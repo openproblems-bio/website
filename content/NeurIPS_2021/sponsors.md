@@ -30,7 +30,7 @@ subtitle = ""
 <div class="row">
 <div class="col-6">
 <a href="https://cellarity.com">
-<img src="/img/sponsor/cellarity.png" height="300px" width="300px;" style="padding-bottom:20px;">
+<img src="/img/sponsor/logotypemarkcolor.svg" height="300px" width="300px;" style="padding-bottom:20px;">
 </a>
 </div>
 <div class="col-6">
