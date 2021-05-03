@@ -28,25 +28,4 @@ subtitle = ""
  css_class = ""
 +++
 
-The rapid advances in data-driven approaches to biology in recent
-years have introduced new frontiers for research, exploration, and
-understanding of biological processes at a resolution never before
-seen. Single-cell omics technologies allow for profiling of cellular features
-such as gene expression or protein abundance across tens of thousands of cells
-in an experiment that can be readily performed in a standard laboratory. However,
-analyzing these new data modalities require development of novel methods to
-unlock novel biological insights.
-
-Recent advances in representation learning (in particular, in
-fields involving self supervised, multi-view, and transfer learning)
-hold the key to alleviating such challenges to lift some of the main
-barriers in the field and unlock new capabilities bridging data
-science, machine learning, and computational biology. To this end, we
-will hold a multi-modal single cell data analysis competition to
-expose the machine learning community to predominant problems
-encountered in biomedical multiomic applications, and the
-computational biology community to a wider range of state of the art
-machine learning methods, which may not be traditionally associated or
-applied to biomedical data. We ask participants to learn meaningful
-joint embeddings from multimodal data and to infer missing or
-corrupted features.
+Innovations in single-cell measurement technologies are driving a revolution in the life sciences. Recent advances make it possible to measure multiple modalities (e.g. chromatin accessibility / gene expression / protein) simultaneously in the same cell. These datasets provide unique opportunities to understand the layers of gene regulation that drive biological diversity and disease. In this competition, we present three tasks crucial to fully leveraging multimodal single-cell data using a combination of publicly available datasets and a first-of-its-kind benchmarking multi-omics dataset. The tasks involve predicting one modality from another and learning representations of multiple modalities measured in the same cells.
