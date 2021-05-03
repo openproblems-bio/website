@@ -2,7 +2,7 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 20  # Order that this section will appear.
+weight = 30  # Order that this section will appear.
 
 title = "Organizers"
 subtitle = ""
@@ -30,11 +30,11 @@ subtitle = ""
 
 ## Organizing Team
 
-All organizers are listed in alphabetical order.
+_In alphabetical order_
 
--   **Daniel Burkhardt** (Primary Contact: [dburkhardt@cellarity.com](mailto:dburkhardt@cellarity.com)) is a Machine Learning
-    Scientist at [Cellarity](https://cellarity.com). He is a core organizer of the Open Problems
-    in Single-Cell Analysis. He completed his PhD in Genetics at
+-   **Daniel Burkhardt** (Primary Contact: [dburkhardt@cellarity.com)](mailto:dburkhardt@cellarity.com) is a Machine Learning
+    Scientist at [Cellarity.](https://cellarity.com) He is a core organizer of the Open Problems
+    in Single-Cell Analysis. Daniel completed his PhD in Genetics at
     Yale University with a specialization in machine learning under the
     supervision of Smita Krishnaswamy.
 
