@@ -78,4 +78,10 @@ Open Problems is hosted on GitHub. Benchmarks are evaluated using AWS thanks to 
 
 # Join us!
 
-We'd love for you to get involved.  You can start by reading our [Contribution Guidelines](/contibuting) page for an explanation of our backend framework. You can see our work-in-progress leaderboards on the [Results](/results) page. You can also check out our code on [GitHub](https://github.com/singlecellopenproblems/SingleCellOpenProblems). Finally, introduce yourself by giving us a 👋 on our [Discord Server](https://discord.gg/sDE7cM4PN7)!
+We'd love for you to get involved.  
+
+You can start by [joining our mailing list](https://docs.google.com/forms/d/e/1FAIpQLSe90Oky4-1b0HbdLsp5Yqo9juCd2mq-NlGHU9NHRW1ECok1xQ/viewform?usp=sf_link) to be the first to hear about updates.
+
+Next, check out our [Contributing Guideidelines](https://github.com/singlecellopenproblems/SingleCellOpenProblems/blob/master/CONTRIBUTING.md) .
+
+Finally, introduce yourself by giving us a 👋 on our [Discord Server](https://discord.gg/sDE7cM4PN7)! You'll find several groups of people here working on different tasks. Check out the different channels and see where you can contribute!

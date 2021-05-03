@@ -32,7 +32,7 @@ subtitle = ""
 
 All organizers are listed in alphabetical order.
 
--   **Daniel Burkhardt** (Platform Administrator) is a Machine Learning
+-   **Daniel Burkhardt** (Primary Contact: [dburkhardt@cellarity.com](mailto:dburkhardt@cellarity.com)) is a Machine Learning
     Scientist at [Cellarity](https://cellarity.com). He is a core organizer of the Open Problems
     in Single-Cell Analysis. He completed his PhD in Genetics at
     Yale University with a specialization in machine learning under the
