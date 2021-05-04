@@ -32,7 +32,7 @@ subtitle = ""
 
 _In alphabetical order_
 
--   **Daniel Burkhardt** (Primary Contact: [dburkhardt@cellarity.com)](mailto:dburkhardt@cellarity.com) is a Machine Learning
+-   **Daniel Burkhardt** (<a href="mailto:dburkhardt@cellarity.com?subject=%5BNeurIPS_2021%5D">Primary contact</a>) is a Machine Learning
     Scientist at [Cellarity.](https://cellarity.com) He is a core organizer of the Open Problems
     in Single-Cell Analysis. Daniel completed his PhD in Genetics at
     Yale University with a specialization in machine learning under the
