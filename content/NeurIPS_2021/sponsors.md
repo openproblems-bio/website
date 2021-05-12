@@ -29,7 +29,7 @@ subtitle = ""
 +++
 <div class="row">
 <div class="col-6">
-<a href="https://cellarity.com">
+<a href="https://cellarity.com/?utm_source=neurips&utm_medium=push-notification&utm_campaign=neurips&utm_content=neurips-competition">
 <img src="/img/sponsor/logotypemarkcolor.svg" height="300px" width="300px;" style="padding-bottom:20px;">
 </a>
 </div>
