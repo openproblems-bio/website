@@ -40,4 +40,6 @@ We will provide:
 
 We will launch the competition in June 2021 with the starter kits and full descriptions of the tasks. We will release specialized training data in July 2021 and collect submissions in September 2021.
 
-For now, [sign up for our mailing list](https://docs.google.com/forms/d/e/1FAIpQLSe90Oky4-1b0HbdLsp5Yqo9juCd2mq-NlGHU9NHRW1ECok1xQ/viewform?usp=sf_link) to be the first to hear when we launch the competition.
+For now, sign up below to be the first to hear when we launch the competition.
+
+ <a href="https://docs.google.com/forms/d/e/1FAIpQLSe90Oky4-1b0HbdLsp5Yqo9juCd2mq-NlGHU9NHRW1ECok1xQ/viewform" target="blank"><button type="button" class="btn btn-primary" style="font-size: 1rem; border: 1px solid #c4c4c4; color:white; height: 40px; padding: 15px 15px;"><strong>Sign up!</strong></button></a>

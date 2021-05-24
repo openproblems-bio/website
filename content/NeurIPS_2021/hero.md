@@ -38,3 +38,5 @@ subtitle = "A NeurIPS Competition (2021)"
  # CSS class.
  css_class = "hero competition-hero"
 +++
+
+ <a href="https://docs.google.com/forms/d/e/1FAIpQLSe90Oky4-1b0HbdLsp5Yqo9juCd2mq-NlGHU9NHRW1ECok1xQ/viewform" target="blank"><button type="button" class="btn btn-primary" style="font-size: 1rem; border: 1px solid white; color:white; height: 40px; padding: 15px 15px;"><strong>Sign up!</strong></button></a>
