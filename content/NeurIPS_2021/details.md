@@ -29,7 +29,7 @@ subtitle = ""
 +++
 
 The competition will focus on three tasks:
-1. **Predicting one modality from another** - e.g. given chromatin accessibility measured in tens of thousands of cells, predict corresponding RNA expression for each cell
+1. **Predicting one modality from another** - given chromatin accessibility measured in tens of thousands of cells, predict corresponding RNA expression for each cell
 2. **Learning a joint embedding** - learn a meaningful embedding of multimodal data measured in the same cells that preserves expert-annotated data organization
 3. **Modality alignment** - re-align multi-modal data measured in the same cells when we hide the correspondences between the two measurements
 
