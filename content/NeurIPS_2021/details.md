@@ -38,7 +38,7 @@ We will provide:
 * Public data curated to match the format of test datasets
 * Purpose-generated training data matching held-out test datasets
 
-We will launch the competition in August 2021 with the starter kits and full descriptions of the tasks. We will release specialized training data in August 2021 and collect submissions in October 2021.
+We will launch the competition in August 2021 with the starter kits and full descriptions of the tasks. We will release specialized training data in August 2021 and collect submissions in November 2021.
 
 For now, sign up below to be the first to hear when we launch the competition.
 
