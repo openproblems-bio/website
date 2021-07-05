@@ -33,7 +33,7 @@ subtitle = ""
 <div class="card" style="width: 300px; height:400px;">
   <img class="card-img-top" src="/img/sponsor/logotypemarkcolor.svg" alt="Card image cap" style="width:200px;  margin: 40px 50px 50px;">
   <div class="card-body" style="padding-top: 0px;">
-    <p class="card-text">Cellarity is redefining drug discovery by targeting cell behaviors as opposed to individual proteins.<br><a class="stretched-link" href="https://cellarity.com">Learn more.</a></p>
+    <p class="card-text">Cellarity is redefining drug discovery by targeting cell behaviors as opposed to individual proteins.<br><a class="stretched-link" href="https://cellarity.com/?utm_source=neurips&utm_medium=push-notification&utm_campaign=neurips&utm_content=neurips-competition">Learn more.</a></p>
   </div>
 </div>
 </a>
