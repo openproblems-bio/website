@@ -60,7 +60,7 @@ _In alphabetical order_
     complexes and RNA interactions, as well as flexible, dynamic and
     even disordered protein ensembles.
 
--   **Angela Pisco** is the Associate Director of Bioinformatics at the Chan Zuckerbeg Biohub.
+-   **Angela Pisco** is the Associate Director of Bioinformatics at the Chan Zuckerberg Biohub.
     Her group is responsible for generating and annotated atlas-scale single-cell
     datasets across biological systems.
 
