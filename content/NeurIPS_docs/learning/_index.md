@@ -1,9 +1,9 @@
 ---
 # Title, summary, and page position.
-linktitle: The tasks
-summary: Learn about the specific tasks in the competition
-weight: 2
-icon: tasks
+linktitle: Background
+summary: Background information on the data modalities used in the competition
+weight: 1
+icon: book
 icon_pack: fas
 
 # Page metadata.

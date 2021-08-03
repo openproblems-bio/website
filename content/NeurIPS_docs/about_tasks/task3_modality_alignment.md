@@ -9,7 +9,7 @@ weight: 3
 The functioning of organs, tissues, and whole organisms is determined by the interplay of cells. Cells are characterised into broad types, which in turn can take on different states. Here, a cell state is made up of the sum of all processes that are occurring within the cell. We can gain insight into the state of a cell by different types of measurements: e.g., RNA expression, protein abundance, or chromatin conformation. Combining this information to describe cellular heterogeneity requires the formation of joint embeddings generated from this multimodal data. These embeddings must account for and remove possible batch effects between different measurement batches. The reward for methods that can achieve this is great: a highly resolved description of the underlying biological state of a cell that determines its function, how it interacts with other cells, and thus the cell’s role in the functioning of the whole tissue.
 
 <figure>
-  <img src="/media/tasks/integrate.png">
+  <img src="/media/tasks/integrate.svg">
   <figcaption>
     <h3>
       Task 3: Joint embedding
