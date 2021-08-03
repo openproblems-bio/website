@@ -59,9 +59,9 @@ There are many challenges new methods need to overcome. A recent perspective ide
 
 # Our inspiration
 
-We are inspired by the progress machine learning has made in computer vision, natural language processing (NLP), and individualized recommendation. Many of these advances were driven by competition among methods developers against standardized, well-defined computational tasks. Computer vision has [ImageNet,](www.image-net.org/) language processing has the [Workshop on Statistical Machine Translation,](http://www.statmt.org), recommendation had the [Netflix Prize.](https://en.wikipedia.org/wiki/Netflix_Prize) There are hundreds more challenges in machine learning that are catalogued on the [Papers with Code State-of-the-art Leaderboards.](https://paperswithcode.com/sota)
+We are inspired by the progress machine learning has made in computer vision, natural language processing (NLP), and individualized recommendation. Many of these advances were driven by competition among methods developers against standardized, well-defined computational tasks. Computer vision has [ImageNet](www.image-net.org/), language processing has the [Workshop on Statistical Machine Translation](http://www.statmt.org), recommendation had the [Netflix Prize](https://en.wikipedia.org/wiki/Netflix_Prize). There are hundreds more challenges in machine learning that are catalogued on the [Papers with Code State-of-the-art Leaderboards.](https://paperswithcode.com/sota)
 
-These challenges provide both direction for methods developers and provide a straightforward framework for evaluating methods. It's not surprising that the biggest machine learning advances in the biological sciences have also occurred within the framework of formalized challenges. When DeepMind wanted to tackle protein folding prediction, they pursued state-of-the-art performance in the [Critical Assessment of protein Structure Prediction.](https://predictioncenter.org/) Similarly, the [Dream Challenges](http://dreamchallenges.org/challenges/) and Recursion Pharmaceuticals' [RXRX competitions](https://www.rxrx.ai/) strive to build on these large-scale high-reward challenges to drive innovation.
+These challenges provide both direction for methods developers and provide a straightforward framework for evaluating methods. It's not surprising that the biggest machine learning advances in the biological sciences have also occurred within the framework of formalized challenges. When DeepMind wanted to tackle protein folding prediction, they pursued state-of-the-art performance in the [Critical Assessment of protein Structure Prediction](https://predictioncenter.org/). Similarly, the [Dream Challenges](http://dreamchallenges.org/challenges/) and Recursion Pharmaceuticals' [RXRX competitions](https://www.rxrx.ai/) strive to build on these large-scale high-reward challenges to drive innovation.
 
 We want to leverage the strengths of these machine learning challenges to drive innovation in computational biology for single-cell analysis.
 
@@ -74,7 +74,7 @@ We think there are four key traits that allow these challenges to drive innovati
 
 Our goal is to provide an open source, community driven, extensible platform for continuously updated benchmarking of formalized tasks in single-cell analysis. For example, we're interested in ranking dimensionality reduction methods based on their ability to preserve global distances and comparing data denoising methods based on their ability to recover simulated mRNA undercounting.
 
-Open Problems is hosted on GitHub. Benchmarks are evaluated using AWS thanks to generous support from the [Chan Zuckerberg Initiative](https://chanzuckerberg.com/science/). Up-to-date leaderboards are hosted on our [Results](/results) page. All code, methods, and leadership is driven by broad input from the scientific community.
+Open Problems is hosted on GitHub. Benchmarks are evaluated using AWS thanks to generous support from the [Chan Zuckerberg Initiative](https://chanzuckerberg.com/science/). Leaderboards are hosted on our [Results](/results) page. All code, methods, and leadership is driven by broad input from the scientific community.
 
 # Join us!
 
@@ -82,6 +82,6 @@ We'd love for you to get involved.
 
 You can start by [joining our mailing list](https://docs.google.com/forms/d/e/1FAIpQLSe90Oky4-1b0HbdLsp5Yqo9juCd2mq-NlGHU9NHRW1ECok1xQ/viewform?usp=sf_link) to be the first to hear about updates.
 
-Next, check out our [Contributing Guideidelines](https://github.com/singlecellopenproblems/SingleCellOpenProblems/blob/master/CONTRIBUTING.md) .
+Next, check out our [Contributing Guidelines](https://github.com/openproblems-bio/openproblems/blob/master/CONTRIBUTING.md).
 
 Finally, introduce yourself by giving us a 👋 on our [Discord Server](https://discord.gg/sDE7cM4PN7)! You'll find several groups of people here working on different tasks. Check out the different channels and see where you can contribute!
