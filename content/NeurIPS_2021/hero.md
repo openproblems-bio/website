@@ -8,8 +8,8 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 1  # Order that this section will appear.
 
-title = "**Multimodal Single-Cell Data Integration**"
-subtitle = "A NeurIPS Competition (2021)"
+#title = "**Multimodal Single-Cell Data Integration**"
+#subtitle = "A NeurIPS Competition (2021)"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
@@ -33,10 +33,12 @@ subtitle = "A NeurIPS Competition (2021)"
 
 [advanced]
  # Custom CSS.
- css_style = "height: 400px;"
+ css_style = "height: 400px; text-align: left;"
 
  # CSS class.
- css_class = "hero competition-hero"
+ css_class = "hero competition-hero text-left"
 +++
+# **Multimodal Single-Cell Data Integration**
+A NeurIPS Competition (2021)
 
- <a href="https://docs.google.com/forms/d/e/1FAIpQLSe90Oky4-1b0HbdLsp5Yqo9juCd2mq-NlGHU9NHRW1ECok1xQ/viewform" target="blank"><button type="button" class="btn btn-primary" style="font-size: 1rem; border: 1px solid white; color:white; height: 40px; padding: 15px 15px;"><strong>Sign up!</strong></button></a>
+ <a href="https://docs.google.com/forms/d/e/1FAIpQLSe90Oky4-1b0HbdLsp5Yqo9juCd2mq-NlGHU9NHRW1ECok1xQ/viewform" target="blank"><button type="button" class="btn btn-primary" style="font-size: 1rem; border: 1px solid white; color:white; height: 40px; padding: 0px 15px"><strong>Sign up!</strong></button></a>
