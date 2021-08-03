@@ -9,7 +9,7 @@
     <div class="col-lg-8 frontpage-hero banner-container">
       {{ with $st.Title }}<h1>{{ . | markdownify | emojify }}</h1>{{ end }}
       {{ with $st.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
-      {{ with $st.Params.text_img }}<img src="{{ site.BaseURL }}media/{{ . }}">{{ end }}
+      {{ with $st.Params.text_img }}<img src="{{ site.BaseURL }}/media/{{ . }}">{{ end }}
     </div>
 
 </div>
