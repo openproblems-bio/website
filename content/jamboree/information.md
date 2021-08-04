@@ -99,7 +99,7 @@ To help orient you to our codebase on GitHub, we’ve created three introductory
 Before the Jamboree:
 1. Watch the Open Problems Repository introduction: https://www.youtube.com/watch?v=tHempZCdXyA  
 2. Watch the tutorial on adding a new task: https://www.youtube.com/watch?v=tgVG3Hp6mBc
-3. Read the guide for GitHub and AWS SageMaker (video linked in guide): https://github.com/singlecellopenproblems/SingleCellOpenProblems/blob/master/SAGEMAKER.md
+3. Read the guide for GitHub and AWS SageMaker (video linked in guide): https://github.com/openproblems-bio/openproblems/blob/master/SAGEMAKER.md
 
 ## GitHub and Amazon Web Services (AWS)
 
@@ -109,7 +109,7 @@ Before the Jamboree:
 1. If you are unfamiliar with GitHub / Git:
 2. Create a GitHub account: https://github.com/join
 3. Go through the Hello World tutorial on GitHub: https://guides.github.com/activities/hello-world/
-4. Read through the [CONTRIBUTING.md](https://github.com/singlecellopenproblems/SingleCellOpenProblems/blob/master/CONTRIBUTING.md) file that describes the process for adding code to the GitHub repository.
+4. Read through the [CONTRIBUTING.md](https://github.com/openproblems-bio/openproblems/blob/master/CONTRIBUTING.md) file that describes the process for adding code to the GitHub repository.
 
 ## Community Participation Guidelines
 

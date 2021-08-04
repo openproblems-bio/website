@@ -38,6 +38,13 @@ _In alphabetical order_
     Yale University with a specialization in machine learning under the
     supervision of Smita Krishnaswamy.
 
+-   **Robrecht Cannoodt** is a postdoctoral researcher in Saeys lab at 
+    VIB-UGent and a computer science consultant at Data Intuitive.
+    During his PhD, his research was focused mainly on unsupervised learning in 
+    single-cell omics, more specifically on trajectory inference. Robrecht 
+    oversees infrastructure development for building collaborative, scalable 
+    and reproducible pipelines using NextFlow and Viash.
+
 -   **Smita Krishnaswamy** is an associate professor of Computer Science and
     Genetics at Yale University. Her research focuses on unsupervised
     learning, using data geometry, topology and deep learning methods
@@ -60,7 +67,7 @@ _In alphabetical order_
     complexes and RNA interactions, as well as flexible, dynamic and
     even disordered protein ensembles.
 
--   **Angela Pisco** is the Associate Director of Bioinformatics at the Chan Zuckerbeg Biohub.
+-   **Angela Pisco** is the Associate Director of Bioinformatics at the Chan Zuckerberg Biohub.
     Her group is responsible for generating and annotated atlas-scale single-cell
     datasets across biological systems.
 
