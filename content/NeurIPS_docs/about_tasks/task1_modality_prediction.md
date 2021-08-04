@@ -16,7 +16,7 @@ Experimental techniques to measure multiple modalities within the same single ce
       Task 1: Prediction
     </h3>
     <p style="font-size: medium;">
-      In this task, the goal is to take one modality (ATAC or RNA) and predict the other modality (RNA or Protein) for all features in each cell. Performance is measured using Mean Square Error.
+      In this task, the goal is to take one modality (ATAC or RNA) and predict the other modality (RNA or Protein) for all features in each cell (only ATAC + RNA shown). Performance is measured using Mean Square Error.
     </p>
   </figcaption>
 </figure>

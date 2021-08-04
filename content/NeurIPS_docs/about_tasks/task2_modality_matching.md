@@ -11,13 +11,13 @@ While joint profiling of two modalities in the same single cell is now possible,
 Unlike in task 1, where the goal was to predict all values of RNA or protein abundances from ATAC or RNA (respectively) in each cell, the goal of this task is to identify the correspondence between single-cell profiles. Because we are only interested in matching observations, the competitors are encouraged to consider feature selection to identify the representation of the input most important for matching observations.
 
 <figure>
-  <img src="/media/tasks/match.png">
+  <img src="/media/tasks/match.svg">
   <figcaption>
     <h3>
       Task 2: Matching
     </h3>
     <p style="font-size: medium;">
-      In this task, competitors are given a jointly measured multmodal dataset where the cell barcodes linking the two measures are obscured for the purposes of the competition. Competitors must submit estimates of which profile goes to which. The sum of weights in the correct correspondences is used to score submissions.
+      In this task, competitors are given a jointly measured multmodal dataset (only ATAC + RNA shown) where the cell barcodes linking the two measures are obscured for the purposes of the competition. Competitors must estimate which profiles match across modalities and provide the probability distribution of these predictions. The sum of weights in the correct correspondences is used to score submissions.
     </p>
   </figcaption>
 </figure>
@@ -56,7 +56,7 @@ adata
 
 ### Output data formats
 
-This component should output only *one* h5ad file, `--output`, containing the predicted pairings of the two input datasets.
+This component should output only *one* h5ad file, `--output`, containing the predicting probabilities of the matchings between the two input datasets.
 
 ```plaintext
 adata

@@ -15,7 +15,7 @@ The functioning of organs, tissues, and whole organisms is determined by the int
       Task 3: Joint embedding
     </h3>
     <p style="font-size: medium;">
-      In this task, the goal is to learn an embedded space that leverages the information of multiple modalities. Quality of the embedding will be scored using a number of metrics derived from expert annotation.
+      In this task, the goal is to learn an embedded space that leverages the information of multiple modalities (only ATAC + RNA shown). Quality of the embedding will be scored using a number of metrics derived from expert annotation.
     </p>
   </figcaption>
 </figure>
@@ -58,7 +58,7 @@ adata
 
   Attributes
   ----------
-  adata.X : ndarray, shape=(n_obs, 100)
+  adata.X : ndarray, shape=(n_obs, N), N <= 100
     Embedding matrix.
   adata.uns['dataset_id'] : str
     The name of the dataset.
