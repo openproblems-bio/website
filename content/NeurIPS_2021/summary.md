@@ -32,6 +32,6 @@ Scaling from a dozen cells a decade ago to millions of cells today, single-cell 
 
 In this competition for [NeurIPS 2021,](https://neurips.cc/Conferences/2021/CompetitionTrack) we present three tasks on multimodal single-cell data using public datasets and a first-of-its-kind multi-omics benchmarking dataset. Teams will predict one modality from another and learn representations of multiple modalities measured in the same cells. Progress will reveal how a common genetic blueprint gives rise to distinct cell types and processes, as a foundation for improving human health.
 
-To learn more, you can watch the following introduction to the competition presented to CZI Single-Cell Grantees or <a href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbGJZVDRkemdHN1pROHM2cE9Qakw1NDRsVjY0QXxBQ3Jtc0tteWp5bEswNWZDV2tFb3lmaTB6ZnhSSXgxZUFORmp1bUMtRWZEU2hYSjJIcDR5emlKdXdxNm93UGVjRzU0VTFtdllPU1ZxSnFyM25Leld4QnNoQUZOYUFSNkdmRWxPVEpmV2hWeGxYaktoc29jelJwNA&q=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1L6-Ww0fIhtC3lv0Uzir0FZRyDxZxDaPQ%2F" style="color: #EB5252;">download the slides</a>:
+To learn more, you can watch the following introduction to the competition presented to CZI Single-Cell Grantees or <a href="https://drive.google.com/file/d/1L6-Ww0fIhtC3lv0Uzir0FZRyDxZxDaPQ/" style="color: #EB5252;">download the slides</a>:
 
 {{< youtube Fm-MDpPo85c >}}
