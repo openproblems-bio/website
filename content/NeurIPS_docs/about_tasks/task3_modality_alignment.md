@@ -25,7 +25,7 @@ The functioning of organs, tissues, and whole organisms is determined by the int
 
 ### Input data formats
 
-This component expects two inputs, `--input_mod1` and `--input_mod2`. They are both [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad files for which the rows are shuffled and anonymised. These files have the attributes below. If the `feature_types` of one file is "GEX", then that of the other must be either "ATAC" or "ADT".
+This component expects two inputs, `--input_mod1` and `--input_mod2`. They are both [AnnData](https://anndata.readthedocs.io/en/latest/), containing the full profile matrices where extra metadata has been removed. These have the following attributes:
 
 ```plaintext
 adata
@@ -93,7 +93,7 @@ where $C$ denotes the set of all cell identity labels.
 <br style="margin-bottom: 10px;">
 4. **Cell cycle conservation** - The cell cycle conservation score is a proxy for the conservation of gene program signal during data integration. It evaluates how much variance is explained by cell cycle per batch before and after integration. This should ideally be equal. Using Scanpy’s `score_cell_cycle` function we score the cell cycle stage of each cell using the gene expression data and a gene set from Tirosh et al. (10.1126/science.aad0501).<br style="margin-bottom: 10px;">
 We then compute the variance contribution of the resulting S and G2/M phase scores using principal component regression, which is performed for each batch separately. The differences in variance before, $Var_{before}$, and after, $Var_{after}$, integration is aggregated into a final score between 0 and 1, using the equation:
-CC conservation = 1 -\frac{|Var_{after}-Var_{before}|}{Var_{before}} .
+$$CC conservation = 1 -\frac{|Var_{after}-Var_{before}|}{Var_{before}}$$
 In this equation values close to 0 indicate lower conservation and 1 indicates complete conservation of the variance explained by cell cycle. In other words, the variance remains unchanged within each batch for complete conservation, while any deviation from the pre-integration variance contribution reduces the score.
 <br style="margin-bottom: 10px;">
 5. **Trajectory conservation** - The trajectory conservation score is a proxy for the conservation of continuous biological signal in the joint embedding. In this metric we compare trajectories computed after integration for relevant cell types that describe a continuous cellular differentiation process with a trajectory computed per batch and modality. Trajectories are computed using diffusion pseudotime (implemented in the `sc.tl.dpt` function in Scanpy). This approach embeds the data into a diffusion map space and computes an ordering of cells in this space from a selected root cell (a pseudotime value). As root cell, we select the cell in the earliest progenitor cluster that is most extremal in the first three diffusion components, which is still in the largest connected component of the cellular nearest neighbor graph (the graph that is used as the basis for the diffusion map computation).<br style="margin-bottom: 10px;">
