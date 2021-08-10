@@ -19,3 +19,6 @@ These objects can be opened in Python using the [`anndata.read_h5ad()`](https://
     </p>
   </figcaption>
 </figure>
+
+
+For the full AnnData API, please consult the [docs](https://anndata.readthedocs.io/en/latest/anndata.AnnData.html).
