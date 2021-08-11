@@ -19,24 +19,10 @@ EvalAI is an open source platform to host machine learning competitions. We're u
 
 For this competition, we want competitors to share code and we will evaluate results on a remote server. To facilitate running arbitrary scripts submitted by contestants, we are using [viash](https://viash.io), a tool designed to turn R, Python, C, etc. scripts into Dockerized components that can be executed from the command line and integrated into a workflow system like [Nextflow](https://www.nextflow.io/).
 
-Installing viash has three prerequisites:
+Before you get started with the competition you will need to install two  prerequisites:
 
-* [Docker](https://docs.docker.com/get-docker/)
-* Java Runtime ≥8.0, [available](https://adoptopenjdk.net/?variant=openjdk11&jvmVariant=hotspot) from OpenJDK
-
-Next, get a copy of the competition Github Repository and run the `bin/init` script. This script will install viash and Nextflow.
-
-```
-# The Docker daemon must be running. On MacOS, launch the Docker desktop app instead of `dockerd`
-$ dockerd
-$ git clone https://github.com/openproblems-bio/neurips2021_multimodal_viash.git
-$ cd neurips2021_multimodal_viash
-$ ./bin/init
-# You need to add the viash binaries to your PATH
-$ export PATH=${PWD}/bin:$PATH
-```
-
-If you have any issues installing `viash`, please [open](https://github.com/openproblems-bio/neurips2021_multimodal_viash/issues) a GitHub Issue on the competition Github page or ask a question on the competition [Discord](https://discord.gg/Q3RKGMGD3E) server (look for the #viash-help channel).
+1. [Docker](https://docs.docker.com/get-docker/)
+2. Java Runtime ≥8.0, [available](https://adoptopenjdk.net/?variant=openjdk11&jvmVariant=hotspot) from OpenJDK
 
 ## 3. Grab a starter kit
 
