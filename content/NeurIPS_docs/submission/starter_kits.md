@@ -337,3 +337,5 @@ This function runs a Nextwork workflow to:
 Note, it may take up to 20 minutes to download the public data. You should only need to do this once.
 
 If this process runs successfully, then you will be instructed to upload the submission to EvalAI.
+
+If you need any help, please reach out on the competition [Discord](https://discord.gg/Q3RKGMGD3E) server. See the #troubleshooting or #viash-help channels.

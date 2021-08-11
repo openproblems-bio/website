@@ -71,3 +71,5 @@ To upload the submission, you have two options:
 6. Hit Submit
 
 Once your method is submitted, you can navigate to the [My Submissions](https://eval.ai/web/challenges/challenge-page/1111/my-submission) tab for the competition and select the Phase that matches your recent submission. Here you will find a table that lists each submission you've uploaded for a given phase. Once the Status column is marked "Finished" you can view the `results.json` file that provides the method performance.
+
+If you need any help, please reach out on the competition [Discord](https://discord.gg/Q3RKGMGD3E) server. See the #troubleshooting or #viash-help channels.
