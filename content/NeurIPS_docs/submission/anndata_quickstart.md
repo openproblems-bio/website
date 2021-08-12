@@ -8,7 +8,7 @@ weight: 30
 
 All the datasets provided in the competition are organized in [AnnData](https://anndata.readthedocs.io) objects. This page describes the structure of AnnData objects so that you can work with the data in the competition efficiently.
 
-AnnData is a generic data storage format especially well suited for single-cell data. The class stores a data matrix `X` together with annotations of observations and variables in Pandas DataFrames. The advantage of storing the annotations and data in the same object is to ensure that when inspecting slices of the data, relevant annotations are properly linked with the views of the data.
+AnnData is a generic data storage format especially well-suited for single-cell data. The class stores a data matrix `X` together with annotations of observations and variables in Pandas DataFrames. The advantage of storing the annotations and data in the same object is to ensure that when inspecting slices of the data, relevant annotations are properly linked with the views of the data.
 
 The most common attributes are:
 * `adata.X` - The data. This can by a sparse array or a numpy array.
@@ -37,9 +37,6 @@ The following diagram shows these attributes and their relation to the data:
   </figcaption>
 </figure>
 
-AnnData objects can be opened in Python using the [`anndata.read_h5ad()`](https://anndata.readthedocs.io/en/latest/anndata.read_h5ad.html) function or the [`scanpy.read_h5ad()`](https://scanpy.readthedocs.io/en/stable/generated/scanpy.read_h5ad.html) function. This object can be opened in R using the [`readH5AD`](https://rdrr.io/github/theislab/zellkonverter/man/readH5AD.html) function
+AnnData objects can be opened in Python using the [`anndata.read_h5ad()`](https://anndata.readthedocs.io/en/latest/anndata.read_h5ad.html) function or the [`scanpy.read_h5ad()`](https://scanpy.readthedocs.io/en/stable/generated/scanpy.read_h5ad.html) function. This object can be opened in R using the [`readH5AD()`](https://rdrr.io/github/theislab/zellkonverter/man/readH5AD.html) function.
 
-
-
-
-For the full AnnData API, please consult the [docs](https://anndata.readthedocs.io/en/latest/anndata.AnnData.html).
+For the full AnnData API, please consult the [documentation of the `anndata` package](https://anndata.readthedocs.io/en/latest/anndata.AnnData.html).
