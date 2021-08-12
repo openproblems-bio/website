@@ -50,7 +50,7 @@ adata
 
 ### Output data formats
 
-This component should output only *one* h5ad file, `--output`, containing the predicted pairings of the two input datasets. We are placing a limit of the embedding space to 100 dimensions. The output file must have the following attributes.
+This component should output only *one* h5ad file, `--output`, containing the predicted pairings of the two input datasets. We are limiting the embedding to at most 100 dimensions. The output file must have the following attributes.
 
 ```plaintext
 adata
@@ -69,8 +69,6 @@ adata
 
 ```
 
-
-
 ### Metrics
 
 Performance in task 3 will be measured using 7 different metrics broken into two classes:
@@ -83,23 +81,19 @@ These measures are then aggregated into a single score used to rank methods.
 
 These metrics measure of how well an embedding conserves expert-annotated biology.
 
-1. **NMI cluster/label** - Normalized mutual information (NMI) compares the overlap of two clusterings. We use NMI to compare the cell type labels with an automated clustering computed on the integrated dataset (based on louvain clustering). NMI scores of 0 or 1 correspond to uncorrelated clustering or a perfect match, respectively. Automated Louvain clustering is performed at resolution ranges from 0.1 to 2 in steps of 0.1, and the clustering output with the highest NMI with the label set is used.
-<br style="margin-bottom: 10px;">
+1. **NMI cluster/label** - Normalized mutual information (NMI) compares the overlap of two clusterings. We use NMI to compare the cell type labels with an automated clustering computed on the integrated dataset (based on Louvain clustering). NMI scores of 0 or 1 correspond to uncorrelated clustering or a perfect match, respectively. Automated Louvain clustering is performed at resolution ranges from 0.1 to 2 in steps of 0.1, and the clustering output with the highest NMI with the label set is used.
 2. **ARI cluster/label** - The Rand index compares the overlap of two clusterings; it considers both correct clustering overlaps while also counting correct disagreements between two clusterings. Similar to NMI, we compare the cell type labels with the NMI-optimized Louvain clustering computed on the integrated dataset. An ARI of 0 or 1 corresponds to random labelling or a perfect match, respectively.
-<br style="margin-bottom: 10px;">
 3. **Cell type ASW** - The silhouette width measures the compactness of observations with the same labels. Averaging over all silhouette widths of a set of cells yields the average silhouette width (ASW), which ranges between -1 and 1. We use ASW to evaluate the compactness of cell types in the resulting embedding. The cluster ASW is computed on cell identity labels and scaled to a value between 0 and 1 using the equation:
 $$ASW = (ASW_{C}+1)/2 $$
 where $C$ denotes the set of all cell identity labels.
-<br style="margin-bottom: 10px;">
-4. **Cell cycle conservation** - The cell cycle conservation score is a proxy for the conservation of gene program signal during data integration. It evaluates how much variance is explained by cell cycle per batch before and after integration. This should ideally be equal. Using Scanpy’s `score_cell_cycle` function we score the cell cycle stage of each cell using the gene expression data and a gene set from Tirosh et al. (10.1126/science.aad0501).<br style="margin-bottom: 10px;">
-We then compute the variance contribution of the resulting S and G2/M phase scores using principal component regression, which is performed for each batch separately. The differences in variance before, $Var_{before}$, and after, $Var_{after}$, integration is aggregated into a final score between 0 and 1, using the equation:
-$$CC conservation = 1 -\frac{|Var_{after}-Var_{before}|}{Var_{before}}$$
-In this equation values close to 0 indicate lower conservation and 1 indicates complete conservation of the variance explained by cell cycle. In other words, the variance remains unchanged within each batch for complete conservation, while any deviation from the pre-integration variance contribution reduces the score.
-<br style="margin-bottom: 10px;">
-5. **Trajectory conservation** - The trajectory conservation score is a proxy for the conservation of continuous biological signal in the joint embedding. In this metric we compare trajectories computed after integration for relevant cell types that describe a continuous cellular differentiation process with a trajectory computed per batch and modality. Trajectories are computed using diffusion pseudotime (implemented in the `sc.tl.dpt` function in Scanpy). This approach embeds the data into a diffusion map space and computes an ordering of cells in this space from a selected root cell (a pseudotime value). As root cell, we select the cell in the earliest progenitor cluster that is most extremal in the first three diffusion components, which is still in the largest connected component of the cellular nearest neighbor graph (the graph that is used as the basis for the diffusion map computation).<br style="margin-bottom: 10px;">
-The conservation of the trajectory is quantified via Spearman’s rank correlation coefficient, s, between the pseudotime values before and after integration. The final score is scaled to a value between 0 and 1 using the equation:
+4. **Cell cycle conservation** - The cell cycle conservation score is a proxy for the conservation of gene program signal during data integration. It evaluates how much variance is explained by cell cycle per batch before and after integration. This should ideally be equal. Using Scanpy’s `score_cell_cycle` function we score the cell cycle stage of each cell using the gene expression data and a gene set from [Tirosh et al. (10.1126/science.aad0501)](https://dx.doi.org/10.1126/science.aad0501).
+We then compute the variance contribution of the resulting S and G2/M phase scores using principal component regression, which is performed for each batch separately. The differences in variance before, $Var_\text{before}$, and after, $Var_\text{after}$, integration is aggregated into a final score between 0 and 1, using the equation:
+$$CC conservation = 1 -\frac{|Var_\text{after}-Var_\text{before}|}{Var_\text{before}}$$
+In this equation values close to 0 indicate lower conservation and 1 indicates complete conservation of the variance explained by the cell cycle. In other words, the variance remains unchanged within each batch for complete conservation, while any deviation from the pre-integration variance contribution reduces the score.
+5. **Trajectory conservation** - The trajectory conservation score is a proxy for the conservation of a continuous biological signal in the joint embedding. In this metric, we compare trajectories computed after integration for relevant cell types that describe a continuous cellular differentiation process with a trajectory computed per batch and modality. Trajectories are computed using diffusion pseudotime (implemented in the `sc.tl.dpt` function in Scanpy). This approach embeds the data into a diffusion map space and computes an ordering of cells in this space from a selected root cell (a pseudotime value). As root cell, we select the cell in the earliest progenitor cluster that is most extremal in the first three diffusion components, which is still in the largest connected component of the cellular nearest neighbor graph (the graph that is used as the basis for the diffusion map computation).
+The conservation of the trajectory is quantified via Spearman’s rank correlation coefficient, $s$, between the pseudotime values before and after integration. The final score is scaled to a value between 0 and 1 using the equation:
 $$trajectory conservation = (s+1)/2.$$
-Values of 1 or 0 correspond to the same order of cells on the trajectory before and after integration or the reverse order, respectively. In cases where the trajectory could not be computed, which occurs when kNN graphs of the integrated data contain many connected components, we set the value of the metric to 0.<br style="margin-bottom: 10px;">
+Values of 1 or 0 correspond to the same order of cells on the trajectory before and after integration or the reverse order, respectively. In cases where the trajectory could not be computed, which occurs when kNN graphs of the integrated data contain many connected components, we set the value of the metric to 0.
 To compute a multimodal trajectory conservation score using un-modal ground-truth trajectories, we take the mean of the trajectory conservation scores for each modality.
 
 #### Batch removal metrics
@@ -114,8 +108,8 @@ To obtain the final $batchASW$ score, the label-specific $batchASW_j$ scores are
 $$batchASW =\frac{1}{|M|}\sum_{j \in M} batchASW_{j}$$
 Here, M is the set of unique cell labels. Overall, a batch ASW of 1 represents ideal batch mixing and a value of 0 indicates strongly separated batches.
 <br style="margin-bottom: 10px;">
-2. **Graph connectivity** - The graph connectivity metric assesses whether cells of the same type from different batches are close to one another in the embedding. This is evaluated by computing a k-nearest neighbour (kNN) graph, $G$, on the embedding using Euclidean distances. We then check if all cells with the same cell identity label are connected on this kNN graph. For each cell identity label $c$, we generate the subset kNN graph $G(N_c;E_c)$ which contains only cells from a given label. Using these subset kNN graphs, we compute the graph connectivity score:
-$$gc =\frac{1}{|C|} \sum_{c \in C} \frac{|LCC(G(N_c;E_c))}{||N_c|}$$
+2. **Graph connectivity** - The graph connectivity metric assesses whether cells of the same type from different batches are close to one another in the embedding. This is evaluated by computing a k-nearest neighbour (kNN) graph, $G$, on the embedding using Euclidean distances. We then check if all cells with the same cell identity label are connected on this kNN graph. For each cell identity label $c$, we generate the subset kNN graph $G(N_c;E_c)$, which contains only cells from a given label. Using these subset kNN graphs, we compute the graph connectivity score:
+$$gc =\frac{1}{|C|} \sum_{c \in C} \frac{|LCC(G(N_c;E_c))|}{|N_c|}$$
 Here, $C$ represents the set of cell identity labels, $|LCC()|$ is the number of nodes in the largest connected component of the graph, and $|N_c|$ is the number of nodes with cell identity $c$. The resulting score has a range of $(0;1]$, where 1 indicates that all cells with the same cell identity are connected in the integrated kNN graph, and the lowest possible score indicates a graph where no cell is connected.
 
 #### Metric aggregation
@@ -124,7 +118,7 @@ To rank methods, the individual metric scores will be aggregated. This will occu
 Each metric result will be rescaled by min-max scaling via
 
 $$f(Y) =\frac{Y - min(Y)}{max(Y) - min(Y)}$$
-Separate bio-conservation and batch removal scores will be computed by taking the mean of all rescaled bio-conservation and batch removal metrics respectively.
+Separate bio-conservation and batch removal scores will be computed by taking the mean of all rescaled bio-conservation and batch removal metrics, respectively.
 
 An overall score will be calculated taking a weighted average of the batch removal and bio-conseration scores via the equation:
 $$S_{overall,i} = 0.6*S_{bio,i} + 0.4*S_{batch,i}$$
@@ -137,7 +131,7 @@ Note that when using a distribution-based rescaling as proposed here, it is poss
 
 Further information on any of these metrics can be found at https://www.biorxiv.org/content/10.1101/2020.05.22.111161v2
 
-The batch covariate used for evaluation is “donor”, however you may want to encode the site of data collection as an additional or replacement batch covariate
+The batch covariate used for evaluation is “donor”, however you may want to encode the site of data collection as an additional or replacement batch covariate.
 
 
 ## Prizes
