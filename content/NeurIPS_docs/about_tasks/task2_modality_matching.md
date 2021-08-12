@@ -6,7 +6,7 @@ date: "2021-08-02T00:00:00+01:00"
 weight: 3
 ---
 ## Matching profiles of each cell from different modalities.
-While joint profiling of two modalities in the same single cell is now possible, most single-cell datasets that exist measure only a single modality. These modalities complement each other in their description of cellular state. Yet, it is challenging to analyse uni-modal datasets together when they do not share observations (cells) or a common feature space (genes, proteins, or open chromatin peaks). If we could map observations to one another across modalities, it would be possible to treat separately profiled datasets in the same manner as new multi-modal sequencing data. Mapping these modalities to one another opens up the vast amount of uni-modal single-cell datasets generated in the past years to multi-modal data analysis methods.
+While joint profiling of two modalities in the same single cell is now possible, most single-cell datasets that exist measure only a *single* modality. These modalities complement each other in their description of cellular state. Yet, it is challenging to analyse uni-modal datasets together when they do not share observations (cells) or a common feature space (genes, proteins, or open chromatin peaks). If we could map observations to one another across modalities, it would be possible to treat separately profiled datasets in the same manner as new multi-modal sequencing data. Mapping these modalities to one another opens up the vast amount of uni-modal single-cell datasets generated in the past years to multi-modal data analysis methods.
 
 Unlike in task 1, where the goal was to predict all values of RNA or protein abundances from ATAC or RNA (respectively) in each cell, the goal of this task is to identify the correspondence between single-cell profiles. Because we are only interested in matching observations, the competitors are encouraged to consider feature selection to identify the representation of the input most important for matching observations.
 
@@ -17,18 +17,16 @@ Unlike in task 1, where the goal was to predict all values of RNA or protein abu
       Task 2: Matching
     </h3>
     <p style="font-size: medium;">
-      In this task, competitors are given a jointly measured multmodal dataset (only ATAC + RNA shown) where the cell barcodes linking the two measures are obscured for the purposes of the competition. Competitors must estimate which profiles match across modalities and provide the probability distribution of these predictions. The sum of weights in the correct correspondences is used to score submissions.
+      In this task, competitors are given a jointly measured multimodal dataset (only ATAC + RNA shown) where the cell barcodes linking the two measures are obscured for the purposes of the competition. Competitors must estimate which profiles match across modalities and provide the probability distribution of these predictions. The sum of weights in the correct correspondences is used to score submissions.
     </p>
   </figcaption>
 </figure>
-
-
 
 ## Task API
 
 ### Input data formats
 
-This component expects two inputs, `--input_mod1` and `--input_mod2`. They are both [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad files for which the rows are shuffled and anonymised. These files have the attributes below. If the `feature_types` of one file is "GEX", then that of the other must be either "ATAC" or "ADT" (antibody-derived tag, a measure of protein abundance).
+This component expects two inputs, `--input_mod1` and `--input_mod2`. They are both [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad files for which the rows are shuffled and anonymized. These files have the attributes below. If the `feature_types` of one file is "GEX", then that of the other must be either "ATAC" or "ADT" (antibody-derived tag, a measure of protein abundance).
 
 ```plaintext
 adata
@@ -56,7 +54,7 @@ adata
 
 ### Output data formats
 
-This component should output only *one* h5ad file, `--output`, containing the predicting probabilities of the matchings between the two input datasets.
+This component should output only *one* h5ad file, `--output`, containing the predicted probabilities of the matchings between the two input datasets.
 
 ```plaintext
 adata
