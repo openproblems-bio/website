@@ -12,20 +12,20 @@ This page provides information to go from starter kit to a submission ready for 
 
 All of the starter kits for the competition are available here:
 
-### Task 1 - Modality prediction
+### Task 1 - Predict Modality
 
-* [Starter Kit in Python](https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases/download/0.4.0/starter_kit-predict_modality-python.zip)
-* [Starter Kit in R](https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases/download/0.4.0/starter_kit-predict_modality-r.zip)
+* [Starter Kit in Python](https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases/download/0.5.0/starter_kit-predict_modality-python.zip)
+* [Starter Kit in R](https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases/download/0.5.0/starter_kit-predict_modality-r.zip)
 
-### Task 2 - Modality matching
+### Task 2 - Match Modality
 
-* Starter Kit in Python
-* Starter Kit in R
+* [Starter Kit in Python](https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases/download/0.5.0/starter_kit-match_modality-python.zip)
+* [Starter Kit in R](https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases/download/0.5.0/starter_kit-match_modality-r.zip)
 
-### Task 3 - Modality alignment
+### Task 3 - Joint Embedding
 
-* Starter Kit in Python
-* Starter Kit in R
+* [Starter Kit in Python](https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases/download/0.5.0/starter_kit-joint_embedding-python.zip)
+* [Starter Kit in R](https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases/download/0.5.0/starter_kit-joint_embedding-r.zip)
 
 ## What's in the kit
 
