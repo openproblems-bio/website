@@ -27,7 +27,8 @@ This task requires translating information between multiple layers of gene regul
 
 ### Input data formats
 
-This component expects two inputs, `--input_mod1` and `--input_mod2`. They are both [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad files with the attributes below. If the `feature_types` of one file is "GEX", then that of the other must be either "ATAC" or "ADT". These objects can be opened in Python using the [`anndata.read_h5ad()`](https://anndata.readthedocs.io/en/latest/anndata.read_h5ad.html) function or the [`scanpy.read_h5ad()`](https://scanpy.readthedocs.io/en/stable/generated/scanpy.read_h5ad.html) function. This object can be opened in R using the [`readH5AD`](https://rdrr.io/github/theislab/zellkonverter/man/readH5AD.html) function
+This component expects two inputs, `--input_mod1` and `--input_mod2`. They are both [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad files with the attributes below. If the `feature_types` of one file is "GEX", then that of the other must be either "ATAC" or "ADT". These objects can be opened in Python using the [`anndata.read_h5ad()`](https://anndata.readthedocs.io/en/latest/anndata.read_h5ad.html) function or the [`scanpy.read_h5ad()`](https://scanpy.readthedocs.io/en/stable/generated/scanpy.read_h5ad.html) function. This object can be opened in R using the [`readH5AD()`](https://rdrr.io/github/theislab/zellkonverter/man/readH5AD.html) function. Examples of how to load and process such data are contained in the [starter kits]({{< ref "starter_kits" >}}) for the respective programming language.
+The input data object has the following attributes:
 
 
 ```plaintext
@@ -62,7 +63,7 @@ Note, the dimensions of these two input h5ad files are different;
 
 ### Output data formats
 
-This component should output only one h5ad file, `--output_prediction`, containing the predicted profile values of modality 2 for the **test cells only**. It has the following attributes:
+This component should output only one h5ad file whose path is specified via `--output_prediction`, containing the predicted profile values of modality 2 for the **test cells only**. It has the following attributes:
 
 ```plaintext
 adata
@@ -86,13 +87,13 @@ adata
 
 ### Metric
 
-Performance in task 1 is measured using mean square error between the observed and predicted values for modality 2 in the `test` set. Lower is better.
+Performance in task 1 is measured using the mean squared error between the observed and predicted values for modality 2 in the `test` set. Lower values are better.
 
-The metric function used to evaluate the prediction has the following structure:
+The metric function used to evaluate the prediction has the following structure (this example employs `Python` syntax; the `R` evaluation function is functionally equivalent):
 
 ```plaintext
 def calculate_mse(adata_mod2, adata_mod2_answer):  
-    '''Function to calcualte MSE between prediction and solution for the test sets  
+    '''Function to calculate MSE between prediction and solution for the test sets  
 
     Params
     ------
@@ -104,7 +105,7 @@ def calculate_mse(adata_mod2, adata_mod2_answer):
     Returns
     -------
     mean_square_error : float
-      The mean square error between the predicted and observed values for all features in
+      The mean squared error between the predicted and observed values for all features in
       the test set.
     '''
 

@@ -6,7 +6,7 @@ date: "2021-08-02T00:00:00+01:00"
 weight: 10
 ---
 
-This page provides information to go from starter kit to a submission ready for EvalAI.
+This page provides information to go from starter kit to a submission ready for EvalAI. Please read these instructions carefully. Each starter kit has certain components that must **not** be changed; your submission will fail otherwise.
 
 ## List of Starter Kits
 
@@ -82,13 +82,13 @@ Let's look at the file section by section
 
 #### Imports
 
-This section defines which packages the method expects, if you want to import a new different package, add the import statment here and add the dependency to the config.vsh.yaml
+This section defines which packages the method expects, if you want to import a new different package, add the `import` statement here **and** add the dependency to `config.vsh.yaml`. This ensures that we can build an appropriate image to run your code.
 
 ```python
 import logging
 import anndata as ad
-import umap
 from scipy.sparse import csc_matrix
+from sklearn.decomposition import TruncatedSVD
 from sklearn.neighbors import KNeighborsRegressor
 
 logging.basicConfig(
@@ -139,11 +139,8 @@ logging.info('Performing dimensionality reduction on modality 1 values...')
 
 ## Method
 
-# Notice how this instantiation also uses the pre-defined parameter for
-# the distance method to be used here.
-embedder = umap.UMAP(
+embedder = TruncatedSVD(
     n_components=par['n_pcs'],
-    metric=par['distance_method'],
 )
 
 X = embedder.fit_transform(ad_mod1.X)
@@ -183,11 +180,11 @@ adata = ad.AnnData(
     },
 )
 
-## Data writer
+# Data writer
 adata.write(par['output'])
 ```
 
-Your job is to replace the Method section with code that operates on `ad_mod1` and `ad_mod2` to minimize the mean square error between `y_pred` and `y_true` for the test data that is only accessible to the EvalAI worker.
+Your job is to replace the Method section with code that operates on `ad_mod1` and `ad_mod2` to minimize the mean squared error between `y_pred` and `y_true` for the test data that is only accessible to the EvalAI worker.
 
 ### Updating the configuration
 
@@ -256,8 +253,8 @@ functionality:
 
 In this section of the configuration you should focus on updating the following sections:
 1. Description and Authors - Information about who contributed the method
-2. Arguments - Each section here defines a command-line argument for the script. These sections are all passed  to the script in the form of a dictionary called `par`. You only need to change the method-specific parameters, and if you would like these parameters hard-coded into the script, you do not need to provide any parameters here.
-3. Resources - This section describes the files that need to be included in your component. For example if you'd like to add a file containing model weights called `weights.pt`, add the following section the the resources block:
+2. Arguments - Each section here defines a command-line argument for the script. These sections are all passed to the script in the form of a dictionary called `par`. You only need to change the method-specific parameters, and if you would like these parameters hard-coded into the script, you do not need to provide any parameters here. Make sure **not** to remove required parameters such as the inputs. Your method cannot be executed properly otherwise! 
+3. Resources - This section describes the files that need to be included in your component. For example if you'd like to add a file containing model weights called `weights.pt`, add the following section to the resources block:
     ```yaml
     - type: file
     path: weights.pt
@@ -330,15 +327,15 @@ $ bin/viash run -- ---dockerfile
 
 As you're working on the component for your submission, you will likely want to prototype the component locally to ensure that it works.
 
-### Running `scripy.py`
+### Running `script.py`
 
 The first way you can do this is to simply run the `script.py` file.
 
-```ruby
+```bash
 $ python script.py
 ```
 
-As long as you left the Viash block in the script, the `par` dictionary will be instantiated when you run the script and the script will work as a normal Python script. We included some sample data in starter kits in the `sample_data/` directory. These are very small datasets that have the same structure as the training and evaluation datasets but with fewer observations and variables.
+As long as you left the Viash block in the script, the `par` dictionary will be instantiated when you run the script and the script will work as a normal Python script. We included some sample data in starter kits in the `sample_data/` directory. These are very small datasets that have the same structure as the training and evaluation datasets but with fewer observations and variables. You can use these to iterate quickly and check whether your method is capable of handling certain inputs.
 
 ### Using Viash build to build the component
 If you can run the script directly, you should next proceed to building a Viash component and running on the sample data.
@@ -379,8 +376,9 @@ What if running your method on the sample data works but fails when applied to t
 
 ```sh
 $ ./generate_submission.sh
-```
+
     ...
+
     [78/9f8fc2] NOTE: Process `method:method_process (dyngen_atac_disconnected_mod2)` terminated with an error exit status (127) -- Error is ignored
     [20/330b8a] NOTE: Process `method:method_process (dyngen_atac_bifurcating_converging_mod2)` terminated with an error exit status (127) -- Error is ignored
     Completed at: 05-Aug-2021 12:13:39
@@ -389,6 +387,7 @@ $ ./generate_submission.sh
     Succeeded   : 0
     Ignored     : 32
     Failed      : 32
+```
 
 You can still submit your solutions to eval.ai but you will get penalized for every failed execution.
 
@@ -396,7 +395,6 @@ You can check out what went wrong by looking at the tag for the process that fai
 
 ```sh
 $ ls -1a work/20/330b8a52b1a71489e7c53c66ef686e/
-```
     .command.begin
     .command.err
     .command.log
@@ -406,8 +404,9 @@ $ ls -1a work/20/330b8a52b1a71489e7c53c66ef686e/
     dyngen_atac_bifurcating_converging_mod2.censor_dataset.output_mod1.h5ad
     dyngen_atac_bifurcating_converging_mod2.censor_dataset.output_mod2.h5ad
     .exitcode
+```
 
-You can view the `stdout` and `stderr` of this process by viewing the `.command.log` and `.command.err` files respectively. You can also try to run your component manually by editing the `VIASH START` and `VIASH END` code block in your script (see below) and running through the code manually.
+You can view the `stdout` and `stderr` of this process by viewing the `.command.log` and `.command.err` files, respectively. You can also try to run your component manually by editing the `VIASH START` and `VIASH END` code block in your script (see below) and running through the code manually.
 
 ```python
 ## VIASH START
@@ -420,5 +419,4 @@ par = {
 ## VIASH END
 ```
 
-
-If you need any help, please reach out on the competition [Discord](https://discord.gg/Q3RKGMGD3E) server. See the #troubleshooting or #viash-help channels.
+If you need any help, please reach out on the competition [Discord](https://discord.gg/Q3RKGMGD3E) server. See the `#troubleshooting` or `#viash-help` channels.
