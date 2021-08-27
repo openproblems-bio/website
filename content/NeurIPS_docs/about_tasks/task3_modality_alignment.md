@@ -120,7 +120,7 @@ Each metric result will be rescaled by min-max scaling via
 $$f(Y) =\frac{Y - min(Y)}{max(Y) - min(Y)}$$
 Separate bio-conservation and batch removal scores will be computed by taking the mean of all rescaled bio-conservation and batch removal metrics, respectively.
 
-An overall score will be calculated taking a weighted average of the batch removal and bio-conseration scores via the equation:
+An overall score will be calculated taking a weighted average of the batch removal and bio-conservation scores via the equation:
 $$S_{overall,i} = 0.6*S_{bio,i} + 0.4*S_{batch,i}$$
 
 This reflects the relative importance of the metrics.
