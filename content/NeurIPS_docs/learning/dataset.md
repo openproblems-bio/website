@@ -15,11 +15,11 @@ The current forms of the data are public available on S3. To download the data, 
 
 You can then access the data at the following locations:
 
-* s3://openproblems-bio/public/cite/CITE_ADT_processed.h5ad
-* s3://openproblems-bio/public/cite/CITE_GEX_processed.h5ad
-* s3://openproblems-bio/public/multiome/Multiome_ATAC_processed.h5ad
-* s3://openproblems-bio/public/multiome/Multiome_GEX_processed.h5ad
-* s3://openproblems-bio/public/LICENSE.txt
+* `s3://openproblems-bio/public/cite/CITE_ADT_processed.h5ad`
+* `s3://openproblems-bio/public/cite/CITE_GEX_processed.h5ad`
+* `s3://openproblems-bio/public/multiome/Multiome_ATAC_processed.h5ad`
+* `s3://openproblems-bio/public/multiome/Multiome_GEX_processed.h5ad`
+* `s3://openproblems-bio/public/LICENSE.txt`
 
 You can download these files to your local computer with the following command:
 
