@@ -23,6 +23,8 @@ The functioning of organs, tissues, and whole organisms is determined by the int
 
 ## Task API
 
+The following section describes the task API for the Joint Embedding task. Competitors must submit their code as a Viash component. To facilitate creation of these components, [starter kits](/neurips_docs/submission/starter_kits/) will be provided.
+
 ### Input data formats
 
 This component expects two inputs, `--input_mod1` and `--input_mod2`. They are both [AnnData](https://anndata.readthedocs.io/en/latest/), containing the full profile matrices where extra metadata has been removed. These have the following attributes:
@@ -46,6 +48,10 @@ adata
     Ids for the features.
   adata.obs_names : ndarray, shape=(n_obs,)
     Ids for the cells.
+  adata.obs['batch']`: ndarray, shape=(n_obs,)
+    The batch from which the data was sequenced. Has format "s[1-4]d[1-9]" indicating the site and
+    donor associated with the batch.
+
 ```
 
 ### Output data formats
@@ -114,20 +120,13 @@ Here, $C$ represents the set of cell identity labels, $|LCC()|$ is the number of
 
 #### Metric aggregation
 
-To rank methods, the individual metric scores will be aggregated. This will occur by the following approach:
-Each metric result will be rescaled by min-max scaling via
+To rank methods, the individual metric scores will be aggregated. However, due to the differing nature of each metric, we will assign a weight to each metric after 1 month of the public competition. The goal of this weighting will be to provide equal importance on each measure when summing them. This weighting will be noted in the competition documentation and in communication to all competitions.
 
-$$f(Y) =\frac{Y - min(Y)}{max(Y) - min(Y)}$$
-Separate bio-conservation and batch removal scores will be computed by taking the mean of all rescaled bio-conservation and batch removal metrics, respectively.
-
-An overall score will be calculated taking a weighted average of the batch removal and bio-conservation scores via the equation:
-$$S_{overall,i} = 0.6*S_{bio,i} + 0.4*S_{batch,i}$$
-
+An overall weighted average of batch correction and bio-conservation scores will be computed via the equation:
+$$S_{overall,i} = 0.6 \cdot S_{bio,i} + 0.4 \cdot S_{batch,i}$$
 This reflects the relative importance of the metrics.
 
-{{< callout note >}}
-Note that when using a distribution-based rescaling as proposed here, it is possible that the ranking order of two results changes when a third method is added. Thus, rankings will only be final once all results are submitted and finalized.
-{{</ callout >}}
+The batch covariate used for evaluation is `donor`, however one can consider encoding the site of data collection as an additional or replacement batch covariate.
 
 Further information on any of these metrics can be found at https://www.biorxiv.org/content/10.1101/2020.05.22.111161v2
 
@@ -136,7 +135,9 @@ The batch covariate used for evaluation is “donor”, however you may want to 
 
 ## Prizes
 
-For this task, three prizes of $1000 will be awarded to the submissions for each of the following criteria:
-1. Best performance on CITE-seq
-2. Best performance on ATAC-seq
-3. Best performance average across modalities
+For this task, five $1000 prizes will be awarded to the submissions for each of the following criteria:
+1. Best performance embedding GEX and ATAC based on bio-conservation
+2. Best performance embedding ATAC and GEX based on batch removal
+2. Best performance embedding GEX and ADT based on bio-conservation
+2. Best performance embedding ADT and GEX based on batch removal
+3. Best performance on average the above

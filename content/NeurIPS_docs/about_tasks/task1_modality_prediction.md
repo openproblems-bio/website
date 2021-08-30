@@ -25,10 +25,28 @@ This task requires translating information between multiple layers of gene regul
 
 ## Task API
 
+The following section describes the task API for the Modality Prediction task. Competitors must submit their code as a Viash component. To facilitate creation of these components, [starter kits](/neurips_docs/submission/starter_kits/) will be provided.
+
 ### Input data formats
 
-This component expects two inputs, `--input_mod1` and `--input_mod2`. They are both [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad files with the attributes below. If the `feature_types` of one file is "GEX", then that of the other must be either "ATAC" or "ADT". These objects can be opened in Python using the [`anndata.read_h5ad()`](https://anndata.readthedocs.io/en/latest/anndata.read_h5ad.html) function or the [`scanpy.read_h5ad()`](https://scanpy.readthedocs.io/en/stable/generated/scanpy.read_h5ad.html) function. This object can be opened in R using the [`readH5AD()`](https://rdrr.io/github/theislab/zellkonverter/man/readH5AD.html) function. Examples of how to load and process such data are contained in the [starter kits]({{< ref "starter_kits" >}}) for the respective programming language.
-The input data object has the following attributes:
+{{% callout note  %}}
+The data format and attributes provided in the input data is tailored to each task and may differ from the publicly released [benchmarking dataset](/neurips_docs/data/dataset/). That benchmarking dataset contains additional annotations about cell type, cell cycle, and developmental trajectories that may not be accessible to methods submitted for the tasks. **Only the attributes listed in the following section will be accessible to methods submitted to the competition.**
+{{% /callout  %}}
+
+
+Method components should expect three inputs, `--input_train_mod1`, `--input_train_mod2`, and `--input_test_mod1`. They are all [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad files with the attributes below. More information can be found on AnnData objects [here](/neurips_docs/submission/anndata_quickstart/). `mod1` and `mod2` refer to the modality of the datasets as defined by `feature_type`.  One file will always have `feature_type` be `"GEX"` and the other will be `"ATAC"` or `"ADT"`. For the purposes of the competition, components should expect the following 4 combinations of modalities:
+
+| `mod1`   | `mod2`   |
+|----------|----------|
+| `"GEX"`  | `"ATAC"` |
+| `"ATAC"` | `"GEX"`  |
+| `"GEX"`  | `"ADT"`  |
+| `"ADT"`  | `"GEX"`  |
+
+
+Submission components must predict `mod2` for the cells provided in `--input_test_mod1`. For methods that do not involve pre-trained models, training data is also provided in the `--input_train_mod[1|2]` files. For methods that involve pre-trained models, these training datasets can be ignored.
+
+The input data objects have the following attributes:
 
 
 ```plaintext
@@ -44,8 +62,9 @@ adata
     chromatin accessibility
   adata.uns['dataset_id'] : str
     The name of the dataset.
-  adata.obs['group']: ndarray, shape=(n_obs,)
-    Denotes whether a cell belongs to the 'train' or the 'test' set.
+  adata.obs["batch"] : ndarray, shape=(n_obs,)
+    The batch from which the data was sequenced. Has format "s[1-4]d[1-9]" indicating the site and
+    donor associated with the batch.
   adata.obs_names : ndarray, shape=(n_obs,)
     Ids for the cells.
   adata.var['feature_types']: ndarray, shape=(n_var,)
@@ -54,16 +73,16 @@ adata
     Ids for the features.
 ```
 
+Examples of how to load and process the data are contained in the [starter kits]({{< ref "starter_kits" >}}) for the respective programming language.
+
 {{% callout note  %}}
-Note, the dimensions of these two input h5ad files are different;
-* `input_mod1` contains the modality 1 data of both the `train` and the `test` cells.
-* `input_mod2` contains only modality 2 data of the `train` cells.
+Note, you do not need to return predictions for all four combinations of inputs and outputs. We will be independently ranking and awarding prizes to each combination as described below in [Prizes](#prizes).
 {{% /callout  %}}
 
 
 ### Output data formats
 
-This component should output only one h5ad file whose path is specified via `--output_prediction`, containing the predicted profile values of modality 2 for the **test cells only**. It has the following attributes:
+This component should output only one h5ad file whose path is specified via `--output`, containing the predicted profile values of modality 2 for the **test cells only**. It must have the following attributes:
 
 ```plaintext
 adata
@@ -79,8 +98,6 @@ adata
     The name of the prediction method. This is used to track submissions.
   adata.var['feature_types'] : ndarray, shape=(n_var,)
     The modality of this file, should be equal to "GEX", "ATAC" or "ADT".
-  adata.obs['group'] : ndarray, shape=(n_obs,)
-    Should be "test" for all cells
   adata.obs_names : ndarray, shape=(n_obs,)
     Ids for the cells.
 ```
@@ -108,13 +125,17 @@ def calculate_mse(adata_mod2, adata_mod2_answer):
       The mean squared error between the predicted and observed values for all features in
       the test set.
     '''
-
+    from sklearn.metrics import mean_square_error
     return mean_square_error(adata_mod2.X, adata_mod2_answer.X)
 ```
 
 ## Prizes
 
-For this task, three prizes of $1000 will be awarded to the submissions for each of the following criteria:
-1. Best performance on CITE-seq
-2. Best performance on ATAC-seq
-3. Best performance average across modalities
+For this task, five prizes of $1000 will be awarded to the submissions for each of the following criteria:
+1. Best performance predicting GEX → ATAC
+2. Best performance predicting ATAC → GEX
+2. Best performance predicting GEX → ADT
+2. Best performance predicting ADT → GEX
+3. Best performance on average across modalities
+
+[Terms and Conditions](/neurips_docs/submission/terms/) apply.

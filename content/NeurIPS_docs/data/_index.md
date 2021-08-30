@@ -1,9 +1,9 @@
 ---
 # Title, summary, and page position.
-title: Background
+title: Data
 summary: Background information on the data modalities used in the competition
 weight: 1
-icon: book
+icon: database
 icon_pack: fas
 
 # Page metadata.

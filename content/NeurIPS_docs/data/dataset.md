@@ -28,3 +28,5 @@ aws s3 sync s3://openproblems-bio/public/  /tmp/public/ --no-sign-request
 ```
 
 Note the dataset size is roughly 10GiB.
+
+## Data format
