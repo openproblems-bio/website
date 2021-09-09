@@ -29,12 +29,14 @@ The following section describes the task API for the Modality Matching task. Com
 ### Input data formats
 
 {{% callout note  %}}
-The data format and attributes provided in the input data is tailored to each task and may differ from the publicly released [benchmarking dataset](/neurips_docs/data/dataset/). That benchmarking dataset contains additional annotations about cell type, cell cycle, and developmental trajectories that may not be accessible to methods submitted for the tasks. **Only the attributes listed in the following section will be accessible to methods submitted to the competition.**
+The data format and attributes provided in the input data is tailored to each task and may differ from the publicly released [benchmarking dataset](/neurips_docs/data/dataset/). **Only the attributes listed in the following section will be accessible to methods submitted to the competition.**
 {{% /callout  %}}
 
-This component expects **five** h5ad files, `--input_train_mod1`, `--input_train_mod2`, `--input_train_sol`, `--input_test_mod1`, and `--input_test_mod2`.
+#### Inputs to methods
 
-The `*_mod1` and `*_mod2` are [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad files for which the rows are shuffled and anonymized. These files have the attributes below. If the `feature_types` of one modality is "GEX", then that of the other must be either "ATAC" or "ADT" (antibody-derived tag, a measure of protein abundance). For the purposes of the competition, components should expect the following 4 combinations of modalities:
+Method components should expect **five** h5ad files, `--input_train_mod1`, `--input_train_mod2`, `--input_train_sol`, `--input_test_mod1`, and `--input_test_mod2`.
+
+The `*_mod1` and `*_mod2` arguments are paths to [AnnData](https://anndata.readthedocs.io/en/latest/) objects containing the modality 1 and modality 2 data for which the rows are shuffled and anonymized. These files have the attributes below. If the `feature_types` of one modality is ``"GEX"``, then that of the other must be either ``"ATAC"`` or ``"ADT"`` (antibody-derived tag, a measure of protein abundance). For the purposes of the competition, components should expect the following 4 combinations of modalities:
 
 | `mod1`   | `mod2`   |
 |----------|----------|
@@ -48,7 +50,17 @@ The `input_train_sol` file contains the solution pairing matrix of shape `(n_obs
   * `X`: The sparse pairing matrix. A value of 1 in this matrix means this modality 1 profile (row) corresponds to a modality 2 profile (column).
   * `.uns['dataset_id']`: The name of the dataset.
 
-The goal is to ouput a solution the correspondences between profiles from either modality.
+#### Objective for methods
+
+The goal is to output a matching matrix that predicts the correspondences between profiles from modality 1 in modality 2.
+
+{{% callout note  %}}
+Note, you do not need to return predictions for all four combinations of inputs and outputs. We will be independently ranking and awarding prizes to each combination as described below in [Prizes](#prizes). For more details, see the [FAQs](/neurips_docs/faqs/questions/#what-if-i-only-want-to-compete-for-one-of-the-prizes-in-a-task)
+{{% /callout  %}}
+
+#### Attributes of input data
+
+The input `*_mod1` and `*_mod2` data objects have the following attributes:
 
 
 ```plaintext
@@ -75,7 +87,41 @@ adata
     Anonymised ids for the cells.
 ```
 
+The input `input_train_sol` object has the following attributes:
+
+```plaintext
+adata
+  Input solution AnnData object for task 2
+
+  Attributes
+  ----------
+  adata.X : ndarray, shape=(n_obs)
+    Sparse pairing matrix for input_train_mod[1|2]
+  adata.uns['dataset_id'] : str
+    The name of the dataset.
+  adata.uns['method_id']: str
+    The name of the prediction method.
+```
+
 Examples of how to load and process the data are contained in the [starter kits]({{< ref "starter_kits" >}}) for the respective programming language.
+
+#### Normalization and transformation of data for the matching task
+
+To make the task more straightforward, we have followed common practices for normalizing and transforming data of each modality. The raw data is also provided in `adata.layers` as described below.
+
+For full details on preprocessing, see the [Data Preprocessing](/neurips_docs/data/dataset/#preprocessing) notes.
+
+**GEX**  
+
+For this task, gene expression data stored in `adata.X` for the training and test data has been size-factor normalized and log1p transformed.  Raw UMI counts are available in `adata.layers["counts"]`. Size factors are accessible in `adata.obs["size_factors"]`
+
+**ATAC**
+
+For this task, ATAC data stored in `adata.X` for the training and test data has been binarized. The raw UMI counts for each peak can be found in `adata.layers["counts"]`.
+
+**ADT**
+
+For this task, ADT derived protein abundance measures have been centered log-ration (CLR) normalized. Raw ADT counts can be found in `adata.layers["counts"]`.
 
 
 ### Output data formats
@@ -100,8 +146,8 @@ adata
 **Restrictions on the pairing matrix**
 
 There are two restrictions on the pairing matrix:
-1. Row stochastic - The sum of each row of the matrix should be 1. This limits the amount of weight that can be placed on each pairing $i,j$
-2. Sparsity - If `input_mod1` has shape `(n_obs, n_var1)` and `input_mod2` has shape `(n_obs, n_var2)`, the pairing matrix must be a sparse matrix with shape `(n_obs, n_obs)` containing **at most `100×N` non-zero values**. Predictions with more than `100×N` non-zero values will be rejected by the metric component.
+1. Rows sum to 1 - The sum of each row of the matrix should be 1. This limits the amount of weight that can be placed on each pairing $i,j$
+2. Sparsity - If `input_mod1` has shape `(n_obs, n_var1)` and `input_mod2` has shape `(n_obs, n_var2)`, the pairing matrix must be a sparse matrix with shape `(n_obs, n_obs)` containing **at most `1000×N` non-zero values**. Predictions with more than `1000×N` non-zero values will be rejected by the metric component.
 {{% /callout  %}}
 
 
@@ -109,8 +155,10 @@ There are two restrictions on the pairing matrix:
 
 Performance in task 2 is measured using a weighted sum of the confidences placed on correct pairings `i,j`.
 Specifically the score is calculated using the following equation:
-$$ Score = \sum_i \sum_j X_{i,j} * \delta_{i,j} $$
-where $X_{i,j}$ is the entry in the sparse pairing matrix from the user's submission and $\delta_{i,j}$ is $1$ if profile $i$ and $j$ were measured in the same cells and $0$ otherwise.
+$$ Score = \frac{1}{N} \sum_i \sum_j X_{i,j} * \delta_{i,j} $$
+where $X_{i,j}$ is the entry in the sparse pairing matrix from the user's submission and $\delta_{i,j}$ is $1$ if profile $i$ and $j$ were measured in the same cell and $0$ otherwise. $N$ is the number of observations.
+
+
 ## Prizes
 
 For this task, five $1000 prizes will be awarded to the submissions for each of the following criteria:

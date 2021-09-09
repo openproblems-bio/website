@@ -51,8 +51,28 @@ adata
   adata.obs['batch']`: ndarray, shape=(n_obs,)
     The batch from which the data was sequenced. Has format "s[1-4]d[1-9]" indicating the site and
     donor associated with the batch.
-
+  adata.obs['size_factors']`: ndarray, shape=(n_obs,)
+    The batch from which the data was sequenced. Has format "s[1-4]d[1-9]" indicating the site and
+    donor associated with the batch.
 ```
+
+#### Normalization and transformation of data for the joint embedding task
+
+To make the task more straightforward, we have followed common practices for normalizing and transforming data of each modality. The raw data is also provided in `adata.layers` as described below.
+
+For full details on preprocessing, see the [Data Preprocessing](/neurips_docs/data/dataset/#preprocessing) notes.
+
+**GEX**  
+
+For this task, gene expression data stored in `adata.X` for the training and test data has been size-factor normalized and log1p transformed.  Raw UMI counts are available in `adata.layers["counts"]`. Size factors are accessible in `adata.obs["size_factors"]`
+
+**ATAC**
+
+For this task, ATAC data stored in `adata.X` for the training and test data has been binarized. The raw UMI counts for each peak can be found in `adata.layers["counts"]`.
+
+**ADT**
+
+For this task, ADT derived protein abundance measures have been centered log-ration (CLR) normalized. Raw ADT counts can be found in `adata.layers["counts"]`.
 
 ### Output data formats
 
@@ -77,7 +97,7 @@ adata
 
 ### Metrics
 
-Performance in task 3 will be measured using 7 different metrics broken into two classes:
+Performance in task 3 will be measured using 6 different metrics broken into two classes:
 * Biology conservation
 * Batch removal
 
@@ -134,9 +154,14 @@ The batch covariate used for evaluation is “donor”, however you may want to 
 
 ## Prizes
 
-For this task, five $1000 prizes will be awarded to the submissions for each of the following criteria:
-1. Best performance embedding GEX and ATAC based on bio-conservation
-2. Best performance embedding ATAC and GEX based on batch removal
-2. Best performance embedding GEX and ADT based on bio-conservation
-2. Best performance embedding ADT and GEX based on batch removal
-3. Best performance on average the above
+Because labels used for the metric calculations are available for some of the data as described in the [Benchmark Dataset](/neurips_docs/data/dataset/) notes, we anticipate a bias in performance in models that use this information in model training. As there is no way for us to distinguish between pre-trained models that use these labels and those that don't, we are splitting the prizes into two categories.
+
+**Pre-trained models** are any method that includes model parameters through the `resources` block of the `config.vsh.yaml` file. For more information, see the [FAQs](/neurips_docs/faqs/questions/#how-can-i-upload-a-pre-trained-model). This also includes models that may download model weights during execution.
+
+**Non pre-trained models** are any method that uses only the `input_mod[1|2]` files to generate the embedding.
+
+For this task, four $1250 prizes will be awarded to the submissions for each of the following criteria:
+1. Best performance embedding GEX and ATAC using a pre-trained model
+2. Best performance embedding GEX and ADT using a pre-trained model
+1. Best performance embedding GEX and ATAC without pre-training
+2. Best performance embedding GEX and ADT without pre-training
