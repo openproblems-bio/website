@@ -8,6 +8,15 @@ weight: 10
 
 This page provides information to go from starter kit to a submission ready for EvalAI. Please read these instructions carefully. Each starter kit has certain components that must **not** be changed; your submission will fail otherwise.
 
+## Configuring your local environment
+
+For this competition, we want competitors to share code and we will evaluate results on a remote server. To facilitate running arbitrary scripts submitted by contestants, we are using [viash](https://viash.io), a tool designed to turn R and Python scripts into Dockerized components that can be executed from the command line and integrated into a workflow system like [Nextflow](https://www.nextflow.io/).
+
+Before you get started with the competition you will need to install two  prerequisites:
+
+1. Install [Docker](https://docs.docker.com/get-docker/)
+2. Install Java Runtime ≥8.0, available from [OpenJDK](https://adoptopenjdk.net/?variant=openjdk11&jvmVariant=hotspot)
+
 ## List of Starter Kits
 
 All of the starter kits for the competition are available here:
@@ -32,36 +41,35 @@ All of the starter kits for the competition are available here:
 The Starter Kits have all you need to compete in the Multimodal Single-Cell Data Integration Challenge.
 
 Let's look at the Task 1 Starter Kit (Python):
-
 ```
-starter_kit-predict_modality-python/
-├── README.md                     # Read this
-├── bin/                          # Binaries needed to generate a submission
+.
+├── LICENSE                                 # MIT License
+├── README.md                               # Read this
+├── bin/                                    # Binaries needed to generate a submission
+│   ├── check_format
 │   ├── nextflow
 │   └── viash
-├── config.vsh.yaml               # Configuration for the submission component
-├── generate_submission.sh        # Script to generate a submission.zip that can be uploaded to EvalAI
-├── nextflow.config               # Configuration for Nextflow (ignore)
-├── sample_data/                  # Sample data to test your code
-│   ├── test_resource.mod1.h5ad
-│   └── test_resource.mod2.h5ad
-└── script.py                     # Script containing your method
+├── config.vsh.yaml                         # Viash configuration for the submission component
+├── sample_data/                            # Small sample datasets for unit testing and debugging
+│   ├── openproblems_bmmc_cite_starter/     # Contains H5AD files for CITE data
+│   └── openproblems_bmmc_multiome_starter/ # Contains H5AD files for multiome data
+├── script.py                               # Script containing your method
+├── scripts/                                # Scripts to test, generate, and evaluate a submission
+│   ├── 0_sys_checks.sh                     # Checks that necessary software installed
+│   ├── 1_unit_test.sh                      # Runs the unit tests in test.py
+│   ├── 2_generate_submission.sh            # Generates a submission pkg by running your method on validation data
+│   ├── 3_evaluate_submission.sh            # (Optional) Scores your method locally
+│   └── nextflow.config                     # Configurations for running Nextflow locally
+└── test.py                                 # Default unit tests. Feel free to add more tests, but don't remove any.
 ```
+
+
 
 The most important parts of this directory are the `script.py` and `config.vsh.yaml` files. You'll need to edit these components to create a submission for the competition.
 
-You'll also need to run the `generate_submission.sh` script to build a `submission.zip` file to submit to EvalAI so your method is registered on the leaderboards.
+You'll also need to run the `2_generate_submission.sh` script to build a `submission.zip` file to submit to EvalAI so your method is registered on the leaderboards.
 
 The rest of the starter kit contains files to build a `submission.zip` file.
-
-## Configuring your local environment
-
-For this competition, we want competitors to share code and we will evaluate results on a remote server. To facilitate running arbitrary scripts submitted by contestants, we are using [viash](https://viash.io), a tool designed to turn R and Python scripts into Dockerized components that can be executed from the command line and integrated into a workflow system like [Nextflow](https://www.nextflow.io/).
-
-Before you get started with the competition you will need to install two  prerequisites:
-
-1. Install [Docker](https://docs.docker.com/get-docker/)
-2. Install Java Runtime ≥8.0, available from [OpenJDK](https://adoptopenjdk.net/?variant=openjdk11&jvmVariant=hotspot)
 
 ## Editing the Starter Kit
 
@@ -253,7 +261,7 @@ functionality:
 
 In this section of the configuration you should focus on updating the following sections:
 1. Description and Authors - Information about who contributed the method
-2. Arguments - Each section here defines a command-line argument for the script. These sections are all passed to the script in the form of a dictionary called `par`. You only need to change the method-specific parameters, and if you would like these parameters hard-coded into the script, you do not need to provide any parameters here. Make sure **not** to remove required parameters such as the inputs. Your method cannot be executed properly otherwise! 
+2. Arguments - Each section here defines a command-line argument for the script. These sections are all passed to the script in the form of a dictionary called `par`. You only need to change the method-specific parameters, and if you would like these parameters hard-coded into the script, you do not need to provide any parameters here. Make sure **not** to remove required parameters such as the inputs. Your method cannot be executed properly otherwise!
 3. Resources - This section describes the files that need to be included in your component. For example if you'd like to add a file containing model weights called `weights.pt`, add the following section to the resources block:
     ```yaml
     - type: file
@@ -286,9 +294,6 @@ platforms:
       # - type: apt
       #   packages:
       #     - bash
-      # - type: python
-      #   packages:
-      #     - scanpy
       - type: python
         packages:
           - scikit-learn
@@ -338,44 +343,37 @@ $ python script.py
 As long as you left the Viash block in the script, the `par` dictionary will be instantiated when you run the script and the script will work as a normal Python script. We included some sample data in starter kits in the `sample_data/` directory. These are very small datasets that have the same structure as the training and evaluation datasets but with fewer observations and variables. You can use these to iterate quickly and check whether your method is capable of handling certain inputs.
 
 ### Using Viash build to build the component
-If you can run the script directly, you should next proceed to building a Viash component and running on the sample data.
+If you can run the script directly, you should next proceed to running unit tests on the data.
 
 From within the starter kit, you can run the code on the sample dataset as follows:
 
 ```sh
-$ bin/viash run config.vsh.yaml -- \
-  --input_mod1 sample_data/test_resource.mod1.h5ad \
-  --input_mod2 sample_data/test_resource.mod2.h5ad \
-  --output test_output.h5ad
+$ ./scripts/1_unit_test.sh
 ```
-
-**Tip:** You can also omit the `config.vsh.yaml` in the above command.
-
-**Tip #2:** Run `bin/viash run -- --help` to view the command-line interface of your component.
 
 ### Generating a submission
 
 If you can run your contribution on sample data, you can now proceed to generating a submission file.
 
-```ruby
-$ ./generate_submission.sh
+```sh
+$ ./scripts/2_generate_submission.sh
 ```
 
 This function runs a Nextwork workflow to:
 1. Build a Viash module from your `script.py` and `config.vsh.yaml`
-2. Download public datasets from `s3://neurips2021-multimodal-public-datasets/`
+2. Download public datasets from `s3://openproblems-bio/public`
 3. Run your method against the public data
 4. Generate a `submission.zip` file to upload to EvalAI
 
-Note, it may take up to 20 minutes to download the public data. You should only need to do this once.
+Note, the public data is roughly 10GiB, so the download speed may take up to 20 minutes or more depending on your internet connection. You should only need to do this once.
 
-If this process runs successfully, then you will be instructed to upload the submission to EvalAI.
+If this process runs successfully, then you will be instructed to upload the submission to EvalAI. If you see any warnings, please consult our [FAQ](/docs/about/questions).
 
 ## Troubleshooting
 What if running your method on the sample data works but fails when applied to the submission datasets? Given the following output:
 
 ```sh
-$ ./generate_submission.sh
+$ ./scripts/2_generate_submission.sh
 
     ...
 
@@ -419,4 +417,4 @@ par = {
 ## VIASH END
 ```
 
-If you need any help, please reach out on the competition [Discord](https://discord.gg/Q3RKGMGD3E) server. See the `#troubleshooting` or `#viash-help` channels.
+If you need any help, please reach out on the competition [Discord](https://discord.gg/Q3RKGMGD3E) server. See the `#neurips2021-help` channel.
