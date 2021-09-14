@@ -18,16 +18,17 @@ The current forms of the data are public available on S3. To download the data, 
 
 You can then access the data at the following locations:
 
-* `s3://openproblems-bio/public/cite/CITE_ADT_processed.h5ad`
-* `s3://openproblems-bio/public/cite/CITE_GEX_processed.h5ad`
-* `s3://openproblems-bio/public/multiome/Multiome_ATAC_processed.h5ad`
-* `s3://openproblems-bio/public/multiome/Multiome_GEX_processed.h5ad`
-* `s3://openproblems-bio/public/LICENSE.txt`
+* `"s3://openproblems-bio/public/explore/LICENSE.txt"`
+* `"s3://openproblems-bio/public/explore/README.txt"`
+* `"s3://openproblems-bio/public/explore/cite/cite_adt_processed_training.h5ad"`
+* `"s3://openproblems-bio/public/explore/cite/cite_gex_processed_training.h5ad"`
+* `"s3://openproblems-bio/public/explore/multiome/multiome_atac_processed_training.h5ad"`
+* `"s3://openproblems-bio/public/explore/multiome/multiome_gex_processed_training.h5ad"`
 
 You can download these files to your local computer with the following command:
 
 ```sh
-aws s3 sync s3://openproblems-bio/public/  /tmp/public/ --no-sign-request
+aws s3 sync s3://openproblems-bio/public/explore  /tmp/public/ --no-sign-request
 ```
 
 Note the dataset size is roughly 10GiB.
