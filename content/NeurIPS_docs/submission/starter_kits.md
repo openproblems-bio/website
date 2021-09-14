@@ -367,7 +367,7 @@ This function runs a Nextwork workflow to:
 
 Note, the public data is roughly 10GiB, so the download speed may take up to 20 minutes or more depending on your internet connection. You should only need to do this once.
 
-If this process runs successfully, then you will be instructed to upload the submission to EvalAI. If you see any warnings, please consult our [FAQ](/docs/about/questions).
+If this process runs successfully, then you will be instructed to upload the submission to EvalAI. If you see any warnings, please consult our [FAQ](/neurips_docs/about/questions).
 
 ## Troubleshooting
 What if running your method on the sample data works but fails when applied to the submission datasets? Given the following output:

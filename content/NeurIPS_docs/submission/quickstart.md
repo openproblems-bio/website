@@ -6,7 +6,7 @@ date: "2021-08-02T00:00:00+01:00"
 weight: 2
 ---
 
-The goal of this guide is to get you started developing submissions for the competition as quickly as possible. This section will detail the necessary steps, getting you up to speed and enable you and your team to participate in the competition. 
+The goal of this guide is to get you started developing submissions for the competition as quickly as possible. This section will detail the necessary steps, getting you up to speed and enable you and your team to participate in the competition.
 
 ## 1. Register on EvalAI
 
@@ -38,7 +38,7 @@ You can find a set of starter kits for each task on the [Starter Kits](/neurips_
 
 The `generate_submission` script triggers a Nextflow workflow to:
 1. Build a [viash component](https://viash.io/docs/getting_started/what_is_a_viash_component/) of the method in `script.py` using the configuration specified in `config.vsh.yaml`.
-2. Evaluate the containerized method on 32 public testing datasets stored in `s3://neurips2021-multimodal-public-datasets/`.
+2. Evaluate the containerized method on 32 public testing datasets stored in `s3://openproblems-bio/public`.
 3. Create a `submission.zip` directory that can be uploaded to EvalAI for evaluation on the competition data and registration of the method on the leaderboard.
 
 If this workflow finishes successfully, then your local environment is set up for the competition!
