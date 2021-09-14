@@ -16,24 +16,27 @@ Single Cell Gene Expression with Feature Barcoding](https://support.10xgenomics.
 
 The current forms of the data are public available on S3. To download the data, first install the AWS CLI on your computer: https://aws.amazon.com/cli/
 
-You can then access the data at the following locations:
-
-* `"s3://openproblems-bio/public/explore/LICENSE.txt"`
-* `"s3://openproblems-bio/public/explore/README.txt"`
-* `"s3://openproblems-bio/public/explore/cite/cite_adt_processed_training.h5ad"`
-* `"s3://openproblems-bio/public/explore/cite/cite_gex_processed_training.h5ad"`
-* `"s3://openproblems-bio/public/explore/multiome/multiome_atac_processed_training.h5ad"`
-* `"s3://openproblems-bio/public/explore/multiome/multiome_gex_processed_training.h5ad"`
-
-You can download these files to your local computer with the following command:
+You can download the data to your local computer with the following command (note the dataset size is roughly 10GiB):
 
 ```sh
 aws s3 sync s3://openproblems-bio/public/explore  /tmp/public/ --no-sign-request
 ```
 
-Note the dataset size is roughly 10GiB.
+You'll find the following files:
 
-## Data format
+```sh
+explore
+├── LICENSE.txt
+├── README.txt
+├── cite/cite_adt_processed_training.h5ad
+├── cite/cite_gex_processed_training.h5ad
+├── multiome/multiome_atac_processed_training.h5ad
+└── multiome/multiome_gex_processed_training.h5ad
+```
+
+These are all [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad files, as described in the following section.
+
+## Data file format
 
 The training data is accessible in an [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad file with the attributes below. More information can be found on AnnData objects [here](/neurips_docs/submission/anndata_quickstart/).
 
