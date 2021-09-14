@@ -29,13 +29,12 @@ subtitle = ""
 +++
 
 The competition will focus on three tasks:
-1. **Predicting one modality from another** - given chromatin accessibility measured in tens of thousands of cells, predict corresponding RNA expression for each cell
-2. **Learning a joint embedding** - learn a meaningful embedding of multimodal data measured in the same cells that preserves expert-annotated data organization
-3. **Modality alignment** - re-align multi-modal data measured in the same cells when we hide the correspondences between the two measurements
+1. **Predicting one modality from another** - Given chromatin accessibility measured in tens of thousands of cells, predict corresponding RNA expression for each cell.
+2. **Modality alignment** - Re-align multi-modal data measured in the same cells when we hide the correspondences between the two measurements.
+3. **Learning a joint embedding** - Learn a meaningful embedding of multimodal data measured in the same cells that preserves expert-annotated data organization
 
 We will provide:
 * A starter kit with minimal example submissions
-* Public data curated to match the format of test datasets
 * Purpose-generated training data matching held-out test datasets
 
 We will launch the competition in August 2021 with the starter kits and full descriptions of the tasks. We will release specialized training data in August 2021 and collect submissions in November 2021.

@@ -2,7 +2,7 @@
 # Title, summary, and page position.
 linktitle: Submissions
 summary: Learn about how to submit to the competition
-weight: 3
+weight: 30
 icon: download
 icon_pack: fas
 

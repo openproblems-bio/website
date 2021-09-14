@@ -1,8 +1,8 @@
 ---
 # Title, summary, and page position.
 title: Data
-summary: Background information on the data modalities used in the competition
-weight: 1
+summary: Background information on the datasets used in the competition
+weight: 10
 icon: database
 icon_pack: fas
 

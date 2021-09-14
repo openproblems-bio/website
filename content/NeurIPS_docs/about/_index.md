@@ -1,15 +1,14 @@
 ---
 # Title, summary, and page position.
-linktitle: FAQS
-summary: Commonly asked questions
-weight: 40
-icon: question
+linktitle: General
+summary: General information about the competition
+weight: 5
+icon: info
 icon_pack: fas
 
 # Page metadata.
-title: Commonly asked questions
+title: About the Competition
 date: "2021-08-02T00:00:00Z"
 type: book  # Do not modify.
 ---
-
 {{< list_children >}}

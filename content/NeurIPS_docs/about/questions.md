@@ -1,5 +1,5 @@
 ---
-title: "Common Questions"
+title: "Frequently Asked Questions"
 type: book
 date: "2021-08-02T00:00:00+01:00"
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
@@ -28,3 +28,9 @@ resources:
 The model parameter file will now be accessible to the script in the working directory. This could be accessed, for example, by running `torch.load("./weights.pt")`.
 
 For more information, see [Updating the Configuration](neurips_docs/submission/starter_kits/#updating-the-configuration).
+
+## Why am I seeing "Process terminated with an error exit status (137)" when I generate a submission?
+
+Exit code 137 is the SIGKILL out of memory error. It means one of the processed in the submission script ran out of memory. One common cause of is the default memory constraint for Docker Desktop is 2GB. If you're using Docker Desktop, you can edit the [Resources Configuration](https://docs.docker.com/desktop/mac/#resources).
+
+If this isn't the issue, your script might be using too much memory and getting killed by your kernel. To limit the memory used by your script, try deleting unused variables or working with sparse matrix formats.
