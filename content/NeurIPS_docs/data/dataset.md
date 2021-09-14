@@ -38,31 +38,17 @@ These are all [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad files, a
 
 ## Data file format
 
-The training data is accessible in an [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad file with the attributes below. More information can be found on AnnData objects [here](/neurips_docs/submission/anndata_quickstart/).
+The training data is accessible in an [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad file. More information can be found on AnnData objects [here](/neurips_docs/submission/anndata_quickstart/). You can load these files is to use the `AnnData.read_h5ad()` function. The easiest way to get started is to [spin up a free Jupyter Server on Saturn Cloud](/neurips_docs/about/explore).
 
-```plaintext
-adata
-  Input AnnData object for modality 1 or 2
+```python
+!pip install anndata
+import anndata as ad
 
-  Attributes
-  ----------
-  adata.X : ndarray, shape=(n_obs, n_var)
-    Sparse profile matrix of given modality. If .var['feature_types'] == "GEX" or "ADT",
-    values in adata.X represent expression counts for each gene. If
-    .var['feature_types'] == "ATAC", values represent counts of reads in peaks for
-    chromatin accessibility
-  adata.uns['dataset_id'] : str
-    The name of the dataset.
-  adata.obs["batch"] : ndarray, shape=(n_obs,)
-    The batch from which the data was sequenced. Has format "s[1-4]d[1-9]" indicating the site and
-    donor associated with the batch.
-  adata.obs_names : ndarray, shape=(n_obs,)
-    Ids for the cells.
-  adata.var['feature_types']: ndarray, shape=(n_var,)
-    The modality of this file, should be equal to "GEX", "ATAC" or "ADT".
-  adata.var_names : ndarray, shape=(n_var,)
-    Ids for the features.
+adata_gex = ad.read_h5ad("cite/cite_gex_processed_training.h5ad")
+adata_adt = ad.read_h5ad("cite/cite_adt_processed_training.h5ad")
 ```
+
+You can find code examples for exploring the data in our data [exploration notebooks](https://github.com/openproblems-bio/neurips2021-notebooks/tree/main/notebooks/explore).
 
 ## Preprocessing
 
