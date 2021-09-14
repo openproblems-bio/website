@@ -21,7 +21,7 @@ Experimental techniques to measure multiple modalities within the same single ce
   </figcaption>
 </figure>
 
-This task requires translating information between multiple layers of gene regulation. In some ways, this is similar to the task of machine translation. In machine translation, the same sentiment is expressed in multiple languages and the goal is to train a model to represent the same meaning in a different language. In this context, the same cellular state is measured in two different feature sets and the goal of this task is to translate the information about cellular state from one modality to the other. We chose to limit the prediction task in the direction that genetic information generally flows (DNA ➞ RNA ➞ Protein).
+This task requires translating information between multiple layers of gene regulation. In some ways, this is similar to the task of machine translation. In machine translation, the same sentiment is expressed in multiple languages and the goal is to train a model to represent the same meaning in a different language. In this context, the same cellular state is measured in two different feature sets and the goal of this task is to translate the information about cellular state from one modality to the other. 
 
 ## Task API
 

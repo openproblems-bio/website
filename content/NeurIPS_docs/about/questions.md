@@ -34,3 +34,18 @@ For more information, see [Updating the Configuration](neurips_docs/submission/s
 Exit code 137 is the SIGKILL out of memory error. It means one of the processed in the submission script ran out of memory. One common cause of is the default memory constraint for Docker Desktop is 2GB. If you're using Docker Desktop, you can edit the [Resources Configuration](https://docs.docker.com/desktop/mac/#resources).
 
 If this isn't the issue, your script might be using too much memory and getting killed by your kernel. To limit the memory used by your script, try deleting unused variables or working with sparse matrix formats.
+
+## How are the libraries in `config.vsh.yaml` installed?
+
+If you'd like to see how the viash docker image is built, run `bin/viash run -- ---dockerfile`. Here's an example from the predict modality starter kit.
+
+```sh
+> bin/viash run -- ---dockerfile
+
+FROM dataintuitive/randpy:py3.8
+
+RUN pip install --upgrade pip && \
+  pip install --no-cache-dir "scikit-learn" "anndata" "scanpy"
+```
+
+Here you can see the base Docker image is https://hub.docker.com/r/dataintuitive/randpy at the [py3.8](https://hub.docker.com/layers/dataintuitive/randpy/py3.8/images/sha256-21c7d4fb8ecf787040590b62753fb1439022e706800cde110f7d20c1fdccaab3?context=explore) tag.
