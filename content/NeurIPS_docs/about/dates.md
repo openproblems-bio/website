@@ -8,9 +8,9 @@ weight: 10
 
 The following dates describe the different milestones for the competition
 
-**September 13** - Competition Launch  
-**September 17** - Phase 1: Open Leaderboard for method on training and validation data  
-**October 4** - Announce weighting scheme for metric aggregation for Task 3  
+**September 15** - Competition Kickoff: Release starter kits and first batch of training & validation data
+**September 22** - Phase 1: Open Leaderboard and release second batch of training & validation data
+**October 11** - Announce weighting scheme for metric aggregation for Task 3  
 **November 8** - Phase 2: Competitors submit code for evaluation on test data  
 **November 15** - Start evaluating test submissions and identify winners  
 **November 22** - Notify winners  
