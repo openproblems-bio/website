@@ -33,12 +33,18 @@ The competition will focus on three tasks:
 2. **Modality alignment** - Re-align multi-modal data measured in the same cells when we hide the correspondences between the two measurements.
 3. **Learning a joint embedding** - Learn a meaningful embedding of multimodal data measured in the same cells that preserves expert-annotated data organization
 
-We will provide:
-* A starter kit with minimal example submissions
-* Purpose-generated training data matching held-out test datasets
+To get started:
 
-We will launch the competition in August 2021 with the starter kits and full descriptions of the tasks. We will release specialized training data in August 2021 and collect submissions in November 2021.
+1.  Read [about the tasks](/neurips_docs/about_tasks) and the [submission quickstart](neurips_docs/submission/quickstart/) on our competition website
+2.  Download a [starter kit](neurips_docs/submission/starter_kits/)
+3.  Download the [benchmarking data](/neurips_docs/data/dataset/) and [exploration notebooks](https://github.com/openproblems-bio/neurips2021-notebooks/tree/main/notebooks/explore) (Optional)
+4.  Explore the data and prototype methods for free on [Saturn Cloud](https://openproblems.bio/neurips_docs/data/explore) (Optional)
+5.  Upload a [submission](neurips_docs/submission/starter_kits/#generating-a-submission)!
 
-For now, sign up below to be the first to hear when we launch the competition.
+Full details about all the above can be found in the [Competition Documentation](/neurips_docs).
 
- <a href="https://docs.google.com/forms/d/e/1FAIpQLSe90Oky4-1b0HbdLsp5Yqo9juCd2mq-NlGHU9NHRW1ECok1xQ/viewform" target="blank"><button type="button" class="btn btn-primary" style="font-size: 1rem; border: 1px solid #c4c4c4; color:white; height: 40px; padding: 0px 15px;"><strong>Sign up!</strong></button></a>
+If you ever have any questions, please feel free to reach out on the Open Problems [Discord Server](https://discord.gg/hDE5bYEcHF).
+
+If you'd like to get updates, please fill out the interest list below:
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSe90Oky4-1b0HbdLsp5Yqo9juCd2mq-NlGHU9NHRW1ECok1xQ/viewform" target="blank"><button type="button" class="btn btn-primary" style="font-size: 1rem; border: 1px solid #c4c4c4; color:white; height: 40px; padding: 0px 15px;"><strong>Sign up for updates</strong></button></a>
