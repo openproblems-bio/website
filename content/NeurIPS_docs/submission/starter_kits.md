@@ -75,7 +75,7 @@ The rest of the starter kit contains files to build a `submission.zip` file.
 
 To go from Starter Kit to Submission, you need to edit two files:
 * `script.[py/R]` - A Python or R script containing the method to be evaluated
-* `config.vsh.yaml` - A YAML configuration script that tells Viash how to create a component from the script
+* `config.vsh.yaml` - A YAML configuration script that tells Viash how to create a component from the script and sets runtime configurations
 
 ### Editing the script
 
@@ -284,9 +284,8 @@ platforms:
   # By specifying 'docker' platform, viash will build a standalone
   # executable which uses docker in the back end to run your method.
   - type: docker
-    # you need to specify a base image that contains at least
-    # R, python, bash and the 'anndata' python package.
-    image: dataintuitive/randpy:r4.0_py3.8_bioc3.12
+    # you need to specify a base image that contains at least bash and python
+    image: dataintuitive/randpy:py3.8
     # You can specify additional dependencies with 'setup'.
     # See https://viash.io/docs/reference_config/platform-docker/#setup-list
     # for more information on how to add more dependencies.
@@ -294,6 +293,9 @@ platforms:
       # - type: apt
       #   packages:
       #     - bash
+      # - type: python
+      #   packages:
+      #     - scanpy
       - type: python
         packages:
           - scikit-learn
@@ -304,12 +306,12 @@ platforms:
   # which uses the docker container built above to also be able to
   # run your method as part of a nextflow pipeline.
   - type: nextflow
-    publish: true
-    directive_time: 5m
-    directive_memory: 10 GB
+    labels: [ lowmem, lowtime, lowcpu ]
 ```
 
 The most important part of this section to update is the `setup` definition that describes the packages that need to be installed in the docker container for the method to run. There are many different methods for specifying these requirements described in the Viash [docs](https://viash.io/docs/reference_config/platform-docker/#setup-list).
+
+You can also change the memory, runtime, and CPU utilization be editing the Nextflow labels section. Available options are `[low|med|high]` for each of `mem`, `time`, and `cpu`. The corresponding resource values can be found in the `scripts/nextflow.config` file.
 
 {{< callout note >}}
 **Tip:** After making changes to the components dependencies, you will need to rebuild the docker container as follows:

@@ -29,6 +29,10 @@ The model parameter file will now be accessible to the script in the working dir
 
 For more information, see [Updating the Configuration](neurips_docs/submission/starter_kits/#updating-the-configuration).
 
+## Can I pre-train on public data?
+
+Pre-training on public data is allowed. We've already compiled a large number of public datasets [here](https://github.com/openproblems-bio/neurips2021_multimodal_viash/tree/main/src/common/datasets). Note, these datasets are not all filtered, preprocessed, and annotated in the same way as the competition training and test data. We have no prior expectation about whether including public data will or will not improve performance on the in house test data. Use of public data is at the competitors risk.
+
 ## Why am I seeing "Process terminated with an error exit status (137)" when I generate a submission?
 
 Exit code 137 is the SIGKILL out of memory error. It means one of the processed in the submission script ran out of memory. One common cause of is the default memory constraint for Docker Desktop is 2GB. If you're using Docker Desktop, you can edit the [Resources Configuration](https://docs.docker.com/desktop/mac/#resources).
@@ -49,3 +53,17 @@ RUN pip install --upgrade pip && \
 ```
 
 Here you can see the base Docker image is https://hub.docker.com/r/dataintuitive/randpy at the [py3.8](https://hub.docker.com/layers/dataintuitive/randpy/py3.8/images/sha256-21c7d4fb8ecf787040590b62753fb1439022e706800cde110f7d20c1fdccaab3?context=explore) tag.
+
+## How can I increase the memory/CPU/runtime limits of my method?
+
+The resource use of the submission components is set through the `config.vsh.yaml` file available in the starter kits.
+
+```yaml
+# By specifying a 'nextflow', viash will also build a viash module
+# which uses the docker container built above to also be able to
+# run your method as part of a nextflow pipeline.
+- type: nextflow
+  labels: [ lowmem, lowtime, lowcpu ]
+```
+
+Available options are `[low|med|high]` for each of `mem`, `time`, and `cpu`. The corresponding resource values can be found in the `scripts/nextflow.config` file.
