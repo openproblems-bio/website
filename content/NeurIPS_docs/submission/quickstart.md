@@ -55,7 +55,13 @@ A full set of instructions for editing these can be found in the [Using the Star
 
 ## 5. Submitting to EvalAI
 
-Once you have editing the starter kit to include the method you would like to submit, run the `generate_submission.sh` script, which will create a `submission.zip` file.
+{{% callout note  %}}
+The EvalAI Leaderboard will open on Sept 22, so please skip the upload step for now. You can still generate a submission and evaluate locally.
+{{% /callout  %}}
+
+Once you have editing the starter kit to include the method you would like to submit, run the `scripts/2_generate_submission.sh` script, which will create a `submission.zip` file.
+
+You can also evaluate the submission locally using the included `scripts/3_evaluate_submission.sh` script. This performs the same evaluation as is performed on EvalAI.
 
 To upload the submission, you have two options:
 * Upload the submission via https://eval.ai/web/challenges/challenge-page/1111/submission

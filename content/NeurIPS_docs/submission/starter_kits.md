@@ -371,6 +371,16 @@ Note, the public data is roughly 10GiB, so the download speed may take up to 20 
 
 If this process runs successfully, then you will be instructed to upload the submission to EvalAI. If you see any warnings, please consult our [FAQ](/neurips_docs/about/questions).
 
+### Evaluate locally
+
+You can evaluate the results of your submission using the included evaluation script. Note this must be run after generating a submission.
+
+```sh
+$ ./scripts/3_evaluate_submission.sh
+```
+
+The evaluation results will be saved at a path like `output/evaluation/predict_modality`.
+
 ## Troubleshooting
 What if running your method on the sample data works but fails when applied to the submission datasets? Given the following output:
 
