@@ -8,6 +8,14 @@ weight: 40
 
 To make this competition more accessible, we teamed up with [Saturn Cloud](https://saturncloud.io) to provide up to 100 hours of free compute per month to competition participants. Saturn Cloud hosts Jupyter servers that run behind the scenes on AWS. The Saturn Cloud website provides a GUI that allows you to launch cloud resources easily in your web browser.  We've created a custom image preloaded with the benchmarking dataset, several single-cell analysis tools, and exploratory notebooks.
 
+{{% callout note  %}}
+Currently, the Starter Kits require Docker. Because of the way Saturn Cloud creates Jupyter Servers, Docker isn't available within the Saturn Cloud instances.
+
+As a result, you currently cannot run the `1_unit_test.sh`, `2_generate_submission.sh`, or `3_evaluate_submission.sh` scripts on Saturn Cloud.
+
+We are working hard to get these scripts working on Saturn Cloud, but for now, you'll need to evaluate your methods on a resource with Docker installed.
+{{% /callout  %}}
+
 ### Get started
 
 1. Go to https://saturncloud.io/ and login or create a free account
