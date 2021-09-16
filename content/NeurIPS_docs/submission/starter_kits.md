@@ -367,7 +367,7 @@ This function runs a Nextwork workflow to:
 3. Run your method against the public data
 4. Generate a `submission.zip` file to upload to EvalAI
 
-Note, the public data is roughly 10GiB, so the download speed may take up to 20 minutes or more depending on your internet connection. You should only need to do this once.
+Note, the public data is roughly 1.2 GiB, so the download speed may take up to 5 minutes or more depending on your internet connection. You should only need to do this once.
 
 If this process runs successfully, then you will be instructed to upload the submission to EvalAI. If you see any warnings, please consult our [FAQ](/neurips_docs/about/questions).
 
