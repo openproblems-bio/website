@@ -8,4 +8,4 @@ weight: 50
 
 If you ever have any questions, please feel free to reach out on the [Open Problems Discord Server](https://discord.gg/hDE5bYEcHF).
 
-You can find channels for the competition with the prefix `#neurips2021`
+You can find channels for the competition in the category "NeurIPS 2021 Competition".

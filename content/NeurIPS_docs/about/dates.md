@@ -6,11 +6,11 @@ date: "2021-08-02T00:00:00+01:00"
 weight: 10
 ---
 
-The following dates describe the different milestones for the competition
+The following dates describe the different milestones for the competition.
 
-**September 15** - Competition Kickoff: Release starter kits and first batch of training & validation data
-**September 22** - Phase 1: Open Leaderboard and release second batch of training & validation data
-**October 11** - Announce weighting scheme for metric aggregation for Task 3  
+**September 15** - Competition Kickoff: Release starter kits and first batch of training & validation data  
+**September 22** - Phase 1: Open Leaderboard and release second batch of training & validation data  
+**October 11** - Announce weighting scheme for metric aggregation for Task 3   
 **November 8** - Phase 2: Competitors submit code for evaluation on test data  
 **November 15** - Start evaluating test submissions and identify winners  
 **November 22** - Notify winners  
