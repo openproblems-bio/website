@@ -6,7 +6,7 @@ date: "2021-08-02T00:00:00+01:00"
 weight: 2
 ---
 
-The goal of this guide is to get you started developing submissions for the competition as quickly as possible. This section will detail the necessary steps, getting you up to speed and enable you and your team to participate in the competition.
+The goal of this guide is to get you started developing submissions for the competition as quickly as possible. This section will detail the necessary steps to create your first submission.
 
 ## 1. Register on EvalAI
 
@@ -17,7 +17,7 @@ EvalAI is an open source platform to host machine learning competitions. We're u
 
 ## 2. Configure your local environment
 
-For this competition, we want competitors to share code and we will evaluate results on a remote server. To facilitate running arbitrary scripts submitted by contestants, we are using [viash](https://viash.io), a tool designed to turn R and Python scripts into Dockerized components that can be executed from the command line and integrated into a workflow system like [Nextflow](https://www.nextflow.io/).
+For this competition, we want competitors to share code and we will evaluate results on a remote server. To facilitate running arbitrary scripts submitted by contestants, we are using [Viash](https://viash.io), a tool designed to turn R and Python scripts into Dockerized components that can be executed from the command line and integrated into a workflow system like [Nextflow](https://www.nextflow.io/).
 
 Before you get started with the competition you will need to install two prerequisites:
 
@@ -26,32 +26,61 @@ Before you get started with the competition you will need to install two prerequ
 
 ## 3. Grab a starter kit
 
-You can find a set of starter kits for each task on the [Starter Kits](/neurips_docs/submission/starter_kits/) page.
+You can find a set of starter kits for each task on the [Starter Kits](//neurips_docs/submission/quickstart/#3-grab-a-starter-kit) page or on the [GitHub releases](https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases) of the competition codebase. Download the starter kit which is most relevant to you and unzip it in a directory.
 
-1. Download the relevant Starter Kit
-2. Unzip the kit
-3. Make sure you can generate the test submission
-    ```ruby
-    $ cd starter_kit-predict_modality-python
-    $ ./generate_submission
-    ```  
+Task 1 - Predict Modality
 
-The `generate_submission` script triggers a Nextflow workflow to:
-1. Build a [viash component](https://viash.io/docs/getting_started/what_is_a_viash_component/) of the method in `script.py` using the configuration specified in `config.vsh.yaml`.
-2. Evaluate the containerized method on 32 public testing datasets stored in `s3://openproblems-bio/public`.
-3. Create a `submission.zip` directory that can be uploaded to EvalAI for evaluation on the competition data and registration of the method on the leaderboard.
+* [Starter Kit in Python](https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases/latest/download/starter_kit-predict_modality-python.zip)
+* [Starter Kit in R](https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases/latest/download/starter_kit-predict_modality-r.zip)
 
-If this workflow finishes successfully, then your local environment is set up for the competition!
+Task 2 - Match Modality
 
-{{< callout note >}}
-If you get a `viash: command not found` error, make sure you've added the binaries
-{{</ callout >}}
+* [Starter Kit in Python](https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases/latest/download/starter_kit-match_modality-python.zip)
+* [Starter Kit in R](https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases/latest/download/starter_kit-match_modality-r.zip)
 
-## 4. Start editing the script
+Task 3 - Joint Embedding
 
-The starter kit has a simple method in `script.py` with a corresponding configuration in `config.vsh.yaml`, but you'll want to update these for your method.
+* [Starter Kit in Python](https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases/latest/download/starter_kit-joint_embedding-python.zip)
+* [Starter Kit in R](https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases/latest/download/starter_kit-joint_embedding-r.zip)
 
-A full set of instructions for editing these can be found in the [Using the Starter Kits](/neurips_docs/submission/starter_kits/) documentation.
+
+## 4. Generate your first submission
+
+To make sure your local environment is set up correctly, first run the `2_generate_submission.sh` script. This script triggers a Nextflow workflow to:
+1. Build a [viash component](https://viash.io/docs/getting_started/what_is_a_viash_component/) of the method in `script.py/R` using the configuration specified in `config.vsh.yaml`.
+2. Sync the training datasets from S3 (`s3://openproblems-bio/public/phase1-data`) to a local drive (`output/datasets/`).
+3. Apply the containerized method on the training datasets.
+4. Create a `submission.zip` file that can be uploaded to EvalAI for evaluation on the competition data and registration of the method on the leaderboard.
+
+If this workflow finishes successfully, you'll see something like this:
+
+```
+$ scripts/2_generate_submission.sh
+...
+######################################################################
+##            Generating submission files using nextflow            ##
+######################################################################
+N E X T F L O W  ~  version 21.04.1
+Pulling openproblems-bio/neurips2021_multimodal_viash ...
+Launching `openproblems-bio/neurips2021_multimodal_viash` [intergalactic_roentgen] - revision: a784bb6c4b [main_build]
+[f6/c705c5] process > method:method_process (openproblems_bmmc_multiome_phase1) [100%] 2 of 2 ✔
+
+######################################################################
+##                        Submission summary                        ##
+######################################################################
+Please upload your submission at the link below:
+  https://eval.ai/web/challenges/challenge-page/1111/submission
+
+Or use the command below create a private submission:
+> evalai challenge 1111 phase 2278 submit --file submission.zip --large --private
+
+Or this command to create a public one:
+> evalai challenge 1111 phase 2278 submit --file submission.zip --large --public
+
+Good luck!
+```
+
+Make note of the outputs generated in the nextflow step. If all went well, you should see a 100% success rate.
 
 ## 5. Submitting to EvalAI
 
@@ -59,23 +88,10 @@ A full set of instructions for editing these can be found in the [Using the Star
 The EvalAI Leaderboard will open on Sept 22, so please skip the upload step for now. You can still generate a submission and evaluate locally.
 {{% /callout  %}}
 
-Once you have editing the starter kit to include the method you would like to submit, run the `scripts/2_generate_submission.sh` script, which will create a `submission.zip` file.
-
-You can also evaluate the submission locally using the included `scripts/3_evaluate_submission.sh` script. This performs the same evaluation as is performed on EvalAI.
-
 To upload the submission, you have two options:
 * Upload the submission via https://eval.ai/web/challenges/challenge-page/1111/submission
-* Use the [EvalAI-CLI](https://github.com/Cloud-CV/evalai-cli) to upload the submission
+* Use the [EvalAI-CLI](https://github.com/Cloud-CV/evalai-cli) to upload the submission following the instructions outputted by the generate script.
 
-### Upload on the website
-
-1. Go to  https://eval.ai/web/challenges/challenge-page/1111/submission and log in to your account
-2. Select the appropriate phase for your submission. Currently, only the Development Phase for each task is open. Make sure to select the correct task.
-3. Select the submission type. Most folks will use the Upload File option.
-4. Set the visibility. Public submissions will be evaluated and registered to the leaderboard. Private submissions will still be evaluated, but the performance will only be available to you. You may change the visibility after submission.
-5. Add optional method name, description, etc. This information will be visible on the leaderboard for Public submissions.
-6. Hit Submit
-
-Once your method is submitted, you can navigate to the [My Submissions](https://eval.ai/web/challenges/challenge-page/1111/my-submission) tab for the competition and select the phase that matches your recent submission. Here you will find a table that lists each submission you've uploaded for a given phase. Once the "Status" column is marked "Finished" you can view the `results.json` file that provides the method performance.
+Once your method is submitted, you can navigate to the [My Submissions](https://eval.ai/web/challenges/challenge-page/1111/my-submission) tab for the competition and select the phase that matches your recent submission. Here you will find a table that lists each submission you've uploaded for a given phase. Once the "Status" column is marked "Finished" you can view the `results.json` file that provides the method performance. Note that it might take up to 5 minutes for your submission to update from "Running" to "Finished", and that your submission might have to wait in a queue for an undetermined amount of time depending on the number of submissions being run on the submission server. 
 
 If you need any help, please reach out on the competition [Discord](https://discord.gg/Q3RKGMGD3E) server. See the `#troubleshooting` or `#viash-help` channels.

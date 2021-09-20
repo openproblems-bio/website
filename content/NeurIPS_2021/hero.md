@@ -42,3 +42,5 @@ weight = 1  # Order that this section will appear.
 A NeurIPS Competition (2021)
 
  <a href="https://docs.google.com/forms/d/e/1FAIpQLSe90Oky4-1b0HbdLsp5Yqo9juCd2mq-NlGHU9NHRW1ECok1xQ/viewform" target="blank"><button type="button" class="btn btn-primary" style="font-size: 1rem; border: 1px solid white; color:white; height: 40px; padding: 0px 15px"><strong>Sign up for updates</strong></button></a>
+
+  <a href="https://openproblems.bio/neurips_docs/about/getting_started/" target="blank"><button type="button" class="btn btn-secondary" style="font-size: 1rem; border: 1px solid white; color:white; height: 40px; padding: 0px 15px"><strong>Get Started</strong></button></a>

@@ -27,7 +27,7 @@ resources:
 ```
 The model parameter file will now be accessible to the script in the working directory. This could be accessed, for example, by running `torch.load("./weights.pt")`.
 
-For more information, see [Updating the Configuration](neurips_docs/submission/starter_kits/#updating-the-configuration).
+For more information, see [Updating the Configuration](neurips_docs/submission/starter_kit_contents/#updating-the-configuration).
 
 ## Can I pre-train on public data?
 

@@ -23,7 +23,7 @@ The functioning of organs, tissues, and whole organisms is determined by the int
 
 ## Task API
 
-The following section describes the task API for the Joint Embedding task. Competitors must submit their code as a Viash component. To facilitate creation of these components, [starter kits](/neurips_docs/submission/starter_kits/) will be provided.
+The following section describes the task API for the Joint Embedding task. Competitors must submit their code as a Viash component. To facilitate creation of these components, [starter kits](//neurips_docs/submission/starter_kit_contents) have been provided.
 
 ### Input data formats
 
@@ -156,7 +156,7 @@ The batch covariate used for evaluation is “donor”, however you may want to 
 
 Because labels used for the metric calculations are available for some of the data as described in the [Benchmark Dataset](/neurips_docs/data/dataset/) notes, we anticipate a bias in performance in models that use this information in model training. As there is no way for us to distinguish between pre-trained models that use these labels and those that don't, we are splitting the prizes into two categories.
 
-**Pre-trained models** are any method that includes model parameters through the `resources` block of the `config.vsh.yaml` file. For more information, see the [FAQs](/neurips_docs/faqs/questions/#how-can-i-upload-a-pre-trained-model). This also includes models that may download model weights during execution.
+**Pre-trained models** are any method that includes model parameters through the `resources` block of the `config.vsh.yaml` file. For more information, see the [FAQs](/neurips_docs/about/questions/#how-can-i-upload-a-pre-trained-model). This also includes models that may download model weights during execution.
 
 **Non pre-trained models** are any method that uses only the `input_mod[1|2]` files to generate the embedding.
 

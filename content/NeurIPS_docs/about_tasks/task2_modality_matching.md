@@ -24,7 +24,7 @@ Unlike in task 1, where the goal was to predict all values of RNA or protein abu
 
 ## Task API
 
-The following section describes the task API for the Modality Matching task. Competitors must submit their code as a Viash component. To facilitate creation of these components, [starter kits](/neurips_docs/submission/starter_kits/) will be provided.
+The following section describes the task API for the Modality Matching task. Competitors must submit their code as a Viash component. To facilitate creation of these components, [starter kits](//neurips_docs/submission/starter_kit_contents) have been provided.
 
 ### Input data formats
 
@@ -55,7 +55,7 @@ The `input_train_sol` file contains the solution pairing matrix of shape `(n_obs
 The goal is to output a matching matrix that predicts the correspondences between profiles from modality 1 in modality 2.
 
 {{% callout note  %}}
-Note, you do not need to return predictions for all four combinations of inputs and outputs. We will be independently ranking and awarding prizes to each combination as described below in [Prizes](#prizes). For more details, see the [FAQs](/neurips_docs/faqs/questions/#what-if-i-only-want-to-compete-for-one-of-the-prizes-in-a-task)
+Note, you do not need to return predictions for all four combinations of inputs and outputs. We will be independently ranking and awarding prizes to each combination as described below in [Prizes](#prizes). For more details, see the [FAQs](/neurips_docs/about/questions/#what-if-i-only-want-to-compete-for-one-of-the-prizes-in-a-task)
 {{% /callout  %}}
 
 #### Attributes of input data
@@ -103,7 +103,7 @@ adata
     The name of the prediction method.
 ```
 
-Examples of how to load and process the data are contained in the [starter kits]({{< ref "starter_kits" >}}) for the respective programming language.
+Examples of how to load and process the data are contained in the [starter kits](/neurips_docs/submission/starter_kit_contents) for the respective programming language.
 
 #### Normalization and transformation of data for the matching task
 
