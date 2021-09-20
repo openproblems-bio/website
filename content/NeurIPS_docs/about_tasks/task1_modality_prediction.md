@@ -35,7 +35,7 @@ The data format and attributes provided in the input data is tailored to each ta
 
 #### Inputs to methods
 
-Method components should expect three inputs, `--input_train_mod1`, `--input_train_mod2`, and `--input_test_mod1`. They are all paths to [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad files with the attributes below. More information can be found on AnnData objects [here](/neurips_docs/submission/anndata_quickstart/). `mod1` and `mod2` refer to the modality of the datasets as defined by `feature_type`.  One file will always have `feature_type` be `"GEX"` and the other will be `"ATAC"` or `"ADT"`. For the purposes of the competition, components should expect the following 4 combinations of modalities:
+Method components should expect three inputs, `--input_train_mod1`, `--input_train_mod2`, and `--input_test_mod1`. They are all paths to [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad files with the attributes below. More information can be found on AnnData objects [here](/neurips_docs/submission/quickstart/). `mod1` and `mod2` refer to the modality of the datasets as defined by `feature_type`.  One file will always have `feature_type` be `"GEX"` and the other will be `"ATAC"` or `"ADT"`. For the purposes of the competition, components should expect the following 4 combinations of modalities:
 
 | `mod1`   | `mod2`   |
 |----------|----------|
@@ -50,7 +50,7 @@ Method components should expect three inputs, `--input_train_mod1`, `--input_tra
 Submission components must predict `mod2` for the cells provided in `--input_test_mod1`. For methods that do not involve pre-trained models, training data is also provided in the `--input_train_mod[1|2]` files. For methods that involve pre-trained models, these training datasets can be ignored.
 
 {{% callout note  %}}
-Note, you do not need to return predictions for all four combinations of inputs and outputs. We will be independently ranking and awarding prizes to each combination as described below in [Prizes](#prizes). For more details, see the [FAQs](/neurips_docs/faqs/questions/#what-if-i-only-want-to-compete-for-one-of-the-prizes-in-a-task)
+Note, you do not need to return predictions for all four combinations of inputs and outputs. We will be independently ranking and awarding prizes to each combination as described below in [Prizes](#prizes). For more details, see the [FAQs](/neurips_docs/about/questions/#what-if-i-only-want-to-compete-for-one-of-the-prizes-in-a-task)
 {{% /callout  %}}
 
 

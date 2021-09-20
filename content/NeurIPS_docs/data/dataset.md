@@ -55,7 +55,7 @@ These are all [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad files, a
 
 ## Data file format
 
-The training data is accessible in an [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad file. More information can be found on AnnData objects [here](/neurips_docs/submission/anndata_quickstart/). You can load these files is to use the `AnnData.read_h5ad()` function. The easiest way to get started is to [spin up a free Jupyter Server on Saturn Cloud](/neurips_docs/about/explore).
+The training data is accessible in an [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad file. More information can be found on AnnData objects [here](/neurips_docs/submission/quickstart/). You can load these files is to use the `AnnData.read_h5ad()` function. The easiest way to get started is to [spin up a free Jupyter Server on Saturn Cloud](/neurips_docs/about/explore).
 
 ```python
 !pip install anndata
