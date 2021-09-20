@@ -23,7 +23,7 @@ The functioning of organs, tissues, and whole organisms is determined by the int
 
 ## Task API
 
-The following section describes the task API for the Joint Embedding task. Competitors must submit their code as a Viash component. To facilitate creation of these components, [starter kits](/neurips_docs/submission/starter_kits/) will be provided.
+The following section describes the task API for the Joint Embedding task. Competitors must submit their code as a Viash component. To facilitate creation of these components, [starter kits](//neurips_docs/submission/starter_kit_contents) have been provided.
 
 ### Input data formats
 

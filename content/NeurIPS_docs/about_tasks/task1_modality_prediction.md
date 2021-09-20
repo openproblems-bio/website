@@ -25,7 +25,7 @@ This task requires translating information between multiple layers of gene regul
 
 ## Task API
 
-The following section describes the task API for the Modality Prediction task. Competitors must submit their code as a Viash component. To facilitate creation of these components, [starter kits](/neurips_docs/submission/starter_kits/) will be provided.
+The following section describes the task API for the Modality Prediction task. Competitors must submit their code as a Viash component. To facilitate creation of these components, [starter kits](//neurips_docs/submission/starter_kit_contents) have been provided.
 
 ### Input data formats
 
@@ -83,7 +83,7 @@ adata
     Ids for the features.
 ```
 
-Examples of how to load and process the data are contained in the [starter kits]({{< ref "starter_kits" >}}) for the respective programming language.
+Examples of how to load and process the data are contained in the [starter kits](/neurips_docs/submission/starter_kit_contents) for the respective programming language.
 
 #### Normalization and transformation of data for the prediction task
 

@@ -36,10 +36,9 @@ The competition will focus on three tasks:
 To get started:
 
 1.  Read [about the tasks](/neurips_docs/about_tasks) and the [submission quickstart](neurips_docs/submission/quickstart/) on our competition website
-2.  Download a [starter kit](neurips_docs/submission/starter_kits/)
-3.  Download the [benchmarking data](/neurips_docs/data/dataset/) and [exploration notebooks](https://github.com/openproblems-bio/neurips2021-notebooks/tree/main/notebooks/explore) (Optional)
+2.  View the [starter kit contents](/neurips_docs/submission/starter_kit_contents)
 4.  Explore the data and prototype methods for free on [Saturn Cloud](https://openproblems.bio/neurips_docs/data/explore) (Optional)
-5.  Upload a [submission](neurips_docs/submission/starter_kits/#generating-a-submission)!
+5.  Implement your method and [generate a submission](neurips_docs/submission/development_process/)!
 
 Full details about all the above can be found in the [Competition Documentation](/neurips_docs).
 
