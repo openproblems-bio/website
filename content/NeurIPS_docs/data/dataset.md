@@ -23,7 +23,7 @@ The currently available training batches are:
 * Site 3 - Donors 6, 7
 
 
-By September 22, we expect to release an additional 1 batch of Multiome and and 3 batches of CITE. By October 4, we expect to release another 3 batches of Multiome and 3 batches of CITE, completing the study design.
+By October 4, we expect to release another 4 batches of Multiome and 3 batches of CITE, completing the study design.
 {{% /callout  %}}
 
 We are currently in the process of creating a benchmarking dataset for the competition. There will be two types of data:
