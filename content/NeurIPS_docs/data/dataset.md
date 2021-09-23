@@ -15,9 +15,13 @@ The currently available training batches are:
 **Multiome**
 * Site 1 - Donors 1, 2
 * Site 2 - Donors 1, 4
+* Site 3 - Donor  6
 
 **CITE**
 * Site 1 - Donors 1, 2
+* Site 2 - Donors 1, 4
+* Site 3 - Donors 6, 7
+
 
 By September 22, we expect to release an additional 1 batch of Multiome and and 3 batches of CITE. By October 4, we expect to release another 3 batches of Multiome and 3 batches of CITE, completing the study design.
 {{% /callout  %}}
