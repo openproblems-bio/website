@@ -10,8 +10,8 @@ To get started:
 
 1.  Read [about the tasks](/neurips_docs/about_tasks) and the [submission quickstart](neurips_docs/submission/quickstart/) on our competition website
 2.  View the [starter kit contents](/neurips_docs/submission/starter_kit_contents)
-3.  Explore the data and prototype methods for free on [Saturn Cloud](https://openproblems.bio/neurips_docs/data/explore) (Optional)
-4.  Implement your method and [generate a submission](neurips_docs/submission/development_process/)!
+3.  Explore the data and prototype methods for free on [Saturn Cloud](https://openproblems.bio/neurips_docs/about/explore) (Optional)
+4.  Implement your method and [generate a submission](/neurips_docs/submission/development_process/)!
 
 
 If you ever have any questions, please feel free to reach out on the [Open Problems Discord Server](https://discord.gg/hDE5bYEcHF).
