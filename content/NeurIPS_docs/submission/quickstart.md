@@ -85,10 +85,6 @@ Make note of the outputs generated in the nextflow step. If all went well, you s
 
 ## 5. Submitting to EvalAI
 
-{{% callout note  %}}
-The EvalAI Leaderboard will open on Sept 22, so please skip the upload step for now. You can still generate a submission and evaluate locally.
-{{% /callout  %}}
-
 To upload the submission, you have two options:
 * Upload the submission via https://eval.ai/web/challenges/challenge-page/1111/submission
 * Use the [EvalAI-CLI](https://github.com/Cloud-CV/evalai-cli) to upload the submission following the instructions outputted by the generate script.
