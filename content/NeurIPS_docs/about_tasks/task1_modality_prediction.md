@@ -50,7 +50,7 @@ Method components should expect three inputs, `--input_train_mod1`, `--input_tra
 Submission components must predict `mod2` for the cells provided in `--input_test_mod1`. For methods that do not involve pre-trained models, training data is also provided in the `--input_train_mod[1|2]` files. For methods that involve pre-trained models, these training datasets can be ignored.
 
 {{% callout note  %}}
-Note, you do not need to return predictions for all four combinations of inputs and outputs. We will be independently ranking and awarding prizes to each combination as described below in [Prizes](#prizes). For more details, see the [FAQs](/neurips_docs/about/questions/#what-if-i-only-want-to-compete-for-one-of-the-prizes-in-a-task)
+Note, you do not need to return predictions for all four combinations of inputs and outputs. We will be independently ranking and awarding prizes to each combination as described below in [Prizes](#prizes). For more details, see the [FAQs](/neurips_docs/submission/faq/#what-if-i-only-want-to-compete-for-one-of-the-prizes-in-a-task)
 {{% /callout  %}}
 
 
