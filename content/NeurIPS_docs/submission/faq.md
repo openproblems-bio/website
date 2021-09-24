@@ -144,7 +144,7 @@ par = {
 ## VIASH END
 ```
 
-## Solving exit code 137
+### Solving exit code 137
 
 Exit code 137 means that one of the instances where your script was ran on one of the datasets ran out of memory (max 10GB by default).
 
