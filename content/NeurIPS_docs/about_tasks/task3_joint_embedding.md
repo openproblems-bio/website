@@ -145,11 +145,10 @@ An overall weighted average of batch correction and bio-conservation scores will
 $$S_{overall,i} = 0.6 \cdot S_{bio,i} + 0.4 \cdot S_{batch,i}$$
 This reflects the relative importance of the metrics.
 
-The batch covariate used for evaluation is `donor`, however one can consider encoding the site of data collection as an additional or replacement batch covariate.
+The batch covariate used for evaluation is `sample`, however one can consider encoding the nested donor and site of data collection as a nested batch covariate.
 
 Further information on any of these metrics can be found at https://www.biorxiv.org/content/10.1101/2020.05.22.111161v2
 
-The batch covariate used for evaluation is “donor”, however you may want to encode the site of data collection as an additional or replacement batch covariate.
 
 
 ## Prizes
