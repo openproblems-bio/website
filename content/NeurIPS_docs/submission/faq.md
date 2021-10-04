@@ -225,3 +225,8 @@ The resource use of the submission components is set through the `config.vsh.yam
 
 Available options are `[low|med|high]` for each of `mem`, `time`, and `cpu`. The corresponding resource values can be found in the `scripts/nextflow.config` file.
 
+## My submission is stuck at status 'Submitted'
+
+This status means your submission has been submitted to the queue but hasn't been picked up by the evaluation worker yet.
+Depending on how many submissions are being submitted by yourself and other competitors, a delay of about 30 minutes is expected.
+If you're experiencing longer waiting times, please contact @rcannood in the Discord #support channel.
