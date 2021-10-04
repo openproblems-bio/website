@@ -50,6 +50,58 @@ RUN pip install --upgrade pip && \
 Here you can see the base Docker image is https://hub.docker.com/r/dataintuitive/randpy at the [py3.8](https://hub.docker.com/layers/dataintuitive/randpy/py3.8/images/sha256-21c7d4fb8ecf787040590b62753fb1439022e706800cde110f7d20c1fdccaab3?context=explore) tag.
 
 
+## Can I store helper functions as separate files?
+
+Yes, though you'll need to let Viash know which additional files are required to run the component. If several helper functions are stored in an additional file `mymodule.py` or `mymodule.R`, use the following code to import helper functions:
+
+### Python
+
+In the functionality resources section in the config:
+
+```yaml
+resources:
+  - type: python_script
+    path: script.py
+  - path: mymodule.py
+```
+
+In the main Python script:
+
+```python
+import sys
+
+## VIASH START
+meta = { resources_dir='.' }
+## VIASH END
+
+sys.path.append(meta['resources_dir'])
+from mymodule import helper_fun
+```
+
+### R
+
+
+In the functionality resources section in the config:
+
+```yaml
+resources:
+  - type: r_script
+    path: script.R
+  - path: mymodule.R
+```
+
+In the main Python script:
+
+```R
+## VIASH START
+meta <- list(resources_dir = ".")
+## VIASH END
+
+source(paste0(meta[["resources_dir"]], "/mymodule.R"))
+helper_fun(...)
+```
+
+
 ## Error message "Process terminated with an error exit status (xxx)"
 
 When running a Nextflow pipeline, it's possible your component might fail when running on one of multiple datasets. Here is an example output of a nextflow execution that failed:
