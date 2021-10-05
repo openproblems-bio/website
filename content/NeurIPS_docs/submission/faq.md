@@ -90,9 +90,9 @@ resources:
   - path: mymodule.R
 ```
 
-In the main Python script:
+In the main R script:
 
-```R
+```r
 ## VIASH START
 meta <- list(resources_dir = ".")
 ## VIASH END
