@@ -71,7 +71,7 @@ In the main Python script:
 import sys
 
 ## VIASH START
-meta = { resources_dir='.' }
+meta = { resources_dir: '.' }
 ## VIASH END
 
 sys.path.append(meta['resources_dir'])
