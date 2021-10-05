@@ -188,9 +188,9 @@ To do this, change the paths specified as follows (example shown for Python but 
 ```python
 ## VIASH START
 par = {
-    input_mod1 : "output/datasets/joint_embedding/openproblems_bmmc_multiome_phase1/openproblems_bmmc_multiome_phase1.censor_dataset.output_mod1.h5ad",
-    input_mod2 : "output/datasets/joint_embedding/openproblems_bmmc_multiome_phase1/openproblems_bmmc_multiome_phase1.censor_dataset.output_mod2.h5ad",
-    output : "debug_output.h5ad",
+    'input_mod1' : "output/datasets/joint_embedding/openproblems_bmmc_multiome_phase1/openproblems_bmmc_multiome_phase1.censor_dataset.output_mod1.h5ad",
+    'input_mod2' : "output/datasets/joint_embedding/openproblems_bmmc_multiome_phase1/openproblems_bmmc_multiome_phase1.censor_dataset.output_mod2.h5ad",
+    'output' : "debug_output.h5ad",
     # ... other parameters
 }
 ## VIASH END
