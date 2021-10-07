@@ -30,7 +30,7 @@ subtitle = ""
 
 Scaling from a dozen cells a decade ago to millions of cells today, single-cell measurement technologies are driving a revolution in the life sciences. Recent advances make it possible to measure multiple high-dimensional modalities (e.g. DNA accessibility, RNA, and proteins) simultaneously in the same cell. Such data provides, for the first time, a direct and comprehensive view into the layers of gene regulation that drive biological diversity and disease.
 
-In this competition for [NeurIPS 2021,](https://neurips.cc/Conferences/2021/CompetitionTrack) we present three tasks on multimodal single-cell data using public datasets and a first-of-its-kind multi-omics benchmarking dataset. Teams will predict one modality from another and learn representations of multiple modalities measured in the same cells. Progress will reveal how a common genetic blueprint gives rise to distinct cell types and processes, as a foundation for improving human health.
+In this competition for [NeurIPS 2021,](https://neurips.cc/Conferences/2021/CompetitionTrack) we present three tasks on multimodal single-cell data using a first-of-its-kind multi-omics benchmarking dataset. Teams will predict one modality from another and learn representations of multiple modalities measured in the same cells. Progress will reveal how a common genetic blueprint gives rise to distinct cell types and processes, as a foundation for improving human health.
 
 To learn more, you can watch the following introduction to the competition presented at the Broad Institute's Models Inferences and Algorithms meeting or <a href="https://drive.google.com/file/d/1olW-WN-kHYuG15MSgAK3GUqNtMCPFBq3/view?usp=sharing" style="color: #EB5252;">download the slides</a>:
 
