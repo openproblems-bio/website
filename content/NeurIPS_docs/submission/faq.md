@@ -163,6 +163,10 @@ openproblems_bmmc_multiome_phase1.censor_dataset.output_mod1.h5ad
 openproblems_bmmc_multiome_phase1.censor_dataset.output_mod2.h5ad
 ```
 
+{{< callout note >}}
+**Tip:** Modify the command above depending on the output you got from Nextflow. For example, if Nextflow tells you process `5f/5ff487` failed, you should be looking in the `work/5f/5ff487...` directory and not the `work/e2/7371b2..` directory. Use auto-completion to get the full name of the directory as Nextflow only displays the first 6 characters hash.
+{{</ callout >}}
+
 You can view the `exitcode`, `stdout` and `stderr` of this process by viewing the `.exitcode`, `.command.log` and `.command.err` files, respectively.
 
 In this case, an exception was thrown after the data was loaded because the method at hand is specifically designed for GEX+ADT and not GEX+ATAC data.
