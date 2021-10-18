@@ -414,3 +414,31 @@ process {
 def viash_temp = System.getenv("VIASH_TEMP") ?: "/tmp/"
 docker.runOptions = "-v ${launchDir}/target/nextflow:${launchDir}/target/nextflow -v $viash_temp:$viash_temp --shm-size=4096m"
 ```
+
+## How to generate a submission from WSL2
+
+1. Install WSL2: [https://docs.microsoft.com/en-us/windows/wsl/install](https://docs.microsoft.com/en-us/windows/wsl/install)
+2. Install Docker Desktop with a WSL2 backend: [https://docs.docker.com/desktop/windows/wsl/](https://docs.docker.com/desktop/windows/wsl/)
+3. Open Ubuntu from the Start Menu and run the following commands:
+  ```bash
+  # update packages
+  sudo apt-get update
+  sudo apt-get upgrade -y
+
+  # test to see if docker works
+  docker run hello-world
+
+  # install dependencies
+  sudo apt-get install -y default-jdk unzip zip
+
+  # get starter kit
+  mkdir openproblems-neurips && cd openproblems-neurips
+  wget https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases/latest/download/starter_kit-predict_modality-python.zip
+  unzip starter_kit-predict_modality-python.zip
+
+  # run everything to see if it works
+  scripts/0_sys_checks.sh
+  scripts/1_unit_test.sh
+  scripts/2_generate_submission.sh
+  scripts/3_evaluate_submission.sh
+  ```
