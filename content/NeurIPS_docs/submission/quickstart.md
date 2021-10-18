@@ -23,7 +23,11 @@ For this competition, we want competitors to share code and we will evaluate res
 Before you get started with the competition you will need to install two prerequisites:
 
 1. Install [Docker](https://docs.docker.com/get-docker/)
-2. Install Java Runtime ≥8.0, available from [OpenJDK](https://adoptopenjdk.net/?variant=openjdk11&jvmVariant=hotspot)
+2. Install Java Runtime ≥8 ≤12, available from [OpenJDK](https://adoptopenjdk.net/?variant=openjdk11&jvmVariant=hotspot)
+
+{{< callout note >}}
+**Tip:** Under Windows, first [install WSL2](https://openproblems.bio/neurips_docs/submission/faq/#how-to-generate-a-submission-from-wsl2).
+{{</ callout >}}
 
 ## 3. Grab a starter kit
 
