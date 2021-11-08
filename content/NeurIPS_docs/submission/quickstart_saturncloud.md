@@ -26,13 +26,13 @@ EvalAI is an open source platform to host machine learning competitions. We're u
 
 
 ## 3. Configure your local environment
-First we need to install some requisites.
+First you need to install some requisites:
 ```
 sudo apt-get update
 sudo apt-get install -y unzip zip
 ```
 
-In order to easily submit your solution to eval.ai, you should install and configure the evalai cli. Click [here](https://eval.ai/web/challenges/challenge-page/1111/submission) for more instructions.
+In order to easily submit your solution to eval.ai, you should install and configure the evalai cli. Click [here](https://eval.ai/web/challenges/challenge-page/1111/submission) for more instructions. Please run:
 ```bash
 pip install evalai
 evalai set_token <your token here>
