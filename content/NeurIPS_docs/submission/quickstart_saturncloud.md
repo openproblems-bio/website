@@ -1,9 +1,9 @@
 ---
-title: "Quickstart"
+title: "Quickstart on Saturn Cloud"
 type: book
 date: "2021-08-02T00:00:00+01:00"
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 0
+weight: 10
 ---
 
 The goal of this guide is to get you started developing submissions for the competition as quickly as possible. This section will detail the necessary steps to create your first submission.
@@ -16,20 +16,29 @@ EvalAI is an open source platform to host machine learning competitions. We're u
 2. [Visit](https://eval.ai/web/challenges/challenge-page/1111/overview) the Single-Cell Multimodal Data Integration Challenge page
 3. [Register](https://eval.ai/web/challenges/challenge-page/1111/participate) by creating a new team on EvalAI. You can change your team details later or merge teams.
 
-## 2. Configure your local environment
+## 2. Register on Saturn Cloud
 
-For this competition, we want competitors to share code and we will evaluate results on a remote server. To facilitate running arbitrary scripts submitted by contestants, we are using [Viash](https://viash.io), a tool designed to turn R and Python scripts into Dockerized components that can be executed from the command line and integrated into a workflow system like [Nextflow](https://www.nextflow.io/).
+1. Go to https://saturncloud.io/ and login or create a free account
+2. Under "Create a Resource" at the top of the page, click on the NeurIPS Openbio template card and click through the pop-up modals to create a new Saturn Cloud project using this template.
+3. Click on the ▶ button to start a Jupyter server
+4. Once the server is started, click the "Jupyter Lab" button to access the server
+5. From the Saturn Cloud dashboard, you should see a blue circle in the lower right corner with a which chat icon inside. Click this button and send a message saying "Can you please upgrade my account for the Open Problems NeurIPS competition?". Someone at Saturn Cloud should respond shortly and you should see 100 hours appear under the "Hours remaining" box on the left sidebar.
 
-Before you get started with the competition you will need to install two prerequisites:
 
-1. Install [Docker](https://docs.docker.com/get-docker/)
-2. Install Java Runtime ≥8 ≤12, available from [OpenJDK](https://adoptopenjdk.net/?variant=openjdk11&jvmVariant=hotspot)
+## 3. Configure your local environment
+First we need to install some requisites.
+```
+sudo apt-get update
+sudo apt-get install -y unzip zip
+```
 
-{{< callout note >}}
-**Tip:** Under Windows, first [install WSL2](https://openproblems.bio/neurips_docs/submission/faq/#how-to-generate-a-submission-from-wsl2).
-{{</ callout >}}
+In order to easily submit your solution to eval.ai, you should install and configure the evalai cli. Click [here](https://eval.ai/web/challenges/challenge-page/1111/submission) for more instructions.
+```bash
+pip install evalai
+evalai set_token <your token here>
+```
 
-## 3. Grab a starter kit
+## 4. Grab a starter kit
 
 You can find a set of starter kits for each task below or on the [GitHub releases](https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases) of the competition codebase. Download the starter kit which is most relevant to you and unzip it in a directory.
 
@@ -48,8 +57,30 @@ Task 3 - Joint Embedding
 * [Starter Kit in Python](https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases/latest/download/starter_kit-joint_embedding-python.zip)
 * [Starter Kit in R](https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases/latest/download/starter_kit-joint_embedding-r.zip)
 
+Once you've chosen your starter kit, download and unzip it:
 
-## 4. Generate your first submission
+```bash
+mkdir starter_kit
+cd starter_kit
+wget https://github.com/openproblems-bio/neurips2021_multimodal_viash/releases/latest/download/starter_kit-predict_modality-python.zip
+unzip starter_kit-predict_modality-python.zip
+ls -l # view contents
+```
+
+## 5. Tweak starter kit
+
+Running Docker containers on Saturn Cloud is not enabled as it would pose security problems for other containers running on the same platform. This means we need to make some minor tweaks to the starter kit. Please run:
+
+```bash
+echo '  - type: native' >> config.vsh.yaml
+echo 'docker.enabled = false' >> scripts/nextflow.config
+sed -i 's#docker info#echo hi#g' scripts/0_sys_checks.sh
+sed -i 's#-p docker#-p native#g' scripts/1_unit_test.sh
+sed -i 's#-p docker#-p native#g' scripts/2_generate_submission.sh
+echo 'echo No local evaluation is possible on Saturn Cloud' > scripts/3_evaluate_submission.sh
+```
+
+## 6. Generate your first submission
 
 To make sure your local environment is set up correctly, first run the `2_generate_submission.sh` script. This script triggers a Nextflow workflow to:
 1. Build a [viash component](https://viash.io/docs/getting_started/what_is_a_viash_component/) of the method in `script.py/R` using the configuration specified in `config.vsh.yaml`.
@@ -57,8 +88,15 @@ To make sure your local environment is set up correctly, first run the `2_genera
 3. Apply the containerized method on the training datasets.
 4. Create a `submission.zip` file that can be uploaded to EvalAI for evaluation on the competition data and registration of the method on the leaderboard.
 
-If this workflow finishes successfully, you'll see something like this:
+Please run the following commands:
 
+```bash
+scripts/0_sys_checks.sh
+scripts/1_unit_test.sh
+scripts/2_generate_submission.sh
+```
+
+If this workflow finishes successfully, you'll see something like this:
 ```
 $ scripts/2_generate_submission.sh
 ...
@@ -87,13 +125,14 @@ Good luck!
 
 Make note of the outputs generated in the nextflow step. If all went well, you should see a 100% success rate.
 
-## 5. Submitting to EvalAI
+## 7. Submitting to EvalAI
 
 To upload the submission, you have two options:
 * Upload the submission via https://eval.ai/web/challenges/challenge-page/1111/submission
 * Use the [EvalAI-CLI](https://github.com/Cloud-CV/evalai-cli) to upload the submission following the instructions outputted by the generate script.
 
 Once your method is submitted, you can navigate to the [My Submissions](https://eval.ai/web/challenges/challenge-page/1111/my-submission) tab for the competition and select the phase that matches your recent submission. Here you will find a table that lists each submission you've uploaded for a given phase. Once the "Status" column is marked "Finished" you can view the `results.json` file that provides the method performance. Note that it might take up to 5 minutes for your submission to update from "Running" to "Finished", and that your submission might have to wait in a queue for an undetermined amount of time depending on the number of submissions being run on the submission server.
+
 
 ## Encountering issues?
 If you encounter a problem, please read the [FAQ](/neurips_docs/submission/faq/) to see whether a solution is already described. If you can't find a solution to your problem, please reach out on the competition [Discord](https://discord.gg/Q3RKGMGD3E) server. See the `#troubleshooting` or `#viash-help` channels.

@@ -442,3 +442,7 @@ docker.runOptions = "-v ${launchDir}/target/nextflow:${launchDir}/target/nextflo
   scripts/2_generate_submission.sh
   scripts/3_evaluate_submission.sh
   ```
+
+  ## Can I generate a submission on Saturn Cloud?
+
+  Yes. Please follow [these instructions](/neurips_docs/submission/quickstart_saturncloud) to get started.
