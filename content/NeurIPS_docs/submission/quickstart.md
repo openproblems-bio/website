@@ -3,7 +3,7 @@ title: "Quickstart"
 type: book
 date: "2021-08-02T00:00:00+01:00"
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 0
+weight: 1
 ---
 
 The goal of this guide is to get you started developing submissions for the competition as quickly as possible. This section will detail the necessary steps to create your first submission.
