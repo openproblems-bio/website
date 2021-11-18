@@ -39,7 +39,7 @@ Single Cell Gene Expression with Feature Barcoding](https://support.10xgenomics.
 
 The current forms of the data are public available on S3. To download the data, first install the AWS CLI on your computer: https://aws.amazon.com/cli/
 
-You can download the data to your local computer with the following command (note the dataset size is roughly 1.2 GiB):
+You can download the data to your local computer with the following command (note the dataset size is roughly 2.8 GiB):
 
 ```sh
 aws s3 sync s3://openproblems-bio/public/explore  /tmp/public/ --no-sign-request
