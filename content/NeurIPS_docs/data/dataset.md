@@ -12,15 +12,17 @@ All the training data is released! Due to supply chain issues, we've had to devi
 
 The currently available training batches are:
 
-**Multiome**
+**Multiome** (42492 cells in training set)
 * Site 1 - Donors 1, 2, 3
 * Site 2 - Donors 1, 4, 5
 * Site 3 - Donors 3, 6, 7, 10
 
-**CITE**
+**CITE** (57593 cells in training set)
 * Site 1 - Donors 1, 2, 3
 * Site 2 - Donors 1, 4, 5
 * Site 3 - Donors 1, 6, 7
+
+
 
 Site 4 Donors 1, 8, 9 will be used for testing for both Multiome and Cite
 
