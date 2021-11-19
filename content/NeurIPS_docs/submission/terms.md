@@ -25,7 +25,7 @@ The Organizers of the Challenge may in their sole discretion disqualify any part
 
 ## Participation
 
-This Challenge is a skills-based competition to promote and further the field of single-cell data science. In order to participate, you must follow all instructions and requirements posted on the Website page titled ["Development process"](/neurips_docs/submission/development_process/) (“Requirements”).
+This Challenge is a skills-based competition to promote and further the field of single-cell data science. In order to participate, you must follow all instructions and requirements posted on the Website page titled ["Development process"](/neurips_docs/submission/development_process/).
 
 You can participate in this Challenge alone or as a team. There is no maximum team size, and the minimum team size is one person. Each individual participant needs to create an EvalAI account as described on the Website. Participants may not collaborate unless those participants entered this Challenge as a team; participants who are members of the same team may collaborate with one another. Teams may be merged if the merging teams notify the Organizers accordingly. Teams may be merged only during the Validation phase. After the Validation phase ends and the Testing phase starts teams merging isn’t allowed anymore. If you participate in this Challenge as part of a team, then you may participate in one team only.
 
