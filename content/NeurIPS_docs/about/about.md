@@ -13,7 +13,7 @@ The competitions is broken down into three tracks, each with an independent set 
 The competition will run in two phases, dates can be found [here]():
 
 * **Development (Sept 15 - Nov 15)** - during this development phase, participants will prototype submissions for the competition on the training data. Users will have access to starter kits with baseline methods and scripts to download code. Users can submit code to EvalAI for ranking on a public leaderboard using a subset of the public training data. These rankings are meant to help drive competition during the competition but will not be used to award prizes.
-* **Testing (Nov 15 - Nov 22)** - during the testing phase, competitors will submit their final code packages for evaluation on held-out testing data. Submissions will run on our EvalAI worker, and must be formatted according to the format in the associated starter kit for each task.
+* **Testing (Nov 15 - Nov 26)** - during the testing phase, competitors will submit their final code packages for evaluation on held-out testing data. Submissions will run on our EvalAI worker, and must be formatted according to the format in the associated starter kit for each task.
 
 Winners will receive a cash price according to the prize criteria described in each task description. [Terms and conditions](/neurips_docs/submission/terms) apply.
 

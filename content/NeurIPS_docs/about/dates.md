@@ -10,6 +10,6 @@ The following dates describe the different milestones for the competition.
 
 **Sep 15** - Competition Kickoff: Release starter kits and first batch of training & validation data  
 **Sep 22 - Nov 15** - Phase 1: Open Leaderboard and release second batch of training & validation data  
-**Nov 15 - Nov 22** - Phase 2: Competitors submit code for evaluation on test data  
-**Nov 29** - Notify winners  
-**Dec 6** - NeurIPS Conference Starts  
+**Nov 15 - Nov 26** - Phase 2: Competitors submit code for evaluation on test data  
+**Nov 30** - Notify winners  
+**Dec 10** - NeurIPS Competition and Benchmarks Mini Workshop  
