@@ -72,8 +72,8 @@ ls -l # view contents
 Running Docker containers on Saturn Cloud is not enabled as it would pose security problems for other containers running on the same platform. This means we need to make some minor tweaks to the starter kit. Please run:
 
 ```bash
-echo '  - type: native' >> config.vsh.yaml
-echo 'docker.enabled = false' >> scripts/nextflow.config
+echo "" >> scripts/nextflow.config
+echo "docker.enabled = false" >> scripts/nextflow.config
 sed -i 's#docker info#echo hi#g' scripts/0_sys_checks.sh
 sed -i 's#-p docker#-p native#g' scripts/1_unit_test.sh
 sed -i 's#-p docker#-p native#g' scripts/2_generate_submission.sh
