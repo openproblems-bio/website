@@ -8,22 +8,24 @@ weight: 3
 
 
 {{% callout note  %}}
-We've worked hard to optimize cutting-edge data generation in the face of pandemic-related supply chain issues. Some batches of training data are still being processed.
+All the training data is released! Due to supply chain issues, we've had to deviate from the planned study design for Site 3 Multiome.
 
 The currently available training batches are:
 
-**Multiome**
-* Site 1 - Donors 1, 2
-* Site 2 - Donors 1, 4
-* Site 3 - Donor  6
+**Multiome** (42492 cells in training set)
+* Site 1 - Donors 1, 2, 3
+* Site 2 - Donors 1, 4, 5
+* Site 3 - Donors 3, 6, 7, 10
 
-**CITE**
-* Site 1 - Donors 1, 2
-* Site 2 - Donors 1, 4
-* Site 3 - Donors 6, 7
+**CITE** (57593 cells in training set)
+* Site 1 - Donors 1, 2, 3
+* Site 2 - Donors 1, 4, 5
+* Site 3 - Donors 1, 6, 7
 
 
-By October 4, we expect to release another 4 batches of Multiome and 3 batches of CITE, completing the study design.
+
+Site 4 Donors 1, 8, 9 will be used for testing for both Multiome and Cite
+
 {{% /callout  %}}
 
 We are currently in the process of creating a benchmarking dataset for the competition. There will be two types of data:
@@ -37,7 +39,7 @@ Single Cell Gene Expression with Feature Barcoding](https://support.10xgenomics.
 
 The current forms of the data are public available on S3. To download the data, first install the AWS CLI on your computer: https://aws.amazon.com/cli/
 
-You can download the data to your local computer with the following command (note the dataset size is roughly 1.2 GiB):
+You can download the data to your local computer with the following command (note the dataset size is roughly 2.8 GiB):
 
 ```sh
 aws s3 sync s3://openproblems-bio/public/explore  /tmp/public/ --no-sign-request
