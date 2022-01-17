@@ -44,7 +44,7 @@ Anna Laddach, Roman Laddach, Michael Shapiro
 **University of Michigan, [code](https://github.com/openproblems-bio/neurips2021_multimodal_topmethods/tree/main/src/predict_modality/methods/Guanlab-dengkw)**  
 Kaiwen Deng
 
-### ADT→GEX: Novel (pending validation)
+### ADT→GEX: Novel
 **Novel Software Systems, [code](https://github.com/openproblems-bio/neurips2021_multimodal_topmethods/tree/main/src/predict_modality/methods/novel)**   
 Nikolay	Russkikh, Gleb	Ryazantsev, Igor	I
 
