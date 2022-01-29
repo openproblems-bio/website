@@ -10,21 +10,19 @@ weight: 3
 {{% callout note  %}}
 All the training data is released! Due to supply chain issues, we've had to deviate from the planned study design for Site 3 Multiome.
 
-The currently available training batches are:
+The study design is as follows:
 
-**Multiome** (42492 cells in training set)
+**Multiome**
 * Site 1 - Donors 1, 2, 3
 * Site 2 - Donors 1, 4, 5
 * Site 3 - Donors 3, 6, 7, 10
+* Site 4 - Donors 1, 8, 9
 
-**CITE** (57593 cells in training set)
+**CITE**
 * Site 1 - Donors 1, 2, 3
 * Site 2 - Donors 1, 4, 5
 * Site 3 - Donors 1, 6, 7
-
-
-
-Site 4 Donors 1, 8, 9 will be used for testing for both Multiome and Cite
+* Site 4 - Donors 1, 8, 9
 
 {{% /callout  %}}
 
@@ -37,27 +35,9 @@ Single Cell Gene Expression with Feature Barcoding](https://support.10xgenomics.
 
 ## Download the data
 
-The current forms of the data are public available on S3. To download the data, first install the AWS CLI on your computer: https://aws.amazon.com/cli/
+The dataset is available from NCBI GEO under accession [GSE194122](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE194122).
 
-You can download the data to your local computer with the following command (note the dataset size is roughly 2.8 GiB):
-
-```sh
-aws s3 sync s3://openproblems-bio/public/explore  /tmp/public/ --no-sign-request
-```
-
-You'll find the following files:
-
-```sh
-explore
-├── LICENSE.txt
-├── README.txt
-├── cite/cite_adt_processed_training.h5ad
-├── cite/cite_gex_processed_training.h5ad
-├── multiome/multiome_atac_processed_training.h5ad
-└── multiome/multiome_gex_processed_training.h5ad
-```
-
-These are all [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad files, as described in the following section.
+In this series you will find BAM files containing the raw sequencing data and proccess and curated datasets stored in the H5AD file format. The processed data files are all [AnnData](https://anndata.readthedocs.io/en/latest/) objects, as described in the following section.
 
 ## Data file format
 

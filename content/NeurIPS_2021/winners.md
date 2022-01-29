@@ -28,7 +28,7 @@ subtitle = ""
  css_class = ""
 +++
 
-We're proud to announce the winners of our 2021 NeurIPS competition! Note, some winners are still pending validation.
+We're proud to announce the winners of our 2021 NeurIPS competition!
 
 ## **Task 1 - Modality Prediction**
 _Given one modality, predict the other._
