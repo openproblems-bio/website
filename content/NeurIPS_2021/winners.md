@@ -48,7 +48,7 @@ Kaiwen Deng
 **Novel Software Systems, [code](https://github.com/openproblems-bio/neurips2021_multimodal_topmethods/tree/main/src/predict_modality/methods/novel)**   
 Nikolay	Russkikh, Gleb	Ryazantsev, Igor	I
 
-### Overall: DANCE (pending validation)
+### Overall: DANCE
 **Michigan State University, [code](https://github.com/openproblems-bio/neurips2021_multimodal_topmethods/tree/main/src/predict_modality/methods/DANCE)**  
 Hongzhi Wen, Jiayuan	Ding, Wei	Jin, Xiaoyan	Li, Zhaoheng	Li, Yiqi	Wang, Haoyu	Han, Yanyi	Ding, Xiaochun	Ni, Yu	Lei, Yuying	Xie, Jiliang	Tang
 
@@ -62,7 +62,7 @@ Zhi-Jie	Cao, Xinming	Tu, Chen-Rui	Xia
 ## **Task 3 - Joint Embedding**
 _Learn a low dimensional embedding of both modalities that preserves biology and removes batch effects._
 
-### Multiome, pre-trained & CITE, pre-trained: Amateur (pending validation)
+### Multiome, pre-trained & CITE, pre-trained: Amateur
 **Stanford University, Tsinghua University, [code](https://github.com/openproblems-bio/neurips2021_multimodal_topmethods/tree/main/src/joint_embedding/methods/jae)**  
 Qiao	Liu, Wanwen	Zeng, Chencheng	Xu
 
