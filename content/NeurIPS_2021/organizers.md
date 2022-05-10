@@ -38,6 +38,8 @@ _In alphabetical order_
     Yale University with a specialization in machine learning under the
     supervision of Smita Krishnaswamy.
 
+    **Jonathan M. Bloom** leads Perturbation Biology and Machine Learning at Cellarity. As an Institute Scientist at the Broad Institute, he cofounded the Hail team, Learning Meaningful Representations of Life, and Models, Inference & Algorithms, while contributing to sequencing benchmarks, statistical genetics, ML theory, and neuroscience efforts. Jonathan completed his PhD at Columbia and Moore Instructorship and NSF postdoc at MIT, conducting research on algebraic topology and geometry while reimagining the teaching of statistics.
+
 -   **Robrecht Cannoodt** is a postdoctoral researcher in Saeys lab at 
     VIB-UGent and a computer science consultant at Data Intuitive.
     During his PhD, his research was focused mainly on unsupervised learning in 
