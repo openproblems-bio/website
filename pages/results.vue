@@ -36,7 +36,8 @@
                             <v-card-text>
                                 <VRecordsTable                                 
                                     :json="table.results"    
-                                    :fieldRenderFunctions="fieldRenderFunctions"                
+                                    :fieldRenderFunctions="fieldRenderFunctions"        
+                                    :fieldSynonymMap="fieldSynonymMap"        
                                 />
                             </v-card-text>
                         </v-card>
@@ -68,6 +69,11 @@ const fieldRenderFunctions = {
     'Mean squared error': toFixed,
     'kNN Area Under the Curve': toFixed
 }
+// set column names to something other than internal field name
+export const fieldSynonymMap = {
+  'Memory': 'Memory (GB)',
+  'Runtime': 'Runtime (min)',
+}
 
 
 export default {
@@ -77,7 +83,7 @@ export default {
     data: () => ({
         tab: null,
         tabTable:null,
-        fieldRenderFunctions,
+        fieldRenderFunctions, fieldSynonymMap,
         showTables: []
     }),
     async asyncData({ $content, params }) {
