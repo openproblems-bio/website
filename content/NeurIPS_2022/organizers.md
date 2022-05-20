@@ -53,7 +53,7 @@ _In alphabetical order_
     for big biomedical data. She is a faculty advisor for Open Problems
     in Single-Cell Analysis.
 
-- **Christopher Lance** is a PhD candidate in the Machine Learning Group of Prof. Fabian Theis at the Helmholtz Center Munich. He graduated in Molecular Biotechnology at the University of Heidelberg with a focus on bioinformatics. In prior research projects at the Sanger Institute, UK and the EMBL Heidelberg, he worked on association studies of rare genetic variants with plasma proteomics and leveraging metabolomics data to characterize drug perturbations on bacterial metabolism. Last year, he joined the NeurIPS2021 multimodal single cell data integration challenge as one of the main data analysts and was in charge of the follow up assessment of competition results and feedback, which was recently accepted at PMLR. With this, he joined the Open Problems project and is now focusing on best practices for analysing multimodal single cell data and the integration of multiple modalities. Christopher will contribute to the analysis of the newly generated data for this years competition and is evaluating baseline methods and metrics.
+- **Christopher Lance** is a PhD candidate in the Machine Learning Group of Prof. Fabian Theis at the Helmholtz Center Munich where he works on establishing best practices for analysing multimodal single cell data and the integration of multiple modalities.
 
 -   **Malte Lücken** is a senior postdoctoral researcher and team leader
     for integrative single-cell analysis in the Machine Learning Group
