@@ -1,5 +1,6 @@
 <template>
     <v-row>
+        <MDHeader text="Results" h="1" add-hash/>
         <v-tabs v-model="tab">
             <v-tab 
                 v-for="(tables, group, index) in groupedTables"
@@ -34,7 +35,9 @@
                         >
                             <v-card-title>{{table.name}}</v-card-title>
                             <v-card-text>
-                                <VRecordsTable                                 
+                                <VRecordsTable        
+                                    :ref="`${group}-table-${table.name}-${table.id}`" 
+                                    :fieldOrder="table.headers.names"                        
                                     :json="table.results"    
                                     :fieldRenderFunctions="fieldRenderFunctions"        
                                     :fieldSynonymMap="fieldSynonymMap"        
@@ -45,25 +48,33 @@
                 </v-tabs-items>                
             </v-tab-item>
         </v-tabs-items>
+        <v-col>
+            <MDHeader text="Submit online today!" h="1" add-hash/>
+            Click <a target="_blank" href="https://github.com/openproblems-bio/openproblems">here</a> to submit online via GitHub.
+        </v-col>
     </v-row>
 </template>
 
 <script>
 import _ from 'lodash'
 import {VRecordsTable} from 'vfrxt'
+import MDHeader from '~/components/global/MDHeader.vue'
 
 const toFixed = (id, field, record, n=3) => record[field].toFixed(n)
 
 const fieldRenderFunctions = {
     Code: (id, field, record) => {
-        return `<a target="_blank" href="${record[field]}">code</a>`
+        return `<a target="_blank" href="${record[field]}">${record.Version}</a>`
     },
     'Paper URL': (id, field, record) => {
         return `<a target="_blank" href="${record[field]}">paper</a>`
     },
-    'Runtime (min)': toFixed,
+    'Paper': (id, field, record) => {
+        return `<a target="_blank" href="${record[field]}">${record.Paper}</a>`
+    },
+    'Runtime (min)': (id, field, record) => `${toFixed(id, field, record)} min`,
     'Micro F1 score': toFixed,
-    'Memory (GB)': toFixed,
+    'Memory (GB)': (id, field, record) => `${toFixed(id, field, record)} GB`,
     'F1 score': toFixed,
     'Accuracy': toFixed,
     'Mean squared error': toFixed,
@@ -78,8 +89,9 @@ export const fieldSynonymMap = {
 
 export default {
     components: {
-        VRecordsTable
-    },
+    VRecordsTable,
+    MDHeader
+},
     data: () => ({
         tab: null,
         tabTable:null,
@@ -94,6 +106,12 @@ export default {
         }
     },
     methods: {
+        setSort(str) {
+            console.log(str, this.$refs[str])
+            this.$refs[str].sortSpecifications.push(
+                {field:'Rank', isAscending:true}
+            )
+        },
         getResultType(str) {
             const parts = str.split('/')
             return parts[parts.length - 1]

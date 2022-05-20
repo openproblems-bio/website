@@ -42,7 +42,7 @@
     <v-footer fixed app>
       <span> &copy; Open Problems {{ new Date().getFullYear() }}</span>
       <v-spacer></v-spacer>
-      <span> View on <a href="https://github.com/openproblems-bio/openproblems">GitHub</a></span>
+      <span> View on <a href="https://github.com/openproblems-bio/openproblems/blob/main/CONTRIBUTING.md">GitHub</a></span>
     </v-footer>
   </v-app>
 </template>
@@ -59,13 +59,18 @@ export default {
     version: '1.0.0',
     tabs: [      
       {
+        text: 'Home',
+        href: '/',
+        icon: ''
+      },
+      {
         text: 'Results',
         href: '/results',
         icon: ''
       },
       {
-        text: 'NeurIPs',
-        href: '/neurips',
+        text: 'NeurIPs 2021',
+        href: '/neurips/2021',
         icon: ''
       },      
     ],
@@ -97,3 +102,9 @@ export default {
   }
 }
 </script>
+
+<style>
+html {
+  text-align: justify !important;
+}
+</style>
