@@ -30,7 +30,7 @@ subtitle = ""
 
 Scaling from a dozen cells a decade ago to millions of cells today, single-cell measurement technologies are driving a revolution in the life sciences. Recent advances make it possible to measure multiple high-dimensional modalities (e.g. DNA accessibility, RNA, and proteins) simultaneously in the same cell. Such data provides, for the first time, a direct and comprehensive view into the layers of gene regulation that drive biological diversity and disease.
 
-In 2021, we organized the first single-cell analysis competition at NeurIPS bringing together 280 participants to compete on an atlas-scale dataset of human bone marrow cells from 12 donors generated across 4 sites globally. 
+In [2021](https://openproblems.bio/neurips_2021), we organized the first single-cell analysis competition at NeurIPS bringing together 280 participants to compete on an atlas-scale dataset of human bone marrow cells from 12 donors generated across 4 sites globally. 
 
 In this competition for [NeurIPS 2022](https://neurips.cc/Conferences/2022/CompetitionTrack), we will build on this success, address concerns identified from a survey of the participants in our 2021 competition, and extend the tasks to include a further open problem in single-cell data science: modelling multimodal time series. We are generating a new dataset to complement our previous atlas, modifying our competition submission system, and refining the task metrics to better capture biological processes regulating the flow of genetic information.
 
