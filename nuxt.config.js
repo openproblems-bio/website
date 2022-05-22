@@ -1,6 +1,24 @@
 import colors from 'vuetify/es5/util/colors'
 
+
+const gitlabPagesRepositorySlug = 'website'
+const isGitlabPages  = (process.env.DEPLOY_ENV === 'GITLAB_PAGES' )
+const isNetlify = (process.env.DEPLOY_ENV === 'NETLIFY' )
+const staticLoc = isGitlabPages 
+  ? `/${gitlabPagesRepositorySlug}/`
+  : `/`
+
+
+
 export default {
+  vue: {
+    config: {
+      productionTip: true,
+      devtools: (!isGitlabPages && !isNetlify)
+    }
+  },
+
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s',
@@ -119,6 +137,18 @@ export default {
       }
     }
   },
+
+  generate: {
+    dir: 'public',
+    fallback: true
+  },
+  /*
+  ** Customize the base url
+  */
+  router: {
+    base: staticLoc, //this is whatever the project is named
+  },
+
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

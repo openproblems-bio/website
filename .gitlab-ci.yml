@@ -1,0 +1,17 @@
+image: node
+
+before_script:
+  - npm install
+
+cache:
+  paths:
+    - node_modules/
+
+pages:
+  script:    
+    - npm run generate:gitlab-pages
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
