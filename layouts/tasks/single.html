@@ -1,0 +1,23 @@
+{{ define "main" }}
+<main class="container">
+    <article class="container">
+        <header class="row">
+            <h1>{{.Title}}</h1>
+        </header>
+        {{.Summary}}
+        {{.Content}}
+
+        {{partial "task_dataset.html" .}}
+    
+    </article>
+
+    <div>
+        {{ with .PrevInSection }}
+          <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
+        {{ end }}
+        {{ with .NextInSection }}
+          <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
+        {{ end }}
+    </div>
+</aside>
+{{ end }}
