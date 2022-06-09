@@ -1,10 +1,21 @@
 
 {{ define "main" }}
+<section id="hero" class="home-section wg-hero dark frontpage-hero" style="padding: 0px 0 0 0;">
+    <div class="home-section-bg  bg-image" style="background-image: url('/media/heros/home_hero.jpg');"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8 frontpage-hero banner-container">
+                <h1 class="display-1 text-primary">
+                    {{.Title}}
+                </h1>               
+            </div>
+        </div>
+    </div>
+</section>
+
 <main class="container">
-    <article class="container">
-        <header class="row">
-            <h1>{{.Title}}</h1>
-        </header>
+    <article class="container py-4">        
         <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
         {{.Content}}
         
