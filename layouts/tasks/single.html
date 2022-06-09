@@ -1,6 +1,8 @@
 {{ define "main" }}
 <main class="container">
     <article class="container">
+      
+
         <header class="row">
             <h1>{{.Title}}</h1>
         </header>
@@ -8,8 +10,12 @@
         {{.Content}}
 
         {{partial "task_dataset.html" .}}
-    
-    </article>
 
+        <div class="row">
+          {{ partial "breadcrumb" . }}
+        </div>
+        
+    </article>
+    
 </aside>
 {{ end }}
