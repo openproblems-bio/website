@@ -13,8 +13,9 @@
 
 <!-- From here on out, shameless copy-paste from layouts/shortcodes/task_tables.html -->
 {{ $id := strings.Replace $dataFile.name " " "-" }}
+{{ $id := strings.Replace $id "(" "" }}
+{{ $id := strings.Replace $id ")" "" }}
 {{ $.Scratch.Set "count" 0 }}
-
 
 <script>
     function docReady(fn) {
