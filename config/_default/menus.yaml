@@ -10,12 +10,21 @@ main:
   - name: Results
     url: /results
     weight: 20
-  - name: NeurIPS 2022 Competition
-    url: /NeurIPS_2022
+  - name: Competitions
+    identifier: comp
     weight: 40
+  - name: NeurIPS 2022 Competition
+    parent: comp
+    url: /NeurIPS_2022
+    weight: 10
+  - name: NeurIPS 2021 Competition
+    parent: comp
+    url: /NeurIPS_2021
+    weight: 20
   - name: NeurIPS Docs
+    parent: comp
     url: /NeurIPS_docs
-    weight: 50
+    weight: 90
   - name: Join
     url: /#join-us
     weight: 100
