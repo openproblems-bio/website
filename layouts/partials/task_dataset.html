@@ -15,6 +15,8 @@
 {{ $id := strings.Replace $dataFile.name " " "-" }}
 {{ $id := strings.Replace $id "(" "" }}
 {{ $id := strings.Replace $id ")" "" }}
+{{ $id := strings.Replace $id "," "-" }}
+{{ $id := strings.Replace $id "." "-" }}
 {{ $.Scratch.Set "count" 0 }}
 
 <script>
