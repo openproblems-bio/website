@@ -1,6 +1,6 @@
 +++
 title = "Label Projection"
-summary = "Blah blah blah"
+summary = "TODO"
 headless = false
 theme = "op"
 +++
@@ -18,3 +18,4 @@ Metrics for label projection aim to characterize how well each classifer correct
 
 * **Accuracy**: Average number of correctly applied labels.
 * **F1 score**: The [F1 score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html) can be interpreted as a weighted average of the precision and recall, where an F1 score reaches its best value at 1 and worst score at 0.
+* **Micro F1 score**: TODO

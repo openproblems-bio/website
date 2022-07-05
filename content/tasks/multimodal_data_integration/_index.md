@@ -1,6 +1,6 @@
 +++
 title = "Multimodal Data Integration"
-summary = "Blah blah blah"
+summary = "TODO"
 headless = false
 theme = "op"
 +++
