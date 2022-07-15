@@ -46,12 +46,19 @@
                 {{ range .Pages }}
                     <div class="col-sm-6">  
                         <div class="card">
-                            <img 
-                                src="/media/icon.png" 
-                                class="card-img-top" 
-                                alt=""
+                            
+                            <object 
+                                data="/media/icon.png" type="image/png" 
                                 style="max-height:50px; max-width: 50px;"
+                                class="card-img-top mx-auto my-2" 
                             >
+                                <img 
+                                    src='/media/thumbnails/{{print (strings.Replace (lower .Title) " " "_") ".png"}}'
+                                    class="card-img-top mx-auto my-2" 
+                                    alt="{{.Title}} card thumbnail"
+                                    style="max-height:50px; max-width: 50px;"
+                                >
+                            </object>
                             <div class="card-body">
                                 <h5 class="card-title">
                                     {{ .Title }}
