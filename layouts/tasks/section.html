@@ -45,18 +45,17 @@
                 -->
                 {{ range .Pages }}
                     <div class="col-sm-6">  
-                        <div class="card">
-                            
+                        <div class="card">                            
                             <object 
-                                data="/media/icon.png" type="image/png" 
-                                style="max-height:50px; max-width: 50px;"
-                                class="card-img-top mx-auto my-2" 
+                                data='/media/thumbnails/{{print (strings.Replace (lower .Title) " " "_") ".png"}}' type="image/png" 
+                                class="card-img-top mx-auto d-block my-2 img-thumbnail" 
+                                style="max-height:140px; max-width:200px;"
                             >
                                 <img 
-                                    src='/media/thumbnails/{{print (strings.Replace (lower .Title) " " "_") ".png"}}'
-                                    class="card-img-top mx-auto my-2" 
+                                    src='/media/icon.png'
+                                    class="my-auto py-3 mx-auto" 
                                     alt="{{.Title}} card thumbnail"
-                                    style="max-height:50px; max-width: 50px;"
+                                    style="max-height:140px; max-width: 200px;"
                                 >
                             </object>
                             <div class="card-body">
