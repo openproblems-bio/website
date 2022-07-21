@@ -1,0 +1,93 @@
+<!-- NOTE: this should be /tasks/<task-name> -->
+{{$task := path.Base .Page.File.Dir}}
+<!-- NOTE: this should be /tasks/<task-name>/<dataset>.md -->
+<!-- NOTE: this should match a file named /data/results/<task-name>/<dataset>.json-->
+{{$dataset := .Page.File.TranslationBaseName}}
+
+{{$path := path.Join "data/results" $task $dataset}}
+{{$url := ".json" |  printf "%s%s" $path}}
+
+<!-- NOTE: no need for range any more, working one at a time -->
+{{$dataFile := getJSON $url}}
+
+
+<!-- From here on out, shameless copy-paste from layouts/shortcodes/task_tables.html -->
+{{ $id := strings.Replace $dataFile.name " " "-" }}
+{{ $id := strings.Replace $id "(" "" }}
+{{ $id := strings.Replace $id ")" "" }}
+{{ $id := strings.Replace $id "," "-" }}
+{{ $id := strings.Replace $id "." "-" }}
+{{ $id := strings.Replace $id "/" "-" }}
+{{ $.Scratch.Set "count" 0 }}
+
+<script>
+    function docReady(fn) {
+      // see if DOM is already available
+      if (document.readyState === "complete" || document.readyState === "interactive") {
+        // call on next available tick
+        setTimeout(fn, 1);
+      } else {
+        document.addEventListener("DOMContentLoaded", fn);
+      }
+    }
+
+    docReady( function() {
+      $(document).ready( function () {
+        $({{ printf "#%s" $id }}).DataTable(
+        {"paging": false,
+        "bInfo" : false,
+        "searching": false,
+        "columnDefs":[
+          {
+            "orderable": false, "targets":[
+            {{ range $dataFile.headers.fixed }}
+              {{ printf "%s" . }},
+            {{ end }}
+            ]
+          }
+        ]
+      }
+        );
+      } );
+    }
+    )
+  </script>
+
+  <h3>{{ $dataFile.name }}</h3>
+
+  <table id="{{ $id }}" class="display center" >
+    <thead>
+      {{ range $dataFile.headers.names }}
+        <th class="{{ . }}">
+          {{ . }}
+        </th>
+      {{ end }}
+    </thead>
+
+    {{ range $method := $dataFile.results }}
+    <tr>
+      {{ range $attr := $dataFile.headers.names }}
+        {{ $val := index $method $attr }}
+        {{ if (eq $attr "Name") }}
+        <td>
+        {{ else }}
+        <td class="text-center">
+        {{ end }}
+          {{ if (eq $attr "Paper" )}}
+            <a href='{{ index $method "Paper URL"}}'> <i class="fas fa-file-alt"></i></a>
+
+          {{ else if (eq $attr "Code")}}
+            <a href='{{ $val }}'><p>v{{ index $method "Version"}}</p></a>
+          {{ else if (eq $attr "Rank")}}
+            <strong>{{ $val }}</strong>
+          {{ else if not (in "Name Paper Code Year" $attr) }}
+             {{ lang.NumFmt 2 $val }}
+          {{ else }}
+            {{ $val }}
+          {{ end }}
+        </td>
+      {{ end }}
+    {{ end }}
+    </tr>
+  </table>
+  <br>
