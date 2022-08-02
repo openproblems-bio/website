@@ -1,12 +1,12 @@
 ---
 # Display name
-title: Malte Lücken, D.Phil
+title: Angela O. Pisco, PhD
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: Co-founder of Open Problems, Group Leader at Helmholtz Munich
+role: Associate Director of Bioinformatics at Chan Zuckerberg Biohub
 
 # Organizations/Affiliations
 organizations:

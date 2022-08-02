@@ -6,7 +6,7 @@ title: Daniel B. Burkhardt, PhD.
 superuser: true
 
 # Role/position
-role: Co-founder
+role: Co-founder of Open Problems, Machine Learning Scientist at Cellarity
 
 # Organizations/Affiliations
 organizations:
@@ -60,7 +60,6 @@ highlight_name: false
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Core contributors
-  - Leadership team
+  - Core team
 ---
 

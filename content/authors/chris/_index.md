@@ -1,12 +1,12 @@
 ---
 # Display name
-title: Malte Lücken, D.Phil
+title: Christopher Lance
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: Co-founder of Open Problems, Group Leader at Helmholtz Munich
+role: PhD Student at Helmholtz Munich
 
 # Organizations/Affiliations
 organizations:

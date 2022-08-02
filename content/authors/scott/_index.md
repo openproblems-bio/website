@@ -1,16 +1,16 @@
 ---
 # Display name
-title: Malte Lücken, D.Phil
+title: Scott Gigante, PhD
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: Co-founder of Open Problems, Group Leader at Helmholtz Munich
+role: Co-founder of Open Problems, Sr. Machine Learning Scientist at Immunai
 
 # Organizations/Affiliations
 organizations:
-  - name: Helmholtz Munich
+  - name: Immunai
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
