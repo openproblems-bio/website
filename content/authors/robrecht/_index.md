@@ -6,7 +6,7 @@ title: Robrecht Cannoodt, PhD
 superuser: false
 
 # Role/position
-role: Data Science Consultant at Data Intuitive
+role: Core Developer at Open Problems, Data Science Engineer at Data Intuitive
 
 # Organizations/Affiliations
 organizations:
@@ -19,16 +19,16 @@ bio:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:johnny@appleseed.com'
+    link: 'mailto:robrecht@data-intuitive.com'
   - icon: twitter
     icon_pack: fab
-    link: https://twitter.com/johnnyappleseed
+    link: https://twitter.com/rcannood
   - icon: github
     icon_pack: fab
-    link: https://github.com/johnnyappleseed
+    link: https://github.com/rcannood
   - icon: linkedin
     icon_pack: fab
-    link: https://www.linkedin.com/in/johnny-appleseed/
+    link: https://www.linkedin.com/in/robrecht-cannoodt/
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ''
@@ -39,6 +39,6 @@ highlight_name: false
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Core contributors
+  - Core team
 ---
 
