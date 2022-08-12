@@ -39,7 +39,7 @@ weight = 1  # Order that this section will appear.
 # **Multimodal Single-Cell Integration Across Time, Individuals, and Batches**
 A NeurIPS Competition (2022)
 
- <a href="https://docs.google.com/forms/d/e/1FAIpQLSe90Oky4-1b0HbdLsp5Yqo9juCd2mq-NlGHU9NHRW1ECok1xQ/viewform" target="blank"><button type="button" class="btn btn-primary" style="font-size: 1rem; border: 1px solid white; color:white; height: 40px; padding: 0px 15px"><strong>Sign up for updates</strong></button></a>
+ <a href="https://www.kaggle.com/competitions/open-problems-multimodal/" target="blank"><button type="button" class="btn btn-primary" style="font-size: 1rem; border: 1px solid white; color:white; height: 40px; padding: 0px 15px"><strong>Sign up on Kaggle</strong></button></a>
 
 <a href="https://openproblems.bio/neurips_2021" target="blank"><button type="button" class="btn btn-secondary" style="font-size: 0.8rem; border: 1px solid white; color:white; height: 30px; padding: 0px 15px"><strong>2021 Competition Page</strong></button></a>
 
