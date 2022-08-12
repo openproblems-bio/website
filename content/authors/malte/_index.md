@@ -17,18 +17,15 @@ organizations:
 bio: 
 
 social:
-  - icon: envelope
-    icon_pack: fas
-    link: 'mailto:johnny@appleseed.com'
   - icon: twitter
     icon_pack: fab
-    link: https://twitter.com/johnnyappleseed
+    link: https://twitter.com/MDLuecken
   - icon: github
     icon_pack: fab
-    link: https://github.com/johnnyappleseed
+    link: https://github.com/luckymd
   - icon: linkedin
     icon_pack: fab
-    link: https://www.linkedin.com/in/johnny-appleseed/
+    link: https://www.linkedin.com/in/malte-lücken-b8b21049/
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ''

@@ -1,12 +1,13 @@
 ---
 # Display name
-title: Jonathan Bloom, PhD
+title: Jonathan M. Bloom, PhD
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: Purposefully Unemployed; Formerly Cellarity and Broad Institute
+role: Purposefully Unemployed; formerly Cellarity, Broad Institute, MIT
+
 
 # Organizations/Affiliations
 organizations:
@@ -19,16 +20,16 @@ bio:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:johnny@appleseed.com'
+    link: 'mailto:jonathan.bloom.cv@gmail.com'
   - icon: twitter
     icon_pack: fab
-    link: https://twitter.com/johnnyappleseed
+    link: https://twitter.com/MorseCell
   - icon: github
     icon_pack: fab
-    link: https://github.com/johnnyappleseed
+    link: https://github.com/jbloom22
   - icon: linkedin
     icon_pack: fab
-    link: https://www.linkedin.com/in/johnny-appleseed/
+    link: https://www.linkedin.com/in/jon-bloom/
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ''
