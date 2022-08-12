@@ -4,20 +4,44 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 # Appearance
+appearance:
+  theme_day: minimal
+  theme_night: minimal
+  font: 'minimal'
+  font_size: M
 
-theme: minimal
-day_night: false
-font: 'minimal'
-font_size: M
+# Site header
+
+header:
+  navbar:
+    enable: true
+    align: l
+    show_logo: true
+    show_language: false
+    show_day_night: false
+    show_search: false
+    highlight_active_link: true
 
 # SEO
 
-site_type: Project
+marketing:
+  seo:
+    site_type: Organization
+    local_business_type: ''
+    org_name: 'Open Problems in Single-Cell Analysis'
+    description: 'Aggregating and Benchmarking Open Problems in Single Cell Analysis'
+    twitter: 'dbburkhardt'
+  analytics:
+    google_analytics: 'UA-178400615-1'
+    baidu_tongji: ''
+  verification:
+    google: ''
+    baidu: ''
+site_type: Organization
 local_business_type: ''
 org_name: 'Open Problems in Single Cell Analysis'
 description: 'Aggregating and Benchmarking Open Problems in Single Cell Analysis'
 twitter: ''
-sharing_image: "social.jpg"
 # Site header
 
 main_menu:
@@ -36,58 +60,39 @@ time_format: '3:04 PM'
 
 # Site features
 
-highlight: true
-highlight_languages: ["python", "r", "bash", "sh"]  # Add support for highlighting additional languages
-highlight_style: "github-gist"  # For supported styles, see https://cdnjs.com/libraries/highlight.js/
+features:
+  syntax_highlighter:
+    enable: true
+    extra_languages:
+      - r
+      - latex
+      - python
+  math:
+    enable: true
+  privacy_pack:
+    enable: false
+  repository:
+    url: 'https://github.com/openproblems-bio/website'
+    content_dir: content
+    branch: main
+  comment:
+    provider: ''
+    disqus:
+      shortname: ''
+      show_count: true
+    commento:
+      url: ''
+  search:
+    provider: wowchemy
+    algolia:
+      app_id: ''
+      api_key: ''
+      index_name: ''
+      show_logo: false
 
-math: true
-diagram: false
-privacy_pack: false
-edit_page:
-  repo_url: ''
-  content_dir: ''
-  repo_branch: main
-  editable:
-    book: false
-show_related:
-  book: true
-reading_time: true
-section_pager: false
-docs_section_pager: true
-sharing: true
-copyright_license:
-  enable: false
-  allow_derivatives: false
-  share_alike: true
-  allow_commercial: false
-  notice: 'This work is licensed under {license}'
-plugins_js: []
-breadcrumb:
-  page_types:
-    book: true
-comments:
-  provider: ''
-  commentable:
-    book: true
-  disqus:
-    shortname: ''
-    show_count: true
-  commento:
-    url: ''
-search:
-  provider: wowchemy
-  algolia:
-    app_id: ''
-    api_key: ''
-    index_name: ''
-    show_logo: false
-marketing:
-  google_analytics: 'UA-178400615-1'
-  google_tag_manager: ''
-  google_site_verification: ''
-cms:
-  branch: main
-  local_backend: false
-icon:
-  pack:
-    ai: false
+extensions:
+  cms:
+    branch: main
+    local_backend: false
+  academicons:
+    enable: false
