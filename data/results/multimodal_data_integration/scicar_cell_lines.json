@@ -1,6 +1,7 @@
 {
     "name": "sciCAR Cell Lines", 
     "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE117089", 
+    "data_reference": "https://doi.org/10.1126/science.aau0730", 
     "headers": {
         "names": [
             "Rank", 
@@ -29,28 +30,28 @@
             "Year": 1975, 
             "Library": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.procrustes.html", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/procrustes", 
-            "Version": "1.8.1", 
-            "Runtime (min)": 1.15, 
-            "CPU (%)": 243.8, 
-            "Memory (GB)": 0.6777, 
+            "Version": "1.9.0", 
+            "Runtime (min)": 1.3833333333333333, 
+            "CPU (%)": 340.5, 
+            "Memory (GB)": 0.68, 
             "Rank": 2, 
-            "Mean squared error": 0.8936530945028042, 
-            "kNN Area Under the Curve": 0.08621172526637894
+            "Mean squared error": 0.8943315909306856, 
+            "kNN Area Under the Curve": 0.08540924487123999
         }, 
         {
             "Name": "Harmonic Alignment (sqrt CPM)", 
             "Paper": "Harmonic Alignment", 
-            "Paper URL": "https://epubs.siam.org/doi/abs/10.1137/1.9781611976236.36", 
+            "Paper URL": "https://doi.org/10.1137/1.9781611976236.36", 
             "Year": 2020, 
             "Library": "https://github.com/KrishnaswamyLab/harmonic-alignment", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/harmonic_alignment", 
             "Version": "0.0", 
-            "Runtime (min)": 2.6, 
-            "CPU (%)": 380.7, 
-            "Memory (GB)": 0.9048, 
-            "Rank": 4, 
-            "Mean squared error": 0.9999188308023853, 
-            "kNN Area Under the Curve": 0.04445901043264833
+            "Runtime (min)": 4.45, 
+            "CPU (%)": 577.7, 
+            "Memory (GB)": 0.9101, 
+            "Rank": 5, 
+            "Mean squared error": 1.0001596123594634, 
+            "kNN Area Under the Curve": 0.04209977002016152
         }, 
         {
             "Name": "Mutual Nearest Neighbors (log CPM)", 
@@ -59,13 +60,28 @@
             "Year": 2018, 
             "Library": "https://github.com/LTLA/batchelor", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/mnn", 
-            "Version": "1.12.1", 
-            "Runtime (min)": 2.3333333333333335, 
-            "CPU (%)": 75.7, 
+            "Version": "1.12.3", 
+            "Runtime (min)": 4.133333333333334, 
+            "CPU (%)": 59.9, 
             "Memory (GB)": 1.9, 
             "Rank": 3, 
-            "Mean squared error": 0.899747120376009, 
-            "kNN Area Under the Curve": 0.07275144596366527
+            "Mean squared error": 0.8991167741155816, 
+            "kNN Area Under the Curve": 0.07283055347302053
+        }, 
+        {
+            "Name": "Harmonic Alignment (log scran)", 
+            "Paper": "Harmonic Alignment", 
+            "Paper URL": "https://doi.org/10.1137/1.9781611976236.36", 
+            "Year": 2020, 
+            "Library": "https://github.com/KrishnaswamyLab/harmonic-alignment", 
+            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/harmonic_alignment", 
+            "Version": "0.0", 
+            "Runtime (min)": 7.666666666666667, 
+            "CPU (%)": 331.7, 
+            "Memory (GB)": 3.3, 
+            "Rank": 4, 
+            "kNN Area Under the Curve": 0.05599414548550246, 
+            "Mean squared error": 1.0000137244923197
         }, 
         {
             "Name": "Mutual Nearest Neighbors (log scran)", 
@@ -74,28 +90,13 @@
             "Year": 2018, 
             "Library": "https://github.com/LTLA/batchelor", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/mnn", 
-            "Version": "1.12.1", 
-            "Runtime (min)": 2.7, 
-            "CPU (%)": 100.1, 
+            "Version": "1.12.3", 
+            "Runtime (min)": 4.333333333333333, 
+            "CPU (%)": 71.7, 
             "Memory (GB)": 3.3, 
             "Rank": 1, 
-            "kNN Area Under the Curve": 0.09928193588623076, 
-            "Mean squared error": 0.7237576215640483
-        }, 
-        {
-            "Name": "Harmonic Alignment (log scran)", 
-            "Paper": "Harmonic Alignment", 
-            "Paper URL": "https://epubs.siam.org/doi/abs/10.1137/1.9781611976236.36", 
-            "Year": 2020, 
-            "Library": "https://github.com/KrishnaswamyLab/harmonic-alignment", 
-            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/harmonic_alignment", 
-            "Version": "0.0", 
-            "Runtime (min)": 4.2, 
-            "CPU (%)": 268.5, 
-            "Memory (GB)": 3.3, 
-            "Rank": 5, 
-            "Mean squared error": 1.0001664008413693, 
-            "kNN Area Under the Curve": 0.05857490926903477
+            "kNN Area Under the Curve": 0.09922770975384367, 
+            "Mean squared error": 0.7154929845616024
         }
     ]
 }
