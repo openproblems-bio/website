@@ -1,0 +1,55 @@
+<!-- NOTE: this should be /tasks/<task-name> -->
+{{$task := path.Base .Page.File.Dir}}
+<!-- NOTE: this should be /tasks/<task-name>/<dataset>.md -->
+{{$path := path.Join "data/results" $task}}
+<div class="table-responsive">
+  <table class="table table-hover  w-100 d-block d-md-table">
+    <thead>
+      <tr>
+        <th scope="col">Dataset</th>
+        <th scope="col">Best Method</th>
+        <th scope="col">Paper</th>
+        <th scope="col">Code</th>
+      </tr>
+    </thead>
+    <tbody class="">
+      {{range $page := .Page.Pages}}
+
+        <!-- NOTE: this should be /tasks/<task-name>/<dataset>.md -->
+        <!-- NOTE: this should match a file named /data/results/<task-name>/<dataset>.json-->
+        {{$dataset := $page.File.TranslationBaseName}}
+
+        {{$path := path.Join "data/results" $task $dataset}}
+        {{$url := ".json" |  printf "%s%s" $path}}
+
+        <!-- NOTE: no need for range any more, working one at a time -->
+        <!-- NOTE: 
+              data is not formatted for proper use with hugo so
+              we need to grab each to do this escape code nonsense
+              to access the json 
+        -->
+        {{$dataset := getJSON $url}}
+        <tr>
+          <td><a href="{{$page.Permalink}}">{{$dataset.name}}</a></td>
+          
+          {{ range $method := $dataset.results }}
+            {{$rank := index $method "Rank"}}
+            {{$name := index $method "Name"}}
+            {{if eq (int $rank) 1}}
+            <td>
+              {{$name}}
+            </td>
+            <td>
+              <a href='{{ index $method "Paper URL"}}'> <i class="fas fa-file-alt"></i></a>
+            </td>
+            <td>                
+                <a href='{{ index $method "Code" }}'><p>v{{ index $method "Version"}}</p></a>
+            </td>
+            {{end}}
+          {{end}}          
+        </tr>
+      {{end}}
+    
+    </tbody>
+  </table>
+</div>
