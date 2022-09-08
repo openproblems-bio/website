@@ -32,13 +32,8 @@ Scaling from a dozen cells a decade ago to millions of cells today, single-cell 
 
 In [2021](https://openproblems.bio/neurips_2021), we organized the first single-cell analysis competition at NeurIPS bringing together 280 participants to compete on an atlas-scale dataset of human bone marrow cells from 12 donors generated across 4 sites globally. 
 
-In this competition for [NeurIPS 2022](https://neurips.cc/Conferences/2022/CompetitionTrack), we will build on this success, address concerns identified from a survey of the participants in our 2021 competition, and extend the tasks to include a further open problem in single-cell data science: modelling multimodal time series. We are generating a new dataset to complement our previous atlas, modifying our competition submission system, and refining the task metrics to better capture biological processes regulating the flow of genetic information.
+In this competition for [NeurIPS 2022](https://neurips.cc/Conferences/2022/CompetitionTrack), we are extending the challenge to drive innovation in modeling temporal single-cell data measured in multiple modalities at multiple time points. In this years competition, we generated a 300,000-cell time course dataset of CD34+ hematopoietic stem and progenitor cells (HSPC) from four human donors at five time points. HSPCs are stem cells that give rise to all other cells in the blood throughout adult life, and a 10-day time course captures important biology in CD34+ HSPCs.
 
-We're hard at work finalizing the details of the competition. To be the first to hear about the competition, sign up for our [mailing list](https://docs.google.com/forms/d/e/1FAIpQLSe90Oky4-1b0HbdLsp5Yqo9juCd2mq-NlGHU9NHRW1ECok1xQ/viewform) for updates. 
+In the test set, taken from an unseen later time point in the dataset, competitors will be provided with one modality and be tasked with predicting a paired modality measured in the same cell. The added challenge of this competition is that the test data will be from a later time point than any time point in the training data.
 
-
-For now, check out this video we produced for our 2021 competition below!
-
-{{< youtube y5YbM0tbvCo >}}
-<br>
-To learn more, you can watch a [lecture](https://www.youtube.com/watch?v=ZXDILOyiy7A) presented at the Broad Institute's Models Inferences and Algorithms meeting (<a href="https://drive.google.com/file/d/1olW-WN-kHYuG15MSgAK3GUqNtMCPFBq3/view?usp=sharing" style="color: #EB5252;">slides</a>).
+To read all the details and join to compete for $25,000 in prizes, [sign up on Kaggle!](https://www.kaggle.com/competitions/open-problems-multimodal/)
