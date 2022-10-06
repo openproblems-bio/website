@@ -46,6 +46,12 @@ _In alphabetical order_
     single-cell omics, more specifically on trajectory inference. Robrecht 
     oversees infrastructure development for building collaborative, scalable 
     and reproducible pipelines using NextFlow and Viash.
+    
+-   **Peter Holderrieth** is a Machine Learning Scientist at Cellarity where he works on hit 
+    prediction tools based on single-cell data. Previously, he was an Associate Scientist at 
+    Genomics plc. Originally trained as a mathematician, he holds an MSc in Statistics and 
+    MSc in Neuroscience from the University of Oxford.
+    
 
 -   **Smita Krishnaswamy** is an associate professor of Computer Science and
     Genetics at Yale University. Her research focuses on unsupervised
@@ -53,7 +59,9 @@ _In alphabetical order_
     for big biomedical data. She is a faculty advisor for Open Problems
     in Single-Cell Analysis.
 
-- **Christopher Lance** is a PhD candidate in the Machine Learning Group of Prof. Fabian Theis at the Helmholtz Center Munich where he works on establishing best practices for analysing multimodal single cell data and the integration of multiple modalities.
+-   **Christopher Lance** is a PhD candidate in the Machine Learning Group of Prof. Fabian Theis 
+    at the Helmholtz Center Munich where he works on establishing best practices for analysing multimodal single-cell data
+    and the integration of multiple modalities.
 
 -   **Malte Lücken** is a senior postdoctoral researcher and team leader
     for integrative single-cell analysis in the Machine Learning Group
