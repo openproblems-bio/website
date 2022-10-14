@@ -16,8 +16,6 @@ subtitle = "Using cell labels from a reference dataset to annotate an unseen dat
   columns = "1"
 
 
-  # Text color (true=light or false=dark).
-  text_color_light = false
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
