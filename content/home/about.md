@@ -63,7 +63,7 @@ We are inspired by the progress machine learning has made in computer vision, na
 
 These challenges provide both direction for methods developers and provide a straightforward framework for evaluating methods. It's not surprising that the biggest machine learning advances in the biological sciences have also occurred within the framework of formalized challenges. When DeepMind wanted to tackle protein folding prediction, they pursued state-of-the-art performance in the [Critical Assessment of protein Structure Prediction](https://predictioncenter.org/). Similarly, the [Dream Challenges](http://dreamchallenges.org/challenges/) and Recursion Pharmaceuticals' [RXRX competitions](https://www.rxrx.ai/) strive to build on these large-scale high-reward challenges to drive innovation.
 
-We want to leverage the strengths of these machine learning challenges to drive innovation in computational biology for single-cell analysis.
+Of course, computational single-cell methods have seen a lot of innovation in the past years. This is partly driven by benchmarking efforts, that quantify progress and set goals. Yet, we noticed that many successful methods draw from innovations in computer vision and other areas of machine learning that are more mature. We want to promote this cross-fertilization to increase the pace of innovation for single-cell analysis, and enable machine learning scientists to use their skills to address relevant tasks in digital biomedical research.
 
 # Our approach
 We think there are four key traits that allow these challenges to drive innovation:  
