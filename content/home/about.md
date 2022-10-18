@@ -76,6 +76,11 @@ Our goal is to provide an open source, community driven, extensible platform for
 
 Open Problems is hosted on GitHub. Benchmarks are evaluated using AWS thanks to generous support from the [Chan Zuckerberg Initiative](https://chanzuckerberg.com/science/). Leaderboards are hosted on our [Results](/results) page. All code, methods, and leadership is driven by broad input from the scientific community.
 
+# Who are we?
+We are machine learning scientists, computational biologists, and single-cell data analysts who formalize computational tasks in single-cell analysis and collaborate with molecular biologists to generate benchmarking datasets that challenge methods and method developers to perform ever better.
+
+Meet the contributors on [our Team page](/team).
+
 # Join us!
 
 We'd love for you to get involved.  
