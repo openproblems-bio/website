@@ -15,10 +15,6 @@ subtitle = ""
   # Choose how many columns the section has. Valid values: 1 or 2.
   columns = "1"
 
-[design.background]
-    # Text color (true=light or false=dark).
-  text_color_light = false
-
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
   padding = ["20px", "0", "20px", "0"]
