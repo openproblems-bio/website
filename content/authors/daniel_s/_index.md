@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Daniel Strobel
+title: Daniel Strobl
 
 # Is this the primary user of the site?
 superuser: false
