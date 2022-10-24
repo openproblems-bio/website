@@ -44,20 +44,15 @@
                         JSON file to render this more thoroughly 
                 -->
                 {{ range .Pages }}
-                    <div class="col-sm-6">  
-                        <div class="card">                            
-                            <object 
-                                data='/media/thumbnails/{{print (strings.Replace (lower .Title) " " "_") ".png"}}' type="image/png" 
+                    <div class="col-sm-6">
+                        <div class="card">
+                            {{ $thumb_img_url := (print "/media/thumbnails/" (strings.Replace (lower .Title) " " "_") ".png")}}
+                            <img 
+                                src='{{ $thumb_img_url }}'
                                 class="card-img-top mx-auto d-block mb-2 img-thumbnail" 
                                 style="max-height:200px; max-width:600px;"
-                            >
-                                <img 
-                                    src='/media/icon.png'
-                                    class="my-auto py-3 mx-auto" 
-                                    alt="{{.Title}} card thumbnail"
-                                    style="max-height:200px; max-width: 200px;"
-                                >
-                            </object>
+                                onerror="if (this.src != '{{ $thumb_img_url }}') { this.src = '/media/icon.png'; this.style='max-height:200px; max-width:200px;'; this.className='my-auto py-3 mx-auto'; this.onerror = ''; }" 
+                                alt="{{.Title}} thumbnail">
                             <div class="card-body">
                                 <h5 class="card-title">
                                     {{ .Title }}
