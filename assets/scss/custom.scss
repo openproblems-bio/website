@@ -131,3 +131,13 @@ a {
 span {
   font-family: 'hk_groteskmedium', Fallback, sans-serif;
 }
+
+// override the default width for a people widget
+// based on: https://github.com/wowchemy/wowchemy-hugo-themes/blob/c51be55f93177c75578521f7a513eec87a7cb818/modules/wowchemy/assets/scss/wowchemy/widgets/_people.scss#L29
+// at the moment, setting the width to 25% works better for our site
+// since a lot of the groups have 6 people in it.
+@media (min-width: 992px) {
+  .people-widget .col-sm-auto {
+    width: 25%;
+  }
+}
