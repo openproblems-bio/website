@@ -76,7 +76,7 @@
           {{ if (eq $attr "Paper" )}}
             <a href='{{ index $method "Paper URL"}}'> <i class="fas fa-file-alt"></i></a>
 
-          {{ else if (eq $attr "Code")}}
+          {{ else if (eq $attr "Implementation")}}
             <a href='{{ $val }}'><p>v{{ index $method "Version"}}</p></a>
           {{ else if (eq $attr "Rank")}}
             <strong>{{ $val }}</strong>
