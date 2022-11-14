@@ -75,12 +75,13 @@
         {{ end }}
           {{ if (eq $attr "Paper" )}}
             <a href='{{ index $method "Paper URL"}}'> <i class="fas fa-file-alt"></i></a>
-
-          {{ else if (eq $attr "Implementation")}}
-            <a href='{{ $val }}'><p>v{{ index $method "Version"}}</p></a>
+          {{ else if (eq $attr "Name")}}
+            <a href='{{ index $method "Implementation" }}'>{{ $val}}</a>
+          {{ else if (eq $attr "Library")}}
+            <a href='{{ $val }}'>v{{ index $method "Version" }}</a>
           {{ else if (eq $attr "Rank")}}
             <strong>{{ $val }}</strong>
-          {{ else if not (in "Name Paper Code Year" $attr) }}
+          {{ else if not (in "Name Paper Code Year Implementation Library Version" $attr) }}
              {{ lang.NumFmt 2 $val }}
           {{ else }}
             {{ $val }}
