@@ -1,13 +1,13 @@
 +++
 title = "Denoising"
-summary = "Denoising UMI counts by Molecular Cross Validation"
+summary = "Removing noise in sparse single-cell RNA-sequencing count data"
 headless = false
 theme = "op"
 +++
 
 ## The task
 
-Single-cell RNA-Seq protocols only detect a small fraction of the mRNA molecules present
+Single-cell RNA-Seq protocols only detect a fraction of the mRNA molecules present
 in each cell. As a result, the measurements (UMI counts) observed for each gene and each
 cell are associated with generally high levels of technical noise ([Grün et al.,
 2014](https://www.nature.com/articles/nmeth.2930)). Denoising describes the task of
