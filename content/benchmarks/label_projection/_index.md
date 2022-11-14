@@ -1,6 +1,6 @@
 +++
 title = "Label Projection"
-summary = "Classification of cell types from an annotated reference"
+summary = "Automated cell type annotation from rich, labeled reference data"
 headless = false
 theme = "op"
 +++
