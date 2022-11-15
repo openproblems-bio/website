@@ -1,6 +1,6 @@
 +++
 title = "Spatial Decomposition"
-summary = "Decompose spatial gene expression data by cell type from single cell reference"
+summary = "Calling cell-type compositions for spot-based spatial transcriptomics data"
 headless = false
 theme = "op"
 +++
