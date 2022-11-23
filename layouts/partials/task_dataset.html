@@ -66,7 +66,7 @@
     Toggle columns:
     <form id="visibility">
     {{ range $index, $header := $dataFile.headers }}
-      <input type="checkbox" class="toggle-vis" data-column="{{ $index }}" name="toggle{{ $index }}" checked>
+      <input type="checkbox" class="toggle-vis" data-column="{{ $index }}" name="toggle{{ $index }}" {{ if index $header "enabled" }}checked{{ end }}>
       <label for="toggle{{ $index }}">{{ index $header "name" }}</label>
     {{ end }}
     </form>
@@ -103,10 +103,14 @@
           {{ end }}
           {{ if ne $result_name "" }}
             {{ $val := index $method $result_name }}
-            {{ if ne $digits "none" }}
-              {{ lang.NumFmt $digits $val }}
+            {{ if ne $val nil }}
+              {{ if ne $digits "none" }}
+                {{ lang.NumFmt $digits $val }}
+              {{ else }}
+                {{ $val }}
+              {{ end }}
             {{ else }}
-              {{ $val }}
+              NaN
             {{ end }}
           {{ end }}
           {{ if $bold }}
