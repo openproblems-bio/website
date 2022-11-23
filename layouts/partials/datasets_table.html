@@ -33,17 +33,17 @@
           <td><a href="{{$page.Permalink}}">{{$dataset.name}}</a></td>
           
           {{ range $method := $dataset.results }}
-            {{$rank := index $method "Rank"}}
-            {{$name := index $method "Name"}}
+            {{$rank := index $method "rank"}}
+            {{$name := index $method "name"}}
             {{if eq (int $rank) 1}}
             <td>
               {{$name}}
             </td>
             <td>
-              <a href='{{ index $method "Paper URL"}}'> <i class="fas fa-file-alt"></i></a>
+              <a href='{{ index $method "paper_url"}}'> <i class="fas fa-file-alt"></i></a>
             </td>
             <td>                
-                <a href='{{ index $method "Implementation" }}'><p>v{{ index $method "Version"}}</p></a>
+                <a href='{{ index $method "implementation" }}'><p>{{ index $method "version"}}</p></a>
             </td>
             {{end}}
           {{end}}          

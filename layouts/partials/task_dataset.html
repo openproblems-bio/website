@@ -1,127 +1,136 @@
 <!-- NOTE: this should be /tasks/<task-name> -->
-{{$task := path.Base .Page.File.Dir}}
-<!-- NOTE: this should be /tasks/<task-name>/<dataset>.md -->
-<!-- NOTE: this should match a file named /data/results/<task-name>/<dataset>.json-->
-{{$dataset := .Page.File.TranslationBaseName}}
-
-{{$path := path.Join "data/results" $task $dataset}}
-{{$url := ".json" |  printf "%s%s" $path}}
-
-<!-- NOTE: no need for range any more, working one at a time -->
-{{$dataFile := getJSON $url}}
-
-
-<!-- From here on out, shameless copy-paste from layouts/shortcodes/task_tables.html -->
-{{ $id := strings.Replace $dataFile.name " " "-" }}
-{{ $id := strings.Replace $id "(" "" }}
-{{ $id := strings.Replace $id ")" "" }}
-{{ $id := strings.Replace $id "," "-" }}
-{{ $id := strings.Replace $id "." "-" }}
-{{ $id := strings.Replace $id "/" "-" }}
-{{ $.Scratch.Set "count" 0 }}
-
-<script>
-    function docReady(fn) {
-      // see if DOM is already available
-      if (document.readyState === "complete" || document.readyState === "interactive") {
-        // call on next available tick
-        setTimeout(fn, 1);
-      } else {
-        document.addEventListener("DOMContentLoaded", fn);
+  {{$task := path.Base .Page.File.Dir}}
+  <!-- NOTE: this should be /tasks/<task-name>/<dataset>.md -->
+  <!-- NOTE: this should match a file named /data/results/<task-name>/<dataset>.json-->
+  {{$dataset := .Page.File.TranslationBaseName}}
+  
+  {{$path := path.Join "data/results" $task $dataset}}
+  {{$url := ".json" |  printf "%s%s" $path}}
+  
+  <!-- NOTE: no need for range any more, working one at a time -->
+  {{$dataFile := getJSON $url}}
+  
+  
+  <!-- From here on out, shameless copy-paste from layouts/shortcodes/task_tables.html -->
+  {{ $id := strings.Replace $dataFile.name " " "-" }}
+  {{ $id := strings.Replace $id "(" "" }}
+  {{ $id := strings.Replace $id ")" "" }}
+  {{ $id := strings.Replace $id "," "-" }}
+  {{ $id := strings.Replace $id "." "-" }}
+  {{ $id := strings.Replace $id "/" "-" }}
+  {{ $.Scratch.Set "count" 0 }}
+  
+  <script>
+      function docReady(fn) {
+        // see if DOM is already available
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+          // call on next available tick
+          setTimeout(fn, 1);
+        } else {
+          document.addEventListener("DOMContentLoaded", fn);
+        }
       }
-    }
-
-    docReady( function() {
-      $(document).ready(function () {
-        var table = $({{ printf "#%s" $id }}).DataTable({
-          "paging": false,
-          "bInfo" : false,
-          "searching": false,
-          "columnDefs": [{
-            "orderable": false, 
-            "targets": [
-              {{ range $dataFile.headers }}
-                {{ if not (index . "orderable") }}
-                  {{ index . "name" }},
-                {{end}}
+  
+      docReady( function() {
+        $(document).ready(function () {
+          var table = $('#{{ $id }}').DataTable({
+            "paging": false,
+            "bInfo" : false,
+            "searching": false,
+            "columns": [
+              {{ range $header := $dataFile.headers }}
+                { 
+                  name: '{{ index $header "id" }}', 
+                  orderable: {{ index $header "orderable" }}
+                },
               {{ end }}
             ]
-          }]
+          });
+          $('input.toggle-vis').on('change',function(){
+            var _val = $(this).is(':checked');
+            var data_cat = $(this).attr('data-cat')
+            // Get the column API object
+            var columns = table.columns('.' + data_cat);
+            // Toggle the visibility
+            columns.visible(_val);
+          });
+          $('input.toggle-vis').change();
         });
-        $('input.toggle-vis').on('change',function(){
-          var _val = $(this).is(':checked');
-          // Get the column API object
-          var column = table.column($(this).attr('data-column'));
-          // Toggle the visibility
-          column.visible(_val);
-        });
-        $('input.toggle-vis').change();
-      });
-    })
-  </script>
-
-  <h3>{{ $dataFile.name }}</h3>
-
-  <div>
-    Toggle columns:
-    <form id="visibility">
-    {{ range $index, $header := $dataFile.headers }}
-      <input type="checkbox" class="toggle-vis" data-column="{{ $index }}" name="toggle{{ $index }}" {{ if index $header "enabled" }}checked{{ end }}>
-      <label for="toggle{{ $index }}">{{ index $header "name" }}</label>
-    {{ end }}
-    </form>
-  </div>
-
-  <table id="{{ $id }}" class="display center" >
-    <thead>
-      {{ range $dataFile.headers }}
-        <th class="{{ lower (replace (index . "name") " " "_") }}" title="{{ index . "tooltip" }}">
-          {{ index . "name" }}
-        </th>
+      })
+    </script>
+  
+    <h3>Results</h3>
+  
+    <div>
+      <form><small>
+      Toggle categories: &nbsp;
+      {{ range $cat := $dataFile.categories }}
+        <label>
+          <input type="checkbox" class="toggle-vis" data-cat="cat-{{ index $cat "id" }}" {{ if index $cat "enabled" }}checked{{ end }}/> 
+          {{ index $cat "label" }}
+        </label> &nbsp;
       {{ end }}
-    </thead>
-
-    {{ range $method := $dataFile.results }}
-    <tr>
-      {{ range $header := $dataFile.headers }}
-        {{ $header_name := index $header "name" }}
-        {{ $href := default "" (index $header "href") }}
-        {{ $bold := default false (index $header "bold") }}
-        {{ $html := default "" (index $header "html") }}
-        {{ $result_name := default "" (index $header "result_name") }}
-        {{ $align := default "center" (index $header "align") }}
-        {{ $digits := default "none" (index $header "digits") }}
-        <td class="text-{{ $align }}">
-          {{ if ne $href "" }}
-            <a href='{{ index $method $href }}'>
+      </small></form>
+    </div>
+  
+    <table id="{{ $id }}" class="display" >
+      <thead>
+        <tr>
+          {{ range $cat := $dataFile.categories }}
+            <th id="cat-{{ index $cat "id" }}" class="cat-{{ index $cat "id" }}" colspan="{{ index $cat "width" }}">
+              {{ index $cat "label" }}
+            </th>
           {{ end }}
-          {{ if $bold }}
-            <strong>
-          {{ end }}
-          {{ if ne $html "" }}
-            {{ safeHTML $html }}
-          {{ end }}
-          {{ if ne $result_name "" }}
-            {{ $val := index $method $result_name }}
-            {{ if ne $val nil }}
-              {{ if ne $digits "none" }}
-                {{ lang.NumFmt $digits $val }}
-              {{ else }}
-                {{ $val }}
-              {{ end }}
-            {{ else }}
-              NaN
+        </tr>
+        <tr>
+        {{ range $header := $dataFile.headers }}
+          <th id="col-{{ index $header "id" }}" class="cat-{{ index $header "category" }}" title="{{ index $header "tooltip" }}">
+            {{ index $header "label" }}
+          </th>
+        {{ end }}
+        </tr>
+      </thead>
+  
+      {{ range $method := $dataFile.results }}
+      <tr>
+        {{ range $header := $dataFile.headers }}
+          {{ $href := default "" (index $header "href") }}
+          {{ $bold := default false (index $header "bold") }}
+          {{ $html := default "" (index $header "html") }}
+          {{ $result_name := default "" (index $header "result_name") }}
+          {{ $align := default "center" (index $header "align") }}
+          {{ $digits := default "none" (index $header "digits") }}
+          <td class="text-{{ $align }}">
+            {{ if ne $href "" }}
+              <a href='{{ index $method $href }}'>
             {{ end }}
-          {{ end }}
-          {{ if $bold }}
-            </strong>
-          {{ end }}
-          {{ if ne $href "" }}
-            </a>
-          {{ end }}
-        </td>
+            {{ if $bold }}
+              <strong>
+            {{ end }}
+            {{ if ne $html "" }}
+              {{ safeHTML $html }}
+            {{ end }}
+            {{ if ne $result_name "" }}
+              {{ $val := index $method $result_name }}
+              {{ if ne $val nil }}
+                {{ if ne $digits "none" }}
+                  {{ lang.NumFmt $digits $val }}
+                {{ else }}
+                  {{ $val }}
+                {{ end }}
+              {{ else }}
+                NaN
+              {{ end }}
+            {{ end }}
+            {{ if $bold }}
+              </strong>
+            {{ end }}
+            {{ if ne $href "" }}
+              </a>
+            {{ end }}
+          </td>
+        {{ end }}
       {{ end }}
-    {{ end }}
-    </tr>
-  </table>
-  <br>
+      </tr>
+    </table>
+    <br>
