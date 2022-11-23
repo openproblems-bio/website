@@ -1,29 +1,113 @@
 {
     "name": "Immune (by batch)", 
     "data_url": "https://ndownloader.figshare.com/files/36086786", 
-    "data_reference": "https://doi.org/10.1038/s41592-021-01336-8", 
-    "headers": {
-        "names": [
-            "Rank", 
-            "Cell Cycle Score", 
-            "Isolated label Silhouette", 
-            "Silhouette", 
-            "Batch ASW", 
-            "PC Regression", 
-            "Memory (GB)", 
-            "Runtime (min)", 
-            "CPU (%)", 
-            "Name", 
-            "Paper", 
-            "Year", 
-            "Library"
-        ], 
-        "fixed": [
-            "Name", 
-            "Paper", 
-            "Library"
-        ]
-    }, 
+    "data_reference": "https://doi.org/10.1038/s41592-021-01336-8",
+    "headers": [
+        {
+            "name": "Rank",
+            "result_name": "Rank",
+            "orderable": true,
+            "tooltip": "Tooltip text",
+            "enabled": true,
+            "bold": true
+        },
+        {
+            "name": "Cell Cycle Score",
+            "result_name": "Cell Cycle Score",
+            "orderable": true,
+            "tooltip": "Tooltip text",
+            "enabled": false,
+            "digits": 2
+        },
+        {
+            "name": "Isolated label Silhouette",
+            "result_name": "Isolated label Silhouette",
+            "orderable": true,
+            "tooltip": "Tooltip text",
+            "enabled": false,
+            "digits": 2
+        },
+        {
+            "name": "Silhouette",
+            "result_name": "Silhouette",
+            "orderable": true,
+            "tooltip": "Tooltip text",
+            "enabled": true,
+            "digits": 2
+        },
+        {
+            "name": "Batch ASW",
+            "result_name": "Batch ASW",
+            "orderable": true,
+            "tooltip": "Tooltip text",
+            "enabled": true,
+            "digits": 2
+        },
+        {
+            "name": "PC Regression",
+            "result_name": "PC Regression",
+            "orderable": false,
+            "tooltip": "Tooltip text",
+            "enabled": true,
+            "digits": 2
+        },
+        {
+            "name": "Memory (GB)",
+            "result_name": "Memory (GB)",
+            "orderable": true,
+            "tooltip": "Tooltip text",
+            "enabled": true,
+            "digits": 1
+        },
+        {
+            "name": "Runtime (min)",
+            "result_name": "Runtime (min)",
+            "orderable": true,
+            "tooltip": "Tooltip text",
+            "enabled": true,
+            "digits": 1
+        },
+        {
+            "name": "CPU (%)",
+            "result_name": "CPU (%)",
+            "orderable": true,
+            "tooltip": "Tooltip text",
+            "enabled": true,
+            "digits": 1
+        },
+        {
+            "name": "Name",
+            "result_name": "Name",
+            "orderable": false,
+            "tooltip": "Tooltip text",
+            "enabled": true,
+            "href": "Implementation",
+            "align": "left"
+        },
+        {
+            "name": "Paper",
+            "orderable": false,
+            "tooltip": "Tooltip text",
+            "enabled": true,
+            "href": "Paper URL",
+            "html": "<i class=\"fas fa-file-alt\"/>"
+        },
+        {
+            "name": "Year",
+            "result_name": "Year",
+            "orderable": true,
+            "tooltip": "Tooltip text",
+            "enabled": true
+        },
+        {
+            "name": "Version",
+            "result_name": "Version",
+            "orderable": false,
+            "tooltip": "Tooltip text",
+            "enabled": true,
+            "href": "Library"
+        }
+    ],
     "results": [
         {
             "Name": "FastMNN embed (full/unscaled)", 
