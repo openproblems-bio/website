@@ -32,59 +32,88 @@
     }
 
     docReady( function() {
-      $(document).ready( function () {
-        $({{ printf "#%s" $id }}).DataTable(
-        {"paging": false,
-        "bInfo" : false,
-        "searching": false,
-        "columnDefs":[
-          {
-            "orderable": false, "targets":[
-            {{ range $dataFile.headers.fixed }}
-              {{ printf "%s" . }},
-            {{ end }}
+      $(document).ready(function () {
+        var table = $({{ printf "#%s" $id }}).DataTable({
+          "paging": false,
+          "bInfo" : false,
+          "searching": false,
+          "columnDefs": [{
+            "orderable": false, 
+            "targets": [
+              {{ range $dataFile.headers }}
+                {{ if not (index . "orderable") }}
+                  {{ index . "name" }},
+                {{end}}
+              {{ end }}
             ]
-          }
-        ]
-      }
-        );
-      } );
-    }
-    )
+          }]
+        });
+        $('input.toggle-vis').on('change',function(){
+          var _val = $(this).is(':checked');
+          // Get the column API object
+          var column = table.column($(this).attr('data-column'));
+          // Toggle the visibility
+          column.visible(_val);
+        });
+        $('input.toggle-vis').change();
+      });
+    })
   </script>
 
   <h3>{{ $dataFile.name }}</h3>
 
+  <div>
+    Toggle columns:
+    <form id="visibility">
+    {{ range $index, $header := $dataFile.headers }}
+      <input type="checkbox" class="toggle-vis" data-column="{{ $index }}" name="toggle{{ $index }}" checked>
+      <label for="toggle{{ $index }}">{{ index $header "name" }}</label>
+    {{ end }}
+    </form>
+  </div>
+
   <table id="{{ $id }}" class="display center" >
     <thead>
-      {{ range $dataFile.headers.names }}
-        <th class="{{ . }}">
-          {{ . }}
+      {{ range $dataFile.headers }}
+        <th class="{{ lower (replace (index . "name") " " "_") }}" title="{{ index . "tooltip" }}">
+          {{ index . "name" }}
         </th>
       {{ end }}
     </thead>
 
     {{ range $method := $dataFile.results }}
     <tr>
-      {{ range $attr := $dataFile.headers.names }}
-        {{ $val := index $method $attr }}
-        {{ if (eq $attr "Name") }}
-        <td>
-        {{ else }}
-        <td class="text-center">
-        {{ end }}
-          {{ if (eq $attr "Paper" )}}
-            <a href='{{ index $method "Paper URL"}}'> <i class="fas fa-file-alt"></i></a>
-          {{ else if (eq $attr "Name")}}
-            <a href='{{ index $method "Implementation" }}'>{{ $val}}</a>
-          {{ else if (eq $attr "Library")}}
-            <a href='{{ $val }}'>v{{ index $method "Version" }}</a>
-          {{ else if (eq $attr "Rank")}}
-            <strong>{{ $val }}</strong>
-          {{ else if not (in "Name Paper Code Year Implementation Library Version" $attr) }}
-             {{ lang.NumFmt 2 $val }}
-          {{ else }}
-            {{ $val }}
+      {{ range $header := $dataFile.headers }}
+        {{ $header_name := index $header "name" }}
+        {{ $href := default "" (index $header "href") }}
+        {{ $bold := default false (index $header "bold") }}
+        {{ $html := default "" (index $header "html") }}
+        {{ $result_name := default "" (index $header "result_name") }}
+        {{ $align := default "center" (index $header "align") }}
+        {{ $digits := default "none" (index $header "digits") }}
+        <td class="text-{{ $align }}">
+          {{ if ne $href "" }}
+            <a href='{{ index $method $href }}'>
+          {{ end }}
+          {{ if $bold }}
+            <strong>
+          {{ end }}
+          {{ if ne $html "" }}
+            {{ safeHTML $html }}
+          {{ end }}
+          {{ if ne $result_name "" }}
+            {{ $val := index $method $result_name }}
+            {{ if ne $digits "none" }}
+              {{ lang.NumFmt $digits $val }}
+            {{ else }}
+              {{ $val }}
+            {{ end }}
+          {{ end }}
+          {{ if $bold }}
+            </strong>
+          {{ end }}
+          {{ if ne $href "" }}
+            </a>
           {{ end }}
         </td>
       {{ end }}
