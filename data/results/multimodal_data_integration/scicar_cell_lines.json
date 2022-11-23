@@ -1,0 +1,83 @@
+{
+    "name": "sciCAR Cell Lines", 
+    "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE117089", 
+    "data_reference": "https://doi.org/10.1126/science.aau0730", 
+    "headers": {}, 
+    "results": [
+        {
+            "Name": "Mutual Nearest Neighbors (log scran)", 
+            "Paper": "Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors", 
+            "Paper URL": "https://www.nature.com/articles/nbt.4091", 
+            "Year": 2018, 
+            "Library": "https://github.com/LTLA/batchelor", 
+            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/mnn.py", 
+            "Version": "1.12.3", 
+            "Runtime (min)": 3.6, 
+            "CPU (%)": 99.9, 
+            "Memory (GB)": 3.4, 
+            "Rank": 1, 
+            "kNN Area Under the Curve": 0.08029363310441183, 
+            "Mean squared error": 0.2720163457545731
+        }, 
+        {
+            "Name": "Procrustes", 
+            "Paper": "Generalized Procrustes analysis", 
+            "Paper URL": "https://link.springer.com/content/pdf/10.1007/BF02291478.pdf", 
+            "Year": 1975, 
+            "Library": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.procrustes.html", 
+            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/procrustes.py", 
+            "Version": "1.9.3", 
+            "Runtime (min)": 0.7783333333333334, 
+            "CPU (%)": 704.3, 
+            "Memory (GB)": 0.6965, 
+            "Rank": 2, 
+            "Mean squared error": 0.08635167818222245, 
+            "kNN Area Under the Curve": 0.05566786776592482
+        }, 
+        {
+            "Name": "Mutual Nearest Neighbors (log CPM)", 
+            "Paper": "Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors", 
+            "Paper URL": "https://www.nature.com/articles/nbt.4091", 
+            "Year": 2018, 
+            "Library": "https://github.com/LTLA/batchelor", 
+            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/mnn.py", 
+            "Version": "1.12.3", 
+            "Runtime (min)": 2.966666666666667, 
+            "CPU (%)": 103.8, 
+            "Memory (GB)": 1.8, 
+            "Rank": 3, 
+            "kNN Area Under the Curve": 0.037688650690506885, 
+            "Mean squared error": 0.08086797390427403
+        }, 
+        {
+            "Name": "Harmonic Alignment (log scran)", 
+            "Paper": "Harmonic Alignment", 
+            "Paper URL": "https://doi.org/10.1137/1.9781611976236.36", 
+            "Year": 2020, 
+            "Library": "https://github.com/KrishnaswamyLab/harmonic-alignment", 
+            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/harmonic_alignment.py", 
+            "Version": "0.0", 
+            "Runtime (min)": 3.716666666666667, 
+            "CPU (%)": 756.1, 
+            "Memory (GB)": 3.4, 
+            "Rank": 4, 
+            "kNN Area Under the Curve": 0.004146296770484236, 
+            "Mean squared error": -0.022301823454279113
+        }, 
+        {
+            "Name": "Harmonic Alignment (sqrt CPM)", 
+            "Paper": "Harmonic Alignment", 
+            "Paper URL": "https://doi.org/10.1137/1.9781611976236.36", 
+            "Year": 2020, 
+            "Library": "https://github.com/KrishnaswamyLab/harmonic-alignment", 
+            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/harmonic_alignment.py", 
+            "Version": "0.0", 
+            "Runtime (min)": 1.2, 
+            "CPU (%)": 1531.1, 
+            "Memory (GB)": 0.901, 
+            "Rank": 5, 
+            "Mean squared error": -0.022896550588441977, 
+            "kNN Area Under the Curve": -0.01899200404811834
+        }
+    ]
+}
