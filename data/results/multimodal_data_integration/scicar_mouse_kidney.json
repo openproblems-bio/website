@@ -1,83 +1,164 @@
 {
-    "name": "sciCAR Mouse Kidney", 
-    "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE117089", 
-    "data_reference": "https://doi.org/10.1126/science.aau0730", 
-    "headers": {}, 
-    "results": [
-        {
-            "Name": "Procrustes", 
-            "Paper": "Generalized Procrustes analysis", 
-            "Paper URL": "https://link.springer.com/content/pdf/10.1007/BF02291478.pdf", 
-            "Year": 1975, 
-            "Library": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.procrustes.html", 
-            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/procrustes.py", 
-            "Version": "1.9.3", 
-            "Runtime (min)": 0.9716666666666666, 
-            "CPU (%)": 680.3, 
-            "Memory (GB)": 0.9457, 
-            "Rank": 1, 
-            "Mean squared error": 0.05374023678280704, 
-            "kNN Area Under the Curve": 0.040008580982149204
-        }, 
-        {
-            "Name": "Mutual Nearest Neighbors (log scran)", 
-            "Paper": "Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors", 
-            "Paper URL": "https://www.nature.com/articles/nbt.4091", 
-            "Year": 2018, 
-            "Library": "https://github.com/LTLA/batchelor", 
-            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/mnn.py", 
-            "Version": "1.12.3", 
-            "Runtime (min)": 6.016666666666667, 
-            "CPU (%)": 101.3, 
-            "Memory (GB)": 4.3, 
-            "Rank": 2, 
-            "Mean squared error": 0.030042472551150112, 
-            "kNN Area Under the Curve": 0.0435745690869384
-        }, 
-        {
-            "Name": "Harmonic Alignment (log scran)", 
-            "Paper": "Harmonic Alignment", 
-            "Paper URL": "https://doi.org/10.1137/1.9781611976236.36", 
-            "Year": 2020, 
-            "Library": "https://github.com/KrishnaswamyLab/harmonic-alignment", 
-            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/harmonic_alignment.py", 
-            "Version": "0.0", 
-            "Runtime (min)": 13.6, 
-            "CPU (%)": 575.7, 
-            "Memory (GB)": 4.3, 
-            "Rank": 3, 
-            "kNN Area Under the Curve": 0.0255268654116331, 
-            "Mean squared error": -0.004157914770311688
-        }, 
-        {
-            "Name": "Mutual Nearest Neighbors (log CPM)", 
-            "Paper": "Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors", 
-            "Paper URL": "https://www.nature.com/articles/nbt.4091", 
-            "Year": 2018, 
-            "Library": "https://github.com/LTLA/batchelor", 
-            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/mnn.py", 
-            "Version": "1.12.3", 
-            "Runtime (min)": 3.183333333333333, 
-            "CPU (%)": 105.1, 
-            "Memory (GB)": 2.3, 
-            "Rank": 4, 
-            "Mean squared error": 0.01960105548142288, 
-            "kNN Area Under the Curve": -0.005466720492005963
-        }, 
-        {
-            "Name": "Harmonic Alignment (sqrt CPM)", 
-            "Paper": "Harmonic Alignment", 
-            "Paper URL": "https://doi.org/10.1137/1.9781611976236.36", 
-            "Year": 2020, 
-            "Library": "https://github.com/KrishnaswamyLab/harmonic-alignment", 
-            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/harmonic_alignment.py", 
-            "Version": "0.0", 
-            "Runtime (min)": 4.666666666666667, 
-            "CPU (%)": 1220.0, 
-            "Memory (GB)": 2.1, 
-            "Rank": 5, 
-            "Mean squared error": -0.0036879418713913203, 
-            "kNN Area Under the Curve": 0.009480290398518953
-        }
-    ]
+  "name": "sciCAR Mouse Kidney",
+  "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE117089",
+  "data_reference": "https://doi.org/10.1126/science.aau0730",
+  "headers": [
+    {
+      "name": "Rank",
+      "result_name": "Rank",
+      "orderable": true,
+      "tooltip": "Todo: fill in tooltip",
+      "enabled": true,
+      "bold": true
+    },
+    {
+      "name": "Mean squared error",
+      "result_name": "Mean squared error",
+      "orderable": true,
+      "tooltip": "Todo: fill in tooltip",
+      "enabled": true,
+      "digits": 2
+    },
+    {
+      "name": "kNN Area Under the Curve",
+      "result_name": "kNN Area Under the Curve",
+      "orderable": true,
+      "tooltip": "Todo: fill in tooltip",
+      "enabled": true,
+      "digits": 2
+    },
+    {
+      "name": "Memory (GB)",
+      "result_name": "Memory (GB)",
+      "orderable": true,
+      "tooltip": "Todo: fill in tooltip",
+      "enabled": false,
+      "digits": 1
+    },
+    {
+      "name": "Runtime (min)",
+      "result_name": "Runtime (min)",
+      "orderable": true,
+      "tooltip": "Todo: fill in tooltip",
+      "enabled": false,
+      "digits": 1
+    },
+    {
+      "name": "CPU (%)",
+      "result_name": "CPU (%)",
+      "orderable": true,
+      "tooltip": "Todo: fill in tooltip",
+      "enabled": false,
+      "digits": 1
+    },
+    {
+      "name": "Name",
+      "result_name": "Name",
+      "orderable": true,
+      "tooltip": "Todo: fill in tooltip",
+      "enabled": true,
+      "href": "Implementation",
+      "align": "left"
+    },
+    {
+      "name": "Paper",
+      "orderable": false,
+      "tooltip": "Todo: fill in tooltip",
+      "enabled": false,
+      "href": "Paper URL",
+      "html": "<i class=\"fas fa-file-alt\"/>"
+    },
+    {
+      "name": "Year",
+      "result_name": "Year",
+      "orderable": true,
+      "tooltip": "Todo: fill in tooltip",
+      "enabled": false
+    },
+    {
+      "name": "Library",
+      "result_name": "Version",
+      "orderable": true,
+      "tooltip": "Todo: fill in tooltip",
+      "enabled": false,
+      "href": "Library"
+    }
+  ],
+  "results": [
+    {
+      "Name": "Procrustes",
+      "Paper": "Generalized Procrustes analysis",
+      "Paper URL": "https://link.springer.com/content/pdf/10.1007/BF02291478.pdf",
+      "Year": 1975,
+      "Library": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.procrustes.html",
+      "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/procrustes.py",
+      "Version": "1.9.3",
+      "Runtime (min)": 0.9717,
+      "CPU (%)": 680.3,
+      "Memory (GB)": 0.9457,
+      "Rank": 1,
+      "Mean squared error": 0.0537,
+      "kNN Area Under the Curve": 0.04
+    },
+    {
+      "Name": "Mutual Nearest Neighbors (log scran)",
+      "Paper": "Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors",
+      "Paper URL": "https://www.nature.com/articles/nbt.4091",
+      "Year": 2018,
+      "Library": "https://github.com/LTLA/batchelor",
+      "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/mnn.py",
+      "Version": "1.12.3",
+      "Runtime (min)": 6.0167,
+      "CPU (%)": 101.3,
+      "Memory (GB)": 4.3,
+      "Rank": 2,
+      "Mean squared error": 0.03,
+      "kNN Area Under the Curve": 0.0436
+    },
+    {
+      "Name": "Harmonic Alignment (log scran)",
+      "Paper": "Harmonic Alignment",
+      "Paper URL": "https://doi.org/10.1137/1.9781611976236.36",
+      "Year": 2020,
+      "Library": "https://github.com/KrishnaswamyLab/harmonic-alignment",
+      "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/harmonic_alignment.py",
+      "Version": "0.0",
+      "Runtime (min)": 13.6,
+      "CPU (%)": 575.7,
+      "Memory (GB)": 4.3,
+      "Rank": 3,
+      "Mean squared error": -0.0042,
+      "kNN Area Under the Curve": 0.0255
+    },
+    {
+      "Name": "Mutual Nearest Neighbors (log CPM)",
+      "Paper": "Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors",
+      "Paper URL": "https://www.nature.com/articles/nbt.4091",
+      "Year": 2018,
+      "Library": "https://github.com/LTLA/batchelor",
+      "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/mnn.py",
+      "Version": "1.12.3",
+      "Runtime (min)": 3.1833,
+      "CPU (%)": 105.1,
+      "Memory (GB)": 2.3,
+      "Rank": 4,
+      "Mean squared error": 0.0196,
+      "kNN Area Under the Curve": -0.0055
+    },
+    {
+      "Name": "Harmonic Alignment (sqrt CPM)",
+      "Paper": "Harmonic Alignment",
+      "Paper URL": "https://doi.org/10.1137/1.9781611976236.36",
+      "Year": 2020,
+      "Library": "https://github.com/KrishnaswamyLab/harmonic-alignment",
+      "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/multimodal_data_integration/methods/harmonic_alignment.py",
+      "Version": "0.0",
+      "Runtime (min)": 4.6667,
+      "CPU (%)": 1220,
+      "Memory (GB)": 2.1,
+      "Rank": 5,
+      "Mean squared error": -0.0037,
+      "kNN Area Under the Curve": 0.0095
+    }
+  ]
 }
