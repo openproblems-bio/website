@@ -5,6 +5,7 @@
     "headers": {
         "names": [
             "Rank", 
+            "Mean score", 
             "Precision-recall AUC", 
             "Odds Ratio", 
             "Memory (GB)", 
@@ -23,21 +24,6 @@
     }, 
     "results": [
         {
-            "Name": "LIANA Rank Aggregate (max)", 
-            "Paper": "Comparison of methods and resources for cell-cell communication inference from single-cell RNA-Seq data", 
-            "Paper URL": "https://www.nature.com/articles/s41467-022-30755-0", 
-            "Year": 2022, 
-            "Library": "https://github.com/saezlab/liana", 
-            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_cell_cell_communication/_common/methods/liana.py", 
-            "Version": "0.1.7", 
-            "Runtime (min)": 152.85, 
-            "CPU (%)": 100.0, 
-            "Memory (GB)": 121.2, 
-            "Rank": 1, 
-            "Odds Ratio": 0.0, 
-            "Precision-recall AUC": 0.49860085155284745
-        }, 
-        {
             "Name": "Log2FC (sum)", 
             "Paper": "Computation and visualization of cell–cell signaling topologies in single-cell systems data using Connectome", 
             "Paper URL": "https://www.nature.com/articles/s41598-022-07959-x", 
@@ -45,12 +31,13 @@
             "Library": "https://github.com/saezlab/liana", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_cell_cell_communication/_common/methods/liana.py", 
             "Version": "0.1.7", 
-            "Runtime (min)": 10.466666666666667, 
-            "CPU (%)": 98.9, 
-            "Memory (GB)": 20.5, 
-            "Rank": 2, 
-            "Odds Ratio": 0.0, 
-            "Precision-recall AUC": 0.07240602179528488
+            "Runtime (min)": 11.3, 
+            "CPU (%)": 94.3, 
+            "Memory (GB)": 20.4, 
+            "Rank": 1, 
+            "Mean score": 0.022354484104964635, 
+            "Precision-recall AUC": 0.04470896820992927, 
+            "Odds Ratio": 0.0
         }, 
         {
             "Name": "CellPhoneDB (max)", 
@@ -60,12 +47,13 @@
             "Library": "https://github.com/saezlab/liana", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_cell_cell_communication/_common/methods/liana.py", 
             "Version": "0.1.7", 
-            "Runtime (min)": 132.91666666666666, 
-            "CPU (%)": 100.0, 
-            "Memory (GB)": 118.7, 
-            "Rank": 3, 
-            "Precision-recall AUC": 0.036310968860493446, 
-            "Odds Ratio": 0.0
+            "Runtime (min)": 158.6, 
+            "CPU (%)": 100.5, 
+            "Memory (GB)": 122.8, 
+            "Rank": 2, 
+            "Mean score": 0.003768076058563812, 
+            "Odds Ratio": 0.0, 
+            "Precision-recall AUC": 0.007536152117127624
         }, 
         {
             "Name": "SingleCellSignalR (max)", 
@@ -75,11 +63,12 @@
             "Library": "https://github.com/saezlab/liana", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_cell_cell_communication/_common/methods/liana.py", 
             "Version": "0.1.7", 
-            "Runtime (min)": 9.8, 
-            "CPU (%)": 98.7, 
-            "Memory (GB)": 20.5, 
-            "Rank": 4, 
-            "Precision-recall AUC": 0.03537360935234839, 
+            "Runtime (min)": 15.85, 
+            "CPU (%)": 94.4, 
+            "Memory (GB)": 20.6, 
+            "Rank": 3, 
+            "Mean score": 0.0032854019830878133, 
+            "Precision-recall AUC": 0.0065708039661756265, 
             "Odds Ratio": 0.0
         }, 
         {
@@ -90,11 +79,12 @@
             "Library": "https://github.com/saezlab/liana", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_cell_cell_communication/_common/methods/liana.py", 
             "Version": "0.1.7", 
-            "Runtime (min)": 19.85, 
-            "CPU (%)": 99.8, 
-            "Memory (GB)": 21.2, 
-            "Rank": 5, 
-            "Precision-recall AUC": 0.034353654445259466, 
+            "Runtime (min)": 31.883333333333333, 
+            "CPU (%)": 101.2, 
+            "Memory (GB)": 20.4, 
+            "Rank": 4, 
+            "Mean score": 0.002760197099018759, 
+            "Precision-recall AUC": 0.005520394198037518, 
             "Odds Ratio": 0.0
         }, 
         {
@@ -105,11 +95,28 @@
             "Library": "https://github.com/saezlab/liana", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_cell_cell_communication/_common/methods/liana.py", 
             "Version": "0.1.7", 
-            "Runtime (min)": 9.683333333333334, 
-            "CPU (%)": 97.8, 
-            "Memory (GB)": 21.2, 
+            "Runtime (min)": 13.666666666666666, 
+            "CPU (%)": 94.0, 
+            "Memory (GB)": 20.7, 
+            "Rank": 5, 
+            "Mean score": 0.0010892294229582497, 
+            "Precision-recall AUC": 0.0021784588459164995, 
+            "Odds Ratio": 0.0
+        }, 
+        {
+            "Name": "LIANA Rank Aggregate (max)", 
+            "Paper": "Comparison of methods and resources for cell-cell communication inference from single-cell RNA-Seq data", 
+            "Paper URL": "https://www.nature.com/articles/s41467-022-30755-0", 
+            "Year": 2022, 
+            "Library": "https://github.com/saezlab/liana", 
+            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_cell_cell_communication/_common/methods/liana.py", 
+            "Version": "0.1.7", 
+            "Runtime (min)": 180.36666666666667, 
+            "CPU (%)": 100.2, 
+            "Memory (GB)": 120.4, 
             "Rank": 6, 
-            "Precision-recall AUC": 0.031108612876756456, 
+            "Mean score": -0.00503788072384543, 
+            "Precision-recall AUC": -0.01007576144769086, 
             "Odds Ratio": 0.0
         }, 
         {
@@ -120,12 +127,13 @@
             "Library": "https://github.com/saezlab/liana", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_cell_cell_communication/_common/methods/liana.py", 
             "Version": "0.1.7", 
-            "Runtime (min)": 7.816666666666666, 
-            "CPU (%)": 99.8, 
-            "Memory (GB)": 20.5, 
+            "Runtime (min)": 13.683333333333334, 
+            "CPU (%)": 94.2, 
+            "Memory (GB)": 20.4, 
             "Rank": 7, 
-            "Precision-recall AUC": 0.01237085241738688, 
-            "Odds Ratio": 0.0
+            "Mean score": -0.008559396453909998, 
+            "Odds Ratio": -0.0, 
+            "Precision-recall AUC": -0.017118792907819997
         }, 
         {
             "Name": "NATMI (sum)", 
@@ -135,12 +143,13 @@
             "Library": "https://github.com/saezlab/liana", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_cell_cell_communication/_common/methods/liana.py", 
             "Version": "0.1.7", 
-            "Runtime (min)": 26.083333333333332, 
-            "CPU (%)": 101.5, 
-            "Memory (GB)": 20.5, 
+            "Runtime (min)": 19.966666666666665, 
+            "CPU (%)": 101.2, 
+            "Memory (GB)": 20.4, 
             "Rank": 8, 
-            "Odds Ratio": 0.0, 
-            "Precision-recall AUC": 0.008198927702637436
+            "Mean score": -0.010707643617511104, 
+            "Precision-recall AUC": -0.021415287235022208, 
+            "Odds Ratio": 0.0
         }, 
         {
             "Name": "Connectome (sum)", 
@@ -150,12 +159,13 @@
             "Library": "https://github.com/saezlab/liana", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_cell_cell_communication/_common/methods/liana.py", 
             "Version": "0.1.7", 
-            "Runtime (min)": 12.0, 
-            "CPU (%)": 97.9, 
-            "Memory (GB)": 21.3, 
+            "Runtime (min)": 15.533333333333333, 
+            "CPU (%)": 94.7, 
+            "Memory (GB)": 20.5, 
             "Rank": 9, 
+            "Mean score": -0.01074392358999364, 
             "Odds Ratio": 0.0, 
-            "Precision-recall AUC": 0.008128471510996714
+            "Precision-recall AUC": -0.02148784717998728
         }, 
         {
             "Name": "LIANA Rank Aggregate (sum)", 
@@ -165,12 +175,13 @@
             "Library": "https://github.com/saezlab/liana", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_cell_cell_communication/_common/methods/liana.py", 
             "Version": "0.1.7", 
-            "Runtime (min)": 159.78333333333333, 
-            "CPU (%)": 100.1, 
-            "Memory (GB)": 121.2, 
+            "Runtime (min)": 164.06666666666666, 
+            "CPU (%)": 100.5, 
+            "Memory (GB)": 112.2, 
             "Rank": 10, 
-            "Precision-recall AUC": -0.004106765256967034, 
-            "Odds Ratio": 0.0
+            "Mean score": -0.023379898803591065, 
+            "Precision-recall AUC": -0.04675979760718213, 
+            "Odds Ratio": -0.0
         }, 
         {
             "Name": "CellPhoneDB (sum)", 
@@ -180,11 +191,12 @@
             "Library": "https://github.com/saezlab/liana", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_cell_cell_communication/_common/methods/liana.py", 
             "Version": "0.1.7", 
-            "Runtime (min)": 137.03333333333333, 
-            "CPU (%)": 100.0, 
-            "Memory (GB)": 118.7, 
+            "Runtime (min)": 142.86666666666667, 
+            "CPU (%)": 99.8, 
+            "Memory (GB)": 119.0, 
             "Rank": 11, 
-            "Precision-recall AUC": -0.016465375850259915, 
+            "Mean score": -0.023408021446091026, 
+            "Precision-recall AUC": -0.04681604289218205, 
             "Odds Ratio": -0.0
         }, 
         {
@@ -195,12 +207,13 @@
             "Library": "https://github.com/saezlab/liana", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_cell_cell_communication/_common/methods/liana.py", 
             "Version": "0.1.7", 
-            "Runtime (min)": 9.566666666666666, 
-            "CPU (%)": 100.2, 
-            "Memory (GB)": 20.8, 
+            "Runtime (min)": 15.816666666666666, 
+            "CPU (%)": 92.9, 
+            "Memory (GB)": 20.2, 
             "Rank": 12, 
+            "Mean score": -0.024849188522630267, 
             "Odds Ratio": -0.0, 
-            "Precision-recall AUC": -0.019264141581954688
+            "Precision-recall AUC": -0.04969837704526053
         }
     ]
 }

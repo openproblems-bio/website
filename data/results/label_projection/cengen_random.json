@@ -5,6 +5,7 @@
     "headers": {
         "names": [
             "Rank", 
+            "Mean score", 
             "Macro F1 score", 
             "Accuracy", 
             "F1 score", 
@@ -31,13 +32,14 @@
             "Library": "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/methods/logistic_regression.py", 
             "Version": "1.1.3", 
-            "Runtime (min)": 11.983333333333333, 
-            "CPU (%)": 3038.7, 
+            "Runtime (min)": 7.733333333333333, 
+            "CPU (%)": 1890.8, 
             "Memory (GB)": 1.9, 
             "Rank": 1, 
-            "Macro F1 score": 0.8141444669114343, 
-            "F1 score": 0.8886272999211364, 
-            "Accuracy": 0.8870951718656865
+            "Mean score": 0.8623558878162695, 
+            "F1 score": 0.8861284288659187, 
+            "Macro F1 score": 0.816789204334856, 
+            "Accuracy": 0.884150030248034
         }, 
         {
             "Name": "Multilayer perceptron (log scran)", 
@@ -47,13 +49,14 @@
             "Library": "https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/methods/mlp.py", 
             "Version": "1.1.3", 
-            "Runtime (min)": 59.166666666666664, 
-            "CPU (%)": 2391.5, 
-            "Memory (GB)": 7.5, 
+            "Runtime (min)": 59.11666666666667, 
+            "CPU (%)": 1279.3, 
+            "Memory (GB)": 7.3, 
             "Rank": 2, 
-            "F1 score": 0.876860762145114, 
-            "Accuracy": 0.8730379495330817, 
-            "Macro F1 score": 0.8159093408198992
+            "Mean score": 0.8543124413273976, 
+            "Accuracy": 0.8718491631377294, 
+            "F1 score": 0.873422924697839, 
+            "Macro F1 score": 0.8176652361466246
         }, 
         {
             "Name": "XGBoost (log CPM)", 
@@ -63,13 +66,14 @@
             "Library": "https://xgboost.readthedocs.io/en/stable/index.html", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/methods/xgboost.py", 
             "Version": "1.6.2", 
-            "Runtime (min)": 18.216666666666665, 
-            "CPU (%)": 1956.7, 
+            "Runtime (min)": 12.583333333333334, 
+            "CPU (%)": 2043.1, 
             "Memory (GB)": 2.0, 
             "Rank": 3, 
-            "F1 score": 0.8488953109882404, 
-            "Macro F1 score": 0.7905497408916217, 
-            "Accuracy": 0.8459666203059806
+            "Mean score": 0.8249387775350777, 
+            "F1 score": 0.8429178173603058, 
+            "Accuracy": 0.8397358338374673, 
+            "Macro F1 score": 0.7921626814074602
         }, 
         {
             "Name": "Multilayer perceptron (log CPM)", 
@@ -79,13 +83,14 @@
             "Library": "https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/methods/mlp.py", 
             "Version": "1.1.3", 
-            "Runtime (min)": 12.4, 
-            "CPU (%)": 5427.9, 
+            "Runtime (min)": 25.716666666666665, 
+            "CPU (%)": 2546.9, 
             "Memory (GB)": 1.7, 
             "Rank": 4, 
-            "Macro F1 score": 0.7635218163704085, 
-            "Accuracy": 0.852076296443473, 
-            "F1 score": 0.8522360579235922
+            "Mean score": 0.8200651751597806, 
+            "Macro F1 score": 0.7594256522912787, 
+            "F1 score": 0.8500439203749962, 
+            "Accuracy": 0.8507259528130672
         }, 
         {
             "Name": "Logistic regression (log scran)", 
@@ -95,13 +100,14 @@
             "Library": "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/methods/logistic_regression.py", 
             "Version": "1.1.3", 
-            "Runtime (min)": 40.516666666666666, 
-            "CPU (%)": 537.9, 
-            "Memory (GB)": 7.5, 
+            "Runtime (min)": 45.516666666666666, 
+            "CPU (%)": 322.5, 
+            "Memory (GB)": 7.3, 
             "Rank": 5, 
-            "Accuracy": 0.8212298827736937, 
-            "F1 score": 0.8357486473748492, 
-            "Macro F1 score": 0.7820343700633392
+            "Mean score": 0.8175842047848777, 
+            "Macro F1 score": 0.7936359122536898, 
+            "Accuracy": 0.8226961080863077, 
+            "F1 score": 0.8364205940146356
         }, 
         {
             "Name": "K-neighbors classifier (log scran)", 
@@ -111,13 +117,14 @@
             "Library": "https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/methods/knn_classifier.py", 
             "Version": "1.1.3", 
-            "Runtime (min)": 34.53333333333333, 
-            "CPU (%)": 112.8, 
-            "Memory (GB)": 7.5, 
+            "Runtime (min)": 34.35, 
+            "CPU (%)": 109.1, 
+            "Memory (GB)": 7.3, 
             "Rank": 6, 
-            "F1 score": 0.838006117038795, 
-            "Accuracy": 0.8380190741108683, 
-            "Macro F1 score": 0.7605773658245075
+            "Mean score": 0.8114854614086796, 
+            "Accuracy": 0.8363581367211131, 
+            "Macro F1 score": 0.7607595930382328, 
+            "F1 score": 0.8373386544666929
         }, 
         {
             "Name": "Seurat reference mapping (SCTransform)", 
@@ -127,13 +134,14 @@
             "Library": "https://github.com/satijalab/seurat", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/methods/seurat.py", 
             "Version": "4.1.1", 
-            "Runtime (min)": 25.633333333333333, 
-            "CPU (%)": 127.8, 
-            "Memory (GB)": 989.3, 
+            "Runtime (min)": 27.5, 
+            "CPU (%)": 126.7, 
+            "Memory (GB)": 1200.0, 
             "Rank": 7, 
-            "Accuracy": 0.8336479237035566, 
-            "Macro F1 score": 0.7628651421520458, 
-            "F1 score": 0.8327005734545099
+            "Mean score": 0.8054107554266564, 
+            "F1 score": 0.8296643439983402, 
+            "Macro F1 score": 0.7560577387768901, 
+            "Accuracy": 0.8305101835047388
         }, 
         {
             "Name": "XGBoost (log scran)", 
@@ -143,13 +151,14 @@
             "Library": "https://xgboost.readthedocs.io/en/stable/index.html", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/methods/xgboost.py", 
             "Version": "1.6.2", 
-            "Runtime (min)": 40.0, 
-            "CPU (%)": 1139.0, 
+            "Runtime (min)": 48.21666666666667, 
+            "CPU (%)": 754.6, 
             "Memory (GB)": 7.1, 
             "Rank": 8, 
-            "Macro F1 score": 0.7638608883087463, 
-            "Accuracy": 0.8202364394993046, 
-            "F1 score": 0.8265241260432546
+            "Mean score": 0.79911591920095, 
+            "F1 score": 0.8234489470064652, 
+            "Macro F1 score": 0.756697761997877, 
+            "Accuracy": 0.8172010485985078
         }, 
         {
             "Name": "K-neighbors classifier (log CPM)", 
@@ -159,13 +168,14 @@
             "Library": "https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/methods/knn_classifier.py", 
             "Version": "1.1.3", 
-            "Runtime (min)": 2.3166666666666664, 
-            "CPU (%)": 1121.7, 
+            "Runtime (min)": 1.9333333333333333, 
+            "CPU (%)": 738.0, 
             "Memory (GB)": 2.8, 
             "Rank": 9, 
-            "Macro F1 score": 0.7216836187613729, 
-            "Accuracy": 0.8288297238227696, 
-            "F1 score": 0.8330193674551462
+            "Mean score": 0.7986848146826366, 
+            "Macro F1 score": 0.7288888073742984, 
+            "Accuracy": 0.8316696914700544, 
+            "F1 score": 0.8354959452035571
         }, 
         {
             "Name": "scANVI (All genes)", 
@@ -175,13 +185,14 @@
             "Library": "https://github.com/YosefLab/scvi-tools", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/methods/scvi_tools.py", 
             "Version": "0.19.0", 
-            "Runtime (min)": 129.61666666666667, 
-            "CPU (%)": 2677.7, 
+            "Runtime (min)": 196.63333333333333, 
+            "CPU (%)": 1528.6, 
             "Memory (GB)": 10.1, 
             "Rank": 10, 
-            "Accuracy": 0.6634710908007153, 
-            "Macro F1 score": 0.24537854313335902, 
-            "F1 score": 0.5712775221302416
+            "Mean score": 0.4779125156903061, 
+            "Macro F1 score": 0.22687995006333891, 
+            "Accuracy": 0.6495765275257108, 
+            "F1 score": 0.5572810694818683
         }, 
         {
             "Name": "scANVI (Seurat v3 2000 HVG)", 
@@ -191,29 +202,14 @@
             "Library": "https://github.com/YosefLab/scvi-tools", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/methods/scvi_tools.py", 
             "Version": "0.19.0", 
-            "Runtime (min)": 119.7, 
-            "CPU (%)": 2389.5, 
-            "Memory (GB)": 9.8, 
+            "Runtime (min)": 151.51666666666668, 
+            "CPU (%)": 1315.3, 
+            "Memory (GB)": 4.2, 
             "Rank": 11, 
-            "Accuracy": 0.5936320286111663, 
-            "Macro F1 score": 0.1979486399982227, 
-            "F1 score": 0.5029048281488616
-        }, 
-        {
-            "Name": "scArches+scANVI (All genes)", 
-            "Paper": "Query to reference single-cell integration with transfer learning", 
-            "Paper URL": "https://doi.org/10.1101/2020.07.16.205997", 
-            "Year": 2021, 
-            "Library": "https://github.com/YosefLab/scvi-tools", 
-            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/methods/scvi_tools.py", 
-            "Version": "0.19.0", 
-            "Runtime (min)": 200.08333333333334, 
-            "CPU (%)": 2598.9, 
-            "Memory (GB)": 13.5, 
-            "Rank": 12, 
-            "Macro F1 score": 0.048917710538558645, 
-            "F1 score": 0.21744889252265465, 
-            "Accuracy": 0.34462547188555537
+            "Mean score": 0.4343112460470017, 
+            "Accuracy": 0.597650736035491, 
+            "Macro F1 score": 0.1989953516334216, 
+            "F1 score": 0.5062876504720926
         }, 
         {
             "Name": "scArches+scANVI (Seurat v3 2000 HVG)", 
@@ -223,13 +219,31 @@
             "Library": "https://github.com/YosefLab/scvi-tools", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/methods/scvi_tools.py", 
             "Version": "0.19.0", 
-            "Runtime (min)": 159.98333333333332, 
-            "CPU (%)": 2454.5, 
-            "Memory (GB)": 10.8, 
+            "Runtime (min)": 137.78333333333333, 
+            "CPU (%)": 1379.6, 
+            "Memory (GB)": 4.099999999, 
+            "Rank": 12, 
+            "Mean score": 0.2195742768385477, 
+            "Macro F1 score": 0.055476778423445734, 
+            "Accuracy": 0.3674631982254487, 
+            "F1 score": 0.2357828538667486
+        }, 
+        {
+            "Name": "scArches+scANVI (All genes)", 
+            "Paper": "Query to reference single-cell integration with transfer learning", 
+            "Paper URL": "https://doi.org/10.1101/2020.07.16.205997", 
+            "Year": 2021, 
+            "Library": "https://github.com/YosefLab/scvi-tools", 
+            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/methods/scvi_tools.py", 
+            "Version": "0.19.0", 
+            "Runtime (min)": 256.5833333333333, 
+            "CPU (%)": 1555.3, 
+            "Memory (GB)": 11.1, 
             "Rank": 13, 
-            "F1 score": 0.20700085302378957, 
-            "Accuracy": 0.3312636598450228, 
-            "Macro F1 score": 0.04432637987554448
+            "Mean score": 0.21192282064094048, 
+            "F1 score": 0.22384285369820695, 
+            "Accuracy": 0.3568763863682194, 
+            "Macro F1 score": 0.05504922185639509
         }, 
         {
             "Name": "Majority Vote", 
@@ -239,13 +253,14 @@
             "Library": "https://github.com/openproblems-bio/openproblems", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/methods/baseline.py", 
             "Version": "0.6.0", 
-            "Runtime (min)": 0.13833333333333334, 
-            "CPU (%)": 194.7, 
-            "Memory (GB)": 1.0144, 
+            "Runtime (min)": 0.13499999999999998, 
+            "CPU (%)": 112.2, 
+            "Memory (GB)": 0.9942, 
             "Rank": 14, 
-            "F1 score": -0.010408766330240782, 
-            "Accuracy": 0.037254122789588714, 
-            "Macro F1 score": -0.005025351052712574
+            "Mean score": 0.006662652024285562, 
+            "Macro F1 score": -0.00531534137922687, 
+            "Accuracy": 0.03654970760233918, 
+            "F1 score": -0.01124641015025562
         }
     ]
 }
