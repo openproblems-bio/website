@@ -5,6 +5,7 @@
     "headers": {
         "names": [
             "Rank", 
+            "Mean score", 
             "HVG conservation", 
             "Memory (GB)", 
             "Runtime (min)", 
@@ -29,11 +30,12 @@
             "Library": "https://scanpy.readthedocs.io/en/stable/api/scanpy.pp.combat.html", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/methods/combat.py", 
             "Version": "1.9.1", 
-            "Runtime (min)": 3.2333333333333334, 
-            "CPU (%)": 1110.2, 
+            "Runtime (min)": 5.583333333333333, 
+            "CPU (%)": 294.1, 
             "Memory (GB)": 3.3, 
             "Rank": 1, 
-            "HVG conservation": 0.2565535023635581
+            "Mean score": 0.24749891257068282, 
+            "HVG conservation": 0.24749891257068282
         }, 
         {
             "Name": "MNN (hvg/unscaled)", 
@@ -43,11 +45,12 @@
             "Library": "https://github.com/chriscainx/mnnpy", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/methods/mnn.py", 
             "Version": "0.1.9.5", 
-            "Runtime (min)": 4.133333333333334, 
-            "CPU (%)": 2304.6, 
-            "Memory (GB)": 71.4, 
+            "Runtime (min)": 6.066666666666666, 
+            "CPU (%)": 1057.9, 
+            "Memory (GB)": 4.2, 
             "Rank": 2, 
-            "HVG conservation": -0.01890846583584024
+            "Mean score": -0.031317964332318426, 
+            "HVG conservation": -0.031317964332318426
         }, 
         {
             "Name": "SCALEX (hvg)", 
@@ -57,25 +60,12 @@
             "Library": "https://github.com/jsxlei/SCALEX", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_feature/methods/scalex.py", 
             "Version": "1.0.2", 
-            "Runtime (min)": 15.083333333333334, 
-            "CPU (%)": 2531.5, 
-            "Memory (GB)": 19.9, 
+            "Runtime (min)": 50.53333333333333, 
+            "CPU (%)": 1715.7, 
+            "Memory (GB)": 20.3, 
             "Rank": 3, 
-            "HVG conservation": -0.05758487322733136
-        }, 
-        {
-            "Name": "FastMNN feature (hvg/scaled)", 
-            "Paper": "A description of the theory behind the fastMNN algorithm", 
-            "Paper URL": "https://marionilab.github.io/FurtherMNN2018/theory/description.html", 
-            "Year": 2019, 
-            "Library": "https://doi.org/doi:10.18129/B9.bioc.batchelor", 
-            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/methods/fastmnn.py", 
-            "Version": "1.12.3", 
-            "Runtime (min)": 3.55, 
-            "CPU (%)": 435.4, 
-            "Memory (GB)": 5.4, 
-            "Rank": 4, 
-            "HVG conservation": -0.346368715083799
+            "Mean score": -0.07046541974771635, 
+            "HVG conservation": -0.07046541974771635
         }, 
         {
             "Name": "FastMNN feature (hvg/unscaled)", 
@@ -85,11 +75,27 @@
             "Library": "https://doi.org/doi:10.18129/B9.bioc.batchelor", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/methods/fastmnn.py", 
             "Version": "1.12.3", 
-            "Runtime (min)": 3.066666666666667, 
-            "CPU (%)": 509.9, 
+            "Runtime (min)": 3.4166666666666665, 
+            "CPU (%)": 247.5, 
+            "Memory (GB)": 5.4, 
+            "Rank": 4, 
+            "Mean score": -0.3632013919095259, 
+            "HVG conservation": -0.3632013919095259
+        }, 
+        {
+            "Name": "FastMNN feature (hvg/scaled)", 
+            "Paper": "A description of the theory behind the fastMNN algorithm", 
+            "Paper URL": "https://marionilab.github.io/FurtherMNN2018/theory/description.html", 
+            "Year": 2019, 
+            "Library": "https://doi.org/doi:10.18129/B9.bioc.batchelor", 
+            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/methods/fastmnn.py", 
+            "Version": "1.12.3", 
+            "Runtime (min)": 5.233333333333333, 
+            "CPU (%)": 179.4, 
             "Memory (GB)": 5.4, 
             "Rank": 5, 
-            "HVG conservation": -0.34679845294370437
+            "Mean score": -0.3636363636363636, 
+            "HVG conservation": -0.3636363636363636
         }, 
         {
             "Name": "MNN (hvg/scaled)", 
@@ -99,11 +105,12 @@
             "Library": "https://github.com/chriscainx/mnnpy", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/methods/mnn.py", 
             "Version": "0.1.9.5", 
-            "Runtime (min)": 6.566666666666666, 
-            "CPU (%)": 1503.6, 
-            "Memory (GB)": 78.3, 
+            "Runtime (min)": 6.383333333333334, 
+            "CPU (%)": 997.0, 
+            "Memory (GB)": 7.0, 
             "Rank": 6, 
-            "HVG conservation": -0.36742587021916634
+            "Mean score": -0.38408003479773806, 
+            "HVG conservation": -0.38408003479773806
         }, 
         {
             "Name": "Combat (hvg/scaled)", 
@@ -113,11 +120,12 @@
             "Library": "https://scanpy.readthedocs.io/en/stable/api/scanpy.pp.combat.html", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/methods/combat.py", 
             "Version": "1.9.1", 
-            "Runtime (min)": 2.716666666666667, 
-            "CPU (%)": 1176.5, 
-            "Memory (GB)": 3.8, 
+            "Runtime (min)": 2.1333333333333333, 
+            "CPU (%)": 711.0, 
+            "Memory (GB)": 3.7, 
             "Rank": 7, 
-            "HVG conservation": -0.4473571121615816
+            "Mean score": -0.4649847759895607, 
+            "HVG conservation": -0.4649847759895607
         }, 
         {
             "Name": "Scanorama gene output (hvg/scaled)", 
@@ -127,11 +135,12 @@
             "Library": "https://github.com/brianhie/scanorama", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/methods/scanorama.py", 
             "Version": "1.7", 
-            "Runtime (min)": 5.083333333333333, 
-            "CPU (%)": 1086.0, 
-            "Memory (GB)": 5.0, 
+            "Runtime (min)": 9.016666666666667, 
+            "CPU (%)": 578.3, 
+            "Memory (GB)": 5.3, 
             "Rank": 8, 
-            "HVG conservation": -0.4490760636012033
+            "Mean score": -0.46672466289691156, 
+            "HVG conservation": -0.46672466289691156
         }, 
         {
             "Name": "Scanorama gene output (hvg/unscaled)", 
@@ -141,11 +150,12 @@
             "Library": "https://github.com/brianhie/scanorama", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/methods/scanorama.py", 
             "Version": "1.7", 
-            "Runtime (min)": 3.0166666666666666, 
-            "CPU (%)": 1506.1, 
+            "Runtime (min)": 8.233333333333333, 
+            "CPU (%)": 645.7, 
             "Memory (GB)": 4.8, 
             "Rank": 9, 
-            "HVG conservation": -0.46454662655779977
+            "Mean score": -0.4823836450630708, 
+            "HVG conservation": -0.4823836450630708
         }, 
         {
             "Name": "Combat (full/unscaled)", 
@@ -155,11 +165,12 @@
             "Library": "https://scanpy.readthedocs.io/en/stable/api/scanpy.pp.combat.html", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/methods/combat.py", 
             "Version": "1.9.1", 
-            "Runtime (min)": 2.716666666666667, 
-            "CPU (%)": 892.4, 
+            "Runtime (min)": 3.8166666666666664, 
+            "CPU (%)": 448.1, 
             "Memory (GB)": 13.9, 
             "Rank": 10, 
-            "HVG conservation": -0.5105285775676839
+            "Mean score": -0.5289256198347108, 
+            "HVG conservation": -0.5289256198347108
         }, 
         {
             "Name": "MNN (full/unscaled)", 
@@ -169,11 +180,12 @@
             "Library": "https://github.com/chriscainx/mnnpy", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/methods/mnn.py", 
             "Version": "0.1.9.5", 
-            "Runtime (min)": 23.233333333333334, 
-            "CPU (%)": 3256.7, 
-            "Memory (GB)": 330.7, 
+            "Runtime (min)": 39.05, 
+            "CPU (%)": 1652.9, 
+            "Memory (GB)": 314.8, 
             "Rank": 11, 
-            "HVG conservation": -0.5449076063601204
+            "Mean score": -0.5637233579817311, 
+            "HVG conservation": -0.5637233579817311
         }, 
         {
             "Name": "SCALEX (full)", 
@@ -183,11 +195,12 @@
             "Library": "https://github.com/jsxlei/SCALEX", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_feature/methods/scalex.py", 
             "Version": "1.0.2", 
-            "Runtime (min)": 104.81666666666666, 
-            "CPU (%)": 2002.5, 
-            "Memory (GB)": 23.4, 
+            "Runtime (min)": 84.8, 
+            "CPU (%)": 1274.9, 
+            "Memory (GB)": 26.5, 
             "Rank": 12, 
-            "HVG conservation": -0.5775676837129353
+            "Mean score": -0.6059156154849934, 
+            "HVG conservation": -0.6059156154849934
         }, 
         {
             "Name": "FastMNN feature (full/unscaled)", 
@@ -197,11 +210,12 @@
             "Library": "https://doi.org/doi:10.18129/B9.bioc.batchelor", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/methods/fastmnn.py", 
             "Version": "1.12.3", 
-            "Runtime (min)": 8.45, 
-            "CPU (%)": 272.5, 
-            "Memory (GB)": 17.7, 
+            "Runtime (min)": 13.6, 
+            "CPU (%)": 122.2, 
+            "Memory (GB)": 18.2, 
             "Rank": 13, 
-            "HVG conservation": -0.7868500214868931
+            "Mean score": -0.8086124401913874, 
+            "HVG conservation": -0.8086124401913874
         }, 
         {
             "Name": "FastMNN feature (full/scaled)", 
@@ -211,25 +225,12 @@
             "Library": "https://doi.org/doi:10.18129/B9.bioc.batchelor", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/methods/fastmnn.py", 
             "Version": "1.12.3", 
-            "Runtime (min)": 10.566666666666666, 
-            "CPU (%)": 243.6, 
-            "Memory (GB)": 22.6, 
+            "Runtime (min)": 16.283333333333335, 
+            "CPU (%)": 106.6, 
+            "Memory (GB)": 24.2, 
             "Rank": 14, 
-            "HVG conservation": -0.7868500214868931
-        }, 
-        {
-            "Name": "Scanorama gene output (full/unscaled)", 
-            "Paper": "Efficient integration of heterogeneous single-cell transcriptomes using Scanorama", 
-            "Paper URL": "https://www.nature.com/articles/s41587-019-0113-3", 
-            "Year": 2019, 
-            "Library": "https://github.com/brianhie/scanorama", 
-            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/methods/scanorama.py", 
-            "Version": "1.7", 
-            "Runtime (min)": 9.316666666666666, 
-            "CPU (%)": 1449.8, 
-            "Memory (GB)": 26.9, 
-            "Rank": 15, 
-            "HVG conservation": -0.8053287494628278
+            "Mean score": -0.8086124401913874, 
+            "HVG conservation": -0.8086124401913874
         }, 
         {
             "Name": "MNN (full/scaled)", 
@@ -239,11 +240,12 @@
             "Library": "https://github.com/chriscainx/mnnpy", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/methods/mnn.py", 
             "Version": "0.1.9.5", 
-            "Runtime (min)": 36.15, 
-            "CPU (%)": 2252.6, 
-            "Memory (GB)": 503.3, 
-            "Rank": 16, 
-            "HVG conservation": -0.8238074774387625
+            "Runtime (min)": 55.7, 
+            "CPU (%)": 1433.0, 
+            "Memory (GB)": 428.3, 
+            "Rank": 15, 
+            "Mean score": -0.8460200086994345, 
+            "HVG conservation": -0.8460200086994345
         }, 
         {
             "Name": "Scanorama gene output (full/scaled)", 
@@ -253,11 +255,27 @@
             "Library": "https://github.com/brianhie/scanorama", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/methods/scanorama.py", 
             "Version": "1.7", 
-            "Runtime (min)": 16.583333333333332, 
-            "CPU (%)": 1426.8, 
-            "Memory (GB)": 33.1, 
+            "Runtime (min)": 22.75, 
+            "CPU (%)": 1374.7, 
+            "Memory (GB)": 32.7, 
+            "Rank": 16, 
+            "Mean score": -0.8573292735972161, 
+            "HVG conservation": -0.8573292735972161
+        }, 
+        {
+            "Name": "Scanorama gene output (full/unscaled)", 
+            "Paper": "Efficient integration of heterogeneous single-cell transcriptomes using Scanorama", 
+            "Paper URL": "https://www.nature.com/articles/s41587-019-0113-3", 
+            "Year": 2019, 
+            "Library": "https://github.com/brianhie/scanorama", 
+            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/methods/scanorama.py", 
+            "Version": "1.7", 
+            "Runtime (min)": 9.2, 
+            "CPU (%)": 538.4, 
+            "Memory (GB)": 28.0, 
             "Rank": 17, 
-            "HVG conservation": -0.8349806617963044
+            "Mean score": -0.871683340582862, 
+            "HVG conservation": -0.871683340582862
         }, 
         {
             "Name": "Combat (full/scaled)", 
@@ -267,11 +285,12 @@
             "Library": "https://scanpy.readthedocs.io/en/stable/api/scanpy.pp.combat.html", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/methods/combat.py", 
             "Version": "1.9.1", 
-            "Runtime (min)": 4.716666666666667, 
-            "CPU (%)": 1270.3, 
-            "Memory (GB)": 16.0, 
+            "Runtime (min)": 10.683333333333334, 
+            "CPU (%)": 366.9, 
+            "Memory (GB)": 18.7, 
             "Rank": 18, 
-            "HVG conservation": -0.8753760206274175
+            "Mean score": -0.8982166159199652, 
+            "HVG conservation": -0.8982166159199652
         }
     ]
 }
