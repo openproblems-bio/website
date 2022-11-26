@@ -1,7 +1,7 @@
 {
-    "name": "1k Peripheral blood mononuclear cells", 
-    "data_url": "https://ndownloader.figshare.com/files/36088667", 
-    "data_reference": "https://www.10xgenomics.com/resources/datasets", 
+    "name": "Tabula Muris Senis Lung (random split)", 
+    "data_url": "https://tabula-muris-senis.ds.czbiohub.org/", 
+    "data_reference": "https://doi.org/10.1038/s41586-020-2496-1", 
     "headers": {
         "names": [
             "Rank", 
@@ -31,13 +31,13 @@
             "Library": "https://github.com/KlugerLab/ALRA", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/denoising/methods/alra.py", 
             "Version": "1.0.0", 
-            "Runtime (min)": 0.9883333333333333, 
-            "CPU (%)": 101.3, 
-            "Memory (GB)": 2.2, 
+            "Runtime (min)": 36.31666666666667, 
+            "CPU (%)": 100.7, 
+            "Memory (GB)": 39.4, 
             "Rank": 1, 
-            "Mean score": 0.503650857003351, 
-            "Poisson loss": 0.9763687044236522, 
-            "Mean-squared error": 0.030933009583049786
+            "Mean score": 0.47135672855526844, 
+            "Mean-squared error": -0.04080687762179469, 
+            "Poisson loss": 0.9835203347323316
         }, 
         {
             "Name": "MAGIC (approximate)", 
@@ -47,13 +47,13 @@
             "Library": "https://github.com/KrishnaswamyLab/MAGIC", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/denoising/methods/magic.py", 
             "Version": "3.0.0", 
-            "Runtime (min)": 0.28833333333333333, 
-            "CPU (%)": 519.8, 
-            "Memory (GB)": 0.4415, 
+            "Runtime (min)": 9.45, 
+            "CPU (%)": 140.6, 
+            "Memory (GB)": 7.8, 
             "Rank": 2, 
-            "Mean score": 0.4234626576107978, 
-            "Poisson loss": 0.5425545092543281, 
-            "Mean-squared error": 0.3043708059672675
+            "Mean score": 0.4010311994615718, 
+            "Poisson loss": 0.5047337700392311, 
+            "Mean-squared error": 0.2973286288839124
         }, 
         {
             "Name": "MAGIC", 
@@ -63,13 +63,13 @@
             "Library": "https://github.com/KrishnaswamyLab/MAGIC", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/denoising/methods/magic.py", 
             "Version": "3.0.0", 
-            "Runtime (min)": 2.2666666666666666, 
-            "CPU (%)": 54.7, 
-            "Memory (GB)": 0.4299, 
+            "Runtime (min)": 11.25, 
+            "CPU (%)": 116.3, 
+            "Memory (GB)": 8.199999999, 
             "Rank": 3, 
-            "Mean score": 0.42221577264676774, 
-            "Mean-squared error": 0.3036662741570899, 
-            "Poisson loss": 0.5407652711364456
+            "Mean score": 0.398070571407753, 
+            "Poisson loss": 0.5000837763488009, 
+            "Mean-squared error": 0.2960573664667051
         }, 
         {
             "Name": "DCA", 
@@ -79,13 +79,13 @@
             "Library": "https://github.com/theislab/dca", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/denoising/methods/dca.py", 
             "Version": "0.3.4", 
-            "Runtime (min)": 0.8883333333333333, 
-            "CPU (%)": 1106.9, 
-            "Memory (GB)": 1.8, 
+            "Runtime (min)": 20.533333333333335, 
+            "CPU (%)": 772.8, 
+            "Memory (GB)": 7.7, 
             "Rank": 4, 
-            "Mean score": 0.07915711614102983, 
-            "Mean-squared error": 0.1950086185301425, 
-            "Poisson loss": -0.036694386248082855
+            "Mean score": 0.06271341721825208, 
+            "Mean-squared error": 0.17117313948916268, 
+            "Poisson loss": -0.04574630505265853
         }, 
         {
             "Name": "KNN smoothing", 
@@ -95,13 +95,13 @@
             "Library": "https://github.com/openproblems-bio/openproblems", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/denoising/methods/magic.py", 
             "Version": "3.0.0", 
-            "Runtime (min)": 3.1, 
-            "CPU (%)": 53.8, 
-            "Memory (GB)": 0.4306, 
+            "Runtime (min)": 7.2, 
+            "CPU (%)": 148.7, 
+            "Memory (GB)": 8.199999999, 
             "Rank": 5, 
-            "Mean score": 0.0662535826186012, 
-            "Poisson loss": -0.02866193169701603, 
-            "Mean-squared error": 0.16116909693421844
+            "Mean score": 0.04934258737264913, 
+            "Mean-squared error": 0.12900502224909915, 
+            "Poisson loss": -0.0303198475038009
         }, 
         {
             "Name": "Iterative KNN smoothing", 
@@ -111,13 +111,13 @@
             "Library": "https://github.com/yanailab/knn-smoothing", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/denoising/methods/knn_smoothing.py", 
             "Version": "2.0", 
-            "Runtime (min)": 0.5333333333333333, 
-            "CPU (%)": 491.1, 
-            "Memory (GB)": 1.1, 
+            "Runtime (min)": 10.266666666666667, 
+            "CPU (%)": 445.0, 
+            "Memory (GB)": 28.1, 
             "Rank": 6, 
-            "Mean score": -4.603644590956763, 
-            "Mean-squared error": 0.17426517380173512, 
-            "Poisson loss": -9.381554355715261
+            "Mean score": -4.7316954056317195, 
+            "Poisson loss": -9.601612495593068, 
+            "Mean-squared error": 0.13822168432962956
         }
     ]
 }
