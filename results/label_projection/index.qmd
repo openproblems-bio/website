@@ -1,0 +1,287 @@
+---
+title: Label projection
+engine: knitr
+image: thumbnail.jpg
+params:
+  task_id: label_projection
+---
+
+```{r params-dummy}
+#| include: FALSE
+#| eval: FALSE
+params <- list(
+  task_id = "label_projection"
+)
+path <- "benchmarks/label_projection"
+```
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(reticulate)
+op <- reticulate::import("openproblems")
+
+path <- "."
+
+task_id <- params$task_id
+task <- op$tasks[[task_id]]
+
+method_info <- map_df(task$METHODS, function(fun) {
+  bind_cols(
+    tibble(
+      task_id = task_id,
+      method_id = fun$`__name__`
+    ),
+    do.call(tibble, fun$metadata)
+  )
+})
+
+metric_info <- map_df(task$METRICS, function(fun) {
+  bind_cols(
+    tibble(
+      task_id = task_id,
+      metric_id = fun$`__name__`
+    ),
+    do.call(tibble, fun$metadata)
+  )
+})
+
+dataset_info <- map_df(task$DATASETS, function(fun) {
+  bind_cols(
+    tibble(
+      task_id = task_id,
+      dataset_id = fun$`__name__`
+    ),
+    do.call(tibble, fun$metadata)
+  )
+})
+
+parse_size <- function(x) {
+  num <- as.numeric(gsub("[^\\.0-9]", "", x))
+  denom <- gsub("[^A-Z]", "", x)
+  mult <- c(MB = 1, GB = 1024, TB = 1024*1024)[denom]
+  num * mult
+}
+
+json_paths <- list.files(path, pattern = "*.raw.json", full.names = TRUE)
+results <- map_df(json_paths, function(json_path) {
+  # replace NaNs and Infs
+  json_txt <- readr::read_lines(json_path) %>%
+    gsub(": NaN", ": \"NaN\"", .) %>%
+    gsub(": Infinity", ": \"Infinity\"", .)
+  data <- jsonlite::fromJSON(json_txt)
+
+  dataset_id <- gsub(".*/", "", json_path) %>% gsub(".raw.json", "", .)
+  
+  process_scores <- function(x) {
+    x[map_lgl(x, function(y) y == "NaN")] <- NA_real_
+    x[map_lgl(x, function(y) y == "Infinity")] <- Inf
+    tibble(feature_id = names(x), value = unname(x))
+  }
+  
+  map2_df(names(data), data, function(method_id, li) {
+    meta <- tibble(task_id, method_id, dataset_id)
+    scaled <- do.call(tibble, li$metrics)
+    colnames(scaled) <- paste0("scaled_", colnames(scaled))
+    raw <- do.call(tibble, li$metrics_raw)
+    exec <- do.call(tibble, li[!names(li) %in% c("metrics", "metrics_raw")]) %>%
+      transmute(
+        submit = lubridate::as_datetime(submit),
+        duration = lubridate::duration(toupper(duration)),
+        realtime = lubridate::duration(toupper(realtime)),
+        cpu_pct = `%cpu` %>% gsub("%", "", .) %>% as.numeric(),
+        peak_rss_mb = parse_size(peak_rss),
+        peak_vmem_mb = parse_size(peak_vmem),
+        rchar_mb = parse_size(rchar),
+        wchar_mb = parse_size(wchar),
+        code_version
+      )
+    bind_cols(meta, raw, scaled, exec)
+  })
+}) %>%
+  left_join(method_info %>% select(method_id, is_baseline), "method_id")
+
+qc <- tibble(
+  section = character(0),
+  name = character(0),
+  desc = character(0),
+  value = numeric(0),
+  lower = numeric(0),
+  upper = numeric(0)
+)
+```
+
+## Pre-process raw scores
+
+Build a full crossing to make sure no results are missing.
+It's likely some of the methods didn't finish running on all datasets.
+
+```{r}
+cross_df <- crossing(
+  dataset_info %>% select(dataset_id),
+  method_info %>% select(method_id, is_baseline),
+  metric_info %>% select(metric_id)
+)
+```
+
+Transform the results into a long format and join with the crossing.
+```{r}
+results_long <- 
+  results %>%
+  gather(metric_id, value, !!metric_info$metric_id) %>%
+  select(method_id, dataset_id, metric_id, value, is_baseline) %>%
+  full_join(cross_df, by = colnames(cross_df))
+```
+
+Add some QC metrics.
+```{r}
+qc <- qc %>% 
+  add_row(
+    section = "Raw data",
+    name = "Long table size",
+    desc = "Whether the long form of the results table has the right number of rows.",
+    value = nrow(results_long),
+    lower = nrow(method_info) * nrow(dataset_info) * nrow(metric_info),
+    upper = nrow(method_info) * nrow(dataset_info) * nrow(metric_info)
+  ) %>% 
+  add_row(
+    section = "Raw data",
+    name = "Percentage of missing results",
+    desc = "Probably shouldn't be higher than 10%.",
+    value = mean(is.na(results_long$value)),
+    lower = 0,
+    upper = .1
+  )
+```
+
+
+Plot the raw scores.
+
+```{r fig.width=10, fig.height=12}
+ggplot(results_long) +
+  geom_point(aes(value, method_id, colour = is_baseline)) +
+  facet_wrap(~metric_id, ncol = 1) +
+  theme_bw() +
+  labs(x = NULL, y = NULL)
+```
+
+
+## Compute scaling factors
+
+Compute the minimum and maximum scores of baseline methods per dataset per metric.
+
+```{r fig.width=10, fig.height=12}
+scaling_factors <- 
+  results %>%
+    filter(is_baseline) %>%
+    gather(metric_id, value, !!metric_info$metric_id) %>%
+    group_by(dataset_id, metric_id) %>%
+    summarise(
+      scale_min = min(value, na.rm = TRUE),
+      scale_max = max(value, na.rm = TRUE),
+      .groups = "drop"
+    )
+```
+
+Visualise the scaling factors.
+
+```{r}
+scaling_factors %>% 
+  gather(scaling_factor, value, scale_min, scale_max) %>%
+  ggplot() +
+  geom_point(aes(value, dataset_id, colour = scaling_factor)) +
+  theme_bw()
+```
+
+## Apply scaling
+
+```{r}
+results_long_scaled <- results_long %>%
+  left_join(scaling_factors, by = c("dataset_id", "metric_id")) %>%
+  left_join(metric_info %>% select(metric_id, maximize), by = "metric_id") %>%
+  mutate(
+    score = case_when(
+      !is.na(value) ~ value,
+      maximize ~ scale_min,
+      !maximize ~ scale_max
+    ),
+    scaled = (score - scale_min) / (scale_max - scale_min),
+    scaled = ifelse(maximize, scaled, 1 - scaled)
+  )
+```
+
+```{r}
+ggplot(results_long_scaled) +
+  geom_point(aes(value, scaled)) +
+  facet_wrap(~metric_id, nrow = ceiling(sqrt(nrow(metric_info)))) +
+  theme_bw() +
+  coord_equal()
+```
+
+## Compute overall ranking
+
+```{r}
+ranking <- results_long_scaled %>%
+  group_by(method_id) %>%
+  summarise(mean_value = )
+```
+## Raw data
+
+:::{.column-screen-inset}
+
+::: {.panel-tabset}
+
+## Methods
+```{ojs}
+//| echo: false
+Inputs.table(method_info)
+```
+
+
+## Metrics
+```{ojs}
+//| echo: false
+Inputs.table(metric_info)
+```
+
+## Datasets
+```{ojs}
+//| echo: false
+Inputs.table(dataset_info)
+```
+
+## Results
+```{ojs}
+//| echo: false
+Inputs.table(results)
+```
+
+## Scaling factors
+```{ojs}
+//| echo: false
+Inputs.table(scaling_factors)
+```
+
+:::
+
+:::
+
+
+```{r pass-data-to-ojs}
+#| echo: false
+ojs_define(
+  method_info_t = method_info,
+  metric_info_t = metric_info,
+  dataset_info_t = dataset_info,
+  results_t = results,
+  scaling_factors_t = scaling_factors
+)
+```
+
+```{ojs transpose-ojs-to-r}
+//| echo: false
+method_info = transpose(method_info_t)
+metric_info = transpose(metric_info_t)
+dataset_info = transpose(dataset_info_t)
+results = transpose(results_t)
+scaling_factors = transpose(scaling_factors_t)
+```
