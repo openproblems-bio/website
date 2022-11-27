@@ -2,44 +2,51 @@ library(readr)
 library(stringr)
 library(cli)
 library(purrr)
+library(googledrive)
+d2b <- reticulate::import("doi2bib")
 
+cli::cli_alert("google drive authentication")
+zip_file <- "manuscript/auth_token.zip"
+auth_file <- "manuscript/auth_token"
+
+# created with:
+# zip(zip_file, files = auth_file, flags = paste("--password", Sys.getenv("GOOGLE_DRIVE_PASSWORD")))
+
+if (!file.exists(auth_file)) {
+  processx::run("unzip", c("-P", Sys.getenv("GOOGLE_DRIVE_PASSWORD"), zip_file, auth_file))
+}
+googledrive::drive_auth(email = Sys.getenv("GOOGLE_DRIVE_EMAIL"), path = auth_file)
+
+cli::cli_alert("download manuscript from gdrive")
 temp_manuscript <- tempfile()
 dest_manuscript <- "manuscript/index.qmd"
 dest_library <- "manuscript/library.bib"
 
-# todo: somehow detect whether drive can access a google drive token
-if (Sys.info()[["user"]] == "rcannood") {
-  library(googledrive)
-  library(textreadr)
+drive <- drive_download(
+  as_id("1gcfToxQ5cVgHfQ5Z6M0mbaCzUISEC-CQt352CXvP4s4"),
+  type = "docx",
+  overwrite = TRUE,
+  path = temp_manuscript
+)
 
-  # httr::set_config(httr::config(http_version = 0)) # avoid http2 framing layer bug
-  drive <- drive_download(
-    as_id("1gcfToxQ5cVgHfQ5Z6M0mbaCzUISEC-CQt352CXvP4s4"),
-    type = "docx",
-    overwrite = TRUE,
-    path = temp_manuscript
-  )
+cli::cli_alert("read docx and write to qmd")
+doc <- officer::read_docx(drive$local_path)
+content <- officer::docx_summary(doc)
 
-  # read docx
-  doc <- officer::read_docx(drive$local_path)
-  content <- officer::docx_summary(doc)
-  
-  content$text %>%
-    # add spaces before citations
-    # str_replace_all("([^ ])(\\[@[^\\]]*\\])", "\\1 \\2") %>% 
-    # add newlines before sections
-    str_replace_all("^#", "\n#") %>%
-    write_lines(dest_manuscript)
-}
+content$text %>%
+  # add spaces before citations
+  # str_replace_all("([^ ])(\\[@[^\\]]*\\])", "\\1 \\2") %>% 
+  # add newlines before sections
+  str_replace_all("^#", "\n#") %>%
+  write_lines(dest_manuscript)
 
-# convert references
-d2b <- reticulate::import("doi2bib")
 
-# extract citation yaml
+cli::cli_alert("extract citation yaml")
 manu_txt <- read_lines(dest_manuscript) %>% paste(collapse = "\n")
-citations_yaml <- gsub(".*```\\{citations([^`]*)```.*", "\\1", manu_txt)
+citations_yaml <- gsub(".*```\\{citations[^\n]*\n([^`]*)```.*", "\\1", manu_txt)
 citations <- yaml::read_yaml(text = citations_yaml)$citations
 
+cli::cli_alert("convert to bibtex")
 bibs <- map2_chr(names(citations), citations, function(name, text) {
   bib <-
     if (grepl("^@", text)) {
@@ -57,4 +64,5 @@ bibs <- map2_chr(names(citations), citations, function(name, text) {
   gsub("(@[a-zA-Z]+\\{)[A-Za-z0-9_-]+", paste0("\\1", name), bib)
 })
 
+cli::cli_alert("write library file")
 write_lines(bibs, dest_library)
