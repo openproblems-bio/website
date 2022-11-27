@@ -420,14 +420,14 @@ qc_plot <- qc %>% mutate(
   passes = lower <= value & value <= upper,
   lf = (value - lower) / ifelse(upper == lower, 1, upper - lower),
   test = case_when(
-    lf <= 1 ~ "✓",
-    lf <= 2 ~ "✗",
-    lf <= 3 ~ "✗✗",
+    0 <= lf & lf <= 1 ~ "✓",
+    -1 <= lf | lf <= 2 ~ "✗",
+    -2 <= lf | lf <= 3 ~ "✗✗",
     TRUE ~ "✗✗✗"
   ),
-  color = ifelse(lf <= 1, "green", "red")
+  color = ifelse(0 <= lf & lf <= 1, "green", "red")
 ) %>%
-  arrange(desc(lf), section, name, variable)
+  arrange(desc(abs(lf)), section, name, variable)
 
 qc_plot %>% 
   transmute(
