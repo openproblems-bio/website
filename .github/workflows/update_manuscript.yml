@@ -40,3 +40,6 @@ jobs:
       - name: Update manuscript
         run: |
           Rscript manuscript/_update_manuscript.R
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
