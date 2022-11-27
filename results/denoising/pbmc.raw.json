@@ -1,0 +1,160 @@
+{
+    "no_denoising": {
+        "submit": "2022-11-23 17:41:53.632", 
+        "duration": "29.4s", 
+        "realtime": "6.8s", 
+        "%cpu": "124.2%", 
+        "peak_rss": "447.1 MB", 
+        "peak_vmem": "3 GB", 
+        "rchar": "115.8 MB", 
+        "wchar": "195 MB", 
+        "metrics": {
+            "poisson": 0.0, 
+            "mse": 0.0
+        }, 
+        "code_version": "0.6.0", 
+        "metrics_raw": {
+            "poisson": 0.3011988118677921, 
+            "mse": 0.27097428
+        }
+    }, 
+    "alra": {
+        "submit": "2022-11-23 17:41:44.073", 
+        "duration": "1m 20s", 
+        "realtime": "59.3s", 
+        "%cpu": "101.3%", 
+        "peak_rss": "2.2 GB", 
+        "peak_vmem": "4.8 GB", 
+        "rchar": "152.4 MB", 
+        "wchar": "220.8 MB", 
+        "metrics": {
+            "poisson": 0.9763687044236522, 
+            "mse": 0.030933009583049786
+        }, 
+        "code_version": "1.0.0", 
+        "metrics_raw": {
+            "poisson": 0.04973081647874371, 
+            "mse": 0.26259223
+        }, 
+        "mean_score": 0.503650857003351
+    }, 
+    "knn_smoothing": {
+        "submit": "2022-11-23 17:42:32.900", 
+        "duration": "2m 10s", 
+        "realtime": "32s", 
+        "%cpu": "491.1%", 
+        "peak_rss": "1.1 GB", 
+        "peak_vmem": "4.1 GB", 
+        "rchar": "115.2 MB", 
+        "wchar": "195 MB", 
+        "metrics": {
+            "mse": 0.17426517380173512, 
+            "poisson": -9.381554355715261
+        }, 
+        "code_version": "2.0", 
+        "metrics_raw": {
+            "mse": 0.2237529, 
+            "poisson": 2.71745883410777
+        }, 
+        "mean_score": -4.603644590956763
+    }, 
+    "perfect_denoising": {
+        "submit": "2022-11-23 17:42:53.460", 
+        "duration": "2m 29s", 
+        "realtime": "7.5s", 
+        "%cpu": "116.2%", 
+        "peak_rss": "236.6 MB", 
+        "peak_vmem": "3 GB", 
+        "rchar": "115.8 MB", 
+        "wchar": "195 MB", 
+        "metrics": {
+            "mse": 1.0, 
+            "poisson": 1.0
+        }, 
+        "code_version": "0.6.0", 
+        "metrics_raw": {
+            "mse": 2.0541418e-17, 
+            "poisson": 0.04364447378862427
+        }
+    }, 
+    "knn_naive": {
+        "submit": "2022-11-23 17:41:53.560", 
+        "duration": "3m 39s", 
+        "realtime": "3m 6s", 
+        "%cpu": "53.8%", 
+        "peak_rss": "430.6 MB", 
+        "peak_vmem": "3.2 GB", 
+        "rchar": "116.1 MB", 
+        "wchar": "195 MB", 
+        "metrics": {
+            "poisson": -0.02866193169701603, 
+            "mse": 0.16116909693421844
+        }, 
+        "code_version": "3.0.0", 
+        "metrics_raw": {
+            "poisson": 0.30858081671408744, 
+            "mse": 0.2273016
+        }, 
+        "mean_score": 0.0662535826186012
+    }, 
+    "dca": {
+        "submit": "2022-11-23 17:42:44.383", 
+        "duration": "2m 48s", 
+        "realtime": "53.3s", 
+        "%cpu": "1106.9%", 
+        "peak_rss": "1.8 GB", 
+        "peak_vmem": "9 GB", 
+        "rchar": "140.5 MB", 
+        "wchar": "132.4 MB", 
+        "metrics": {
+            "mse": 0.1950086185301425, 
+            "poisson": -0.036694386248082855
+        }, 
+        "code_version": "0.3.4", 
+        "metrics_raw": {
+            "mse": 0.21813196, 
+            "poisson": 0.31064961022913845
+        }, 
+        "mean_score": 0.07915711614102983
+    }, 
+    "magic_approx": {
+        "submit": "2022-11-23 17:42:53.155", 
+        "duration": "2m 49s", 
+        "realtime": "17.3s", 
+        "%cpu": "519.8%", 
+        "peak_rss": "441.5 MB", 
+        "peak_vmem": "3.5 GB", 
+        "rchar": "116.1 MB", 
+        "wchar": "195 MB", 
+        "metrics": {
+            "poisson": 0.5425545092543281, 
+            "mse": 0.3043708059672675
+        }, 
+        "code_version": "3.0.0", 
+        "metrics_raw": {
+            "poisson": 0.16146154436492588, 
+            "mse": 0.18849762
+        }, 
+        "mean_score": 0.4234626576107978
+    }, 
+    "magic": {
+        "submit": "2022-11-23 17:42:53.322", 
+        "duration": "5m 29s", 
+        "realtime": "2m 16s", 
+        "%cpu": "54.7%", 
+        "peak_rss": "429.9 MB", 
+        "peak_vmem": "3.2 GB", 
+        "rchar": "116.1 MB", 
+        "wchar": "195 MB", 
+        "metrics": {
+            "mse": 0.3036662741570899, 
+            "poisson": 0.5407652711364456
+        }, 
+        "code_version": "3.0.0", 
+        "metrics_raw": {
+            "mse": 0.18868853, 
+            "poisson": 0.16192237040404314
+        }, 
+        "mean_score": 0.42221577264676774
+    }
+}
