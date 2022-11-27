@@ -12,12 +12,14 @@ params:
 params <- list(
   task_id = "label_projection"
 )
-path <- "benchmarks/label_projection"
+path <- paste0("results/", params$task_id, "/")
 ```
 
 ```{r setup, include=FALSE}
 library(tidyverse)
 library(reticulate)
+orig_settings <- knitr::opts_chunk$get()
+
 op <- reticulate::import("openproblems")
 
 path <- "."
@@ -156,7 +158,14 @@ qc <- qc %>%
 
 Plot the raw scores.
 
-```{r fig.width=10, fig.height=12}
+```{r include=FALSE}
+knitr::opts_chunk$set(
+  fig.width = 10,
+  fig.height = nrow(method_info) * nrow(metric_info) / 4
+)
+```
+
+```{r}
 ggplot(results_long) +
   geom_point(aes(value, method_id, colour = is_baseline)) +
   facet_wrap(~metric_id, ncol = 1) +
@@ -169,7 +178,7 @@ ggplot(results_long) +
 
 Compute the minimum and maximum scores of baseline methods per dataset per metric.
 
-```{r fig.width=10, fig.height=12}
+```{r}
 scaling_factors <- 
   results %>%
     filter(is_baseline) %>%
@@ -183,6 +192,14 @@ scaling_factors <-
 ```
 
 Visualise the scaling factors.
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(
+  fig.width = 10,
+  fig.height = nrow(method_info) / 4
+)
+```
 
 ```{r}
 scaling_factors %>% 
@@ -199,20 +216,29 @@ results_long_scaled <- results_long %>%
   left_join(scaling_factors, by = c("dataset_id", "metric_id")) %>%
   left_join(metric_info %>% select(metric_id, maximize), by = "metric_id") %>%
   mutate(
-    score = case_when(
+    scaled_score = case_when(
       !is.na(value) ~ value,
       maximize ~ scale_min,
       !maximize ~ scale_max
     ),
-    scaled = (score - scale_min) / (scale_max - scale_min),
-    scaled = ifelse(maximize, scaled, 1 - scaled)
+    scaled_score = (scaled_score - scale_min) / (scale_max - scale_min),
+    scaled_score = ifelse(maximize, scaled_score, 1 - scaled_score)
   )
 ```
 
+
+```{r include=FALSE}
+knitr::opts_chunk$set(
+  fig.width = 4,
+  fig.height = 4 * nrow(metric_info)
+)
+```
+
 ```{r}
+
 ggplot(results_long_scaled) +
-  geom_point(aes(value, scaled)) +
-  facet_wrap(~metric_id, nrow = ceiling(sqrt(nrow(metric_info)))) +
+  geom_point(aes(value, scaled_score)) +
+  facet_wrap(~metric_id, ncol = 1) +
   theme_bw() +
   coord_equal()
 ```
@@ -220,10 +246,104 @@ ggplot(results_long_scaled) +
 ## Compute overall ranking
 
 ```{r}
-ranking <- results_long_scaled %>%
+overall_ranking <- results_long_scaled %>%
   group_by(method_id) %>%
-  summarise(mean_value = )
+  summarise(mean_score = mean(scaled_score)) %>%
+  arrange(desc(mean_score))
 ```
+
+
+View results
+
+```{r include=FALSE}
+knitr::opts_chunk$set(
+  fig.width = 10,
+  fig.height = nrow(method_info) * nrow(metric_info) / 4
+)
+```
+
+```{r}
+# order by ranking
+results_long_scaled$method_id <- factor(results_long_scaled$method_id, levels = rev(overall_ranking$method_id))
+
+ggplot(results_long_scaled %>% arrange(method_id)) +
+  geom_vline(aes(xintercept = x), tibble(x = c(0, 1)), linetype = "dashed", alpha = .5, colour = "red") +
+  geom_path(aes(scaled_score, method_id, group = dataset_id), alpha = .25) +
+  geom_point(aes(scaled_score, method_id, colour = is_baseline)) +
+  facet_wrap(~metric_id, ncol = 1) +
+  theme_bw() +
+  labs(x = NULL, y = NULL)
+```
+
+
+## Overview
+
+Add extra columns
+```{r}
+per_dataset <- results_long_scaled %>%
+  group_by(method_id, dataset_id) %>%
+  summarise(score = mean(scaled_score), .groups = "drop") %>%
+  mutate(dataset_id = paste0("dataset_", dataset_id)) %>%
+  spread(dataset_id, score)
+per_metric <- results_long_scaled %>%
+  group_by(method_id, metric_id) %>%
+  summarise(score = mean(scaled_score), .groups = "drop") %>%
+  mutate(metric_id = paste0("metric_", metric_id)) %>%
+  spread(metric_id, score)
+
+summary <- 
+  method_info %>%
+  transmute(method_id, method_name, method_is_baseline = ifelse(is_baseline, "yes", "")) %>%
+  left_join(overall_ranking, by = "method_id") %>%
+  left_join(per_dataset, by = "method_id") %>%
+  left_join(per_metric, by = "method_id") %>%
+  arrange(desc(mean_score))
+```
+
+```{r}
+library(funkyheatmap)
+
+# fix funkyheatmap defaults so we don't need to do the processing below
+column_info <- 
+  tibble(
+    id = colnames(summary)[-1],
+    name = id %>%
+      gsub("^[^_]+_", "", .) %>%
+      gsub("_", " ", .) %>%
+      str_to_title(),
+    group = gsub("_.*", "", id),
+    geom = c("method" = "text", "mean" = "bar", "dataset" = "funkyrect", "metric" = "funkyrect")[group],
+    palette = c("method" = NA_character_, "mean" = "mean", "dataset" = "dataset", "metric" = "metric")[group],
+    options = map2(id, geom, function(id, geom) {
+      if (geom == "text") {
+        list(width = 6)
+      } else if (geom == "bar") {
+        list(width = 4)
+      } else {
+        list()
+      }
+    })
+  ) %>%
+  verify_column_info(summary)
+
+g <- funky_heatmap(
+  data = summary,
+  column_info = column_info,
+  expand = c(xmax = 2)
+)
+```
+
+```{r include=FALSE}
+knitr::opts_chunk$set(
+  fig.width = g$width,
+  fig.height = g$height
+)
+```
+
+```{r}
+g
+```
+
 ## Raw data
 
 :::{.column-screen-inset}
