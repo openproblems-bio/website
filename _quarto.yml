@@ -1,0 +1,25 @@
+project:
+  type: website
+  preview:
+    port: 4200
+
+website:
+  title: "OpenProblems"
+  navbar:
+    logo: images/logo.png
+    title: false
+    left:
+      - href: index.qmd
+        text: Home
+      - benchmarks/index.qmd
+      - py_imports.qmd
+      - r_imports.qmd
+
+format:
+  html:
+    theme: simplex
+    css: styles.css
+    toc: true
+
+
+
