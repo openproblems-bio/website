@@ -2,6 +2,8 @@
 on:
   push:
     branches: [ gh-pages ]
+  # to be able to trigger a manual build
+  workflow_dispatch:
 
 name: 'Deploy to Netlify'
 
