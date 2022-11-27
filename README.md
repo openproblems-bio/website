@@ -21,3 +21,9 @@ Run `quarto preview` to render a preview version of the site.
 ## Build
 
 Run `quarto build` to render the site.
+
+## Helper scripts
+
+* Run `Rscript results/_generate_pages.R` to generate the `index.qmd` pages for all subtasks.
+
+* Run `Rscript manuscript/_update_manuscript.R` to fetch the latest version of the manuscript from Google Drive and generate the corresponding `index.qmd`.
