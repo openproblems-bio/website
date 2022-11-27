@@ -17,6 +17,8 @@ task_id <- 'label_projection'
 #| include: FALSE
 library(tidyverse)
 library(reticulate)
+library(funkyheatmap)
+library(kableExtra)
 op <- reticulate::import("openproblems")
 
 # orig_settings <- knitr::opts_chunk$get()
@@ -100,9 +102,11 @@ results <- map_df(json_paths, function(json_path) {
   left_join(method_info %>% select(method_id, is_baseline), "method_id")
 
 qc <- tibble(
+  task_id = character(0),
   section = character(0),
   name = character(0),
   desc = character(0),
+  variable = character(0),
   value = numeric(0),
   lower = numeric(0),
   upper = numeric(0)
@@ -131,24 +135,65 @@ results_long <-
   full_join(cross_df, by = colnames(cross_df))
 ```
 
-Add some QC metrics.
 ```{r}
+#| include: false
+# add some qc checks
 qc <- qc %>% 
-  add_row(
-    section = "Raw data",
-    name = "Long table size",
-    desc = "Whether the long form of the results table has the right number of rows.",
-    value = nrow(results_long),
-    lower = nrow(method_info) * nrow(dataset_info) * nrow(metric_info),
-    upper = nrow(method_info) * nrow(dataset_info) * nrow(metric_info)
-  ) %>% 
-  add_row(
-    section = "Raw data",
-    name = "Percentage of missing results",
-    desc = "Probably shouldn't be higher than 10%.",
-    value = mean(is.na(results_long$value)),
-    lower = 0,
-    upper = .1
+  bind_rows(
+    tibble(
+      task_id,
+      section = "Raw data",
+      name = "Long table size",
+      desc = "Whether the long form of the results table has the right number of rows.",
+      value = nrow(results_long),
+      lower = nrow(method_info) * nrow(dataset_info) * nrow(metric_info),
+      upper = nrow(method_info) * nrow(dataset_info) * nrow(metric_info)
+    ),
+    tibble(
+      task_id,
+      section = "Raw data",
+      name = "Percentage of missing results",
+      desc = "Probably shouldn't be higher than 10%.",
+      value = mean(is.na(results_long$value)),
+      lower = 0,
+      upper = .1
+    ),
+    results_long %>%
+      group_by(variable = metric_id) %>%
+      summarise(
+        task_id,
+        section = "Raw data",
+        name = paste0("Percentage of missing results per metric"),
+        desc = "Probably shouldn't be higher than 10%.",
+        value = mean(is.na(value)),
+        lower = 0,
+        upper = .1,
+        .groups = "drop"
+      ),
+    results_long %>%
+      group_by(variable = dataset_id) %>%
+      summarise(
+        task_id,
+        section = "Raw data",
+        name = paste0("Percentage of missing results per dataset"),
+        desc = "Probably shouldn't be higher than 10%.",
+        value = mean(is.na(value)),
+        lower = 0,
+        upper = .1,
+        .groups = "drop"
+      ),
+    results_long %>%
+      group_by(variable = method_id) %>%
+      summarise(
+        task_id,
+        section = "Raw data",
+        name = paste0("Percentage of missing results per method"),
+        desc = "Probably shouldn't be higher than 10%.",
+        value = mean(is.na(value)),
+        lower = 0,
+        upper = .1,
+        .groups = "drop"
+      )
   )
 ```
 
@@ -173,7 +218,9 @@ ggplot(results_long) +
 
 ## Compute scaling factors
 
-Compute the minimum and maximum scores of baseline methods per dataset per metric.
+* Compute the minimum and maximum scores of baseline methods per dataset per metric.
+* Rescale values
+
 
 ```{r}
 scaling_factors <- 
@@ -190,23 +237,22 @@ scaling_factors <-
 
 Visualise the scaling factors.
 
-
 ```{r include=FALSE}
 knitr::opts_chunk$set(
   fig.width = 10,
-  fig.height = nrow(method_info) / 4
+  fig.height = nrow(metric_info) / 4
 )
 ```
 
-```{r}
+```{r, eval=FALSE, echo=FALSE}
 scaling_factors %>% 
   gather(scaling_factor, value, scale_min, scale_max) %>%
   ggplot() +
-  geom_point(aes(value, dataset_id, colour = scaling_factor)) +
+  geom_point(aes(value, metric_id, colour = scaling_factor)) +
   theme_bw()
 ```
 
-## Apply scaling
+
 
 ```{r}
 results_long_scaled <- results_long %>%
@@ -231,14 +277,34 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r}
+```{r, eval=FALSE, echo=FALSE}
 ggplot(results_long_scaled) +
   geom_point(aes(value, scaled_score)) +
   facet_wrap(~metric_id, ncol = 1, scales = "free") +
   theme_bw()
 ```
 
-## Compute overall ranking
+
+```{r}
+#| include: false
+# add some qc checks
+qc <- qc %>% 
+  bind_rows(
+    results_long_scaled %>%
+      group_by(variable = metric_id) %>%
+      summarise(
+        task_id,
+        section = "Metric scaling",
+        name = paste0(c("Lower", "Upper"), " bound check scores after scaling"),
+        desc = "Scores should not fall drastically outside the range of the baseline [min, max] range.",
+        value = c(min(scaled_score), max(scaled_score)),
+        lower = -1,
+        upper = 2,
+        .groups = "drop"
+      )
+  )
+```
+
 
 ```{r}
 overall_ranking <- results_long_scaled %>%
@@ -265,7 +331,7 @@ ggplot(results_long_scaled %>% arrange(method_id)) +
   geom_vline(aes(xintercept = x), tibble(x = c(0, 1)), linetype = "dashed", alpha = .5, colour = "red") +
   geom_path(aes(scaled_score, method_id, group = dataset_id), alpha = .25) +
   geom_point(aes(scaled_score, method_id, colour = is_baseline)) +
-  facet_wrap(~metric_id, ncol = 1) +
+  facet_wrap(~metric_id, ncol = 1, scales = "free") +
   theme_bw() +
   labs(x = NULL, y = NULL)
 ```
@@ -303,7 +369,6 @@ summary <-
 ```
 
 ```{r}
-library(funkyheatmap)
 
 # fix funkyheatmap defaults so we don't need to do the processing below
 column_info <- tibble(
@@ -353,9 +418,49 @@ knitr::opts_chunk$set(
 g
 ```
 
+## Quality control
+
+```{r}
+#| echo: false
+qc_plot <- qc %>% mutate(
+  passes = lower <= value & value <= upper,
+  lf = (value - lower) / ifelse(upper == lower, 1, upper - lower),
+  test = case_when(
+    lf <= 1 ~ "✓",
+    lf <= 2 ~ "✗",
+    lf <= 3 ~ "✗✗",
+    TRUE ~ "✗✗✗"
+  ),
+  color = ifelse(lf <= 1, "green", "red")
+) %>%
+  arrange(desc(lf), section, name, variable)
+
+qc_plot %>% 
+  transmute(
+    section,
+    name,
+    variable = ifelse(is.na(variable), "", variable),
+    lower = round(lower, 3),
+    value = round(value, 3),
+    upper = round(upper, 3),
+    test
+  ) %>%
+  kbl() %>%
+  kable_paper() %>%
+  column_spec(
+    7, 
+    color = qc_plot$color
+  ) %>%
+  column_spec(
+    1:7,
+    popover = qc_plot$desc
+  )
+```
+
+
 ## Raw data
 
-:::{.column-screen-inset}
+:::{.column-page}
 
 ::: {.panel-tabset}
 
@@ -396,6 +501,12 @@ Inputs.table(scaling_factors)
 Inputs.table(summary)
 ```
 
+## Quality control
+```{ojs}
+//| echo: false
+Inputs.table(qc)
+```
+
 :::
 
 :::
@@ -409,7 +520,8 @@ ojs_define(
   dataset_info_t = dataset_info,
   results_t = results,
   scaling_factors_t = scaling_factors,
-  summary_t = summary
+  summary_t = summary,
+  qc_t = qc
 )
 ```
 
@@ -421,4 +533,5 @@ dataset_info = transpose(dataset_info_t)
 results = transpose(results_t)
 scaling_factors = transpose(scaling_factors_t)
 summary = transpose(summary_t)
+qc = transpose(qc_t)
 ```
