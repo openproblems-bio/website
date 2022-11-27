@@ -11,13 +11,13 @@ bibliography: library.bib
 
 Single-cell genomics has enabled the study of biological processes at an unprecedented scale and resolution [@celltypeatlas_plass2018; @humancellatlas_cao2020; @revisedairwayepithelial_montoro2018]. These studies have been enabled by computational tools for the analysis of single-cell data, which has surpassed 1300 published algorithms [@overtoolsreveal_zappia2021]. Evolving biological questions and technological development [@methodyearspatially_nmeth2021; @methodyearsinglecell_nmeth2020] continuously pose new challenges for data analysts, which has led to the description of grand challenges for single-cell data science [@elevengrandchallenges_lahnemann2020]. While the identification of such grand challenges in single-cell genomics can concentrate research into relevant areas, the current definitions of these challenges are qualitative in nature.
 
-Clear definitions of open problems including quantifications of progress has driven innovation in machine learning research [@yearsdatascience_donoho2017]. Open challenges such as the Netflix prize and ImageNet [@largescalehierarchical_deng2009] represent landmark problems that allow measurement of progress across decades. These challenges have provided a common vocabulary for innovation: image classification accuracy has improved from 50% to over 90% on ImageNet since 2011. Inspired by open challenges in machine learning, Critical Assessment of protein Structure Prediction (CASP), Recursion’s cellular image classification Kaggle competition, various DREAM challenges, and our recent multimodal data integration competition at NeurIPS 2021 [@sandboxpredictionintegration_luecken2021] have focused research efforts in computational biology disciplines such as protein structure prediction, cellular diagnostics, gene module prediction, and multimodal single-cell data integration. Particularly successful competitions such as CASP have built communities that accelerate research toward these goals.
+Clear definitions of open problems including quantifications of progress has driven innovation in machine learning research [@yearsdatascience_donoho2017]. Open challenges such as the Netflix prize [@netflixprize_bennet2007] and ImageNet [@largescalehierarchical_deng2009] represent landmark problems that allow measurement of progress across decades. These challenges have provided a common vocabulary for innovation: image classification accuracy has improved from 50% to over 90% on ImageNet since 2011. Inspired by open challenges in machine learning, Critical Assessment of protein Structure Prediction (CASP), Recursion’s cellular image classification Kaggle competition, various DREAM challenges, and our recent multimodal data integration competition at NeurIPS 2021 [@sandboxpredictionintegration_luecken2021] have focused research efforts in computational biology disciplines such as protein structure prediction, cellular diagnostics, gene module prediction, and multimodal single-cell data integration. Particularly successful competitions such as CASP have built communities that accelerate research toward these goals.
 
 In single-cell genomics, large-scale benchmarks [@comparisonsinglecell_saelens2019; @benchmarkingatlaslevel_luecken2020; @biasrobustnessscalability_soneson2018; @confrontingfalsediscoveries_squair2021] have quantified open questions by proposing evaluation metrics and using these to compare existing methods. Yet, benchmarks inevitably age: newly developed tools that optimize the proposed benchmarking metrics cannot be compared in the same study; existing tools may perform differently on newly generated benchmarking datasets of better quality; and used metrics may not capture the aspects of method performance that a user is interested in. These challenges can only be addressed by community participation in benchmarking. To build such communities around quantified challenges, benchmarking studies would require frequent updating and open discussion on benchmarking datasets, proposed metrics, and selected methods.
 
 Learning from machine learning competitions, we propose a living benchmarking framework for single-cell genomics tools that follows the Common Task Framework (CTF) [@yearsdatascience_donoho2017]. The CTF has 3 criteria: (1) An easily available training dataset of sufficient complexity, (2) a set of competitors who submit methods for benchmarking, and (3) a set of metrics that are evaluated on test data to define progress on the task and thereby formally define it. When continuously updating such benchmarks, ...
 
-We have developed the Open Problems in Single-cell Analysis (Open Problems) framework, a platform that defines and measures progress towards open challenges in single-cell genomics following the CTF. Open Problems combines an open github repository with community-defined tasks, Github Actions testing workflows, a benchmarking pipeline using Nextflow and Amazon Web Services, and a website to explore the results to build a living, community-based benchmarking project. Currently, Open Problems includes X defined tasks, on which Y datasets are used to evaluate Z methods using XY metrics. These tasks were defined by interactions between contributors, which has led to new benchmarking insights even when contributors had already published benchmarks on these tasks. Open Problems provides community-defined standards for progress in single-cell data science to enable decentralized method development towards a common goal.
+We have developed the Open Problems in Single-cell Analysis (Open Problems) framework, a platform that defines and measures progress towards open challenges in single-cell genomics following the CTF. Open Problems combines an open github repository with community-defined tasks, Github Actions testing workflows, a benchmarking pipeline using Nextflow [@nextflowenablesreproducible_tommaso2017] and Amazon Web Services, and a website to explore the results to build a living, community-based benchmarking project. Currently, Open Problems includes X defined tasks, on which Y datasets are used to evaluate Z methods using XY metrics. These tasks were defined by interactions between contributors, which has led to new benchmarking insights even when contributors had already published benchmarks on these tasks. Open Problems provides community-defined standards for progress in single-cell data science to enable decentralized method development towards a common goal.
 
 
 
@@ -37,24 +37,24 @@ Building on previous work defining open challenges in single-cell analysis [@ele
 ## Proposed structure
 
 
-Task overview
-Results from a few tasks
-All of the scIB benchmarking can be migrated into this framework (highly extensible)
-Addition of completely novel tasks (e.g. gene regulatory prediction)
-Community-driven benchmarking for emerging methodology (e.g. differential abundance, spatial decomposition)
-Results of the CZI jamboree
-Focus on spatial decomposition task
-Explain metrics, datasets, methods
+1. Task overview
+2. Results from a few tasks
+  a. All of the scIB benchmarking can be migrated into this framework (highly extensible)
+  b. Addition of completely novel tasks (e.g. gene regulatory prediction)
+  c. Community-driven benchmarking for emerging methodology (e.g. differential abundance, spatial decomposition)
+  d. Results of the CZI jamboree
+2. Focus on spatial decomposition task
+  a. Explain metrics, datasets, methods
 
 
 ## Defined open problems facilitate/drive innovation in single-cell data science
 
-Reaching out to the ML community:
-NeurIPS competition built on Open Problems
-Note: Community-informed re-evaluation of metrics (PMLR report)
-Using framework to drive development of novel methods
-Enable method developers to include their methods in live benchmark and publish results
-Build analysis pipelines from top performers across tasks
+1. Reaching out to the ML community:
+  a. NeurIPS competition built on Open Problems
+    - Note: Community-informed re-evaluation of metrics (PMLR report)
+2. Using framework to drive development of novel methods
+3. Enable method developers to include their methods in live benchmark and publish results
+4. Build analysis pipelines from top performers across tasks
 
 
 ```{citations, include=FALSE}
@@ -89,6 +89,7 @@ citations:
   benchmarkingjointmultiomics_cantini2021: 10.1038/s41467-020-20430-7
   benchmarkingcelltype_avilacobos2020: 10.1038/s41467-020-19015-1
   cellxgeneperformantscalable_megill2021: 10.1101/2021.04.05.438318
+  nextflowenablesreproducible_tommaso2017: 10.1038/nbt.3820
 
   sandboxpredictionintegration_luecken2021: |
     @inproceedings{
@@ -99,5 +100,13 @@ citations:
       year={2021},
       url={https://openreview.net/forum?id=gN35BGa1Rt}
     }
+  netflixprize_bennet2007: |
+    @inproceedings{bennett2007netflix,
+      title={The netflix prize},
+      author={Bennett, James and Lanning, Stan and others},
+      year={2007}
+    }
+
+
 ```
 
