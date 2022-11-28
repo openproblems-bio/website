@@ -43,6 +43,11 @@ jobs:
           export GOOGLE_DRIVE_PASSWORD="${{ secrets.GOOGLE_DRIVE_PASSWORD }}"
           Rscript manuscript/_update_manuscript.R
 
+      - name: Install Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true 
+
       - name: Try rendering
         run: |
           quarto render manuscript/index.qmd
