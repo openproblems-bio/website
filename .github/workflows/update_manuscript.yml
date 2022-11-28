@@ -41,7 +41,12 @@ jobs:
         run: |
           export GOOGLE_DRIVE_EMAIL="${{ secrets.GOOGLE_DRIVE_EMAIL }}"
           export GOOGLE_DRIVE_PASSWORD="${{ secrets.GOOGLE_DRIVE_PASSWORD }}"
-          Rscript manuscript/_update_manuscript.R
           
+          unzip -P $GOOGLE_DRIVE_PASSWORD manuscript/auth_token.zip manuscript/auth_token
+          ls -l manuscript
+
+          Rscript manuscript/_update_manuscript.R
+          ls -l manuscript
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
