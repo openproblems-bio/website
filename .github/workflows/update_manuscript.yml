@@ -45,3 +45,7 @@ jobs:
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: Update manuscript
+          title: Update manuscript
+          body: This PR updates the manuscript using the latest changes from Google Drive.
