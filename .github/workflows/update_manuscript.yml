@@ -41,15 +41,7 @@ jobs:
         run: |
           export GOOGLE_DRIVE_EMAIL="${{ secrets.GOOGLE_DRIVE_EMAIL }}"
           export GOOGLE_DRIVE_PASSWORD="${{ secrets.GOOGLE_DRIVE_PASSWORD }}"
-
-          unzip -P $GOOGLE_DRIVE_PASSWORD manuscript/auth_token.zip manuscript/auth_token
-          ls -l manuscript
-
-          mkdir -p ~/.cache/gargle
-          cp manuscript/auth_token "~/.cache/gargle/134f22af3ae3a9f0b7f0eb57dd61916f_$GOOGLE_DRIVE_EMAIL"
-
           Rscript manuscript/_update_manuscript.R
-          ls -l manuscript
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4

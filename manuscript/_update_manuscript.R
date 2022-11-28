@@ -6,15 +6,28 @@ library(googledrive)
 d2b <- reticulate::import("doi2bib")
 
 cli::cli_alert("google drive authentication")
-zip_file <- "manuscript/auth_token.zip"
+zip_file <- fs::path_wd("manuscript/auth_token.zip")
 auth_file <- paste0(Sys.getenv("HOME"), "/.cache/gargle/134f22af3ae3a9f0b7f0eb57dd61916f_", Sys.getenv("GOOGLE_DRIVE_EMAIL"))
 
-# created with:
-# zip(zip_file, files = auth_file, flags = paste("--password", Sys.getenv("GOOGLE_DRIVE_PASSWORD")))
+# zip_file created with:
+#   processx::run(
+#     "zip",
+#     args = c(zip_file, basename(auth_file), "--password", Sys.getenv("GOOGLE_DRIVE_PASSWORD")),
+#     wd = dirname(auth_file)
+#   )
+
+if (is.null(Sys.getenv("GOOGLE_DRIVE_EMAIL"))) {
+  stop("Need the email to authenticate")
+}
 
 if (!file.exists(auth_file)) {
-  stop("Unzip '", zip_file, "'' to '", auth_file, "'")
+  if (is.null(Sys.getenv("GOOGLE_DRIVE_PASSWORD"))) {
+    stop("Need the password to unzip")
+  }
+  dir.create(dirname(auth_file), recursive = TRUE, showWarnings = FALSE)
+  processx::run("unzip", c("-D", "-P", Sys.getenv("GOOGLE_DRIVE_PASSWORD"), zip_file), wd = dirname(auth_file))
 }
+
 googledrive::drive_auth(email = Sys.getenv("GOOGLE_DRIVE_EMAIL"), path = auth_file)
 
 cli::cli_alert("download manuscript from gdrive")
