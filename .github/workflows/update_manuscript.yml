@@ -40,6 +40,9 @@ jobs:
       - name: Update manuscript
         run: |
           Rscript manuscript/_update_manuscript.R
+        env:
+          GOOGLE_DRIVE_EMAIL: ${{ secrets.GOOGLE_DRIVE_EMAIL }}
+          GOOGLE_DRIVE_PASSWORD: ${{ secrets.GOOGLE_DRIVE_PASSWORD }}
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
