@@ -45,7 +45,7 @@ jobs:
           unzip -P $GOOGLE_DRIVE_PASSWORD manuscript/auth_token.zip manuscript/auth_token
           ls -l manuscript
 
-          mkdir ~/.cache/gargle
+          mkdir -p ~/.cache/gargle
           cp manuscript/auth_token "~/.cache/gargle/134f22af3ae3a9f0b7f0eb57dd61916f_$GOOGLE_DRIVE_EMAIL"
 
           Rscript manuscript/_update_manuscript.R
