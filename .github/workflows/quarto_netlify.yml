@@ -57,19 +57,34 @@ jobs:
           quarto render
 
       - name: Deploy 🚀
+        uses: jsmrcaga/action-netlify-deploy@v1.8.0
         if: github.event_name != 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: _site
-          branch: gh-pages
-          force: false
-          clean-exclude: pr-preview/
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_DEPLOY_MESSAGE: "Prod deploy v${{ github.ref }}"
+          NETLIFY_DEPLOY_TO_PROD: true
+          build_directory: _site
+          install_command: echo no install required
+          build_command: echo no build required
 
       - name: Deploy preview
         if: github.event_name == 'pull_request'
-        uses: rossjrw/pr-preview-action@v1
+        uses: jsmrcaga/action-netlify-deploy@v1.8.0
         with:
-          source-dir: _site
-          preview-branch: gh-pages
-          umbrella-dir: pr-preview
-          action: auto
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_DEPLOY_MESSAGE: "PR deploy v${{ github.ref }}"
+          deploy_alias: ${{ env.BRANCH_NAME }}
+          build_directory: _site
+          install_command: echo no install required
+          build_command: echo no build required
+
+      - name: Status check
+        if: github.event_name == 'pull_request'
+        uses: Sibz/github-status-action@v1.1.1
+        with:
+          authToken: ${{ secrets.GITHUB_TOKEN }}
+          context: Netlify preview
+          state: success
+          target_url: https://${{ env.BRANCH_NAME }}--openproblems-nbt2022-reproducibility.netlify.app
