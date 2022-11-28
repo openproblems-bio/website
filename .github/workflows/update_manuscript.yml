@@ -43,6 +43,10 @@ jobs:
           export GOOGLE_DRIVE_PASSWORD="${{ secrets.GOOGLE_DRIVE_PASSWORD }}"
           Rscript manuscript/_update_manuscript.R
 
+      - name: Try rendering
+        run: |
+          quarto render manuscript/index.qmd
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
