@@ -7,13 +7,13 @@ d2b <- reticulate::import("doi2bib")
 
 cli::cli_alert("google drive authentication")
 zip_file <- "manuscript/auth_token.zip"
-auth_file <- "manuscript/auth_token"
+auth_file <- paste0(Sys.getenv("HOME"), "/.cache/gargle/134f22af3ae3a9f0b7f0eb57dd61916f_", Sys.getenv("GOOGLE_DRIVE_EMAIL"))
 
 # created with:
 # zip(zip_file, files = auth_file, flags = paste("--password", Sys.getenv("GOOGLE_DRIVE_PASSWORD")))
 
 if (!file.exists(auth_file)) {
-  processx::run("unzip", c("-P", Sys.getenv("GOOGLE_DRIVE_PASSWORD"), zip_file, auth_file))
+  stop("Unzip '", zip_file, "'' to '", auth_file, "'")
 }
 googledrive::drive_auth(email = Sys.getenv("GOOGLE_DRIVE_EMAIL"), path = auth_file)
 
