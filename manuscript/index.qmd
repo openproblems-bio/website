@@ -6,6 +6,11 @@ bibliography: library.bib
 
 
 
+```{r}#| include: false
+op <- reticulate::import("openproblems")
+```
+
+
 ## Abstract
 
 
@@ -17,7 +22,21 @@ In single-cell genomics, large-scale benchmarks [@comparisonsinglecell_saelens20
 
 Learning from machine learning competitions, we propose a living benchmarking framework for single-cell genomics tools that follows the Common Task Framework (CTF) [@yearsdatascience_donoho2017]. The CTF has 3 criteria: (1) An easily available training dataset of sufficient complexity, (2) a set of competitors who submit methods for benchmarking, and (3) a set of metrics that are evaluated on test data to define progress on the task and thereby formally define it. When continuously updating such benchmarks, ...
 
-We have developed the Open Problems in Single-cell Analysis (Open Problems) framework, a platform that defines and measures progress towards open challenges in single-cell genomics following the CTF. Open Problems combines an open github repository with community-defined tasks, Github Actions testing workflows, a benchmarking pipeline using Nextflow [@nextflowenablesreproducible_tommaso2017] and Amazon Web Services, and a website to explore the results to build a living, community-based benchmarking project. Currently, Open Problems includes X defined tasks, on which Y datasets are used to evaluate Z methods using XY metrics. These tasks were defined by interactions between contributors, which has led to new benchmarking insights even when contributors had already published benchmarks on these tasks. Open Problems provides community-defined standards for progress in single-cell data science to enable decentralized method development towards a common goal.
+```{r}
+tasks <- map(op$TASKS, function(task) {
+  list(
+    method_ids = map_chr(task$METHODS, function(fun) fun$`__name__`),
+    metric_ids = map_chr(task$METRICS, function(fun) fun$`__name__`),
+    dataset_ids = map_chr(task$DATASETS, function(fun) fun$`__name__`)
+  )
+})
+n_tasks <- length(tasks)
+n_methods <- length(unique(unlist(map(tasks, "method_ids"))))
+n_metrics <- length(unique(unlist(map(tasks, "metric_ids"))))
+n_datasets <- length(unique(unlist(map(tasks, "dataset_ids"))))
+```
+
+We have developed the Open Problems in Single-cell Analysis (Open Problems) framework, a platform that defines and measures progress towards open challenges in single-cell genomics following the CTF. Open Problems combines an open github repository with community-defined tasks, Github Actions testing workflows, a benchmarking pipeline using Nextflow [@nextflowenablesreproducible_tommaso2017] and Amazon Web Services, and a website to explore the results to build a living, community-based benchmarking project. Currently, Open Problems includes `r n_tasks` defined tasks, on which `r n_datasets` datasets are used to evaluate `r n_methods` methods using `r n_metrics` metrics. These tasks were defined by interactions between contributors, which has led to new benchmarking insights even when contributors had already published benchmarks on these tasks. Open Problems provides community-defined standards for progress in single-cell data science to enable decentralized method development towards a common goal.
 
 
 
@@ -25,12 +44,13 @@ We have developed the Open Problems in Single-cell Analysis (Open Problems) fram
 
 In order to enable a truly living benchmark, we have designed a standardized and automated infrastructure which allows members of the single-cell community to contribute to Open Problems in a seamless manner. Each Open Problems task is comprised of datasets, methods, and metrics (Fig 1): datasets define both the input and the ground truth for a task, methods attempt to solve the task, and metrics evaluate the success of a method on a given dataset. Metrics are normalized between 0 and 1 based on the inclusion of “baseline” methods which are designed to emulate either random or perfect performance. Methods are then ranked on a per-dataset basis by the average normalized metric score and presented in a summary table on the Open Problems website ([openproblems.bio](https://openproblems.bio)).
 
-To enable seamless community involvement in Open Problems, we have designed the infrastructure to take advantage of automated workflows through GitHub Actions, Nextflow[@nextflowenablesreproducible_tommaso2017], and AWS Batch. When a community member adds a task, dataset, method, or metric, the new contributions are automatically tested on the cloud. When all tests pass and the new contribution is merged into the main repository, the results from the new contribution are automatically submitted to the Open Problems website. To maximize reproducibility, all code is run within Docker containers and all data is downloaded from public repositories, including figshare, GEO, and CELLxGENE [@cellxgeneperformantscalable_megill2021]. Task definitions, choices of metrics, and implementations of methods care discussed on our github repository ([github.com/openproblems-bio/openproblems](https://github.com/openproblems-bio/openproblems)) and can be easily amended by pull requests which are reviewed by task leaders (who initially defined the task) and the core infrastructure team.
+To enable seamless community involvement in Open Problems, we have designed the infrastructure to take advantage of automated workflows through GitHub Actions, Nextflow [@nextflowenablesreproducible_tommaso2017], and AWS Batch. When a community member adds a task, dataset, method, or metric, the new contributions are automatically tested on the cloud. When all tests pass and the new contribution is merged into the main repository, the results from the new contribution are automatically submitted to the Open Problems website. To maximize reproducibility, all code is run within Docker containers and all data is downloaded from public repositories, including figshare, GEO, and CELLxGENE [@cellxgeneperformantscalable_megill2021]. Task definitions, choices of metrics, and implementations of methods care discussed on our github repository ([github.com/openproblems-bio/openproblems](https://github.com/openproblems-bio/openproblems)) and can be easily amended by pull requests which are reviewed by task leaders (who initially defined the task) and the core infrastructure team.
 
 
 ## Community-defined open problems in Single-cell analysis
 
-Building on previous work defining open challenges in single-cell analysis [@elevengrandchallenges_lahnemann2020] and many independent benchmarking studies in single-cell genomics [@benchmarkingatlaslevel_luecken2020; @biasrobustnessscalability_soneson2018; @benchmarkingspatialsingle_li2022; @systematicevaluationsingle_hou2020; @tuningparametersdimensionality_raimundo2020; @comprehensivecomparisonsupervised_sun2022; @accuracyrobustnessscalability_sun2019; @evaluationmachinelearning_huang2021; @flexiblecomparisonbatch_chazarragil2021; @benchmarkingjointmultiomics_cantini2021; @benchmarkingcelltype_avilacobos2020], we defined X Open Problems tasks (Fig 2a). While some tasks were directly transferred from published benchmarking papers (e.g., batch correction12), others were defined directly by method developers in the single-cell community (e.g., spatial decomposition). To exemplify how such a task is defined and the value that the task adds, we elaborate on the spatial deconvolution task.
+
+Building on previous work defining open challenges in single-cell analysis [@elevengrandchallenges_lahnemann2020] and many independent benchmarking studies in single-cell genomics [@benchmarkingatlaslevel_luecken2020; @biasrobustnessscalability_soneson2018; @benchmarkingspatialsingle_li2022; @systematicevaluationsingle_hou2020; @tuningparametersdimensionality_raimundo2020; @comprehensivecomparisonsupervised_sun2022; @accuracyrobustnessscalability_sun2019; @evaluationmachinelearning_huang2021; @flexiblecomparisonbatch_chazarragil2021; @benchmarkingjointmultiomics_cantini2021; @benchmarkingcelltype_avilacobos2020], we defined `r n_tasks` Open Problems tasks (Fig 2a). While some tasks were directly transferred from published benchmarking papers (e.g., batch correction [@benchmarkingatlaslevel_luecken2020]), others were defined directly by method developers in the single-cell community (e.g., spatial decomposition). To exemplify how such a task is defined and the value that the task adds, we elaborate on the spatial deconvolution task.
 
 
 
