@@ -25,7 +25,7 @@ We have developed the Open Problems in Single-cell Analysis (Open Problems) fram
 
 In order to enable a truly living benchmark, we have designed a standardized and automated infrastructure which allows members of the single-cell community to contribute to Open Problems in a seamless manner. Each Open Problems task is comprised of datasets, methods, and metrics (Fig 1): datasets define both the input and the ground truth for a task, methods attempt to solve the task, and metrics evaluate the success of a method on a given dataset. Metrics are normalized between 0 and 1 based on the inclusion of “baseline” methods which are designed to emulate either random or perfect performance. Methods are then ranked on a per-dataset basis by the average normalized metric score and presented in a summary table on the Open Problems website ([openproblems.bio](https://openproblems.bio)).
 
-To enable seamless community involvement in Open Problems, we have designed the infrastructure to take advantage of automated workflows through GitHub Actions, Nextflow[cite], and AWS Batch. When a community member adds a task, dataset, method, or metric, the new contributions are automatically tested on the cloud. When all tests pass and the new contribution is merged into the main repository, the results from the new contribution are automatically submitted to the Open Problems website. To maximize reproducibility, all code is run within Docker containers and all data is downloaded from public repositories, including figshare, GEO, and CELLxGENE [@cellxgeneperformantscalable_megill2021]. Task definitions, choices of metrics, and implementations of methods care discussed on our github repository ([github.com/openproblems-bio/openproblems](https://github.com/openproblems-bio/openproblems)) and can be easily amended by pull requests which are reviewed by task leaders (who initially defined the task) and the core infrastructure team.
+To enable seamless community involvement in Open Problems, we have designed the infrastructure to take advantage of automated workflows through GitHub Actions, Nextflow[@nextflowenablesreproducible_tommaso2017], and AWS Batch. When a community member adds a task, dataset, method, or metric, the new contributions are automatically tested on the cloud. When all tests pass and the new contribution is merged into the main repository, the results from the new contribution are automatically submitted to the Open Problems website. To maximize reproducibility, all code is run within Docker containers and all data is downloaded from public repositories, including figshare, GEO, and CELLxGENE [@cellxgeneperformantscalable_megill2021]. Task definitions, choices of metrics, and implementations of methods care discussed on our github repository ([github.com/openproblems-bio/openproblems](https://github.com/openproblems-bio/openproblems)) and can be easily amended by pull requests which are reviewed by task leaders (who initially defined the task) and the core infrastructure team.
 
 
 ## Community-defined open problems in Single-cell analysis
@@ -37,33 +37,31 @@ Building on previous work defining open challenges in single-cell analysis [@ele
 ## Proposed structure
 
 
-1. Task overview
-2. Results from a few tasks
-  a. All of the scIB benchmarking can be migrated into this framework (highly extensible)
-  b. Addition of completely novel tasks (e.g. gene regulatory prediction)
-  c. Community-driven benchmarking for emerging methodology (e.g. differential abundance, spatial decomposition)
-  d. Results of the CZI jamboree
-2. Focus on spatial decomposition task
-  a. Explain metrics, datasets, methods
+* Task overview
+* Results from a few tasks
+  - All of the scIB benchmarking can be migrated into this framework (highly extensible)
+  - Addition of completely novel tasks (e.g. gene regulatory prediction)
+  - Community-driven benchmarking for emerging methodology (e.g. differential abundance, spatial decomposition)
+  - Results of the CZI jamboree
+* Focus on spatial decomposition task
+  - Explain metrics, datasets, methods
 
 
 ## Defined open problems facilitate/drive innovation in single-cell data science
 
-1. Reaching out to the ML community:
-  a. NeurIPS competition built on Open Problems
-    - Note: Community-informed re-evaluation of metrics (PMLR report)
-2. Using framework to drive development of novel methods
-3. Enable method developers to include their methods in live benchmark and publish results
-4. Build analysis pipelines from top performers across tasks
+* Reaching out to the ML community:
+  - NeurIPS competition built on Open Problems
+    * Note: Community-informed re-evaluation of metrics (PMLR report)
+* Using framework to drive development of novel methods
+* Enable method developers to include their methods in live benchmark and publish results
+* Build analysis pipelines from top performers across tasks
 
 
 ```{citations, include=FALSE}
 
 # this is a yaml for matching citation keys with their doi.
 
-# if there is no doi (e.g. sandboxpredictionintegration_luecken2021), 
-
-# you can simply pass a bibtex.
+# if there is no doi, you can simply pass a bibtex entry
 
 citations:
   celltypeatlas_plass2018: 10.1126/science.aaq1723
