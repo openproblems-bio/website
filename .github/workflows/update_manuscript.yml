@@ -41,7 +41,8 @@ jobs:
         run: |
           export GOOGLE_DRIVE_EMAIL="${{ secrets.GOOGLE_DRIVE_EMAIL }}"
           export GOOGLE_DRIVE_PASSWORD="${{ secrets.GOOGLE_DRIVE_PASSWORD }}"
-          Rscript manuscript/_update_manuscript.R
+          Rscript manuscript/_update_manuscript_md.R
+          # Rscript manuscript/_update_manuscript_docx.R
 
       - name: Install Quarto
         uses: quarto-dev/quarto-actions/setup@v2
