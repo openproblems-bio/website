@@ -2,8 +2,8 @@
 ```{r noninteractive}
 #| include: FALSE
 #| eval: FALSE
-path <- 'results/batch_integration_embed'
-task_id <- 'batch_integration_embed'
+path <- 'results/cell_cell_communication_ligand_target'
+task_id <- 'cell_cell_communication_ligand_target'
 ```
 
 
@@ -15,6 +15,7 @@ library(funkyheatmap)
 library(kableExtra)
 op <- reticulate::import("openproblems")
 
+knitr::opts_chunk$set(error = TRUE)
 # orig_settings <- knitr::opts_chunk$get()
 
 task <- op$tasks[[task_id]]
@@ -70,7 +71,7 @@ results <- map_df(json_paths, function(json_path) {
   process_scores <- function(x) {
     x[map_lgl(x, function(y) y == "NaN")] <- NA_real_
     x[map_lgl(x, function(y) y == "Infinity")] <- NA_real_
-    x[is.infinite(x)] <- NA_real_
+    x[map_lgl(x, is.infinite)] <- NA_real_
     do.call(tibble, x)
   }
   
@@ -227,14 +228,13 @@ results_long <- results_long %>%
 scaling_factors <- 
   results_long %>%
     filter(is_baseline) %>%
-  # results %>%
-  #   filter(is_baseline) %>%
-  #   gather(metric_id, value, !!metric_info$metric_id) %>%
     group_by(dataset_id, metric_id) %>%
     summarise(
+      # if there are less than 2 baseline metric values, 
+      # don't use any scaling at all
       not_missing = sum(!is.na(value)),
-      scale_min = ifelse(not_missing == 0, 0, min(value, na.rm = TRUE)),
-      scale_max = ifelse(not_missing == 0, 1, max(value, na.rm = TRUE)),
+      scale_min = ifelse(not_missing <= 1, 0, min(value, na.rm = TRUE)),
+      scale_max = ifelse(not_missing <= 1, 1, max(value, na.rm = TRUE)),
       .groups = "drop"
     ) %>%
     select(-not_missing)
@@ -361,10 +361,9 @@ summary <-
   method_info %>%
   transmute(
     method_id,
-    method_name = method_name
+    method_name = method_name,
     method_is_baseline = ifelse(is_baseline, "yes", "")
   ) %>%
-  select(-name_tmp) %>%
   left_join(overall_ranking, by = "method_id") %>%
   left_join(per_dataset, by = "method_id") %>%
   left_join(per_metric, by = "method_id") %>%
@@ -389,7 +388,7 @@ column_info <- tibble(
   palette = ifelse(group %in% c("mean", "dataset", "metric"), group, NA_character_),
   options = map2(id, geom, function(id, geom) {
     if (id == "method_name") {
-      list(width = 8, hjust = 0)
+      list(width = 10, hjust = 0)
     } else if (id == "is_baseline") {
       list(width = 1)
     } else if (geom == "bar") {
