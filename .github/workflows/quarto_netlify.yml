@@ -82,7 +82,7 @@ jobs:
 
       - name: Status check
         if: github.event_name == 'pull_request'
-        uses: Sibz/github-status-action@v1.1.1
+        uses: Sibz/github-status-action@v1.1.6
         with:
           authToken: ${{ secrets.GITHUB_TOKEN }}
           context: Netlify preview
