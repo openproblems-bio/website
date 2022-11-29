@@ -75,7 +75,8 @@ results <- map_df(json_paths, function(json_path) {
   
   process_scores <- function(x) {
     x[map_lgl(x, function(y) y == "NaN")] <- NA_real_
-    x[map_lgl(x, function(y) y == "Infinity")] <- Inf
+    x[map_lgl(x, function(y) y == "Infinity")] <- NA_real_
+    x[is.infinite(x)] <- NA_real_
     do.call(tibble, x)
   }
   
@@ -223,16 +224,26 @@ ggplot(results_long) +
 
 
 ```{r}
+# remove metrics which are all NA
+results_long <- results_long %>% 
+  group_by(metric_id) %>%
+  filter(!all(is.na(value))) %>%
+  ungroup()
+
 scaling_factors <- 
-  results %>%
+  results_long %>%
     filter(is_baseline) %>%
-    gather(metric_id, value, !!metric_info$metric_id) %>%
+  # results %>%
+  #   filter(is_baseline) %>%
+  #   gather(metric_id, value, !!metric_info$metric_id) %>%
     group_by(dataset_id, metric_id) %>%
     summarise(
-      scale_min = ifelse(sum(!is.na(value)) == 0, 0, min(value, na.rm = TRUE)),
-      scale_max = ifelse(sum(!is.na(value)) == 0, 1, max(value, na.rm = TRUE)),
+      not_missing = sum(!is.na(value)),
+      scale_min = ifelse(not_missing == 0, 0, min(value, na.rm = TRUE)),
+      scale_max = ifelse(not_missing == 0, 1, max(value, na.rm = TRUE)),
       .groups = "drop"
-    )
+    ) %>%
+    select(-not_missing)
 ```
 
 Visualise the scaling factors.
@@ -356,9 +367,7 @@ summary <-
   method_info %>%
   transmute(
     method_id,
-    name_tmp = method_name,
-    method_name = gsub(" \\(.*", "", name_tmp),
-    method_config = gsub("[^\\(]*\\(?([^\\)]*)\\)?", "\\1", name_tmp),
+    method_name = method_name
     method_is_baseline = ifelse(is_baseline, "yes", "")
   ) %>%
   select(-name_tmp) %>%
@@ -386,9 +395,7 @@ column_info <- tibble(
   palette = ifelse(group %in% c("mean", "dataset", "metric"), group, NA_character_),
   options = map2(id, geom, function(id, geom) {
     if (id == "method_name") {
-      list(width = 6, hjust = 0)
-    } else if (id == "method_config") {
-      list(width = 4)
+      list(width = 8, hjust = 0)
     } else if (id == "is_baseline") {
       list(width = 1)
     } else if (geom == "bar") {
