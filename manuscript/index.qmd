@@ -1,131 +1,262 @@
----
-title: Defining challenges and benchmarking open problems in Single-cell analysis
-engine: knitr
-bibliography: library.bib
----
+# Defining challenges and benchmarking open problems in Single-cell analysis 
 
+### Abstract
 
+### Introduction
 
-```{r, include=FALSE}
-library(purrr)
-op <- reticulate::import("openproblems")
-```
+Single-cell genomics has enabled the study of biological processes at an
+unprecedented scale and
+resolution^1--3^. These
+studies have been enabled by computational tools for the analysis of
+single-cell data, which has surpassed 1300 published
+algorithms^4^. Evolving
+biological questions and technological
+development^5,6^
+continuously pose new challenges for data analysts, which has led to the
+description of grand challenges for single-cell data
+science^7^. While the
+identification of such grand challenges in single-cell genomics can
+concentrate research into relevant areas, the current definitions of
+these challenges are qualitative in nature.
 
+Clear definitions of open problems including quantifications of progress
+has driven innovation in machine learning
+research^8^. Open challenges such
+as the Netflix prize and
+ImageNet^9^ represent landmark
+problems that allow measurement of progress across decades. These
+challenges have provided a common vocabulary for innovation: image
+classification accuracy has improved from 50% to over 90% on ImageNet
+since 2011. Inspired by open challenges in machine learning, Critical
+Assessment of protein Structure Prediction (CASP), Recursion's cellular
+image classification Kaggle competition, various DREAM challenges, and
+our recent multimodal data integration competition at NeurIPS
+2021^10^ have focused research
+efforts in computational biology disciplines such as protein structure
+prediction, cellular diagnostics, gene module prediction, and multimodal
+single-cell data integration. Particularly successful competitions such
+as CASP have built communities that accelerate research toward these
+goals.
 
-## Abstract
+In single-cell genomics, large-scale
+benchmarks^11--14^
+have quantified open questions by proposing evaluation metrics and using
+these to compare existing methods. Yet, benchmarks inevitably age: newly
+developed tools that optimize the proposed benchmarking metrics cannot
+be compared in the same study; existing tools may perform differently on
+newly generated benchmarking datasets of better quality; and used
+metrics may not capture the aspects of method performance that a user is
+interested in. These challenges can only be addressed by community
+participation in benchmarking. To build such communities around
+quantified challenges, benchmarking studies would require frequent
+updating and open discussion on benchmarking datasets, proposed metrics,
+and selected methods.
 
+Learning from machine learning competitions, we propose a living
+benchmarking framework for single-cell genomics tools that follows the
+Common Task Framework (CTF)^8^.
+The CTF has 3 criteria: (1) An easily available training dataset of
+sufficient complexity, (2) a set of competitors who submit methods for
+benchmarking, and (3) a set of metrics that are evaluated on test data
+to define progress on the task and thereby formally define it. When
+continuously updating such benchmarks, ...
 
-Single-cell genomics has enabled the study of biological processes at an unprecedented scale and resolution [@celltypeatlas_plass2018; @humancellatlas_cao2020; @revisedairwayepithelial_montoro2018]. These studies have been enabled by computational tools for the analysis of single-cell data, which has surpassed 1300 published algorithms [@overtoolsreveal_zappia2021]. Evolving biological questions and technological development [@methodyearspatially_nmeth2021; @methodyearsinglecell_nmeth2020] continuously pose new challenges for data analysts, which has led to the description of grand challenges for single-cell data science [@elevengrandchallenges_lahnemann2020]. While the identification of such grand challenges in single-cell genomics can concentrate research into relevant areas, the current definitions of these challenges are qualitative in nature.
+We have developed the Open Problems in Single-cell Analysis (Open
+Problems) framework, a platform that defines and measures progress
+towards open challenges in single-cell genomics following the CTF. Open
+Problems combines an open github repository with community-defined
+tasks, Github Actions testing workflows, a benchmarking pipeline using
+Nextflow and Amazon Web Services, and a website to explore the results
+to build a living, community-based benchmarking project. Currently, Open
+Problems includes X defined tasks, on which Y datasets are used to
+evaluate Z methods using XY metrics. These tasks were defined by
+interactions between contributors, which has led to new benchmarking
+insights even when contributors had already published benchmarks on
+these tasks. Open Problems provides community-defined standards for
+progress in single-cell data science to enable decentralized method
+development towards a common goal.
 
-Clear definitions of open problems including quantifications of progress has driven innovation in machine learning research [@yearsdatascience_donoho2017]. Open challenges such as the Netflix prize [@netflixprize_bennet2007] and ImageNet [@largescalehierarchical_deng2009] represent landmark problems that allow measurement of progress across decades. These challenges have provided a common vocabulary for innovation: image classification accuracy has improved from 50% to over 90% on ImageNet since 2011. Inspired by open challenges in machine learning, Critical Assessment of protein Structure Prediction (CASP), Recursion’s cellular image classification Kaggle competition, various DREAM challenges, and our recent multimodal data integration competition at NeurIPS 2021 [@sandboxpredictionintegration_luecken2021] have focused research efforts in computational biology disciplines such as protein structure prediction, cellular diagnostics, gene module prediction, and multimodal single-cell data integration. Particularly successful competitions such as CASP have built communities that accelerate research toward these goals.
+### An infrastructure for living benchmarks in Single-cell Data Science
 
-In single-cell genomics, large-scale benchmarks [@comparisonsinglecell_saelens2019; @benchmarkingatlaslevel_luecken2020; @biasrobustnessscalability_soneson2018; @confrontingfalsediscoveries_squair2021] have quantified open questions by proposing evaluation metrics and using these to compare existing methods. Yet, benchmarks inevitably age: newly developed tools that optimize the proposed benchmarking metrics cannot be compared in the same study; existing tools may perform differently on newly generated benchmarking datasets of better quality; and used metrics may not capture the aspects of method performance that a user is interested in. These challenges can only be addressed by community participation in benchmarking. To build such communities around quantified challenges, benchmarking studies would require frequent updating and open discussion on benchmarking datasets, proposed metrics, and selected methods.
+In order to enable a truly living benchmark, we have designed a
+standardized and automated infrastructure which allows members of the
+single-cell community to contribute to Open Problems in a seamless
+manner. Each Open Problems task is comprised of datasets, methods, and
+metrics (Fig 1): datasets define both the input and the ground truth for
+a task, methods attempt to solve the task, and metrics evaluate the
+success of a method on a given dataset. Metrics are normalized between 0
+and 1 based on the inclusion of "baseline" methods which are designed to
+emulate either random or perfect performance. Methods are then ranked on
+a per-dataset basis by the average normalized metric score and presented
+in a summary table on the Open Problems website
+([[https://openproblems.bio]{.ul}](https://openproblems.bio)).
 
-Learning from machine learning competitions, we propose a living benchmarking framework for single-cell genomics tools that follows the Common Task Framework (CTF) [@yearsdatascience_donoho2017]. The CTF has 3 criteria: (1) An easily available training dataset of sufficient complexity, (2) a set of competitors who submit methods for benchmarking, and (3) a set of metrics that are evaluated on test data to define progress on the task and thereby formally define it. When continuously updating such benchmarks, ...
+To enable seamless community involvement in Open Problems, we have
+designed the infrastructure to take advantage of automated workflows
+through GitHub Actions, Nextflow\[cite\], and AWS Batch. When a
+community member adds a task, dataset, method, or metric, the new
+contributions are automatically tested on the cloud. When all tests pass
+and the new contribution is merged into the main repository, the results
+from the new contribution are automatically submitted to the Open
+Problems website. To maximize reproducibility, all code is run within
+Docker containers and all data is downloaded from public repositories,
+including figshare, GEO, and CELLxGENE\[cite\]. Task definitions,
+choices of metrics, and implementations of methods care discussed on our
+github repository
+([[www.github.com/openproblems-bio/openproblems]{.ul}](http://www.github.com/openproblems-bio/openproblems))
+and can be easily amended by pull requests which are reviewed by task
+leaders (who initially defined the task) and the core infrastructure
+team.
 
-```{r}
-tasks <- map(op$TASKS, function(task) {
-  list(
-    method_ids = map_chr(task$METHODS, function(fun) fun$`__name__`),
-    metric_ids = map_chr(task$METRICS, function(fun) fun$`__name__`),
-    dataset_ids = map_chr(task$DATASETS, function(fun) fun$`__name__`)
-  )
-})
-n_tasks <- length(tasks)
-n_methods <- length(unique(unlist(map(tasks, "method_ids"))))
-n_metrics <- length(unique(unlist(map(tasks, "metric_ids"))))
-n_datasets <- length(unique(unlist(map(tasks, "dataset_ids"))))
-```
+### Community-defined open problems in Single-cell analysis
 
-We have developed the Open Problems in Single-cell Analysis (Open Problems) framework, a platform that defines and measures progress towards open challenges in single-cell genomics following the CTF. Open Problems combines an open github repository with community-defined tasks, Github Actions testing workflows, a benchmarking pipeline using Nextflow [@nextflowenablesreproducible_tommaso2017] and Amazon Web Services, and a website to explore the results to build a living, community-based benchmarking project. Currently, Open Problems includes `r n_tasks` defined tasks, on which `r n_datasets` datasets are used to evaluate `r n_methods` methods using `r n_metrics` metrics. These tasks were defined by interactions between contributors, which has led to new benchmarking insights even when contributors had already published benchmarks on these tasks. Open Problems provides community-defined standards for progress in single-cell data science to enable decentralized method development towards a common goal.
+Building on previous work defining open challenges in single-cell
+analysis^7^ and many independent
+benchmarking studies in single-cell
+genomics^12,13,15--23^,
+we defined X Open Problems tasks (Fig 2a). While some tasks were
+directly transferred from published benchmarking papers (e.g., batch
+correction^12^), others were
+defined directly by method developers in the single-cell community
+(e.g., spatial decomposition). To exemplify how such a task is defined
+and the value that the task adds, we elaborate on the spatial
+deconvolution task.
 
+1.  Task overview
 
+2.  Results from a few tasks
 
-## An infrastructure for living benchmarks in Single-cell Data Science
+    a.  All of the [[scIB]{.ul}](https://github.com/theislab/scIB)
+        > benchmarking can be migrated into this framework (highly
+        > extensible)
 
-In order to enable a truly living benchmark, we have designed a standardized and automated infrastructure which allows members of the single-cell community to contribute to Open Problems in a seamless manner. Each Open Problems task is comprised of datasets, methods, and metrics (Fig 1): datasets define both the input and the ground truth for a task, methods attempt to solve the task, and metrics evaluate the success of a method on a given dataset. Metrics are normalized between 0 and 1 based on the inclusion of “baseline” methods which are designed to emulate either random or perfect performance. Methods are then ranked on a per-dataset basis by the average normalized metric score and presented in a summary table on the Open Problems website ([openproblems.bio](https://openproblems.bio)).
+    b.  Addition of completely novel tasks (e.g. gene regulatory
+        > prediction)
 
-To enable seamless community involvement in Open Problems, we have designed the infrastructure to take advantage of automated workflows through GitHub Actions, Nextflow [@nextflowenablesreproducible_tommaso2017], and AWS Batch. When a community member adds a task, dataset, method, or metric, the new contributions are automatically tested on the cloud. When all tests pass and the new contribution is merged into the main repository, the results from the new contribution are automatically submitted to the Open Problems website. To maximize reproducibility, all code is run within Docker containers and all data is downloaded from public repositories, including figshare, GEO, and CELLxGENE [@cellxgeneperformantscalable_megill2021]. Task definitions, choices of metrics, and implementations of methods care discussed on our github repository ([github.com/openproblems-bio/openproblems](https://github.com/openproblems-bio/openproblems)) and can be easily amended by pull requests which are reviewed by task leaders (who initially defined the task) and the core infrastructure team.
+    c.  Community-driven benchmarking for emerging methodology (e.g.
+        > differential abundance, spatial decomposition)
 
+    d.  Results of the CZI jamboree
 
-## Community-defined open problems in Single-cell analysis
+3.  Focus on spatial decomposition task
 
+    a.  Explain metrics, datasets, methods
 
-Building on previous work defining open challenges in single-cell analysis [@elevengrandchallenges_lahnemann2020] and many independent benchmarking studies in single-cell genomics [@benchmarkingatlaslevel_luecken2020; @biasrobustnessscalability_soneson2018; @benchmarkingspatialsingle_li2022; @systematicevaluationsingle_hou2020; @tuningparametersdimensionality_raimundo2020; @comprehensivecomparisonsupervised_sun2022; @accuracyrobustnessscalability_sun2019; @evaluationmachinelearning_huang2021; @flexiblecomparisonbatch_chazarragil2021; @benchmarkingjointmultiomics_cantini2021; @benchmarkingcelltype_avilacobos2020], we defined `r n_tasks` Open Problems tasks (Fig 2a). While some tasks were directly transferred from published benchmarking papers (e.g., batch correction [@benchmarkingatlaslevel_luecken2020]), others were defined directly by method developers in the single-cell community (e.g., spatial decomposition). To exemplify how such a task is defined and the value that the task adds, we elaborate on the spatial deconvolution task.
+### Defined open problems facilitate/drive innovation in single-cell data science
 
+1.  Reaching out to the ML community:
 
+    a.  NeurIPS competition built on Open Problems
 
-## Proposed structure
+        i.  Note: Community-informed re-evaluation of metrics (PMLR
+            > report)
 
+2.  Using framework to drive development of novel methods
 
-* Task overview
-* Results from a few tasks
-  - All of the scIB benchmarking can be migrated into this framework (highly extensible)
-  - Addition of completely novel tasks (e.g. gene regulatory prediction)
-  - Community-driven benchmarking for emerging methodology (e.g. differential abundance, spatial decomposition)
-  - Results of the CZI jamboree
-* Focus on spatial decomposition task
-  - Explain metrics, datasets, methods
+3.  Enable method developers to include their methods in live benchmark
+    > and publish results
 
+4.  Build analysis pipelines from top performers across tasks
 
-## Defined open problems facilitate/drive innovation in single-cell data science
+### Acknowledgements
 
-* Reaching out to the ML community:
-  - NeurIPS competition built on Open Problems
-    * Note: Community-informed re-evaluation of metrics (PMLR report)
-* Using framework to drive development of novel methods
-* Enable method developers to include their methods in live benchmark and publish results
-* Build analysis pipelines from top performers across tasks
+-   CZI: Jonah Cool, Ivana Williams, Fiona Griffin
 
+-   Mo Lotfollahi for early discussions
 
-```{citations, include=FALSE}
+### References
 
-# this is a yaml for matching citation keys with their doi.
+1\. Plass, M. *et al.* Cell type atlas and lineage tree of a whole
+complex animal by single-cell transcriptomics. *Science* vol. 360
+eaaq1723 (2018).
 
-# if there is no doi, you can simply pass a bibtex entry
+2\. Cao, J. *et al.* A human cell atlas of fetal gene expression.
+*Science* **370**, (2020).
 
-citations:
-  celltypeatlas_plass2018: 10.1126/science.aaq1723
-  humancellatlas_cao2020: 10.1126/science.aba7721
-  revisedairwayepithelial_montoro2018: 10.1038/s41586-018-0393-7
-  overtoolsreveal_zappia2021: 10.1186/s13059-021-02519-4
-  methodyearspatially_nmeth2021: 10.1038/s41592-020-01042-x
-  methodyearsinglecell_nmeth2020: 10.1038/s41592-019-0703-5
-  elevengrandchallenges_lahnemann2020: 10.1186/s13059-020-1926-6
-  yearsdatascience_donoho2017: 10.1080/10618600.2017.1384734
-  largescalehierarchical_deng2009: 10.1109/CVPR.2009.5206848
-  comparisonsinglecell_saelens2019: 10.1038/s41587-019-0071-9
-  benchmarkingatlaslevel_luecken2020: 10.1038/s41592-021-01336-8
-  biasrobustnessscalability_soneson2018: 10.1038/nmeth.4612
-  confrontingfalsediscoveries_squair2021: 10.1038/s41467-021-25960-2
-  benchmarkingspatialsingle_li2022: 10.1038/s41592-022-01480-9
-  systematicevaluationsingle_hou2020: 10.1186/s13059-020-02132-x
-  tuningparametersdimensionality_raimundo2020: 10.1186/s13059-020-02128-7
-  comprehensivecomparisonsupervised_sun2022: 10.1093/bib/bbab567
-  accuracyrobustnessscalability_sun2019: 10.1186/s13059-019-1898-6
-  evaluationmachinelearning_huang2021: 10.1093/bib/bbab035
-  flexiblecomparisonbatch_chazarragil2021: 10.1093/nar/gkab004
-  benchmarkingjointmultiomics_cantini2021: 10.1038/s41467-020-20430-7
-  benchmarkingcelltype_avilacobos2020: 10.1038/s41467-020-19015-1
-  cellxgeneperformantscalable_megill2021: 10.1101/2021.04.05.438318
-  nextflowenablesreproducible_tommaso2017: 10.1038/nbt.3820
+3\. Montoro, D. T. *et al.* A revised airway epithelial hierarchy
+includes CFTR-expressing ionocytes. *Nature* **560**, 319--324
+(2018).
 
-  sandboxpredictionintegration_luecken2021: |
-    @inproceedings{
-      sandboxpredictionintegration_luecken2021,
-      title={A sandbox for prediction and integration of {DNA}, {RNA}, and proteins in single cells},
-      author={Malte D Luecken and Daniel Bernard Burkhardt and Robrecht Cannoodt and Christopher Lance and Aditi Agrawal and Hananeh Aliee and Ann T Chen and Louise Deconinck and Angela M Detweiler and Alejandro A Granados and Shelly Huynh and Laura Isacco and Yang Joon Kim and Dominik Klein and BONY DE KUMAR and Sunil Kuppasani and Heiko Lickert and Aaron McGeever and Honey Mekonen and Joaquin Caceres Melgarejo and Maurizio Morri and Michaela M{\"u}ller and Norma Neff and Sheryl Paul and Bastian Rieck and Kaylie Schneider and Scott Steelman and Michael Sterr and Daniel J. Treacy and Alexander Tong and Alexandra-Chloe Villani and Guilin Wang and Jia Yan and Ce Zhang and Angela Oliveira Pisco and Smita Krishnaswamy and Fabian J Theis and Jonathan M. Bloom},
-      booktitle={Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (Round 2)},
-      year={2021},
-      url={https://openreview.net/forum?id=gN35BGa1Rt}
-    }
-  netflixprize_bennet2007: |
-    @inproceedings{bennett2007netflix,
-      title={The netflix prize},
-      author={Bennett, James and Lanning, Stan and others},
-      year={2007}
-    }
+4\. Zappia, L. & Theis, F. J. Over 1000 tools reveal trends in the
+single-cell RNA-seq analysis landscape. *Genome Biol.* **22**, 301
+(2021).
 
+5\. Method of the Year 2020: spatially resolved transcriptomics. *Nat.
+Methods* **18**, 1 (2021).
 
-```
+6\. Method of the Year 2019: Single-cell multimodal omics. *Nat.
+Methods* **17**, 1 (2020).
+
+7\. Lähnemann, D. *et al.* Eleven grand challenges in single-cell data
+science. *Genome Biol.* **21**, 31
+(2020).
+
+8\. Donoho, D. 50 Years of Data Science. *Journal of Computational and
+Graphical Statistics* vol. 26 745--766
+(2017).
+
+9\. Deng, J. *et al.* Imagenet: A large-scale hierarchical image
+database. in *2009 IEEE conference on computer vision and pattern
+recognition* 248--255 (Ieee, 2009).
+
+10\. Luecken, M. D. *et al.* A sandbox for prediction and integration
+of DNA, RNA, and proteins in single cells.
+(2021).
+
+11\. Saelens, W., Cannoodt, R., Todorov, H. & Saeys, Y. A comparison of
+single-cell trajectory inference methods. *Nat. Biotechnol.* **37**,
+547--554 (2019).
+
+12\. Luecken, M. D. *et al.* Benchmarking atlas-level data integration
+in single-cell genomics. *Nat. Methods* **19**, 41--50
+(2022).
+
+13\. Soneson, C. & Robinson, M. D. Bias, robustness and scalability in
+single-cell differential expression analysis. *Nat. Methods* **15**,
+255--261 (2018).
+
+14\. Squair, J. W. *et al.* Confronting false discoveries in
+single-cell differential expression. *Nat. Commun.* **12**, 5692
+(2021).
+
+15\. Li, B. *et al.* Benchmarking spatial and single-cell
+transcriptomics integration methods for transcript distribution
+prediction and cell type deconvolution. *Nature Methods* (2022)
+doi:[10.1038/s41592-022-01480-9](http://dx.doi.org/10.1038/s41592-022-01480-9).
+
+16\. Hou, W., Ji, Z., Ji, H. & Hicks, S. C. A systematic evaluation of
+single-cell RNA-sequencing imputation methods. *Genome Biol.* **21**,
+218 (2020).
+
+17\. Raimundo, F., Vallot, C. & Vert, J.-P. Tuning parameters of
+dimensionality reduction methods for single-cell RNA-seq analysis.
+*Genome Biol.* **21**, 212 (2020).
+
+18\. Sun, X., Lin, X., Li, Z. & Wu, H. A comprehensive comparison of
+supervised and unsupervised methods for cell type identification in
+single-cell RNA-seq. *Brief. Bioinform.* **23**,
+(2022).
+
+19\. Sun, S., Zhu, J., Ma, Y. & Zhou, X. Accuracy, robustness and
+scalability of dimensionality reduction methods for single-cell RNA-seq
+analysis. *Genome Biol.* **20**, 269
+(2019).
+
+20\. Huang, Y. & Zhang, P. Evaluation of machine learning approaches
+for cell-type identification from single-cell transcriptomics data.
+*Brief. Bioinform.* **22**, (2021).
+
+21\. Chazarra-Gil, R., van Dongen, S., Kiselev, V. Y. & Hemberg, M.
+Flexible comparison of batch correction methods for single-cell RNA-seq
+using BatchBench. *Nucleic Acids Res.* **49**, e42
+(2021).
+
+22\. Cantini, L. *et al.* Benchmarking joint multi-omics dimensionality
+reduction approaches for cancer study.
+doi:[10.1101/2020.01.14.905760](http://dx.doi.org/10.1101/2020.01.14.905760).
+
+23\. Avila Cobos, F., Alquicira-Hernandez, J., Powell, J. E., Mestdagh,
+P. & De Preter, K. Benchmarking of cell type deconvolution pipelines for
+transcriptomics data. *Nat. Commun.* **11**, 5650
+(2020).
 

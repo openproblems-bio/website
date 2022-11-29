@@ -14,9 +14,8 @@ library(reticulate)
 library(funkyheatmap)
 library(kableExtra)
 op <- reticulate::import("openproblems")
-
+ 
 knitr::opts_chunk$set(error = TRUE)
-# orig_settings <- knitr::opts_chunk$get()
 
 task <- op$tasks[[task_id]]
 
@@ -133,6 +132,7 @@ results_long <-
 
 ```{r}
 #| include: false
+
 # add some qc checks
 qc <- qc %>% 
   bind_rows(
@@ -196,7 +196,14 @@ qc <- qc %>%
 
 Plot the raw scores.
 
-```{r include=FALSE}
+
+
+:::{.panel-tabset}
+
+## Figure
+
+```{r}
+#| include: false
 knitr::opts_chunk$set(
   fig.width = 10,
   fig.height = nrow(method_info) * nrow(metric_info) / 4
@@ -204,6 +211,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r}
+#| echo: false
 ggplot(results_long) +
   geom_point(aes(value, method_id, colour = is_baseline)) +
   facet_wrap(~metric_id, ncol = 1, scales = "free") +
@@ -211,6 +219,17 @@ ggplot(results_long) +
   labs(x = NULL, y = NULL)
 ```
 
+## Code
+```{r}
+#| eval: false
+ggplot(results_long) +
+  geom_point(aes(value, method_id, colour = is_baseline)) +
+  facet_wrap(~metric_id, ncol = 1, scales = "free") +
+  theme_bw() +
+  labs(x = NULL, y = NULL)
+```
+
+:::
 
 ## Compute scaling factors
 
@@ -242,22 +261,6 @@ scaling_factors <-
 
 Visualise the scaling factors.
 
-```{r include=FALSE}
-knitr::opts_chunk$set(
-  fig.width = 10,
-  fig.height = nrow(metric_info) / 4
-)
-```
-
-```{r, eval=FALSE, echo=FALSE}
-scaling_factors %>% 
-  gather(scaling_factor, value, scale_min, scale_max) %>%
-  ggplot() +
-  geom_point(aes(value, metric_id, colour = scaling_factor)) +
-  theme_bw()
-```
-
-
 
 ```{r}
 results_long_scaled <- results_long %>%
@@ -275,19 +278,14 @@ results_long_scaled <- results_long %>%
 ```
 
 
-```{r include=FALSE}
+```{r}
+#| include: false
 knitr::opts_chunk$set(
   fig.width = 4,
   fig.height = 4 * nrow(metric_info)
 )
 ```
 
-```{r, eval=FALSE, echo=FALSE}
-ggplot(results_long_scaled) +
-  geom_point(aes(value, scaled_score)) +
-  facet_wrap(~metric_id, ncol = 1, scales = "free") +
-  theme_bw()
-```
 
 
 ```{r}
@@ -321,14 +319,19 @@ overall_ranking <- results_long_scaled %>%
 
 View results
 
-```{r include=FALSE}
+```{r}
+#| include: false
 knitr::opts_chunk$set(
   fig.width = 10,
   fig.height = nrow(method_info) * nrow(metric_info) / 4
 )
 ```
 
-```{r}
+:::{.panel-tabset}
+
+## Figure
+
+```{r echo=FALSE}
 # order by ranking
 results_long_scaled$method_id <- factor(results_long_scaled$method_id, levels = rev(overall_ranking$method_id))
 
@@ -341,6 +344,23 @@ ggplot(results_long_scaled %>% arrange(method_id)) +
   labs(x = NULL, y = NULL)
 ```
 
+## Code
+
+```{r}
+#| eval: false
+# order by ranking
+results_long_scaled$method_id <- factor(results_long_scaled$method_id, levels = rev(overall_ranking$method_id))
+
+ggplot(results_long_scaled %>% arrange(method_id)) +
+  geom_vline(aes(xintercept = x), tibble(x = c(0, 1)), linetype = "dashed", alpha = .5, colour = "red") +
+  geom_path(aes(scaled_score, method_id, group = dataset_id), alpha = .25) +
+  geom_point(aes(scaled_score, method_id, colour = is_baseline)) +
+  facet_wrap(~metric_id, ncol = 1, scales = "free") +
+  theme_bw() +
+  labs(x = NULL, y = NULL)
+```
+
+:::
 
 ## Overview
 
@@ -370,9 +390,13 @@ summary <-
   arrange(desc(mean_score))
 ```
 
-```{r}
+:::{.panel-tabset}
 
-# fix funkyheatmap defaults so we don't need to do the processing below
+## Figure
+
+```{r}
+#| echo: false
+#| message: false
 column_info <- tibble(
   id = colnames(summary)[-1],
   name = id %>%
@@ -407,7 +431,8 @@ g <- funky_heatmap(
 )
 ```
 
-```{r include=FALSE}
+```{r}
+#| include: false
 knitr::opts_chunk$set(
   fig.width = g$width,
   fig.height = g$height
@@ -415,8 +440,49 @@ knitr::opts_chunk$set(
 ```
 
 ```{r}
+#| echo: false
 g
 ```
+
+## Code
+
+```{r}
+#| eval: false
+column_info <- tibble(
+  id = colnames(summary)[-1],
+  name = id %>%
+    gsub("^[^_]+_", "", .) %>%
+    gsub("_", " ", .) %>%
+    str_to_title(),
+  group = gsub("_.*", "", id),
+  geom = case_when(
+    group == "method" ~ "text",
+    group == "mean" ~ "bar",
+    group %in% c("dataset", "metric") ~ "funkyrect"
+  ),
+  palette = ifelse(group %in% c("mean", "dataset", "metric"), group, NA_character_),
+  options = map2(id, geom, function(id, geom) {
+    if (id == "method_name") {
+      list(width = 10, hjust = 0)
+    } else if (id == "is_baseline") {
+      list(width = 1)
+    } else if (geom == "bar") {
+      list(width = 4)
+    } else {
+      list()
+    }
+  })
+)
+
+funky_heatmap(
+  data = summary,
+  column_info = column_info,
+  expand = c(xmax = 3),
+  col_annot_offset = 4
+)
+```
+
+:::
 
 ## Quality control
 
