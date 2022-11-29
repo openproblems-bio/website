@@ -24,6 +24,22 @@
     }, 
     "results": [
         {
+            "Name": "Log2FC (sum)", 
+            "Paper": "Computation and visualization of cell–cell signaling topologies in single-cell systems data using Connectome", 
+            "Paper URL": "https://www.nature.com/articles/s41598-022-07959-x", 
+            "Year": 2022, 
+            "Library": "https://github.com/saezlab/liana", 
+            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_cell_cell_communication/_common/methods/liana.py", 
+            "Version": "0.1.7", 
+            "Runtime (min)": 11.3, 
+            "CPU (%)": 94.3, 
+            "Memory (GB)": 20.4, 
+            "Rank": 1, 
+            "Mean score": 0.022354484104964635, 
+            "Precision-recall AUC": 0.04470896820992927, 
+            "Odds Ratio": 0.0
+        }, 
+        {
             "Name": "CellPhoneDB (max)", 
             "Paper": "CellPhoneDB: inferring cell–cell communication from combined expression of multi-subunit ligand–receptor complexes", 
             "Paper URL": "https://www.nature.com/articles/s41596-020-0292-x", 
@@ -34,9 +50,9 @@
             "Runtime (min)": 158.6, 
             "CPU (%)": 100.5, 
             "Memory (GB)": 122.8, 
-            "Rank": 1, 
-            "Mean score": 0.30245721463534286, 
-            "Odds Ratio": 0.5973782771535581, 
+            "Rank": 2, 
+            "Mean score": 0.003768076058563812, 
+            "Odds Ratio": 0.0, 
             "Precision-recall AUC": 0.007536152117127624
         }, 
         {
@@ -50,26 +66,10 @@
             "Runtime (min)": 15.85, 
             "CPU (%)": 94.4, 
             "Memory (GB)": 20.6, 
-            "Rank": 2, 
-            "Mean score": 0.25458379669508024, 
-            "Precision-recall AUC": 0.0065708039661756265, 
-            "Odds Ratio": 0.5025967894239849
-        }, 
-        {
-            "Name": "Log2FC (sum)", 
-            "Paper": "Computation and visualization of cell–cell signaling topologies in single-cell systems data using Connectome", 
-            "Paper URL": "https://www.nature.com/articles/s41598-022-07959-x", 
-            "Year": 2022, 
-            "Library": "https://github.com/saezlab/liana", 
-            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_cell_cell_communication/_common/methods/liana.py", 
-            "Version": "0.1.7", 
-            "Runtime (min)": 11.3, 
-            "CPU (%)": 94.3, 
-            "Memory (GB)": 20.4, 
             "Rank": 3, 
-            "Mean score": 0.21265210315258365, 
-            "Precision-recall AUC": 0.04470896820992927, 
-            "Odds Ratio": 0.38059523809523804
+            "Mean score": 0.0032854019830878133, 
+            "Precision-recall AUC": 0.0065708039661756265, 
+            "Odds Ratio": 0.0
         }, 
         {
             "Name": "NATMI (max)", 
@@ -83,9 +83,9 @@
             "CPU (%)": 101.2, 
             "Memory (GB)": 20.4, 
             "Rank": 4, 
-            "Mean score": 0.19305781614663778, 
+            "Mean score": 0.002760197099018759, 
             "Precision-recall AUC": 0.005520394198037518, 
-            "Odds Ratio": 0.38059523809523804
+            "Odds Ratio": 0.0
         }, 
         {
             "Name": "Log2FC (max)", 
@@ -99,25 +99,9 @@
             "CPU (%)": 94.0, 
             "Memory (GB)": 20.7, 
             "Rank": 5, 
-            "Mean score": 0.19138684847057727, 
+            "Mean score": 0.0010892294229582497, 
             "Precision-recall AUC": 0.0021784588459164995, 
-            "Odds Ratio": 0.38059523809523804
-        }, 
-        {
-            "Name": "Connectome (sum)", 
-            "Paper": "Computation and visualization of cell–cell signaling topologies in single-cell systems data using Connectome", 
-            "Paper URL": "https://www.nature.com/articles/s41598-022-07959-x", 
-            "Year": 2022, 
-            "Library": "https://github.com/saezlab/liana", 
-            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_cell_cell_communication/_common/methods/liana.py", 
-            "Version": "0.1.7", 
-            "Runtime (min)": 15.533333333333333, 
-            "CPU (%)": 94.7, 
-            "Memory (GB)": 20.5, 
-            "Rank": 6, 
-            "Mean score": 0.1795536954576254, 
-            "Odds Ratio": 0.38059523809523804, 
-            "Precision-recall AUC": -0.02148784717998728
+            "Odds Ratio": 0.0
         }, 
         {
             "Name": "LIANA Rank Aggregate (max)", 
@@ -130,10 +114,26 @@
             "Runtime (min)": 180.36666666666667, 
             "CPU (%)": 100.2, 
             "Memory (GB)": 120.4, 
-            "Rank": 7, 
-            "Mean score": 0.1047638209366458, 
+            "Rank": 6, 
+            "Mean score": -0.00503788072384543, 
             "Precision-recall AUC": -0.01007576144769086, 
-            "Odds Ratio": 0.21960340332098247
+            "Odds Ratio": 0.0
+        }, 
+        {
+            "Name": "Connectome (max)", 
+            "Paper": "Computation and visualization of cell–cell signaling topologies in single-cell systems data using Connectome", 
+            "Paper URL": "https://www.nature.com/articles/s41598-022-07959-x", 
+            "Year": 2022, 
+            "Library": "https://github.com/saezlab/liana", 
+            "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_cell_cell_communication/_common/methods/liana.py", 
+            "Version": "0.1.7", 
+            "Runtime (min)": 13.683333333333334, 
+            "CPU (%)": 94.2, 
+            "Memory (GB)": 20.4, 
+            "Rank": 7, 
+            "Mean score": -0.008559396453909998, 
+            "Odds Ratio": -0.0, 
+            "Precision-recall AUC": -0.017118792907819997
         }, 
         {
             "Name": "NATMI (sum)", 
@@ -147,25 +147,25 @@
             "CPU (%)": 101.2, 
             "Memory (GB)": 20.4, 
             "Rank": 8, 
-            "Mean score": 0.09909405804298013, 
+            "Mean score": -0.010707643617511104, 
             "Precision-recall AUC": -0.021415287235022208, 
-            "Odds Ratio": 0.21960340332098247
+            "Odds Ratio": 0.0
         }, 
         {
-            "Name": "Connectome (max)", 
+            "Name": "Connectome (sum)", 
             "Paper": "Computation and visualization of cell–cell signaling topologies in single-cell systems data using Connectome", 
             "Paper URL": "https://www.nature.com/articles/s41598-022-07959-x", 
             "Year": 2022, 
             "Library": "https://github.com/saezlab/liana", 
             "Implementation": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_cell_cell_communication/_common/methods/liana.py", 
             "Version": "0.1.7", 
-            "Runtime (min)": 13.683333333333334, 
-            "CPU (%)": 94.2, 
-            "Memory (GB)": 20.4, 
+            "Runtime (min)": 15.533333333333333, 
+            "CPU (%)": 94.7, 
+            "Memory (GB)": 20.5, 
             "Rank": 9, 
-            "Mean score": -0.16532870241676437, 
-            "Odds Ratio": -0.31353861192570875, 
-            "Precision-recall AUC": -0.017118792907819997
+            "Mean score": -0.01074392358999364, 
+            "Odds Ratio": 0.0, 
+            "Precision-recall AUC": -0.02148784717998728
         }, 
         {
             "Name": "LIANA Rank Aggregate (sum)", 
@@ -179,9 +179,9 @@
             "CPU (%)": 100.5, 
             "Memory (GB)": 112.2, 
             "Rank": 10, 
-            "Mean score": -0.18014920476644544, 
+            "Mean score": -0.023379898803591065, 
             "Precision-recall AUC": -0.04675979760718213, 
-            "Odds Ratio": -0.31353861192570875
+            "Odds Ratio": -0.0
         }, 
         {
             "Name": "CellPhoneDB (sum)", 
@@ -195,9 +195,9 @@
             "CPU (%)": 99.8, 
             "Memory (GB)": 119.0, 
             "Rank": 11, 
-            "Mean score": -0.41924135477942437, 
+            "Mean score": -0.023408021446091026, 
             "Precision-recall AUC": -0.04681604289218205, 
-            "Odds Ratio": -0.7916666666666667
+            "Odds Ratio": -0.0
         }, 
         {
             "Name": "SingleCellSignalR (sum)", 
@@ -211,8 +211,8 @@
             "CPU (%)": 92.9, 
             "Memory (GB)": 20.2, 
             "Rank": 12, 
-            "Mean score": -0.42068252185596366, 
-            "Odds Ratio": -0.7916666666666667, 
+            "Mean score": -0.024849188522630267, 
+            "Odds Ratio": -0.0, 
             "Precision-recall AUC": -0.04969837704526053
         }
     ]
