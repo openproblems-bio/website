@@ -1,8 +1,8 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pcooksey/bibtex-js@1.0.0/src/bibtex_js.js"></script>
 <bibtex src="/bibliography/main.bib"></bibtex>
 
-<div class="bibtex_template">
-    <span class="if BIBTEXTYPEKEY==ARTICLE">
+<div class="bibtex_template" style="display:none;">
+    <div class="if BIBTEXTYPEKEY==ARTICLE">
         <span class="author" max="3"><span class="von"></span> <span class="last"> </span><span class="junior">, </span><span class="first_initial"></span></span>,
         "<span class="title"></span>".
         <em><span class="journal"></span></em>,
@@ -29,7 +29,7 @@
             </span>
         </span>.
     </div>
-    <span class="if BIBTEXTYPEKEY==BOOK || BIBTEXTYPEKEY==INBOOK">
+    <div class="if BIBTEXTYPEKEY==BOOK || BIBTEXTYPEKEY==INBOOK">
         <span class="author" max="3"><span class="von"></span> <span class="last"></span><span class="junior">, </span><span class="first_initial"></span></span>,
         <span class="if chapter">"<span class="chapter"></span>", in "</span>
         <em><span class="title"></span></em>.
@@ -47,7 +47,7 @@
             </span>
         </span>
     </div>
-    <span class="if BIBTEXTYPEKEY==INPROCEEDINGS">
+    <div class="if BIBTEXTYPEKEY==INPROCEEDINGS">
         <span class="author" max="3"><span class="von"></span> <span class="last"></span><span class="junior">, </span><span class="first_initial"></span></span>,
         "<span class="title"></span>", in
         <em><span class="booktitle"></span></em>,
@@ -73,7 +73,7 @@
             </span>
         </span>
     </div>
-    <span class="if BIBTEXTYPEKEY==MISC">
+    <div class="if BIBTEXTYPEKEY==MISC">
         <span class="author" max="3"><span class="von"></span> <span class="last"></span><span class="junior">, </span><span class="first_initial"></span></span>,
         "<span class="title"></span>",
         <span class="year"></span>.
