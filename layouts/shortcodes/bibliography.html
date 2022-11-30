@@ -1,34 +1,82 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pcooksey/bibtex-js@1.0.0/src/bibtex_js.js"></script>
 <bibtex src="/bibliography/main.bib"></bibtex>
 
-<div class="bibtex_template">
-    <div class="if author" style="font-weight: bold;">
-        <span class="if year">
-            <span class="year"></span>,
-        </span>
-        <span class="author" max="3"><span class="von"></span> <span class="last"></span><span class="junior">, </span><span class="first_initial">, </span></span>
+<span class="bibtex_template">
+    <span class="if BIBTEXTYPEKEY==ARTICLE">
+        <span class="author" max="3"><span class="von"></span> <span class="last"></span><span class="junior">, </span><span class="first_initial"></span></span>,
+        "<span class="title"></span>".
+        <em><span class="journal"></span></em>,
+        <span class="if volume">vol. <span class="volume"></span>, </span>
+        <span class="if number">no. <span class="number"></span>, </span>
+        <span class="if pages">pp. <span class="pages"></span>, </span>
+        <span class="if month">no. <span class="month"></span>, </span>
+        <span class="year"></span>
+
+        <div class="if doi">
+            <a class="bibtexVar" href="http://dx.doi.org/+DOI+" extra="doi">
+                , doi:<span class="doi"></span>
+            </a>
+        </div>
+        <div class="if !doi">
+            <div class="if arxivid">
+                <a class="bibtexVar" href="https://arxiv.org/abs/+ARXIVID+" extra="arxivid">
+                    , arXiv:<span class="arxivid"></span>
+                </a>
+            </div>
+            <div class="if !arxivid">
+                <span class="if url">
+                    . Available: <a class="url"><span class="url"></span></a>
+                </span>
+            </div>
+        </div>.
+    </span>
+
+    <span class="if BIBTEXTYPEKEY==BOOK">
+        <span class="author" max="3"><span class="von"></span> <span class="last"></span><span class="junior">, </span><span class="first_initial"></span></span>,
+        <em><span class="title"></span></em>.
+        <span class="publisher"></span>,
+        <span class="year"></span>
+        <span class="if pages">, pp. <span class="pages"></span></span>.
+
         <div class="if doi">
             <a class="bibtexVar" href="http://dx.doi.org/+DOI+" extra="doi">
                 doi:<span class="doi"></span>
             </a>
         </div>
         <div class="if !doi">
+            <span class="if url">
+                Available: <a class="url"><span class="url"></span></a>
+            </span>
+        </div>
+    </span>
+
+    <span class="if BIBTEXTYPEKEY==INPROCEEDINGS">
+        <span class="author" max="3"><span class="von"></span> <span class="last"></span><span class="junior">, </span><span class="first_initial"></span></span>,
+        "<span class="title"></span>", in
+        <em><span class="booktitle"></span></em>,
+        <span class="if editor"><span class="editor"></span>, Ed. </span>
+        <span class="if month"><span class="month"></span> </span>
+        <span class="year"></span>
+        <span class="if pages">, pp. <span class="pages"></span></span>.
+        <div class="if doi">
+            <a class="bibtexVar" href="http://dx.doi.org/+DOI+" extra="doi">
+                doi:<span class="doi"></span>
+            </a>.
+        </div>
+        <div class="if !doi">
             <div class="if arxivid">
                 <a class="bibtexVar" href="https://arxiv.org/abs/+ARXIVID+" extra="arxivid">
                     arXiv:<span class="arxivid"></span>
-                </a>
+                </a>.
             </div>
             <div class="if !arxivid">
-                <span class="if url" style="margin-left: 20px">
-                    <a class="url" style="font-size:10px">(view online)</a>
+                <span class="if url">
+                    Available: <a class="url"><span class="url"></span></a>.
                 </span>
             </div>
         </div>
-    </div>
-    <div style="margin-left: 10px; margin-bottom:5px;">
-        <span class="title"></span>
-    </div>
-</div>
+    </span>
+</span>
 
 <div id="bibtex_display"></div>
 
