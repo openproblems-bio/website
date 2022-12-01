@@ -33,34 +33,55 @@
 
     docReady( function() {
       $(document).ready( function () {
-        $({{ printf "#%s" $id }}).DataTable(
-        {"paging": false,
-        "bInfo" : false,
-        "searching": false,
-        "columnDefs":[
-          {
-            "orderable": false, "targets":[
-            {{ range $dataFile.headers.fixed }}
-              {{ printf "%s" . }},
+        var table = $({{ printf "#%s" $id }}).DataTable({
+          "paging": false,
+          "bInfo" : false,
+          "searching": false,
+          "columns": [
+            {{ range $dataFile.headers.names }}
+              { 
+                name: '{{ . }}', 
+                orderable: {{ not (in $dataFile.headers.fixed .) }},
+                {{ if strings.HasSuffix . "Raw" }}
+                className: 'group_raw',
+                {{ else if strings.HasSuffix . "Scaled" }}
+                className: 'group_scaled',
+                {{ end }}
+              },
             {{ end }}
-            ]
-          }
-        ]
-      }
-        );
+          ]
+        });
+
+        $('input.toggle-vis').on('change',function(){
+          var is_checked = $(this).is(':checked');
+          // Get the column API object
+          
+          var raw_columns = table.columns('.group_raw');
+          var scaled_columns = table.columns('.group_scaled');
+          
+          // Toggle the visibility
+          raw_columns.visible(is_checked);
+          scaled_columns.visible(!is_checked);
+        });
+        $('input.toggle-vis').change();
       } );
-    }
-    )
+    })
   </script>
 
   <h3>{{ $dataFile.name }}</h3>
 
+
+  <div>
+    <small><form>
+    Show raw values: &nbsp; 
+    <label><input type="checkbox" class="toggle-vis" /> </label>
+    </form></small>
+  </div>
+
   <table id="{{ $id }}" class="display center" >
     <thead>
       {{ range $dataFile.headers.names }}
-        <th class="{{ . }}">
-          {{ . }}
-        </th>
+      <th>{{ replaceRE " *(Raw|Scaled)$" "" . 1 }}</th>
       {{ end }}
     </thead>
 
