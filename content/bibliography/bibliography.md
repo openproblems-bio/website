@@ -21,7 +21,7 @@ subtitle = ""
 
 [advanced]
  # Custom CSS.
- css_style = ""
+ css_style = "div:target { background-color: gold; }"
 
  # CSS class.
  css_class = ""
