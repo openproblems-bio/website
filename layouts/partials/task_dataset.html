@@ -55,28 +55,22 @@
 
         $('input.toggle-vis').on('change',function(){
           var is_checked = $(this).is(':checked');
-          // Get the column API object
-          
-          var raw_columns = table.columns('.group_raw');
-          var scaled_columns = table.columns('.group_scaled');
-          
           // Toggle the visibility
-          raw_columns.visible(is_checked);
-          scaled_columns.visible(!is_checked);
+          table.columns('.group_raw').visible(!is_checked);
+          table.columns('.group_scaled').visible(is_checked);
         });
         $('input.toggle-vis').change();
       } );
     })
   </script>
 
-  <h3>{{ $dataFile.name }}</h3>
-
-
-  <div>
-    <small><form>
-    Show raw values: &nbsp; 
-    <label><input type="checkbox" class="toggle-vis" /> </label>
-    </form></small>
+  <div align="right">
+    Raw
+    <label class="switch">
+      <input type="checkbox" class="toggle-vis">
+      <span class="slider round"></span>
+    </label>
+    Scaled
   </div>
 
   <table id="{{ $id }}" class="display center" >
