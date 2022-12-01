@@ -29,8 +29,4 @@ subtitle = ""
 
 +++
 
-{{ with .Resources.GetMatch "style.css" }}
-  <style>{{ .Content | safeCSS }}</style>
-{{ end }}
-
 {{< bibliography >}}
