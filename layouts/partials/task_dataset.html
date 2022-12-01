@@ -47,12 +47,13 @@
             ]
           });
           $('input.toggle-vis').on('change',function(){
-            var _val = $(this).is(':checked');
-            var data_cat = $(this).attr('data-cat')
+            var is_checked = $(this).is(':checked');
             // Get the column API object
-            var columns = table.columns('.' + data_cat);
+            var raw_columns = table.columns('.group-raw');
+            var scaled_columns = table.columns('.group-scaled');
             // Toggle the visibility
-            columns.visible(_val);
+            raw_columns.visible(is_checked);
+            scaled_columns.visible(!is_checked);
           });
           $('input.toggle-vis').change();
         });
@@ -62,29 +63,17 @@
     <h3>Results</h3>
   
     <div>
-      <form><small>
-      Toggle categories: &nbsp;
-      {{ range $cat := $dataFile.categories }}
-        <label>
-          <input type="checkbox" class="toggle-vis" data-cat="cat-{{ index $cat "id" }}" {{ if index $cat "enabled" }}checked{{ end }}/> 
-          {{ index $cat "label" }}
-        </label> &nbsp;
-      {{ end }}
-      </small></form>
+      <small>
+      Show raw values: &nbsp; 
+      <input type="checkbox" class="toggle-vis" data-cat="show-scaled"/> 
+      </small>
     </div>
   
     <table id="{{ $id }}" class="display" >
       <thead>
         <tr>
-          {{ range $cat := $dataFile.categories }}
-            <th id="cat-{{ index $cat "id" }}" class="cat-{{ index $cat "id" }}" colspan="{{ index $cat "width" }}">
-              {{ index $cat "label" }}
-            </th>
-          {{ end }}
-        </tr>
-        <tr>
         {{ range $header := $dataFile.headers }}
-          <th id="col-{{ index $header "id" }}" class="cat-{{ index $header "category" }}" title="{{ index $header "tooltip" }}">
+          <th id="col-{{ index $header "id" }}" class="group-{{ index $header "category" }}" title="{{ index $header "tooltip" }}">
             {{ index $header "label" }}
           </th>
         {{ end }}
