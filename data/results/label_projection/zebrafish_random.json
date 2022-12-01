@@ -6,12 +6,12 @@
         "names": [
             "Rank", 
             "Mean score", 
-            "F1 score Raw", 
-            "Accuracy Scaled", 
             "Accuracy Raw", 
+            "Accuracy Scaled", 
+            "F1 score Raw", 
             "F1 score Scaled", 
-            "Macro F1 score Scaled", 
             "Macro F1 score Raw", 
+            "Macro F1 score Scaled", 
             "Memory (GB)", 
             "Runtime (min)", 
             "CPU (%)", 
@@ -40,12 +40,12 @@
             "Memory (GB)": 424.6, 
             "Rank": 1, 
             "Mean score": 0.8066201991752195, 
-            "Macro F1 score Raw": 0.7507220806236946, 
             "Accuracy Raw": 0.8543046357615894, 
             "F1 score Raw": 0.8517309568428941, 
-            "Macro F1 score Scaled": 0.7405535970077647, 
+            "Macro F1 score Raw": 0.7507220806236946, 
             "Accuracy Scaled": 0.8410201912858661, 
-            "F1 score Scaled": 0.8382868092320276
+            "F1 score Scaled": 0.8382868092320276, 
+            "Macro F1 score Scaled": 0.7405535970077647
         }, 
         {
             "Name": "Multilayer perceptron (log scran)", 
@@ -100,11 +100,11 @@
             "Memory (GB)": 1.6, 
             "Rank": 4, 
             "Mean score": 0.7809669388214138, 
-            "F1 score Raw": 0.8353571635712232, 
             "Accuracy Raw": 0.8371640046747175, 
+            "F1 score Raw": 0.8353571635712232, 
             "Macro F1 score Raw": 0.7119075883445035, 
-            "F1 score Scaled": 0.8204283385859913, 
             "Accuracy Scaled": 0.8223166843783208, 
+            "F1 score Scaled": 0.8204283385859913, 
             "Macro F1 score Scaled": 0.7001557934999293
         }, 
         {
@@ -140,11 +140,11 @@
             "Memory (GB)": 1.9, 
             "Rank": 6, 
             "Mean score": 0.7454949174395153, 
-            "F1 score Raw": 0.7994428455753902, 
             "Accuracy Raw": 0.8034670821971173, 
+            "F1 score Raw": 0.7994428455753902, 
             "Macro F1 score Raw": 0.682626171768621, 
-            "F1 score Scaled": 0.7812575256253397, 
             "Accuracy Scaled": 0.785547290116897, 
+            "F1 score Scaled": 0.7812575256253397, 
             "Macro F1 score Scaled": 0.6696799365763093
         }, 
         {
@@ -160,12 +160,12 @@
             "Memory (GB)": 6.7, 
             "Rank": 7, 
             "Mean score": 0.7345739198855878, 
-            "Macro F1 score Raw": 0.6420521731197941, 
-            "F1 score Raw": 0.80558865310809, 
             "Accuracy Raw": 0.8059992208804051, 
-            "Macro F1 score Scaled": 0.6274508533474861, 
+            "F1 score Raw": 0.80558865310809, 
+            "Macro F1 score Raw": 0.6420521731197941, 
+            "Accuracy Scaled": 0.7883103081827842, 
             "F1 score Scaled": 0.7879605981264931, 
-            "Accuracy Scaled": 0.7883103081827842
+            "Macro F1 score Scaled": 0.6274508533474861
         }, 
         {
             "Name": "XGBoost (log scran)", 
@@ -180,12 +180,12 @@
             "Memory (GB)": 5.3, 
             "Rank": 8, 
             "Mean score": 0.7338768533166217, 
+            "Accuracy Raw": 0.7937280872613947, 
             "F1 score Raw": 0.7892108675682317, 
             "Macro F1 score Raw": 0.670070876872428, 
-            "Accuracy Raw": 0.7937280872613947, 
+            "Accuracy Scaled": 0.7749202975557917, 
             "F1 score Scaled": 0.7700977732173332, 
-            "Macro F1 score Scaled": 0.6566124891767398, 
-            "Accuracy Scaled": 0.7749202975557917
+            "Macro F1 score Scaled": 0.6566124891767398
         }, 
         {
             "Name": "K-neighbors classifier (log CPM)", 
@@ -200,11 +200,11 @@
             "Memory (GB)": 1.8, 
             "Rank": 9, 
             "Mean score": 0.7092954646479589, 
-            "F1 score Raw": 0.783740635218521, 
             "Accuracy Raw": 0.7855473315153876, 
+            "F1 score Raw": 0.783740635218521, 
             "Macro F1 score Raw": 0.6135261821199451, 
-            "F1 score Scaled": 0.7641315330050957, 
             "Accuracy Scaled": 0.7659936238044633, 
+            "F1 score Scaled": 0.7641315330050957, 
             "Macro F1 score Scaled": 0.5977612371343175
         }, 
         {
@@ -220,12 +220,12 @@
             "Memory (GB)": 3.4, 
             "Rank": 10, 
             "Mean score": 0.6548031109064574, 
-            "Macro F1 score Raw": 0.482509987648797, 
             "Accuracy Raw": 0.7950915465523958, 
             "F1 score Raw": 0.7493298589731846, 
-            "Macro F1 score Scaled": 0.46140066226142884, 
+            "Macro F1 score Raw": 0.482509987648797, 
             "Accuracy Scaled": 0.7764080765143464, 
-            "F1 score Scaled": 0.7266005939435968
+            "F1 score Scaled": 0.7266005939435968, 
+            "Macro F1 score Scaled": 0.46140066226142884
         }, 
         {
             "Name": "scANVI (All genes)", 
@@ -280,12 +280,12 @@
             "Memory (GB)": 6.0, 
             "Rank": 13, 
             "Mean score": 0.44142067828654324, 
+            "Accuracy Raw": 0.6264121542656798, 
             "F1 score Raw": 0.5251357026489172, 
             "Macro F1 score Raw": 0.2792368083603988, 
-            "Accuracy Raw": 0.6264121542656798, 
+            "Accuracy Scaled": 0.5923485653560042, 
             "F1 score Scaled": 0.4820778560965943, 
-            "Macro F1 score Scaled": 0.24983561340703128, 
-            "Accuracy Scaled": 0.5923485653560042
+            "Macro F1 score Scaled": 0.24983561340703128
         }, 
         {
             "Name": "Majority Vote", 
@@ -300,12 +300,12 @@
             "Memory (GB)": 1.0, 
             "Rank": 14, 
             "Mean score": 0.008223763122022708, 
-            "Macro F1 score Raw": 0.011944490794816175, 
             "Accuracy Raw": 0.16731593299571484, 
             "F1 score Raw": 0.0479640869158415, 
-            "Macro F1 score Scaled": -0.02836002667756904, 
+            "Macro F1 score Raw": 0.011944490794816175, 
             "Accuracy Scaled": 0.09139213602550478, 
-            "F1 score Scaled": -0.03836081998186761
+            "F1 score Scaled": -0.03836081998186761, 
+            "Macro F1 score Scaled": -0.02836002667756904
         }
     ]
 }
