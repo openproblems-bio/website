@@ -1,14 +1,14 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pcooksey/bibtex-js@1.0.0/src/bibtex_js.js"></script>
 <bibtex src="/bibliography/main.bib"></bibtex>
 
-<span class="bibtex_template">
-    <span class="bibtexVar" id="+BIBTEXKEY+" extra="BIBTEXKEY">
+<div class="bibtex_template">
+    <div class="bibtexVar" id="+BIBTEXKEY+" extra="BIBTEXKEY">
         <!-- author -->
         <span class="author" max="3">
             <span class="if von"><span class="von"> </span></span><span class="last"></span><span class="if junior"> <span class="junior"></span></span>,
             <span class="first_initial"></span></span>,
         <!-- title, journal, year etc -->
-        <div class="if BIBTEXTYPEKEY==ARTICLE">
+        <span class="if BIBTEXTYPEKEY==ARTICLE">
             "<span class="title"></span>".
             <em><span class="journal"></span></em>,
             <span class="if volume">vol. <span class="volume"></span>, </span>
@@ -16,14 +16,14 @@
             <span class="if pages">pp. <span class="pages"></span>, </span>
             <span class="if month">no. <span class="month"></span>, </span>
             <span class="year"></span>.
-        </div>
-        <div class="if BIBTEXTYPEKEY==BOOK || BIBTEXTYPEKEY==INBOOK">
+        </span>
+        <span class="if BIBTEXTYPEKEY==BOOK || BIBTEXTYPEKEY==INBOOK">
             <span class="if chapter">"<span class="chapter"></span>", in "</span>
             <em><span class="title"></span></em>.
             <span class="publisher"></span>,
             <span class="year"></span>
             <span class="if pages">, pp. <span class="pages"></span></span>.
-        </div>
+        </span>
         <span class="if BIBTEXTYPEKEY==INPROCEEDINGS">
             "<span class="title"></span>", in
             <em><span class="booktitle"></span></em>,
