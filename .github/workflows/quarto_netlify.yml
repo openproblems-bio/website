@@ -57,7 +57,7 @@ jobs:
           quarto render
 
       - name: Deploy 🚀
-        uses: jsmrcaga/action-netlify-deploy@v1.8.0
+        uses: jsmrcaga/action-netlify-deploy@v1.8.1
         if: github.event_name != 'pull_request'
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -70,7 +70,7 @@ jobs:
 
       - name: Deploy preview
         if: github.event_name == 'pull_request'
-        uses: jsmrcaga/action-netlify-deploy@v1.8.0
+        uses: jsmrcaga/action-netlify-deploy@v1.8.1
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
