@@ -65,8 +65,7 @@ jobs:
           NETLIFY_DEPLOY_MESSAGE: "Prod deploy v${{ github.ref }}"
           NETLIFY_DEPLOY_TO_PROD: true
           build_directory: _site
-          install_command: echo no install required
-          build_command: echo no build required
+          use_nvm: false
 
       - name: Deploy preview
         if: github.event_name == 'pull_request'
