@@ -17,7 +17,7 @@ Run `quarto preview` to render a preview version of the site.
 
 ## Build
 
-Run `quarto build` to render the site.
+Run `quarto render` to render the site.
 
 ## Helper scripts
 
