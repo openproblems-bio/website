@@ -11,9 +11,19 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - results/index.qmd
-      - href: manuscript/index.qmd
-        text: Manuscript
+      - text: OpenProblemsv1
+        menu: 
+          - results/index.qmd
+          - results/quality_control.qmd
+          - href: manuscript/index.qmd
+            text: NBT Manuscript
+      - text: OpenProblemsv2
+        menu: 
+          - results_v2/index.qmd
+          - results_v2/quality_control.qmd
+          - results_v2/migration.qmd
+      - text: Documentation
+        href: contributing/index.qmd
 
 format:
   html:
