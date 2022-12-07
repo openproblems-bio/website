@@ -25,6 +25,27 @@ website:
       - text: Documentation
         href: contributing/index.qmd
 
+  sidebar:
+    - id: documentation
+      collapse-level: 3
+      title: Documentation
+      contents: 
+        - contributing/index.qmd
+        - "contributing/quick_start.qmd"
+        - "contributing/requirements.qmd"
+        - text: Extend a task
+          href: contributing/extend_task/index.qmd
+          contents:
+            - href: contributing/extend_task/index.qmd
+              text: Overview
+            - auto: contributing/extend_task/*.qmd
+        - text: Create a new task
+          href: contributing/create_task/index.qmd
+          contents:
+            - href: contributing/create_task/index.qmd
+              text: Overview
+            - auto: contributing/create_task/*.qmd
+        - "contributing/code_of_conduct.qmd"
 format:
   html:
     theme: simplex
