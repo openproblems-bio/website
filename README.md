@@ -6,7 +6,7 @@ An experimental repository for producing the results from the NBT 2022 paper.
 
 * Install [quarto](https://quarto.org), R and Python.
 
-* Run `Rscript -e 'install.packages("renv")` if you don't have `{renv}` installed.
+* Run `Rscript -e 'install.packages("renv")'` if you don't have `{renv}` installed.
 
 * Run `Rscript -e 'renv::restore()'` to install R and Python packages recorded in the renv lockfile (`renv.lock`) and Python requirements (`requirements.txt`).
   This might take a while.
