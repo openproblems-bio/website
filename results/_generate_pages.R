@@ -52,7 +52,6 @@ pwalk(task_info, function(id, name, description) {
 title: {name}
 engine: knitr
 image: thumbnail.png
-sidebar: false
 ---
 
 ```{{r noninteractive}}

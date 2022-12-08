@@ -12,11 +12,7 @@ website:
       - href: index.qmd
         text: Home
       - text: OpenProblemsv1
-        menu: 
-          - results/index.qmd
-          - results/quality_control.qmd
-          - href: manuscript/index.qmd
-            text: NBT Manuscript
+        href: results/index.qmd
       - text: OpenProblemsv2
         href: results_v2/index.qmd
       - text: Documentation
@@ -43,6 +39,18 @@ website:
               text: Overview
             - auto: contributing/create_task/*.qmd
         - "contributing/code_of_conduct.qmd"
+    - id: results_v1
+      title: OpenProblemsv1
+      href: results/index.qmd
+      contents:
+        - text: Overview
+          href: results/index.qmd
+        - text: Results
+          contents:
+            - auto: results/*/index.qmd
+        - results/quality_control.qmd
+        - text: NBT Manuscript
+          href: manuscript/index.qmd
     - id: results_v2
       title: OpenProblemsv2
       href: results_v2/index.qmd
