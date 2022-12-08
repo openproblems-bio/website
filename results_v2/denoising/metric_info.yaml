@@ -1,0 +1,16 @@
+- id: mse
+  label: mse
+  description: Mean Squared Error.
+  maximize: no
+  min: 0
+  max: +inf
+  config_path: metrics/mse/config.vsh.yaml
+  namespace: denoising/metrics
+- id: poisson
+  label: poisson
+  description: Poisson loss
+  maximize: no
+  min: 0
+  max: +inf
+  config_path: metrics/poisson/config.vsh.yaml
+  namespace: denoising/metrics

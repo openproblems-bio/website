@@ -1,0 +1,32 @@
+- id: accuracy
+  label: Accuracy
+  description: The percentage of correctly predicted labels.
+  min: 0
+  max: 1
+  maximize: yes
+  config_path: metrics/accuracy/config.vsh.yaml
+  namespace: label_projection/metrics
+- id: f1
+  label: F1 weighted
+  description: balanced F-score or F-measure
+  min: 0
+  max: 1
+  maximize: yes
+  config_path: metrics/f1/config.vsh.yaml
+  namespace: label_projection/metrics
+- id: f1
+  label: F1 macro
+  description: balanced F-score or F-measure
+  min: 0
+  max: 1
+  maximize: yes
+  config_path: metrics/f1/config.vsh.yaml
+  namespace: label_projection/metrics
+- id: f1
+  label: F1 micro
+  description: balanced F-score or F-measure
+  min: 0
+  max: 1
+  maximize: yes
+  config_path: metrics/f1/config.vsh.yaml
+  namespace: label_projection/metrics
