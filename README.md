@@ -1,6 +1,6 @@
-## OpenProblems NBT2022 reproducibility
+## Experimental website repository
 
-An experimental repository for producing the results from the NBT 2022 paper.
+This is a repository for hosting experimental website designs.
 
 ## Installation
 
