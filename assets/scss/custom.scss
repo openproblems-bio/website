@@ -148,17 +148,80 @@ span {
   margin-bottom: 10px;
 }
 
-.bibtex-citation .dark div:target {
+.bibtex-citation .dark:target {
   background-color: darkgoldenrod;
 }
 
-.bibtex-citation div:target {
+.bibtex-citation:target {
   background-color: palegoldenrod;
 }
 
-.bibtex-citation div:target::before {
+.bibtex-citation:target::before {
   font: 70% sans-serif;
   content: "►";
   color: limegreen;
   margin-right: 0.25em;
 }
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 27px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #EB5252;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #EB5252;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 27px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+} 
