@@ -57,7 +57,7 @@ jobs:
           quarto render
 
       - name: Deploy 🚀
-        uses: jsmrcaga/action-netlify-deploy@v1.8.1
+        uses: jsmrcaga/action-netlify-deploy@v1.7.2
         if: github.event_name != 'pull_request'
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -70,7 +70,7 @@ jobs:
 
       - name: Deploy preview
         if: github.event_name == 'pull_request'
-        uses: jsmrcaga/action-netlify-deploy@v1.8.1
+        uses: jsmrcaga/action-netlify-deploy@v1.7.2
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
@@ -87,4 +87,4 @@ jobs:
           authToken: ${{ secrets.GITHUB_TOKEN }}
           context: Netlify preview
           state: success
-          target_url: https://${{ env.BRANCH_NAME }}--openproblems-nbt2022-reproducibility.netlify.app
+          target_url: https://${{ env.BRANCH_NAME }}--openproblems-experimental.netlify.app
