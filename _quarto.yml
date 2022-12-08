@@ -18,10 +18,7 @@ website:
           - href: manuscript/index.qmd
             text: NBT Manuscript
       - text: OpenProblemsv2
-        menu: 
-          - results_v2/index.qmd
-          - results_v2/quality_control.qmd
-          - results_v2/migration.qmd
+        href: results_v2/index.qmd
       - text: Documentation
         href: contributing/index.qmd
 
@@ -46,6 +43,30 @@ website:
               text: Overview
             - auto: contributing/create_task/*.qmd
         - "contributing/code_of_conduct.qmd"
+    - id: results_v2
+      title: OpenProblemsv2
+      href: results_v2/index.qmd
+      contents:
+        - text: Overview
+          href: results_v2/index.qmd
+        - text: Denoising
+          contents: 
+            - href: results_v2/denoising/index.qmd
+              text: Description
+            - results_v2/denoising/methods.qmd
+            - results_v2/denoising/metrics.qmd
+            - results_v2/denoising/api.qmd
+            - results_v2/denoising/normalization.qmd
+        - text: Label projection
+          contents: 
+            - href: results_v2/label_projection/index.qmd
+              text: Description
+            - results_v2/label_projection/methods.qmd
+            - results_v2/label_projection/metrics.qmd
+            - results_v2/label_projection/api.qmd
+            - results_v2/label_projection/normalization.qmd
+        - results_v2/quality_control.qmd
+        - results_v2/migration.qmd
 format:
   html:
     theme: simplex
