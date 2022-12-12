@@ -1,6 +1,6 @@
 library(tidyverse)
 
-# where tof ind this data in openproblems?
+# where to find this data in openproblems?
 task_info <- tibble(
   id = c(
     "batch_integration_embed",
