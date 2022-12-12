@@ -1,0 +1,122 @@
+[
+    {
+        "task_id": "regulatory_effect_prediction", 
+        "category": "Raw data", 
+        "name": "Number of results", 
+        "check": false, 
+        "code": "len(results) == len(method_info) * len(metric_info) * len(dataset_info)", 
+        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: regulatory_effect_prediction\n  Number of results: 3\n  Number of methods: 3\n  Number of metrics: 2\n  Number of datasets: 1\n"
+    }, 
+    {
+        "task_id": "regulatory_effect_prediction", 
+        "category": "Raw results", 
+        "name": "Metric pearson_correlation %missing", 
+        "check": true, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: regulatory_effect_prediction\n  Metric id: pearson_correlation\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "regulatory_effect_prediction", 
+        "category": "Raw results", 
+        "name": "Metric spearman_correlation %missing", 
+        "check": true, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: regulatory_effect_prediction\n  Metric id: spearman_correlation\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "regulatory_effect_prediction", 
+        "category": "Raw results", 
+        "name": "Method beta %missing", 
+        "check": true, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: regulatory_effect_prediction\n  method id: beta\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "regulatory_effect_prediction", 
+        "category": "Raw results", 
+        "name": "Method random_scores %missing", 
+        "check": true, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: regulatory_effect_prediction\n  method id: random_scores\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "regulatory_effect_prediction", 
+        "category": "Raw results", 
+        "name": "Method true_scores %missing", 
+        "check": true, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: regulatory_effect_prediction\n  method id: true_scores\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "regulatory_effect_prediction", 
+        "category": "Raw results", 
+        "name": "Dataset scicar_mouse_kidney %missing", 
+        "check": true, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: regulatory_effect_prediction\n  dataset id: scicar_mouse_kidney\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "regulatory_effect_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score beta pearson_correlation", 
+        "check": false, 
+        "code": "worst_score >= -1", 
+        "message": "Method beta performs much worse than baselines.\n  Task id: regulatory_effect_prediction\n  Method id: beta\n  Metric id: pearson_correlation\n  Worst score: -3.331066380886856%\n"
+    }, 
+    {
+        "task_id": "regulatory_effect_prediction", 
+        "category": "Scaling", 
+        "name": "Best score beta pearson_correlation", 
+        "check": true, 
+        "code": "best_score <= 2", 
+        "message": "Method beta performs a lot better than baselines.\n  Task id: regulatory_effect_prediction\n  Method id: beta\n  Metric id: pearson_correlation\n  Best score: -3.331066380886856%\n"
+    }, 
+    {
+        "task_id": "regulatory_effect_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score true_scores pearson_correlation", 
+        "check": true, 
+        "code": "worst_score >= -1", 
+        "message": "Method true_scores performs much worse than baselines.\n  Task id: regulatory_effect_prediction\n  Method id: true_scores\n  Metric id: pearson_correlation\n  Worst score: 1.0%\n"
+    }, 
+    {
+        "task_id": "regulatory_effect_prediction", 
+        "category": "Scaling", 
+        "name": "Best score true_scores pearson_correlation", 
+        "check": true, 
+        "code": "best_score <= 2", 
+        "message": "Method true_scores performs a lot better than baselines.\n  Task id: regulatory_effect_prediction\n  Method id: true_scores\n  Metric id: pearson_correlation\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "regulatory_effect_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score beta spearman_correlation", 
+        "check": true, 
+        "code": "worst_score >= -1", 
+        "message": "Method beta performs much worse than baselines.\n  Task id: regulatory_effect_prediction\n  Method id: beta\n  Metric id: spearman_correlation\n  Worst score: -0.15715105784123454%\n"
+    }, 
+    {
+        "task_id": "regulatory_effect_prediction", 
+        "category": "Scaling", 
+        "name": "Best score beta spearman_correlation", 
+        "check": true, 
+        "code": "best_score <= 2", 
+        "message": "Method beta performs a lot better than baselines.\n  Task id: regulatory_effect_prediction\n  Method id: beta\n  Metric id: spearman_correlation\n  Best score: -0.15715105784123454%\n"
+    }, 
+    {
+        "task_id": "regulatory_effect_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score true_scores spearman_correlation", 
+        "check": true, 
+        "code": "worst_score >= -1", 
+        "message": "Method true_scores performs much worse than baselines.\n  Task id: regulatory_effect_prediction\n  Method id: true_scores\n  Metric id: spearman_correlation\n  Worst score: 1.0%\n"
+    }, 
+    {
+        "task_id": "regulatory_effect_prediction", 
+        "category": "Scaling", 
+        "name": "Best score true_scores spearman_correlation", 
+        "check": true, 
+        "code": "best_score <= 2", 
+        "message": "Method true_scores performs a lot better than baselines.\n  Task id: regulatory_effect_prediction\n  Method id: true_scores\n  Metric id: spearman_correlation\n  Best score: 1.0%\n"
+    }
+]
