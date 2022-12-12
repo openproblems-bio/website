@@ -2,3 +2,70 @@
 title: "Quality control"
 ---
 
+```{r interactive}
+#| include: false
+#| eval: false
+path <- 'results'
+```
+
+```{r noninteractive}
+#| include: false
+path <- '.'
+```
+
+```{r setup}
+#| include: false
+#| error: true
+library(tidyverse)
+library(kableExtra)
+
+knitr::opts_chunk$set(error = TRUE)
+
+qc <- list.files(path, pattern = "quality_control.json", recursive = TRUE, full.names = TRUE) %>%
+  map_df(jsonlite::read_json, simplifyVector = TRUE) %>%
+  as_tibble()
+
+```
+
+```{r}
+#| echo: false
+#| output: asis
+qc_plot <- qc %>% 
+  filter(severity > 0) %>%
+  mutate(
+    test = case_when(
+      severity == 0 ~ "✓",
+      severity == 1 ~ "✗",
+      severity == 2 ~ "✗✗",
+      TRUE ~ "✗✗✗"
+    ),
+    color = ifelse(severity == 0, "green", "red")
+  ) %>%
+  arrange(desc(severity_value), category, name)
+ 
+if (nrow(qc_plot) > 0) {
+  out <- qc_plot %>% 
+    transmute(
+      Task = gsub("_", " ", task_id),
+      Category = category,
+      Name = name,
+      Value = value,
+      Condition = code,
+      Severity = test
+    ) %>%
+    kbl(format = "html") %>%
+    kable_styling() %>%
+    column_spec(
+      6, 
+      color = qc_plot$color
+    ) %>%
+    column_spec(
+      1:6,
+      tooltip = qc_plot$message
+    )
+  cat(out)
+} else {
+  cat("✓ All checks succeeded!")
+}
+```
+

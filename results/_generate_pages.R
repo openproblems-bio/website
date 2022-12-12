@@ -43,13 +43,15 @@ task_info <- tibble(
   )
 )
 
-template <- readr::read_lines("results/_template.qmd") %>%
+index_template <- readr::read_lines("results/_template_index.qmd") %>%
   paste0(collapse = "\n") %>%
-  gsub("```\\{r noninteractive\\}[^`]+```", "", .)
+  gsub("```\\{r interactive\\}[^`]+```", "", .)
 
 pwalk(task_info, function(id, name, description) {
+  description <- gsub("\n", " ", description)
   newlines <- glue::glue("---
 title: {name}
+description: {description}
 engine: knitr
 image: thumbnail.png
 ---
@@ -61,5 +63,5 @@ task_id <- '{id}'
 ```
 ")
 
-  readr::write_lines(c(newlines, template), paste0("results/", id, "/index.qmd"))
+  readr::write_lines(c(newlines, index_template), paste0("results/", id, "/index.qmd"))
 })
