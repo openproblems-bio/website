@@ -1,5 +1,6 @@
 ---
 title: Label Projection
+description: Automated cell type annotation from rich, labeled reference data
 engine: knitr
 image: thumbnail.png
 ---
@@ -18,6 +19,7 @@ task_id <- 'label_projection'
 #| error: true
 library(tidyverse)
 library(funkyheatmap)
+library(kableExtra)
 
 knitr::opts_chunk$set(error = TRUE)
 
@@ -29,6 +31,7 @@ method_info <- jsonlite::read_json(paste0(path, "/method_info.json"), simplifyVe
 metric_info <- jsonlite::read_json(paste0(path, "/metric_info.json"), simplifyVector = TRUE)
 dataset_info <- jsonlite::read_json(paste0(path, "/dataset_info.json"), simplifyVector = TRUE)
 results <- jsonlite::read_json(paste0(path, "/results.json"), simplifyVector = TRUE)
+qc <- jsonlite::read_json(paste0(path, "/quality_control.json"), simplifyVector = TRUE)
 ```
 
 
@@ -175,4 +178,45 @@ g_all
 
 ## Quality control
 
-To do
+```{r}
+#| echo: false
+#| output: asis
+qc_plot <- qc %>% 
+  filter(severity > 0) %>%
+  mutate(
+    test = case_when(
+      severity == 0 ~ "✓",
+      severity == 1 ~ "✗",
+      severity == 2 ~ "✗✗",
+      TRUE ~ "✗✗✗"
+    ),
+    color = ifelse(severity == 0, "green", "red")
+  ) %>%
+  arrange(desc(abs(severity)), category, name)
+
+if (nrow(qc_plot) > 0) {
+  out <- qc_plot %>% 
+    transmute(
+      Category = category,
+      Name = name,
+      Value = value,
+      Condition = code,
+      Severity = test
+    ) %>%
+    kbl(format = "html") %>%
+    kable_styling() %>%
+    kable_paper() %>%
+    column_spec(
+      5, 
+      color = qc_plot$color
+    ) %>%
+    column_spec(
+      1:5,
+      tooltip = qc_plot$message
+    )
+  cat(out)
+} else {
+  cat("✓ All checks succeeded!")
+}
+```
+

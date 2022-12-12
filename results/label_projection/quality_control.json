@@ -3,7 +3,8 @@
         "task_id": "label_projection", 
         "category": "Raw data", 
         "name": "Number of results", 
-        "check": false, 
+        "value": 128, 
+        "severity": 0, 
         "code": "len(results) == len(method_info) * len(metric_info) * len(dataset_info)", 
         "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: label_projection\n  Number of results: 128\n  Number of methods: 16\n  Number of metrics: 3\n  Number of datasets: 8\n"
     }, 
@@ -11,7 +12,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Metric accuracy %missing", 
-        "check": true, 
+        "value": 0.0078125, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  Metric id: accuracy\n  Percentage missing: 1%\n"
     }, 
@@ -19,7 +21,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Metric f1 %missing", 
-        "check": true, 
+        "value": 0.0078125, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  Metric id: f1\n  Percentage missing: 1%\n"
     }, 
@@ -27,7 +30,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Metric f1_macro %missing", 
-        "check": true, 
+        "value": 0.0078125, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  Metric id: f1_macro\n  Percentage missing: 1%\n"
     }, 
@@ -35,7 +39,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Method knn_classifier_log_cpm %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  method id: knn_classifier_log_cpm\n  Percentage missing: 0%\n"
     }, 
@@ -43,7 +48,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Method knn_classifier_scran %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  method id: knn_classifier_scran\n  Percentage missing: 0%\n"
     }, 
@@ -51,7 +57,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Method logistic_regression_log_cpm %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  method id: logistic_regression_log_cpm\n  Percentage missing: 0%\n"
     }, 
@@ -59,7 +66,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Method logistic_regression_scran %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  method id: logistic_regression_scran\n  Percentage missing: 0%\n"
     }, 
@@ -67,7 +75,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Method majority_vote %missing", 
-        "check": false, 
+        "value": 0.125, 
+        "severity": 1, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  method id: majority_vote\n  Percentage missing: 12%\n"
     }, 
@@ -75,7 +84,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Method mlp_log_cpm %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  method id: mlp_log_cpm\n  Percentage missing: 0%\n"
     }, 
@@ -83,7 +93,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Method mlp_scran %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  method id: mlp_scran\n  Percentage missing: 0%\n"
     }, 
@@ -91,7 +102,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Method random_labels %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  method id: random_labels\n  Percentage missing: 0%\n"
     }, 
@@ -99,7 +111,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Method scanvi_all_genes %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  method id: scanvi_all_genes\n  Percentage missing: 0%\n"
     }, 
@@ -107,7 +120,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Method scanvi_hvg %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  method id: scanvi_hvg\n  Percentage missing: 0%\n"
     }, 
@@ -115,7 +129,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Method scarches_scanvi_all_genes %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  method id: scarches_scanvi_all_genes\n  Percentage missing: 0%\n"
     }, 
@@ -123,7 +138,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Method scarches_scanvi_hvg %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  method id: scarches_scanvi_hvg\n  Percentage missing: 0%\n"
     }, 
@@ -131,7 +147,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Method seurat %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  method id: seurat\n  Percentage missing: 0%\n"
     }, 
@@ -139,7 +156,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Method true_labels %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  method id: true_labels\n  Percentage missing: 0%\n"
     }, 
@@ -147,7 +165,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Method xgboost_log_cpm %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  method id: xgboost_log_cpm\n  Percentage missing: 0%\n"
     }, 
@@ -155,7 +174,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Method xgboost_scran %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  method id: xgboost_scran\n  Percentage missing: 0%\n"
     }, 
@@ -163,7 +183,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Dataset cengen_batch %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  dataset id: cengen_batch\n  Percentage missing: 0%\n"
     }, 
@@ -171,7 +192,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Dataset cengen_random %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  dataset id: cengen_random\n  Percentage missing: 0%\n"
     }, 
@@ -179,7 +201,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Dataset pancreas_batch %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  dataset id: pancreas_batch\n  Percentage missing: 0%\n"
     }, 
@@ -187,7 +210,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Dataset pancreas_random %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  dataset id: pancreas_random\n  Percentage missing: 0%\n"
     }, 
@@ -195,7 +219,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Dataset pancreas_random_label_noise %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  dataset id: pancreas_random_label_noise\n  Percentage missing: 0%\n"
     }, 
@@ -203,7 +228,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Dataset tabula_muris_senis_lung_random %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  dataset id: tabula_muris_senis_lung_random\n  Percentage missing: 0%\n"
     }, 
@@ -211,7 +237,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Dataset zebrafish_labels %missing", 
-        "check": true, 
+        "value": 0.0625, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  dataset id: zebrafish_labels\n  Percentage missing: 6%\n"
     }, 
@@ -219,7 +246,8 @@
         "task_id": "label_projection", 
         "category": "Raw results", 
         "name": "Dataset zebrafish_random %missing", 
-        "check": true, 
+        "value": 0.0, 
+        "severity": 0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: label_projection\n  dataset id: zebrafish_random\n  Percentage missing: 0%\n"
     }, 
@@ -227,7 +255,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score knn_classifier_log_cpm accuracy", 
-        "check": true, 
+        "value": 0.1516895282703245, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method knn_classifier_log_cpm performs much worse than baselines.\n  Task id: label_projection\n  Method id: knn_classifier_log_cpm\n  Metric id: accuracy\n  Worst score: 0.1516895282703245%\n"
     }, 
@@ -235,7 +264,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score knn_classifier_log_cpm accuracy", 
-        "check": true, 
+        "value": 0.9264201296225695, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method knn_classifier_log_cpm performs a lot better than baselines.\n  Task id: label_projection\n  Method id: knn_classifier_log_cpm\n  Metric id: accuracy\n  Best score: 0.9264201296225695%\n"
     }, 
@@ -243,7 +273,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score knn_classifier_scran accuracy", 
-        "check": true, 
+        "value": 0.16513884242221477, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method knn_classifier_scran performs much worse than baselines.\n  Task id: label_projection\n  Method id: knn_classifier_scran\n  Metric id: accuracy\n  Worst score: 0.16513884242221477%\n"
     }, 
@@ -251,7 +282,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score knn_classifier_scran accuracy", 
-        "check": true, 
+        "value": 0.951200914982844, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method knn_classifier_scran performs a lot better than baselines.\n  Task id: label_projection\n  Method id: knn_classifier_scran\n  Metric id: accuracy\n  Best score: 0.951200914982844%\n"
     }, 
@@ -259,7 +291,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score logistic_regression_log_cpm accuracy", 
-        "check": true, 
+        "value": 0.1917029106724657, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method logistic_regression_log_cpm performs much worse than baselines.\n  Task id: label_projection\n  Method id: logistic_regression_log_cpm\n  Metric id: accuracy\n  Worst score: 0.1917029106724657%\n"
     }, 
@@ -267,7 +300,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score logistic_regression_log_cpm accuracy", 
-        "check": true, 
+        "value": 0.986275257338925, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method logistic_regression_log_cpm performs a lot better than baselines.\n  Task id: label_projection\n  Method id: logistic_regression_log_cpm\n  Metric id: accuracy\n  Best score: 0.986275257338925%\n"
     }, 
@@ -275,7 +309,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score logistic_regression_scran accuracy", 
-        "check": true, 
+        "value": 0.24155235864837737, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method logistic_regression_scran performs much worse than baselines.\n  Task id: label_projection\n  Method id: logistic_regression_scran\n  Metric id: accuracy\n  Worst score: 0.24155235864837737%\n"
     }, 
@@ -283,7 +318,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score logistic_regression_scran accuracy", 
-        "check": true, 
+        "value": 0.9306138009912315, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method logistic_regression_scran performs a lot better than baselines.\n  Task id: label_projection\n  Method id: logistic_regression_scran\n  Metric id: accuracy\n  Best score: 0.9306138009912315%\n"
     }, 
@@ -291,7 +327,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score majority_vote accuracy", 
-        "check": true, 
+        "value": -0.03138173302107728, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method majority_vote performs much worse than baselines.\n  Task id: label_projection\n  Method id: majority_vote\n  Metric id: accuracy\n  Worst score: -0.03138173302107728%\n"
     }, 
@@ -299,7 +336,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score majority_vote accuracy", 
-        "check": true, 
+        "value": 0.19011115369873513, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method majority_vote performs a lot better than baselines.\n  Task id: label_projection\n  Method id: majority_vote\n  Metric id: accuracy\n  Best score: 0.19011115369873513%\n"
     }, 
@@ -307,7 +345,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score mlp_log_cpm accuracy", 
-        "check": true, 
+        "value": 0.22863834058213447, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method mlp_log_cpm performs much worse than baselines.\n  Task id: label_projection\n  Method id: mlp_log_cpm\n  Metric id: accuracy\n  Worst score: 0.22863834058213447%\n"
     }, 
@@ -315,7 +354,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score mlp_log_cpm accuracy", 
-        "check": true, 
+        "value": 0.9870377430423181, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method mlp_log_cpm performs a lot better than baselines.\n  Task id: label_projection\n  Method id: mlp_log_cpm\n  Metric id: accuracy\n  Best score: 0.9870377430423181%\n"
     }, 
@@ -323,7 +363,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score mlp_scran accuracy", 
-        "check": true, 
+        "value": 0.15128805620608898, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method mlp_scran performs much worse than baselines.\n  Task id: label_projection\n  Method id: mlp_scran\n  Metric id: accuracy\n  Worst score: 0.15128805620608898%\n"
     }, 
@@ -331,7 +372,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score mlp_scran accuracy", 
-        "check": true, 
+        "value": 0.9775066717499047, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method mlp_scran performs a lot better than baselines.\n  Task id: label_projection\n  Method id: mlp_scran\n  Metric id: accuracy\n  Best score: 0.9775066717499047%\n"
     }, 
@@ -339,7 +381,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score scanvi_all_genes accuracy", 
-        "check": true, 
+        "value": 0.19230511876881898, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method scanvi_all_genes performs much worse than baselines.\n  Task id: label_projection\n  Method id: scanvi_all_genes\n  Metric id: accuracy\n  Worst score: 0.19230511876881898%\n"
     }, 
@@ -347,7 +390,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score scanvi_all_genes accuracy", 
-        "check": true, 
+        "value": 0.9584445291650782, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method scanvi_all_genes performs a lot better than baselines.\n  Task id: label_projection\n  Method id: scanvi_all_genes\n  Metric id: accuracy\n  Best score: 0.9584445291650782%\n"
     }, 
@@ -355,7 +399,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score scanvi_hvg accuracy", 
-        "check": true, 
+        "value": 0.19130143860823018, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method scanvi_hvg performs much worse than baselines.\n  Task id: label_projection\n  Method id: scanvi_hvg\n  Metric id: accuracy\n  Worst score: 0.19130143860823018%\n"
     }, 
@@ -363,7 +408,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score scanvi_hvg accuracy", 
-        "check": true, 
+        "value": 0.967420467612112, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method scanvi_hvg performs a lot better than baselines.\n  Task id: label_projection\n  Method id: scanvi_hvg\n  Metric id: accuracy\n  Best score: 0.967420467612112%\n"
     }, 
@@ -371,7 +417,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score scarches_scanvi_all_genes accuracy", 
-        "check": true, 
+        "value": 0.2046838407494145, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method scarches_scanvi_all_genes performs much worse than baselines.\n  Task id: label_projection\n  Method id: scarches_scanvi_all_genes\n  Metric id: accuracy\n  Worst score: 0.2046838407494145%\n"
     }, 
@@ -379,7 +426,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score scarches_scanvi_all_genes accuracy", 
-        "check": true, 
+        "value": 0.9435760579489134, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method scarches_scanvi_all_genes performs a lot better than baselines.\n  Task id: label_projection\n  Method id: scarches_scanvi_all_genes\n  Metric id: accuracy\n  Best score: 0.9435760579489134%\n"
     }, 
@@ -387,7 +435,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score scarches_scanvi_hvg accuracy", 
-        "check": true, 
+        "value": 0.06719128329297822, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method scarches_scanvi_hvg performs much worse than baselines.\n  Task id: label_projection\n  Method id: scarches_scanvi_hvg\n  Metric id: accuracy\n  Worst score: 0.06719128329297822%\n"
     }, 
@@ -395,7 +444,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score scarches_scanvi_hvg accuracy", 
-        "check": true, 
+        "value": 0.9482560367957071, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method scarches_scanvi_hvg performs a lot better than baselines.\n  Task id: label_projection\n  Method id: scarches_scanvi_hvg\n  Metric id: accuracy\n  Best score: 0.9482560367957071%\n"
     }, 
@@ -403,7 +453,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score seurat accuracy", 
-        "check": true, 
+        "value": 0.32372030779524924, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method seurat performs much worse than baselines.\n  Task id: label_projection\n  Method id: seurat\n  Metric id: accuracy\n  Worst score: 0.32372030779524924%\n"
     }, 
@@ -411,7 +462,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score seurat accuracy", 
-        "check": true, 
+        "value": 0.9777692602529705, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method seurat performs a lot better than baselines.\n  Task id: label_projection\n  Method id: seurat\n  Metric id: accuracy\n  Best score: 0.9777692602529705%\n"
     }, 
@@ -419,7 +471,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score true_labels accuracy", 
-        "check": true, 
+        "value": 1.0, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method true_labels performs much worse than baselines.\n  Task id: label_projection\n  Method id: true_labels\n  Metric id: accuracy\n  Worst score: 1.0%\n"
     }, 
@@ -427,7 +480,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score true_labels accuracy", 
-        "check": true, 
+        "value": 1.0, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method true_labels performs a lot better than baselines.\n  Task id: label_projection\n  Method id: true_labels\n  Metric id: accuracy\n  Best score: 1.0%\n"
     }, 
@@ -435,7 +489,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score xgboost_log_cpm accuracy", 
-        "check": true, 
+        "value": 0.2000669120107059, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method xgboost_log_cpm performs much worse than baselines.\n  Task id: label_projection\n  Method id: xgboost_log_cpm\n  Metric id: accuracy\n  Worst score: 0.2000669120107059%\n"
     }, 
@@ -443,7 +498,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score xgboost_log_cpm accuracy", 
-        "check": true, 
+        "value": 0.9729317575295463, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method xgboost_log_cpm performs a lot better than baselines.\n  Task id: label_projection\n  Method id: xgboost_log_cpm\n  Metric id: accuracy\n  Best score: 0.9729317575295463%\n"
     }, 
@@ -451,7 +507,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score xgboost_scran accuracy", 
-        "check": true, 
+        "value": 0.21191033790565406, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method xgboost_scran performs much worse than baselines.\n  Task id: label_projection\n  Method id: xgboost_scran\n  Metric id: accuracy\n  Worst score: 0.21191033790565406%\n"
     }, 
@@ -459,7 +516,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score xgboost_scran accuracy", 
-        "check": true, 
+        "value": 0.9584445291650782, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method xgboost_scran performs a lot better than baselines.\n  Task id: label_projection\n  Method id: xgboost_scran\n  Metric id: accuracy\n  Best score: 0.9584445291650782%\n"
     }, 
@@ -467,7 +525,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score knn_classifier_log_cpm f1", 
-        "check": true, 
+        "value": 0.1736454372256545, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method knn_classifier_log_cpm performs much worse than baselines.\n  Task id: label_projection\n  Method id: knn_classifier_log_cpm\n  Metric id: f1\n  Worst score: 0.1736454372256545%\n"
     }, 
@@ -475,7 +534,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score knn_classifier_log_cpm f1", 
-        "check": true, 
+        "value": 0.9253642835014723, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method knn_classifier_log_cpm performs a lot better than baselines.\n  Task id: label_projection\n  Method id: knn_classifier_log_cpm\n  Metric id: f1\n  Best score: 0.9253642835014723%\n"
     }, 
@@ -483,7 +543,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score knn_classifier_scran f1", 
-        "check": true, 
+        "value": 0.17069317515579194, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method knn_classifier_scran performs much worse than baselines.\n  Task id: label_projection\n  Method id: knn_classifier_scran\n  Metric id: f1\n  Worst score: 0.17069317515579194%\n"
     }, 
@@ -491,7 +552,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score knn_classifier_scran f1", 
-        "check": true, 
+        "value": 0.949520486698036, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method knn_classifier_scran performs a lot better than baselines.\n  Task id: label_projection\n  Method id: knn_classifier_scran\n  Metric id: f1\n  Best score: 0.949520486698036%\n"
     }, 
@@ -499,7 +561,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score logistic_regression_log_cpm f1", 
-        "check": true, 
+        "value": 0.21829743562755147, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method logistic_regression_log_cpm performs much worse than baselines.\n  Task id: label_projection\n  Method id: logistic_regression_log_cpm\n  Metric id: f1\n  Worst score: 0.21829743562755147%\n"
     }, 
@@ -507,7 +570,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score logistic_regression_log_cpm f1", 
-        "check": true, 
+        "value": 0.9860963146195088, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method logistic_regression_log_cpm performs a lot better than baselines.\n  Task id: label_projection\n  Method id: logistic_regression_log_cpm\n  Metric id: f1\n  Best score: 0.9860963146195088%\n"
     }, 
@@ -515,7 +579,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score logistic_regression_scran f1", 
-        "check": true, 
+        "value": 0.2862889780345894, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method logistic_regression_scran performs much worse than baselines.\n  Task id: label_projection\n  Method id: logistic_regression_scran\n  Metric id: f1\n  Worst score: 0.2862889780345894%\n"
     }, 
@@ -523,7 +588,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score logistic_regression_scran f1", 
-        "check": true, 
+        "value": 0.9212624467209203, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method logistic_regression_scran performs a lot better than baselines.\n  Task id: label_projection\n  Method id: logistic_regression_scran\n  Metric id: f1\n  Best score: 0.9212624467209203%\n"
     }, 
@@ -531,7 +597,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score majority_vote f1", 
-        "check": true, 
+        "value": -0.05066653807766655, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method majority_vote performs much worse than baselines.\n  Task id: label_projection\n  Method id: majority_vote\n  Metric id: f1\n  Worst score: -0.05066653807766655%\n"
     }, 
@@ -539,7 +606,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score majority_vote f1", 
-        "check": true, 
+        "value": -0.00901803590910048, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method majority_vote performs a lot better than baselines.\n  Task id: label_projection\n  Method id: majority_vote\n  Metric id: f1\n  Best score: -0.00901803590910048%\n"
     }, 
@@ -547,7 +615,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score mlp_log_cpm f1", 
-        "check": true, 
+        "value": 0.24342165189110682, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method mlp_log_cpm performs much worse than baselines.\n  Task id: label_projection\n  Method id: mlp_log_cpm\n  Metric id: f1\n  Worst score: 0.24342165189110682%\n"
     }, 
@@ -555,7 +624,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score mlp_log_cpm f1", 
-        "check": true, 
+        "value": 0.9870228834015857, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method mlp_log_cpm performs a lot better than baselines.\n  Task id: label_projection\n  Method id: mlp_log_cpm\n  Metric id: f1\n  Best score: 0.9870228834015857%\n"
     }, 
@@ -563,7 +633,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score mlp_scran f1", 
-        "check": true, 
+        "value": 0.14827572930903826, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method mlp_scran performs much worse than baselines.\n  Task id: label_projection\n  Method id: mlp_scran\n  Metric id: f1\n  Worst score: 0.14827572930903826%\n"
     }, 
@@ -571,7 +642,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score mlp_scran f1", 
-        "check": true, 
+        "value": 0.9770572284544019, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method mlp_scran performs a lot better than baselines.\n  Task id: label_projection\n  Method id: mlp_scran\n  Metric id: f1\n  Best score: 0.9770572284544019%\n"
     }, 
@@ -579,7 +651,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score scanvi_all_genes f1", 
-        "check": true, 
+        "value": 0.20334791771329178, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method scanvi_all_genes performs much worse than baselines.\n  Task id: label_projection\n  Method id: scanvi_all_genes\n  Metric id: f1\n  Worst score: 0.20334791771329178%\n"
     }, 
@@ -587,7 +660,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score scanvi_all_genes f1", 
-        "check": true, 
+        "value": 0.9495228992497474, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method scanvi_all_genes performs a lot better than baselines.\n  Task id: label_projection\n  Method id: scanvi_all_genes\n  Metric id: f1\n  Best score: 0.9495228992497474%\n"
     }, 
@@ -595,7 +669,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score scanvi_hvg f1", 
-        "check": true, 
+        "value": 0.20302967957894796, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method scanvi_hvg performs much worse than baselines.\n  Task id: label_projection\n  Method id: scanvi_hvg\n  Metric id: f1\n  Worst score: 0.20302967957894796%\n"
     }, 
@@ -603,7 +678,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score scanvi_hvg f1", 
-        "check": true, 
+        "value": 0.9626390825216433, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method scanvi_hvg performs a lot better than baselines.\n  Task id: label_projection\n  Method id: scanvi_hvg\n  Metric id: f1\n  Best score: 0.9626390825216433%\n"
     }, 
@@ -611,7 +687,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score scarches_scanvi_all_genes f1", 
-        "check": true, 
+        "value": 0.18775314563046078, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method scarches_scanvi_all_genes performs much worse than baselines.\n  Task id: label_projection\n  Method id: scarches_scanvi_all_genes\n  Metric id: f1\n  Worst score: 0.18775314563046078%\n"
     }, 
@@ -619,7 +696,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score scarches_scanvi_all_genes f1", 
-        "check": true, 
+        "value": 0.9398490707360454, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method scarches_scanvi_all_genes performs a lot better than baselines.\n  Task id: label_projection\n  Method id: scarches_scanvi_all_genes\n  Metric id: f1\n  Best score: 0.9398490707360454%\n"
     }, 
@@ -627,7 +705,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score scarches_scanvi_hvg f1", 
-        "check": true, 
+        "value": 0.023938347817375746, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method scarches_scanvi_hvg performs much worse than baselines.\n  Task id: label_projection\n  Method id: scarches_scanvi_hvg\n  Metric id: f1\n  Worst score: 0.023938347817375746%\n"
     }, 
@@ -635,7 +714,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score scarches_scanvi_hvg f1", 
-        "check": true, 
+        "value": 0.9363842138734043, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method scarches_scanvi_hvg performs a lot better than baselines.\n  Task id: label_projection\n  Method id: scarches_scanvi_hvg\n  Metric id: f1\n  Best score: 0.9363842138734043%\n"
     }, 
@@ -643,7 +723,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score seurat f1", 
-        "check": true, 
+        "value": 0.3847443539026205, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method seurat performs much worse than baselines.\n  Task id: label_projection\n  Method id: seurat\n  Metric id: f1\n  Worst score: 0.3847443539026205%\n"
     }, 
@@ -651,7 +732,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score seurat f1", 
-        "check": true, 
+        "value": 0.9752763879924344, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method seurat performs a lot better than baselines.\n  Task id: label_projection\n  Method id: seurat\n  Metric id: f1\n  Best score: 0.9752763879924344%\n"
     }, 
@@ -659,7 +741,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score true_labels f1", 
-        "check": true, 
+        "value": 1.0, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method true_labels performs much worse than baselines.\n  Task id: label_projection\n  Method id: true_labels\n  Metric id: f1\n  Worst score: 1.0%\n"
     }, 
@@ -667,7 +750,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score true_labels f1", 
-        "check": true, 
+        "value": 1.0, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method true_labels performs a lot better than baselines.\n  Task id: label_projection\n  Method id: true_labels\n  Metric id: f1\n  Best score: 1.0%\n"
     }, 
@@ -675,7 +759,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score xgboost_log_cpm f1", 
-        "check": true, 
+        "value": 0.24703662977702717, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method xgboost_log_cpm performs much worse than baselines.\n  Task id: label_projection\n  Method id: xgboost_log_cpm\n  Metric id: f1\n  Worst score: 0.24703662977702717%\n"
     }, 
@@ -683,7 +768,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score xgboost_log_cpm f1", 
-        "check": true, 
+        "value": 0.9728004271934376, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method xgboost_log_cpm performs a lot better than baselines.\n  Task id: label_projection\n  Method id: xgboost_log_cpm\n  Metric id: f1\n  Best score: 0.9728004271934376%\n"
     }, 
@@ -691,7 +777,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score xgboost_scran f1", 
-        "check": true, 
+        "value": 0.26763456798784385, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method xgboost_scran performs much worse than baselines.\n  Task id: label_projection\n  Method id: xgboost_scran\n  Metric id: f1\n  Worst score: 0.26763456798784385%\n"
     }, 
@@ -699,7 +786,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score xgboost_scran f1", 
-        "check": true, 
+        "value": 0.9582525644042101, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method xgboost_scran performs a lot better than baselines.\n  Task id: label_projection\n  Method id: xgboost_scran\n  Metric id: f1\n  Best score: 0.9582525644042101%\n"
     }, 
@@ -707,7 +795,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score knn_classifier_log_cpm f1_macro", 
-        "check": true, 
+        "value": 0.17145462231341613, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method knn_classifier_log_cpm performs much worse than baselines.\n  Task id: label_projection\n  Method id: knn_classifier_log_cpm\n  Metric id: f1_macro\n  Worst score: 0.17145462231341613%\n"
     }, 
@@ -715,7 +804,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score knn_classifier_log_cpm f1_macro", 
-        "check": true, 
+        "value": 0.825464015881537, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method knn_classifier_log_cpm performs a lot better than baselines.\n  Task id: label_projection\n  Method id: knn_classifier_log_cpm\n  Metric id: f1_macro\n  Best score: 0.825464015881537%\n"
     }, 
@@ -723,7 +813,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score knn_classifier_scran f1_macro", 
-        "check": true, 
+        "value": 0.17642390196481403, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method knn_classifier_scran performs much worse than baselines.\n  Task id: label_projection\n  Method id: knn_classifier_scran\n  Metric id: f1_macro\n  Worst score: 0.17642390196481403%\n"
     }, 
@@ -731,7 +822,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score knn_classifier_scran f1_macro", 
-        "check": true, 
+        "value": 0.8374514754686065, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method knn_classifier_scran performs a lot better than baselines.\n  Task id: label_projection\n  Method id: knn_classifier_scran\n  Metric id: f1_macro\n  Best score: 0.8374514754686065%\n"
     }, 
@@ -739,7 +831,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score logistic_regression_log_cpm f1_macro", 
-        "check": true, 
+        "value": 0.21239696742292807, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method logistic_regression_log_cpm performs much worse than baselines.\n  Task id: label_projection\n  Method id: logistic_regression_log_cpm\n  Metric id: f1_macro\n  Worst score: 0.21239696742292807%\n"
     }, 
@@ -747,7 +840,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score logistic_regression_log_cpm f1_macro", 
-        "check": true, 
+        "value": 0.9253999018991211, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method logistic_regression_log_cpm performs a lot better than baselines.\n  Task id: label_projection\n  Method id: logistic_regression_log_cpm\n  Metric id: f1_macro\n  Best score: 0.9253999018991211%\n"
     }, 
@@ -755,7 +849,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score logistic_regression_scran f1_macro", 
-        "check": true, 
+        "value": 0.21436956099863208, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method logistic_regression_scran performs much worse than baselines.\n  Task id: label_projection\n  Method id: logistic_regression_scran\n  Metric id: f1_macro\n  Worst score: 0.21436956099863208%\n"
     }, 
@@ -763,7 +858,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score logistic_regression_scran f1_macro", 
-        "check": true, 
+        "value": 0.9068124802835555, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method logistic_regression_scran performs a lot better than baselines.\n  Task id: label_projection\n  Method id: logistic_regression_scran\n  Metric id: f1_macro\n  Best score: 0.9068124802835555%\n"
     }, 
@@ -771,7 +867,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score majority_vote f1_macro", 
-        "check": true, 
+        "value": -0.03676387187589318, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method majority_vote performs much worse than baselines.\n  Task id: label_projection\n  Method id: majority_vote\n  Metric id: f1_macro\n  Worst score: -0.03676387187589318%\n"
     }, 
@@ -779,7 +876,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score majority_vote f1_macro", 
-        "check": true, 
+        "value": -0.0015072148323787146, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method majority_vote performs a lot better than baselines.\n  Task id: label_projection\n  Method id: majority_vote\n  Metric id: f1_macro\n  Best score: -0.0015072148323787146%\n"
     }, 
@@ -787,7 +885,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score mlp_log_cpm f1_macro", 
-        "check": true, 
+        "value": 0.17997889043567886, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method mlp_log_cpm performs much worse than baselines.\n  Task id: label_projection\n  Method id: mlp_log_cpm\n  Metric id: f1_macro\n  Worst score: 0.17997889043567886%\n"
     }, 
@@ -795,7 +894,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score mlp_log_cpm f1_macro", 
-        "check": true, 
+        "value": 0.9275885492178375, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method mlp_log_cpm performs a lot better than baselines.\n  Task id: label_projection\n  Method id: mlp_log_cpm\n  Metric id: f1_macro\n  Best score: 0.9275885492178375%\n"
     }, 
@@ -803,7 +903,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score mlp_scran f1_macro", 
-        "check": true, 
+        "value": 0.13058283220388534, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method mlp_scran performs much worse than baselines.\n  Task id: label_projection\n  Method id: mlp_scran\n  Metric id: f1_macro\n  Worst score: 0.13058283220388534%\n"
     }, 
@@ -811,7 +912,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score mlp_scran f1_macro", 
-        "check": true, 
+        "value": 0.9139755727450801, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method mlp_scran performs a lot better than baselines.\n  Task id: label_projection\n  Method id: mlp_scran\n  Metric id: f1_macro\n  Best score: 0.9139755727450801%\n"
     }, 
@@ -819,7 +921,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score scanvi_all_genes f1_macro", 
-        "check": true, 
+        "value": 0.19579517527042756, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method scanvi_all_genes performs much worse than baselines.\n  Task id: label_projection\n  Method id: scanvi_all_genes\n  Metric id: f1_macro\n  Worst score: 0.19579517527042756%\n"
     }, 
@@ -827,7 +930,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score scanvi_all_genes f1_macro", 
-        "check": true, 
+        "value": 0.6360330403063652, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method scanvi_all_genes performs a lot better than baselines.\n  Task id: label_projection\n  Method id: scanvi_all_genes\n  Metric id: f1_macro\n  Best score: 0.6360330403063652%\n"
     }, 
@@ -835,7 +939,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score scanvi_hvg f1_macro", 
-        "check": true, 
+        "value": 0.16695443307902177, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method scanvi_hvg performs much worse than baselines.\n  Task id: label_projection\n  Method id: scanvi_hvg\n  Metric id: f1_macro\n  Worst score: 0.16695443307902177%\n"
     }, 
@@ -843,7 +948,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score scanvi_hvg f1_macro", 
-        "check": true, 
+        "value": 0.659879759884599, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method scanvi_hvg performs a lot better than baselines.\n  Task id: label_projection\n  Method id: scanvi_hvg\n  Metric id: f1_macro\n  Best score: 0.659879759884599%\n"
     }, 
@@ -851,7 +957,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score scarches_scanvi_all_genes f1_macro", 
-        "check": true, 
+        "value": 0.05504922185639509, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method scarches_scanvi_all_genes performs much worse than baselines.\n  Task id: label_projection\n  Method id: scarches_scanvi_all_genes\n  Metric id: f1_macro\n  Worst score: 0.05504922185639509%\n"
     }, 
@@ -859,7 +966,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score scarches_scanvi_all_genes f1_macro", 
-        "check": true, 
+        "value": 0.6294191563030153, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method scarches_scanvi_all_genes performs a lot better than baselines.\n  Task id: label_projection\n  Method id: scarches_scanvi_all_genes\n  Metric id: f1_macro\n  Best score: 0.6294191563030153%\n"
     }, 
@@ -867,7 +975,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score scarches_scanvi_hvg f1_macro", 
-        "check": true, 
+        "value": 0.03130763475749498, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method scarches_scanvi_hvg performs much worse than baselines.\n  Task id: label_projection\n  Method id: scarches_scanvi_hvg\n  Metric id: f1_macro\n  Worst score: 0.03130763475749498%\n"
     }, 
@@ -875,7 +984,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score scarches_scanvi_hvg f1_macro", 
-        "check": true, 
+        "value": 0.5006733737393337, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method scarches_scanvi_hvg performs a lot better than baselines.\n  Task id: label_projection\n  Method id: scarches_scanvi_hvg\n  Metric id: f1_macro\n  Best score: 0.5006733737393337%\n"
     }, 
@@ -883,7 +993,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score seurat f1_macro", 
-        "check": true, 
+        "value": 0.27121972086424795, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method seurat performs much worse than baselines.\n  Task id: label_projection\n  Method id: seurat\n  Metric id: f1_macro\n  Worst score: 0.27121972086424795%\n"
     }, 
@@ -891,7 +1002,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score seurat f1_macro", 
-        "check": true, 
+        "value": 0.8711878044253301, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method seurat performs a lot better than baselines.\n  Task id: label_projection\n  Method id: seurat\n  Metric id: f1_macro\n  Best score: 0.8711878044253301%\n"
     }, 
@@ -899,7 +1011,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score true_labels f1_macro", 
-        "check": true, 
+        "value": 1.0, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method true_labels performs much worse than baselines.\n  Task id: label_projection\n  Method id: true_labels\n  Metric id: f1_macro\n  Worst score: 1.0%\n"
     }, 
@@ -907,7 +1020,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score true_labels f1_macro", 
-        "check": true, 
+        "value": 1.0, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method true_labels performs a lot better than baselines.\n  Task id: label_projection\n  Method id: true_labels\n  Metric id: f1_macro\n  Best score: 1.0%\n"
     }, 
@@ -915,7 +1029,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score xgboost_log_cpm f1_macro", 
-        "check": true, 
+        "value": 0.20090456131347068, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method xgboost_log_cpm performs much worse than baselines.\n  Task id: label_projection\n  Method id: xgboost_log_cpm\n  Metric id: f1_macro\n  Worst score: 0.20090456131347068%\n"
     }, 
@@ -923,7 +1038,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score xgboost_log_cpm f1_macro", 
-        "check": true, 
+        "value": 0.9258719849197675, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method xgboost_log_cpm performs a lot better than baselines.\n  Task id: label_projection\n  Method id: xgboost_log_cpm\n  Metric id: f1_macro\n  Best score: 0.9258719849197675%\n"
     }, 
@@ -931,7 +1047,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Worst score xgboost_scran f1_macro", 
-        "check": true, 
+        "value": 0.18467830297588853, 
+        "severity": 0, 
         "code": "worst_score >= -1", 
         "message": "Method xgboost_scran performs much worse than baselines.\n  Task id: label_projection\n  Method id: xgboost_scran\n  Metric id: f1_macro\n  Worst score: 0.18467830297588853%\n"
     }, 
@@ -939,7 +1056,8 @@
         "task_id": "label_projection", 
         "category": "Scaling", 
         "name": "Best score xgboost_scran f1_macro", 
-        "check": true, 
+        "value": 0.8719843444265045, 
+        "severity": 0, 
         "code": "best_score <= 2", 
         "message": "Method xgboost_scran performs a lot better than baselines.\n  Task id: label_projection\n  Method id: xgboost_scran\n  Metric id: f1_macro\n  Best score: 0.8719843444265045%\n"
     }

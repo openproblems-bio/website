@@ -1,4 +1,4 @@
-from typing import List, Optional, Union
+from typing import Any, List, Optional, Union
 import openproblems as op
 import json
 from pathlib import Path
@@ -118,24 +118,36 @@ def create_quality_control(task_id, dataset_info, method_info, metric_info, resu
   def add_qc(
     category: str,
     name: str,
-    check: bool,
+    value: Any,
+    severity_value: float,
     code: str,
     message: str,
   ) -> None:
     "Add an entry to the result qc"
+    if severity_value <= 1:
+      severity = 0
+    elif severity_value <= 2:
+      severity = 1
+    elif severity_value <= 3:
+      severity = 2
+    else:
+      severity = 3
     result_qc.append({
       "task_id": task_id,
       "category": category,
       "name": name,
-      "check": bool(check),
+      "value": value,
+      "severity": severity,
       "code": code,
       "message": message
     })
 
+  pct_missing = 1 - len(results) / len(method_info) * len(metric_info) * len(dataset_info)
   add_qc(
     "Raw data",
     "Number of results",
-    len(results) == len(method_info) * len(metric_info) * len(dataset_info),
+    len(results),
+    pct_missing / .1,
     "len(results) == len(method_info) * len(metric_info) * len(dataset_info)",
     f"Number of results should be equal to #methods × #metrics × #datasets.\n"
     f"  Task id: {task_id}\n"
@@ -158,7 +170,8 @@ def create_quality_control(task_id, dataset_info, method_info, metric_info, resu
     add_qc(
       "Raw results",
       f"Metric {metric_id} %missing",
-      pct_missing <= .1,
+      pct_missing,
+      pct_missing / .1,
       "pct_missing <= .1",
       f"Percentage of missing results should be less than 10%.\n"
       f"  Task id: {task_id}\n"
@@ -179,7 +192,8 @@ def create_quality_control(task_id, dataset_info, method_info, metric_info, resu
     add_qc(
       "Raw results",
       f"Method {method_id} %missing",
-      pct_missing <= .1,
+      pct_missing,
+      pct_missing / .1,
       "pct_missing <= .1",
       f"Percentage of missing results should be less than 10%.\n"
       f"  Task id: {task_id}\n"
@@ -200,7 +214,8 @@ def create_quality_control(task_id, dataset_info, method_info, metric_info, resu
     add_qc(
       "Raw results",
       f"Dataset {dataset_id} %missing",
-      pct_missing <= .1,
+      pct_missing,
+      pct_missing / .1,
       "pct_missing <= .1",
       f"Percentage of missing results should be less than 10%.\n"
       f"  Task id: {task_id}\n"
@@ -230,7 +245,8 @@ def create_quality_control(task_id, dataset_info, method_info, metric_info, resu
         add_qc(
           "Scaling",
           f"Worst score {method_id} {metric_id}",
-          worst_score >= -1,
+          worst_score,
+          worst_score / -1,
           "worst_score >= -1",
           f"Method {method_id} performs much worse than baselines.\n"
           f"  Task id: {task_id}\n"
@@ -242,7 +258,8 @@ def create_quality_control(task_id, dataset_info, method_info, metric_info, resu
         add_qc(
           "Scaling",
           f"Best score {method_id} {metric_id}",
-          best_score <= 2,
+          best_score,
+          best_score / 2,
           "best_score <= 2",
           f"Method {method_id} performs a lot better than baselines.\n"
           f"  Task id: {task_id}\n"
@@ -259,7 +276,6 @@ for task in op.TASKS:
   
   task_id = re.sub(".*\.", "", task.__name__)
   path = Path("results") / task_id
-
 
   print(f"Processing task {task_id}", flush=True)
 
