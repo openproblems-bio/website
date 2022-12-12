@@ -24,8 +24,59 @@ knitr::opts_chunk$set(error = TRUE)
 qc <- list.files(path, pattern = "quality_control.json", recursive = TRUE, full.names = TRUE) %>%
   map_df(jsonlite::read_json, simplifyVector = TRUE) %>%
   as_tibble()
-
 ```
+
+## Summary
+```{r}
+#| echo: false
+#| output: asis
+scale <- RColorBrewer::brewer.pal(10, "RdYlGn")[c(9, 3, 2, 1)] %>%
+  setNames(c("✓", "✗", "✗✗", "✗✗✗"))
+ 
+
+qc %>%
+  group_by(task_id, severity) %>%
+  summarise(n = n(), .groups = "drop") %>%
+  transmute(
+    Task = gsub("_", " ", task_id),
+    severity = case_when(
+      severity == 0 ~ "✓",
+      severity == 1 ~ "✗",
+      severity == 2 ~ "✗✗",
+      TRUE ~ "✗✗✗"
+    ),
+    n
+  ) %>%
+  spread(severity, n, fill = "") %>%
+  kbl(format = "html") %>%
+  kable_styling() %>%
+  column_spec(
+    2,
+    color = scale[[1]]
+  ) %>%
+  column_spec(
+    3,
+    color = scale[[2]]
+  ) %>%
+  column_spec(
+    4,
+    color = scale[[3]]
+  ) %>%
+  column_spec(
+    5,
+    color = scale[[4]]
+  )
+```
+
+## Detailed
+
+
+<small>
+
+:::{.callout-tip}
+The tooltip contains some more details on the QC check.
+:::
+
 
 ```{r}
 #| echo: false
@@ -39,7 +90,7 @@ qc_plot <- qc %>%
       severity == 2 ~ "✗✗",
       TRUE ~ "✗✗✗"
     ),
-    color = ifelse(severity == 0, "green", "red")
+    color = scale[severity+1]
   ) %>%
   arrange(desc(severity_value), category, name)
  
@@ -53,7 +104,7 @@ if (nrow(qc_plot) > 0) {
       Condition = code,
       Severity = test
     ) %>%
-    kbl(format = "html") %>%
+    kbl(format = "html", font_size = 5) %>%
     kable_styling() %>%
     column_spec(
       6, 
@@ -69,3 +120,4 @@ if (nrow(qc_plot) > 0) {
 }
 ```
 
+</small>
