@@ -14,46 +14,17 @@ task_id <- 'multimodal_data_integration'
 
 
 ```{r setup}
-#| include: FALSE
+#| include: false
+#| error: true
 library(tidyverse)
-library(reticulate)
 library(funkyheatmap)
 library(kableExtra)
-op <- reticulate::import("openproblems")
- 
+
 knitr::opts_chunk$set(error = TRUE)
 
-task <- op$tasks[[task_id]]
-
-method_info <- map_df(task$METHODS, function(fun) {
-  bind_cols(
-    tibble(
-      task_id = task_id,
-      method_id = fun$`__name__`
-    ),
-    do.call(tibble, fun$metadata)
-  )
-})
-
-metric_info <- map_df(task$METRICS, function(fun) {
-  bind_cols(
-    tibble(
-      task_id = task_id,
-      metric_id = fun$`__name__`
-    ),
-    do.call(tibble, fun$metadata)
-  )
-})
-
-dataset_info <- map_df(task$DATASETS, function(fun) {
-  bind_cols(
-    tibble(
-      task_id = task_id,
-      dataset_id = fun$`__name__`
-    ),
-    do.call(tibble, fun$metadata)
-  )
-})
+method_info <- jsonlite::read_json(paste0(path, "/method_info.json"), simplifyVector = TRUE)
+metric_info <- jsonlite::read_json(paste0(path, "/metric_info.json"), simplifyVector = TRUE)
+dataset_info <- jsonlite::read_json(paste0(path, "/dataset_info.json"), simplifyVector = TRUE)
 
 parse_size <- function(x) {
   num <- as.numeric(gsub("[^\\.0-9]", "", x))
