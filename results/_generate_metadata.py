@@ -93,11 +93,16 @@ for task in op.TASKS:
         return "Inf"
       else:
         return metric_result
+    def fix_values_scaled(metric_result):
+      if np.isnan(metric_result) or np.isinf(metric_result):
+        return 0.0
+      else:
+        return metric_result
     
     for method_id, li in data.items():
       meta = {"task_id": task_id, "method_id": method_id, "dataset_id": dataset_id}
       raw = { k: fix_values(v) for k, v in li["metrics_raw"].items() }
-      # scaled = { k: fix_values(v) for k, v in li["metrics"].items() }
+      scaled = { k + "_scaled": fix_values_scaled(v) for k, v in li["metrics"].items() }
       
       exec = {
         "submission_time": li["submit"],
@@ -109,6 +114,6 @@ for task in op.TASKS:
         "code_version": li["code_version"]
       }
 
-      results.append(meta | raw | exec)
+      results.append(meta | exec | raw | scaled)
   with open(path / "results.json", "w") as file:
     dump_json(results, file)

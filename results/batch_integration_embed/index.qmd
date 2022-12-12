@@ -18,321 +18,88 @@ task_id <- 'batch_integration_embed'
 #| error: true
 library(tidyverse)
 library(funkyheatmap)
-library(kableExtra)
 
 knitr::opts_chunk$set(error = TRUE)
 
-method_info <- jsonlite::read_json(paste0(path, "/method_info.json"), simplifyVector = TRUE)
+method_info <- jsonlite::read_json(paste0(path, "/method_info.json"), simplifyVector = TRUE) %>%
+  mutate(
+    method_base_name = gsub(" \\(.*", "", method_name)
+  )
+
 metric_info <- jsonlite::read_json(paste0(path, "/metric_info.json"), simplifyVector = TRUE)
 dataset_info <- jsonlite::read_json(paste0(path, "/dataset_info.json"), simplifyVector = TRUE)
 results <- jsonlite::read_json(paste0(path, "/results.json"), simplifyVector = TRUE)
+```
 
-results <- results %>%
+
+```{r}
+#| echo: false
+results_long <-
+  inner_join(
+    results %>%
+      gather(metric_id, value, any_of(metric_info$metric_id)) %>%
+      mutate(value = ifelse(is.na(value), NA_real_, value)) %>%
+      select(method_id, dataset_id, metric_id, value),
+    results %>%
+      gather(metric_id, score, any_of(paste0(metric_info$metric_id, "_scaled"))) %>%
+      mutate(metric_id = sub("_scaled$", "", metric_id)) %>%
+      select(method_id, dataset_id, metric_id, score),
+    by = c("method_id", "dataset_id", "metric_id")
+  ) %>%
   left_join(method_info %>% select(method_id, is_baseline), "method_id")
 
-qc <- tibble(
-  task_id = character(0),
-  section = character(0),
-  name = character(0),
-  desc = character(0),
-  variable = character(0),
-  value = numeric(0),
-  lower = numeric(0),
-  upper = numeric(0)
-)
-```
+overall_ranking <- results_long %>%
+  group_by(method_id) %>%
+  summarise(mean_score = mean(score)) %>%
+  arrange(desc(mean_score))
 
-## Pre-process raw scores
-
-Build a full crossing to make sure no results are missing.
-It's likely some of the methods didn't finish running on all datasets.
-
-```{r}
-cross_df <- crossing(
-  dataset_info %>% select(dataset_id),
-  method_info %>% select(method_id, is_baseline),
-  metric_info %>% select(metric_id)
-)
-```
-
-Transform the results into a long format and join with the crossing.
-```{r}
-results_long <- 
-  results %>%
-  gather(metric_id, value, !!metric_info$metric_id) %>%
-  select(method_id, dataset_id, metric_id, value, is_baseline) %>%
-  full_join(cross_df, by = colnames(cross_df))
-```
-
-```{r}
-#| include: false
-
-# add some qc checks
-qc <- qc %>% 
-  bind_rows(
-    tibble(
-      task_id,
-      section = "Raw data",
-      name = "Long table size",
-      desc = "Whether the long form of the results table has the right number of rows.",
-      value = nrow(results_long),
-      lower = nrow(method_info) * nrow(dataset_info) * nrow(metric_info),
-      upper = nrow(method_info) * nrow(dataset_info) * nrow(metric_info)
-    ),
-    tibble(
-      task_id,
-      section = "Raw data",
-      name = "Percentage of missing results",
-      desc = "Probably shouldn't be higher than 10%.",
-      value = mean(is.na(results_long$value)),
-      lower = 0,
-      upper = .1
-    ),
-    results_long %>%
-      group_by(variable = metric_id) %>%
-      summarise(
-        task_id,
-        section = "Raw data",
-        name = paste0("Percentage of missing results per metric"),
-        desc = "Probably shouldn't be higher than 10%.",
-        value = mean(is.na(value)),
-        lower = 0,
-        upper = .1,
-        .groups = "drop"
-      ),
-    results_long %>%
-      group_by(variable = dataset_id) %>%
-      summarise(
-        task_id,
-        section = "Raw data",
-        name = paste0("Percentage of missing results per dataset"),
-        desc = "Probably shouldn't be higher than 10%.",
-        value = mean(is.na(value)),
-        lower = 0,
-        upper = .1,
-        .groups = "drop"
-      ),
-    results_long %>%
-      group_by(variable = method_id) %>%
-      summarise(
-        task_id,
-        section = "Raw data",
-        name = paste0("Percentage of missing results per method"),
-        desc = "Probably shouldn't be higher than 10%.",
-        value = mean(is.na(value)),
-        lower = 0,
-        upper = .1,
-        .groups = "drop"
-      )
-  )
-```
-
-
-Plot the raw scores.
-
-
-
-:::{.panel-tabset}
-
-## Figure
-
-```{r}
-#| include: false
-knitr::opts_chunk$set(
-  fig.width = 10,
-  fig.height = nrow(method_info) * nrow(metric_info) / 4
-)
+# order by ranking
+results_long$method_id <- factor(results_long$method_id, levels = rev(overall_ranking$method_id))
 ```
 
 ```{r}
 #| echo: false
-ggplot(results_long) +
-  geom_point(aes(value, method_id, colour = is_baseline)) +
-  facet_wrap(~metric_id, ncol = 1, scales = "free") +
-  theme_bw() +
-  labs(x = NULL, y = NULL)
-```
-
-## Code
-```{r}
-#| eval: false
-ggplot(results_long) +
-  geom_point(aes(value, method_id, colour = is_baseline)) +
-  facet_wrap(~metric_id, ncol = 1, scales = "free") +
-  theme_bw() +
-  labs(x = NULL, y = NULL)
-```
-
-:::
-
-## Compute scaling factors
-
-* Compute the minimum and maximum scores of baseline methods per dataset per metric.
-* Rescale values
-
-
-```{r}
-# remove metrics which are all NA
-results_long <- results_long %>% 
-  group_by(metric_id) %>%
-  filter(!all(is.na(value))) %>%
-  ungroup()
-
-scaling_factors <- 
-  results_long %>%
-    filter(is_baseline) %>%
-    group_by(dataset_id, metric_id) %>%
-    summarise(
-      # if there are less than 2 baseline metric values, 
-      # don't use any scaling at all
-      not_missing = sum(!is.na(value)),
-      scale_min = ifelse(not_missing <= 1, 0, min(value, na.rm = TRUE)),
-      scale_max = ifelse(not_missing <= 1, 1, max(value, na.rm = TRUE)),
-      .groups = "drop"
-    ) %>%
-    select(-not_missing)
-```
-
-Visualise the scaling factors.
-
-
-```{r}
-results_long_scaled <- results_long %>%
-  left_join(scaling_factors, by = c("dataset_id", "metric_id")) %>%
-  left_join(metric_info %>% select(metric_id, maximize), by = "metric_id") %>%
-  mutate(
-    scaled_score = case_when(
-      !is.na(value) ~ value,
-      maximize ~ scale_min,
-      !maximize ~ scale_max
-    ),
-    scaled_score = (scaled_score - scale_min) / (scale_max - scale_min),
-    scaled_score = ifelse(maximize, scaled_score, 1 - scaled_score)
-  )
-```
-
-
-```{r}
-#| include: false
-knitr::opts_chunk$set(
-  fig.width = 4,
-  fig.height = 4 * nrow(metric_info)
-)
-```
-
-
-
-```{r}
-#| include: false
-# add some qc checks
-qc <- qc %>% 
-  bind_rows(
-    results_long_scaled %>%
-      group_by(variable = metric_id) %>%
-      summarise(
-        task_id,
-        section = "Metric scaling",
-        name = paste0(c("Lower", "Upper"), " bound check scores after scaling"),
-        desc = "Scores should not fall drastically outside the range of the baseline [min, max] range.",
-        value = c(min(scaled_score), max(scaled_score)),
-        lower = -1,
-        upper = 2,
-        .groups = "drop"
-      )
-  )
-```
-
-
-```{r}
-overall_ranking <- results_long_scaled %>%
-  group_by(method_id) %>%
-  summarise(mean_score = mean(scaled_score)) %>%
-  arrange(desc(mean_score))
-```
-
-
-View results
-
-```{r}
-#| include: false
-knitr::opts_chunk$set(
-  fig.width = 10,
-  fig.height = nrow(method_info) * nrow(metric_info) / 4
-)
-```
-
-:::{.panel-tabset}
-
-## Figure
-
-```{r echo=FALSE}
-# order by ranking
-results_long_scaled$method_id <- factor(results_long_scaled$method_id, levels = rev(overall_ranking$method_id))
-
-ggplot(results_long_scaled %>% arrange(method_id)) +
-  geom_vline(aes(xintercept = x), tibble(x = c(0, 1)), linetype = "dashed", alpha = .5, colour = "red") +
-  geom_path(aes(scaled_score, method_id, group = dataset_id), alpha = .25) +
-  geom_point(aes(scaled_score, method_id, colour = is_baseline)) +
-  facet_wrap(~metric_id, ncol = 1, scales = "free") +
-  theme_bw() +
-  labs(x = NULL, y = NULL)
-```
-
-## Code
-
-```{r}
-#| eval: false
-# order by ranking
-results_long_scaled$method_id <- factor(results_long_scaled$method_id, levels = rev(overall_ranking$method_id))
-
-ggplot(results_long_scaled %>% arrange(method_id)) +
-  geom_vline(aes(xintercept = x), tibble(x = c(0, 1)), linetype = "dashed", alpha = .5, colour = "red") +
-  geom_path(aes(scaled_score, method_id, group = dataset_id), alpha = .25) +
-  geom_point(aes(scaled_score, method_id, colour = is_baseline)) +
-  facet_wrap(~metric_id, ncol = 1, scales = "free") +
-  theme_bw() +
-  labs(x = NULL, y = NULL)
-```
-
-:::
-
-## Overview
-
-Add extra columns
-```{r}
-per_dataset <- results_long_scaled %>%
+#| message: false
+per_dataset <- results_long %>%
   group_by(method_id, dataset_id) %>%
-  summarise(score = mean(scaled_score), .groups = "drop") %>%
+  summarise(score = mean(score), .groups = "drop") %>%
   mutate(dataset_id = paste0("dataset_", dataset_id)) %>%
   spread(dataset_id, score)
-per_metric <- results_long_scaled %>%
+per_metric <- results_long %>%
   group_by(method_id, metric_id) %>%
-  summarise(score = mean(scaled_score), .groups = "drop") %>%
+  summarise(score = mean(score), .groups = "drop") %>%
   mutate(metric_id = paste0("metric_", metric_id)) %>%
   spread(metric_id, score)
 
-summary <- 
+summary_all <- 
   method_info %>%
   transmute(
     method_id,
-    method_name = method_name,
+    method_name,
     method_is_baseline = ifelse(is_baseline, "yes", "")
   ) %>%
   left_join(overall_ranking, by = "method_id") %>%
   left_join(per_dataset, by = "method_id") %>%
   left_join(per_metric, by = "method_id") %>%
   arrange(desc(mean_score))
-```
+summary_base <- 
+  method_info %>%
+  transmute(
+    method_id,
+    method_name = method_base_name,
+    method_is_baseline = ifelse(is_baseline, "yes", "")
+  ) %>%
+  left_join(overall_ranking, by = "method_id") %>%
+  group_by(method_name) %>%
+  slice(which.max(mean_score)) %>%
+  ungroup() %>%
+  arrange(desc(mean_score)) %>%
+  left_join(per_dataset, by = "method_id") %>%
+  left_join(per_metric, by = "method_id") %>%
+  arrange(desc(mean_score))
 
-:::{.panel-tabset}
-
-## Figure
-
-```{r}
-#| echo: false
-#| message: false
 column_info <- tibble(
-  id = colnames(summary)[-1],
+  id = colnames(summary_all)[-1],
   name = id %>%
     gsub("^[^_]+_", "", .) %>%
     gsub("_", " ", .) %>%
@@ -357,181 +124,55 @@ column_info <- tibble(
   })
 )
 
-g <- funky_heatmap(
-  data = summary,
+g_all <- funky_heatmap(
+  data = summary_all,
+  column_info = column_info,
+  expand = c(xmax = 3),
+  col_annot_offset = 4
+)
+g_base <- funky_heatmap(
+  data = summary_base,
   column_info = column_info,
   expand = c(xmax = 3),
   col_annot_offset = 4
 )
 ```
+
+
+::: {.panel-tabset}
+
+## Per method
 
 ```{r}
 #| include: false
 knitr::opts_chunk$set(
-  fig.width = g$width,
-  fig.height = g$height
+  fig.width = g_base$width,
+  fig.height = g_base$height
 )
 ```
 
 ```{r}
 #| echo: false
-g
+g_base
 ```
 
-## Code
+## Per paramset
 
 ```{r}
-#| eval: false
-column_info <- tibble(
-  id = colnames(summary)[-1],
-  name = id %>%
-    gsub("^[^_]+_", "", .) %>%
-    gsub("_", " ", .) %>%
-    str_to_title(),
-  group = gsub("_.*", "", id),
-  geom = case_when(
-    group == "method" ~ "text",
-    group == "mean" ~ "bar",
-    group %in% c("dataset", "metric") ~ "funkyrect"
-  ),
-  palette = ifelse(group %in% c("mean", "dataset", "metric"), group, NA_character_),
-  options = map2(id, geom, function(id, geom) {
-    if (id == "method_name") {
-      list(width = 10, hjust = 0)
-    } else if (id == "is_baseline") {
-      list(width = 1)
-    } else if (geom == "bar") {
-      list(width = 4)
-    } else {
-      list()
-    }
-  })
+#| include: false
+knitr::opts_chunk$set(
+  fig.width = g_all$width,
+  fig.height = g_all$height
 )
+```
 
-funky_heatmap(
-  data = summary,
-  column_info = column_info,
-  expand = c(xmax = 3),
-  col_annot_offset = 4
-)
+```{r}
+#| echo: false
+g_all
 ```
 
 :::
 
 ## Quality control
 
-```{r}
-#| echo: false
-qc_plot <- qc %>% mutate(
-  passes = lower <= value & value <= upper,
-  lf = (value - lower) / ifelse(upper == lower, 1, upper - lower),
-  test = case_when(
-    0 <= lf & lf <= 1 ~ "✓",
-    -1 <= lf | lf <= 2 ~ "✗",
-    -2 <= lf | lf <= 3 ~ "✗✗",
-    TRUE ~ "✗✗✗"
-  ),
-  color = ifelse(0 <= lf & lf <= 1, "green", "red")
-) %>%
-  arrange(desc(abs(lf)), section, name, variable)
-
-qc_plot %>% 
-  transmute(
-    section,
-    name,
-    variable = ifelse(is.na(variable), "", variable),
-    lower = round(lower, 3),
-    value = round(value, 3),
-    upper = round(upper, 3),
-    test
-  ) %>%
-  kbl() %>%
-  kable_paper() %>%
-  column_spec(
-    7, 
-    color = qc_plot$color
-  ) %>%
-  column_spec(
-    1:7,
-    popover = qc_plot$desc
-  )
-```
-
-
-## Raw data
-
-:::{.column-page}
-
-::: {.panel-tabset}
-
-## Methods
-```{ojs}
-//| echo: false
-Inputs.table(method_info)
-```
-
-
-## Metrics
-```{ojs}
-//| echo: false
-Inputs.table(metric_info)
-```
-
-## Datasets
-```{ojs}
-//| echo: false
-Inputs.table(dataset_info)
-```
-
-## Results
-```{ojs}
-//| echo: false
-Inputs.table(results)
-```
-
-## Scaling factors
-```{ojs}
-//| echo: false
-Inputs.table(scaling_factors)
-```
-
-## Summary
-```{ojs}
-//| echo: false
-Inputs.table(summary)
-```
-
-## Quality control
-```{ojs}
-//| echo: false
-Inputs.table(qc)
-```
-
-:::
-
-:::
-
-
-```{r pass-data-to-ojs}
-#| echo: false
-ojs_define(
-  method_info_t = method_info,
-  metric_info_t = metric_info,
-  dataset_info_t = dataset_info,
-  results_t = results,
-  scaling_factors_t = scaling_factors,
-  summary_t = summary,
-  qc_t = qc
-)
-```
-
-```{ojs transpose-ojs-to-r}
-//| echo: false
-method_info = transpose(method_info_t)
-metric_info = transpose(metric_info_t)
-dataset_info = transpose(dataset_info_t)
-results = transpose(results_t)
-scaling_factors = transpose(scaling_factors_t)
-summary = transpose(summary_t)
-qc = transpose(qc_t)
-```
+To do

@@ -21,9 +21,6 @@ metric_info <- jsonlite::read_json(paste0(path, "/metric_info.json"), simplifyVe
 dataset_info <- jsonlite::read_json(paste0(path, "/dataset_info.json"), simplifyVector = TRUE)
 results <- jsonlite::read_json(paste0(path, "/results.json"), simplifyVector = TRUE)
 
-results <- results %>%
-  left_join(method_info %>% select(method_id, is_baseline), "method_id")
-
 qc <- tibble(
   task_id = character(0),
   section = character(0),
@@ -53,6 +50,7 @@ Transform the results into a long format and join with the crossing.
 ```{r}
 results_long <- 
   results %>%
+  left_join(method_info %>% select(method_id, is_baseline), "method_id") %>%
   gather(metric_id, value, !!metric_info$metric_id) %>%
   select(method_id, dataset_id, metric_id, value, is_baseline) %>%
   full_join(cross_df, by = colnames(cross_df))

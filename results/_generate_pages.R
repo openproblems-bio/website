@@ -43,7 +43,7 @@ task_info <- tibble(
   )
 )
 
-template <- readr::read_lines("results/_template.qmd") %>%
+template <- readr::read_lines("results/_template_index.qmd") %>%
   paste0(collapse = "\n") %>%
   gsub("```\\{r noninteractive\\}[^`]+```", "", .)
 
