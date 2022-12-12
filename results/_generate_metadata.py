@@ -271,14 +271,29 @@ def create_quality_control(task_id, dataset_info, method_info, metric_info, resu
 
   return result_qc
 
+results_path = Path("results")
+
+# todo: where to find this info in openproblemsv1?
+task_info = json.loads((results_path / "task_info.json").read_text())
+
 for task in op.TASKS:
   # task_id = "batch_integration_embed"
   # task = op.tasks._batch_integration.batch_integration_embed
   
   task_id = re.sub(".*\.", "", task.__name__)
-  path = Path("results") / task_id
+  legacy_results = results_path / task_id
+  path = results_path / task_id / "data"
+
+  # create dir if need be
+  if not path.exists():
+    path.mkdir(parents=True)
 
   print(f"Processing task {task_id}", flush=True)
+
+  # create task info json
+  task_info_ = [ti for ti in task_info if ti["id"] == task_id][0]
+  with open(path / "task_info.json", "w") as file:
+    dump_json(task_info_, file)
 
   # create method info json
   method_info = list(create_method_info(task_id, task))
@@ -296,7 +311,7 @@ for task in op.TASKS:
     dump_json(dataset_info, file)
   
   # create results json
-  results = list(create_results(task_id, path))
+  results = list(create_results(task_id, legacy_results))
   with open(path / "results.json", "w") as file:
     dump_json(results, file)
 

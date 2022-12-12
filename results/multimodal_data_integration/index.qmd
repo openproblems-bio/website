@@ -23,15 +23,15 @@ library(kableExtra)
 
 knitr::opts_chunk$set(error = TRUE)
 
-method_info <- jsonlite::read_json(paste0(path, "/method_info.json"), simplifyVector = TRUE) %>%
+method_info <- jsonlite::read_json(paste0(path, "/data/method_info.json"), simplifyVector = TRUE) %>%
   mutate(
     method_base_name = gsub(" \\(.*", "", method_name)
   )
 
-metric_info <- jsonlite::read_json(paste0(path, "/metric_info.json"), simplifyVector = TRUE)
-dataset_info <- jsonlite::read_json(paste0(path, "/dataset_info.json"), simplifyVector = TRUE)
-results <- jsonlite::read_json(paste0(path, "/results.json"), simplifyVector = TRUE)
-qc <- jsonlite::read_json(paste0(path, "/quality_control.json"), simplifyVector = TRUE)
+metric_info <- jsonlite::read_json(paste0(path, "/data/metric_info.json"), simplifyVector = TRUE)
+dataset_info <- jsonlite::read_json(paste0(path, "/data/dataset_info.json"), simplifyVector = TRUE)
+results <- jsonlite::read_json(paste0(path, "/data/results.json"), simplifyVector = TRUE)
+qc <- jsonlite::read_json(paste0(path, "/data/quality_control.json"), simplifyVector = TRUE)
 ```
 
 
