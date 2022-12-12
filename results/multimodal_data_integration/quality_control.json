@@ -5,6 +5,7 @@
         "name": "Number of results", 
         "value": 21, 
         "severity": 0, 
+        "severity_value": -170.0, 
         "code": "len(results) == len(method_info) * len(metric_info) * len(dataset_info)", 
         "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: multimodal_data_integration\n  Number of results: 21\n  Number of methods: 7\n  Number of metrics: 2\n  Number of datasets: 3\n"
     }, 
@@ -14,6 +15,7 @@
         "name": "Metric knn_auc %missing", 
         "value": 0.0, 
         "severity": 0, 
+        "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  Metric id: knn_auc\n  Percentage missing: 0%\n"
     }, 
@@ -23,6 +25,7 @@
         "name": "Metric mse %missing", 
         "value": 0.1428571428571429, 
         "severity": 1, 
+        "severity_value": 1.428571428571429, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  Metric id: mse\n  Percentage missing: 14%\n"
     }, 
@@ -32,6 +35,7 @@
         "name": "Method harmonic_alignment_log_scran_pooling %missing", 
         "value": 0.0, 
         "severity": 0, 
+        "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  method id: harmonic_alignment_log_scran_pooling\n  Percentage missing: 0%\n"
     }, 
@@ -41,6 +45,7 @@
         "name": "Method harmonic_alignment_sqrt_cpm %missing", 
         "value": 0.0, 
         "severity": 0, 
+        "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  method id: harmonic_alignment_sqrt_cpm\n  Percentage missing: 0%\n"
     }, 
@@ -50,6 +55,7 @@
         "name": "Method mnn_log_cpm %missing", 
         "value": 0.0, 
         "severity": 0, 
+        "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  method id: mnn_log_cpm\n  Percentage missing: 0%\n"
     }, 
@@ -59,6 +65,7 @@
         "name": "Method mnn_log_scran_pooling %missing", 
         "value": 0.0, 
         "severity": 0, 
+        "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  method id: mnn_log_scran_pooling\n  Percentage missing: 0%\n"
     }, 
@@ -68,6 +75,7 @@
         "name": "Method procrustes %missing", 
         "value": 0.0, 
         "severity": 0, 
+        "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  method id: procrustes\n  Percentage missing: 0%\n"
     }, 
@@ -77,6 +85,7 @@
         "name": "Method random_features %missing", 
         "value": 0.0, 
         "severity": 0, 
+        "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  method id: random_features\n  Percentage missing: 0%\n"
     }, 
@@ -86,6 +95,7 @@
         "name": "Method true_features %missing", 
         "value": 0.5, 
         "severity": 3, 
+        "severity_value": 5.0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  method id: true_features\n  Percentage missing: 50%\n"
     }, 
@@ -95,6 +105,7 @@
         "name": "Dataset citeseq_cbmc %missing", 
         "value": 0.0714285714285714, 
         "severity": 0, 
+        "severity_value": 0.714285714285714, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  dataset id: citeseq_cbmc\n  Percentage missing: 7%\n"
     }, 
@@ -104,6 +115,7 @@
         "name": "Dataset scicar_cell_lines %missing", 
         "value": 0.0714285714285714, 
         "severity": 0, 
+        "severity_value": 0.714285714285714, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  dataset id: scicar_cell_lines\n  Percentage missing: 7%\n"
     }, 
@@ -113,6 +125,7 @@
         "name": "Dataset scicar_mouse_kidney %missing", 
         "value": 0.0714285714285714, 
         "severity": 0, 
+        "severity_value": 0.714285714285714, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  dataset id: scicar_mouse_kidney\n  Percentage missing: 7%\n"
     }, 
@@ -122,6 +135,7 @@
         "name": "Worst score harmonic_alignment_log_scran_pooling knn_auc", 
         "value": 0.01097933501351758, 
         "severity": 0, 
+        "severity_value": -0.01097933501351758, 
         "code": "worst_score >= -1", 
         "message": "Method harmonic_alignment_log_scran_pooling performs much worse than baselines.\n  Task id: multimodal_data_integration\n  Method id: harmonic_alignment_log_scran_pooling\n  Metric id: knn_auc\n  Worst score: 0.01097933501351758%\n"
     }, 
@@ -131,6 +145,7 @@
         "name": "Best score harmonic_alignment_log_scran_pooling knn_auc", 
         "value": 0.02600777884395559, 
         "severity": 0, 
+        "severity_value": 0.013003889421977796, 
         "code": "best_score <= 2", 
         "message": "Method harmonic_alignment_log_scran_pooling performs a lot better than baselines.\n  Task id: multimodal_data_integration\n  Method id: harmonic_alignment_log_scran_pooling\n  Metric id: knn_auc\n  Best score: 0.02600777884395559%\n"
     }, 
@@ -140,6 +155,7 @@
         "name": "Worst score harmonic_alignment_sqrt_cpm knn_auc", 
         "value": -0.0138011621899108, 
         "severity": 0, 
+        "severity_value": 0.0138011621899108, 
         "code": "worst_score >= -1", 
         "message": "Method harmonic_alignment_sqrt_cpm performs much worse than baselines.\n  Task id: multimodal_data_integration\n  Method id: harmonic_alignment_sqrt_cpm\n  Metric id: knn_auc\n  Worst score: -0.0138011621899108%\n"
     }, 
@@ -149,6 +165,7 @@
         "name": "Best score harmonic_alignment_sqrt_cpm knn_auc", 
         "value": 0.0056999816106845565, 
         "severity": 0, 
+        "severity_value": 0.0028499908053422783, 
         "code": "best_score <= 2", 
         "message": "Method harmonic_alignment_sqrt_cpm performs a lot better than baselines.\n  Task id: multimodal_data_integration\n  Method id: harmonic_alignment_sqrt_cpm\n  Metric id: knn_auc\n  Best score: 0.0056999816106845565%\n"
     }, 
@@ -158,6 +175,7 @@
         "name": "Worst score mnn_log_cpm knn_auc", 
         "value": -0.006259874592617514, 
         "severity": 0, 
+        "severity_value": 0.006259874592617514, 
         "code": "worst_score >= -1", 
         "message": "Method mnn_log_cpm performs much worse than baselines.\n  Task id: multimodal_data_integration\n  Method id: mnn_log_cpm\n  Metric id: knn_auc\n  Worst score: -0.006259874592617514%\n"
     }, 
@@ -167,6 +185,7 @@
         "name": "Best score mnn_log_cpm knn_auc", 
         "value": 0.03708007897604483, 
         "severity": 0, 
+        "severity_value": 0.018540039488022415, 
         "code": "best_score <= 2", 
         "message": "Method mnn_log_cpm performs a lot better than baselines.\n  Task id: multimodal_data_integration\n  Method id: mnn_log_cpm\n  Metric id: knn_auc\n  Best score: 0.03708007897604483%\n"
     }, 
@@ -176,6 +195,7 @@
         "name": "Worst score mnn_log_scran_pooling knn_auc", 
         "value": -0.013109451015437854, 
         "severity": 0, 
+        "severity_value": 0.013109451015437854, 
         "code": "worst_score >= -1", 
         "message": "Method mnn_log_scran_pooling performs much worse than baselines.\n  Task id: multimodal_data_integration\n  Method id: mnn_log_scran_pooling\n  Metric id: knn_auc\n  Worst score: -0.013109451015437854%\n"
     }, 
@@ -185,6 +205,7 @@
         "name": "Best score mnn_log_scran_pooling knn_auc", 
         "value": 0.08018716592896218, 
         "severity": 0, 
+        "severity_value": 0.04009358296448109, 
         "code": "best_score <= 2", 
         "message": "Method mnn_log_scran_pooling performs a lot better than baselines.\n  Task id: multimodal_data_integration\n  Method id: mnn_log_scran_pooling\n  Metric id: knn_auc\n  Best score: 0.08018716592896218%\n"
     }, 
@@ -194,6 +215,7 @@
         "name": "Worst score procrustes knn_auc", 
         "value": 0.039584823421299965, 
         "severity": 0, 
+        "severity_value": -0.039584823421299965, 
         "code": "worst_score >= -1", 
         "message": "Method procrustes performs much worse than baselines.\n  Task id: multimodal_data_integration\n  Method id: procrustes\n  Metric id: knn_auc\n  Worst score: 0.039584823421299965%\n"
     }, 
@@ -203,6 +225,7 @@
         "name": "Best score procrustes knn_auc", 
         "value": 0.3102002871192909, 
         "severity": 0, 
+        "severity_value": 0.15510014355964544, 
         "code": "best_score <= 2", 
         "message": "Method procrustes performs a lot better than baselines.\n  Task id: multimodal_data_integration\n  Method id: procrustes\n  Metric id: knn_auc\n  Best score: 0.3102002871192909%\n"
     }, 
@@ -212,6 +235,7 @@
         "name": "Worst score true_features knn_auc", 
         "value": 1.0, 
         "severity": 0, 
+        "severity_value": -1.0, 
         "code": "worst_score >= -1", 
         "message": "Method true_features performs much worse than baselines.\n  Task id: multimodal_data_integration\n  Method id: true_features\n  Metric id: knn_auc\n  Worst score: 1.0%\n"
     }, 
@@ -221,6 +245,7 @@
         "name": "Best score true_features knn_auc", 
         "value": 1.0, 
         "severity": 0, 
+        "severity_value": 0.5, 
         "code": "best_score <= 2", 
         "message": "Method true_features performs a lot better than baselines.\n  Task id: multimodal_data_integration\n  Method id: true_features\n  Metric id: knn_auc\n  Best score: 1.0%\n"
     }, 
@@ -230,6 +255,7 @@
         "name": "Worst score harmonic_alignment_log_scran_pooling mse", 
         "value": -0.015644095001306146, 
         "severity": 0, 
+        "severity_value": 0.015644095001306146, 
         "code": "worst_score >= -1", 
         "message": "Method harmonic_alignment_log_scran_pooling performs much worse than baselines.\n  Task id: multimodal_data_integration\n  Method id: harmonic_alignment_log_scran_pooling\n  Metric id: mse\n  Worst score: -0.015644095001306146%\n"
     }, 
@@ -239,6 +265,7 @@
         "name": "Best score harmonic_alignment_log_scran_pooling mse", 
         "value": 0.0020720595316432444, 
         "severity": 0, 
+        "severity_value": 0.0010360297658216222, 
         "code": "best_score <= 2", 
         "message": "Method harmonic_alignment_log_scran_pooling performs a lot better than baselines.\n  Task id: multimodal_data_integration\n  Method id: harmonic_alignment_log_scran_pooling\n  Metric id: mse\n  Best score: 0.0020720595316432444%\n"
     }, 
@@ -248,6 +275,7 @@
         "name": "Worst score harmonic_alignment_sqrt_cpm mse", 
         "value": -0.015629675291290557, 
         "severity": 0, 
+        "severity_value": 0.015629675291290557, 
         "code": "worst_score >= -1", 
         "message": "Method harmonic_alignment_sqrt_cpm performs much worse than baselines.\n  Task id: multimodal_data_integration\n  Method id: harmonic_alignment_sqrt_cpm\n  Metric id: mse\n  Worst score: -0.015629675291290557%\n"
     }, 
@@ -257,6 +285,7 @@
         "name": "Best score harmonic_alignment_sqrt_cpm mse", 
         "value": 0.0022118570076827826, 
         "severity": 0, 
+        "severity_value": 0.0011059285038413913, 
         "code": "best_score <= 2", 
         "message": "Method harmonic_alignment_sqrt_cpm performs a lot better than baselines.\n  Task id: multimodal_data_integration\n  Method id: harmonic_alignment_sqrt_cpm\n  Metric id: mse\n  Best score: 0.0022118570076827826%\n"
     }, 
@@ -266,6 +295,7 @@
         "name": "Worst score mnn_log_cpm mse", 
         "value": 0.02635166862896654, 
         "severity": 0, 
+        "severity_value": -0.02635166862896654, 
         "code": "worst_score >= -1", 
         "message": "Method mnn_log_cpm performs much worse than baselines.\n  Task id: multimodal_data_integration\n  Method id: mnn_log_cpm\n  Metric id: mse\n  Worst score: 0.02635166862896654%\n"
     }, 
@@ -275,6 +305,7 @@
         "name": "Best score mnn_log_cpm mse", 
         "value": 0.09590018656401533, 
         "severity": 0, 
+        "severity_value": 0.047950093282007666, 
         "code": "best_score <= 2", 
         "message": "Method mnn_log_cpm performs a lot better than baselines.\n  Task id: multimodal_data_integration\n  Method id: mnn_log_cpm\n  Metric id: mse\n  Best score: 0.09590018656401533%\n"
     }, 
@@ -284,6 +315,7 @@
         "name": "Worst score mnn_log_scran_pooling mse", 
         "value": -0.029295153018888298, 
         "severity": 0, 
+        "severity_value": 0.029295153018888298, 
         "code": "worst_score >= -1", 
         "message": "Method mnn_log_scran_pooling performs much worse than baselines.\n  Task id: multimodal_data_integration\n  Method id: mnn_log_scran_pooling\n  Metric id: mse\n  Worst score: -0.029295153018888298%\n"
     }, 
@@ -293,6 +325,7 @@
         "name": "Best score mnn_log_scran_pooling mse", 
         "value": 0.26666551618049583, 
         "severity": 0, 
+        "severity_value": 0.13333275809024792, 
         "code": "best_score <= 2", 
         "message": "Method mnn_log_scran_pooling performs a lot better than baselines.\n  Task id: multimodal_data_integration\n  Method id: mnn_log_scran_pooling\n  Metric id: mse\n  Best score: 0.26666551618049583%\n"
     }, 
@@ -302,6 +335,7 @@
         "name": "Worst score procrustes mse", 
         "value": 0.059239578990742614, 
         "severity": 0, 
+        "severity_value": -0.059239578990742614, 
         "code": "worst_score >= -1", 
         "message": "Method procrustes performs much worse than baselines.\n  Task id: multimodal_data_integration\n  Method id: procrustes\n  Metric id: mse\n  Worst score: 0.059239578990742614%\n"
     }, 
@@ -311,6 +345,7 @@
         "name": "Best score procrustes mse", 
         "value": 0.41325439805643316, 
         "severity": 0, 
+        "severity_value": 0.20662719902821658, 
         "code": "best_score <= 2", 
         "message": "Method procrustes performs a lot better than baselines.\n  Task id: multimodal_data_integration\n  Method id: procrustes\n  Metric id: mse\n  Best score: 0.41325439805643316%\n"
     }, 
@@ -320,6 +355,7 @@
         "name": "Worst score true_features mse", 
         "value": 1.0, 
         "severity": 0, 
+        "severity_value": -1.0, 
         "code": "worst_score >= -1", 
         "message": "Method true_features performs much worse than baselines.\n  Task id: multimodal_data_integration\n  Method id: true_features\n  Metric id: mse\n  Worst score: 1.0%\n"
     }, 
@@ -329,6 +365,7 @@
         "name": "Best score true_features mse", 
         "value": 1.0, 
         "severity": 0, 
+        "severity_value": 0.5, 
         "code": "best_score <= 2", 
         "message": "Method true_features performs a lot better than baselines.\n  Task id: multimodal_data_integration\n  Method id: true_features\n  Metric id: mse\n  Best score: 1.0%\n"
     }

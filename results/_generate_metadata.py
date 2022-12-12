@@ -138,6 +138,7 @@ def create_quality_control(task_id, dataset_info, method_info, metric_info, resu
       "name": name,
       "value": value,
       "severity": severity,
+      "severity_value": severity_value,
       "code": code,
       "message": message
     })
