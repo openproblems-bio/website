@@ -2,8 +2,8 @@
 ```{r noninteractive}
 #| include: false
 #| eval: false
-path <- 'results/label_projection'
-task_id <- 'label_projection'
+path <- 'results/batch_integration_embed'
+task_id <- 'batch_integration_embed'
 ```
 
 
@@ -19,52 +19,9 @@ knitr::opts_chunk$set(error = TRUE)
 method_info <- jsonlite::read_json(paste0(path, "/method_info.json"), simplifyVector = TRUE)
 metric_info <- jsonlite::read_json(paste0(path, "/metric_info.json"), simplifyVector = TRUE)
 dataset_info <- jsonlite::read_json(paste0(path, "/dataset_info.json"), simplifyVector = TRUE)
+results <- jsonlite::read_json(paste0(path, "/results.json"), simplifyVector = TRUE)
 
-parse_size <- function(x) {
-  num <- as.numeric(gsub("[^\\.0-9]", "", x))
-  denom <- gsub("[^A-Z]", "", x)
-  mult <- c(MB = 1, GB = 1024, TB = 1024*1024)[denom]
-  num * mult
-}
-
-json_paths <- list.files(path, pattern = "*.raw.json", full.names = TRUE)
-results <- map_df(json_paths, function(json_path) {
-  cat("Processing '", json_path, "'\n", sep = "")
-  # replace NaNs and Infs
-  json_txt <- readr::read_lines(json_path) %>%
-    gsub(": NaN", ": \"NaN\"", .) %>%
-    gsub(": Infinity", ": \"Infinity\"", .)
-  data <- jsonlite::fromJSON(json_txt)
-
-  dataset_id <- gsub(".*/", "", json_path) %>% gsub(".raw.json", "", .)
-  
-  process_scores <- function(x) {
-    x[map_lgl(x, function(y) y == "NaN")] <- NA_real_
-    x[map_lgl(x, function(y) y == "Infinity")] <- NA_real_
-    x[map_lgl(x, is.infinite)] <- NA_real_
-    do.call(tibble, x)
-  }
-  
-  map2_df(names(data), data, function(method_id, li) {
-    meta <- tibble(task_id, method_id, dataset_id)
-    scaled <- process_scores(li$metrics)
-    colnames(scaled) <- paste0("scaled_", colnames(scaled))
-    raw <- process_scores(li$metrics_raw)
-    exec <- do.call(tibble, li[!names(li) %in% c("metrics", "metrics_raw")]) %>%
-      transmute(
-        submit = lubridate::as_datetime(submit),
-        duration = lubridate::duration(toupper(duration)),
-        realtime = lubridate::duration(toupper(realtime)),
-        cpu_pct = `%cpu` %>% gsub("%", "", .) %>% as.numeric(),
-        peak_rss_mb = parse_size(peak_rss),
-        peak_vmem_mb = parse_size(peak_vmem),
-        rchar_mb = parse_size(rchar),
-        wchar_mb = parse_size(wchar),
-        code_version
-      )
-    bind_cols(meta, raw, scaled, exec)
-  })
-}) %>%
+results <- results %>%
   left_join(method_info %>% select(method_id, is_baseline), "method_id")
 
 qc <- tibble(
