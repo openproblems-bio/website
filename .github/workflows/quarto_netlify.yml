@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
       RENV_PATHS_ROOT: ~/.local/share/renv
 
     steps:
