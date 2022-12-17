@@ -3,11 +3,11 @@
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Raw data", 
         "name": "Number of results", 
-        "value": 14, 
+        "value": 16, 
         "severity": 0, 
         "severity_value": -10.0, 
         "code": "len(results) == len(method_info) * len(metric_info) * len(dataset_info)", 
-        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: cell_cell_communication_ligand_target\n  Number of results: 14\n  Number of methods: 14\n  Number of metrics: 2\n  Number of datasets: 1\n"
+        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: cell_cell_communication_ligand_target\n  Number of results: 16\n  Number of methods: 16\n  Number of metrics: 2\n  Number of datasets: 1\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
@@ -72,26 +72,6 @@
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Raw results", 
-        "name": "Method liana_max %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: cell_cell_communication_ligand_target\n  method id: liana_max\n  Percentage missing: 0%\n"
-    }, 
-    {
-        "task_id": "cell_cell_communication_ligand_target", 
-        "category": "Raw results", 
-        "name": "Method liana_sum %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: cell_cell_communication_ligand_target\n  method id: liana_sum\n  Percentage missing: 0%\n"
-    }, 
-    {
-        "task_id": "cell_cell_communication_ligand_target", 
-        "category": "Raw results", 
         "name": "Method logfc_max %missing", 
         "value": 0.0, 
         "severity": 0, 
@@ -108,6 +88,26 @@
         "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: cell_cell_communication_ligand_target\n  method id: logfc_sum\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Raw results", 
+        "name": "Method magnitude_max %missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: cell_cell_communication_ligand_target\n  method id: magnitude_max\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Raw results", 
+        "name": "Method magnitude_sum %missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: cell_cell_communication_ligand_target\n  method id: magnitude_sum\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
@@ -162,6 +162,26 @@
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Raw results", 
+        "name": "Method specificity_max %missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: cell_cell_communication_ligand_target\n  method id: specificity_max\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Raw results", 
+        "name": "Method specificity_sum %missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: cell_cell_communication_ligand_target\n  method id: specificity_sum\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Raw results", 
         "name": "Method true_events %missing", 
         "value": 0.0, 
         "severity": 0, 
@@ -183,241 +203,281 @@
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score cellphonedb_max auprc", 
-        "value": 0.01600215525960339, 
+        "value": -0.015021038055658006, 
         "severity": 0, 
-        "severity_value": -0.01600215525960339, 
+        "severity_value": 0.015021038055658006, 
         "code": "worst_score >= -1", 
-        "message": "Method cellphonedb_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: cellphonedb_max\n  Metric id: auprc\n  Worst score: 0.01600215525960339%\n"
+        "message": "Method cellphonedb_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: cellphonedb_max\n  Metric id: auprc\n  Worst score: -0.015021038055658006%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score cellphonedb_max auprc", 
-        "value": 0.01600215525960339, 
+        "value": -0.015021038055658006, 
         "severity": 0, 
-        "severity_value": 0.008001077629801696, 
+        "severity_value": -0.007510519027829003, 
         "code": "best_score <= 2", 
-        "message": "Method cellphonedb_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: cellphonedb_max\n  Metric id: auprc\n  Best score: 0.01600215525960339%\n"
+        "message": "Method cellphonedb_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: cellphonedb_max\n  Metric id: auprc\n  Best score: -0.015021038055658006%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score cellphonedb_sum auprc", 
-        "value": 0.006461992899446222, 
+        "value": -0.024861979835953254, 
         "severity": 0, 
-        "severity_value": -0.006461992899446222, 
+        "severity_value": 0.024861979835953254, 
         "code": "worst_score >= -1", 
-        "message": "Method cellphonedb_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: cellphonedb_sum\n  Metric id: auprc\n  Worst score: 0.006461992899446222%\n"
+        "message": "Method cellphonedb_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: cellphonedb_sum\n  Metric id: auprc\n  Worst score: -0.024861979835953254%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score cellphonedb_sum auprc", 
-        "value": 0.006461992899446222, 
+        "value": -0.024861979835953254, 
         "severity": 0, 
-        "severity_value": 0.003230996449723111, 
+        "severity_value": -0.012430989917976627, 
         "code": "best_score <= 2", 
-        "message": "Method cellphonedb_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: cellphonedb_sum\n  Metric id: auprc\n  Best score: 0.006461992899446222%\n"
+        "message": "Method cellphonedb_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: cellphonedb_sum\n  Metric id: auprc\n  Best score: -0.024861979835953254%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score connectome_max auprc", 
-        "value": 0.004178719279726427, 
+        "value": -0.02721723983173558, 
         "severity": 0, 
-        "severity_value": -0.004178719279726427, 
+        "severity_value": 0.02721723983173558, 
         "code": "worst_score >= -1", 
-        "message": "Method connectome_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: connectome_max\n  Metric id: auprc\n  Worst score: 0.004178719279726427%\n"
+        "message": "Method connectome_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: connectome_max\n  Metric id: auprc\n  Worst score: -0.02721723983173558%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score connectome_max auprc", 
-        "value": 0.004178719279726427, 
+        "value": -0.02721723983173558, 
         "severity": 0, 
-        "severity_value": 0.0020893596398632135, 
+        "severity_value": -0.01360861991586779, 
         "code": "best_score <= 2", 
-        "message": "Method connectome_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: connectome_max\n  Metric id: auprc\n  Best score: 0.004178719279726427%\n"
+        "message": "Method connectome_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: connectome_max\n  Metric id: auprc\n  Best score: -0.02721723983173558%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score connectome_sum auprc", 
-        "value": 0.008733098771794155, 
+        "value": -0.022519271208686825, 
         "severity": 0, 
-        "severity_value": -0.008733098771794155, 
+        "severity_value": 0.022519271208686825, 
         "code": "worst_score >= -1", 
-        "message": "Method connectome_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: connectome_sum\n  Metric id: auprc\n  Worst score: 0.008733098771794155%\n"
+        "message": "Method connectome_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: connectome_sum\n  Metric id: auprc\n  Worst score: -0.022519271208686825%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score connectome_sum auprc", 
-        "value": 0.008733098771794155, 
+        "value": -0.022519271208686825, 
         "severity": 0, 
-        "severity_value": 0.004366549385897077, 
+        "severity_value": -0.011259635604343413, 
         "code": "best_score <= 2", 
-        "message": "Method connectome_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: connectome_sum\n  Metric id: auprc\n  Best score: 0.008733098771794155%\n"
-    }, 
-    {
-        "task_id": "cell_cell_communication_ligand_target", 
-        "category": "Scaling", 
-        "name": "Worst score liana_max auprc", 
-        "value": 0.011392168231808284, 
-        "severity": 0, 
-        "severity_value": -0.011392168231808284, 
-        "code": "worst_score >= -1", 
-        "message": "Method liana_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: liana_max\n  Metric id: auprc\n  Worst score: 0.011392168231808284%\n"
-    }, 
-    {
-        "task_id": "cell_cell_communication_ligand_target", 
-        "category": "Scaling", 
-        "name": "Best score liana_max auprc", 
-        "value": 0.011392168231808284, 
-        "severity": 0, 
-        "severity_value": 0.005696084115904142, 
-        "code": "best_score <= 2", 
-        "message": "Method liana_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: liana_max\n  Metric id: auprc\n  Best score: 0.011392168231808284%\n"
-    }, 
-    {
-        "task_id": "cell_cell_communication_ligand_target", 
-        "category": "Scaling", 
-        "name": "Worst score liana_sum auprc", 
-        "value": 0.004610814620551096, 
-        "severity": 0, 
-        "severity_value": -0.004610814620551096, 
-        "code": "worst_score >= -1", 
-        "message": "Method liana_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: liana_sum\n  Metric id: auprc\n  Worst score: 0.004610814620551096%\n"
-    }, 
-    {
-        "task_id": "cell_cell_communication_ligand_target", 
-        "category": "Scaling", 
-        "name": "Best score liana_sum auprc", 
-        "value": 0.004610814620551096, 
-        "severity": 0, 
-        "severity_value": 0.002305407310275548, 
-        "code": "best_score <= 2", 
-        "message": "Method liana_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: liana_sum\n  Metric id: auprc\n  Best score: 0.004610814620551096%\n"
+        "message": "Method connectome_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: connectome_sum\n  Metric id: auprc\n  Best score: -0.022519271208686825%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score logfc_max auprc", 
-        "value": 0.006615656563186668, 
+        "value": -0.024703471509624132, 
         "severity": 0, 
-        "severity_value": -0.006615656563186668, 
+        "severity_value": 0.024703471509624132, 
         "code": "worst_score >= -1", 
-        "message": "Method logfc_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: logfc_max\n  Metric id: auprc\n  Worst score: 0.006615656563186668%\n"
+        "message": "Method logfc_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: logfc_max\n  Metric id: auprc\n  Worst score: -0.024703471509624132%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score logfc_max auprc", 
-        "value": 0.006615656563186668, 
+        "value": -0.024703471509624132, 
         "severity": 0, 
-        "severity_value": 0.003307828281593334, 
+        "severity_value": -0.012351735754812066, 
         "code": "best_score <= 2", 
-        "message": "Method logfc_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: logfc_max\n  Metric id: auprc\n  Best score: 0.006615656563186668%\n"
+        "message": "Method logfc_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: logfc_max\n  Metric id: auprc\n  Best score: -0.024703471509624132%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score logfc_sum auprc", 
-        "value": 0.002747801900373648, 
+        "value": -0.028693270751443258, 
         "severity": 0, 
-        "severity_value": -0.002747801900373648, 
+        "severity_value": 0.028693270751443258, 
         "code": "worst_score >= -1", 
-        "message": "Method logfc_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: logfc_sum\n  Metric id: auprc\n  Worst score: 0.002747801900373648%\n"
+        "message": "Method logfc_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: logfc_sum\n  Metric id: auprc\n  Worst score: -0.028693270751443258%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score logfc_sum auprc", 
-        "value": 0.002747801900373648, 
+        "value": -0.028693270751443258, 
         "severity": 0, 
-        "severity_value": 0.001373900950186824, 
+        "severity_value": -0.014346635375721629, 
         "code": "best_score <= 2", 
-        "message": "Method logfc_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: logfc_sum\n  Metric id: auprc\n  Best score: 0.002747801900373648%\n"
+        "message": "Method logfc_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: logfc_sum\n  Metric id: auprc\n  Best score: -0.028693270751443258%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Scaling", 
+        "name": "Worst score magnitude_max auprc", 
+        "value": -0.016510134759286293, 
+        "severity": 0, 
+        "severity_value": 0.016510134759286293, 
+        "code": "worst_score >= -1", 
+        "message": "Method magnitude_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: magnitude_max\n  Metric id: auprc\n  Worst score: -0.016510134759286293%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Scaling", 
+        "name": "Best score magnitude_max auprc", 
+        "value": -0.016510134759286293, 
+        "severity": 0, 
+        "severity_value": -0.008255067379643146, 
+        "code": "best_score <= 2", 
+        "message": "Method magnitude_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: magnitude_max\n  Metric id: auprc\n  Best score: -0.016510134759286293%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Scaling", 
+        "name": "Worst score magnitude_sum auprc", 
+        "value": -0.02946677301348703, 
+        "severity": 0, 
+        "severity_value": 0.02946677301348703, 
+        "code": "worst_score >= -1", 
+        "message": "Method magnitude_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: magnitude_sum\n  Metric id: auprc\n  Worst score: -0.02946677301348703%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Scaling", 
+        "name": "Best score magnitude_sum auprc", 
+        "value": -0.02946677301348703, 
+        "severity": 0, 
+        "severity_value": -0.014733386506743515, 
+        "code": "best_score <= 2", 
+        "message": "Method magnitude_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: magnitude_sum\n  Metric id: auprc\n  Best score: -0.02946677301348703%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score natmi_max auprc", 
-        "value": -0.01693694380061947, 
+        "value": -0.0489986312988081, 
         "severity": 0, 
-        "severity_value": 0.01693694380061947, 
+        "severity_value": 0.0489986312988081, 
         "code": "worst_score >= -1", 
-        "message": "Method natmi_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: natmi_max\n  Metric id: auprc\n  Worst score: -0.01693694380061947%\n"
+        "message": "Method natmi_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: natmi_max\n  Metric id: auprc\n  Worst score: -0.0489986312988081%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score natmi_max auprc", 
-        "value": -0.01693694380061947, 
+        "value": -0.0489986312988081, 
         "severity": 0, 
-        "severity_value": -0.008468471900309735, 
+        "severity_value": -0.02449931564940405, 
         "code": "best_score <= 2", 
-        "message": "Method natmi_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: natmi_max\n  Metric id: auprc\n  Best score: -0.01693694380061947%\n"
+        "message": "Method natmi_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: natmi_max\n  Metric id: auprc\n  Best score: -0.0489986312988081%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score natmi_sum auprc", 
-        "value": -0.007311878706997241, 
+        "value": -0.03907010999675261, 
         "severity": 0, 
-        "severity_value": 0.007311878706997241, 
+        "severity_value": 0.03907010999675261, 
         "code": "worst_score >= -1", 
-        "message": "Method natmi_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: natmi_sum\n  Metric id: auprc\n  Worst score: -0.007311878706997241%\n"
+        "message": "Method natmi_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: natmi_sum\n  Metric id: auprc\n  Worst score: -0.03907010999675261%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score natmi_sum auprc", 
-        "value": -0.007311878706997241, 
+        "value": -0.03907010999675261, 
         "severity": 0, 
-        "severity_value": -0.0036559393534986205, 
+        "severity_value": -0.019535054998376305, 
         "code": "best_score <= 2", 
-        "message": "Method natmi_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: natmi_sum\n  Metric id: auprc\n  Best score: -0.007311878706997241%\n"
+        "message": "Method natmi_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: natmi_sum\n  Metric id: auprc\n  Best score: -0.03907010999675261%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score sca_max auprc", 
-        "value": 0.016467189334103263, 
+        "value": -0.014541342524257077, 
         "severity": 0, 
-        "severity_value": -0.016467189334103263, 
+        "severity_value": 0.014541342524257077, 
         "code": "worst_score >= -1", 
-        "message": "Method sca_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: sca_max\n  Metric id: auprc\n  Worst score: 0.016467189334103263%\n"
+        "message": "Method sca_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: sca_max\n  Metric id: auprc\n  Worst score: -0.014541342524257077%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score sca_max auprc", 
-        "value": 0.016467189334103263, 
+        "value": -0.014541342524257077, 
         "severity": 0, 
-        "severity_value": 0.008233594667051631, 
+        "severity_value": -0.007270671262128539, 
         "code": "best_score <= 2", 
-        "message": "Method sca_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: sca_max\n  Metric id: auprc\n  Best score: 0.016467189334103263%\n"
+        "message": "Method sca_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: sca_max\n  Metric id: auprc\n  Best score: -0.014541342524257077%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score sca_sum auprc", 
-        "value": -0.0009269012900907826, 
+        "value": -0.03248382889836245, 
         "severity": 0, 
-        "severity_value": 0.0009269012900907826, 
+        "severity_value": 0.03248382889836245, 
         "code": "worst_score >= -1", 
-        "message": "Method sca_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: sca_sum\n  Metric id: auprc\n  Worst score: -0.0009269012900907826%\n"
+        "message": "Method sca_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: sca_sum\n  Metric id: auprc\n  Worst score: -0.03248382889836245%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score sca_sum auprc", 
-        "value": -0.0009269012900907826, 
+        "value": -0.03248382889836245, 
         "severity": 0, 
-        "severity_value": -0.0004634506450453913, 
+        "severity_value": -0.016241914449181227, 
         "code": "best_score <= 2", 
-        "message": "Method sca_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: sca_sum\n  Metric id: auprc\n  Best score: -0.0009269012900907826%\n"
+        "message": "Method sca_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: sca_sum\n  Metric id: auprc\n  Best score: -0.03248382889836245%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Scaling", 
+        "name": "Worst score specificity_max auprc", 
+        "value": -0.024818439216105475, 
+        "severity": 0, 
+        "severity_value": 0.024818439216105475, 
+        "code": "worst_score >= -1", 
+        "message": "Method specificity_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: specificity_max\n  Metric id: auprc\n  Worst score: -0.024818439216105475%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Scaling", 
+        "name": "Best score specificity_max auprc", 
+        "value": -0.024818439216105475, 
+        "severity": 0, 
+        "severity_value": -0.012409219608052737, 
+        "code": "best_score <= 2", 
+        "message": "Method specificity_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: specificity_max\n  Metric id: auprc\n  Best score: -0.024818439216105475%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Scaling", 
+        "name": "Worst score specificity_sum auprc", 
+        "value": -0.024895235537812557, 
+        "severity": 0, 
+        "severity_value": 0.024895235537812557, 
+        "code": "worst_score >= -1", 
+        "message": "Method specificity_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: specificity_sum\n  Metric id: auprc\n  Worst score: -0.024895235537812557%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Scaling", 
+        "name": "Best score specificity_sum auprc", 
+        "value": -0.024895235537812557, 
+        "severity": 0, 
+        "severity_value": -0.012447617768906278, 
+        "code": "best_score <= 2", 
+        "message": "Method specificity_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: specificity_sum\n  Metric id: auprc\n  Best score: -0.024895235537812557%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
@@ -443,241 +503,281 @@
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score cellphonedb_max odds_ratio", 
-        "value": -0.26924186815227247, 
+        "value": 0.3763136453806917, 
         "severity": 0, 
-        "severity_value": 0.26924186815227247, 
+        "severity_value": -0.3763136453806917, 
         "code": "worst_score >= -1", 
-        "message": "Method cellphonedb_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: cellphonedb_max\n  Metric id: odds_ratio\n  Worst score: -0.26924186815227247%\n"
+        "message": "Method cellphonedb_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: cellphonedb_max\n  Metric id: odds_ratio\n  Worst score: 0.3763136453806917%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score cellphonedb_max odds_ratio", 
-        "value": -0.26924186815227247, 
+        "value": 0.3763136453806917, 
         "severity": 0, 
-        "severity_value": -0.13462093407613623, 
+        "severity_value": 0.18815682269034584, 
         "code": "best_score <= 2", 
-        "message": "Method cellphonedb_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: cellphonedb_max\n  Metric id: odds_ratio\n  Best score: -0.26924186815227247%\n"
+        "message": "Method cellphonedb_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: cellphonedb_max\n  Metric id: odds_ratio\n  Best score: 0.3763136453806917%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score cellphonedb_sum odds_ratio", 
-        "value": -0.1610060065502273, 
+        "value": 0.05282710646457493, 
         "severity": 0, 
-        "severity_value": 0.1610060065502273, 
+        "severity_value": -0.05282710646457493, 
         "code": "worst_score >= -1", 
-        "message": "Method cellphonedb_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: cellphonedb_sum\n  Metric id: odds_ratio\n  Worst score: -0.1610060065502273%\n"
+        "message": "Method cellphonedb_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: cellphonedb_sum\n  Metric id: odds_ratio\n  Worst score: 0.05282710646457493%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score cellphonedb_sum odds_ratio", 
-        "value": -0.1610060065502273, 
+        "value": 0.05282710646457493, 
         "severity": 0, 
-        "severity_value": -0.08050300327511364, 
+        "severity_value": 0.026413553232287466, 
         "code": "best_score <= 2", 
-        "message": "Method cellphonedb_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: cellphonedb_sum\n  Metric id: odds_ratio\n  Best score: -0.1610060065502273%\n"
+        "message": "Method cellphonedb_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: cellphonedb_sum\n  Metric id: odds_ratio\n  Best score: 0.05282710646457493%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score connectome_max odds_ratio", 
-        "value": -0.17904670997840894, 
+        "value": 0.29188114821667377, 
         "severity": 0, 
-        "severity_value": 0.17904670997840894, 
+        "severity_value": -0.29188114821667377, 
         "code": "worst_score >= -1", 
-        "message": "Method connectome_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: connectome_max\n  Metric id: odds_ratio\n  Worst score: -0.17904670997840894%\n"
+        "message": "Method connectome_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: connectome_max\n  Metric id: odds_ratio\n  Worst score: 0.29188114821667377%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score connectome_max odds_ratio", 
-        "value": -0.17904670997840894, 
+        "value": 0.29188114821667377, 
         "severity": 0, 
-        "severity_value": -0.08952335498920447, 
+        "severity_value": 0.14594057410833688, 
         "code": "best_score <= 2", 
-        "message": "Method connectome_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: connectome_max\n  Metric id: odds_ratio\n  Best score: -0.17904670997840894%\n"
+        "message": "Method connectome_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: connectome_max\n  Metric id: odds_ratio\n  Best score: 0.29188114821667377%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score connectome_sum odds_ratio", 
-        "value": -0.21514507468848174, 
+        "value": 0.10394917134281607, 
         "severity": 0, 
-        "severity_value": 0.21514507468848174, 
+        "severity_value": -0.10394917134281607, 
         "code": "worst_score >= -1", 
-        "message": "Method connectome_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: connectome_sum\n  Metric id: odds_ratio\n  Worst score: -0.21514507468848174%\n"
+        "message": "Method connectome_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: connectome_sum\n  Metric id: odds_ratio\n  Worst score: 0.10394917134281607%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score connectome_sum odds_ratio", 
-        "value": -0.21514507468848174, 
+        "value": 0.10394917134281607, 
         "severity": 0, 
-        "severity_value": -0.10757253734424087, 
+        "severity_value": 0.05197458567140804, 
         "code": "best_score <= 2", 
-        "message": "Method connectome_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: connectome_sum\n  Metric id: odds_ratio\n  Best score: -0.21514507468848174%\n"
-    }, 
-    {
-        "task_id": "cell_cell_communication_ligand_target", 
-        "category": "Scaling", 
-        "name": "Worst score liana_max odds_ratio", 
-        "value": -0.23319031534696705, 
-        "severity": 0, 
-        "severity_value": 0.23319031534696705, 
-        "code": "worst_score >= -1", 
-        "message": "Method liana_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: liana_max\n  Metric id: odds_ratio\n  Worst score: -0.23319031534696705%\n"
-    }, 
-    {
-        "task_id": "cell_cell_communication_ligand_target", 
-        "category": "Scaling", 
-        "name": "Best score liana_max odds_ratio", 
-        "value": -0.23319031534696705, 
-        "severity": 0, 
-        "severity_value": -0.11659515767348352, 
-        "code": "best_score <= 2", 
-        "message": "Method liana_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: liana_max\n  Metric id: odds_ratio\n  Best score: -0.23319031534696705%\n"
-    }, 
-    {
-        "task_id": "cell_cell_communication_ligand_target", 
-        "category": "Scaling", 
-        "name": "Worst score liana_sum odds_ratio", 
-        "value": -0.10699208497028764, 
-        "severity": 0, 
-        "severity_value": 0.10699208497028764, 
-        "code": "worst_score >= -1", 
-        "message": "Method liana_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: liana_sum\n  Metric id: odds_ratio\n  Worst score: -0.10699208497028764%\n"
-    }, 
-    {
-        "task_id": "cell_cell_communication_ligand_target", 
-        "category": "Scaling", 
-        "name": "Best score liana_sum odds_ratio", 
-        "value": -0.10699208497028764, 
-        "severity": 0, 
-        "severity_value": -0.05349604248514382, 
-        "code": "best_score <= 2", 
-        "message": "Method liana_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: liana_sum\n  Metric id: odds_ratio\n  Best score: -0.10699208497028764%\n"
+        "message": "Method connectome_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: connectome_sum\n  Metric id: odds_ratio\n  Best score: 0.10394917134281607%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score logfc_max odds_ratio", 
-        "value": -0.1970951353215238, 
+        "value": 0.2011727011584961, 
         "severity": 0, 
-        "severity_value": 0.1970951353215238, 
+        "severity_value": -0.2011727011584961, 
         "code": "worst_score >= -1", 
-        "message": "Method logfc_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: logfc_max\n  Metric id: odds_ratio\n  Worst score: -0.1970951353215238%\n"
+        "message": "Method logfc_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: logfc_max\n  Metric id: odds_ratio\n  Worst score: 0.2011727011584961%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score logfc_max odds_ratio", 
-        "value": -0.1970951353215238, 
+        "value": 0.2011727011584961, 
         "severity": 0, 
-        "severity_value": -0.0985475676607619, 
+        "severity_value": 0.10058635057924804, 
         "code": "best_score <= 2", 
-        "message": "Method logfc_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: logfc_max\n  Metric id: odds_ratio\n  Best score: -0.1970951353215238%\n"
+        "message": "Method logfc_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: logfc_max\n  Metric id: odds_ratio\n  Best score: 0.2011727011584961%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score logfc_sum odds_ratio", 
-        "value": -0.21514507468848174, 
+        "value": 0.2011727011584961, 
         "severity": 0, 
-        "severity_value": 0.21514507468848174, 
+        "severity_value": -0.2011727011584961, 
         "code": "worst_score >= -1", 
-        "message": "Method logfc_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: logfc_sum\n  Metric id: odds_ratio\n  Worst score: -0.21514507468848174%\n"
+        "message": "Method logfc_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: logfc_sum\n  Metric id: odds_ratio\n  Worst score: 0.2011727011584961%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score logfc_sum odds_ratio", 
-        "value": -0.21514507468848174, 
+        "value": 0.2011727011584961, 
         "severity": 0, 
-        "severity_value": -0.10757253734424087, 
+        "severity_value": 0.10058635057924804, 
         "code": "best_score <= 2", 
-        "message": "Method logfc_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: logfc_sum\n  Metric id: odds_ratio\n  Best score: -0.21514507468848174%\n"
+        "message": "Method logfc_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: logfc_sum\n  Metric id: odds_ratio\n  Best score: 0.2011727011584961%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Scaling", 
+        "name": "Worst score magnitude_max odds_ratio", 
+        "value": 0.3763136453806917, 
+        "severity": 0, 
+        "severity_value": -0.3763136453806917, 
+        "code": "worst_score >= -1", 
+        "message": "Method magnitude_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: magnitude_max\n  Metric id: odds_ratio\n  Worst score: 0.3763136453806917%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Scaling", 
+        "name": "Best score magnitude_max odds_ratio", 
+        "value": 0.3763136453806917, 
+        "severity": 0, 
+        "severity_value": 0.18815682269034584, 
+        "code": "best_score <= 2", 
+        "message": "Method magnitude_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: magnitude_max\n  Metric id: odds_ratio\n  Best score: 0.3763136453806917%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Scaling", 
+        "name": "Worst score magnitude_sum odds_ratio", 
+        "value": 0.05282710646457493, 
+        "severity": 0, 
+        "severity_value": -0.05282710646457493, 
+        "code": "worst_score >= -1", 
+        "message": "Method magnitude_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: magnitude_sum\n  Metric id: odds_ratio\n  Worst score: 0.05282710646457493%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Scaling", 
+        "name": "Best score magnitude_sum odds_ratio", 
+        "value": 0.05282710646457493, 
+        "severity": 0, 
+        "severity_value": 0.026413553232287466, 
+        "code": "best_score <= 2", 
+        "message": "Method magnitude_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: magnitude_sum\n  Metric id: odds_ratio\n  Best score: 0.05282710646457493%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score natmi_max odds_ratio", 
-        "value": -0.10699208497028764, 
+        "value": -0.11084821956701768, 
         "severity": 0, 
-        "severity_value": 0.10699208497028764, 
+        "severity_value": 0.11084821956701768, 
         "code": "worst_score >= -1", 
-        "message": "Method natmi_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: natmi_max\n  Metric id: odds_ratio\n  Worst score: -0.10699208497028764%\n"
+        "message": "Method natmi_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: natmi_max\n  Metric id: odds_ratio\n  Worst score: -0.11084821956701768%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score natmi_max odds_ratio", 
-        "value": -0.10699208497028764, 
+        "value": -0.11084821956701768, 
         "severity": 0, 
-        "severity_value": -0.05349604248514382, 
+        "severity_value": -0.05542410978350884, 
         "code": "best_score <= 2", 
-        "message": "Method natmi_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: natmi_max\n  Metric id: odds_ratio\n  Best score: -0.10699208497028764%\n"
+        "message": "Method natmi_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: natmi_max\n  Metric id: odds_ratio\n  Best score: -0.11084821956701768%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score natmi_sum odds_ratio", 
-        "value": -0.23319031534696705, 
+        "value": 0.05282710646457493, 
         "severity": 0, 
-        "severity_value": 0.23319031534696705, 
+        "severity_value": -0.05282710646457493, 
         "code": "worst_score >= -1", 
-        "message": "Method natmi_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: natmi_sum\n  Metric id: odds_ratio\n  Worst score: -0.23319031534696705%\n"
+        "message": "Method natmi_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: natmi_sum\n  Metric id: odds_ratio\n  Worst score: 0.05282710646457493%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score natmi_sum odds_ratio", 
-        "value": -0.23319031534696705, 
+        "value": 0.05282710646457493, 
         "severity": 0, 
-        "severity_value": -0.11659515767348352, 
+        "severity_value": 0.026413553232287466, 
         "code": "best_score <= 2", 
-        "message": "Method natmi_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: natmi_sum\n  Metric id: odds_ratio\n  Best score: -0.23319031534696705%\n"
+        "message": "Method natmi_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: natmi_sum\n  Metric id: odds_ratio\n  Best score: 0.05282710646457493%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score sca_max odds_ratio", 
-        "value": -0.1610060065502273, 
+        "value": 0.3348660434500332, 
         "severity": 0, 
-        "severity_value": 0.1610060065502273, 
+        "severity_value": -0.3348660434500332, 
         "code": "worst_score >= -1", 
-        "message": "Method sca_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: sca_max\n  Metric id: odds_ratio\n  Worst score: -0.1610060065502273%\n"
+        "message": "Method sca_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: sca_max\n  Metric id: odds_ratio\n  Worst score: 0.3348660434500332%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score sca_max odds_ratio", 
-        "value": -0.1610060065502273, 
+        "value": 0.3348660434500332, 
         "severity": 0, 
-        "severity_value": -0.08050300327511364, 
+        "severity_value": 0.1674330217250166, 
         "code": "best_score <= 2", 
-        "message": "Method sca_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: sca_max\n  Metric id: odds_ratio\n  Best score: -0.1610060065502273%\n"
+        "message": "Method sca_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: sca_max\n  Metric id: odds_ratio\n  Best score: 0.3348660434500332%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Worst score sca_sum odds_ratio", 
-        "value": -0.23319031534696705, 
+        "value": -0.16890118629465178, 
         "severity": 0, 
-        "severity_value": 0.23319031534696705, 
+        "severity_value": 0.16890118629465178, 
         "code": "worst_score >= -1", 
-        "message": "Method sca_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: sca_sum\n  Metric id: odds_ratio\n  Worst score: -0.23319031534696705%\n"
+        "message": "Method sca_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: sca_sum\n  Metric id: odds_ratio\n  Worst score: -0.16890118629465178%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
         "category": "Scaling", 
         "name": "Best score sca_sum odds_ratio", 
-        "value": -0.23319031534696705, 
+        "value": -0.16890118629465178, 
         "severity": 0, 
-        "severity_value": -0.11659515767348352, 
+        "severity_value": -0.08445059314732589, 
         "code": "best_score <= 2", 
-        "message": "Method sca_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: sca_sum\n  Metric id: odds_ratio\n  Best score: -0.23319031534696705%\n"
+        "message": "Method sca_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: sca_sum\n  Metric id: odds_ratio\n  Best score: -0.16890118629465178%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Scaling", 
+        "name": "Worst score specificity_max odds_ratio", 
+        "value": 0.3348660434500332, 
+        "severity": 0, 
+        "severity_value": -0.3348660434500332, 
+        "code": "worst_score >= -1", 
+        "message": "Method specificity_max performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: specificity_max\n  Metric id: odds_ratio\n  Worst score: 0.3348660434500332%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Scaling", 
+        "name": "Best score specificity_max odds_ratio", 
+        "value": 0.3348660434500332, 
+        "severity": 0, 
+        "severity_value": 0.1674330217250166, 
+        "code": "best_score <= 2", 
+        "message": "Method specificity_max performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: specificity_max\n  Metric id: odds_ratio\n  Best score: 0.3348660434500332%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Scaling", 
+        "name": "Worst score specificity_sum odds_ratio", 
+        "value": 0.10394917134281607, 
+        "severity": 0, 
+        "severity_value": -0.10394917134281607, 
+        "code": "worst_score >= -1", 
+        "message": "Method specificity_sum performs much worse than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: specificity_sum\n  Metric id: odds_ratio\n  Worst score: 0.10394917134281607%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_ligand_target", 
+        "category": "Scaling", 
+        "name": "Best score specificity_sum odds_ratio", 
+        "value": 0.10394917134281607, 
+        "severity": 0, 
+        "severity_value": 0.05197458567140804, 
+        "code": "best_score <= 2", 
+        "message": "Method specificity_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_ligand_target\n  Method id: specificity_sum\n  Metric id: odds_ratio\n  Best score: 0.10394917134281607%\n"
     }, 
     {
         "task_id": "cell_cell_communication_ligand_target", 
