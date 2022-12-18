@@ -8,6 +8,10 @@ website:
   site-url: https://openproblems-experimental.netlify.com
   repo-url: https://github.com/openproblems-bio/website-experimental
   repo-actions: [edit, issue] 
+
+
+  page-footer:
+    left: "© Open Problems 2022 · View on [GitHub](https://github.com/openproblems-bio/openproblems). Made with [Quarto♥](https://quarto.org)."
   
   navbar:
     logo: images/logo.png
@@ -87,7 +91,7 @@ website:
         - results_v2/migration.qmd
 format:
   html:
-    theme: simplex
+    theme: [ simplex, theme.scss ]
     css: styles.css
     toc: true
 
