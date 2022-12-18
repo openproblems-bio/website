@@ -1,0 +1,40 @@
+```{=html}
+<div class="grid quarto-listing-cols-3">
+<% for (const item of items) { %>
+  <div class="g-col-1">
+    <a class="quarto-grid-link" href="<%- item.path %>">
+      <div class="quarto-grid-item card h-100 card-center">
+        <p class="card-img-top">
+          <img class="thumbnail-image card-img" src="<%- item.image %>" style="width: 150px; height: 150px; border-radius: 50%;"/>
+        </p>
+        <div class="card-body post-contents">
+          <h5 class="no-anchor card-title listing-title">
+            <%= item.title %>
+          </h5>
+          <h6 class="no-anchor card-title listing-title">
+            <%= item.role %>
+          </h6>
+          <div class="card-text">
+            <% for (const link of item.about.links || []) { %>
+            <a class="about-link" href="<%- link.href %>" style="text-decoration: none;">
+              <i class=" bi-<%- link.icon %>"></i>
+            </a>
+            <% } %>
+          </div>
+          <div class="card-attribution card-text-small start">
+          <% for (const organization of item.organizations || []) { %>
+            <div class="listing-author">
+            <%= organization.role %>
+            <% if (organization.name) { %>
+              at <a href="<%= organization.href %>"><%= organization.name %></a>
+            <% } %>
+            </div>
+          <% } %>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+<% } %>
+</div>
+```

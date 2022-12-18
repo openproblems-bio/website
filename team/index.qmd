@@ -1,12 +1,33 @@
 ---
 title: "Meet the Team"
+toc: false
+page-layout: full
 listing:
   - id: core_members
-    contents: core_members/*.qmd
+    contents: core_members/*/index.qmd
     type: grid
+    template: members.ejs
   - id: task_leaders
-    contents: task_leaders/*.qmd
+    contents: task_leaders/*/index.qmd
     type: grid
-# see https://quarto.org/docs/websites/website-listings-custom.html 
-# if we want a custom listing
+    template: members.ejs
+  - id: scientific_advisors
+    contents: scientific_advisors/*/index.qmd
+    type: grid
+    template: members.ejs
 ---
+
+## Core members
+
+:::{#core_members}
+:::
+
+## Task leaders
+
+:::{#task_leaders}
+:::
+
+## Scientific Advisors
+
+:::{#scientific_advisors}
+:::
