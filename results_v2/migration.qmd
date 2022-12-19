@@ -28,6 +28,7 @@ df <- map_df(jsons, function(json) {
   as_tibble(df)
 }) %>%
   mutate(
+    task_id = gsub("/.*", "", namespace),
     outdated = grepl("out of date", status)
   )
 
@@ -46,7 +47,7 @@ df %>%
     status = gsub(" \\(.*", "", status),
     v1 = glue::glue("<a href=\"{github_op}/blob/main/{v1_url}\">v1_src</a>"),
     v1_diff = glue::glue("<a href=\"{github_op}/compare/{v1_commit}...main\">v1_diff</a>"),
-    v2 = glue::glue("<a href=\"{github_op2}/blob/main/{config_path}\">v2_src</a>"),
+    v2 = glue::glue("<a href=\"{github_op2}/blob/main/src/{task_id}/{config_path}\">v2_src</a>"),
     links = glue::glue("{v1} | {v1_diff} | {v2}")
   ) %>%
   select(-v1, -v1_diff, -v2) %>%
