@@ -3,7 +3,7 @@
     "id": "no_denoising",
     "type": "negative_control",
     "label": "no denoising",
-    "v1_url": "/openproblems/tasks/denoising/methods/baseline.py",
+    "v1_url": "openproblems/tasks/denoising/methods/baseline.py",
     "v1_commit": "b460ecb183328c857cbbf653488f522a4034a61c",
     "v1_comp_id": "no_denoising",
     "preferred_normalization": "counts",
@@ -12,13 +12,14 @@
     "description": "negative control by copying train counts",
     "paper_doi": null,
     "code_url": null,
-    "doc_url": null
+    "doc_url": null,
+    "status": "up to date"
   },
   {
     "id": "perfect_denoising",
     "type": "positive_control",
     "label": "perfect denoising",
-    "v1_url": "/openproblems/tasks/denoising/methods/baseline.py",
+    "v1_url": "openproblems/tasks/denoising/methods/baseline.py",
     "v1_commit": "b460ecb183328c857cbbf653488f522a4034a61c",
     "v1_comp_id": "perfect_denoising",
     "preferred_normalization": "counts",
@@ -27,13 +28,14 @@
     "description": "Negative control by copying the train counts",
     "paper_doi": null,
     "code_url": null,
-    "doc_url": null
+    "doc_url": null,
+    "status": "up to date"
   },
   {
     "id": "alra",
     "type": "method",
     "label": "ALRA",
-    "v1_url": "/openproblems/tasks/denoising/methods/alra.py",
+    "v1_url": "openproblems/tasks/denoising/methods/alra.py",
     "v1_commit": "411a416150ecabce25e1f59bde422a029d0a8baa",
     "v1_comp_id": "alra",
     "preferred_normalization": "counts",
@@ -42,13 +44,14 @@
     "description": "Adaptively-thresholded Low Rank Approximation (ALRA). \n\nALRA is a method for imputation of missing values in single cell RNA-sequencing data, \ndescribed in the preprint, \"Zero-preserving imputation of scRNA-seq data using low-rank approximation\" \navailable [here](https://www.biorxiv.org/content/early/2018/08/22/397588). Given a \nscRNA-seq expression matrix, ALRA first computes its rank-k approximation using randomized SVD. \nNext, each row (gene) is thresholded by the magnitude of the most negative value of that gene. \nFinally, the matrix is rescaled.\n",
     "paper_doi": "10.1101/397588",
     "code_url": "https://github.com/KlugerLab/ALRA",
-    "doc_url": "https://github.com/KlugerLab/ALRA/blob/master/README.md"
+    "doc_url": "https://github.com/KlugerLab/ALRA/blob/master/README.md",
+    "status": "up to date"
   },
   {
     "id": "dca",
     "type": "method",
     "label": "DCA",
-    "v1_url": "/openproblems/tasks/denoising/methods/dca.py",
+    "v1_url": "openproblems/tasks/denoising/methods/dca.py",
     "v1_commit": "c2470ce02e6f196267cec1c554ba7ae389c0956a",
     "v1_comp_id": "dca",
     "preferred_normalization": "counts",
@@ -57,13 +60,14 @@
     "description": "Deep Count Autoencoder",
     "paper_doi": "10.1038/s41467-018-07931-2",
     "code_url": "https://github.com/theislab/dca",
-    "doc_url": null
+    "doc_url": null,
+    "status": "out of date (sha: aa2253779e9aa9cd178f54ac0f3b6ba521ecd59f)"
   },
   {
     "id": "knn_smoothing",
     "type": "method",
     "label": "knn_smooth",
-    "v1_url": "/openproblems/tasks/denoising/methods/knn_smoothing.py",
+    "v1_url": "openproblems/tasks/denoising/methods/knn_smoothing.py",
     "v1_commit": "bbecf4e9ad90007c2711394e7fbd8e49cbd3e4a1",
     "v1_comp_id": "knn_smoothing",
     "preferred_normalization": "counts",
@@ -72,13 +76,14 @@
     "description": "iterative K-nearest neighbor smoothing",
     "paper_doi": "10.1101/217737",
     "code_url": "https://github.com/yanailab/knn-smoothing",
-    "doc_url": null
+    "doc_url": null,
+    "status": "up to date"
   },
   {
     "id": "magic",
     "type": "method",
     "label": "magic",
-    "v1_url": "/openproblems/tasks/denoising/methods/magic.py",
+    "v1_url": "openproblems/tasks/denoising/methods/magic.py",
     "v1_commit": "2fbc2d4c8d3ff955ea948fc082635cf779b1927e",
     "v1_comp_id": "magic",
     "preferred_normalization": "counts",
@@ -87,6 +92,7 @@
     "description": "MAGIC: Markov affinity-based graph imputation of cells",
     "paper_doi": "10.1016/j.cell.2018.05.061",
     "code_url": "https://github.com/KrishnaswamyLab/MAGIC",
-    "doc_url": null
+    "doc_url": null,
+    "status": "out of date (sha: 2af9a4918ed3370859f71774558068961f6d22c6)"
   }
 ]
