@@ -16,18 +16,15 @@ strip_margin <- function(text, symbol = "\\|") {
 dir <- "results_v2/denoising"
 dir <- "."
 
-task_info <- yaml::read_yaml(paste0(dir, "/task_info.yaml"))
+task_info <- jsonlite::read_json(paste0(dir, "/data/task_info.json"))
 task_id <- task_info$id
 
-method_info <- yaml::read_yaml(paste0(dir, "/method_info.yaml")) %>%
-  map_df(as_tibble) %>%
+method_info <- jsonlite::read_json(paste0(dir, "/data/method_info.json"), simplifyVector = TRUE) %>%
   rename(method_id = id, method_name = label) %>%
   mutate(is_baseline = type != "method")
-metric_info <- yaml::read_yaml(paste0(dir, "/metric_info.yaml")) %>%
-  map_df(as_tibble) %>%
+metric_info <- jsonlite::read_json(paste0(dir, "/data/metric_info.json"), simplifyVector = TRUE) %>%
   rename(metric_id = id)
-results <- yaml::read_yaml(paste0(dir, "/results.yaml")) %>%
-  map_df(as_tibble) %>%
+results <- jsonlite::read_json(paste0(dir, "/data/results.json"), simplifyVector = TRUE) %>%
   filter(dataset_id != "combined") %>%
   left_join(method_info %>% select(method_id, is_baseline), "method_id")
 dataset_info <- results %>%
@@ -64,7 +61,7 @@ Transform the results into a long format and join with the crossing.
 ```{r}
 results_long <- 
   results %>%
-  gather(metric_id, value, !!metric_info$metric_id) %>%
+  gather(metric_id, value, any_of(metric_info$metric_id)) %>%
   select(method_id, dataset_id, metric_id, value, is_baseline) %>%
   full_join(cross_df, by = colnames(cross_df))
 ```

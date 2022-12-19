@@ -11,11 +11,13 @@ strip_margin <- function(text, symbol = "\\|") {
   str_replace_all(text, paste0("(\n?)[ \t]*", symbol), "\\1") 
 }
 
-dir <- "results_v2/label_projection"
+dir <- "results_v2/dimensionality_reduction"
 dir <- "."
 
 task_info <- jsonlite::read_json(paste0(dir, "/data/task_info.json"))
 method_info <- jsonlite::read_json(paste0(dir, "/data/method_info.json"), simplifyVector = TRUE)
+method_info$paper_doi <- method_info$paper_doi %||% NA_character_
+method_info$code_url <- method_info$code_url %||% NA_character_
 ```
 
 

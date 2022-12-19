@@ -1,0 +1,239 @@
+{
+  "comp_info": [
+    {
+      "name": "comp_control_method",
+      "label": "control method"
+    },
+    {
+      "name": "comp_method",
+      "label": "method"
+    },
+    {
+      "name": "comp_metric",
+      "label": "metric"
+    },
+    {
+      "name": "comp_split_dataset",
+      "label": "split dataset"
+    }
+  ],
+  "file_info": [
+    {
+      "name": "anndata_dataset",
+      "description": "A preprocessed dataset",
+      "short_description": "Preprocessed dataset",
+      "example": "preprocessed.h5ad",
+      "label": "dataset"
+    },
+    {
+      "name": "anndata_denoised",
+      "description": "The denoised data",
+      "short_description": "Denoised data",
+      "example": "denoised.h5ad",
+      "label": "denoised"
+    },
+    {
+      "name": "anndata_score",
+      "description": "Metric score file",
+      "short_description": "Score",
+      "example": "output.h5ad",
+      "label": "score"
+    },
+    {
+      "name": "anndata_test",
+      "description": "The test data",
+      "short_description": "Test data",
+      "example": "test.h5ad",
+      "label": "test"
+    },
+    {
+      "name": "anndata_train",
+      "description": "The training data",
+      "short_description": "Training data",
+      "example": "training.h5ad",
+      "label": "train"
+    }
+  ],
+  "comp_file_io": [
+    {
+      "comp_name": "comp_control_method",
+      "arg_name": "input_train",
+      "direction": "input",
+      "file_name": "anndata_train"
+    },
+    {
+      "comp_name": "comp_control_method",
+      "arg_name": "input_test",
+      "direction": "input",
+      "file_name": "anndata_test"
+    },
+    {
+      "comp_name": "comp_control_method",
+      "arg_name": "output",
+      "direction": "output",
+      "file_name": "anndata_denoised"
+    },
+    {
+      "comp_name": "comp_method",
+      "arg_name": "input_train",
+      "direction": "input",
+      "file_name": "anndata_train"
+    },
+    {
+      "comp_name": "comp_method",
+      "arg_name": "output",
+      "direction": "output",
+      "file_name": "anndata_denoised"
+    },
+    {
+      "comp_name": "comp_metric",
+      "arg_name": "input_test",
+      "direction": "input",
+      "file_name": "anndata_test"
+    },
+    {
+      "comp_name": "comp_metric",
+      "arg_name": "input_denoised",
+      "direction": "input",
+      "file_name": "anndata_denoised"
+    },
+    {
+      "comp_name": "comp_metric",
+      "arg_name": "output",
+      "direction": "output",
+      "file_name": "anndata_score"
+    },
+    {
+      "comp_name": "comp_split_dataset",
+      "arg_name": "input",
+      "direction": "input",
+      "file_name": "anndata_dataset"
+    },
+    {
+      "comp_name": "comp_split_dataset",
+      "arg_name": "output_train",
+      "direction": "output",
+      "file_name": "anndata_train"
+    },
+    {
+      "comp_name": "comp_split_dataset",
+      "arg_name": "output_test",
+      "direction": "output",
+      "file_name": "anndata_test"
+    }
+  ],
+  "file_schema": [
+    {
+      "type": "integer",
+      "name": "counts",
+      "description": "Raw counts",
+      "struct": "layers",
+      "file_name": "anndata_dataset",
+      "multiple": false
+    },
+    {
+      "type": "string",
+      "name": "dataset_id",
+      "description": "A unique identifier for the dataset",
+      "struct": "uns",
+      "file_name": "anndata_dataset",
+      "multiple": false
+    },
+    {
+      "type": "integer",
+      "name": "counts",
+      "description": "Raw counts",
+      "struct": "layers",
+      "file_name": "anndata_denoised",
+      "multiple": false
+    },
+    {
+      "type": "integer",
+      "name": "denoised",
+      "description": "denoised data",
+      "struct": "layers",
+      "file_name": "anndata_denoised",
+      "multiple": false
+    },
+    {
+      "type": "string",
+      "name": "dataset_id",
+      "description": "A unique identifier for the dataset",
+      "struct": "uns",
+      "file_name": "anndata_denoised",
+      "multiple": false
+    },
+    {
+      "type": "string",
+      "name": "method_id",
+      "description": "A unique identifier for the method",
+      "struct": "uns",
+      "file_name": "anndata_denoised",
+      "multiple": false
+    },
+    {
+      "type": "string",
+      "name": "dataset_id",
+      "description": "A unique identifier for the dataset",
+      "struct": "uns",
+      "file_name": "anndata_score",
+      "multiple": false
+    },
+    {
+      "type": "string",
+      "name": "method_id",
+      "description": "A unique identifier for the method",
+      "struct": "uns",
+      "file_name": "anndata_score",
+      "multiple": false
+    },
+    {
+      "type": "string",
+      "name": "metric_ids",
+      "description": "One or more unique metric identifiers",
+      "struct": "uns",
+      "file_name": "anndata_score",
+      "multiple": true
+    },
+    {
+      "type": "double",
+      "name": "metric_values",
+      "description": "The metric values obtained for the given prediction. Must be of same length as 'metric_ids'.",
+      "struct": "uns",
+      "file_name": "anndata_score",
+      "multiple": true
+    },
+    {
+      "type": "integer",
+      "name": "counts",
+      "description": "Raw counts",
+      "struct": "layers",
+      "file_name": "anndata_test",
+      "multiple": false
+    },
+    {
+      "type": "string",
+      "name": "dataset_id",
+      "description": "A unique identifier for the dataset",
+      "struct": "uns",
+      "file_name": "anndata_test",
+      "multiple": false
+    },
+    {
+      "type": "integer",
+      "name": "counts",
+      "description": "Raw counts",
+      "struct": "layers",
+      "file_name": "anndata_train",
+      "multiple": false
+    },
+    {
+      "type": "string",
+      "name": "dataset_id",
+      "description": "A unique identifier for the dataset",
+      "struct": "uns",
+      "file_name": "anndata_train",
+      "multiple": false
+    }
+  ]
+}
