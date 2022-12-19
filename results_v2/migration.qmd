@@ -1,4 +1,41 @@
 ---
 title: "Migration status"
+engine: knitr
+page-layout: full
 ---
 
+```{r}
+#| include: false
+library(tidyverse)
+
+path <- "results_v2"
+path <- "."
+
+jsons <- list.files(path, pattern = "(method_info|metric_info).json", recursive = TRUE, full.names = TRUE)
+
+df <- map_df(jsons, function(json) {
+  df <- jsonlite::read_json(json, simplifyVector = TRUE)
+  df$task_id <- gsub("/.*", "", df$namespace)
+  if ("min" %in% names(df)) {
+    df$min <- as.character(df$min)
+  }
+  if ("max" %in% names(df)) {
+    df$max <- as.character(df$max)
+  }
+  as_tibble(df)
+})
+
+# subdf <- df %>% select(task_id, id, status, v1_comp_id, config_path, v1_url, v1_commit)
+```
+
+```{r}
+#| echo: false
+df %>%
+  transmute(
+    namespace, id,
+    status = gsub(" \\(.*", "", status),
+    v1_url = glue::glue("[link](https://github.com/openproblems-bio/openproblems/blob/main/{v1_url})"),
+    v2_url = glue::glue("[link](https://github.com/openproblems-bio/openproblems-v2/blob/main/{config_path})")
+  ) %>%
+  knitr::kable()
+```
