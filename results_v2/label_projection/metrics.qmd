@@ -14,9 +14,8 @@ strip_margin <- function(text, symbol = "\\|") {
 dir <- "results_v2/label_projection"
 dir <- "."
 
-task_info <- yaml::read_yaml(paste0(dir, "/task_info.yaml"))
-metric_info <- yaml::read_yaml(paste0(dir, "/metric_info.yaml")) %>%
-  map_df(as_tibble)
+task_info <- jsonlite::read_json(paste0(dir, "/data/task_info.json"))
+metric_info <- jsonlite::read_json(paste0(dir, "/data/metric_info.json"), simplifyVector = TRUE)
 ```
 
 

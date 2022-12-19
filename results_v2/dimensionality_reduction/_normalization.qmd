@@ -13,7 +13,7 @@ strip_margin <- function(text, symbol = "\\|") {
   str_replace_all(text, paste0("(\n?)[ \t]*", symbol), "\\1") 
 }
 
-dir <- "results_v2/label_projection"
+dir <- "results_v2/dimensionality_reduction"
 dir <- "."
 
 task_info <- jsonlite::read_json(paste0(dir, "/data/task_info.json"))
@@ -249,7 +249,7 @@ qc <- qc %>%
 ```{r}
 overall_ranking <- results_long_scaled %>%
   group_by(method_id) %>%
-  summarise(mean_score = mean(scaled_score)) %>%
+  summarise(mean_score = mean(scaled_score, na.rm = TRUE)) %>%
   arrange(desc(mean_score))
 ```
 
