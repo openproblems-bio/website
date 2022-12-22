@@ -2,8 +2,8 @@
 ```{r interactive}
 #| include: false
 #| eval: false
-path <- 'results/batch_integration_embed'
-task_id <- 'batch_integration_embed'
+path <- 'results/dimensionality_reduction'
+task_id <- 'dimensionality_reduction'
 ```
 
 
@@ -174,7 +174,6 @@ g_all
 
 ```{r}
 #| echo: false
-#| output: asis
 qc_plot <- qc %>% 
   filter(severity > 0) %>%
   mutate(
@@ -189,7 +188,7 @@ qc_plot <- qc %>%
   arrange(desc(severity_value), category, name)
 
 if (nrow(qc_plot) > 0) {
-  out <- qc_plot %>% 
+  qc_plot %>% 
     transmute(
       Category = category,
       Name = name,
@@ -208,9 +207,8 @@ if (nrow(qc_plot) > 0) {
       1:5,
       tooltip = qc_plot$message
     )
-  cat(out)
 } else {
-  cat("✓ All checks succeeded!")
+  knitr::asis_output("✓ All checks succeeded!")
 }
 ```
 
