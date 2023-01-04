@@ -1,13 +1,15 @@
 {
-    "name": "Tabula Muris Senis Lung (random split)", 
+    "name": "Tabula Muris Senis Lung", 
     "data_url": "https://tabula-muris-senis.ds.czbiohub.org/", 
     "data_reference": "https://doi.org/10.1038/s41586-020-2496-1", 
     "headers": {
         "names": [
             "Rank", 
             "Mean score", 
-            "Mean-squared error", 
-            "Poisson loss", 
+            "Mean-squared error Raw", 
+            "Mean-squared error Scaled", 
+            "Poisson loss Raw", 
+            "Poisson loss Scaled", 
             "Memory (GB)", 
             "Runtime (min)", 
             "CPU (%)", 
@@ -36,8 +38,10 @@
             "Memory (GB)": 39.4, 
             "Rank": 1, 
             "Mean score": 0.47135672855526844, 
-            "Mean-squared error": -0.04080687762179469, 
-            "Poisson loss": 0.9835203347323316
+            "Mean-squared error Raw": 0.2722978, 
+            "Mean-squared error Scaled": -0.04080687762179469, 
+            "Poisson loss Raw": 0.02989410334761169, 
+            "Poisson loss Scaled": 0.9835203347323316
         }, 
         {
             "Name": "MAGIC (approximate)", 
@@ -52,8 +56,10 @@
             "Memory (GB)": 7.8, 
             "Rank": 2, 
             "Mean score": 0.4010311994615718, 
-            "Poisson loss": 0.5047337700392311, 
-            "Mean-squared error": 0.2973286288839124
+            "Mean-squared error Raw": 0.18383417, 
+            "Mean-squared error Scaled": 0.2973286288839124, 
+            "Poisson loss Raw": 0.11581620541889623, 
+            "Poisson loss Scaled": 0.5047337700392311
         }, 
         {
             "Name": "MAGIC", 
@@ -68,8 +74,10 @@
             "Memory (GB)": 8.199999999, 
             "Rank": 3, 
             "Mean score": 0.398070571407753, 
-            "Poisson loss": 0.5000837763488009, 
-            "Mean-squared error": 0.2960573664667051
+            "Mean-squared error Raw": 0.18416676, 
+            "Mean-squared error Scaled": 0.2960573664667051, 
+            "Poisson loss Raw": 0.11665068420748982, 
+            "Poisson loss Scaled": 0.5000837763488009
         }, 
         {
             "Name": "DCA", 
@@ -84,8 +92,10 @@
             "Memory (GB)": 7.7, 
             "Rank": 4, 
             "Mean score": 0.06271341721825208, 
-            "Mean-squared error": 0.17117313948916268, 
-            "Poisson loss": -0.04574630505265853
+            "Mean-squared error Raw": 0.2168392, 
+            "Mean-squared error Scaled": 0.17117313948916268, 
+            "Poisson loss Raw": 0.21460428488510214, 
+            "Poisson loss Scaled": -0.04574630505265853
         }, 
         {
             "Name": "KNN smoothing", 
@@ -100,8 +110,10 @@
             "Memory (GB)": 8.199999999, 
             "Rank": 5, 
             "Mean score": 0.04934258737264913, 
-            "Mean-squared error": 0.12900502224909915, 
-            "Poisson loss": -0.0303198475038009
+            "Mean-squared error Raw": 0.2278713, 
+            "Mean-squared error Scaled": 0.12900502224909915, 
+            "Poisson loss Raw": 0.21183588293347072, 
+            "Poisson loss Scaled": -0.0303198475038009
         }, 
         {
             "Name": "Iterative KNN smoothing", 
@@ -116,8 +128,10 @@
             "Memory (GB)": 28.1, 
             "Rank": 6, 
             "Mean score": -4.7316954056317195, 
-            "Poisson loss": -9.601612495593068, 
-            "Mean-squared error": 0.13822168432962956
+            "Mean-squared error Raw": 0.22546002, 
+            "Mean-squared error Scaled": 0.13822168432962956, 
+            "Poisson loss Raw": 1.9294813736552212, 
+            "Poisson loss Scaled": -9.601612495593068
         }
     ]
 }
