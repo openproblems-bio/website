@@ -1,3 +1,5 @@
+@import "compass/css3";
+
 .hero {
 
 }
@@ -143,32 +145,58 @@ span {
   }
 }
 
+
+
 .bibtexentry > .bibtex-citation {
   line-height: 1.05;
   margin-bottom: 10px;
 }
 
-.dark .bibtexentry > .bibtex-citation:target {
-  background-color: darkgoldenrod;
+
+/**
+ * Use the :target pseudo-element to apply
+ * styles to the element with the same ID as  
+ * the fragment identifier.
+ * (e.g. `#target-section`)
+ * 
+ * The pseudo-element can also be used in
+ * conjunction with another selector to 
+ * define a variety of target styles.
+ * (e.g. `#target-section:target)
+ */
+
+ .bibtexentry > .bibtex-citation:target {
+	-webkit-animation: target-fade 2s;
+	-moz-animation: target-fade 2s;
+	-o-animation: target-fade 2s;
+	animation: target-fade 2s;
 }
 
-.bibtexentry > .bibtex-citation:target {
-  background-color: palegoldenrod;
+
+/**
+ * Keyframe animation definition
+ * 
+ * 1. Insert a color of your choice here
+ */
+
+@-webkit-keyframes target-fade {
+	from { background-color: red; } /* [1] */
+	to { background-color: transparent; }
 }
 
-.bibtexentry > .bibtex-citation:target::before {
-  font: 70% sans-serif;
-  content: "►";
-  color: limegreen;
-  margin-right: 0.25em;
+@-moz-keyframes target-fade {
+	from { background-color: red; } /* [1] */
+	to { background-color: transparent; }
 }
 
-.bibtexentry > .bibtex-citation a.anchorjs-link {
-  opacity: 0%;
+@-o-keyframes target-fade {
+	from { background-color: red; } /* [1] */
+	to { background-color: transparent; }
 }
 
-.bibtexentry:hover > .bibtex-citation a.anchorjs-link {
-  opacity: 100%;
+@keyframes target-fade {
+	from { background-color: red; } /* [1] */
+	to { background-color: transparent; }
 }
 
 /* The switch - the box around the slider */
