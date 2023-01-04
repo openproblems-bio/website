@@ -143,20 +143,20 @@ span {
   }
 }
 
-.bibtex-citation {
+.bibtexentry > .bibtex-citation {
   line-height: 1.05;
   margin-bottom: 10px;
 }
 
-.bibtex-citation .dark div:target {
+.dark .bibtexentry > .bibtex-citation:target {
   background-color: darkgoldenrod;
 }
 
-.bibtex-citation div:target {
+.bibtexentry > .bibtex-citation:target {
   background-color: palegoldenrod;
 }
 
-.bibtex-citation div:target::before {
+.bibtexentry > .bibtex-citation:target::before {
   font: 70% sans-serif;
   content: "►";
   color: limegreen;
