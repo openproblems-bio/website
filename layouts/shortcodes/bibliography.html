@@ -68,9 +68,9 @@
 <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
 <script>
   function add_anchors(bibtex_display) {
+    anchors.add(".bibtex-citation");
     if (window.location.hash != "") {
       window.location.href = window.location.hash;
     }
-    anchors.add(".bibtex-citation");
   }
 </script>
