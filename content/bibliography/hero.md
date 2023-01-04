@@ -33,5 +33,5 @@ subtitle = ""
  css_style = "height: 400px;"
 
  # CSS class.
- css_class = "hero contributing-hero"
+ css_class = "hero contributing-hero bibliography-hero"
 +++
