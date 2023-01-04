@@ -1,4 +1,5 @@
 .hero {
+
 }
 
 .hero h1{
@@ -142,6 +143,50 @@ span {
   }
 }
 
+// Bibliography page needs a white title even in light mode
+.bibliography-hero h1 {
+  color: #fff;
+}
+
+// BibTeX entry standard style
+.bibtexentry > .bibtex-citation {
+  line-height: 1.05;
+  margin-bottom: 10px;
+}
+
+
+// BibTeX entry keyframe animation on target
+ .bibtexentry > .bibtex-citation:target {
+	-webkit-animation: target-fade 2s;
+	-moz-animation: target-fade 2s;
+	-o-animation: target-fade 2s;
+	animation: target-fade 2s;
+  background-color: #ff414b44;
+}
+
+@-webkit-keyframes target-fade {
+	from { background-color: #ff414b; }
+	to { background-color: #ff414b44; }
+}
+@-moz-keyframes target-fade {
+	from { background-color: #ff414b; }
+	to { background-color: #ff414b44; }
+}
+@-o-keyframes target-fade {
+	from { background-color: #ff414b; }
+	to { background-color: #ff414b44; }
+}
+@keyframes target-fade {
+	from { background-color: #ff414b; }
+	to { background-color: #ff414b44; }
+}
+
+// BibTeX entry highlight arrow on target
+.bibtexentry > .bibtex-citation:target::before {
+  font: 70% sans-serif;
+  content: "►";
+  margin-right: 0.25em;
+}
 
 /* The switch - the box around the slider */
 .switch {
