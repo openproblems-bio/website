@@ -60,14 +60,14 @@
         </span>
       </span>
     </span>
-    <a
-      class="bibtexVar anchorjs-link"
-      href="#+BIBTEXKEY+"
-      extra="BIBTEXKEY"
-      style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em"
-      ></a
-    >
   </div>
 </div>
 
 <div id="bibtex_display"></div>
+
+<script>
+  import AnchorJS from "anchor-js";
+
+  const anchors = new AnchorJS();
+  anchors.add(".bibtex-citation");
+</script>
