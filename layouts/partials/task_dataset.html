@@ -20,6 +20,18 @@
 {{ $id := strings.Replace $id "/" "-" }}
 {{ $.Scratch.Set "count" 0 }}
 
+<!-- Here we manually move Rank and Name to the beginning to make sure everything is in the right order -->
+<!-- NOTE: this is Technical Debt, whoever exports the file should make sure we are not fixing it on frontend -->
+{{ $colSorted := slice "Rank" "Name"}}
+{{ range $attr := $dataFile.headers.names }} 
+  {{ if or (eq $attr "Rank") (eq $attr "Name") }}
+  {{ else }}
+    {{ $colSorted = append $attr $colSorted }}
+  {{ end }}
+{{ end }}
+
+
+
 <script>
     function docReady(fn) {
       // see if DOM is already available
@@ -38,11 +50,14 @@
           "bInfo" : false,
           "searching": false,
           "autoWidth": false,
+          "scrollX": true,
           "columns": [
-            {{ range $dataFile.headers.names }}
+            {{ range $colSorted }}
               { 
                 name: '{{ . }}', 
-                orderable: {{ not (in $dataFile.headers.fixed .) }},
+                // NOTE: have to hack "Name" into here because it isn't in whatever "$dataFile.headers.fixed" is
+                // should be fixed on backend
+                orderable: {{ or (not (in $dataFile.headers.fixed .)) (eq . "Name") }},
                 {{ if strings.HasSuffix . "Raw" }}
                 className: 'group_raw',
                 {{ else if strings.HasSuffix . "Scaled" }}
@@ -75,14 +90,14 @@
 
   <table id="{{ $id }}" class="display center" >
     <thead>
-      {{ range $dataFile.headers.names }}
+      {{ range $colSorted }}
       <th>{{ replaceRE " *(Raw|Scaled)$" "" . 1 }}</th>
       {{ end }}
     </thead>
 
     {{ range $method := $dataFile.results }}
     <tr>
-      {{ range $attr := $dataFile.headers.names }}
+      {{ range $attr := $colSorted }}
         {{ $val := index $method $attr }}
         {{ if (eq $attr "Name") }}
         <td>
