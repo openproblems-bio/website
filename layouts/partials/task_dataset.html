@@ -20,6 +20,36 @@
 {{ $id := strings.Replace $id "/" "-" }}
 {{ $.Scratch.Set "count" 0 }}
 
+<style>
+table.dataTable td {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+table.dataTable th {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+table.dataTable {
+  border-collapse: unset !important;
+}
+
+table.dataTable > * > * > * {
+  border: 1px solid grey !important;
+}
+
+table.dataTable > * > * > th {
+  text-align: center !important;
+}
+.textcell {
+  text-align: left !important;
+}
+
+.numbercell {
+  text-align: right !important;
+}
+
+</style>
+
 <script>
     function docReady(fn) {
       // see if DOM is already available
@@ -37,7 +67,7 @@
           "paging": false,
           "bInfo" : false,
           "searching": false,
-          "autoWidth": false,
+          "autoWidth": false,          
           "columns": [
             {{ range $dataFile.headers.names }}
               { 
@@ -47,7 +77,7 @@
                 className: 'group_raw',
                 {{ else if strings.HasSuffix . "Scaled" }}
                 className: 'group_scaled',
-                {{ end }}
+                {{ end }}                
               },
             {{ end }}
           ]
@@ -84,10 +114,12 @@
     <tr>
       {{ range $attr := $dataFile.headers.names }}
         {{ $val := index $method $attr }}
-        {{ if (eq $attr "Name") }}
-        <td>
+        {{ if (eq $attr "Name")}}
+        <td class="textcell">
+        {{else if (eq $attr "Paper") }}
+        <td style="text-align:center">
         {{ else }}
-        <td class="text-center">
+        <td style="text-align:right">
         {{ end }}
           {{ if (eq $attr "Paper" )}}
             <a href='{{ index $method "Paper URL"}}'> <i class="fas fa-file-alt"></i></a>
