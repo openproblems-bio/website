@@ -14,21 +14,18 @@ organizations:
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
-bio: 
+bio:
 
 social:
-  - icon: envelope
-    icon_pack: fas
-    link: 'mailto:johnny@appleseed.com'
   - icon: twitter
     icon_pack: fab
-    link: https://twitter.com/johnnyappleseed
+    link: https://c.im/@nsmarkov
   - icon: github
     icon_pack: fab
-    link: https://github.com/johnnyappleseed
+    link: https://github.com/mxposed
   - icon: linkedin
     icon_pack: fab
-    link: https://www.linkedin.com/in/johnny-appleseed/
+    link: https://www.linkedin.com/in/nikolaimarkov/
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ''
@@ -41,4 +38,3 @@ highlight_name: false
 user_groups:
   - Task authors
 ---
-
