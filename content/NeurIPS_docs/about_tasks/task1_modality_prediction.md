@@ -161,4 +161,4 @@ For this task, five prizes of $1000 will be awarded to the submissions for each 
 2. Best performance predicting ADT → GEX
 3. Best performance on average across modalities
 
-[Terms and Conditions](/neurips_docs/submission/terms/) apply.
+[Terms and Conditions](/neurips_docs/submission/terms_and_conditions/) apply.
