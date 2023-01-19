@@ -1,0 +1,275 @@
+
+---
+title: "Batch integration embed"
+summary: "Removing batch effects while preserving biological variation (embedding output)"
+---
+
+
+```{r}
+#| include: false
+params <- list(
+  data_dir = "./data"
+)
+```
+
+
+```{r setup}
+#| include: false
+#| error: true
+
+# setwd("content/results")
+library(tidyverse)
+library(funkyheatmap)
+library(kableExtra)
+library(rlang)
+
+knitr::opts_chunk$set(error = TRUE)
+
+# read task info
+task_info <- jsonlite::read_json(paste0(params$data_dir, "/task_info.json"))
+task_info$task_description <- task_info$task_description %||% "<missing description>"
+
+# read method info
+method_info <- jsonlite::read_json(paste0(params$data_dir, "/method_info.json"), simplifyVector = TRUE) %>%
+  mutate(
+    method_base_name = gsub(" \\(.*", "", method_name)
+  )
+
+# read metric info
+metric_info <- jsonlite::read_json(paste0(params$data_dir, "/metric_info.json"), simplifyVector = TRUE)
+metric_info$metric_description <- metric_info$metric_description %||% "<missing description>"
+
+# read dataset info
+dataset_info <- jsonlite::read_json(paste0(params$data_dir, "/dataset_info.json"), simplifyVector = TRUE)
+
+# read results
+results <- jsonlite::read_json(paste0(params$data_dir, "/results.json"), simplifyVector = TRUE)
+
+# read qc values
+qc <- jsonlite::read_json(paste0(params$data_dir, "/quality_control.json"), simplifyVector = TRUE)
+```
+
+```{r overall_ranking}
+#| echo: false
+
+results_long <-
+  inner_join(
+    results %>%
+      gather(metric_id, value, any_of(metric_info$metric_id)) %>%
+      mutate(value = ifelse(is.na(value), NA_real_, value)) %>%
+      select(method_id, dataset_id, metric_id, value),
+    results %>%
+      gather(metric_id, score, any_of(paste0(metric_info$metric_id, "_scaled"))) %>%
+      mutate(metric_id = sub("_scaled$", "", metric_id)) %>%
+      select(method_id, dataset_id, metric_id, score),
+    by = c("method_id", "dataset_id", "metric_id")
+  ) %>%
+  left_join(method_info %>% select(method_id, is_baseline), "method_id")
+
+overall_ranking <- results_long %>%
+  group_by(method_id) %>%
+  summarise(mean_score = mean(score)) %>%
+  arrange(desc(mean_score))
+
+# order by ranking
+results_long$method_id <- factor(results_long$method_id, levels = rev(overall_ranking$method_id))
+```
+
+`r task_info$task_description`
+
+## Overview
+
+This visualization shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).
+
+```{r funkyheatmap_data}
+#| echo: false
+#| message: false
+#| warning: false
+per_dataset <- results_long %>%
+  group_by(method_id, dataset_id) %>%
+  summarise(score = mean(score), .groups = "drop") %>%
+  mutate(dataset_id = paste0("dataset_", dataset_id)) %>%
+  spread(dataset_id, score)
+per_metric <- results_long %>%
+  group_by(method_id, metric_id) %>%
+  summarise(score = mean(score), .groups = "drop") %>%
+  mutate(metric_id = paste0("metric_", metric_id)) %>%
+  spread(metric_id, score)
+
+summary_all <- 
+  method_info %>%
+  transmute(
+    method_id,
+    method_name,
+    method_is_baseline = ifelse(is_baseline, "yes", "")
+  ) %>%
+  left_join(overall_ranking, by = "method_id") %>%
+  left_join(per_dataset, by = "method_id") %>%
+  left_join(per_metric, by = "method_id") %>%
+  arrange(desc(mean_score))
+summary_base <- 
+  method_info %>%
+  transmute(
+    method_id,
+    method_name = method_base_name,
+    method_is_baseline = ifelse(is_baseline, "yes", "")
+  ) %>%
+  group_by(method_name) %>%
+  mutate(method_num_paramsets = as.character(n())) %>%
+  left_join(overall_ranking, by = "method_id") %>%
+  slice(which.max(mean_score)) %>%
+  ungroup() %>%
+  arrange(desc(mean_score)) %>%
+  left_join(per_dataset, by = "method_id") %>%
+  left_join(per_metric, by = "method_id") %>%
+  arrange(desc(mean_score))
+
+column_info <- tibble(
+  id = colnames(summary_base)[-1],
+  name = id %>%
+    gsub("^[^_]+_", "", .) %>%
+    gsub("_", " ", .) %>%
+    str_to_title(),
+  group = gsub("_.*", "", id),
+  geom = case_when(
+    group == "method" ~ "text",
+    group == "mean" ~ "bar",
+    group %in% c("dataset", "metric") ~ "funkyrect"
+  ),
+  palette = ifelse(group %in% c("mean", "dataset", "metric"), group, NA_character_),
+  options = map2(id, geom, function(id, geom) {
+    if (id == "method_name") {
+      list(width = 12, hjust = 0)
+    } else if (id == "is_baseline") {
+      list(width = 1)
+    } else if (geom == "bar") {
+      list(width = 4)
+    } else {
+      list()
+    }
+  })
+)
+
+g_base <- funky_heatmap(
+  data = summary_base,
+  column_info = column_info,
+  expand = c(xmax = 3),
+  col_annot_offset = 5
+)
+
+g_all <- funky_heatmap(
+  data = summary_all,
+  column_info = column_info %>% filter(id %in% colnames(summary_all)),
+  expand = c(xmax = 3),
+  col_annot_offset = 5
+)
+```
+
+```{r}
+#| include: false
+knitr::opts_chunk$set(
+  fig.width = g_base$width,
+  fig.height = g_base$height
+)
+```
+
+```{r summary}
+#| echo: false
+#| fig-cap: The average overall, per dataset and per metric scaled scores per method.
+g_base
+```
+
+<details><summary>Overview per parameter set</summary>
+```{r}
+#| include: false
+knitr::opts_chunk$set(
+  fig.width = g_all$width,
+  fig.height = g_all$height
+)
+```
+
+```{r summary_defailed}
+#| echo: false
+#| fig-cap: The average overall, per dataset and per metric scaled scores per method and parameter set.
+g_all
+```
+</details>
+
+## Metrics
+
+```{r}
+#| echo: false
+#| output: asis
+pwalk(metric_info, function(metric_name, metric_description, ...) {
+  cat(glue::glue("* **{metric_name}**: {metric_description}"), "\n", sep = "")
+})
+```
+
+## Details
+
+<details><summary>Quality control checks</summary>
+
+```{r}
+#| echo: false
+qc_plot <- qc %>% 
+  filter(severity > 0) %>%
+  mutate(
+    test = case_when(
+      severity == 0 ~ "✓",
+      severity == 1 ~ "✗",
+      severity == 2 ~ "✗✗",
+      TRUE ~ "✗✗✗"
+    ),
+    color = ifelse(severity == 0, "green", "red")
+  ) %>%
+  arrange(desc(severity_value), category, name)
+
+if (nrow(qc_plot) > 0) {
+  qc_plot %>% 
+    transmute(
+      Category = category,
+      Name = name,
+      Value = value,
+      Condition = code,
+      Severity = test
+    ) %>%
+    kbl(format = "html") %>%
+    kable_styling() %>%
+    kable_paper() %>%
+    column_spec(
+      5, 
+      color = qc_plot$color
+    ) %>%
+    column_spec(
+      1:5,
+      tooltip = qc_plot$message
+    )
+} else {
+  knitr::asis_output("✓ All checks succeeded!")
+}
+```
+
+</details>
+
+<details><summary>Visualization of raw results</summary>
+
+```{r}
+#| include: false
+knitr::opts_chunk$set(
+  fig.width = 10,
+  fig.height = nrow(method_info) * nrow(metric_info) / 4
+)
+```
+
+```{r echo=FALSE}
+ggplot(results_long %>% arrange(method_id)) +
+  geom_vline(aes(xintercept = x), tibble(x = c(0, 1)), linetype = "dashed", alpha = .5, colour = "red") +
+  geom_path(aes(score, method_id, group = dataset_id), alpha = .25) +
+  geom_point(aes(score, method_id, colour = is_baseline)) +
+  facet_wrap(~metric_id, ncol = 1, scales = "free") +
+  theme_bw() +
+  labs(x = NULL, y = NULL)
+```
+
+</details>
+

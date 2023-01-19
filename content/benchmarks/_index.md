@@ -1,6 +1,5 @@
-+++
-title = "Benchmarks"
-summary = "Tasks"
-headless = false
-theme = "op"
-+++
+---
+title: Benchmarks
+cms_exclude: true
+view: 3
+---
