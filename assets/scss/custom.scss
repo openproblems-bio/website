@@ -1,14 +1,4 @@
-.hero {
 
-}
-
-.hero h1{
-  font-size: 2.5rem;
-}
-
-.hero p{
-  font-size: 1rem;
-}
 
 .MathJax {
   font-size: 100% !important;
@@ -19,69 +9,14 @@ code{
   background-color: #ececec;
 }
 
+// Navigation bar
 .dropdown-menu,
 nav#navbar-main li.nav-item {
   font-size: 18px;
   font-weight: bold;
 }
 
-
-.task-card{
-  max-height: 400px;
-  max-width: 300px;
-  background: #ffffff;
-  width: 100%;
-  min-width: 240px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.task-card img{
-  max-height:200px; /* Needed for safari?? */
-  padding-top:20px;
-}
-
-.task-card .card-body{
-  padding: 0rem 1rem 1rem;
-}
-
-.contributing-hero section{
-  filter: blur(8px);
-}
-
-.frontpage-banner {
-
-}
-
-
-.frontpage-hero {
-  height: 30em;
-}
-
-.banner-container {
-  display: flex;
-  align-items: center;
-  justify-content: center
-}
-
-.banner-container img{
-    margin: 0
-}
-
-
-@media screen and (max-width: 575.98px) {
-  .frontpage-hero {
-    height: 325px;
-  }
-}
-
-@media screen and (min-width: 576px) and (max-width: 767.98px) {
-  .frontpage-hero {
-    height: 350px;
-  }
-
-}
-
+// Fonts
 @font-face {
   font-family: 'hk_groteskbold';
   src: url('https://chanzuckerberg.com/wp-content/themes/czi/fonts/HK-Grotesk/hkgrotesk-bold.eot'); /* IE9 Compat Modes */
@@ -110,11 +45,9 @@ nav#navbar-main li.nav-item {
        url('https://chanzuckerberg.com/wp-content/themes/czi/fonts/HK-Grotesk/hkgrotesk-medium.ttf')  format('truetype'), /* Safari, Android, iOS */
 }
 
-
 p {
   font-family: 'hk_groteskmedium', Fallback, sans-serif;
 }
-
 
 a {
   font-family: 'hk_groteskmedium', Fallback, sans-serif;
@@ -122,17 +55,15 @@ a {
     font-weight: bold;
 }
 
-.competition-page a{
-  color: #EB5252;
-}
-
 .nav-link:hover{
   color: #ff414b;
 }
+
 span {
   font-family: 'hk_groteskmedium', Fallback, sans-serif;
 }
 
+/* people widget */
 // override the default width for a people widget
 // based on: https://github.com/wowchemy/wowchemy-hugo-themes/blob/c51be55f93177c75578521f7a513eec87a7cb818/modules/wowchemy/assets/scss/wowchemy/widgets/_people.scss#L29
 // at the moment, setting the width to 25% works better for our site
@@ -143,6 +74,7 @@ span {
   }
 }
 
+/* bibliograhy */
 // Bibliography page needs a white title even in light mode
 .bibliography-hero h1 {
   color: #fff;
