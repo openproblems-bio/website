@@ -1,7 +1,4 @@
 # SITE SETUP
-# Guide: https://wowchemy.com/docs/getting-started/
-# Documentation: https://wowchemy.com/docs/
-# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 # Appearance
 appearance:
@@ -10,20 +7,7 @@ appearance:
   font: 'minimal'
   font_size: M
 
-# Site header
-
-header:
-  navbar:
-    enable: true
-    align: l
-    show_logo: true
-    show_language: false
-    show_day_night: true
-    show_search: false
-    highlight_active_link: true
-
 # SEO
-
 marketing:
   seo:
     site_type: Organization
@@ -42,24 +26,35 @@ local_business_type: ''
 org_name: 'Open Problems in Single Cell Analysis'
 description: 'Aggregating and Benchmarking Open Problems in Single Cell Analysis'
 twitter: ''
-# Site header
 
-main_menu:
-  enable: true
-  align: l
-  show_logo: true
-  show_language: false
-  show_day_night: false
-  show_search: false
-  highlight_active_link: true
+# Site header
+header:
+  navbar:
+    enable: true
+    align: l
+    show_logo: true
+    show_language: false
+    show_day_night: true
+    show_search: false
+    highlight_active_link: true
+
+# Site footer
+footer:
+  copyright:
+    notice: '&copy; Open Problems {year} · View on [GitHub](https://github.com/openproblems-bio/openproblems)'
+    license:
+      enable: false
+      allow_derivatives: false
+      share_alike: true
+      allow_commercial: false
 
 # Localization
-
-date_format: 'Jan 2, 2006'
-time_format: '3:04 PM'
+locale:
+  date_format: 'Jan 2, 2006'
+  time_format: '3:04 PM'
+  address_format: en-us
 
 # Site features
-
 features:
   syntax_highlighter:
     enable: true
@@ -90,6 +85,7 @@ features:
       index_name: ''
       show_logo: false
 
+# Extensions
 extensions:
   cms:
     branch: main
