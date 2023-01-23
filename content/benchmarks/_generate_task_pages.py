@@ -16,10 +16,11 @@ for task_info_file in task_info_files:
     task_name = task_info.get("task_name", "<Name missing>")
     task_summary = task_info.get("task_summary", "<Summary missing>")
 
-    content = f"""
+    content = f"""\
 ---
 title: "{task_name}"
 summary: "{task_summary}"
+bibliography: "../../../static/bibliography/main.bib"
 ---
 
 {template}

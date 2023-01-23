@@ -1,36 +1,18 @@
 ---
-title: "Dimensionality reduction for visualization"
+title: "Dimensionality reduction for visualisation"
 summary: "Reduction of high-dimensional datasets to 2D for visualization & interpretation"
+bibliography: "../../../static/bibliography/main.bib"
 ---
 
 <script src="index_files/libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="index_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
-Dimensionality reduction is one of the key challenges in single-cell data representation.
-Routine single-cell RNA sequencing (scRNA-seq) experiments measure cells in roughly
-20,000-30,000 dimensions (i.e., features - mostly gene transcripts but also other functional
-elements encoded in mRNA such as lncRNAs). Since its inception,scRNA-seq experiments have
-been growing in terms of the number of cells measured. Originally, cutting-edge SmartSeq
-experiments would yield a few hundred cells, at best. Now, it is not uncommon to see
-experiments that yield over [100,000 cells](https://www.nature.com/articles/s41586-018-0590-4)
-or even [\> 1 million cells](https://doi.org/10.1126/science.aba7721).
-
-Each *feature* in a dataset functions as a single dimension. While each of the \~30,000
-dimensions measured in each cell contribute to an underlying data structure, the overall
-structure of the data is challenging to display in few dimensions due to data sparsity
-and the [*"curse of dimensionality"*](https://en.wikipedia.org/wiki/Curse_of_dimensionality)
-(distances in high dimensional data don't distinguish data points well). Thus, we need to find
-a way to [dimensionally reduce](https://en.wikipedia.org/wiki/Dimensionality_reduction)
-the data for visualization and interpretation.
-
-## Overview
-
-This visualization shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).
+missing 'task_description'
 
 <figure>
-<img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="883" alt="The average overall, per dataset and per metric scaled scores per method." />
-<figcaption aria-hidden="true">The average overall, per dataset and per metric scaled scores per method.</figcaption>
+<img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="883" alt="Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
+<figcaption aria-hidden="true">Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
 </figure>
 
 <details>
@@ -38,25 +20,121 @@ This visualization shows the means of the scaled scores per method across all re
 Overview per parameter set
 </summary>
 
+    Warning: Removed 10 rows containing missing values (geom_rect).
+
 <figure>
-<img src="index.markdown_strict_files/figure-markdown_strict/summary_defailed-1.png" width="856" alt="The average overall, per dataset and per metric scaled scores per method and parameter set." />
-<figcaption aria-hidden="true">The average overall, per dataset and per metric scaled scores per method and parameter set.</figcaption>
+<img src="index.markdown_strict_files/figure-markdown_strict/summary_defailed-1.png" width="856" alt="Overview of the results per method and parameter set. This figures shows the means of the scaled scores per method parameter set across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
+<figcaption aria-hidden="true">Overview of the results per method and parameter set. This figures shows the means of the scaled scores per method parameter set across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
 </figure>
 
 </details>
 
+## Methods
+
+-   **densMAP (logCPM)** (Narayan, Berger, and Cho 2021): missing 'method_summary'
+
+<!-- -->
+
+-   **densMAP (logCPM, 1kHVG)** (Narayan, Berger, and Cho 2021): missing 'method_summary'
+
+<!-- -->
+
+-   **densMAP PCA (logCPM)** (Narayan, Berger, and Cho 2021): missing 'method_summary'
+
+<!-- -->
+
+-   **densMAP PCA (logCPM, 1kHVG)** (Narayan, Berger, and Cho 2021): missing 'method_summary'
+
+<!-- -->
+
+-   **NeuralEE (CPU) (Default)** (Xiong et al. 2020): missing 'method_summary'
+
+<!-- -->
+
+-   **NeuralEE (CPU) (logCPM, 1kHVG)** (Xiong et al. 2020): missing 'method_summary'
+
+<!-- -->
+
+-   **Principle Component Analysis (PCA) (logCPM)** (Pearson 1901): missing 'method_summary'
+
+<!-- -->
+
+-   **Principle Component Analysis (PCA) (logCPM, 1kHVG)** (Pearson 1901): missing 'method_summary'
+
+<!-- -->
+
+-   **PHATE (default)** (Moon et al. 2019): missing 'method_summary'
+
+<!-- -->
+
+-   **PHATE (logCPM, 1kHVG)** (Moon et al. 2019): missing 'method_summary'
+
+<!-- -->
+
+-   **PHATE (logCPM)** (Moon et al. 2019): missing 'method_summary'
+
+<!-- -->
+
+-   **PHATE (gamma=0)** (Moon et al. 2019): missing 'method_summary'
+
+<!-- -->
+
+-   **Random Features** (Open Problems for Single Cell Analysis Consortium 2022): missing 'method_summary'
+
+<!-- -->
+
+-   **True Features** (Open Problems for Single Cell Analysis Consortium 2022): missing 'method_summary'
+
+<!-- -->
+
+-   **True Features (logCPM)** (Open Problems for Single Cell Analysis Consortium 2022): missing 'method_summary'
+
+<!-- -->
+
+-   **True Features (logCPM, 1kHVG)** (Open Problems for Single Cell Analysis Consortium 2022): missing 'method_summary'
+
+<!-- -->
+
+-   **t-Distributed Stochastic Neighbor Embedding (t-SNE) (logCPM)** (van der Maaten and Hinton 2008): missing 'method_summary'
+
+<!-- -->
+
+-   **t-Distributed Stochastic Neighbor Embedding (t-SNE) (logCPM, 1kHVG)** (van der Maaten and Hinton 2008): missing 'method_summary'
+
+<!-- -->
+
+-   **UMAP (logCPM)** (McInnes, Healy, and Melville 2018): missing 'method_summary'
+
+<!-- -->
+
+-   **UMAP (logCPM, 1kHVG)** (McInnes, Healy, and Melville 2018): missing 'method_summary'
+
+<!-- -->
+
+-   **UMAP PCA (logCPM)** (McInnes, Healy, and Melville 2018): missing 'method_summary'
+
+<!-- -->
+
+-   **UMAP PCA (logCPM, 1kHVG)** (McInnes, Healy, and Melville 2018): missing 'method_summary'
+
+## Datasets
+
+-   **Mouse hematopoietic stem cell differentiation** (Nestorowa et al. 2016): 1.6k hematopoietic stem and progenitor cells from mouse bone marrow. Sequenced by Smart-seq2. 1920 cells x 43258 features with 3 cell type labels
+-   **Mouse myeloid lineage differentiation** (Olsson et al. 2016): Myeloid lineage differentiation from mouse blood. Sequenced by SMARTseq in 2016 by Olsson et al. 660 cells x 112815 features with 4 cell type labels
+-   **5k Peripheral blood mononuclear cells** (10x Genomics 2019): 5k Peripheral Blood Mononuclear Cells (PBMCs) from a healthy donor. Sequenced on 10X v3 chemistry in July 2019 by 10X Genomics. 5247 cells x 20822 features with no cell type labels
+
 ## Metrics
 
--   **continuity**: <missing description>
--   **density preservation**: <missing description>
--   **local continuity meta criterion**: <missing description>
--   **global property**: <missing description>
--   **local property**: <missing description>
--   **co-KNN size**: <missing description>
--   **co-KNN AUC**: <missing description>
--   **RMSE**: <missing description>
--   **RMSE (spectral)**: <missing description>
--   **trustworthiness**: <missing description>
+-   **continuity** (Zhang, Shang, and Zhang 2021): missing 'metric_summary'
+-   **density preservation** (Narayan, Berger, and Cho 2021): missing 'metric_summary'
+-   **local continuity meta criterion** (Zhang, Shang, and Zhang 2021): missing 'metric_summary'
+-   **global property** (Zhang, Shang, and Zhang 2021): missing 'metric_summary'
+-   **local property** (Zhang, Shang, and Zhang 2021): missing 'metric_summary'
+-   **co-KNN size** (Zhang, Shang, and Zhang 2021): missing 'metric_summary'
+-   **co-KNN AUC** (Zhang, Shang, and Zhang 2021): missing 'metric_summary'
+-   **RMSE** (Kruskal 1964): missing 'metric_summary'
+-   **RMSE (spectral)** (Coifman and Lafon 2006): missing 'metric_summary'
+-   **trustworthiness** (Venna and Kaski 2001): missing 'metric_summary'
 
 ## Details
 
@@ -93,7 +171,7 @@ Quality control checks
   Method id: neuralee_logCPM_1kHVG
   Metric id: continuity
   Best score: 102.83814481509313%
-"> 102.838145 </td>
+"> 102.8381448 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method neuralee_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: neuralee_logCPM_1kHVG
@@ -125,7 +203,7 @@ Quality control checks
   Method id: densmap_logCPM_1kHVG
   Metric id: continuity
   Best score: 98.6632656844972%
-"> 98.663266 </td>
+"> 98.6632657 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method densmap_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: densmap_logCPM_1kHVG
@@ -157,7 +235,7 @@ Quality control checks
   Method id: densmap_pca_logCPM_1kHVG
   Metric id: continuity
   Best score: 87.28135544874854%
-"> 87.281355 </td>
+"> 87.2813554 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method densmap_pca_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: densmap_pca_logCPM_1kHVG
@@ -189,7 +267,7 @@ Quality control checks
   Method id: pca_logCPM_1kHVG
   Metric id: continuity
   Best score: 85.71740376798641%
-"> 85.717404 </td>
+"> 85.7174038 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method pca_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: pca_logCPM_1kHVG
@@ -221,7 +299,7 @@ Quality control checks
   Method id: tsne_logCPM_1kHVG
   Metric id: continuity
   Best score: 83.87346863100112%
-"> 83.873469 </td>
+"> 83.8734686 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method tsne_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: tsne_logCPM_1kHVG
@@ -253,7 +331,7 @@ Quality control checks
   Method id: phate_logCPM_1kHVG
   Metric id: continuity
   Best score: 81.27619835417812%
-"> 81.276198 </td>
+"> 81.2761984 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: phate_logCPM_1kHVG
@@ -285,7 +363,7 @@ Quality control checks
   Method id: umap_logCPM_1kHVG
   Metric id: continuity
   Best score: 77.04036966783967%
-"> 77.040370 </td>
+"> 77.0403697 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method umap_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: umap_logCPM_1kHVG
@@ -317,7 +395,7 @@ Quality control checks
   Method id: densmap_logCPM_1kHVG
   Metric id: qnn_auc
   Best score: 52.346142282079846%
-"> 52.346142 </td>
+"> 52.3461423 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method densmap_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: densmap_logCPM_1kHVG
@@ -349,7 +427,7 @@ Quality control checks
   Method id: neuralee_logCPM_1kHVG
   Metric id: qnn_auc
   Best score: 51.715852240502336%
-"> 51.715852 </td>
+"> 51.7158522 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method neuralee_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: neuralee_logCPM_1kHVG
@@ -381,7 +459,7 @@ Quality control checks
   Method id: densmap_pca_logCPM_1kHVG
   Metric id: qnn_auc
   Best score: 41.067048200521015%
-"> 41.067048 </td>
+"> 41.0670482 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method densmap_pca_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: densmap_pca_logCPM_1kHVG
@@ -413,7 +491,7 @@ Quality control checks
   Method id: pca_logCPM_1kHVG
   Metric id: qnn_auc
   Best score: 39.00986505038051%
-"> 39.009865 </td>
+"> 39.0098651 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method pca_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: pca_logCPM_1kHVG
@@ -445,7 +523,7 @@ Quality control checks
   Method id: phate_sqrt
   Metric id: continuity
   Best score: 35.1551121696587%
-"> 35.155112 </td>
+"> 35.1551122 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_sqrt performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: phate_sqrt
@@ -477,7 +555,7 @@ Quality control checks
   Method id: tsne_logCPM_1kHVG
   Metric id: qnn_auc
   Best score: 32.94131052664672%
-"> 32.941311 </td>
+"> 32.9413105 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method tsne_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: tsne_logCPM_1kHVG
@@ -509,7 +587,7 @@ Quality control checks
   Method id: phate_logCPM_1kHVG
   Metric id: qnn_auc
   Best score: 28.40457957102999%
-"> 28.404580 </td>
+"> 28.4045796 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: phate_logCPM_1kHVG
@@ -541,7 +619,7 @@ Quality control checks
   Method id: phate_default
   Metric id: continuity
   Best score: 26.045760657186854%
-"> 26.045761 </td>
+"> 26.0457607 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_default performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: phate_default
@@ -573,7 +651,7 @@ Quality control checks
   Method id: umap_logCPM_1kHVG
   Metric id: qnn_auc
   Best score: 25.82993603860544%
-"> 25.829936 </td>
+"> 25.8299360 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method umap_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: umap_logCPM_1kHVG
@@ -605,7 +683,7 @@ Quality control checks
   Method id: phate_default
   Metric id: rmse_spectral
   Worst score: -11.880482343387474%
-"> -11.880482 </td>
+"> -11.8804823 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_default performs much worse than baselines.
   Task id: dimensionality_reduction
   Method id: phate_default
@@ -617,6 +695,276 @@ Quality control checks
   Method id: phate_default
   Metric id: rmse_spectral
   Worst score: -11.880482343387474%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: densmap_logCPM
+  Percentage missing: 100%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: densmap_logCPM
+  Percentage missing: 100%
+"> Method densmap_logCPM %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: densmap_logCPM
+  Percentage missing: 100%
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: densmap_logCPM
+  Percentage missing: 100%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: densmap_logCPM
+  Percentage missing: 100%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: densmap_pca_logCPM
+  Percentage missing: 100%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: densmap_pca_logCPM
+  Percentage missing: 100%
+"> Method densmap_pca_logCPM %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: densmap_pca_logCPM
+  Percentage missing: 100%
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: densmap_pca_logCPM
+  Percentage missing: 100%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: densmap_pca_logCPM
+  Percentage missing: 100%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pca_logCPM
+  Percentage missing: 100%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pca_logCPM
+  Percentage missing: 100%
+"> Method pca_logCPM %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pca_logCPM
+  Percentage missing: 100%
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pca_logCPM
+  Percentage missing: 100%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pca_logCPM
+  Percentage missing: 100%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: phate_logCPM
+  Percentage missing: 100%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: phate_logCPM
+  Percentage missing: 100%
+"> Method phate_logCPM %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: phate_logCPM
+  Percentage missing: 100%
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: phate_logCPM
+  Percentage missing: 100%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: phate_logCPM
+  Percentage missing: 100%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: true_features_log_cpm
+  Percentage missing: 100%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: true_features_log_cpm
+  Percentage missing: 100%
+"> Method true_features_log_cpm %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: true_features_log_cpm
+  Percentage missing: 100%
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: true_features_log_cpm
+  Percentage missing: 100%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: true_features_log_cpm
+  Percentage missing: 100%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: true_features_log_cpm_hvg
+  Percentage missing: 100%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: true_features_log_cpm_hvg
+  Percentage missing: 100%
+"> Method true_features_log_cpm_hvg %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: true_features_log_cpm_hvg
+  Percentage missing: 100%
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: true_features_log_cpm_hvg
+  Percentage missing: 100%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: true_features_log_cpm_hvg
+  Percentage missing: 100%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: tsne_logCPM
+  Percentage missing: 100%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: tsne_logCPM
+  Percentage missing: 100%
+"> Method tsne_logCPM %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: tsne_logCPM
+  Percentage missing: 100%
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: tsne_logCPM
+  Percentage missing: 100%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: tsne_logCPM
+  Percentage missing: 100%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: umap_logCPM
+  Percentage missing: 100%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: umap_logCPM
+  Percentage missing: 100%
+"> Method umap_logCPM %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: umap_logCPM
+  Percentage missing: 100%
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: umap_logCPM
+  Percentage missing: 100%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: umap_logCPM
+  Percentage missing: 100%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: umap_pca_logCPM
+  Percentage missing: 100%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: umap_pca_logCPM
+  Percentage missing: 100%
+"> Method umap_pca_logCPM %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: umap_pca_logCPM
+  Percentage missing: 100%
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: umap_pca_logCPM
+  Percentage missing: 100%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: umap_pca_logCPM
+  Percentage missing: 100%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: umap_pca_logCPM_1kHVG
+  Percentage missing: 100%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: umap_pca_logCPM_1kHVG
+  Percentage missing: 100%
+"> Method umap_pca_logCPM_1kHVG %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: umap_pca_logCPM_1kHVG
+  Percentage missing: 100%
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: umap_pca_logCPM_1kHVG
+  Percentage missing: 100%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: umap_pca_logCPM_1kHVG
+  Percentage missing: 100%
 "> ✗✗✗ </td>
   </tr>
   <tr>
@@ -637,7 +985,7 @@ Quality control checks
   Method id: phate_sqrt
   Metric id: rmse_spectral
   Worst score: -8.744787098984089%
-"> -8.744787 </td>
+"> -8.7447871 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_sqrt performs much worse than baselines.
   Task id: dimensionality_reduction
   Method id: phate_sqrt
@@ -669,7 +1017,7 @@ Quality control checks
   Method id: neuralee_default
   Metric id: continuity
   Best score: 17.117206954090772%
-"> 17.117207 </td>
+"> 17.1172070 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method neuralee_default performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: neuralee_default
@@ -701,7 +1049,7 @@ Quality control checks
   Method id: neuralee_logCPM_1kHVG
   Metric id: qglobal
   Best score: 16.13294394290441%
-"> 16.132944 </td>
+"> 16.1329439 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method neuralee_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: neuralee_logCPM_1kHVG
@@ -733,7 +1081,7 @@ Quality control checks
   Method id: densmap_logCPM_1kHVG
   Metric id: qglobal
   Best score: 15.284277319217653%
-"> 15.284277 </td>
+"> 15.2842773 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method densmap_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: densmap_logCPM_1kHVG
@@ -765,7 +1113,7 @@ Quality control checks
   Method id: pca_logCPM_1kHVG
   Metric id: qglobal
   Best score: 14.681745025490805%
-"> 14.681745 </td>
+"> 14.6817450 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method pca_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: pca_logCPM_1kHVG
@@ -797,7 +1145,7 @@ Quality control checks
   Method id: phate_sqrt
   Metric id: qnn_auc
   Best score: 12.384966210770889%
-"> 12.384966 </td>
+"> 12.3849662 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_sqrt performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: phate_sqrt
@@ -829,7 +1177,7 @@ Quality control checks
   Method id: densmap_pca_logCPM_1kHVG
   Metric id: qglobal
   Best score: 11.897509952339183%
-"> 11.897510 </td>
+"> 11.8975100 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method densmap_pca_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: densmap_pca_logCPM_1kHVG
@@ -861,7 +1209,7 @@ Quality control checks
   Method id: phate_default
   Metric id: qnn_auc
   Best score: 10.410511376236835%
-"> 10.410511 </td>
+"> 10.4105114 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_default performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: phate_default
@@ -893,7 +1241,7 @@ Quality control checks
   Method id: phate_logCPM_1kHVG
   Metric id: rmse_spectral
   Worst score: -4.9434393781515835%
-"> -4.943439 </td>
+"> -4.9434394 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_logCPM_1kHVG performs much worse than baselines.
   Task id: dimensionality_reduction
   Method id: phate_logCPM_1kHVG
@@ -925,7 +1273,7 @@ Quality control checks
   Method id: umap_logCPM_1kHVG
   Metric id: rmse_spectral
   Worst score: -4.882204229017713%
-"> -4.882204 </td>
+"> -4.8822042 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method umap_logCPM_1kHVG performs much worse than baselines.
   Task id: dimensionality_reduction
   Method id: umap_logCPM_1kHVG
@@ -957,7 +1305,7 @@ Quality control checks
   Method id: tsne_logCPM_1kHVG
   Metric id: qglobal
   Best score: 9.358494435549117%
-"> 9.358494 </td>
+"> 9.3584944 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method tsne_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: tsne_logCPM_1kHVG
@@ -969,6 +1317,394 @@ Quality control checks
   Method id: tsne_logCPM_1kHVG
   Metric id: qglobal
   Best score: 9.358494435549117%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Number of results should be equal to #methods × #metrics × #datasets.
+  Task id: dimensionality_reduction
+  Number of results: 36
+  Number of methods: 22
+  Number of metrics: 10
+  Number of datasets: 3
+"> Raw data </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Number of results should be equal to #methods × #metrics × #datasets.
+  Task id: dimensionality_reduction
+  Number of results: 36
+  Number of methods: 22
+  Number of metrics: 10
+  Number of datasets: 3
+"> Number of results </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Number of results should be equal to #methods × #metrics × #datasets.
+  Task id: dimensionality_reduction
+  Number of results: 36
+  Number of methods: 22
+  Number of metrics: 10
+  Number of datasets: 3
+"> 36.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Number of results should be equal to #methods × #metrics × #datasets.
+  Task id: dimensionality_reduction
+  Number of results: 36
+  Number of methods: 22
+  Number of metrics: 10
+  Number of datasets: 3
+"> len(results) == len(method_info) * len(metric_info) * len(dataset_info) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Number of results should be equal to #methods × #metrics × #datasets.
+  Task id: dimensionality_reduction
+  Number of results: 36
+  Number of methods: 22
+  Number of metrics: 10
+  Number of datasets: 3
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: mouse_hspc_nestorowa2016
+  Percentage missing: 45%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: mouse_hspc_nestorowa2016
+  Percentage missing: 45%
+"> Dataset mouse_hspc_nestorowa2016 %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: mouse_hspc_nestorowa2016
+  Percentage missing: 45%
+"> 0.4545455 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: mouse_hspc_nestorowa2016
+  Percentage missing: 45%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: mouse_hspc_nestorowa2016
+  Percentage missing: 45%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: olsson_2016_mouse_blood
+  Percentage missing: 45%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: olsson_2016_mouse_blood
+  Percentage missing: 45%
+"> Dataset olsson_2016_mouse_blood %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: olsson_2016_mouse_blood
+  Percentage missing: 45%
+"> 0.4545455 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: olsson_2016_mouse_blood
+  Percentage missing: 45%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: olsson_2016_mouse_blood
+  Percentage missing: 45%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: tenx_5k_pbmc
+  Percentage missing: 45%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: tenx_5k_pbmc
+  Percentage missing: 45%
+"> Dataset tenx_5k_pbmc %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: tenx_5k_pbmc
+  Percentage missing: 45%
+"> 0.4545455 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: tenx_5k_pbmc
+  Percentage missing: 45%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: tenx_5k_pbmc
+  Percentage missing: 45%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: continuity
+  Percentage missing: 45%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: continuity
+  Percentage missing: 45%
+"> Metric continuity %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: continuity
+  Percentage missing: 45%
+"> 0.4545455 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: continuity
+  Percentage missing: 45%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: continuity
+  Percentage missing: 45%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: density_preservation
+  Percentage missing: 45%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: density_preservation
+  Percentage missing: 45%
+"> Metric density_preservation %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: density_preservation
+  Percentage missing: 45%
+"> 0.4545455 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: density_preservation
+  Percentage missing: 45%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: density_preservation
+  Percentage missing: 45%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: lcmc
+  Percentage missing: 45%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: lcmc
+  Percentage missing: 45%
+"> Metric lcmc %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: lcmc
+  Percentage missing: 45%
+"> 0.4545455 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: lcmc
+  Percentage missing: 45%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: lcmc
+  Percentage missing: 45%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qglobal
+  Percentage missing: 45%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qglobal
+  Percentage missing: 45%
+"> Metric qglobal %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qglobal
+  Percentage missing: 45%
+"> 0.4545455 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qglobal
+  Percentage missing: 45%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qglobal
+  Percentage missing: 45%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qlocal
+  Percentage missing: 45%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qlocal
+  Percentage missing: 45%
+"> Metric qlocal %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qlocal
+  Percentage missing: 45%
+"> 0.4545455 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qlocal
+  Percentage missing: 45%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qlocal
+  Percentage missing: 45%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn
+  Percentage missing: 45%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn
+  Percentage missing: 45%
+"> Metric qnn %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn
+  Percentage missing: 45%
+"> 0.4545455 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn
+  Percentage missing: 45%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn
+  Percentage missing: 45%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn_auc
+  Percentage missing: 45%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn_auc
+  Percentage missing: 45%
+"> Metric qnn_auc %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn_auc
+  Percentage missing: 45%
+"> 0.4545455 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn_auc
+  Percentage missing: 45%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn_auc
+  Percentage missing: 45%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse
+  Percentage missing: 45%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse
+  Percentage missing: 45%
+"> Metric rmse %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse
+  Percentage missing: 45%
+"> 0.4545455 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse
+  Percentage missing: 45%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse
+  Percentage missing: 45%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse_spectral
+  Percentage missing: 45%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse_spectral
+  Percentage missing: 45%
+"> Metric rmse_spectral %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse_spectral
+  Percentage missing: 45%
+"> 0.4545455 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse_spectral
+  Percentage missing: 45%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse_spectral
+  Percentage missing: 45%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: trustworthiness
+  Percentage missing: 45%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: trustworthiness
+  Percentage missing: 45%
+"> Metric trustworthiness %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: trustworthiness
+  Percentage missing: 45%
+"> 0.4545455 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: trustworthiness
+  Percentage missing: 45%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: trustworthiness
+  Percentage missing: 45%
 "> ✗✗✗ </td>
   </tr>
   <tr>
@@ -989,7 +1725,7 @@ Quality control checks
   Method id: phate_logCPM_1kHVG
   Metric id: qglobal
   Best score: 8.612992603118963%
-"> 8.612993 </td>
+"> 8.6129926 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: phate_logCPM_1kHVG
@@ -1021,7 +1757,7 @@ Quality control checks
   Method id: pca_logCPM_1kHVG
   Metric id: rmse_spectral
   Worst score: -4.2484677198873175%
-"> -4.248468 </td>
+"> -4.2484677 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method pca_logCPM_1kHVG performs much worse than baselines.
   Task id: dimensionality_reduction
   Method id: pca_logCPM_1kHVG
@@ -1053,7 +1789,7 @@ Quality control checks
   Method id: densmap_logCPM_1kHVG
   Metric id: rmse_spectral
   Worst score: -4.154292086061113%
-"> -4.154292 </td>
+"> -4.1542921 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method densmap_logCPM_1kHVG performs much worse than baselines.
   Task id: dimensionality_reduction
   Method id: densmap_logCPM_1kHVG
@@ -1085,7 +1821,7 @@ Quality control checks
   Method id: densmap_pca_logCPM_1kHVG
   Metric id: rmse_spectral
   Worst score: -3.895765918017437%
-"> -3.895766 </td>
+"> -3.8957659 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method densmap_pca_logCPM_1kHVG performs much worse than baselines.
   Task id: dimensionality_reduction
   Method id: densmap_pca_logCPM_1kHVG
@@ -1117,7 +1853,7 @@ Quality control checks
   Method id: umap_logCPM_1kHVG
   Metric id: qglobal
   Best score: 7.7857784598414765%
-"> 7.785779 </td>
+"> 7.7857785 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method umap_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: umap_logCPM_1kHVG
@@ -1149,7 +1885,7 @@ Quality control checks
   Method id: neuralee_logCPM_1kHVG
   Metric id: qlocal
   Best score: 7.311321979503796%
-"> 7.311322 </td>
+"> 7.3113220 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method neuralee_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: neuralee_logCPM_1kHVG
@@ -1181,7 +1917,7 @@ Quality control checks
   Method id: densmap_logCPM_1kHVG
   Metric id: qlocal
   Best score: 7.142970523509472%
-"> 7.142970 </td>
+"> 7.1429705 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method densmap_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: densmap_logCPM_1kHVG
@@ -1213,7 +1949,7 @@ Quality control checks
   Method id: neuralee_logCPM_1kHVG
   Metric id: rmse_spectral
   Worst score: -3.4783740440817237%
-"> -3.478374 </td>
+"> -3.4783740 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method neuralee_logCPM_1kHVG performs much worse than baselines.
   Task id: dimensionality_reduction
   Method id: neuralee_logCPM_1kHVG
@@ -1245,7 +1981,7 @@ Quality control checks
   Method id: tsne_logCPM_1kHVG
   Metric id: rmse_spectral
   Worst score: -3.3737825355811353%
-"> -3.373782 </td>
+"> -3.3737825 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method tsne_logCPM_1kHVG performs much worse than baselines.
   Task id: dimensionality_reduction
   Method id: tsne_logCPM_1kHVG
@@ -1277,7 +2013,7 @@ Quality control checks
   Method id: pca_logCPM_1kHVG
   Metric id: qlocal
   Best score: 6.65705207245835%
-"> 6.657052 </td>
+"> 6.6570521 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method pca_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: pca_logCPM_1kHVG
@@ -1309,7 +2045,7 @@ Quality control checks
   Method id: densmap_pca_logCPM_1kHVG
   Metric id: qlocal
   Best score: 6.451980918195087%
-"> 6.451981 </td>
+"> 6.4519809 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method densmap_pca_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: densmap_pca_logCPM_1kHVG
@@ -1341,7 +2077,7 @@ Quality control checks
   Method id: phate_sqrt
   Metric id: qglobal
   Best score: 5.983924465342125%
-"> 5.983924 </td>
+"> 5.9839245 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_sqrt performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: phate_sqrt
@@ -1373,7 +2109,7 @@ Quality control checks
   Method id: tsne_logCPM_1kHVG
   Metric id: qlocal
   Best score: 5.803059232428761%
-"> 5.803059 </td>
+"> 5.8030592 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method tsne_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: tsne_logCPM_1kHVG
@@ -1405,7 +2141,7 @@ Quality control checks
   Method id: tsne_logCPM_1kHVG
   Metric id: lcmc
   Best score: 5.7572254335260125%
-"> 5.757225 </td>
+"> 5.7572254 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method tsne_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: tsne_logCPM_1kHVG
@@ -1437,7 +2173,7 @@ Quality control checks
   Method id: tsne_logCPM_1kHVG
   Metric id: qnn
   Best score: 5.7572254335260125%
-"> 5.757225 </td>
+"> 5.7572254 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method tsne_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: tsne_logCPM_1kHVG
@@ -1469,7 +2205,7 @@ Quality control checks
   Method id: phate_default
   Metric id: qglobal
   Best score: 5.315624865380937%
-"> 5.315625 </td>
+"> 5.3156249 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_default performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: phate_default
@@ -1501,7 +2237,7 @@ Quality control checks
   Method id: umap_logCPM_1kHVG
   Metric id: qlocal
   Best score: 5.209984053856216%
-"> 5.209984 </td>
+"> 5.2099841 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method umap_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: umap_logCPM_1kHVG
@@ -1533,7 +2269,7 @@ Quality control checks
   Method id: phate_logCPM_1kHVG
   Metric id: qlocal
   Best score: 5.200088407359667%
-"> 5.200088 </td>
+"> 5.2000884 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: phate_logCPM_1kHVG
@@ -1565,7 +2301,7 @@ Quality control checks
   Method id: neuralee_default
   Metric id: qnn_auc
   Best score: 4.951439188900353%
-"> 4.951439 </td>
+"> 4.9514392 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method neuralee_default performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: neuralee_default
@@ -1597,7 +2333,7 @@ Quality control checks
   Method id: densmap_pca_logCPM_1kHVG
   Metric id: lcmc
   Best score: 4.789430222956235%
-"> 4.789430 </td>
+"> 4.7894302 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method densmap_pca_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: densmap_pca_logCPM_1kHVG
@@ -1629,7 +2365,7 @@ Quality control checks
   Method id: densmap_pca_logCPM_1kHVG
   Metric id: qnn
   Best score: 4.789430222956235%
-"> 4.789430 </td>
+"> 4.7894302 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method densmap_pca_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: densmap_pca_logCPM_1kHVG
@@ -1661,7 +2397,7 @@ Quality control checks
   Method id: umap_logCPM_1kHVG
   Metric id: lcmc
   Best score: 4.770437654830719%
-"> 4.770438 </td>
+"> 4.7704377 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method umap_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: umap_logCPM_1kHVG
@@ -1693,7 +2429,7 @@ Quality control checks
   Method id: umap_logCPM_1kHVG
   Metric id: qnn
   Best score: 4.770437654830719%
-"> 4.770438 </td>
+"> 4.7704377 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method umap_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: umap_logCPM_1kHVG
@@ -1725,7 +2461,7 @@ Quality control checks
   Method id: phate_logCPM_1kHVG
   Metric id: lcmc
   Best score: 3.8464079273327836%
-"> 3.846408 </td>
+"> 3.8464079 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: phate_logCPM_1kHVG
@@ -1757,7 +2493,7 @@ Quality control checks
   Method id: phate_logCPM_1kHVG
   Metric id: qnn
   Best score: 3.8464079273327836%
-"> 3.846408 </td>
+"> 3.8464079 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: phate_logCPM_1kHVG
@@ -1789,7 +2525,7 @@ Quality control checks
   Method id: densmap_logCPM_1kHVG
   Metric id: density_preservation
   Best score: 3.6471166917533075%
-"> 3.647117 </td>
+"> 3.6471167 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method densmap_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: densmap_logCPM_1kHVG
@@ -1821,7 +2557,7 @@ Quality control checks
   Method id: neuralee_default
   Metric id: qglobal
   Best score: 3.6255694895590502%
-"> 3.625570 </td>
+"> 3.6255695 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method neuralee_default performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: neuralee_default
@@ -1853,7 +2589,7 @@ Quality control checks
   Method id: densmap_logCPM_1kHVG
   Metric id: lcmc
   Best score: 3.5763831544178375%
-"> 3.576383 </td>
+"> 3.5763832 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method densmap_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: densmap_logCPM_1kHVG
@@ -1885,7 +2621,7 @@ Quality control checks
   Method id: densmap_logCPM_1kHVG
   Metric id: qnn
   Best score: 3.5763831544178375%
-"> 3.576383 </td>
+"> 3.5763832 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method densmap_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: densmap_logCPM_1kHVG
@@ -1917,7 +2653,7 @@ Quality control checks
   Method id: phate_sqrt
   Metric id: qlocal
   Best score: 3.565385048719486%
-"> 3.565385 </td>
+"> 3.5653850 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_sqrt performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: phate_sqrt
@@ -1949,7 +2685,7 @@ Quality control checks
   Method id: phate_logCPM_1kHVG
   Metric id: density_preservation
   Best score: 3.514185589968861%
-"> 3.514186 </td>
+"> 3.5141856 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: phate_logCPM_1kHVG
@@ -1981,7 +2717,7 @@ Quality control checks
   Method id: phate_default
   Metric id: qlocal
   Best score: 3.29082956597632%
-"> 3.290830 </td>
+"> 3.2908296 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_default performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: phate_default
@@ -2013,7 +2749,7 @@ Quality control checks
   Method id: neuralee_logCPM_1kHVG
   Metric id: density_preservation
   Best score: 3.21843575077129%
-"> 3.218436 </td>
+"> 3.2184358 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method neuralee_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: neuralee_logCPM_1kHVG
@@ -2045,7 +2781,7 @@ Quality control checks
   Method id: umap_logCPM_1kHVG
   Metric id: density_preservation
   Worst score: -1.3062806408417627%
-"> -1.306281 </td>
+"> -1.3062806 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method umap_logCPM_1kHVG performs much worse than baselines.
   Task id: dimensionality_reduction
   Method id: umap_logCPM_1kHVG
@@ -2077,7 +2813,7 @@ Quality control checks
   Method id: neuralee_default
   Metric id: qlocal
   Best score: 2.6075869447062363%
-"> 2.607587 </td>
+"> 2.6075869 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method neuralee_default performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: neuralee_default
@@ -2109,7 +2845,7 @@ Quality control checks
   Method id: pca_logCPM_1kHVG
   Metric id: density_preservation
   Best score: 2.5866639073535724%
-"> 2.586664 </td>
+"> 2.5866639 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method pca_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: pca_logCPM_1kHVG
@@ -2141,7 +2877,7 @@ Quality control checks
   Method id: neuralee_logCPM_1kHVG
   Metric id: lcmc
   Best score: 2.484723369116433%
-"> 2.484723 </td>
+"> 2.4847234 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method neuralee_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: neuralee_logCPM_1kHVG
@@ -2173,7 +2909,7 @@ Quality control checks
   Method id: neuralee_logCPM_1kHVG
   Metric id: qnn
   Best score: 2.484723369116433%
-"> 2.484723 </td>
+"> 2.4847234 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method neuralee_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: neuralee_logCPM_1kHVG
@@ -2205,7 +2941,7 @@ Quality control checks
   Method id: phate_sqrt
   Metric id: density_preservation
   Worst score: -1.2017507573859036%
-"> -1.201751 </td>
+"> -1.2017508 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_sqrt performs much worse than baselines.
   Task id: dimensionality_reduction
   Method id: phate_sqrt
@@ -2237,7 +2973,7 @@ Quality control checks
   Method id: pca_logCPM_1kHVG
   Metric id: lcmc
   Best score: 2.37737407101569%
-"> 2.377374 </td>
+"> 2.3773741 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method pca_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: pca_logCPM_1kHVG
@@ -2269,7 +3005,7 @@ Quality control checks
   Method id: pca_logCPM_1kHVG
   Metric id: qnn
   Best score: 2.37737407101569%
-"> 2.377374 </td>
+"> 2.3773741 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method pca_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: pca_logCPM_1kHVG
@@ -2301,7 +3037,7 @@ Quality control checks
   Method id: densmap_pca_logCPM_1kHVG
   Metric id: density_preservation
   Best score: 2.277740691976449%
-"> 2.277741 </td>
+"> 2.2777407 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method densmap_pca_logCPM_1kHVG performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: densmap_pca_logCPM_1kHVG
@@ -2324,6 +3060,36 @@ Quality control checks
 Visualization of raw results
 </summary>
 
-<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-7-1.png" width="960" />
+<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-9-1.png" width="960" />
 
 </details>
+
+## References
+
+10x Genomics. 2019. "5k Peripheral Blood Mononuclear Cells (PBMCs) from a Healthy Donor with a Panel of TotalSeq-b Antibodies (V3 Chemistry)." <https://www.10xgenomics.com/resources/datasets/5-k-peripheral-blood-mononuclear-cells-pbm-cs-from-a-healthy-donor-with-cell-surface-proteins-v-3-chemistry-3-1-standard-3-1-0>.
+
+Coifman, Ronald R., and Stéphane Lafon. 2006. "Diffusion Maps." *Applied and Computational Harmonic Analysis* 21 (1): 5--30. <https://doi.org/10.1016/j.acha.2006.04.006>.
+
+Kruskal, J. B. 1964. "Multidimensional Scaling by Optimizing Goodness of Fit to a Nonmetric Hypothesis." *Psychometrika* 29 (1): 1--27. <https://doi.org/10.1007/bf02289565>.
+
+McInnes, Leland, John Healy, and James Melville. 2018. "UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction." *arXiv*. <https://doi.org/10.48550/arxiv.1802.03426>.
+
+Moon, Kevin R., David van Dijk, Zheng Wang, Scott Gigante, Daniel B. Burkhardt, William S. Chen, Kristina Yim, et al. 2019. "Visualizing Structure and Transitions in High-Dimensional Biological Data." *Nature Biotechnology* 37 (12): 1482--92. <https://doi.org/10.1038/s41587-019-0336-3>.
+
+Narayan, Ashwin, Bonnie Berger, and Hyunghoon Cho. 2021. "Assessing Single-Cell Transcriptomic Variability Through Density-Preserving Data Visualization." *Nature Biotechnology* 39 (6): 765--74. <https://doi.org/10.1038/s41587-020-00801-7>.
+
+Nestorowa, Sonia, Fiona K. Hamey, Blanca Pijuan Sala, Evangelia Diamanti, Mairi Shepherd, Elisa Laurenti, Nicola K. Wilson, David G. Kent, and Berthold Göttgens. 2016. "A Single-Cell Resolution Map of Mouse Hematopoietic Stem and Progenitor Cell Differentiation." *Blood* 128 (8): e20--31. <https://doi.org/10.1182/blood-2016-05-716480>.
+
+Olsson, Andre, Meenakshi Venkatasubramanian, Viren K. Chaudhri, Bruce J. Aronow, Nathan Salomonis, Harinder Singh, and H. Leighton Grimes. 2016. "Single-Cell Analysis of Mixed-Lineage States Leading to a Binary Cell Fate Choice." *Nature* 537 (7622): 698--702. <https://doi.org/10.1038/nature19348>.
+
+Open Problems for Single Cell Analysis Consortium. 2022. "Open Problems." <https://openproblems.bio>.
+
+Pearson, Karl. 1901. "On Lines and Planes of Closest Fit to Systems of Points in Space." *The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science* 2 (11): 559--72. <https://doi.org/10.1080/14786440109462720>.
+
+van der Maaten, Laurens, and Geoffrey Hinton. 2008. "Visualizing Data Using t-SNE." *Journal of Machine Learning Research* 9 (86): 2579--2605. <http://jmlr.org/papers/v9/vandermaaten08a.html>.
+
+Venna, Jarkko, and Samuel Kaski. 2001. "Neighborhood Preservation in Nonlinear Projection Methods: An Experimental Study." In *Artificial Neural Networks ICANN 2001*, 485--91. Springer Berlin Heidelberg. [https://doi.org/10.1007/3-540-44668-0\\\_68](https://doi.org/10.1007/3-540-44668-0\_68).
+
+Xiong, Jiankang, Fuzhou Gong, Lin Wan, and Liang Ma. 2020. "NeuralEE: A GPU-Accelerated Elastic Embedding Dimensionality Reduction Method for Visualizing Large-Scale <span class="nocase">scRNA</span>-Seq Data." *Frontiers in Genetics* 11. <https://doi.org/10.3389/fgene.2020.00786>.
+
+Zhang, Yinsheng, Qian Shang, and Guoming Zhang. 2021. "<span class="nocase">pyDRMetrics</span> - a Python Toolkit for Dimensionality Reduction Quality Assessment." *Heliyon* 7 (2): e06199. <https://doi.org/10.1016/j.heliyon.2021.e06199>.

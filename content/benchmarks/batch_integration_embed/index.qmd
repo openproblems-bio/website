@@ -1,9 +1,8 @@
-
 ---
 title: "Batch integration embed"
 summary: "Removing batch effects while preserving biological variation (embedding output)"
+bibliography: "../../../static/bibliography/main.bib"
 ---
-
 
 ```{r}
 #| include: false
@@ -17,27 +16,25 @@ params <- list(
 #| include: false
 #| error: true
 
-# setwd("content/results")
 library(tidyverse)
 library(funkyheatmap)
 library(kableExtra)
 library(rlang)
 
-knitr::opts_chunk$set(error = TRUE)
-
 # read task info
 task_info <- jsonlite::read_json(paste0(params$data_dir, "/task_info.json"))
-task_info$task_description <- task_info$task_description %||% "<missing description>"
+task_info$task_description <- task_info$task_description %||% "missing 'task_description'"
 
 # read method info
 method_info <- jsonlite::read_json(paste0(params$data_dir, "/method_info.json"), simplifyVector = TRUE) %>%
   mutate(
     method_base_name = gsub(" \\(.*", "", method_name)
   )
+method_info$method_summary <- method_info$method_summary %||% "missing 'method_summary'"
 
 # read metric info
 metric_info <- jsonlite::read_json(paste0(params$data_dir, "/metric_info.json"), simplifyVector = TRUE)
-metric_info$metric_description <- metric_info$metric_description %||% "<missing description>"
+metric_info$metric_summary <- metric_info$metric_summary %||% "missing 'metric_summary'"
 
 # read dataset info
 dataset_info <- jsonlite::read_json(paste0(params$data_dir, "/dataset_info.json"), simplifyVector = TRUE)
@@ -51,16 +48,17 @@ qc <- jsonlite::read_json(paste0(params$data_dir, "/quality_control.json"), simp
 
 ```{r overall_ranking}
 #| echo: false
-
 results_long <-
   inner_join(
     results %>%
+      unnest(metric_values) %>%
       gather(metric_id, value, any_of(metric_info$metric_id)) %>%
       mutate(value = ifelse(is.na(value), NA_real_, value)) %>%
       select(method_id, dataset_id, metric_id, value),
     results %>%
-      gather(metric_id, score, any_of(paste0(metric_info$metric_id, "_scaled"))) %>%
-      mutate(metric_id = sub("_scaled$", "", metric_id)) %>%
+      unnest(metric_scores) %>%
+      gather(metric_id, score, any_of(metric_info$metric_id)) %>%
+      mutate(score = ifelse(is.na(score), NA_real_, score)) %>%
       select(method_id, dataset_id, metric_id, score),
     by = c("method_id", "dataset_id", "metric_id")
   ) %>%
@@ -77,9 +75,6 @@ results_long$method_id <- factor(results_long$method_id, levels = rev(overall_ra
 
 `r task_info$task_description`
 
-## Overview
-
-This visualization shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).
 
 ```{r funkyheatmap_data}
 #| echo: false
@@ -175,7 +170,7 @@ knitr::opts_chunk$set(
 
 ```{r summary}
 #| echo: false
-#| fig-cap: The average overall, per dataset and per metric scaled scores per method.
+#| fig-cap: Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).
 g_base
 ```
 
@@ -190,18 +185,38 @@ knitr::opts_chunk$set(
 
 ```{r summary_defailed}
 #| echo: false
-#| fig-cap: The average overall, per dataset and per metric scaled scores per method and parameter set.
+#| fig-cap: Overview of the results per method and parameter set. This figures shows the means of the scaled scores per method parameter set across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).
 g_all
 ```
 </details>
+
+## Methods
+
+```{r}
+#| echo: false
+lines <- pmap_chr(method_info, function(method_name, method_summary, paper_reference, ...) {
+  glue::glue("* **{method_name}** [@{paper_reference}]: {method_summary}")
+})
+knitr::asis_output(lines)
+```
+
+## Datasets
+
+```{r}
+#| echo: false
+#| output: asis
+pwalk(dataset_info, function(dataset_name, dataset_summary, data_reference, ...) {
+  cat(glue::glue("* **{dataset_name}** [@{data_reference}]: {dataset_summary}"), "\n", sep = "")
+})
+```
 
 ## Metrics
 
 ```{r}
 #| echo: false
 #| output: asis
-pwalk(metric_info, function(metric_name, metric_description, ...) {
-  cat(glue::glue("* **{metric_name}**: {metric_description}"), "\n", sep = "")
+pwalk(metric_info, function(metric_name, metric_summary, paper_reference, ...) {
+  cat(glue::glue("* **{metric_name}** [@{paper_reference}]: {metric_summary}"), "\n", sep = "")
 })
 ```
 
@@ -273,3 +288,4 @@ ggplot(results_long %>% arrange(method_id)) +
 
 </details>
 
+## References
