@@ -8,12 +8,65 @@ bibliography: "../../../static/bibliography/main.bib"
 <link href="index_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
-missing 'task_description'
+Missing 'task_description'
+
+## Results
 
 <figure>
 <img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="672" alt="Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
 <figcaption aria-hidden="true">Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
 </figure>
+
+## Methods
+
+-   **[Harmonic Alignment](https://github.com/KrishnaswamyLab/harmonic-alignment)** (Stanley et al. 2020): Missing 'method_description'.
+
+<!-- -->
+
+-   **[Mutual Nearest Neighbors](https://github.com/LTLA/batchelor)** (Haghverdi et al. 2018): Missing 'method_description'.
+
+<!-- -->
+
+-   **[Procrustes](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.procrustes.html)** (Gower 1975): Missing 'method_description'.
+
+## Metrics
+
+-   **kNN Area Under the Curve** (Stanley et al. 2020): Missing 'metric_description'.
+
+<!-- -->
+
+-   **Mean squared error** (Lance et al. 2022): Missing 'metric_description'.
+
+## Datasets
+
+-   **CITE-seq Cord Blood Mononuclear Cells** (Stoeckius et al. 2017): Missing 'dataset_description'.
+
+<!-- -->
+
+-   **sciCAR Cell Lines** (Cao et al. 2018): Missing 'dataset_description'.
+
+<!-- -->
+
+-   **sciCAR Mouse Kidney** (Cao et al. 2018): Missing 'dataset_description'.
+
+## Baselines
+
+-   **Random Features**: Missing 'method_description'.
+
+<!-- -->
+
+-   **True Features**: Missing 'method_description'.
+
+## Downloads
+
+<a href="data/task_info.json" class="btn btn-secondary">Task info</a>
+<a href="data/method_info.json" class="btn btn-secondary">Method info</a>
+<a href="data/metric_info.json" class="btn btn-secondary">Metric info</a>
+<a href="data/dataset_info.json" class="btn btn-secondary">Dataset info</a>
+<a href="data/results.json" class="btn btn-secondary">Results</a>
+<a href="data/quality_control.json" class="btn btn-secondary">Quality control</a>
+
+## Details
 
 <details>
 <summary>
@@ -26,51 +79,9 @@ Overview per parameter set
 </figure>
 
 </details>
-
-## Methods
-
--   **Harmonic Alignment (log scran)** (Stanley et al. 2020): missing 'method_summary'
-
-<!-- -->
-
--   **Harmonic Alignment (sqrt CPM)** (Stanley et al. 2020): missing 'method_summary'
-
-<!-- -->
-
--   **Mutual Nearest Neighbors (log CPM)** (Haghverdi et al. 2018): missing 'method_summary'
-
-<!-- -->
-
--   **Mutual Nearest Neighbors (log scran)** (Haghverdi et al. 2018): missing 'method_summary'
-
-<!-- -->
-
--   **Procrustes** (Gower 1975): missing 'method_summary'
-
-<!-- -->
-
--   **Random Features** (Open Problems for Single Cell Analysis Consortium 2022): missing 'method_summary'
-
-<!-- -->
-
--   **True Features** (Open Problems for Single Cell Analysis Consortium 2022): missing 'method_summary'
-
-## Datasets
-
--   **CITE-seq Cord Blood Mononuclear Cells** (Stoeckius et al. 2017): 8k cord blood mononuclear cells sequenced by CITEseq, a multimodal addition to the 10x scRNA-seq platform that allows simultaneous measurement of RNA and protein.
--   **sciCAR Cell Lines** (Cao et al. 2018): 5k cells from a time-series of dexamethasone treatment sequenced by sci-CAR, a combinatorial indexing-based co-assay that jointly profiles chromatin accessibility and mRNA.
--   **sciCAR Mouse Kidney** (Cao et al. 2018): 11k cells from adult mouse kidney sequenced by sci-CAR, a combinatorial indexing-based co-assay that jointly profiles chromatin accessibility and mRNA.
-
-## Metrics
-
--   **kNN Area Under the Curve** (Stanley et al. 2020): missing 'metric_summary'
--   **Mean squared error** (Lance et al. 2022): missing 'metric_summary'
-
-## Details
-
 <details>
 <summary>
-Quality control checks
+Quality control
 </summary>
 <table class="table lightable-paper" style='margin-left: auto; margin-right: auto; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
  <thead>
@@ -93,7 +104,7 @@ Quality control checks
   Task id: multimodal_data_integration
   method id: true_features
   Percentage missing: 50%
-"> Method true_features %missing </td>
+"> Method 'true_features' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: multimodal_data_integration
   method id: true_features
@@ -111,6 +122,94 @@ Quality control checks
 "> ✗✗✗ </td>
   </tr>
   <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: multimodal_data_integration
+  Field: dataset_description
+"> Dataset info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: multimodal_data_integration
+  Field: dataset_description
+"> Pct 'dataset_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: multimodal_data_integration
+  Field: dataset_description
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: multimodal_data_integration
+  Field: dataset_description
+"> percent_missing(dataset_info, field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: multimodal_data_integration
+  Field: dataset_description
+"> ✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: multimodal_data_integration
+  Field: method_description
+"> Method info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: multimodal_data_integration
+  Field: method_description
+"> Pct 'method_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: multimodal_data_integration
+  Field: method_description
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: multimodal_data_integration
+  Field: method_description
+"> percent_missing(method_info, field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: multimodal_data_integration
+  Field: method_description
+"> ✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: multimodal_data_integration
+  Field: metric_description
+"> Metric info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: multimodal_data_integration
+  Field: metric_description
+"> Pct 'metric_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: multimodal_data_integration
+  Field: metric_description
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: multimodal_data_integration
+  Field: metric_description
+"> percent_missing(metric_info, field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: multimodal_data_integration
+  Field: metric_description
+"> ✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: multimodal_data_integration
+  Field: task_description
+"> Task info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: multimodal_data_integration
+  Field: task_description
+"> Pct 'task_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: multimodal_data_integration
+  Field: task_description
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: multimodal_data_integration
+  Field: task_description
+"> percent_missing([task_info], field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: multimodal_data_integration
+  Field: task_description
+"> ✗✗ </td>
+  </tr>
+  <tr>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: multimodal_data_integration
   Metric id: mse
@@ -120,7 +219,7 @@ Quality control checks
   Task id: multimodal_data_integration
   Metric id: mse
   Percentage missing: 14%
-"> Metric mse %missing </td>
+"> Metric 'mse' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: multimodal_data_integration
   Metric id: mse
@@ -146,7 +245,7 @@ Quality control checks
 Visualization of raw results
 </summary>
 
-<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-9-1.png" width="960" />
+<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-10-1.png" width="960" />
 
 </details>
 
@@ -159,8 +258,6 @@ Gower, J. C. 1975. "Generalized Procrustes Analysis." *Psychometrika* 40 (1): 33
 Haghverdi, Laleh, Aaron T L Lun, Michael D Morgan, and John C Marioni. 2018. "Batch Effects in Single-Cell RNA-Sequencing Data Are Corrected by Matching Mutual Nearest Neighbors." *Nature Biotechnology* 36 (5): 421--27. <https://doi.org/10.1038/nbt.4091>.
 
 Lance, Christopher, Malte D. Luecken, Daniel B. Burkhardt, Robrecht Cannoodt, Pia Rautenstrauch, Anna Laddach, Aidyn Ubingazhibov, et al. 2022. "Multimodal Single Cell Data Integration Challenge: Results and Lessons Learned." *bioRxiv*. <https://doi.org/10.1101/2022.04.11.487796>.
-
-Open Problems for Single Cell Analysis Consortium. 2022. "Open Problems." <https://openproblems.bio>.
 
 Stanley, Jay S., Scott Gigante, Guy Wolf, and Smita Krishnaswamy. 2020. "Harmonic Alignment." In *Proceedings of the 2020 SIAM International Conference on Data Mining*, 316--24. Society for Industrial; Applied Mathematics. <https://doi.org/10.1137/1.9781611976236.36>.
 

@@ -8,12 +8,129 @@ bibliography: "../../../static/bibliography/main.bib"
 <link href="index_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
-missing 'task_description'
+A major challenge for integrating single cell datasets is creating matching
+cell type annotations for each cell. One of the most common strategies for
+annotating cell types is referred to as
+["cluster-then-annotate"](https://www.nature.com/articles/s41576-018-0088-9)
+whereby cells are aggregated into clusters based on feature similarity and
+then manually characterized based on differential gene expression or previously
+identified marker genes. Recently, methods have emerged to build on this
+strategy and annotate cells using
+[known marker genes](https://www.nature.com/articles/s41592-019-0535-3).
+However, these strategies pose a difficulty for integrating atlas-scale
+datasets as the particular annotations may not match.
+To ensure that the cell type labels in newly generated datasets match
+existing reference datasets, some methods align cells to a previously
+annotated [reference dataset](https://academic.oup.com/bioinformatics/article/35/22/4688/54802990)
+and then *project* labels from the reference to the new dataset.
+Here, we compare methods for annotation based on a reference dataset.
+The datasets consist of two or more samples of single cell profiles that
+have been manually annotated with matching labels. These datasets are then
+split into training and test batches, and the task of each method is to
+train a cell type classifer on the training set and project those labels
+onto the test set.
+
+## Results
 
 <figure>
 <img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="830" alt="Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
 <figcaption aria-hidden="true">Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
 </figure>
+
+## Methods
+
+-   **[K-neighbors classifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)** (Cover and Hart 1967): Missing 'method_description'.
+
+<!-- -->
+
+-   **[Logistic regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)** (Hosmer Jr, Lemeshow, and Sturdivant 2013): Missing 'method_description'.
+
+<!-- -->
+
+-   **[Multilayer perceptron](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html)** (Hinton 1989): Missing 'method_description'.
+
+<!-- -->
+
+-   **[scANVI](https://github.com/YosefLab/scvi-tools)** (Xu et al. 2021): Probabilistic harmonization and annotation of single-cell transcriptomics data with deep generative models.
+
+<!-- -->
+
+-   **[scArches+scANVI](https://github.com/YosefLab/scvi-tools)** (Lotfollahi et al. 2020): Probabilistic harmonization and annotation of single-cell transcriptomics data with deep generative models.
+
+<!-- -->
+
+-   **[Seurat reference mapping](https://github.com/satijalab/seurat)** (Hao et al. 2021): The Seurat v3 anchoring procedure is designed to integrate diverse single-cell datasets across technologies and modalities.
+
+<!-- -->
+
+-   **[XGBoost](https://xgboost.readthedocs.io/en/stable/index.html)** (Chen and Guestrin 2016): Missing 'method_description'.
+
+## Metrics
+
+-   **Accuracy** (Grandini, Bagli, and Visani 2020): The percentage of correctly predicted labels.
+
+<!-- -->
+
+-   **F1 score** (Grandini, Bagli, and Visani 2020): Calculates the F1 score for each label, and find their average weighted by support (the number of true instances for each label). This alters 'macro' to account for label imbalance; it can result in an F-score that is not between precision and recall.
+
+<!-- -->
+
+-   **Macro F1 score** (Grandini, Bagli, and Visani 2020): Calculates the F1 score for each label, and find their unweighted mean. This does not take label imbalance into account.
+
+## Datasets
+
+-   **CeNGEN (by batch)** (Hammarlund et al. 2018): 100k FACS-isolated C. elegans neurons from 17 experiments sequenced on 10x Genomics. Split into train/test by experimental batch.
+
+<!-- -->
+
+-   **CeNGEN (random split)** (Hammarlund et al. 2018): 100k FACS-isolated C. elegans neurons from 17 experiments sequenced on 10x Genomics. Split into train/test randomly.
+
+<!-- -->
+
+-   **Pancreas (by batch)** (Luecken et al. 2021): Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq). Split into train/test by experimental batch.
+
+<!-- -->
+
+-   **Pancreas (random split)** (Luecken et al. 2021): Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq). Split into train/test randomly.
+
+<!-- -->
+
+-   **Pancreas (random split with label noise)** (Luecken et al. 2021): Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq). Split into train/test randomly with 20% label noise.
+
+<!-- -->
+
+-   **Tabula Muris Senis Lung (random split)** (Tabula Muris Consortium 2020): All lung cells from Tabula Muris Senis, a 500k cell-atlas from 18 organs and tissues across the mouse lifespan. Split into train/test randomly.
+
+<!-- -->
+
+-   **Zebrafish (by labels)** (Wagner et al. 2018): 90k cells from zebrafish embryos throughout the first day of development, with and without a knockout of chordin, an important developmental gene. Split into train/test by laboratory.
+
+<!-- -->
+
+-   **Zebrafish (random split)** (Wagner et al. 2018): 90k cells from zebrafish embryos throughout the first day of development, with and without a knockout of chordin, an important developmental gene. Split into train/test randomly.
+
+## Baselines
+
+-   **Majority Vote**: Baseline method using majority voting.
+
+<!-- -->
+
+-   **Random Labels**: Baseline method which generates random labels.
+
+<!-- -->
+
+-   **True Labels**: Positive control method by returning the true labels.
+
+## Downloads
+
+<a href="data/task_info.json" class="btn btn-secondary">Task info</a>
+<a href="data/method_info.json" class="btn btn-secondary">Method info</a>
+<a href="data/metric_info.json" class="btn btn-secondary">Metric info</a>
+<a href="data/dataset_info.json" class="btn btn-secondary">Dataset info</a>
+<a href="data/results.json" class="btn btn-secondary">Results</a>
+<a href="data/quality_control.json" class="btn btn-secondary">Quality control</a>
+
+## Details
 
 <details>
 <summary>
@@ -26,93 +143,9 @@ Overview per parameter set
 </figure>
 
 </details>
-
-## Methods
-
--   **K-neighbors classifier (log CPM)** (Cover and Hart 1967): missing 'method_summary'
-
-<!-- -->
-
--   **K-neighbors classifier (log scran)** (Cover and Hart 1967): missing 'method_summary'
-
-<!-- -->
-
--   **Logistic regression (log CPM)** (Hosmer Jr, Lemeshow, and Sturdivant 2013): missing 'method_summary'
-
-<!-- -->
-
--   **Logistic regression (log scran)** (Hosmer Jr, Lemeshow, and Sturdivant 2013): missing 'method_summary'
-
-<!-- -->
-
--   **Majority Vote** (Open Problems for Single Cell Analysis Consortium 2022): missing 'method_summary'
-
-<!-- -->
-
--   **Multilayer perceptron (log CPM)** (Hinton 1989): missing 'method_summary'
-
-<!-- -->
-
--   **Multilayer perceptron (log scran)** (Hinton 1989): missing 'method_summary'
-
-<!-- -->
-
--   **Random Labels** (Open Problems for Single Cell Analysis Consortium 2022): missing 'method_summary'
-
-<!-- -->
-
--   **scANVI (All genes)** (Xu et al. 2021): missing 'method_summary'
-
-<!-- -->
-
--   **scANVI (Seurat v3 2000 HVG)** (Xu et al. 2021): missing 'method_summary'
-
-<!-- -->
-
--   **scArches+scANVI (All genes)** (Lotfollahi et al. 2020): missing 'method_summary'
-
-<!-- -->
-
--   **scArches+scANVI (Seurat v3 2000 HVG)** (Lotfollahi et al. 2020): missing 'method_summary'
-
-<!-- -->
-
--   **Seurat reference mapping (SCTransform)** (Hao et al. 2021): missing 'method_summary'
-
-<!-- -->
-
--   **True Labels** (Open Problems for Single Cell Analysis Consortium 2022): missing 'method_summary'
-
-<!-- -->
-
--   **XGBoost (log CPM)** (Chen and Guestrin 2016): missing 'method_summary'
-
-<!-- -->
-
--   **XGBoost (log scran)** (Chen and Guestrin 2016): missing 'method_summary'
-
-## Datasets
-
--   **CeNGEN (by batch)** (Hammarlund et al. 2018): 100k FACS-isolated C. elegans neurons from 17 experiments sequenced on 10x Genomics. Split into train/test by experimental batch.
--   **CeNGEN (random split)** (Hammarlund et al. 2018): 100k FACS-isolated C. elegans neurons from 17 experiments sequenced on 10x Genomics. Split into train/test randomly.
--   **Pancreas (by batch)** (Luecken et al. 2021): Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq). Split into train/test by experimental batch.
--   **Pancreas (random split)** (Luecken et al. 2021): Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq). Split into train/test randomly.
--   **Pancreas (random split with label noise)** (Luecken et al. 2021): Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq). Split into train/test randomly with 20% label noise.
--   **Tabula Muris Senis Lung (random split)** (Tabula Muris Consortium 2020): All lung cells from Tabula Muris Senis, a 500k cell-atlas from 18 organs and tissues across the mouse lifespan. Split into train/test randomly.
--   **Zebrafish (by labels)** (Wagner et al. 2018): 90k cells from zebrafish embryos throughout the first day of development, with and without a knockout of chordin, an important developmental gene. Split into train/test by laboratory.
--   **Zebrafish (random split)** (Wagner et al. 2018): 90k cells from zebrafish embryos throughout the first day of development, with and without a knockout of chordin, an important developmental gene. Split into train/test randomly.
-
-## Metrics
-
--   **Accuracy** (Grandini, Bagli, and Visani 2020): missing 'metric_summary'
--   **F1 score** (Grandini, Bagli, and Visani 2020): missing 'metric_summary'
--   **Macro F1 score** (Grandini, Bagli, and Visani 2020): missing 'metric_summary'
-
-## Details
-
 <details>
 <summary>
-Quality control checks
+Quality control
 </summary>
 <table class="table lightable-paper" style='margin-left: auto; margin-right: auto; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
  <thead>
@@ -126,6 +159,138 @@ Quality control checks
  </thead>
 <tbody>
   <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: label_projection
+  Field: dataset_description
+"> Dataset info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: label_projection
+  Field: dataset_description
+"> Pct 'dataset_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: label_projection
+  Field: dataset_description
+"> 1.000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: label_projection
+  Field: dataset_description
+"> percent_missing(dataset_info, field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: label_projection
+  Field: dataset_description
+"> ✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: label_projection
+  Field: method_description
+"> Method info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: label_projection
+  Field: method_description
+"> Pct 'method_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: label_projection
+  Field: method_description
+"> 1.000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: label_projection
+  Field: method_description
+"> percent_missing(method_info, field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: label_projection
+  Field: method_description
+"> ✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_summary' should be defined
+  Task id: label_projection
+  Field: method_summary
+"> Method info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_summary' should be defined
+  Task id: label_projection
+  Field: method_summary
+"> Pct 'method_summary' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_summary' should be defined
+  Task id: label_projection
+  Field: method_summary
+"> 1.000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_summary' should be defined
+  Task id: label_projection
+  Field: method_summary
+"> percent_missing(method_info, field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_summary' should be defined
+  Task id: label_projection
+  Field: method_summary
+"> ✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: label_projection
+  Field: metric_description
+"> Metric info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: label_projection
+  Field: metric_description
+"> Pct 'metric_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: label_projection
+  Field: metric_description
+"> 1.000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: label_projection
+  Field: metric_description
+"> percent_missing(metric_info, field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: label_projection
+  Field: metric_description
+"> ✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_summary' should be defined
+  Task id: label_projection
+  Field: metric_summary
+"> Metric info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_summary' should be defined
+  Task id: label_projection
+  Field: metric_summary
+"> Pct 'metric_summary' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_summary' should be defined
+  Task id: label_projection
+  Field: metric_summary
+"> 1.000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_summary' should be defined
+  Task id: label_projection
+  Field: metric_summary
+"> percent_missing(metric_info, field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_summary' should be defined
+  Task id: label_projection
+  Field: metric_summary
+"> ✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: label_projection
+  Field: task_description
+"> Task info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: label_projection
+  Field: task_description
+"> Pct 'task_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: label_projection
+  Field: task_description
+"> 1.000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: label_projection
+  Field: task_description
+"> percent_missing([task_info], field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: label_projection
+  Field: task_description
+"> ✗✗ </td>
+  </tr>
+  <tr>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: label_projection
   method id: majority_vote
@@ -135,7 +300,7 @@ Quality control checks
   Task id: label_projection
   method id: majority_vote
   Percentage missing: 12%
-"> Method majority_vote %missing </td>
+"> Method 'majority_vote' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: label_projection
   method id: majority_vote
@@ -161,7 +326,7 @@ Quality control checks
 Visualization of raw results
 </summary>
 
-<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-9-1.png" width="960" />
+<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-10-1.png" width="960" />
 
 </details>
 
@@ -184,8 +349,6 @@ Hosmer Jr, D. W., S. Lemeshow, and R. X. Sturdivant. 2013. *Applied Logistic Reg
 Lotfollahi, Mohammad, Mohsen Naghipourfar, Malte D. Luecken, Matin Khajavi, Maren Büttner, Ziga Avsec, Alexander V. Misharin, and Fabian J. Theis. 2020. "Query to Reference Single-Cell Integration with Transfer Learning." *bioRxiv*. <https://doi.org/10.1101/2020.07.16.205997>.
 
 Luecken, Malte D., M. Büttner, K. Chaichoompu, A. Danese, M. Interlandi, M. F. Mueller, D. C. Strobl, et al. 2021. "Benchmarking Atlas-Level Data Integration in Single-Cell Genomics." *Nature Methods* 19 (1): 41--50. <https://doi.org/10.1038/s41592-021-01336-8>.
-
-Open Problems for Single Cell Analysis Consortium. 2022. "Open Problems." <https://openproblems.bio>.
 
 Tabula Muris Consortium. 2020. "A Single-Cell Transcriptomic Atlas Characterizes Ageing Tissues in the Mouse." *Nature* 583 (7817): 590--95. <https://doi.org/10.1038/s41586-020-2496-1>.
 

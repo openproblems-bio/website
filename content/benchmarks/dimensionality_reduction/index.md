@@ -8,12 +8,125 @@ bibliography: "../../../static/bibliography/main.bib"
 <link href="index_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
-missing 'task_description'
+Missing 'task_description'
+
+## Results
 
 <figure>
 <img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="883" alt="Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
 <figcaption aria-hidden="true">Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
 </figure>
+
+## Methods
+
+-   **[densMAP](https://github.com/lmcinnes/umap)** (Narayan, Berger, and Cho 2021): Missing 'method_description'.
+
+<!-- -->
+
+-   **[densMAP PCA](https://github.com/lmcinnes/umap)** (Narayan, Berger, and Cho 2021): Missing 'method_description'.
+
+<!-- -->
+
+-   **[NeuralEE](https://github.com/HiBearME/NeuralEE)** (Xiong et al. 2020): Missing 'method_description'.
+
+<!-- -->
+
+-   **[Principle Component Analysis](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)** (Pearson 1901): Missing 'method_description'.
+
+<!-- -->
+
+-   **[PHATE](https://github.com/KrishnaswamyLab/PHATE/)** (Moon et al. 2019): Missing 'method_description'.
+
+<!-- -->
+
+-   **[t-Distributed Stochastic Neighbor Embedding](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html#sklearn.manifold.TSNE)** (van der Maaten and Hinton 2008): Missing 'method_description'.
+
+<!-- -->
+
+-   **[UMAP](https://github.com/lmcinnes/umap)** (McInnes, Healy, and Melville 2018): Missing 'method_description'.
+
+<!-- -->
+
+-   **[UMAP PCA](https://github.com/lmcinnes/umap)** (McInnes, Healy, and Melville 2018): Missing 'method_description'.
+
+## Metrics
+
+-   **continuity** (Zhang, Shang, and Zhang 2021): Missing 'metric_description'.
+
+<!-- -->
+
+-   **density preservation** (Narayan, Berger, and Cho 2021): Missing 'metric_description'.
+
+<!-- -->
+
+-   **local continuity meta criterion** (Zhang, Shang, and Zhang 2021): Missing 'metric_description'.
+
+<!-- -->
+
+-   **global property** (Zhang, Shang, and Zhang 2021): Missing 'metric_description'.
+
+<!-- -->
+
+-   **local property** (Zhang, Shang, and Zhang 2021): Missing 'metric_description'.
+
+<!-- -->
+
+-   **co-KNN size** (Zhang, Shang, and Zhang 2021): Missing 'metric_description'.
+
+<!-- -->
+
+-   **co-KNN AUC** (Zhang, Shang, and Zhang 2021): Missing 'metric_description'.
+
+<!-- -->
+
+-   **RMSE** (Kruskal 1964): Missing 'metric_description'.
+
+<!-- -->
+
+-   **RMSE (spectral)** (Coifman and Lafon 2006): Missing 'metric_description'.
+
+<!-- -->
+
+-   **trustworthiness** (Venna and Kaski 2001): Missing 'metric_description'.
+
+## Datasets
+
+-   **Mouse hematopoietic stem cell differentiation** (Nestorowa et al. 2016): Missing 'dataset_description'.
+
+<!-- -->
+
+-   **Mouse myeloid lineage differentiation** (Olsson et al. 2016): Missing 'dataset_description'.
+
+<!-- -->
+
+-   **5k Peripheral blood mononuclear cells** (10x Genomics 2019): Missing 'dataset_description'.
+
+## Baselines
+
+-   **Random Features**: Missing 'method_description'.
+
+<!-- -->
+
+-   **True Features**: Missing 'method_description'.
+
+<!-- -->
+
+-   **True Features**: Missing 'method_description'.
+
+<!-- -->
+
+-   **True Features**: Missing 'method_description'.
+
+## Downloads
+
+<a href="data/task_info.json" class="btn btn-secondary">Task info</a>
+<a href="data/method_info.json" class="btn btn-secondary">Method info</a>
+<a href="data/metric_info.json" class="btn btn-secondary">Metric info</a>
+<a href="data/dataset_info.json" class="btn btn-secondary">Dataset info</a>
+<a href="data/results.json" class="btn btn-secondary">Results</a>
+<a href="data/quality_control.json" class="btn btn-secondary">Quality control</a>
+
+## Details
 
 <details>
 <summary>
@@ -28,119 +141,9 @@ Overview per parameter set
 </figure>
 
 </details>
-
-## Methods
-
--   **densMAP (logCPM)** (Narayan, Berger, and Cho 2021): missing 'method_summary'
-
-<!-- -->
-
--   **densMAP (logCPM, 1kHVG)** (Narayan, Berger, and Cho 2021): missing 'method_summary'
-
-<!-- -->
-
--   **densMAP PCA (logCPM)** (Narayan, Berger, and Cho 2021): missing 'method_summary'
-
-<!-- -->
-
--   **densMAP PCA (logCPM, 1kHVG)** (Narayan, Berger, and Cho 2021): missing 'method_summary'
-
-<!-- -->
-
--   **NeuralEE (CPU) (Default)** (Xiong et al. 2020): missing 'method_summary'
-
-<!-- -->
-
--   **NeuralEE (CPU) (logCPM, 1kHVG)** (Xiong et al. 2020): missing 'method_summary'
-
-<!-- -->
-
--   **Principle Component Analysis (PCA) (logCPM)** (Pearson 1901): missing 'method_summary'
-
-<!-- -->
-
--   **Principle Component Analysis (PCA) (logCPM, 1kHVG)** (Pearson 1901): missing 'method_summary'
-
-<!-- -->
-
--   **PHATE (default)** (Moon et al. 2019): missing 'method_summary'
-
-<!-- -->
-
--   **PHATE (logCPM, 1kHVG)** (Moon et al. 2019): missing 'method_summary'
-
-<!-- -->
-
--   **PHATE (logCPM)** (Moon et al. 2019): missing 'method_summary'
-
-<!-- -->
-
--   **PHATE (gamma=0)** (Moon et al. 2019): missing 'method_summary'
-
-<!-- -->
-
--   **Random Features** (Open Problems for Single Cell Analysis Consortium 2022): missing 'method_summary'
-
-<!-- -->
-
--   **True Features** (Open Problems for Single Cell Analysis Consortium 2022): missing 'method_summary'
-
-<!-- -->
-
--   **True Features (logCPM)** (Open Problems for Single Cell Analysis Consortium 2022): missing 'method_summary'
-
-<!-- -->
-
--   **True Features (logCPM, 1kHVG)** (Open Problems for Single Cell Analysis Consortium 2022): missing 'method_summary'
-
-<!-- -->
-
--   **t-Distributed Stochastic Neighbor Embedding (t-SNE) (logCPM)** (van der Maaten and Hinton 2008): missing 'method_summary'
-
-<!-- -->
-
--   **t-Distributed Stochastic Neighbor Embedding (t-SNE) (logCPM, 1kHVG)** (van der Maaten and Hinton 2008): missing 'method_summary'
-
-<!-- -->
-
--   **UMAP (logCPM)** (McInnes, Healy, and Melville 2018): missing 'method_summary'
-
-<!-- -->
-
--   **UMAP (logCPM, 1kHVG)** (McInnes, Healy, and Melville 2018): missing 'method_summary'
-
-<!-- -->
-
--   **UMAP PCA (logCPM)** (McInnes, Healy, and Melville 2018): missing 'method_summary'
-
-<!-- -->
-
--   **UMAP PCA (logCPM, 1kHVG)** (McInnes, Healy, and Melville 2018): missing 'method_summary'
-
-## Datasets
-
--   **Mouse hematopoietic stem cell differentiation** (Nestorowa et al. 2016): 1.6k hematopoietic stem and progenitor cells from mouse bone marrow. Sequenced by Smart-seq2. 1920 cells x 43258 features with 3 cell type labels
--   **Mouse myeloid lineage differentiation** (Olsson et al. 2016): Myeloid lineage differentiation from mouse blood. Sequenced by SMARTseq in 2016 by Olsson et al. 660 cells x 112815 features with 4 cell type labels
--   **5k Peripheral blood mononuclear cells** (10x Genomics 2019): 5k Peripheral Blood Mononuclear Cells (PBMCs) from a healthy donor. Sequenced on 10X v3 chemistry in July 2019 by 10X Genomics. 5247 cells x 20822 features with no cell type labels
-
-## Metrics
-
--   **continuity** (Zhang, Shang, and Zhang 2021): missing 'metric_summary'
--   **density preservation** (Narayan, Berger, and Cho 2021): missing 'metric_summary'
--   **local continuity meta criterion** (Zhang, Shang, and Zhang 2021): missing 'metric_summary'
--   **global property** (Zhang, Shang, and Zhang 2021): missing 'metric_summary'
--   **local property** (Zhang, Shang, and Zhang 2021): missing 'metric_summary'
--   **co-KNN size** (Zhang, Shang, and Zhang 2021): missing 'metric_summary'
--   **co-KNN AUC** (Zhang, Shang, and Zhang 2021): missing 'metric_summary'
--   **RMSE** (Kruskal 1964): missing 'metric_summary'
--   **RMSE (spectral)** (Coifman and Lafon 2006): missing 'metric_summary'
--   **trustworthiness** (Venna and Kaski 2001): missing 'metric_summary'
-
-## Details
-
 <details>
 <summary>
-Quality control checks
+Quality control
 </summary>
 <table class="table lightable-paper" style='margin-left: auto; margin-right: auto; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
  <thead>
@@ -707,7 +710,7 @@ Quality control checks
   Task id: dimensionality_reduction
   method id: densmap_logCPM
   Percentage missing: 100%
-"> Method densmap_logCPM %missing </td>
+"> Method 'densmap_logCPM' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   method id: densmap_logCPM
@@ -734,7 +737,7 @@ Quality control checks
   Task id: dimensionality_reduction
   method id: densmap_pca_logCPM
   Percentage missing: 100%
-"> Method densmap_pca_logCPM %missing </td>
+"> Method 'densmap_pca_logCPM' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   method id: densmap_pca_logCPM
@@ -761,7 +764,7 @@ Quality control checks
   Task id: dimensionality_reduction
   method id: pca_logCPM
   Percentage missing: 100%
-"> Method pca_logCPM %missing </td>
+"> Method 'pca_logCPM' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   method id: pca_logCPM
@@ -788,7 +791,7 @@ Quality control checks
   Task id: dimensionality_reduction
   method id: phate_logCPM
   Percentage missing: 100%
-"> Method phate_logCPM %missing </td>
+"> Method 'phate_logCPM' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   method id: phate_logCPM
@@ -808,33 +811,6 @@ Quality control checks
   <tr>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
-  method id: true_features_log_cpm
-  Percentage missing: 100%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  method id: true_features_log_cpm
-  Percentage missing: 100%
-"> Method true_features_log_cpm %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  method id: true_features_log_cpm
-  Percentage missing: 100%
-"> 1.0000000 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  method id: true_features_log_cpm
-  Percentage missing: 100%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  method id: true_features_log_cpm
-  Percentage missing: 100%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
   method id: true_features_log_cpm_hvg
   Percentage missing: 100%
 "> Raw results </td>
@@ -842,7 +818,7 @@ Quality control checks
   Task id: dimensionality_reduction
   method id: true_features_log_cpm_hvg
   Percentage missing: 100%
-"> Method true_features_log_cpm_hvg %missing </td>
+"> Method 'true_features_log_cpm_hvg' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   method id: true_features_log_cpm_hvg
@@ -862,6 +838,33 @@ Quality control checks
   <tr>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
+  method id: true_features_log_cpm
+  Percentage missing: 100%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: true_features_log_cpm
+  Percentage missing: 100%
+"> Method 'true_features_log_cpm' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: true_features_log_cpm
+  Percentage missing: 100%
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: true_features_log_cpm
+  Percentage missing: 100%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: true_features_log_cpm
+  Percentage missing: 100%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
   method id: tsne_logCPM
   Percentage missing: 100%
 "> Raw results </td>
@@ -869,7 +872,7 @@ Quality control checks
   Task id: dimensionality_reduction
   method id: tsne_logCPM
   Percentage missing: 100%
-"> Method tsne_logCPM %missing </td>
+"> Method 'tsne_logCPM' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   method id: tsne_logCPM
@@ -896,7 +899,7 @@ Quality control checks
   Task id: dimensionality_reduction
   method id: umap_logCPM
   Percentage missing: 100%
-"> Method umap_logCPM %missing </td>
+"> Method 'umap_logCPM' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   method id: umap_logCPM
@@ -916,54 +919,54 @@ Quality control checks
   <tr>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
-  method id: umap_pca_logCPM
+  method id: umap_pca_logCPM_1kHVG
   Percentage missing: 100%
 "> Raw results </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
-  method id: umap_pca_logCPM
+  method id: umap_pca_logCPM_1kHVG
   Percentage missing: 100%
-"> Method umap_pca_logCPM %missing </td>
+"> Method 'umap_pca_logCPM_1kHVG' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
-  method id: umap_pca_logCPM
+  method id: umap_pca_logCPM_1kHVG
   Percentage missing: 100%
 "> 1.0000000 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
-  method id: umap_pca_logCPM
+  method id: umap_pca_logCPM_1kHVG
   Percentage missing: 100%
 "> pct_missing &lt;= .1 </td>
    <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
-  method id: umap_pca_logCPM
+  method id: umap_pca_logCPM_1kHVG
   Percentage missing: 100%
 "> ✗✗✗ </td>
   </tr>
   <tr>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
-  method id: umap_pca_logCPM_1kHVG
+  method id: umap_pca_logCPM
   Percentage missing: 100%
 "> Raw results </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
-  method id: umap_pca_logCPM_1kHVG
+  method id: umap_pca_logCPM
   Percentage missing: 100%
-"> Method umap_pca_logCPM_1kHVG %missing </td>
+"> Method 'umap_pca_logCPM' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
-  method id: umap_pca_logCPM_1kHVG
+  method id: umap_pca_logCPM
   Percentage missing: 100%
 "> 1.0000000 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
-  method id: umap_pca_logCPM_1kHVG
+  method id: umap_pca_logCPM
   Percentage missing: 100%
 "> pct_missing &lt;= .1 </td>
    <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
-  method id: umap_pca_logCPM_1kHVG
+  method id: umap_pca_logCPM
   Percentage missing: 100%
 "> ✗✗✗ </td>
   </tr>
@@ -1366,7 +1369,7 @@ Quality control checks
   Task id: dimensionality_reduction
   dataset id: mouse_hspc_nestorowa2016
   Percentage missing: 45%
-"> Dataset mouse_hspc_nestorowa2016 %missing </td>
+"> Dataset 'mouse_hspc_nestorowa2016' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   dataset id: mouse_hspc_nestorowa2016
@@ -1393,7 +1396,7 @@ Quality control checks
   Task id: dimensionality_reduction
   dataset id: olsson_2016_mouse_blood
   Percentage missing: 45%
-"> Dataset olsson_2016_mouse_blood %missing </td>
+"> Dataset 'olsson_2016_mouse_blood' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   dataset id: olsson_2016_mouse_blood
@@ -1420,7 +1423,7 @@ Quality control checks
   Task id: dimensionality_reduction
   dataset id: tenx_5k_pbmc
   Percentage missing: 45%
-"> Dataset tenx_5k_pbmc %missing </td>
+"> Dataset 'tenx_5k_pbmc' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   dataset id: tenx_5k_pbmc
@@ -1447,7 +1450,7 @@ Quality control checks
   Task id: dimensionality_reduction
   Metric id: continuity
   Percentage missing: 45%
-"> Metric continuity %missing </td>
+"> Metric 'continuity' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   Metric id: continuity
@@ -1474,7 +1477,7 @@ Quality control checks
   Task id: dimensionality_reduction
   Metric id: density_preservation
   Percentage missing: 45%
-"> Metric density_preservation %missing </td>
+"> Metric 'density_preservation' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   Metric id: density_preservation
@@ -1501,7 +1504,7 @@ Quality control checks
   Task id: dimensionality_reduction
   Metric id: lcmc
   Percentage missing: 45%
-"> Metric lcmc %missing </td>
+"> Metric 'lcmc' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   Metric id: lcmc
@@ -1528,7 +1531,7 @@ Quality control checks
   Task id: dimensionality_reduction
   Metric id: qglobal
   Percentage missing: 45%
-"> Metric qglobal %missing </td>
+"> Metric 'qglobal' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   Metric id: qglobal
@@ -1555,7 +1558,7 @@ Quality control checks
   Task id: dimensionality_reduction
   Metric id: qlocal
   Percentage missing: 45%
-"> Metric qlocal %missing </td>
+"> Metric 'qlocal' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   Metric id: qlocal
@@ -1575,33 +1578,6 @@ Quality control checks
   <tr>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
-  Metric id: qnn
-  Percentage missing: 45%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qnn
-  Percentage missing: 45%
-"> Metric qnn %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qnn
-  Percentage missing: 45%
-"> 0.4545455 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qnn
-  Percentage missing: 45%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qnn
-  Percentage missing: 45%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
   Metric id: qnn_auc
   Percentage missing: 45%
 "> Raw results </td>
@@ -1609,7 +1585,7 @@ Quality control checks
   Task id: dimensionality_reduction
   Metric id: qnn_auc
   Percentage missing: 45%
-"> Metric qnn_auc %missing </td>
+"> Metric 'qnn_auc' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   Metric id: qnn_auc
@@ -1629,27 +1605,27 @@ Quality control checks
   <tr>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
-  Metric id: rmse
+  Metric id: qnn
   Percentage missing: 45%
 "> Raw results </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
-  Metric id: rmse
+  Metric id: qnn
   Percentage missing: 45%
-"> Metric rmse %missing </td>
+"> Metric 'qnn' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
-  Metric id: rmse
+  Metric id: qnn
   Percentage missing: 45%
 "> 0.4545455 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
-  Metric id: rmse
+  Metric id: qnn
   Percentage missing: 45%
 "> pct_missing &lt;= .1 </td>
    <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
-  Metric id: rmse
+  Metric id: qnn
   Percentage missing: 45%
 "> ✗✗✗ </td>
   </tr>
@@ -1663,7 +1639,7 @@ Quality control checks
   Task id: dimensionality_reduction
   Metric id: rmse_spectral
   Percentage missing: 45%
-"> Metric rmse_spectral %missing </td>
+"> Metric 'rmse_spectral' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   Metric id: rmse_spectral
@@ -1677,6 +1653,33 @@ Quality control checks
    <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   Metric id: rmse_spectral
+  Percentage missing: 45%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse
+  Percentage missing: 45%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse
+  Percentage missing: 45%
+"> Metric 'rmse' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse
+  Percentage missing: 45%
+"> 0.4545455 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse
+  Percentage missing: 45%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse
   Percentage missing: 45%
 "> ✗✗✗ </td>
   </tr>
@@ -1690,7 +1693,7 @@ Quality control checks
   Task id: dimensionality_reduction
   Metric id: trustworthiness
   Percentage missing: 45%
-"> Metric trustworthiness %missing </td>
+"> Metric 'trustworthiness' %missing </td>
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
   Metric id: trustworthiness
@@ -2058,6 +2061,94 @@ Quality control checks
   Metric id: qlocal
   Best score: 6.451980918195087%
 "> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: dimensionality_reduction
+  Field: dataset_description
+"> Dataset info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: dimensionality_reduction
+  Field: dataset_description
+"> Pct 'dataset_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: dimensionality_reduction
+  Field: dataset_description
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: dimensionality_reduction
+  Field: dataset_description
+"> percent_missing(dataset_info, field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: dimensionality_reduction
+  Field: dataset_description
+"> ✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: dimensionality_reduction
+  Field: method_description
+"> Method info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: dimensionality_reduction
+  Field: method_description
+"> Pct 'method_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: dimensionality_reduction
+  Field: method_description
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: dimensionality_reduction
+  Field: method_description
+"> percent_missing(method_info, field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: dimensionality_reduction
+  Field: method_description
+"> ✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: dimensionality_reduction
+  Field: metric_description
+"> Metric info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: dimensionality_reduction
+  Field: metric_description
+"> Pct 'metric_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: dimensionality_reduction
+  Field: metric_description
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: dimensionality_reduction
+  Field: metric_description
+"> percent_missing(metric_info, field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: dimensionality_reduction
+  Field: metric_description
+"> ✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: dimensionality_reduction
+  Field: task_description
+"> Task info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: dimensionality_reduction
+  Field: task_description
+"> Pct 'task_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: dimensionality_reduction
+  Field: task_description
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: dimensionality_reduction
+  Field: task_description
+"> percent_missing([task_info], field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: dimensionality_reduction
+  Field: task_description
+"> ✗✗ </td>
   </tr>
   <tr>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_sqrt performs a lot better than baselines.
@@ -3060,7 +3151,7 @@ Quality control checks
 Visualization of raw results
 </summary>
 
-<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-9-1.png" width="960" />
+<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-10-1.png" width="960" />
 
 </details>
 
@@ -3081,8 +3172,6 @@ Narayan, Ashwin, Bonnie Berger, and Hyunghoon Cho. 2021. "Assessing Single-Cell 
 Nestorowa, Sonia, Fiona K. Hamey, Blanca Pijuan Sala, Evangelia Diamanti, Mairi Shepherd, Elisa Laurenti, Nicola K. Wilson, David G. Kent, and Berthold Göttgens. 2016. "A Single-Cell Resolution Map of Mouse Hematopoietic Stem and Progenitor Cell Differentiation." *Blood* 128 (8): e20--31. <https://doi.org/10.1182/blood-2016-05-716480>.
 
 Olsson, Andre, Meenakshi Venkatasubramanian, Viren K. Chaudhri, Bruce J. Aronow, Nathan Salomonis, Harinder Singh, and H. Leighton Grimes. 2016. "Single-Cell Analysis of Mixed-Lineage States Leading to a Binary Cell Fate Choice." *Nature* 537 (7622): 698--702. <https://doi.org/10.1038/nature19348>.
-
-Open Problems for Single Cell Analysis Consortium. 2022. "Open Problems." <https://openproblems.bio>.
 
 Pearson, Karl. 1901. "On Lines and Planes of Closest Fit to Systems of Points in Space." *The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science* 2 (11): 559--72. <https://doi.org/10.1080/14786440109462720>.
 

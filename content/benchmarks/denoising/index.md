@@ -8,12 +8,73 @@ bibliography: "../../../static/bibliography/main.bib"
 <link href="index_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
-missing 'task_description'
+Missing 'task_description'
+
+## Results
 
 <figure>
 <img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="672" alt="Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
 <figcaption aria-hidden="true">Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
 </figure>
+
+## Methods
+
+-   **[ALRA](https://github.com/KlugerLab/ALRA)** (Linderman, Zhao, and Kluger 2018): Missing 'method_description'.
+
+<!-- -->
+
+-   **[DCA](https://github.com/theislab/dca)** (**https://www.nature.com/articles/s41467-018-07931-2?**): Missing 'method_description'.
+
+<!-- -->
+
+-   **[KNN smoothing](https://github.com/openproblems-bio/openproblems)** (Open Problems for Single Cell Analysis Consortium 2022): Missing 'method_description'.
+
+<!-- -->
+
+-   **[Iterative KNN smoothing](https://github.com/yanailab/knn-smoothing)** (Wagner, Yan, and Yanai 2018): Missing 'method_description'.
+
+<!-- -->
+
+-   **[MAGIC](https://github.com/KrishnaswamyLab/MAGIC)** (**https://doi.org/10.1016/j.cell.2018.05.061?**): Missing 'method_description'.
+
+## Metrics
+
+-   **Mean-squared error** (Batson, Royer, and Webber 2019): Missing 'metric_description'.
+
+<!-- -->
+
+-   **Poisson loss** (Batson, Royer, and Webber 2019): Missing 'metric_description'.
+
+## Datasets
+
+-   **Pancreas (inDrop)** (Luecken et al. 2021): Missing 'dataset_description'.
+
+<!-- -->
+
+-   **1k Peripheral blood mononuclear cells** (10x Genomics 2018): Missing 'dataset_description'.
+
+<!-- -->
+
+-   **Tabula Muris Senis Lung** (Tabula Muris Consortium 2020): Missing 'dataset_description'.
+
+## Baselines
+
+-   **No denoising**: Missing 'method_description'.
+
+<!-- -->
+
+-   **Perfect denoising**: Missing 'method_description'.
+
+## Downloads
+
+<a href="data/task_info.json" class="btn btn-secondary">Task info</a>
+<a href="data/method_info.json" class="btn btn-secondary">Method info</a>
+<a href="data/metric_info.json" class="btn btn-secondary">Metric info</a>
+<a href="data/dataset_info.json" class="btn btn-secondary">Dataset info</a>
+<a href="data/results.json" class="btn btn-secondary">Results</a>
+<a href="data/quality_control.json" class="btn btn-secondary">Quality control</a>
+
+## Details
 
 <details>
 <summary>
@@ -26,55 +87,9 @@ Overview per parameter set
 </figure>
 
 </details>
-
-## Methods
-
--   **ALRA** (Linderman, Zhao, and Kluger 2018): missing 'method_summary'
-
-<!-- -->
-
--   **DCA** (**https://www.nature.com/articles/s41467-018-07931-2?**): missing 'method_summary'
-
-<!-- -->
-
--   **KNN smoothing** (Open Problems for Single Cell Analysis Consortium 2022): missing 'method_summary'
-
-<!-- -->
-
--   **Iterative KNN smoothing** (Wagner, Yan, and Yanai 2018): missing 'method_summary'
-
-<!-- -->
-
--   **MAGIC** (**https://doi.org/10.1016/j.cell.2018.05.061?**): missing 'method_summary'
-
-<!-- -->
-
--   **MAGIC (approximate)** (**https://doi.org/10.1016/j.cell.2018.05.061?**): missing 'method_summary'
-
-<!-- -->
-
--   **No denoising** (Batson, Royer, and Webber 2019): missing 'method_summary'
-
-<!-- -->
-
--   **Perfect denoising** (Batson, Royer, and Webber 2019): missing 'method_summary'
-
-## Datasets
-
--   **Pancreas (inDrop)** (Luecken et al. 2021): Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq). Here we just use the inDrop1 batch, which includes1937 cells × 15502 genes.
--   **1k Peripheral blood mononuclear cells** (10x Genomics 2018): 1k Peripheral Blood Mononuclear Cells (PBMCs) from a healthy donor. Sequenced on 10X v3 chemistry in November 2018 by 10X Genomics.
--   **Tabula Muris Senis Lung** (Tabula Muris Consortium 2020): All lung cells from Tabula Muris Senis, a 500k cell-atlas from 18 organs and tissues across the mouse lifespan. Here we use just 10x data from lung. 24540 cells × 16160 genes across 3 time points.
-
-## Metrics
-
--   **Mean-squared error** (Batson, Royer, and Webber 2019): missing 'metric_summary'
--   **Poisson loss** (Batson, Royer, and Webber 2019): missing 'metric_summary'
-
-## Details
-
 <details>
 <summary>
-Quality control checks
+Quality control
 </summary>
 <table class="table lightable-paper" style='margin-left: auto; margin-right: auto; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
  <thead>
@@ -119,6 +134,94 @@ Quality control checks
   Worst score: -10.298315065894421%
 "> ✗✗✗ </td>
   </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: denoising
+  Field: dataset_description
+"> Dataset info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: denoising
+  Field: dataset_description
+"> Pct 'dataset_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: denoising
+  Field: dataset_description
+"> 1.00000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: denoising
+  Field: dataset_description
+"> percent_missing(dataset_info, field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: denoising
+  Field: dataset_description
+"> ✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: denoising
+  Field: method_description
+"> Method info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: denoising
+  Field: method_description
+"> Pct 'method_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: denoising
+  Field: method_description
+"> 1.00000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: denoising
+  Field: method_description
+"> percent_missing(method_info, field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: denoising
+  Field: method_description
+"> ✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: denoising
+  Field: metric_description
+"> Metric info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: denoising
+  Field: metric_description
+"> Pct 'metric_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: denoising
+  Field: metric_description
+"> 1.00000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: denoising
+  Field: metric_description
+"> percent_missing(metric_info, field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: denoising
+  Field: metric_description
+"> ✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: denoising
+  Field: task_description
+"> Task info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: denoising
+  Field: task_description
+"> Pct 'task_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: denoising
+  Field: task_description
+"> 1.00000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: denoising
+  Field: task_description
+"> percent_missing([task_info], field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: denoising
+  Field: task_description
+"> ✗✗ </td>
+  </tr>
 </tbody>
 </table>
 
@@ -128,7 +231,7 @@ Quality control checks
 Visualization of raw results
 </summary>
 
-<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-9-1.png" width="960" />
+<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-10-1.png" width="960" />
 
 </details>
 

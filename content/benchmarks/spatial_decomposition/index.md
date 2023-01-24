@@ -8,12 +8,105 @@ bibliography: "../../../static/bibliography/main.bib"
 <link href="index_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
-missing 'task_description'
+Missing 'task_description'
+
+## Results
 
 <figure>
 <img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="752" alt="Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
 <figcaption aria-hidden="true">Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
 </figure>
+
+## Methods
+
+-   **[Cell2location, amortised](https://github.com/BayraktarLab/cell2location)** (Kleshchevnikov et al. 2022): Missing 'method_description'.
+
+<!-- -->
+
+-   **[Cell2location](https://github.com/BayraktarLab/cell2location)** (Kleshchevnikov et al. 2022): Missing 'method_description'.
+
+<!-- -->
+
+-   **[DestVI](https://github.com/YosefLab/scvi-tools)** (Lopez et al. 2022): Missing 'method_description'.
+
+<!-- -->
+
+-   **[Non-Negative Matrix Factorization](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.NMF.html)** (Cichocki and Phan 2009): Missing 'method_description'.
+
+<!-- -->
+
+-   **[NMF-reg](https://github.com/tudaga/NMFreg_tutorial)** (Rodriques et al. 2019): Missing 'method_description'.
+
+<!-- -->
+
+-   **[Non-Negative Least Squares](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.nnls.html)** (Lawson and Hanson 1995): Missing 'method_description'.
+
+<!-- -->
+
+-   **[RCTD](https://github.com/dmcable/spacexr)** (Cable et al. 2021): Missing 'method_description'.
+
+<!-- -->
+
+-   **[SeuratV3](https://satijalab.org/seurat/archive/v3.2/spatial_vignette.html)** (Stuart et al. 2019): Missing 'method_description'.
+
+<!-- -->
+
+-   **[Stereoscope](https://github.com/scverse/scvi-tools)** (Andersson et al. 2020): Missing 'method_description'.
+
+<!-- -->
+
+-   **[Tangram](https://github.com/broadinstitute/Tangram)** (Biancalani et al. 2021): Missing 'method_description'.
+
+## Metrics
+
+-   **r2** (Miles 2005): Missing 'metric_description'.
+
+## Datasets
+
+-   **DestVI** (Lopez et al. 2022): Missing 'dataset_description'.
+
+<!-- -->
+
+-   **Pancreas (alpha=0.5)** (Luecken et al. 2021): Missing 'dataset_description'.
+
+<!-- -->
+
+-   **Pancreas (alpha=1)** (Luecken et al. 2021): Missing 'dataset_description'.
+
+<!-- -->
+
+-   **Pancreas (alpha=5)** (Luecken et al. 2021): Missing 'dataset_description'.
+
+<!-- -->
+
+-   **Tabula muris senis (alpha=0.5)** (Tabula Muris Consortium 2020): Missing 'dataset_description'.
+
+<!-- -->
+
+-   **Tabula muris senis (alpha=1)** (Tabula Muris Consortium 2020): Missing 'dataset_description'.
+
+<!-- -->
+
+-   **Tabula muris senis (alpha=5)** (Tabula Muris Consortium 2020): Missing 'dataset_description'.
+
+## Baselines
+
+-   **Random Proportions**: Missing 'method_description'.
+
+<!-- -->
+
+-   **True Proportions**: Missing 'method_description'.
+
+## Downloads
+
+<a href="data/task_info.json" class="btn btn-secondary">Task info</a>
+<a href="data/method_info.json" class="btn btn-secondary">Method info</a>
+<a href="data/metric_info.json" class="btn btn-secondary">Metric info</a>
+<a href="data/dataset_info.json" class="btn btn-secondary">Dataset info</a>
+<a href="data/results.json" class="btn btn-secondary">Results</a>
+<a href="data/quality_control.json" class="btn btn-secondary">Quality control</a>
+
+## Details
 
 <details>
 <summary>
@@ -26,86 +119,9 @@ Overview per parameter set
 </figure>
 
 </details>
-
-## Methods
-
--   **Cell2location, amortised (detection_alpha=20, reference hard-coded)** (Kleshchevnikov et al. 2022): missing 'method_summary'
-
-<!-- -->
-
--   **Cell2location (detection_alpha=1, reference hard-coded)** (Kleshchevnikov et al. 2022): missing 'method_summary'
-
-<!-- -->
-
--   **Cell2location (detection_alpha=20, reference hard-coded)** (Kleshchevnikov et al. 2022): missing 'method_summary'
-
-<!-- -->
-
--   **Cell2location (detection_alpha=200, reference hard-coded)** (Kleshchevnikov et al. 2022): missing 'method_summary'
-
-<!-- -->
-
--   **Cell2location (detection_alpha=20, reference NB without batch info)** (Kleshchevnikov et al. 2022): missing 'method_summary'
-
-<!-- -->
-
--   **DestVI** (Lopez et al. 2022): missing 'method_summary'
-
-<!-- -->
-
--   **Non-Negative Matrix Factorization (NMF)** (Cichocki and Phan 2009): missing 'method_summary'
-
-<!-- -->
-
--   **NMF-reg** (Rodriques et al. 2019): missing 'method_summary'
-
-<!-- -->
-
--   **Non-Negative Least Squares** (Lawson and Hanson 1995): missing 'method_summary'
-
-<!-- -->
-
--   **Random Proportions** (Open Problems for Single Cell Analysis Consortium 2022): missing 'method_summary'
-
-<!-- -->
-
--   **RCTD** (Cable et al. 2021): missing 'method_summary'
-
-<!-- -->
-
--   **SeuratV3** (Stuart et al. 2019): missing 'method_summary'
-
-<!-- -->
-
--   **Stereoscope** (Andersson et al. 2020): missing 'method_summary'
-
-<!-- -->
-
--   **Tangram** (Biancalani et al. 2021): missing 'method_summary'
-
-<!-- -->
-
--   **True Proportions** (Open Problems for Single Cell Analysis Consortium 2022): missing 'method_summary'
-
-## Datasets
-
--   **DestVI** (Lopez et al. 2022): scRNA-seq is generated based on learn NB parameters from the destVI manuscripts leveraging sparsePCA. Number of cells and cell types present in each spatial spot is computed via combination of kernel-based parametrization of a categorical distribution and the NB model.
--   **Pancreas (alpha=0.5)** (Luecken et al. 2021): Human pancreas cells aggregated from single-cell (Dirichlet alpha=0.5)
--   **Pancreas (alpha=1)** (Luecken et al. 2021): Human pancreas cells aggregated from single-cell (Dirichlet alpha=1)
--   **Pancreas (alpha=5)** (Luecken et al. 2021): Human pancreas cells aggregated from single-cell (Dirichlet alpha=5)
--   **Tabula muris senis (alpha=0.5)** (Tabula Muris Consortium 2020): Mouse lung cells aggregated from single-cell (Dirichlet alpha=0.5)
--   **Tabula muris senis (alpha=1)** (Tabula Muris Consortium 2020): Mouse lung cells aggregated from single-cell (Dirichlet alpha=1)
--   **Tabula muris senis (alpha=5)** (Tabula Muris Consortium 2020): Mouse lung cells aggregated from single-cell (Dirichlet alpha=5)
-
-## Metrics
-
--   **r2** (Miles 2005): missing 'metric_summary'
-
-## Details
-
 <details>
 <summary>
-Quality control checks
+Quality control
 </summary>
 <table class="table lightable-paper" style='margin-left: auto; margin-right: auto; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
  <thead>
@@ -118,6 +134,94 @@ Quality control checks
   </tr>
  </thead>
 <tbody>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: spatial_decomposition
+  Field: dataset_description
+"> Dataset info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: spatial_decomposition
+  Field: dataset_description
+"> Pct 'dataset_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: spatial_decomposition
+  Field: dataset_description
+"> 1.000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: spatial_decomposition
+  Field: dataset_description
+"> percent_missing(dataset_info, field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
+  Task id: spatial_decomposition
+  Field: dataset_description
+"> ✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: spatial_decomposition
+  Field: method_description
+"> Method info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: spatial_decomposition
+  Field: method_description
+"> Pct 'method_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: spatial_decomposition
+  Field: method_description
+"> 1.000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: spatial_decomposition
+  Field: method_description
+"> percent_missing(method_info, field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
+  Task id: spatial_decomposition
+  Field: method_description
+"> ✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: spatial_decomposition
+  Field: metric_description
+"> Metric info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: spatial_decomposition
+  Field: metric_description
+"> Pct 'metric_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: spatial_decomposition
+  Field: metric_description
+"> 1.000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: spatial_decomposition
+  Field: metric_description
+"> percent_missing(metric_info, field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
+  Task id: spatial_decomposition
+  Field: metric_description
+"> ✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: spatial_decomposition
+  Field: task_description
+"> Task info </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: spatial_decomposition
+  Field: task_description
+"> Pct 'task_description' missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: spatial_decomposition
+  Field: task_description
+"> 1.000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: spatial_decomposition
+  Field: task_description
+"> percent_missing([task_info], field) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
+  Task id: spatial_decomposition
+  Field: task_description
+"> ✗✗ </td>
+  </tr>
   <tr>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method seuratv3 performs much worse than baselines.
   Task id: spatial_decomposition
@@ -159,7 +263,7 @@ Quality control checks
 Visualization of raw results
 </summary>
 
-<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-9-1.png" width="960" />
+<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-10-1.png" width="960" />
 
 </details>
 
@@ -182,8 +286,6 @@ Lopez, Romain, Baoguo Li, Hadas Keren-Shaul, Pierre Boyeau, Merav Kedmi, David P
 Luecken, Malte D., M. Büttner, K. Chaichoompu, A. Danese, M. Interlandi, M. F. Mueller, D. C. Strobl, et al. 2021. "Benchmarking Atlas-Level Data Integration in Single-Cell Genomics." *Nature Methods* 19 (1): 41--50. <https://doi.org/10.1038/s41592-021-01336-8>.
 
 Miles, Jeremy. 2005. "Encyclopedia of Statistics in Behavioral Science." In. John Wiley & Sons, Ltd. <https://doi.org/10.1002/0470013192.bsa526>.
-
-Open Problems for Single Cell Analysis Consortium. 2022. "Open Problems." <https://openproblems.bio>.
 
 Rodriques, Samuel G., Robert R. Stickels, Aleksandrina Goeva, Carly A. Martin, Evan Murray, Charles R. Vanderburg, Joshua Welch, Linlin M. Chen, Fei Chen, and Evan Z. Macosko. 2019. "Slide-Seq: A Scalable Technology for Measuring Genome-Wide Expression at High Spatial Resolution." *Science* 363 (6434): 1463--67. <https://doi.org/10.1126/science.aaw1219>.
 
