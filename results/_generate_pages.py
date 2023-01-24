@@ -15,15 +15,14 @@ for task_info_file in task_info_files:
     task_info = json.loads(task_info_file.read_text())
     task_name = task_info.get("task_name", "<Name missing>")
     task_summary = task_info.get("task_summary", "<Summary missing>")
-    task_description = task_info.get("task_description", "<Description missing>")
 
-    content = f"""
+    content = f"""\
 ---
 title: "{task_name}"
 subtitle: "{task_summary}"
-description: "{task_description}"
 engine: knitr
 image: thumbnail.png
+bibliography: "../../library.bib"
 ---
 
 {template}

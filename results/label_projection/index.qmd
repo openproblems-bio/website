@@ -2,16 +2,16 @@
 ---
 title: "Label Projection"
 subtitle: "Automated cell type annotation from rich, labeled reference data"
-description: "<todo: fill in description>"
 engine: knitr
 image: thumbnail.png
+bibliography: "../../library.bib"
 ---
+
 
 ```{r}
 #| include: false
-params <- list(
-  data_dir = "./data"
-)
+params <- list(data_dir = "content/benchmarks/label_projection/data")
+params <- list(data_dir = "./data")
 ```
 
 
@@ -19,17 +19,17 @@ params <- list(
 #| include: false
 #| error: true
 
-# setwd("content/results")
 library(tidyverse)
 library(funkyheatmap)
 library(kableExtra)
-library(rlang)
-
-knitr::opts_chunk$set(error = TRUE)
 
 # read task info
 task_info <- jsonlite::read_json(paste0(params$data_dir, "/task_info.json"))
-task_info$task_description <- task_info$task_description %||% "<missing description>"
+task_info$task_description <- task_info$task_description %||% NA_character_
+
+`%|%` <- function(x, y) {
+  ifelse(is.na(x), y, x)
+}
 
 # read method info
 method_info <- jsonlite::read_json(paste0(params$data_dir, "/method_info.json"), simplifyVector = TRUE) %>%
@@ -39,7 +39,6 @@ method_info <- jsonlite::read_json(paste0(params$data_dir, "/method_info.json"),
 
 # read metric info
 metric_info <- jsonlite::read_json(paste0(params$data_dir, "/metric_info.json"), simplifyVector = TRUE)
-metric_info$metric_description <- metric_info$metric_description %||% "<missing description>"
 
 # read dataset info
 dataset_info <- jsonlite::read_json(paste0(params$data_dir, "/dataset_info.json"), simplifyVector = TRUE)
@@ -51,18 +50,23 @@ results <- jsonlite::read_json(paste0(params$data_dir, "/results.json"), simplif
 qc <- jsonlite::read_json(paste0(params$data_dir, "/quality_control.json"), simplifyVector = TRUE)
 ```
 
+`r task_info$task_description %|% "Missing 'task_description'"`
+
+## Results
+
 ```{r overall_ranking}
 #| echo: false
-
 results_long <-
   inner_join(
     results %>%
+      unnest(metric_values) %>%
       gather(metric_id, value, any_of(metric_info$metric_id)) %>%
       mutate(value = ifelse(is.na(value), NA_real_, value)) %>%
       select(method_id, dataset_id, metric_id, value),
     results %>%
-      gather(metric_id, score, any_of(paste0(metric_info$metric_id, "_scaled"))) %>%
-      mutate(metric_id = sub("_scaled$", "", metric_id)) %>%
+      unnest(scaled_scores) %>%
+      gather(metric_id, score, any_of(metric_info$metric_id)) %>%
+      mutate(score = ifelse(is.na(score), NA_real_, score)) %>%
       select(method_id, dataset_id, metric_id, score),
     by = c("method_id", "dataset_id", "metric_id")
   ) %>%
@@ -76,11 +80,6 @@ overall_ranking <- results_long %>%
 # order by ranking
 results_long$method_id <- factor(results_long$method_id, levels = rev(overall_ranking$method_id))
 ```
-
-
-## Overview
-
-This visualization shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).
 
 ```{r funkyheatmap_data}
 #| echo: false
@@ -176,9 +175,75 @@ knitr::opts_chunk$set(
 
 ```{r summary}
 #| echo: false
-#| fig-cap: The average overall, per dataset and per metric scaled scores per method.
+#| fig-cap: Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).
 g_base
 ```
+
+
+## Methods
+
+```{r}
+#| echo: false
+# show each method just once
+method_info_base <- method_info %>% filter(!duplicated(method_base_name), !is_baseline)
+lines <- pmap_chr(method_info_base, function(method_base_name, method_description, paper_reference, code_url, ...) {
+  name <- method_base_name
+  if (!is.na(code_url)) {
+    name <- glue::glue("[{name}]({code_url})")
+  }
+  ref <- if (is.na(paper_reference)) "" else glue::glue(" [@{paper_reference}]")
+  summ <- (method_description %|% "Missing 'method_description'") %>% str_replace_all("\\. *$", "")
+  glue::glue("* **{name}**{ref}: {summ}.")
+})
+knitr::asis_output(lines)
+```
+
+## Metrics
+
+```{r}
+#| echo: false
+lines <- pmap_chr(metric_info, function(metric_name, metric_description, paper_reference, ...) {
+  ref <- if (is.na(paper_reference)) "" else glue::glue(" [@{paper_reference}]")
+  summ <- (metric_description %|% "Missing 'metric_description'") %>% str_replace_all("\\. *$", "")
+  glue::glue("* **{metric_name}**{ref}: {summ}.")
+})
+knitr::asis_output(lines)
+```
+
+## Datasets
+
+```{r}
+#| echo: false
+lines <- pmap_chr(dataset_info, function(dataset_name, dataset_description, data_reference, ...) {
+  ref <- if (is.na(data_reference)) "" else glue::glue(" [@{data_reference}]")
+  summ <- (dataset_description %|% "Missing 'dataset_description'") %>% str_replace_all("\\. *$", "")
+  glue::glue("* **{dataset_name}**{ref}: {summ}.")
+})
+knitr::asis_output(lines)
+```
+
+## Baselines
+
+```{r}
+#| echo: false
+baselines <- method_info %>% filter(is_baseline)
+lines <- pmap_chr(baselines, function(method_base_name, method_description, reference, code_url, ...) {
+  summ <- (method_description %|% "Missing 'method_description'") %>% str_replace_all("\\. *$", "")
+  glue::glue("* **{method_base_name}**: {summ}.")
+})
+knitr::asis_output(lines)
+```
+
+## Downloads
+
+<a href="data/task_info.json" class="btn btn-secondary">Task info</a>
+<a href="data/method_info.json" class="btn btn-secondary">Method info</a>
+<a href="data/metric_info.json" class="btn btn-secondary">Metric info</a>
+<a href="data/dataset_info.json" class="btn btn-secondary">Dataset info</a>
+<a href="data/results.json" class="btn btn-secondary">Results</a>
+<a href="data/quality_control.json" class="btn btn-secondary">Quality control</a>
+
+## Details
 
 <details><summary>Overview per parameter set</summary>
 ```{r}
@@ -191,28 +256,16 @@ knitr::opts_chunk$set(
 
 ```{r summary_defailed}
 #| echo: false
-#| fig-cap: The average overall, per dataset and per metric scaled scores per method and parameter set.
+#| fig-cap: Overview of the results per method and parameter set. This figures shows the means of the scaled scores per method parameter set across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).
 g_all
 ```
 </details>
 
-## Metrics
+<details><summary>Quality control</summary>
 
 ```{r}
 #| echo: false
-#| output: asis
-pwalk(metric_info, function(metric_name, metric_description, ...) {
-  cat(glue::glue("* **{metric_name}**: {metric_description}"), "\n", sep = "")
-})
-```
-
-## Details
-
-<details><summary>Quality control checks</summary>
-
-```{r}
-#| echo: false
-qc_plot <- qc %>% 
+qc_print <- qc %>% 
   filter(severity > 0) %>%
   mutate(
     test = case_when(
@@ -225,8 +278,8 @@ qc_plot <- qc %>%
   ) %>%
   arrange(desc(severity_value), category, name)
 
-if (nrow(qc_plot) > 0) {
-  qc_plot %>% 
+if (nrow(qc_print) > 0) {
+  qc_print %>% 
     transmute(
       Category = category,
       Name = name,
@@ -239,11 +292,11 @@ if (nrow(qc_plot) > 0) {
     kable_paper() %>%
     column_spec(
       5, 
-      color = qc_plot$color
+      color = qc_print$color
     ) %>%
     column_spec(
       1:5,
-      tooltip = qc_plot$message
+      tooltip = qc_print$message
     )
 } else {
   knitr::asis_output("✓ All checks succeeded!")
@@ -273,4 +326,6 @@ ggplot(results_long %>% arrange(method_id)) +
 ```
 
 </details>
+
+## References
 
