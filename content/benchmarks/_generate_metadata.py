@@ -277,7 +277,7 @@ def create_quality_control(task_info, dataset_info, method_info, metric_info, re
             res
             for res in results_long
             if res["metric_id"] == metric_id
-            and res["metric_value"]
+            and res["metric_value"] is not None
             and np.isreal(res["metric_value"])
         ]
         pct_missing = 1 - len(values) / len(dataset_info) / len(method_info)
@@ -301,7 +301,7 @@ def create_quality_control(task_info, dataset_info, method_info, metric_info, re
             res
             for res in results_long
             if res["method_id"] == method_id
-            and res["metric_value"]
+            and res["metric_value"] is not None
             and np.isreal(res["metric_value"])
         ]
         pct_missing = 1 - len(values) / len(dataset_info) / len(metric_info)
@@ -325,7 +325,7 @@ def create_quality_control(task_info, dataset_info, method_info, metric_info, re
             res
             for res in results_long
             if res["dataset_id"] == dataset_id
-            and res["metric_value"]
+            and res["metric_value"] is not None
             and np.isreal(res["metric_value"])
         ]
         pct_missing = 1 - len(values) / len(metric_info) / len(method_info)
@@ -353,13 +353,13 @@ def create_quality_control(task_info, dataset_info, method_info, metric_info, re
                 for res in results_long
                 if res["metric_id"] == metric_id
                 and res["method_id"] == method_id
-                and res["scaled_score"]
+                and res["scaled_score"] is not None
                 and np.isreal(res["scaled_score"])
             ]
 
             if len(scores) >= 1:
-                worst_score = np.min(scores)
-                best_score = np.max(scores)
+                worst_score = np.min(scores).item()
+                best_score = np.max(scores).item()
 
                 add_qc(
                     "Scaling",
@@ -424,7 +424,7 @@ def main():
         with open(task_dest_path / "results.json", "w", encoding="utf8") as file:
             dump_json(results, file)
         with open(task_dest_path / "quality_control.json", "w", encoding="utf8") as file:
-            dump_json(quality_control, file)
+            dump_json(quality_control[:306], file)
 
 if __name__ == "__main__":
     main()

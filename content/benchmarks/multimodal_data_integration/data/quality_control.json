@@ -273,11 +273,11 @@
         "task_id": "multimodal_data_integration", 
         "category": "Raw results", 
         "name": "Metric 'mse' %missing", 
-        "value": 0.1428571428571429, 
-        "severity": 1, 
-        "severity_value": 1.428571428571429, 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  Metric id: mse\n  Percentage missing: 14%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  Metric id: mse\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "multimodal_data_integration", 
@@ -343,41 +343,41 @@
         "task_id": "multimodal_data_integration", 
         "category": "Raw results", 
         "name": "Method 'true_features' %missing", 
-        "value": 0.5, 
-        "severity": 3, 
-        "severity_value": 5.0, 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  method id: true_features\n  Percentage missing: 50%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  method id: true_features\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "multimodal_data_integration", 
         "category": "Raw results", 
         "name": "Dataset 'citeseq_cbmc' %missing", 
-        "value": 0.0714285714285714, 
+        "value": 0.0, 
         "severity": 0, 
-        "severity_value": 0.714285714285714, 
+        "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  dataset id: citeseq_cbmc\n  Percentage missing: 7%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  dataset id: citeseq_cbmc\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "multimodal_data_integration", 
         "category": "Raw results", 
         "name": "Dataset 'scicar_cell_lines' %missing", 
-        "value": 0.0714285714285714, 
+        "value": 0.0, 
         "severity": 0, 
-        "severity_value": 0.714285714285714, 
+        "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  dataset id: scicar_cell_lines\n  Percentage missing: 7%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  dataset id: scicar_cell_lines\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "multimodal_data_integration", 
         "category": "Raw results", 
         "name": "Dataset 'scicar_mouse_kidney' %missing", 
-        "value": 0.0714285714285714, 
+        "value": 0.0, 
         "severity": 0, 
-        "severity_value": 0.714285714285714, 
+        "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  dataset id: scicar_mouse_kidney\n  Percentage missing: 7%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: multimodal_data_integration\n  dataset id: scicar_mouse_kidney\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "multimodal_data_integration", 
@@ -478,6 +478,26 @@
         "severity_value": 0.15408585245340034, 
         "code": "best_score <= 2", 
         "message": "Method procrustes performs a lot better than baselines.\n  Task id: multimodal_data_integration\n  Method id: procrustes\n  Metric id: knn_auc\n  Best score: 0.3081717049068007%\n"
+    }, 
+    {
+        "task_id": "multimodal_data_integration", 
+        "category": "Scaling", 
+        "name": "Worst score random_features knn_auc", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method random_features performs much worse than baselines.\n  Task id: multimodal_data_integration\n  Method id: random_features\n  Metric id: knn_auc\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "multimodal_data_integration", 
+        "category": "Scaling", 
+        "name": "Best score random_features knn_auc", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: multimodal_data_integration\n  Method id: random_features\n  Metric id: knn_auc\n  Best score: 0.0%\n"
     }, 
     {
         "task_id": "multimodal_data_integration", 
@@ -598,6 +618,26 @@
         "severity_value": 0.21328580764613814, 
         "code": "best_score <= 2", 
         "message": "Method procrustes performs a lot better than baselines.\n  Task id: multimodal_data_integration\n  Method id: procrustes\n  Metric id: mse\n  Best score: 0.4265716152922763%\n"
+    }, 
+    {
+        "task_id": "multimodal_data_integration", 
+        "category": "Scaling", 
+        "name": "Worst score random_features mse", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method random_features performs much worse than baselines.\n  Task id: multimodal_data_integration\n  Method id: random_features\n  Metric id: mse\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "multimodal_data_integration", 
+        "category": "Scaling", 
+        "name": "Best score random_features mse", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: multimodal_data_integration\n  Method id: random_features\n  Metric id: mse\n  Best score: 0.0%\n"
     }, 
     {
         "task_id": "multimodal_data_integration", 

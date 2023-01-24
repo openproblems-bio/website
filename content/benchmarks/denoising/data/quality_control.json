@@ -512,6 +512,26 @@
     {
         "task_id": "denoising", 
         "category": "Scaling", 
+        "name": "Worst score no_denoising mse", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method no_denoising performs much worse than baselines.\n  Task id: denoising\n  Method id: no_denoising\n  Metric id: mse\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "denoising", 
+        "category": "Scaling", 
+        "name": "Best score no_denoising mse", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method no_denoising performs a lot better than baselines.\n  Task id: denoising\n  Method id: no_denoising\n  Metric id: mse\n  Best score: 0.0%\n"
+    }, 
+    {
+        "task_id": "denoising", 
+        "category": "Scaling", 
         "name": "Worst score perfect_denoising mse", 
         "value": 1.0, 
         "severity": 0, 
@@ -648,6 +668,26 @@
         "severity_value": 0.2967036474005357, 
         "code": "best_score <= 2", 
         "message": "Method magic_approx performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic_approx\n  Metric id: poisson\n  Best score: 0.5934072948010713%\n"
+    }, 
+    {
+        "task_id": "denoising", 
+        "category": "Scaling", 
+        "name": "Worst score no_denoising poisson", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method no_denoising performs much worse than baselines.\n  Task id: denoising\n  Method id: no_denoising\n  Metric id: poisson\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "denoising", 
+        "category": "Scaling", 
+        "name": "Best score no_denoising poisson", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method no_denoising performs a lot better than baselines.\n  Task id: denoising\n  Method id: no_denoising\n  Metric id: poisson\n  Best score: 0.0%\n"
     }, 
     {
         "task_id": "denoising", 

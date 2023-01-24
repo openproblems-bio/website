@@ -672,6 +672,26 @@
     {
         "task_id": "spatial_decomposition", 
         "category": "Scaling", 
+        "name": "Worst score random_proportions r2", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method random_proportions performs much worse than baselines.\n  Task id: spatial_decomposition\n  Method id: random_proportions\n  Metric id: r2\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "category": "Scaling", 
+        "name": "Best score random_proportions r2", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method random_proportions performs a lot better than baselines.\n  Task id: spatial_decomposition\n  Method id: random_proportions\n  Metric id: r2\n  Best score: 0.0%\n"
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "category": "Scaling", 
         "name": "Worst score rctd r2", 
         "value": 0.6615444328336749, 
         "severity": 0, 
