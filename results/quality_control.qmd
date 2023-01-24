@@ -2,14 +2,9 @@
 title: "Quality control"
 ---
 
-```{r interactive}
-#| include: false
-#| eval: false
-path <- 'results'
-```
-
 ```{r noninteractive}
 #| include: false
+path <- 'results'
 path <- '.'
 ```
 
@@ -18,8 +13,6 @@ path <- '.'
 #| error: true
 library(tidyverse)
 library(kableExtra)
-
-knitr::opts_chunk$set(error = TRUE)
 
 qc <- list.files(path, pattern = "quality_control.json", recursive = TRUE, full.names = TRUE) %>%
   map_df(jsonlite::read_json, simplifyVector = TRUE) %>%

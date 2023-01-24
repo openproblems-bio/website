@@ -1,0 +1,25 @@
+```{=html}
+<div class="list grid quarto-listing-cols-2">
+<% for (const item of items) { %>
+  <div class="g-col-1">
+    <a href="<%- item.path %>" class="quarto-grid-link">
+    <div class="quarto-grid-item card card-left">
+      <p class="card-img-top">
+        <img src="<%- item.image %>" class="thumbnail-image card-img">
+      </p>
+      <div class="card-body post-contents">
+        <h4 class="no-anchor card-title listing-title">
+        <%= item.title %>
+        </h4>
+        <% if (item.subtitle) { %>
+          <div class="card-text listing-description">
+          <%= item.subtitle %>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </a>
+  </div>
+<% } %>
+</div>
+```
