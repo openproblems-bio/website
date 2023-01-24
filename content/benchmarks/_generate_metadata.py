@@ -395,37 +395,36 @@ def main():
 
     for task in op.TASKS:
         task_id = re.sub(".*\\.", "", task.__name__)
-        if task_id != "label_projection":
-            task_source_path = source_path / task_id
-            task_dest_path = dest_path / task_id / "data"
+        task_source_path = source_path / task_id
+        task_dest_path = dest_path / task_id / "data"
 
-            # create dir if need be
-            if not task_dest_path.exists():
-                task_dest_path.mkdir(parents=True)
+        # create dir if need be
+        if not task_dest_path.exists():
+            task_dest_path.mkdir(parents=True)
 
-            print(f"Processing task {task_id}", flush=True)
+        print(f"Processing task {task_id}", flush=True)
 
-            # create info objects
-            task_info = create_task_info(task_id, task)
-            method_info = create_method_info(task_id, task)
-            metric_info = create_metric_info(task_id, task)
-            dataset_info = create_dataset_info(task_id, task)
-            results = create_results(task_id, task_source_path)
-            quality_control = create_quality_control(task_info, dataset_info, method_info, metric_info, results)
+        # create info objects
+        task_info = create_task_info(task_id, task)
+        method_info = create_method_info(task_id, task)
+        metric_info = create_metric_info(task_id, task)
+        dataset_info = create_dataset_info(task_id, task)
+        results = create_results(task_id, task_source_path)
+        quality_control = create_quality_control(task_info, dataset_info, method_info, metric_info, results)
 
-            # write data to files
-            with open(task_dest_path / "task_info.json", "w", encoding="utf8") as file:
-                dump_json(task_info, file)
-            with open(task_dest_path / "method_info.json", "w", encoding="utf8") as file:
-                dump_json(method_info, file)
-            with open(task_dest_path / "metric_info.json", "w", encoding="utf8") as file:
-                dump_json(metric_info, file)
-            with open(task_dest_path / "dataset_info.json", "w", encoding="utf8") as file:
-                dump_json(dataset_info, file)
-            with open(task_dest_path / "results.json", "w", encoding="utf8") as file:
-                dump_json(results, file)
-            with open(task_dest_path / "quality_control.json", "w", encoding="utf8") as file:
-                dump_json(quality_control, file)
+        # write data to files
+        with open(task_dest_path / "task_info.json", "w", encoding="utf8") as file:
+            dump_json(task_info, file)
+        with open(task_dest_path / "method_info.json", "w", encoding="utf8") as file:
+            dump_json(method_info, file)
+        with open(task_dest_path / "metric_info.json", "w", encoding="utf8") as file:
+            dump_json(metric_info, file)
+        with open(task_dest_path / "dataset_info.json", "w", encoding="utf8") as file:
+            dump_json(dataset_info, file)
+        with open(task_dest_path / "results.json", "w", encoding="utf8") as file:
+            dump_json(results, file)
+        with open(task_dest_path / "quality_control.json", "w", encoding="utf8") as file:
+            dump_json(quality_control, file)
 
 if __name__ == "__main__":
     main()
