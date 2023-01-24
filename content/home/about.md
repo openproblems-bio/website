@@ -72,5 +72,3 @@ You can start by [joining our mailing list](https://docs.google.com/forms/d/e/1F
 Next, check out our [Contributing Guidelines](https://github.com/openproblems-bio/openproblems/blob/master/CONTRIBUTING.md).
 
 Finally, introduce yourself by giving us a 👋 on our [Discord Server](https://discord.gg/sDE7cM4PN7)! You'll find several groups of people here working on different tasks. Check out the different channels and see where you can contribute!
-
-<a href="https://www.netlify.com"> <img src="https://www.netlify.com/v3/img/components/netlify-color-accent.svg" alt="Deploys by Netlify" /> </a>
