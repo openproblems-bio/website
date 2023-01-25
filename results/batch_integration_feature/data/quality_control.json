@@ -812,6 +812,26 @@
     {
         "task_id": "batch_integration_feature", 
         "category": "Scaling", 
+        "name": "Worst score random_integration hvg_conservation", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method random_integration performs much worse than baselines.\n  Task id: batch_integration_feature\n  Method id: random_integration\n  Metric id: hvg_conservation\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "category": "Scaling", 
+        "name": "Best score random_integration hvg_conservation", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method random_integration performs a lot better than baselines.\n  Task id: batch_integration_feature\n  Method id: random_integration\n  Metric id: hvg_conservation\n  Best score: 0.0%\n"
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "category": "Scaling", 
         "name": "Worst score scalex_full hvg_conservation", 
         "value": -0.587116299178556, 
         "severity": 0, 

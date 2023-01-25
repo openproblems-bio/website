@@ -273,11 +273,11 @@
         "task_id": "cell_cell_communication_source_target", 
         "category": "Raw results", 
         "name": "Metric 'odds_ratio' %missing", 
-        "value": 0.1875, 
-        "severity": 1, 
-        "severity_value": 1.875, 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: cell_cell_communication_source_target\n  Metric id: odds_ratio\n  Percentage missing: 19%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: cell_cell_communication_source_target\n  Metric id: odds_ratio\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "cell_cell_communication_source_target", 
@@ -293,11 +293,11 @@
         "task_id": "cell_cell_communication_source_target", 
         "category": "Raw results", 
         "name": "Method 'cellphonedb_sum' %missing", 
-        "value": 0.5, 
-        "severity": 3, 
-        "severity_value": 5.0, 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: cell_cell_communication_source_target\n  method id: cellphonedb_sum\n  Percentage missing: 50%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: cell_cell_communication_source_target\n  method id: cellphonedb_sum\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "cell_cell_communication_source_target", 
@@ -353,11 +353,11 @@
         "task_id": "cell_cell_communication_source_target", 
         "category": "Raw results", 
         "name": "Method 'magnitude_sum' %missing", 
-        "value": 0.5, 
-        "severity": 3, 
-        "severity_value": 5.0, 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: cell_cell_communication_source_target\n  method id: magnitude_sum\n  Percentage missing: 50%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: cell_cell_communication_source_target\n  method id: magnitude_sum\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "cell_cell_communication_source_target", 
@@ -403,11 +403,11 @@
         "task_id": "cell_cell_communication_source_target", 
         "category": "Raw results", 
         "name": "Method 'sca_sum' %missing", 
-        "value": 0.5, 
-        "severity": 3, 
-        "severity_value": 5.0, 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: cell_cell_communication_source_target\n  method id: sca_sum\n  Percentage missing: 50%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: cell_cell_communication_source_target\n  method id: sca_sum\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "cell_cell_communication_source_target", 
@@ -443,11 +443,11 @@
         "task_id": "cell_cell_communication_source_target", 
         "category": "Raw results", 
         "name": "Dataset 'mouse_brain_atlas' %missing", 
-        "value": 0.09375, 
+        "value": 0.0, 
         "severity": 0, 
-        "severity_value": 0.9375, 
+        "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: cell_cell_communication_source_target\n  dataset id: mouse_brain_atlas\n  Percentage missing: 9%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: cell_cell_communication_source_target\n  dataset id: mouse_brain_atlas\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "cell_cell_communication_source_target", 
@@ -652,6 +652,26 @@
     {
         "task_id": "cell_cell_communication_source_target", 
         "category": "Scaling", 
+        "name": "Worst score random_events auprc", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method random_events performs much worse than baselines.\n  Task id: cell_cell_communication_source_target\n  Method id: random_events\n  Metric id: auprc\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_source_target", 
+        "category": "Scaling", 
+        "name": "Best score random_events auprc", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method random_events performs a lot better than baselines.\n  Task id: cell_cell_communication_source_target\n  Method id: random_events\n  Metric id: auprc\n  Best score: 0.0%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_source_target", 
+        "category": "Scaling", 
         "name": "Worst score sca_max auprc", 
         "value": 0.04615286977438289, 
         "severity": 0, 
@@ -788,6 +808,26 @@
         "severity_value": -0.1899999999999999, 
         "code": "best_score <= 2", 
         "message": "Method cellphonedb_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_source_target\n  Method id: cellphonedb_sum\n  Metric id: odds_ratio\n  Best score: -0.3799999999999998%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_source_target", 
+        "category": "Scaling", 
+        "name": "Worst score connectome_max odds_ratio", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method connectome_max performs much worse than baselines.\n  Task id: cell_cell_communication_source_target\n  Method id: connectome_max\n  Metric id: odds_ratio\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_source_target", 
+        "category": "Scaling", 
+        "name": "Best score connectome_max odds_ratio", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method connectome_max performs a lot better than baselines.\n  Task id: cell_cell_communication_source_target\n  Method id: connectome_max\n  Metric id: odds_ratio\n  Best score: 0.0%\n"
     }, 
     {
         "task_id": "cell_cell_communication_source_target", 
@@ -932,6 +972,26 @@
     {
         "task_id": "cell_cell_communication_source_target", 
         "category": "Scaling", 
+        "name": "Worst score random_events odds_ratio", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method random_events performs much worse than baselines.\n  Task id: cell_cell_communication_source_target\n  Method id: random_events\n  Metric id: odds_ratio\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_source_target", 
+        "category": "Scaling", 
+        "name": "Best score random_events odds_ratio", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method random_events performs a lot better than baselines.\n  Task id: cell_cell_communication_source_target\n  Method id: random_events\n  Metric id: odds_ratio\n  Best score: 0.0%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_source_target", 
+        "category": "Scaling", 
         "name": "Worst score sca_max odds_ratio", 
         "value": 0.6308280254777071, 
         "severity": 0, 
@@ -988,6 +1048,26 @@
         "severity_value": 0.20734283319362956, 
         "code": "best_score <= 2", 
         "message": "Method specificity_max performs a lot better than baselines.\n  Task id: cell_cell_communication_source_target\n  Method id: specificity_max\n  Metric id: odds_ratio\n  Best score: 0.4146856663872591%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_source_target", 
+        "category": "Scaling", 
+        "name": "Worst score specificity_sum odds_ratio", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method specificity_sum performs much worse than baselines.\n  Task id: cell_cell_communication_source_target\n  Method id: specificity_sum\n  Metric id: odds_ratio\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "cell_cell_communication_source_target", 
+        "category": "Scaling", 
+        "name": "Best score specificity_sum odds_ratio", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method specificity_sum performs a lot better than baselines.\n  Task id: cell_cell_communication_source_target\n  Method id: specificity_sum\n  Metric id: odds_ratio\n  Best score: 0.0%\n"
     }, 
     {
         "task_id": "cell_cell_communication_source_target", 
