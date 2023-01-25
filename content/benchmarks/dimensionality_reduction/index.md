@@ -811,6 +811,114 @@ Quality control
   <tr>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
   Task id: dimensionality_reduction
+  method id: pymde_distances_log_cpm_hvg
+  Percentage missing: 100%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_distances_log_cpm_hvg
+  Percentage missing: 100%
+"> Method 'pymde_distances_log_cpm_hvg' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_distances_log_cpm_hvg
+  Percentage missing: 100%
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_distances_log_cpm_hvg
+  Percentage missing: 100%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_distances_log_cpm_hvg
+  Percentage missing: 100%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_distances_log_cpm
+  Percentage missing: 100%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_distances_log_cpm
+  Percentage missing: 100%
+"> Method 'pymde_distances_log_cpm' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_distances_log_cpm
+  Percentage missing: 100%
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_distances_log_cpm
+  Percentage missing: 100%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_distances_log_cpm
+  Percentage missing: 100%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_neighbors_log_cpm_hvg
+  Percentage missing: 100%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_neighbors_log_cpm_hvg
+  Percentage missing: 100%
+"> Method 'pymde_neighbors_log_cpm_hvg' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_neighbors_log_cpm_hvg
+  Percentage missing: 100%
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_neighbors_log_cpm_hvg
+  Percentage missing: 100%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_neighbors_log_cpm_hvg
+  Percentage missing: 100%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_neighbors_log_cpm
+  Percentage missing: 100%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_neighbors_log_cpm
+  Percentage missing: 100%
+"> Method 'pymde_neighbors_log_cpm' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_neighbors_log_cpm
+  Percentage missing: 100%
+"> 1.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_neighbors_log_cpm
+  Percentage missing: 100%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  method id: pymde_neighbors_log_cpm
+  Percentage missing: 100%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
   method id: true_features_log_cpm_hvg
   Percentage missing: 100%
 "> Raw results </td>
@@ -1195,6 +1303,394 @@ Quality control
 "> ✗✗✗ </td>
   </tr>
   <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Number of results should be equal to #methods × #metrics × #datasets.
+  Task id: dimensionality_reduction
+  Number of results: 36
+  Number of methods: 26
+  Number of metrics: 10
+  Number of datasets: 3
+"> Raw data </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Number of results should be equal to #methods × #metrics × #datasets.
+  Task id: dimensionality_reduction
+  Number of results: 36
+  Number of methods: 26
+  Number of metrics: 10
+  Number of datasets: 3
+"> Number of results </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Number of results should be equal to #methods × #metrics × #datasets.
+  Task id: dimensionality_reduction
+  Number of results: 36
+  Number of methods: 26
+  Number of metrics: 10
+  Number of datasets: 3
+"> 36.0000000 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Number of results should be equal to #methods × #metrics × #datasets.
+  Task id: dimensionality_reduction
+  Number of results: 36
+  Number of methods: 26
+  Number of metrics: 10
+  Number of datasets: 3
+"> len(results) == len(method_info) * len(metric_info) * len(dataset_info) </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Number of results should be equal to #methods × #metrics × #datasets.
+  Task id: dimensionality_reduction
+  Number of results: 36
+  Number of methods: 26
+  Number of metrics: 10
+  Number of datasets: 3
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: mouse_hspc_nestorowa2016
+  Percentage missing: 54%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: mouse_hspc_nestorowa2016
+  Percentage missing: 54%
+"> Dataset 'mouse_hspc_nestorowa2016' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: mouse_hspc_nestorowa2016
+  Percentage missing: 54%
+"> 0.5384615 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: mouse_hspc_nestorowa2016
+  Percentage missing: 54%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: mouse_hspc_nestorowa2016
+  Percentage missing: 54%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: olsson_2016_mouse_blood
+  Percentage missing: 54%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: olsson_2016_mouse_blood
+  Percentage missing: 54%
+"> Dataset 'olsson_2016_mouse_blood' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: olsson_2016_mouse_blood
+  Percentage missing: 54%
+"> 0.5384615 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: olsson_2016_mouse_blood
+  Percentage missing: 54%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: olsson_2016_mouse_blood
+  Percentage missing: 54%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: tenx_5k_pbmc
+  Percentage missing: 54%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: tenx_5k_pbmc
+  Percentage missing: 54%
+"> Dataset 'tenx_5k_pbmc' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: tenx_5k_pbmc
+  Percentage missing: 54%
+"> 0.5384615 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: tenx_5k_pbmc
+  Percentage missing: 54%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  dataset id: tenx_5k_pbmc
+  Percentage missing: 54%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: continuity
+  Percentage missing: 54%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: continuity
+  Percentage missing: 54%
+"> Metric 'continuity' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: continuity
+  Percentage missing: 54%
+"> 0.5384615 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: continuity
+  Percentage missing: 54%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: continuity
+  Percentage missing: 54%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: density_preservation
+  Percentage missing: 54%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: density_preservation
+  Percentage missing: 54%
+"> Metric 'density_preservation' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: density_preservation
+  Percentage missing: 54%
+"> 0.5384615 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: density_preservation
+  Percentage missing: 54%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: density_preservation
+  Percentage missing: 54%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: lcmc
+  Percentage missing: 54%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: lcmc
+  Percentage missing: 54%
+"> Metric 'lcmc' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: lcmc
+  Percentage missing: 54%
+"> 0.5384615 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: lcmc
+  Percentage missing: 54%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: lcmc
+  Percentage missing: 54%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qglobal
+  Percentage missing: 54%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qglobal
+  Percentage missing: 54%
+"> Metric 'qglobal' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qglobal
+  Percentage missing: 54%
+"> 0.5384615 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qglobal
+  Percentage missing: 54%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qglobal
+  Percentage missing: 54%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qlocal
+  Percentage missing: 54%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qlocal
+  Percentage missing: 54%
+"> Metric 'qlocal' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qlocal
+  Percentage missing: 54%
+"> 0.5384615 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qlocal
+  Percentage missing: 54%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qlocal
+  Percentage missing: 54%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn_auc
+  Percentage missing: 54%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn_auc
+  Percentage missing: 54%
+"> Metric 'qnn_auc' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn_auc
+  Percentage missing: 54%
+"> 0.5384615 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn_auc
+  Percentage missing: 54%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn_auc
+  Percentage missing: 54%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn
+  Percentage missing: 54%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn
+  Percentage missing: 54%
+"> Metric 'qnn' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn
+  Percentage missing: 54%
+"> 0.5384615 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn
+  Percentage missing: 54%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: qnn
+  Percentage missing: 54%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse_spectral
+  Percentage missing: 54%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse_spectral
+  Percentage missing: 54%
+"> Metric 'rmse_spectral' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse_spectral
+  Percentage missing: 54%
+"> 0.5384615 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse_spectral
+  Percentage missing: 54%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse_spectral
+  Percentage missing: 54%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse
+  Percentage missing: 54%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse
+  Percentage missing: 54%
+"> Metric 'rmse' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse
+  Percentage missing: 54%
+"> 0.5384615 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse
+  Percentage missing: 54%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: rmse
+  Percentage missing: 54%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: trustworthiness
+  Percentage missing: 54%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: trustworthiness
+  Percentage missing: 54%
+"> Metric 'trustworthiness' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: trustworthiness
+  Percentage missing: 54%
+"> 0.5384615 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: trustworthiness
+  Percentage missing: 54%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: dimensionality_reduction
+  Metric id: trustworthiness
+  Percentage missing: 54%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method phate_default performs a lot better than baselines.
   Task id: dimensionality_reduction
   Method id: phate_default
@@ -1320,394 +1816,6 @@ Quality control
   Method id: tsne_logCPM_1kHVG
   Metric id: qglobal
   Best score: 9.358494435549117%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Number of results should be equal to #methods × #metrics × #datasets.
-  Task id: dimensionality_reduction
-  Number of results: 36
-  Number of methods: 22
-  Number of metrics: 10
-  Number of datasets: 3
-"> Raw data </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Number of results should be equal to #methods × #metrics × #datasets.
-  Task id: dimensionality_reduction
-  Number of results: 36
-  Number of methods: 22
-  Number of metrics: 10
-  Number of datasets: 3
-"> Number of results </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Number of results should be equal to #methods × #metrics × #datasets.
-  Task id: dimensionality_reduction
-  Number of results: 36
-  Number of methods: 22
-  Number of metrics: 10
-  Number of datasets: 3
-"> 36.0000000 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Number of results should be equal to #methods × #metrics × #datasets.
-  Task id: dimensionality_reduction
-  Number of results: 36
-  Number of methods: 22
-  Number of metrics: 10
-  Number of datasets: 3
-"> len(results) == len(method_info) * len(metric_info) * len(dataset_info) </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Number of results should be equal to #methods × #metrics × #datasets.
-  Task id: dimensionality_reduction
-  Number of results: 36
-  Number of methods: 22
-  Number of metrics: 10
-  Number of datasets: 3
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  dataset id: mouse_hspc_nestorowa2016
-  Percentage missing: 45%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  dataset id: mouse_hspc_nestorowa2016
-  Percentage missing: 45%
-"> Dataset 'mouse_hspc_nestorowa2016' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  dataset id: mouse_hspc_nestorowa2016
-  Percentage missing: 45%
-"> 0.4545455 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  dataset id: mouse_hspc_nestorowa2016
-  Percentage missing: 45%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  dataset id: mouse_hspc_nestorowa2016
-  Percentage missing: 45%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  dataset id: olsson_2016_mouse_blood
-  Percentage missing: 45%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  dataset id: olsson_2016_mouse_blood
-  Percentage missing: 45%
-"> Dataset 'olsson_2016_mouse_blood' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  dataset id: olsson_2016_mouse_blood
-  Percentage missing: 45%
-"> 0.4545455 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  dataset id: olsson_2016_mouse_blood
-  Percentage missing: 45%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  dataset id: olsson_2016_mouse_blood
-  Percentage missing: 45%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  dataset id: tenx_5k_pbmc
-  Percentage missing: 45%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  dataset id: tenx_5k_pbmc
-  Percentage missing: 45%
-"> Dataset 'tenx_5k_pbmc' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  dataset id: tenx_5k_pbmc
-  Percentage missing: 45%
-"> 0.4545455 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  dataset id: tenx_5k_pbmc
-  Percentage missing: 45%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  dataset id: tenx_5k_pbmc
-  Percentage missing: 45%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: continuity
-  Percentage missing: 45%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: continuity
-  Percentage missing: 45%
-"> Metric 'continuity' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: continuity
-  Percentage missing: 45%
-"> 0.4545455 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: continuity
-  Percentage missing: 45%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: continuity
-  Percentage missing: 45%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: density_preservation
-  Percentage missing: 45%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: density_preservation
-  Percentage missing: 45%
-"> Metric 'density_preservation' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: density_preservation
-  Percentage missing: 45%
-"> 0.4545455 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: density_preservation
-  Percentage missing: 45%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: density_preservation
-  Percentage missing: 45%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: lcmc
-  Percentage missing: 45%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: lcmc
-  Percentage missing: 45%
-"> Metric 'lcmc' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: lcmc
-  Percentage missing: 45%
-"> 0.4545455 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: lcmc
-  Percentage missing: 45%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: lcmc
-  Percentage missing: 45%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qglobal
-  Percentage missing: 45%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qglobal
-  Percentage missing: 45%
-"> Metric 'qglobal' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qglobal
-  Percentage missing: 45%
-"> 0.4545455 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qglobal
-  Percentage missing: 45%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qglobal
-  Percentage missing: 45%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qlocal
-  Percentage missing: 45%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qlocal
-  Percentage missing: 45%
-"> Metric 'qlocal' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qlocal
-  Percentage missing: 45%
-"> 0.4545455 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qlocal
-  Percentage missing: 45%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qlocal
-  Percentage missing: 45%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qnn_auc
-  Percentage missing: 45%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qnn_auc
-  Percentage missing: 45%
-"> Metric 'qnn_auc' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qnn_auc
-  Percentage missing: 45%
-"> 0.4545455 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qnn_auc
-  Percentage missing: 45%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qnn_auc
-  Percentage missing: 45%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qnn
-  Percentage missing: 45%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qnn
-  Percentage missing: 45%
-"> Metric 'qnn' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qnn
-  Percentage missing: 45%
-"> 0.4545455 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qnn
-  Percentage missing: 45%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: qnn
-  Percentage missing: 45%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: rmse_spectral
-  Percentage missing: 45%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: rmse_spectral
-  Percentage missing: 45%
-"> Metric 'rmse_spectral' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: rmse_spectral
-  Percentage missing: 45%
-"> 0.4545455 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: rmse_spectral
-  Percentage missing: 45%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: rmse_spectral
-  Percentage missing: 45%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: rmse
-  Percentage missing: 45%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: rmse
-  Percentage missing: 45%
-"> Metric 'rmse' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: rmse
-  Percentage missing: 45%
-"> 0.4545455 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: rmse
-  Percentage missing: 45%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: rmse
-  Percentage missing: 45%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: trustworthiness
-  Percentage missing: 45%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: trustworthiness
-  Percentage missing: 45%
-"> Metric 'trustworthiness' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: trustworthiness
-  Percentage missing: 45%
-"> 0.4545455 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: trustworthiness
-  Percentage missing: 45%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: dimensionality_reduction
-  Metric id: trustworthiness
-  Percentage missing: 45%
 "> ✗✗✗ </td>
   </tr>
   <tr>

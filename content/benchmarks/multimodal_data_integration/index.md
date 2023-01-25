@@ -95,33 +95,6 @@ Quality control
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: multimodal_data_integration
-  method id: true_features
-  Percentage missing: 50%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: multimodal_data_integration
-  method id: true_features
-  Percentage missing: 50%
-"> Method 'true_features' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: multimodal_data_integration
-  method id: true_features
-  Percentage missing: 50%
-"> 0.5000000 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: multimodal_data_integration
-  method id: true_features
-  Percentage missing: 50%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: multimodal_data_integration
-  method id: true_features
-  Percentage missing: 50%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
   Task id: multimodal_data_integration
   Field: dataset_description
@@ -133,7 +106,7 @@ Quality control
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
   Task id: multimodal_data_integration
   Field: dataset_description
-"> 1.0000000 </td>
+"> 1 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
   Task id: multimodal_data_integration
   Field: dataset_description
@@ -155,7 +128,7 @@ Quality control
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
   Task id: multimodal_data_integration
   Field: method_description
-"> 1.0000000 </td>
+"> 1 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
   Task id: multimodal_data_integration
   Field: method_description
@@ -177,7 +150,7 @@ Quality control
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
   Task id: multimodal_data_integration
   Field: metric_description
-"> 1.0000000 </td>
+"> 1 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
   Task id: multimodal_data_integration
   Field: metric_description
@@ -199,7 +172,7 @@ Quality control
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
   Task id: multimodal_data_integration
   Field: task_description
-"> 1.0000000 </td>
+"> 1 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
   Task id: multimodal_data_integration
   Field: task_description
@@ -208,33 +181,6 @@ Quality control
   Task id: multimodal_data_integration
   Field: task_description
 "> ✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: multimodal_data_integration
-  Metric id: mse
-  Percentage missing: 14%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: multimodal_data_integration
-  Metric id: mse
-  Percentage missing: 14%
-"> Metric 'mse' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: multimodal_data_integration
-  Metric id: mse
-  Percentage missing: 14%
-"> 0.1428571 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: multimodal_data_integration
-  Metric id: mse
-  Percentage missing: 14%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: multimodal_data_integration
-  Metric id: mse
-  Percentage missing: 14%
-"> ✗ </td>
   </tr>
 </tbody>
 </table>

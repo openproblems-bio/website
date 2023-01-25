@@ -103,87 +103,6 @@ Quality control
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  method id: cellphonedb_sum
-  Percentage missing: 50%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  method id: cellphonedb_sum
-  Percentage missing: 50%
-"> Method 'cellphonedb_sum' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  method id: cellphonedb_sum
-  Percentage missing: 50%
-"> 0.5000 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  method id: cellphonedb_sum
-  Percentage missing: 50%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  method id: cellphonedb_sum
-  Percentage missing: 50%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  method id: magnitude_sum
-  Percentage missing: 50%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  method id: magnitude_sum
-  Percentage missing: 50%
-"> Method 'magnitude_sum' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  method id: magnitude_sum
-  Percentage missing: 50%
-"> 0.5000 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  method id: magnitude_sum
-  Percentage missing: 50%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  method id: magnitude_sum
-  Percentage missing: 50%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  method id: sca_sum
-  Percentage missing: 50%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  method id: sca_sum
-  Percentage missing: 50%
-"> Method 'sca_sum' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  method id: sca_sum
-  Percentage missing: 50%
-"> 0.5000 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  method id: sca_sum
-  Percentage missing: 50%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  method id: sca_sum
-  Percentage missing: 50%
-"> ✗✗✗ </td>
-  </tr>
-  <tr>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
   Task id: cell_cell_communication_source_target
   Field: dataset_description
@@ -195,7 +114,7 @@ Quality control
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
   Task id: cell_cell_communication_source_target
   Field: dataset_description
-"> 1.0000 </td>
+"> 1 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
   Task id: cell_cell_communication_source_target
   Field: dataset_description
@@ -217,7 +136,7 @@ Quality control
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
   Task id: cell_cell_communication_source_target
   Field: method_description
-"> 1.0000 </td>
+"> 1 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
   Task id: cell_cell_communication_source_target
   Field: method_description
@@ -239,7 +158,7 @@ Quality control
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
   Task id: cell_cell_communication_source_target
   Field: metric_description
-"> 1.0000 </td>
+"> 1 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
   Task id: cell_cell_communication_source_target
   Field: metric_description
@@ -261,7 +180,7 @@ Quality control
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
   Task id: cell_cell_communication_source_target
   Field: task_description
-"> 1.0000 </td>
+"> 1 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
   Task id: cell_cell_communication_source_target
   Field: task_description
@@ -270,33 +189,6 @@ Quality control
   Task id: cell_cell_communication_source_target
   Field: task_description
 "> ✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  Metric id: odds_ratio
-  Percentage missing: 19%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  Metric id: odds_ratio
-  Percentage missing: 19%
-"> Metric 'odds_ratio' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  Metric id: odds_ratio
-  Percentage missing: 19%
-"> 0.1875 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  Metric id: odds_ratio
-  Percentage missing: 19%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: cell_cell_communication_source_target
-  Metric id: odds_ratio
-  Percentage missing: 19%
-"> ✗ </td>
   </tr>
 </tbody>
 </table>

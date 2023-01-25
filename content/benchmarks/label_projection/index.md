@@ -159,6 +159,33 @@ Quality control
  </thead>
 <tbody>
   <tr>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: label_projection
+  dataset id: zebrafish_labs
+  Percentage missing: 100%
+"> Raw results </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: label_projection
+  dataset id: zebrafish_labs
+  Percentage missing: 100%
+"> Dataset 'zebrafish_labs' %missing </td>
+   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: label_projection
+  dataset id: zebrafish_labs
+  Percentage missing: 100%
+"> 1 </td>
+   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: label_projection
+  dataset id: zebrafish_labs
+  Percentage missing: 100%
+"> pct_missing &lt;= .1 </td>
+   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
+  Task id: label_projection
+  dataset id: zebrafish_labs
+  Percentage missing: 100%
+"> ✗✗✗ </td>
+  </tr>
+  <tr>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
   Task id: label_projection
   Field: dataset_description
@@ -170,7 +197,7 @@ Quality control
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
   Task id: label_projection
   Field: dataset_description
-"> 1.000 </td>
+"> 1 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Dataset metadata field 'dataset_description' should be defined
   Task id: label_projection
   Field: dataset_description
@@ -192,7 +219,7 @@ Quality control
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
   Task id: label_projection
   Field: method_description
-"> 1.000 </td>
+"> 1 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
   Task id: label_projection
   Field: method_description
@@ -200,28 +227,6 @@ Quality control
    <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_description' should be defined
   Task id: label_projection
   Field: method_description
-"> ✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_summary' should be defined
-  Task id: label_projection
-  Field: method_summary
-"> Method info </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_summary' should be defined
-  Task id: label_projection
-  Field: method_summary
-"> Pct 'method_summary' missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_summary' should be defined
-  Task id: label_projection
-  Field: method_summary
-"> 1.000 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_summary' should be defined
-  Task id: label_projection
-  Field: method_summary
-"> percent_missing(method_info, field) </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Method metadata field 'method_summary' should be defined
-  Task id: label_projection
-  Field: method_summary
 "> ✗✗ </td>
   </tr>
   <tr>
@@ -236,7 +241,7 @@ Quality control
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
   Task id: label_projection
   Field: metric_description
-"> 1.000 </td>
+"> 1 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
   Task id: label_projection
   Field: metric_description
@@ -244,28 +249,6 @@ Quality control
    <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
   Task id: label_projection
   Field: metric_description
-"> ✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_summary' should be defined
-  Task id: label_projection
-  Field: metric_summary
-"> Metric info </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_summary' should be defined
-  Task id: label_projection
-  Field: metric_summary
-"> Pct 'metric_summary' missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_summary' should be defined
-  Task id: label_projection
-  Field: metric_summary
-"> 1.000 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_summary' should be defined
-  Task id: label_projection
-  Field: metric_summary
-"> percent_missing(metric_info, field) </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_summary' should be defined
-  Task id: label_projection
-  Field: metric_summary
 "> ✗✗ </td>
   </tr>
   <tr>
@@ -280,7 +263,7 @@ Quality control
    <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
   Task id: label_projection
   Field: task_description
-"> 1.000 </td>
+"> 1 </td>
    <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
   Task id: label_projection
   Field: task_description
@@ -289,33 +272,6 @@ Quality control
   Task id: label_projection
   Field: task_description
 "> ✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: label_projection
-  method id: majority_vote
-  Percentage missing: 12%
-"> Raw results </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: label_projection
-  method id: majority_vote
-  Percentage missing: 12%
-"> Method 'majority_vote' %missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: label_projection
-  method id: majority_vote
-  Percentage missing: 12%
-"> 0.125 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: label_projection
-  method id: majority_vote
-  Percentage missing: 12%
-"> pct_missing &lt;= .1 </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Percentage of missing results should be less than 10%.
-  Task id: label_projection
-  method id: majority_vote
-  Percentage missing: 12%
-"> ✗ </td>
   </tr>
 </tbody>
 </table>
