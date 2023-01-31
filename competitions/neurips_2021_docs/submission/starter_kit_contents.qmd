@@ -1,0 +1,263 @@
+---
+title: "Starter kit contents"
+order: 20
+---
+
+
+The Starter Kits have all you need to compete in the Multimodal Single-Cell Data Integration Challenge. The following sections will use the Python starter kit for the Modality Prediction task. After unzipping the starter kit, the working directory will contain the following files.
+
+```
+├── LICENSE                                 # MIT License
+├── README.md                               # Some starter information
+├── bin/                                    # Binaries needed to generate a submission
+│   ├── check_format
+│   ├── nextflow
+│   └── viash
+├── config.vsh.yaml                         # Viash configuration file
+├── script.py                               # Script containing your method
+├── sample_data/                            # Small sample datasets for unit testing and debugging
+│   ├── openproblems_bmmc_cite_starter/     # Contains H5AD files for CITE data
+│   └── openproblems_bmmc_multiome_starter/ # Contains H5AD files for multiome data
+├── scripts/                                # Scripts to test, generate, and evaluate a submission
+│   ├── 0_sys_checks.sh                     # Checks that necessary software installed
+│   ├── 1_unit_test.sh                      # Runs the unit tests in test.py
+│   ├── 2_generate_submission.sh            # Generates a submission pkg by running your method on validation data
+│   ├── 3_evaluate_submission.sh            # (Optional) Scores your method locally
+│   └── nextflow.config                     # Configurations for running Nextflow locally
+└── test.py                                 # Default unit tests. Feel free to add more tests, but don't remove any.
+```
+
+
+The most important parts of this directory are the `script.py` and `config.vsh.yaml` files, which you will need to modify in order to submit your method to EvalAI.
+
+
+## Anatomy of `script.py`
+
+The Python script provided in this starter kit has three main sections: Imports, Viash block, and Method.
+
+### Imports
+
+This section defines which packages the method expects, if you want to import a new different package, add the `import` statement here **and** add the dependency to `config.vsh.yaml` (See below). This ensures that we can build an appropriate image to run your code.
+
+```python
+import logging
+import anndata as ad
+import numpy as np
+
+logging.basicConfig(level=logging.INFO)
+```
+
+### Viash block
+
+This optional code block exists to facilitate prototyping so your script can run when called directly by running `python script.py` (or `Rscript script.R` for R users). 
+
+```python
+## VIASH START
+# Anything within this block will be removed by `viash` and will be
+# replaced with the parameters as specified in your config.vsh.yaml.
+input_path = 'sample_data/openproblems_bmmc_multiome_starter/openproblems_bmmc_multiome_starter'
+par = {
+    # Required arguments for the task
+    'input_train_mod1': input_path + '.train_mod1.h5ad',
+    'input_train_mod2': input_path + '.train_mod2.h5ad',
+    'input_test_mod1': input_path + '.test_mod1.h5ad',
+    'output': 'output.h5ad',
+    # Optional method-specific arguments
+    'n_neighbors': 5,
+}
+meta = { 'resources_dir': '.', 'functionality_name': '.' }
+## VIASH END
+```
+
+Here, the `par` dictionary contains all the `arguments` defined in the `config.vsh.yaml` file. When you create the component using the `generate_submission.sh` script, Viash will remove everything between the `## VIASH START` and `## VIASH END` comments and replace it with a dictionary / named list containing the parameter values retrieved from an auto-generated command-line interface.
+
+### Method
+
+This code block will typically consist of reading the input files, performing some preprocessing, training a model on the train cells, generating predictions for the test cells, and outputting the predictions as an AnnData file (See [Data Formats](/competitions/neurips_2021_docs/submission/data_formats)).
+
+```python
+## Data reader
+logging.info('Reading `h5ad` files...')
+
+input_train_mod1 = ad.read_h5ad(par['input_train_mod1'])
+input_train_mod2 = ad.read_h5ad(par['input_train_mod2'])
+input_test_mod1 = ad.read_h5ad(par['input_test_mod1'])
+
+# ... preprocessing ... 
+# ... train model ...
+# ... generate predictions ...
+
+# write output to file
+adata = ad.AnnData(
+    X=y_pred,
+    uns={
+        'dataset_id': input_train_mod1.uns['dataset_id'],
+        'method_id': "python_starter_kit", # all lowercase letters or underscores
+    },
+)
+adata.write_h5ad(par['output'], compress='gzip')
+```
+
+## Anatomy of `config.vsh.yaml`
+
+Once the script is working, you'll probably need to update the `config.vsh.yaml` file. The configuration has two sections:
+
+* Functionality about the script, including method arguments and any additional resources (e.g. pretrained models)
+* Platform targets that define the components dependencies (which are used to build a Docker container).
+
+Full documentation on the Viash configuration file is available on the [Viash documentation site](https://viash.io/docs/reference_config/config/).
+
+### Functionality
+
+The first section of the configuration file contains information about the metadata of the script including parameters for the script and a list of resource files. 
+
+```yaml
+functionality:
+  # a unique name for your method, same as what is being output by the script.
+  # must match the regex [a-z][a-z0-9_]*
+  name: method
+
+  # metadata for your method
+  description: A description for your method.
+  authors:
+    - name: John Doe
+      email: johndoe@youremailprovider.com
+      roles: [ author, maintainer ]
+      props: { github: johndoe, orcid: "0000-1111-2222-3333" }
+
+  # component parameters
+  arguments:
+    # required inputs (do not modify)
+    - name: "--input_train_mod1"
+      type: "file"
+      example: "dataset_mod1.h5ad"
+      description: Censored dataset, training cells.
+      required: true
+    - name: "--input_test_mod1"
+      type: "file"
+      example: "dataset_mod1.h5ad"
+      description: Censored dataset, test cells.
+      required: true
+    - name: "--input_train_mod2"
+      type: "file"
+      example: "dataset_mod2.h5ad"
+      description: Censored dataset.
+      required: true
+    # required outputs (do not modify)
+    - name: "--output"
+      type: "file"
+      direction: "output"
+      example: "output.h5ad"
+      description: Dataset with predicted values for modality2.
+      required: true
+    # Method-specific parameters. 
+    # Change these to expose parameters of your method to Nextflow (optional)
+    - name: "--n_neighbors"
+      type: "integer"
+      default: 5
+      description: Number of neighbors to use.
+
+  # files your script needs
+  resources:
+    # the script itself
+    - type: python_script
+      path: script.py
+    # additional resources your script needs (optional)
+    - path: pretrained_model.pt
+```
+
+In this section of the configuration you should focus on updating the following sections:
+
+1. Description and Authors - Information about who contributed the method
+2. Arguments - Each section here defines a command-line argument for the script. These sections are all passed to the script in the form of a dictionary called `par`. You only need to change the method-specific parameters, and if you would like these parameters hard-coded into the script, you do not need to provide any parameters here. Make sure **not** to remove required parameters such as the inputs. Your method cannot be executed properly otherwise!
+3. Resources - This section describes the files that need to be included in your component. For example if you'd like to add a file containing model weights called `weights.pt`, add `{ type: file, path: weights.pt }` to the resources. You can now load the additional resource in your script by using at the path `meta['resources_dir'] + '/weights.pt'`.
+
+
+### Platform
+
+The Platform section defines the information about how the Viash component is run on various backend platforms. The two platforms that are important for the competition are:
+
+1. Docker ([docs](https://viash.io/docs/reference_config/platform-docker/))
+2. Nextflow ([docs](https://viash.io/docs/reference_config/platform-nextflow/))
+
+```yaml
+# target platforms
+platforms:
+
+  # By specifying 'docker' platform, viash will build a standalone
+  # executable which uses docker in the back end to run your method.
+  - type: docker
+    # you need to specify a base image that contains at least bash and python
+    image: dataintuitive/randpy:py3.8
+    # You can specify additional dependencies with 'setup'.
+    # See https://viash.io/docs/reference_config/platform-docker/#setup-list
+    # for more information on how to add more dependencies.
+    setup:
+      # - type: apt
+      #   packages:
+      #     - bash
+      # - type: python
+      #   packages:
+      #     - scanpy
+      - type: python
+        packages:
+          - scikit-learn
+          - anndata
+          - scanpy
+
+  # By specifying a 'nextflow', viash will also build a viash module
+  # which uses the docker container built above to also be able to
+  # run your method as part of a nextflow pipeline.
+  - type: nextflow
+    labels: [ lowmem, lowtime, lowcpu ]
+```
+
+The most important part of this section to update is the `setup` definition that describes the packages that need to be installed in the docker container for the method to run. There are many different methods for specifying these requirements described in the Viash [docs](https://viash.io/docs/reference_config/platform-docker/#setup-list).
+
+You can also change the memory, runtime, and CPU utilization be editing the Nextflow labels section. Available options are `[low|med|high]` for each of `mem`, `time`, and `cpu`. The corresponding resource values can be found in the `scripts/nextflow.config` file.
+
+:::{.callout-note}
+**Tip:** After making changes to the components dependencies, you will need to rebuild the docker container as follows:
+
+```sh
+$ bin/viash run -- ---setup cachedbuild
+[notice] Running 'docker build -t method:dev /tmp/viashsetupdocker-method-tEX78c'
+```
+:::
+
+:::{.callout-note}
+**Tip #2:** You can view the dockerfile that Viash generates from the config file using the `---dockerfile` argument:
+```sh
+$ bin/viash run -- ---dockerfile
+```
+:::
+
+
+## Input/output AnnData file format
+
+
+All the datasets provided in the competition are organized in [AnnData](https://anndata.readthedocs.io) objects. This page describes the structure of AnnData objects so that you can work with the data in the competition efficiently.
+
+AnnData is a generic data storage format especially well-suited for single-cell data. The class stores a data matrix `X` together with annotations of observations and variables in Pandas DataFrames. The advantage of storing the annotations and data in the same object is to ensure that when inspecting slices of the data, relevant annotations are properly linked with the views of the data.
+
+The most common attributes are:
+
+* `adata.X` - The data. This can by a sparse array or a numpy array.
+* `adata.n_obs` - The number of observations, equal to `adata.X.shape[0]`
+* `adata.obs_names` - The index for the observations, similar to a Pandas DataFrame `index`. Typically this contains cell barcodes.
+* `adata.obs` - A Pandas DataFrame containing annotations of the observations, for example, cluster labels or the donor of origin. The index of the DataFrame must be the same as `adata.obs_names`.
+* `adata.obsm` - A dictionary of n-dimensional arrays (ndarrays) of shape `(n_obs, m)`. For example, it is common to store a PCA or UMAP embedding of the data in `adata.obsm["X_pca"]` or `adata.obsm["X_umap"]`.
+* `adata.obsp` - Pairwise annotations of the observations. Most often this contains a graph adjacency matrix where the nodes in the graph are observations.
+* `adata.n_var` - The number of variables or features in the data, equal to `adata.X.shape[1]`
+* `adata.var_names` - The index for the variables, similar to a Pandas DataFrame `columns`. Typically this contains gene names.
+* `adata.var` - Annotations on the variables, e.g. whether a feature is a protein coding gene or a non-coding gene. Index of this DataFrame must match `adat.var_names`.
+* `adata.varm`, `adata.varp` - Analogous to the `obsm` and `obsp` attributes. Not commonly used.
+* `adata.uns` - A dictionary to story any unstructured annotations associated with the data. E.g, a data version.
+
+The following diagram shows these attributes and their relation to the data:
+
+![**AnnData - Annotated Data Containers**. AnnData provides a scalable way of keeping track of data and learned annotations.](images/anndata.svg)]
+
+AnnData objects can be opened in Python using the [`anndata.read_h5ad()`](https://anndata.readthedocs.io/en/latest/anndata.read_h5ad.html) function or the [`scanpy.read_h5ad()`](https://scanpy.readthedocs.io/en/stable/generated/scanpy.read_h5ad.html) function. This object can be opened in R using the [`anndata::read_h5ad()`](https://anndata.dynverse.org/index.html#getting-started) function.
+
+For the full AnnData API, please consult the [documentation of the `anndata` package](https://anndata.readthedocs.io/en/latest/anndata.AnnData.html).
