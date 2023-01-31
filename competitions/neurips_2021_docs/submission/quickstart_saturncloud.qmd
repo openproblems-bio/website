@@ -80,6 +80,7 @@ echo 'echo No local evaluation is possible on Saturn Cloud' > scripts/3_evaluate
 ## 6. Generate your first submission
 
 To make sure your local environment is set up correctly, first run the `2_generate_submission.sh` script. This script triggers a Nextflow workflow to:
+
 1. Build a [viash component](https://viash.io/guide/) of the method in `script.py/R` using the configuration specified in `config.vsh.yaml`.
 2. Sync the training datasets from S3 (`s3://openproblems-bio/public/phase1-data`) to a local drive (`output/datasets/`).
 3. Apply the containerized method on the training datasets.
@@ -125,6 +126,7 @@ Make note of the outputs generated in the nextflow step. If all went well, you s
 ## 7. Submitting to EvalAI
 
 To upload the submission, you have two options:
+
 * Upload the submission via https://eval.ai/web/challenges/challenge-page/1111/submission
 * Use the [EvalAI-CLI](https://github.com/Cloud-CV/evalai-cli) to upload the submission following the instructions outputted by the generate script.
 
