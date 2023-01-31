@@ -5,10 +5,11 @@ project:
 
 website:
   title: "OpenProblems"
+  description: Open Problems in Single Cell Analysis
+  favicon: images/icon.png
   site-url: https://openproblems-experimental.netlify.com
   repo-url: https://github.com/openproblems-bio/website-experimental
   repo-actions: [edit, issue] 
-
 
   page-footer:
     left: "© Open Problems 2022 · View on [GitHub](https://github.com/openproblems-bio/openproblems). Made with [Quarto♥](https://quarto.org)."
@@ -79,6 +80,9 @@ website:
           contents: competitions/neurips_2021_docs/submission/*
 format:
   html:
+    # theme:
+    #   light: [ simplex, theme.scss ]
+    #   dark: [ darkly, theme.scss ]
     theme: [ simplex, theme.scss ]
     css: styles.css
     toc: true
