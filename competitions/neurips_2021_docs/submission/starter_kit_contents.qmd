@@ -105,7 +105,7 @@ Once the script is working, you'll probably need to update the `config.vsh.yaml`
 * Functionality about the script, including method arguments and any additional resources (e.g. pretrained models)
 * Platform targets that define the components dependencies (which are used to build a Docker container).
 
-Full documentation on the Viash configuration file is available on the [Viash documentation site](https://viash.io/docs/reference_config/config/).
+Full documentation on the Viash configuration file is available on the [Viash documentation site](https://viash.io/reference/).
 
 ### Functionality
 
@@ -177,8 +177,8 @@ In this section of the configuration you should focus on updating the following 
 
 The Platform section defines the information about how the Viash component is run on various backend platforms. The two platforms that are important for the competition are:
 
-1. Docker ([docs](https://viash.io/docs/reference_config/platform-docker/))
-2. Nextflow ([docs](https://viash.io/docs/reference_config/platform-nextflow/))
+1. Docker ([docs](https://viash.io/guide))
+2. Nextflow ([docs](https://viash.io/guide))
 
 ```yaml
 # target platforms
@@ -190,7 +190,7 @@ platforms:
     # you need to specify a base image that contains at least bash and python
     image: dataintuitive/randpy:py3.8
     # You can specify additional dependencies with 'setup'.
-    # See https://viash.io/docs/reference_config/platform-docker/#setup-list
+    # See https://viash.io/reference
     # for more information on how to add more dependencies.
     setup:
       # - type: apt
@@ -212,7 +212,7 @@ platforms:
     labels: [ lowmem, lowtime, lowcpu ]
 ```
 
-The most important part of this section to update is the `setup` definition that describes the packages that need to be installed in the docker container for the method to run. There are many different methods for specifying these requirements described in the Viash [docs](https://viash.io/docs/reference_config/platform-docker/#setup-list).
+The most important part of this section to update is the `setup` definition that describes the packages that need to be installed in the docker container for the method to run. There are many different methods for specifying these requirements described in the Viash [docs](https://viash.io/reference).
 
 You can also change the memory, runtime, and CPU utilization be editing the Nextflow labels section. Available options are `[low|med|high]` for each of `mem`, `time`, and `cpu`. The corresponding resource values can be found in the `scripts/nextflow.config` file.
 
@@ -256,7 +256,7 @@ The most common attributes are:
 
 The following diagram shows these attributes and their relation to the data:
 
-![**AnnData - Annotated Data Containers**. AnnData provides a scalable way of keeping track of data and learned annotations.](images/anndata.svg)]
+![**AnnData - Annotated Data Containers**. AnnData provides a scalable way of keeping track of data and learned annotations.](../images/anndata.svg)]
 
 AnnData objects can be opened in Python using the [`anndata.read_h5ad()`](https://anndata.readthedocs.io/en/latest/anndata.read_h5ad.html) function or the [`scanpy.read_h5ad()`](https://scanpy.readthedocs.io/en/stable/generated/scanpy.read_h5ad.html) function. This object can be opened in R using the [`anndata::read_h5ad()`](https://anndata.dynverse.org/index.html#getting-started) function.
 
