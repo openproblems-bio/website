@@ -8,62 +8,16 @@ bibliography: "../../../static/bibliography/main.bib"
 <link href="index_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
+## Description
+
 Missing 'task_description'
 
-## Results
+## Summary
 
 <figure>
-<img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="619" alt="Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
-<figcaption aria-hidden="true">Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
+<img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="664" alt="Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)." />
+<figcaption aria-hidden="true"><strong>Overview of the results per method</strong>. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric).</figcaption>
 </figure>
-
-## Methods
-
--   **[CellPhoneDB](https://github.com/saezlab/liana)** (Efremova et al. 2020): Missing 'method_description'.
-
-<!-- -->
-
--   **[Connectome](https://github.com/saezlab/liana)** (Raredon et al. 2022): Missing 'method_description'.
-
-<!-- -->
-
--   **[Log2FC](https://github.com/saezlab/liana)** (Raredon et al. 2022): Missing 'method_description'.
-
-<!-- -->
-
--   **[Magnitude Rank Aggregate](https://github.com/saezlab/liana)** (Dimitrov et al. 2022): Missing 'method_description'.
-
-<!-- -->
-
--   **[NATMI](https://github.com/saezlab/liana)** (Hou et al. 2020): Missing 'method_description'.
-
-<!-- -->
-
--   **[SingleCellSignalR](https://github.com/saezlab/liana)** (Cabello-Aguilar et al. 2020): Missing 'method_description'.
-
-<!-- -->
-
--   **[Specificity Rank Aggregate](https://github.com/saezlab/liana)** (Dimitrov et al. 2022): Missing 'method_description'.
-
-## Metrics
-
--   **Precision-recall AUC** (Davis and Goadrich 2006): Missing 'metric_description'.
-
-<!-- -->
-
--   **Odds Ratio** (Bland 2000): Missing 'metric_description'.
-
-## Datasets
-
--   **Mouse brain atlas** (Tasic et al. 2016): Missing 'dataset_description'.
-
-## Baselines
-
--   **Random Events**: Missing 'method_description'.
-
-<!-- -->
-
--   **True Events**: Missing 'method_description'.
 
 ## Downloads
 
@@ -78,13 +32,102 @@ Missing 'task_description'
 
 <details>
 <summary>
-Overview per parameter set
+Method descriptions
 </summary>
 
-<figure>
-<img src="index.markdown_strict_files/figure-markdown_strict/summary_defailed-1.png" width="593" alt="Overview of the results per method and parameter set. This figures shows the means of the scaled scores per method parameter set across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
-<figcaption aria-hidden="true">Overview of the results per method and parameter set. This figures shows the means of the scaled scores per method parameter set across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
-</figure>
+-   **[CellPhoneDB (max)](https://github.com/saezlab/liana)**: Missing 'method_description'. [\[efremova2020cellphonedb\]](/bibliography#efremova2020cellphonedb)
+
+<!-- -->
+
+-   **[CellPhoneDB (sum)](https://github.com/saezlab/liana)**: Missing 'method_description'. [\[efremova2020cellphonedb\]](/bibliography#efremova2020cellphonedb)
+
+<!-- -->
+
+-   **[Connectome (max)](https://github.com/saezlab/liana)**: Missing 'method_description'. [\[raredon2022computation\]](/bibliography#raredon2022computation)
+
+<!-- -->
+
+-   **[Connectome (sum)](https://github.com/saezlab/liana)**: Missing 'method_description'. [\[raredon2022computation\]](/bibliography#raredon2022computation)
+
+<!-- -->
+
+-   **[Log2FC (max)](https://github.com/saezlab/liana)**: Missing 'method_description'. [\[raredon2022computation\]](/bibliography#raredon2022computation)
+
+<!-- -->
+
+-   **[Log2FC (sum)](https://github.com/saezlab/liana)**: Missing 'method_description'. [\[raredon2022computation\]](/bibliography#raredon2022computation)
+
+<!-- -->
+
+-   **[Magnitude Rank Aggregate (max)](https://github.com/saezlab/liana)**: Missing 'method_description'. [\[dimitrov2022comparison\]](/bibliography#dimitrov2022comparison)
+
+<!-- -->
+
+-   **[Magnitude Rank Aggregate (sum)](https://github.com/saezlab/liana)**: Missing 'method_description'. [\[dimitrov2022comparison\]](/bibliography#dimitrov2022comparison)
+
+<!-- -->
+
+-   **[NATMI (max)](https://github.com/saezlab/liana)**: Missing 'method_description'. [\[hou2020predicting\]](/bibliography#hou2020predicting)
+
+<!-- -->
+
+-   **[NATMI (sum)](https://github.com/saezlab/liana)**: Missing 'method_description'. [\[hou2020predicting\]](/bibliography#hou2020predicting)
+
+<!-- -->
+
+-   **[Random Events](https://github.com/openproblems-bio/openproblems)**: Missing 'method_description'. [\[openproblems\]](/bibliography#openproblems)
+
+<!-- -->
+
+-   **[SingleCellSignalR (max)](https://github.com/saezlab/liana)**: Missing 'method_description'. [\[cabello2020singlecellsignalr\]](/bibliography#cabello2020singlecellsignalr)
+
+<!-- -->
+
+-   **[SingleCellSignalR (sum)](https://github.com/saezlab/liana)**: Missing 'method_description'. [\[cabello2020singlecellsignalr\]](/bibliography#cabello2020singlecellsignalr)
+
+<!-- -->
+
+-   **[Specificity Rank Aggregate (max)](https://github.com/saezlab/liana)**: Missing 'method_description'. [\[dimitrov2022comparison\]](/bibliography#dimitrov2022comparison)
+
+<!-- -->
+
+-   **[Specificity Rank Aggregate (sum)](https://github.com/saezlab/liana)**: Missing 'method_description'. [\[dimitrov2022comparison\]](/bibliography#dimitrov2022comparison)
+
+<!-- -->
+
+-   **[True Events](https://github.com/openproblems-bio/openproblems)**: Missing 'method_description'. [\[openproblems\]](/bibliography#openproblems)
+
+</details>
+<details>
+<summary>
+Metric descriptions
+</summary>
+
+-   **Precision-recall AUC**: Missing 'metric_description'. [\[davis2006prauc\]](/bibliography#davis2006prauc)
+
+<!-- -->
+
+-   **Odds Ratio**: Missing 'metric_description'. [\[bland2000odds\]](/bibliography#bland2000odds)
+
+</details>
+<details>
+<summary>
+Dataset descriptions
+</summary>
+
+-   **Mouse brain atlas**: Missing 'dataset_description'. [\[tasic2016adult\]](/bibliography#tasic2016adult)
+
+</details>
+<details>
+<summary>
+Baseline descriptions
+</summary>
+
+-   **Random Events**: Missing 'method_description'.
+
+<!-- -->
+
+-   **True Events**: Missing 'method_description'.
 
 </details>
 <details>
@@ -199,24 +242,6 @@ Quality control
 Visualization of raw results
 </summary>
 
-<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-10-1.png" width="960" />
+<img src="index.markdown_strict_files/figure-markdown_strict/raw_results-1.png" width="960" />
 
 </details>
-
-## References
-
-Bland, J. M. 2000. "Statistics Notes: The Odds Ratio." *BMJ* 320 (7247): 1468--68. <https://doi.org/10.1136/bmj.320.7247.1468>.
-
-Cabello-Aguilar, Simon, Mélissa Alame, Fabien Kon-Sun-Tack, Caroline Fau, Matthieu Lacroix, and Jacques Colinge. 2020. "SingleCellSignalR: Inference of Intercellular Networks from Single-Cell Transcriptomics." *Nucleic Acids Research* 48 (10): e55--55. <https://doi.org/10.1093/nar/gkaa183>.
-
-Davis, Jesse, and Mark Goadrich. 2006. "The Relationship Between Precision-Recall and ROC Curves." In *Proceedings of the 23rd International Conference on Machine Learning - ICML 06*. ACM Press. <https://doi.org/10.1145/1143844.1143874>.
-
-Dimitrov, Daniel, Dénes Türei, Martin Garrido-Rodriguez, Paul L. Burmedi, James S. Nagai, Charlotte Boys, Ricardo O. Ramirez Flores, et al. 2022. "Comparison of Methods and Resources for Cell-Cell Communication Inference from Single-Cell RNA-Seq Data." *Nature Communications* 13 (1). <https://doi.org/10.1038/s41467-022-30755-0>.
-
-Efremova, Mirjana, Miquel Vento-Tormo, Sarah A. Teichmann, and Roser Vento-Tormo. 2020. "CellPhoneDB: Inferring Cellcell Communication from Combined Expression of Multi-Subunit Ligandreceptor Complexes." *Nature Protocols* 15 (4): 1484--1506. <https://doi.org/10.1038/s41596-020-0292-x>.
-
-Hou, Rui, Elena Denisenko, Huan Ting Ong, Jordan A. Ramilowski, and Alistair R. R. Forrest. 2020. "Predicting Cell-to-Cell Communication Networks Using NATMI." *Nature Communications* 11 (1). <https://doi.org/10.1038/s41467-020-18873-z>.
-
-Raredon, Micha Sam Brickman, Junchen Yang, James Garritano, Meng Wang, Dan Kushnir, Jonas Christian Schupp, Taylor S. Adams, et al. 2022. "Computation and Visualization of Cellcell Signaling Topologies in Single-Cell Systems Data Using Connectome." *Scientific Reports* 12 (1). <https://doi.org/10.1038/s41598-022-07959-x>.
-
-Tasic, Bosiljka, Vilas Menon, Thuc Nghi Nguyen, Tae Kyung Kim, Tim Jarsky, Zizhen Yao, Boaz Levi, et al. 2016. "Adult Mouse Cortical Cell Taxonomy Revealed by Single Cell Transcriptomics." *Nature Neuroscience* 19 (2): 335--46. <https://doi.org/10.1038/nn.4216>.

@@ -8,62 +8,16 @@ bibliography: "../../../static/bibliography/main.bib"
 <link href="index_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
+## Description
+
 Missing 'task_description'
 
-## Results
+## Summary
 
 <figure>
-<img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="672" alt="Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
-<figcaption aria-hidden="true">Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
+<img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="717" alt="Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)." />
+<figcaption aria-hidden="true"><strong>Overview of the results per method</strong>. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric).</figcaption>
 </figure>
-
-## Methods
-
--   **[ALRA](https://github.com/KlugerLab/ALRA)** (Linderman, Zhao, and Kluger 2018): Missing 'method_description'.
-
-<!-- -->
-
--   **[DCA](https://github.com/theislab/dca)** (**https://www.nature.com/articles/s41467-018-07931-2?**): Missing 'method_description'.
-
-<!-- -->
-
--   **[KNN smoothing](https://github.com/openproblems-bio/openproblems)** (Open Problems for Single Cell Analysis Consortium 2022): Missing 'method_description'.
-
-<!-- -->
-
--   **[Iterative KNN smoothing](https://github.com/yanailab/knn-smoothing)** (Wagner, Yan, and Yanai 2018): Missing 'method_description'.
-
-<!-- -->
-
--   **[MAGIC](https://github.com/KrishnaswamyLab/MAGIC)** (**https://doi.org/10.1016/j.cell.2018.05.061?**): Missing 'method_description'.
-
-## Metrics
-
--   **Mean-squared error** (Batson, Royer, and Webber 2019): Missing 'metric_description'.
-
-<!-- -->
-
--   **Poisson loss** (Batson, Royer, and Webber 2019): Missing 'metric_description'.
-
-## Datasets
-
--   **Pancreas (inDrop)** (Luecken et al. 2021): Missing 'dataset_description'.
-
-<!-- -->
-
--   **1k Peripheral blood mononuclear cells** (10x Genomics 2018): Missing 'dataset_description'.
-
-<!-- -->
-
--   **Tabula Muris Senis Lung** (Tabula Muris Consortium 2020): Missing 'dataset_description'.
-
-## Baselines
-
--   **No denoising**: Missing 'method_description'.
-
-<!-- -->
-
--   **Perfect denoising**: Missing 'method_description'.
 
 ## Downloads
 
@@ -78,13 +32,78 @@ Missing 'task_description'
 
 <details>
 <summary>
-Overview per parameter set
+Method descriptions
 </summary>
 
-<figure>
-<img src="index.markdown_strict_files/figure-markdown_strict/summary_defailed-1.png" width="645" alt="Overview of the results per method and parameter set. This figures shows the means of the scaled scores per method parameter set across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
-<figcaption aria-hidden="true">Overview of the results per method and parameter set. This figures shows the means of the scaled scores per method parameter set across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
-</figure>
+-   **[ALRA](https://github.com/KlugerLab/ALRA)**: Missing 'method_description'. [\[linderman2018zero\]](/bibliography#linderman2018zero)
+
+<!-- -->
+
+-   **[DCA](https://github.com/theislab/dca)**: Missing 'method_description'. [\[https://www.nature.com/articles/s41467-018-07931-2\]](/bibliography#https://www.nature.com/articles/s41467-018-07931-2)
+
+<!-- -->
+
+-   **[KNN smoothing](https://github.com/openproblems-bio/openproblems)**: Missing 'method_description'. [\[openproblems\]](/bibliography#openproblems)
+
+<!-- -->
+
+-   **[Iterative KNN smoothing](https://github.com/yanailab/knn-smoothing)**: Missing 'method_description'. [\[wagner2018knearest\]](/bibliography#wagner2018knearest)
+
+<!-- -->
+
+-   **[MAGIC](https://github.com/KrishnaswamyLab/MAGIC)**: Missing 'method_description'. [\[https://doi.org/10.1016/j.cell.2018.05.061\]](/bibliography#https://doi.org/10.1016/j.cell.2018.05.061)
+
+<!-- -->
+
+-   **[MAGIC (approximate)](https://github.com/KrishnaswamyLab/MAGIC)**: Missing 'method_description'. [\[https://doi.org/10.1016/j.cell.2018.05.061\]](/bibliography#https://doi.org/10.1016/j.cell.2018.05.061)
+
+<!-- -->
+
+-   **[No denoising](https://github.com/czbiohub/molecular-cross-validation)**: Missing 'method_description'. [\[batson2019molecular\]](/bibliography#batson2019molecular)
+
+<!-- -->
+
+-   **[Perfect denoising](https://github.com/czbiohub/molecular-cross-validation)**: Missing 'method_description'. [\[batson2019molecular\]](/bibliography#batson2019molecular)
+
+</details>
+<details>
+<summary>
+Metric descriptions
+</summary>
+
+-   **Mean-squared error**: Missing 'metric_description'. [\[batson2019molecular\]](/bibliography#batson2019molecular)
+
+<!-- -->
+
+-   **Poisson loss**: Missing 'metric_description'. [\[batson2019molecular\]](/bibliography#batson2019molecular)
+
+</details>
+<details>
+<summary>
+Dataset descriptions
+</summary>
+
+-   **Pancreas (inDrop)**: Missing 'dataset_description'. [\[luecken2022benchmarking\]](/bibliography#luecken2022benchmarking)
+
+<!-- -->
+
+-   **1k Peripheral blood mononuclear cells**: Missing 'dataset_description'. [\[10x2018pbmc\]](/bibliography#10x2018pbmc)
+
+<!-- -->
+
+-   **Tabula Muris Senis Lung**: Missing 'dataset_description'. [\[tabula2020single\]](/bibliography#tabula2020single)
+
+</details>
+<details>
+<summary>
+Baseline descriptions
+</summary>
+
+-   **No denoising**: Missing 'method_description'.
+
+<!-- -->
+
+-   **Perfect denoising**: Missing 'method_description'.
 
 </details>
 <details>
@@ -231,22 +250,6 @@ Quality control
 Visualization of raw results
 </summary>
 
-<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-10-1.png" width="960" />
+<img src="index.markdown_strict_files/figure-markdown_strict/raw_results-1.png" width="960" />
 
 </details>
-
-## References
-
-10x Genomics. 2018. "1k PBMCs from a Healthy Donor (V3 Chemistry)." <https://www.10xgenomics.com/resources/datasets/1-k-pbm-cs-from-a-healthy-donor-v-3-chemistry-3-standard-3-0-0>.
-
-Batson, Joshua, Loı̈c Royer, and James Webber. 2019. "Molecular Cross-Validation for Single-Cell RNA-Seq." *bioRxiv*. <https://doi.org/10.1101/786269>.
-
-Linderman, George C., Jun Zhao, and Yuval Kluger. 2018. "Zero-Preserving Imputation of scRNA-Seq Data Using Low-Rank Approximation." *bioRxiv*. <https://doi.org/10.1101/397588>.
-
-Luecken, Malte D., M. Büttner, K. Chaichoompu, A. Danese, M. Interlandi, M. F. Mueller, D. C. Strobl, et al. 2021. "Benchmarking Atlas-Level Data Integration in Single-Cell Genomics." *Nature Methods* 19 (1): 41--50. <https://doi.org/10.1038/s41592-021-01336-8>.
-
-Open Problems for Single Cell Analysis Consortium. 2022. "Open Problems." <https://openproblems.bio>.
-
-Tabula Muris Consortium. 2020. "A Single-Cell Transcriptomic Atlas Characterizes Ageing Tissues in the Mouse." *Nature* 583 (7817): 590--95. <https://doi.org/10.1038/s41586-020-2496-1>.
-
-Wagner, Florian, Yun Yan, and Itai Yanai. 2018. "K-Nearest Neighbor Smoothing for High-Throughput Single-Cell RNA-Seq Data." *bioRxiv*. <https://doi.org/10.1101/217737>.

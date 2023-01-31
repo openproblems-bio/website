@@ -8,6 +8,8 @@ bibliography: "../../../static/bibliography/main.bib"
 <link href="index_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
+## Description
+
 A major challenge for integrating single cell datasets is creating matching
 cell type annotations for each cell. One of the most common strategies for
 annotating cell types is referred to as
@@ -30,96 +32,12 @@ split into training and test batches, and the task of each method is to
 train a cell type classifer on the training set and project those labels
 onto the test set.
 
-## Results
+## Summary
 
 <figure>
-<img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="830" alt="Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
-<figcaption aria-hidden="true">Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
+<img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="876" alt="Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)." />
+<figcaption aria-hidden="true"><strong>Overview of the results per method</strong>. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric).</figcaption>
 </figure>
-
-## Methods
-
--   **[K-neighbors classifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)** (Cover and Hart 1967): Missing 'method_description'.
-
-<!-- -->
-
--   **[Logistic regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)** (Hosmer Jr, Lemeshow, and Sturdivant 2013): Missing 'method_description'.
-
-<!-- -->
-
--   **[Multilayer perceptron](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html)** (Hinton 1989): Missing 'method_description'.
-
-<!-- -->
-
--   **[scANVI](https://github.com/YosefLab/scvi-tools)** (Xu et al. 2021): Probabilistic harmonization and annotation of single-cell transcriptomics data with deep generative models.
-
-<!-- -->
-
--   **[scArches+scANVI](https://github.com/YosefLab/scvi-tools)** (Lotfollahi et al. 2020): Probabilistic harmonization and annotation of single-cell transcriptomics data with deep generative models.
-
-<!-- -->
-
--   **[Seurat reference mapping](https://github.com/satijalab/seurat)** (Hao et al. 2021): The Seurat v3 anchoring procedure is designed to integrate diverse single-cell datasets across technologies and modalities.
-
-<!-- -->
-
--   **[XGBoost](https://xgboost.readthedocs.io/en/stable/index.html)** (Chen and Guestrin 2016): Missing 'method_description'.
-
-## Metrics
-
--   **Accuracy** (Grandini, Bagli, and Visani 2020): The percentage of correctly predicted labels.
-
-<!-- -->
-
--   **F1 score** (Grandini, Bagli, and Visani 2020): Calculates the F1 score for each label, and find their average weighted by support (the number of true instances for each label). This alters 'macro' to account for label imbalance; it can result in an F-score that is not between precision and recall.
-
-<!-- -->
-
--   **Macro F1 score** (Grandini, Bagli, and Visani 2020): Calculates the F1 score for each label, and find their unweighted mean. This does not take label imbalance into account.
-
-## Datasets
-
--   **CeNGEN (by batch)** (Hammarlund et al. 2018): 100k FACS-isolated C. elegans neurons from 17 experiments sequenced on 10x Genomics. Split into train/test by experimental batch.
-
-<!-- -->
-
--   **CeNGEN (random split)** (Hammarlund et al. 2018): 100k FACS-isolated C. elegans neurons from 17 experiments sequenced on 10x Genomics. Split into train/test randomly.
-
-<!-- -->
-
--   **Pancreas (by batch)** (Luecken et al. 2021): Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq). Split into train/test by experimental batch.
-
-<!-- -->
-
--   **Pancreas (random split)** (Luecken et al. 2021): Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq). Split into train/test randomly.
-
-<!-- -->
-
--   **Pancreas (random split with label noise)** (Luecken et al. 2021): Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq). Split into train/test randomly with 20% label noise.
-
-<!-- -->
-
--   **Tabula Muris Senis Lung (random split)** (Tabula Muris Consortium 2020): All lung cells from Tabula Muris Senis, a 500k cell-atlas from 18 organs and tissues across the mouse lifespan. Split into train/test randomly.
-
-<!-- -->
-
--   **Zebrafish (by labels)** (Wagner et al. 2018): 90k cells from zebrafish embryos throughout the first day of development, with and without a knockout of chordin, an important developmental gene. Split into train/test by laboratory.
-
-<!-- -->
-
--   **Zebrafish (random split)** (Wagner et al. 2018): 90k cells from zebrafish embryos throughout the first day of development, with and without a knockout of chordin, an important developmental gene. Split into train/test randomly.
-
-## Baselines
-
--   **Majority Vote**: Baseline method using majority voting.
-
-<!-- -->
-
--   **Random Labels**: Baseline method which generates random labels.
-
-<!-- -->
-
--   **True Labels**: Positive control method by returning the true labels.
 
 ## Downloads
 
@@ -134,13 +52,138 @@ onto the test set.
 
 <details>
 <summary>
-Overview per parameter set
+Method descriptions
 </summary>
 
-<figure>
-<img src="index.markdown_strict_files/figure-markdown_strict/summary_defailed-1.png" width="804" alt="Overview of the results per method and parameter set. This figures shows the means of the scaled scores per method parameter set across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
-<figcaption aria-hidden="true">Overview of the results per method and parameter set. This figures shows the means of the scaled scores per method parameter set across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
-</figure>
+-   **[K-neighbors classifier (log CPM)](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)**: Missing 'method_description'. [\[cover1967nearest\]](/bibliography#cover1967nearest)
+
+<!-- -->
+
+-   **[K-neighbors classifier (log scran)](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)**: Missing 'method_description'. [\[cover1967nearest\]](/bibliography#cover1967nearest)
+
+<!-- -->
+
+-   **[Logistic regression (log CPM)](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)**: Missing 'method_description'. [\[hosmer2013applied\]](/bibliography#hosmer2013applied)
+
+<!-- -->
+
+-   **[Logistic regression (log scran)](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)**: Missing 'method_description'. [\[hosmer2013applied\]](/bibliography#hosmer2013applied)
+
+<!-- -->
+
+-   **[Majority Vote](https://github.com/openproblems-bio/openproblems)**: Baseline method using majority voting. [\[openproblems\]](/bibliography#openproblems)
+
+<!-- -->
+
+-   **[Multilayer perceptron (log CPM)](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html)**: Missing 'method_description'. [\[hinton1989connectionist\]](/bibliography#hinton1989connectionist)
+
+<!-- -->
+
+-   **[Multilayer perceptron (log scran)](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html)**: Missing 'method_description'. [\[hinton1989connectionist\]](/bibliography#hinton1989connectionist)
+
+<!-- -->
+
+-   **[Random Labels](https://github.com/openproblems-bio/openproblems)**: Baseline method which generates random labels. [\[openproblems\]](/bibliography#openproblems)
+
+<!-- -->
+
+-   **[scANVI (All genes)](https://github.com/YosefLab/scvi-tools)**: Probabilistic harmonization and annotation of single-cell transcriptomics data with deep generative models. [\[xu2021probabilistic\]](/bibliography#xu2021probabilistic)
+
+<!-- -->
+
+-   **[scANVI (Seurat v3 2000 HVG)](https://github.com/YosefLab/scvi-tools)**: Probabilistic harmonization and annotation of single-cell transcriptomics data with deep generative models. [\[xu2021probabilistic\]](/bibliography#xu2021probabilistic)
+
+<!-- -->
+
+-   **[scArches+scANVI (All genes)](https://github.com/YosefLab/scvi-tools)**: Probabilistic harmonization and annotation of single-cell transcriptomics data with deep generative models. [\[lotfollahi2020query\]](/bibliography#lotfollahi2020query)
+
+<!-- -->
+
+-   **[scArches+scANVI (Seurat v3 2000 HVG)](https://github.com/YosefLab/scvi-tools)**: Probabilistic harmonization and annotation of single-cell transcriptomics data with deep generative models. [\[lotfollahi2020query\]](/bibliography#lotfollahi2020query)
+
+<!-- -->
+
+-   **[Seurat reference mapping (SCTransform)](https://github.com/satijalab/seurat)**: The Seurat v3 anchoring procedure is designed to integrate diverse single-cell datasets across technologies and modalities. [\[hao2021integrated\]](/bibliography#hao2021integrated)
+
+<!-- -->
+
+-   **[True Labels](https://github.com/openproblems-bio/openproblems)**: Positive control method by returning the true labels. [\[openproblems\]](/bibliography#openproblems)
+
+<!-- -->
+
+-   **[XGBoost (log CPM)](https://xgboost.readthedocs.io/en/stable/index.html)**: Missing 'method_description'. [\[chen2016xgboost\]](/bibliography#chen2016xgboost)
+
+<!-- -->
+
+-   **[XGBoost (log scran)](https://xgboost.readthedocs.io/en/stable/index.html)**: Missing 'method_description'. [\[chen2016xgboost\]](/bibliography#chen2016xgboost)
+
+</details>
+<details>
+<summary>
+Metric descriptions
+</summary>
+
+-   **Accuracy**: The percentage of correctly predicted labels. [\[grandini2020metrics\]](/bibliography#grandini2020metrics)
+
+<!-- -->
+
+-   **F1 score**: Calculates the F1 score for each label, and find their average weighted by support (the number of true instances for each label). This alters 'macro' to account for label imbalance; it can result in an F-score that is not between precision and recall. [\[grandini2020metrics\]](/bibliography#grandini2020metrics)
+
+<!-- -->
+
+-   **Macro F1 score**: Calculates the F1 score for each label, and find their unweighted mean. This does not take label imbalance into account. [\[grandini2020metrics\]](/bibliography#grandini2020metrics)
+
+</details>
+<details>
+<summary>
+Dataset descriptions
+</summary>
+
+-   **CeNGEN (by batch)**: 100k FACS-isolated C. elegans neurons from 17 experiments sequenced on 10x Genomics. Split into train/test by experimental batch. [\[hammarlund2018cengen\]](/bibliography#hammarlund2018cengen)
+
+<!-- -->
+
+-   **CeNGEN (random split)**: 100k FACS-isolated C. elegans neurons from 17 experiments sequenced on 10x Genomics. Split into train/test randomly. [\[hammarlund2018cengen\]](/bibliography#hammarlund2018cengen)
+
+<!-- -->
+
+-   **Pancreas (by batch)**: Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq). Split into train/test by experimental batch. [\[luecken2022benchmarking\]](/bibliography#luecken2022benchmarking)
+
+<!-- -->
+
+-   **Pancreas (random split)**: Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq). Split into train/test randomly. [\[luecken2022benchmarking\]](/bibliography#luecken2022benchmarking)
+
+<!-- -->
+
+-   **Pancreas (random split with label noise)**: Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq). Split into train/test randomly with 20% label noise. [\[luecken2022benchmarking\]](/bibliography#luecken2022benchmarking)
+
+<!-- -->
+
+-   **Tabula Muris Senis Lung (random split)**: All lung cells from Tabula Muris Senis, a 500k cell-atlas from 18 organs and tissues across the mouse lifespan. Split into train/test randomly. [\[tabula2020single\]](/bibliography#tabula2020single)
+
+<!-- -->
+
+-   **Zebrafish (by labels)**: 90k cells from zebrafish embryos throughout the first day of development, with and without a knockout of chordin, an important developmental gene. Split into train/test by laboratory. [\[wagner2018single\]](/bibliography#wagner2018single)
+
+<!-- -->
+
+-   **Zebrafish (random split)**: 90k cells from zebrafish embryos throughout the first day of development, with and without a knockout of chordin, an important developmental gene. Split into train/test randomly. [\[wagner2018single\]](/bibliography#wagner2018single)
+
+</details>
+<details>
+<summary>
+Baseline descriptions
+</summary>
+
+-   **Majority Vote**: Baseline method using majority voting.
+
+<!-- -->
+
+-   **Random Labels**: Baseline method which generates random labels.
+
+<!-- -->
+
+-   **True Labels**: Positive control method by returning the true labels.
 
 </details>
 <details>
@@ -282,32 +325,6 @@ Quality control
 Visualization of raw results
 </summary>
 
-<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-10-1.png" width="960" />
+<img src="index.markdown_strict_files/figure-markdown_strict/raw_results-1.png" width="960" />
 
 </details>
-
-## References
-
-Chen, Tianqi, and Carlos Guestrin. 2016. "XGBoost." In *Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining*. Acm. <https://doi.org/10.1145/2939672.2939785>.
-
-Cover, T., and P. Hart. 1967. "Nearest Neighbor Pattern Classification." *IEEE Transactions on Information Theory* 13 (1): 21--27. <https://doi.org/10.1109/tit.1967.1053964>.
-
-Grandini, Margherita, Enrico Bagli, and Giorgio Visani. 2020. "Metrics for Multi-Class Classification: An Overview." *arXiv*. <https://doi.org/10.48550/arxiv.2008.05756>.
-
-Hammarlund, Marc, Oliver Hobert, David M. Miller, and Nenad Sestan. 2018. "The CeNGEN Project: The Complete Gene Expression Map of an Entire Nervous System." *Neuron* 99 (3): 430--33. <https://doi.org/10.1016/j.neuron.2018.07.042>.
-
-Hao, Yuhan, Stephanie Hao, Erica Andersen-Nissen, William M. Mauck, Shiwei Zheng, Andrew Butler, Maddie J. Lee, et al. 2021. "Integrated Analysis of Multimodal Single-Cell Data." *Cell* 184 (13): 3573--3587.e29. <https://doi.org/10.1016/j.cell.2021.04.048>.
-
-Hinton, Geoffrey E. 1989. "Connectionist Learning Procedures." *Artificial Intelligence* 40 (1-3): 185--234. <https://doi.org/10.1016/0004-3702(89)90049-0>.
-
-Hosmer Jr, D. W., S. Lemeshow, and R. X. Sturdivant. 2013. *Applied Logistic Regression*. Vol. 398. John Wiley & Sons.
-
-Lotfollahi, Mohammad, Mohsen Naghipourfar, Malte D. Luecken, Matin Khajavi, Maren Büttner, Ziga Avsec, Alexander V. Misharin, and Fabian J. Theis. 2020. "Query to Reference Single-Cell Integration with Transfer Learning." *bioRxiv*. <https://doi.org/10.1101/2020.07.16.205997>.
-
-Luecken, Malte D., M. Büttner, K. Chaichoompu, A. Danese, M. Interlandi, M. F. Mueller, D. C. Strobl, et al. 2021. "Benchmarking Atlas-Level Data Integration in Single-Cell Genomics." *Nature Methods* 19 (1): 41--50. <https://doi.org/10.1038/s41592-021-01336-8>.
-
-Tabula Muris Consortium. 2020. "A Single-Cell Transcriptomic Atlas Characterizes Ageing Tissues in the Mouse." *Nature* 583 (7817): 590--95. <https://doi.org/10.1038/s41586-020-2496-1>.
-
-Wagner, Daniel E., Caleb Weinreb, Zach M. Collins, James A. Briggs, Sean G. Megason, and Allon M. Klein. 2018. "Single-Cell Mapping of Gene Expression Landscapes and Lineage in the Zebrafish Embryo." *Science* 360 (6392): 981--87. <https://doi.org/10.1126/science.aar4362>.
-
-Xu, Chenling, Romain Lopez, Edouard Mehlman, Jeffrey Regier, Michael I Jordan, and Nir Yosef. 2021. "Probabilistic Harmonization and Annotation of Single-Cell Transcriptomics Data with Deep Generative Models." *Molecular Systems Biology* 17 (1). <https://doi.org/10.15252/msb.20209620>.

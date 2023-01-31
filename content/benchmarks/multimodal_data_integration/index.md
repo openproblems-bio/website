@@ -8,54 +8,16 @@ bibliography: "../../../static/bibliography/main.bib"
 <link href="index_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
+## Description
+
 Missing 'task_description'
 
-## Results
+## Summary
 
 <figure>
-<img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="672" alt="Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
-<figcaption aria-hidden="true">Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
+<img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="717" alt="Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)." />
+<figcaption aria-hidden="true"><strong>Overview of the results per method</strong>. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric).</figcaption>
 </figure>
-
-## Methods
-
--   **[Harmonic Alignment](https://github.com/KrishnaswamyLab/harmonic-alignment)** (Stanley et al. 2020): Missing 'method_description'.
-
-<!-- -->
-
--   **[Mutual Nearest Neighbors](https://github.com/LTLA/batchelor)** (Haghverdi et al. 2018): Missing 'method_description'.
-
-<!-- -->
-
--   **[Procrustes](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.procrustes.html)** (Gower 1975): Missing 'method_description'.
-
-## Metrics
-
--   **kNN Area Under the Curve** (Stanley et al. 2020): Missing 'metric_description'.
-
-<!-- -->
-
--   **Mean squared error** (Lance et al. 2022): Missing 'metric_description'.
-
-## Datasets
-
--   **CITE-seq Cord Blood Mononuclear Cells** (Stoeckius et al. 2017): Missing 'dataset_description'.
-
-<!-- -->
-
--   **sciCAR Cell Lines** (Cao et al. 2018): Missing 'dataset_description'.
-
-<!-- -->
-
--   **sciCAR Mouse Kidney** (Cao et al. 2018): Missing 'dataset_description'.
-
-## Baselines
-
--   **Random Features**: Missing 'method_description'.
-
-<!-- -->
-
--   **True Features**: Missing 'method_description'.
 
 ## Downloads
 
@@ -70,13 +32,74 @@ Missing 'task_description'
 
 <details>
 <summary>
-Overview per parameter set
+Method descriptions
 </summary>
 
-<figure>
-<img src="index.markdown_strict_files/figure-markdown_strict/summary_defailed-1.png" width="645" alt="Overview of the results per method and parameter set. This figures shows the means of the scaled scores per method parameter set across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
-<figcaption aria-hidden="true">Overview of the results per method and parameter set. This figures shows the means of the scaled scores per method parameter set across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
-</figure>
+-   **[Harmonic Alignment (log scran)](https://github.com/KrishnaswamyLab/harmonic-alignment)**: Missing 'method_description'. [\[stanley2020harmonic\]](/bibliography#stanley2020harmonic)
+
+<!-- -->
+
+-   **[Harmonic Alignment (sqrt CPM)](https://github.com/KrishnaswamyLab/harmonic-alignment)**: Missing 'method_description'. [\[stanley2020harmonic\]](/bibliography#stanley2020harmonic)
+
+<!-- -->
+
+-   **[Mutual Nearest Neighbors (log CPM)](https://github.com/LTLA/batchelor)**: Missing 'method_description'. [\[haghverdi2018batch\]](/bibliography#haghverdi2018batch)
+
+<!-- -->
+
+-   **[Mutual Nearest Neighbors (log scran)](https://github.com/LTLA/batchelor)**: Missing 'method_description'. [\[haghverdi2018batch\]](/bibliography#haghverdi2018batch)
+
+<!-- -->
+
+-   **[Procrustes](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.procrustes.html)**: Missing 'method_description'. [\[gower1975generalized\]](/bibliography#gower1975generalized)
+
+<!-- -->
+
+-   **[Random Features](https://github.com/openproblems-bio/openproblems)**: Missing 'method_description'. [\[openproblems\]](/bibliography#openproblems)
+
+<!-- -->
+
+-   **[True Features](https://github.com/openproblems-bio/openproblems)**: Missing 'method_description'. [\[openproblems\]](/bibliography#openproblems)
+
+</details>
+<details>
+<summary>
+Metric descriptions
+</summary>
+
+-   **kNN Area Under the Curve**: Missing 'metric_description'. [\[stanley2020harmonic\]](/bibliography#stanley2020harmonic)
+
+<!-- -->
+
+-   **Mean squared error**: Missing 'metric_description'. [\[lance2022multimodal\]](/bibliography#lance2022multimodal)
+
+</details>
+<details>
+<summary>
+Dataset descriptions
+</summary>
+
+-   **CITE-seq Cord Blood Mononuclear Cells**: Missing 'dataset_description'. [\[stoeckius2017simultaneous\]](/bibliography#stoeckius2017simultaneous)
+
+<!-- -->
+
+-   **sciCAR Cell Lines**: Missing 'dataset_description'. [\[cao2018joint\]](/bibliography#cao2018joint)
+
+<!-- -->
+
+-   **sciCAR Mouse Kidney**: Missing 'dataset_description'. [\[cao2018joint\]](/bibliography#cao2018joint)
+
+</details>
+<details>
+<summary>
+Baseline descriptions
+</summary>
+
+-   **Random Features**: Missing 'method_description'.
+
+<!-- -->
+
+-   **True Features**: Missing 'method_description'.
 
 </details>
 <details>
@@ -191,20 +214,6 @@ Quality control
 Visualization of raw results
 </summary>
 
-<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-10-1.png" width="960" />
+<img src="index.markdown_strict_files/figure-markdown_strict/raw_results-1.png" width="960" />
 
 </details>
-
-## References
-
-Cao, Junyue, Darren A. Cusanovich, Vijay Ramani, Delasa Aghamirzaie, Hannah A. Pliner, Andrew J. Hill, Riza M. Daza, et al. 2018. "Joint Profiling of Chromatin Accessibility and Gene Expression in Thousands of Single Cells." *Science* 361 (6409): 1380--85. <https://doi.org/10.1126/science.aau0730>.
-
-Gower, J. C. 1975. "Generalized Procrustes Analysis." *Psychometrika* 40 (1): 33--51. <https://doi.org/10.1007/bf02291478>.
-
-Haghverdi, Laleh, Aaron T L Lun, Michael D Morgan, and John C Marioni. 2018. "Batch Effects in Single-Cell RNA-Sequencing Data Are Corrected by Matching Mutual Nearest Neighbors." *Nature Biotechnology* 36 (5): 421--27. <https://doi.org/10.1038/nbt.4091>.
-
-Lance, Christopher, Malte D. Luecken, Daniel B. Burkhardt, Robrecht Cannoodt, Pia Rautenstrauch, Anna Laddach, Aidyn Ubingazhibov, et al. 2022. "Multimodal Single Cell Data Integration Challenge: Results and Lessons Learned." *bioRxiv*. <https://doi.org/10.1101/2022.04.11.487796>.
-
-Stanley, Jay S., Scott Gigante, Guy Wolf, and Smita Krishnaswamy. 2020. "Harmonic Alignment." In *Proceedings of the 2020 SIAM International Conference on Data Mining*, 316--24. Society for Industrial; Applied Mathematics. <https://doi.org/10.1137/1.9781611976236.36>.
-
-Stoeckius, Marlon, Christoph Hafemeister, William Stephenson, Brian Houck-Loomis, Pratip K Chattopadhyay, Harold Swerdlow, Rahul Satija, and Peter Smibert. 2017. "Simultaneous Epitope and Transcriptome Measurement in Single Cells." *Nature Methods* 14 (9): 865--68. <https://doi.org/10.1038/nmeth.4380>.

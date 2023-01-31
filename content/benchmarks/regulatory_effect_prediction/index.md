@@ -8,38 +8,16 @@ bibliography: "../../../static/bibliography/main.bib"
 <link href="index_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
+## Description
+
 Missing 'task_description'
 
-## Results
+## Summary
 
 <figure>
-<img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="619" alt="Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
-<figcaption aria-hidden="true">Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
+<img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="664" alt="Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)." />
+<figcaption aria-hidden="true"><strong>Overview of the results per method</strong>. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric).</figcaption>
 </figure>
-
-## Methods
-
--   **[BETA](http://cistrome.org/BETA)** (Wang et al. 2013): Missing 'method_description'.
-
-## Metrics
-
--   **Median Pearson correlation** (Schober, Boer, and Schwarte 2018): Missing 'metric_description'.
-
-<!-- -->
-
--   **Median Spearman correlation** (Schober, Boer, and Schwarte 2018): Missing 'metric_description'.
-
-## Datasets
-
--   **sciCAR Mouse Kidney with cell clusters** (Cao et al. 2018): Missing 'dataset_description'.
-
-## Baselines
-
--   **Random Scores**: Missing 'method_description'.
-
-<!-- -->
-
--   **True Scores**: Missing 'method_description'.
 
 ## Downloads
 
@@ -54,13 +32,50 @@ Missing 'task_description'
 
 <details>
 <summary>
-Overview per parameter set
+Method descriptions
 </summary>
 
-<figure>
-<img src="index.markdown_strict_files/figure-markdown_strict/summary_defailed-1.png" width="592" alt="Overview of the results per method and parameter set. This figures shows the means of the scaled scores per method parameter set across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
-<figcaption aria-hidden="true">Overview of the results per method and parameter set. This figures shows the means of the scaled scores per method parameter set across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
-</figure>
+-   **[BETA](http://cistrome.org/BETA)**: Missing 'method_description'. [\[wang2013target\]](/bibliography#wang2013target)
+
+<!-- -->
+
+-   **[Random Scores](https://github.com/openproblems-bio/openproblems)**: Missing 'method_description'. [\[openproblems\]](/bibliography#openproblems)
+
+<!-- -->
+
+-   **[True Scores](https://github.com/openproblems-bio/openproblems)**: Missing 'method_description'. [\[openproblems\]](/bibliography#openproblems)
+
+</details>
+<details>
+<summary>
+Metric descriptions
+</summary>
+
+-   **Median Pearson correlation**: Missing 'metric_description'. [\[schober2018correlation\]](/bibliography#schober2018correlation)
+
+<!-- -->
+
+-   **Median Spearman correlation**: Missing 'metric_description'. [\[schober2018correlation\]](/bibliography#schober2018correlation)
+
+</details>
+<details>
+<summary>
+Dataset descriptions
+</summary>
+
+-   **sciCAR Mouse Kidney with cell clusters**: Missing 'dataset_description'. [\[cao2018joint\]](/bibliography#cao2018joint)
+
+</details>
+<details>
+<summary>
+Baseline descriptions
+</summary>
+
+-   **Random Scores**: Missing 'method_description'.
+
+<!-- -->
+
+-   **True Scores**: Missing 'method_description'.
 
 </details>
 <details>
@@ -207,14 +222,6 @@ Quality control
 Visualization of raw results
 </summary>
 
-<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-10-1.png" width="960" />
+<img src="index.markdown_strict_files/figure-markdown_strict/raw_results-1.png" width="960" />
 
 </details>
-
-## References
-
-Cao, Junyue, Darren A. Cusanovich, Vijay Ramani, Delasa Aghamirzaie, Hannah A. Pliner, Andrew J. Hill, Riza M. Daza, et al. 2018. "Joint Profiling of Chromatin Accessibility and Gene Expression in Thousands of Single Cells." *Science* 361 (6409): 1380--85. <https://doi.org/10.1126/science.aau0730>.
-
-Schober, Patrick, Christa Boer, and Lothar A. Schwarte. 2018. "Correlation Coefficients." *Anesthesia &Amp$\mathsemicolon$ Analgesia* 126 (5): 1763--68. <https://doi.org/10.1213/ane.0000000000002864>.
-
-Wang, Su, Hanfei Sun, Jian Ma, Chongzhi Zang, Chenfei Wang, Juan Wang, Qianzi Tang, Clifford A Meyer, Yong Zhang, and X Shirley Liu. 2013. "Target Analysis by Integration of Transcriptome and ChIP-Seq Data with BETA." *Nature Protocols* 8 (12): 2502--15. <https://doi.org/10.1038/nprot.2013.150>.

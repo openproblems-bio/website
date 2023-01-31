@@ -1,4 +1,5 @@
 
+
 ```{r}
 #| include: false
 params <- list(data_dir = "content/benchmarks/label_projection/data")
@@ -22,28 +23,26 @@ task_info$task_description <- task_info$task_description %||% NA_character_
   ifelse(is.na(x), y, x)
 }
 
-# read method info
-method_info <- jsonlite::read_json(paste0(params$data_dir, "/method_info.json"), simplifyVector = TRUE) %>%
-  mutate(
-    method_base_name = gsub(" \\(.*", "", method_name)
-  )
-
-# read metric info
+method_info <- jsonlite::read_json(paste0(params$data_dir, "/method_info.json"), simplifyVector = TRUE)
 metric_info <- jsonlite::read_json(paste0(params$data_dir, "/metric_info.json"), simplifyVector = TRUE)
-
-# read dataset info
 dataset_info <- jsonlite::read_json(paste0(params$data_dir, "/dataset_info.json"), simplifyVector = TRUE)
-
-# read results
 results <- jsonlite::read_json(paste0(params$data_dir, "/results.json"), simplifyVector = TRUE)
-
-# read qc values
 qc <- jsonlite::read_json(paste0(params$data_dir, "/quality_control.json"), simplifyVector = TRUE)
+
+num_methods <- sum(!method_info$is_baseline)
+num_baselines <- sum(method_info$is_baseline)
+num_datasets <- nrow(dataset_info)
+num_metrics <- nrow(metric_info)
 ```
 
+:::{.content-hidden}
+`r num_methods` methods • `r num_metrics` metrics • `r num_datasets` datasets
+:::
+
+## Description 
 `r task_info$task_description %|% "Missing 'task_description'"`
 
-## Results
+## Summary
 
 ```{r overall_ranking}
 #| echo: false
@@ -61,7 +60,8 @@ results_long <-
       select(method_id, dataset_id, metric_id, score),
     by = c("method_id", "dataset_id", "metric_id")
   ) %>%
-  left_join(method_info %>% select(method_id, is_baseline), "method_id")
+  left_join(method_info %>% select(method_id, is_baseline), "method_id") %>%
+  mutate(score = pmin(1, pmax(score, 0))) # clip scores to [0, 1]
 
 overall_ranking <- results_long %>%
   group_by(method_id) %>%
@@ -98,25 +98,9 @@ summary_all <-
   left_join(per_dataset, by = "method_id") %>%
   left_join(per_metric, by = "method_id") %>%
   arrange(desc(mean_score))
-summary_base <- 
-  method_info %>%
-  transmute(
-    method_id,
-    method_name = method_base_name,
-    method_is_baseline = ifelse(is_baseline, "yes", "")
-  ) %>%
-  group_by(method_name) %>%
-  mutate(method_num_paramsets = as.character(n())) %>%
-  left_join(overall_ranking, by = "method_id") %>%
-  slice(which.max(mean_score)) %>%
-  ungroup() %>%
-  arrange(desc(mean_score)) %>%
-  left_join(per_dataset, by = "method_id") %>%
-  left_join(per_metric, by = "method_id") %>%
-  arrange(desc(mean_score))
 
 column_info <- tibble(
-  id = colnames(summary_base)[-1],
+  id = colnames(summary_all)[-1],
   name = id %>%
     gsub("^[^_]+_", "", .) %>%
     gsub("_", " ", .) %>%
@@ -130,7 +114,7 @@ column_info <- tibble(
   palette = ifelse(group %in% c("mean", "dataset", "metric"), group, NA_character_),
   options = map2(id, geom, function(id, geom) {
     if (id == "method_name") {
-      list(width = 12, hjust = 0)
+      list(width = 15, hjust = 0)
     } else if (id == "is_baseline") {
       list(width = 1)
     } else if (geom == "bar") {
@@ -140,90 +124,104 @@ column_info <- tibble(
     }
   })
 )
-
-g_base <- funky_heatmap(
-  data = summary_base,
-  column_info = column_info,
-  expand = c(xmax = 3),
-  col_annot_offset = 5
+column_groups <- tribble(
+  ~Category, ~group, ~palette,
+  "", "method", NA_character_,
+  "Overall", "mean", "mean",
+  "Dataset", "dataset", "dataset",
+  "Metric", "metric", "metric"
+)
+palettes <- list(
+  mean = "Greys",
+  dataset = "Blues",
+  metric = "Reds"
 )
 
 g_all <- funky_heatmap(
   data = summary_all,
   column_info = column_info %>% filter(id %in% colnames(summary_all)),
+  column_groups = column_groups,
+  palettes = palettes,
   expand = c(xmax = 3),
-  col_annot_offset = 5
+  col_annot_offset = 5,
+  add_abc = FALSE,
+  scale_column = FALSE
 )
 ```
 
 ```{r}
 #| include: false
 knitr::opts_chunk$set(
-  fig.width = g_base$width,
-  fig.height = g_base$height
+  fig.width = g_all$width,
+  fig.height = g_all$height,
+  dev.args = list(bg = "transparent")
 )
 ```
 
 ```{r summary}
 #| echo: false
-#| fig-cap: Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).
-g_base
+#| fig-cap: "**Overview of the results per method**. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)."
+g_all + theme(
+  panel.background = element_rect(fill = "transparent", colour = NA),
+  plot.background = element_rect(fill = "transparent", colour = NA)
+)
 ```
 
 
-## Methods
+:::{.content-hidden}
+## Results
 
 ```{r}
 #| echo: false
-# show each method just once
-method_info_base <- method_info %>% filter(!duplicated(method_base_name), !is_baseline)
-lines <- pmap_chr(method_info_base, function(method_base_name, method_description, paper_reference, code_url, ...) {
-  name <- method_base_name
-  if (!is.na(code_url)) {
-    name <- glue::glue("[{name}]({code_url})")
-  }
-  ref <- if (is.na(paper_reference)) "" else glue::glue(" [@{paper_reference}]")
-  summ <- (method_description %|% "Missing 'method_description'") %>% str_replace_all("\\. *$", "")
-  glue::glue("* **{name}**{ref}: {summ}.")
-})
-knitr::asis_output(lines)
+res_tib <- results %>%
+  unnest(scaled_scores) %>%
+  unnest(resources) %>%
+  left_join(method_info %>% select(-commit_sha, -code_version, -task_id), by = "method_id") %>%
+  left_join(dataset_info %>% select(dataset_id, dataset_name, data_reference), by = "dataset_id") %>%
+  mutate(
+    # dataset_label = glue::glue("[{dataset_name}]({data_reference})"),
+    # paper_label = glue::glue("[Ref](/bibliography#{paper_reference})"),
+    # package_label = glue::glue("[v{code_version}]({code_url})"),
+    dataset_label = glue::glue("<a href=\"/bibliography#{data_reference}\">{dataset_name}</a>"),
+    paper_label = glue::glue("<a href=\"/bibliography#{paper_reference}\">Ref</a>"),
+    package_label = glue::glue("<a href=\"{code_url}\">v{code_version}</a>"),
+    peak_memory_gb = peak_memory_mb / 1024
+  ) %>%
+  select(
+    method_name,
+    dataset_label,
+    mean_score,
+    any_of(metric_info$metric_id),
+    duration_sec,
+    cpu_pct,
+    peak_memory_gb,
+    paper_label,
+    package_label
+  ) %>%
+  arrange(desc(mean_score))
+res_cn <- c(
+  "Method",
+  "Dataset",
+  "Mean score",
+  metric_info$metric_name,
+  "Runtime (s)",
+  "CPU (%)",
+  "Memory (GB)",
+  "Paper",
+  "Library"
+)
+# ojs_define(
+#   res_tib = res_tib
+# )
+kbl(
+  res_tib,
+  format = "html",
+  col.names = res_cn,
+  digits = 2,
+  escape = FALSE
+)
 ```
-
-## Metrics
-
-```{r}
-#| echo: false
-lines <- pmap_chr(metric_info, function(metric_name, metric_description, paper_reference, ...) {
-  ref <- if (is.na(paper_reference)) "" else glue::glue(" [@{paper_reference}]")
-  summ <- (metric_description %|% "Missing 'metric_description'") %>% str_replace_all("\\. *$", "")
-  glue::glue("* **{metric_name}**{ref}: {summ}.")
-})
-knitr::asis_output(lines)
-```
-
-## Datasets
-
-```{r}
-#| echo: false
-lines <- pmap_chr(dataset_info, function(dataset_name, dataset_description, data_reference, ...) {
-  ref <- if (is.na(data_reference)) "" else glue::glue(" [@{data_reference}]")
-  summ <- (dataset_description %|% "Missing 'dataset_description'") %>% str_replace_all("\\. *$", "")
-  glue::glue("* **{dataset_name}**{ref}: {summ}.")
-})
-knitr::asis_output(lines)
-```
-
-## Baselines
-
-```{r}
-#| echo: false
-baselines <- method_info %>% filter(is_baseline)
-lines <- pmap_chr(baselines, function(method_base_name, method_description, reference, code_url, ...) {
-  summ <- (method_description %|% "Missing 'method_description'") %>% str_replace_all("\\. *$", "")
-  glue::glue("* **{method_base_name}**: {summ}.")
-})
-knitr::asis_output(lines)
-```
+:::
 
 ## Downloads
 
@@ -236,25 +234,80 @@ knitr::asis_output(lines)
 
 ## Details
 
-<details><summary>Overview per parameter set</summary>
-```{r}
-#| include: false
-knitr::opts_chunk$set(
-  fig.width = g_all$width,
-  fig.height = g_all$height
-)
-```
+<details><summary>Method descriptions</summary>
 
-```{r summary_defailed}
+```{r}
 #| echo: false
-#| fig-cap: Overview of the results per method and parameter set. This figures shows the means of the scaled scores per method parameter set across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).
-g_all
+# show each method just once
+lines <- pmap_chr(method_info, function(method_name, method_description, paper_reference, code_url, ...) {
+  if (!is.na(code_url)) {
+    method_name <- glue::glue("[{method_name}]({code_url})")
+  }
+  ref <- 
+    if (!is.na(paper_reference)) {
+      glue::glue(" [[{paper_reference}]](/bibliography#{paper_reference})")
+    } else {
+      ""
+    }
+  summ <- (method_description %|% "Missing 'method_description'") %>% str_replace_all("\\. *$", "")
+  glue::glue("* **{method_name}**: {summ}.{ref}")
+})
+knitr::asis_output(lines)
+```
+</details>
+
+<details><summary>Metric descriptions</summary>
+
+```{r}
+#| echo: false
+lines <- pmap_chr(metric_info, function(metric_name, metric_description, paper_reference, ...) {
+  ref <- 
+    if (!is.na(paper_reference)) {
+      glue::glue(" [[{paper_reference}]](/bibliography#{paper_reference})")
+    } else {
+      ""
+    }
+  summ <- (metric_description %|% "Missing 'metric_description'") %>% str_replace_all("\\. *$", "")
+  glue::glue("* **{metric_name}**: {summ}.{ref}")
+})
+knitr::asis_output(lines)
+```
+</details>
+
+<details><summary>Dataset descriptions</summary>
+
+```{r}
+#| echo: false
+lines <- pmap_chr(dataset_info, function(dataset_name, dataset_description, data_reference, ...) {
+  ref <- 
+    if (!is.na(data_reference)) {
+      glue::glue(" [[{data_reference}]](/bibliography#{data_reference})")
+    } else {
+      ""
+    }
+  summ <- (dataset_description %|% "Missing 'dataset_description'") %>% str_replace_all("\\. *$", "")
+  glue::glue("* **{dataset_name}**: {summ}.{ref}")
+})
+knitr::asis_output(lines)
+```
+</details>
+
+<details><summary>Baseline descriptions</summary>
+
+```{r}
+#| echo: false
+baselines <- method_info %>% filter(is_baseline)
+lines <- pmap_chr(baselines, function(method_name, method_description, reference, code_url, ...) {
+  summ <- (method_description %|% "Missing 'method_description'") %>% str_replace_all("\\. *$", "")
+  glue::glue("* **{method_name}**: {summ}.")
+})
+knitr::asis_output(lines)
 ```
 </details>
 
 <details><summary>Quality control</summary>
 
-```{r}
+```{r quality_control}
 #| echo: false
 qc_print <- qc %>% 
   filter(severity > 0) %>%
@@ -306,7 +359,8 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r echo=FALSE}
+```{r raw_results}
+#| echo: false
 ggplot(results_long %>% arrange(method_id)) +
   geom_vline(aes(xintercept = x), tibble(x = c(0, 1)), linetype = "dashed", alpha = .5, colour = "red") +
   geom_path(aes(score, method_id, group = dataset_id), alpha = .25) +
@@ -317,5 +371,3 @@ ggplot(results_long %>% arrange(method_id)) +
 ```
 
 </details>
-
-## References

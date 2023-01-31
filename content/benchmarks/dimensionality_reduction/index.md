@@ -8,114 +8,18 @@ bibliography: "../../../static/bibliography/main.bib"
 <link href="index_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
+## Description
+
 Missing 'task_description'
 
-## Results
+## Summary
+
+    Warning: Removed 10 rows containing missing values (geom_rect).
 
 <figure>
-<img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="883" alt="Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
-<figcaption aria-hidden="true">Overview of the results per method. This figures shows the means of the scaled scores per method across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
+<img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="928" alt="Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)." />
+<figcaption aria-hidden="true"><strong>Overview of the results per method</strong>. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric).</figcaption>
 </figure>
-
-## Methods
-
--   **[densMAP](https://github.com/lmcinnes/umap)** (Narayan, Berger, and Cho 2021): Missing 'method_description'.
-
-<!-- -->
-
--   **[densMAP PCA](https://github.com/lmcinnes/umap)** (Narayan, Berger, and Cho 2021): Missing 'method_description'.
-
-<!-- -->
-
--   **[NeuralEE](https://github.com/HiBearME/NeuralEE)** (Xiong et al. 2020): Missing 'method_description'.
-
-<!-- -->
-
--   **[Principle Component Analysis](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)** (Pearson 1901): Missing 'method_description'.
-
-<!-- -->
-
--   **[PHATE](https://github.com/KrishnaswamyLab/PHATE/)** (Moon et al. 2019): Missing 'method_description'.
-
-<!-- -->
-
--   **[t-Distributed Stochastic Neighbor Embedding](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html#sklearn.manifold.TSNE)** (van der Maaten and Hinton 2008): Missing 'method_description'.
-
-<!-- -->
-
--   **[UMAP](https://github.com/lmcinnes/umap)** (McInnes, Healy, and Melville 2018): Missing 'method_description'.
-
-<!-- -->
-
--   **[UMAP PCA](https://github.com/lmcinnes/umap)** (McInnes, Healy, and Melville 2018): Missing 'method_description'.
-
-## Metrics
-
--   **continuity** (Zhang, Shang, and Zhang 2021): Missing 'metric_description'.
-
-<!-- -->
-
--   **density preservation** (Narayan, Berger, and Cho 2021): Missing 'metric_description'.
-
-<!-- -->
-
--   **local continuity meta criterion** (Zhang, Shang, and Zhang 2021): Missing 'metric_description'.
-
-<!-- -->
-
--   **global property** (Zhang, Shang, and Zhang 2021): Missing 'metric_description'.
-
-<!-- -->
-
--   **local property** (Zhang, Shang, and Zhang 2021): Missing 'metric_description'.
-
-<!-- -->
-
--   **co-KNN size** (Zhang, Shang, and Zhang 2021): Missing 'metric_description'.
-
-<!-- -->
-
--   **co-KNN AUC** (Zhang, Shang, and Zhang 2021): Missing 'metric_description'.
-
-<!-- -->
-
--   **RMSE** (Kruskal 1964): Missing 'metric_description'.
-
-<!-- -->
-
--   **RMSE (spectral)** (Coifman and Lafon 2006): Missing 'metric_description'.
-
-<!-- -->
-
--   **trustworthiness** (Venna and Kaski 2001): Missing 'metric_description'.
-
-## Datasets
-
--   **Mouse hematopoietic stem cell differentiation** (Nestorowa et al. 2016): Missing 'dataset_description'.
-
-<!-- -->
-
--   **Mouse myeloid lineage differentiation** (Olsson et al. 2016): Missing 'dataset_description'.
-
-<!-- -->
-
--   **5k Peripheral blood mononuclear cells** (10x Genomics 2019): Missing 'dataset_description'.
-
-## Baselines
-
--   **Random Features**: Missing 'method_description'.
-
-<!-- -->
-
--   **True Features**: Missing 'method_description'.
-
-<!-- -->
-
--   **True Features**: Missing 'method_description'.
-
-<!-- -->
-
--   **True Features**: Missing 'method_description'.
 
 ## Downloads
 
@@ -130,15 +34,174 @@ Missing 'task_description'
 
 <details>
 <summary>
-Overview per parameter set
+Method descriptions
 </summary>
 
-    Warning: Removed 10 rows containing missing values (geom_rect).
+-   **[densMAP (logCPM)](https://github.com/lmcinnes/umap)**: Missing 'method_description'. [\[narayan2021assessing\]](/bibliography#narayan2021assessing)
 
-<figure>
-<img src="index.markdown_strict_files/figure-markdown_strict/summary_defailed-1.png" width="856" alt="Overview of the results per method and parameter set. This figures shows the means of the scaled scores per method parameter set across all results (group Mean), per dataset (group Dataset) and per metric (group Metric)." />
-<figcaption aria-hidden="true">Overview of the results per method and parameter set. This figures shows the means of the scaled scores per method parameter set across all results (group Mean), per dataset (group Dataset) and per metric (group Metric).</figcaption>
-</figure>
+<!-- -->
+
+-   **[densMAP (logCPM, 1kHVG)](https://github.com/lmcinnes/umap)**: Missing 'method_description'. [\[narayan2021assessing\]](/bibliography#narayan2021assessing)
+
+<!-- -->
+
+-   **[densMAP PCA (logCPM)](https://github.com/lmcinnes/umap)**: Missing 'method_description'. [\[narayan2021assessing\]](/bibliography#narayan2021assessing)
+
+<!-- -->
+
+-   **[densMAP PCA (logCPM, 1kHVG)](https://github.com/lmcinnes/umap)**: Missing 'method_description'. [\[narayan2021assessing\]](/bibliography#narayan2021assessing)
+
+<!-- -->
+
+-   **[NeuralEE (CPU) (Default)](https://github.com/HiBearME/NeuralEE)**: Missing 'method_description'. [\[xiong2020neuralee\]](/bibliography#xiong2020neuralee)
+
+<!-- -->
+
+-   **[NeuralEE (CPU) (logCPM, 1kHVG)](https://github.com/HiBearME/NeuralEE)**: Missing 'method_description'. [\[xiong2020neuralee\]](/bibliography#xiong2020neuralee)
+
+<!-- -->
+
+-   **[Principle Component Analysis (PCA) (logCPM)](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)**: Missing 'method_description'. [\[pearson1901pca\]](/bibliography#pearson1901pca)
+
+<!-- -->
+
+-   **[Principle Component Analysis (PCA) (logCPM, 1kHVG)](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)**: Missing 'method_description'. [\[pearson1901pca\]](/bibliography#pearson1901pca)
+
+<!-- -->
+
+-   **[PHATE (default)](https://github.com/KrishnaswamyLab/PHATE/)**: Missing 'method_description'. [\[moon2019visualizing\]](/bibliography#moon2019visualizing)
+
+<!-- -->
+
+-   **[PHATE (logCPM, 1kHVG)](https://github.com/KrishnaswamyLab/PHATE/)**: Missing 'method_description'. [\[moon2019visualizing\]](/bibliography#moon2019visualizing)
+
+<!-- -->
+
+-   **[PHATE (logCPM)](https://github.com/KrishnaswamyLab/PHATE/)**: Missing 'method_description'. [\[moon2019visualizing\]](/bibliography#moon2019visualizing)
+
+<!-- -->
+
+-   **[PHATE (gamma=0)](https://github.com/KrishnaswamyLab/PHATE/)**: Missing 'method_description'. [\[moon2019visualizing\]](/bibliography#moon2019visualizing)
+
+<!-- -->
+
+-   **[Random Features](https://github.com/openproblems-bio/openproblems)**: Missing 'method_description'. [\[openproblems\]](/bibliography#openproblems)
+
+<!-- -->
+
+-   **[True Features](https://github.com/openproblems-bio/openproblems)**: Missing 'method_description'. [\[openproblems\]](/bibliography#openproblems)
+
+<!-- -->
+
+-   **[True Features (logCPM)](https://github.com/openproblems-bio/openproblems)**: Missing 'method_description'. [\[openproblems\]](/bibliography#openproblems)
+
+<!-- -->
+
+-   **[True Features (logCPM, 1kHVG)](https://github.com/openproblems-bio/openproblems)**: Missing 'method_description'. [\[openproblems\]](/bibliography#openproblems)
+
+<!-- -->
+
+-   **[t-Distributed Stochastic Neighbor Embedding (t-SNE) (logCPM)](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html#sklearn.manifold.TSNE)**: Missing 'method_description'. [\[vandermaaten2008visualizing\]](/bibliography#vandermaaten2008visualizing)
+
+<!-- -->
+
+-   **[t-Distributed Stochastic Neighbor Embedding (t-SNE) (logCPM, 1kHVG)](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html#sklearn.manifold.TSNE)**: Missing 'method_description'. [\[vandermaaten2008visualizing\]](/bibliography#vandermaaten2008visualizing)
+
+<!-- -->
+
+-   **[UMAP (logCPM)](https://github.com/lmcinnes/umap)**: Missing 'method_description'. [\[mcinnes2018umap\]](/bibliography#mcinnes2018umap)
+
+<!-- -->
+
+-   **[UMAP (logCPM, 1kHVG)](https://github.com/lmcinnes/umap)**: Missing 'method_description'. [\[mcinnes2018umap\]](/bibliography#mcinnes2018umap)
+
+<!-- -->
+
+-   **[UMAP PCA (logCPM)](https://github.com/lmcinnes/umap)**: Missing 'method_description'. [\[mcinnes2018umap\]](/bibliography#mcinnes2018umap)
+
+<!-- -->
+
+-   **[UMAP PCA (logCPM, 1kHVG)](https://github.com/lmcinnes/umap)**: Missing 'method_description'. [\[mcinnes2018umap\]](/bibliography#mcinnes2018umap)
+
+</details>
+<details>
+<summary>
+Metric descriptions
+</summary>
+
+-   **continuity**: Missing 'metric_description'. [\[zhang2021pydrmetrics\]](/bibliography#zhang2021pydrmetrics)
+
+<!-- -->
+
+-   **density preservation**: Missing 'metric_description'. [\[narayan2021assessing\]](/bibliography#narayan2021assessing)
+
+<!-- -->
+
+-   **local continuity meta criterion**: Missing 'metric_description'. [\[zhang2021pydrmetrics\]](/bibliography#zhang2021pydrmetrics)
+
+<!-- -->
+
+-   **global property**: Missing 'metric_description'. [\[zhang2021pydrmetrics\]](/bibliography#zhang2021pydrmetrics)
+
+<!-- -->
+
+-   **local property**: Missing 'metric_description'. [\[zhang2021pydrmetrics\]](/bibliography#zhang2021pydrmetrics)
+
+<!-- -->
+
+-   **co-KNN size**: Missing 'metric_description'. [\[zhang2021pydrmetrics\]](/bibliography#zhang2021pydrmetrics)
+
+<!-- -->
+
+-   **co-KNN AUC**: Missing 'metric_description'. [\[zhang2021pydrmetrics\]](/bibliography#zhang2021pydrmetrics)
+
+<!-- -->
+
+-   **RMSE**: Missing 'metric_description'. [\[kruskal1964mds\]](/bibliography#kruskal1964mds)
+
+<!-- -->
+
+-   **RMSE (spectral)**: Missing 'metric_description'. [\[coifman2006diffusion\]](/bibliography#coifman2006diffusion)
+
+<!-- -->
+
+-   **trustworthiness**: Missing 'metric_description'. [\[venna2001neighborhood\]](/bibliography#venna2001neighborhood)
+
+</details>
+<details>
+<summary>
+Dataset descriptions
+</summary>
+
+-   **Mouse hematopoietic stem cell differentiation**: Missing 'dataset_description'. [\[nestorowa2016single\]](/bibliography#nestorowa2016single)
+
+<!-- -->
+
+-   **Mouse myeloid lineage differentiation**: Missing 'dataset_description'. [\[olsson2016single\]](/bibliography#olsson2016single)
+
+<!-- -->
+
+-   **5k Peripheral blood mononuclear cells**: Missing 'dataset_description'. [\[10x2019pbmc\]](/bibliography#10x2019pbmc)
+
+</details>
+<details>
+<summary>
+Baseline descriptions
+</summary>
+
+-   **Random Features**: Missing 'method_description'.
+
+<!-- -->
+
+-   **True Features**: Missing 'method_description'.
+
+<!-- -->
+
+-   **True Features (logCPM)**: Missing 'method_description'.
+
+<!-- -->
+
+-   **True Features (logCPM, 1kHVG)**: Missing 'method_description'.
 
 </details>
 <details>
@@ -3259,34 +3322,6 @@ Quality control
 Visualization of raw results
 </summary>
 
-<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-10-1.png" width="960" />
+<img src="index.markdown_strict_files/figure-markdown_strict/raw_results-1.png" width="960" />
 
 </details>
-
-## References
-
-10x Genomics. 2019. "5k Peripheral Blood Mononuclear Cells (PBMCs) from a Healthy Donor with a Panel of TotalSeq-b Antibodies (V3 Chemistry)." <https://www.10xgenomics.com/resources/datasets/5-k-peripheral-blood-mononuclear-cells-pbm-cs-from-a-healthy-donor-with-cell-surface-proteins-v-3-chemistry-3-1-standard-3-1-0>.
-
-Coifman, Ronald R., and Stéphane Lafon. 2006. "Diffusion Maps." *Applied and Computational Harmonic Analysis* 21 (1): 5--30. <https://doi.org/10.1016/j.acha.2006.04.006>.
-
-Kruskal, J. B. 1964. "Multidimensional Scaling by Optimizing Goodness of Fit to a Nonmetric Hypothesis." *Psychometrika* 29 (1): 1--27. <https://doi.org/10.1007/bf02289565>.
-
-McInnes, Leland, John Healy, and James Melville. 2018. "UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction." *arXiv*. <https://doi.org/10.48550/arxiv.1802.03426>.
-
-Moon, Kevin R., David van Dijk, Zheng Wang, Scott Gigante, Daniel B. Burkhardt, William S. Chen, Kristina Yim, et al. 2019. "Visualizing Structure and Transitions in High-Dimensional Biological Data." *Nature Biotechnology* 37 (12): 1482--92. <https://doi.org/10.1038/s41587-019-0336-3>.
-
-Narayan, Ashwin, Bonnie Berger, and Hyunghoon Cho. 2021. "Assessing Single-Cell Transcriptomic Variability Through Density-Preserving Data Visualization." *Nature Biotechnology* 39 (6): 765--74. <https://doi.org/10.1038/s41587-020-00801-7>.
-
-Nestorowa, Sonia, Fiona K. Hamey, Blanca Pijuan Sala, Evangelia Diamanti, Mairi Shepherd, Elisa Laurenti, Nicola K. Wilson, David G. Kent, and Berthold Göttgens. 2016. "A Single-Cell Resolution Map of Mouse Hematopoietic Stem and Progenitor Cell Differentiation." *Blood* 128 (8): e20--31. <https://doi.org/10.1182/blood-2016-05-716480>.
-
-Olsson, Andre, Meenakshi Venkatasubramanian, Viren K. Chaudhri, Bruce J. Aronow, Nathan Salomonis, Harinder Singh, and H. Leighton Grimes. 2016. "Single-Cell Analysis of Mixed-Lineage States Leading to a Binary Cell Fate Choice." *Nature* 537 (7622): 698--702. <https://doi.org/10.1038/nature19348>.
-
-Pearson, Karl. 1901. "On Lines and Planes of Closest Fit to Systems of Points in Space." *The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science* 2 (11): 559--72. <https://doi.org/10.1080/14786440109462720>.
-
-van der Maaten, Laurens, and Geoffrey Hinton. 2008. "Visualizing Data Using t-SNE." *Journal of Machine Learning Research* 9 (86): 2579--2605. <http://jmlr.org/papers/v9/vandermaaten08a.html>.
-
-Venna, Jarkko, and Samuel Kaski. 2001. "Neighborhood Preservation in Nonlinear Projection Methods: An Experimental Study." In *Artificial Neural Networks ICANN 2001*, 485--91. Springer Berlin Heidelberg. [https://doi.org/10.1007/3-540-44668-0\\\_68](https://doi.org/10.1007/3-540-44668-0\_68).
-
-Xiong, Jiankang, Fuzhou Gong, Lin Wan, and Liang Ma. 2020. "NeuralEE: A GPU-Accelerated Elastic Embedding Dimensionality Reduction Method for Visualizing Large-Scale <span class="nocase">scRNA</span>-Seq Data." *Frontiers in Genetics* 11. <https://doi.org/10.3389/fgene.2020.00786>.
-
-Zhang, Yinsheng, Qian Shang, and Guoming Zhang. 2021. "<span class="nocase">pyDRMetrics</span> - a Python Toolkit for Dimensionality Reduction Quality Assessment." *Heliyon* 7 (2): e06199. <https://doi.org/10.1016/j.heliyon.2021.e06199>.
