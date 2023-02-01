@@ -4,6 +4,27 @@ summary: "Prediction of gene expression from chromatin accessibility"
 bibliography: "../../../static/bibliography/main.bib"
 ---
 
+<script src="index_files/libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="index_files/libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="index_files/libs/datatables-binding-0.25/datatables.js"></script>
+<script src="index_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="index_files/libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="index_files/libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="index_files/libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="index_files/libs/dt-ext-select-1.11.3/css/select.dataTables.min.css" rel="stylesheet" />
+<script src="index_files/libs/dt-ext-select-1.11.3/js/dataTables.select.min.js"></script>
+<link href="index_files/libs/dt-ext-searchpanes-1.11.3/css/searchPanes.dataTables.min.css" rel="stylesheet" />
+<script src="index_files/libs/dt-ext-searchpanes-1.11.3/js/dataTables.searchPanes.min.js"></script>
+<script src="index_files/libs/jszip-1.11.3/jszip.min.js"></script>
+<script src="index_files/libs/pdfmake-1.11.3/pdfmake.js"></script>
+<script src="index_files/libs/pdfmake-1.11.3/vfs_fonts.js"></script>
+<link href="index_files/libs/dt-ext-buttons-1.11.3/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="index_files/libs/dt-ext-buttons-1.11.3/js/dataTables.buttons.min.js"></script>
+<script src="index_files/libs/dt-ext-buttons-1.11.3/js/buttons.html5.min.js"></script>
+<script src="index_files/libs/dt-ext-buttons-1.11.3/js/buttons.colVis.min.js"></script>
+<script src="index_files/libs/dt-ext-buttons-1.11.3/js/buttons.print.min.js"></script>
+<link href="index_files/libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="index_files/libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 <script src="index_files/libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="index_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -15,9 +36,15 @@ Missing 'task_description'
 ## Summary
 
 <figure>
-<img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="664" alt="Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)." />
+<img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="638" alt="Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)." />
 <figcaption aria-hidden="true"><strong>Overview of the results per method</strong>. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric).</figcaption>
 </figure>
+
+## Scaled scores
+
+<div id="htmlwidget-9e216779d07deb836a16" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9e216779d07deb836a16">{"x":{"filter":"none","vertical":false,"extensions":["Select","SearchPanes","Buttons"],"data":[["<a href=\"/bibliography#wang2013target\">BETA<\/a>","<a href=\"/bibliography#wang2013target\">BETA<\/a>"],["Overall mean","<a href=\"/bibliography#cao2018joint\">sciCAR Mouse Kidney with cell clusters<\/a>"],[-1.76036443792866,-1.76036443792866],[-3.36341676537853,-3.36341676537853],[-0.157312110478785,-0.157312110478785],[747,747],[3233.4,3233.4],[4.4921875,4.4921875],["<a href=\"http://cistrome.org/BETA\">v1.0<\/a>","<a href=\"http://cistrome.org/BETA\">v1.0<\/a>"]],"container":"<table class=\"stripe compact\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Dataset<\/th>\n      <th>Mean score<\/th>\n      <th>Median Pearson correlation<\/th>\n      <th>Median Spearman correlation<\/th>\n      <th>Runtime (s)<\/th>\n      <th>CPU (%)<\/th>\n      <th>Memory (GB)<\/th>\n      <th>Library<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bfrtip","paging":false,"columnDefs":[{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"searchPanes":{"show":false},"targets":[2,3,4,5,6,7,8]},{"searchPanes":{"preSelect":"Overall mean"},"targets":1},{"className":"dt-right","targets":[2,3,4,5,6,7]}],"buttons":["searchPanes",{"extend":"collection","buttons":["csv","excel","pdf"],"text":"Download"}],"language":{"searchPanes":{"collapse":"Filter Rows"}},"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render"],"jsHooks":[]}</script>
+<!--### sciCAR Mouse Kidney with cell clusters-->
 
 ## Downloads
 
@@ -221,6 +248,11 @@ Quality control
 <summary>
 Visualization of raw results
 </summary>
+
+    geom_path: Each group consists of only one observation. Do you need to adjust
+    the group aesthetic?
+    geom_path: Each group consists of only one observation. Do you need to adjust
+    the group aesthetic?
 
 <img src="index.markdown_strict_files/figure-markdown_strict/raw_results-1.png" width="960" />
 

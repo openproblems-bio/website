@@ -1,6 +1,7 @@
 from pathlib import Path
 import json
 import subprocess
+import shutil
 
 print("Fetch template", flush=True)
 benchmark_dir = Path("content/benchmarks/")
@@ -33,3 +34,7 @@ bibliography: "../../../static/bibliography/main.bib"
 
     print(f"Rendering {index_qmd}", flush=True)
     subprocess.run(["quarto", "render", str(index_qmd), "--to", "hugo-md"])
+
+    index_files = task_info_file.parent.parent / "index_files"
+    shutil.rmtree(index_files)
+    

@@ -4,8 +4,6 @@ summary: "Removing noise in sparse single-cell RNA-sequencing count data"
 bibliography: "../../../static/bibliography/main.bib"
 ---
 
-
-
 ```{r}
 #| include: false
 params <- list(data_dir = "content/benchmarks/label_projection/data")
@@ -67,6 +65,7 @@ results_long <-
     by = c("method_id", "dataset_id", "metric_id")
   ) %>%
   left_join(method_info %>% select(method_id, is_baseline), "method_id") %>%
+  filter(!is_baseline) %>%
   mutate(score = pmin(1, pmax(score, 0))) # clip scores to [0, 1]
 
 overall_ranking <- results_long %>%
@@ -95,10 +94,11 @@ per_metric <- results_long %>%
 
 summary_all <- 
   method_info %>%
+  filter(!is_baseline) %>%
   transmute(
     method_id,
-    method_name,
-    method_is_baseline = ifelse(is_baseline, "yes", "")
+    method_name#,
+    # method_is_baseline = ifelse(is_baseline, "yes", "")
   ) %>%
   left_join(overall_ranking, by = "method_id") %>%
   left_join(per_dataset, by = "method_id") %>%
@@ -174,37 +174,45 @@ g_all + theme(
 ```
 
 
-:::{.content-hidden}
-## Results
+## Scaled scores
 
 ```{r}
 #| echo: false
-res_tib <- results %>%
+res_tib0 <- results %>%
   unnest(scaled_scores) %>%
   unnest(resources) %>%
   left_join(method_info %>% select(-commit_sha, -code_version, -task_id), by = "method_id") %>%
-  left_join(dataset_info %>% select(dataset_id, dataset_name, data_reference), by = "dataset_id") %>%
+  filter(!is_baseline) %>%
+  left_join(dataset_info %>% select(dataset_id, dataset_name, data_reference), by = "dataset_id")
+
+res_tib1 <- res_tib0 %>% 
+  group_by(method_id, method_name, paper_reference, code_url, code_version) %>%
+  summarise_if(is.numeric, mean) %>%
+  ungroup() %>%
   mutate(
-    # dataset_label = glue::glue("[{dataset_name}]({data_reference})"),
-    # paper_label = glue::glue("[Ref](/bibliography#{paper_reference})"),
-    # package_label = glue::glue("[v{code_version}]({code_url})"),
-    dataset_label = glue::glue("<a href=\"/bibliography#{data_reference}\">{dataset_name}</a>"),
-    paper_label = glue::glue("<a href=\"/bibliography#{paper_reference}\">Ref</a>"),
+    dataset_name = "Overall mean"
+  ) %>%
+  bind_rows(res_tib0)
+  
+res_tib <- res_tib1 %>%
+  mutate(
+    method_label = ifelse(is.na(paper_reference), method_name, glue::glue("<a href=\"/bibliography#{paper_reference}\">{method_name}</a>")),
+    dataset_label = ifelse(is.na(data_reference), dataset_name, glue::glue("<a href=\"/bibliography#{data_reference}\">{dataset_name}</a>")),
     package_label = glue::glue("<a href=\"{code_url}\">v{code_version}</a>"),
     peak_memory_gb = peak_memory_mb / 1024
   ) %>%
   select(
-    method_name,
+    method_label,
     dataset_label,
     mean_score,
     any_of(metric_info$metric_id),
     duration_sec,
     cpu_pct,
     peak_memory_gb,
-    paper_label,
     package_label
   ) %>%
   arrange(desc(mean_score))
+
 res_cn <- c(
   "Method",
   "Dataset",
@@ -213,21 +221,119 @@ res_cn <- c(
   "Runtime (s)",
   "CPU (%)",
   "Memory (GB)",
-  "Paper",
   "Library"
 )
-# ojs_define(
-#   res_tib = res_tib
-# )
-kbl(
+
+DT::datatable(
   res_tib,
-  format = "html",
-  col.names = res_cn,
-  digits = 2,
-  escape = FALSE
-)
+  colnames = res_cn,
+  options = list(
+    dom = "Bfrtip",
+    paging = FALSE,
+    columnDefs = list(
+      list(
+        searchPanes = list(show = FALSE),
+        targets = seq(2, ncol(res_tib)-1)
+      ),
+      list(
+        searchPanes = list(
+          preSelect = "Overall mean"
+        ),
+        targets = 1
+      )
+    ),
+    buttons = list(
+      'searchPanes',
+      list(
+        extend = 'collection',
+        buttons = c('csv', 'excel', 'pdf'),
+        text = 'Download'
+      )
+    ),
+    language = list(
+      searchPanes = list(collapse = "Filter Rows")
+    )
+  ),
+  escape = FALSE,
+  class = "stripe compact",
+  rownames = FALSE,
+  extensions = c("Select", "SearchPanes", "Buttons")
+) %>%
+  DT::formatRound(c("peak_memory_gb", "mean_score", metric_info$metric_id), digits = 2) %>%
+  DT::formatRound(c("cpu_pct", "duration_sec"), digits = 0)
 ```
-:::
+
+```{r}
+#| echo: false
+#| include: false
+#| eval: false
+di_table <- function(dataset_id) {
+  res_tib <- results %>%
+    filter(dataset_id == !!dataset_id) %>%
+    unnest(scaled_scores) %>%
+    unnest(resources) %>%
+    left_join(method_info %>% select(-commit_sha, -code_version, -task_id), by = "method_id") %>%
+    left_join(dataset_info %>% select(dataset_id, dataset_name, data_reference), by = "dataset_id") %>%
+    mutate(
+      # dataset_label = glue::glue("[{dataset_name}]({data_reference})"),
+      # paper_label = glue::glue("[Ref](/bibliography#{paper_reference})"),
+      # package_label = glue::glue("[v{code_version}]({code_url})"),
+      dataset_label = glue::glue("<a href=\"/bibliography#{data_reference}\">{dataset_name}</a>"),
+      paper_label = glue::glue("<a href=\"/bibliography#{paper_reference}\">Link</a>"),
+      package_label = glue::glue("<a href=\"{code_url}\">v{code_version}</a>"),
+      peak_memory_gb = peak_memory_mb / 1024
+    ) %>%
+    select(
+      method_name,
+      mean_score,
+      any_of(metric_info$metric_id),
+      duration_sec,
+      cpu_pct,
+      peak_memory_gb,
+      paper_label,
+      package_label
+    ) %>%
+    arrange(desc(mean_score))
+  res_cn <- c(
+    "Method",
+    "Mean score",
+    metric_info$metric_name,
+    "Runtime (s)",
+    "CPU (%)",
+    "Memory (GB)",
+    "Paper",
+    "Library"
+  )
+  DT::datatable(
+    res_tib,
+    colnames = res_cn,
+    options = list(
+      paging = FALSE,
+      bInfo = FALSE,
+      searching = FALSE,
+      # autoWidth = FALSE,
+      scrollX = TRUE
+    ),
+    escape = FALSE,
+    # class = "cell-border stripe compact",
+    rownames = FALSE
+  ) %>%
+    DT::formatRound(c("peak_memory_gb", "mean_score", metric_info$metric_id), digits = 2) %>%
+    DT::formatRound("peak_memory_gb", digits = 1) %>%
+    DT::formatRound(c("cpu_pct", "duration_sec"), digits = 0)
+}
+```
+
+
+<!--### `r dataset_info$dataset_name[[1]]`-->
+
+```{r}
+#| echo: false
+#| include: false
+#| eval: false
+dit <- di_table(dataset_info$dataset_id[[1]])
+dit
+```
 
 ## Downloads
 
@@ -376,4 +482,6 @@ ggplot(results_long %>% arrange(method_id)) +
 ```
 
 </details>
+
+
 
