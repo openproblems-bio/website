@@ -84,10 +84,22 @@ column_info <- tibble(
 column_groups <- tribble(
   ~Category, ~group, ~palette,
   "", "method", NA_character_,
-  "Overall", "mean", "mean",
-  "Dataset", "dataset", "dataset",
-  "Metric", "metric", "metric"
+  "Overall", "mean", "mean"
 )
+if (nrow(dataset_info) >= 3) {
+  column_groups <- column_groups %>%
+    add_row(Category = "Dataset", group = "dataset", palette = "dataset")
+} else {
+  column_groups <- column_groups %>%
+    add_row(Category = "", group = "dataset", palette = NA_character_)
+}
+if (nrow(metric_info) >= 3) {
+  column_groups <- column_groups %>%
+    add_row(Category = "Metric", group = "metric", palette = "metric")
+} else {
+  column_groups <- column_groups %>%
+    add_row(Category = "", group = "metric", palette = NA_character_)
+}
 palettes <- list(
   mean = "Greys",
   dataset = "Blues",
