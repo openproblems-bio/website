@@ -16,14 +16,17 @@ res_tib1 <- res_tib0 %>%
     dataset_name = "Overall mean"
   ) %>%
   bind_rows(res_tib0)
+
   
 res_tib <- res_tib1 %>%
+  arrange(desc(mean_score)) %>%
+  rowwise() %>%
   mutate(
-    method_label = ifelse(is.na(paper_reference), method_name, glue::glue("<a href=\"/bibliography#{paper_reference}\">{method_name}</a>")),
-    dataset_label = ifelse(is.na(data_reference), dataset_name, glue::glue("<a href=\"/bibliography#{data_reference}\">{dataset_name}</a>")),
-    package_label = glue::glue("<a href=\"{code_url}\">v{code_version}</a>"),
+    method_label = ifelse(is.na(paper_reference), method_name, glue::glue("{method_name} <sup>{cite_fun(paper_reference, format = 'html')}</sup>")),
+    dataset_label = ifelse(is.na(data_reference), dataset_name, glue::glue("{dataset_name} <sup>{cite_fun(data_reference, format = 'html')}</sup>")),
     peak_memory_gb = peak_memory_mb / 1024
   ) %>%
+  ungroup() %>%
   select(
     method_label,
     dataset_label,
@@ -31,10 +34,8 @@ res_tib <- res_tib1 %>%
     any_of(metric_info$metric_id),
     duration_sec,
     cpu_pct,
-    peak_memory_gb,
-    package_label
-  ) %>%
-  arrange(desc(mean_score))
+    peak_memory_gb
+  )
 
 res_cn <- c(
   "Method",
@@ -43,8 +44,7 @@ res_cn <- c(
   metric_info$metric_name,
   "Runtime (s)",
   "CPU (%)",
-  "Memory (GB)",
-  "Library"
+  "Memory (GB)"
 )
 
 DT::datatable(

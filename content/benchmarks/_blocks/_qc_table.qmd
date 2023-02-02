@@ -1,0 +1,44 @@
+
+<details><summary>Quality control</summary>
+
+```{r quality_control}
+#| echo: false
+qc_print <- qc %>% 
+  filter(severity > 0) %>%
+  mutate(
+    test = case_when(
+      severity == 0 ~ "✓",
+      severity == 1 ~ "✗",
+      severity == 2 ~ "✗✗",
+      TRUE ~ "✗✗✗"
+    ),
+    color = ifelse(severity == 0, "green", "red")
+  ) %>%
+  arrange(desc(severity_value), category, name)
+
+if (nrow(qc_print) > 0) {
+  qc_print %>% 
+    transmute(
+      Category = category,
+      Name = name,
+      Value = value,
+      Condition = code,
+      Severity = test
+    ) %>%
+    kbl(format = "html") %>%
+    kable_styling() %>%
+    kable_paper() %>%
+    column_spec(
+      5, 
+      color = qc_print$color
+    ) %>%
+    column_spec(
+      1:5,
+      tooltip = qc_print$message
+    )
+} else {
+  knitr::asis_output("✓ All checks succeeded!")
+}
+```
+
+</details>

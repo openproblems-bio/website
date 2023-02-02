@@ -1,0 +1,79 @@
+
+<details><summary>Method descriptions</summary>
+
+```{r}
+#| echo: false
+# show each method just once
+lines <- pmap_chr(method_info, function(method_name, method_description, paper_reference, code_url, code_version, ...) {
+  links <- c()
+  if (!is.na(code_url)) {
+    links <- c(links, glue::glue(" [Docs]({code_url})"))
+  }
+  version_label <- 
+    if (!is.na(code_version)) {
+      glue::glue(" Software version {code_version}.")
+    } else {
+      ""
+    }
+  ref <- 
+    if (!is.na(paper_reference)) {
+      paste0("<sup>", cite_fun(paper_reference, "html"), "</sup>")
+    } else {
+      ""
+    }
+  links_label <- glue::glue(" Links: {paste(links, collapse = ', ')}.")
+  summ <- (method_description %|% "Missing 'method_description'") %>% str_replace_all("\\. *$", "")
+  glue::glue("* **{method_name}**{ref}: {summ}.{version_label}{links_label}")
+})
+knitr::asis_output(lines)
+```
+</details>
+
+<details><summary>Metric descriptions</summary>
+
+```{r}
+#| echo: false
+lines <- pmap_chr(metric_info, function(metric_name, metric_description, paper_reference, ...) {
+  ref <- 
+    if (!is.na(paper_reference)) {
+      paste0("<sup>", cite_fun(paper_reference, "html"), "</sup>")
+    } else {
+      ""
+    }
+  summ <- (metric_description %|% "Missing 'metric_description'") %>% str_replace_all("\\. *$", "")
+  glue::glue("* **{metric_name}**{ref}: {summ}.")
+})
+knitr::asis_output(lines)
+```
+</details>
+
+<details><summary>Dataset descriptions</summary>
+
+```{r}
+#| echo: false
+lines <- pmap_chr(dataset_info, function(dataset_name, dataset_description, data_reference, ...) {
+  ref <- 
+    if (!is.na(data_reference)) {
+      paste0("<sup>", cite_fun(data_reference, "html"), "</sup>")
+    } else {
+      ""
+    }
+  summ <- (dataset_description %|% "Missing 'dataset_description'") %>% str_replace_all("\\. *$", "")
+  glue::glue("* **{dataset_name}**{ref}: {summ}.")
+})
+knitr::asis_output(lines)
+```
+</details>
+
+<details><summary>Baseline descriptions</summary>
+
+```{r}
+#| echo: false
+baselines <- method_info %>% filter(is_baseline)
+lines <- pmap_chr(baselines, function(method_name, method_description, reference, code_url, ...) {
+  summ <- (method_description %|% "Missing 'method_description'") %>% str_replace_all("\\. *$", "")
+  glue::glue("* **{method_name}**: {summ}.")
+})
+knitr::asis_output(lines)
+```
+</details>
