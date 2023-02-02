@@ -110,17 +110,12 @@ g_all <- funky_heatmap(
 #| include: false
 knitr::opts_chunk$set(
   fig.width = g_all$width,
-  fig.height = g_all$height#,
-  # dev.args = list(bg = "transparent")
+  fig.height = g_all$height
 )
 ```
 
 ```{r summary}
 #| echo: false
-#| fig-cap: "**Overview of the results per method**. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)."
-g_all 
-# + theme(
-#   panel.background = element_rect(fill = "transparent", colour = NA),
-#   plot.background = element_rect(fill = "transparent", colour = NA)
-# )
+#| fig-cap: "Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)."
+g_all
 ```

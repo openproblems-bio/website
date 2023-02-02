@@ -1,7 +1,6 @@
 ---
 title: "Cell-Cell Communication Inference (Source-Target)"
 summary: "Detect interactions between source and target cell types"
-bibliography: "../../../static/bibliography/main.bib"
 ---
 
 <script src="index_files/libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
@@ -37,13 +36,8 @@ Missing 'task_description'
 
 <figure>
 <img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="638" alt="Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)." />
-<figcaption aria-hidden="true"><strong>Overview of the results per method</strong>. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric).</figcaption>
+<figcaption aria-hidden="true">Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric).</figcaption>
 </figure>
-
-## Scaled scores
-
-<div id="htmlwidget-516b851aa59f7224efc3" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-516b851aa59f7224efc3">{"x":{"filter":"none","vertical":false,"extensions":["Select","SearchPanes","Buttons","Responsive"],"data":[["CellPhoneDB (max)","CellPhoneDB (max)","SingleCellSignalR (max)","SingleCellSignalR (max)","Magnitude Rank Aggregate (max)","Magnitude Rank Aggregate (max)","Log2FC (sum)","Log2FC (sum)","NATMI (max)","NATMI (max)","Log2FC (max)","Log2FC (max)","Specificity Rank Aggregate (max)","Specificity Rank Aggregate (max)","NATMI (sum)","NATMI (sum)","Connectome (sum)","Connectome (sum)","Connectome (max)","Connectome (max)","Specificity Rank Aggregate (sum)","Specificity Rank Aggregate (sum)","CellPhoneDB (sum)","CellPhoneDB (sum)","Magnitude Rank Aggregate (sum)","Magnitude Rank Aggregate (sum)","SingleCellSignalR (sum)","SingleCellSignalR (sum)"],["Overall mean","Mouse brain atlas","Overall mean","Mouse brain atlas","Overall mean","Mouse brain atlas","Overall mean","Mouse brain atlas","Overall mean","Mouse brain atlas","Overall mean","Mouse brain atlas","Overall mean","Mouse brain atlas","Overall mean","Mouse brain atlas","Overall mean","Mouse brain atlas","Overall mean","Mouse brain atlas","Overall mean","Mouse brain atlas","Overall mean","Mouse brain atlas","Overall mean","Mouse brain atlas","Overall mean","Mouse brain atlas"],[0.374816111051117,0.374816111051117,0.338490447626045,0.338490447626045,0.336319588677802,0.336319588677802,0.310385730940304,0.310385730940304,0.29157215619934,0.29157215619934,0.289967766345615,0.289967766345615,0.22953446422155,0.22953446422155,0.216983759599155,0.216983759599155,0.216948925161255,0.216948925161255,0.0117035790839415,0.0117035790839415,-0.00280439341683836,-0.00280439341683836,-0.192553419193474,-0.192553419193474,-0.193274231147795,-0.193274231147795,-0.193937164593368,-0.193937164593368],[0.0470797547170948,0.0470797547170948,0.0461528697743829,0.0461528697743829,0.0418111518778968,0.0418111518778968,0.0827714618806079,0.0827714618806079,0.045144312398679,0.045144312398679,0.0419355326912306,0.0419355326912306,0.0443832620558401,0.0443832620558401,0.0192818528110501,0.0192818528110501,0.0192121839352504,0.0192121839352504,0.0234071581678829,0.0234071581678829,-0.00560878683367672,-0.00560878683367672,-0.00510683838694755,-0.00510683838694755,-0.00654846229558964,-0.00654846229558964,-0.00787432918673636,-0.00787432918673636],[0.702552467385139,0.702552467385139,0.630828025477707,0.630828025477707,0.630828025477707,0.630828025477707,0.538,0.538,0.538,0.538,0.538,0.538,0.414685666387259,0.414685666387259,0.414685666387259,0.414685666387259,0.414685666387259,0.414685666387259,0,0,0,0,-0.38,-0.38,-0.38,-0.38,-0.38,-0.38],[7210,7210,1143,1143,29358,29358,1080,1080,1791,1791,860,860,34190,34190,1818,1818,1139,1139,1121,1121,39438,39438,34240,34240,8390,8390,686,686],[100.1,100.1,96.5,96.5,99.6,99.6,96.6,96.6,99,99,99.8,99.8,100.1,100.1,98.8,98.8,93.8,93.8,97.7,97.7,100.1,100.1,100.1,100.1,100,100,93.9,93.9],[115.8203125,115.8203125,19.921875,19.921875,116.2109375,116.2109375,19.921875,19.921875,19.921875,19.921875,19.921875,19.921875,116.30859375,116.30859375,19.921875,19.921875,19.921875,19.921875,19.921875,19.921875,116.11328125,116.11328125,115.8203125,115.8203125,116.2109375,116.2109375,19.921875,19.921875]],"container":"<table class=\"stripe compact\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Dataset<\/th>\n      <th>Mean score<\/th>\n      <th>Precision-recall AUC<\/th>\n      <th>Odds Ratio<\/th>\n      <th>Runtime (s)<\/th>\n      <th>CPU (%)<\/th>\n      <th>Memory (GB)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","paging":false,"columnDefs":[{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"searchPanes":{"show":false},"targets":[2,3,4,5,6,7]},{"searchPanes":{"preSelect":"Overall mean"},"targets":1},{"className":"dt-right","targets":[2,3,4,5,6,7]}],"buttons":["searchPanes","csv","excel"],"language":{"searchPanes":{"collapse":"Filters"}},"order":[],"autoWidth":false,"orderClasses":false,"responsive":true}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render"],"jsHooks":[]}</script>
 
 ## Metrics
 
@@ -53,14 +47,10 @@ Missing 'task_description'
 
 -   **Odds Ratio**<sup><a href="/bibliography#bland2000odds" target="_blank">2</a></sup>: Missing 'metric_description'.
 
-## Downloads
+## Results
 
-<a href="data/task_info.json" class="btn btn-secondary">Task info</a>
-<a href="data/method_info.json" class="btn btn-secondary">Method info</a>
-<a href="data/metric_info.json" class="btn btn-secondary">Metric info</a>
-<a href="data/dataset_info.json" class="btn btn-secondary">Dataset info</a>
-<a href="data/results.json" class="btn btn-secondary">Results</a>
-<a href="data/quality_control.json" class="btn btn-secondary">Quality control</a>
+<div id="htmlwidget-7c43ab563d647d5864ba" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7c43ab563d647d5864ba">{"x":{"filter":"none","vertical":false,"extensions":["Select","SearchPanes","Buttons","Responsive"],"caption":"<caption>Results table of the scores per method, dataset and metric (after scaling). Use the filters to make a custom subselection of methods and datasets. The \"Overall mean\" dataset is the mean value across all datasets.<\/caption>","data":[["CellPhoneDB (max) <sup><a href=\"/bibliography#efremova2020cellphonedb\" target=\"_blank\">3<\/a><\/sup>","CellPhoneDB (max) <sup><a href=\"/bibliography#efremova2020cellphonedb\" target=\"_blank\">3<\/a><\/sup>","SingleCellSignalR (max) <sup><a href=\"/bibliography#cabello2020singlecellsignalr\" target=\"_blank\">4<\/a><\/sup>","SingleCellSignalR (max) <sup><a href=\"/bibliography#cabello2020singlecellsignalr\" target=\"_blank\">4<\/a><\/sup>","Magnitude Rank Aggregate (max) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">5<\/a><\/sup>","Magnitude Rank Aggregate (max) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">5<\/a><\/sup>","Log2FC (sum) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Log2FC (sum) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","NATMI (max) <sup><a href=\"/bibliography#hou2020predicting\" target=\"_blank\">7<\/a><\/sup>","NATMI (max) <sup><a href=\"/bibliography#hou2020predicting\" target=\"_blank\">7<\/a><\/sup>","Log2FC (max) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Log2FC (max) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Specificity Rank Aggregate (max) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">5<\/a><\/sup>","Specificity Rank Aggregate (max) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">5<\/a><\/sup>","NATMI (sum) <sup><a href=\"/bibliography#hou2020predicting\" target=\"_blank\">7<\/a><\/sup>","NATMI (sum) <sup><a href=\"/bibliography#hou2020predicting\" target=\"_blank\">7<\/a><\/sup>","Connectome (sum) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Connectome (sum) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Connectome (max) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Connectome (max) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Specificity Rank Aggregate (sum) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">5<\/a><\/sup>","Specificity Rank Aggregate (sum) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">5<\/a><\/sup>","CellPhoneDB (sum) <sup><a href=\"/bibliography#efremova2020cellphonedb\" target=\"_blank\">3<\/a><\/sup>","CellPhoneDB (sum) <sup><a href=\"/bibliography#efremova2020cellphonedb\" target=\"_blank\">3<\/a><\/sup>","Magnitude Rank Aggregate (sum) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">5<\/a><\/sup>","Magnitude Rank Aggregate (sum) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">5<\/a><\/sup>","SingleCellSignalR (sum) <sup><a href=\"/bibliography#cabello2020singlecellsignalr\" target=\"_blank\">4<\/a><\/sup>","SingleCellSignalR (sum) <sup><a href=\"/bibliography#cabello2020singlecellsignalr\" target=\"_blank\">4<\/a><\/sup>"],["Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>"],[0.374816111051117,0.374816111051117,0.338490447626045,0.338490447626045,0.336319588677802,0.336319588677802,0.310385730940304,0.310385730940304,0.29157215619934,0.29157215619934,0.289967766345615,0.289967766345615,0.22953446422155,0.22953446422155,0.216983759599155,0.216983759599155,0.216948925161255,0.216948925161255,0.0117035790839415,0.0117035790839415,-0.00280439341683836,-0.00280439341683836,-0.192553419193474,-0.192553419193474,-0.193274231147795,-0.193274231147795,-0.193937164593368,-0.193937164593368],[0.0470797547170948,0.0470797547170948,0.0461528697743829,0.0461528697743829,0.0418111518778968,0.0418111518778968,0.0827714618806079,0.0827714618806079,0.045144312398679,0.045144312398679,0.0419355326912306,0.0419355326912306,0.0443832620558401,0.0443832620558401,0.0192818528110501,0.0192818528110501,0.0192121839352504,0.0192121839352504,0.0234071581678829,0.0234071581678829,-0.00560878683367672,-0.00560878683367672,-0.00510683838694755,-0.00510683838694755,-0.00654846229558964,-0.00654846229558964,-0.00787432918673636,-0.00787432918673636],[0.702552467385139,0.702552467385139,0.630828025477707,0.630828025477707,0.630828025477707,0.630828025477707,0.538,0.538,0.538,0.538,0.538,0.538,0.414685666387259,0.414685666387259,0.414685666387259,0.414685666387259,0.414685666387259,0.414685666387259,0,0,0,0,-0.38,-0.38,-0.38,-0.38,-0.38,-0.38],[7210,7210,1143,1143,29358,29358,1080,1080,1791,1791,860,860,34190,34190,1818,1818,1139,1139,1121,1121,39438,39438,34240,34240,8390,8390,686,686],[100.1,100.1,96.5,96.5,99.6,99.6,96.6,96.6,99,99,99.8,99.8,100.1,100.1,98.8,98.8,93.8,93.8,97.7,97.7,100.1,100.1,100.1,100.1,100,100,93.9,93.9],[115.8203125,115.8203125,19.921875,19.921875,116.2109375,116.2109375,19.921875,19.921875,19.921875,19.921875,19.921875,19.921875,116.30859375,116.30859375,19.921875,19.921875,19.921875,19.921875,19.921875,19.921875,116.11328125,116.11328125,115.8203125,115.8203125,116.2109375,116.2109375,19.921875,19.921875]],"container":"<table class=\"stripe compact\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Dataset<\/th>\n      <th>Mean score<\/th>\n      <th>Precision-recall AUC<\/th>\n      <th>Odds Ratio<\/th>\n      <th>Runtime (s)<\/th>\n      <th>CPU (%)<\/th>\n      <th>Memory (GB)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","paging":false,"columnDefs":[{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"searchPanes":{"show":false},"targets":[2,3,4,5,6,7]},{"searchPanes":{"preSelect":"Overall mean"},"targets":1},{"className":"dt-right","targets":[2,3,4,5,6,7]}],"buttons":["searchPanes","csv","excel"],"language":{"searchPanes":{"collapse":"Filters"}},"order":[],"autoWidth":false,"orderClasses":false,"responsive":true}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render"],"jsHooks":[]}</script>
 
 ## Details
 
@@ -77,19 +67,19 @@ Methods
 
 <!-- -->
 
--   **Connectome (max)**<sup><a href="/bibliography#raredon2022computation" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **Connectome (max)**<sup><a href="/bibliography#raredon2022computation" target="_blank">6</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **Connectome (sum)**<sup><a href="/bibliography#raredon2022computation" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **Connectome (sum)**<sup><a href="/bibliography#raredon2022computation" target="_blank">6</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **Log2FC (max)**<sup><a href="/bibliography#raredon2022computation" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **Log2FC (max)**<sup><a href="/bibliography#raredon2022computation" target="_blank">6</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **Log2FC (sum)**<sup><a href="/bibliography#raredon2022computation" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **Log2FC (sum)**<sup><a href="/bibliography#raredon2022computation" target="_blank">6</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
@@ -101,23 +91,23 @@ Methods
 
 <!-- -->
 
--   **NATMI (max)**<sup><a href="/bibliography#hou2020predicting" target="_blank">6</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **NATMI (max)**<sup><a href="/bibliography#hou2020predicting" target="_blank">7</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **NATMI (sum)**<sup><a href="/bibliography#hou2020predicting" target="_blank">6</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **NATMI (sum)**<sup><a href="/bibliography#hou2020predicting" target="_blank">7</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **Random Events**<sup><a href="/bibliography#openproblems" target="_blank">7</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/openproblems-bio/openproblems).
+-   **Random Events**<sup><a href="/bibliography#openproblems" target="_blank">9</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/openproblems-bio/openproblems).
 
 <!-- -->
 
--   **SingleCellSignalR (max)**<sup><a href="/bibliography#cabello2020singlecellsignalr" target="_blank">8</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **SingleCellSignalR (max)**<sup><a href="/bibliography#cabello2020singlecellsignalr" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **SingleCellSignalR (sum)**<sup><a href="/bibliography#cabello2020singlecellsignalr" target="_blank">8</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **SingleCellSignalR (sum)**<sup><a href="/bibliography#cabello2020singlecellsignalr" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
@@ -129,7 +119,7 @@ Methods
 
 <!-- -->
 
--   **True Events**<sup><a href="/bibliography#openproblems" target="_blank">7</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/openproblems-bio/openproblems).
+-   **True Events**<sup><a href="/bibliography#openproblems" target="_blank">9</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/openproblems-bio/openproblems).
 
 </details>
 <details>
@@ -149,7 +139,20 @@ Baseline methods
 Datasets
 </summary>
 
--   **Mouse brain atlas**<sup><a href="/bibliography#tasic2016adult" target="_blank">9</a></sup>: Missing 'dataset_description'.
+-   **Mouse brain atlas**<sup><a href="/bibliography#tasic2016adult" target="_blank">8</a></sup>: Missing 'dataset_description'.
+
+</details>
+<details>
+<summary>
+Download raw data
+</summary>
+
+<a href="data/task_info.json" class="btn btn-secondary">Task info</a>
+<a href="data/method_info.json" class="btn btn-secondary">Method info</a>
+<a href="data/metric_info.json" class="btn btn-secondary">Metric info</a>
+<a href="data/dataset_info.json" class="btn btn-secondary">Dataset info</a>
+<a href="data/results.json" class="btn btn-secondary">Results</a>
+<a href="data/quality_control.json" class="btn btn-secondary">Quality control</a>
 
 </details>
 <details>

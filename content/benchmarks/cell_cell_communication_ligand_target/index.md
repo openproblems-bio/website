@@ -1,7 +1,6 @@
 ---
 title: "Cell-Cell Communication Inference (Ligand-Target)"
 summary: "Detect interactions between ligands and target cell types"
-bibliography: "../../../static/bibliography/main.bib"
 ---
 
 <script src="index_files/libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
@@ -37,13 +36,8 @@ Missing 'task_description'
 
 <figure>
 <img src="index.markdown_strict_files/figure-markdown_strict/summary-1.png" width="638" alt="Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)." />
-<figcaption aria-hidden="true"><strong>Overview of the results per method</strong>. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric).</figcaption>
+<figcaption aria-hidden="true">Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric).</figcaption>
 </figure>
-
-## Scaled scores
-
-<div id="htmlwidget-7122a41fc1efcf6868c1" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7122a41fc1efcf6868c1">{"x":{"filter":"none","vertical":false,"extensions":["Select","SearchPanes","Buttons","Responsive"],"data":[["CellPhoneDB (max)","CellPhoneDB (max)","Magnitude Rank Aggregate (max)","Magnitude Rank Aggregate (max)","SingleCellSignalR (max)","SingleCellSignalR (max)","Specificity Rank Aggregate (max)","Specificity Rank Aggregate (max)","Connectome (max)","Connectome (max)","Log2FC (max)","Log2FC (max)","Log2FC (sum)","Log2FC (sum)","Connectome (sum)","Connectome (sum)","Specificity Rank Aggregate (sum)","Specificity Rank Aggregate (sum)","CellPhoneDB (sum)","CellPhoneDB (sum)","Magnitude Rank Aggregate (sum)","Magnitude Rank Aggregate (sum)","NATMI (sum)","NATMI (sum)","NATMI (max)","NATMI (max)","SingleCellSignalR (sum)","SingleCellSignalR (sum)"],["Overall mean","Triple negative breast cancer atlas","Overall mean","Triple negative breast cancer atlas","Overall mean","Triple negative breast cancer atlas","Overall mean","Triple negative breast cancer atlas","Overall mean","Triple negative breast cancer atlas","Overall mean","Triple negative breast cancer atlas","Overall mean","Triple negative breast cancer atlas","Overall mean","Triple negative breast cancer atlas","Overall mean","Triple negative breast cancer atlas","Overall mean","Triple negative breast cancer atlas","Overall mean","Triple negative breast cancer atlas","Overall mean","Triple negative breast cancer atlas","Overall mean","Triple negative breast cancer atlas","Overall mean","Triple negative breast cancer atlas"],[0.180646303662517,0.180646303662517,0.179901755310703,0.179901755310703,0.160162350462888,0.160162350462888,0.155023802116964,0.155023802116964,0.132331954192469,0.132331954192469,0.088234614824436,0.088234614824436,0.0862397152035264,0.0862397152035264,0.0407149500670646,0.0407149500670646,0.0395269679025018,0.0395269679025018,0.0139825633143108,0.0139825633143108,0.011680166725544,0.011680166725544,0.00687849823391116,0.00687849823391116,-0.0799234254329129,-0.0799234254329129,-0.100692507596507,-0.100692507596507],[-0.015021038055658,-0.015021038055658,-0.0165101347592863,-0.0165101347592863,-0.0145413425242571,-0.0145413425242571,-0.0248184392161055,-0.0248184392161055,-0.0272172398317356,-0.0272172398317356,-0.0247034715096241,-0.0247034715096241,-0.0286932707514433,-0.0286932707514433,-0.0225192712086868,-0.0225192712086868,-0.0248952355378126,-0.0248952355378126,-0.0248619798359533,-0.0248619798359533,-0.029466773013487,-0.029466773013487,-0.0390701099967526,-0.0390701099967526,-0.0489986312988081,-0.0489986312988081,-0.0324838288983625,-0.0324838288983625],[0.376313645380692,0.376313645380692,0.376313645380692,0.376313645380692,0.334866043450033,0.334866043450033,0.334866043450033,0.334866043450033,0.291881148216674,0.291881148216674,0.201172701158496,0.201172701158496,0.201172701158496,0.201172701158496,0.103949171342816,0.103949171342816,0.103949171342816,0.103949171342816,0.0528271064645749,0.0528271064645749,0.0528271064645749,0.0528271064645749,0.0528271064645749,0.0528271064645749,-0.110848219567018,-0.110848219567018,-0.168901186294652,-0.168901186294652],[8499,8499,12320,12320,508,508,34526,34526,893,893,939,939,729,729,880,880,35709,35709,16940,16940,34350,34350,1265,1265,1260,1260,1062,1062],[102,102,100.3,100.3,101.3,101.3,101.2,101.2,98.7,98.7,95.8,95.8,100.6,100.6,97.9,97.9,100.8,100.8,101,101,101.5,101.5,100.9,100.9,97.6,97.6,93.6,93.6],[95.60546875,95.60546875,95.703125,95.703125,19.82421875,19.82421875,96.38671875,96.38671875,19.82421875,19.82421875,19.921875,19.921875,20.41015625,20.41015625,19.82421875,19.82421875,92.67578125,92.67578125,92.67578125,92.67578125,95.703125,95.703125,19.921875,19.921875,19.82421875,19.82421875,20.41015625,20.41015625]],"container":"<table class=\"stripe compact\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Dataset<\/th>\n      <th>Mean score<\/th>\n      <th>Precision-recall AUC<\/th>\n      <th>Odds Ratio<\/th>\n      <th>Runtime (s)<\/th>\n      <th>CPU (%)<\/th>\n      <th>Memory (GB)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","paging":false,"columnDefs":[{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"searchPanes":{"show":false},"targets":[2,3,4,5,6,7]},{"searchPanes":{"preSelect":"Overall mean"},"targets":1},{"className":"dt-right","targets":[2,3,4,5,6,7]}],"buttons":["searchPanes","csv","excel"],"language":{"searchPanes":{"collapse":"Filters"}},"order":[],"autoWidth":false,"orderClasses":false,"responsive":true}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render"],"jsHooks":[]}</script>
 
 ## Metrics
 
@@ -53,14 +47,10 @@ Missing 'task_description'
 
 -   **Odds Ratio**<sup><a href="/bibliography#bland2000odds" target="_blank">2</a></sup>: Missing 'metric_description'.
 
-## Downloads
+## Results
 
-<a href="data/task_info.json" class="btn btn-secondary">Task info</a>
-<a href="data/method_info.json" class="btn btn-secondary">Method info</a>
-<a href="data/metric_info.json" class="btn btn-secondary">Metric info</a>
-<a href="data/dataset_info.json" class="btn btn-secondary">Dataset info</a>
-<a href="data/results.json" class="btn btn-secondary">Results</a>
-<a href="data/quality_control.json" class="btn btn-secondary">Quality control</a>
+<div id="htmlwidget-8ff87b8fa8e16255d225" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8ff87b8fa8e16255d225">{"x":{"filter":"none","vertical":false,"extensions":["Select","SearchPanes","Buttons","Responsive"],"caption":"<caption>Results table of the scores per method, dataset and metric (after scaling). Use the filters to make a custom subselection of methods and datasets. The \"Overall mean\" dataset is the mean value across all datasets.<\/caption>","data":[["CellPhoneDB (max) <sup><a href=\"/bibliography#efremova2020cellphonedb\" target=\"_blank\">3<\/a><\/sup>","CellPhoneDB (max) <sup><a href=\"/bibliography#efremova2020cellphonedb\" target=\"_blank\">3<\/a><\/sup>","Magnitude Rank Aggregate (max) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","Magnitude Rank Aggregate (max) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","SingleCellSignalR (max) <sup><a href=\"/bibliography#cabello2020singlecellsignalr\" target=\"_blank\">5<\/a><\/sup>","SingleCellSignalR (max) <sup><a href=\"/bibliography#cabello2020singlecellsignalr\" target=\"_blank\">5<\/a><\/sup>","Specificity Rank Aggregate (max) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","Specificity Rank Aggregate (max) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","Connectome (max) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Connectome (max) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Log2FC (max) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Log2FC (max) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Log2FC (sum) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Log2FC (sum) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Connectome (sum) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Connectome (sum) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Specificity Rank Aggregate (sum) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","Specificity Rank Aggregate (sum) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","CellPhoneDB (sum) <sup><a href=\"/bibliography#efremova2020cellphonedb\" target=\"_blank\">3<\/a><\/sup>","CellPhoneDB (sum) <sup><a href=\"/bibliography#efremova2020cellphonedb\" target=\"_blank\">3<\/a><\/sup>","Magnitude Rank Aggregate (sum) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","Magnitude Rank Aggregate (sum) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","NATMI (sum) <sup><a href=\"/bibliography#hou2020predicting\" target=\"_blank\">7<\/a><\/sup>","NATMI (sum) <sup><a href=\"/bibliography#hou2020predicting\" target=\"_blank\">7<\/a><\/sup>","NATMI (max) <sup><a href=\"/bibliography#hou2020predicting\" target=\"_blank\">7<\/a><\/sup>","NATMI (max) <sup><a href=\"/bibliography#hou2020predicting\" target=\"_blank\">7<\/a><\/sup>","SingleCellSignalR (sum) <sup><a href=\"/bibliography#cabello2020singlecellsignalr\" target=\"_blank\">5<\/a><\/sup>","SingleCellSignalR (sum) <sup><a href=\"/bibliography#cabello2020singlecellsignalr\" target=\"_blank\">5<\/a><\/sup>"],["Overall mean","Triple negative breast cancer atlas <sup><a href=\"/bibliography#wu2021single\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Triple negative breast cancer atlas <sup><a href=\"/bibliography#wu2021single\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Triple negative breast cancer atlas <sup><a href=\"/bibliography#wu2021single\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Triple negative breast cancer atlas <sup><a href=\"/bibliography#wu2021single\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Triple negative breast cancer atlas <sup><a href=\"/bibliography#wu2021single\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Triple negative breast cancer atlas <sup><a href=\"/bibliography#wu2021single\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Triple negative breast cancer atlas <sup><a href=\"/bibliography#wu2021single\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Triple negative breast cancer atlas <sup><a href=\"/bibliography#wu2021single\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Triple negative breast cancer atlas <sup><a href=\"/bibliography#wu2021single\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Triple negative breast cancer atlas <sup><a href=\"/bibliography#wu2021single\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Triple negative breast cancer atlas <sup><a href=\"/bibliography#wu2021single\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Triple negative breast cancer atlas <sup><a href=\"/bibliography#wu2021single\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Triple negative breast cancer atlas <sup><a href=\"/bibliography#wu2021single\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Triple negative breast cancer atlas <sup><a href=\"/bibliography#wu2021single\" target=\"_blank\">8<\/a><\/sup>"],[0.180646303662517,0.180646303662517,0.179901755310703,0.179901755310703,0.160162350462888,0.160162350462888,0.155023802116964,0.155023802116964,0.132331954192469,0.132331954192469,0.088234614824436,0.088234614824436,0.0862397152035264,0.0862397152035264,0.0407149500670646,0.0407149500670646,0.0395269679025018,0.0395269679025018,0.0139825633143108,0.0139825633143108,0.011680166725544,0.011680166725544,0.00687849823391116,0.00687849823391116,-0.0799234254329129,-0.0799234254329129,-0.100692507596507,-0.100692507596507],[-0.015021038055658,-0.015021038055658,-0.0165101347592863,-0.0165101347592863,-0.0145413425242571,-0.0145413425242571,-0.0248184392161055,-0.0248184392161055,-0.0272172398317356,-0.0272172398317356,-0.0247034715096241,-0.0247034715096241,-0.0286932707514433,-0.0286932707514433,-0.0225192712086868,-0.0225192712086868,-0.0248952355378126,-0.0248952355378126,-0.0248619798359533,-0.0248619798359533,-0.029466773013487,-0.029466773013487,-0.0390701099967526,-0.0390701099967526,-0.0489986312988081,-0.0489986312988081,-0.0324838288983625,-0.0324838288983625],[0.376313645380692,0.376313645380692,0.376313645380692,0.376313645380692,0.334866043450033,0.334866043450033,0.334866043450033,0.334866043450033,0.291881148216674,0.291881148216674,0.201172701158496,0.201172701158496,0.201172701158496,0.201172701158496,0.103949171342816,0.103949171342816,0.103949171342816,0.103949171342816,0.0528271064645749,0.0528271064645749,0.0528271064645749,0.0528271064645749,0.0528271064645749,0.0528271064645749,-0.110848219567018,-0.110848219567018,-0.168901186294652,-0.168901186294652],[8499,8499,12320,12320,508,508,34526,34526,893,893,939,939,729,729,880,880,35709,35709,16940,16940,34350,34350,1265,1265,1260,1260,1062,1062],[102,102,100.3,100.3,101.3,101.3,101.2,101.2,98.7,98.7,95.8,95.8,100.6,100.6,97.9,97.9,100.8,100.8,101,101,101.5,101.5,100.9,100.9,97.6,97.6,93.6,93.6],[95.60546875,95.60546875,95.703125,95.703125,19.82421875,19.82421875,96.38671875,96.38671875,19.82421875,19.82421875,19.921875,19.921875,20.41015625,20.41015625,19.82421875,19.82421875,92.67578125,92.67578125,92.67578125,92.67578125,95.703125,95.703125,19.921875,19.921875,19.82421875,19.82421875,20.41015625,20.41015625]],"container":"<table class=\"stripe compact\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Dataset<\/th>\n      <th>Mean score<\/th>\n      <th>Precision-recall AUC<\/th>\n      <th>Odds Ratio<\/th>\n      <th>Runtime (s)<\/th>\n      <th>CPU (%)<\/th>\n      <th>Memory (GB)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","paging":false,"columnDefs":[{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"searchPanes":{"show":false},"targets":[2,3,4,5,6,7]},{"searchPanes":{"preSelect":"Overall mean"},"targets":1},{"className":"dt-right","targets":[2,3,4,5,6,7]}],"buttons":["searchPanes","csv","excel"],"language":{"searchPanes":{"collapse":"Filters"}},"order":[],"autoWidth":false,"orderClasses":false,"responsive":true}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render"],"jsHooks":[]}</script>
 
 ## Details
 
@@ -77,59 +67,59 @@ Methods
 
 <!-- -->
 
--   **Connectome (max)**<sup><a href="/bibliography#raredon2022computation" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **Connectome (max)**<sup><a href="/bibliography#raredon2022computation" target="_blank">6</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **Connectome (sum)**<sup><a href="/bibliography#raredon2022computation" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **Connectome (sum)**<sup><a href="/bibliography#raredon2022computation" target="_blank">6</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **Log2FC (max)**<sup><a href="/bibliography#raredon2022computation" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **Log2FC (max)**<sup><a href="/bibliography#raredon2022computation" target="_blank">6</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **Log2FC (sum)**<sup><a href="/bibliography#raredon2022computation" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **Log2FC (sum)**<sup><a href="/bibliography#raredon2022computation" target="_blank">6</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **Magnitude Rank Aggregate (max)**<sup><a href="/bibliography#dimitrov2022comparison" target="_blank">5</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **Magnitude Rank Aggregate (max)**<sup><a href="/bibliography#dimitrov2022comparison" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **Magnitude Rank Aggregate (sum)**<sup><a href="/bibliography#dimitrov2022comparison" target="_blank">5</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **Magnitude Rank Aggregate (sum)**<sup><a href="/bibliography#dimitrov2022comparison" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **NATMI (max)**<sup><a href="/bibliography#hou2020predicting" target="_blank">6</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **NATMI (max)**<sup><a href="/bibliography#hou2020predicting" target="_blank">7</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **NATMI (sum)**<sup><a href="/bibliography#hou2020predicting" target="_blank">6</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **NATMI (sum)**<sup><a href="/bibliography#hou2020predicting" target="_blank">7</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **Random Events**<sup><a href="/bibliography#openproblems" target="_blank">7</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/openproblems-bio/openproblems).
+-   **Random Events**<sup><a href="/bibliography#openproblems" target="_blank">9</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/openproblems-bio/openproblems).
 
 <!-- -->
 
--   **SingleCellSignalR (max)**<sup><a href="/bibliography#cabello2020singlecellsignalr" target="_blank">8</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **SingleCellSignalR (max)**<sup><a href="/bibliography#cabello2020singlecellsignalr" target="_blank">5</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **SingleCellSignalR (sum)**<sup><a href="/bibliography#cabello2020singlecellsignalr" target="_blank">8</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **SingleCellSignalR (sum)**<sup><a href="/bibliography#cabello2020singlecellsignalr" target="_blank">5</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **Specificity Rank Aggregate (max)**<sup><a href="/bibliography#dimitrov2022comparison" target="_blank">5</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **Specificity Rank Aggregate (max)**<sup><a href="/bibliography#dimitrov2022comparison" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **Specificity Rank Aggregate (sum)**<sup><a href="/bibliography#dimitrov2022comparison" target="_blank">5</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **Specificity Rank Aggregate (sum)**<sup><a href="/bibliography#dimitrov2022comparison" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **True Events**<sup><a href="/bibliography#openproblems" target="_blank">7</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/openproblems-bio/openproblems).
+-   **True Events**<sup><a href="/bibliography#openproblems" target="_blank">9</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/openproblems-bio/openproblems).
 
 </details>
 <details>
@@ -149,7 +139,20 @@ Baseline methods
 Datasets
 </summary>
 
--   **Triple negative breast cancer atlas**<sup><a href="/bibliography#wu2021single" target="_blank">9</a></sup>: Missing 'dataset_description'.
+-   **Triple negative breast cancer atlas**<sup><a href="/bibliography#wu2021single" target="_blank">8</a></sup>: Missing 'dataset_description'.
+
+</details>
+<details>
+<summary>
+Download raw data
+</summary>
+
+<a href="data/task_info.json" class="btn btn-secondary">Task info</a>
+<a href="data/method_info.json" class="btn btn-secondary">Method info</a>
+<a href="data/metric_info.json" class="btn btn-secondary">Metric info</a>
+<a href="data/dataset_info.json" class="btn btn-secondary">Dataset info</a>
+<a href="data/results.json" class="btn btn-secondary">Results</a>
+<a href="data/quality_control.json" class="btn btn-secondary">Quality control</a>
 
 </details>
 <details>

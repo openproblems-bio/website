@@ -1,5 +1,5 @@
 
-```{r}
+```{r resultstable}
 #| echo: false
 res_tib0 <- results %>%
   unnest(scaled_scores) %>%
@@ -22,10 +22,10 @@ res_tib <- res_tib1 %>%
   arrange(desc(mean_score)) %>%
   rowwise() %>%
   mutate(
-    # method_label = ifelse(is.na(paper_reference), method_name, glue::glue("{method_name} <sup>{cite_fun(paper_reference, format = 'html')}</sup>")),
-    # dataset_label = ifelse(is.na(data_reference), dataset_name, glue::glue("{dataset_name} <sup>{cite_fun(data_reference, format = 'html')}</sup>")),
-    method_label = method_name,
-    dataset_label = dataset_name,
+    method_label = ifelse(is.na(paper_reference), method_name, glue::glue("{method_name} <sup>{cite_fun(paper_reference, format = 'html')}</sup>")),
+    dataset_label = ifelse(is.na(data_reference), dataset_name, glue::glue("{dataset_name} <sup>{cite_fun(data_reference, format = 'html')}</sup>")),
+    # method_label = method_name,
+    # dataset_label = dataset_name,
     peak_memory_gb = peak_memory_mb / 1024
   ) %>%
   ungroup() %>%
@@ -49,7 +49,7 @@ res_cn <- c(
   "Memory (GB)"
 )
 
-DT::datatable(
+dt <- DT::datatable(
   res_tib,
   colnames = res_cn,
   options = list(
@@ -79,8 +79,11 @@ DT::datatable(
   escape = FALSE,
   class = "stripe compact",
   rownames = FALSE,
-  extensions = c("Select", "SearchPanes", "Buttons", "Responsive")
+  extensions = c("Select", "SearchPanes", "Buttons", "Responsive"),
+  caption = "Results table of the scores per method, dataset and metric (after scaling). Use the filters to make a custom subselection of methods and datasets. The \"Overall mean\" dataset is the mean value across all datasets."
 ) %>%
   DT::formatRound(c("peak_memory_gb", "mean_score", metric_info$metric_id), digits = 2) %>%
   DT::formatRound(c("cpu_pct", "duration_sec"), digits = 0)
+
+dt
 ```
