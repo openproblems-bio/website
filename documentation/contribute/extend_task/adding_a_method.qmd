@@ -1,3 +1,86 @@
 ---
 title: Add a method
 ---
+
+This page describes how to add a method to an already existing task. Make sure you have followed the [first setup](../first_setup) page.
+
+There are 2 type of components you can add:
+
+* control method:  The control methods are methods that form a baseline (random/ground truth) to compare the methods from the same task against.
+* method: scripts to be benchmarked on how to perform the task.
+
+you will find the control methods in the `control_methods` directory and the methods in the `methods` driectory. The setup of both components is similar with small differences in the config yaml. 
+The differences will be pointed out below.
+
+## Directory
+
+To add a (control) method create a new directory in the `src/task/(control_)methods` (where `task` is replaced by the task name. e.g. `denoising`) with the name of the new (control) method in snake case. A task can also contain a subtask then this should be `src/task/subtask/methods`.
+Add a `config.vsh.yaml` and a script file e.g. `script.py` or `script.R`. You can also add additional helper files to this `dir` if it is required for the method e.g. method specific unit test `test.py`
+
+structure of the new control method directory:
+
+    src/task/control_methods/new_method
+        ├── script.py/R                  method script
+        ├── config.vsh.yaml              config file for method
+        └── additional files             Helper files like e.g. tsv file, unit test specific for method, ...
+
+## config.vsh.yaml
+example:
+```yaml
+__merge__: ../../api/comp_control_method.yaml
+functionality:
+  name: method_name # snake case
+  namespace: denoising/methods
+  description: description of the method
+  info:
+    type: negative/positive_control
+    method_name: Method name
+    variants:
+      method_name:
+      method_var1:
+
+  # if extra arguments are needed add this block:
+  arguments:
+    - name: 
+      type:
+      example:
+      default:
+      description:
+
+platforms:
+  # This will change depending on the programming language
+  - type: docker
+    image: python:3.10
+    setup:
+      # section required
+      - type: python
+        pip: [ pyyaml, anndata>0.8]
+
+  - type: nextflow
+    directives:
+      label: [midmem, midcpu]
+```
+
+### merge
+```yaml
+__merge__: ../../api/comp_control_method.yaml
+```
+This file contains metadata that is needed for all the methods. it will contain the required arguments such as the `--input` files and the `--output` files
+
+### functionality
+
+In the `functionality` section of the config there are several data fields that are required.
+
+```yaml
+functionality:
+  name: method_name # snake case
+  namespace: denoising/(control_)methods
+  description: description of the method
+  info:
+    type: method/negative/positive_control
+    method_name: Method name
+    variants:
+      method_name:
+```
+* `namespace`: this should be structered acording to `task/methods` or `task/control_methods`. If the task contains subtasks this should be `task/subtask/methods`, the same for control methods.
+* `info/type`: For a method this should be `method`. For control_method it should be `negative_control` or `positive_control`.
