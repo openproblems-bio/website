@@ -27,6 +27,10 @@ params <- list(data_dir = "./data")
 
 {{< include ../_blocks/_results_table.qmd >}}
 
+## Metrics
+
+{{< include ../_blocks/_metric_descriptions.qmd >}}
+
 ## Downloads
 
 <a href="data/task_info.json" class="btn btn-secondary">Task info</a>
@@ -38,10 +42,30 @@ params <- list(data_dir = "./data")
 
 ## Details
 
-{{< include ../_blocks/_descriptions.qmd >}}
+<details><summary>Methods</summary>
+
+{{< include ../_blocks/_method_descriptions.qmd >}}
+
+</details>
+
+<details><summary>Baseline methods</summary>
+
+{{< include ../_blocks/_baseline_descriptions.qmd >}}
+
+</details>
+
+<details><summary>Datasets</summary>
+
+{{< include ../_blocks/_dataset_descriptions.qmd >}}
+
+</details>
+
+
+<details><summary>Quality control results</summary>
 
 {{< include ../_blocks/_qc_table.qmd >}}
 
+</details>
 
 <details><summary>Visualization of raw results</summary>
 

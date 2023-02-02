@@ -42,8 +42,16 @@ Missing 'task_description'
 
 ## Scaled scores
 
-<div id="htmlwidget-2c0ab8c12e52d4d468b5" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2c0ab8c12e52d4d468b5">{"x":{"filter":"none","vertical":false,"extensions":["Select","SearchPanes","Buttons","Responsive"],"data":[["Procrustes <sup><a href=\"/bibliography#gower1975generalized\" target=\"_blank\">1<\/a><\/sup>","Mutual Nearest Neighbors (log scran) <sup><a href=\"/bibliography#haghverdi2018batch\" target=\"_blank\">2<\/a><\/sup>","Procrustes <sup><a href=\"/bibliography#gower1975generalized\" target=\"_blank\">1<\/a><\/sup>","Procrustes <sup><a href=\"/bibliography#gower1975generalized\" target=\"_blank\">1<\/a><\/sup>","Mutual Nearest Neighbors (log scran) <sup><a href=\"/bibliography#haghverdi2018batch\" target=\"_blank\">2<\/a><\/sup>","Mutual Nearest Neighbors (log CPM) <sup><a href=\"/bibliography#haghverdi2018batch\" target=\"_blank\">2<\/a><\/sup>","Mutual Nearest Neighbors (log CPM) <sup><a href=\"/bibliography#haghverdi2018batch\" target=\"_blank\">2<\/a><\/sup>","Procrustes <sup><a href=\"/bibliography#gower1975generalized\" target=\"_blank\">1<\/a><\/sup>","Mutual Nearest Neighbors (log CPM) <sup><a href=\"/bibliography#haghverdi2018batch\" target=\"_blank\">2<\/a><\/sup>","Mutual Nearest Neighbors (log scran) <sup><a href=\"/bibliography#haghverdi2018batch\" target=\"_blank\">2<\/a><\/sup>","Harmonic Alignment (log scran) <sup><a href=\"/bibliography#stanley2020harmonic\" target=\"_blank\">3<\/a><\/sup>","Mutual Nearest Neighbors (log CPM) <sup><a href=\"/bibliography#haghverdi2018batch\" target=\"_blank\">2<\/a><\/sup>","Harmonic Alignment (log scran) <sup><a href=\"/bibliography#stanley2020harmonic\" target=\"_blank\">3<\/a><\/sup>","Harmonic Alignment (sqrt CPM) <sup><a href=\"/bibliography#stanley2020harmonic\" target=\"_blank\">3<\/a><\/sup>","Harmonic Alignment (log scran) <sup><a href=\"/bibliography#stanley2020harmonic\" target=\"_blank\">3<\/a><\/sup>","Harmonic Alignment (sqrt CPM) <sup><a href=\"/bibliography#stanley2020harmonic\" target=\"_blank\">3<\/a><\/sup>","Harmonic Alignment (sqrt CPM) <sup><a href=\"/bibliography#stanley2020harmonic\" target=\"_blank\">3<\/a><\/sup>","Harmonic Alignment (log scran) <sup><a href=\"/bibliography#stanley2020harmonic\" target=\"_blank\">3<\/a><\/sup>","Mutual Nearest Neighbors (log scran) <sup><a href=\"/bibliography#haghverdi2018batch\" target=\"_blank\">2<\/a><\/sup>","Harmonic Alignment (sqrt CPM) <sup><a href=\"/bibliography#stanley2020harmonic\" target=\"_blank\">3<\/a><\/sup>"],["CITE-seq Cord Blood Mononuclear Cells <sup><a href=\"/bibliography#stoeckius2017simultaneous\" target=\"_blank\">4<\/a><\/sup>","sciCAR Cell Lines <sup><a href=\"/bibliography#cao2018joint\" target=\"_blank\">5<\/a><\/sup>","Overall mean","sciCAR Cell Lines <sup><a href=\"/bibliography#cao2018joint\" target=\"_blank\">5<\/a><\/sup>","Overall mean","CITE-seq Cord Blood Mononuclear Cells <sup><a href=\"/bibliography#stoeckius2017simultaneous\" target=\"_blank\">4<\/a><\/sup>","sciCAR Cell Lines <sup><a href=\"/bibliography#cao2018joint\" target=\"_blank\">5<\/a><\/sup>","sciCAR Mouse Kidney <sup><a href=\"/bibliography#cao2018joint\" target=\"_blank\">5<\/a><\/sup>","Overall mean","sciCAR Mouse Kidney <sup><a href=\"/bibliography#cao2018joint\" target=\"_blank\">5<\/a><\/sup>","sciCAR Mouse Kidney <sup><a href=\"/bibliography#cao2018joint\" target=\"_blank\">5<\/a><\/sup>","sciCAR Mouse Kidney <sup><a href=\"/bibliography#cao2018joint\" target=\"_blank\">5<\/a><\/sup>","CITE-seq Cord Blood Mononuclear Cells <sup><a href=\"/bibliography#stoeckius2017simultaneous\" target=\"_blank\">4<\/a><\/sup>","sciCAR Mouse Kidney <sup><a href=\"/bibliography#cao2018joint\" target=\"_blank\">5<\/a><\/sup>","Overall mean","CITE-seq Cord Blood Mononuclear Cells <sup><a href=\"/bibliography#stoeckius2017simultaneous\" target=\"_blank\">4<\/a><\/sup>","Overall mean","sciCAR Cell Lines <sup><a href=\"/bibliography#cao2018joint\" target=\"_blank\">5<\/a><\/sup>","CITE-seq Cord Blood Mononuclear Cells <sup><a href=\"/bibliography#stoeckius2017simultaneous\" target=\"_blank\">4<\/a><\/sup>","sciCAR Cell Lines <sup><a href=\"/bibliography#cao2018joint\" target=\"_blank\">5<\/a><\/sup>"],[0.367371660099538,0.172964252031419,0.162837986597246,0.0738402342650184,0.0653706327887329,0.0622904826180733,0.0578544389346066,0.0473020654271813,0.0426085296479292,0.0374213892344664,0.0109700285290439,0.00768066739110755,0.0046471142447602,0.00401139972041642,0.00314853587622908,-0.00173450021106317,-0.00480976937010793,-0.00617153514511684,-0.0142737428996867,-0.016706207619677],[0.308171704906801,0.0802243802593182,0.135417673163572,0.0579895919310561,0.0369218501295169,0.0140308448143716,0.0366648883279408,0.0400917226528605,0.0151695187773746,0.0434258827880639,0.0247993159239327,-0.00518717681018846,0.011571461471132,0.0104405294544754,0.0152583183793965,-0.00114099213098423,-0.000711677681043749,0.0094041777431248,-0.0128847126588314,-0.0114345703666224],[0.426571615292276,0.26570412380352,0.19025830003092,0.0896908765989807,0.0938194154479489,0.110550120421775,0.0790439895412725,0.054512408201502,0.0700475405184837,0.0314168956808689,-0.00285925886584493,0.0205485115924036,-0.00227723298161164,-0.00241773001364254,-0.00896124662693835,-0.0023280082911421,-0.00890786105917211,-0.0217472480333585,-0.0156627731405421,-0.0219778448727317],[291,879,449.666666666667,499,982.666666666667,540,749,559,719.333333333333,1239,1993,869,2046,581,1926,890,593.666666666667,1739,830,310],[132.8,88.6,273.333333333333,369,86.3666666666667,43.5,83.3,318.2,71.6,92.8,655.5,88,395,941.1,458.566666666667,903.9,930.366666666667,325.2,77.7,946.1],[0.5666015625,3.22265625,0.684928385416667,0.65517578125,3.87369791666667,1.953125,1.85546875,0.8330078125,2.01822916666667,4.19921875,4.19921875,2.24609375,4.19921875,1.85546875,3.87369791666667,0.61318359375,1.112890625,3.22265625,4.19921875,0.87001953125]],"container":"<table class=\"stripe compact\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Dataset<\/th>\n      <th>Mean score<\/th>\n      <th>kNN Area Under the Curve<\/th>\n      <th>Mean squared error<\/th>\n      <th>Runtime (s)<\/th>\n      <th>CPU (%)<\/th>\n      <th>Memory (GB)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","paging":false,"columnDefs":[{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"searchPanes":{"show":false},"targets":[2,3,4,5,6,7]},{"searchPanes":{"preSelect":"Overall mean"},"targets":1},{"className":"dt-right","targets":[2,3,4,5,6,7]}],"buttons":["searchPanes","csv","excel"],"language":{"searchPanes":{"collapse":"Filters"}},"order":[],"autoWidth":false,"orderClasses":false,"responsive":true}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render"],"jsHooks":[]}</script>
+<div id="htmlwidget-f7f4a212c20c8130f32b" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f7f4a212c20c8130f32b">{"x":{"filter":"none","vertical":false,"extensions":["Select","SearchPanes","Buttons","Responsive"],"data":[["Procrustes","Mutual Nearest Neighbors (log scran)","Procrustes","Procrustes","Mutual Nearest Neighbors (log scran)","Mutual Nearest Neighbors (log CPM)","Mutual Nearest Neighbors (log CPM)","Procrustes","Mutual Nearest Neighbors (log CPM)","Mutual Nearest Neighbors (log scran)","Harmonic Alignment (log scran)","Mutual Nearest Neighbors (log CPM)","Harmonic Alignment (log scran)","Harmonic Alignment (sqrt CPM)","Harmonic Alignment (log scran)","Harmonic Alignment (sqrt CPM)","Harmonic Alignment (sqrt CPM)","Harmonic Alignment (log scran)","Mutual Nearest Neighbors (log scran)","Harmonic Alignment (sqrt CPM)"],["CITE-seq Cord Blood Mononuclear Cells","sciCAR Cell Lines","Overall mean","sciCAR Cell Lines","Overall mean","CITE-seq Cord Blood Mononuclear Cells","sciCAR Cell Lines","sciCAR Mouse Kidney","Overall mean","sciCAR Mouse Kidney","sciCAR Mouse Kidney","sciCAR Mouse Kidney","CITE-seq Cord Blood Mononuclear Cells","sciCAR Mouse Kidney","Overall mean","CITE-seq Cord Blood Mononuclear Cells","Overall mean","sciCAR Cell Lines","CITE-seq Cord Blood Mononuclear Cells","sciCAR Cell Lines"],[0.367371660099538,0.172964252031419,0.162837986597246,0.0738402342650184,0.0653706327887329,0.0622904826180733,0.0578544389346066,0.0473020654271813,0.0426085296479292,0.0374213892344664,0.0109700285290439,0.00768066739110755,0.0046471142447602,0.00401139972041642,0.00314853587622908,-0.00173450021106317,-0.00480976937010793,-0.00617153514511684,-0.0142737428996867,-0.016706207619677],[0.308171704906801,0.0802243802593182,0.135417673163572,0.0579895919310561,0.0369218501295169,0.0140308448143716,0.0366648883279408,0.0400917226528605,0.0151695187773746,0.0434258827880639,0.0247993159239327,-0.00518717681018846,0.011571461471132,0.0104405294544754,0.0152583183793965,-0.00114099213098423,-0.000711677681043749,0.0094041777431248,-0.0128847126588314,-0.0114345703666224],[0.426571615292276,0.26570412380352,0.19025830003092,0.0896908765989807,0.0938194154479489,0.110550120421775,0.0790439895412725,0.054512408201502,0.0700475405184837,0.0314168956808689,-0.00285925886584493,0.0205485115924036,-0.00227723298161164,-0.00241773001364254,-0.00896124662693835,-0.0023280082911421,-0.00890786105917211,-0.0217472480333585,-0.0156627731405421,-0.0219778448727317],[291,879,449.666666666667,499,982.666666666667,540,749,559,719.333333333333,1239,1993,869,2046,581,1926,890,593.666666666667,1739,830,310],[132.8,88.6,273.333333333333,369,86.3666666666667,43.5,83.3,318.2,71.6,92.8,655.5,88,395,941.1,458.566666666667,903.9,930.366666666667,325.2,77.7,946.1],[0.5666015625,3.22265625,0.684928385416667,0.65517578125,3.87369791666667,1.953125,1.85546875,0.8330078125,2.01822916666667,4.19921875,4.19921875,2.24609375,4.19921875,1.85546875,3.87369791666667,0.61318359375,1.112890625,3.22265625,4.19921875,0.87001953125]],"container":"<table class=\"stripe compact\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Dataset<\/th>\n      <th>Mean score<\/th>\n      <th>kNN Area Under the Curve<\/th>\n      <th>Mean squared error<\/th>\n      <th>Runtime (s)<\/th>\n      <th>CPU (%)<\/th>\n      <th>Memory (GB)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","paging":false,"columnDefs":[{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"searchPanes":{"show":false},"targets":[2,3,4,5,6,7]},{"searchPanes":{"preSelect":"Overall mean"},"targets":1},{"className":"dt-right","targets":[2,3,4,5,6,7]}],"buttons":["searchPanes","csv","excel"],"language":{"searchPanes":{"collapse":"Filters"}},"order":[],"autoWidth":false,"orderClasses":false,"responsive":true}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render"],"jsHooks":[]}</script>
+
+## Metrics
+
+-   **kNN Area Under the Curve**<sup><a href="/bibliography#stanley2020harmonic" target="_blank">1</a></sup>: Missing 'metric_description'.
+
+<!-- -->
+
+-   **Mean squared error**<sup><a href="/bibliography#lance2022multimodal" target="_blank">2</a></sup>: Missing 'metric_description'.
 
 ## Downloads
 
@@ -58,67 +66,39 @@ Missing 'task_description'
 
 <details>
 <summary>
-Method descriptions
+Methods
 </summary>
 
--   **Harmonic Alignment (log scran)**<sup><a href="/bibliography#stanley2020harmonic" target="_blank">3</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/KrishnaswamyLab/harmonic-alignment).
+-   **Harmonic Alignment (log scran)**<sup><a href="/bibliography#stanley2020harmonic" target="_blank">1</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/KrishnaswamyLab/harmonic-alignment).
 
 <!-- -->
 
--   **Harmonic Alignment (sqrt CPM)**<sup><a href="/bibliography#stanley2020harmonic" target="_blank">3</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/KrishnaswamyLab/harmonic-alignment).
+-   **Harmonic Alignment (sqrt CPM)**<sup><a href="/bibliography#stanley2020harmonic" target="_blank">1</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/KrishnaswamyLab/harmonic-alignment).
 
 <!-- -->
 
--   **Mutual Nearest Neighbors (log CPM)**<sup><a href="/bibliography#haghverdi2018batch" target="_blank">2</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/LTLA/batchelor).
+-   **Mutual Nearest Neighbors (log CPM)**<sup><a href="/bibliography#haghverdi2018batch" target="_blank">3</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/LTLA/batchelor).
 
 <!-- -->
 
--   **Mutual Nearest Neighbors (log scran)**<sup><a href="/bibliography#haghverdi2018batch" target="_blank">2</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/LTLA/batchelor).
+-   **Mutual Nearest Neighbors (log scran)**<sup><a href="/bibliography#haghverdi2018batch" target="_blank">3</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/LTLA/batchelor).
 
 <!-- -->
 
--   **Procrustes**<sup><a href="/bibliography#gower1975generalized" target="_blank">1</a></sup>: Missing 'method_description'. Links: [Docs](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.procrustes.html).
+-   **Procrustes**<sup><a href="/bibliography#gower1975generalized" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.procrustes.html).
 
 <!-- -->
 
--   **Random Features**<sup><a href="/bibliography#openproblems" target="_blank">6</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/openproblems-bio/openproblems).
+-   **Random Features**<sup><a href="/bibliography#openproblems" target="_blank">5</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/openproblems-bio/openproblems).
 
 <!-- -->
 
--   **True Features**<sup><a href="/bibliography#openproblems" target="_blank">6</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/openproblems-bio/openproblems).
+-   **True Features**<sup><a href="/bibliography#openproblems" target="_blank">5</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/openproblems-bio/openproblems).
 
 </details>
 <details>
 <summary>
-Metric descriptions
-</summary>
-
--   **kNN Area Under the Curve** <sup><a href="/bibliography#stanley2020harmonic" target="_blank">3</a></sup>: Missing 'metric_description'.
-
-<!-- -->
-
--   **Mean squared error** <sup><a href="/bibliography#lance2022multimodal" target="_blank">7</a></sup>: Missing 'metric_description'.
-
-</details>
-<details>
-<summary>
-Dataset descriptions
-</summary>
-
--   **CITE-seq Cord Blood Mononuclear Cells** <sup><a href="/bibliography#stoeckius2017simultaneous" target="_blank">4</a></sup>: Missing 'dataset_description'.
-
-<!-- -->
-
--   **sciCAR Cell Lines** <sup><a href="/bibliography#cao2018joint" target="_blank">5</a></sup>: Missing 'dataset_description'.
-
-<!-- -->
-
--   **sciCAR Mouse Kidney** <sup><a href="/bibliography#cao2018joint" target="_blank">5</a></sup>: Missing 'dataset_description'.
-
-</details>
-<details>
-<summary>
-Baseline descriptions
+Baseline methods
 </summary>
 
 -   **Random Features**: Missing 'method_description'.
@@ -130,7 +110,23 @@ Baseline descriptions
 </details>
 <details>
 <summary>
-Quality control
+Datasets
+</summary>
+
+-   **CITE-seq Cord Blood Mononuclear Cells**<sup><a href="/bibliography#stoeckius2017simultaneous" target="_blank">6</a></sup>: Missing 'dataset_description'.
+
+<!-- -->
+
+-   **sciCAR Cell Lines**<sup><a href="/bibliography#cao2018joint" target="_blank">7</a></sup>: Missing 'dataset_description'.
+
+<!-- -->
+
+-   **sciCAR Mouse Kidney**<sup><a href="/bibliography#cao2018joint" target="_blank">7</a></sup>: Missing 'dataset_description'.
+
+</details>
+<details>
+<summary>
+Quality control results
 </summary>
 <table class="table lightable-paper" style='margin-left: auto; margin-right: auto; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
  <thead>

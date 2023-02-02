@@ -1,6 +1,3 @@
-
-<details><summary>Quality control</summary>
-
 ```{r quality_control}
 #| echo: false
 qc_print <- qc %>% 
@@ -40,5 +37,3 @@ if (nrow(qc_print) > 0) {
   knitr::asis_output("✓ All checks succeeded!")
 }
 ```
-
-</details>

@@ -42,8 +42,16 @@ Missing 'task_description'
 
 ## Scaled scores
 
-<div id="htmlwidget-985a87e2dd726f477599" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-985a87e2dd726f477599">{"x":{"filter":"none","vertical":false,"extensions":["Select","SearchPanes","Buttons","Responsive"],"data":[["BETA <sup><a href=\"/bibliography#wang2013target\" target=\"_blank\">1<\/a><\/sup>","BETA <sup><a href=\"/bibliography#wang2013target\" target=\"_blank\">1<\/a><\/sup>"],["Overall mean","sciCAR Mouse Kidney with cell clusters <sup><a href=\"/bibliography#cao2018joint\" target=\"_blank\">2<\/a><\/sup>"],[-1.76036443792866,-1.76036443792866],[-3.36341676537853,-3.36341676537853],[-0.157312110478785,-0.157312110478785],[747,747],[3233.4,3233.4],[4.4921875,4.4921875]],"container":"<table class=\"stripe compact\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Dataset<\/th>\n      <th>Mean score<\/th>\n      <th>Median Pearson correlation<\/th>\n      <th>Median Spearman correlation<\/th>\n      <th>Runtime (s)<\/th>\n      <th>CPU (%)<\/th>\n      <th>Memory (GB)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","paging":false,"columnDefs":[{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"searchPanes":{"show":false},"targets":[2,3,4,5,6,7]},{"searchPanes":{"preSelect":"Overall mean"},"targets":1},{"className":"dt-right","targets":[2,3,4,5,6,7]}],"buttons":["searchPanes","csv","excel"],"language":{"searchPanes":{"collapse":"Filters"}},"order":[],"autoWidth":false,"orderClasses":false,"responsive":true}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render"],"jsHooks":[]}</script>
+<div id="htmlwidget-80615f92490109c28e05" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-80615f92490109c28e05">{"x":{"filter":"none","vertical":false,"extensions":["Select","SearchPanes","Buttons","Responsive"],"data":[["BETA","BETA"],["Overall mean","sciCAR Mouse Kidney with cell clusters"],[-1.76036443792866,-1.76036443792866],[-3.36341676537853,-3.36341676537853],[-0.157312110478785,-0.157312110478785],[747,747],[3233.4,3233.4],[4.4921875,4.4921875]],"container":"<table class=\"stripe compact\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Dataset<\/th>\n      <th>Mean score<\/th>\n      <th>Median Pearson correlation<\/th>\n      <th>Median Spearman correlation<\/th>\n      <th>Runtime (s)<\/th>\n      <th>CPU (%)<\/th>\n      <th>Memory (GB)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","paging":false,"columnDefs":[{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"searchPanes":{"show":false},"targets":[2,3,4,5,6,7]},{"searchPanes":{"preSelect":"Overall mean"},"targets":1},{"className":"dt-right","targets":[2,3,4,5,6,7]}],"buttons":["searchPanes","csv","excel"],"language":{"searchPanes":{"collapse":"Filters"}},"order":[],"autoWidth":false,"orderClasses":false,"responsive":true}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render"],"jsHooks":[]}</script>
+
+## Metrics
+
+-   **Median Pearson correlation**<sup><a href="/bibliography#schober2018correlation" target="_blank">1</a></sup>: Missing 'metric_description'.
+
+<!-- -->
+
+-   **Median Spearman correlation**<sup><a href="/bibliography#schober2018correlation" target="_blank">1</a></sup>: Missing 'metric_description'.
 
 ## Downloads
 
@@ -58,10 +66,10 @@ Missing 'task_description'
 
 <details>
 <summary>
-Method descriptions
+Methods
 </summary>
 
--   **BETA**<sup><a href="/bibliography#wang2013target" target="_blank">1</a></sup>: Missing 'method_description'. Software version 1.0. Links: [Docs](http://cistrome.org/BETA).
+-   **BETA**<sup><a href="/bibliography#wang2013target" target="_blank">2</a></sup>: Missing 'method_description'. Software version 1.0. Links: [Docs](http://cistrome.org/BETA).
 
 <!-- -->
 
@@ -74,27 +82,7 @@ Method descriptions
 </details>
 <details>
 <summary>
-Metric descriptions
-</summary>
-
--   **Median Pearson correlation** <sup><a href="/bibliography#schober2018correlation" target="_blank">4</a></sup>: Missing 'metric_description'.
-
-<!-- -->
-
--   **Median Spearman correlation** <sup><a href="/bibliography#schober2018correlation" target="_blank">4</a></sup>: Missing 'metric_description'.
-
-</details>
-<details>
-<summary>
-Dataset descriptions
-</summary>
-
--   **sciCAR Mouse Kidney with cell clusters** <sup><a href="/bibliography#cao2018joint" target="_blank">2</a></sup>: Missing 'dataset_description'.
-
-</details>
-<details>
-<summary>
-Baseline descriptions
+Baseline methods
 </summary>
 
 -   **Random Scores**: Missing 'method_description'.
@@ -106,7 +94,15 @@ Baseline descriptions
 </details>
 <details>
 <summary>
-Quality control
+Datasets
+</summary>
+
+-   **sciCAR Mouse Kidney with cell clusters**<sup><a href="/bibliography#cao2018joint" target="_blank">4</a></sup>: Missing 'dataset_description'.
+
+</details>
+<details>
+<summary>
+Quality control results
 </summary>
 <table class="table lightable-paper" style='margin-left: auto; margin-right: auto; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
  <thead>

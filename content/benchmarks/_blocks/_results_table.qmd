@@ -22,8 +22,10 @@ res_tib <- res_tib1 %>%
   arrange(desc(mean_score)) %>%
   rowwise() %>%
   mutate(
-    method_label = ifelse(is.na(paper_reference), method_name, glue::glue("{method_name} <sup>{cite_fun(paper_reference, format = 'html')}</sup>")),
-    dataset_label = ifelse(is.na(data_reference), dataset_name, glue::glue("{dataset_name} <sup>{cite_fun(data_reference, format = 'html')}</sup>")),
+    # method_label = ifelse(is.na(paper_reference), method_name, glue::glue("{method_name} <sup>{cite_fun(paper_reference, format = 'html')}</sup>")),
+    # dataset_label = ifelse(is.na(data_reference), dataset_name, glue::glue("{dataset_name} <sup>{cite_fun(data_reference, format = 'html')}</sup>")),
+    method_label = method_name,
+    dataset_label = dataset_name,
     peak_memory_gb = peak_memory_mb / 1024
   ) %>%
   ungroup() %>%

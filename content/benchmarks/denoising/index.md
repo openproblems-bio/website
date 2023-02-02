@@ -42,8 +42,16 @@ Missing 'task_description'
 
 ## Scaled scores
 
-<div id="htmlwidget-138435b4a2c040a74cef" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-138435b4a2c040a74cef">{"x":{"filter":"none","vertical":false,"extensions":["Select","SearchPanes","Buttons","Responsive"],"data":[["ALRA <sup><a href=\"/bibliography#linderman2018zero\" target=\"_blank\">1<\/a><\/sup>","ALRA <sup><a href=\"/bibliography#linderman2018zero\" target=\"_blank\">1<\/a><\/sup>","ALRA <sup><a href=\"/bibliography#linderman2018zero\" target=\"_blank\">1<\/a><\/sup>","ALRA <sup><a href=\"/bibliography#linderman2018zero\" target=\"_blank\">1<\/a><\/sup>","MAGIC (approximate) <sup><a href=\"/bibliography#https://doi.org/10.1016/j.cell.2018.05.061\" target=\"_blank\">2<\/a><\/sup>","MAGIC <sup><a href=\"/bibliography#https://doi.org/10.1016/j.cell.2018.05.061\" target=\"_blank\">2<\/a><\/sup>","MAGIC (approximate) <sup><a href=\"/bibliography#https://doi.org/10.1016/j.cell.2018.05.061\" target=\"_blank\">2<\/a><\/sup>","MAGIC <sup><a href=\"/bibliography#https://doi.org/10.1016/j.cell.2018.05.061\" target=\"_blank\">2<\/a><\/sup>","MAGIC (approximate) <sup><a href=\"/bibliography#https://doi.org/10.1016/j.cell.2018.05.061\" target=\"_blank\">2<\/a><\/sup>","MAGIC <sup><a href=\"/bibliography#https://doi.org/10.1016/j.cell.2018.05.061\" target=\"_blank\">2<\/a><\/sup>","MAGIC (approximate) <sup><a href=\"/bibliography#https://doi.org/10.1016/j.cell.2018.05.061\" target=\"_blank\">2<\/a><\/sup>","MAGIC <sup><a href=\"/bibliography#https://doi.org/10.1016/j.cell.2018.05.061\" target=\"_blank\">2<\/a><\/sup>","DCA <sup><a href=\"/bibliography#https://www.nature.com/articles/s41467-018-07931-2\" target=\"_blank\">3<\/a><\/sup>","KNN smoothing <sup><a href=\"/bibliography#openproblems\" target=\"_blank\">4<\/a><\/sup>","DCA <sup><a href=\"/bibliography#https://www.nature.com/articles/s41467-018-07931-2\" target=\"_blank\">3<\/a><\/sup>","DCA <sup><a href=\"/bibliography#https://www.nature.com/articles/s41467-018-07931-2\" target=\"_blank\">3<\/a><\/sup>","KNN smoothing <sup><a href=\"/bibliography#openproblems\" target=\"_blank\">4<\/a><\/sup>","KNN smoothing <sup><a href=\"/bibliography#openproblems\" target=\"_blank\">4<\/a><\/sup>","DCA <sup><a href=\"/bibliography#https://www.nature.com/articles/s41467-018-07931-2\" target=\"_blank\">3<\/a><\/sup>","KNN smoothing <sup><a href=\"/bibliography#openproblems\" target=\"_blank\">4<\/a><\/sup>","Iterative KNN smoothing <sup><a href=\"/bibliography#wagner2018knearest\" target=\"_blank\">5<\/a><\/sup>","Iterative KNN smoothing <sup><a href=\"/bibliography#wagner2018knearest\" target=\"_blank\">5<\/a><\/sup>","Iterative KNN smoothing <sup><a href=\"/bibliography#wagner2018knearest\" target=\"_blank\">5<\/a><\/sup>","Iterative KNN smoothing <sup><a href=\"/bibliography#wagner2018knearest\" target=\"_blank\">5<\/a><\/sup>"],["1k Peripheral blood mononuclear cells <sup><a href=\"/bibliography#10x2018pbmc\" target=\"_blank\">6<\/a><\/sup>","Overall mean","Pancreas (inDrop) <sup><a href=\"/bibliography#luecken2022benchmarking\" target=\"_blank\">7<\/a><\/sup>","Tabula Muris Senis Lung <sup><a href=\"/bibliography#tabula2020single\" target=\"_blank\">8<\/a><\/sup>","1k Peripheral blood mononuclear cells <sup><a href=\"/bibliography#10x2018pbmc\" target=\"_blank\">6<\/a><\/sup>","1k Peripheral blood mononuclear cells <sup><a href=\"/bibliography#10x2018pbmc\" target=\"_blank\">6<\/a><\/sup>","Pancreas (inDrop) <sup><a href=\"/bibliography#luecken2022benchmarking\" target=\"_blank\">7<\/a><\/sup>","Pancreas (inDrop) <sup><a href=\"/bibliography#luecken2022benchmarking\" target=\"_blank\">7<\/a><\/sup>","Overall mean","Overall mean","Tabula Muris Senis Lung <sup><a href=\"/bibliography#tabula2020single\" target=\"_blank\">8<\/a><\/sup>","Tabula Muris Senis Lung <sup><a href=\"/bibliography#tabula2020single\" target=\"_blank\">8<\/a><\/sup>","1k Peripheral blood mononuclear cells <sup><a href=\"/bibliography#10x2018pbmc\" target=\"_blank\">6<\/a><\/sup>","1k Peripheral blood mononuclear cells <sup><a href=\"/bibliography#10x2018pbmc\" target=\"_blank\">6<\/a><\/sup>","Tabula Muris Senis Lung <sup><a href=\"/bibliography#tabula2020single\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Tabula Muris Senis Lung <sup><a href=\"/bibliography#tabula2020single\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Pancreas (inDrop) <sup><a href=\"/bibliography#luecken2022benchmarking\" target=\"_blank\">7<\/a><\/sup>","Pancreas (inDrop) <sup><a href=\"/bibliography#luecken2022benchmarking\" target=\"_blank\">7<\/a><\/sup>","1k Peripheral blood mononuclear cells <sup><a href=\"/bibliography#10x2018pbmc\" target=\"_blank\">6<\/a><\/sup>","Tabula Muris Senis Lung <sup><a href=\"/bibliography#tabula2020single\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Pancreas (inDrop) <sup><a href=\"/bibliography#luecken2022benchmarking\" target=\"_blank\">7<\/a><\/sup>"],[0.501363973563934,0.484760180546059,0.481765057016442,0.471151511057799,0.423398272165919,0.422343820701091,0.416198003714486,0.414839849650972,0.413539971014164,0.411741162878811,0.401023637162087,0.398039818284369,0.0800425088283952,0.0662707289151282,0.0627714825559103,0.0532909734019813,0.0493447398994811,0.0388499753711862,0.0170589288216383,0.000934457298949309,-4.60364459095676,-4.73169540563172,-4.81302798622217,-5.10374396207803],[0.0262419739615141,-0.00907527426962888,-0.012315382233739,-0.0411524145366617,0.304248727960455,0.303805069617678,0.2389887126279,0.239203260151013,0.280182064485013,0.279685469339885,0.297308752866686,0.296048078250963,0.196793954023976,0.161271320658182,0.173166780463236,0.161684424427903,0.12903510383671,0.124028649400453,0.115092538796496,0.0817795237064677,0.174265173801735,0.13822168432963,0.134437999956578,0.0908271417383699],[0.976485973166353,0.978595635361746,0.975845496266624,0.98345543665226,0.542547816371383,0.540882571784504,0.593407294801071,0.59047643915093,0.546897877543315,0.543796856417737,0.504738521457489,0.500031558317775,-0.0367089363671858,-0.0287298628279258,-0.0476238153514155,-0.0551024776239402,-0.0303456240377475,-0.0463286986580808,-0.0809746811532193,-0.0799106091085691,-9.38155435571526,-9.60161249559307,-9.76049397240092,-10.2983150658944],[329,3809,399,10699,199,199,199,199,299.333333333333,339.333333333333,500,620,249,378,2871,1119.66666666667,500,422,239,388,249,1328,612,259],[98,96.1333333333333,99.4,91,451.8,803.2,480.8,690.3,369.233333333333,544.766666666667,175.1,140.8,995.5,282.1,1944.2,1254.83333333333,168.7,254.2,824.8,311.8,409.2,376.8,585.666666666667,971],[2.44140625,14.8763020833333,3.7109375,38.4765625,0.41845703125,0.417578125,0.52685546875,0.9765625,2.85416666666667,3.13398437467448,7.6171875,8.00781249902344,1.7578125,0.419140625,7.71484375,3.87369791666667,8.00781249902344,2.98164062467448,2.1484375,0.51796875,1.07421875,27.44140625,10.0911458333333,1.7578125]],"container":"<table class=\"stripe compact\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Dataset<\/th>\n      <th>Mean score<\/th>\n      <th>Mean-squared error<\/th>\n      <th>Poisson loss<\/th>\n      <th>Runtime (s)<\/th>\n      <th>CPU (%)<\/th>\n      <th>Memory (GB)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","paging":false,"columnDefs":[{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"searchPanes":{"show":false},"targets":[2,3,4,5,6,7]},{"searchPanes":{"preSelect":"Overall mean"},"targets":1},{"className":"dt-right","targets":[2,3,4,5,6,7]}],"buttons":["searchPanes","csv","excel"],"language":{"searchPanes":{"collapse":"Filters"}},"order":[],"autoWidth":false,"orderClasses":false,"responsive":true}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render"],"jsHooks":[]}</script>
+<div id="htmlwidget-e304b7420a3f001a3901" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e304b7420a3f001a3901">{"x":{"filter":"none","vertical":false,"extensions":["Select","SearchPanes","Buttons","Responsive"],"data":[["ALRA","ALRA","ALRA","ALRA","MAGIC (approximate)","MAGIC","MAGIC (approximate)","MAGIC","MAGIC (approximate)","MAGIC","MAGIC (approximate)","MAGIC","DCA","KNN smoothing","DCA","DCA","KNN smoothing","KNN smoothing","DCA","KNN smoothing","Iterative KNN smoothing","Iterative KNN smoothing","Iterative KNN smoothing","Iterative KNN smoothing"],["1k Peripheral blood mononuclear cells","Overall mean","Pancreas (inDrop)","Tabula Muris Senis Lung","1k Peripheral blood mononuclear cells","1k Peripheral blood mononuclear cells","Pancreas (inDrop)","Pancreas (inDrop)","Overall mean","Overall mean","Tabula Muris Senis Lung","Tabula Muris Senis Lung","1k Peripheral blood mononuclear cells","1k Peripheral blood mononuclear cells","Tabula Muris Senis Lung","Overall mean","Tabula Muris Senis Lung","Overall mean","Pancreas (inDrop)","Pancreas (inDrop)","1k Peripheral blood mononuclear cells","Tabula Muris Senis Lung","Overall mean","Pancreas (inDrop)"],[0.501363973563934,0.484760180546059,0.481765057016442,0.471151511057799,0.423398272165919,0.422343820701091,0.416198003714486,0.414839849650972,0.413539971014164,0.411741162878811,0.401023637162087,0.398039818284369,0.0800425088283952,0.0662707289151282,0.0627714825559103,0.0532909734019813,0.0493447398994811,0.0388499753711862,0.0170589288216383,0.000934457298949309,-4.60364459095676,-4.73169540563172,-4.81302798622217,-5.10374396207803],[0.0262419739615141,-0.00907527426962888,-0.012315382233739,-0.0411524145366617,0.304248727960455,0.303805069617678,0.2389887126279,0.239203260151013,0.280182064485013,0.279685469339885,0.297308752866686,0.296048078250963,0.196793954023976,0.161271320658182,0.173166780463236,0.161684424427903,0.12903510383671,0.124028649400453,0.115092538796496,0.0817795237064677,0.174265173801735,0.13822168432963,0.134437999956578,0.0908271417383699],[0.976485973166353,0.978595635361746,0.975845496266624,0.98345543665226,0.542547816371383,0.540882571784504,0.593407294801071,0.59047643915093,0.546897877543315,0.543796856417737,0.504738521457489,0.500031558317775,-0.0367089363671858,-0.0287298628279258,-0.0476238153514155,-0.0551024776239402,-0.0303456240377475,-0.0463286986580808,-0.0809746811532193,-0.0799106091085691,-9.38155435571526,-9.60161249559307,-9.76049397240092,-10.2983150658944],[329,3809,399,10699,199,199,199,199,299.333333333333,339.333333333333,500,620,249,378,2871,1119.66666666667,500,422,239,388,249,1328,612,259],[98,96.1333333333333,99.4,91,451.8,803.2,480.8,690.3,369.233333333333,544.766666666667,175.1,140.8,995.5,282.1,1944.2,1254.83333333333,168.7,254.2,824.8,311.8,409.2,376.8,585.666666666667,971],[2.44140625,14.8763020833333,3.7109375,38.4765625,0.41845703125,0.417578125,0.52685546875,0.9765625,2.85416666666667,3.13398437467448,7.6171875,8.00781249902344,1.7578125,0.419140625,7.71484375,3.87369791666667,8.00781249902344,2.98164062467448,2.1484375,0.51796875,1.07421875,27.44140625,10.0911458333333,1.7578125]],"container":"<table class=\"stripe compact\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Dataset<\/th>\n      <th>Mean score<\/th>\n      <th>Mean-squared error<\/th>\n      <th>Poisson loss<\/th>\n      <th>Runtime (s)<\/th>\n      <th>CPU (%)<\/th>\n      <th>Memory (GB)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","paging":false,"columnDefs":[{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"searchPanes":{"show":false},"targets":[2,3,4,5,6,7]},{"searchPanes":{"preSelect":"Overall mean"},"targets":1},{"className":"dt-right","targets":[2,3,4,5,6,7]}],"buttons":["searchPanes","csv","excel"],"language":{"searchPanes":{"collapse":"Filters"}},"order":[],"autoWidth":false,"orderClasses":false,"responsive":true}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render"],"jsHooks":[]}</script>
+
+## Metrics
+
+-   **Mean-squared error**<sup><a href="/bibliography#batson2019molecular" target="_blank">1</a></sup>: Missing 'metric_description'.
+
+<!-- -->
+
+-   **Poisson loss**<sup><a href="/bibliography#batson2019molecular" target="_blank">1</a></sup>: Missing 'metric_description'.
 
 ## Downloads
 
@@ -58,10 +66,10 @@ Missing 'task_description'
 
 <details>
 <summary>
-Method descriptions
+Methods
 </summary>
 
--   **ALRA**<sup><a href="/bibliography#linderman2018zero" target="_blank">1</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/KlugerLab/ALRA).
+-   **ALRA**<sup><a href="/bibliography#linderman2018zero" target="_blank">2</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/KlugerLab/ALRA).
 
 <!-- -->
 
@@ -77,52 +85,24 @@ Method descriptions
 
 <!-- -->
 
--   **MAGIC**<sup><a href="/bibliography#https://doi.org/10.1016/j.cell.2018.05.061" target="_blank">2</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/KrishnaswamyLab/MAGIC).
+-   **MAGIC**<sup><a href="/bibliography#https://doi.org/10.1016/j.cell.2018.05.061" target="_blank">6</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/KrishnaswamyLab/MAGIC).
 
 <!-- -->
 
--   **MAGIC (approximate)**<sup><a href="/bibliography#https://doi.org/10.1016/j.cell.2018.05.061" target="_blank">2</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/KrishnaswamyLab/MAGIC).
+-   **MAGIC (approximate)**<sup><a href="/bibliography#https://doi.org/10.1016/j.cell.2018.05.061" target="_blank">6</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/KrishnaswamyLab/MAGIC).
 
 <!-- -->
 
--   **No denoising**<sup><a href="/bibliography#batson2019molecular" target="_blank">9</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/czbiohub/molecular-cross-validation).
+-   **No denoising**<sup><a href="/bibliography#batson2019molecular" target="_blank">1</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/czbiohub/molecular-cross-validation).
 
 <!-- -->
 
--   **Perfect denoising**<sup><a href="/bibliography#batson2019molecular" target="_blank">9</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/czbiohub/molecular-cross-validation).
+-   **Perfect denoising**<sup><a href="/bibliography#batson2019molecular" target="_blank">1</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/czbiohub/molecular-cross-validation).
 
 </details>
 <details>
 <summary>
-Metric descriptions
-</summary>
-
--   **Mean-squared error** <sup><a href="/bibliography#batson2019molecular" target="_blank">9</a></sup>: Missing 'metric_description'.
-
-<!-- -->
-
--   **Poisson loss** <sup><a href="/bibliography#batson2019molecular" target="_blank">9</a></sup>: Missing 'metric_description'.
-
-</details>
-<details>
-<summary>
-Dataset descriptions
-</summary>
-
--   **Pancreas (inDrop)** <sup><a href="/bibliography#luecken2022benchmarking" target="_blank">7</a></sup>: Missing 'dataset_description'.
-
-<!-- -->
-
--   **1k Peripheral blood mononuclear cells** <sup><a href="/bibliography#10x2018pbmc" target="_blank">6</a></sup>: Missing 'dataset_description'.
-
-<!-- -->
-
--   **Tabula Muris Senis Lung** <sup><a href="/bibliography#tabula2020single" target="_blank">8</a></sup>: Missing 'dataset_description'.
-
-</details>
-<details>
-<summary>
-Baseline descriptions
+Baseline methods
 </summary>
 
 -   **No denoising**: Missing 'method_description'.
@@ -134,7 +114,23 @@ Baseline descriptions
 </details>
 <details>
 <summary>
-Quality control
+Datasets
+</summary>
+
+-   **Pancreas (inDrop)**<sup><a href="/bibliography#luecken2022benchmarking" target="_blank">7</a></sup>: Missing 'dataset_description'.
+
+<!-- -->
+
+-   **1k Peripheral blood mononuclear cells**<sup><a href="/bibliography#10x2018pbmc" target="_blank">8</a></sup>: Missing 'dataset_description'.
+
+<!-- -->
+
+-   **Tabula Muris Senis Lung**<sup><a href="/bibliography#tabula2020single" target="_blank">9</a></sup>: Missing 'dataset_description'.
+
+</details>
+<details>
+<summary>
+Quality control results
 </summary>
 <table class="table lightable-paper" style='margin-left: auto; margin-right: auto; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
  <thead>
