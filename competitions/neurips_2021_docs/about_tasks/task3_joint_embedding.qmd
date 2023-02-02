@@ -1,0 +1,158 @@
+---
+title: "Task 3: Joint Embedding"
+description: Learn a joint embedding from multiple modalities
+image: ../images/integrate.svg
+order: 3
+---
+
+The functioning of organs, tissues, and whole organisms is determined by the interplay of cells. Cells are characterised into broad types, which in turn can take on different states. Here, a cell state is made up of the sum of all processes that are occurring within the cell. We can gain insight into the state of a cell by different types of measurements: e.g., RNA expression, protein abundance, or chromatin conformation. Combining this information to describe cellular heterogeneity requires the formation of joint embeddings generated from this multimodal data. These embeddings must account for and remove possible batch effects between different measurement batches. The reward for methods that can achieve this is great: a highly resolved description of the underlying biological state of a cell that determines its function, how it interacts with other cells, and thus the cell’s role in the functioning of the whole tissue.
+
+![**Task 3: Joint embedding**. In this task, the goal is to learn an embedded space that leverages the information of multiple modalities (only ATAC + RNA shown). Quality of the embedding will be scored using a number of metrics derived from expert annotation.](../images/integrate.svg)
+
+
+## Task API
+
+The following section describes the task API for the Joint Embedding task. Competitors must submit their code as a Viash component. To facilitate creation of these components, [starter kits](/competitions/neurips_2021_docs/submission/starter_kit_contents.qmd) have been provided.
+
+### Input data formats
+
+This component expects two inputs, `--input_mod1` and `--input_mod2`. They are both [AnnData](https://anndata.readthedocs.io/en/latest/), containing the full profile matrices where extra metadata has been removed. These have the following attributes:
+
+```plaintext
+adata
+  Input AnnData object for task 2
+
+  Attributes
+  ----------
+  adata.X : ndarray, shape=(n_obs, n_var)
+    Sparse profile matrix of given modality. If .var['feature_types'] == "GEX" or "ADT",
+    values in adata.X represent expression counts for each gene. If
+    .var['feature_types'] == "ATAC", values represent counts of reads in peaks for
+    chromatin accessibility
+  adata.uns['dataset_id'] : str
+    The name of the dataset.
+  adata.var['feature_types']: ndarray, shape=(n_var,)
+    The modality of this file, should be equal to "GEX", "ATAC" or "ADT".
+  adata.var_names : ndarray, shape=(n_var,)
+    Ids for the features.
+  adata.obs_names : ndarray, shape=(n_obs,)
+    Ids for the cells.
+  adata.obs['batch']`: ndarray, shape=(n_obs,)
+    The batch from which the data was sequenced. Has format "s[1-4]d[1-9]" indicating the site and
+    donor associated with the batch.
+  adata.obs['size_factors']`: ndarray, shape=(n_obs,)
+    The batch from which the data was sequenced. Has format "s[1-4]d[1-9]" indicating the site and
+    donor associated with the batch.
+```
+
+#### Normalization and transformation of data for the joint embedding task
+
+To make the task more straightforward, we have followed common practices for normalizing and transforming data of each modality. The raw data is also provided in `adata.layers` as described below.
+
+For full details on preprocessing, see the [Data Preprocessing](/competitions/neurips_2021_docs/data/dataset.qmd#preprocessing) notes.
+
+**GEX**  
+
+For this task, gene expression data stored in `adata.X` for the training and test data has been size-factor normalized and log1p transformed.  Raw UMI counts are available in `adata.layers["counts"]`. Size factors are accessible in `adata.obs["size_factors"]`
+
+**ATAC**
+
+For this task, ATAC data stored in `adata.X` for the training and test data has been binarized. The raw UMI counts for each peak can be found in `adata.layers["counts"]`.
+
+**ADT**
+
+For this task, ADT derived protein abundance measures have been centered log-ration (CLR) normalized. Raw ADT counts can be found in `adata.layers["counts"]`.
+
+### Output data formats
+
+This component should output only *one* h5ad file, `--output`, containing the predicted pairings of the two input datasets. We are limiting the embedding to at most 100 dimensions. The output file must have the following attributes.
+
+```plaintext
+adata
+  Output AnnData object for task 2
+
+  Attributes
+  ----------
+  adata.X : ndarray, shape=(n_obs, N), N <= 100
+    Embedding matrix.
+  adata.uns['dataset_id'] : str
+    The name of the dataset.
+  adata.uns['method_id']: str
+    The name of the prediction method.
+  adata.obs_names : ndarray, shape=(n_obs,)
+    Ids for the cells.
+
+```
+
+### Metrics
+
+Performance in task 3 will be measured using 6 different metrics broken into two classes:
+* Biology conservation
+* Batch removal
+
+These measures are then aggregated into a single score used to rank methods.
+
+#### Bio-conservation metrics:
+
+These metrics measure of how well an embedding conserves expert-annotated biology.
+
+1. **NMI cluster/label** - Normalized mutual information (NMI) compares the overlap of two clusterings. We use NMI to compare the cell type labels with an automated clustering computed on the integrated dataset (based on Louvain clustering). NMI scores of 0 or 1 correspond to uncorrelated clustering or a perfect match, respectively. Automated Louvain clustering is performed at resolution ranges from 0.1 to 2 in steps of 0.1, and the clustering output with the highest NMI with the label set is used.
+2. **Cell type ASW** - The silhouette width measures the compactness of observations with the same labels. Averaging over all silhouette widths of a set of cells yields the average silhouette width (ASW), which ranges between -1 and 1. We use ASW to evaluate the compactness of cell types in the resulting embedding. The cluster ASW is computed on cell identity labels and scaled to a value between 0 and 1 using the equation:
+$$ASW = (ASW_{C}+1)/2 $$
+where $C$ denotes the set of all cell identity labels.
+3. **Cell cycle conservation** - The cell cycle conservation score is a proxy for the conservation of gene program signal during data integration. It evaluates how much variance is explained by cell cycle per batch before and after integration. This should ideally be equal. Using Scanpy’s `score_cell_cycle` function we score the cell cycle stage of each cell using the gene expression data and a gene set from [Tirosh et al. (10.1126/science.aad0501)](https://dx.doi.org/10.1126/science.aad0501).
+We then compute the variance contribution of the resulting S and G2/M phase scores using principal component regression, which is performed for each batch separately. The differences in variance before, $Var_\text{before}$, and after, $Var_\text{after}$, integration is aggregated into a final score between 0 and 1, using the equation:
+$$CC conservation = 1 -\frac{|Var_\text{after}-Var_\text{before}|}{Var_\text{before}}$$
+In this equation values close to 0 indicate lower conservation and 1 indicates complete conservation of the variance explained by the cell cycle. In other words, the variance remains unchanged within each batch for complete conservation, while any deviation from the pre-integration variance contribution reduces the score.
+4. **Trajectory conservation** - The trajectory conservation score is a proxy for the conservation of a continuous biological signal in the joint embedding. In this metric, we compare trajectories computed after integration for relevant cell types that describe a continuous cellular differentiation process with a trajectory computed per batch and modality. Trajectories are computed using diffusion pseudotime (implemented in the `sc.tl.dpt` function in Scanpy). This approach embeds the data into a diffusion map space and computes an ordering of cells in this space from a selected root cell (a pseudotime value). As root cell, we select the cell in the earliest progenitor cluster that is most extremal in the first three diffusion components, which is still in the largest connected component of the cellular nearest neighbor graph (the graph that is used as the basis for the diffusion map computation).
+The conservation of the trajectory is quantified via Spearman’s rank correlation coefficient, $s$, between the pseudotime values before and after integration. The final score is scaled to a value between 0 and 1 using the equation:
+$$trajectory conservation = (s+1)/2.$$
+Values of 1 or 0 correspond to the same order of cells on the trajectory before and after integration or the reverse order, respectively. In cases where the trajectory could not be computed, which occurs when kNN graphs of the integrated data contain many connected components, we set the value of the metric to 0.
+To compute a multimodal trajectory conservation score using un-modal ground-truth trajectories, we take the mean of the trajectory conservation scores for each modality.
+
+#### Batch removal metrics
+
+These metrics how well an embedding removes batch variation.
+
+1. **Batch ASW** - As mentioned above, the average silhouette width (ASW) measures the compactness of observations with the same label in an embedding. We use the ASW to measure batch mixing by considering the non-compactness of batch labels per cell type cluster.
+Specifically, we consider the absolute silhouette width, $s(i)$, on batch labels per cell i. Here, 0 indicates that batches are well mixed, and any deviation from 0 indicates a batch effect. We rescale this score so that higher scores indicate better batch mixing and compute this per cell type label, j, via the equation:
+$$batchASW_{j} =\frac{1}{|C_{j}|}\sum_{i \in C_{j}} 1-|s(i)|$$
+where $C_j$ is the set of cells with the cell label j and $|C_j|$ denotes the number of cells in that set.
+To obtain the final $batchASW$ score, the label-specific $batchASW_j$ scores are averaged:
+$$batchASW =\frac{1}{|M|}\sum_{j \in M} batchASW_{j}$$
+Here, M is the set of unique cell labels. Overall, a batch ASW of 1 represents ideal batch mixing and a value of 0 indicates strongly separated batches.
+<br style="margin-bottom: 10px;">
+2. **Graph connectivity** - The graph connectivity metric assesses whether cells of the same type from different batches are close to one another in the embedding. This is evaluated by computing a k-nearest neighbour (kNN) graph, $G$, on the embedding using Euclidean distances. We then check if all cells with the same cell identity label are connected on this kNN graph. For each cell identity label $c$, we generate the subset kNN graph $G(N_c;E_c)$, which contains only cells from a given label. Using these subset kNN graphs, we compute the graph connectivity score:
+$$gc =\frac{1}{|C|} \sum_{c \in C} \frac{|LCC(G(N_c;E_c))|}{|N_c|}$$
+Here, $C$ represents the set of cell identity labels, $|LCC()|$ is the number of nodes in the largest connected component of the graph, and $|N_c|$ is the number of nodes with cell identity $c$. The resulting score has a range of $(0;1]$, where 1 indicates that all cells with the same cell identity are connected in the integrated kNN graph, and the lowest possible score indicates a graph where no cell is connected.
+
+#### Metric aggregation
+
+To rank methods, the individual metric scores will be aggregated. However, due to the differing nature of each metric, we will assign a weight to each metric after 1 month of the public competition. The goal of this weighting will be to provide equal importance on each measure when summing them. This weighting will be noted in the competition documentation and in communication to all competitions.
+
+An overall weighted average of batch correction and bio-conservation scores will be computed via the equation:
+$$S_{overall,i} = 0.6 \cdot S_{bio,i} + 0.4 \cdot S_{batch,i}$$
+This reflects the relative importance of the metrics.
+
+The batch covariate used for evaluation is `sample`, however one can consider encoding the nested donor and site of data collection as a nested batch covariate.
+
+Further information on any of these metrics can be found at [biorxiv.org/content/10.1101/2020.05.22.111161v2](https://www.biorxiv.org/content/10.1101/2020.05.22.111161v2).
+
+
+
+## Prizes
+
+Because labels used for the metric calculations are available for some of the data as described in the [Benchmark Dataset](/competitions/neurips_2021_docs/data/dataset.qmd) notes, we anticipate a bias in performance in models that use this information in model training. As there is no way for us to distinguish between pre-trained models that use these labels and those that don't, we are splitting the prizes into two categories.
+
+**Pre-trained models** are any method that includes model parameters through the `resources` block of the `config.vsh.yaml` file. For more information, see the [FAQs](/competitions/neurips_2021_docs/submission/faq.qmd#how-can-i-upload-a-pre-trained-model). This also includes models that may download model weights during execution.
+
+**Non pre-trained models** are any method that uses only the `input_mod[1|2]` files to generate the embedding.
+
+For this task, four $1250 prizes will be awarded to the submissions for each of the following criteria:
+
+1. Best performance embedding GEX and ATAC using a pre-trained model
+2. Best performance embedding GEX and ADT using a pre-trained model
+1. Best performance embedding GEX and ATAC without pre-training
+2. Best performance embedding GEX and ADT without pre-training
+
+[Terms and Conditions](/competitions/neurips_2021_docs/submission/terms.qmd) apply.

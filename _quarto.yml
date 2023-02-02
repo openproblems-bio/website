@@ -5,10 +5,11 @@ project:
 
 website:
   title: "OpenProblems"
+  description: Open Problems in Single Cell Analysis
+  favicon: images/icon.png
   site-url: https://openproblems-experimental.netlify.com
   repo-url: https://github.com/openproblems-bio/website-experimental
   repo-actions: [edit, issue] 
-
 
   page-footer:
     left: "© Open Problems 2022 · View on [GitHub](https://github.com/openproblems-bio/openproblems). Made with [Quarto♥](https://quarto.org)."
@@ -23,6 +24,14 @@ website:
         href: results/index.qmd
       - text: Benchmarks v2
         href: results_v2/index.qmd
+      - text: Competitions
+        menu: 
+          - text: NeurIPS 2022
+            href: competitions/neurips_2022
+          - text: NeurIPS 2021
+            href: competitions/neurips_2021
+          - text: NeurIPS 2021 docs
+            href: competitions/neurips_2021_docs
       - href: team/index.qmd
         text: Team
       - text: Documentation
@@ -53,40 +62,27 @@ website:
               text: Overview
             - auto: contributing/create_task/*.qmd
         - "contributing/code_of_conduct.qmd"
-    - id: results_v2
-      title: OpenProblemsv2
-      href: results_v2/index.qmd
-      contents:
-        - text: Overview
-          href: results_v2/index.qmd
-        - text: Denoising
-          contents: 
-            - href: results_v2/denoising/index.qmd
-              text: Description
-            - results_v2/denoising/methods.qmd
-            - results_v2/denoising/metrics.qmd
-            - results_v2/denoising/api.qmd
-            - results_v2/denoising/normalization.qmd
-        - text: Dimensionality reduction
-          contents: 
-            - href: results_v2/dimensionality_reduction/index.qmd
-              text: Description
-            - results_v2/dimensionality_reduction/methods.qmd
-            - results_v2/dimensionality_reduction/metrics.qmd
-            - results_v2/dimensionality_reduction/api.qmd
-            - results_v2/dimensionality_reduction/normalization.qmd
-        - text: Label projection
-          contents: 
-            - href: results_v2/label_projection/index.qmd
-              text: Description
-            - results_v2/label_projection/methods.qmd
-            - results_v2/label_projection/metrics.qmd
-            - results_v2/label_projection/api.qmd
-            - results_v2/label_projection/normalization.qmd
-        - results_v2/quality_control.qmd
-        - results_v2/migration.qmd
+    - id: neurips2021_docs
+      title: NeurIPS2021
+      contents: 
+        - competitions/neurips_2021_docs/index.qmd
+        - text: General
+          href: competitions/neurips_2021_docs/about/index.qmd
+          contents: competitions/neurips_2021_docs/about/*
+        - text: Data
+          href: competitions/neurips_2021_docs/data/index.qmd
+          contents: competitions/neurips_2021_docs/data/*
+        - text: The tasks
+          href: competitions/neurips_2021_docs/about_tasks/index.qmd
+          contents: competitions/neurips_2021_docs/about_tasks/*
+        - text: Submissions
+          href: competitions/neurips_2021_docs/submission/index.qmd
+          contents: competitions/neurips_2021_docs/submission/*
 format:
   html:
+    # theme:
+    #   light: [ simplex, theme.scss ]
+    #   dark: [ darkly, theme.scss ]
     theme: [ simplex, theme.scss ]
     css: styles.css
     toc: true
