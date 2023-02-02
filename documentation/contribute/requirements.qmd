@@ -1,9 +1,7 @@
 ---
 title: Requirements
-order: 1
+order: 5
 ---
-
-{{< include _os_chooser.md >}}
 
 This page describes how to set up your system so you can start contributing to OpenProblems. If you just want to [analyse the results](/documentation/analyse_results/) or [run a method, metric or pipeline](/documentation/execute/), please click on on the respective links.
 
@@ -412,121 +410,84 @@ nextflow run hello -with-docker
 
 ## Troubleshooting common problems
 
-### How to choose the right version of Java
+If you run into any problems, please ask ChatGPT or take a look at our [troubleshooting](troubleshooting.qmd) page.
 
-Your system might have multiple versions of Java installed. First determine which versions of Java are installed. This directory can usually be found at `/usr/lib/jvm/`. Example:
+```{=html}
+<script type="text/javascript">
+let tabDict = {
+  "debian": "Debian/Ubuntu",
+  "rhel": "RHEL/Fedora",
+  "arch": "Arch",
+  "macos": "macOS",
+  "windows": "Windows/WSL"
+};
 
+let invertedTabDict = invertDictionary(tabDict);
+
+document.addEventListener("DOMContentLoaded", function() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    let lang = 'debian';
+
+    if (urlParams.has('lang')){
+        lang = urlParams.get('lang');
+    }
+
+    changeTabSelections(lang);
+
+    var tabs = document.querySelectorAll('[role="tab"]');
+    
+    for(var i = 0; i < tabs.length; i++) {
+        tab = tabs[i];
+        if (tab.textContent in invertedTabDict) {
+            tab.addEventListener('click', onTabClicked);
+        }
+    }
+
+});
+
+function changeTabSelections(language) {
+    var tabs = document.querySelectorAll('[role="tab"]');
+    var tab_panels = document.querySelectorAll('[role="tabpanel"]');
+
+    // Disable all tab panels
+    for(var i = 0; i < tab_panels.length; i++) {
+        panel = tab_panels[i];
+        panel.classList.remove('active')
+    }
+
+    // Iterate over all tabs
+    for(var i = 0; i < tabs.length; i++) {
+        tab = tabs[i];
+
+        // Disable all tabs
+        tab.classList.remove('active');
+
+        // If the tab is the chosen language
+        if (tab.textContent == tabDict[language]) {
+            // Mark it active
+            tab.classList.add('active');
+            // Find the linked tab panel and make it active
+            var linked_panel = tab.getAttribute('aria-controls')
+            var panel = document.getElementById(linked_panel);
+            panel.classList.add('active');
+        }
+    }
+
+}
+
+function onTabClicked(event) {
+    changeTabSelections(invertedTabDict[event.srcElement.textContent]);
+}
+
+function invertDictionary(dict){
+    var ret = {};
+    for(var key in dict){
+        ret[dict[key]] = key;
+    }
+    return ret;
+}
+
+</script>
 ```
-$ ls -1 /usr/lib/jvm/
-java
-java-11
-java-11-openjdk
-java-11-openjdk-11.0.17.0.8-2.el8_6.x86_64
-java-1.8.0
-java-1.8.0-openjdk
-java-1.8.0-openjdk-1.8.0.352.b08-2.el8_6.x86_64
-java-19
-java-19-openjdk
-java-19-openjdk-19.0.0.0.36-2.rolling.el8.x86_64
-java-openjdk
-jre
-jre-11
-jre-11-openjdk
-jre-11-openjdk-11.0.17.0.8-2.el8_6.x86_64
-jre-1.8.0
-jre-1.8.0-openjdk
-jre-1.8.0-openjdk-1.8.0.352.b08-2.el8_6.x86_64
-jre-19
-jre-19-openjdk
-jre-19-openjdk-19.0.0.0.36-2.rolling.el8.x86_64
-jre-openjdk
-```
-
-In the example above, it would be recommended to include the following
-command as part of your execution script or in your `~/.bashrc`:
-
-```sh
-export JAVA_HOME=/usr/lib/jvm/java-19-openjdk
-```
-
-### Note: Permission error with Docker
-
-If you get a permission denied error on a Linux system, you may need to add your user to the docker group.
-
-```sh
-sudo usermod -aG docker $USER
-```
-
-After running the command above, you will need to log out and back in again.
-After doing so, run the following commands to verify that everything is working.
-
-```sh
-groups
-```
-
-    youruser wheel docker
-
-```sh
-docker run hello-world
-```
-
-    Hello from Docker!
-    This message shows that your installation appears to be working correctly.
-    ...
-
-### Note: Docker error – the docker daemon is not running
-
-If you get the error above, the Docker daemon may not have been started yet.
-
-Figure out how to enable your system to launch Docker on boot. For example, 
-on 
-```sh
-sudo systemctl enable docker
-docker run hello-world
-```
-
-    Hello from Docker!
-    This message shows that your installation appears to be working correctly.
-    ...
-
-### Note: viash command not found
-
-Check whether Viash was indeed installed in your `$HOME/.local/bin` folder by running:
-
-```bash
-ls $HOME/.local/bin/viash
-```
-
-  /home/youruser/.local/bin/viash
-
-If it was, then the `$HOME/.local/bin` folder is likely not in your `PATH` variable. 
-Run the following command to check whether it's missing from your PATH variable:
-
-```bash
-echo $PATH
-```
-
-    /home/youruser/.local/bin:/home/youruser/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
-
-If `/home/youruser/.local/bin` is not there, look up instructions on how to add a folder to your PATH variable for your operating system.
-
-### Note: nextflow command not found
-
-Check whether Nextflow was indeed installed in your `$HOME/.local/bin` folder by running:
-
-```bash
-ls $HOME/.local/bin/nextflow
-```
-
-  /home/youruser/.local/bin/nextflow
-
-If it was, then the `$HOME/.local/bin` folder is likely not in your `PATH` variable. 
-Run the following command to check whether it's missing from your PATH variable:
-
-```bash
-echo $PATH
-```
-
-    /home/youruser/.local/bin:/home/youruser/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
-
-If `/home/youruser/.local/bin` is not there, look up instructions on how to add a folder to your PATH variable for your operating system.

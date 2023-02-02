@@ -1,0 +1,123 @@
+---
+title: Troubleshooting
+order: 100
+---
+
+### Choosing between multiple versions of Java
+
+Your system might have multiple versions of Java installed. First determine which versions of Java are installed. This directory can usually be found at `/usr/lib/jvm/`. Example:
+
+```
+$ ls -1 /usr/lib/jvm/
+java
+java-11
+java-11-openjdk
+java-11-openjdk-11.0.17.0.8-2.el8_6.x86_64
+java-1.8.0
+java-1.8.0-openjdk
+java-1.8.0-openjdk-1.8.0.352.b08-2.el8_6.x86_64
+java-19
+java-19-openjdk
+java-19-openjdk-19.0.0.0.36-2.rolling.el8.x86_64
+java-openjdk
+jre
+jre-11
+jre-11-openjdk
+jre-11-openjdk-11.0.17.0.8-2.el8_6.x86_64
+jre-1.8.0
+jre-1.8.0-openjdk
+jre-1.8.0-openjdk-1.8.0.352.b08-2.el8_6.x86_64
+jre-19
+jre-19-openjdk
+jre-19-openjdk-19.0.0.0.36-2.rolling.el8.x86_64
+jre-openjdk
+```
+
+In the example above, it would be recommended to include the following
+command as part of your execution script or in your `~/.bashrc`:
+
+```sh
+export JAVA_HOME=/usr/lib/jvm/java-19-openjdk
+```
+
+### Permission error with Docker
+
+If you get a permission denied error on a Linux system, you may need to add your user to the docker group.
+
+```sh
+sudo usermod -aG docker $USER
+```
+
+After running the command above, you will need to log out and back in again.
+After doing so, run the following commands to verify that everything is working.
+
+```sh
+groups
+```
+
+    youruser wheel docker
+
+```sh
+docker run hello-world
+```
+
+    Hello from Docker!
+    This message shows that your installation appears to be working correctly.
+    ...
+
+### Docker error – the docker daemon is not running
+
+If you get the error above, the Docker daemon may not have been started yet.
+
+Figure out how to enable your system to launch Docker on boot. For example, 
+on 
+```sh
+sudo systemctl enable docker
+docker run hello-world
+```
+
+    Hello from Docker!
+    This message shows that your installation appears to be working correctly.
+    ...
+
+### Viash: command not found
+
+Check whether Viash was indeed installed in your `$HOME/.local/bin` folder by running:
+
+```bash
+ls $HOME/.local/bin/viash
+```
+
+  /home/youruser/.local/bin/viash
+
+If it was, then the `$HOME/.local/bin` folder is likely not in your `PATH` variable. 
+Run the following command to check whether it's missing from your PATH variable:
+
+```bash
+echo $PATH
+```
+
+    /home/youruser/.local/bin:/home/youruser/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
+
+If `/home/youruser/.local/bin` is not there, look up instructions on how to add a folder to your PATH variable for your operating system.
+
+### Nextflow: command not found
+
+Check whether Nextflow was indeed installed in your `$HOME/.local/bin` folder by running:
+
+```bash
+ls $HOME/.local/bin/nextflow
+```
+
+  /home/youruser/.local/bin/nextflow
+
+If it was, then the `$HOME/.local/bin` folder is likely not in your `PATH` variable. 
+Run the following command to check whether it's missing from your PATH variable:
+
+```bash
+echo $PATH
+```
+
+    /home/youruser/.local/bin:/home/youruser/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
+
+If `/home/youruser/.local/bin` is not there, look up instructions on how to add a folder to your PATH variable for your operating system.
