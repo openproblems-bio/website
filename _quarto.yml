@@ -35,33 +35,19 @@ website:
       - href: team/index.qmd
         text: Team
       - text: Documentation
-        href: contributing/index.qmd
+        href: documentation/index.qmd
 
   sidebar:
     - id: documentation
       collapse-level: 3
       title: Documentation
-      contents: 
-        - documentation/index.qmd
-        - "documentation/quick_start.qmd"
-        - "documentation/requirements.qmd"
-        - text: Analyse results
-          href: documentation/analyse_results/index.qmd
-        - text: Run a method
-          href: documentation/run_method/index.qmd
-        - text: Extend a task
-          href: documentation/extend_task/index.qmd
-          contents:
-            - href: documentation/extend_task/index.qmd
-              text: Overview
-            - auto: documentation/extend_task/*.qmd
-        - text: Create a new task
-          href: documentation/create_task/index.qmd
-          contents:
-            - href: documentation/create_task/index.qmd
-              text: Overview
-            - auto: contributing/create_task/*.qmd
-        - "contributing/code_of_conduct.qmd"
+      contents:
+        - documentation/analyse_results/index.qmd
+        - documentation/execute/index.qmd
+        - documentation/first_setup/index.qmd
+        - documentation/contribute/index.qmd
+        - documentation/development/index.qmd
+        - documentation/code_of_conduct.qmd
     - id: neurips2021_docs
       title: NeurIPS2021
       contents: 
