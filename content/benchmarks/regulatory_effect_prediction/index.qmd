@@ -4,40 +4,14 @@ summary: "Prediction of gene expression from chromatin accessibility"
 bibliography: "../../../static/bibliography/main.bib"
 ---
 
+
 ```{r}
 #| include: false
 params <- list(data_dir = "content/benchmarks/label_projection/data")
 params <- list(data_dir = "./data")
 ```
 
-
-```{r setup}
-#| include: false
-#| error: true
-
-library(tidyverse)
-library(funkyheatmap)
-library(kableExtra)
-
-# read task info
-task_info <- jsonlite::read_json(paste0(params$data_dir, "/task_info.json"))
-task_info$task_description <- task_info$task_description %||% NA_character_
-
-`%|%` <- function(x, y) {
-  ifelse(is.na(x), y, x)
-}
-
-method_info <- jsonlite::read_json(paste0(params$data_dir, "/method_info.json"), simplifyVector = TRUE)
-metric_info <- jsonlite::read_json(paste0(params$data_dir, "/metric_info.json"), simplifyVector = TRUE)
-dataset_info <- jsonlite::read_json(paste0(params$data_dir, "/dataset_info.json"), simplifyVector = TRUE)
-results <- jsonlite::read_json(paste0(params$data_dir, "/results.json"), simplifyVector = TRUE)
-qc <- jsonlite::read_json(paste0(params$data_dir, "/quality_control.json"), simplifyVector = TRUE)
-
-num_methods <- sum(!method_info$is_baseline)
-num_baselines <- sum(method_info$is_baseline)
-num_datasets <- nrow(dataset_info)
-num_metrics <- nrow(metric_info)
-```
+{{< include ../_blocks/_setup.qmd >}}
 
 :::{.content-hidden}
 `r num_methods` methods • `r num_metrics` metrics • `r num_datasets` datasets
@@ -48,292 +22,11 @@ num_metrics <- nrow(metric_info)
 
 ## Summary
 
-```{r overall_ranking}
-#| echo: false
-results_long <-
-  inner_join(
-    results %>%
-      unnest(metric_values) %>%
-      gather(metric_id, value, any_of(metric_info$metric_id)) %>%
-      mutate(value = ifelse(is.na(value), NA_real_, value)) %>%
-      select(method_id, dataset_id, metric_id, value),
-    results %>%
-      unnest(scaled_scores) %>%
-      gather(metric_id, score, any_of(metric_info$metric_id)) %>%
-      mutate(score = ifelse(is.na(score), NA_real_, score)) %>%
-      select(method_id, dataset_id, metric_id, score),
-    by = c("method_id", "dataset_id", "metric_id")
-  ) %>%
-  left_join(method_info %>% select(method_id, is_baseline), "method_id") %>%
-  filter(!is_baseline) %>%
-  mutate(score = pmin(1, pmax(score, 0))) # clip scores to [0, 1]
-
-overall_ranking <- results_long %>%
-  group_by(method_id) %>%
-  summarise(mean_score = mean(score)) %>%
-  arrange(desc(mean_score))
-
-# order by ranking
-results_long$method_id <- factor(results_long$method_id, levels = rev(overall_ranking$method_id))
-```
-
-```{r funkyheatmap_data}
-#| echo: false
-#| message: false
-#| warning: false
-per_dataset <- results_long %>%
-  group_by(method_id, dataset_id) %>%
-  summarise(score = mean(score), .groups = "drop") %>%
-  mutate(dataset_id = paste0("dataset_", dataset_id)) %>%
-  spread(dataset_id, score)
-per_metric <- results_long %>%
-  group_by(method_id, metric_id) %>%
-  summarise(score = mean(score), .groups = "drop") %>%
-  mutate(metric_id = paste0("metric_", metric_id)) %>%
-  spread(metric_id, score)
-
-summary_all <- 
-  method_info %>%
-  filter(!is_baseline) %>%
-  transmute(
-    method_id,
-    method_name#,
-    # method_is_baseline = ifelse(is_baseline, "yes", "")
-  ) %>%
-  left_join(overall_ranking, by = "method_id") %>%
-  left_join(per_dataset, by = "method_id") %>%
-  left_join(per_metric, by = "method_id") %>%
-  arrange(desc(mean_score))
-
-column_info <- tibble(
-  id = colnames(summary_all)[-1],
-  name = id %>%
-    gsub("^[^_]+_", "", .) %>%
-    gsub("_", " ", .) %>%
-    str_to_title(),
-  group = gsub("_.*", "", id),
-  geom = case_when(
-    group == "method" ~ "text",
-    group == "mean" ~ "bar",
-    group %in% c("dataset", "metric") ~ "funkyrect"
-  ),
-  palette = ifelse(group %in% c("mean", "dataset", "metric"), group, NA_character_),
-  options = map2(id, geom, function(id, geom) {
-    if (id == "method_name") {
-      list(width = 15, hjust = 0)
-    } else if (id == "is_baseline") {
-      list(width = 1)
-    } else if (geom == "bar") {
-      list(width = 4)
-    } else {
-      list()
-    }
-  })
-)
-column_groups <- tribble(
-  ~Category, ~group, ~palette,
-  "", "method", NA_character_,
-  "Overall", "mean", "mean",
-  "Dataset", "dataset", "dataset",
-  "Metric", "metric", "metric"
-)
-palettes <- list(
-  mean = "Greys",
-  dataset = "Blues",
-  metric = "Reds"
-)
-
-g_all <- funky_heatmap(
-  data = summary_all,
-  column_info = column_info %>% filter(id %in% colnames(summary_all)),
-  column_groups = column_groups,
-  palettes = palettes,
-  expand = c(xmax = 3),
-  col_annot_offset = 5,
-  add_abc = FALSE,
-  scale_column = FALSE
-)
-```
-
-```{r}
-#| include: false
-knitr::opts_chunk$set(
-  fig.width = g_all$width,
-  fig.height = g_all$height,
-  dev.args = list(bg = "transparent")
-)
-```
-
-```{r summary}
-#| echo: false
-#| fig-cap: "**Overview of the results per method**. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)."
-g_all + theme(
-  panel.background = element_rect(fill = "transparent", colour = NA),
-  plot.background = element_rect(fill = "transparent", colour = NA)
-)
-```
-
+{{< include ../_blocks/_summary_figure.qmd >}}
 
 ## Scaled scores
 
-```{r}
-#| echo: false
-res_tib0 <- results %>%
-  unnest(scaled_scores) %>%
-  unnest(resources) %>%
-  left_join(method_info %>% select(-commit_sha, -code_version, -task_id), by = "method_id") %>%
-  filter(!is_baseline) %>%
-  left_join(dataset_info %>% select(dataset_id, dataset_name, data_reference), by = "dataset_id")
-
-res_tib1 <- res_tib0 %>% 
-  group_by(method_id, method_name, paper_reference, code_url, code_version) %>%
-  summarise_if(is.numeric, mean) %>%
-  ungroup() %>%
-  mutate(
-    dataset_name = "Overall mean"
-  ) %>%
-  bind_rows(res_tib0)
-  
-res_tib <- res_tib1 %>%
-  mutate(
-    method_label = ifelse(is.na(paper_reference), method_name, glue::glue("<a href=\"/bibliography#{paper_reference}\">{method_name}</a>")),
-    dataset_label = ifelse(is.na(data_reference), dataset_name, glue::glue("<a href=\"/bibliography#{data_reference}\">{dataset_name}</a>")),
-    package_label = glue::glue("<a href=\"{code_url}\">v{code_version}</a>"),
-    peak_memory_gb = peak_memory_mb / 1024
-  ) %>%
-  select(
-    method_label,
-    dataset_label,
-    mean_score,
-    any_of(metric_info$metric_id),
-    duration_sec,
-    cpu_pct,
-    peak_memory_gb,
-    package_label
-  ) %>%
-  arrange(desc(mean_score))
-
-res_cn <- c(
-  "Method",
-  "Dataset",
-  "Mean score",
-  metric_info$metric_name,
-  "Runtime (s)",
-  "CPU (%)",
-  "Memory (GB)",
-  "Library"
-)
-
-DT::datatable(
-  res_tib,
-  colnames = res_cn,
-  options = list(
-    dom = "Bfrtip",
-    paging = FALSE,
-    columnDefs = list(
-      list(
-        searchPanes = list(show = FALSE),
-        targets = seq(2, ncol(res_tib)-1)
-      ),
-      list(
-        searchPanes = list(
-          preSelect = "Overall mean"
-        ),
-        targets = 1
-      )
-    ),
-    buttons = list(
-      'searchPanes',
-      list(
-        extend = 'collection',
-        buttons = c('csv', 'excel', 'pdf'),
-        text = 'Download'
-      )
-    ),
-    language = list(
-      searchPanes = list(collapse = "Filter Rows")
-    )
-  ),
-  escape = FALSE,
-  class = "stripe compact",
-  rownames = FALSE,
-  extensions = c("Select", "SearchPanes", "Buttons")
-) %>%
-  DT::formatRound(c("peak_memory_gb", "mean_score", metric_info$metric_id), digits = 2) %>%
-  DT::formatRound(c("cpu_pct", "duration_sec"), digits = 0)
-```
-
-```{r}
-#| echo: false
-#| include: false
-#| eval: false
-di_table <- function(dataset_id) {
-  res_tib <- results %>%
-    filter(dataset_id == !!dataset_id) %>%
-    unnest(scaled_scores) %>%
-    unnest(resources) %>%
-    left_join(method_info %>% select(-commit_sha, -code_version, -task_id), by = "method_id") %>%
-    left_join(dataset_info %>% select(dataset_id, dataset_name, data_reference), by = "dataset_id") %>%
-    mutate(
-      # dataset_label = glue::glue("[{dataset_name}]({data_reference})"),
-      # paper_label = glue::glue("[Ref](/bibliography#{paper_reference})"),
-      # package_label = glue::glue("[v{code_version}]({code_url})"),
-      dataset_label = glue::glue("<a href=\"/bibliography#{data_reference}\">{dataset_name}</a>"),
-      paper_label = glue::glue("<a href=\"/bibliography#{paper_reference}\">Link</a>"),
-      package_label = glue::glue("<a href=\"{code_url}\">v{code_version}</a>"),
-      peak_memory_gb = peak_memory_mb / 1024
-    ) %>%
-    select(
-      method_name,
-      mean_score,
-      any_of(metric_info$metric_id),
-      duration_sec,
-      cpu_pct,
-      peak_memory_gb,
-      paper_label,
-      package_label
-    ) %>%
-    arrange(desc(mean_score))
-  res_cn <- c(
-    "Method",
-    "Mean score",
-    metric_info$metric_name,
-    "Runtime (s)",
-    "CPU (%)",
-    "Memory (GB)",
-    "Paper",
-    "Library"
-  )
-  DT::datatable(
-    res_tib,
-    colnames = res_cn,
-    options = list(
-      paging = FALSE,
-      bInfo = FALSE,
-      searching = FALSE,
-      # autoWidth = FALSE,
-      scrollX = TRUE
-    ),
-    escape = FALSE,
-    # class = "cell-border stripe compact",
-    rownames = FALSE
-  ) %>%
-    DT::formatRound(c("peak_memory_gb", "mean_score", metric_info$metric_id), digits = 2) %>%
-    DT::formatRound("peak_memory_gb", digits = 1) %>%
-    DT::formatRound(c("cpu_pct", "duration_sec"), digits = 0)
-}
-```
-
-
-<!--### `r dataset_info$dataset_name[[1]]`-->
-
-```{r}
-#| echo: false
-#| include: false
-#| eval: false
-dit <- di_table(dataset_info$dataset_id[[1]])
-dit
-```
+{{< include ../_blocks/_results_table.qmd >}}
 
 ## Downloads
 
@@ -482,6 +175,8 @@ ggplot(results_long %>% arrange(method_id)) +
 ```
 
 </details>
+
+
 
 
 
