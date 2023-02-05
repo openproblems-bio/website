@@ -1,20 +1,86 @@
 [
     {
         "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "random_proportions", 
-        "dataset_id": "destvi", 
-        "submission_time": "2022-12-14 10:38:46.408", 
-        "code_version": "0.6.0", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nnls_scipy", 
+        "dataset_id": "pancreas_alpha_0_5", 
+        "submission_time": "2023-02-03 19:07:29.071", 
+        "code_version": "1.9.3", 
         "resources": {
-            "duration_sec": 49.9, 
-            "cpu_pct": 60.3, 
-            "peak_memory_mb": 218.4, 
-            "disk_read_mb": 470.3, 
-            "disk_write_mb": 25.0
+            "duration_sec": 188.0, 
+            "cpu_pct": 120.4, 
+            "peak_memory_mb": 657.3, 
+            "disk_read_mb": 215.6, 
+            "disk_write_mb": 4.099999
         }, 
         "metric_values": {
-            "r2": -0.15911935493320545
+            "r2": 0.8326269418905541
+        }, 
+        "scaled_scores": {
+            "r2": 0.9006448257825351
+        }, 
+        "mean_score": 0.9006448257825351
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nmfreg", 
+        "dataset_id": "pancreas_alpha_0_5", 
+        "submission_time": "2023-02-03 19:07:28.766", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 228.0, 
+            "cpu_pct": 1789.2, 
+            "peak_memory_mb": 1500.0, 
+            "disk_read_mb": 215.7, 
+            "disk_write_mb": 4.099999
+        }, 
+        "metric_values": {
+            "r2": 0.00922171270465798
+        }, 
+        "scaled_scores": {
+            "r2": 0.4118590503332938
+        }, 
+        "mean_score": 0.4118590503332938
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "true_proportions", 
+        "dataset_id": "pancreas_alpha_0_5", 
+        "submission_time": "2023-02-03 19:07:29.222", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 238.0, 
+            "cpu_pct": 17.9, 
+            "peak_memory_mb": 121.1, 
+            "disk_read_mb": 215.6, 
+            "disk_write_mb": 4.099999
+        }, 
+        "metric_values": {
+            "r2": 1.0
+        }, 
+        "scaled_scores": {
+            "r2": 1.0
+        }, 
+        "mean_score": 1.0
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "random_proportions", 
+        "dataset_id": "pancreas_alpha_0_5", 
+        "submission_time": "2023-02-03 19:07:37.421", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 250.0, 
+            "cpu_pct": 81.9, 
+            "peak_memory_mb": 413.3, 
+            "disk_read_mb": 215.6, 
+            "disk_write_mb": 4.099999
+        }, 
+        "metric_values": {
+            "r2": -0.6845932728486367
         }, 
         "scaled_scores": {
             "r2": 0.0
@@ -23,2290 +89,2224 @@
     }, 
     {
         "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nmf", 
+        "dataset_id": "pancreas_alpha_0_5", 
+        "submission_time": "2023-02-03 19:07:37.199", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 260.0, 
+            "cpu_pct": 176.6, 
+            "peak_memory_mb": 658.5, 
+            "disk_read_mb": 215.6, 
+            "disk_write_mb": 4.099999
+        }, 
+        "metric_values": {
+            "r2": 0.5678768163563208
+        }, 
+        "scaled_scores": {
+            "r2": 0.7434851541862317
+        }, 
+        "mean_score": 0.7434851541862317
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "tangram", 
+        "dataset_id": "pancreas_alpha_0_5", 
+        "submission_time": "2023-02-03 19:07:17.880", 
+        "code_version": "1.0.3", 
+        "resources": {
+            "duration_sec": 469.0, 
+            "cpu_pct": 565.5, 
+            "peak_memory_mb": 1000.0, 
+            "disk_read_mb": 229.1, 
+            "disk_write_mb": 4.8
+        }, 
+        "metric_values": {
+            "r2": -0.980300392720811
+        }, 
+        "scaled_scores": {
+            "r2": -0.17553621081018297
+        }, 
+        "mean_score": -0.17553621081018297
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "seuratv3", 
+        "dataset_id": "pancreas_alpha_0_5", 
+        "submission_time": "2023-02-03 19:07:29.005", 
+        "code_version": "4.3.0", 
+        "resources": {
+            "duration_sec": 478.0, 
+            "cpu_pct": 161.4, 
+            "peak_memory_mb": 63100.0, 
+            "disk_read_mb": 440.3, 
+            "disk_write_mb": 138.2
+        }, 
+        "metric_values": {
+            "r2": -0.9469267372654611
+        }, 
+        "scaled_scores": {
+            "r2": -0.15572510507133874
+        }, 
+        "mean_score": -0.15572510507133874
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "stereoscope", 
+        "dataset_id": "pancreas_alpha_0_5", 
+        "submission_time": "2023-02-03 19:07:29.115", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 878.0, 
+            "cpu_pct": 939.7, 
+            "peak_memory_mb": 1200.0, 
+            "disk_read_mb": 237.2, 
+            "disk_write_mb": 4.4
+        }, 
+        "metric_values": {
+            "r2": 0.1496261462704575
+        }, 
+        "scaled_scores": {
+            "r2": 0.49520524186139864
+        }, 
+        "mean_score": 0.49520524186139864
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "rctd", 
+        "dataset_id": "pancreas_alpha_0_5", 
+        "submission_time": "2023-02-03 19:07:37.513", 
+        "code_version": "2.1.7", 
+        "resources": {
+            "duration_sec": 969.0, 
+            "cpu_pct": 18.6, 
+            "peak_memory_mb": 2400.0, 
+            "disk_read_mb": 645.4, 
+            "disk_write_mb": 4.7
+        }, 
+        "metric_values": {
+            "r2": 0.3004725116253896
+        }, 
+        "scaled_scores": {
+            "r2": 0.5847499217471563
+        }, 
+        "mean_score": 0.5847499217471563
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "destvi", 
+        "dataset_id": "pancreas_alpha_0_5", 
+        "submission_time": "2023-02-03 21:02:19.833", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 11261.0, 
+            "cpu_pct": 2222.5, 
+            "peak_memory_mb": 2000.0, 
+            "disk_read_mb": 237.3, 
+            "disk_write_mb": 4.4
+        }, 
+        "metric_values": {
+            "r2": -0.37825693077499495
+        }, 
+        "scaled_scores": {
+            "r2": 0.18184587758422477
+        }, 
+        "mean_score": 0.18184587758422477
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_amortised_detection_alpha_20", 
+        "dataset_id": "pancreas_alpha_0_5", 
+        "submission_time": "2023-02-03 21:01:20.361", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 14820.0, 
+            "cpu_pct": 599.1, 
+            "peak_memory_mb": 12200.0, 
+            "disk_read_mb": 240.0, 
+            "disk_write_mb": 47.6
+        }, 
+        "metric_values": {
+            "r2": 0.8938954769203659
+        }, 
+        "scaled_scores": {
+            "r2": 0.9370147531812163
+        }, 
+        "mean_score": 0.9370147531812163
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_200", 
+        "dataset_id": "pancreas_alpha_0_5", 
+        "submission_time": "2023-02-03 21:03:02.177", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 25019.0, 
+            "cpu_pct": 1416.2, 
+            "peak_memory_mb": 3800.0, 
+            "disk_read_mb": 240.1, 
+            "disk_write_mb": 16.7
+        }, 
+        "metric_values": {
+            "r2": 0.8743713873589994
+        }, 
+        "scaled_scores": {
+            "r2": 0.9254249588516027
+        }, 
+        "mean_score": 0.9254249588516027
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_1", 
+        "dataset_id": "pancreas_alpha_0_5", 
+        "submission_time": "2023-02-04 03:24:02.955", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 7408.0, 
+            "cpu_pct": 1386.3, 
+            "peak_memory_mb": 1300.0, 
+            "disk_read_mb": 240.1, 
+            "disk_write_mb": 16.5
+        }, 
+        "metric_values": {
+            "r2": 0.8753379563302451
+        }, 
+        "scaled_scores": {
+            "r2": 0.9259987287857608
+        }, 
+        "mean_score": 0.9259987287857608
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_20_nb", 
+        "dataset_id": "pancreas_alpha_0_5", 
+        "submission_time": "2023-02-04 03:49:12.589", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 12849.0, 
+            "cpu_pct": 1406.9, 
+            "peak_memory_mb": 3200.0, 
+            "disk_read_mb": 240.1, 
+            "disk_write_mb": 15.1
+        }, 
+        "metric_values": {
+            "r2": 0.8742721624298048
+        }, 
+        "scaled_scores": {
+            "r2": 0.925366057435579
+        }, 
+        "mean_score": 0.925366057435579
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_20", 
+        "dataset_id": "pancreas_alpha_0_5", 
+        "submission_time": "2023-02-04 04:06:23.495", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 13438.0, 
+            "cpu_pct": 1374.6, 
+            "peak_memory_mb": 1200.0, 
+            "disk_read_mb": 240.1, 
+            "disk_write_mb": 14.9
+        }, 
+        "metric_values": {
+            "r2": 0.8758723189669566
+        }, 
+        "scaled_scores": {
+            "r2": 0.9263159345144812
+        }, 
+        "mean_score": 0.9263159345144812
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nmfreg", 
+        "dataset_id": "pancreas_alpha_5", 
+        "submission_time": "2023-02-03 19:07:28.821", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 218.0, 
+            "cpu_pct": 1983.5, 
+            "peak_memory_mb": 1400.0, 
+            "disk_read_mb": 215.6, 
+            "disk_write_mb": 4.0
+        }, 
+        "metric_values": {
+            "r2": -0.3475223450800682
+        }, 
+        "scaled_scores": {
+            "r2": 0.4620002584345432
+        }, 
+        "mean_score": 0.4620002584345432
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "nnls_scipy", 
-        "dataset_id": "destvi", 
-        "submission_time": "2022-12-14 10:38:45.816", 
+        "dataset_id": "pancreas_alpha_5", 
+        "submission_time": "2023-02-03 19:07:29.144", 
         "code_version": "1.9.3", 
         "resources": {
-            "duration_sec": 62.0, 
-            "cpu_pct": 61.1, 
-            "peak_memory_mb": 230.3, 
-            "disk_read_mb": 470.3, 
+            "duration_sec": 218.0, 
+            "cpu_pct": 27.1, 
+            "peak_memory_mb": 237.0, 
+            "disk_read_mb": 215.6, 
+            "disk_write_mb": 4.0
+        }, 
+        "metric_values": {
+            "r2": 0.3485137336136697
+        }, 
+        "scaled_scores": {
+            "r2": 0.7398934093902065
+        }, 
+        "mean_score": 0.7398934093902065
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "true_proportions", 
+        "dataset_id": "pancreas_alpha_5", 
+        "submission_time": "2023-02-03 19:07:29.275", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 228.0, 
+            "cpu_pct": 22.9, 
+            "peak_memory_mb": 224.5, 
+            "disk_read_mb": 215.6, 
+            "disk_write_mb": 4.0
+        }, 
+        "metric_values": {
+            "r2": 1.0
+        }, 
+        "scaled_scores": {
+            "r2": 1.0
+        }, 
+        "mean_score": 1.0
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nmf", 
+        "dataset_id": "pancreas_alpha_5", 
+        "submission_time": "2023-02-03 19:07:37.350", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 270.0, 
+            "cpu_pct": 348.0, 
+            "peak_memory_mb": 658.3, 
+            "disk_read_mb": 215.6, 
+            "disk_write_mb": 4.0
+        }, 
+        "metric_values": {
+            "r2": -0.9302001293843338
+        }, 
+        "scaled_scores": {
+            "r2": 0.22936552809691652
+        }, 
+        "mean_score": 0.22936552809691652
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "random_proportions", 
+        "dataset_id": "pancreas_alpha_5", 
+        "submission_time": "2023-02-03 19:07:37.478", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 270.0, 
+            "cpu_pct": 34.7, 
+            "peak_memory_mb": 215.6, 
+            "disk_read_mb": 215.6, 
+            "disk_write_mb": 4.0
+        }, 
+        "metric_values": {
+            "r2": -1.5046895769114772
+        }, 
+        "scaled_scores": {
+            "r2": 0.0
+        }, 
+        "mean_score": 0.0
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "tangram", 
+        "dataset_id": "pancreas_alpha_5", 
+        "submission_time": "2023-02-03 19:07:17.977", 
+        "code_version": "1.0.3", 
+        "resources": {
+            "duration_sec": 429.0, 
+            "cpu_pct": 336.3, 
+            "peak_memory_mb": 1000.0, 
+            "disk_read_mb": 229.0, 
+            "disk_write_mb": 4.7
+        }, 
+        "metric_values": {
+            "r2": -1.7556614627174807
+        }, 
+        "scaled_scores": {
+            "r2": -0.10020079458927439
+        }, 
+        "mean_score": -0.10020079458927439
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "seuratv3", 
+        "dataset_id": "pancreas_alpha_5", 
+        "submission_time": "2023-02-03 19:07:29.000", 
+        "code_version": "4.3.0", 
+        "resources": {
+            "duration_sec": 448.0, 
+            "cpu_pct": 158.1, 
+            "peak_memory_mb": 63800.0, 
+            "disk_read_mb": 440.1, 
+            "disk_write_mb": 137.9
+        }, 
+        "metric_values": {
+            "r2": -2.460385807294036
+        }, 
+        "scaled_scores": {
+            "r2": -0.38156274501729837
+        }, 
+        "mean_score": -0.38156274501729837
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "stereoscope", 
+        "dataset_id": "pancreas_alpha_5", 
+        "submission_time": "2023-02-03 19:07:29.204", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 878.0, 
+            "cpu_pct": 928.3, 
+            "peak_memory_mb": 1200.0, 
+            "disk_read_mb": 237.1, 
+            "disk_write_mb": 4.3
+        }, 
+        "metric_values": {
+            "r2": 0.18261402209422384
+        }, 
+        "scaled_scores": {
+            "r2": 0.6736577716294522
+        }, 
+        "mean_score": 0.6736577716294522
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "rctd", 
+        "dataset_id": "pancreas_alpha_5", 
+        "submission_time": "2023-02-03 19:07:37.591", 
+        "code_version": "2.1.7", 
+        "resources": {
+            "duration_sec": 869.0, 
+            "cpu_pct": 17.6, 
+            "peak_memory_mb": 2400.0, 
+            "disk_read_mb": 645.4, 
+            "disk_write_mb": 4.6
+        }, 
+        "metric_values": {
+            "r2": 0.21263960724399883
+        }, 
+        "scaled_scores": {
+            "r2": 0.6856455187046004
+        }, 
+        "mean_score": 0.6856455187046004
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "destvi", 
+        "dataset_id": "pancreas_alpha_5", 
+        "submission_time": "2023-02-03 21:01:22.983", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 17268.0, 
+            "cpu_pct": 726.7, 
+            "peak_memory_mb": 1600.0, 
+            "disk_read_mb": 237.1, 
+            "disk_write_mb": 4.3
+        }, 
+        "metric_values": {
+            "r2": -1.0459846321465918
+        }, 
+        "scaled_scores": {
+            "r2": 0.18313844118380238
+        }, 
+        "mean_score": 0.18313844118380238
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_1", 
+        "dataset_id": "pancreas_alpha_5", 
+        "submission_time": "2023-02-03 21:02:20.375", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 21601.0, 
+            "cpu_pct": 1498.0, 
+            "peak_memory_mb": 2000.0, 
+            "disk_read_mb": 240.0, 
+            "disk_write_mb": 15.8
+        }, 
+        "metric_values": {
+            "r2": 0.683030886507736
+        }, 
+        "scaled_scores": {
+            "r2": 0.8734497414713095
+        }, 
+        "mean_score": 0.8734497414713095
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_20_nb", 
+        "dataset_id": "pancreas_alpha_5", 
+        "submission_time": "2023-02-04 01:58:51.338", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 9050.0, 
+            "cpu_pct": 1512.6, 
+            "peak_memory_mb": 3200.0, 
+            "disk_read_mb": 240.0, 
+            "disk_write_mb": 15.3
+        }, 
+        "metric_values": {
+            "r2": 0.6836411462323562
+        }, 
+        "scaled_scores": {
+            "r2": 0.8736933883209014
+        }, 
+        "mean_score": 0.8736933883209014
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_200", 
+        "dataset_id": "pancreas_alpha_5", 
+        "submission_time": "2023-02-04 01:43:52.798", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 10538.0, 
+            "cpu_pct": 1403.5, 
+            "peak_memory_mb": 4900.0, 
+            "disk_read_mb": 240.0, 
+            "disk_write_mb": 16.0
+        }, 
+        "metric_values": {
+            "r2": 0.6745629735674743
+        }, 
+        "scaled_scores": {
+            "r2": 0.8700689181476049
+        }, 
+        "mean_score": 0.8700689181476049
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_20", 
+        "dataset_id": "pancreas_alpha_5", 
+        "submission_time": "2023-02-04 03:24:04.294", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 6357.0, 
+            "cpu_pct": 1450.8, 
+            "peak_memory_mb": 1600.0, 
+            "disk_read_mb": 240.0, 
+            "disk_write_mb": 16.5
+        }, 
+        "metric_values": {
+            "r2": 0.6826276172378353
+        }, 
+        "scaled_scores": {
+            "r2": 0.873288735782773
+        }, 
+        "mean_score": 0.873288735782773
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_amortised_detection_alpha_20", 
+        "dataset_id": "pancreas_alpha_5", 
+        "submission_time": "2023-02-04 01:58:52.126", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 16979.0, 
+            "cpu_pct": 1840.7, 
+            "peak_memory_mb": 17600.0, 
+            "disk_read_mb": 240.0, 
+            "disk_write_mb": 47.6
+        }, 
+        "metric_values": {
+            "r2": 0.6627247305850442
+        }, 
+        "scaled_scores": {
+            "r2": 0.8653424869396995
+        }, 
+        "mean_score": 0.8653424869396995
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "true_proportions", 
+        "dataset_id": "pancreas_alpha_1", 
+        "submission_time": "2023-02-03 19:07:29.274", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 218.0, 
+            "cpu_pct": 27.3, 
+            "peak_memory_mb": 224.0, 
+            "disk_read_mb": 215.6, 
+            "disk_write_mb": 4.099999
+        }, 
+        "metric_values": {
+            "r2": 1.0
+        }, 
+        "scaled_scores": {
+            "r2": 1.0
+        }, 
+        "mean_score": 1.0
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nnls_scipy", 
+        "dataset_id": "pancreas_alpha_1", 
+        "submission_time": "2023-02-03 19:07:29.111", 
+        "code_version": "1.9.3", 
+        "resources": {
+            "duration_sec": 239.0, 
+            "cpu_pct": 27.7, 
+            "peak_memory_mb": 657.4, 
+            "disk_read_mb": 215.6, 
+            "disk_write_mb": 4.099999
+        }, 
+        "metric_values": {
+            "r2": 0.6502539960875544
+        }, 
+        "scaled_scores": {
+            "r2": 0.80046200418048
+        }, 
+        "mean_score": 0.80046200418048
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nmf", 
+        "dataset_id": "pancreas_alpha_1", 
+        "submission_time": "2023-02-03 19:07:37.350", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 270.0, 
+            "cpu_pct": 884.9, 
+            "peak_memory_mb": 658.9, 
+            "disk_read_mb": 215.6, 
+            "disk_write_mb": 4.099999
+        }, 
+        "metric_values": {
+            "r2": 0.022435729755805767
+        }, 
+        "scaled_scores": {
+            "r2": 0.4422775011372845
+        }, 
+        "mean_score": 0.4422775011372845
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "random_proportions", 
+        "dataset_id": "pancreas_alpha_1", 
+        "submission_time": "2023-02-03 19:07:37.460", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 270.0, 
+            "cpu_pct": 34.8, 
+            "peak_memory_mb": 313.9, 
+            "disk_read_mb": 215.6, 
+            "disk_write_mb": 4.099999
+        }, 
+        "metric_values": {
+            "r2": -0.7527789756332273
+        }, 
+        "scaled_scores": {
+            "r2": 0.0
+        }, 
+        "mean_score": 0.0
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nmfreg", 
+        "dataset_id": "pancreas_alpha_1", 
+        "submission_time": "2023-02-03 19:07:28.896", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 288.0, 
+            "cpu_pct": 1095.7, 
+            "peak_memory_mb": 1500.0, 
+            "disk_read_mb": 215.7, 
+            "disk_write_mb": 4.099999
+        }, 
+        "metric_values": {
+            "r2": 0.0885145916177496
+        }, 
+        "scaled_scores": {
+            "r2": 0.47997698451799514
+        }, 
+        "mean_score": 0.47997698451799514
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "seuratv3", 
+        "dataset_id": "pancreas_alpha_1", 
+        "submission_time": "2023-02-03 19:07:28.981", 
+        "code_version": "4.3.0", 
+        "resources": {
+            "duration_sec": 348.0, 
+            "cpu_pct": 150.4, 
+            "peak_memory_mb": 65400.0, 
+            "disk_read_mb": 440.3, 
+            "disk_write_mb": 138.1
+        }, 
+        "metric_values": {
+            "r2": -1.8241768724566443
+        }, 
+        "scaled_scores": {
+            "r2": -0.6112567024809005
+        }, 
+        "mean_score": -0.6112567024809005
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "tangram", 
+        "dataset_id": "pancreas_alpha_1", 
+        "submission_time": "2023-02-03 19:07:17.969", 
+        "code_version": "1.0.3", 
+        "resources": {
+            "duration_sec": 419.0, 
+            "cpu_pct": 639.0, 
+            "peak_memory_mb": 1000.0, 
+            "disk_read_mb": 229.0, 
+            "disk_write_mb": 4.8
+        }, 
+        "metric_values": {
+            "r2": -1.1223287016843586
+        }, 
+        "scaled_scores": {
+            "r2": -0.21083646665582803
+        }, 
+        "mean_score": -0.21083646665582803
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "rctd", 
+        "dataset_id": "pancreas_alpha_1", 
+        "submission_time": "2023-02-03 19:07:37.539", 
+        "code_version": "2.1.7", 
+        "resources": {
+            "duration_sec": 859.0, 
+            "cpu_pct": 17.8, 
+            "peak_memory_mb": 2400.0, 
+            "disk_read_mb": 645.4, 
+            "disk_write_mb": 4.7
+        }, 
+        "metric_values": {
+            "r2": 0.28209896456936084
+        }, 
+        "scaled_scores": {
+            "r2": 0.5904212422611455
+        }, 
+        "mean_score": 0.5904212422611455
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "stereoscope", 
+        "dataset_id": "pancreas_alpha_1", 
+        "submission_time": "2023-02-03 19:07:29.228", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 998.0, 
+            "cpu_pct": 904.7, 
+            "peak_memory_mb": 1200.0, 
+            "disk_read_mb": 237.2, 
+            "disk_write_mb": 4.4
+        }, 
+        "metric_values": {
+            "r2": 0.15947756862472875
+        }, 
+        "scaled_scores": {
+            "r2": 0.520462965918669
+        }, 
+        "mean_score": 0.520462965918669
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "destvi", 
+        "dataset_id": "pancreas_alpha_1", 
+        "submission_time": "2023-02-03 19:07:28.647", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 1899.0, 
+            "cpu_pct": 1060.2, 
+            "peak_memory_mb": 1700.0, 
+            "disk_read_mb": 237.2, 
+            "disk_write_mb": 4.4
+        }, 
+        "metric_values": {
+            "r2": -0.39731435302453116
+        }, 
+        "scaled_scores": {
+            "r2": 0.2028005969664699
+        }, 
+        "mean_score": 0.2028005969664699
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_1", 
+        "dataset_id": "pancreas_alpha_1", 
+        "submission_time": "2023-02-03 21:01:21.710", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 14349.0, 
+            "cpu_pct": 1516.2, 
+            "peak_memory_mb": 4300.0, 
+            "disk_read_mb": 240.1, 
+            "disk_write_mb": 16.6
+        }, 
+        "metric_values": {
+            "r2": 0.8206497834691646
+        }, 
+        "scaled_scores": {
+            "r2": 0.8976766500373834
+        }, 
+        "mean_score": 0.8976766500373834
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_amortised_detection_alpha_20", 
+        "dataset_id": "pancreas_alpha_1", 
+        "submission_time": "2023-02-03 21:01:21.268", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 19360.0, 
+            "cpu_pct": 590.2, 
+            "peak_memory_mb": 12200.0, 
+            "disk_read_mb": 239.9, 
+            "disk_write_mb": 47.6
+        }, 
+        "metric_values": {
+            "r2": 0.8341323685035976
+        }, 
+        "scaled_scores": {
+            "r2": 0.9053687693643865
+        }, 
+        "mean_score": 0.9053687693643865
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_20", 
+        "dataset_id": "pancreas_alpha_1", 
+        "submission_time": "2023-02-03 21:01:22.739", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 21558.0, 
+            "cpu_pct": 459.6, 
+            "peak_memory_mb": 1300.0, 
+            "disk_read_mb": 239.9, 
+            "disk_write_mb": 16.5
+        }, 
+        "metric_values": {
+            "r2": 0.819287253969666
+        }, 
+        "scaled_scores": {
+            "r2": 0.8968992961790587
+        }, 
+        "mean_score": 0.8968992961790587
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_200", 
+        "dataset_id": "pancreas_alpha_1", 
+        "submission_time": "2023-02-04 03:24:11.388", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 8770.0, 
+            "cpu_pct": 1346.1, 
+            "peak_memory_mb": 1400.0, 
+            "disk_read_mb": 240.1, 
+            "disk_write_mb": 14.9
+        }, 
+        "metric_values": {
+            "r2": 0.8178777445221838
+        }, 
+        "scaled_scores": {
+            "r2": 0.8960951391991561
+        }, 
+        "mean_score": 0.8960951391991561
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_20_nb", 
+        "dataset_id": "pancreas_alpha_1", 
+        "submission_time": "2023-02-04 03:38:22.091", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 10449.0, 
+            "cpu_pct": 1496.3, 
+            "peak_memory_mb": 3200.0, 
+            "disk_read_mb": 240.1, 
+            "disk_write_mb": 15.1
+        }, 
+        "metric_values": {
+            "r2": 0.828333769654458
+        }, 
+        "scaled_scores": {
+            "r2": 0.9020605377335018
+        }, 
+        "mean_score": 0.9020605377335018
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "true_proportions", 
+        "dataset_id": "tabula_muris_senis_alpha_1", 
+        "submission_time": "2023-02-03 19:07:48.211", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 289.0, 
+            "cpu_pct": 79.2, 
+            "peak_memory_mb": 842.8, 
+            "disk_read_mb": 285.5, 
+            "disk_write_mb": 4.6
+        }, 
+        "metric_values": {
+            "r2": 1.0
+        }, 
+        "scaled_scores": {
+            "r2": 1.0
+        }, 
+        "mean_score": 1.0
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nnls_scipy", 
+        "dataset_id": "tabula_muris_senis_alpha_1", 
+        "submission_time": "2023-02-03 19:07:48.198", 
+        "code_version": "1.9.3", 
+        "resources": {
+            "duration_sec": 329.0, 
+            "cpu_pct": 24.8, 
+            "peak_memory_mb": 230.1, 
+            "disk_read_mb": 285.5, 
+            "disk_write_mb": 4.6
+        }, 
+        "metric_values": {
+            "r2": -0.01923163394567123
+        }, 
+        "scaled_scores": {
+            "r2": 0.5656213434251027
+        }, 
+        "mean_score": 0.5656213434251027
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "random_proportions", 
+        "dataset_id": "tabula_muris_senis_alpha_1", 
+        "submission_time": "2023-02-03 19:07:48.320", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 329.0, 
+            "cpu_pct": 26.8, 
+            "peak_memory_mb": 230.9, 
+            "disk_read_mb": 285.5, 
+            "disk_write_mb": 4.6
+        }, 
+        "metric_values": {
+            "r2": -1.34641278644392
+        }, 
+        "scaled_scores": {
+            "r2": 0.0
+        }, 
+        "mean_score": 0.0
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nmf", 
+        "dataset_id": "tabula_muris_senis_alpha_1", 
+        "submission_time": "2023-02-03 19:07:48.297", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 349.0, 
+            "cpu_pct": 398.6, 
+            "peak_memory_mb": 845.1, 
+            "disk_read_mb": 285.5, 
+            "disk_write_mb": 4.5
+        }, 
+        "metric_values": {
+            "r2": -0.26641755371397147
+        }, 
+        "scaled_scores": {
+            "r2": 0.46027503726943264
+        }, 
+        "mean_score": 0.46027503726943264
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nmfreg", 
+        "dataset_id": "tabula_muris_senis_alpha_1", 
+        "submission_time": "2023-02-03 19:07:48.115", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 629.0, 
+            "cpu_pct": 927.8, 
+            "peak_memory_mb": 3700.0, 
+            "disk_read_mb": 285.6, 
+            "disk_write_mb": 4.6
+        }, 
+        "metric_values": {
+            "r2": -2.769352684478529
+        }, 
+        "scaled_scores": {
+            "r2": -0.6064320422456997
+        }, 
+        "mean_score": -0.6064320422456997
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "seuratv3", 
+        "dataset_id": "tabula_muris_senis_alpha_1", 
+        "submission_time": "2023-02-03 19:07:48.170", 
+        "code_version": "4.3.0", 
+        "resources": {
+            "duration_sec": 809.0, 
+            "cpu_pct": 141.1, 
+            "peak_memory_mb": 188000.0, 
+            "disk_read_mb": 712.8, 
+            "disk_write_mb": 339.8
+        }, 
+        "metric_values": {
+            "r2": -1.7988446456099247
+        }, 
+        "scaled_scores": {
+            "r2": -0.19281852783102285
+        }, 
+        "mean_score": -0.19281852783102285
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "rctd", 
+        "dataset_id": "tabula_muris_senis_alpha_1", 
+        "submission_time": "2023-02-03 19:07:48.339", 
+        "code_version": "2.1.7", 
+        "resources": {
+            "duration_sec": 1328.0, 
+            "cpu_pct": 21.8, 
+            "peak_memory_mb": 4300.0, 
+            "disk_read_mb": 715.3, 
+            "disk_write_mb": 5.1
+        }, 
+        "metric_values": {
+            "r2": 0.10884497472017554
+        }, 
+        "scaled_scores": {
+            "r2": 0.6202053490211309
+        }, 
+        "mean_score": 0.6202053490211309
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "stereoscope", 
+        "dataset_id": "tabula_muris_senis_alpha_1", 
+        "submission_time": "2023-02-03 19:07:48.235", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 1359.0, 
+            "cpu_pct": 1365.3, 
+            "peak_memory_mb": 1400.0, 
+            "disk_read_mb": 307.1, 
+            "disk_write_mb": 4.8
+        }, 
+        "metric_values": {
+            "r2": 0.00949144042489613
+        }, 
+        "scaled_scores": {
+            "r2": 0.5778626142434817
+        }, 
+        "mean_score": 0.5778626142434817
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "tangram", 
+        "dataset_id": "tabula_muris_senis_alpha_1", 
+        "submission_time": "2023-02-03 19:43:07.803", 
+        "code_version": "1.0.3", 
+        "resources": {
+            "duration_sec": 1552.0, 
+            "cpu_pct": 684.7, 
+            "peak_memory_mb": 1300.0, 
+            "disk_read_mb": 298.9, 
+            "disk_write_mb": 5.1
+        }, 
+        "metric_values": {
+            "r2": -1.761972317653531
+        }, 
+        "scaled_scores": {
+            "r2": -0.17710418798024352
+        }, 
+        "mean_score": -0.17710418798024352
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "destvi", 
+        "dataset_id": "tabula_muris_senis_alpha_1", 
+        "submission_time": "2023-02-03 19:43:09.528", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 4320.0, 
+            "cpu_pct": 1430.0, 
+            "peak_memory_mb": 2100.0, 
+            "disk_read_mb": 307.1, 
+            "disk_write_mb": 4.9
+        }, 
+        "metric_values": {
+            "r2": -0.30790479756648953
+        }, 
+        "scaled_scores": {
+            "r2": 0.4425939011572341
+        }, 
+        "mean_score": 0.4425939011572341
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_20", 
+        "dataset_id": "tabula_muris_senis_alpha_1", 
+        "submission_time": "2023-02-03 21:02:57.731", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 24343.0, 
+            "cpu_pct": 1534.1, 
+            "peak_memory_mb": 1400.0, 
+            "disk_read_mb": 310.0, 
+            "disk_write_mb": 17.6
+        }, 
+        "metric_values": {
+            "r2": 0.46666284848131184
+        }, 
+        "scaled_scores": {
+            "r2": 0.7727010547334336
+        }, 
+        "mean_score": 0.7727010547334336
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_1", 
+        "dataset_id": "tabula_muris_senis_alpha_1", 
+        "submission_time": "2023-02-03 21:02:56.317", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 24895.0, 
+            "cpu_pct": 1512.4, 
+            "peak_memory_mb": 1400.0, 
+            "disk_read_mb": 310.0, 
+            "disk_write_mb": 17.7
+        }, 
+        "metric_values": {
+            "r2": 0.4765828280649211
+        }, 
+        "scaled_scores": {
+            "r2": 0.7769287761475516
+        }, 
+        "mean_score": 0.7769287761475516
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_20_nb", 
+        "dataset_id": "tabula_muris_senis_alpha_1", 
+        "submission_time": "2023-02-04 03:24:01.851", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 9819.0, 
+            "cpu_pct": 1642.3, 
+            "peak_memory_mb": 6100.0, 
+            "disk_read_mb": 310.0, 
+            "disk_write_mb": 16.0
+        }, 
+        "metric_values": {
+            "r2": 0.4303467044771572
+        }, 
+        "scaled_scores": {
+            "r2": 0.7572237507339131
+        }, 
+        "mean_score": 0.7572237507339131
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_amortised_detection_alpha_20", 
+        "dataset_id": "tabula_muris_senis_alpha_1", 
+        "submission_time": "2023-02-04 03:49:12.402", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 14249.0, 
+            "cpu_pct": 1888.9, 
+            "peak_memory_mb": 17000.0, 
+            "disk_read_mb": 310.0, 
+            "disk_write_mb": 51.3
+        }, 
+        "metric_values": {
+            "r2": 0.39976669208092086
+        }, 
+        "scaled_scores": {
+            "r2": 0.7441910854787167
+        }, 
+        "mean_score": 0.7441910854787167
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_200", 
+        "dataset_id": "tabula_muris_senis_alpha_1", 
+        "submission_time": "2023-02-04 04:06:22.629", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 13819.0, 
+            "cpu_pct": 1273.3, 
+            "peak_memory_mb": 1200.0, 
+            "disk_read_mb": 310.0, 
+            "disk_write_mb": 16.0
+        }, 
+        "metric_values": {
+            "r2": 0.4561473943661817
+        }, 
+        "scaled_scores": {
+            "r2": 0.7682195525118801
+        }, 
+        "mean_score": 0.7682195525118801
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nnls_scipy", 
+        "dataset_id": "tabula_muris_senis_alpha_0_5", 
+        "submission_time": "2023-02-03 19:07:48.781", 
+        "code_version": "1.9.3", 
+        "resources": {
+            "duration_sec": 289.0, 
+            "cpu_pct": 65.1, 
+            "peak_memory_mb": 481.2, 
+            "disk_read_mb": 285.4, 
+            "disk_write_mb": 4.4
+        }, 
+        "metric_values": {
+            "r2": 0.23333242512090352
+        }, 
+        "scaled_scores": {
+            "r2": 0.7158745077638505
+        }, 
+        "mean_score": 0.7158745077638505
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "random_proportions", 
+        "dataset_id": "tabula_muris_senis_alpha_0_5", 
+        "submission_time": "2023-02-03 19:07:48.874", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 289.0, 
+            "cpu_pct": 82.1, 
+            "peak_memory_mb": 842.7, 
+            "disk_read_mb": 285.4, 
+            "disk_write_mb": 4.4
+        }, 
+        "metric_values": {
+            "r2": -1.698341387269413
+        }, 
+        "scaled_scores": {
+            "r2": 0.0
+        }, 
+        "mean_score": 0.0
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "true_proportions", 
+        "dataset_id": "tabula_muris_senis_alpha_0_5", 
+        "submission_time": "2023-02-03 19:07:48.785", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 309.0, 
+            "cpu_pct": 29.4, 
+            "peak_memory_mb": 236.2, 
+            "disk_read_mb": 285.4, 
+            "disk_write_mb": 4.4
+        }, 
+        "metric_values": {
+            "r2": 1.0
+        }, 
+        "scaled_scores": {
+            "r2": 1.0
+        }, 
+        "mean_score": 1.0
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nmf", 
+        "dataset_id": "tabula_muris_senis_alpha_0_5", 
+        "submission_time": "2023-02-03 19:07:48.824", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 328.0, 
+            "cpu_pct": 482.5, 
+            "peak_memory_mb": 844.4, 
+            "disk_read_mb": 285.4, 
+            "disk_write_mb": 4.4
+        }, 
+        "metric_values": {
+            "r2": 0.014732103841228784
+        }, 
+        "scaled_scores": {
+            "r2": 0.6348616595338171
+        }, 
+        "mean_score": 0.6348616595338171
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "tangram", 
+        "dataset_id": "tabula_muris_senis_alpha_0_5", 
+        "submission_time": "2023-02-03 19:07:48.382", 
+        "code_version": "1.0.3", 
+        "resources": {
+            "duration_sec": 399.0, 
+            "cpu_pct": 685.2, 
+            "peak_memory_mb": 1300.0, 
+            "disk_read_mb": 298.7, 
+            "disk_write_mb": 5.0
+        }, 
+        "metric_values": {
+            "r2": -2.2633623386184882
+        }, 
+        "scaled_scores": {
+            "r2": -0.20939565097833976
+        }, 
+        "mean_score": -0.20939565097833976
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nmfreg", 
+        "dataset_id": "tabula_muris_senis_alpha_0_5", 
+        "submission_time": "2023-02-03 19:07:48.684", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 508.0, 
+            "cpu_pct": 1383.6, 
+            "peak_memory_mb": 3700.0, 
+            "disk_read_mb": 285.5, 
+            "disk_write_mb": 4.4
+        }, 
+        "metric_values": {
+            "r2": -1.458394554782462
+        }, 
+        "scaled_scores": {
+            "r2": 0.08892382321191959
+        }, 
+        "mean_score": 0.08892382321191959
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "seuratv3", 
+        "dataset_id": "tabula_muris_senis_alpha_0_5", 
+        "submission_time": "2023-02-03 19:07:48.691", 
+        "code_version": "4.3.0", 
+        "resources": {
+            "duration_sec": 538.0, 
+            "cpu_pct": 149.9, 
+            "peak_memory_mb": 127000.0, 
+            "disk_read_mb": 711.5, 
+            "disk_write_mb": 339.2
+        }, 
+        "metric_values": {
+            "r2": -1.6555892022116476
+        }, 
+        "scaled_scores": {
+            "r2": 0.015843875522744192
+        }, 
+        "mean_score": 0.015843875522744192
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "rctd", 
+        "dataset_id": "tabula_muris_senis_alpha_0_5", 
+        "submission_time": "2023-02-03 19:07:48.912", 
+        "code_version": "2.1.7", 
+        "resources": {
+            "duration_sec": 948.0, 
+            "cpu_pct": 22.9, 
+            "peak_memory_mb": 4300.0, 
+            "disk_read_mb": 715.2, 
+            "disk_write_mb": 4.9
+        }, 
+        "metric_values": {
+            "r2": 0.19432457284707863
+        }, 
+        "scaled_scores": {
+            "r2": 0.7014182745911833
+        }, 
+        "mean_score": 0.7014182745911833
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "stereoscope", 
+        "dataset_id": "tabula_muris_senis_alpha_0_5", 
+        "submission_time": "2023-02-03 19:07:48.744", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 2028.0, 
+            "cpu_pct": 1029.4, 
+            "peak_memory_mb": 1400.0, 
+            "disk_read_mb": 306.9, 
+            "disk_write_mb": 4.7
+        }, 
+        "metric_values": {
+            "r2": 0.006552654558319841
+        }, 
+        "scaled_scores": {
+            "r2": 0.6318303717503294
+        }, 
+        "mean_score": 0.6318303717503294
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_20", 
+        "dataset_id": "tabula_muris_senis_alpha_0_5", 
+        "submission_time": "2023-02-03 21:02:55.621", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 25075.0, 
+            "cpu_pct": 1406.6, 
+            "peak_memory_mb": 1400.0, 
+            "disk_read_mb": 309.8, 
+            "disk_write_mb": 17.5
+        }, 
+        "metric_values": {
+            "r2": 0.5640940778305871
+        }, 
+        "scaled_scores": {
+            "r2": 0.838454124364698
+        }, 
+        "mean_score": 0.838454124364698
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_1", 
+        "dataset_id": "tabula_muris_senis_alpha_0_5", 
+        "submission_time": "2023-02-03 21:02:55.137", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 25086.0, 
+            "cpu_pct": 1400.3, 
+            "peak_memory_mb": 1200.0, 
+            "disk_read_mb": 309.8, 
+            "disk_write_mb": 17.5
+        }, 
+        "metric_values": {
+            "r2": 0.5709323788650787
+        }, 
+        "scaled_scores": {
+            "r2": 0.840988385250572
+        }, 
+        "mean_score": 0.840988385250572
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_20_nb", 
+        "dataset_id": "tabula_muris_senis_alpha_0_5", 
+        "submission_time": "2023-02-04 03:24:02.123", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 9769.0, 
+            "cpu_pct": 1631.9, 
+            "peak_memory_mb": 6200.0, 
+            "disk_read_mb": 309.8, 
+            "disk_write_mb": 15.9
+        }, 
+        "metric_values": {
+            "r2": 0.5316567915192151
+        }, 
+        "scaled_scores": {
+            "r2": 0.8264329299878823
+        }, 
+        "mean_score": 0.8264329299878823
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_200", 
+        "dataset_id": "tabula_muris_senis_alpha_0_5", 
+        "submission_time": "2023-02-04 03:24:12.996", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 10058.0, 
+            "cpu_pct": 1339.5, 
+            "peak_memory_mb": 1400.0, 
+            "disk_read_mb": 309.8, 
+            "disk_write_mb": 15.8
+        }, 
+        "metric_values": {
+            "r2": 0.5563659968727135
+        }, 
+        "scaled_scores": {
+            "r2": 0.8355901127928732
+        }, 
+        "mean_score": 0.8355901127928732
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_amortised_detection_alpha_20", 
+        "dataset_id": "tabula_muris_senis_alpha_0_5", 
+        "submission_time": "2023-02-04 01:31:32.007", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 16919.0, 
+            "cpu_pct": 1921.5, 
+            "peak_memory_mb": 16300.0, 
+            "disk_read_mb": 309.8, 
+            "disk_write_mb": 51.2
+        }, 
+        "metric_values": {
+            "r2": 0.5252102027680169
+        }, 
+        "scaled_scores": {
+            "r2": 0.824043836902177
+        }, 
+        "mean_score": 0.824043836902177
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "destvi", 
+        "dataset_id": "tabula_muris_senis_alpha_0_5", 
+        "submission_time": "2023-02-04 03:49:12.775", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 11418.0, 
+            "cpu_pct": 2610.1, 
+            "peak_memory_mb": 2100.0, 
+            "disk_read_mb": 307.0, 
+            "disk_write_mb": 4.8
+        }, 
+        "metric_values": {
+            "r2": -0.3120452721940618
+        }, 
+        "scaled_scores": {
+            "r2": 0.5137586080159463
+        }, 
+        "mean_score": 0.5137586080159463
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nnls_scipy", 
+        "dataset_id": "tabula_muris_senis_alpha_5", 
+        "submission_time": "2023-02-03 19:08:47.821", 
+        "code_version": "1.9.3", 
+        "resources": {
+            "duration_sec": 579.0, 
+            "cpu_pct": 51.3, 
+            "peak_memory_mb": 230.7, 
+            "disk_read_mb": 285.5, 
+            "disk_write_mb": 4.6
+        }, 
+        "metric_values": {
+            "r2": -0.5857227001855957
+        }, 
+        "scaled_scores": {
+            "r2": 0.4937817432427683
+        }, 
+        "mean_score": 0.4937817432427683
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "random_proportions", 
+        "dataset_id": "tabula_muris_senis_alpha_5", 
+        "submission_time": "2023-02-03 19:08:47.936", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 599.0, 
+            "cpu_pct": 57.6, 
+            "peak_memory_mb": 223.9, 
+            "disk_read_mb": 285.5, 
+            "disk_write_mb": 4.6
+        }, 
+        "metric_values": {
+            "r2": -2.132488168924466
+        }, 
+        "scaled_scores": {
+            "r2": 0.0
+        }, 
+        "mean_score": 0.0
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "true_proportions", 
+        "dataset_id": "tabula_muris_senis_alpha_5", 
+        "submission_time": "2023-02-03 19:08:47.862", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 610.0, 
+            "cpu_pct": 48.4, 
+            "peak_memory_mb": 844.2, 
+            "disk_read_mb": 285.5, 
+            "disk_write_mb": 4.6
+        }, 
+        "metric_values": {
+            "r2": 1.0
+        }, 
+        "scaled_scores": {
+            "r2": 1.0
+        }, 
+        "mean_score": 1.0
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nmfreg", 
+        "dataset_id": "tabula_muris_senis_alpha_5", 
+        "submission_time": "2023-02-03 19:08:47.763", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 659.0, 
+            "cpu_pct": 1908.6, 
+            "peak_memory_mb": 3300.0, 
+            "disk_read_mb": 285.6, 
+            "disk_write_mb": 4.6
+        }, 
+        "metric_values": {
+            "r2": -3.0374327652315753
+        }, 
+        "scaled_scores": {
+            "r2": -0.28889002847146283
+        }, 
+        "mean_score": -0.28889002847146283
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nmf", 
+        "dataset_id": "tabula_muris_senis_alpha_5", 
+        "submission_time": "2023-02-03 19:08:47.928", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 939.0, 
+            "cpu_pct": 313.7, 
+            "peak_memory_mb": 844.3, 
+            "disk_read_mb": 285.5, 
+            "disk_write_mb": 4.6
+        }, 
+        "metric_values": {
+            "r2": -0.65343705867062
+        }, 
+        "scaled_scores": {
+            "r2": 0.47216494699856293
+        }, 
+        "mean_score": 0.47216494699856293
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "tangram", 
+        "dataset_id": "tabula_muris_senis_alpha_5", 
+        "submission_time": "2023-02-03 19:08:47.503", 
+        "code_version": "1.0.3", 
+        "resources": {
+            "duration_sec": 979.0, 
+            "cpu_pct": 320.2, 
+            "peak_memory_mb": 1300.0, 
+            "disk_read_mb": 298.9, 
+            "disk_write_mb": 5.1
+        }, 
+        "metric_values": {
+            "r2": -2.5678441775529524
+        }, 
+        "scaled_scores": {
+            "r2": -0.13898089478753406
+        }, 
+        "mean_score": -0.13898089478753406
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "seuratv3", 
+        "dataset_id": "tabula_muris_senis_alpha_5", 
+        "submission_time": "2023-02-03 19:08:47.785", 
+        "code_version": "4.3.0", 
+        "resources": {
+            "duration_sec": 1109.0, 
+            "cpu_pct": 112.9, 
+            "peak_memory_mb": 249200.0, 
+            "disk_read_mb": 712.8, 
+            "disk_write_mb": 339.9
+        }, 
+        "metric_values": {
+            "r2": -2.5497782174637655
+        }, 
+        "scaled_scores": {
+            "r2": -0.1332136072145407
+        }, 
+        "mean_score": -0.1332136072145407
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "stereoscope", 
+        "dataset_id": "tabula_muris_senis_alpha_5", 
+        "submission_time": "2023-02-03 19:08:47.846", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 1849.0, 
+            "cpu_pct": 1144.7, 
+            "peak_memory_mb": 1400.0, 
+            "disk_read_mb": 307.1, 
+            "disk_write_mb": 4.8
+        }, 
+        "metric_values": {
+            "r2": 0.012730772432455103
+        }, 
+        "scaled_scores": {
+            "r2": 0.6848290642047271
+        }, 
+        "mean_score": 0.6848290642047271
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "rctd", 
+        "dataset_id": "tabula_muris_senis_alpha_5", 
+        "submission_time": "2023-02-03 19:24:17.895", 
+        "code_version": "2.1.7", 
+        "resources": {
+            "duration_sec": 2761.0, 
+            "cpu_pct": 15.6, 
+            "peak_memory_mb": 4300.0, 
+            "disk_read_mb": 716.4, 
+            "disk_write_mb": 5.1
+        }, 
+        "metric_values": {
+            "r2": -0.07494047722100175
+        }, 
+        "scaled_scores": {
+            "r2": 0.6568413289203003
+        }, 
+        "mean_score": 0.6568413289203003
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_20", 
+        "dataset_id": "tabula_muris_senis_alpha_5", 
+        "submission_time": "2023-02-04 03:24:25.219", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 10006.0, 
+            "cpu_pct": 1338.1, 
+            "peak_memory_mb": 1300.0, 
+            "disk_read_mb": 310.0, 
+            "disk_write_mb": 15.9
+        }, 
+        "metric_values": {
+            "r2": 0.2891735236808169
+        }, 
+        "scaled_scores": {
+            "r2": 0.7730792782009951
+        }, 
+        "mean_score": 0.7730792782009951
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_200", 
+        "dataset_id": "tabula_muris_senis_alpha_5", 
+        "submission_time": "2023-02-04 03:24:23.246", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 10108.0, 
+            "cpu_pct": 1327.7, 
+            "peak_memory_mb": 1300.0, 
+            "disk_read_mb": 310.0, 
+            "disk_write_mb": 15.9
+        }, 
+        "metric_values": {
+            "r2": 0.2825305519041658
+        }, 
+        "scaled_scores": {
+            "r2": 0.7709586088102686
+        }, 
+        "mean_score": 0.7709586088102686
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_20_nb", 
+        "dataset_id": "tabula_muris_senis_alpha_5", 
+        "submission_time": "2023-02-04 03:47:12.252", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 12879.0, 
+            "cpu_pct": 1576.0, 
+            "peak_memory_mb": 5400.0, 
+            "disk_read_mb": 310.0, 
+            "disk_write_mb": 16.1
+        }, 
+        "metric_values": {
+            "r2": 0.23843047081356508
+        }, 
+        "scaled_scores": {
+            "r2": 0.7568803174608898
+        }, 
+        "mean_score": 0.7568803174608898
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_1", 
+        "dataset_id": "tabula_muris_senis_alpha_5", 
+        "submission_time": "2023-02-04 03:49:14.448", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 13117.0, 
+            "cpu_pct": 1338.0, 
+            "peak_memory_mb": 1400.0, 
+            "disk_read_mb": 310.0, 
+            "disk_write_mb": 16.0
+        }, 
+        "metric_values": {
+            "r2": 0.2902803322094875
+        }, 
+        "scaled_scores": {
+            "r2": 0.7734326102708974
+        }, 
+        "mean_score": 0.7734326102708974
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "destvi", 
+        "dataset_id": "tabula_muris_senis_alpha_5", 
+        "submission_time": "2023-02-04 05:49:31.608", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 6760.0, 
+            "cpu_pct": 2681.1, 
+            "peak_memory_mb": 2200.0, 
+            "disk_read_mb": 307.2, 
+            "disk_write_mb": 4.9
+        }, 
+        "metric_values": {
+            "r2": -0.42223234390160724
+        }, 
+        "scaled_scores": {
+            "r2": 0.5459735944062869
+        }, 
+        "mean_score": 0.5459735944062869
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_amortised_detection_alpha_20", 
+        "dataset_id": "tabula_muris_senis_alpha_5", 
+        "submission_time": "2023-02-04 03:49:14.920", 
+        "code_version": "0.1.3", 
+        "resources": {
+            "duration_sec": 14376.0, 
+            "cpu_pct": 1944.3, 
+            "peak_memory_mb": 16700.0, 
+            "disk_read_mb": 310.0, 
+            "disk_write_mb": 51.3
+        }, 
+        "metric_values": {
+            "r2": 0.157532468059008
+        }, 
+        "scaled_scores": {
+            "r2": 0.7310548399516377
+        }, 
+        "mean_score": 0.7310548399516377
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "true_proportions", 
+        "dataset_id": "destvi", 
+        "submission_time": "2023-02-03 19:25:38.844", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 1602.0, 
+            "cpu_pct": 89.6, 
+            "peak_memory_mb": 513.2, 
+            "disk_read_mb": 469.6, 
+            "disk_write_mb": 25.0
+        }, 
+        "metric_values": {
+            "r2": 1.0
+        }, 
+        "scaled_scores": {
+            "r2": 1.0
+        }, 
+        "mean_score": 1.0
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "random_proportions", 
+        "dataset_id": "destvi", 
+        "submission_time": "2023-02-03 19:25:39.039", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 1642.0, 
+            "cpu_pct": 84.7, 
+            "peak_memory_mb": 1300.0, 
+            "disk_read_mb": 469.6, 
+            "disk_write_mb": 25.0
+        }, 
+        "metric_values": {
+            "r2": -0.15849512458694134
+        }, 
+        "scaled_scores": {
+            "r2": 0.0
+        }, 
+        "mean_score": 0.0
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nnls_scipy", 
+        "dataset_id": "destvi", 
+        "submission_time": "2023-02-03 19:25:38.723", 
+        "code_version": "1.9.3", 
+        "resources": {
+            "duration_sec": 1671.0, 
+            "cpu_pct": 73.9, 
+            "peak_memory_mb": 232.3, 
+            "disk_read_mb": 469.6, 
             "disk_write_mb": 25.0
         }, 
         "metric_values": {
             "r2": 0.4086332165218671
         }, 
         "scaled_scores": {
-            "r2": 0.48981372715305016
+            "r2": 0.4895388241802198
         }, 
-        "mean_score": 0.48981372715305016
+        "mean_score": 0.4895388241802198
     }, 
     {
         "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nmf", 
-        "dataset_id": "destvi", 
-        "submission_time": "2022-12-14 10:38:45.735", 
-        "code_version": "1.0.2", 
-        "resources": {
-            "duration_sec": 171.0, 
-            "cpu_pct": 320.3, 
-            "peak_memory_mb": 1300.0, 
-            "disk_read_mb": 470.3, 
-            "disk_write_mb": 25.0
-        }, 
-        "metric_values": {
-            "r2": 0.20699475213941904
-        }, 
-        "scaled_scores": {
-            "r2": 0.3158553996311466
-        }, 
-        "mean_score": 0.3158553996311466
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "true_proportions", 
-        "dataset_id": "destvi", 
-        "submission_time": "2022-12-14 10:38:46.062", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 181.0, 
-            "cpu_pct": 20.6, 
-            "peak_memory_mb": 830.4, 
-            "disk_read_mb": 470.3, 
-            "disk_write_mb": 25.0
-        }, 
-        "metric_values": {
-            "r2": 1.0
-        }, 
-        "scaled_scores": {
-            "r2": 1.0
-        }, 
-        "mean_score": 1.0
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "nmfreg", 
         "dataset_id": "destvi", 
-        "submission_time": "2022-12-14 10:38:45.843", 
-        "code_version": "1.0.2", 
+        "submission_time": "2023-02-03 19:25:38.600", 
+        "code_version": "1.1.3", 
         "resources": {
-            "duration_sec": 470.0, 
-            "cpu_pct": 246.5, 
+            "duration_sec": 1691.0, 
+            "cpu_pct": 1566.4, 
             "peak_memory_mb": 2300.0, 
-            "disk_read_mb": 470.3, 
+            "disk_read_mb": 469.7, 
             "disk_write_mb": 25.0
         }, 
         "metric_values": {
             "r2": 0.3005616114966171
         }, 
         "scaled_scores": {
-            "r2": 0.39657776783160675
+            "r2": 0.3962526266541122
         }, 
-        "mean_score": 0.39657776783160675
+        "mean_score": 0.3962526266541122
     }, 
     {
         "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "nmf", 
+        "dataset_id": "destvi", 
+        "submission_time": "2023-02-03 19:25:38.957", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1691.0, 
+            "cpu_pct": 591.9, 
+            "peak_memory_mb": 1300.0, 
+            "disk_read_mb": 469.6, 
+            "disk_write_mb": 25.0
+        }, 
+        "metric_values": {
+            "r2": 0.20699475213941904
+        }, 
+        "scaled_scores": {
+            "r2": 0.3154867629302065
+        }, 
+        "mean_score": 0.3154867629302065
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "seuratv3", 
         "dataset_id": "destvi", 
-        "submission_time": "2022-12-14 10:38:46.253", 
-        "code_version": "4.1.1", 
+        "submission_time": "2023-02-03 19:25:39.356", 
+        "code_version": "4.3.0", 
         "resources": {
-            "duration_sec": 689.0, 
-            "cpu_pct": 116.1, 
-            "peak_memory_mb": 315100.0, 
-            "disk_read_mb": 1300.0, 
+            "duration_sec": 2242.0, 
+            "cpu_pct": 125.9, 
+            "peak_memory_mb": 290200.0, 
+            "disk_read_mb": 1200.0, 
             "disk_write_mb": 784.7
         }, 
         "metric_values": {
             "r2": -3.144265333714095
         }, 
         "scaled_scores": {
-            "r2": -2.5753568569760525
+            "r2": -2.577283361629789
         }, 
-        "mean_score": -2.5753568569760525
+        "mean_score": -2.577283361629789
     }, 
     {
         "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "rctd", 
-        "dataset_id": "destvi", 
-        "submission_time": "2022-12-14 11:09:07.372", 
-        "code_version": "2.0.1", 
-        "resources": {
-            "duration_sec": 3949.0, 
-            "cpu_pct": 100.4, 
-            "peak_memory_mb": 4000.0, 
-            "disk_read_mb": 645.7, 
-            "disk_write_mb": 31.2
-        }, 
-        "metric_values": {
-            "r2": 0.7000196606284087
-        }, 
-        "scaled_scores": {
-            "r2": 0.741199784047366
-        }, 
-        "mean_score": 0.741199784047366
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "tangram", 
-        "dataset_id": "destvi", 
-        "submission_time": "2022-12-14 11:13:16.812", 
-        "code_version": "1.0.3", 
-        "resources": {
-            "duration_sec": 5950.0, 
-            "cpu_pct": 1705.7, 
-            "peak_memory_mb": 3200.0, 
-            "disk_read_mb": 482.7, 
-            "disk_write_mb": 25.2
-        }, 
-        "metric_values": {
-            "r2": -1.2519521772808448
-        }, 
-        "scaled_scores": {
-            "r2": -0.9428130224006259
-        }, 
-        "mean_score": -0.9428130224006259
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_20_nb", 
-        "dataset_id": "destvi", 
-        "submission_time": "2022-12-14 11:09:08.139", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 10908.0, 
-            "cpu_pct": 1290.6, 
-            "peak_memory_mb": 3600.0, 
-            "disk_read_mb": 493.1, 
-            "disk_write_mb": 38.7
-        }, 
-        "metric_values": {
-            "r2": 0.8812386546777228
-        }, 
-        "scaled_scores": {
-            "r2": 0.8975417459670312
-        }, 
-        "mean_score": 0.8975417459670312
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_1", 
-        "dataset_id": "destvi", 
-        "submission_time": "2022-12-14 11:09:08.332", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 11958.0, 
-            "cpu_pct": 1274.3, 
-            "peak_memory_mb": 3600.0, 
-            "disk_read_mb": 493.0, 
-            "disk_write_mb": 38.7
-        }, 
-        "metric_values": {
-            "r2": 0.882228701745374
-        }, 
-        "scaled_scores": {
-            "r2": 0.8983958832596557
-        }, 
-        "mean_score": 0.8983958832596557
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "stereoscope", 
         "dataset_id": "destvi", 
-        "submission_time": "2022-12-14 11:09:07.074", 
-        "code_version": "0.19.0", 
+        "submission_time": "2023-02-03 19:25:38.811", 
+        "code_version": "0.20.0", 
         "resources": {
-            "duration_sec": 14829.0, 
-            "cpu_pct": 2547.6, 
+            "duration_sec": 2640.0, 
+            "cpu_pct": 2114.9, 
             "peak_memory_mb": 1500.0, 
-            "disk_read_mb": 490.4, 
+            "disk_read_mb": 491.1, 
             "disk_write_mb": 25.3
         }, 
         "metric_values": {
-            "r2": 0.2288115132669885
+            "r2": 0.22881094402581784
         }, 
         "scaled_scores": {
-            "r2": 0.33467724143261207
+            "r2": 0.334318255116397
         }, 
-        "mean_score": 0.33467724143261207
+        "mean_score": 0.334318255116397
     }, 
     {
         "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "rctd", 
+        "dataset_id": "destvi", 
+        "submission_time": "2023-02-03 19:57:40.786", 
+        "code_version": "2.1.7", 
+        "resources": {
+            "duration_sec": 2720.0, 
+            "cpu_pct": 20.2, 
+            "peak_memory_mb": 4300.0, 
+            "disk_read_mb": 900.5, 
+            "disk_write_mb": 31.2
+        }, 
+        "metric_values": {
+            "r2": -0.0557985944807748
+        }, 
+        "scaled_scores": {
+            "r2": 0.08864649313287594
+        }, 
+        "mean_score": 0.08864649313287594
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "tangram", 
+        "dataset_id": "destvi", 
+        "submission_time": "2023-02-03 20:20:39.967", 
+        "code_version": "1.0.3", 
+        "resources": {
+            "duration_sec": 1370.0, 
+            "cpu_pct": 2037.5, 
+            "peak_memory_mb": 3200.0, 
+            "disk_read_mb": 482.9, 
+            "disk_write_mb": 25.2
+        }, 
+        "metric_values": {
+            "r2": -1.2492548199370135
+        }, 
+        "scaled_scores": {
+            "r2": -0.941531537078311
+        }, 
+        "mean_score": -0.941531537078311
+    }, 
+    {
+        "task_id": "spatial_decomposition", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "destvi", 
         "dataset_id": "destvi", 
-        "submission_time": "2022-12-14 11:09:06.880", 
-        "code_version": "0.19.0", 
+        "submission_time": "2023-02-04 05:49:33.002", 
+        "code_version": "0.20.0", 
         "resources": {
-            "duration_sec": 16560.0, 
-            "cpu_pct": 2573.2, 
-            "peak_memory_mb": 5200.0, 
-            "disk_read_mb": 490.4, 
-            "disk_write_mb": 25.1
+            "duration_sec": 8418.0, 
+            "cpu_pct": 2580.3, 
+            "peak_memory_mb": 5100.0, 
+            "disk_read_mb": 491.1, 
+            "disk_write_mb": 25.2
         }, 
         "metric_values": {
             "r2": -0.1697060734331357
         }, 
         "scaled_scores": {
-            "r2": -0.009133415342322811
+            "r2": -0.009677165322721233
         }, 
-        "mean_score": -0.009133415342322811
+        "mean_score": -0.009677165322721233
     }, 
     {
         "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "cell2location_detection_alpha_200", 
         "dataset_id": "destvi", 
-        "submission_time": "2022-12-14 18:43:27.929", 
-        "code_version": "0.1", 
+        "submission_time": "2023-02-04 05:47:31.765", 
+        "code_version": "0.1.3", 
         "resources": {
-            "duration_sec": 24719.0, 
-            "cpu_pct": 1793.5, 
-            "peak_memory_mb": 5200.0, 
-            "disk_read_mb": 493.1, 
-            "disk_write_mb": 38.7
+            "duration_sec": 9990.0, 
+            "cpu_pct": 2068.3, 
+            "peak_memory_mb": 5100.0, 
+            "disk_read_mb": 493.8, 
+            "disk_write_mb": 38.5
         }, 
         "metric_values": {
             "r2": 0.8822402083077602
         }, 
         "scaled_scores": {
-            "r2": 0.8984058102463263
+            "r2": 0.8983510683877701
         }, 
-        "mean_score": 0.8984058102463263
+        "mean_score": 0.8983510683877701
     }, 
     {
         "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_amortised_detection_alpha_20", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "cell2location_detection_alpha_20_nb", 
         "dataset_id": "destvi", 
-        "submission_time": "2022-12-15 02:31:28.500", 
-        "code_version": "0.1", 
+        "submission_time": "2023-02-04 05:49:33.490", 
+        "code_version": "0.1.3", 
         "resources": {
-            "duration_sec": 15649.0, 
-            "cpu_pct": 2093.1, 
-            "peak_memory_mb": 41700.0, 
-            "disk_read_mb": 493.1, 
-            "disk_write_mb": 65.2
+            "duration_sec": 11328.0, 
+            "cpu_pct": 1910.7, 
+            "peak_memory_mb": 5100.0, 
+            "disk_read_mb": 493.8, 
+            "disk_write_mb": 38.6
         }, 
         "metric_values": {
-            "r2": 0.8859517834195799
+            "r2": 0.8812396870863864
         }, 
         "scaled_scores": {
-            "r2": 0.9016078748965483
+            "r2": 0.89748742968948
         }, 
-        "mean_score": 0.9016078748965483
+        "mean_score": 0.89748742968948
     }, 
     {
         "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "cell2location_detection_alpha_20", 
         "dataset_id": "destvi", 
-        "submission_time": "2022-12-16 19:49:30.857", 
-        "code_version": "0.1", 
+        "submission_time": "2023-02-04 06:02:42.080", 
+        "code_version": "0.1.3", 
         "resources": {
-            "duration_sec": 16749.0, 
-            "cpu_pct": 1904.6, 
-            "peak_memory_mb": 5100.0, 
-            "disk_read_mb": 493.1, 
-            "disk_write_mb": 38.7
+            "duration_sec": 11149.0, 
+            "cpu_pct": 2008.1, 
+            "peak_memory_mb": 5200.0, 
+            "disk_read_mb": 493.8, 
+            "disk_write_mb": 38.6
         }, 
         "metric_values": {
             "r2": 0.8822350162953173
         }, 
         "scaled_scores": {
-            "r2": 0.8984013309729704
+            "r2": 0.8983465867008534
         }, 
-        "mean_score": 0.8984013309729704
+        "mean_score": 0.8983465867008534
     }, 
     {
         "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "random_proportions", 
-        "dataset_id": "pancreas_alpha_0_5", 
-        "submission_time": "2022-12-14 10:25:15.039", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 310.0, 
-            "cpu_pct": 41.5, 
-            "peak_memory_mb": 235.5, 
-            "disk_read_mb": 216.3, 
-            "disk_write_mb": 4.099999
-        }, 
-        "metric_values": {
-            "r2": -0.6820281387200977
-        }, 
-        "scaled_scores": {
-            "r2": 0.0
-        }, 
-        "mean_score": 0.0
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nnls_scipy", 
-        "dataset_id": "pancreas_alpha_0_5", 
-        "submission_time": "2022-12-14 10:25:14.981", 
-        "code_version": "1.9.3", 
-        "resources": {
-            "duration_sec": 320.0, 
-            "cpu_pct": 55.9, 
-            "peak_memory_mb": 662.2, 
-            "disk_read_mb": 216.3, 
-            "disk_write_mb": 4.099999
-        }, 
-        "metric_values": {
-            "r2": 0.8286881962898739
-        }, 
-        "scaled_scores": {
-            "r2": 0.8981516421951883
-        }, 
-        "mean_score": 0.8981516421951883
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "true_proportions", 
-        "dataset_id": "pancreas_alpha_0_5", 
-        "submission_time": "2022-12-14 10:25:15.210", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 320.0, 
-            "cpu_pct": 40.3, 
-            "peak_memory_mb": 229.0, 
-            "disk_read_mb": 216.3, 
-            "disk_write_mb": 4.099999
-        }, 
-        "metric_values": {
-            "r2": 1.0
-        }, 
-        "scaled_scores": {
-            "r2": 1.0
-        }, 
-        "mean_score": 1.0
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nmf", 
-        "dataset_id": "pancreas_alpha_0_5", 
-        "submission_time": "2022-12-14 10:25:14.994", 
-        "code_version": "1.0.2", 
-        "resources": {
-            "duration_sec": 330.0, 
-            "cpu_pct": 162.5, 
-            "peak_memory_mb": 662.1, 
-            "disk_read_mb": 216.3, 
-            "disk_write_mb": 4.099999
-        }, 
-        "metric_values": {
-            "r2": 0.5719022115465621
-        }, 
-        "scaled_scores": {
-            "r2": 0.7454871422191607
-        }, 
-        "mean_score": 0.7454871422191607
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nmfreg", 
-        "dataset_id": "pancreas_alpha_0_5", 
-        "submission_time": "2022-12-14 10:25:15.064", 
-        "code_version": "1.0.2", 
-        "resources": {
-            "duration_sec": 350.0, 
-            "cpu_pct": 2005.3, 
-            "peak_memory_mb": 1500.0, 
-            "disk_read_mb": 216.4, 
-            "disk_write_mb": 4.099999
-        }, 
-        "metric_values": {
-            "r2": 0.003254695667821192
-        }, 
-        "scaled_scores": {
-            "r2": 0.40741460776593774
-        }, 
-        "mean_score": 0.40741460776593774
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "rctd", 
-        "dataset_id": "pancreas_alpha_0_5", 
-        "submission_time": "2022-12-14 10:25:15.398", 
-        "code_version": "2.0.1", 
-        "resources": {
-            "duration_sec": 700.0, 
-            "cpu_pct": 66.1, 
-            "peak_memory_mb": 2400.0, 
-            "disk_read_mb": 391.8, 
-            "disk_write_mb": 4.7
-        }, 
-        "metric_values": {
-            "r2": 0.7867802024698798
-        }, 
-        "scaled_scores": {
-            "r2": 0.8732364859886559
-        }, 
-        "mean_score": 0.8732364859886559
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "seuratv3", 
-        "dataset_id": "pancreas_alpha_0_5", 
-        "submission_time": "2022-12-14 10:25:15.410", 
-        "code_version": "4.1.1", 
-        "resources": {
-            "duration_sec": 769.0, 
-            "cpu_pct": 93.8, 
-            "peak_memory_mb": 102100.0, 
-            "disk_read_mb": 444.5, 
-            "disk_write_mb": 138.4
-        }, 
-        "metric_values": {
-            "r2": -1.1410996538675877
-        }, 
-        "scaled_scores": {
-            "r2": -0.27292736939395695
-        }, 
-        "mean_score": -0.27292736939395695
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "stereoscope", 
-        "dataset_id": "pancreas_alpha_0_5", 
-        "submission_time": "2022-12-14 11:00:31.398", 
-        "code_version": "0.19.0", 
-        "resources": {
-            "duration_sec": 615.0, 
-            "cpu_pct": 1593.5, 
-            "peak_memory_mb": 1300.0, 
-            "disk_read_mb": 236.5, 
-            "disk_write_mb": 4.4
-        }, 
-        "metric_values": {
-            "r2": 0.1510831363487464
-        }, 
-        "scaled_scores": {
-            "r2": 0.4953016277734698
-        }, 
-        "mean_score": 0.4953016277734698
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "tangram", 
-        "dataset_id": "pancreas_alpha_0_5", 
-        "submission_time": "2022-12-14 11:00:31.209", 
-        "code_version": "1.0.3", 
-        "resources": {
-            "duration_sec": 685.0, 
-            "cpu_pct": 1198.5, 
-            "peak_memory_mb": 1000.0, 
-            "disk_read_mb": 228.9, 
-            "disk_write_mb": 4.8
-        }, 
-        "metric_values": {
-            "r2": -0.9993294176721652
-        }, 
-        "scaled_scores": {
-            "r2": -0.18864207538972025
-        }, 
-        "mean_score": -0.18864207538972025
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_200", 
-        "dataset_id": "pancreas_alpha_0_5", 
-        "submission_time": "2022-12-14 11:00:30.182", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 4316.0, 
-            "cpu_pct": 1048.7, 
-            "peak_memory_mb": 6000.0, 
-            "disk_read_mb": 239.3, 
-            "disk_write_mb": 16.5
-        }, 
-        "metric_values": {
-            "r2": 0.8759336746692509
-        }, 
-        "scaled_scores": {
-            "r2": 0.9262400417241802
-        }, 
-        "mean_score": 0.9262400417241802
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "destvi", 
-        "dataset_id": "pancreas_alpha_0_5", 
-        "submission_time": "2022-12-14 11:00:33.185", 
-        "code_version": "0.19.0", 
-        "resources": {
-            "duration_sec": 5963.0, 
-            "cpu_pct": 1599.5, 
-            "peak_memory_mb": 2000.0, 
-            "disk_read_mb": 236.6, 
-            "disk_write_mb": 4.5
-        }, 
-        "metric_values": {
-            "r2": -0.4280618305914786
-        }, 
-        "scaled_scores": {
-            "r2": 0.1509881447773336
-        }, 
-        "mean_score": 0.1509881447773336
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_20", 
-        "dataset_id": "pancreas_alpha_0_5", 
-        "submission_time": "2022-12-14 11:00:33.464", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 24193.0, 
-            "cpu_pct": 1410.2, 
-            "peak_memory_mb": 4600.0, 
-            "disk_read_mb": 239.4, 
-            "disk_write_mb": 16.8
-        }, 
-        "metric_values": {
-            "r2": 0.8775824932970827
-        }, 
-        "scaled_scores": {
-            "r2": 0.9272202979933094
-        }, 
-        "mean_score": 0.9272202979933094
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "cell2location_detection_alpha_1", 
-        "dataset_id": "pancreas_alpha_0_5", 
-        "submission_time": "2022-12-14 11:00:32.101", 
-        "code_version": "0.1", 
+        "dataset_id": "destvi", 
+        "submission_time": "2023-02-04 06:02:43.889", 
+        "code_version": "0.1.3", 
         "resources": {
-            "duration_sec": 24945.0, 
-            "cpu_pct": 1410.7, 
-            "peak_memory_mb": 6000.0, 
-            "disk_read_mb": 239.4, 
-            "disk_write_mb": 16.8
-        }, 
-        "metric_values": {
-            "r2": 0.8771760282469875
-        }, 
-        "scaled_scores": {
-            "r2": 0.9269786462392522
-        }, 
-        "mean_score": 0.9269786462392522
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_20_nb", 
-        "dataset_id": "pancreas_alpha_0_5", 
-        "submission_time": "2022-12-14 13:34:57.167", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 31740.0, 
-            "cpu_pct": 1494.4, 
-            "peak_memory_mb": 3200.0, 
-            "disk_read_mb": 239.4, 
-            "disk_write_mb": 16.8
-        }, 
-        "metric_values": {
-            "r2": 0.875295241092722
-        }, 
-        "scaled_scores": {
-            "r2": 0.9258604799547709
-        }, 
-        "mean_score": 0.9258604799547709
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_amortised_detection_alpha_20", 
-        "dataset_id": "pancreas_alpha_0_5", 
-        "submission_time": "2022-12-14 16:08:17.037", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 27260.0, 
-            "cpu_pct": 1735.7, 
-            "peak_memory_mb": 14600.0, 
-            "disk_read_mb": 239.4, 
-            "disk_write_mb": 47.7
-        }, 
-        "metric_values": {
-            "r2": 0.8961045875370309
-        }, 
-        "scaled_scores": {
-            "r2": 0.9382320604089145
-        }, 
-        "mean_score": 0.9382320604089145
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nnls_scipy", 
-        "dataset_id": "pancreas_alpha_1", 
-        "submission_time": "2022-12-14 10:22:55.190", 
-        "code_version": "1.9.3", 
-        "resources": {
-            "duration_sec": 80.0, 
-            "cpu_pct": 112.1, 
-            "peak_memory_mb": 412.1, 
-            "disk_read_mb": 216.3, 
-            "disk_write_mb": 4.099999
-        }, 
-        "metric_values": {
-            "r2": 0.6707320644164548
-        }, 
-        "scaled_scores": {
-            "r2": 0.8120985467176228
-        }, 
-        "mean_score": 0.8120985467176228
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "random_proportions", 
-        "dataset_id": "pancreas_alpha_1", 
-        "submission_time": "2022-12-14 10:22:55.191", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 80.0, 
-            "cpu_pct": 59.3, 
-            "peak_memory_mb": 142.7, 
-            "disk_read_mb": 216.3, 
-            "disk_write_mb": 4.099999
-        }, 
-        "metric_values": {
-            "r2": -0.7523437409966337
-        }, 
-        "scaled_scores": {
-            "r2": 0.0
-        }, 
-        "mean_score": 0.0
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nmf", 
-        "dataset_id": "pancreas_alpha_1", 
-        "submission_time": "2022-12-14 10:22:55.127", 
-        "code_version": "1.0.2", 
-        "resources": {
-            "duration_sec": 90.0, 
-            "cpu_pct": 1055.3, 
-            "peak_memory_mb": 662.8, 
-            "disk_read_mb": 216.3, 
-            "disk_write_mb": 4.099999
-        }, 
-        "metric_values": {
-            "r2": -0.1940955542329209
-        }, 
-        "scaled_scores": {
-            "r2": 0.3185723061653491
-        }, 
-        "mean_score": 0.3185723061653491
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "true_proportions", 
-        "dataset_id": "pancreas_alpha_1", 
-        "submission_time": "2022-12-14 10:23:15.387", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 129.0, 
-            "cpu_pct": 50.4, 
-            "peak_memory_mb": 229.6, 
-            "disk_read_mb": 216.3, 
-            "disk_write_mb": 4.099999
-        }, 
-        "metric_values": {
-            "r2": 1.0
-        }, 
-        "scaled_scores": {
-            "r2": 1.0
-        }, 
-        "mean_score": 1.0
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nmfreg", 
-        "dataset_id": "pancreas_alpha_1", 
-        "submission_time": "2022-12-14 10:23:15.291", 
-        "code_version": "1.0.2", 
-        "resources": {
-            "duration_sec": 150.0, 
-            "cpu_pct": 1310.7, 
-            "peak_memory_mb": 1400.0, 
-            "disk_read_mb": 216.4, 
-            "disk_write_mb": 4.099999
-        }, 
-        "metric_values": {
-            "r2": 0.12465646810651407
-        }, 
-        "scaled_scores": {
-            "r2": 0.500472703263322
-        }, 
-        "mean_score": 0.500472703263322
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "tangram", 
-        "dataset_id": "pancreas_alpha_1", 
-        "submission_time": "2022-12-14 10:23:15.401", 
-        "code_version": "1.0.3", 
-        "resources": {
-            "duration_sec": 159.0, 
-            "cpu_pct": 627.9, 
-            "peak_memory_mb": 1000.0, 
-            "disk_read_mb": 228.8, 
-            "disk_write_mb": 4.8
-        }, 
-        "metric_values": {
-            "r2": -1.1822167026711936
-        }, 
-        "scaled_scores": {
-            "r2": -0.24531314925122658
-        }, 
-        "mean_score": -0.24531314925122658
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "stereoscope", 
-        "dataset_id": "pancreas_alpha_1", 
-        "submission_time": "2022-12-14 10:23:15.442", 
-        "code_version": "0.19.0", 
-        "resources": {
-            "duration_sec": 379.0, 
-            "cpu_pct": 1265.1, 
-            "peak_memory_mb": 1200.0, 
-            "disk_read_mb": 236.5, 
-            "disk_write_mb": 4.4
-        }, 
-        "metric_values": {
-            "r2": 0.16004710124279573
-        }, 
-        "scaled_scores": {
-            "r2": 0.5206688738594822
-        }, 
-        "mean_score": 0.5206688738594822
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "rctd", 
-        "dataset_id": "pancreas_alpha_1", 
-        "submission_time": "2022-12-14 10:23:27.268", 
-        "code_version": "2.0.1", 
-        "resources": {
-            "duration_sec": 677.0, 
-            "cpu_pct": 84.5, 
-            "peak_memory_mb": 2400.0, 
-            "disk_read_mb": 391.8, 
-            "disk_write_mb": 4.7
-        }, 
-        "metric_values": {
-            "r2": 0.69869547122617
-        }, 
-        "scaled_scores": {
-            "r2": 0.8280562644618659
-        }, 
-        "mean_score": 0.8280562644618659
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "seuratv3", 
-        "dataset_id": "pancreas_alpha_1", 
-        "submission_time": "2022-12-14 10:23:27.306", 
-        "code_version": "4.1.1", 
-        "resources": {
-            "duration_sec": 727.0, 
-            "cpu_pct": 114.1, 
-            "peak_memory_mb": 104100.0, 
-            "disk_read_mb": 444.5, 
-            "disk_write_mb": 138.4
-        }, 
-        "metric_values": {
-            "r2": -1.9830511672084623
-        }, 
-        "scaled_scores": {
-            "r2": -0.7023207818300947
-        }, 
-        "mean_score": -0.7023207818300947
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "destvi", 
-        "dataset_id": "pancreas_alpha_1", 
-        "submission_time": "2022-12-14 10:22:55.230", 
-        "code_version": "0.19.0", 
-        "resources": {
-            "duration_sec": 1449.0, 
-            "cpu_pct": 1233.8, 
-            "peak_memory_mb": 1700.0, 
-            "disk_read_mb": 236.5, 
-            "disk_write_mb": 4.4
-        }, 
-        "metric_values": {
-            "r2": -0.5226738674483954
-        }, 
-        "scaled_scores": {
-            "r2": 0.13106439574327758
-        }, 
-        "mean_score": 0.13106439574327758
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_200", 
-        "dataset_id": "pancreas_alpha_1", 
-        "submission_time": "2022-12-14 10:53:54.969", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 4881.0, 
-            "cpu_pct": 838.6, 
-            "peak_memory_mb": 1500.0, 
-            "disk_read_mb": 239.3, 
-            "disk_write_mb": 16.0
-        }, 
-        "metric_values": {
-            "r2": 0.8166994197457699
-        }, 
-        "scaled_scores": {
-            "r2": 0.8953969041770429
-        }, 
-        "mean_score": 0.8953969041770429
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_20", 
-        "dataset_id": "pancreas_alpha_1", 
-        "submission_time": "2022-12-14 10:58:55.878", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 8841.0, 
-            "cpu_pct": 941.2, 
-            "peak_memory_mb": 1200.0, 
-            "disk_read_mb": 239.3, 
-            "disk_write_mb": 16.5
-        }, 
-        "metric_values": {
-            "r2": 0.8180949137791992
-        }, 
-        "scaled_scores": {
-            "r2": 0.8961932627913839
-        }, 
-        "mean_score": 0.8961932627913839
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_1", 
-        "dataset_id": "pancreas_alpha_1", 
-        "submission_time": "2022-12-14 10:58:54.445", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 22372.0, 
-            "cpu_pct": 1227.1, 
-            "peak_memory_mb": 4200.0, 
-            "disk_read_mb": 239.4, 
-            "disk_write_mb": 16.7
-        }, 
-        "metric_values": {
-            "r2": 0.8159863712073364
-        }, 
-        "scaled_scores": {
-            "r2": 0.8949899928378168
-        }, 
-        "mean_score": 0.8949899928378168
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_20_nb", 
-        "dataset_id": "pancreas_alpha_1", 
-        "submission_time": "2022-12-14 10:59:49.342", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 24307.0, 
-            "cpu_pct": 1142.9, 
-            "peak_memory_mb": 3200.0, 
-            "disk_read_mb": 239.4, 
-            "disk_write_mb": 16.8
-        }, 
-        "metric_values": {
-            "r2": 0.8216403024969667
-        }, 
-        "scaled_scores": {
-            "r2": 0.8982164895332738
-        }, 
-        "mean_score": 0.8982164895332738
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_amortised_detection_alpha_20", 
-        "dataset_id": "pancreas_alpha_1", 
-        "submission_time": "2022-12-16 15:37:10.138", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 31170.0, 
-            "cpu_pct": 1849.5, 
-            "peak_memory_mb": 15300.0, 
-            "disk_read_mb": 239.4, 
-            "disk_write_mb": 47.8
-        }, 
-        "metric_values": {
-            "r2": 0.8271168053949495
-        }, 
-        "scaled_scores": {
-            "r2": 0.9013417341812604
-        }, 
-        "mean_score": 0.9013417341812604
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nnls_scipy", 
-        "dataset_id": "pancreas_alpha_5", 
-        "submission_time": "2022-12-14 10:23:15.256", 
-        "code_version": "1.9.3", 
-        "resources": {
-            "duration_sec": 79.0, 
-            "cpu_pct": 124.4, 
-            "peak_memory_mb": 381.3, 
-            "disk_read_mb": 216.2, 
-            "disk_write_mb": 4.0
-        }, 
-        "metric_values": {
-            "r2": 0.34869447961405486
-        }, 
-        "scaled_scores": {
-            "r2": 0.7388274824848621
-        }, 
-        "mean_score": 0.7388274824848621
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "random_proportions", 
-        "dataset_id": "pancreas_alpha_5", 
-        "submission_time": "2022-12-14 10:23:15.216", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 89.0, 
-            "cpu_pct": 104.0, 
-            "peak_memory_mb": 654.1, 
-            "disk_read_mb": 216.2, 
-            "disk_write_mb": 4.0
-        }, 
-        "metric_values": {
-            "r2": -1.4937750977117825
-        }, 
-        "scaled_scores": {
-            "r2": 0.0
-        }, 
-        "mean_score": 0.0
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nmf", 
-        "dataset_id": "pancreas_alpha_5", 
-        "submission_time": "2022-12-14 10:23:15.100", 
-        "code_version": "1.0.2", 
-        "resources": {
-            "duration_sec": 100.0, 
-            "cpu_pct": 1231.5, 
-            "peak_memory_mb": 661.5, 
-            "disk_read_mb": 216.2, 
-            "disk_write_mb": 4.0
-        }, 
-        "metric_values": {
-            "r2": -1.1774006645156976
-        }, 
-        "scaled_scores": {
-            "r2": 0.1268656638228448
-        }, 
-        "mean_score": 0.1268656638228448
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "true_proportions", 
-        "dataset_id": "pancreas_alpha_5", 
-        "submission_time": "2022-12-14 10:23:15.802", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 130.0, 
-            "cpu_pct": 52.7, 
-            "peak_memory_mb": 420.6, 
-            "disk_read_mb": 216.2, 
-            "disk_write_mb": 4.0
-        }, 
-        "metric_values": {
-            "r2": 1.0
-        }, 
-        "scaled_scores": {
-            "r2": 1.0
-        }, 
-        "mean_score": 1.0
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nmfreg", 
-        "dataset_id": "pancreas_alpha_5", 
-        "submission_time": "2022-12-14 10:23:15.315", 
-        "code_version": "1.0.2", 
-        "resources": {
-            "duration_sec": 159.0, 
-            "cpu_pct": 1447.3, 
-            "peak_memory_mb": 1400.0, 
-            "disk_read_mb": 216.3, 
-            "disk_write_mb": 4.0
-        }, 
-        "metric_values": {
-            "r2": -0.3213778887467662
-        }, 
-        "scaled_scores": {
-            "r2": 0.4701294876353424
-        }, 
-        "mean_score": 0.4701294876353424
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "tangram", 
-        "dataset_id": "pancreas_alpha_5", 
-        "submission_time": "2022-12-14 10:23:15.417", 
-        "code_version": "1.0.3", 
-        "resources": {
-            "duration_sec": 169.0, 
-            "cpu_pct": 364.0, 
-            "peak_memory_mb": 1000.0, 
-            "disk_read_mb": 228.7, 
-            "disk_write_mb": 4.7
-        }, 
-        "metric_values": {
-            "r2": -1.9233526328960597
-        }, 
-        "scaled_scores": {
-            "r2": -0.1722599345780802
-        }, 
-        "mean_score": -0.1722599345780802
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "stereoscope", 
-        "dataset_id": "pancreas_alpha_5", 
-        "submission_time": "2022-12-14 10:23:15.478", 
-        "code_version": "0.19.0", 
-        "resources": {
-            "duration_sec": 369.0, 
-            "cpu_pct": 1359.5, 
-            "peak_memory_mb": 1200.0, 
-            "disk_read_mb": 236.4, 
-            "disk_write_mb": 4.3
-        }, 
-        "metric_values": {
-            "r2": 0.17501627589062385
-        }, 
-        "scaled_scores": {
-            "r2": 0.6691827884293344
-        }, 
-        "mean_score": 0.6691827884293344
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "rctd", 
-        "dataset_id": "pancreas_alpha_5", 
-        "submission_time": "2022-12-14 10:23:27.338", 
-        "code_version": "2.0.1", 
-        "resources": {
-            "duration_sec": 687.0, 
-            "cpu_pct": 84.6, 
-            "peak_memory_mb": 2400.0, 
-            "disk_read_mb": 391.7, 
-            "disk_write_mb": 4.6
-        }, 
-        "metric_values": {
-            "r2": 0.33606688989117856
-        }, 
-        "scaled_scores": {
-            "r2": 0.7337638383196513
-        }, 
-        "mean_score": 0.7337638383196513
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "seuratv3", 
-        "dataset_id": "pancreas_alpha_5", 
-        "submission_time": "2022-12-14 10:23:27.315", 
-        "code_version": "4.1.1", 
-        "resources": {
-            "duration_sec": 727.0, 
-            "cpu_pct": 113.0, 
-            "peak_memory_mb": 96000.0, 
-            "disk_read_mb": 444.3, 
-            "disk_write_mb": 138.1
-        }, 
-        "metric_values": {
-            "r2": -2.414836981842052
-        }, 
-        "scaled_scores": {
-            "r2": -0.3693444067892929
-        }, 
-        "mean_score": -0.3693444067892929
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "destvi", 
-        "dataset_id": "pancreas_alpha_5", 
-        "submission_time": "2022-12-14 10:23:15.235", 
-        "code_version": "0.19.0", 
-        "resources": {
-            "duration_sec": 1299.0, 
-            "cpu_pct": 1258.5, 
-            "peak_memory_mb": 1700.0, 
-            "disk_read_mb": 236.4, 
-            "disk_write_mb": 4.3
-        }, 
-        "metric_values": {
-            "r2": -0.7515071105345592
-        }, 
-        "scaled_scores": {
-            "r2": 0.29764832757304677
-        }, 
-        "mean_score": 0.29764832757304677
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_1", 
-        "dataset_id": "pancreas_alpha_5", 
-        "submission_time": "2022-12-14 10:58:55.705", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 7701.0, 
-            "cpu_pct": 916.1, 
-            "peak_memory_mb": 6000.0, 
-            "disk_read_mb": 239.2, 
-            "disk_write_mb": 15.2
-        }, 
-        "metric_values": {
-            "r2": 0.6857855406296502
-        }, 
-        "scaled_scores": {
-            "r2": 0.8740004823776353
-        }, 
-        "mean_score": 0.8740004823776353
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_amortised_detection_alpha_20", 
-        "dataset_id": "pancreas_alpha_5", 
-        "submission_time": "2022-12-14 10:54:35.110", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 13431.0, 
-            "cpu_pct": 1239.2, 
-            "peak_memory_mb": 15300.0, 
-            "disk_read_mb": 239.2, 
-            "disk_write_mb": 47.6
-        }, 
-        "metric_values": {
-            "r2": 0.6609162753372047
-        }, 
-        "scaled_scores": {
-            "r2": 0.8640279450324413
-        }, 
-        "mean_score": 0.8640279450324413
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_200", 
-        "dataset_id": "pancreas_alpha_5", 
-        "submission_time": "2022-12-14 10:54:36.009", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 22661.0, 
-            "cpu_pct": 1432.7, 
-            "peak_memory_mb": 5700.0, 
-            "disk_read_mb": 239.3, 
-            "disk_write_mb": 16.7
-        }, 
-        "metric_values": {
-            "r2": 0.6689162149964898
-        }, 
-        "scaled_scores": {
-            "r2": 0.8672359086000565
-        }, 
-        "mean_score": 0.8672359086000565
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_20_nb", 
-        "dataset_id": "pancreas_alpha_5", 
-        "submission_time": "2022-12-14 10:59:39.241", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 24327.0, 
-            "cpu_pct": 1140.9, 
-            "peak_memory_mb": 3200.0, 
-            "disk_read_mb": 239.3, 
-            "disk_write_mb": 16.8
-        }, 
-        "metric_values": {
-            "r2": 0.6838623707940487
-        }, 
-        "scaled_scores": {
-            "r2": 0.8732292942150115
-        }, 
-        "mean_score": 0.8732292942150115
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_20", 
-        "dataset_id": "pancreas_alpha_5", 
-        "submission_time": "2022-12-14 13:16:07.335", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 27400.0, 
-            "cpu_pct": 1429.5, 
-            "peak_memory_mb": 1900.0, 
-            "disk_read_mb": 239.3, 
-            "disk_write_mb": 14.9
-        }, 
-        "metric_values": {
-            "r2": 0.6824342162338214
-        }, 
-        "scaled_scores": {
-            "r2": 0.8726566064206961
-        }, 
-        "mean_score": 0.8726566064206961
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "random_proportions", 
-        "dataset_id": "tabula_muris_senis_alpha_0_5", 
-        "submission_time": "2022-12-14 10:24:26.383", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 389.0, 
-            "cpu_pct": 18.9, 
-            "peak_memory_mb": 229.1, 
-            "disk_read_mb": 286.1, 
-            "disk_write_mb": 4.4
-        }, 
-        "metric_values": {
-            "r2": -1.695437129832705
-        }, 
-        "scaled_scores": {
-            "r2": 0.0
-        }, 
-        "mean_score": 0.0
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nnls_scipy", 
-        "dataset_id": "tabula_muris_senis_alpha_0_5", 
-        "submission_time": "2022-12-14 10:24:26.386", 
-        "code_version": "1.9.3", 
-        "resources": {
-            "duration_sec": 389.0, 
-            "cpu_pct": 20.8, 
-            "peak_memory_mb": 849.2, 
-            "disk_read_mb": 286.1, 
-            "disk_write_mb": 4.4
-        }, 
-        "metric_values": {
-            "r2": 0.18359039408305017
-        }, 
-        "scaled_scores": {
-            "r2": 0.6971142094612235
-        }, 
-        "mean_score": 0.6971142094612235
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "true_proportions", 
-        "dataset_id": "tabula_muris_senis_alpha_0_5", 
-        "submission_time": "2022-12-14 10:24:26.468", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 389.0, 
-            "cpu_pct": 20.6, 
-            "peak_memory_mb": 228.5, 
-            "disk_read_mb": 286.1, 
-            "disk_write_mb": 4.4
-        }, 
-        "metric_values": {
-            "r2": 1.0
-        }, 
-        "scaled_scores": {
-            "r2": 1.0
-        }, 
-        "mean_score": 1.0
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nmf", 
-        "dataset_id": "tabula_muris_senis_alpha_0_5", 
-        "submission_time": "2022-12-14 10:24:26.264", 
-        "code_version": "1.0.2", 
-        "resources": {
-            "duration_sec": 429.0, 
-            "cpu_pct": 1089.1, 
-            "peak_memory_mb": 847.9, 
-            "disk_read_mb": 286.1, 
-            "disk_write_mb": 4.4
-        }, 
-        "metric_values": {
-            "r2": -0.008727019140854447
-        }, 
-        "scaled_scores": {
-            "r2": 0.6257649610979938
-        }, 
-        "mean_score": 0.6257649610979938
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nmfreg", 
-        "dataset_id": "tabula_muris_senis_alpha_0_5", 
-        "submission_time": "2022-12-14 10:24:26.446", 
-        "code_version": "1.0.2", 
-        "resources": {
-            "duration_sec": 869.0, 
-            "cpu_pct": 508.5, 
-            "peak_memory_mb": 3700.0, 
-            "disk_read_mb": 286.1, 
-            "disk_write_mb": 4.4
-        }, 
-        "metric_values": {
-            "r2": -1.412269879325964
-        }, 
-        "scaled_scores": {
-            "r2": 0.10505429615578381
-        }, 
-        "mean_score": 0.10505429615578381
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "rctd", 
-        "dataset_id": "tabula_muris_senis_alpha_0_5", 
-        "submission_time": "2022-12-14 10:24:26.550", 
-        "code_version": "2.0.1", 
-        "resources": {
-            "duration_sec": 958.0, 
-            "cpu_pct": 93.8, 
+            "duration_sec": 12567.0, 
+            "cpu_pct": 1840.5, 
             "peak_memory_mb": 5100.0, 
-            "disk_read_mb": 461.5, 
-            "disk_write_mb": 4.9
+            "disk_read_mb": 493.8, 
+            "disk_write_mb": 38.6
         }, 
         "metric_values": {
-            "r2": 0.41057349242569763
+            "r2": 0.882229279332234
         }, 
         "scaled_scores": {
-            "r2": 0.7813243347245552
+            "r2": 0.8983416346186552
         }, 
-        "mean_score": 0.7813243347245552
+        "mean_score": 0.8983416346186552
     }, 
     {
         "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "seuratv3", 
-        "dataset_id": "tabula_muris_senis_alpha_0_5", 
-        "submission_time": "2022-12-14 10:24:26.610", 
-        "code_version": "4.1.1", 
-        "resources": {
-            "duration_sec": 1008.0, 
-            "cpu_pct": 116.7, 
-            "peak_memory_mb": 217900.0, 
-            "disk_read_mb": 715.7, 
-            "disk_write_mb": 339.5
-        }, 
-        "metric_values": {
-            "r2": -1.1871500630875524
-        }, 
-        "scaled_scores": {
-            "r2": 0.18857314871844177
-        }, 
-        "mean_score": 0.18857314871844177
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "tangram", 
-        "dataset_id": "tabula_muris_senis_alpha_0_5", 
-        "submission_time": "2022-12-14 11:00:57.438", 
-        "code_version": "1.0.3", 
-        "resources": {
-            "duration_sec": 1149.0, 
-            "cpu_pct": 1518.6, 
-            "peak_memory_mb": 1400.0, 
-            "disk_read_mb": 298.6, 
-            "disk_write_mb": 5.0
-        }, 
-        "metric_values": {
-            "r2": -2.21723338785429
-        }, 
-        "scaled_scores": {
-            "r2": -0.1935850227209606
-        }, 
-        "mean_score": -0.1935850227209606
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "stereoscope", 
-        "dataset_id": "tabula_muris_senis_alpha_0_5", 
-        "submission_time": "2022-12-14 11:00:57.662", 
-        "code_version": "0.19.0", 
-        "resources": {
-            "duration_sec": 3599.0, 
-            "cpu_pct": 1676.6, 
-            "peak_memory_mb": 1500.0, 
-            "disk_read_mb": 306.3, 
-            "disk_write_mb": 4.7
-        }, 
-        "metric_values": {
-            "r2": 0.007010408295945489
-        }, 
-        "scaled_scores": {
-            "r2": 0.6316035047845151
-        }, 
-        "mean_score": 0.6316035047845151
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_1", 
-        "dataset_id": "tabula_muris_senis_alpha_0_5", 
-        "submission_time": "2022-12-14 11:00:58.379", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 15928.0, 
-            "cpu_pct": 962.4, 
-            "peak_memory_mb": 1300.0, 
-            "disk_read_mb": 309.1, 
-            "disk_write_mb": 17.2
-        }, 
-        "metric_values": {
-            "r2": 0.5594370504797405
-        }, 
-        "scaled_scores": {
-            "r2": 0.836552318492547
-        }, 
-        "mean_score": 0.836552318492547
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_200", 
-        "dataset_id": "tabula_muris_senis_alpha_0_5", 
-        "submission_time": "2022-12-14 11:00:54.861", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 23792.0, 
-            "cpu_pct": 1448.0, 
-            "peak_memory_mb": 1300.0, 
-            "disk_read_mb": 309.1, 
-            "disk_write_mb": 17.6
-        }, 
-        "metric_values": {
-            "r2": 0.5507250122154509
-        }, 
-        "scaled_scores": {
-            "r2": 0.8333201754876643
-        }, 
-        "mean_score": 0.8333201754876643
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "destvi", 
-        "dataset_id": "tabula_muris_senis_alpha_0_5", 
-        "submission_time": "2022-12-14 11:00:57.216", 
-        "code_version": "0.19.0", 
-        "resources": {
-            "duration_sec": 25920.0, 
-            "cpu_pct": 1650.8, 
-            "peak_memory_mb": 2200.0, 
-            "disk_read_mb": 306.3, 
-            "disk_write_mb": 4.7
-        }, 
-        "metric_values": {
-            "r2": -0.2433305379457803
-        }, 
-        "scaled_scores": {
-            "r2": 0.5387276801284737
-        }, 
-        "mean_score": 0.5387276801284737
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_20_nb", 
-        "dataset_id": "tabula_muris_senis_alpha_0_5", 
-        "submission_time": "2022-12-14 11:00:57.921", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 26119.0, 
-            "cpu_pct": 1504.1, 
-            "peak_memory_mb": 6200.0, 
-            "disk_read_mb": 309.1, 
-            "disk_write_mb": 17.0
-        }, 
-        "metric_values": {
-            "r2": 0.5244094027031608
-        }, 
-        "scaled_scores": {
-            "r2": 0.8235571544099205
-        }, 
-        "mean_score": 0.8235571544099205
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_20", 
-        "dataset_id": "tabula_muris_senis_alpha_0_5", 
-        "submission_time": "2022-12-14 11:00:58.150", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 26349.0, 
-            "cpu_pct": 1435.1, 
-            "peak_memory_mb": 1300.0, 
-            "disk_read_mb": 309.1, 
-            "disk_write_mb": 17.6
-        }, 
-        "metric_values": {
-            "r2": 0.5559850556337562
-        }, 
-        "scaled_scores": {
-            "r2": 0.8352716375937873
-        }, 
-        "mean_score": 0.8352716375937873
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "cell2location_amortised_detection_alpha_20", 
-        "dataset_id": "tabula_muris_senis_alpha_0_5", 
-        "submission_time": "2022-12-14 11:00:55.992", 
-        "code_version": "0.1", 
+        "dataset_id": "destvi", 
+        "submission_time": "2023-02-04 06:02:42.630", 
+        "code_version": "0.1.3", 
         "resources": {
-            "duration_sec": 27581.0, 
-            "cpu_pct": 1616.6, 
-            "peak_memory_mb": 15600.0, 
-            "disk_read_mb": 309.1, 
-            "disk_write_mb": 51.3
+            "duration_sec": 15909.0, 
+            "cpu_pct": 1918.0, 
+            "peak_memory_mb": 41400.0, 
+            "disk_read_mb": 493.8, 
+            "disk_write_mb": 65.099999
         }, 
         "metric_values": {
-            "r2": 0.5317215153410179
+            "r2": 0.8847743318600099
         }, 
         "scaled_scores": {
-            "r2": 0.8262699287339541
+            "r2": 0.9005384954200186
         }, 
-        "mean_score": 0.8262699287339541
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "random_proportions", 
-        "dataset_id": "tabula_muris_senis_alpha_1", 
-        "submission_time": "2022-12-14 10:24:25.977", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 389.0, 
-            "cpu_pct": 21.6, 
-            "peak_memory_mb": 234.7, 
-            "disk_read_mb": 286.2, 
-            "disk_write_mb": 4.6
-        }, 
-        "metric_values": {
-            "r2": -1.3453960280347264
-        }, 
-        "scaled_scores": {
-            "r2": 0.0
-        }, 
-        "mean_score": 0.0
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nnls_scipy", 
-        "dataset_id": "tabula_muris_senis_alpha_1", 
-        "submission_time": "2022-12-14 10:24:25.945", 
-        "code_version": "1.9.3", 
-        "resources": {
-            "duration_sec": 399.0, 
-            "cpu_pct": 24.7, 
-            "peak_memory_mb": 231.8, 
-            "disk_read_mb": 286.2, 
-            "disk_write_mb": 4.6
-        }, 
-        "metric_values": {
-            "r2": -0.0950141414820289
-        }, 
-        "scaled_scores": {
-            "r2": 0.5331218572926585
-        }, 
-        "mean_score": 0.5331218572926585
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "true_proportions", 
-        "dataset_id": "tabula_muris_senis_alpha_1", 
-        "submission_time": "2022-12-14 10:24:26.021", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 399.0, 
-            "cpu_pct": 24.3, 
-            "peak_memory_mb": 230.1, 
-            "disk_read_mb": 286.2, 
-            "disk_write_mb": 4.6
-        }, 
-        "metric_values": {
-            "r2": 1.0
-        }, 
-        "scaled_scores": {
-            "r2": 1.0
-        }, 
-        "mean_score": 1.0
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nmf", 
-        "dataset_id": "tabula_muris_senis_alpha_1", 
-        "submission_time": "2022-12-14 10:24:25.869", 
-        "code_version": "1.0.2", 
-        "resources": {
-            "duration_sec": 599.0, 
-            "cpu_pct": 573.9, 
-            "peak_memory_mb": 847.4, 
-            "disk_read_mb": 286.2, 
-            "disk_write_mb": 4.5
-        }, 
-        "metric_values": {
-            "r2": -0.5276169500927715
-        }, 
-        "scaled_scores": {
-            "r2": 0.3486741975201497
-        }, 
-        "mean_score": 0.3486741975201497
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nmfreg", 
-        "dataset_id": "tabula_muris_senis_alpha_1", 
-        "submission_time": "2022-12-14 10:24:25.978", 
-        "code_version": "1.0.2", 
-        "resources": {
-            "duration_sec": 869.0, 
-            "cpu_pct": 510.5, 
-            "peak_memory_mb": 3300.0, 
-            "disk_read_mb": 286.2, 
-            "disk_write_mb": 4.6
-        }, 
-        "metric_values": {
-            "r2": -2.8227204051350188
-        }, 
-        "scaled_scores": {
-            "r2": -0.6298826976091472
-        }, 
-        "mean_score": -0.6298826976091472
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "seuratv3", 
-        "dataset_id": "tabula_muris_senis_alpha_1", 
-        "submission_time": "2022-12-14 10:24:26.170", 
-        "code_version": "4.1.1", 
-        "resources": {
-            "duration_sec": 988.0, 
-            "cpu_pct": 120.5, 
-            "peak_memory_mb": 196000.0, 
-            "disk_read_mb": 715.9, 
-            "disk_write_mb": 339.8
-        }, 
-        "metric_values": {
-            "r2": -1.5954105338832163
-        }, 
-        "scaled_scores": {
-            "r2": -0.10659799149484539
-        }, 
-        "mean_score": -0.10659799149484539
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "rctd", 
-        "dataset_id": "tabula_muris_senis_alpha_1", 
-        "submission_time": "2022-12-14 10:24:26.152", 
-        "code_version": "2.0.1", 
-        "resources": {
-            "duration_sec": 1008.0, 
-            "cpu_pct": 90.7, 
-            "peak_memory_mb": 5100.0, 
-            "disk_read_mb": 461.6, 
-            "disk_write_mb": 5.1
-        }, 
-        "metric_values": {
-            "r2": 0.2919180534266436
-        }, 
-        "scaled_scores": {
-            "r2": 0.698097064159063
-        }, 
-        "mean_score": 0.698097064159063
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "tangram", 
-        "dataset_id": "tabula_muris_senis_alpha_1", 
-        "submission_time": "2022-12-14 11:00:54.054", 
-        "code_version": "1.0.3", 
-        "resources": {
-            "duration_sec": 1082.0, 
-            "cpu_pct": 1538.7, 
-            "peak_memory_mb": 1400.0, 
-            "disk_read_mb": 298.7, 
-            "disk_write_mb": 5.1
-        }, 
-        "metric_values": {
-            "r2": -1.8392691421649907
-        }, 
-        "scaled_scores": {
-            "r2": -0.2105713100162852
-        }, 
-        "mean_score": -0.2105713100162852
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "stereoscope", 
-        "dataset_id": "tabula_muris_senis_alpha_1", 
-        "submission_time": "2022-12-14 11:00:54.198", 
-        "code_version": "0.19.0", 
-        "resources": {
-            "duration_sec": 4802.0, 
-            "cpu_pct": 1576.0, 
-            "peak_memory_mb": 1400.0, 
-            "disk_read_mb": 306.4, 
-            "disk_write_mb": 4.9
-        }, 
-        "metric_values": {
-            "r2": 0.009826576580171009
-        }, 
-        "scaled_scores": {
-            "r2": 0.5778225034986849
-        }, 
-        "mean_score": 0.5778225034986849
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_1", 
-        "dataset_id": "tabula_muris_senis_alpha_1", 
-        "submission_time": "2022-12-14 11:00:54.649", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 23772.0, 
-            "cpu_pct": 1445.0, 
-            "peak_memory_mb": 1400.0, 
-            "disk_read_mb": 309.2, 
-            "disk_write_mb": 17.7
-        }, 
-        "metric_values": {
-            "r2": 0.46092017606895747
-        }, 
-        "scaled_scores": {
-            "r2": 0.7701540304974623
-        }, 
-        "mean_score": 0.7701540304974623
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_20", 
-        "dataset_id": "tabula_muris_senis_alpha_1", 
-        "submission_time": "2022-12-14 11:00:55.366", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 23811.0, 
-            "cpu_pct": 1451.5, 
-            "peak_memory_mb": 1300.0, 
-            "disk_read_mb": 309.2, 
-            "disk_write_mb": 17.7
-        }, 
-        "metric_values": {
-            "r2": 0.4521578376375712
-        }, 
-        "scaled_scores": {
-            "r2": 0.7664180565610144
-        }, 
-        "mean_score": 0.7664180565610144
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "destvi", 
-        "dataset_id": "tabula_muris_senis_alpha_1", 
-        "submission_time": "2022-12-14 11:00:53.417", 
-        "code_version": "0.19.0", 
-        "resources": {
-            "duration_sec": 24093.0, 
-            "cpu_pct": 1652.1, 
-            "peak_memory_mb": 2100.0, 
-            "disk_read_mb": 306.4, 
-            "disk_write_mb": 4.8
-        }, 
-        "metric_values": {
-            "r2": -0.2652952627242702
-        }, 
-        "scaled_scores": {
-            "r2": 0.46051956786824744
-        }, 
-        "mean_score": 0.46051956786824744
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_200", 
-        "dataset_id": "tabula_muris_senis_alpha_1", 
-        "submission_time": "2022-12-14 11:00:52.495", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 26544.0, 
-            "cpu_pct": 1416.2, 
-            "peak_memory_mb": 1300.0, 
-            "disk_read_mb": 309.2, 
-            "disk_write_mb": 17.8
-        }, 
-        "metric_values": {
-            "r2": 0.4429603811169565
-        }, 
-        "scaled_scores": {
-            "r2": 0.7624965625315726
-        }, 
-        "mean_score": 0.7624965625315726
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_20_nb", 
-        "dataset_id": "tabula_muris_senis_alpha_1", 
-        "submission_time": "2022-12-14 11:00:54.407", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 26982.0, 
-            "cpu_pct": 1493.0, 
-            "peak_memory_mb": 5500.0, 
-            "disk_read_mb": 309.2, 
-            "disk_write_mb": 17.2
-        }, 
-        "metric_values": {
-            "r2": 0.40774361636205164
-        }, 
-        "scaled_scores": {
-            "r2": 0.7474812882094727
-        }, 
-        "mean_score": 0.7474812882094727
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_amortised_detection_alpha_20", 
-        "dataset_id": "tabula_muris_senis_alpha_1", 
-        "submission_time": "2022-12-14 11:00:52.624", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 58845.0, 
-            "cpu_pct": 1582.3, 
-            "peak_memory_mb": 14700.0, 
-            "disk_read_mb": 309.2, 
-            "disk_write_mb": 51.6
-        }, 
-        "metric_values": {
-            "r2": 0.37708113749699024
-        }, 
-        "scaled_scores": {
-            "r2": 0.7344078121318508
-        }, 
-        "mean_score": 0.7344078121318508
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "random_proportions", 
-        "dataset_id": "tabula_muris_senis_alpha_5", 
-        "submission_time": "2022-12-14 10:23:35.258", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 369.0, 
-            "cpu_pct": 14.4, 
-            "peak_memory_mb": 226.6, 
-            "disk_read_mb": 286.2, 
-            "disk_write_mb": 4.6
-        }, 
-        "metric_values": {
-            "r2": -2.1246958427932863
-        }, 
-        "scaled_scores": {
-            "r2": 0.0
-        }, 
-        "mean_score": 0.0
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nnls_scipy", 
-        "dataset_id": "tabula_muris_senis_alpha_5", 
-        "submission_time": "2022-12-14 10:23:35.289", 
-        "code_version": "1.9.3", 
-        "resources": {
-            "duration_sec": 370.0, 
-            "cpu_pct": 17.0, 
-            "peak_memory_mb": 848.4, 
-            "disk_read_mb": 286.2, 
-            "disk_write_mb": 4.6
-        }, 
-        "metric_values": {
-            "r2": -0.5377355381962826
-        }, 
-        "scaled_scores": {
-            "r2": 0.5078767292685865
-        }, 
-        "mean_score": 0.5078767292685865
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "true_proportions", 
-        "dataset_id": "tabula_muris_senis_alpha_5", 
-        "submission_time": "2022-12-14 10:23:35.380", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 370.0, 
-            "cpu_pct": 16.1, 
-            "peak_memory_mb": 221.4, 
-            "disk_read_mb": 286.2, 
-            "disk_write_mb": 4.6
-        }, 
-        "metric_values": {
-            "r2": 1.0
-        }, 
-        "scaled_scores": {
-            "r2": 1.0
-        }, 
-        "mean_score": 1.0
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nmf", 
-        "dataset_id": "tabula_muris_senis_alpha_5", 
-        "submission_time": "2022-12-14 10:23:35.373", 
-        "code_version": "1.0.2", 
-        "resources": {
-            "duration_sec": 390.0, 
-            "cpu_pct": 553.6, 
-            "peak_memory_mb": 848.1, 
-            "disk_read_mb": 286.2, 
-            "disk_write_mb": 4.6
-        }, 
-        "metric_values": {
-            "r2": -0.226105962038004
-        }, 
-        "scaled_scores": {
-            "r2": 0.6076079005046646
-        }, 
-        "mean_score": 0.6076079005046646
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "nmfreg", 
-        "dataset_id": "tabula_muris_senis_alpha_5", 
-        "submission_time": "2022-12-14 10:23:35.394", 
-        "code_version": "1.0.2", 
-        "resources": {
-            "duration_sec": 559.0, 
-            "cpu_pct": 1162.0, 
-            "peak_memory_mb": 3700.0, 
-            "disk_read_mb": 286.3, 
-            "disk_write_mb": 4.6
-        }, 
-        "metric_values": {
-            "r2": -2.8623882628192665
-        }, 
-        "scaled_scores": {
-            "r2": -0.23608455259009417
-        }, 
-        "mean_score": -0.23608455259009417
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "seuratv3", 
-        "dataset_id": "tabula_muris_senis_alpha_5", 
-        "submission_time": "2022-12-14 10:23:35.585", 
-        "code_version": "4.1.1", 
-        "resources": {
-            "duration_sec": 949.0, 
-            "cpu_pct": 127.2, 
-            "peak_memory_mb": 188700.0, 
-            "disk_read_mb": 716.0, 
-            "disk_write_mb": 339.9
-        }, 
-        "metric_values": {
-            "r2": -2.8789251963734186
-        }, 
-        "scaled_scores": {
-            "r2": -0.2413768864318959
-        }, 
-        "mean_score": -0.2413768864318959
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "rctd", 
-        "dataset_id": "tabula_muris_senis_alpha_5", 
-        "submission_time": "2022-12-14 10:23:35.449", 
-        "code_version": "2.0.1", 
-        "resources": {
-            "duration_sec": 1049.0, 
-            "cpu_pct": 94.3, 
-            "peak_memory_mb": 5100.0, 
-            "disk_read_mb": 461.7, 
-            "disk_write_mb": 5.1
-        }, 
-        "metric_values": {
-            "r2": -0.05757070369485988
-        }, 
-        "scaled_scores": {
-            "r2": 0.6615444328336749
-        }, 
-        "mean_score": 0.6615444328336749
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "tangram", 
-        "dataset_id": "tabula_muris_senis_alpha_5", 
-        "submission_time": "2022-12-14 10:59:51.703", 
-        "code_version": "1.0.3", 
-        "resources": {
-            "duration_sec": 395.0, 
-            "cpu_pct": 1048.8, 
-            "peak_memory_mb": 1400.0, 
-            "disk_read_mb": 298.7, 
-            "disk_write_mb": 5.1
-        }, 
-        "metric_values": {
-            "r2": -2.554126767509973
-        }, 
-        "scaled_scores": {
-            "r2": -0.13743127213713124
-        }, 
-        "mean_score": -0.13743127213713124
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_1", 
-        "dataset_id": "tabula_muris_senis_alpha_5", 
-        "submission_time": "2022-12-14 10:57:46.720", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 3480.0, 
-            "cpu_pct": 948.6, 
-            "peak_memory_mb": 1600.0, 
-            "disk_read_mb": 309.2, 
-            "disk_write_mb": 17.2
-        }, 
-        "metric_values": {
-            "r2": 0.23125010024599382
-        }, 
-        "scaled_scores": {
-            "r2": 0.7539760864958969
-        }, 
-        "mean_score": 0.7539760864958969
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "stereoscope", 
-        "dataset_id": "tabula_muris_senis_alpha_5", 
-        "submission_time": "2022-12-14 10:58:59.669", 
-        "code_version": "0.19.0", 
-        "resources": {
-            "duration_sec": 3817.0, 
-            "cpu_pct": 1460.7, 
-            "peak_memory_mb": 1400.0, 
-            "disk_read_mb": 306.5, 
-            "disk_write_mb": 4.9
-        }, 
-        "metric_values": {
-            "r2": 0.012761433193090204
-        }, 
-        "scaled_scores": {
-            "r2": 0.6840529073945388
-        }, 
-        "mean_score": 0.6840529073945388
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_amortised_detection_alpha_20", 
-        "dataset_id": "tabula_muris_senis_alpha_5", 
-        "submission_time": "2022-12-14 10:59:39.446", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 5437.0, 
-            "cpu_pct": 574.2, 
-            "peak_memory_mb": 12900.0, 
-            "disk_read_mb": 309.2, 
-            "disk_write_mb": 51.3
-        }, 
-        "metric_values": {
-            "r2": 0.0945894454365698
-        }, 
-        "scaled_scores": {
-            "r2": 0.7102404201510862
-        }, 
-        "mean_score": 0.7102404201510862
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_200", 
-        "dataset_id": "tabula_muris_senis_alpha_5", 
-        "submission_time": "2022-12-14 10:59:50.284", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 12876.0, 
-            "cpu_pct": 915.8, 
-            "peak_memory_mb": 1300.0, 
-            "disk_read_mb": 309.2, 
-            "disk_write_mb": 17.4
-        }, 
-        "metric_values": {
-            "r2": 0.21042555486821882
-        }, 
-        "scaled_scores": {
-            "r2": 0.7473115833168741
-        }, 
-        "mean_score": 0.7473115833168741
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "destvi", 
-        "dataset_id": "tabula_muris_senis_alpha_5", 
-        "submission_time": "2022-12-14 13:35:57.253", 
-        "code_version": "0.19.0", 
-        "resources": {
-            "duration_sec": 8760.0, 
-            "cpu_pct": 1373.9, 
-            "peak_memory_mb": 2100.0, 
-            "disk_read_mb": 306.4, 
-            "disk_write_mb": 4.9
-        }, 
-        "metric_values": {
-            "r2": -0.578102309236955
-        }, 
-        "scaled_scores": {
-            "r2": 0.494958105161932
-        }, 
-        "mean_score": 0.494958105161932
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_20", 
-        "dataset_id": "tabula_muris_senis_alpha_5", 
-        "submission_time": "2022-12-14 10:58:56.295", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 24180.0, 
-            "cpu_pct": 1128.9, 
-            "peak_memory_mb": 1400.0, 
-            "disk_read_mb": 309.3, 
-            "disk_write_mb": 17.7
-        }, 
-        "metric_values": {
-            "r2": 0.22340718601483808
-        }, 
-        "scaled_scores": {
-            "r2": 0.7514661096451117
-        }, 
-        "mean_score": 0.7514661096451117
-    }, 
-    {
-        "task_id": "spatial_decomposition", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "cell2location_detection_alpha_20_nb", 
-        "dataset_id": "tabula_muris_senis_alpha_5", 
-        "submission_time": "2022-12-14 13:16:08.224", 
-        "code_version": "0.1", 
-        "resources": {
-            "duration_sec": 26669.0, 
-            "cpu_pct": 1691.0, 
-            "peak_memory_mb": 5500.0, 
-            "disk_read_mb": 309.3, 
-            "disk_write_mb": 16.1
-        }, 
-        "metric_values": {
-            "r2": 0.1756308851879056
-        }, 
-        "scaled_scores": {
-            "r2": 0.7361762052094136
-        }, 
-        "mean_score": 0.7361762052094136
+        "mean_score": 0.9005384954200186
     }
 ]
