@@ -60,3 +60,33 @@ cite_fun <- function(key, format = "markdown") {
 }
 
 ```
+
+
+```{r overall_ranking}
+#| echo: false
+results_long <-
+  inner_join(
+    results %>%
+      unnest(metric_values) %>%
+      gather(metric_id, value, any_of(metric_info$metric_id)) %>%
+      mutate(value = ifelse(is.na(value), NA_real_, value)) %>%
+      select(method_id, dataset_id, metric_id, value),
+    results %>%
+      unnest(scaled_scores) %>%
+      gather(metric_id, score, any_of(metric_info$metric_id)) %>%
+      mutate(score = ifelse(is.na(score), NA_real_, score)) %>%
+      select(method_id, dataset_id, metric_id, score),
+    by = c("method_id", "dataset_id", "metric_id")
+  ) %>%
+  left_join(method_info %>% select(method_id, is_baseline), "method_id")
+
+overall_ranking <- results_long %>%
+  group_by(method_id) %>%
+  summarise(mean_score = mean(score)) %>%
+  arrange(desc(mean_score))
+
+# order by ranking
+results_long$method_id <- factor(results_long$method_id, levels = rev(overall_ranking$method_id))
+results$method_id <- factor(results$method_id, levels = rev(overall_ranking$method_id))
+method_info$method_id <- factor(method_info$method_id, levels = rev(overall_ranking$method_id))
+```
