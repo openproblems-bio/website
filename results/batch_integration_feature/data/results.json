@@ -1,970 +1,2774 @@
 [
     {
         "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "no_integration", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 10:26:36.272", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 229.0, 
-            "cpu_pct": 118.2, 
-            "peak_memory_mb": 1400.0, 
-            "disk_read_mb": 1200.0, 
-            "disk_write_mb": 1200.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 1.0
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 1.0
-        }, 
-        "mean_score": 1.0
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "random_integration", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 10:26:36.404", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 279.0, 
-            "cpu_pct": 92.4, 
-            "peak_memory_mb": 8000.0, 
-            "disk_read_mb": 1200.0, 
-            "disk_write_mb": 1400.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.10200000000000001
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 0.0
-        }, 
-        "mean_score": 0.0
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "batch_random_integration", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 10:26:36.414", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 419.0, 
-            "cpu_pct": 94.9, 
-            "peak_memory_mb": 3900.0, 
-            "disk_read_mb": 1200.0, 
-            "disk_write_mb": 1400.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 1.0
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 1.0
-        }, 
-        "mean_score": 1.0
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "celltype_random_integration", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 10:26:36.300", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 529.0, 
-            "cpu_pct": 95.4, 
-            "peak_memory_mb": 3900.0, 
-            "disk_read_mb": 1200.0, 
-            "disk_write_mb": 1400.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.15760000000000002
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 0.06191536748329622
-        }, 
-        "mean_score": 0.06191536748329622
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "scanorama_feature_hvg_unscaled", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 10:26:36.383", 
-        "code_version": "1.7", 
-        "resources": {
-            "duration_sec": 619.0, 
-            "cpu_pct": 847.6, 
-            "peak_memory_mb": 7600.0, 
-            "disk_read_mb": 1300.0, 
-            "disk_write_mb": 717.7
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.2472
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 0.1616926503340757
-        }, 
-        "mean_score": 0.1616926503340757
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "fastmnn_feature_hvg_unscaled", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 10:26:36.106", 
-        "code_version": "1.12.3", 
-        "resources": {
-            "duration_sec": 759.0, 
-            "cpu_pct": 112.5, 
-            "peak_memory_mb": 8100.0, 
-            "disk_read_mb": 1300.0, 
-            "disk_write_mb": 944.5
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.3036
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 0.22449888641425386
-        }, 
-        "mean_score": 0.22449888641425386
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "fastmnn_feature_hvg_scaled", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 10:26:36.590", 
-        "code_version": "1.12.3", 
-        "resources": {
-            "duration_sec": 819.0, 
-            "cpu_pct": 132.4, 
-            "peak_memory_mb": 8900.0, 
-            "disk_read_mb": 1300.0, 
-            "disk_write_mb": 933.4
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.3034
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 0.2242761692650334
-        }, 
-        "mean_score": 0.2242761692650334
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "combat_hvg_scaled", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 10:26:36.517", 
-        "code_version": "1.9.1", 
-        "resources": {
-            "duration_sec": 858.0, 
-            "cpu_pct": 151.8, 
-            "peak_memory_mb": 5700.0, 
-            "disk_read_mb": 1300.0, 
-            "disk_write_mb": 958.8
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.2537999999999999
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 0.16904231625835178
-        }, 
-        "mean_score": 0.16904231625835178
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "combat_hvg_unscaled", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 10:26:36.324", 
-        "code_version": "1.9.1", 
-        "resources": {
-            "duration_sec": 898.0, 
-            "cpu_pct": 161.3, 
-            "peak_memory_mb": 4800.0, 
-            "disk_read_mb": 1300.0, 
-            "disk_write_mb": 969.9
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.42460000000000003
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 0.35924276169265035
-        }, 
-        "mean_score": 0.35924276169265035
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "mnn_hvg_unscaled", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 10:26:36.680", 
-        "code_version": "0.1.9.5", 
-        "resources": {
-            "duration_sec": 1228.0, 
-            "cpu_pct": 1366.7, 
-            "peak_memory_mb": 41100.0, 
-            "disk_read_mb": 2800.0, 
-            "disk_write_mb": 2100.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.42800000000000005
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 0.3630289532293987
-        }, 
-        "mean_score": 0.3630289532293987
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "combat_full_unscaled", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 10:32:56.102", 
-        "code_version": "1.9.1", 
-        "resources": {
-            "duration_sec": 1409.0, 
-            "cpu_pct": 211.4, 
-            "peak_memory_mb": 17600.0, 
-            "disk_read_mb": 1300.0, 
-            "disk_write_mb": 5500.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.188
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 0.09576837416481068
-        }, 
-        "mean_score": 0.09576837416481068
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "fastmnn_feature_full_unscaled", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 10:40:15.294", 
-        "code_version": "1.12.3", 
-        "resources": {
-            "duration_sec": 970.0, 
-            "cpu_pct": 112.8, 
-            "peak_memory_mb": 23100.0, 
-            "disk_read_mb": 1300.0, 
-            "disk_write_mb": 5400.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.1646
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 0.06971046770601334
-        }, 
-        "mean_score": 0.06971046770601334
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "scanorama_feature_hvg_scaled", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 10:26:36.724", 
-        "code_version": "1.7", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-03 19:10:27.668", 
+        "code_version": "0.7.0", 
         "resources": {
             "duration_sec": 1889.0, 
-            "cpu_pct": 401.3, 
-            "peak_memory_mb": 9100.0, 
-            "disk_read_mb": 1300.0, 
-            "disk_write_mb": 728.8
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.26020000000000004
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 0.1761692650334076
-        }, 
-        "mean_score": 0.1761692650334076
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "combat_full_scaled", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 10:32:25.742", 
-        "code_version": "1.9.1", 
-        "resources": {
-            "duration_sec": 1550.0, 
-            "cpu_pct": 273.4, 
-            "peak_memory_mb": 20100.0, 
-            "disk_read_mb": 1300.0, 
-            "disk_write_mb": 5400.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.041800000000000004
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": -0.06703786191536748
-        }, 
-        "mean_score": -0.06703786191536748
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "fastmnn_feature_full_scaled", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 10:46:05.245", 
-        "code_version": "1.12.3", 
-        "resources": {
-            "duration_sec": 2081.0, 
-            "cpu_pct": 198.2, 
-            "peak_memory_mb": 29600.0, 
-            "disk_read_mb": 1300.0, 
-            "disk_write_mb": 5400.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.1646
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 0.06971046770601334
-        }, 
-        "mean_score": 0.06971046770601334
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "mnn_hvg_scaled", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 11:01:45.678", 
-        "code_version": "0.1.9.5", 
-        "resources": {
-            "duration_sec": 2011.0, 
-            "cpu_pct": 1576.3, 
-            "peak_memory_mb": 92300.0, 
-            "disk_read_mb": 2800.0, 
-            "disk_write_mb": 2200.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.29619999999999996
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 0.21625835189309572
-        }, 
-        "mean_score": 0.21625835189309572
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "scanorama_feature_full_unscaled", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 11:10:16.653", 
-        "code_version": "1.7", 
-        "resources": {
-            "duration_sec": 4510.0, 
-            "cpu_pct": 1985.2, 
-            "peak_memory_mb": 18200.0, 
-            "disk_read_mb": 1300.0, 
-            "disk_write_mb": 3900.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.04359999999999999
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": -0.06503340757238309
-        }, 
-        "mean_score": -0.06503340757238309
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "scanorama_feature_full_scaled", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 11:12:47.404", 
-        "code_version": "1.7", 
-        "resources": {
-            "duration_sec": 5649.0, 
-            "cpu_pct": 949.0, 
-            "peak_memory_mb": 39100.0, 
-            "disk_read_mb": 1300.0, 
-            "disk_write_mb": 3900.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.045200000000000004
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": -0.06325167037861916
-        }, 
-        "mean_score": -0.06325167037861916
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "scalex_hvg", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 11:01:17.235", 
-        "code_version": "1.0.2", 
-        "resources": {
-            "duration_sec": 16989.0, 
-            "cpu_pct": 2031.3, 
-            "peak_memory_mb": 18700.0, 
-            "disk_read_mb": 1300.0, 
-            "disk_write_mb": 1600.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.48840000000000006
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 0.4302895322939867
-        }, 
-        "mean_score": 0.4302895322939867
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "mnn_full_unscaled", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 11:40:06.757", 
-        "code_version": "0.1.9.5", 
-        "resources": {
-            "duration_sec": 16010.0, 
-            "cpu_pct": 2199.3, 
-            "peak_memory_mb": 376900.0, 
-            "disk_read_mb": 10500.0, 
-            "disk_write_mb": 12300.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.2966
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 0.2167037861915367
-        }, 
-        "mean_score": 0.2167037861915367
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "scalex_full", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 13:35:58.610", 
-        "code_version": "1.0.2", 
-        "resources": {
-            "duration_sec": 31248.0, 
-            "cpu_pct": 1960.1, 
-            "peak_memory_mb": 24400.0, 
-            "disk_read_mb": 1300.0, 
-            "disk_write_mb": 7400.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.3136
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 0.23563474387527839
-        }, 
-        "mean_score": 0.23563474387527839
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "mnn_full_scaled", 
-        "dataset_id": "immune_batch", 
-        "submission_time": "2022-12-14 16:08:20.014", 
-        "code_version": "0.1.9.5", 
-        "resources": {
-            "duration_sec": 27557.0, 
-            "cpu_pct": 2716.5, 
-            "peak_memory_mb": 600900.0, 
-            "disk_read_mb": 10500.0, 
-            "disk_write_mb": 13100.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.058800000000000005
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": -0.048106904231625836
-        }, 
-        "mean_score": -0.048106904231625836
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "no_integration", 
-        "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 10:26:44.828", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 451.0, 
-            "cpu_pct": 22.4, 
-            "peak_memory_mb": 1500.0, 
-            "disk_read_mb": 1300.0, 
-            "disk_write_mb": 1300.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 1.0
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 1.0
-        }, 
-        "mean_score": 1.0
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "random_integration", 
-        "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 10:26:45.014", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 510.0, 
-            "cpu_pct": 57.7, 
-            "peak_memory_mb": 6900.0, 
+            "cpu_pct": 97.4, 
+            "peak_memory_mb": 3400.0, 
             "disk_read_mb": 1300.0, 
             "disk_write_mb": 1500.0
         }, 
         "metric_values": {
-            "hvg_conservation": 0.48600000000000004
+            "ari": 0.011085205018005332, 
+            "cc_score": 0.09651103473716632, 
+            "graph_connectivity": 0.2594199361570831, 
+            "hvg_conservation": 1.0, 
+            "isolated_labels_f1": 0.10524315883928957, 
+            "isolated_labels_sil": 0.46850980011125404, 
+            "kBET": 0.0011226415094339748, 
+            "nmi": 0.050319438133450516, 
+            "pcr": 9.430260981392222e-05, 
+            "silhouette": 0.45595280081033707, 
+            "silhouette_batch": 0.8471555788497636
         }, 
         "scaled_scores": {
-            "hvg_conservation": 0.0
+            "ari": 0.05204828393252281, 
+            "cc_score": 0.0005170775897820806, 
+            "graph_connectivity": 0.0895007346089901, 
+            "hvg_conservation": 1.0, 
+            "isolated_labels_f1": 0.054012054778946536, 
+            "isolated_labels_sil": 0.0, 
+            "kBET": 0.0, 
+            "nmi": 0.07628889111661243, 
+            "pcr": 9.438876586901669e-05, 
+            "silhouette": 0.0, 
+            "silhouette_batch": 0.6054263526356887
         }, 
-        "mean_score": 0.0
+        "mean_score": 0.1707170712207647
     }, 
     {
         "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "celltype_random_integration", 
         "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 10:26:45.022", 
-        "code_version": "0.6.0", 
+        "submission_time": "2023-02-03 19:10:28.253", 
+        "code_version": "0.7.0", 
         "resources": {
-            "duration_sec": 631.0, 
-            "cpu_pct": 76.4, 
+            "duration_sec": 1889.0, 
+            "cpu_pct": 89.4, 
             "peak_memory_mb": 3700.0, 
             "disk_read_mb": 1300.0, 
             "disk_write_mb": 1500.0
         }, 
         "metric_values": {
-            "hvg_conservation": 0.5135555555555554
+            "ari": 0.22210323417752673, 
+            "cc_score": 0.19342435266670868, 
+            "graph_connectivity": 0.8295237574437031, 
+            "hvg_conservation": 0.6313333333333334, 
+            "isolated_labels_f1": 0.7179898454574566, 
+            "isolated_labels_sil": 0.5865517035126686, 
+            "kBET": 0.9410512033498516, 
+            "nmi": 0.5959767524839191, 
+            "pcr": 0.9565572556855363, 
+            "silhouette": 0.5284764617681503, 
+            "silhouette_batch": 0.8791921384581614
         }, 
         "scaled_scores": {
-            "hvg_conservation": 0.05361003026372644
+            "ari": 1.0, 
+            "cc_score": 0.14744291209725827, 
+            "graph_connectivity": 0.9893814696279181, 
+            "hvg_conservation": 0.11472785485592324, 
+            "isolated_labels_f1": 1.0, 
+            "isolated_labels_sil": 0.9999993214808914, 
+            "kBET": 1.0, 
+            "nmi": 1.0, 
+            "pcr": 0.9574311784728745, 
+            "silhouette": 1.0, 
+            "silhouette_batch": 0.823411481651783
         }, 
-        "mean_score": 0.05361003026372644
+        "mean_score": 0.8211267471078773
     }, 
     {
         "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "batch_random_integration", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "combat_hvg_unscaled", 
         "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 10:26:45.089", 
-        "code_version": "0.6.0", 
+        "submission_time": "2023-02-03 19:10:27.875", 
+        "code_version": "1.9.1", 
         "resources": {
-            "duration_sec": 631.0, 
-            "cpu_pct": 76.4, 
-            "peak_memory_mb": 3500.0, 
+            "duration_sec": 1899.0, 
+            "cpu_pct": 164.4, 
+            "peak_memory_mb": 3200.0, 
+            "disk_read_mb": 1400.0, 
+            "disk_write_mb": 507.9
+        }, 
+        "metric_values": {
+            "ari": 0.94475449593296, 
+            "cc_score": 0.8755805355122244, 
+            "graph_connectivity": 0.9950160505966628, 
+            "hvg_conservation": 0.6086666666666667, 
+            "isolated_labels_f1": 0.9293409534627012, 
+            "isolated_labels_sil": 0.6551880290110906, 
+            "kBET": 0.1087976930521306, 
+            "nmi": 0.9096031339730573, 
+            "pcr": 0.9999566689589967, 
+            "silhouette": 0.6191973015666008, 
+            "silhouette_batch": 0.9069727824110302
+        }, 
+        "scaled_scores": {
+            "ari": 4.2463505911218995, 
+            "cc_score": 1.1816286006099372, 
+            "graph_connectivity": 1.2506028837667682, 
+            "hvg_conservation": 0.060298826040554906, 
+            "isolated_labels_f1": 1.326294053886356, 
+            "isolated_labels_sil": 1.5814562189858254, 
+            "kBET": 0.11455663325291933, 
+            "nmi": 1.5309196174988784, 
+            "pcr": 1.0008702419983102, 
+            "silhouette": 2.25091368251835, 
+            "silhouette_batch": 1.0124382476416267
+        }, 
+        "mean_score": 1.414211781574675
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "no_integration", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-03 19:10:28.609", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 1962.0, 
+            "cpu_pct": 96.0, 
+            "peak_memory_mb": 1500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1300.0
+        }, 
+        "metric_values": {
+            "ari": 0.2191013652199369, 
+            "cc_score": 0.7557770280146165, 
+            "graph_connectivity": 0.8362509430650784, 
+            "hvg_conservation": 1.0, 
+            "isolated_labels_f1": 0.7168921967529442, 
+            "isolated_labels_sil": 0.58655178360641, 
+            "kBET": 0.08834872340425526, 
+            "nmi": 0.594376451732129, 
+            "pcr": 0.0, 
+            "silhouette": 0.5284764524549246, 
+            "silhouette_batch": 0.7581780530788378
+        }, 
+        "scaled_scores": {
+            "ari": 0.986514769183036, 
+            "cc_score": 1.0, 
+            "graph_connectivity": 1.0, 
+            "hvg_conservation": 1.0, 
+            "isolated_labels_f1": 0.99830539688711, 
+            "isolated_labels_sil": 1.0, 
+            "kBET": 0.09280075681925139, 
+            "nmi": 0.9972909451718016, 
+            "pcr": 0.0, 
+            "silhouette": 0.9999998715836236, 
+            "silhouette_batch": 0.0
+        }, 
+        "mean_score": 0.7340828854222565
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "random_integration", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-03 19:10:28.665", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 2048.0, 
+            "cpu_pct": 83.8, 
+            "peak_memory_mb": 6800.0, 
             "disk_read_mb": 1300.0, 
             "disk_write_mb": 1500.0
         }, 
         "metric_values": {
-            "hvg_conservation": 1.0
+            "ari": -0.00050096135567772, 
+            "cc_score": 0.0961699667077025, 
+            "graph_connectivity": 0.2027182991257362, 
+            "hvg_conservation": 0.5835555555555556, 
+            "isolated_labels_f1": 0.07025782126661596, 
+            "isolated_labels_sil": 0.4930085904003742, 
+            "kBET": 0.31101505217711867, 
+            "nmi": 0.0052538423631594494, 
+            "pcr": 0.9990872212990471, 
+            "silhouette": 0.49422089848667383, 
+            "silhouette_batch": 0.9051447739418581
         }, 
         "scaled_scores": {
-            "hvg_conservation": 1.0
+            "ari": 0.0, 
+            "cc_score": 0.0, 
+            "graph_connectivity": 0.0, 
+            "hvg_conservation": 0.0, 
+            "isolated_labels_f1": 0.0, 
+            "isolated_labels_sil": 0.20754302464025864, 
+            "kBET": 0.329697833695896, 
+            "nmi": 0.0, 
+            "pcr": 1.0, 
+            "silhouette": 0.5276636227533683, 
+            "silhouette_batch": 1.0
         }, 
-        "mean_score": 1.0
+        "mean_score": 0.27862768009904754
     }, 
     {
         "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "fastmnn_feature_hvg_scaled", 
-        "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 10:26:45.178", 
-        "code_version": "1.12.3", 
-        "resources": {
-            "duration_sec": 1000.0, 
-            "cpu_pct": 88.1, 
-            "peak_memory_mb": 5400.0, 
-            "disk_read_mb": 1400.0, 
-            "disk_write_mb": 479.1
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.3026666666666667
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": -0.35667963683527887
-        }, 
-        "mean_score": -0.35667963683527887
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "fastmnn_feature_hvg_unscaled", 
-        "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 10:26:44.748", 
-        "code_version": "1.12.3", 
-        "resources": {
-            "duration_sec": 1010.0, 
-            "cpu_pct": 84.7, 
-            "peak_memory_mb": 5500.0, 
-            "disk_read_mb": 1400.0, 
-            "disk_write_mb": 484.4
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.3033333333333334
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": -0.3553826199740596
-        }, 
-        "mean_score": -0.3553826199740596
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "combat_hvg_unscaled", 
-        "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 10:26:44.938", 
-        "code_version": "1.9.1", 
-        "resources": {
-            "duration_sec": 1050.0, 
-            "cpu_pct": 129.1, 
-            "peak_memory_mb": 3300.0, 
-            "disk_read_mb": 1400.0, 
-            "disk_write_mb": 509.5
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.6155555555555555
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": 0.25205361003026355
-        }, 
-        "mean_score": 0.25205361003026355
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "combat_hvg_scaled", 
-        "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 10:26:45.120", 
-        "code_version": "1.9.1", 
-        "resources": {
-            "duration_sec": 1050.0, 
-            "cpu_pct": 123.2, 
-            "peak_memory_mb": 3600.0, 
-            "disk_read_mb": 1400.0, 
-            "disk_write_mb": 504.3
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.25155555555555553
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": -0.4561175961954173
-        }, 
-        "mean_score": -0.4561175961954173
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "combat_full_unscaled", 
         "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 10:26:45.130", 
+        "submission_time": "2023-02-03 19:10:27.802", 
         "code_version": "1.9.1", 
         "resources": {
-            "duration_sec": 1230.0, 
-            "cpu_pct": 123.2, 
-            "peak_memory_mb": 13900.0, 
+            "duration_sec": 2192.0, 
+            "cpu_pct": 213.7, 
+            "peak_memory_mb": 13800.0, 
             "disk_read_mb": 1400.0, 
             "disk_write_mb": 4300.0
         }, 
         "metric_values": {
-            "hvg_conservation": 0.21866666666666668
+            "ari": 0.7465706806556708, 
+            "cc_score": 0.7824098934331719, 
+            "graph_connectivity": 0.9937376045008615, 
+            "hvg_conservation": 0.6075555555555555, 
+            "isolated_labels_f1": 0.860950752669548, 
+            "isolated_labels_sil": 0.6088187949111065, 
+            "kBET": 0.10928786871244822, 
+            "nmi": 0.8118419858862902, 
+            "pcr": 0.9999725603810083, 
+            "silhouette": 0.5728167071938515, 
+            "silhouette_batch": 0.8952889209373446
         }, 
         "scaled_scores": {
-            "hvg_conservation": -0.5201037613488976
+            "ari": 3.356053735743325, 
+            "cc_score": 1.0403768652291052, 
+            "graph_connectivity": 1.24858491972335, 
+            "hvg_conservation": 0.05763073639274259, 
+            "isolated_labels_f1": 1.2207099570083493, 
+            "isolated_labels_sil": 1.1886363702589782, 
+            "kBET": 0.115078136354557, 
+            "nmi": 1.3654255315038355, 
+            "pcr": 1.0008861479389257, 
+            "silhouette": 1.6113900600177051, 
+            "silhouette_batch": 0.9329381988885794
         }, 
-        "mean_score": -0.5201037613488976
+        "mean_score": 1.1943373326417686
     }, 
     {
         "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "combat_hvg_scaled", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-03 19:10:28.269", 
+        "code_version": "1.9.1", 
+        "resources": {
+            "duration_sec": 2192.0, 
+            "cpu_pct": 330.8, 
+            "peak_memory_mb": 3800.0, 
+            "disk_read_mb": 1400.0, 
+            "disk_write_mb": 502.7
+        }, 
+        "metric_values": {
+            "ari": 0.9475807142920909, 
+            "cc_score": 0.7028731184219738, 
+            "graph_connectivity": 0.995237347137488, 
+            "hvg_conservation": 0.25533333333333336, 
+            "isolated_labels_f1": 0.9584254642528897, 
+            "isolated_labels_sil": 0.6346057044963042, 
+            "kBET": 0.18377607287609599, 
+            "nmi": 0.9188695688000531, 
+            "pcr": 1.0, 
+            "silhouette": 0.625304639339447, 
+            "silhouette_batch": 0.8817652963633499
+        }, 
+        "scaled_scores": {
+            "ari": 4.259046750564723, 
+            "cc_score": 0.9197948101285915, 
+            "graph_connectivity": 1.2509521894307183, 
+            "hvg_conservation": -0.7881536819637142, 
+            "isolated_labels_f1": 1.3711961271264763, 
+            "isolated_labels_sil": 1.4070917775781537, 
+            "kBET": 0.19432692949453445, 
+            "nmi": 1.5466062188956342, 
+            "pcr": 1.0009136126270999, 
+            "silhouette": 2.335125341061054, 
+            "silhouette_batch": 0.8409199209098571
+        }, 
+        "mean_score": 1.3034381814411935
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "fastmnn_feature_hvg_unscaled", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-03 19:10:28.386", 
+        "code_version": "1.14.1", 
+        "resources": {
+            "duration_sec": 2249.0, 
+            "cpu_pct": 145.0, 
+            "peak_memory_mb": 5300.0, 
+            "disk_read_mb": 1400.0, 
+            "disk_write_mb": 482.7
+        }, 
+        "metric_values": {
+            "ari": 0.9266940226883835, 
+            "cc_score": 0.6752525749155565, 
+            "graph_connectivity": 0.954318883709558, 
+            "hvg_conservation": 0.30199999999999994, 
+            "isolated_labels_f1": 0.8575099566904859, 
+            "isolated_labels_sil": 0.6182181586821874, 
+            "kBET": 0.3524408928478697, 
+            "nmi": 0.8757446956715942, 
+            "pcr": 0.7001460695313045, 
+            "silhouette": 0.7582769393920898, 
+            "silhouette_batch": 0.8005636008438299
+        }, 
+        "scaled_scores": {
+            "ari": 4.1652179188408756, 
+            "cc_score": 0.8779205714694552, 
+            "graph_connectivity": 1.186364415115733, 
+            "hvg_conservation": -0.6760939167556034, 
+            "isolated_labels_f1": 1.2153978899025728, 
+            "isolated_labels_sil": 1.2682636646568792, 
+            "kBET": 0.3737712264542112, 
+            "nmi": 1.4736026627619419, 
+            "pcr": 0.7007857318212426, 
+            "silhouette": 4.168627653223595, 
+            "silhouette_batch": 0.2884023506552712
+        }, 
+        "mean_score": 1.3674781971041978
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "fastmnn_feature_hvg_scaled", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-03 19:10:28.366", 
+        "code_version": "1.14.1", 
+        "resources": {
+            "duration_sec": 2269.0, 
+            "cpu_pct": 134.3, 
+            "peak_memory_mb": 5400.0, 
+            "disk_read_mb": 1400.0, 
+            "disk_write_mb": 477.5
+        }, 
+        "metric_values": {
+            "ari": 0.8414837307108444, 
+            "cc_score": 0.675250111342231, 
+            "graph_connectivity": 0.9515937933836826, 
+            "hvg_conservation": 0.30199999999999994, 
+            "isolated_labels_f1": 0.8558907231869478, 
+            "isolated_labels_sil": 0.6182185094803572, 
+            "kBET": 0.3505317910567777, 
+            "nmi": 0.8422885484398398, 
+            "pcr": 0.7001711859512115, 
+            "silhouette": 0.7582772076129913, 
+            "silhouette_batch": 0.8005639171613748
+        }, 
+        "scaled_scores": {
+            "ari": 3.7824295721368313, 
+            "cc_score": 0.877916836558976, 
+            "graph_connectivity": 1.1820629945781413, 
+            "hvg_conservation": -0.6760939167556034, 
+            "isolated_labels_f1": 1.2128980389718413, 
+            "isolated_labels_sil": 1.2682666364653779, 
+            "kBET": 0.3717401127413201, 
+            "nmi": 1.4169667228676943, 
+            "pcr": 0.700810871187828, 
+            "silhouette": 4.168631351615237, 
+            "silhouette_batch": 0.28840450296256204
+        }, 
+        "mean_score": 1.3267303384845643
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "scanorama_feature_hvg_unscaled", 
         "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 10:26:45.041", 
+        "submission_time": "2023-02-03 19:10:28.028", 
         "code_version": "1.7", 
         "resources": {
-            "duration_sec": 1380.0, 
-            "cpu_pct": 207.2, 
-            "peak_memory_mb": 4900.0, 
+            "duration_sec": 2339.0, 
+            "cpu_pct": 477.6, 
+            "peak_memory_mb": 4700.0, 
             "disk_read_mb": 1400.0, 
-            "disk_write_mb": 392.0
+            "disk_write_mb": 391.1
         }, 
         "metric_values": {
-            "hvg_conservation": 0.2426666666666667
+            "ari": 0.6580435977506698, 
+            "cc_score": 0.1406814340200938, 
+            "graph_connectivity": 0.9862516432048677, 
+            "hvg_conservation": 0.24949434464404524, 
+            "isolated_labels_f1": 0.9223583740280867, 
+            "isolated_labels_sil": 0.7128165364265442, 
+            "kBET": 0.20397493214108997, 
+            "nmi": 0.8323507428207756, 
+            "pcr": 0.5293427443657833, 
+            "silhouette": 0.6579896658658981, 
+            "silhouette_batch": 0.8515635248059455
         }, 
         "scaled_scores": {
-            "hvg_conservation": -0.4734111543450065
+            "ari": 2.9583654410867406, 
+            "cc_score": 0.06748179321215635, 
+            "graph_connectivity": 1.2367686994107774, 
+            "hvg_conservation": -0.8021747327117379, 
+            "isolated_labels_f1": 1.3155140103284708, 
+            "isolated_labels_sil": 2.0696597014172977, 
+            "kBET": 0.21581671083009024, 
+            "nmi": 1.400143597424612, 
+            "pcr": 0.5298263585810996, 
+            "silhouette": 2.7858062098255787, 
+            "silhouette_batch": 0.6354191695829376
         }, 
-        "mean_score": -0.4734111543450065
+        "mean_score": 1.1284206326352746
     }, 
     {
         "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "scanorama_feature_hvg_scaled", 
         "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 10:26:45.356", 
+        "submission_time": "2023-02-03 19:10:28.747", 
         "code_version": "1.7", 
         "resources": {
-            "duration_sec": 1389.0, 
-            "cpu_pct": 237.3, 
-            "peak_memory_mb": 4900.0, 
+            "duration_sec": 2481.0, 
+            "cpu_pct": 415.8, 
+            "peak_memory_mb": 5400.0, 
             "disk_read_mb": 1400.0, 
-            "disk_write_mb": 391.9
+            "disk_write_mb": 391.0
         }, 
         "metric_values": {
-            "hvg_conservation": 0.2506666666666667
+            "ari": 0.9447218782814952, 
+            "cc_score": 0.13752334125476062, 
+            "graph_connectivity": 0.9873681393037866, 
+            "hvg_conservation": 0.267942337547128, 
+            "isolated_labels_f1": 0.9433304455607382, 
+            "isolated_labels_sil": 0.7708132515350977, 
+            "kBET": 0.2462102846235502, 
+            "nmi": 0.9116331956609041, 
+            "pcr": 0.7389276789028819, 
+            "silhouette": 0.6713958084583282, 
+            "silhouette_batch": 0.7942680535304334
         }, 
         "scaled_scores": {
-            "hvg_conservation": -0.4578469520103761
+            "ari": 4.2462040635536, 
+            "cc_score": 0.06269395367769792, 
+            "graph_connectivity": 1.2385310333798314, 
+            "hvg_conservation": -0.7578759237128733, 
+            "isolated_labels_f1": 1.3478917078166415, 
+            "isolated_labels_sil": 2.5609824782065704, 
+            "kBET": 0.2607513518199988, 
+            "nmi": 1.5343561892875566, 
+            "pcr": 0.7396027725608412, 
+            "silhouette": 2.970658193514439, 
+            "silhouette_batch": 0.2455658004728372
         }, 
-        "mean_score": -0.4578469520103761
+        "mean_score": 1.3135783291433762
     }, 
     {
         "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "combat_full_scaled", 
         "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 10:26:45.116", 
+        "submission_time": "2023-02-03 19:10:28.101", 
         "code_version": "1.9.1", 
         "resources": {
-            "duration_sec": 1440.0, 
-            "cpu_pct": 139.1, 
-            "peak_memory_mb": 15900.0, 
+            "duration_sec": 2552.0, 
+            "cpu_pct": 259.7, 
+            "peak_memory_mb": 15800.0, 
             "disk_read_mb": 1400.0, 
             "disk_write_mb": 4300.0
         }, 
         "metric_values": {
-            "hvg_conservation": 0.030222222222222223
+            "ari": 0.7268721538405876, 
+            "cc_score": 0.4830234069284963, 
+            "graph_connectivity": 0.9936255701936375, 
+            "hvg_conservation": 0.25288888888888894, 
+            "isolated_labels_f1": 0.9521377834319593, 
+            "isolated_labels_sil": 0.6161751759548982, 
+            "kBET": 0.15695306499925188, 
+            "nmi": 0.8023071906372551, 
+            "pcr": 1.0, 
+            "silhouette": 0.5740139707922935, 
+            "silhouette_batch": 0.882200839609324
         }, 
         "scaled_scores": {
-            "hvg_conservation": -0.8867271941201903
+            "ari": 3.2675624709318094, 
+            "cc_score": 0.5864907501964894, 
+            "graph_connectivity": 1.2484080791006988, 
+            "hvg_conservation": -0.7940234791889008, 
+            "isolated_labels_f1": 1.3614889016287328, 
+            "isolated_labels_sil": 1.2509564095024195, 
+            "kBET": 0.16578964595425819, 
+            "nmi": 1.3492846385645623, 
+            "pcr": 1.0009136126270999, 
+            "silhouette": 1.627898652973851, 
+            "silhouette_batch": 0.8438834710483957
         }, 
-        "mean_score": -0.8867271941201903
+        "mean_score": 1.082604832121765
     }, 
     {
         "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "mnn_hvg_unscaled", 
         "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 10:26:45.279", 
+        "submission_time": "2023-02-03 19:10:28.438", 
         "code_version": "0.1.9.5", 
         "resources": {
-            "duration_sec": 1550.0, 
-            "cpu_pct": 342.2, 
-            "peak_memory_mb": 36800.0, 
+            "duration_sec": 2572.0, 
+            "cpu_pct": 591.3, 
+            "peak_memory_mb": 94800.0, 
             "disk_read_mb": 2100.0, 
             "disk_write_mb": 1100.0
         }, 
         "metric_values": {
-            "hvg_conservation": 0.4731111111111111
+            "ari": 0.8474535537495956, 
+            "cc_score": 0.8584084446933405, 
+            "graph_connectivity": 0.9953274710588493, 
+            "hvg_conservation": 0.46844444444444444, 
+            "isolated_labels_f1": 0.8965030512016119, 
+            "isolated_labels_sil": 0.6855641802151998, 
+            "kBET": 0.13390528618475006, 
+            "nmi": 0.8800272778512946, 
+            "pcr": 0.670475852921203, 
+            "silhouette": 0.6331914067268372, 
+            "silhouette_batch": 0.9139148498780877
         }, 
         "scaled_scores": {
-            "hvg_conservation": -0.025075659316904572
+            "ari": 3.809247678706888, 
+            "cc_score": 1.1555947816498129, 
+            "graph_connectivity": 1.2510944455910338, 
+            "hvg_conservation": -0.2764140875133406, 
+            "isolated_labels_f1": 1.275597313514269, 
+            "isolated_labels_sil": 1.838789671920863, 
+            "kBET": 0.14126886879075404, 
+            "nmi": 1.4808523937378828, 
+            "pcr": 0.6710884081265973, 
+            "silhouette": 2.443872848884437, 
+            "silhouette_batch": 1.059673890012173
         }, 
-        "mean_score": -0.025075659316904572
+        "mean_score": 1.350060564856488
     }, 
     {
         "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "mnn_hvg_scaled", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-03 19:10:28.504", 
+        "code_version": "0.1.9.5", 
+        "resources": {
+            "duration_sec": 2701.0, 
+            "cpu_pct": 488.2, 
+            "peak_memory_mb": 34100.0, 
+            "disk_read_mb": 2100.0, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "ari": 0.9446878042805911, 
+            "cc_score": 0.9081939010545637, 
+            "graph_connectivity": 0.9944937852886497, 
+            "hvg_conservation": 0.2911111111111111, 
+            "isolated_labels_f1": 0.9561209331997054, 
+            "isolated_labels_sil": 0.7226128652691841, 
+            "kBET": 0.12988539835036528, 
+            "nmi": 0.914658958159197, 
+            "pcr": 0.8408975308607606, 
+            "silhouette": 0.6253174692392349, 
+            "silhouette_batch": 0.9140269950390356
+        }, 
+        "scaled_scores": {
+            "ari": 4.246050993658297, 
+            "cc_score": 1.2310722276652946, 
+            "graph_connectivity": 1.2497785137630923, 
+            "hvg_conservation": -0.7022411953041624, 
+            "isolated_labels_f1": 1.3676382807222274, 
+            "isolated_labels_sil": 2.15264991009201, 
+            "kBET": 0.1369920673426592, 
+            "nmi": 1.5394783242961247, 
+            "pcr": 0.841665785463052, 
+            "silhouette": 2.3353022474612337, 
+            "silhouette_batch": 1.0604369550128028
+        }, 
+        "mean_score": 1.40534764637933
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "scalex_hvg", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-03 19:10:28.023", 
+        "code_version": "1.0.2", 
+        "resources": {
+            "duration_sec": 3171.0, 
+            "cpu_pct": 1049.4, 
+            "peak_memory_mb": 19900.0, 
+            "disk_read_mb": 1400.0, 
+            "disk_write_mb": 1000.0
+        }, 
+        "metric_values": {
+            "ari": 0.927867692528279, 
+            "cc_score": 0.7379968111434594, 
+            "graph_connectivity": 0.9923811762687034, 
+            "hvg_conservation": 0.5071111111111111, 
+            "isolated_labels_f1": 0.711966355452761, 
+            "isolated_labels_sil": 0.6110099699969093, 
+            "kBET": 0.23728151770115158, 
+            "nmi": 0.887297634902074, 
+            "pcr": 0.9983702984005319, 
+            "silhouette": 0.6324695348739624, 
+            "silhouette_batch": 0.8858371398965991
+        }, 
+        "scaled_scores": {
+            "ari": 4.170490370409384, 
+            "cc_score": 0.9730442290354984, 
+            "graph_connectivity": 1.2464438647277878, 
+            "hvg_conservation": -0.1835645677694773, 
+            "isolated_labels_f1": 0.9907006450511379, 
+            "isolated_labels_sil": 1.2071990461893831, 
+            "kBET": 0.2512519416681084, 
+            "nmi": 1.493159952707101, 
+            "pcr": 0.9992824221116721, 
+            "silhouette": 2.433919244180247, 
+            "silhouette_batch": 0.8686258090819443
+        }, 
+        "mean_score": 1.3136866324902534
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "fastmnn_feature_full_unscaled", 
         "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 10:45:15.276", 
-        "code_version": "1.12.3", 
+        "submission_time": "2023-02-03 19:50:10.856", 
+        "code_version": "1.14.1", 
         "resources": {
-            "duration_sec": 520.0, 
-            "cpu_pct": 378.4, 
+            "duration_sec": 1749.0, 
+            "cpu_pct": 123.3, 
             "peak_memory_mb": 17700.0, 
             "disk_read_mb": 1400.0, 
             "disk_write_mb": 4300.0
         }, 
         "metric_values": {
-            "hvg_conservation": 0.07577777777777778
+            "ari": 0.8843516060919819, 
+            "cc_score": 0.39360516413378116, 
+            "graph_connectivity": 0.9586861476619145, 
+            "hvg_conservation": 0.29244444444444445, 
+            "isolated_labels_f1": 0.7902230573922528, 
+            "isolated_labels_sil": 0.5867967962597808, 
+            "kBET": 0.31653323169985936, 
+            "nmi": 0.8343837311266546, 
+            "pcr": 0.8642214562049927, 
+            "silhouette": 0.7248280495405197, 
+            "silhouette_batch": 0.8193192065770913
         }, 
         "scaled_scores": {
-            "hvg_conservation": -0.7980977086035452
+            "ari": 3.9750039990404034, 
+            "cc_score": 0.45092785519420414, 
+            "graph_connectivity": 1.1932579256461464, 
+            "hvg_conservation": -0.6990394877267878, 
+            "isolated_labels_f1": 1.1115171231884533, 
+            "isolated_labels_sil": 1.0020756399216284, 
+            "kBET": 0.335568683616592, 
+            "nmi": 1.403585123512475, 
+            "pcr": 0.8650110198399922, 
+            "silhouette": 3.707414175996801, 
+            "silhouette_batch": 0.41602039658515544
         }, 
-        "mean_score": -0.7980977086035452
+        "mean_score": 1.251031132255915
     }, 
     {
         "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "mnn_hvg_scaled", 
-        "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 10:26:44.885", 
-        "code_version": "0.1.9.5", 
-        "resources": {
-            "duration_sec": 1770.0, 
-            "cpu_pct": 298.0, 
-            "peak_memory_mb": 87000.0, 
-            "disk_read_mb": 2100.0, 
-            "disk_write_mb": 1100.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.2928888888888889
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": -0.37570255079982706
-        }, 
-        "mean_score": -0.37570255079982706
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "fastmnn_feature_full_scaled", 
         "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 10:47:35.150", 
-        "code_version": "1.12.3", 
+        "submission_time": "2023-02-03 19:53:20.125", 
+        "code_version": "1.14.1", 
         "resources": {
-            "duration_sec": 992.0, 
-            "cpu_pct": 127.1, 
-            "peak_memory_mb": 24300.0, 
+            "duration_sec": 1809.0, 
+            "cpu_pct": 249.3, 
+            "peak_memory_mb": 22500.0, 
             "disk_read_mb": 1400.0, 
             "disk_write_mb": 4300.0
         }, 
         "metric_values": {
-            "hvg_conservation": 0.076
+            "ari": 0.8845682162624572, 
+            "cc_score": 0.3936123947128169, 
+            "graph_connectivity": 0.9578028868801972, 
+            "hvg_conservation": 0.29222222222222227, 
+            "isolated_labels_f1": 0.7901033009954298, 
+            "isolated_labels_sil": 0.5867939743523797, 
+            "kBET": 0.3174315868266895, 
+            "nmi": 0.834253178500896, 
+            "pcr": 0.8642388034294594, 
+            "silhouette": 0.7248320877552032, 
+            "silhouette_batch": 0.8193145121331149
         }, 
         "scaled_scores": {
-            "hvg_conservation": -0.7976653696498055
+            "ari": 3.975977072211627, 
+            "cc_score": 0.4509388171433097, 
+            "graph_connectivity": 1.1918637421101173, 
+            "hvg_conservation": -0.6995731056563501, 
+            "isolated_labels_f1": 1.1113322374759202, 
+            "isolated_labels_sil": 1.0020517339576862, 
+            "kBET": 0.33652445319664503, 
+            "nmi": 1.4033641186665111, 
+            "pcr": 0.8650283829131021, 
+            "silhouette": 3.7074698573376246, 
+            "silhouette_batch": 0.4159884543607602
         }, 
-        "mean_score": -0.7976653696498055
+        "mean_score": 1.2509968876106323
     }, 
     {
         "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "scanorama_feature_full_unscaled", 
         "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 11:02:16.439", 
+        "submission_time": "2023-02-03 19:58:09.743", 
         "code_version": "1.7", 
         "resources": {
-            "duration_sec": 2810.0, 
-            "cpu_pct": 1695.0, 
-            "peak_memory_mb": 26900.0, 
+            "duration_sec": 2350.0, 
+            "cpu_pct": 1429.4, 
+            "peak_memory_mb": 27700.0, 
             "disk_read_mb": 1400.0, 
-            "disk_write_mb": 3200.0
+            "disk_write_mb": 3100.0
         }, 
         "metric_values": {
-            "hvg_conservation": 0.06644444444444444
+            "ari": 0.48880048201085313, 
+            "cc_score": 0.14018259743077882, 
+            "graph_connectivity": 0.8888710305675156, 
+            "hvg_conservation": 0.33577777777777773, 
+            "isolated_labels_f1": 0.7878967846931872, 
+            "isolated_labels_sil": 0.6496435292065144, 
+            "kBET": 0.14101768617021282, 
+            "nmi": 0.7039962252188732, 
+            "pcr": 0.2773006173843109, 
+            "silhouette": 0.5729992762207985, 
+            "silhouette_batch": 0.8441046674897894
         }, 
         "scaled_scores": {
-            "hvg_conservation": -0.8162559446606139
+            "ari": 2.1980782626064426, 
+            "cc_score": 0.0667255299478932, 
+            "graph_connectivity": 1.0830582101898372, 
+            "hvg_conservation": -0.5949839914621134, 
+            "isolated_labels_f1": 1.1079257109806477, 
+            "isolated_labels_sil": 1.5344856442766686, 
+            "kBET": 0.14883582682800783, 
+            "nmi": 1.1828597992125816, 
+            "pcr": 0.2775539627298558, 
+            "silhouette": 1.6139074319282767, 
+            "silhouette_batch": 0.584667153940511
         }, 
-        "mean_score": -0.8162559446606139
+        "mean_score": 0.8366466855616917
     }, 
     {
         "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "scalex_hvg", 
-        "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 11:03:27.322", 
-        "code_version": "1.0.2", 
-        "resources": {
-            "duration_sec": 3829.0, 
-            "cpu_pct": 2191.2, 
-            "peak_memory_mb": 20000.0, 
-            "disk_read_mb": 1400.0, 
-            "disk_write_mb": 1000.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.45311111111111113
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": -0.06398616515348036
-        }, 
-        "mean_score": -0.06398616515348036
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "scanorama_feature_full_scaled", 
-        "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 11:40:47.436", 
-        "code_version": "1.7", 
-        "resources": {
-            "duration_sec": 11879.0, 
-            "cpu_pct": 1150.6, 
-            "peak_memory_mb": 33000.0, 
-            "disk_read_mb": 1400.0, 
-            "disk_write_mb": 3200.0
-        }, 
-        "metric_values": {
-            "hvg_conservation": 0.051111111111111114
-        }, 
-        "scaled_scores": {
-            "hvg_conservation": -0.8460873324686555
-        }, 
-        "mean_score": -0.8460873324686555
-    }, 
-    {
-        "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "mnn_full_unscaled", 
         "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 11:54:36.984", 
+        "submission_time": "2023-02-03 20:10:59.894", 
         "code_version": "0.1.9.5", 
         "resources": {
-            "duration_sec": 11770.0, 
-            "cpu_pct": 2896.4, 
-            "peak_memory_mb": 330200.0, 
+            "duration_sec": 2640.0, 
+            "cpu_pct": 2561.4, 
+            "peak_memory_mb": 191800.0, 
             "disk_read_mb": 8199.999999, 
             "disk_write_mb": 9600.0
         }, 
         "metric_values": {
-            "hvg_conservation": 0.20111111111111113
+            "ari": 0.35387473341080095, 
+            "cc_score": 0.852779758263623, 
+            "graph_connectivity": 0.9930664538245064, 
+            "hvg_conservation": 0.47244444444444444, 
+            "isolated_labels_f1": 0.8927563112742606, 
+            "isolated_labels_sil": 0.6388493763903776, 
+            "kBET": 0.10825037200199783, 
+            "nmi": 0.6493679117754173, 
+            "pcr": 0.7218523217226214, 
+            "silhouette": 0.5800459235906601, 
+            "silhouette_batch": 0.8523803141964809
         }, 
         "scaled_scores": {
-            "hvg_conservation": -0.5542585386943364
+            "ari": 1.5919542482909703, 
+            "cc_score": 1.1470613884223886, 
+            "graph_connectivity": 1.2475255415164406, 
+            "hvg_conservation": -0.2668089647812168, 
+            "isolated_labels_f1": 1.2698129153566642, 
+            "isolated_labels_sil": 1.4430423077913945, 
+            "kBET": 0.1139743325628955, 
+            "nmi": 1.0903827469305085, 
+            "pcr": 0.7225118151186485, 
+            "silhouette": 1.711070857999123, 
+            "silhouette_batch": 0.6409768181835116
         }, 
-        "mean_score": -0.5542585386943364
+        "mean_score": 0.97377309158103
     }, 
     {
         "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "scanorama_feature_full_scaled", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-03 20:03:01.490", 
+        "code_version": "1.7", 
+        "resources": {
+            "duration_sec": 3249.0, 
+            "cpu_pct": 1150.2, 
+            "peak_memory_mb": 30800.0, 
+            "disk_read_mb": 1400.0, 
+            "disk_write_mb": 3200.0
+        }, 
+        "metric_values": {
+            "ari": 0.6649276283053551, 
+            "cc_score": 0.11246672802673367, 
+            "graph_connectivity": 0.983056406387842, 
+            "hvg_conservation": 0.2888888888888889, 
+            "isolated_labels_f1": 0.93038875144532, 
+            "isolated_labels_sil": 0.7090627936025461, 
+            "kBET": 0.18183378143285123, 
+            "nmi": 0.765654285643889, 
+            "pcr": 0.7039574547346306, 
+            "silhouette": 0.5822549760341644, 
+            "silhouette_batch": 0.8444815194773607
+        }, 
+        "scaled_scores": {
+            "ari": 2.9892904222543057, 
+            "cc_score": 0.024706772069331008, 
+            "graph_connectivity": 1.2317251758487435, 
+            "hvg_conservation": -0.7075773745997866, 
+            "isolated_labels_f1": 1.3279116950457965, 
+            "isolated_labels_sil": 2.0378596357724152, 
+            "kBET": 0.1922605049575019, 
+            "nmi": 1.2872370958581634, 
+            "pcr": 0.7046005991542171, 
+            "silhouette": 1.7415306060913949, 
+            "silhouette_batch": 0.587231353409332
+        }, 
+        "mean_score": 1.0378887714419465
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "mnn_full_scaled", 
         "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 11:44:48.621", 
+        "submission_time": "2023-02-03 21:00:40.185", 
         "code_version": "0.1.9.5", 
         "resources": {
-            "duration_sec": 12848.0, 
-            "cpu_pct": 2211.9, 
-            "peak_memory_mb": 505100.0, 
+            "duration_sec": 21511.0, 
+            "cpu_pct": 1433.3, 
+            "peak_memory_mb": 501700.0, 
             "disk_read_mb": 8199.999999, 
             "disk_write_mb": 9900.0
         }, 
         "metric_values": {
-            "hvg_conservation": 0.05688888888888889
+            "ari": 0.654241432765385, 
+            "cc_score": 0.6020715525637308, 
+            "graph_connectivity": 0.9941384139750756, 
+            "hvg_conservation": 0.2595555555555556, 
+            "isolated_labels_f1": 0.9513819136281659, 
+            "isolated_labels_sil": 0.6654129053155581, 
+            "kBET": 0.1724031292796907, 
+            "nmi": 0.7482137200729019, 
+            "pcr": 0.948455028576564, 
+            "silhouette": 0.5732760578393936, 
+            "silhouette_batch": 0.8997697749699883
         }, 
         "scaled_scores": {
-            "hvg_conservation": -0.8348465196714224
+            "ari": 2.9412850577804988, 
+            "cc_score": 0.7669741813461775, 
+            "graph_connectivity": 1.249217577689831, 
+            "hvg_conservation": -0.7780149413020279, 
+            "isolated_labels_f1": 1.3603219532989237, 
+            "isolated_labels_sil": 1.6680768941194912, 
+            "kBET": 0.1822271337673607, 
+            "nmi": 1.2577129902712956, 
+            "pcr": 0.9493215490669079, 
+            "silhouette": 1.617723863902886, 
+            "silhouette_batch": 0.9634271014532636
         }, 
-        "mean_score": -0.8348465196714224
+        "mean_score": 1.1071157601267823
     }, 
     {
         "task_id": "batch_integration_feature", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "scalex_full", 
         "dataset_id": "pancreas_batch", 
-        "submission_time": "2022-12-14 16:08:18.909", 
+        "submission_time": "2023-02-04 04:04:23.557", 
         "code_version": "1.0.2", 
         "resources": {
-            "duration_sec": 30258.0, 
-            "cpu_pct": 2038.8, 
-            "peak_memory_mb": 24600.0, 
-            "disk_read_mb": 1400.0, 
-            "disk_write_mb": 5900.0
+            "duration_sec": 14028.0, 
+            "cpu_pct": 2469.9, 
+            "peak_memory_mb": 29500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 5800.0
         }, 
         "metric_values": {
-            "hvg_conservation": 0.1842222222222222
+            "ari": 0.8988350784439229, 
+            "cc_score": 0.6476908661825974, 
+            "graph_connectivity": 0.9780220429118719, 
+            "hvg_conservation": 0.4144444444444445, 
+            "isolated_labels_f1": 0.7104521033587413, 
+            "isolated_labels_sil": 0.5595035258059701, 
+            "kBET": 0.2748345917077766, 
+            "nmi": 0.8372230690751248, 
+            "pcr": 0.9997575779827014, 
+            "silhouette": 0.5743014588952065, 
+            "silhouette_batch": 0.8868154569755781
         }, 
         "scaled_scores": {
-            "hvg_conservation": -0.587116299178556
+            "ari": 4.040067787785484, 
+            "cc_score": 0.8361355295107631, 
+            "graph_connectivity": 1.2237786816560114, 
+            "hvg_conservation": -0.40608324439701177, 
+            "isolated_labels_f1": 0.9883628694935509, 
+            "isolated_labels_sil": 0.7708590028771423, 
+            "kBET": 0.2912050567570834, 
+            "nmi": 1.4083916713876703, 
+            "pcr": 1.000670969129985, 
+            "silhouette": 1.6318627124148124, 
+            "silhouette_batch": 0.8752825343135756
         }, 
-        "mean_score": -0.587116299178556
+        "mean_score": 1.1509575973571875
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "no_integration", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 19:10:47.669", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 1919.0, 
+            "cpu_pct": 110.8, 
+            "peak_memory_mb": 1400.0, 
+            "disk_read_mb": 1200.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "ari": 0.29956575879565533, 
+            "cc_score": 0.751094841161122, 
+            "graph_connectivity": 0.8056819334047614, 
+            "hvg_conservation": 1.0, 
+            "isolated_labels_f1": 0.7596316496561842, 
+            "isolated_labels_sil": 0.6391010927036405, 
+            "kBET": 0.10196766409866753, 
+            "nmi": 0.6408059163203979, 
+            "pcr": 0.0, 
+            "silhouette": 0.532086718827486, 
+            "silhouette_batch": 0.7666338950368743
+        }, 
+        "scaled_scores": {
+            "ari": 1.0, 
+            "cc_score": 1.0, 
+            "graph_connectivity": 0.9780039111175302, 
+            "hvg_conservation": 1.0, 
+            "isolated_labels_f1": 0.9555265044780181, 
+            "isolated_labels_sil": 0.9999999473825222, 
+            "kBET": 0.0922185588486646, 
+            "nmi": 1.0, 
+            "pcr": 0.0, 
+            "silhouette": 1.0, 
+            "silhouette_batch": 0.0
+        }, 
+        "mean_score": 0.7296135383478851
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "batch_random_integration", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 19:10:47.081", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 2001.0, 
+            "cpu_pct": 95.3, 
+            "peak_memory_mb": 3900.0, 
+            "disk_read_mb": 1200.0, 
+            "disk_write_mb": 1400.0
+        }, 
+        "metric_values": {
+            "ari": 0.05884524968595261, 
+            "cc_score": 0.015340592857061774, 
+            "graph_connectivity": 0.24970431005913485, 
+            "hvg_conservation": 1.0, 
+            "isolated_labels_f1": 0.13930536879654676, 
+            "isolated_labels_sil": 0.4832067391835153, 
+            "kBET": 0.015503482095010734, 
+            "nmi": 0.12350297004100241, 
+            "pcr": 0.0, 
+            "silhouette": 0.4356302171945572, 
+            "silhouette_batch": 0.8500781767736553
+        }, 
+        "scaled_scores": {
+            "ari": 0.19666840109734648, 
+            "cc_score": 0.0, 
+            "graph_connectivity": 0.19544973951106004, 
+            "hvg_conservation": 1.0, 
+            "isolated_labels_f1": 0.13102329312948688, 
+            "isolated_labels_sil": 0.11923447357709761, 
+            "kBET": 0.0, 
+            "nmi": 0.187646897323778, 
+            "pcr": 0.0, 
+            "silhouette": 0.0, 
+            "silhouette_batch": 0.5035439488354697
+        }, 
+        "mean_score": 0.2121424321340217
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "random_integration", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 19:10:47.603", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 2001.0, 
+            "cpu_pct": 93.7, 
+            "peak_memory_mb": 8000.0, 
+            "disk_read_mb": 1200.0, 
+            "disk_write_mb": 1400.0
+        }, 
+        "metric_values": {
+            "ari": -8.697419595809435e-05, 
+            "cc_score": 0.017788276449517283, 
+            "graph_connectivity": 0.11084404248966284, 
+            "hvg_conservation": 0.3656, 
+            "isolated_labels_f1": 0.040728200127837406, 
+            "isolated_labels_sil": 0.4621023910585791, 
+            "kBET": 0.2516785444430816, 
+            "nmi": 0.004010236492021698, 
+            "pcr": 0.9996721577866602, 
+            "silhouette": 0.4582529589533806, 
+            "silhouette_batch": 0.8634706349292087
+        }, 
+        "scaled_scores": {
+            "ari": 0.0, 
+            "cc_score": 0.0033267678686157874, 
+            "graph_connectivity": 0.0, 
+            "hvg_conservation": 0.0, 
+            "isolated_labels_f1": 0.0, 
+            "isolated_labels_sil": 0.0, 
+            "kBET": 0.2518930195258365, 
+            "nmi": 0.0, 
+            "pcr": 1.0, 
+            "silhouette": 0.23453827762607057, 
+            "silhouette_batch": 0.5843606462040644
+        }, 
+        "mean_score": 0.18855624647496247
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "celltype_random_integration", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 19:10:47.297", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 2120.0, 
+            "cpu_pct": 100.2, 
+            "peak_memory_mb": 3900.0, 
+            "disk_read_mb": 1200.0, 
+            "disk_write_mb": 1400.0
+        }, 
+        "metric_values": {
+            "ari": 0.28207893109410975, 
+            "cc_score": 0.3038572461303636, 
+            "graph_connectivity": 0.8213093923890636, 
+            "hvg_conservation": 0.41559999999999997, 
+            "isolated_labels_f1": 0.7930918929812, 
+            "isolated_labels_sil": 0.6391011020168662, 
+            "kBET": 0.9531041460302276, 
+            "nmi": 0.6305814876077719, 
+            "pcr": 0.8435226799627242, 
+            "silhouette": 0.5320867113769054, 
+            "silhouette_batch": 0.932347894638617
+        }, 
+        "scaled_scores": {
+            "ari": 0.9416430228185672, 
+            "cc_score": 0.39213725770302105, 
+            "graph_connectivity": 1.0, 
+            "hvg_conservation": 0.07881462799495584, 
+            "isolated_labels_f1": 1.0, 
+            "isolated_labels_sil": 1.0, 
+            "kBET": 1.0, 
+            "nmi": 0.9839439414611268, 
+            "pcr": 0.8437993129971119, 
+            "silhouette": 0.9999999227570929, 
+            "silhouette_batch": 1.0
+        }, 
+        "mean_score": 0.8400307350665343
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "combat_hvg_scaled", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 19:10:46.989", 
+        "code_version": "1.9.1", 
+        "resources": {
+            "duration_sec": 2130.0, 
+            "cpu_pct": 427.0, 
+            "peak_memory_mb": 5500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 958.9
+        }, 
+        "metric_values": {
+            "ari": 0.6600091540513817, 
+            "cc_score": 0.7742251977481738, 
+            "graph_connectivity": 0.9384742210041475, 
+            "hvg_conservation": 0.2537999999999999, 
+            "isolated_labels_f1": 0.8096842932794925, 
+            "isolated_labels_sil": 0.6039372814702801, 
+            "kBET": 0.0640852652619549, 
+            "nmi": 0.7539186268927016, 
+            "pcr": 1.0, 
+            "silhouette": 0.5677013918757439, 
+            "silhouette_batch": 0.860272040760865
+        }, 
+        "scaled_scores": {
+            "ari": 2.2028703748409137, 
+            "cc_score": 1.0314376120020619, 
+            "graph_connectivity": 1.1649127978326796, 
+            "hvg_conservation": -0.1762295081967214, 
+            "isolated_labels_f1": 1.022053696178992, 
+            "isolated_labels_sil": 0.8013329003572628, 
+            "kBET": 0.05181500508227126, 
+            "nmi": 1.1776279490507677, 
+            "pcr": 1.0003279497291049, 
+            "silhouette": 1.369230403812401, 
+            "silhouette_batch": 0.5650587515178532
+        }, 
+        "mean_score": 0.9282216302006897
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "combat_hvg_unscaled", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 19:10:47.101", 
+        "code_version": "1.9.1", 
+        "resources": {
+            "duration_sec": 2180.0, 
+            "cpu_pct": 333.1, 
+            "peak_memory_mb": 4800.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 970.0
+        }, 
+        "metric_values": {
+            "ari": 0.6276331737464516, 
+            "cc_score": 0.8569046730408661, 
+            "graph_connectivity": 0.9542575505480007, 
+            "hvg_conservation": 0.42460000000000003, 
+            "isolated_labels_f1": 0.7727441471526754, 
+            "isolated_labels_sil": 0.5798769099055789, 
+            "kBET": 0.036326470446280124, 
+            "nmi": 0.7410984878641145, 
+            "pcr": 0.9999916909669999, 
+            "silhouette": 0.5582710355520248, 
+            "silhouette_batch": 0.860385171898604
+        }, 
+        "scaled_scores": {
+            "ari": 2.094825372275106, 
+            "cc_score": 1.1438113774043976, 
+            "graph_connectivity": 1.1871282789199529, 
+            "hvg_conservation": 0.09300126103404799, 
+            "isolated_labels_f1": 0.9729549072851255, 
+            "isolated_labels_sil": 0.6653976077529485, 
+            "kBET": 0.022208802907490416, 
+            "nmi": 1.1574956845981534, 
+            "pcr": 1.0003196379711596, 
+            "silhouette": 1.2714624341673186, 
+            "silhouette_batch": 0.5657414405966927
+        }, 
+        "mean_score": 0.9249406186283994
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "fastmnn_feature_hvg_scaled", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 19:10:47.375", 
+        "code_version": "1.14.1", 
+        "resources": {
+            "duration_sec": 2241.0, 
+            "cpu_pct": 222.3, 
+            "peak_memory_mb": 9100.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 933.5
+        }, 
+        "metric_values": {
+            "ari": 0.6925583931658362, 
+            "cc_score": 0.7447658230487296, 
+            "graph_connectivity": 0.9575059373779858, 
+            "hvg_conservation": 0.3034, 
+            "isolated_labels_f1": 0.6763486365726324, 
+            "isolated_labels_sil": 0.584871057420969, 
+            "kBET": 0.25438124352346114, 
+            "nmi": 0.7586331048145972, 
+            "pcr": 0.8598924468571455, 
+            "silhouette": 0.5881277248263359, 
+            "silhouette_batch": 0.8461476158933401
+        }, 
+        "scaled_scores": {
+            "ari": 2.3114935760695356, 
+            "cc_score": 0.9913979183579558, 
+            "graph_connectivity": 1.1917004749185969, 
+            "hvg_conservation": -0.09804539722572504, 
+            "isolated_labels_f1": 0.8448313528184552, 
+            "isolated_labels_sil": 0.6936133359260596, 
+            "kBET": 0.25477558902939895, 
+            "nmi": 1.1850313879735415, 
+            "pcr": 0.8601744483521516, 
+            "silhouette": 1.580997704147693, 
+            "silhouette_batch": 0.4798250060197666
+        }, 
+        "mean_score": 0.9359813996715846
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "fastmnn_feature_hvg_unscaled", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 19:10:47.537", 
+        "code_version": "1.14.1", 
+        "resources": {
+            "duration_sec": 2262.0, 
+            "cpu_pct": 228.9, 
+            "peak_memory_mb": 8100.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 944.6
+        }, 
+        "metric_values": {
+            "ari": 0.6950391647636355, 
+            "cc_score": 0.7447676105710576, 
+            "graph_connectivity": 0.9586707224061368, 
+            "hvg_conservation": 0.3036, 
+            "isolated_labels_f1": 0.6755106945582198, 
+            "isolated_labels_sil": 0.5848707659170032, 
+            "kBET": 0.2566596221340248, 
+            "nmi": 0.7583362341195952, 
+            "pcr": 0.8598950277970399, 
+            "silhouette": 0.5881270617246628, 
+            "silhouette_batch": 0.8461425368811226
+        }, 
+        "scaled_scores": {
+            "ari": 2.31977239793454, 
+            "cc_score": 0.9914003478679886, 
+            "graph_connectivity": 1.1933399426678908, 
+            "hvg_conservation": -0.09773013871374527, 
+            "isolated_labels_f1": 0.8437176068703557, 
+            "isolated_labels_sil": 0.6936116889990042, 
+            "kBET": 0.25720559862538306, 
+            "nmi": 1.1845651933927583, 
+            "pcr": 0.8601770301384645, 
+            "silhouette": 1.5809908295289592, 
+            "silhouette_batch": 0.4797943567551923
+        }, 
+        "mean_score": 0.9369858958242537
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "scanorama_feature_hvg_unscaled", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 19:10:47.167", 
+        "code_version": "1.7", 
+        "resources": {
+            "duration_sec": 2350.0, 
+            "cpu_pct": 572.3, 
+            "peak_memory_mb": 7600.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 717.8
+        }, 
+        "metric_values": {
+            "ari": 0.7575673255931856, 
+            "cc_score": 0.3917832295523063, 
+            "graph_connectivity": 0.9121733817346305, 
+            "hvg_conservation": 0.2472, 
+            "isolated_labels_f1": 0.8571463939423839, 
+            "isolated_labels_sil": 0.6409373977221549, 
+            "kBET": 0.14437673365091253, 
+            "nmi": 0.8127271653158763, 
+            "pcr": 0.8001191731629149, 
+            "silhouette": 0.606821209192276, 
+            "silhouette_batch": 0.8395405428874008
+        }, 
+        "scaled_scores": {
+            "ari": 2.5284411466066907, 
+            "cc_score": 0.5116418118725896, 
+            "graph_connectivity": 1.1278936254363887, 
+            "hvg_conservation": -0.18663303909205542, 
+            "isolated_labels_f1": 1.0851376821737042, 
+            "isolated_labels_sil": 1.010374627562804, 
+            "kBET": 0.13745004297992502, 
+            "nmi": 1.2699786673204398, 
+            "pcr": 0.8003815720290053, 
+            "silhouette": 1.7747999263875096, 
+            "silhouette_batch": 0.4399546690426978
+        }, 
+        "mean_score": 0.9544927938472452
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "scanorama_feature_hvg_scaled", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 19:10:47.786", 
+        "code_version": "1.7", 
+        "resources": {
+            "duration_sec": 2582.0, 
+            "cpu_pct": 313.4, 
+            "peak_memory_mb": 8000.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 729.0
+        }, 
+        "metric_values": {
+            "ari": 0.7292752412615412, 
+            "cc_score": 0.4348264861759675, 
+            "graph_connectivity": 0.9133954320118194, 
+            "hvg_conservation": 0.25339999999999996, 
+            "isolated_labels_f1": 0.840898214418698, 
+            "isolated_labels_sil": 0.6121049663051963, 
+            "kBET": 0.18835551502179304, 
+            "nmi": 0.7789679302064993, 
+            "pcr": 0.9002640463825228, 
+            "silhouette": 0.5896555185317993, 
+            "silhouette_batch": 0.8367999611141437
+        }, 
+        "scaled_scores": {
+            "ari": 2.434024906683939, 
+            "cc_score": 0.5701440314967064, 
+            "graph_connectivity": 1.1296136956373661, 
+            "hvg_conservation": -0.17686002522068098, 
+            "isolated_labels_f1": 1.0635415051146224, 
+            "isolated_labels_sil": 0.8474783484833851, 
+            "kBET": 0.18435570661959924, 
+            "nmi": 1.2169644334323024, 
+            "pcr": 0.9005592877326568, 
+            "silhouette": 1.5968369029533633, 
+            "silhouette_batch": 0.4234166470298113
+        }, 
+        "mean_score": 0.9263704945420973
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "scalex_hvg", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 19:10:47.275", 
+        "code_version": "1.0.2", 
+        "resources": {
+            "duration_sec": 2682.0, 
+            "cpu_pct": 1410.8, 
+            "peak_memory_mb": 18900.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1600.0
+        }, 
+        "metric_values": {
+            "ari": 0.6882877719967807, 
+            "cc_score": 0.6253940756867831, 
+            "graph_connectivity": 0.9692067891023506, 
+            "hvg_conservation": 0.5409999999999999, 
+            "isolated_labels_f1": 0.6329317706714183, 
+            "isolated_labels_sil": 0.5448097623884678, 
+            "kBET": 0.07017893411027698, 
+            "nmi": 0.7305996871234155, 
+            "pcr": 0.9969927064885287, 
+            "silhouette": 0.553395964205265, 
+            "silhouette_batch": 0.8439523977032432
+        }, 
+        "scaled_scores": {
+            "ari": 2.2972416747889457, 
+            "cc_score": 0.8291538706516698, 
+            "graph_connectivity": 1.2081697534358693, 
+            "hvg_conservation": 0.27648171500630503, 
+            "isolated_labels_f1": 0.7871240680124136, 
+            "isolated_labels_sil": 0.4672766873956509, 
+            "kBET": 0.05831422066809033, 
+            "nmi": 1.1410087625393723, 
+            "pcr": 0.9973196699765411, 
+            "silhouette": 1.2209207779364906, 
+            "silhouette_batch": 0.46657797682867436
+        }, 
+        "mean_score": 0.886326288840002
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "mnn_hvg_scaled", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 19:10:47.578", 
+        "code_version": "0.1.9.5", 
+        "resources": {
+            "duration_sec": 2733.0, 
+            "cpu_pct": 1603.4, 
+            "peak_memory_mb": 26600.0, 
+            "disk_read_mb": 2800.0, 
+            "disk_write_mb": 2200.0
+        }, 
+        "metric_values": {
+            "ari": 0.777119230040482, 
+            "cc_score": 0.6391479365408756, 
+            "graph_connectivity": 0.9755996412725965, 
+            "hvg_conservation": 0.29619999999999996, 
+            "isolated_labels_f1": 0.8508817672601149, 
+            "isolated_labels_sil": 0.6031474368646741, 
+            "kBET": 0.14494832437211935, 
+            "nmi": 0.79434496878365, 
+            "pcr": 0.9246237777312729, 
+            "silhouette": 0.578453928232193, 
+            "silhouette_batch": 0.8979502473160641
+        }, 
+        "scaled_scores": {
+            "ari": 2.5936896903196014, 
+            "cc_score": 0.84784742340491, 
+            "graph_connectivity": 1.2171678730079936, 
+            "hvg_conservation": -0.10939470365699876, 
+            "isolated_labels_f1": 1.076811088610277, 
+            "isolated_labels_sil": 0.7968704689568884, 
+            "kBET": 0.13805967429013313, 
+            "nmi": 1.2411119568283389, 
+            "pcr": 0.9249270078487039, 
+            "silhouette": 1.4807058997553137, 
+            "silhouette_batch": 0.7924276319126923
+        }, 
+        "mean_score": 1.000020364661623
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "mnn_hvg_unscaled", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 19:10:47.501", 
+        "code_version": "0.1.9.5", 
+        "resources": {
+            "duration_sec": 2922.0, 
+            "cpu_pct": 1223.7, 
+            "peak_memory_mb": 20100.0, 
+            "disk_read_mb": 2800.0, 
+            "disk_write_mb": 2100.0
+        }, 
+        "metric_values": {
+            "ari": 0.7026318844827977, 
+            "cc_score": 0.7515144887185998, 
+            "graph_connectivity": 0.9917530338042336, 
+            "hvg_conservation": 0.42800000000000005, 
+            "isolated_labels_f1": 0.8311316010566377, 
+            "isolated_labels_sil": 0.6294912723824382, 
+            "kBET": 0.1529951051099454, 
+            "nmi": 0.7885709515097655, 
+            "pcr": 0.8646849206753955, 
+            "silhouette": 0.5864914208650589, 
+            "silhouette_batch": 0.8955866605245679
+        }, 
+        "scaled_scores": {
+            "ari": 2.3451107942954192, 
+            "cc_score": 1.0005703637572534, 
+            "graph_connectivity": 1.2399042281784807, 
+            "hvg_conservation": 0.09836065573770501, 
+            "isolated_labels_f1": 1.0505602655162305, 
+            "isolated_labels_sil": 0.9457067818042316, 
+            "kBET": 0.146641985552641, 
+            "nmi": 1.2320446571327117, 
+            "pcr": 0.864968493860892, 
+            "silhouette": 1.5640335396427014, 
+            "silhouette_batch": 0.7781645835451643
+        }, 
+        "mean_score": 1.024187849911221
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "combat_full_unscaled", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 19:44:37.556", 
+        "code_version": "1.9.1", 
+        "resources": {
+            "duration_sec": 1632.0, 
+            "cpu_pct": 857.0, 
+            "peak_memory_mb": 17600.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 5500.0
+        }, 
+        "metric_values": {
+            "ari": 0.5670299111476322, 
+            "cc_score": 0.8618061331962791, 
+            "graph_connectivity": 0.9450694706278361, 
+            "hvg_conservation": 0.4204, 
+            "isolated_labels_f1": 0.7937267279253029, 
+            "isolated_labels_sil": 0.5968795358203351, 
+            "kBET": 0.05983377948530111, 
+            "nmi": 0.7216433517138738, 
+            "pcr": 0.9999685992487778, 
+            "silhouette": 0.5669279024004936, 
+            "silhouette_batch": 0.8568171312151119
+        }, 
+        "scaled_scores": {
+            "ari": 1.8925803869089441, 
+            "cc_score": 1.1504731943992856, 
+            "graph_connectivity": 1.174195797523829, 
+            "hvg_conservation": 0.08638083228247163, 
+            "isolated_labels_f1": 1.0008437873200595, 
+            "isolated_labels_sil": 0.7614583407532198, 
+            "kBET": 0.047280573804450034, 
+            "nmi": 1.1269440700591162, 
+            "pcr": 1.000296538680015, 
+            "silhouette": 1.3612113541666466, 
+            "silhouette_batch": 0.5442101234353965
+        }, 
+        "mean_score": 0.9223522726666759
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "combat_full_scaled", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 19:43:29.223", 
+        "code_version": "1.9.1", 
+        "resources": {
+            "duration_sec": 1811.0, 
+            "cpu_pct": 1036.7, 
+            "peak_memory_mb": 23600.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 5400.0
+        }, 
+        "metric_values": {
+            "ari": 0.6121666671829821, 
+            "cc_score": 0.800415618997976, 
+            "graph_connectivity": 0.9402243196951999, 
+            "hvg_conservation": 0.251, 
+            "isolated_labels_f1": 0.7689274127368351, 
+            "isolated_labels_sil": 0.598661535885185, 
+            "kBET": 0.07804556086358572, 
+            "nmi": 0.7097854789272428, 
+            "pcr": 1.0, 
+            "silhouette": 0.5669806748628616, 
+            "silhouette_batch": 0.8593324785519009
+        }, 
+        "scaled_scores": {
+            "ari": 2.0432106033755937, 
+            "cc_score": 1.0670343092826717, 
+            "graph_connectivity": 1.1673761110559076, 
+            "hvg_conservation": -0.1806431273644388, 
+            "isolated_labels_f1": 0.9678819160548267, 
+            "isolated_labels_sil": 0.7715262110512686, 
+            "kBET": 0.06670438831184136, 
+            "nmi": 1.1083229123436198, 
+            "pcr": 1.0003279497291049, 
+            "silhouette": 1.3617584656777901, 
+            "silhouette_batch": 0.5593889697780955
+        }, 
+        "mean_score": 0.9029898826632983
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "fastmnn_feature_full_unscaled", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 19:49:07.647", 
+        "code_version": "1.14.1", 
+        "resources": {
+            "duration_sec": 1993.0, 
+            "cpu_pct": 180.9, 
+            "peak_memory_mb": 24000.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 5400.0
+        }, 
+        "metric_values": {
+            "ari": 0.4927136762485235, 
+            "cc_score": 0.9088974521126296, 
+            "graph_connectivity": 0.9527323918474114, 
+            "hvg_conservation": 0.357, 
+            "isolated_labels_f1": 0.7458724990586556, 
+            "isolated_labels_sil": 0.5756527966004796, 
+            "kBET": 0.32229947732474806, 
+            "nmi": 0.6668852159399377, 
+            "pcr": 0.8111267553450245, 
+            "silhouette": 0.5297409296035767, 
+            "silhouette_batch": 0.8473193702958232
+        }, 
+        "scaled_scores": {
+            "ari": 1.6445725207461197, 
+            "cc_score": 1.2144773357615648, 
+            "graph_connectivity": 1.1849815750718269, 
+            "hvg_conservation": -0.013556116015132402, 
+            "isolated_labels_f1": 0.9372386063135724, 
+            "isolated_labels_sil": 0.6415323870277265, 
+            "kBET": 0.3272139270273973, 
+            "nmi": 1.0409539518650135, 
+            "pcr": 0.8113927641447096, 
+            "silhouette": 0.9756803410428835, 
+            "silhouette_batch": 0.4868959499671647
+        }, 
+        "mean_score": 0.8410348402684407
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "fastmnn_feature_full_scaled", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 19:51:12.257", 
+        "code_version": "1.14.1", 
+        "resources": {
+            "duration_sec": 1967.0, 
+            "cpu_pct": 217.1, 
+            "peak_memory_mb": 29300.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 5400.0
+        }, 
+        "metric_values": {
+            "ari": 0.49326048501001285, 
+            "cc_score": 0.9089301395755566, 
+            "graph_connectivity": 0.9529139756474863, 
+            "hvg_conservation": 0.3564, 
+            "isolated_labels_f1": 0.7442454854698123, 
+            "isolated_labels_sil": 0.5756719050114043, 
+            "kBET": 0.3226748681631846, 
+            "nmi": 0.6670726103517765, 
+            "pcr": 0.8111143752535667, 
+            "silhouette": 0.529738262295723, 
+            "silhouette_batch": 0.8472802572700214
+        }, 
+        "scaled_scores": {
+            "ari": 1.646397328936688, 
+            "cc_score": 1.2145217629096272, 
+            "graph_connectivity": 1.1852371593872344, 
+            "hvg_conservation": -0.014501891551071856, 
+            "isolated_labels_f1": 0.9350760702897076, 
+            "isolated_labels_sil": 0.6416403449378221, 
+            "kBET": 0.32761430093163596, 
+            "nmi": 1.0412482290056644, 
+            "pcr": 0.8113803799932041, 
+            "silhouette": 0.9756526880821339, 
+            "silhouette_batch": 0.48665992267981584
+        }, 
+        "mean_score": 0.840993299600224
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "scanorama_feature_full_scaled", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 19:43:49.018", 
+        "code_version": "1.7", 
+        "resources": {
+            "duration_sec": 2990.0, 
+            "cpu_pct": 512.7, 
+            "peak_memory_mb": 42800.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 3900.0
+        }, 
+        "metric_values": {
+            "ari": 0.6477395909187121, 
+            "cc_score": 0.4651490609438415, 
+            "graph_connectivity": 0.9183243423239311, 
+            "hvg_conservation": 0.25559999999999994, 
+            "isolated_labels_f1": 0.8237512210714375, 
+            "isolated_labels_sil": 0.6033469485118985, 
+            "kBET": 0.19569742783970723, 
+            "nmi": 0.7241525857255791, 
+            "pcr": 0.9169680996595004, 
+            "silhouette": 0.5771165639162064, 
+            "silhouette_batch": 0.8429864036778456
+        }, 
+        "scaled_scores": {
+            "ari": 2.161924433817199, 
+            "cc_score": 0.6113569430602735, 
+            "graph_connectivity": 1.1365512757921332, 
+            "hvg_conservation": -0.17339218158890293, 
+            "isolated_labels_f1": 1.040750674682295, 
+            "isolated_labels_sil": 0.7979976616135143, 
+            "kBET": 0.19218623948963726, 
+            "nmi": 1.130884476835088, 
+            "pcr": 0.9172688190993816, 
+            "silhouette": 1.466840952412769, 
+            "silhouette_batch": 0.4607486924729826
+        }, 
+        "mean_score": 0.885737998880579
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "scanorama_feature_full_unscaled", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 20:38:49.820", 
+        "code_version": "1.7", 
+        "resources": {
+            "duration_sec": 5201.0, 
+            "cpu_pct": 1767.9, 
+            "peak_memory_mb": 19400.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 3900.0
+        }, 
+        "metric_values": {
+            "ari": 0.3434323432134545, 
+            "cc_score": 0.4054291076883601, 
+            "graph_connectivity": 0.8188563031240715, 
+            "hvg_conservation": 0.24339999999999998, 
+            "isolated_labels_f1": 0.8606655699548409, 
+            "isolated_labels_sil": 0.6360078854486346, 
+            "kBET": 0.18948589795661042, 
+            "nmi": 0.6725932732513645, 
+            "pcr": 0.6306063600805463, 
+            "silhouette": 0.561859380453825, 
+            "silhouette_batch": 0.8748511706406672
+        }, 
+        "scaled_scores": {
+            "ari": 1.14639140440954, 
+            "cc_score": 0.530188599971344, 
+            "graph_connectivity": 0.9965472077345652, 
+            "hvg_conservation": -0.19262295081967212, 
+            "isolated_labels_f1": 1.0898151753141698, 
+            "isolated_labels_sil": 0.9825240729071719, 
+            "kBET": 0.18556131896427594, 
+            "nmi": 1.0499176705148718, 
+            "pcr": 0.6308131672655065, 
+            "silhouette": 1.308664124473855, 
+            "silhouette_batch": 0.653036411310266
+        }, 
+        "mean_score": 0.7618942001859903
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "mnn_full_scaled", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 22:54:01.400", 
+        "code_version": "0.1.9.5", 
+        "resources": {
+            "duration_sec": 16180.0, 
+            "cpu_pct": 3640.5, 
+            "peak_memory_mb": 598500.0, 
+            "disk_read_mb": 10500.0, 
+            "disk_write_mb": 13100.0
+        }, 
+        "metric_values": {
+            "ari": 0.6946186335269193, 
+            "cc_score": 0.7750996441211548, 
+            "graph_connectivity": 0.9555341329053504, 
+            "hvg_conservation": 0.2694, 
+            "isolated_labels_f1": 0.8465983735714586, 
+            "isolated_labels_sil": 0.5853395219892263, 
+            "kBET": 0.14865419884315711, 
+            "nmi": 0.7820671108173408, 
+            "pcr": 0.9534183341969515, 
+            "silhouette": 0.5668986365199089, 
+            "silhouette_batch": 0.8911750366904445
+        }, 
+        "scaled_scores": {
+            "ari": 2.3183690026358628, 
+            "cc_score": 1.0326261153304446, 
+            "graph_connectivity": 1.188925104560402, 
+            "hvg_conservation": -0.15163934426229508, 
+            "isolated_labels_f1": 1.0711178398140582, 
+            "isolated_labels_sil": 0.6962600476773544, 
+            "kBET": 0.14201218265919058, 
+            "nmi": 1.2218312701728984, 
+            "pcr": 0.9537310074813751, 
+            "silhouette": 1.3609079440274723, 
+            "silhouette_batch": 0.751542669616795
+        }, 
+        "mean_score": 0.9623348945194142
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "mnn_full_unscaled", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-03 23:24:21.384", 
+        "code_version": "0.1.9.5", 
+        "resources": {
+            "duration_sec": 15420.0, 
+            "cpu_pct": 2358.7, 
+            "peak_memory_mb": 370400.0, 
+            "disk_read_mb": 10500.0, 
+            "disk_write_mb": 12300.0
+        }, 
+        "metric_values": {
+            "ari": 0.37411118743408445, 
+            "cc_score": 0.7651998398881448, 
+            "graph_connectivity": 0.9453169797463673, 
+            "hvg_conservation": 0.49879999999999997, 
+            "isolated_labels_f1": 0.8576763026128, 
+            "isolated_labels_sil": 0.6247401861473918, 
+            "kBET": 0.1258191501857765, 
+            "nmi": 0.6734058578547181, 
+            "pcr": 0.8567518356316002, 
+            "silhouette": 0.5716048255562782, 
+            "silhouette_batch": 0.8652499745178845
+        }, 
+        "scaled_scores": {
+            "ari": 1.248772730667921, 
+            "cc_score": 1.0191708016087373, 
+            "graph_connectivity": 1.1745441735826563, 
+            "hvg_conservation": 0.20996216897856237, 
+            "isolated_labels_f1": 1.0858420073231627, 
+            "isolated_labels_sil": 0.9188642912045907, 
+            "kBET": 0.1176574125147889, 
+            "nmi": 1.0511937228328971, 
+            "pcr": 0.8570328071640056, 
+            "silhouette": 1.409698735282571, 
+            "silhouette_batch": 0.5950980588122452
+        }, 
+        "mean_score": 0.8807124463611036
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "scalex_full", 
+        "dataset_id": "immune_batch", 
+        "submission_time": "2023-02-04 03:24:26.181", 
+        "code_version": "1.0.2", 
+        "resources": {
+            "duration_sec": 9755.0, 
+            "cpu_pct": 2527.9, 
+            "peak_memory_mb": 24600.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 7400.0
+        }, 
+        "metric_values": {
+            "ari": 0.5595551966234822, 
+            "cc_score": 0.5231406845399437, 
+            "graph_connectivity": 0.9541270881990123, 
+            "hvg_conservation": 0.48419999999999996, 
+            "isolated_labels_f1": 0.747367340168323, 
+            "isolated_labels_sil": 0.5528504517860711, 
+            "kBET": 0.08350473331320363, 
+            "nmi": 0.684205227190913, 
+            "pcr": 0.9989777180874393, 
+            "silhouette": 0.5361771993339062, 
+            "silhouette_batch": 0.8501079543518058
+        }, 
+        "scaled_scores": {
+            "ari": 1.8676357970514599, 
+            "cc_score": 0.6901762278007625, 
+            "graph_connectivity": 1.1869446494874876, 
+            "hvg_conservation": 0.18694829760403525, 
+            "isolated_labels_f1": 0.9392254660249949, 
+            "isolated_labels_sil": 0.5127046419500668, 
+            "kBET": 0.07252688040213612, 
+            "nmi": 1.068152646516402, 
+            "pcr": 0.9993053325594679, 
+            "silhouette": 1.0424075146534622, 
+            "silhouette_batch": 0.5037236414276589
+        }, 
+        "mean_score": 0.8245228268616303
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "no_integration", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 19:10:48.391", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 1961.0, 
+            "cpu_pct": 104.4, 
+            "peak_memory_mb": 1700.0, 
+            "disk_read_mb": 1500.0, 
+            "disk_write_mb": 1400.0
+        }, 
+        "metric_values": {
+            "ari": 0.44806526490892834, 
+            "cc_score": 0.6810643305529543, 
+            "graph_connectivity": 0.8060388699504344, 
+            "hvg_conservation": 1.0, 
+            "isolated_labels_f1": 0.7867403314917127, 
+            "isolated_labels_sil": 0.6974566429853439, 
+            "kBET": 0.17920826405647916, 
+            "nmi": 0.6954407036115348, 
+            "pcr": 0.0, 
+            "silhouette": 0.5114260613918304, 
+            "silhouette_batch": 0.8449534179096401
+        }, 
+        "scaled_scores": {
+            "ari": 1.0, 
+            "cc_score": 1.0, 
+            "graph_connectivity": 0.9993869046028546, 
+            "hvg_conservation": 1.0, 
+            "isolated_labels_f1": 1.0, 
+            "isolated_labels_sil": 0.9999997834118405, 
+            "kBET": 0.0, 
+            "nmi": 0.9939001255249873, 
+            "pcr": 0.0, 
+            "silhouette": 1.0, 
+            "silhouette_batch": 0.6828387016581536
+        }, 
+        "mean_score": 0.7887386831998033
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "random_integration", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 19:10:48.349", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 2059.0, 
+            "cpu_pct": 96.0, 
+            "peak_memory_mb": 9500.0, 
+            "disk_read_mb": 1500.0, 
+            "disk_write_mb": 1800.0
+        }, 
+        "metric_values": {
+            "ari": -0.0002276067049529407, 
+            "cc_score": 0.09347229032646599, 
+            "graph_connectivity": 0.07194672567193225, 
+            "hvg_conservation": 0.483875, 
+            "isolated_labels_f1": 0.029268292682926828, 
+            "isolated_labels_sil": 0.49105813074856997, 
+            "kBET": 0.37350816254491304, 
+            "nmi": 0.00392662208957423, 
+            "pcr": 0.999248214356066, 
+            "silhouette": 0.4922696715220809, 
+            "silhouette_batch": 0.8200697795184608
+        }, 
+        "scaled_scores": {
+            "ari": 0.0, 
+            "cc_score": 0.04137218640732641, 
+            "graph_connectivity": 0.0, 
+            "hvg_conservation": 0.0, 
+            "isolated_labels_f1": 0.0, 
+            "isolated_labels_sil": 0.0, 
+            "kBET": 0.26608136661766807, 
+            "nmi": 0.0, 
+            "pcr": 1.0, 
+            "silhouette": 0.8015606605858681, 
+            "silhouette_batch": 0.4785783620243896
+        }, 
+        "mean_score": 0.23523568869411385
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "combat_hvg_scaled", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 19:10:47.811", 
+        "code_version": "1.9.1", 
+        "resources": {
+            "duration_sec": 2180.0, 
+            "cpu_pct": 162.6, 
+            "peak_memory_mb": 6000.0, 
+            "disk_read_mb": 1600.0, 
+            "disk_write_mb": 928.2
+        }, 
+        "metric_values": {
+            "ari": 0.4655052678695431, 
+            "cc_score": 0.607186718765673, 
+            "graph_connectivity": 0.9817570901466908, 
+            "hvg_conservation": 0.24862499999999998, 
+            "isolated_labels_f1": 0.7094535993061578, 
+            "isolated_labels_sil": 0.6769904494285583, 
+            "kBET": 0.22410181656684836, 
+            "nmi": 0.712104548486559, 
+            "pcr": 1.0, 
+            "silhouette": 0.566997803747654, 
+            "silhouette_batch": 0.8808486031733747
+        }, 
+        "scaled_scores": {
+            "ari": 1.0389031458337263, 
+            "cc_score": 0.8794722722353562, 
+            "graph_connectivity": 1.2386082197101795, 
+            "hvg_conservation": -0.45580043594090586, 
+            "isolated_labels_f1": 0.8979675443768229, 
+            "isolated_labels_sil": 0.9008411756183298, 
+            "kBET": 0.06147886796241508, 
+            "nmi": 1.0178507549562255, 
+            "pcr": 1.0007523512508034, 
+            "silhouette": 1.575662738029571, 
+            "silhouette_batch": 0.977488648660532
+        }, 
+        "mean_score": 0.8302932075175505
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "celltype_random_integration", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 19:10:48.035", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 2209.0, 
+            "cpu_pct": 97.2, 
+            "peak_memory_mb": 4000.0, 
+            "disk_read_mb": 1500.0, 
+            "disk_write_mb": 1700.0
+        }, 
+        "metric_values": {
+            "ari": 0.39885229643219844, 
+            "cc_score": 0.5346151762873976, 
+            "graph_connectivity": 0.8064892145693852, 
+            "hvg_conservation": 0.604, 
+            "isolated_labels_f1": 0.7718918918918919, 
+            "isolated_labels_sil": 0.6974566876888275, 
+            "kBET": 0.9094356413369902, 
+            "nmi": 0.6996847408006432, 
+            "pcr": 0.6472264754996991, 
+            "silhouette": 0.5114259952679276, 
+            "silhouette_batch": 0.7617678550048228
+        }, 
+        "scaled_scores": {
+            "ari": 0.8902213896474412, 
+            "cc_score": 0.7610753329776674, 
+            "graph_connectivity": 1.0, 
+            "hvg_conservation": 0.2327440058125454, 
+            "isolated_labels_f1": 0.9803973759570429, 
+            "isolated_labels_sil": 1.0, 
+            "kBET": 1.0, 
+            "nmi": 1.0, 
+            "pcr": 0.6477134171480945, 
+            "silhouette": 0.9999993150283701, 
+            "silhouette_batch": 0.0
+        }, 
+        "mean_score": 0.7738318942337419
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "batch_random_integration", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 19:10:47.786", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 2270.0, 
+            "cpu_pct": 88.4, 
+            "peak_memory_mb": 3500.0, 
+            "disk_read_mb": 1500.0, 
+            "disk_write_mb": 1700.0
+        }, 
+        "metric_values": {
+            "ari": 0.12218270901969006, 
+            "cc_score": 0.06811316025010775, 
+            "graph_connectivity": 0.46634146366237905, 
+            "hvg_conservation": 1.0, 
+            "isolated_labels_f1": 0.10980036297640654, 
+            "isolated_labels_sil": 0.5503000505268574, 
+            "kBET": 0.2298270053060102, 
+            "nmi": 0.30611220125321703, 
+            "pcr": 1.0362990170146203e-05, 
+            "silhouette": 0.414890818297863, 
+            "silhouette_batch": 0.88359100694805
+        }, 
+        "scaled_scores": {
+            "ari": 0.2730588048031157, 
+            "cc_score": 0.0, 
+            "graph_connectivity": 0.5369256972219982, 
+            "hvg_conservation": 1.0, 
+            "isolated_labels_f1": 0.1063168885020837, 
+            "isolated_labels_sil": 0.2870268118949838, 
+            "kBET": 0.0693191502050275, 
+            "nmi": 0.4343256241457284, 
+            "pcr": 1.0370786778762777e-05, 
+            "silhouette": 0.0, 
+            "silhouette_batch": 1.0
+        }, 
+        "mean_score": 0.3369984861417924
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "fastmnn_feature_hvg_unscaled", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 19:10:48.190", 
+        "code_version": "1.14.1", 
+        "resources": {
+            "duration_sec": 2309.0, 
+            "cpu_pct": 184.2, 
+            "peak_memory_mb": 8199.999999, 
+            "disk_read_mb": 1500.0, 
+            "disk_write_mb": 913.5
+        }, 
+        "metric_values": {
+            "ari": 0.5371586667370621, 
+            "cc_score": 0.8260122680143842, 
+            "graph_connectivity": 0.97553200167719, 
+            "hvg_conservation": 0.290875, 
+            "isolated_labels_f1": 0.7257876312718787, 
+            "isolated_labels_sil": 0.5064382352866232, 
+            "kBET": 0.2905105608849845, 
+            "nmi": 0.7177182502944489, 
+            "pcr": 0.4519105390087177, 
+            "silhouette": 0.5840587764978409, 
+            "silhouette_batch": 0.8570035837072915
+        }, 
+        "scaled_scores": {
+            "ari": 1.1987392784261597, 
+            "cc_score": 1.236475504875558, 
+            "graph_connectivity": 1.230133436340133, 
+            "hvg_conservation": -0.3739404214095423, 
+            "isolated_labels_f1": 0.9195314188551575, 
+            "isolated_labels_sil": 0.07451653134622, 
+            "kBET": 0.15242142419120702, 
+            "nmi": 1.0259192225125793, 
+            "pcr": 0.4522505344679922, 
+            "silhouette": 1.7523958378113755, 
+            "silhouette_batch": 0.7817539374358906
+        }, 
+        "mean_score": 0.7681997004411574
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "combat_hvg_unscaled", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 19:10:47.815", 
+        "code_version": "1.9.1", 
+        "resources": {
+            "duration_sec": 2329.0, 
+            "cpu_pct": 223.2, 
+            "peak_memory_mb": 5000.0, 
+            "disk_read_mb": 1600.0, 
+            "disk_write_mb": 938.9
+        }, 
+        "metric_values": {
+            "ari": 0.5067360679465145, 
+            "cc_score": 0.7731234778717699, 
+            "graph_connectivity": 0.9829386597317535, 
+            "hvg_conservation": 0.50175, 
+            "isolated_labels_f1": 0.7263064658990256, 
+            "isolated_labels_sil": 0.6296496093273163, 
+            "kBET": 0.21860086524965094, 
+            "nmi": 0.7149850965648109, 
+            "pcr": 0.9999548722499576, 
+            "silhouette": 0.5620751045644283, 
+            "silhouette_batch": 0.9062376018419678
+        }, 
+        "scaled_scores": {
+            "ari": 1.1308760561513453, 
+            "cc_score": 1.1501900180292193, 
+            "graph_connectivity": 1.2402167986595558, 
+            "hvg_conservation": 0.03463308307096155, 
+            "isolated_labels_f1": 0.920216374339406, 
+            "isolated_labels_sil": 0.6714750366150181, 
+            "kBET": 0.05394566462281437, 
+            "nmi": 1.021990912290772, 
+            "pcr": 1.000707189548842, 
+            "silhouette": 1.5246689348810785, 
+            "silhouette_batch": 1.1858972989343737
+        }, 
+        "mean_score": 0.9031652151948534
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "fastmnn_feature_hvg_scaled", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 19:10:48.063", 
+        "code_version": "1.14.1", 
+        "resources": {
+            "duration_sec": 2382.0, 
+            "cpu_pct": 156.1, 
+            "peak_memory_mb": 8500.0, 
+            "disk_read_mb": 1500.0, 
+            "disk_write_mb": 902.8
+        }, 
+        "metric_values": {
+            "ari": 0.6128221042202762, 
+            "cc_score": 0.8260417116982746, 
+            "graph_connectivity": 0.9746060242693628, 
+            "hvg_conservation": 0.29025, 
+            "isolated_labels_f1": 0.7485907553551298, 
+            "isolated_labels_sil": 0.5064931511878967, 
+            "kBET": 0.2920362448908669, 
+            "nmi": 0.7176814079413915, 
+            "pcr": 0.4518934343612661, 
+            "silhouette": 0.5840651765465736, 
+            "silhouette_batch": 0.8570078448177829
+        }, 
+        "scaled_scores": {
+            "ari": 1.3675205423593138, 
+            "cc_score": 1.2365235408127042, 
+            "graph_connectivity": 1.2288728184428388, 
+            "hvg_conservation": -0.3751513683700654, 
+            "isolated_labels_f1": 0.9496356641803205, 
+            "isolated_labels_sil": 0.07478259861959431, 
+            "kBET": 0.1545107515067129, 
+            "nmi": 1.0258662696945429, 
+            "pcr": 0.4522334169518377, 
+            "silhouette": 1.7524621353471526, 
+            "silhouette_batch": 0.7817889152740395
+        }, 
+        "mean_score": 0.7862768440744539
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "scanorama_feature_hvg_unscaled", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 19:10:47.889", 
+        "code_version": "1.7", 
+        "resources": {
+            "duration_sec": 2434.0, 
+            "cpu_pct": 306.5, 
+            "peak_memory_mb": 5400.0, 
+            "disk_read_mb": 1600.0, 
+            "disk_write_mb": 705.0
+        }, 
+        "metric_values": {
+            "ari": 0.47827042397662434, 
+            "cc_score": 0.35446149871274635, 
+            "graph_connectivity": 0.8570342370063837, 
+            "hvg_conservation": 0.252625, 
+            "isolated_labels_f1": 0.8357588357588357, 
+            "isolated_labels_sil": 0.715216651558876, 
+            "kBET": 0.21501112962682756, 
+            "nmi": 0.7148487301911557, 
+            "pcr": 0.30176934074475487, 
+            "silhouette": 0.5831487402319908, 
+            "silhouette_batch": 0.8526887179857896
+        }, 
+        "scaled_scores": {
+            "ari": 1.0673781828360456, 
+            "cc_score": 0.4671633766865308, 
+            "graph_connectivity": 1.0688115707409473, 
+            "hvg_conservation": -0.44805037539355785, 
+            "isolated_labels_f1": 1.0647132854490713, 
+            "isolated_labels_sil": 1.0860469381827567, 
+            "kBET": 0.04902974975230902, 
+            "nmi": 1.021794915478104, 
+            "pcr": 0.3019963772857183, 
+            "silhouette": 1.7429688530472285, 
+            "silhouette_batch": 0.7463348430135701
+        }, 
+        "mean_score": 0.7425625197344293
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "scalex_hvg", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 19:10:47.898", 
+        "code_version": "1.0.2", 
+        "resources": {
+            "duration_sec": 2701.0, 
+            "cpu_pct": 1399.2, 
+            "peak_memory_mb": 24400.0, 
+            "disk_read_mb": 1500.0, 
+            "disk_write_mb": 1600.0
+        }, 
+        "metric_values": {
+            "ari": 0.5455574629267866, 
+            "cc_score": 0.6222884049865428, 
+            "graph_connectivity": 0.9713865893764022, 
+            "hvg_conservation": 0.3945, 
+            "isolated_labels_f1": 0.721938775510204, 
+            "isolated_labels_sil": 0.5524972788989544, 
+            "kBET": 0.3480124295439857, 
+            "nmi": 0.6828990373093276, 
+            "pcr": 0.9995727062606781, 
+            "silhouette": 0.5160224512219429, 
+            "silhouette_batch": 0.8737013600595285
+        }, 
+        "scaled_scores": {
+            "ari": 1.2174743436514628, 
+            "cc_score": 0.9041099382559763, 
+            "graph_connectivity": 1.2244899067098594, 
+            "hvg_conservation": -0.17316541535480745, 
+            "isolated_labels_f1": 0.91445023359091, 
+            "isolated_labels_sil": 0.2976723726230707, 
+            "kBET": 0.23116658008107216, 
+            "nmi": 0.9758742254816772, 
+            "pcr": 1.0003247360365024, 
+            "silhouette": 1.047613593572643, 
+            "silhouette_batch": 0.9188196436328425
+        }, 
+        "mean_score": 0.7780754689346554
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "mnn_hvg_unscaled", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 19:10:48.214", 
+        "code_version": "0.1.9.5", 
+        "resources": {
+            "duration_sec": 2763.0, 
+            "cpu_pct": 1533.8, 
+            "peak_memory_mb": 88800.0, 
+            "disk_read_mb": 3000.0, 
+            "disk_write_mb": 2100.0
+        }, 
+        "metric_values": {
+            "ari": 0.496917101644145, 
+            "cc_score": 0.791221748571032, 
+            "graph_connectivity": 0.9877741295243155, 
+            "hvg_conservation": 0.37187499999999996, 
+            "isolated_labels_f1": 0.7335140018066847, 
+            "isolated_labels_sil": 0.6334584653377533, 
+            "kBET": 0.2199409116747708, 
+            "nmi": 0.7371022374669485, 
+            "pcr": 0.5312663016018648, 
+            "silhouette": 0.5832446217536926, 
+            "silhouette_batch": 0.9106750351127935
+        }, 
+        "scaled_scores": {
+            "ari": 1.1089730393422208, 
+            "cc_score": 1.179716465772716, 
+            "graph_connectivity": 1.246799766786859, 
+            "hvg_conservation": -0.21700169532574484, 
+            "isolated_labels_f1": 0.9297316244587289, 
+            "isolated_labels_sil": 0.6899289253771351, 
+            "kBET": 0.05578077306548934, 
+            "nmi": 1.0537794610799847, 
+            "pcr": 0.5316660004683847, 
+            "silhouette": 1.7439620812054513, 
+            "silhouette_batch": 1.2223225038321557
+        }, 
+        "mean_score": 0.8677871769148527
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "scanorama_feature_hvg_scaled", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 19:10:48.548", 
+        "code_version": "1.7", 
+        "resources": {
+            "duration_sec": 3061.0, 
+            "cpu_pct": 593.7, 
+            "peak_memory_mb": 7800.0, 
+            "disk_read_mb": 1600.0, 
+            "disk_write_mb": 705.3
+        }, 
+        "metric_values": {
+            "ari": 0.4840882960625488, 
+            "cc_score": 0.3059135065384915, 
+            "graph_connectivity": 0.8587667410151647, 
+            "hvg_conservation": 0.253, 
+            "isolated_labels_f1": 0.8620296465222349, 
+            "isolated_labels_sil": 0.6776436120271683, 
+            "kBET": 0.27785170890478894, 
+            "nmi": 0.6953693136932683, 
+            "pcr": 0.6127683209379006, 
+            "silhouette": 0.5655751526355743, 
+            "silhouette_batch": 0.8532674598030531
+        }, 
+        "scaled_scores": {
+            "ari": 1.0803560204380127, 
+            "cc_score": 0.38795969044465883, 
+            "graph_connectivity": 1.071170187206254, 
+            "hvg_conservation": -0.4473238072172439, 
+            "isolated_labels_f1": 1.0993955039567183, 
+            "isolated_labels_sil": 0.9040057452175202, 
+            "kBET": 0.13508593065309943, 
+            "nmi": 0.9937975181441367, 
+            "pcr": 0.613229337950611, 
+            "silhouette": 1.5609256216513088, 
+            "silhouette_batch": 0.7510855148524762
+        }, 
+        "mean_score": 0.7408806602997775
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "combat_full_unscaled", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 19:45:28.511", 
+        "code_version": "1.9.1", 
+        "resources": {
+            "duration_sec": 1501.0, 
+            "cpu_pct": 1007.4, 
+            "peak_memory_mb": 21000.0, 
+            "disk_read_mb": 1600.0, 
+            "disk_write_mb": 6500.0
+        }, 
+        "metric_values": {
+            "ari": 0.467951307299562, 
+            "cc_score": 0.7863559328992753, 
+            "graph_connectivity": 0.9582405041430835, 
+            "hvg_conservation": 0.49887499999999996, 
+            "isolated_labels_f1": 0.7006039689387403, 
+            "isolated_labels_sil": 0.6620440781116486, 
+            "kBET": 0.21696984379538753, 
+            "nmi": 0.696544499836214, 
+            "pcr": 0.9998998826511049, 
+            "silhouette": 0.5440857671201229, 
+            "silhouette_batch": 0.909415746195431
+        }, 
+        "scaled_scores": {
+            "ari": 1.0443594882939868, 
+            "cc_score": 1.1717781243394942, 
+            "graph_connectivity": 1.206592936239096, 
+            "hvg_conservation": 0.02906272705255502, 
+            "isolated_labels_f1": 0.886284432771364, 
+            "isolated_labels_sil": 0.828426079609514, 
+            "kBET": 0.05171208436410425, 
+            "nmi": 0.9954865909861796, 
+            "pcr": 1.0006521585784958, 
+            "silhouette": 1.3383189877763244, 
+            "silhouette_batch": 1.2119854792413838
+        }, 
+        "mean_score": 0.887696280841136
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "combat_full_scaled", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 19:44:08.759", 
+        "code_version": "1.9.1", 
+        "resources": {
+            "duration_sec": 1931.0, 
+            "cpu_pct": 627.3, 
+            "peak_memory_mb": 26400.0, 
+            "disk_read_mb": 1600.0, 
+            "disk_write_mb": 6500.0
+        }, 
+        "metric_values": {
+            "ari": 0.41467428552809465, 
+            "cc_score": 0.45643098786896363, 
+            "graph_connectivity": 0.9824869142558368, 
+            "hvg_conservation": 0.25012500000000004, 
+            "isolated_labels_f1": 0.8444444444444444, 
+            "isolated_labels_sil": 0.670960009098053, 
+            "kBET": 0.2050323866512327, 
+            "nmi": 0.6878092208069565, 
+            "pcr": 0.9999999999957757, 
+            "silhouette": 0.5430114232003689, 
+            "silhouette_batch": 0.8958396951592549
+        }, 
+        "scaled_scores": {
+            "ari": 0.9255152568885957, 
+            "cc_score": 0.6335216350545444, 
+            "graph_connectivity": 1.2396017961474548, 
+            "hvg_conservation": -0.45289416323565024, 
+            "isolated_labels_f1": 1.0761798587885545, 
+            "isolated_labels_sil": 0.8716237216791973, 
+            "kBET": 0.03536449522192236, 
+            "nmi": 0.9829315394613191, 
+            "pcr": 1.0007523512465761, 
+            "silhouette": 1.3271899546344255, 
+            "silhouette_batch": 1.1005448308948125
+        }, 
+        "mean_score": 0.794575570616523
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "fastmnn_feature_full_unscaled", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 19:48:09.138", 
+        "code_version": "1.14.1", 
+        "resources": {
+            "duration_sec": 1900.0, 
+            "cpu_pct": 226.0, 
+            "peak_memory_mb": 28700.0, 
+            "disk_read_mb": 1500.0, 
+            "disk_write_mb": 6500.0
+        }, 
+        "metric_values": {
+            "ari": 0.4972359214936013, 
+            "cc_score": 0.6992722903115192, 
+            "graph_connectivity": 0.9714937104349455, 
+            "hvg_conservation": 0.30275, 
+            "isolated_labels_f1": 0.6431924882629108, 
+            "isolated_labels_sil": 0.48957295529544353, 
+            "kBET": 0.29272433110106355, 
+            "nmi": 0.6999378261722078, 
+            "pcr": 0.6373231189289175, 
+            "silhouette": 0.5202369429171085, 
+            "silhouette_batch": 0.8473915968248491
+        }, 
+        "scaled_scores": {
+            "ari": 1.1096842258670223, 
+            "cc_score": 1.0297054001048218, 
+            "graph_connectivity": 1.2246357404229016, 
+            "hvg_conservation": -0.3509324291596028, 
+            "isolated_labels_f1": 0.8104909014799438, 
+            "isolated_labels_sil": -0.007195667814462081, 
+            "kBET": 0.15545304185572612, 
+            "nmi": 1.0003637548233477, 
+            "pcr": 0.6378026097746097, 
+            "silhouette": 1.0912711383209712, 
+            "silhouette_batch": 0.7028527866355748
+        }, 
+        "mean_score": 0.6731028638464412
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "fastmnn_feature_full_scaled", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 19:50:39.787", 
+        "code_version": "1.14.1", 
+        "resources": {
+            "duration_sec": 2171.0, 
+            "cpu_pct": 198.0, 
+            "peak_memory_mb": 38400.0, 
+            "disk_read_mb": 1500.0, 
+            "disk_write_mb": 6500.0
+        }, 
+        "metric_values": {
+            "ari": 0.5024016373431825, 
+            "cc_score": 0.6992646756113756, 
+            "graph_connectivity": 0.9739282642718046, 
+            "hvg_conservation": 0.302875, 
+            "isolated_labels_f1": 0.6434378629500581, 
+            "isolated_labels_sil": 0.489673868753016, 
+            "kBET": 0.29090231256309984, 
+            "nmi": 0.7057437024309053, 
+            "pcr": 0.6373397900443544, 
+            "silhouette": 0.5202359762042761, 
+            "silhouette_batch": 0.8473827093002089
+        }, 
+        "scaled_scores": {
+            "ari": 1.1212073086030567, 
+            "cc_score": 1.0296929770921701, 
+            "graph_connectivity": 1.2279501216515674, 
+            "hvg_conservation": -0.3506902397674982, 
+            "isolated_labels_f1": 0.8108148404170606, 
+            "isolated_labels_sil": -0.0067067426055437375, 
+            "kBET": 0.15295790322541455, 
+            "nmi": 1.0087084310873535, 
+            "pcr": 0.637819293432581, 
+            "silhouette": 1.091261124228693, 
+            "silhouette_batch": 0.702779832320254
+        }, 
+        "mean_score": 0.6750722590622826
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "scanorama_feature_full_unscaled", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 19:48:09.389", 
+        "code_version": "1.7", 
+        "resources": {
+            "duration_sec": 2730.0, 
+            "cpu_pct": 1738.5, 
+            "peak_memory_mb": 25900.0, 
+            "disk_read_mb": 1600.0, 
+            "disk_write_mb": 4700.0
+        }, 
+        "metric_values": {
+            "ari": 0.4754111494985026, 
+            "cc_score": 0.3384175438098491, 
+            "graph_connectivity": 0.7772657032888393, 
+            "hvg_conservation": 0.28975, 
+            "isolated_labels_f1": 0.8355091383812011, 
+            "isolated_labels_sil": 0.6861529797315598, 
+            "kBET": 0.2311554473256292, 
+            "nmi": 0.7217044482184111, 
+            "pcr": 0.25018810346037834, 
+            "silhouette": 0.5401272512972355, 
+            "silhouette_batch": 0.8719453395636352
+        }, 
+        "scaled_scores": {
+            "ari": 1.0610000433224098, 
+            "cc_score": 0.4409884451744982, 
+            "graph_connectivity": 0.9602153561948331, 
+            "hvg_conservation": -0.37612012593848393, 
+            "isolated_labels_f1": 1.0643836397792097, 
+            "isolated_labels_sil": 0.9452335901721463, 
+            "kBET": 0.07113836715162618, 
+            "nmi": 1.0316485094828078, 
+            "pcr": 0.2503763327929529, 
+            "silhouette": 1.2973130743294166, 
+            "silhouette_batch": 0.9044051381149452
+        }, 
+        "mean_score": 0.6955074882342147
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "mnn_hvg_scaled", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 20:13:39.646", 
+        "code_version": "0.1.9.5", 
+        "resources": {
+            "duration_sec": 1941.0, 
+            "cpu_pct": 1433.7, 
+            "peak_memory_mb": 89700.0, 
+            "disk_read_mb": 3000.0, 
+            "disk_write_mb": 2100.0
+        }, 
+        "metric_values": {
+            "ari": 0.5443369461944939, 
+            "cc_score": 0.5758874226692339, 
+            "graph_connectivity": 0.9852061462846866, 
+            "hvg_conservation": 0.2985, 
+            "isolated_labels_f1": 0.6356589147286821, 
+            "isolated_labels_sil": 0.6555435955524445, 
+            "kBET": 0.24027611281439443, 
+            "nmi": 0.7220677895007842, 
+            "pcr": 0.8491778984665312, 
+            "silhouette": 0.5687229782342911, 
+            "silhouette_batch": 0.9198522839837284
+        }, 
+        "scaled_scores": {
+            "ari": 1.214751755786305, 
+            "cc_score": 0.8284089940936817, 
+            "graph_connectivity": 1.243303735885388, 
+            "hvg_conservation": -0.35916686849116014, 
+            "isolated_labels_f1": 0.8005452227640983, 
+            "isolated_labels_sil": 0.7969312733687626, 
+            "kBET": 0.08362853907962498, 
+            "nmi": 1.032170733043844, 
+            "pcr": 0.8498167785205972, 
+            "silhouette": 1.5935336671467, 
+            "silhouette_batch": 1.2976550553590755
+        }, 
+        "mean_score": 0.8528708078688108
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "scanorama_feature_full_scaled", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 20:34:30.102", 
+        "code_version": "1.7", 
+        "resources": {
+            "duration_sec": 5760.0, 
+            "cpu_pct": 1311.0, 
+            "peak_memory_mb": 39200.0, 
+            "disk_read_mb": 1600.0, 
+            "disk_write_mb": 4700.0
+        }, 
+        "metric_values": {
+            "ari": 0.47810372415096936, 
+            "cc_score": 0.2883000213847272, 
+            "graph_connectivity": 0.7799722335005616, 
+            "hvg_conservation": 0.2955, 
+            "isolated_labels_f1": 0.8472906403940886, 
+            "isolated_labels_sil": 0.6913753598928452, 
+            "kBET": 0.2739832798814308, 
+            "nmi": 0.672241044956164, 
+            "pcr": 0.6237065361748538, 
+            "silhouette": 0.5337000675499439, 
+            "silhouette_batch": 0.8471342779494202
+        }, 
+        "scaled_scores": {
+            "ari": 1.0670063281039932, 
+            "cc_score": 0.3592241467225352, 
+            "graph_connectivity": 0.9639000037851785, 
+            "hvg_conservation": -0.36497941390167116, 
+            "isolated_labels_f1": 1.0799373518758506, 
+            "isolated_labels_sil": 0.970535996539246, 
+            "kBET": 0.12978836287665582, 
+            "nmi": 0.9605556944196063, 
+            "pcr": 0.6241757825674793, 
+            "silhouette": 1.2307344493495702, 
+            "silhouette_batch": 0.7007405536870395
+        }, 
+        "mean_score": 0.7019653869114076
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "mnn_full_scaled", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-03 22:52:12.113", 
+        "code_version": "0.1.9.5", 
+        "resources": {
+            "duration_sec": 17549.0, 
+            "cpu_pct": 3460.1, 
+            "peak_memory_mb": 722900.0, 
+            "disk_read_mb": 12500.0, 
+            "disk_write_mb": 15600.0
+        }, 
+        "metric_values": {
+            "ari": 0.47476153535023546, 
+            "cc_score": 0.40346214441581196, 
+            "graph_connectivity": 0.9841436567575516, 
+            "hvg_conservation": 0.247125, 
+            "isolated_labels_f1": 0.8737373737373737, 
+            "isolated_labels_sil": 0.6758378446102142, 
+            "kBET": 0.20968409468015925, 
+            "nmi": 0.6995665109468127, 
+            "pcr": 0.9192050983893437, 
+            "silhouette": 0.5387405417859554, 
+            "silhouette_batch": 0.9113795351795335
+        }, 
+        "scaled_scores": {
+            "ari": 1.059550959053172, 
+            "cc_score": 0.5471055451285217, 
+            "graph_connectivity": 1.2418572715307803, 
+            "hvg_conservation": -0.4587067086461613, 
+            "isolated_labels_f1": 1.114851819985955, 
+            "isolated_labels_sil": 0.8952568109045893, 
+            "kBET": 0.04173471383280258, 
+            "nmi": 0.9998300704646471, 
+            "pcr": 0.9198966634948619, 
+            "silhouette": 1.282948273798172, 
+            "silhouette_batch": 1.2281054773926197
+        }, 
+        "mean_score": 0.8065846269945418
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "mnn_full_unscaled", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-04 03:07:31.418", 
+        "code_version": "0.1.9.5", 
+        "resources": {
+            "duration_sec": 4770.0, 
+            "cpu_pct": 4531.3, 
+            "peak_memory_mb": 458200.0, 
+            "disk_read_mb": 12500.0, 
+            "disk_write_mb": 15500.0
+        }, 
+        "metric_values": {
+            "ari": 0.5014435507629115, 
+            "cc_score": 0.670712939643048, 
+            "graph_connectivity": 0.9719586743717001, 
+            "hvg_conservation": 0.38749999999999996, 
+            "isolated_labels_f1": 0.8518971848225215, 
+            "isolated_labels_sil": 0.6209113970398903, 
+            "kBET": 0.1981420717701592, 
+            "nmi": 0.7356664612310082, 
+            "pcr": 0.5960710493817842, 
+            "silhouette": 0.5601024813950062, 
+            "silhouette_batch": 0.8972258186465701
+        }, 
+        "scaled_scores": {
+            "ari": 1.119070119633663, 
+            "cc_score": 0.9831122095667231, 
+            "graph_connectivity": 1.225268738437016, 
+            "hvg_conservation": -0.1867280213126666, 
+            "isolated_labels_f1": 1.0860188231281456, 
+            "isolated_labels_sil": 0.6291384407736271, 
+            "kBET": 0.025928646751362156, 
+            "nmi": 1.0517158470202592, 
+            "pcr": 0.5965195041813544, 
+            "silhouette": 1.504234706860313, 
+            "silhouette_batch": 1.1119229923132696
+        }, 
+        "mean_score": 0.8314729097593697
+    }, 
+    {
+        "task_id": "batch_integration_feature", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "scalex_full", 
+        "dataset_id": "lung_batch", 
+        "submission_time": "2023-02-04 04:04:23.748", 
+        "code_version": "1.0.2", 
+        "resources": {
+            "duration_sec": 14078.0, 
+            "cpu_pct": 2443.9, 
+            "peak_memory_mb": 26800.0, 
+            "disk_read_mb": 1500.0, 
+            "disk_write_mb": 8800.0
+        }, 
+        "metric_values": {
+            "ari": 0.5454994287517335, 
+            "cc_score": 0.5123764528292778, 
+            "graph_connectivity": 0.9670792111016617, 
+            "hvg_conservation": 0.32549999999999996, 
+            "isolated_labels_f1": 0.42764976958525347, 
+            "isolated_labels_sil": 0.5422495007514954, 
+            "kBET": 0.33250961117475475, 
+            "nmi": 0.6659626834931985, 
+            "pcr": 0.9998194550081911, 
+            "silhouette": 0.5034113035071641, 
+            "silhouette_batch": 0.8768880693144052
+        }, 
+        "scaled_scores": {
+            "ari": 1.2173448877115451, 
+            "cc_score": 0.7247939380875457, 
+            "graph_connectivity": 1.218625877957478, 
+            "hvg_conservation": -0.30685395979656105, 
+            "isolated_labels_f1": 0.5259355547022283, 
+            "isolated_labels_sil": 0.2480219375649164, 
+            "kBET": 0.20993645525753288, 
+            "nmi": 0.9515319240975345, 
+            "pcr": 1.0005716704257441, 
+            "silhouette": 0.9169758356866129, 
+            "silhouette_batch": 0.9449781299636003
+        }, 
+        "mean_score": 0.6956238410598344
     }
 ]
