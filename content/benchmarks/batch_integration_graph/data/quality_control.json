@@ -43,9 +43,9 @@
         "task_id": "batch_integration_graph", 
         "category": "Task info", 
         "name": "Pct 'task_description' missing", 
-        "value": 1.0, 
-        "severity": 2, 
-        "severity_value": 3.0, 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
         "code": "percent_missing([task_info], field)", 
         "message": "Task metadata field 'task_description' should be defined\n  Task id: batch_integration_graph\n  Field: task_description\n"
     }, 
@@ -253,11 +253,11 @@
         "task_id": "batch_integration_graph", 
         "category": "Raw data", 
         "name": "Number of results", 
-        "value": 90, 
+        "value": 135, 
         "severity": 0, 
         "severity_value": 0.0, 
         "code": "len(results) == len(method_info) * len(metric_info) * len(dataset_info)", 
-        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: batch_integration_graph\n  Number of results: 90\n  Number of methods: 45\n  Number of metrics: 4\n  Number of datasets: 2\n"
+        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: batch_integration_graph\n  Number of results: 135\n  Number of methods: 45\n  Number of metrics: 4\n  Number of datasets: 3\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
@@ -762,6 +762,16 @@
     {
         "task_id": "batch_integration_graph", 
         "category": "Raw results", 
+        "name": "Dataset 'lung_batch' %missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration_graph\n  dataset id: lung_batch\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "batch_integration_graph", 
+        "category": "Raw results", 
         "name": "Dataset 'pancreas_batch' %missing", 
         "value": 0.0, 
         "severity": 0, 
@@ -773,101 +783,101 @@
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score batch_random_integration ari", 
-        "value": 0.01130009415077376, 
+        "value": 0.011121837653593479, 
         "severity": 0, 
-        "severity_value": -0.01130009415077376, 
+        "severity_value": -0.011121837653593479, 
         "code": "worst_score >= -1", 
-        "message": "Method batch_random_integration performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: batch_random_integration\n  Metric id: ari\n  Worst score: 0.01130009415077376%\n"
+        "message": "Method batch_random_integration performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: batch_random_integration\n  Metric id: ari\n  Worst score: 0.011121837653593479%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score batch_random_integration ari", 
-        "value": 0.059850541730254794, 
+        "value": 0.1344952923467112, 
         "severity": 0, 
-        "severity_value": 0.029925270865127397, 
+        "severity_value": 0.0672476461733556, 
         "code": "best_score <= 2", 
-        "message": "Method batch_random_integration performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: batch_random_integration\n  Metric id: ari\n  Best score: 0.059850541730254794%\n"
+        "message": "Method batch_random_integration performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: batch_random_integration\n  Metric id: ari\n  Best score: 0.1344952923467112%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score bbknn_full_scaled ari", 
-        "value": 0.5734471110855924, 
+        "value": 0.42571456238902894, 
         "severity": 0, 
-        "severity_value": -0.5734471110855924, 
+        "severity_value": -0.42571456238902894, 
         "code": "worst_score >= -1", 
-        "message": "Method bbknn_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_scaled\n  Metric id: ari\n  Worst score: 0.5734471110855924%\n"
+        "message": "Method bbknn_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_scaled\n  Metric id: ari\n  Worst score: 0.42571456238902894%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score bbknn_full_scaled ari", 
-        "value": 0.8274477169403603, 
+        "value": 0.8342083727278303, 
         "severity": 0, 
-        "severity_value": 0.4137238584701802, 
+        "severity_value": 0.41710418636391516, 
         "code": "best_score <= 2", 
-        "message": "Method bbknn_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_scaled\n  Metric id: ari\n  Best score: 0.8274477169403603%\n"
+        "message": "Method bbknn_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_scaled\n  Metric id: ari\n  Best score: 0.8342083727278303%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score bbknn_full_unscaled ari", 
-        "value": 0.5207457979324832, 
+        "value": 0.4689027456210309, 
         "severity": 0, 
-        "severity_value": -0.5207457979324832, 
+        "severity_value": -0.4689027456210309, 
         "code": "worst_score >= -1", 
-        "message": "Method bbknn_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_unscaled\n  Metric id: ari\n  Worst score: 0.5207457979324832%\n"
+        "message": "Method bbknn_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_unscaled\n  Metric id: ari\n  Worst score: 0.4689027456210309%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score bbknn_full_unscaled ari", 
-        "value": 0.9173837224371105, 
+        "value": 0.9110269068031935, 
         "severity": 0, 
-        "severity_value": 0.45869186121855526, 
+        "severity_value": 0.45551345340159677, 
         "code": "best_score <= 2", 
-        "message": "Method bbknn_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_unscaled\n  Metric id: ari\n  Best score: 0.9173837224371105%\n"
+        "message": "Method bbknn_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_unscaled\n  Metric id: ari\n  Best score: 0.9110269068031935%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score bbknn_hvg_scaled ari", 
-        "value": 0.6071907197825888, 
+        "value": 0.4748953667897248, 
         "severity": 0, 
-        "severity_value": -0.6071907197825888, 
+        "severity_value": -0.4748953667897248, 
         "code": "worst_score >= -1", 
-        "message": "Method bbknn_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_scaled\n  Metric id: ari\n  Worst score: 0.6071907197825888%\n"
+        "message": "Method bbknn_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_scaled\n  Metric id: ari\n  Worst score: 0.4748953667897248%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score bbknn_hvg_scaled ari", 
-        "value": 0.9194179854169242, 
+        "value": 0.9156405848649638, 
         "severity": 0, 
-        "severity_value": 0.4597089927084621, 
+        "severity_value": 0.4578202924324819, 
         "code": "best_score <= 2", 
-        "message": "Method bbknn_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_scaled\n  Metric id: ari\n  Best score: 0.9194179854169242%\n"
+        "message": "Method bbknn_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_scaled\n  Metric id: ari\n  Best score: 0.9156405848649638%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score bbknn_hvg_unscaled ari", 
-        "value": 0.6086903758978853, 
+        "value": 0.618424481076565, 
         "severity": 0, 
-        "severity_value": -0.6086903758978853, 
+        "severity_value": -0.618424481076565, 
         "code": "worst_score >= -1", 
-        "message": "Method bbknn_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.6086903758978853%\n"
+        "message": "Method bbknn_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.618424481076565%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score bbknn_hvg_unscaled ari", 
-        "value": 0.9434425935376469, 
+        "value": 0.9468222745486193, 
         "severity": 0, 
-        "severity_value": 0.47172129676882346, 
+        "severity_value": 0.47341113727430967, 
         "code": "best_score <= 2", 
-        "message": "Method bbknn_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_unscaled\n  Metric id: ari\n  Best score: 0.9434425935376469%\n"
+        "message": "Method bbknn_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_unscaled\n  Metric id: ari\n  Best score: 0.9468222745486193%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
@@ -893,481 +903,481 @@
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score celltype_random_integration ari", 
-        "value": 0.21847219903840734, 
+        "value": 0.21874102420838817, 
         "severity": 0, 
-        "severity_value": -0.21847219903840734, 
+        "severity_value": -0.21874102420838817, 
         "code": "worst_score >= -1", 
-        "message": "Method celltype_random_integration performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: celltype_random_integration\n  Metric id: ari\n  Worst score: 0.21847219903840734%\n"
+        "message": "Method celltype_random_integration performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: celltype_random_integration\n  Metric id: ari\n  Worst score: 0.21874102420838817%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score celltype_random_integration ari", 
-        "value": 0.3226460494097655, 
+        "value": 0.3569285341543968, 
         "severity": 0, 
-        "severity_value": 0.16132302470488274, 
+        "severity_value": 0.1784642670771984, 
         "code": "best_score <= 2", 
-        "message": "Method celltype_random_integration performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: celltype_random_integration\n  Metric id: ari\n  Best score: 0.3226460494097655%\n"
+        "message": "Method celltype_random_integration performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: celltype_random_integration\n  Metric id: ari\n  Best score: 0.3569285341543968%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score combat_full_scaled ari", 
-        "value": 0.494660631505984, 
+        "value": 0.39214300964181287, 
         "severity": 0, 
-        "severity_value": -0.494660631505984, 
+        "severity_value": -0.39214300964181287, 
         "code": "worst_score >= -1", 
-        "message": "Method combat_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_scaled\n  Metric id: ari\n  Worst score: 0.494660631505984%\n"
+        "message": "Method combat_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_scaled\n  Metric id: ari\n  Worst score: 0.39214300964181287%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score combat_full_scaled ari", 
-        "value": 0.703856176463439, 
+        "value": 0.7036381809680864, 
         "severity": 0, 
-        "severity_value": 0.3519280882317195, 
+        "severity_value": 0.3518190904840432, 
         "code": "best_score <= 2", 
-        "message": "Method combat_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_scaled\n  Metric id: ari\n  Best score: 0.703856176463439%\n"
+        "message": "Method combat_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_scaled\n  Metric id: ari\n  Best score: 0.7036381809680864%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score combat_full_unscaled ari", 
-        "value": 0.7492839802364787, 
+        "value": 0.5055594931444046, 
         "severity": 0, 
-        "severity_value": -0.7492839802364787, 
+        "severity_value": -0.5055594931444046, 
         "code": "worst_score >= -1", 
-        "message": "Method combat_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_unscaled\n  Metric id: ari\n  Worst score: 0.7492839802364787%\n"
+        "message": "Method combat_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_unscaled\n  Metric id: ari\n  Worst score: 0.5055594931444046%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score combat_full_unscaled ari", 
-        "value": 0.9459142732758569, 
+        "value": 0.9482966438600048, 
         "severity": 0, 
-        "severity_value": 0.47295713663792843, 
+        "severity_value": 0.4741483219300024, 
         "code": "best_score <= 2", 
-        "message": "Method combat_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_unscaled\n  Metric id: ari\n  Best score: 0.9459142732758569%\n"
+        "message": "Method combat_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_unscaled\n  Metric id: ari\n  Best score: 0.9482966438600048%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score combat_hvg_scaled ari", 
-        "value": 0.6595489055053538, 
+        "value": 0.4654275578898162, 
         "severity": 0, 
-        "severity_value": -0.6595489055053538, 
+        "severity_value": -0.4654275578898162, 
         "code": "worst_score >= -1", 
-        "message": "Method combat_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_scaled\n  Metric id: ari\n  Worst score: 0.6595489055053538%\n"
+        "message": "Method combat_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_scaled\n  Metric id: ari\n  Worst score: 0.4654275578898162%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score combat_hvg_scaled ari", 
-        "value": 0.9427582317612057, 
+        "value": 0.9475683247127987, 
         "severity": 0, 
-        "severity_value": 0.47137911588060283, 
+        "severity_value": 0.47378416235639936, 
         "code": "best_score <= 2", 
-        "message": "Method combat_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_scaled\n  Metric id: ari\n  Best score: 0.9427582317612057%\n"
+        "message": "Method combat_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_scaled\n  Metric id: ari\n  Best score: 0.9475683247127987%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score combat_hvg_unscaled ari", 
-        "value": 0.627848321503613, 
+        "value": 0.4541732016677836, 
         "severity": 0, 
-        "severity_value": -0.627848321503613, 
+        "severity_value": -0.4541732016677836, 
         "code": "worst_score >= -1", 
-        "message": "Method combat_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.627848321503613%\n"
+        "message": "Method combat_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.4541732016677836%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score combat_hvg_unscaled ari", 
-        "value": 0.9486655309224169, 
+        "value": 0.9443753976601837, 
         "severity": 0, 
-        "severity_value": 0.47433276546120845, 
+        "severity_value": 0.4721876988300919, 
         "code": "best_score <= 2", 
-        "message": "Method combat_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_unscaled\n  Metric id: ari\n  Best score: 0.9486655309224169%\n"
+        "message": "Method combat_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_unscaled\n  Metric id: ari\n  Best score: 0.9443753976601837%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_embed_full_scaled ari", 
-        "value": 0.4940173155339654, 
+        "value": 0.4900486177771128, 
         "severity": 0, 
-        "severity_value": -0.4940173155339654, 
+        "severity_value": -0.4900486177771128, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_embed_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_scaled\n  Metric id: ari\n  Worst score: 0.4940173155339654%\n"
+        "message": "Method fastmnn_embed_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_scaled\n  Metric id: ari\n  Worst score: 0.4900486177771128%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embed_full_scaled ari", 
-        "value": 0.8766959044622051, 
+        "value": 0.881152996249669, 
         "severity": 0, 
-        "severity_value": 0.43834795223110257, 
+        "severity_value": 0.4405764981248345, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embed_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_scaled\n  Metric id: ari\n  Best score: 0.8766959044622051%\n"
+        "message": "Method fastmnn_embed_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_scaled\n  Metric id: ari\n  Best score: 0.881152996249669%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_embed_full_unscaled ari", 
-        "value": 0.49301757363951737, 
+        "value": 0.48290598724132855, 
         "severity": 0, 
-        "severity_value": -0.49301757363951737, 
+        "severity_value": -0.48290598724132855, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_embed_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_unscaled\n  Metric id: ari\n  Worst score: 0.49301757363951737%\n"
+        "message": "Method fastmnn_embed_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_unscaled\n  Metric id: ari\n  Worst score: 0.48290598724132855%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embed_full_unscaled ari", 
-        "value": 0.8764714112758512, 
+        "value": 0.8840428946406202, 
         "severity": 0, 
-        "severity_value": 0.4382357056379256, 
+        "severity_value": 0.4420214473203101, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embed_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_unscaled\n  Metric id: ari\n  Best score: 0.8764714112758512%\n"
+        "message": "Method fastmnn_embed_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_unscaled\n  Metric id: ari\n  Best score: 0.8840428946406202%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_embed_hvg_scaled ari", 
-        "value": 0.7503616783014923, 
+        "value": 0.6238519215432725, 
         "severity": 0, 
-        "severity_value": -0.7503616783014923, 
+        "severity_value": -0.6238519215432725, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_embed_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_scaled\n  Metric id: ari\n  Worst score: 0.7503616783014923%\n"
+        "message": "Method fastmnn_embed_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_scaled\n  Metric id: ari\n  Worst score: 0.6238519215432725%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embed_hvg_scaled ari", 
-        "value": 0.839085780552373, 
+        "value": 0.7933629094219178, 
         "severity": 0, 
-        "severity_value": 0.4195428902761865, 
+        "severity_value": 0.3966814547109589, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embed_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_scaled\n  Metric id: ari\n  Best score: 0.839085780552373%\n"
+        "message": "Method fastmnn_embed_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_scaled\n  Metric id: ari\n  Best score: 0.7933629094219178%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_embed_hvg_unscaled ari", 
-        "value": 0.6988586856740288, 
+        "value": 0.6229225318986654, 
         "severity": 0, 
-        "severity_value": -0.6988586856740288, 
+        "severity_value": -0.6229225318986654, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_embed_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.6988586856740288%\n"
+        "message": "Method fastmnn_embed_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.6229225318986654%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embed_hvg_unscaled ari", 
-        "value": 0.7876848030652731, 
+        "value": 0.8412856891391125, 
         "severity": 0, 
-        "severity_value": 0.39384240153263655, 
+        "severity_value": 0.42064284456955625, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embed_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_unscaled\n  Metric id: ari\n  Best score: 0.7876848030652731%\n"
+        "message": "Method fastmnn_embed_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_unscaled\n  Metric id: ari\n  Best score: 0.8412856891391125%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_feature_full_scaled ari", 
-        "value": 0.5727620121758443, 
+        "value": 0.4707593889416262, 
         "severity": 0, 
-        "severity_value": -0.5727620121758443, 
+        "severity_value": -0.4707593889416262, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_feature_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_scaled\n  Metric id: ari\n  Worst score: 0.5727620121758443%\n"
+        "message": "Method fastmnn_feature_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_scaled\n  Metric id: ari\n  Worst score: 0.4707593889416262%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature_full_scaled ari", 
-        "value": 0.8572080835076308, 
+        "value": 0.8711817124182109, 
         "severity": 0, 
-        "severity_value": 0.4286040417538154, 
+        "severity_value": 0.4355908562091054, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_scaled\n  Metric id: ari\n  Best score: 0.8572080835076308%\n"
+        "message": "Method fastmnn_feature_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_scaled\n  Metric id: ari\n  Best score: 0.8711817124182109%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_feature_full_unscaled ari", 
-        "value": 0.5626035191673999, 
+        "value": 0.4798717607795685, 
         "severity": 0, 
-        "severity_value": -0.5626035191673999, 
+        "severity_value": -0.4798717607795685, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_feature_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_unscaled\n  Metric id: ari\n  Worst score: 0.5626035191673999%\n"
+        "message": "Method fastmnn_feature_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_unscaled\n  Metric id: ari\n  Worst score: 0.4798717607795685%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature_full_unscaled ari", 
-        "value": 0.8564909926444747, 
+        "value": 0.8922365588453005, 
         "severity": 0, 
-        "severity_value": 0.42824549632223735, 
+        "severity_value": 0.44611827942265025, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_unscaled\n  Metric id: ari\n  Best score: 0.8564909926444747%\n"
+        "message": "Method fastmnn_feature_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_unscaled\n  Metric id: ari\n  Best score: 0.8922365588453005%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_feature_hvg_scaled ari", 
-        "value": 0.6996295106472565, 
+        "value": 0.6178232766731439, 
         "severity": 0, 
-        "severity_value": -0.6996295106472565, 
+        "severity_value": -0.6178232766731439, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_feature_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_scaled\n  Metric id: ari\n  Worst score: 0.6996295106472565%\n"
+        "message": "Method fastmnn_feature_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_scaled\n  Metric id: ari\n  Worst score: 0.6178232766731439%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature_hvg_scaled ari", 
-        "value": 0.7883047969713282, 
+        "value": 0.9266641208820138, 
         "severity": 0, 
-        "severity_value": 0.3941523984856641, 
+        "severity_value": 0.4633320604410069, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_scaled\n  Metric id: ari\n  Best score: 0.7883047969713282%\n"
+        "message": "Method fastmnn_feature_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_scaled\n  Metric id: ari\n  Best score: 0.9266641208820138%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_feature_hvg_unscaled ari", 
-        "value": 0.6910532078960726, 
+        "value": 0.6267689211912999, 
         "severity": 0, 
-        "severity_value": -0.6910532078960726, 
+        "severity_value": -0.6267689211912999, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_feature_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.6910532078960726%\n"
+        "message": "Method fastmnn_feature_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.6267689211912999%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature_hvg_unscaled ari", 
-        "value": 0.8329636106513272, 
+        "value": 0.7927866038716689, 
         "severity": 0, 
-        "severity_value": 0.4164818053256636, 
+        "severity_value": 0.39639330193583444, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_unscaled\n  Metric id: ari\n  Best score: 0.8329636106513272%\n"
+        "message": "Method fastmnn_feature_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_unscaled\n  Metric id: ari\n  Best score: 0.7927866038716689%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score harmony_full_scaled ari", 
-        "value": 0.7334194047630391, 
+        "value": 0.4000618269958009, 
         "severity": 0, 
-        "severity_value": -0.7334194047630391, 
+        "severity_value": -0.4000618269958009, 
         "code": "worst_score >= -1", 
-        "message": "Method harmony_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_scaled\n  Metric id: ari\n  Worst score: 0.7334194047630391%\n"
+        "message": "Method harmony_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_scaled\n  Metric id: ari\n  Worst score: 0.4000618269958009%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score harmony_full_scaled ari", 
-        "value": 0.8283457068501, 
+        "value": 0.8251788681148379, 
         "severity": 0, 
-        "severity_value": 0.41417285342505, 
+        "severity_value": 0.41258943405741894, 
         "code": "best_score <= 2", 
-        "message": "Method harmony_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_scaled\n  Metric id: ari\n  Best score: 0.8283457068501%\n"
+        "message": "Method harmony_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_scaled\n  Metric id: ari\n  Best score: 0.8251788681148379%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score harmony_full_unscaled ari", 
-        "value": 0.6788287873157728, 
+        "value": 0.4425371840273842, 
         "severity": 0, 
-        "severity_value": -0.6788287873157728, 
+        "severity_value": -0.4425371840273842, 
         "code": "worst_score >= -1", 
-        "message": "Method harmony_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_unscaled\n  Metric id: ari\n  Worst score: 0.6788287873157728%\n"
+        "message": "Method harmony_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_unscaled\n  Metric id: ari\n  Worst score: 0.4425371840273842%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score harmony_full_unscaled ari", 
-        "value": 0.9169728130027583, 
+        "value": 0.9145421036222046, 
         "severity": 0, 
-        "severity_value": 0.4584864065013792, 
+        "severity_value": 0.4572710518111023, 
         "code": "best_score <= 2", 
-        "message": "Method harmony_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_unscaled\n  Metric id: ari\n  Best score: 0.9169728130027583%\n"
+        "message": "Method harmony_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_unscaled\n  Metric id: ari\n  Best score: 0.9145421036222046%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score harmony_hvg_scaled ari", 
-        "value": 0.7237341462183536, 
+        "value": 0.483041354582661, 
         "severity": 0, 
-        "severity_value": -0.7237341462183536, 
+        "severity_value": -0.483041354582661, 
         "code": "worst_score >= -1", 
-        "message": "Method harmony_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_scaled\n  Metric id: ari\n  Worst score: 0.7237341462183536%\n"
+        "message": "Method harmony_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_scaled\n  Metric id: ari\n  Worst score: 0.483041354582661%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score harmony_hvg_scaled ari", 
-        "value": 0.9037457316028146, 
+        "value": 0.9059115218618379, 
         "severity": 0, 
-        "severity_value": 0.4518728658014073, 
+        "severity_value": 0.45295576093091894, 
         "code": "best_score <= 2", 
-        "message": "Method harmony_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_scaled\n  Metric id: ari\n  Best score: 0.9037457316028146%\n"
+        "message": "Method harmony_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_scaled\n  Metric id: ari\n  Best score: 0.9059115218618379%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score harmony_hvg_unscaled ari", 
-        "value": 0.7482997076074913, 
+        "value": 0.5169138854646858, 
         "severity": 0, 
-        "severity_value": -0.7482997076074913, 
+        "severity_value": -0.5169138854646858, 
         "code": "worst_score >= -1", 
-        "message": "Method harmony_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.7482997076074913%\n"
+        "message": "Method harmony_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.5169138854646858%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score harmony_hvg_unscaled ari", 
-        "value": 0.951442301947687, 
+        "value": 0.944442015057048, 
         "severity": 0, 
-        "severity_value": 0.4757211509738435, 
+        "severity_value": 0.472221007528524, 
         "code": "best_score <= 2", 
-        "message": "Method harmony_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_unscaled\n  Metric id: ari\n  Best score: 0.951442301947687%\n"
+        "message": "Method harmony_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_unscaled\n  Metric id: ari\n  Best score: 0.944442015057048%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score liger_full_unscaled ari", 
-        "value": 0.37355868590836766, 
+        "value": 0.05149574043692525, 
         "severity": 0, 
-        "severity_value": -0.37355868590836766, 
+        "severity_value": -0.05149574043692525, 
         "code": "worst_score >= -1", 
-        "message": "Method liger_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_full_unscaled\n  Metric id: ari\n  Worst score: 0.37355868590836766%\n"
+        "message": "Method liger_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_full_unscaled\n  Metric id: ari\n  Worst score: 0.05149574043692525%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score liger_full_unscaled ari", 
-        "value": 0.5067741550553619, 
+        "value": 0.5064110848042067, 
         "severity": 0, 
-        "severity_value": 0.25338707752768097, 
+        "severity_value": 0.25320554240210336, 
         "code": "best_score <= 2", 
-        "message": "Method liger_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_full_unscaled\n  Metric id: ari\n  Best score: 0.5067741550553619%\n"
+        "message": "Method liger_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_full_unscaled\n  Metric id: ari\n  Best score: 0.5064110848042067%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score liger_hvg_unscaled ari", 
-        "value": 0.37552404091335484, 
+        "value": 0.08713428559705044, 
         "severity": 0, 
-        "severity_value": -0.37552404091335484, 
+        "severity_value": -0.08713428559705044, 
         "code": "worst_score >= -1", 
-        "message": "Method liger_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.37552404091335484%\n"
+        "message": "Method liger_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.08713428559705044%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score liger_hvg_unscaled ari", 
-        "value": 0.6953261577211756, 
+        "value": 0.6951018831630389, 
         "severity": 0, 
-        "severity_value": 0.3476630788605878, 
+        "severity_value": 0.34755094158151945, 
         "code": "best_score <= 2", 
-        "message": "Method liger_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_hvg_unscaled\n  Metric id: ari\n  Best score: 0.6953261577211756%\n"
+        "message": "Method liger_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_hvg_unscaled\n  Metric id: ari\n  Best score: 0.6951018831630389%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score mnn_full_scaled ari", 
-        "value": 0.45753118253719877, 
+        "value": 0.4170381813452914, 
         "severity": 0, 
-        "severity_value": -0.45753118253719877, 
+        "severity_value": -0.4170381813452914, 
         "code": "worst_score >= -1", 
-        "message": "Method mnn_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_full_scaled\n  Metric id: ari\n  Worst score: 0.45753118253719877%\n"
+        "message": "Method mnn_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_full_scaled\n  Metric id: ari\n  Worst score: 0.4170381813452914%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score mnn_full_scaled ari", 
-        "value": 0.716963842027683, 
+        "value": 0.716755495263185, 
         "severity": 0, 
-        "severity_value": 0.3584819210138415, 
+        "severity_value": 0.3583777476315925, 
         "code": "best_score <= 2", 
-        "message": "Method mnn_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_full_scaled\n  Metric id: ari\n  Best score: 0.716963842027683%\n"
+        "message": "Method mnn_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_full_scaled\n  Metric id: ari\n  Best score: 0.716755495263185%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score mnn_full_unscaled ari", 
-        "value": 0.7522351429811824, 
+        "value": 0.4919223444670818, 
         "severity": 0, 
-        "severity_value": -0.7522351429811824, 
+        "severity_value": -0.4919223444670818, 
         "code": "worst_score >= -1", 
-        "message": "Method mnn_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_full_unscaled\n  Metric id: ari\n  Worst score: 0.7522351429811824%\n"
+        "message": "Method mnn_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_full_unscaled\n  Metric id: ari\n  Worst score: 0.4919223444670818%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score mnn_full_unscaled ari", 
-        "value": 0.8403402427606379, 
+        "value": 0.8410096040738085, 
         "severity": 0, 
-        "severity_value": 0.42017012138031895, 
+        "severity_value": 0.42050480203690427, 
         "code": "best_score <= 2", 
-        "message": "Method mnn_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_full_unscaled\n  Metric id: ari\n  Best score: 0.8403402427606379%\n"
+        "message": "Method mnn_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_full_unscaled\n  Metric id: ari\n  Best score: 0.8410096040738085%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score mnn_hvg_scaled ari", 
-        "value": 0.7858465683761825, 
+        "value": 0.5208092297415235, 
         "severity": 0, 
-        "severity_value": -0.7858465683761825, 
+        "severity_value": -0.5208092297415235, 
         "code": "worst_score >= -1", 
-        "message": "Method mnn_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_hvg_scaled\n  Metric id: ari\n  Worst score: 0.7858465683761825%\n"
+        "message": "Method mnn_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_hvg_scaled\n  Metric id: ari\n  Worst score: 0.5208092297415235%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score mnn_hvg_scaled ari", 
-        "value": 0.948441207231594, 
+        "value": 0.9446771931390331, 
         "severity": 0, 
-        "severity_value": 0.474220603615797, 
+        "severity_value": 0.47233859656951654, 
         "code": "best_score <= 2", 
-        "message": "Method mnn_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_hvg_scaled\n  Metric id: ari\n  Best score: 0.948441207231594%\n"
+        "message": "Method mnn_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_hvg_scaled\n  Metric id: ari\n  Best score: 0.9446771931390331%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score mnn_hvg_unscaled ari", 
-        "value": 0.7397060997702802, 
+        "value": 0.48173386050708, 
         "severity": 0, 
-        "severity_value": -0.7397060997702802, 
+        "severity_value": -0.48173386050708, 
         "code": "worst_score >= -1", 
-        "message": "Method mnn_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.7397060997702802%\n"
+        "message": "Method mnn_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.48173386050708%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score mnn_hvg_unscaled ari", 
-        "value": 0.8454622415194614, 
+        "value": 0.8473922324278069, 
         "severity": 0, 
-        "severity_value": 0.4227311207597307, 
+        "severity_value": 0.42369611621390346, 
         "code": "best_score <= 2", 
-        "message": "Method mnn_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_hvg_unscaled\n  Metric id: ari\n  Best score: 0.8454622415194614%\n"
+        "message": "Method mnn_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_hvg_unscaled\n  Metric id: ari\n  Best score: 0.8473922324278069%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score no_integration ari", 
-        "value": 0.21969428093603416, 
+        "value": 0.21879194351428313, 
         "severity": 0, 
-        "severity_value": -0.21969428093603416, 
+        "severity_value": -0.21879194351428313, 
         "code": "worst_score >= -1", 
-        "message": "Method no_integration performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: no_integration\n  Metric id: ari\n  Worst score: 0.21969428093603416%\n"
+        "message": "Method no_integration performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: no_integration\n  Metric id: ari\n  Worst score: 0.21879194351428313%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score no_integration ari", 
-        "value": 0.2994155799505141, 
+        "value": 0.3536507811925667, 
         "severity": 0, 
-        "severity_value": 0.14970778997525705, 
+        "severity_value": 0.17682539059628335, 
         "code": "best_score <= 2", 
-        "message": "Method no_integration performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: no_integration\n  Metric id: ari\n  Best score: 0.2994155799505141%\n"
+        "message": "Method no_integration performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: no_integration\n  Metric id: ari\n  Best score: 0.3536507811925667%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
@@ -1393,381 +1403,381 @@
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scalex_full ari", 
-        "value": 0.6047254782725486, 
+        "value": 0.5810390217902537, 
         "severity": 0, 
-        "severity_value": -0.6047254782725486, 
+        "severity_value": -0.5810390217902537, 
         "code": "worst_score >= -1", 
-        "message": "Method scalex_full performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scalex_full\n  Metric id: ari\n  Worst score: 0.6047254782725486%\n"
+        "message": "Method scalex_full performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scalex_full\n  Metric id: ari\n  Worst score: 0.5810390217902537%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scalex_full ari", 
-        "value": 0.9205947584249223, 
+        "value": 0.918531140000329, 
         "severity": 0, 
-        "severity_value": 0.46029737921246117, 
+        "severity_value": 0.4592655700001645, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_full performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scalex_full\n  Metric id: ari\n  Best score: 0.9205947584249223%\n"
+        "message": "Method scalex_full performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scalex_full\n  Metric id: ari\n  Best score: 0.918531140000329%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scalex_hvg ari", 
-        "value": 0.7241972099997339, 
+        "value": 0.6014654108621503, 
         "severity": 0, 
-        "severity_value": -0.7241972099997339, 
+        "severity_value": -0.6014654108621503, 
         "code": "worst_score >= -1", 
-        "message": "Method scalex_hvg performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scalex_hvg\n  Metric id: ari\n  Worst score: 0.7241972099997339%\n"
+        "message": "Method scalex_hvg performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scalex_hvg\n  Metric id: ari\n  Worst score: 0.6014654108621503%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scalex_hvg ari", 
-        "value": 0.9398904500992812, 
+        "value": 0.9420299190485509, 
         "severity": 0, 
-        "severity_value": 0.4699452250496406, 
+        "severity_value": 0.47101495952427547, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_hvg performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scalex_hvg\n  Metric id: ari\n  Best score: 0.9398904500992812%\n"
+        "message": "Method scalex_hvg performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scalex_hvg\n  Metric id: ari\n  Best score: 0.9420299190485509%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanorama_embed_full_scaled ari", 
-        "value": 0.744744297096372, 
+        "value": 0.4601564322708569, 
         "severity": 0, 
-        "severity_value": -0.744744297096372, 
+        "severity_value": -0.4601564322708569, 
         "code": "worst_score >= -1", 
-        "message": "Method scanorama_embed_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_full_scaled\n  Metric id: ari\n  Worst score: 0.744744297096372%\n"
+        "message": "Method scanorama_embed_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_full_scaled\n  Metric id: ari\n  Worst score: 0.4601564322708569%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanorama_embed_full_scaled ari", 
-        "value": 0.9283854309728572, 
+        "value": 0.9054639207801882, 
         "severity": 0, 
-        "severity_value": 0.4641927154864286, 
+        "severity_value": 0.4527319603900941, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_embed_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_full_scaled\n  Metric id: ari\n  Best score: 0.9283854309728572%\n"
+        "message": "Method scanorama_embed_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_full_scaled\n  Metric id: ari\n  Best score: 0.9054639207801882%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanorama_embed_full_unscaled ari", 
-        "value": 0.5134034805264535, 
+        "value": 0.46430736810172774, 
         "severity": 0, 
-        "severity_value": -0.5134034805264535, 
+        "severity_value": -0.46430736810172774, 
         "code": "worst_score >= -1", 
-        "message": "Method scanorama_embed_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_full_unscaled\n  Metric id: ari\n  Worst score: 0.5134034805264535%\n"
+        "message": "Method scanorama_embed_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_full_unscaled\n  Metric id: ari\n  Worst score: 0.46430736810172774%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanorama_embed_full_unscaled ari", 
-        "value": 0.5779599096507722, 
+        "value": 0.6010034676920797, 
         "severity": 0, 
-        "severity_value": 0.2889799548253861, 
+        "severity_value": 0.30050173384603984, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_embed_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_full_unscaled\n  Metric id: ari\n  Best score: 0.5779599096507722%\n"
+        "message": "Method scanorama_embed_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_full_unscaled\n  Metric id: ari\n  Best score: 0.6010034676920797%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanorama_embed_hvg_scaled ari", 
-        "value": 0.7860884918418309, 
+        "value": 0.5661290351256181, 
         "severity": 0, 
-        "severity_value": -0.7860884918418309, 
+        "severity_value": -0.5661290351256181, 
         "code": "worst_score >= -1", 
-        "message": "Method scanorama_embed_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_hvg_scaled\n  Metric id: ari\n  Worst score: 0.7860884918418309%\n"
+        "message": "Method scanorama_embed_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_hvg_scaled\n  Metric id: ari\n  Worst score: 0.5661290351256181%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanorama_embed_hvg_scaled ari", 
-        "value": 0.9491206780248117, 
+        "value": 0.9513304042665172, 
         "severity": 0, 
-        "severity_value": 0.47456033901240585, 
+        "severity_value": 0.4756652021332586, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_embed_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_hvg_scaled\n  Metric id: ari\n  Best score: 0.9491206780248117%\n"
+        "message": "Method scanorama_embed_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_hvg_scaled\n  Metric id: ari\n  Best score: 0.9513304042665172%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanorama_embed_hvg_unscaled ari", 
-        "value": 0.7836095474474134, 
+        "value": 0.5350584236742365, 
         "severity": 0, 
-        "severity_value": -0.7836095474474134, 
+        "severity_value": -0.5350584236742365, 
         "code": "worst_score >= -1", 
-        "message": "Method scanorama_embed_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.7836095474474134%\n"
+        "message": "Method scanorama_embed_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.5350584236742365%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanorama_embed_hvg_unscaled ari", 
-        "value": 0.9572236521767342, 
+        "value": 0.9577989809461521, 
         "severity": 0, 
-        "severity_value": 0.4786118260883671, 
+        "severity_value": 0.47889949047307606, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_embed_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_hvg_unscaled\n  Metric id: ari\n  Best score: 0.9572236521767342%\n"
+        "message": "Method scanorama_embed_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_hvg_unscaled\n  Metric id: ari\n  Best score: 0.9577989809461521%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanorama_feature_full_scaled ari", 
-        "value": 0.6980324850704572, 
+        "value": 0.4326799482687699, 
         "severity": 0, 
-        "severity_value": -0.6980324850704572, 
+        "severity_value": -0.4326799482687699, 
         "code": "worst_score >= -1", 
-        "message": "Method scanorama_feature_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_full_scaled\n  Metric id: ari\n  Worst score: 0.6980324850704572%\n"
+        "message": "Method scanorama_feature_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_full_scaled\n  Metric id: ari\n  Worst score: 0.4326799482687699%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanorama_feature_full_scaled ari", 
-        "value": 0.857531173758942, 
+        "value": 0.6978102026766819, 
         "severity": 0, 
-        "severity_value": 0.428765586879471, 
+        "severity_value": 0.34890510133834096, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_feature_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_full_scaled\n  Metric id: ari\n  Best score: 0.857531173758942%\n"
+        "message": "Method scanorama_feature_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_full_scaled\n  Metric id: ari\n  Best score: 0.6978102026766819%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanorama_feature_full_unscaled ari", 
-        "value": 0.44532262161571917, 
+        "value": 0.4421683711474811, 
         "severity": 0, 
-        "severity_value": -0.44532262161571917, 
+        "severity_value": -0.4421683711474811, 
         "code": "worst_score >= -1", 
-        "message": "Method scanorama_feature_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_full_unscaled\n  Metric id: ari\n  Worst score: 0.44532262161571917%\n"
+        "message": "Method scanorama_feature_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_full_unscaled\n  Metric id: ari\n  Worst score: 0.4421683711474811%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanorama_feature_full_unscaled ari", 
-        "value": 0.5491781475890215, 
+        "value": 0.6093804105697392, 
         "severity": 0, 
-        "severity_value": 0.27458907379451075, 
+        "severity_value": 0.3046902052848696, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_feature_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_full_unscaled\n  Metric id: ari\n  Best score: 0.5491781475890215%\n"
+        "message": "Method scanorama_feature_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_full_unscaled\n  Metric id: ari\n  Best score: 0.6093804105697392%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanorama_feature_hvg_scaled ari", 
-        "value": 0.8076207698672963, 
+        "value": 0.4840132878620113, 
         "severity": 0, 
-        "severity_value": -0.8076207698672963, 
+        "severity_value": -0.4840132878620113, 
         "code": "worst_score >= -1", 
-        "message": "Method scanorama_feature_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_hvg_scaled\n  Metric id: ari\n  Worst score: 0.8076207698672963%\n"
+        "message": "Method scanorama_feature_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_hvg_scaled\n  Metric id: ari\n  Worst score: 0.4840132878620113%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanorama_feature_hvg_scaled ari", 
-        "value": 0.934848346507434, 
+        "value": 0.8074791569000984, 
         "severity": 0, 
-        "severity_value": 0.467424173253717, 
+        "severity_value": 0.4037395784500492, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_feature_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_hvg_scaled\n  Metric id: ari\n  Best score: 0.934848346507434%\n"
+        "message": "Method scanorama_feature_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_hvg_scaled\n  Metric id: ari\n  Best score: 0.8074791569000984%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanorama_feature_hvg_unscaled ari", 
-        "value": 0.7314506757027445, 
+        "value": 0.52953548469261, 
         "severity": 0, 
-        "severity_value": -0.7314506757027445, 
+        "severity_value": -0.52953548469261, 
         "code": "worst_score >= -1", 
-        "message": "Method scanorama_feature_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.7314506757027445%\n"
+        "message": "Method scanorama_feature_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.52953548469261%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanorama_feature_hvg_unscaled ari", 
-        "value": 0.8592234924652206, 
+        "value": 0.731252992893501, 
         "severity": 0, 
-        "severity_value": 0.4296117462326103, 
+        "severity_value": 0.3656264964467505, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_feature_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_hvg_unscaled\n  Metric id: ari\n  Best score: 0.8592234924652206%\n"
+        "message": "Method scanorama_feature_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_hvg_unscaled\n  Metric id: ari\n  Best score: 0.731252992893501%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanvi_full_unscaled ari", 
-        "value": 0.8791637767123666, 
+        "value": 0.7044541955205725, 
         "severity": 0, 
-        "severity_value": -0.8791637767123666, 
+        "severity_value": -0.7044541955205725, 
         "code": "worst_score >= -1", 
-        "message": "Method scanvi_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanvi_full_unscaled\n  Metric id: ari\n  Worst score: 0.8791637767123666%\n"
+        "message": "Method scanvi_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanvi_full_unscaled\n  Metric id: ari\n  Worst score: 0.7044541955205725%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanvi_full_unscaled ari", 
-        "value": 0.9447892964983403, 
+        "value": 0.9485326219035161, 
         "severity": 0, 
-        "severity_value": 0.47239464824917016, 
+        "severity_value": 0.47426631095175803, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanvi_full_unscaled\n  Metric id: ari\n  Best score: 0.9447892964983403%\n"
+        "message": "Method scanvi_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanvi_full_unscaled\n  Metric id: ari\n  Best score: 0.9485326219035161%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanvi_hvg_unscaled ari", 
-        "value": 0.8873883993987868, 
+        "value": 0.7717155271473825, 
         "severity": 0, 
-        "severity_value": -0.8873883993987868, 
+        "severity_value": -0.7717155271473825, 
         "code": "worst_score >= -1", 
-        "message": "Method scanvi_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanvi_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.8873883993987868%\n"
+        "message": "Method scanvi_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanvi_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.7717155271473825%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanvi_hvg_unscaled ari", 
-        "value": 0.9485876664100362, 
+        "value": 0.9537123367327522, 
         "severity": 0, 
-        "severity_value": 0.4742938332050181, 
+        "severity_value": 0.4768561683663761, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanvi_hvg_unscaled\n  Metric id: ari\n  Best score: 0.9485876664100362%\n"
+        "message": "Method scanvi_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanvi_hvg_unscaled\n  Metric id: ari\n  Best score: 0.9537123367327522%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scvi_full_unscaled ari", 
-        "value": 0.7935401230074643, 
+        "value": 0.5889829834181002, 
         "severity": 0, 
-        "severity_value": -0.7935401230074643, 
+        "severity_value": -0.5889829834181002, 
         "code": "worst_score >= -1", 
-        "message": "Method scvi_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scvi_full_unscaled\n  Metric id: ari\n  Worst score: 0.7935401230074643%\n"
+        "message": "Method scvi_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scvi_full_unscaled\n  Metric id: ari\n  Worst score: 0.5889829834181002%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scvi_full_unscaled ari", 
-        "value": 0.9305909844103142, 
+        "value": 0.9447606190178229, 
         "severity": 0, 
-        "severity_value": 0.4652954922051571, 
+        "severity_value": 0.47238030950891147, 
         "code": "best_score <= 2", 
-        "message": "Method scvi_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scvi_full_unscaled\n  Metric id: ari\n  Best score: 0.9305909844103142%\n"
+        "message": "Method scvi_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scvi_full_unscaled\n  Metric id: ari\n  Best score: 0.9447606190178229%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scvi_hvg_unscaled ari", 
-        "value": 0.8154740963542599, 
+        "value": 0.5722560241919373, 
         "severity": 0, 
-        "severity_value": -0.8154740963542599, 
+        "severity_value": -0.5722560241919373, 
         "code": "worst_score >= -1", 
-        "message": "Method scvi_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scvi_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.8154740963542599%\n"
+        "message": "Method scvi_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scvi_hvg_unscaled\n  Metric id: ari\n  Worst score: 0.5722560241919373%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scvi_hvg_unscaled ari", 
-        "value": 0.9439415597550863, 
+        "value": 0.9465129739797866, 
         "severity": 0, 
-        "severity_value": 0.47197077987754316, 
+        "severity_value": 0.4732564869898933, 
         "code": "best_score <= 2", 
-        "message": "Method scvi_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scvi_hvg_unscaled\n  Metric id: ari\n  Best score: 0.9439415597550863%\n"
+        "message": "Method scvi_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scvi_hvg_unscaled\n  Metric id: ari\n  Best score: 0.9465129739797866%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score batch_random_integration graph_connectivity", 
-        "value": 0.03066441210400863, 
+        "value": 0.06695452488744323, 
         "severity": 0, 
-        "severity_value": -0.03066441210400863, 
+        "severity_value": -0.06695452488744323, 
         "code": "worst_score >= -1", 
-        "message": "Method batch_random_integration performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: batch_random_integration\n  Metric id: graph_connectivity\n  Worst score: 0.03066441210400863%\n"
+        "message": "Method batch_random_integration performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: batch_random_integration\n  Metric id: graph_connectivity\n  Worst score: 0.06695452488744323%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score batch_random_integration graph_connectivity", 
-        "value": 0.13814898300056044, 
+        "value": 0.42300594497088156, 
         "severity": 0, 
-        "severity_value": 0.06907449150028022, 
+        "severity_value": 0.21150297248544078, 
         "code": "best_score <= 2", 
-        "message": "Method batch_random_integration performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: batch_random_integration\n  Metric id: graph_connectivity\n  Best score: 0.13814898300056044%\n"
+        "message": "Method batch_random_integration performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: batch_random_integration\n  Metric id: graph_connectivity\n  Best score: 0.42300594497088156%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score bbknn_full_scaled graph_connectivity", 
-        "value": 0.9570716649728273, 
+        "value": 0.9717346823857268, 
         "severity": 0, 
-        "severity_value": -0.9570716649728273, 
+        "severity_value": -0.9717346823857268, 
         "code": "worst_score >= -1", 
-        "message": "Method bbknn_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9570716649728273%\n"
+        "message": "Method bbknn_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9717346823857268%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score bbknn_full_scaled graph_connectivity", 
-        "value": 0.9716490711907172, 
+        "value": 0.9947849206617143, 
         "severity": 0, 
-        "severity_value": 0.4858245355953586, 
+        "severity_value": 0.49739246033085716, 
         "code": "best_score <= 2", 
-        "message": "Method bbknn_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9716490711907172%\n"
+        "message": "Method bbknn_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9947849206617143%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score bbknn_full_unscaled graph_connectivity", 
-        "value": 0.9428913079664013, 
+        "value": 0.9894033031717383, 
         "severity": 0, 
-        "severity_value": -0.9428913079664013, 
+        "severity_value": -0.9894033031717383, 
         "code": "worst_score >= -1", 
-        "message": "Method bbknn_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9428913079664013%\n"
+        "message": "Method bbknn_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9894033031717383%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score bbknn_full_unscaled graph_connectivity", 
-        "value": 0.9899360105550568, 
+        "value": 0.9946103605364058, 
         "severity": 0, 
-        "severity_value": 0.4949680052775284, 
+        "severity_value": 0.4973051802682029, 
         "code": "best_score <= 2", 
-        "message": "Method bbknn_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9899360105550568%\n"
+        "message": "Method bbknn_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9946103605364058%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score bbknn_hvg_scaled graph_connectivity", 
-        "value": 0.9814605895917472, 
+        "value": 0.9854412677444178, 
         "severity": 0, 
-        "severity_value": -0.9814605895917472, 
+        "severity_value": -0.9854412677444178, 
         "code": "worst_score >= -1", 
-        "message": "Method bbknn_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9814605895917472%\n"
+        "message": "Method bbknn_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9854412677444178%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score bbknn_hvg_scaled graph_connectivity", 
-        "value": 0.9864488170566265, 
+        "value": 0.9973394681465035, 
         "severity": 0, 
-        "severity_value": 0.49322440852831323, 
+        "severity_value": 0.49866973407325177, 
         "code": "best_score <= 2", 
-        "message": "Method bbknn_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9864488170566265%\n"
+        "message": "Method bbknn_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9973394681465035%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score bbknn_hvg_unscaled graph_connectivity", 
-        "value": 0.9739127598279194, 
+        "value": 0.9780978889287514, 
         "severity": 0, 
-        "severity_value": -0.9739127598279194, 
+        "severity_value": -0.9780978889287514, 
         "code": "worst_score >= -1", 
-        "message": "Method bbknn_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9739127598279194%\n"
+        "message": "Method bbknn_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9780978889287514%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score bbknn_hvg_unscaled graph_connectivity", 
-        "value": 0.9906730076749358, 
+        "value": 0.9957044692084305, 
         "severity": 0, 
-        "severity_value": 0.4953365038374679, 
+        "severity_value": 0.49785223460421524, 
         "code": "best_score <= 2", 
-        "message": "Method bbknn_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9906730076749358%\n"
+        "message": "Method bbknn_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9957044692084305%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
@@ -1793,481 +1803,481 @@
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score celltype_random_integration graph_connectivity", 
-        "value": 0.7384882932612782, 
+        "value": 0.7772867109257336, 
         "severity": 0, 
-        "severity_value": -0.7384882932612782, 
+        "severity_value": -0.7772867109257336, 
         "code": "worst_score >= -1", 
-        "message": "Method celltype_random_integration performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: celltype_random_integration\n  Metric id: graph_connectivity\n  Worst score: 0.7384882932612782%\n"
+        "message": "Method celltype_random_integration performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: celltype_random_integration\n  Metric id: graph_connectivity\n  Worst score: 0.7772867109257336%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score celltype_random_integration graph_connectivity", 
-        "value": 0.7766121474524926, 
+        "value": 0.7954258276516549, 
         "severity": 0, 
-        "severity_value": 0.3883060737262463, 
+        "severity_value": 0.39771291382582746, 
         "code": "best_score <= 2", 
-        "message": "Method celltype_random_integration performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: celltype_random_integration\n  Metric id: graph_connectivity\n  Best score: 0.7766121474524926%\n"
+        "message": "Method celltype_random_integration performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: celltype_random_integration\n  Metric id: graph_connectivity\n  Best score: 0.7954258276516549%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score combat_full_scaled graph_connectivity", 
-        "value": 0.9048423312408638, 
+        "value": 0.9305698089587743, 
         "severity": 0, 
-        "severity_value": -0.9048423312408638, 
+        "severity_value": -0.9305698089587743, 
         "code": "worst_score >= -1", 
-        "message": "Method combat_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9048423312408638%\n"
+        "message": "Method combat_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9305698089587743%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score combat_full_scaled graph_connectivity", 
-        "value": 0.9753294565191446, 
+        "value": 0.9754039540681715, 
         "severity": 0, 
-        "severity_value": 0.4876647282595723, 
+        "severity_value": 0.48770197703408574, 
         "code": "best_score <= 2", 
-        "message": "Method combat_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9753294565191446%\n"
+        "message": "Method combat_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9754039540681715%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score combat_full_unscaled graph_connectivity", 
-        "value": 0.9340519407470237, 
+        "value": 0.9342510838579667, 
         "severity": 0, 
-        "severity_value": -0.9340519407470237, 
+        "severity_value": -0.9342510838579667, 
         "code": "worst_score >= -1", 
-        "message": "Method combat_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9340519407470237%\n"
+        "message": "Method combat_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9342510838579667%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score combat_full_unscaled graph_connectivity", 
-        "value": 0.9755960102028187, 
+        "value": 0.9920955440194462, 
         "severity": 0, 
-        "severity_value": 0.48779800510140936, 
+        "severity_value": 0.4960477720097231, 
         "code": "best_score <= 2", 
-        "message": "Method combat_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9755960102028187%\n"
+        "message": "Method combat_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9920955440194462%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score combat_hvg_scaled graph_connectivity", 
-        "value": 0.9292218980284238, 
+        "value": 0.929435626401524, 
         "severity": 0, 
-        "severity_value": -0.9292218980284238, 
+        "severity_value": -0.929435626401524, 
         "code": "worst_score >= -1", 
-        "message": "Method combat_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9292218980284238%\n"
+        "message": "Method combat_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.929435626401524%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score combat_hvg_scaled graph_connectivity", 
-        "value": 0.9829670810163341, 
+        "value": 0.9940498730265921, 
         "severity": 0, 
-        "severity_value": 0.49148354050816706, 
+        "severity_value": 0.49702493651329605, 
         "code": "best_score <= 2", 
-        "message": "Method combat_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9829670810163341%\n"
+        "message": "Method combat_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9940498730265921%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score combat_hvg_unscaled graph_connectivity", 
-        "value": 0.9474446158283903, 
+        "value": 0.9476033171278568, 
         "severity": 0, 
-        "severity_value": -0.9474446158283903, 
+        "severity_value": -0.9476033171278568, 
         "code": "worst_score >= -1", 
-        "message": "Method combat_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9474446158283903%\n"
+        "message": "Method combat_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9476033171278568%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score combat_hvg_unscaled graph_connectivity", 
-        "value": 0.980283927553498, 
+        "value": 0.9937734005322286, 
         "severity": 0, 
-        "severity_value": 0.490141963776749, 
+        "severity_value": 0.4968867002661143, 
         "code": "best_score <= 2", 
-        "message": "Method combat_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.980283927553498%\n"
+        "message": "Method combat_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9937734005322286%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_embed_full_scaled graph_connectivity", 
-        "value": 0.8934179071048345, 
+        "value": 0.9458811258431232, 
         "severity": 0, 
-        "severity_value": -0.8934179071048345, 
+        "severity_value": -0.9458811258431232, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_embed_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.8934179071048345%\n"
+        "message": "Method fastmnn_embed_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9458811258431232%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embed_full_scaled graph_connectivity", 
-        "value": 0.9459376825585049, 
+        "value": 0.9704110018635289, 
         "severity": 0, 
-        "severity_value": 0.4729688412792524, 
+        "severity_value": 0.48520550093176446, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embed_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9459376825585049%\n"
+        "message": "Method fastmnn_embed_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9704110018635289%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_embed_full_unscaled graph_connectivity", 
-        "value": 0.8961060116255086, 
+        "value": 0.946639701613774, 
         "severity": 0, 
-        "severity_value": -0.8961060116255086, 
+        "severity_value": -0.946639701613774, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_embed_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.8961060116255086%\n"
+        "message": "Method fastmnn_embed_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.946639701613774%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embed_full_unscaled graph_connectivity", 
-        "value": 0.945990097631068, 
+        "value": 0.9726271906140419, 
         "severity": 0, 
-        "severity_value": 0.472995048815534, 
+        "severity_value": 0.48631359530702095, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embed_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.945990097631068%\n"
+        "message": "Method fastmnn_embed_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9726271906140419%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_embed_hvg_scaled graph_connectivity", 
-        "value": 0.9041769900698432, 
+        "value": 0.9421117344230929, 
         "severity": 0, 
-        "severity_value": -0.9041769900698432, 
+        "severity_value": -0.9421117344230929, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_embed_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9041769900698432%\n"
+        "message": "Method fastmnn_embed_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9421117344230929%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embed_hvg_scaled graph_connectivity", 
-        "value": 0.9550256797464612, 
+        "value": 0.9736930472270464, 
         "severity": 0, 
-        "severity_value": 0.4775128398732306, 
+        "severity_value": 0.4868465236135232, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embed_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9550256797464612%\n"
+        "message": "Method fastmnn_embed_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9736930472270464%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_embed_hvg_unscaled graph_connectivity", 
-        "value": 0.9022366612365323, 
+        "value": 0.9391113411612655, 
         "severity": 0, 
-        "severity_value": -0.9022366612365323, 
+        "severity_value": -0.9391113411612655, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_embed_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9022366612365323%\n"
+        "message": "Method fastmnn_embed_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9391113411612655%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embed_hvg_unscaled graph_connectivity", 
-        "value": 0.9552358688136408, 
+        "value": 0.9741240933752242, 
         "severity": 0, 
-        "severity_value": 0.4776179344068204, 
+        "severity_value": 0.4870620466876121, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embed_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9552358688136408%\n"
+        "message": "Method fastmnn_embed_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9741240933752242%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_feature_full_scaled graph_connectivity", 
-        "value": 0.8933873887396593, 
+        "value": 0.9353712326589649, 
         "severity": 0, 
-        "severity_value": -0.8933873887396593, 
+        "severity_value": -0.9353712326589649, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_feature_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.8933873887396593%\n"
+        "message": "Method fastmnn_feature_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9353712326589649%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature_full_scaled graph_connectivity", 
-        "value": 0.9334986197679309, 
+        "value": 0.9716060132889651, 
         "severity": 0, 
-        "severity_value": 0.46674930988396546, 
+        "severity_value": 0.48580300664448256, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9334986197679309%\n"
+        "message": "Method fastmnn_feature_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9716060132889651%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_feature_full_unscaled graph_connectivity", 
-        "value": 0.8706191397631414, 
+        "value": 0.9347034631530092, 
         "severity": 0, 
-        "severity_value": -0.8706191397631414, 
+        "severity_value": -0.9347034631530092, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_feature_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.8706191397631414%\n"
+        "message": "Method fastmnn_feature_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9347034631530092%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature_full_unscaled graph_connectivity", 
-        "value": 0.9342914320765231, 
+        "value": 0.9716258583027422, 
         "severity": 0, 
-        "severity_value": 0.46714571603826155, 
+        "severity_value": 0.4858129291513711, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9342914320765231%\n"
+        "message": "Method fastmnn_feature_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9716258583027422%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_feature_hvg_scaled graph_connectivity", 
-        "value": 0.9010387235244746, 
+        "value": 0.9397663312680025, 
         "severity": 0, 
-        "severity_value": -0.9010387235244746, 
+        "severity_value": -0.9397663312680025, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_feature_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9010387235244746%\n"
+        "message": "Method fastmnn_feature_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9397663312680025%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature_hvg_scaled graph_connectivity", 
-        "value": 0.9554016580880337, 
+        "value": 0.9735469213869326, 
         "severity": 0, 
-        "severity_value": 0.47770082904401684, 
+        "severity_value": 0.4867734606934663, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9554016580880337%\n"
+        "message": "Method fastmnn_feature_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9735469213869326%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_feature_hvg_unscaled graph_connectivity", 
-        "value": 0.9037477157735033, 
+        "value": 0.9394029682371767, 
         "severity": 0, 
-        "severity_value": -0.9037477157735033, 
+        "severity_value": -0.9394029682371767, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_feature_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9037477157735033%\n"
+        "message": "Method fastmnn_feature_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9394029682371767%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature_hvg_unscaled graph_connectivity", 
-        "value": 0.9552864871560659, 
+        "value": 0.9739309273606654, 
         "severity": 0, 
-        "severity_value": 0.47764324357803295, 
+        "severity_value": 0.4869654636803327, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9552864871560659%\n"
+        "message": "Method fastmnn_feature_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9739309273606654%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score harmony_full_scaled graph_connectivity", 
-        "value": 0.9075280912041197, 
+        "value": 0.875303145929384, 
         "severity": 0, 
-        "severity_value": -0.9075280912041197, 
+        "severity_value": -0.875303145929384, 
         "code": "worst_score >= -1", 
-        "message": "Method harmony_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9075280912041197%\n"
+        "message": "Method harmony_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.875303145929384%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score harmony_full_scaled graph_connectivity", 
-        "value": 0.964268534806334, 
+        "value": 0.9834300314136418, 
         "severity": 0, 
-        "severity_value": 0.482134267403167, 
+        "severity_value": 0.4917150157068209, 
         "code": "best_score <= 2", 
-        "message": "Method harmony_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_scaled\n  Metric id: graph_connectivity\n  Best score: 0.964268534806334%\n"
+        "message": "Method harmony_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9834300314136418%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score harmony_full_unscaled graph_connectivity", 
-        "value": 0.9309799933166993, 
+        "value": 0.9326418488034917, 
         "severity": 0, 
-        "severity_value": -0.9309799933166993, 
+        "severity_value": -0.9326418488034917, 
         "code": "worst_score >= -1", 
-        "message": "Method harmony_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9309799933166993%\n"
+        "message": "Method harmony_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9326418488034917%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score harmony_full_unscaled graph_connectivity", 
-        "value": 0.9546516581738101, 
+        "value": 0.9895723249312123, 
         "severity": 0, 
-        "severity_value": 0.4773258290869051, 
+        "severity_value": 0.49478616246560614, 
         "code": "best_score <= 2", 
-        "message": "Method harmony_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9546516581738101%\n"
+        "message": "Method harmony_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9895723249312123%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score harmony_hvg_scaled graph_connectivity", 
-        "value": 0.9351969773987947, 
+        "value": 0.8975757419211668, 
         "severity": 0, 
-        "severity_value": -0.9351969773987947, 
+        "severity_value": -0.8975757419211668, 
         "code": "worst_score >= -1", 
-        "message": "Method harmony_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9351969773987947%\n"
+        "message": "Method harmony_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.8975757419211668%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score harmony_hvg_scaled graph_connectivity", 
-        "value": 0.9746362225540894, 
+        "value": 0.9821756090020647, 
         "severity": 0, 
-        "severity_value": 0.4873181112770447, 
+        "severity_value": 0.49108780450103234, 
         "code": "best_score <= 2", 
-        "message": "Method harmony_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9746362225540894%\n"
+        "message": "Method harmony_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9821756090020647%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score harmony_hvg_unscaled graph_connectivity", 
-        "value": 0.9346780544798086, 
+        "value": 0.9307114634516919, 
         "severity": 0, 
-        "severity_value": -0.9346780544798086, 
+        "severity_value": -0.9307114634516919, 
         "code": "worst_score >= -1", 
-        "message": "Method harmony_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9346780544798086%\n"
+        "message": "Method harmony_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9307114634516919%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score harmony_hvg_unscaled graph_connectivity", 
-        "value": 0.9776286140107007, 
+        "value": 0.9905776112696121, 
         "severity": 0, 
-        "severity_value": 0.48881430700535033, 
+        "severity_value": 0.49528880563480604, 
         "code": "best_score <= 2", 
-        "message": "Method harmony_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9776286140107007%\n"
+        "message": "Method harmony_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9905776112696121%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score liger_full_unscaled graph_connectivity", 
-        "value": 0.5783960491996191, 
+        "value": 0.4527061933226365, 
         "severity": 0, 
-        "severity_value": -0.5783960491996191, 
+        "severity_value": -0.4527061933226365, 
         "code": "worst_score >= -1", 
-        "message": "Method liger_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.5783960491996191%\n"
+        "message": "Method liger_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.4527061933226365%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score liger_full_unscaled graph_connectivity", 
-        "value": 0.8732413961814484, 
+        "value": 0.8736241686692087, 
         "severity": 0, 
-        "severity_value": 0.4366206980907242, 
+        "severity_value": 0.43681208433460433, 
         "code": "best_score <= 2", 
-        "message": "Method liger_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.8732413961814484%\n"
+        "message": "Method liger_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.8736241686692087%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score liger_hvg_unscaled graph_connectivity", 
-        "value": 0.5939184970186199, 
+        "value": 0.33671098939858696, 
         "severity": 0, 
-        "severity_value": -0.5939184970186199, 
+        "severity_value": -0.33671098939858696, 
         "code": "worst_score >= -1", 
-        "message": "Method liger_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.5939184970186199%\n"
+        "message": "Method liger_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.33671098939858696%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score liger_hvg_unscaled graph_connectivity", 
-        "value": 0.8661239938107829, 
+        "value": 0.8665282586921931, 
         "severity": 0, 
-        "severity_value": 0.43306199690539143, 
+        "severity_value": 0.43326412934609654, 
         "code": "best_score <= 2", 
-        "message": "Method liger_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.8661239938107829%\n"
+        "message": "Method liger_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.8665282586921931%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score mnn_full_scaled graph_connectivity", 
-        "value": 0.901686256194793, 
+        "value": 0.9601899822473203, 
         "severity": 0, 
-        "severity_value": -0.901686256194793, 
+        "severity_value": -0.9601899822473203, 
         "code": "worst_score >= -1", 
-        "message": "Method mnn_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_full_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.901686256194793%\n"
+        "message": "Method mnn_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_full_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9601899822473203%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score mnn_full_scaled graph_connectivity", 
-        "value": 0.9600694039739865, 
+        "value": 0.9777530161640994, 
         "severity": 0, 
-        "severity_value": 0.4800347019869933, 
+        "severity_value": 0.4888765080820497, 
         "code": "best_score <= 2", 
-        "message": "Method mnn_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_full_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9600694039739865%\n"
+        "message": "Method mnn_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_full_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9777530161640994%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score mnn_full_unscaled graph_connectivity", 
-        "value": 0.9662884788590915, 
+        "value": 0.9769060568343337, 
         "severity": 0, 
-        "severity_value": -0.9662884788590915, 
+        "severity_value": -0.9769060568343337, 
         "code": "worst_score >= -1", 
-        "message": "Method mnn_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9662884788590915%\n"
+        "message": "Method mnn_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9769060568343337%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score mnn_full_unscaled graph_connectivity", 
-        "value": 0.9768361089179906, 
+        "value": 0.9861073678352906, 
         "severity": 0, 
-        "severity_value": 0.4884180544589953, 
+        "severity_value": 0.4930536839176453, 
         "code": "best_score <= 2", 
-        "message": "Method mnn_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9768361089179906%\n"
+        "message": "Method mnn_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9861073678352906%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score mnn_hvg_scaled graph_connectivity", 
-        "value": 0.9723087991893922, 
+        "value": 0.9721491408270836, 
         "severity": 0, 
-        "severity_value": -0.9723087991893922, 
+        "severity_value": -0.9721491408270836, 
         "code": "worst_score >= -1", 
-        "message": "Method mnn_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_hvg_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9723087991893922%\n"
+        "message": "Method mnn_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_hvg_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9721491408270836%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score mnn_hvg_scaled graph_connectivity", 
-        "value": 0.9804038729982233, 
+        "value": 0.9931209186096128, 
         "severity": 0, 
-        "severity_value": 0.49020193649911165, 
+        "severity_value": 0.4965604593048064, 
         "code": "best_score <= 2", 
-        "message": "Method mnn_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_hvg_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9804038729982233%\n"
+        "message": "Method mnn_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_hvg_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9931209186096128%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score mnn_hvg_unscaled graph_connectivity", 
-        "value": 0.9762652403228519, 
+        "value": 0.9884166182665436, 
         "severity": 0, 
-        "severity_value": -0.9762652403228519, 
+        "severity_value": -0.9884166182665436, 
         "code": "worst_score >= -1", 
-        "message": "Method mnn_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9762652403228519%\n"
+        "message": "Method mnn_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9884166182665436%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score mnn_hvg_unscaled graph_connectivity", 
-        "value": 0.9907309362215537, 
+        "value": 0.9941325004328693, 
         "severity": 0, 
-        "severity_value": 0.49536546811077686, 
+        "severity_value": 0.49706625021643464, 
         "code": "best_score <= 2", 
-        "message": "Method mnn_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9907309362215537%\n"
+        "message": "Method mnn_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: mnn_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9941325004328693%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score no_integration graph_connectivity", 
-        "value": 0.7384882932612782, 
+        "value": 0.7772867109257336, 
         "severity": 0, 
-        "severity_value": -0.7384882932612782, 
+        "severity_value": -0.7772867109257336, 
         "code": "worst_score >= -1", 
-        "message": "Method no_integration performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: no_integration\n  Metric id: graph_connectivity\n  Worst score: 0.7384882932612782%\n"
+        "message": "Method no_integration performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: no_integration\n  Metric id: graph_connectivity\n  Worst score: 0.7772867109257336%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score no_integration graph_connectivity", 
-        "value": 0.7766121474524926, 
+        "value": 0.7954258276516549, 
         "severity": 0, 
-        "severity_value": 0.3883060737262463, 
+        "severity_value": 0.39771291382582746, 
         "code": "best_score <= 2", 
-        "message": "Method no_integration performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: no_integration\n  Metric id: graph_connectivity\n  Best score: 0.7766121474524926%\n"
+        "message": "Method no_integration performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: no_integration\n  Metric id: graph_connectivity\n  Best score: 0.7954258276516549%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
@@ -2293,391 +2303,391 @@
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scalex_full graph_connectivity", 
-        "value": 0.8657168867434972, 
+        "value": 0.9554814059107796, 
         "severity": 0, 
-        "severity_value": -0.8657168867434972, 
+        "severity_value": -0.9554814059107796, 
         "code": "worst_score >= -1", 
-        "message": "Method scalex_full performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scalex_full\n  Metric id: graph_connectivity\n  Worst score: 0.8657168867434972%\n"
+        "message": "Method scalex_full performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scalex_full\n  Metric id: graph_connectivity\n  Worst score: 0.9554814059107796%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scalex_full graph_connectivity", 
-        "value": 0.9553465661013661, 
+        "value": 0.9877022010250268, 
         "severity": 0, 
-        "severity_value": 0.4776732830506831, 
+        "severity_value": 0.4938511005125134, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_full performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scalex_full\n  Metric id: graph_connectivity\n  Best score: 0.9553465661013661%\n"
+        "message": "Method scalex_full performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scalex_full\n  Metric id: graph_connectivity\n  Best score: 0.9877022010250268%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scalex_hvg graph_connectivity", 
-        "value": 0.9572838485612939, 
+        "value": 0.9492332262970918, 
         "severity": 0, 
-        "severity_value": -0.9572838485612939, 
+        "severity_value": -0.9492332262970918, 
         "code": "worst_score >= -1", 
-        "message": "Method scalex_hvg performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scalex_hvg\n  Metric id: graph_connectivity\n  Worst score: 0.9572838485612939%\n"
+        "message": "Method scalex_hvg performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scalex_hvg\n  Metric id: graph_connectivity\n  Worst score: 0.9492332262970918%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scalex_hvg graph_connectivity", 
-        "value": 0.9615873980620158, 
+        "value": 0.993187448123931, 
         "severity": 0, 
-        "severity_value": 0.4807936990310079, 
+        "severity_value": 0.4965937240619655, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_hvg performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scalex_hvg\n  Metric id: graph_connectivity\n  Best score: 0.9615873980620158%\n"
+        "message": "Method scalex_hvg performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scalex_hvg\n  Metric id: graph_connectivity\n  Best score: 0.993187448123931%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanorama_embed_full_scaled graph_connectivity", 
-        "value": 0.9767374391378421, 
+        "value": 0.9475314519244408, 
         "severity": 0, 
-        "severity_value": -0.9767374391378421, 
+        "severity_value": -0.9475314519244408, 
         "code": "worst_score >= -1", 
-        "message": "Method scanorama_embed_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_full_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9767374391378421%\n"
+        "message": "Method scanorama_embed_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_full_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9475314519244408%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanorama_embed_full_scaled graph_connectivity", 
-        "value": 0.987273467980945, 
+        "value": 0.9907774819980129, 
         "severity": 0, 
-        "severity_value": 0.4936367339904725, 
+        "severity_value": 0.4953887409990064, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_embed_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_full_scaled\n  Metric id: graph_connectivity\n  Best score: 0.987273467980945%\n"
+        "message": "Method scanorama_embed_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_full_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9907774819980129%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanorama_embed_full_unscaled graph_connectivity", 
-        "value": 0.9225788283891854, 
+        "value": 0.8165608246473319, 
         "severity": 0, 
-        "severity_value": -0.9225788283891854, 
+        "severity_value": -0.8165608246473319, 
         "code": "worst_score >= -1", 
-        "message": "Method scanorama_embed_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9225788283891854%\n"
+        "message": "Method scanorama_embed_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.8165608246473319%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanorama_embed_full_unscaled graph_connectivity", 
-        "value": 0.9287810042892841, 
+        "value": 0.9871684253572836, 
         "severity": 0, 
-        "severity_value": 0.46439050214464206, 
+        "severity_value": 0.4935842126786418, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_embed_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9287810042892841%\n"
+        "message": "Method scanorama_embed_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9871684253572836%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanorama_embed_hvg_scaled graph_connectivity", 
-        "value": 0.9736919638173854, 
+        "value": 0.9489717880766235, 
         "severity": 0, 
-        "severity_value": -0.9736919638173854, 
+        "severity_value": -0.9489717880766235, 
         "code": "worst_score >= -1", 
-        "message": "Method scanorama_embed_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_hvg_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9736919638173854%\n"
+        "message": "Method scanorama_embed_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_hvg_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9489717880766235%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanorama_embed_hvg_scaled graph_connectivity", 
-        "value": 0.9832178245220686, 
+        "value": 0.9930575897057115, 
         "severity": 0, 
-        "severity_value": 0.4916089122610343, 
+        "severity_value": 0.4965287948528557, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_embed_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_hvg_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9832178245220686%\n"
+        "message": "Method scanorama_embed_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_hvg_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9930575897057115%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanorama_embed_hvg_unscaled graph_connectivity", 
-        "value": 0.8969444064508877, 
+        "value": 0.8972556030460859, 
         "severity": 0, 
-        "severity_value": -0.8969444064508877, 
+        "severity_value": -0.8972556030460859, 
         "code": "worst_score >= -1", 
-        "message": "Method scanorama_embed_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.8969444064508877%\n"
+        "message": "Method scanorama_embed_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.8972556030460859%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanorama_embed_hvg_unscaled graph_connectivity", 
-        "value": 0.9770400410363842, 
+        "value": 0.9938499017756665, 
         "severity": 0, 
-        "severity_value": 0.4885200205181921, 
+        "severity_value": 0.49692495088783323, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_embed_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9770400410363842%\n"
+        "message": "Method scanorama_embed_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_embed_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9938499017756665%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanorama_feature_full_scaled graph_connectivity", 
-        "value": 0.9127320726913921, 
+        "value": 0.8682642332934033, 
         "severity": 0, 
-        "severity_value": -0.9127320726913921, 
+        "severity_value": -0.8682642332934033, 
         "code": "worst_score >= -1", 
-        "message": "Method scanorama_feature_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_full_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9127320726913921%\n"
+        "message": "Method scanorama_feature_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_full_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.8682642332934033%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanorama_feature_full_scaled graph_connectivity", 
-        "value": 0.9394935449169287, 
+        "value": 0.9734460847337155, 
         "severity": 0, 
-        "severity_value": 0.46974677245846436, 
+        "severity_value": 0.48672304236685776, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_feature_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_full_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9394935449169287%\n"
+        "message": "Method scanorama_feature_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_full_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9734460847337155%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanorama_feature_full_unscaled graph_connectivity", 
-        "value": 0.7681790004795004, 
+        "value": 0.7686906527459777, 
         "severity": 0, 
-        "severity_value": -0.7681790004795004, 
+        "severity_value": -0.7686906527459777, 
         "code": "worst_score >= -1", 
-        "message": "Method scanorama_feature_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.7681790004795004%\n"
+        "message": "Method scanorama_feature_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.7686906527459777%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanorama_feature_full_unscaled graph_connectivity", 
-        "value": 0.9566556517568011, 
+        "value": 0.9895704574087326, 
         "severity": 0, 
-        "severity_value": 0.47832782587840056, 
+        "severity_value": 0.4947852287043663, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_feature_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9566556517568011%\n"
+        "message": "Method scanorama_feature_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9895704574087326%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanorama_feature_hvg_scaled graph_connectivity", 
-        "value": 0.9292660761693194, 
+        "value": 0.8510388289782659, 
         "severity": 0, 
-        "severity_value": -0.9292660761693194, 
+        "severity_value": -0.8510388289782659, 
         "code": "worst_score >= -1", 
-        "message": "Method scanorama_feature_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_hvg_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.9292660761693194%\n"
+        "message": "Method scanorama_feature_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_hvg_scaled\n  Metric id: graph_connectivity\n  Worst score: 0.8510388289782659%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanorama_feature_hvg_scaled graph_connectivity", 
-        "value": 0.9659652055081458, 
+        "value": 0.9882078966025839, 
         "severity": 0, 
-        "severity_value": 0.4829826027540729, 
+        "severity_value": 0.49410394830129195, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_feature_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_hvg_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9659652055081458%\n"
+        "message": "Method scanorama_feature_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_hvg_scaled\n  Metric id: graph_connectivity\n  Best score: 0.9882078966025839%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanorama_feature_hvg_unscaled graph_connectivity", 
-        "value": 0.8908213912146477, 
+        "value": 0.8136810553815494, 
         "severity": 0, 
-        "severity_value": -0.8908213912146477, 
+        "severity_value": -0.8136810553815494, 
         "code": "worst_score >= -1", 
-        "message": "Method scanorama_feature_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.8908213912146477%\n"
+        "message": "Method scanorama_feature_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.8136810553815494%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanorama_feature_hvg_unscaled graph_connectivity", 
-        "value": 0.9626201269396137, 
+        "value": 0.9829421799417364, 
         "severity": 0, 
-        "severity_value": 0.48131006346980687, 
+        "severity_value": 0.4914710899708682, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_feature_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9626201269396137%\n"
+        "message": "Method scanorama_feature_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanorama_feature_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9829421799417364%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanvi_full_unscaled graph_connectivity", 
-        "value": 0.9767958884863244, 
+        "value": 0.9823537844120067, 
         "severity": 0, 
-        "severity_value": -0.9767958884863244, 
+        "severity_value": -0.9823537844120067, 
         "code": "worst_score >= -1", 
-        "message": "Method scanvi_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanvi_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9767958884863244%\n"
+        "message": "Method scanvi_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanvi_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9823537844120067%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanvi_full_unscaled graph_connectivity", 
-        "value": 0.9839114576527357, 
+        "value": 0.9951163571648193, 
         "severity": 0, 
-        "severity_value": 0.49195572882636784, 
+        "severity_value": 0.49755817858240964, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanvi_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9839114576527357%\n"
+        "message": "Method scanvi_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanvi_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9951163571648193%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scanvi_hvg_unscaled graph_connectivity", 
-        "value": 0.9864802689542578, 
+        "value": 0.978408560389288, 
         "severity": 0, 
-        "severity_value": -0.9864802689542578, 
+        "severity_value": -0.978408560389288, 
         "code": "worst_score >= -1", 
-        "message": "Method scanvi_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanvi_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9864802689542578%\n"
+        "message": "Method scanvi_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scanvi_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.978408560389288%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scanvi_hvg_unscaled graph_connectivity", 
-        "value": 0.9866852088224709, 
+        "value": 0.995419503997162, 
         "severity": 0, 
-        "severity_value": 0.49334260441123545, 
+        "severity_value": 0.497709751998581, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanvi_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9866852088224709%\n"
+        "message": "Method scanvi_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scanvi_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.995419503997162%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scvi_full_unscaled graph_connectivity", 
-        "value": 0.9769554026290093, 
+        "value": 0.9786686652699871, 
         "severity": 0, 
-        "severity_value": -0.9769554026290093, 
+        "severity_value": -0.9786686652699871, 
         "code": "worst_score >= -1", 
-        "message": "Method scvi_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scvi_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9769554026290093%\n"
+        "message": "Method scvi_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scvi_full_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9786686652699871%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scvi_full_unscaled graph_connectivity", 
-        "value": 0.9786040560169688, 
+        "value": 0.9958710180465045, 
         "severity": 0, 
-        "severity_value": 0.4893020280084844, 
+        "severity_value": 0.49793550902325223, 
         "code": "best_score <= 2", 
-        "message": "Method scvi_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scvi_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9786040560169688%\n"
+        "message": "Method scvi_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scvi_full_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9958710180465045%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score scvi_hvg_unscaled graph_connectivity", 
-        "value": 0.9836369352111263, 
+        "value": 0.9810465280526158, 
         "severity": 0, 
-        "severity_value": -0.9836369352111263, 
+        "severity_value": -0.9810465280526158, 
         "code": "worst_score >= -1", 
-        "message": "Method scvi_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scvi_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9836369352111263%\n"
+        "message": "Method scvi_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: scvi_hvg_unscaled\n  Metric id: graph_connectivity\n  Worst score: 0.9810465280526158%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score scvi_hvg_unscaled graph_connectivity", 
-        "value": 0.9882503405905709, 
+        "value": 0.9934038617757095, 
         "severity": 0, 
-        "severity_value": 0.49412517029528547, 
+        "severity_value": 0.49670193088785475, 
         "code": "best_score <= 2", 
-        "message": "Method scvi_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scvi_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9882503405905709%\n"
+        "message": "Method scvi_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: scvi_hvg_unscaled\n  Metric id: graph_connectivity\n  Best score: 0.9934038617757095%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score batch_random_integration isolated_labels_f1", 
-        "value": 0.08295977178785587, 
+        "value": 0.035511484434925966, 
         "severity": 0, 
-        "severity_value": -0.08295977178785587, 
+        "severity_value": -0.035511484434925966, 
         "code": "worst_score >= -1", 
-        "message": "Method batch_random_integration performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: batch_random_integration\n  Metric id: isolated_labels_f1\n  Worst score: 0.08295977178785587%\n"
+        "message": "Method batch_random_integration performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: batch_random_integration\n  Metric id: isolated_labels_f1\n  Worst score: 0.035511484434925966%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score batch_random_integration isolated_labels_f1", 
-        "value": 0.11342928349698489, 
+        "value": 0.11038348002431952, 
         "severity": 0, 
-        "severity_value": 0.056714641748492445, 
+        "severity_value": 0.05519174001215976, 
         "code": "best_score <= 2", 
-        "message": "Method batch_random_integration performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: batch_random_integration\n  Metric id: isolated_labels_f1\n  Best score: 0.11342928349698489%\n"
+        "message": "Method batch_random_integration performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: batch_random_integration\n  Metric id: isolated_labels_f1\n  Best score: 0.11038348002431952%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score bbknn_full_scaled isolated_labels_f1", 
-        "value": 0.22029614954790208, 
+        "value": 0.8074766890214322, 
         "severity": 0, 
-        "severity_value": -0.22029614954790208, 
+        "severity_value": -0.8074766890214322, 
         "code": "worst_score >= -1", 
-        "message": "Method bbknn_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.22029614954790208%\n"
+        "message": "Method bbknn_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.8074766890214322%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score bbknn_full_scaled isolated_labels_f1", 
-        "value": 0.3821613118469459, 
+        "value": 0.9523172106956465, 
         "severity": 0, 
-        "severity_value": 0.19108065592347295, 
+        "severity_value": 0.4761586053478232, 
         "code": "best_score <= 2", 
-        "message": "Method bbknn_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_scaled\n  Metric id: isolated_labels_f1\n  Best score: 0.3821613118469459%\n"
+        "message": "Method bbknn_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_scaled\n  Metric id: isolated_labels_f1\n  Best score: 0.9523172106956465%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score bbknn_full_unscaled isolated_labels_f1", 
-        "value": 0.04225899217472481, 
+        "value": 0.7761042483450497, 
         "severity": 0, 
-        "severity_value": -0.04225899217472481, 
+        "severity_value": -0.7761042483450497, 
         "code": "worst_score >= -1", 
-        "message": "Method bbknn_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.04225899217472481%\n"
+        "message": "Method bbknn_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.7761042483450497%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score bbknn_full_unscaled isolated_labels_f1", 
-        "value": 0.45248646146564847, 
+        "value": 0.8816118277655323, 
         "severity": 0, 
-        "severity_value": 0.22624323073282424, 
+        "severity_value": 0.44080591388276613, 
         "code": "best_score <= 2", 
-        "message": "Method bbknn_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.45248646146564847%\n"
+        "message": "Method bbknn_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_full_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.8816118277655323%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score bbknn_hvg_scaled isolated_labels_f1", 
-        "value": 0.428573935769996, 
+        "value": 0.7733992933821744, 
         "severity": 0, 
-        "severity_value": -0.428573935769996, 
+        "severity_value": -0.7733992933821744, 
         "code": "worst_score >= -1", 
-        "message": "Method bbknn_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.428573935769996%\n"
+        "message": "Method bbknn_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.7733992933821744%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score bbknn_hvg_scaled isolated_labels_f1", 
-        "value": 0.6078520012518691, 
+        "value": 0.9428884569842478, 
         "severity": 0, 
-        "severity_value": 0.30392600062593456, 
+        "severity_value": 0.4714442284921239, 
         "code": "best_score <= 2", 
-        "message": "Method bbknn_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_scaled\n  Metric id: isolated_labels_f1\n  Best score: 0.6078520012518691%\n"
+        "message": "Method bbknn_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_scaled\n  Metric id: isolated_labels_f1\n  Best score: 0.9428884569842478%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score bbknn_hvg_unscaled isolated_labels_f1", 
-        "value": 0.4106539143244158, 
+        "value": 0.8369626300761587, 
         "severity": 0, 
-        "severity_value": -0.4106539143244158, 
+        "severity_value": -0.8369626300761587, 
         "code": "worst_score >= -1", 
-        "message": "Method bbknn_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.4106539143244158%\n"
+        "message": "Method bbknn_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.8369626300761587%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score bbknn_hvg_unscaled isolated_labels_f1", 
-        "value": 0.6682803222268446, 
+        "value": 0.8679042143966494, 
         "severity": 0, 
-        "severity_value": 0.3341401611134223, 
+        "severity_value": 0.4339521071983247, 
         "code": "best_score <= 2", 
-        "message": "Method bbknn_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.6682803222268446%\n"
+        "message": "Method bbknn_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: bbknn_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.8679042143966494%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score celltype_random_graph isolated_labels_f1", 
-        "value": 0.23231554985132014, 
+        "value": 1.0, 
         "severity": 0, 
-        "severity_value": -0.23231554985132014, 
+        "severity_value": -1.0, 
         "code": "worst_score >= -1", 
-        "message": "Method celltype_random_graph performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: celltype_random_graph\n  Metric id: isolated_labels_f1\n  Worst score: 0.23231554985132014%\n"
+        "message": "Method celltype_random_graph performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: celltype_random_graph\n  Metric id: isolated_labels_f1\n  Worst score: 1.0%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
@@ -2693,370 +2703,360 @@
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score celltype_random_integration isolated_labels_f1", 
-        "value": 0.7394599741064097, 
+        "value": 0.6956373699549321, 
         "severity": 0, 
-        "severity_value": -0.7394599741064097, 
+        "severity_value": -0.6956373699549321, 
         "code": "worst_score >= -1", 
-        "message": "Method celltype_random_integration performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: celltype_random_integration\n  Metric id: isolated_labels_f1\n  Worst score: 0.7394599741064097%\n"
+        "message": "Method celltype_random_integration performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: celltype_random_integration\n  Metric id: isolated_labels_f1\n  Worst score: 0.6956373699549321%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score celltype_random_integration isolated_labels_f1", 
-        "value": 1.0, 
+        "value": 0.7897593050116622, 
         "severity": 0, 
-        "severity_value": 0.5, 
+        "severity_value": 0.3948796525058311, 
         "code": "best_score <= 2", 
-        "message": "Method celltype_random_integration performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: celltype_random_integration\n  Metric id: isolated_labels_f1\n  Best score: 1.0%\n"
+        "message": "Method celltype_random_integration performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: celltype_random_integration\n  Metric id: isolated_labels_f1\n  Best score: 0.7897593050116622%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score combat_full_scaled isolated_labels_f1", 
-        "value": 0.6663686282413159, 
+        "value": 0.21878119067727322, 
         "severity": 0, 
-        "severity_value": -0.6663686282413159, 
+        "severity_value": -0.21878119067727322, 
         "code": "worst_score >= -1", 
-        "message": "Method combat_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.6663686282413159%\n"
+        "message": "Method combat_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.21878119067727322%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score combat_full_scaled isolated_labels_f1", 
-        "value": 3.0647051566740684, 
-        "severity": 1, 
-        "severity_value": 1.5323525783370342, 
+        "value": 0.7339629832572767, 
+        "severity": 0, 
+        "severity_value": 0.36698149162863836, 
         "code": "best_score <= 2", 
-        "message": "Method combat_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_scaled\n  Metric id: isolated_labels_f1\n  Best score: 3.0647051566740684%\n"
+        "message": "Method combat_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_scaled\n  Metric id: isolated_labels_f1\n  Best score: 0.7339629832572767%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score combat_full_unscaled isolated_labels_f1", 
-        "value": 0.673797368688408, 
+        "value": 0.7063737903261056, 
         "severity": 0, 
-        "severity_value": -0.673797368688408, 
+        "severity_value": -0.7063737903261056, 
         "code": "worst_score >= -1", 
-        "message": "Method combat_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.673797368688408%\n"
+        "message": "Method combat_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.7063737903261056%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score combat_full_unscaled isolated_labels_f1", 
-        "value": 0.7415145211932356, 
+        "value": 0.8852167414767064, 
         "severity": 0, 
-        "severity_value": 0.3707572605966178, 
+        "severity_value": 0.4426083707383532, 
         "code": "best_score <= 2", 
-        "message": "Method combat_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.7415145211932356%\n"
+        "message": "Method combat_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_full_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.8852167414767064%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score combat_hvg_scaled isolated_labels_f1", 
-        "value": 0.8071532313929942, 
+        "value": 0.699301395621348, 
         "severity": 0, 
-        "severity_value": -0.8071532313929942, 
+        "severity_value": -0.699301395621348, 
         "code": "worst_score >= -1", 
-        "message": "Method combat_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.8071532313929942%\n"
+        "message": "Method combat_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.699301395621348%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score combat_hvg_scaled isolated_labels_f1", 
-        "value": 0.8697546856009722, 
+        "value": 0.9550577360341218, 
         "severity": 0, 
-        "severity_value": 0.4348773428004861, 
+        "severity_value": 0.4775288680170609, 
         "code": "best_score <= 2", 
-        "message": "Method combat_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_scaled\n  Metric id: isolated_labels_f1\n  Best score: 0.8697546856009722%\n"
+        "message": "Method combat_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_scaled\n  Metric id: isolated_labels_f1\n  Best score: 0.9550577360341218%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score combat_hvg_unscaled isolated_labels_f1", 
-        "value": 0.6662216337331005, 
+        "value": 0.7167431310968285, 
         "severity": 0, 
-        "severity_value": -0.6662216337331005, 
+        "severity_value": -0.7167431310968285, 
         "code": "worst_score >= -1", 
-        "message": "Method combat_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.6662216337331005%\n"
+        "message": "Method combat_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.7167431310968285%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score combat_hvg_unscaled isolated_labels_f1", 
-        "value": 0.6682803222268446, 
+        "value": 0.924198191573194, 
         "severity": 0, 
-        "severity_value": 0.3341401611134223, 
+        "severity_value": 0.462099095786597, 
         "code": "best_score <= 2", 
-        "message": "Method combat_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.6682803222268446%\n"
+        "message": "Method combat_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: combat_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.924198191573194%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_embed_full_scaled isolated_labels_f1", 
-        "value": 0.030489217107048106, 
+        "value": 0.6325294086882746, 
         "severity": 0, 
-        "severity_value": -0.030489217107048106, 
+        "severity_value": -0.6325294086882746, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_embed_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.030489217107048106%\n"
+        "message": "Method fastmnn_embed_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.6325294086882746%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embed_full_scaled isolated_labels_f1", 
-        "value": 0.6755858760799182, 
+        "value": 0.7944964911499859, 
         "severity": 0, 
-        "severity_value": 0.3377929380399591, 
+        "severity_value": 0.39724824557499294, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embed_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_scaled\n  Metric id: isolated_labels_f1\n  Best score: 0.6755858760799182%\n"
+        "message": "Method fastmnn_embed_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_scaled\n  Metric id: isolated_labels_f1\n  Best score: 0.7944964911499859%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_embed_full_unscaled isolated_labels_f1", 
-        "value": 0.11857404418773654, 
+        "value": 0.6308102480271672, 
         "severity": 0, 
-        "severity_value": -0.11857404418773654, 
+        "severity_value": -0.6308102480271672, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_embed_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.11857404418773654%\n"
+        "message": "Method fastmnn_embed_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.6308102480271672%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embed_full_unscaled isolated_labels_f1", 
-        "value": 0.642565832918386, 
+        "value": 0.7417873420991867, 
         "severity": 0, 
-        "severity_value": 0.321282916459193, 
+        "severity_value": 0.37089367104959337, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embed_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.642565832918386%\n"
+        "message": "Method fastmnn_embed_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_full_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.7417873420991867%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_embed_hvg_scaled isolated_labels_f1", 
-        "value": 0.1052681435268408, 
+        "value": 0.6961939473981418, 
         "severity": 0, 
-        "severity_value": -0.1052681435268408, 
+        "severity_value": -0.6961939473981418, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_embed_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.1052681435268408%\n"
+        "message": "Method fastmnn_embed_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.6961939473981418%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embed_hvg_scaled isolated_labels_f1", 
-        "value": 0.6535342924893315, 
+        "value": 0.8463335395232441, 
         "severity": 0, 
-        "severity_value": 0.32676714624466574, 
+        "severity_value": 0.42316676976162204, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embed_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_scaled\n  Metric id: isolated_labels_f1\n  Best score: 0.6535342924893315%\n"
+        "message": "Method fastmnn_embed_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_scaled\n  Metric id: isolated_labels_f1\n  Best score: 0.8463335395232441%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_embed_hvg_unscaled isolated_labels_f1", 
-        "value": 0.11272064246872185, 
+        "value": 0.7258286538716497, 
         "severity": 0, 
-        "severity_value": -0.11272064246872185, 
+        "severity_value": -0.7258286538716497, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_embed_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.11272064246872185%\n"
+        "message": "Method fastmnn_embed_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.7258286538716497%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embed_hvg_unscaled isolated_labels_f1", 
-        "value": 0.6484591198133016, 
+        "value": 0.8443901078604099, 
         "severity": 0, 
-        "severity_value": 0.3242295599066508, 
+        "severity_value": 0.42219505393020496, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embed_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.6484591198133016%\n"
+        "message": "Method fastmnn_embed_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_embed_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.8443901078604099%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_feature_full_scaled isolated_labels_f1", 
-        "value": 0.05456480700486003, 
+        "value": 0.6958321224470949, 
         "severity": 0, 
-        "severity_value": -0.05456480700486003, 
+        "severity_value": -0.6958321224470949, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_feature_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.05456480700486003%\n"
+        "message": "Method fastmnn_feature_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.6958321224470949%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature_full_scaled isolated_labels_f1", 
-        "value": 0.5646430732986748, 
+        "value": 0.784692966411379, 
         "severity": 0, 
-        "severity_value": 0.2823215366493374, 
+        "severity_value": 0.3923464832056895, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_scaled\n  Metric id: isolated_labels_f1\n  Best score: 0.5646430732986748%\n"
+        "message": "Method fastmnn_feature_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_scaled\n  Metric id: isolated_labels_f1\n  Best score: 0.784692966411379%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_feature_full_unscaled isolated_labels_f1", 
-        "value": 0.005719780635661163, 
+        "value": 0.6327552638146141, 
         "severity": 0, 
-        "severity_value": -0.005719780635661163, 
+        "severity_value": -0.6327552638146141, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_feature_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.005719780635661163%\n"
+        "message": "Method fastmnn_feature_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.6327552638146141%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature_full_unscaled isolated_labels_f1", 
-        "value": 0.6942875706234402, 
+        "value": 0.7515668803794964, 
         "severity": 0, 
-        "severity_value": 0.3471437853117201, 
+        "severity_value": 0.3757834401897482, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.6942875706234402%\n"
+        "message": "Method fastmnn_feature_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_full_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.7515668803794964%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_feature_hvg_scaled isolated_labels_f1", 
-        "value": 0.10431735093763973, 
+        "value": 0.6632953822739864, 
         "severity": 0, 
-        "severity_value": -0.10431735093763973, 
+        "severity_value": -0.6632953822739864, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_feature_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.10431735093763973%\n"
+        "message": "Method fastmnn_feature_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.6632953822739864%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature_hvg_scaled isolated_labels_f1", 
-        "value": 0.6535519471587856, 
+        "value": 0.8445697383255848, 
         "severity": 0, 
-        "severity_value": 0.3267759735793928, 
+        "severity_value": 0.4222848691627924, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_scaled\n  Metric id: isolated_labels_f1\n  Best score: 0.6535519471587856%\n"
+        "message": "Method fastmnn_feature_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_scaled\n  Metric id: isolated_labels_f1\n  Best score: 0.8445697383255848%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_feature_hvg_unscaled isolated_labels_f1", 
-        "value": 0.08675282393345644, 
+        "value": 0.7173019566841509, 
         "severity": 0, 
-        "severity_value": -0.08675282393345644, 
+        "severity_value": -0.7173019566841509, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_feature_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.08675282393345644%\n"
+        "message": "Method fastmnn_feature_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.7173019566841509%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature_hvg_unscaled isolated_labels_f1", 
-        "value": 0.6564867748594103, 
+        "value": 0.8437341143583517, 
         "severity": 0, 
-        "severity_value": 0.32824338742970516, 
+        "severity_value": 0.42186705717917583, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.6564867748594103%\n"
+        "message": "Method fastmnn_feature_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: fastmnn_feature_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.8437341143583517%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score harmony_full_scaled isolated_labels_f1", 
-        "value": 0.6091309900971792, 
+        "value": 0.3153790809606967, 
         "severity": 0, 
-        "severity_value": -0.6091309900971792, 
+        "severity_value": -0.3153790809606967, 
         "code": "worst_score >= -1", 
-        "message": "Method harmony_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.6091309900971792%\n"
+        "message": "Method harmony_full_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.3153790809606967%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score harmony_full_scaled isolated_labels_f1", 
-        "value": 2.8549222797927465, 
-        "severity": 1, 
-        "severity_value": 1.4274611398963732, 
+        "value": 0.9156109832465633, 
+        "severity": 0, 
+        "severity_value": 0.45780549162328166, 
         "code": "best_score <= 2", 
-        "message": "Method harmony_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_scaled\n  Metric id: isolated_labels_f1\n  Best score: 2.8549222797927465%\n"
+        "message": "Method harmony_full_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_scaled\n  Metric id: isolated_labels_f1\n  Best score: 0.9156109832465633%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score harmony_full_unscaled isolated_labels_f1", 
-        "value": 0.6574843751941453, 
+        "value": 0.6978758982051604, 
         "severity": 0, 
-        "severity_value": -0.6574843751941453, 
+        "severity_value": -0.6978758982051604, 
         "code": "worst_score >= -1", 
-        "message": "Method harmony_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.6574843751941453%\n"
+        "message": "Method harmony_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.6978758982051604%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score harmony_full_unscaled isolated_labels_f1", 
-        "value": 0.6659724363275239, 
+        "value": 0.8597331675534671, 
         "severity": 0, 
-        "severity_value": 0.33298621816376195, 
+        "severity_value": 0.42986658377673354, 
         "code": "best_score <= 2", 
-        "message": "Method harmony_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.6659724363275239%\n"
+        "message": "Method harmony_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_full_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.8597331675534671%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score harmony_hvg_scaled isolated_labels_f1", 
-        "value": 0.6810400864232709, 
+        "value": 0.2979908056174616, 
         "severity": 0, 
-        "severity_value": -0.6810400864232709, 
+        "severity_value": -0.2979908056174616, 
         "code": "worst_score >= -1", 
-        "message": "Method harmony_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.6810400864232709%\n"
+        "message": "Method harmony_hvg_scaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_scaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.2979908056174616%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score harmony_hvg_scaled isolated_labels_f1", 
-        "value": 0.7273605048073654, 
+        "value": 0.8029893638601506, 
         "severity": 0, 
-        "severity_value": 0.3636802524036827, 
+        "severity_value": 0.4014946819300753, 
         "code": "best_score <= 2", 
-        "message": "Method harmony_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_scaled\n  Metric id: isolated_labels_f1\n  Best score: 0.7273605048073654%\n"
+        "message": "Method harmony_hvg_scaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_scaled\n  Metric id: isolated_labels_f1\n  Best score: 0.8029893638601506%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score harmony_hvg_unscaled isolated_labels_f1", 
-        "value": 0.5987143853869997, 
+        "value": 0.6683778085249978, 
         "severity": 0, 
-        "severity_value": -0.5987143853869997, 
+        "severity_value": -0.6683778085249978, 
         "code": "worst_score >= -1", 
-        "message": "Method harmony_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.5987143853869997%\n"
+        "message": "Method harmony_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.6683778085249978%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score harmony_hvg_unscaled isolated_labels_f1", 
-        "value": 0.7060384257652279, 
+        "value": 0.9251093622099112, 
         "severity": 0, 
-        "severity_value": 0.35301921288261395, 
+        "severity_value": 0.4625546811049556, 
         "code": "best_score <= 2", 
-        "message": "Method harmony_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.7060384257652279%\n"
+        "message": "Method harmony_hvg_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: harmony_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.9251093622099112%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Worst score liger_full_unscaled isolated_labels_f1", 
-        "value": 0.47023060212775136, 
+        "value": 0.1356837702927553, 
         "severity": 0, 
-        "severity_value": -0.47023060212775136, 
+        "severity_value": -0.1356837702927553, 
         "code": "worst_score >= -1", 
-        "message": "Method liger_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_full_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.47023060212775136%\n"
+        "message": "Method liger_full_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_full_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.1356837702927553%\n"
     }, 
     {
         "task_id": "batch_integration_graph", 
         "category": "Scaling", 
         "name": "Best score liger_full_unscaled isolated_labels_f1", 
-        "value": 0.47210545181998886, 
+        "value": 0.5764497575749565, 
         "severity": 0, 
-        "severity_value": 0.23605272590999443, 
+        "severity_value": 0.28822487878747827, 
         "code": "best_score <= 2", 
-        "message": "Method liger_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_full_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.47210545181998886%\n"
-    }, 
-    {
-        "task_id": "batch_integration_graph", 
-        "category": "Scaling", 
-        "name": "Worst score liger_hvg_unscaled isolated_labels_f1", 
-        "value": 0.2687934357813578, 
-        "severity": 0, 
-        "severity_value": -0.2687934357813578, 
-        "code": "worst_score >= -1", 
-        "message": "Method liger_hvg_unscaled performs much worse than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_hvg_unscaled\n  Metric id: isolated_labels_f1\n  Worst score: 0.2687934357813578%\n"
+        "message": "Method liger_full_unscaled performs a lot better than baselines.\n  Task id: batch_integration_graph\n  Method id: liger_full_unscaled\n  Metric id: isolated_labels_f1\n  Best score: 0.5764497575749565%\n"
     }
 ]
