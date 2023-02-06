@@ -78,15 +78,15 @@ results_long <-
       select(method_id, dataset_id, metric_id, score),
     by = c("method_id", "dataset_id", "metric_id")
   ) %>%
-  left_join(method_info %>% select(method_id, is_baseline), "method_id") %>%
-  mutate(score = pmin(1, pmax(score, 0))) # clip scores to [0, 1]
+  left_join(method_info %>% select(method_id, is_baseline), "method_id")
 
-overall_ranking <- results %>%
+overall_ranking <- results_long %>%
   group_by(method_id) %>%
-  summarise(mean_score = mean(mean_score)) %>%
+  summarise(mean_score = mean(score)) %>%
   arrange(desc(mean_score))
 
 # order by ranking
 results_long$method_id <- factor(results_long$method_id, levels = rev(overall_ranking$method_id))
 results$method_id <- factor(results$method_id, levels = rev(overall_ranking$method_id))
+method_info$method_id <- factor(method_info$method_id, levels = rev(overall_ranking$method_id))
 ```

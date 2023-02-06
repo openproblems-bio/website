@@ -3,35 +3,32 @@
 #| echo: false
 #| message: false
 #| warning: false
-results_long_no_baselines <- results_long %>%
-  filter(!is_baseline) %>%
-  mutate(
-    method_id = forcats::fct_drop(method_id)
-  )
-overall <- results %>%
-  left_join(method_info %>% select(method_id, is_baseline), by = "method_id") %>%
-  filter(!is_baseline) %>%
+overall <- results_long %>% 
   group_by(method_id) %>%
-  summarise(mean_score = mean(mean_score), .groups = "drop") %>%
+  summarise(mean_score = mean(score), .groups = "drop") %>%
+  mutate(mean_score = pmin(1, pmax(mean_score, 0))) %>%
   arrange(mean_score)
-per_dataset <- results_long_no_baselines %>%
+per_dataset <- results_long %>%
   group_by(method_id, dataset_id) %>%
   summarise(score = mean(score), .groups = "drop") %>%
   mutate(dataset_id = paste0("dataset_", dataset_id)) %>%
+  mutate(score = pmin(1, pmax(score, 0))) %>%
   spread(dataset_id, score)
-per_metric <- results_long_no_baselines %>%
+per_metric <- results_long %>%
   group_by(method_id, metric_id) %>%
   summarise(score = mean(score), .groups = "drop") %>%
   mutate(metric_id = paste0("metric_", metric_id)) %>%
+  mutate(score = pmin(1, pmax(score, 0))) %>%
   spread(metric_id, score)
 
 summary_all <- 
-  overall %>%
-  left_join(method_info %>% select(method_id, method_name), by = "method_id") %>%
-  select(method_id, method_name, mean_score) %>%
+  method_info %>%
+  filter(!is_baseline) %>%
+  select(method_id, method_name) %>%
+  left_join(overall, by = "method_id") %>%
   left_join(per_dataset, by = "method_id") %>%
   left_join(per_metric, by = "method_id") %>%
-  arrange(desc(mean_score))
+  arrange(desc(method_id))
 
 column_info <- tibble(
   id = colnames(summary_all)[-1],
