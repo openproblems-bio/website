@@ -20,8 +20,6 @@ summary: "Detect interactions between source and target cell types"
 <script src="index_files/libs/dt-ext-buttons-1.11.3/js/buttons.html5.min.js"></script>
 <script src="index_files/libs/dt-ext-buttons-1.11.3/js/buttons.colVis.min.js"></script>
 <script src="index_files/libs/dt-ext-buttons-1.11.3/js/buttons.print.min.js"></script>
-<link href="index_files/libs/dt-ext-responsive-1.11.3/css/responsive.dataTables.min.css" rel="stylesheet" />
-<script src="index_files/libs/dt-ext-responsive-1.11.3/js/dataTables.responsive.min.js"></script>
 <link href="index_files/libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="index_files/libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 <script src="index_files/libs/kePrint-0.0.1/kePrint.js"></script>
@@ -30,7 +28,50 @@ summary: "Detect interactions between source and target cell types"
 
 ## Description
 
-Missing 'task_description'
+## The task
+
+The growing availability of single-cell data has sparked an increased
+interest in the inference of cell-cell communication (CCC),
+with an ever-growing number of computational tools developed for this purpose.
+
+Different tools propose distinct preprocessing steps with diverse
+scoring functions, that are challenging to compare and evaluate.
+Furthermore, each tool typically comes with its own set of prior knowledge.
+To harmonize these, [Dimitrov et
+al, 2022](https://openproblems.bio/bibliography#dimitrov2022comparison) recently
+developed the [LIANA](https://github.com/saezlab/liana) framework, which was used
+as a foundation for this task.
+
+The challenges in evaluating the tools are further exacerbated by the
+lack of a gold standard to benchmark the performance of CCC methods. In an
+attempt to address this, Dimitrov et al use alternative data modalities, including
+the spatial proximity of cell types and
+downstream cytokine activities, to generate an inferred ground truth. However,
+these modalities are only approximations of biological reality and come
+with their own assumptions and limitations. In time, the inclusion of more
+datasets with known ground truth interactions will become available, from
+which the limitations and advantages of the different CCC methods will
+be better understood.
+
+**This subtask evaluates methods in their ability to predict interactions between
+spatially-adjacent source cell types and target cell types. This subtask focuses
+on the prediction of interactions from steady-state, or single-context,
+single-cell data.**
+
+## The metrics
+
+Metrics for cell-cell communication aim to characterize how good are
+the different scoring methods at prioritizing assumed truth predictions.
+
+-   **Odds ratio**: The odds ratio represents the ratio of true and false
+    positives within a set of prioritized interactions (top ranked hits) versus
+    the same ratio for the remainder of the interactions. Thus, in this
+    scenario odds ratios quantify the strength of association between the
+    ability of methods to prioritize interactions and those interactions
+    assigned to the positive class.
+
+-   **AUPRC**: a single number *\[0-1\]* that summarizes the area under the curve where
+    x is the recall and y is the precision.
 
 ## Summary
 
@@ -49,8 +90,8 @@ Missing 'task_description'
 
 ## Results
 
-<div id="htmlwidget-89c8d26a9924d7f0190e" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-89c8d26a9924d7f0190e">{"x":{"filter":"none","vertical":false,"extensions":["Select","SearchPanes","Buttons","Responsive"],"caption":"<caption>Results table of the scores per method, dataset and metric (after scaling). Use the filters to make a custom subselection of methods and datasets. The \"Overall mean\" dataset is the mean value across all datasets.<\/caption>","data":[["CellPhoneDB (max) <sup><a href=\"/bibliography#efremova2020cellphonedb\" target=\"_blank\">3<\/a><\/sup>","CellPhoneDB (max) <sup><a href=\"/bibliography#efremova2020cellphonedb\" target=\"_blank\">3<\/a><\/sup>","SingleCellSignalR (max) <sup><a href=\"/bibliography#cabello2020singlecellsignalr\" target=\"_blank\">4<\/a><\/sup>","SingleCellSignalR (max) <sup><a href=\"/bibliography#cabello2020singlecellsignalr\" target=\"_blank\">4<\/a><\/sup>","Magnitude Rank Aggregate (max) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">5<\/a><\/sup>","Magnitude Rank Aggregate (max) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">5<\/a><\/sup>","Log2FC (sum) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Log2FC (sum) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","NATMI (max) <sup><a href=\"/bibliography#hou2020predicting\" target=\"_blank\">7<\/a><\/sup>","NATMI (max) <sup><a href=\"/bibliography#hou2020predicting\" target=\"_blank\">7<\/a><\/sup>","Log2FC (max) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Log2FC (max) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Specificity Rank Aggregate (max) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">5<\/a><\/sup>","Specificity Rank Aggregate (max) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">5<\/a><\/sup>","NATMI (sum) <sup><a href=\"/bibliography#hou2020predicting\" target=\"_blank\">7<\/a><\/sup>","NATMI (sum) <sup><a href=\"/bibliography#hou2020predicting\" target=\"_blank\">7<\/a><\/sup>","Connectome (sum) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Connectome (sum) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Connectome (max) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Connectome (max) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Specificity Rank Aggregate (sum) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">5<\/a><\/sup>","Specificity Rank Aggregate (sum) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">5<\/a><\/sup>","CellPhoneDB (sum) <sup><a href=\"/bibliography#efremova2020cellphonedb\" target=\"_blank\">3<\/a><\/sup>","CellPhoneDB (sum) <sup><a href=\"/bibliography#efremova2020cellphonedb\" target=\"_blank\">3<\/a><\/sup>","Magnitude Rank Aggregate (sum) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">5<\/a><\/sup>","Magnitude Rank Aggregate (sum) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">5<\/a><\/sup>","SingleCellSignalR (sum) <sup><a href=\"/bibliography#cabello2020singlecellsignalr\" target=\"_blank\">4<\/a><\/sup>","SingleCellSignalR (sum) <sup><a href=\"/bibliography#cabello2020singlecellsignalr\" target=\"_blank\">4<\/a><\/sup>"],["Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>"],[0.374816111051117,0.374816111051117,0.338490447626045,0.338490447626045,0.336319588677802,0.336319588677802,0.310385730940304,0.310385730940304,0.29157215619934,0.29157215619934,0.289967766345615,0.289967766345615,0.22953446422155,0.22953446422155,0.216983759599155,0.216983759599155,0.216948925161255,0.216948925161255,0.0117035790839415,0.0117035790839415,-0.00280439341683836,-0.00280439341683836,-0.192553419193474,-0.192553419193474,-0.193274231147795,-0.193274231147795,-0.193937164593368,-0.193937164593368],[0.0470797547170948,0.0470797547170948,0.0461528697743829,0.0461528697743829,0.0418111518778968,0.0418111518778968,0.0827714618806079,0.0827714618806079,0.045144312398679,0.045144312398679,0.0419355326912306,0.0419355326912306,0.0443832620558401,0.0443832620558401,0.0192818528110501,0.0192818528110501,0.0192121839352504,0.0192121839352504,0.0234071581678829,0.0234071581678829,-0.00560878683367672,-0.00560878683367672,-0.00510683838694755,-0.00510683838694755,-0.00654846229558964,-0.00654846229558964,-0.00787432918673636,-0.00787432918673636],[0.702552467385139,0.702552467385139,0.630828025477707,0.630828025477707,0.630828025477707,0.630828025477707,0.538,0.538,0.538,0.538,0.538,0.538,0.414685666387259,0.414685666387259,0.414685666387259,0.414685666387259,0.414685666387259,0.414685666387259,0,0,0,0,-0.38,-0.38,-0.38,-0.38,-0.38,-0.38],[7210,7210,1143,1143,29358,29358,1080,1080,1791,1791,860,860,34190,34190,1818,1818,1139,1139,1121,1121,39438,39438,34240,34240,8390,8390,686,686],[100.1,100.1,96.5,96.5,99.6,99.6,96.6,96.6,99,99,99.8,99.8,100.1,100.1,98.8,98.8,93.8,93.8,97.7,97.7,100.1,100.1,100.1,100.1,100,100,93.9,93.9],[115.8203125,115.8203125,19.921875,19.921875,116.2109375,116.2109375,19.921875,19.921875,19.921875,19.921875,19.921875,19.921875,116.30859375,116.30859375,19.921875,19.921875,19.921875,19.921875,19.921875,19.921875,116.11328125,116.11328125,115.8203125,115.8203125,116.2109375,116.2109375,19.921875,19.921875]],"container":"<table class=\"stripe compact\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Dataset<\/th>\n      <th>Mean score<\/th>\n      <th>Precision-recall AUC<\/th>\n      <th>Odds Ratio<\/th>\n      <th>Runtime (s)<\/th>\n      <th>CPU (%)<\/th>\n      <th>Memory (GB)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","paging":false,"columnDefs":[{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"searchPanes":{"show":false},"targets":[2,3,4,5,6,7]},{"searchPanes":{"preSelect":"Overall mean"},"targets":1},{"className":"dt-right","targets":[2,3,4,5,6,7]}],"buttons":["searchPanes","csv","excel"],"language":{"searchPanes":{"collapse":"Filter datasets / methods"}},"order":[],"autoWidth":false,"orderClasses":false,"responsive":true}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render"],"jsHooks":[]}</script>
+<div id="htmlwidget-341777158770b28d90f6" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-341777158770b28d90f6">{"x":{"filter":"none","vertical":false,"extensions":["Select","SearchPanes","Buttons"],"caption":"<caption>Results table of the scores per method, dataset and metric (after scaling). Use the filters to make a custom subselection of methods and datasets. The \"Overall mean\" dataset is the mean value across all datasets.<\/caption>","data":[["CellPhoneDB (max) <sup><a href=\"/bibliography#efremova2020cellphonedb\" target=\"_blank\">3<\/a><\/sup>","CellPhoneDB (max) <sup><a href=\"/bibliography#efremova2020cellphonedb\" target=\"_blank\">3<\/a><\/sup>","Magnitude Rank Aggregate (max) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","Magnitude Rank Aggregate (max) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","NATMI (max) <sup><a href=\"/bibliography#hou2020predicting\" target=\"_blank\">5<\/a><\/sup>","NATMI (max) <sup><a href=\"/bibliography#hou2020predicting\" target=\"_blank\">5<\/a><\/sup>","Log2FC (sum) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","Log2FC (sum) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","NATMI (sum) <sup><a href=\"/bibliography#hou2020predicting\" target=\"_blank\">5<\/a><\/sup>","NATMI (sum) <sup><a href=\"/bibliography#hou2020predicting\" target=\"_blank\">5<\/a><\/sup>","Specificity Rank Aggregate (max) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","Specificity Rank Aggregate (max) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","Connectome (sum) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Connectome (sum) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Log2FC (max) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","Log2FC (max) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","SingleCellSignalR (max) <sup><a href=\"/bibliography#cabello2020singlecellsignalr\" target=\"_blank\">7<\/a><\/sup>","SingleCellSignalR (max) <sup><a href=\"/bibliography#cabello2020singlecellsignalr\" target=\"_blank\">7<\/a><\/sup>","Connectome (max) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","Connectome (max) <sup><a href=\"/bibliography#raredon2022computation\" target=\"_blank\">6<\/a><\/sup>","CellPhoneDB (sum) <sup><a href=\"/bibliography#efremova2020cellphonedb\" target=\"_blank\">3<\/a><\/sup>","CellPhoneDB (sum) <sup><a href=\"/bibliography#efremova2020cellphonedb\" target=\"_blank\">3<\/a><\/sup>","Magnitude Rank Aggregate (sum) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","Magnitude Rank Aggregate (sum) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","Specificity Rank Aggregate (sum) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","Specificity Rank Aggregate (sum) <sup><a href=\"/bibliography#dimitrov2022comparison\" target=\"_blank\">4<\/a><\/sup>","SingleCellSignalR (sum) <sup><a href=\"/bibliography#cabello2020singlecellsignalr\" target=\"_blank\">7<\/a><\/sup>","SingleCellSignalR (sum) <sup><a href=\"/bibliography#cabello2020singlecellsignalr\" target=\"_blank\">7<\/a><\/sup>"],["Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>","Overall mean","Mouse brain atlas <sup><a href=\"/bibliography#tasic2016adult\" target=\"_blank\">8<\/a><\/sup>"],[0.386189071031165,0.386189071031165,0.378012622388679,0.378012622388679,0.339263685558844,0.339263685558844,0.316675475462665,0.316675475462665,0.307057583362651,0.307057583362651,0.296111778506437,0.296111778506437,0.283037349661555,0.283037349661555,0.243659817770889,0.243659817770889,0.231416513093503,0.231416513093503,0.138350742651168,0.138350742651168,0.00775552365915082,0.00775552365915082,0.00081715570185599,0.00081715570185599,-0.00125160250716285,-0.00125160250716285,-0.00248760993333397,-0.00248760993333397],[0.0698256746771919,0.0698256746771919,0.0534727773922193,0.0534727773922193,0.0476993456399806,0.0476993456399806,0.0953509509253296,0.0953509509253296,0.0761151667253015,0.0761151667253015,0.0542235570128737,0.0542235570128737,0.0280746993231101,0.0280746993231101,0.072633969154519,0.072633969154519,0.0481473597997468,0.0481473597997468,0.0316667974926225,0.0316667974926225,0.0155110473183016,0.0155110473183016,0.00163431140371198,0.00163431140371198,-0.00250320501432571,-0.00250320501432571,-0.00497521986666794,-0.00497521986666794],[0.702552467385139,0.702552467385139,0.702552467385139,0.702552467385139,0.630828025477707,0.630828025477707,0.538,0.538,0.538,0.538,0.538,0.538,0.538,0.538,0.414685666387259,0.414685666387259,0.414685666387259,0.414685666387259,0.245034687809713,0.245034687809713,0,0,0,0,0,0,0,0],[9720,9720,17760,17760,2602,2602,2442,2442,2512,2512,17640,17640,1911,1911,2732,2732,2342,2342,2472,2472,12269,12269,26420,26420,14670,14670,2532,2532],[99.9,99.9,101.2,101.2,97,97,98.2,98.2,98.7,98.7,100,100,100.3,100.3,97.6,97.6,96.6,96.6,95.8,95.8,100.1,100.1,99.9,99.9,100,100,96.7,96.7],[118.5546875,118.5546875,120.41015625,120.41015625,20.80078125,20.80078125,20.80078125,20.80078125,20.80078125,20.80078125,119.23828125,119.23828125,20.80078125,20.80078125,20.80078125,20.80078125,20.80078125,20.80078125,20.80078125,20.80078125,118.5546875,118.5546875,127.24609375,127.24609375,127.44140625,127.44140625,20.80078125,20.80078125]],"container":"<table class=\"stripe compact\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Dataset<\/th>\n      <th>Mean score<\/th>\n      <th>Precision-recall AUC<\/th>\n      <th>Odds Ratio<\/th>\n      <th>Runtime (s)<\/th>\n      <th>CPU (%)<\/th>\n      <th>Memory (GB)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","paging":false,"columnDefs":[{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"searchPanes":{"show":false},"targets":[2,3,4,5,6,7]},{"searchPanes":{"preSelect":"Overall mean"},"targets":1},{"className":"dt-right","targets":[2,3,4,5,6,7]}],"buttons":["searchPanes","csv","excel"],"language":{"searchPanes":{"collapse":"Filter datasets / methods"}},"scrollX":true,"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render"],"jsHooks":[]}</script>
 
 ## Details
 
@@ -75,27 +116,27 @@ Methods
 
 <!-- -->
 
--   **Log2FC (max)**<sup><a href="/bibliography#raredon2022computation" target="_blank">6</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **Log2FC (max)**<sup><a href="/bibliography#dimitrov2022comparison" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **Log2FC (sum)**<sup><a href="/bibliography#raredon2022computation" target="_blank">6</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **Log2FC (sum)**<sup><a href="/bibliography#dimitrov2022comparison" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **Magnitude Rank Aggregate (max)**<sup><a href="/bibliography#dimitrov2022comparison" target="_blank">5</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **Magnitude Rank Aggregate (max)**<sup><a href="/bibliography#dimitrov2022comparison" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **Magnitude Rank Aggregate (sum)**<sup><a href="/bibliography#dimitrov2022comparison" target="_blank">5</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **Magnitude Rank Aggregate (sum)**<sup><a href="/bibliography#dimitrov2022comparison" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **NATMI (max)**<sup><a href="/bibliography#hou2020predicting" target="_blank">7</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **NATMI (max)**<sup><a href="/bibliography#hou2020predicting" target="_blank">5</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **NATMI (sum)**<sup><a href="/bibliography#hou2020predicting" target="_blank">7</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **NATMI (sum)**<sup><a href="/bibliography#hou2020predicting" target="_blank">5</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
@@ -103,19 +144,19 @@ Methods
 
 <!-- -->
 
--   **SingleCellSignalR (max)**<sup><a href="/bibliography#cabello2020singlecellsignalr" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **SingleCellSignalR (max)**<sup><a href="/bibliography#cabello2020singlecellsignalr" target="_blank">7</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **SingleCellSignalR (sum)**<sup><a href="/bibliography#cabello2020singlecellsignalr" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **SingleCellSignalR (sum)**<sup><a href="/bibliography#cabello2020singlecellsignalr" target="_blank">7</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **Specificity Rank Aggregate (max)**<sup><a href="/bibliography#dimitrov2022comparison" target="_blank">5</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **Specificity Rank Aggregate (max)**<sup><a href="/bibliography#dimitrov2022comparison" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
--   **Specificity Rank Aggregate (sum)**<sup><a href="/bibliography#dimitrov2022comparison" target="_blank">5</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
+-   **Specificity Rank Aggregate (sum)**<sup><a href="/bibliography#dimitrov2022comparison" target="_blank">4</a></sup>: Missing 'method_description'. Links: [Docs](https://github.com/saezlab/liana).
 
 <!-- -->
 
@@ -234,28 +275,6 @@ Quality control results
    <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Metric metadata field 'metric_description' should be defined
   Task id: cell_cell_communication_source_target
   Field: metric_description
-"> ✗✗ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
-  Task id: cell_cell_communication_source_target
-  Field: task_description
-"> Task info </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
-  Task id: cell_cell_communication_source_target
-  Field: task_description
-"> Pct 'task_description' missing </td>
-   <td style="text-align:right;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
-  Task id: cell_cell_communication_source_target
-  Field: task_description
-"> 1 </td>
-   <td style="text-align:left;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
-  Task id: cell_cell_communication_source_target
-  Field: task_description
-"> percent_missing([task_info], field) </td>
-   <td style="text-align:left;color: red !important;" data-toggle="tooltip" data-container="body" data-placement="right" title="Task metadata field 'task_description' should be defined
-  Task id: cell_cell_communication_source_target
-  Field: task_description
 "> ✗✗ </td>
   </tr>
 </tbody>

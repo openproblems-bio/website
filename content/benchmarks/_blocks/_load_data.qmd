@@ -22,6 +22,16 @@ dataset_info <- jsonlite::read_json(paste0(params$data_dir, "/dataset_info.json"
 results <- jsonlite::read_json(paste0(params$data_dir, "/results.json"), simplifyVector = TRUE)
 qc <- jsonlite::read_json(paste0(params$data_dir, "/quality_control.json"), simplifyVector = TRUE)
 
+for (col in c("method_description")) {
+  method_info[[col]] <- method_info[[col]] %||% NA_character_
+}
+for (col in c("metric_description")) {
+  metric_info[[col]] <- metric_info[[col]] %||% NA_character_
+}
+for (col in c("dataset_description")) {
+  dataset_info[[col]] <- dataset_info[[col]] %||% NA_character_
+}
+
 num_methods <- sum(!method_info$is_baseline)
 num_baselines <- sum(method_info$is_baseline)
 num_datasets <- nrow(dataset_info)
