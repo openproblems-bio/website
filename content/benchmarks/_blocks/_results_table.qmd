@@ -74,12 +74,13 @@ dt <- DT::datatable(
     ),
     language = list(
       searchPanes = list(collapse = "Filter datasets / methods")
-    )
+    ),
+    scrollX = TRUE
   ),
   escape = FALSE,
   class = "stripe compact",
   rownames = FALSE,
-  extensions = c("Select", "SearchPanes", "Buttons", "Responsive"),
+  extensions = c("Select", "SearchPanes", "Buttons"),
   caption = "Results table of the scores per method, dataset and metric (after scaling). Use the filters to make a custom subselection of methods and datasets. The \"Overall mean\" dataset is the mean value across all datasets."
 ) %>%
   DT::formatRound(c("peak_memory_gb", "mean_score", metric_info$metric_id), digits = 2) %>%
