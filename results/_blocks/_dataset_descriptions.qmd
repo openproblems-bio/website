@@ -1,0 +1,14 @@
+```{r}
+#| echo: false
+lines <- pmap_chr(dataset_info, function(dataset_name, dataset_description, data_reference, ...) {
+  ref <- 
+    if (!is.na(data_reference)) {
+      paste0("<sup>", cite_fun(data_reference, "html"), "</sup>")
+    } else {
+      ""
+    }
+  summ <- (dataset_description %|% "Missing 'dataset_description'") %>% str_replace_all("\\. *$", "")
+  glue::glue("* **{dataset_name}**{ref}: {summ}.")
+})
+knitr::asis_output(lines)
+```

@@ -1,280 +1,40 @@
 [
     {
         "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "no_denoising", 
-        "dataset_id": "pancreas", 
-        "submission_time": "2022-12-14 10:23:25.847", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 179.0, 
-            "cpu_pct": 104.3, 
-            "peak_memory_mb": 617.0, 
-            "disk_read_mb": 179.8, 
-            "disk_write_mb": 362.9
-        }, 
-        "metric_values": {
-            "mse": 0.30473435, 
-            "poisson": 0.25766019101929694
-        }, 
-        "scaled_scores": {
-            "mse": 0.0, 
-            "poisson": 0.0
-        }, 
-        "mean_score": 0.0
-    }, 
-    {
-        "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "magic", 
-        "dataset_id": "pancreas", 
-        "submission_time": "2022-12-14 10:23:25.769", 
-        "code_version": "3.0.0", 
-        "resources": {
-            "duration_sec": 199.0, 
-            "cpu_pct": 690.3, 
-            "peak_memory_mb": 1000.0, 
-            "disk_read_mb": 179.2, 
-            "disk_write_mb": 362.9
-        }, 
-        "metric_values": {
-            "mse": 0.2318409, 
-            "poisson": 0.1242778236379981
-        }, 
-        "scaled_scores": {
-            "mse": 0.23920326015101345, 
-            "poisson": 0.5904764391509301
-        }, 
-        "mean_score": 0.41483984965097176
-    }, 
-    {
-        "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "magic_approx", 
-        "dataset_id": "pancreas", 
-        "submission_time": "2022-12-14 10:23:25.902", 
-        "code_version": "3.0.0", 
-        "resources": {
-            "duration_sec": 199.0, 
-            "cpu_pct": 480.8, 
-            "peak_memory_mb": 539.5, 
-            "disk_read_mb": 179.2, 
-            "disk_write_mb": 362.9
-        }, 
-        "metric_values": {
-            "mse": 0.23190628, 
-            "poisson": 0.12361577441952155
-        }, 
-        "scaled_scores": {
-            "mse": 0.23898871262790033, 
-            "poisson": 0.5934072948010713
-        }, 
-        "mean_score": 0.41619800371448584
-    }, 
-    {
-        "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "perfect_denoising", 
-        "dataset_id": "pancreas", 
-        "submission_time": "2022-12-14 10:23:25.972", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 229.0, 
-            "cpu_pct": 115.0, 
-            "peak_memory_mb": 616.4, 
-            "disk_read_mb": 179.8, 
-            "disk_write_mb": 362.9
-        }, 
-        "metric_values": {
-            "mse": 8.998869e-18, 
-            "poisson": 0.03177079300522084
-        }, 
-        "scaled_scores": {
-            "mse": 1.0, 
-            "poisson": 1.0
-        }, 
-        "mean_score": 1.0
-    }, 
-    {
-        "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "dca", 
-        "dataset_id": "pancreas", 
-        "submission_time": "2022-12-14 10:23:25.706", 
-        "code_version": "0.3.4", 
-        "resources": {
-            "duration_sec": 239.0, 
-            "cpu_pct": 824.8, 
-            "peak_memory_mb": 2200.0, 
-            "disk_read_mb": 209.0, 
-            "disk_write_mb": 248.3
-        }, 
-        "metric_values": {
-            "mse": 0.2696617, 
-            "poisson": 0.27595151299937937
-        }, 
-        "scaled_scores": {
-            "mse": 0.11509253879649595, 
-            "poisson": -0.08097468115321926
-        }, 
-        "mean_score": 0.01705892882163834
-    }, 
-    {
-        "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "knn_smoothing", 
-        "dataset_id": "pancreas", 
-        "submission_time": "2022-12-14 10:23:25.922", 
-        "code_version": "2.0", 
-        "resources": {
-            "duration_sec": 259.0, 
-            "cpu_pct": 971.0, 
-            "peak_memory_mb": 1800.0, 
-            "disk_read_mb": 178.3, 
-            "disk_write_mb": 362.9
-        }, 
-        "metric_values": {
-            "mse": 0.2770562, 
-            "poisson": 2.5839403818134783
-        }, 
-        "scaled_scores": {
-            "mse": 0.09082714173836992, 
-            "poisson": -10.298315065894421
-        }, 
-        "mean_score": -5.103743962078026
-    }, 
-    {
-        "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "alra", 
-        "dataset_id": "pancreas", 
-        "submission_time": "2022-12-14 10:23:25.595", 
-        "code_version": "1.0.0", 
-        "resources": {
-            "duration_sec": 399.0, 
-            "cpu_pct": 99.4, 
-            "peak_memory_mb": 3800.0, 
-            "disk_read_mb": 216.6, 
-            "disk_write_mb": 402.4
-        }, 
-        "metric_values": {
-            "mse": 0.30848727, 
-            "poisson": 0.03722703931288192
-        }, 
-        "scaled_scores": {
-            "mse": -0.012315382233738958, 
-            "poisson": 0.9758454962666239
-        }, 
-        "mean_score": 0.48176505701644246
-    }, 
-    {
-        "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "knn_naive", 
-        "dataset_id": "pancreas", 
-        "submission_time": "2022-12-14 10:23:46.081", 
+        "dataset_id": "pbmc", 
+        "submission_time": "2023-02-03 19:06:58.116", 
         "code_version": "3.0.0", 
         "resources": {
-            "duration_sec": 388.0, 
-            "cpu_pct": 311.8, 
-            "peak_memory_mb": 530.4, 
-            "disk_read_mb": 179.2, 
-            "disk_write_mb": 362.9
-        }, 
-        "metric_values": {
-            "mse": 0.27981332, 
-            "poisson": 0.27571115040576977
-        }, 
-        "scaled_scores": {
-            "mse": 0.08177952370646768, 
-            "poisson": -0.07991060910856906
-        }, 
-        "mean_score": 0.0009344572989493094
-    }, 
-    {
-        "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "no_denoising", 
-        "dataset_id": "pbmc", 
-        "submission_time": "2022-12-14 10:23:25.735", 
-        "code_version": "0.6.0", 
-        "resources": {
-            "duration_sec": 149.0, 
-            "cpu_pct": 85.9, 
-            "peak_memory_mb": 447.3, 
-            "disk_read_mb": 115.9, 
+            "duration_sec": 139.0, 
+            "cpu_pct": 229.5, 
+            "peak_memory_mb": 712.1, 
+            "disk_read_mb": 115.6, 
             "disk_write_mb": 195.0
         }, 
         "metric_values": {
-            "mse": 0.27097428, 
-            "poisson": 0.3011988118677921
+            "mse": 0.22726515, 
+            "poisson": 0.3086165315122567
         }, 
         "scaled_scores": {
-            "mse": 0.0, 
-            "poisson": 0.0
+            "mse": 0.16130361154571582, 
+            "poisson": -0.02880060068017376
         }, 
-        "mean_score": 0.0
+        "mean_score": 0.06625150543277103
     }, 
     {
         "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "magic", 
-        "dataset_id": "pbmc", 
-        "submission_time": "2022-12-14 10:23:25.772", 
-        "code_version": "3.0.0", 
-        "resources": {
-            "duration_sec": 199.0, 
-            "cpu_pct": 803.2, 
-            "peak_memory_mb": 427.6, 
-            "disk_read_mb": 115.3, 
-            "disk_write_mb": 195.0
-        }, 
-        "metric_values": {
-            "mse": 0.18865092, 
-            "poisson": 0.16189215911327606
-        }, 
-        "scaled_scores": {
-            "mse": 0.3038050696176775, 
-            "poisson": 0.5408825717845045
-        }, 
-        "mean_score": 0.422343820701091
-    }, 
-    {
-        "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "magic_approx", 
-        "dataset_id": "pbmc", 
-        "submission_time": "2022-12-14 10:23:25.847", 
-        "code_version": "3.0.0", 
-        "resources": {
-            "duration_sec": 199.0, 
-            "cpu_pct": 451.8, 
-            "peak_memory_mb": 428.5, 
-            "disk_read_mb": 115.3, 
-            "disk_write_mb": 195.0
-        }, 
-        "metric_values": {
-            "mse": 0.1885307, 
-            "poisson": 0.16146326814596254
-        }, 
-        "scaled_scores": {
-            "mse": 0.30424872796045455, 
-            "poisson": 0.5425478163713835
-        }, 
-        "mean_score": 0.423398272165919
-    }, 
-    {
-        "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "perfect_denoising", 
         "dataset_id": "pbmc", 
-        "submission_time": "2022-12-14 10:23:25.891", 
-        "code_version": "0.6.0", 
+        "submission_time": "2023-02-03 19:07:18.086", 
+        "code_version": "0.7.0", 
         "resources": {
-            "duration_sec": 209.0, 
-            "cpu_pct": 110.7, 
-            "peak_memory_mb": 236.8, 
-            "disk_read_mb": 115.9, 
+            "duration_sec": 139.0, 
+            "cpu_pct": 21.9, 
+            "peak_memory_mb": 233.7, 
+            "disk_read_mb": 115.2, 
             "disk_write_mb": 195.0
         }, 
         "metric_values": {
@@ -289,40 +49,64 @@
     }, 
     {
         "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "dca", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "magic_approx", 
         "dataset_id": "pbmc", 
-        "submission_time": "2022-12-14 10:23:25.816", 
-        "code_version": "0.3.4", 
+        "submission_time": "2023-02-03 19:07:07.202", 
+        "code_version": "3.0.0", 
         "resources": {
-            "duration_sec": 249.0, 
-            "cpu_pct": 995.5, 
-            "peak_memory_mb": 1800.0, 
-            "disk_read_mb": 145.1, 
-            "disk_write_mb": 132.4
+            "duration_sec": 170.0, 
+            "cpu_pct": 267.7, 
+            "peak_memory_mb": 431.2, 
+            "disk_read_mb": 115.6, 
+            "disk_write_mb": 195.0
         }, 
         "metric_values": {
-            "mse": 0.21764818, 
-            "poisson": 0.31065335767543295
+            "mse": 0.18851362, 
+            "poisson": 0.1614508914758856
         }, 
         "scaled_scores": {
-            "mse": 0.19679395402397615, 
-            "poisson": -0.03670893636718575
+            "mse": 0.30431175977292035, 
+            "poisson": 0.5425958709689851
         }, 
-        "mean_score": 0.0800425088283952
+        "mean_score": 0.4234538153709527
     }, 
     {
         "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "magic_reverse_norm", 
+        "dataset_id": "pbmc", 
+        "submission_time": "2023-02-03 19:07:18.012", 
+        "code_version": "3.0.0", 
+        "resources": {
+            "duration_sec": 179.0, 
+            "cpu_pct": 229.3, 
+            "peak_memory_mb": 718.2, 
+            "disk_read_mb": 115.6, 
+            "disk_write_mb": 195.0
+        }, 
+        "metric_values": {
+            "mse": 0.1888018, 
+            "poisson": 0.049456242692637375
+        }, 
+        "scaled_scores": {
+            "mse": 0.3032482640049825, 
+            "poisson": 0.9774347854229244
+        }, 
+        "mean_score": 0.6403415247139534
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "knn_smoothing", 
         "dataset_id": "pbmc", 
-        "submission_time": "2022-12-14 10:23:25.850", 
+        "submission_time": "2023-02-03 19:07:37.998", 
         "code_version": "2.0", 
         "resources": {
-            "duration_sec": 249.0, 
-            "cpu_pct": 409.2, 
+            "duration_sec": 289.0, 
+            "cpu_pct": 503.2, 
             "peak_memory_mb": 1100.0, 
-            "disk_read_mb": 114.4, 
+            "disk_read_mb": 114.6, 
             "disk_write_mb": 195.0
         }, 
         "metric_values": {
@@ -337,69 +121,45 @@
     }, 
     {
         "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "alra", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "magic", 
         "dataset_id": "pbmc", 
-        "submission_time": "2022-12-14 10:23:25.486", 
-        "code_version": "1.0.0", 
-        "resources": {
-            "duration_sec": 329.0, 
-            "cpu_pct": 98.0, 
-            "peak_memory_mb": 2500.0, 
-            "disk_read_mb": 152.7, 
-            "disk_write_mb": 220.8
-        }, 
-        "metric_values": {
-            "mse": 0.26386338, 
-            "poisson": 0.049700613405339905
-        }, 
-        "scaled_scores": {
-            "mse": 0.026241973961514065, 
-            "poisson": 0.9764859731663534
-        }, 
-        "mean_score": 0.5013639735639337
-    }, 
-    {
-        "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "knn_naive", 
-        "dataset_id": "pbmc", 
-        "submission_time": "2022-12-14 10:23:46.620", 
+        "submission_time": "2023-02-03 19:07:37.943", 
         "code_version": "3.0.0", 
         "resources": {
-            "duration_sec": 378.0, 
-            "cpu_pct": 282.1, 
-            "peak_memory_mb": 429.2, 
-            "disk_read_mb": 115.3, 
+            "duration_sec": 299.0, 
+            "cpu_pct": 288.8, 
+            "peak_memory_mb": 441.9, 
+            "disk_read_mb": 115.6, 
             "disk_write_mb": 195.0
         }, 
         "metric_values": {
-            "mse": 0.2272739, 
-            "poisson": 0.30859831267154386
+            "mse": 0.18868424, 
+            "poisson": 0.1619390554371347
         }, 
         "scaled_scores": {
-            "mse": 0.16127132065818217, 
-            "poisson": -0.02872986282792578
+            "mse": 0.3036821059179492, 
+            "poisson": 0.5407004885619566
         }, 
-        "mean_score": 0.0662707289151282
+        "mean_score": 0.4221912972399529
     }, 
     {
         "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "no_denoising", 
-        "dataset_id": "tabula_muris_senis_lung_random", 
-        "submission_time": "2022-12-14 10:29:15.458", 
-        "code_version": "0.6.0", 
+        "dataset_id": "pbmc", 
+        "submission_time": "2023-02-03 19:07:29.702", 
+        "code_version": "0.7.0", 
         "resources": {
-            "duration_sec": 360.0, 
-            "cpu_pct": 26.6, 
-            "peak_memory_mb": 4300.0, 
-            "disk_read_mb": 1100.0, 
-            "disk_write_mb": 4000.0
+            "duration_sec": 327.0, 
+            "cpu_pct": 16.2, 
+            "peak_memory_mb": 442.5, 
+            "disk_read_mb": 115.2, 
+            "disk_write_mb": 195.0
         }, 
         "metric_values": {
-            "mse": 0.26162183, 
-            "poisson": 0.20639474229979976
+            "mse": 0.27097428, 
+            "poisson": 0.3011988118677921
         }, 
         "scaled_scores": {
             "mse": 0.0, 
@@ -409,14 +169,374 @@
     }, 
     {
         "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "alra_log", 
+        "dataset_id": "pbmc", 
+        "submission_time": "2023-02-03 19:07:37.893", 
+        "code_version": "1.0.0", 
+        "resources": {
+            "duration_sec": 349.0, 
+            "cpu_pct": 89.2, 
+            "peak_memory_mb": 2100.0, 
+            "disk_read_mb": 153.1, 
+            "disk_write_mb": 220.8
+        }, 
+        "metric_values": {
+            "mse": 0.28270945, 
+            "poisson": 0.4273245378866518
+        }, 
+        "scaled_scores": {
+            "mse": -0.043307320532413485, 
+            "poisson": -0.4897053063035217
+        }, 
+        "mean_score": -0.2665063134179676
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "alra_sqrt", 
+        "dataset_id": "pbmc", 
+        "submission_time": "2023-02-03 19:07:37.808", 
+        "code_version": "1.0.0", 
+        "resources": {
+            "duration_sec": 359.0, 
+            "cpu_pct": 82.5, 
+            "peak_memory_mb": 2100.0, 
+            "disk_read_mb": 153.1, 
+            "disk_write_mb": 220.8
+        }, 
+        "metric_values": {
+            "mse": 0.263389, 
+            "poisson": 0.04971165934401305
+        }, 
+        "scaled_scores": {
+            "mse": 0.02799261981616863, 
+            "poisson": 0.9764430853673921
+        }, 
+        "mean_score": 0.5022178525917804
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "magic_approx_reverse_norm", 
+        "dataset_id": "pbmc", 
+        "submission_time": "2023-02-03 19:07:47.870", 
+        "code_version": "3.0.0", 
+        "resources": {
+            "duration_sec": 349.0, 
+            "cpu_pct": 256.2, 
+            "peak_memory_mb": 426.0, 
+            "disk_read_mb": 115.6, 
+            "disk_write_mb": 195.0
+        }, 
+        "metric_values": {
+            "mse": 0.18864644, 
+            "poisson": 0.04945601663644106
+        }, 
+        "scaled_scores": {
+            "mse": 0.3038216025520948, 
+            "poisson": 0.9774356631258511
+        }, 
+        "mean_score": 0.640628632838973
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "dca", 
+        "dataset_id": "pbmc", 
+        "submission_time": "2023-02-03 19:07:47.778", 
+        "code_version": "0.3.4", 
+        "resources": {
+            "duration_sec": 439.0, 
+            "cpu_pct": 451.2, 
+            "peak_memory_mb": 2700.0, 
+            "disk_read_mb": 145.3, 
+            "disk_write_mb": 132.4
+        }, 
+        "metric_values": {
+            "mse": 0.21807043, 
+            "poisson": 0.3105316018018715
+        }, 
+        "scaled_scores": {
+            "mse": 0.19523568805127933, 
+            "poisson": -0.03623619778134213
+        }, 
+        "mean_score": 0.0794997451349686
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "perfect_denoising", 
+        "dataset_id": "pancreas", 
+        "submission_time": "2023-02-03 19:07:27.918", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 130.0, 
+            "cpu_pct": 26.6, 
+            "peak_memory_mb": 231.0, 
+            "disk_read_mb": 179.1, 
+            "disk_write_mb": 362.9
+        }, 
+        "metric_values": {
+            "mse": 8.998869e-18, 
+            "poisson": 0.03177079300522084
+        }, 
+        "scaled_scores": {
+            "mse": 1.0, 
+            "poisson": 1.0
+        }, 
+        "mean_score": 1.0
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "knn_naive", 
+        "dataset_id": "pancreas", 
+        "submission_time": "2023-02-03 19:07:27.867", 
+        "code_version": "3.0.0", 
+        "resources": {
+            "duration_sec": 149.0, 
+            "cpu_pct": 637.5, 
+            "peak_memory_mb": 530.0, 
+            "disk_read_mb": 179.5, 
+            "disk_write_mb": 362.9
+        }, 
+        "metric_values": {
+            "mse": 0.27983603, 
+            "poisson": 0.275717085645158
+        }, 
+        "scaled_scores": {
+            "mse": 0.08170499978095669, 
+            "poisson": -0.07993688408845046
+        }, 
+        "mean_score": 0.0008840578462531168
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "magic_approx", 
+        "dataset_id": "pancreas", 
+        "submission_time": "2023-02-03 19:07:27.823", 
+        "code_version": "3.0.0", 
+        "resources": {
+            "duration_sec": 170.0, 
+            "cpu_pct": 214.4, 
+            "peak_memory_mb": 777.8, 
+            "disk_read_mb": 179.5, 
+            "disk_write_mb": 362.9
+        }, 
+        "metric_values": {
+            "mse": 0.2319102, 
+            "poisson": 0.12359904894278426
+        }, 
+        "scaled_scores": {
+            "mse": 0.23897584896484425, 
+            "poisson": 0.5934813375710479
+        }, 
+        "mean_score": 0.4162285932679461
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "magic_reverse_norm", 
+        "dataset_id": "pancreas", 
+        "submission_time": "2023-02-03 19:07:27.937", 
+        "code_version": "3.0.0", 
+        "resources": {
+            "duration_sec": 169.0, 
+            "cpu_pct": 235.2, 
+            "peak_memory_mb": 541.1, 
+            "disk_read_mb": 179.5, 
+            "disk_write_mb": 362.9
+        }, 
+        "metric_values": {
+            "mse": 0.23143774, 
+            "poisson": 0.036957603925210865
+        }, 
+        "scaled_scores": {
+            "mse": 0.24052624851776638, 
+            "poisson": 0.977038271979162
+        }, 
+        "mean_score": 0.6087822602484643
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "magic", 
+        "dataset_id": "pancreas", 
+        "submission_time": "2023-02-03 19:07:37.950", 
+        "code_version": "3.0.0", 
+        "resources": {
+            "duration_sec": 270.0, 
+            "cpu_pct": 635.2, 
+            "peak_memory_mb": 544.3, 
+            "disk_read_mb": 179.5, 
+            "disk_write_mb": 362.9
+        }, 
+        "metric_values": {
+            "mse": 0.23190285, 
+            "poisson": 0.12432021751444929
+        }, 
+        "scaled_scores": {
+            "mse": 0.23899996833307435, 
+            "poisson": 0.5902887637804882
+        }, 
+        "mean_score": 0.4146443660567813
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "no_denoising", 
+        "dataset_id": "pancreas", 
+        "submission_time": "2023-02-03 19:07:29.575", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 288.0, 
+            "cpu_pct": 35.9, 
+            "peak_memory_mb": 235.9, 
+            "disk_read_mb": 179.1, 
+            "disk_write_mb": 362.9
+        }, 
+        "metric_values": {
+            "mse": 0.30473435, 
+            "poisson": 0.25766019101929694
+        }, 
+        "scaled_scores": {
+            "mse": 0.0, 
+            "poisson": 0.0
+        }, 
+        "mean_score": 0.0
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "knn_smoothing", 
+        "dataset_id": "pancreas", 
+        "submission_time": "2023-02-03 19:07:38.107", 
+        "code_version": "2.0", 
+        "resources": {
+            "duration_sec": 280.0, 
+            "cpu_pct": 922.5, 
+            "peak_memory_mb": 1800.0, 
+            "disk_read_mb": 178.6, 
+            "disk_write_mb": 362.9
+        }, 
+        "metric_values": {
+            "mse": 0.2770562, 
+            "poisson": 2.5839403818134783
+        }, 
+        "scaled_scores": {
+            "mse": 0.09082714173836992, 
+            "poisson": -10.298315065894421
+        }, 
+        "mean_score": -5.103743962078026
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "alra_sqrt", 
+        "dataset_id": "pancreas", 
+        "submission_time": "2023-02-03 19:07:37.912", 
+        "code_version": "1.0.0", 
+        "resources": {
+            "duration_sec": 379.0, 
+            "cpu_pct": 98.3, 
+            "peak_memory_mb": 3400.0, 
+            "disk_read_mb": 217.0, 
+            "disk_write_mb": 402.4
+        }, 
+        "metric_values": {
+            "mse": 0.3086547, 
+            "poisson": 0.03721316372077714
+        }, 
+        "scaled_scores": {
+            "mse": -0.012864811597379955, 
+            "poisson": 0.9759069227533328
+        }, 
+        "mean_score": 0.4815210555779764
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "magic_approx_reverse_norm", 
+        "dataset_id": "pancreas", 
+        "submission_time": "2023-02-03 19:07:47.788", 
+        "code_version": "3.0.0", 
+        "resources": {
+            "duration_sec": 379.0, 
+            "cpu_pct": 483.8, 
+            "peak_memory_mb": 541.4, 
+            "disk_read_mb": 179.5, 
+            "disk_write_mb": 362.9
+        }, 
+        "metric_values": {
+            "mse": 0.23159747, 
+            "poisson": 0.036957240923236594
+        }, 
+        "scaled_scores": {
+            "mse": 0.24000208706369985, 
+            "poisson": 0.9770398789690318
+        }, 
+        "mean_score": 0.6085209830163658
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "alra_log", 
+        "dataset_id": "pancreas", 
+        "submission_time": "2023-02-03 19:07:37.957", 
+        "code_version": "1.0.0", 
+        "resources": {
+            "duration_sec": 439.0, 
+            "cpu_pct": 101.0, 
+            "peak_memory_mb": 3700.0, 
+            "disk_read_mb": 217.0, 
+            "disk_write_mb": 402.4
+        }, 
+        "metric_values": {
+            "mse": 0.33165708, 
+            "poisson": 0.29582332230330055
+        }, 
+        "scaled_scores": {
+            "mse": -0.08834819573179065, 
+            "poisson": -0.1689460931744371
+        }, 
+        "mean_score": -0.12864714445311387
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "dca", 
+        "dataset_id": "pancreas", 
+        "submission_time": "2023-02-03 19:07:47.778", 
+        "code_version": "0.3.4", 
+        "resources": {
+            "duration_sec": 539.0, 
+            "cpu_pct": 483.5, 
+            "peak_memory_mb": 3400.0, 
+            "disk_read_mb": 209.2, 
+            "disk_write_mb": 248.3
+        }, 
+        "metric_values": {
+            "mse": 0.26866218, 
+            "poisson": 0.2743541532749241
+        }, 
+        "scaled_scores": {
+            "mse": 0.11837251035204932, 
+            "poisson": -0.07390325709127299
+        }, 
+        "mean_score": 0.022234626630388166
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "perfect_denoising", 
         "dataset_id": "tabula_muris_senis_lung_random", 
-        "submission_time": "2022-12-14 10:29:15.609", 
-        "code_version": "0.6.0", 
+        "submission_time": "2023-02-03 19:10:18.568", 
+        "code_version": "0.7.0", 
         "resources": {
-            "duration_sec": 369.0, 
-            "cpu_pct": 28.4, 
+            "duration_sec": 1599.0, 
+            "cpu_pct": 85.3, 
             "peak_memory_mb": 4300.0, 
             "disk_read_mb": 1100.0, 
             "disk_write_mb": 4000.0
@@ -433,86 +553,182 @@
     }, 
     {
         "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "magic_approx", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "no_denoising", 
         "dataset_id": "tabula_muris_senis_lung_random", 
-        "submission_time": "2022-12-14 10:29:15.419", 
+        "submission_time": "2023-02-03 19:10:18.628", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 1689.0, 
+            "cpu_pct": 71.0, 
+            "peak_memory_mb": 4300.0, 
+            "disk_read_mb": 1100.0, 
+            "disk_write_mb": 4000.0
+        }, 
+        "metric_values": {
+            "mse": 0.26162183, 
+            "poisson": 0.20639474229979976
+        }, 
+        "scaled_scores": {
+            "mse": 0.0, 
+            "poisson": 0.0
+        }, 
+        "mean_score": 0.0
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "knn_naive", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-03 19:10:18.472", 
         "code_version": "3.0.0", 
         "resources": {
-            "duration_sec": 500.0, 
-            "cpu_pct": 175.1, 
+            "duration_sec": 2109.0, 
+            "cpu_pct": 128.2, 
+            "peak_memory_mb": 8199.999999, 
+            "disk_read_mb": 1100.0, 
+            "disk_write_mb": 4000.0
+        }, 
+        "metric_values": {
+            "mse": 0.22784978, 
+            "poisson": 0.21183054130668
+        }, 
+        "scaled_scores": {
+            "mse": 0.12908727838193024, 
+            "poisson": -0.030290082180567834
+        }, 
+        "mean_score": 0.0493985981006812
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "magic_approx_reverse_norm", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-03 19:10:18.791", 
+        "code_version": "3.0.0", 
+        "resources": {
+            "duration_sec": 2148.0, 
+            "cpu_pct": 137.8, 
             "peak_memory_mb": 7800.0, 
             "disk_read_mb": 1100.0, 
             "disk_write_mb": 4000.0
         }, 
         "metric_values": {
-            "mse": 0.18383937, 
-            "poisson": 0.11581535273865286
+            "mse": 0.18366393, 
+            "poisson": 0.029675244691426902
         }, 
         "scaled_scores": {
-            "mse": 0.29730875286668557, 
-            "poisson": 0.5047385214574887
+            "mse": 0.2979793391094314, 
+            "poisson": 0.9847398880442504
         }, 
-        "mean_score": 0.4010236371620871
+        "mean_score": 0.6413596135768409
     }, 
     {
         "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "knn_naive", 
-        "dataset_id": "tabula_muris_senis_lung_random", 
-        "submission_time": "2022-12-14 10:29:15.673", 
-        "code_version": "3.0.0", 
-        "resources": {
-            "duration_sec": 500.0, 
-            "cpu_pct": 168.7, 
-            "peak_memory_mb": 8199.999999, 
-            "disk_read_mb": 1100.0, 
-            "disk_write_mb": 4000.0
-        }, 
-        "metric_values": {
-            "mse": 0.22786343, 
-            "poisson": 0.21184050873992424
-        }, 
-        "scaled_scores": {
-            "mse": 0.12903510383670969, 
-            "poisson": -0.030345624037747543
-        }, 
-        "mean_score": 0.04934473989948107
-    }, 
-    {
-        "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "magic", 
         "dataset_id": "tabula_muris_senis_lung_random", 
-        "submission_time": "2022-12-14 10:29:15.446", 
+        "submission_time": "2023-02-03 19:10:18.688", 
         "code_version": "3.0.0", 
         "resources": {
-            "duration_sec": 620.0, 
-            "cpu_pct": 140.8, 
+            "duration_sec": 2179.0, 
+            "cpu_pct": 126.8, 
             "peak_memory_mb": 8199.999999, 
             "disk_read_mb": 1100.0, 
             "disk_write_mb": 4000.0
         }, 
         "metric_values": {
-            "mse": 0.18416919, 
-            "poisson": 0.11666005515338217
+            "mse": 0.18416359, 
+            "poisson": 0.11665141286883103
         }, 
         "scaled_scores": {
-            "mse": 0.2960480782509626, 
-            "poisson": 0.5000315583177755
+            "mse": 0.2960694831925915, 
+            "poisson": 0.5000797160051643
         }, 
-        "mean_score": 0.398039818284369
+        "mean_score": 0.3980745995988779
     }, 
     {
         "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "magic_approx", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-03 19:10:18.441", 
+        "code_version": "3.0.0", 
+        "resources": {
+            "duration_sec": 2229.0, 
+            "cpu_pct": 121.8, 
+            "peak_memory_mb": 2600.0, 
+            "disk_read_mb": 1100.0, 
+            "disk_write_mb": 4000.0
+        }, 
+        "metric_values": {
+            "mse": 0.18383925, 
+            "poisson": 0.11581745162965196
+        }, 
+        "scaled_scores": {
+            "mse": 0.29730921154400614, 
+            "poisson": 0.5047268257379136
+        }, 
+        "mean_score": 0.4010180186409599
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "magic_reverse_norm", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-03 19:10:18.540", 
+        "code_version": "3.0.0", 
+        "resources": {
+            "duration_sec": 2392.0, 
+            "cpu_pct": 111.7, 
+            "peak_memory_mb": 8199.999999, 
+            "disk_read_mb": 1100.0, 
+            "disk_write_mb": 4000.0
+        }, 
+        "metric_values": {
+            "mse": 0.18411113, 
+            "poisson": 0.02967569573665644
+        }, 
+        "scaled_scores": {
+            "mse": 0.2962700016279223, 
+            "poisson": 0.9847373746700339
+        }, 
+        "mean_score": 0.6405036881489781
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "dca", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-03 19:10:18.780", 
+        "code_version": "0.3.4", 
+        "resources": {
+            "duration_sec": 2651.0, 
+            "cpu_pct": 1750.0, 
+            "peak_memory_mb": 6900.0, 
+            "disk_read_mb": 1100.0, 
+            "disk_write_mb": 2500.0
+        }, 
+        "metric_values": {
+            "mse": 0.2156143, 
+            "poisson": 0.21268347078026129
+        }, 
+        "scaled_scores": {
+            "mse": 0.17585508823938745, 
+            "poisson": -0.03504288923180465
+        }, 
+        "mean_score": 0.0704060995037914
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
         "method_id": "knn_smoothing", 
         "dataset_id": "tabula_muris_senis_lung_random", 
-        "submission_time": "2022-12-14 10:33:56.568", 
+        "submission_time": "2023-02-03 19:38:18.005", 
         "code_version": "2.0", 
         "resources": {
-            "duration_sec": 1328.0, 
-            "cpu_pct": 376.8, 
+            "duration_sec": 2062.0, 
+            "cpu_pct": 477.8, 
             "peak_memory_mb": 28100.0, 
             "disk_read_mb": 1100.0, 
             "disk_write_mb": 4000.0
@@ -529,50 +745,50 @@
     }, 
     {
         "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "dca", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "alra_log", 
         "dataset_id": "tabula_muris_senis_lung_random", 
-        "submission_time": "2022-12-14 11:03:05.122", 
-        "code_version": "0.3.4", 
-        "resources": {
-            "duration_sec": 2871.0, 
-            "cpu_pct": 1944.2, 
-            "peak_memory_mb": 7900.0, 
-            "disk_read_mb": 1100.0, 
-            "disk_write_mb": 2500.0
-        }, 
-        "metric_values": {
-            "mse": 0.21631762, 
-            "poisson": 0.21494121921748693
-        }, 
-        "scaled_scores": {
-            "mse": 0.17316678046323597, 
-            "poisson": -0.047623815351415466
-        }, 
-        "mean_score": 0.06277148255591025
-    }, 
-    {
-        "task_id": "denoising", 
-        "commit_sha": "a49ae996dc5f34402b1fa5cab9b3a3936126a413", 
-        "method_id": "alra", 
-        "dataset_id": "tabula_muris_senis_lung_random", 
-        "submission_time": "2022-12-14 12:26:17.612", 
+        "submission_time": "2023-02-03 20:04:20.583", 
         "code_version": "1.0.0", 
         "resources": {
-            "duration_sec": 10699.0, 
-            "cpu_pct": 91.0, 
-            "peak_memory_mb": 39400.0, 
+            "duration_sec": 3249.0, 
+            "cpu_pct": 101.0, 
+            "peak_memory_mb": 46700.0, 
             "disk_read_mb": 1100.0, 
             "disk_write_mb": 4400.0
         }, 
         "metric_values": {
-            "mse": 0.2723882, 
-            "poisson": 0.029905749830348046
+            "mse": 0.27967116, 
+            "poisson": 0.23733196160576467
         }, 
         "scaled_scores": {
-            "mse": -0.04115241453666174, 
-            "poisson": 0.9834554366522604
+            "mse": -0.06899015269482667, 
+            "poisson": -0.1723924880279475
         }, 
-        "mean_score": 0.47115151105779934
+        "mean_score": -0.12069132036138708
+    }, 
+    {
+        "task_id": "denoising", 
+        "commit_sha": "e091ceff37cb4c35e53cc51ee9c34a5ec571beca", 
+        "method_id": "alra_sqrt", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-03 20:59:39.883", 
+        "code_version": "1.0.0", 
+        "resources": {
+            "duration_sec": 7651.0, 
+            "cpu_pct": 100.9, 
+            "peak_memory_mb": 39300.0, 
+            "disk_read_mb": 1100.0, 
+            "disk_write_mb": 4400.0
+        }, 
+        "metric_values": {
+            "mse": 0.27235627, 
+            "poisson": 0.029901641128633513
+        }, 
+        "scaled_scores": {
+            "mse": -0.041030368146266705, 
+            "poisson": 0.9834783317064063
+        }, 
+        "mean_score": 0.4712239817800698
     }
 ]
