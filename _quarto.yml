@@ -41,30 +41,11 @@ website:
     - id: documentation
       collapse-level: 3
       title: Documentation
-      contents:
-        - documentation/index.qmd
-        - documentation/analyse_results/index.qmd
-        - documentation/execute/index.qmd
-        - href: documentation/contribute/index.qmd
-          contents: documentation/contribute/**
-        - documentation/development/index.qmd
-        - documentation/code_of_conduct.qmd
+      contents: documentation
+
     - id: neurips2021_docs
       title: NeurIPS2021
-      contents: 
-        - competitions/neurips_2021_docs/index.qmd
-        - text: General
-          href: competitions/neurips_2021_docs/about/index.qmd
-          contents: competitions/neurips_2021_docs/about/*
-        - text: Data
-          href: competitions/neurips_2021_docs/data/index.qmd
-          contents: competitions/neurips_2021_docs/data/*
-        - text: The tasks
-          href: competitions/neurips_2021_docs/about_tasks/index.qmd
-          contents: competitions/neurips_2021_docs/about_tasks/*
-        - text: Submissions
-          href: competitions/neurips_2021_docs/submission/index.qmd
-          contents: competitions/neurips_2021_docs/submission/*
+      contents: competitions/neurips_2021_docs
 format:
   html:
     # theme:

@@ -1,20 +1,21 @@
 ---
 title: Add a method
+order: 8
 ---
 
-This page describes how to add a method to an already existing task. Make sure you have followed the [first setup](../first_setup) page.
+This page describes how to add a method to an already existing task. Make sure you have followed the [first setup](../first_setup.html) page.
 
 There are 2 type of components you can add:
 
-* control method:  The control methods are methods that form a baseline (random/ground truth) to compare the methods from the same task against.
-* method: scripts to be benchmarked on how to perform the task.
+* `control method`:  The control methods are methods that form a baseline (random/ground truth) to compare the methods from the same task against.
+* `method`: scripts to be benchmarked on how to perform the task.
 
 you will find the control methods in the `control_methods` directory and the methods in the `methods` driectory. The setup of both components is similar with small differences in the config yaml. 
-The differences will be pointed out below.
+The differences will be pointed out below. whenever `methods` is mentioned it should be replaced with `control_methods` when adding a control method.
 
 ## Directory
 
-To add a (control) method create a new directory in the `src/task/(control_)methods` (where `task` is replaced by the task name. e.g. `denoising`) with the name of the new (control) method in snake case. A task can also contain a subtask then this should be `src/task/subtask/methods`.
+To add a (control) method create a new directory in the `src/task/methods` (where `task` is replaced by the task name. e.g. `denoising`) with the name of the new method in snake case. A task can also contain a subtask then this should be `src/task/subtask/methods`.
 Add a `config.vsh.yaml` and a script file e.g. `script.py` or `script.R`. You can also add additional helper files to this `dir` if it is required for the method e.g. method specific unit test `test.py`
 
 structure of the new control method directory:
@@ -46,6 +47,16 @@ functionality:
       example:
       default:
       description:
+
+  # required
+  resources:
+    - type: python_script
+      path: script.py
+  
+  test_resources:
+    - type: python_script
+      path: test.py
+    - path: helper.tsv
 
 platforms:
   # This will change depending on the programming language
@@ -84,3 +95,134 @@ functionality:
 ```
 * `namespace`: this should be structered acording to `task/methods` or `task/control_methods`. If the task contains subtasks this should be `task/subtask/methods`, the same for control methods.
 * `info/type`: For a method this should be `method`. For control_method it should be `negative_control` or `positive_control`.
+
+```yaml
+  resources:
+    - type: python_script
+      path: script.py
+```
+
+### Platforms
+
+In the `platforms` section no matter the docker image it is required to add the python setup to include the `pyyaml` package due to general unit testing done. When creating a Rscript also add the `anndata>=0.8` package.
+
+```yaml
+platforms:
+  # This will change depending on the programming language
+  - type: docker
+    image: python:3.10
+    setup:
+      # section required
+      - type: python
+        pip: [ pyyaml, anndata>0.8]
+
+  - type: nextflow
+    directives:
+      label: [midmem, midcpu]
+```
+
+## script file
+
+The script has three main sections: Imports/libraries, Viash block, and Method.
+
+### Imports
+
+This section defines which packages the method expects, if you want to import a new different package, add the `import` statement here **and** add the dependency to `config.vsh.yaml` (see above).
+
+::: {.panel-tabset}
+
+### Python
+```python
+import anndata as ad
+```
+
+### R
+```R
+library(anndata, warn.conflicts = FALSE)
+```
+:::
+
+
+### Viash block
+
+This optional code block exists to facilitate prototyping so your script can run when called directly by running `python script.py` (or `Rscript script.R` for R users). 
+
+::: {.panel-tabset}
+## Python
+```python
+## VIASH START
+# Anything within this block will be removed by `viash` and will be
+# replaced with the parameters as specified in your config.vsh.yaml.
+par = {
+    # Required arguments for the task
+    'input_train': 'train.h5ad',
+    'input_test': '.test.h5ad',
+    'output': 'output.h5ad',
+    # Optional method-specific arguments
+    'n_neighbors': 5,
+}
+meta = { 
+  'functionality_name': 'foo' 
+}
+## VIASH END
+```
+
+## R
+```R
+## VIASH START
+# Anything within this block will be removed by `viash` and will be
+# replaced with the parameters as specified in your config.vsh.yaml.
+par <- list(
+    # Required arguments for the task
+    input_train= 'train.h5ad',
+    input_test= 'test_mod1.h5ad',
+    output= 'output.h5ad',
+    # Optional method-specific arguments
+    n_neighbors= 5,
+)
+meta <- list (
+  functionality_name= 'foo' 
+)
+## VIASH END
+```
+:::
+
+Here, the `par` dictionary contains all the `arguments` defined in the `config.vsh.yaml` file. 
+
+### Method
+
+This code block will typically consist of reading the input files, performing some preprocessing, training a model on the train cells, generating predictions for the test cells, and outputting the predictions as an AnnData file.
+
+::: {.panel-tabset}
+## Python
+```python
+## Data reader
+print('Reading input files')
+
+input_train = ad.read_h5ad(par['input_train_mod1'])
+input_test = ad.read_h5ad(par['input_test_mod1'])
+
+print('processing Data')
+# ... preprocessing ... 
+# ... train model ...
+# ... generate predictions ...
+
+# write output to file
+adata = ad.AnnData(
+    X=y_pred,
+    uns={
+        'dataset_id': input_train.uns['dataset_id'],
+        'method_id': meta['functionality_name'],
+    },
+)
+
+print('writing to output files')
+adata.write_h5ad(par['output'], compress='gzip')
+```
+## R
+```R
+
+```
+:::
+
+Depending on the task The output is stored in different locations in the anndata. e.g. for `denoising` it is located in the `.layers['denoised']` and for `dimensionality_reduction` it is stored in `.obsm[X_emb]`.
