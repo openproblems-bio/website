@@ -10,12 +10,12 @@ There are 2 type of components you can add:
 * `control method`:  The control methods are methods that form a baseline (random/ground truth) to compare the methods from the same task against.
 * `method`: scripts to be benchmarked on how to perform the task.
 
-you will find the control methods in the `control_methods` directory and the methods in the `methods` driectory. The setup of both components is similar with small differences in the config yaml. 
+You will find the control methods in the `control_methods` directory and the methods in the `methods` directory. The setup of both components is similar with small differences in the config yaml. 
 The differences will be pointed out below. whenever `methods` is mentioned it should be replaced with `control_methods` when adding a control method.
 
 ## Directory
 
-To add a (control) method create a new directory in the `src/task/methods` (where `task` is replaced by the task name. e.g. `denoising`) with the name of the new method in snake case. A task can also contain a subtask then this should be `src/task/subtask/methods`.
+To add a method create a new directory in the `src/task/methods` (where `task` is replaced by the task name. e.g. `denoising`) with the name of the new method in snake case. A task can also contain a subtask then this should be `src/task/subtask/methods`.
 Add a `config.vsh.yaml` and a script file e.g. `script.py` or `script.R`. You can also add additional helper files to this `dir` if it is required for the method e.g. method specific unit test `test.py`
 
 structure of the new control method directory:
@@ -26,57 +26,152 @@ structure of the new control method directory:
         └── additional files             Helper files like e.g. tsv file, unit test specific for method, ...
 
 ## config.vsh.yaml
-example:
+
+Full documentation on the Viash configuration file is available on the [Viash documentation site](https://viash.io/reference/).
+
+### Merge
 ```yaml
-__merge__: ../../api/comp_control_method.yaml
-functionality:
-  name: method_name # snake case
-  namespace: denoising/methods
-  description: description of the method
-  info:
-    type: negative/positive_control
-    method_name: Method name
-    variants:
-      method_name:
-      method_var1:
-
-  # if extra arguments are needed add this block:
-  arguments:
-    - name: 
-      type:
-      example:
-      default:
-      description:
-
-  # required
-  resources:
-    - type: python_script
-      path: script.py
-  
-  test_resources:
-    - type: python_script
-      path: test.py
-    - path: helper.tsv
-
-platforms:
-  # This will change depending on the programming language
-  - type: docker
-    image: python:3.10
-    setup:
-      # section required
-      - type: python
-        pip: [ pyyaml, anndata>0.8]
-
-  - type: nextflow
-    directives:
-      label: [midmem, midcpu]
-```
-
-### merge
-```yaml
-__merge__: ../../api/comp_control_method.yaml
+__merge__: ../../api/comp_method.yaml
 ```
 This file contains metadata that is needed for all the methods. it will contain the required arguments such as the `--input` files and the `--output` files
+
+### Functionality
+
+This section of the configuration file contains information about the metadata of the script including script specific parameters and a list of resource files. 
+
+```yaml
+functionality:
+  # a unique name for your method, same as what is being output by the script.
+  # must match the regex [a-z][a-z0-9_]*
+  name: method
+
+  # metadata for your method
+  description: A description for your method.
+  info:
+    type: method
+    method_name:
+    variants:
+    preferred_normalization:
+
+
+  # component parameters
+  arguments:
+    # Method-specific parameters. 
+    # Change these to expose parameters of your method to Nextflow (optional)
+    - name: "--n_neighbors"
+      type: "integer"
+      default: 5
+      description: Number of neighbors to use.
+
+  # files your script needs
+  resources:
+    # the script itself
+    - type: python_script
+      path: script.py
+    # additional resources your script needs (optional)
+    - path: pretrained_model.pt
+```
+
+In this section of the configuration you should focus on updating the following sections:
+
+1. Description and Info - Information about the method
+2. Arguments - Each section here defines a command-line argument for the script. These sections are all passed to the script in the form of a dictionary called `par`. You only need to change the method-specific parameters, and if you would like these parameters hard-coded into the script, you do not need to provide any parameters here. 
+3. Resources - This section describes the files that need to be included in your component. For example if you'd like to add a file containing model weights called `weights.pt`, add `{ type: file, path: weights.pt }` to the resources. You can now load the additional resource in your script by using at the path `meta['resources_dir'] + '/weights.pt'`.
+
+
+### Platform
+
+The Platform section defines the information about how the Viash component is run on various backend platforms.
+
+1. Docker ([docs](https://viash.io/guide))
+2. Nextflow ([docs](https://viash.io/guide))
+
+::: {.panel-tabset}
+
+## Python
+```yaml
+# target platforms
+platforms:
+
+  # By specifying 'docker' platform, viash will build a standalone
+  # executable which uses docker in the back end to run your method.
+  - type: docker
+    # you need to specify a base image that contains at least bash and python
+    image: python:3.10
+    # You can specify additional dependencies with 'setup'.
+    # See https://viash.io/reference
+    # for more information on how to add more dependencies.
+    setup:
+      # - type: apt
+      #   packages:
+      #     - bash
+      - type: python
+        pip:
+          - pyyaml
+          - anndata>=0.8
+
+  # By specifying a 'nextflow', viash will also build a viash module
+  # which uses the docker container built above to also be able to
+  # run your method as part of a nextflow pipeline.
+  - type: nextflow
+    directives:
+      label: [ lowmem, lowcpu ]
+```
+
+## R
+```yaml
+# target platforms
+platforms:
+
+  # By specifying 'docker' platform, viash will build a standalone
+  # executable which uses docker in the back end to run your method.
+  - type: docker
+    # you need to specify a base image that contains at least bash and python
+    image: eddelbuettel/r2u:22.04
+    # You can specify additional dependencies with 'setup'.
+    # See https://viash.io/reference
+    # for more information on how to add more dependencies.
+    setup:
+      # - type: apt
+      #   packages:
+      #     - bash
+      - type: apt
+        packages: [ libhdf5-dev, libgeos-dev, python3, python3-pip, python3-dev, python-is-python3, git ]
+      - type: python
+        pip: [ anndata>=0.8, pyyaml ]
+      - type: r
+        cran: [ anndata]
+
+  # By specifying a 'nextflow', viash will also build a viash module
+  # which uses the docker container built above to also be able to
+  # run your method as part of a nextflow pipeline.
+  - type: nextflow
+    directives:
+      label: [ lowmem, lowcpu ]
+```
+:::
+
+The most important part of this section to update is the `setup` definition that describes the packages that need to be installed in the docker container for the method to run. There are many different methods for specifying these requirements described in the Viash [docs](https://viash.io/reference).
+
+You can also change the memory, runtime, and CPU utilization be editing the Nextflow labels section. Available options are `[low|med|high]` for each of `mem` and `cpu`. The corresponding resource values can be found in the `scripts/nextflow.config` file.
+
+:::{.callout-note}
+**Tip:** After making changes to the components dependencies, you will need to rebuild the docker container as follows:
+
+```sh
+$ bin/viash run -- ---setup cachedbuild
+[notice] Running 'docker build -t method:dev /tmp/viashsetupdocker-method-tEX78c'
+```
+:::
+
+:::{.callout-note}
+**Tip #2:** You can view the dockerfile that Viash generates from the config file using the `---dockerfile` argument:
+```sh
+$ bin/viash run -- ---dockerfile
+```
+:::
+
+
 
 ### functionality
 
@@ -106,20 +201,6 @@ functionality:
 
 In the `platforms` section no matter the docker image it is required to add the python setup to include the `pyyaml` package due to general unit testing done. When creating a Rscript also add the `anndata>=0.8` package.
 
-```yaml
-platforms:
-  # This will change depending on the programming language
-  - type: docker
-    image: python:3.10
-    setup:
-      # section required
-      - type: python
-        pip: [ pyyaml, anndata>0.8]
-
-  - type: nextflow
-    directives:
-      label: [midmem, midcpu]
-```
 
 ## script file
 
@@ -226,3 +307,10 @@ adata.write_h5ad(par['output'], compress='gzip')
 :::
 
 Depending on the task The output is stored in different locations in the anndata. e.g. for `denoising` it is located in the `.layers['denoised']` and for `dimensionality_reduction` it is stored in `.obsm[X_emb]`.
+
+<!-- 
+TODO:
+* add to authors
+* 
+
+-->
