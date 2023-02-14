@@ -10,17 +10,17 @@ There are 2 type of components you can add:
 * `control method`:  The control methods are methods that form a baseline (random/ground truth) to compare the methods from the same task against.
 * `method`: scripts to be benchmarked on how to perform the task.
 
-You will find the control methods in the `control_methods` directory and the methods in the `methods` directory. The setup of both components is similar with small differences in the config yaml. 
+You can find the components in their respective directories namely the `control_methods` and `methods` directory. The setup of both components is similar with small differences in the config yaml. 
 The differences will be pointed out below. whenever `methods` is mentioned it should be replaced with `control_methods` when adding a control method.
 
 ## Directory
 
-To add a method create a new directory in the `src/task/methods` (where `task` is replaced by the task name. e.g. `denoising`) with the name of the new method in snake case. A task can also contain a subtask then this should be `src/task/subtask/methods`.
+To add a method, create a new directory in the `src/task/methods` (where `task` is replaced by the task name. e.g. `denoising`) with the name of the new method in snake case. A task can also contain a subtask then this should be `src/task/methods_subtask/`.
 Add a `config.vsh.yaml` and a script file e.g. `script.py` or `script.R`. You can also add additional helper files to this `dir` if it is required for the method e.g. method specific unit test `test.py`
 
-structure of the new control method directory:
+structure of the new method directory:
 
-    src/task/control_methods/new_method
+    src/task/methods/new_method
         ├── script.py/R                  method script
         ├── config.vsh.yaml              config file for method
         └── additional files             Helper files like e.g. tsv file, unit test specific for method, ...
@@ -33,7 +33,7 @@ Full documentation on the Viash configuration file is available on the [Viash do
 ```yaml
 __merge__: ../../api/comp_method.yaml
 ```
-This file contains metadata that is needed for all the methods. it will contain the required arguments such as the `--input` files and the `--output` files
+This file contains metadata that is needed for all the methods. It will contain the required arguments such as the `--input` files and the `--output` files
 
 ### Functionality
 
@@ -44,14 +44,14 @@ functionality:
   # a unique name for your method, same as what is being output by the script.
   # must match the regex [a-z][a-z0-9_]*
   name: method
-
+  namespace: task/methods
   # metadata for your method
   description: A description for your method.
   info:
     type: method
-    method_name:
-    variants:
+    method_name: Method
     preferred_normalization:
+    variants:
 
 
   # component parameters
@@ -75,6 +75,10 @@ functionality:
 In this section of the configuration you should focus on updating the following sections:
 
 1. Description and Info - Information about the method
+
+  * `namespace`: this should be structured according to `task/methods` or `task/control_methods`. If the task contains subtasks this should be `task/methods_subtask`, the same for control methods. Where `task` is replaced by the task name
+  * `info/type`: For a method this should be `method`. For control_method it should be `negative_control` or `positive_control`. 
+
 2. Arguments - Each section here defines a command-line argument for the script. These sections are all passed to the script in the form of a dictionary called `par`. You only need to change the method-specific parameters, and if you would like these parameters hard-coded into the script, you do not need to provide any parameters here. 
 3. Resources - This section describes the files that need to be included in your component. For example if you'd like to add a file containing model weights called `weights.pt`, add `{ type: file, path: weights.pt }` to the resources. You can now load the additional resource in your script by using at the path `meta['resources_dir'] + '/weights.pt'`.
 
@@ -170,32 +174,6 @@ $ bin/viash run -- ---setup cachedbuild
 $ bin/viash run -- ---dockerfile
 ```
 :::
-
-
-
-### functionality
-
-In the `functionality` section of the config there are several data fields that are required.
-
-```yaml
-functionality:
-  name: method_name # snake case
-  namespace: denoising/(control_)methods
-  description: description of the method
-  info:
-    type: method/negative/positive_control
-    method_name: Method name
-    variants:
-      method_name:
-```
-* `namespace`: this should be structered acording to `task/methods` or `task/control_methods`. If the task contains subtasks this should be `task/subtask/methods`, the same for control methods.
-* `info/type`: For a method this should be `method`. For control_method it should be `negative_control` or `positive_control`.
-
-```yaml
-  resources:
-    - type: python_script
-      path: script.py
-```
 
 ### Platforms
 
