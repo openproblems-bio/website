@@ -155,7 +155,7 @@ platforms:
 ```
 :::
 
-The most important part of this section to update is the `setup` definition that describes the packages that need to be installed in the docker container for the method to run. There are many different methods for specifying these requirements described in the Viash [docs](https://viash.io/reference).
+The most important part of this section to update is the `setup` definition that describes the packages that need to be installed in the docker container for the method to run. There are many different methods for specifying these requirements described in the Viash [docs](https://viash.io/reference). It is required to add the python setup to include the `pyyaml` package due to general unit testing done (if not already in the image). When creating an Rscript also add the `anndata>=0.8` package int the python setup.
 
 You can also change the memory, runtime, and CPU utilization be editing the Nextflow labels section. Available options are `[low|med|high]` for each of `mem` and `cpu`. The corresponding resource values can be found in the `scripts/nextflow.config` file.
 
@@ -163,7 +163,7 @@ You can also change the memory, runtime, and CPU utilization be editing the Next
 **Tip:** After making changes to the components dependencies, you will need to rebuild the docker container as follows:
 
 ```sh
-$ bin/viash run -- ---setup cachedbuild
+$ viash run -- ---setup cachedbuild
 [notice] Running 'docker build -t method:dev /tmp/viashsetupdocker-method-tEX78c'
 ```
 :::
@@ -171,14 +171,9 @@ $ bin/viash run -- ---setup cachedbuild
 :::{.callout-note}
 **Tip #2:** You can view the dockerfile that Viash generates from the config file using the `---dockerfile` argument:
 ```sh
-$ bin/viash run -- ---dockerfile
+$ viash run -- ---dockerfile
 ```
 :::
-
-### Platforms
-
-In the `platforms` section no matter the docker image it is required to add the python setup to include the `pyyaml` package due to general unit testing done. When creating a Rscript also add the `anndata>=0.8` package.
-
 
 ## script file
 
@@ -256,12 +251,12 @@ This code block will typically consist of reading the input files, performing so
 ## Python
 ```python
 ## Data reader
-print('Reading input files')
+print('Reading input files', flush=True)
 
 input_train = ad.read_h5ad(par['input_train_mod1'])
 input_test = ad.read_h5ad(par['input_test_mod1'])
 
-print('processing Data')
+print('processing Data', flush=True)
 # ... preprocessing ... 
 # ... train model ...
 # ... generate predictions ...
@@ -275,7 +270,7 @@ adata = ad.AnnData(
     },
 )
 
-print('writing to output files')
+print('writing to output files', flush=True)
 adata.write_h5ad(par['output'], compress='gzip')
 ```
 ## R
