@@ -19,7 +19,7 @@ website:
     title: false
     left:
       - href: index.qmd
-        text: Home
+        text: About
       - text: Benchmarks
         href: results/index.qmd
       - text: Competitions
@@ -33,7 +33,13 @@ website:
       - href: team/index.qmd
         text: Team
       - text: Documentation
-        href: documentation/index.qmd
+        menu:
+          - text: OpenProblems v1
+            href: https://github.com/openproblems-bio/openproblems/blob/main/CONTRIBUTING.md
+          - text: OpenProblems v2
+            href: documentation/index.qmd
+          - text: Bibliography
+            href: bibliography.qmd
 
   sidebar:
     - id: documentation
