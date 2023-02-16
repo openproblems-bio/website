@@ -1,0 +1,493 @@
+---
+title: Requirements
+order: 10
+---
+
+This page describes how to set up your system so you can start contributing to OpenProblems. If you just want to [analyse the results](/documentation/analyse_results/) or [run a method, metric or pipeline](/documentation/execute/), please click on on the respective links.
+
+To start contributing to OpenProblems, you need to have the following software installed:
+
+* Bash (>= 3.2)
+* Java Development Kit (>= 11)
+* Docker
+* Viash (>= 0.6.7)
+* Nextflow (>= 21.04)
+
+The following sections provide instructions on how to install each of these tools.
+
+
+## Step 1: install Bash
+
+::: {.panel-tabset}
+## Debian/Ubuntu
+Bash is already included in most Debian- and Ubuntu-based distributions. However, if for some reason it's not installed, open a terminal and run the following commands:
+
+```bash
+sudo apt-get update
+sudo apt-get install bash
+```
+
+
+## RHEL/Fedora
+Bash is already included in most RHEL- and Fedora-based distributions. However, if for some reason it's not installed, open a terminal and run the following commands:
+
+```bash
+sudo yum install bash
+```
+
+
+## Arch
+Bash is already included in most Arch-based distributions. However, if for some reason it's not installed, open a terminal and run the following commands:
+
+```bash
+sudo pacman -S bash
+```
+
+## macOS
+
+Bash is already included in macOS.
+
+
+## Windows
+
+You will need to install Ubuntu using Windows Subsystem for Linux (WSL).
+
+Open **PowerShell** or **Windows Command Prompt** in administrator mode by right-clicking and selecting "Run as administrator". Enter the following command to enable the features necessary to run WSL and install the Ubuntu distribution of Linux.
+
+```powershell
+wsl --install
+```
+
+After rebooting the system, open **Ubuntu** by visiting the Windows Start menu or by entering the `ubuntu` command in PowerShell or Windows Command Prompt. Since Bash is already included in Ubuntu, no further actions are needed.
+
+
+*Content adapted from the [WSL installation instructions](https://learn.microsoft.com/en-us/windows/wsl/install)*
+
+:::
+
+Verify that you have Bash version 3.2 or higher.
+
+```bash
+bash --version
+```
+
+Example output:
+
+    GNU bash, version 5.1.8
+    ...
+
+
+## Step 2: install Java
+
+You will need Oracle Java >=11 or OpenJDK >=11 to be installed.
+
+::: {.panel-tabset}
+## Debian/Ubuntu
+Run the following commands:
+
+```bash
+sudo apt-get update
+sudo apt-get install openjdk-11-jdk
+```
+
+
+## RHEL/Fedora
+Run the following command:
+
+```bash
+sudo yum install java-11-openjdk-devel
+```
+
+## Arch
+Run the following command:
+
+```bash
+sudo pacman -S jdk11-openjdk
+```
+
+## macOS
+
+If haven't done so already, first install Homebrew:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+
+Next, install Java 11 by running:
+
+```bash
+brew install openjdk@11
+```
+
+
+## Windows
+
+Open Ubuntu in WSL and run the following commands:
+
+
+```bash
+sudo apt-get update
+sudo apt-get install openjdk-11-jdk
+```
+
+:::
+
+
+Verify that you have Java version 11 or higher.
+
+```bash
+java -version
+```
+
+Example output:
+
+    openjdk version "19.0.1" 2022-10-18
+
+
+## Step 3: install Docker
+
+
+::: {.panel-tabset}
+## Debian/Ubuntu
+
+Update package index by running:
+```bash
+sudo apt update
+```
+
+Install Docker by running:
+```bash
+sudo apt install docker.io
+```
+
+Enable the Docker service automatically at boot by running:
+```bash
+sudo systemctl enable docker
+```
+
+Add the current user to the Docker group by running:
+```bash
+sudo usermod -aG docker $USER
+```
+
+## RHEL/Fedora
+
+On RHEL, run the following commands:
+```bash
+sudo yum install -y yum-utils
+sudo yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/rhel/docker-ce.repo
+sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+```
+
+On Fedora, run the following commands:
+```bash
+sudo dnf -y install dnf-plugins-core
+sudo dnf config-manager \
+    --add-repo \
+    https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+```
+
+Enable the Docker service automatically at boot by running:
+```bash
+sudo systemctl enable docker
+```
+
+Add the current user to the Docker group by running:
+```bash
+sudo usermod -aG docker $USER
+```
+
+## Arch
+
+Install Docker by running:
+
+```bash
+sudo pacman -S docker
+```
+
+Enable the Docker service automatically at boot by running:
+```bash
+sudo systemctl enable docker
+```
+
+Add the current user to the Docker group by running:
+```bash
+sudo usermod -aG docker $USER
+```
+
+## macOS
+
+Download and install [Docker Desktop for Mac](https://www.docker.com) and download Docker Desktop for Mac.
+
+## Windows
+
+Open Ubuntu in WSL and follow the following instructions.
+
+Update package index by running:
+```bash
+sudo apt update
+```
+
+Install Docker by running:
+```bash
+sudo apt install docker.io
+```
+
+Enable the Docker service automatically at boot by running:
+```bash
+sudo systemctl enable docker
+```
+
+Add the current user to the Docker group by running:
+```bash
+sudo usermod -aG docker $USER
+```
+
+:::
+
+
+Verify that Docker is working by running:
+
+```bash
+docker run hello-world
+```
+
+Example output:
+
+    Hello from Docker!
+    This message shows that your installation appears to be working correctly.
+    ...
+
+## Step 4: install Viash
+
+
+::: {.panel-tabset}
+## Debian/Ubuntu
+
+Install Viash by running:
+
+```bash
+mkdir -p "$HOME/.local/bin"
+
+curl -fsSL get.viash.io | bash -s -- --bin "$HOME/.local/bin"
+```
+
+Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
+
+## RHEL/Fedora
+
+Install Viash by running:
+
+```bash
+mkdir -p "$HOME/.local/bin"
+
+curl -fsSL get.viash.io | bash -s -- --bin "$HOME/.local/bin"
+```
+
+Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
+
+## Arch
+
+Install Viash by running:
+
+```bash
+mkdir -p "$HOME/.local/bin"
+
+curl -fsSL get.viash.io | bash -s -- --bin "$HOME/.local/bin"
+```
+
+Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
+
+## macOS
+
+
+Install Viash by running:
+
+```bash
+mkdir -p "$HOME/.local/bin"
+
+curl -fsSL get.viash.io | bash -s -- --bin "$HOME/.local/bin"
+```
+
+Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
+
+## Windows
+
+Install Viash in Ubuntu by running:
+
+```bash
+mkdir -p "$HOME/.local/bin"
+
+curl -fsSL get.viash.io | bash -s -- --bin "$HOME/.local/bin"
+```
+
+Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
+
+:::
+
+
+Verify that you have Viash version 0.6.7 or higher.
+
+```bash
+viash -v
+```
+
+Example output:
+
+    viash 0.6.7 (c) 2020 Data Intuitive
+
+
+## Step 5: install Nextflow
+
+::: {.panel-tabset}
+## Debian/Ubuntu
+
+Install Nextflow by running:
+
+```bash
+curl -s https://get.nextflow.io | bash
+mv nextflow "$HOME/.local/bin"
+```
+
+## RHEL/Fedora
+
+Install Nextflow by running:
+
+```bash
+curl -s https://get.nextflow.io | bash
+mv nextflow "$HOME/.local/bin"
+```
+
+## Arch
+
+Install Nextflow by running:
+
+```bash
+curl -s https://get.nextflow.io | bash
+mv nextflow "$HOME/.local/bin"
+```
+
+## macOS
+
+
+Install Nextflow by running:
+
+```bash
+curl -s https://get.nextflow.io | bash
+mv nextflow "$HOME/.local/bin"
+```
+
+## Windows
+
+Install Nextflow by running:
+
+```bash
+curl -s https://get.nextflow.io | bash
+mv nextflow "$HOME/.local/bin"
+```
+
+:::
+
+
+Verify that Nextflow and Docker are working by running:
+
+```bash
+nextflow run hello -with-docker
+```
+
+    N E X T F L O W  ~  version 22.10.4
+    Launching `https://github.com/nextflow-io/hello` [compassionate_keller] DSL2 - revision: 4eab81bd42 [master]
+    executor >  local (4)
+    [d5/78e7a6] process > sayHello (2) [100%] 4 of 4 ✔
+    Bonjour world!
+    Hello world!
+    Hola world!
+    Ciao world!
+
+
+## Troubleshooting common problems
+
+If you run into any problems, please ask ChatGPT or take a look at our [troubleshooting](troubleshooting.qmd) page.
+
+```{=html}
+<script type="text/javascript">
+let tabDict = {
+  "debian": "Debian/Ubuntu",
+  "rhel": "RHEL/Fedora",
+  "arch": "Arch",
+  "macos": "macOS",
+  "windows": "Windows/WSL"
+};
+
+let invertedTabDict = invertDictionary(tabDict);
+
+document.addEventListener("DOMContentLoaded", function() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    let lang = 'debian';
+
+    if (urlParams.has('lang')){
+        lang = urlParams.get('lang');
+    }
+
+    changeTabSelections(lang);
+
+    var tabs = document.querySelectorAll('[role="tab"]');
+    
+    for(var i = 0; i < tabs.length; i++) {
+        tab = tabs[i];
+        if (tab.textContent in invertedTabDict) {
+            tab.addEventListener('click', onTabClicked);
+        }
+    }
+
+});
+
+function changeTabSelections(language) {
+    var tabs = document.querySelectorAll('[role="tab"]');
+    var tab_panels = document.querySelectorAll('[role="tabpanel"]');
+
+    // Disable all tab panels
+    for(var i = 0; i < tab_panels.length; i++) {
+        panel = tab_panels[i];
+        panel.classList.remove('active')
+    }
+
+    // Iterate over all tabs
+    for(var i = 0; i < tabs.length; i++) {
+        tab = tabs[i];
+
+        // Disable all tabs
+        tab.classList.remove('active');
+
+        // If the tab is the chosen language
+        if (tab.textContent == tabDict[language]) {
+            // Mark it active
+            tab.classList.add('active');
+            // Find the linked tab panel and make it active
+            var linked_panel = tab.getAttribute('aria-controls')
+            var panel = document.getElementById(linked_panel);
+            panel.classList.add('active');
+        }
+    }
+
+}
+
+function onTabClicked(event) {
+    changeTabSelections(invertedTabDict[event.srcElement.textContent]);
+}
+
+function invertDictionary(dict){
+    var ret = {};
+    for(var key in dict){
+        ret[dict[key]] = key;
+    }
+    return ret;
+}
+
+</script>
+```

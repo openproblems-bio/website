@@ -12,18 +12,16 @@ website:
   repo-actions: [edit, issue] 
 
   page-footer:
-    left: "© Open Problems 2022 · View on [GitHub](https://github.com/openproblems-bio/openproblems). Made with [Quarto♥](https://quarto.org)."
+    left: "&copy; Open Problems 2023 · View on [GitHub](https://github.com/openproblems-bio/openproblems). Made with [Quarto♥](https://quarto.org)."
   
   navbar:
     logo: images/logo.png
     title: false
     left:
       - href: index.qmd
-        text: Home
+        text: About
       - text: Benchmarks
         href: results/index.qmd
-      - text: Benchmarks v2
-        href: results_v2/index.qmd
       - text: Competitions
         menu: 
           - text: NeurIPS 2022
@@ -35,49 +33,23 @@ website:
       - href: team/index.qmd
         text: Team
       - text: Documentation
-        href: contributing/index.qmd
+        menu:
+          - text: OpenProblems v1
+            href: https://github.com/openproblems-bio/openproblems/blob/main/CONTRIBUTING.md
+          - text: OpenProblems v2
+            href: documentation/index.qmd
+          - text: Bibliography
+            href: bibliography.qmd
 
   sidebar:
     - id: documentation
       collapse-level: 3
       title: Documentation
-      contents: 
-        - contributing/index.qmd
-        - "contributing/quick_start.qmd"
-        - "contributing/requirements.qmd"
-        - text: Analyse results
-          href: contributing/analyse_results/index.qmd
-        - text: Run a method
-          href: contributing/run_method/index.qmd
-        - text: Extend a task
-          href: contributing/extend_task/index.qmd
-          contents:
-            - href: contributing/extend_task/index.qmd
-              text: Overview
-            - auto: contributing/extend_task/*.qmd
-        - text: Create a new task
-          href: contributing/create_task/index.qmd
-          contents:
-            - href: contributing/create_task/index.qmd
-              text: Overview
-            - auto: contributing/create_task/*.qmd
-        - "contributing/code_of_conduct.qmd"
+      contents: documentation
+
     - id: neurips2021_docs
       title: NeurIPS2021
-      contents: 
-        - competitions/neurips_2021_docs/index.qmd
-        - text: General
-          href: competitions/neurips_2021_docs/about/index.qmd
-          contents: competitions/neurips_2021_docs/about/*
-        - text: Data
-          href: competitions/neurips_2021_docs/data/index.qmd
-          contents: competitions/neurips_2021_docs/data/*
-        - text: The tasks
-          href: competitions/neurips_2021_docs/about_tasks/index.qmd
-          contents: competitions/neurips_2021_docs/about_tasks/*
-        - text: Submissions
-          href: competitions/neurips_2021_docs/submission/index.qmd
-          contents: competitions/neurips_2021_docs/submission/*
+      contents: competitions/neurips_2021_docs
 format:
   html:
     # theme:

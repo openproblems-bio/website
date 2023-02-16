@@ -1,7 +1,5 @@
 from pathlib import Path
 import json
-import subprocess
-import shutil
 
 print("Fetch template", flush=True)
 benchmark_dir = Path("results/")
@@ -22,11 +20,12 @@ title: "{task_name}"
 subtitle: "{task_summary}"
 engine: knitr
 image: featured.png
+page-layout: full
 ---
 
 ```{{r}}
 #| include: false
-params <- list(data_dir = "content/benchmarks/{task_id}/data")
+params <- list(data_dir = "results/{task_id}/data")
 params <- list(data_dir = "./data")
 ```
 
