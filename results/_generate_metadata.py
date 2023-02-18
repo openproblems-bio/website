@@ -147,12 +147,12 @@ def create_results(task_id, path):
     return out
 
 def main():
-    source_path = Path("_results_v1_raw")
-    dest_path = Path("content/benchmarks")
+    # source_path = Path("_results_v1_raw")
+    dest_path = Path("results")
 
     for task in op.TASKS:
         task_id = re.sub(".*\\.", "", task.__name__)
-        task_source_path = source_path / task_id
+        # task_source_path = source_path / task_id
         task_dest_path = dest_path / task_id / "data"
 
         # create dir if need be
@@ -166,7 +166,7 @@ def main():
         method_info = create_method_info(task_id, task)
         metric_info = create_metric_info(task_id, task)
         dataset_info = create_dataset_info(task_id, task)
-        results = create_results(task_id, task_source_path)
+        # results = create_results(task_id, task_source_path)
 
         # write data to files
         with open(task_dest_path / "task_info.json", "w", encoding="utf8") as file:
@@ -177,8 +177,8 @@ def main():
             dump_json(metric_info, file)
         with open(task_dest_path / "dataset_info.json", "w", encoding="utf8") as file:
             dump_json(dataset_info, file)
-        with open(task_dest_path / "results.json", "w", encoding="utf8") as file:
-            dump_json(results, file)
+        # with open(task_dest_path / "results.json", "w", encoding="utf8") as file:
+        #     dump_json(results, file)
 
 if __name__ == "__main__":
     main()
