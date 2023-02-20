@@ -6,9 +6,9 @@ import numpy as np
 
 COMMIT_SHA = "a49ae996dc5f34402b1fa5cab9b3a3936126a413"
 EXPECTED_TASK_FIELDS = ["task_id", "commit_sha", "task_name", "task_summary", "task_description"]
-EXPECTED_METHOD_FIELDS = ["task_id", "commit_sha", "method_id", "method_name", "method_description", "paper_reference", "is_baseline"]
-EXPECTED_METRIC_FIELDS = ["task_id", "commit_sha", "metric_id", "metric_name", "metric_description", "paper_reference", "maximize"]
-EXPECTED_DATASET_FIELDS = ["task_id", "commit_sha", "dataset_id", "dataset_name", "dataset_description", "data_reference"]
+EXPECTED_METHOD_FIELDS = ["task_id", "commit_sha", "method_id", "method_name", "method_summary", "paper_reference", "is_baseline"]
+EXPECTED_METRIC_FIELDS = ["task_id", "commit_sha", "metric_id", "metric_name", "metric_summary", "paper_reference", "maximize"]
+EXPECTED_DATASET_FIELDS = ["task_id", "commit_sha", "dataset_id", "dataset_name", "dataset_summary", "data_reference"]
 
 
 

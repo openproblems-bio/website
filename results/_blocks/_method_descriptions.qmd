@@ -1,7 +1,7 @@
 ```{r}
 #| echo: false
 # show each method just once
-lines <- pmap_chr(method_info, function(method_name, method_description, paper_reference, code_url, code_version, ...) {
+lines <- pmap_chr(method_info, function(method_name, method_summary, paper_reference, code_url, code_version, ...) {
   links <- c()
   if (!is.na(code_url)) {
     links <- c(links, glue::glue(" [Docs]({code_url})"))
@@ -19,7 +19,7 @@ lines <- pmap_chr(method_info, function(method_name, method_description, paper_r
       ""
     }
   links_label <- glue::glue(" Links: {paste(links, collapse = ', ')}.")
-  summ <- (method_description %|% "Missing 'method_description'") %>% str_replace_all("\\. *$", "")
+  summ <- (method_summary %|% "Missing 'method_summary'") %>% str_replace_all("\\. *$", "")
   glue::glue("* **{method_name}**{ref}: {summ}.{version_label}{links_label}")
 })
 knitr::asis_output(lines)
