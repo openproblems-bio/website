@@ -7,7 +7,7 @@ title: "Quality control"
 path <- 'results'
 path <- '.'
 ```
-
+ 
 ```{r setup}
 #| include: false
 #| error: true
@@ -25,7 +25,7 @@ qc <- list.files(path, pattern = "quality_control.json", recursive = TRUE, full.
 #| output: asis
 scale <- RColorBrewer::brewer.pal(10, "RdYlGn")[c(9, 3, 2, 1)] %>%
   setNames(c("✓", "✗", "✗✗", "✗✗✗"))
- 
+
 
 qc %>%
   group_by(task_id, severity) %>%

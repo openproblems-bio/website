@@ -92,12 +92,12 @@
     {
         "task_id": "dimensionality_reduction", 
         "category": "Method info", 
-        "name": "Pct 'method_description' missing", 
-        "value": 1.0, 
-        "severity": 2, 
-        "severity_value": 3.0, 
+        "name": "Pct 'method_summary' missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
         "code": "percent_missing(method_info, field)", 
-        "message": "Method metadata field 'method_description' should be defined\n  Task id: dimensionality_reduction\n  Field: method_description\n"
+        "message": "Method metadata field 'method_summary' should be defined\n  Task id: dimensionality_reduction\n  Field: method_summary\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -162,12 +162,12 @@
     {
         "task_id": "dimensionality_reduction", 
         "category": "Metric info", 
-        "name": "Pct 'metric_description' missing", 
-        "value": 1.0, 
-        "severity": 2, 
-        "severity_value": 3.0, 
+        "name": "Pct 'metric_summary' missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
         "code": "percent_missing(metric_info, field)", 
-        "message": "Metric metadata field 'metric_description' should be defined\n  Task id: dimensionality_reduction\n  Field: metric_description\n"
+        "message": "Metric metadata field 'metric_summary' should be defined\n  Task id: dimensionality_reduction\n  Field: metric_summary\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -232,12 +232,12 @@
     {
         "task_id": "dimensionality_reduction", 
         "category": "Dataset info", 
-        "name": "Pct 'dataset_description' missing", 
-        "value": 1.0, 
-        "severity": 2, 
-        "severity_value": 3.0, 
+        "name": "Pct 'dataset_summary' missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
         "code": "percent_missing(dataset_info, field)", 
-        "message": "Dataset metadata field 'dataset_description' should be defined\n  Task id: dimensionality_reduction\n  Field: dataset_description\n"
+        "message": "Dataset metadata field 'dataset_summary' should be defined\n  Task id: dimensionality_reduction\n  Field: dataset_summary\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -254,370 +254,370 @@
         "category": "Raw data", 
         "name": "Number of results", 
         "value": 78, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "len(results) == len(method_info) * len(metric_info) * len(dataset_info)", 
-        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: dimensionality_reduction\n  Number of results: 78\n  Number of methods: 26\n  Number of metrics: 10\n  Number of datasets: 3\n"
+        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: dimensionality_reduction\n  Number of results: 78\n  Number of methods: 26\n  Number of metrics: 10\n  Number of datasets: 4\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'continuity' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: continuity\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: continuity\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'density_preservation' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: density_preservation\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: density_preservation\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'distance_correlation' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: distance_correlation\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: distance_correlation\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'distance_correlation_spectral' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: distance_correlation_spectral\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: distance_correlation_spectral\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'lcmc' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: lcmc\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: lcmc\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'qglobal' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: qglobal\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: qglobal\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'qlocal' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: qlocal\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: qlocal\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'qnn' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: qnn\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: qnn\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'qnn_auc' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: qnn_auc\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: qnn_auc\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'trustworthiness' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: trustworthiness\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: trustworthiness\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'densmap_logCP10k' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: densmap_logCP10k\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: densmap_logCP10k\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'densmap_logCP10k_1kHVG' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: densmap_logCP10k_1kHVG\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: densmap_logCP10k_1kHVG\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'densmap_pca_logCP10k' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: densmap_pca_logCP10k\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: densmap_pca_logCP10k\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'densmap_pca_logCP10k_1kHVG' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: densmap_pca_logCP10k_1kHVG\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: densmap_pca_logCP10k_1kHVG\n  Percentage missing: 25%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Method 'diffusion_map' %missing", 
+        "value": 1.0, 
+        "severity": 3, 
+        "severity_value": 10.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: diffusion_map\n  Percentage missing: 100%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'neuralee_default' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: neuralee_default\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: neuralee_default\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'neuralee_logCP10k_1kHVG' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: neuralee_logCP10k_1kHVG\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: neuralee_logCP10k_1kHVG\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'pca_logCP10k' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: pca_logCP10k\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: pca_logCP10k\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'pca_logCP10k_1kHVG' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: pca_logCP10k_1kHVG\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: pca_logCP10k_1kHVG\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'phate_default' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: phate_default\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: phate_default\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'phate_logCP10k' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: phate_logCP10k\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: phate_logCP10k\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'phate_logCP10k_1kHVG' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: phate_logCP10k_1kHVG\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: phate_logCP10k_1kHVG\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'phate_sqrt' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: phate_sqrt\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: phate_sqrt\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'pymde_distances_log_cp10k' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: pymde_distances_log_cp10k\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: pymde_distances_log_cp10k\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'pymde_distances_log_cp10k_hvg' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: pymde_distances_log_cp10k_hvg\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: pymde_distances_log_cp10k_hvg\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'pymde_neighbors_log_cp10k' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: pymde_neighbors_log_cp10k\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: pymde_neighbors_log_cp10k\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'pymde_neighbors_log_cp10k_hvg' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: pymde_neighbors_log_cp10k_hvg\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: pymde_neighbors_log_cp10k_hvg\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'random_features' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: random_features\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: random_features\n  Percentage missing: 25%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Method 'spectral_features' %missing", 
+        "value": 1.0, 
+        "severity": 3, 
+        "severity_value": 10.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: spectral_features\n  Percentage missing: 100%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'true_features' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: true_features\n  Percentage missing: 0%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Raw results", 
-        "name": "Method 'true_features_log_cp10k' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: true_features_log_cp10k\n  Percentage missing: 0%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Raw results", 
-        "name": "Method 'true_features_log_cp10k_hvg' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: true_features_log_cp10k_hvg\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: true_features\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'tsne_logCP10k' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: tsne_logCP10k\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: tsne_logCP10k\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'tsne_logCP10k_1kHVG' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: tsne_logCP10k_1kHVG\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: tsne_logCP10k_1kHVG\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'umap_logCP10k' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: umap_logCP10k\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: umap_logCP10k\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'umap_logCP10k_1kHVG' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: umap_logCP10k_1kHVG\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: umap_logCP10k_1kHVG\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'umap_pca_logCP10k' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: umap_pca_logCP10k\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: umap_pca_logCP10k\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'umap_pca_logCP10k_1kHVG' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.25, 
+        "severity": 2, 
+        "severity_value": 2.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: umap_pca_logCP10k_1kHVG\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: umap_pca_logCP10k_1kHVG\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -648,6 +648,16 @@
         "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: tenx_5k_pbmc\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Dataset 'zebrafish_labs' %missing", 
+        "value": 1.0, 
+        "severity": 3, 
+        "severity_value": 10.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: zebrafish_labs\n  Percentage missing: 100%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1008,46 +1018,6 @@
         "severity_value": 0.5, 
         "code": "best_score <= 2", 
         "message": "Method true_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: continuity\n  Best score: 1.0%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Scaling", 
-        "name": "Worst score true_features_log_cp10k continuity", 
-        "value": 1.0, 
-        "severity": 0, 
-        "severity_value": -1.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method true_features_log_cp10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features_log_cp10k\n  Metric id: continuity\n  Worst score: 1.0%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Scaling", 
-        "name": "Best score true_features_log_cp10k continuity", 
-        "value": 1.0, 
-        "severity": 0, 
-        "severity_value": 0.5, 
-        "code": "best_score <= 2", 
-        "message": "Method true_features_log_cp10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features_log_cp10k\n  Metric id: continuity\n  Best score: 1.0%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Scaling", 
-        "name": "Worst score true_features_log_cp10k_hvg continuity", 
-        "value": 0.22649628333046867, 
-        "severity": 0, 
-        "severity_value": -0.22649628333046867, 
-        "code": "worst_score >= -1", 
-        "message": "Method true_features_log_cp10k_hvg performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features_log_cp10k_hvg\n  Metric id: continuity\n  Worst score: 0.22649628333046867%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Scaling", 
-        "name": "Best score true_features_log_cp10k_hvg continuity", 
-        "value": 0.9096825813908492, 
-        "severity": 0, 
-        "severity_value": 0.4548412906954246, 
-        "code": "best_score <= 2", 
-        "message": "Method true_features_log_cp10k_hvg performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features_log_cp10k_hvg\n  Metric id: continuity\n  Best score: 0.9096825813908492%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1532,46 +1502,6 @@
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
-        "name": "Worst score true_features_log_cp10k density_preservation", 
-        "value": 0.48376825064516044, 
-        "severity": 0, 
-        "severity_value": -0.48376825064516044, 
-        "code": "worst_score >= -1", 
-        "message": "Method true_features_log_cp10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features_log_cp10k\n  Metric id: density_preservation\n  Worst score: 0.48376825064516044%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Scaling", 
-        "name": "Best score true_features_log_cp10k density_preservation", 
-        "value": 1.0, 
-        "severity": 0, 
-        "severity_value": 0.5, 
-        "code": "best_score <= 2", 
-        "message": "Method true_features_log_cp10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features_log_cp10k\n  Metric id: density_preservation\n  Best score: 1.0%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Scaling", 
-        "name": "Worst score true_features_log_cp10k_hvg density_preservation", 
-        "value": 0.4958774443808371, 
-        "severity": 0, 
-        "severity_value": -0.4958774443808371, 
-        "code": "worst_score >= -1", 
-        "message": "Method true_features_log_cp10k_hvg performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features_log_cp10k_hvg\n  Metric id: density_preservation\n  Worst score: 0.4958774443808371%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Scaling", 
-        "name": "Best score true_features_log_cp10k_hvg density_preservation", 
-        "value": 1.0, 
-        "severity": 0, 
-        "severity_value": 0.5, 
-        "code": "best_score <= 2", 
-        "message": "Method true_features_log_cp10k_hvg performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features_log_cp10k_hvg\n  Metric id: density_preservation\n  Best score: 1.0%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Scaling", 
         "name": "Worst score tsne_logCP10k density_preservation", 
         "value": 0.15334587981054895, 
         "severity": 0, 
@@ -2048,46 +1978,6 @@
         "severity_value": 0.5, 
         "code": "best_score <= 2", 
         "message": "Method true_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: distance_correlation\n  Best score: 1.0%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Scaling", 
-        "name": "Worst score true_features_log_cp10k distance_correlation", 
-        "value": 0.9949119370767393, 
-        "severity": 0, 
-        "severity_value": -0.9949119370767393, 
-        "code": "worst_score >= -1", 
-        "message": "Method true_features_log_cp10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features_log_cp10k\n  Metric id: distance_correlation\n  Worst score: 0.9949119370767393%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Scaling", 
-        "name": "Best score true_features_log_cp10k distance_correlation", 
-        "value": 1.0, 
-        "severity": 0, 
-        "severity_value": 0.5, 
-        "code": "best_score <= 2", 
-        "message": "Method true_features_log_cp10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features_log_cp10k\n  Metric id: distance_correlation\n  Best score: 1.0%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Scaling", 
-        "name": "Worst score true_features_log_cp10k_hvg distance_correlation", 
-        "value": 0.3783230257756442, 
-        "severity": 0, 
-        "severity_value": -0.3783230257756442, 
-        "code": "worst_score >= -1", 
-        "message": "Method true_features_log_cp10k_hvg performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features_log_cp10k_hvg\n  Metric id: distance_correlation\n  Worst score: 0.3783230257756442%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Scaling", 
-        "name": "Best score true_features_log_cp10k_hvg distance_correlation", 
-        "value": 0.7156713973856657, 
-        "severity": 0, 
-        "severity_value": 0.3578356986928328, 
-        "code": "best_score <= 2", 
-        "message": "Method true_features_log_cp10k_hvg performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features_log_cp10k_hvg\n  Metric id: distance_correlation\n  Best score: 0.7156713973856657%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -2572,46 +2462,6 @@
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
-        "name": "Worst score true_features_log_cp10k distance_correlation_spectral", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method true_features_log_cp10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features_log_cp10k\n  Metric id: distance_correlation_spectral\n  Worst score: 0.0%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Scaling", 
-        "name": "Best score true_features_log_cp10k distance_correlation_spectral", 
-        "value": 0.8872329474220716, 
-        "severity": 0, 
-        "severity_value": 0.4436164737110358, 
-        "code": "best_score <= 2", 
-        "message": "Method true_features_log_cp10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features_log_cp10k\n  Metric id: distance_correlation_spectral\n  Best score: 0.8872329474220716%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Scaling", 
-        "name": "Worst score true_features_log_cp10k_hvg distance_correlation_spectral", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method true_features_log_cp10k_hvg performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features_log_cp10k_hvg\n  Metric id: distance_correlation_spectral\n  Worst score: 0.0%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Scaling", 
-        "name": "Best score true_features_log_cp10k_hvg distance_correlation_spectral", 
-        "value": 1.0, 
-        "severity": 0, 
-        "severity_value": 0.5, 
-        "code": "best_score <= 2", 
-        "message": "Method true_features_log_cp10k_hvg performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features_log_cp10k_hvg\n  Metric id: distance_correlation_spectral\n  Best score: 1.0%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Scaling", 
         "name": "Worst score tsne_logCP10k distance_correlation_spectral", 
         "value": 0.9188024419683183, 
         "severity": 0, 
@@ -3058,5 +2908,2555 @@
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
         "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: lcmc\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score random_features lcmc", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: lcmc\n  Best score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score true_features lcmc", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method true_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: lcmc\n  Worst score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score true_features lcmc", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method true_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: lcmc\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score tsne_logCP10k lcmc", 
+        "value": 0.0471018974346288, 
+        "severity": 0, 
+        "severity_value": -0.0471018974346288, 
+        "code": "worst_score >= -1", 
+        "message": "Method tsne_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k\n  Metric id: lcmc\n  Worst score: 0.0471018974346288%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score tsne_logCP10k lcmc", 
+        "value": 0.515139074207123, 
+        "severity": 0, 
+        "severity_value": 0.2575695371035615, 
+        "code": "best_score <= 2", 
+        "message": "Method tsne_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k\n  Metric id: lcmc\n  Best score: 0.515139074207123%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score tsne_logCP10k_1kHVG lcmc", 
+        "value": 0.042642802364990226, 
+        "severity": 0, 
+        "severity_value": -0.042642802364990226, 
+        "code": "worst_score >= -1", 
+        "message": "Method tsne_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k_1kHVG\n  Metric id: lcmc\n  Worst score: 0.042642802364990226%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score tsne_logCP10k_1kHVG lcmc", 
+        "value": 0.4670532690136508, 
+        "severity": 0, 
+        "severity_value": 0.2335266345068254, 
+        "code": "best_score <= 2", 
+        "message": "Method tsne_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k_1kHVG\n  Metric id: lcmc\n  Best score: 0.4670532690136508%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_logCP10k lcmc", 
+        "value": 0.025177497959082695, 
+        "severity": 0, 
+        "severity_value": -0.025177497959082695, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k\n  Metric id: lcmc\n  Worst score: 0.025177497959082695%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_logCP10k lcmc", 
+        "value": 0.48029354408293123, 
+        "severity": 0, 
+        "severity_value": 0.24014677204146562, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k\n  Metric id: lcmc\n  Best score: 0.48029354408293123%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_logCP10k_1kHVG lcmc", 
+        "value": 0.03729312520099943, 
+        "severity": 0, 
+        "severity_value": -0.03729312520099943, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k_1kHVG\n  Metric id: lcmc\n  Worst score: 0.03729312520099943%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_logCP10k_1kHVG lcmc", 
+        "value": 0.4182489992815354, 
+        "severity": 0, 
+        "severity_value": 0.2091244996407677, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k_1kHVG\n  Metric id: lcmc\n  Best score: 0.4182489992815354%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_pca_logCP10k lcmc", 
+        "value": 0.04308809341216634, 
+        "severity": 0, 
+        "severity_value": -0.04308809341216634, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_pca_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k\n  Metric id: lcmc\n  Worst score: 0.04308809341216634%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_pca_logCP10k lcmc", 
+        "value": 0.465257107667043, 
+        "severity": 0, 
+        "severity_value": 0.2326285538335215, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_pca_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k\n  Metric id: lcmc\n  Best score: 0.465257107667043%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_pca_logCP10k_1kHVG lcmc", 
+        "value": 0.03745392474581303, 
+        "severity": 0, 
+        "severity_value": -0.03745392474581303, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_pca_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k_1kHVG\n  Metric id: lcmc\n  Worst score: 0.03745392474581303%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_pca_logCP10k_1kHVG lcmc", 
+        "value": 0.419172739402648, 
+        "severity": 0, 
+        "severity_value": 0.209586369701324, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_pca_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k_1kHVG\n  Metric id: lcmc\n  Best score: 0.419172739402648%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_logCP10k qglobal", 
+        "value": -0.04095923306534779, 
+        "severity": 0, 
+        "severity_value": 0.04095923306534779, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k\n  Metric id: qglobal\n  Worst score: -0.04095923306534779%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_logCP10k qglobal", 
+        "value": 0.5374734118382436, 
+        "severity": 0, 
+        "severity_value": 0.2687367059191218, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k\n  Metric id: qglobal\n  Best score: 0.5374734118382436%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_logCP10k_1kHVG qglobal", 
+        "value": -0.3463374544673593, 
+        "severity": 0, 
+        "severity_value": 0.3463374544673593, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k_1kHVG\n  Metric id: qglobal\n  Worst score: -0.3463374544673593%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_logCP10k_1kHVG qglobal", 
+        "value": 0.5084617519086858, 
+        "severity": 0, 
+        "severity_value": 0.2542308759543429, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k_1kHVG\n  Metric id: qglobal\n  Best score: 0.5084617519086858%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_pca_logCP10k qglobal", 
+        "value": -0.31064772916939654, 
+        "severity": 0, 
+        "severity_value": 0.31064772916939654, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_pca_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k\n  Metric id: qglobal\n  Worst score: -0.31064772916939654%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_pca_logCP10k qglobal", 
+        "value": 0.559409517410454, 
+        "severity": 0, 
+        "severity_value": 0.279704758705227, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_pca_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k\n  Metric id: qglobal\n  Best score: 0.559409517410454%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_pca_logCP10k_1kHVG qglobal", 
+        "value": -0.08864493990095794, 
+        "severity": 0, 
+        "severity_value": 0.08864493990095794, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_pca_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k_1kHVG\n  Metric id: qglobal\n  Worst score: -0.08864493990095794%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_pca_logCP10k_1kHVG qglobal", 
+        "value": 0.4593741214262867, 
+        "severity": 0, 
+        "severity_value": 0.22968706071314335, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_pca_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k_1kHVG\n  Metric id: qglobal\n  Best score: 0.4593741214262867%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score neuralee_default qglobal", 
+        "value": -0.10041587407271191, 
+        "severity": 0, 
+        "severity_value": 0.10041587407271191, 
+        "code": "worst_score >= -1", 
+        "message": "Method neuralee_default performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_default\n  Metric id: qglobal\n  Worst score: -0.10041587407271191%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score neuralee_default qglobal", 
+        "value": 0.5082916881929599, 
+        "severity": 0, 
+        "severity_value": 0.25414584409647994, 
+        "code": "best_score <= 2", 
+        "message": "Method neuralee_default performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_default\n  Metric id: qglobal\n  Best score: 0.5082916881929599%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score neuralee_logCP10k_1kHVG qglobal", 
+        "value": -0.10663479750316049, 
+        "severity": 0, 
+        "severity_value": 0.10663479750316049, 
+        "code": "worst_score >= -1", 
+        "message": "Method neuralee_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_logCP10k_1kHVG\n  Metric id: qglobal\n  Worst score: -0.10663479750316049%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score neuralee_logCP10k_1kHVG qglobal", 
+        "value": 0.5144915389111853, 
+        "severity": 0, 
+        "severity_value": 0.25724576945559263, 
+        "code": "best_score <= 2", 
+        "message": "Method neuralee_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_logCP10k_1kHVG\n  Metric id: qglobal\n  Best score: 0.5144915389111853%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pca_logCP10k qglobal", 
+        "value": -0.38026787204678214, 
+        "severity": 0, 
+        "severity_value": 0.38026787204678214, 
+        "code": "worst_score >= -1", 
+        "message": "Method pca_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k\n  Metric id: qglobal\n  Worst score: -0.38026787204678214%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pca_logCP10k qglobal", 
+        "value": 0.5976814020352406, 
+        "severity": 0, 
+        "severity_value": 0.2988407010176203, 
+        "code": "best_score <= 2", 
+        "message": "Method pca_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k\n  Metric id: qglobal\n  Best score: 0.5976814020352406%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pca_logCP10k_1kHVG qglobal", 
+        "value": -0.15730105690542617, 
+        "severity": 0, 
+        "severity_value": 0.15730105690542617, 
+        "code": "worst_score >= -1", 
+        "message": "Method pca_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k_1kHVG\n  Metric id: qglobal\n  Worst score: -0.15730105690542617%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pca_logCP10k_1kHVG qglobal", 
+        "value": 0.487820920738923, 
+        "severity": 0, 
+        "severity_value": 0.2439104603694615, 
+        "code": "best_score <= 2", 
+        "message": "Method pca_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k_1kHVG\n  Metric id: qglobal\n  Best score: 0.487820920738923%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_default qglobal", 
+        "value": -0.19154418468430276, 
+        "severity": 0, 
+        "severity_value": 0.19154418468430276, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_default performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_default\n  Metric id: qglobal\n  Worst score: -0.19154418468430276%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_default qglobal", 
+        "value": 0.44120405482254993, 
+        "severity": 0, 
+        "severity_value": 0.22060202741127496, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_default performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_default\n  Metric id: qglobal\n  Best score: 0.44120405482254993%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_logCP10k qglobal", 
+        "value": -0.20649483799468862, 
+        "severity": 0, 
+        "severity_value": 0.20649483799468862, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k\n  Metric id: qglobal\n  Worst score: -0.20649483799468862%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_logCP10k qglobal", 
+        "value": 0.5110165948308273, 
+        "severity": 0, 
+        "severity_value": 0.25550829741541364, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k\n  Metric id: qglobal\n  Best score: 0.5110165948308273%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_logCP10k_1kHVG qglobal", 
+        "value": -0.23128993299292014, 
+        "severity": 0, 
+        "severity_value": 0.23128993299292014, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k_1kHVG\n  Metric id: qglobal\n  Worst score: -0.23128993299292014%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_logCP10k_1kHVG qglobal", 
+        "value": 0.4336949101153962, 
+        "severity": 0, 
+        "severity_value": 0.2168474550576981, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k_1kHVG\n  Metric id: qglobal\n  Best score: 0.4336949101153962%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_sqrt qglobal", 
+        "value": -0.14603005810314135, 
+        "severity": 0, 
+        "severity_value": 0.14603005810314135, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_sqrt performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_sqrt\n  Metric id: qglobal\n  Worst score: -0.14603005810314135%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_sqrt qglobal", 
+        "value": 0.4975365960512454, 
+        "severity": 0, 
+        "severity_value": 0.2487682980256227, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_sqrt performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_sqrt\n  Metric id: qglobal\n  Best score: 0.4975365960512454%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_distances_log_cp10k qglobal", 
+        "value": -0.4784923309107507, 
+        "severity": 0, 
+        "severity_value": 0.4784923309107507, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_distances_log_cp10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k\n  Metric id: qglobal\n  Worst score: -0.4784923309107507%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_distances_log_cp10k qglobal", 
+        "value": 0.6584548539818992, 
+        "severity": 0, 
+        "severity_value": 0.3292274269909496, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_distances_log_cp10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k\n  Metric id: qglobal\n  Best score: 0.6584548539818992%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_distances_log_cp10k_hvg qglobal", 
+        "value": -0.19036581774672715, 
+        "severity": 0, 
+        "severity_value": 0.19036581774672715, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_distances_log_cp10k_hvg performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k_hvg\n  Metric id: qglobal\n  Worst score: -0.19036581774672715%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_distances_log_cp10k_hvg qglobal", 
+        "value": 0.5223133874499034, 
+        "severity": 0, 
+        "severity_value": 0.2611566937249517, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_distances_log_cp10k_hvg performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k_hvg\n  Metric id: qglobal\n  Best score: 0.5223133874499034%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_neighbors_log_cp10k qglobal", 
+        "value": -0.1511875850456366, 
+        "severity": 0, 
+        "severity_value": 0.1511875850456366, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_neighbors_log_cp10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k\n  Metric id: qglobal\n  Worst score: -0.1511875850456366%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_neighbors_log_cp10k qglobal", 
+        "value": 0.4768588194734892, 
+        "severity": 0, 
+        "severity_value": 0.2384294097367446, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_neighbors_log_cp10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k\n  Metric id: qglobal\n  Best score: 0.4768588194734892%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_neighbors_log_cp10k_hvg qglobal", 
+        "value": -0.1414294310158969, 
+        "severity": 0, 
+        "severity_value": 0.1414294310158969, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_neighbors_log_cp10k_hvg performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k_hvg\n  Metric id: qglobal\n  Worst score: -0.1414294310158969%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_neighbors_log_cp10k_hvg qglobal", 
+        "value": 0.5171297858846172, 
+        "severity": 0, 
+        "severity_value": 0.2585648929423086, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_neighbors_log_cp10k_hvg performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k_hvg\n  Metric id: qglobal\n  Best score: 0.5171297858846172%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score random_features qglobal", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qglobal\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score random_features qglobal", 
+        "value": 0.6872396259313849, 
+        "severity": 0, 
+        "severity_value": 0.34361981296569244, 
+        "code": "best_score <= 2", 
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qglobal\n  Best score: 0.6872396259313849%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score true_features qglobal", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method true_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: qglobal\n  Worst score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score true_features qglobal", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method true_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: qglobal\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score tsne_logCP10k qglobal", 
+        "value": -0.19840773410084903, 
+        "severity": 0, 
+        "severity_value": 0.19840773410084903, 
+        "code": "worst_score >= -1", 
+        "message": "Method tsne_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k\n  Metric id: qglobal\n  Worst score: -0.19840773410084903%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score tsne_logCP10k qglobal", 
+        "value": 0.5501823541417014, 
+        "severity": 0, 
+        "severity_value": 0.2750911770708507, 
+        "code": "best_score <= 2", 
+        "message": "Method tsne_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k\n  Metric id: qglobal\n  Best score: 0.5501823541417014%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score tsne_logCP10k_1kHVG qglobal", 
+        "value": -0.2084306552072937, 
+        "severity": 0, 
+        "severity_value": 0.2084306552072937, 
+        "code": "worst_score >= -1", 
+        "message": "Method tsne_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k_1kHVG\n  Metric id: qglobal\n  Worst score: -0.2084306552072937%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score tsne_logCP10k_1kHVG qglobal", 
+        "value": 0.40613832287238827, 
+        "severity": 0, 
+        "severity_value": 0.20306916143619413, 
+        "code": "best_score <= 2", 
+        "message": "Method tsne_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k_1kHVG\n  Metric id: qglobal\n  Best score: 0.40613832287238827%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_logCP10k qglobal", 
+        "value": -0.13500619962291527, 
+        "severity": 0, 
+        "severity_value": 0.13500619962291527, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k\n  Metric id: qglobal\n  Worst score: -0.13500619962291527%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_logCP10k qglobal", 
+        "value": 0.5677942740737915, 
+        "severity": 0, 
+        "severity_value": 0.28389713703689573, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k\n  Metric id: qglobal\n  Best score: 0.5677942740737915%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_logCP10k_1kHVG qglobal", 
+        "value": -0.33956313560359774, 
+        "severity": 0, 
+        "severity_value": 0.33956313560359774, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k_1kHVG\n  Metric id: qglobal\n  Worst score: -0.33956313560359774%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_logCP10k_1kHVG qglobal", 
+        "value": 0.4778362556037024, 
+        "severity": 0, 
+        "severity_value": 0.2389181278018512, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k_1kHVG\n  Metric id: qglobal\n  Best score: 0.4778362556037024%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_pca_logCP10k qglobal", 
+        "value": -0.19677244092461296, 
+        "severity": 0, 
+        "severity_value": 0.19677244092461296, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_pca_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k\n  Metric id: qglobal\n  Worst score: -0.19677244092461296%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_pca_logCP10k qglobal", 
+        "value": 0.5801277588756533, 
+        "severity": 0, 
+        "severity_value": 0.29006387943782663, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_pca_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k\n  Metric id: qglobal\n  Best score: 0.5801277588756533%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_pca_logCP10k_1kHVG qglobal", 
+        "value": -0.28942713679298426, 
+        "severity": 0, 
+        "severity_value": 0.28942713679298426, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_pca_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k_1kHVG\n  Metric id: qglobal\n  Worst score: -0.28942713679298426%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_pca_logCP10k_1kHVG qglobal", 
+        "value": 0.43971929594954173, 
+        "severity": 0, 
+        "severity_value": 0.21985964797477087, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_pca_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k_1kHVG\n  Metric id: qglobal\n  Best score: 0.43971929594954173%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_logCP10k qlocal", 
+        "value": 0.1829808650557922, 
+        "severity": 0, 
+        "severity_value": -0.1829808650557922, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k\n  Metric id: qlocal\n  Worst score: 0.1829808650557922%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_logCP10k qlocal", 
+        "value": 0.39125949561739914, 
+        "severity": 0, 
+        "severity_value": 0.19562974780869957, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k\n  Metric id: qlocal\n  Best score: 0.39125949561739914%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_logCP10k_1kHVG qlocal", 
+        "value": 0.02778724160455516, 
+        "severity": 0, 
+        "severity_value": -0.02778724160455516, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k_1kHVG\n  Metric id: qlocal\n  Worst score: 0.02778724160455516%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_logCP10k_1kHVG qlocal", 
+        "value": 0.3838150452396815, 
+        "severity": 0, 
+        "severity_value": 0.19190752261984076, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k_1kHVG\n  Metric id: qlocal\n  Best score: 0.3838150452396815%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_pca_logCP10k qlocal", 
+        "value": 0.13187651696243338, 
+        "severity": 0, 
+        "severity_value": -0.13187651696243338, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_pca_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k\n  Metric id: qlocal\n  Worst score: 0.13187651696243338%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_pca_logCP10k qlocal", 
+        "value": 0.3972804596917448, 
+        "severity": 0, 
+        "severity_value": 0.1986402298458724, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_pca_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k\n  Metric id: qlocal\n  Best score: 0.3972804596917448%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_pca_logCP10k_1kHVG qlocal", 
+        "value": 0.11654136563916238, 
+        "severity": 0, 
+        "severity_value": -0.11654136563916238, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_pca_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k_1kHVG\n  Metric id: qlocal\n  Worst score: 0.11654136563916238%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_pca_logCP10k_1kHVG qlocal", 
+        "value": 0.3679633618565712, 
+        "severity": 0, 
+        "severity_value": 0.1839816809282856, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_pca_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k_1kHVG\n  Metric id: qlocal\n  Best score: 0.3679633618565712%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score neuralee_default qlocal", 
+        "value": 0.14794723082682326, 
+        "severity": 0, 
+        "severity_value": -0.14794723082682326, 
+        "code": "worst_score >= -1", 
+        "message": "Method neuralee_default performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_default\n  Metric id: qlocal\n  Worst score: 0.14794723082682326%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score neuralee_default qlocal", 
+        "value": 0.3602401637010978, 
+        "severity": 0, 
+        "severity_value": 0.1801200818505489, 
+        "code": "best_score <= 2", 
+        "message": "Method neuralee_default performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_default\n  Metric id: qlocal\n  Best score: 0.3602401637010978%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score neuralee_logCP10k_1kHVG qlocal", 
+        "value": 0.06588709436766566, 
+        "severity": 0, 
+        "severity_value": -0.06588709436766566, 
+        "code": "worst_score >= -1", 
+        "message": "Method neuralee_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_logCP10k_1kHVG\n  Metric id: qlocal\n  Worst score: 0.06588709436766566%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score neuralee_logCP10k_1kHVG qlocal", 
+        "value": 0.3794730800899119, 
+        "severity": 0, 
+        "severity_value": 0.18973654004495594, 
+        "code": "best_score <= 2", 
+        "message": "Method neuralee_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_logCP10k_1kHVG\n  Metric id: qlocal\n  Best score: 0.3794730800899119%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pca_logCP10k qlocal", 
+        "value": 0.06945990102325601, 
+        "severity": 0, 
+        "severity_value": -0.06945990102325601, 
+        "code": "worst_score >= -1", 
+        "message": "Method pca_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k\n  Metric id: qlocal\n  Worst score: 0.06945990102325601%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pca_logCP10k qlocal", 
+        "value": 0.35688422900624667, 
+        "severity": 0, 
+        "severity_value": 0.17844211450312333, 
+        "code": "best_score <= 2", 
+        "message": "Method pca_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k\n  Metric id: qlocal\n  Best score: 0.35688422900624667%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pca_logCP10k_1kHVG qlocal", 
+        "value": 0.11304505485587281, 
+        "severity": 0, 
+        "severity_value": -0.11304505485587281, 
+        "code": "worst_score >= -1", 
+        "message": "Method pca_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k_1kHVG\n  Metric id: qlocal\n  Worst score: 0.11304505485587281%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pca_logCP10k_1kHVG qlocal", 
+        "value": 0.3391603545382434, 
+        "severity": 0, 
+        "severity_value": 0.1695801772691217, 
+        "code": "best_score <= 2", 
+        "message": "Method pca_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k_1kHVG\n  Metric id: qlocal\n  Best score: 0.3391603545382434%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_default qlocal", 
+        "value": 0.09662537745235088, 
+        "severity": 0, 
+        "severity_value": -0.09662537745235088, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_default performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_default\n  Metric id: qlocal\n  Worst score: 0.09662537745235088%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_default qlocal", 
+        "value": 0.35704614936650486, 
+        "severity": 0, 
+        "severity_value": 0.17852307468325243, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_default performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_default\n  Metric id: qlocal\n  Best score: 0.35704614936650486%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_logCP10k qlocal", 
+        "value": 0.0838786712684606, 
+        "severity": 0, 
+        "severity_value": -0.0838786712684606, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k\n  Metric id: qlocal\n  Worst score: 0.0838786712684606%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_logCP10k qlocal", 
+        "value": 0.37238279440822397, 
+        "severity": 0, 
+        "severity_value": 0.18619139720411199, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k\n  Metric id: qlocal\n  Best score: 0.37238279440822397%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_logCP10k_1kHVG qlocal", 
+        "value": 0.09621934340363805, 
+        "severity": 0, 
+        "severity_value": -0.09621934340363805, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k_1kHVG\n  Metric id: qlocal\n  Worst score: 0.09621934340363805%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_logCP10k_1kHVG qlocal", 
+        "value": 0.36051219552912356, 
+        "severity": 0, 
+        "severity_value": 0.18025609776456178, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k_1kHVG\n  Metric id: qlocal\n  Best score: 0.36051219552912356%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_sqrt qlocal", 
+        "value": 0.07770391923690717, 
+        "severity": 0, 
+        "severity_value": -0.07770391923690717, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_sqrt performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_sqrt\n  Metric id: qlocal\n  Worst score: 0.07770391923690717%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_sqrt qlocal", 
+        "value": 0.3713486271390782, 
+        "severity": 0, 
+        "severity_value": 0.1856743135695391, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_sqrt performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_sqrt\n  Metric id: qlocal\n  Best score: 0.3713486271390782%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_distances_log_cp10k qlocal", 
+        "value": -0.21564128201987934, 
+        "severity": 0, 
+        "severity_value": 0.21564128201987934, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_distances_log_cp10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k\n  Metric id: qlocal\n  Worst score: -0.21564128201987934%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_distances_log_cp10k qlocal", 
+        "value": 0.3610584620034803, 
+        "severity": 0, 
+        "severity_value": 0.18052923100174015, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_distances_log_cp10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k\n  Metric id: qlocal\n  Best score: 0.3610584620034803%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_distances_log_cp10k_hvg qlocal", 
+        "value": -0.11010882819194683, 
+        "severity": 0, 
+        "severity_value": 0.11010882819194683, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_distances_log_cp10k_hvg performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k_hvg\n  Metric id: qlocal\n  Worst score: -0.11010882819194683%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_distances_log_cp10k_hvg qlocal", 
+        "value": 0.33161307882566654, 
+        "severity": 0, 
+        "severity_value": 0.16580653941283327, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_distances_log_cp10k_hvg performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k_hvg\n  Metric id: qlocal\n  Best score: 0.33161307882566654%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_neighbors_log_cp10k qlocal", 
+        "value": 0.1556133501498778, 
+        "severity": 0, 
+        "severity_value": -0.1556133501498778, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_neighbors_log_cp10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k\n  Metric id: qlocal\n  Worst score: 0.1556133501498778%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_neighbors_log_cp10k qlocal", 
+        "value": 0.3798620926363615, 
+        "severity": 0, 
+        "severity_value": 0.18993104631818075, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_neighbors_log_cp10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k\n  Metric id: qlocal\n  Best score: 0.3798620926363615%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_neighbors_log_cp10k_hvg qlocal", 
+        "value": 0.041952563016476235, 
+        "severity": 0, 
+        "severity_value": -0.041952563016476235, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_neighbors_log_cp10k_hvg performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k_hvg\n  Metric id: qlocal\n  Worst score: 0.041952563016476235%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_neighbors_log_cp10k_hvg qlocal", 
+        "value": 0.365709850866925, 
+        "severity": 0, 
+        "severity_value": 0.1828549254334625, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_neighbors_log_cp10k_hvg performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k_hvg\n  Metric id: qlocal\n  Best score: 0.365709850866925%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score random_features qlocal", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qlocal\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score random_features qlocal", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qlocal\n  Best score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score true_features qlocal", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method true_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: qlocal\n  Worst score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score true_features qlocal", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method true_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: qlocal\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score tsne_logCP10k qlocal", 
+        "value": 0.1618010304226123, 
+        "severity": 0, 
+        "severity_value": -0.1618010304226123, 
+        "code": "worst_score >= -1", 
+        "message": "Method tsne_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k\n  Metric id: qlocal\n  Worst score: 0.1618010304226123%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score tsne_logCP10k qlocal", 
+        "value": 0.3447684662981654, 
+        "severity": 0, 
+        "severity_value": 0.1723842331490827, 
+        "code": "best_score <= 2", 
+        "message": "Method tsne_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k\n  Metric id: qlocal\n  Best score: 0.3447684662981654%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score tsne_logCP10k_1kHVG qlocal", 
+        "value": 0.0815339720602245, 
+        "severity": 0, 
+        "severity_value": -0.0815339720602245, 
+        "code": "worst_score >= -1", 
+        "message": "Method tsne_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k_1kHVG\n  Metric id: qlocal\n  Worst score: 0.0815339720602245%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score tsne_logCP10k_1kHVG qlocal", 
+        "value": 0.3317803171809118, 
+        "severity": 0, 
+        "severity_value": 0.1658901585904559, 
+        "code": "best_score <= 2", 
+        "message": "Method tsne_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k_1kHVG\n  Metric id: qlocal\n  Best score: 0.3317803171809118%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_logCP10k qlocal", 
+        "value": 0.16848296341543834, 
+        "severity": 0, 
+        "severity_value": -0.16848296341543834, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k\n  Metric id: qlocal\n  Worst score: 0.16848296341543834%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_logCP10k qlocal", 
+        "value": 0.3655908875968559, 
+        "severity": 0, 
+        "severity_value": 0.18279544379842794, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k\n  Metric id: qlocal\n  Best score: 0.3655908875968559%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_logCP10k_1kHVG qlocal", 
+        "value": 0.018507025202236432, 
+        "severity": 0, 
+        "severity_value": -0.018507025202236432, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k_1kHVG\n  Metric id: qlocal\n  Worst score: 0.018507025202236432%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_logCP10k_1kHVG qlocal", 
+        "value": 0.35910740414965364, 
+        "severity": 0, 
+        "severity_value": 0.17955370207482682, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k_1kHVG\n  Metric id: qlocal\n  Best score: 0.35910740414965364%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_pca_logCP10k qlocal", 
+        "value": 0.1558252829762789, 
+        "severity": 0, 
+        "severity_value": -0.1558252829762789, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_pca_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k\n  Metric id: qlocal\n  Worst score: 0.1558252829762789%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_pca_logCP10k qlocal", 
+        "value": 0.37640733714193414, 
+        "severity": 0, 
+        "severity_value": 0.18820366857096707, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_pca_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k\n  Metric id: qlocal\n  Best score: 0.37640733714193414%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_pca_logCP10k_1kHVG qlocal", 
+        "value": 0.11987771607670773, 
+        "severity": 0, 
+        "severity_value": -0.11987771607670773, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_pca_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k_1kHVG\n  Metric id: qlocal\n  Worst score: 0.11987771607670773%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_pca_logCP10k_1kHVG qlocal", 
+        "value": 0.3471971978287769, 
+        "severity": 0, 
+        "severity_value": 0.17359859891438845, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_pca_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k_1kHVG\n  Metric id: qlocal\n  Best score: 0.3471971978287769%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_logCP10k qnn", 
+        "value": 0.02272656979729186, 
+        "severity": 0, 
+        "severity_value": -0.02272656979729186, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k\n  Metric id: qnn\n  Worst score: 0.02272656979729186%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_logCP10k qnn", 
+        "value": 0.5317399126188641, 
+        "severity": 0, 
+        "severity_value": 0.26586995630943205, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k\n  Metric id: qnn\n  Best score: 0.5317399126188641%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_logCP10k_1kHVG qnn", 
+        "value": 0.037869368617044305, 
+        "severity": 0, 
+        "severity_value": -0.037869368617044305, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k_1kHVG\n  Metric id: qnn\n  Worst score: 0.037869368617044305%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_logCP10k_1kHVG qnn", 
+        "value": 0.42451811873554357, 
+        "severity": 0, 
+        "severity_value": 0.21225905936777179, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k_1kHVG\n  Metric id: qnn\n  Best score: 0.42451811873554357%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_pca_logCP10k qnn", 
+        "value": 0.045057249429361436, 
+        "severity": 0, 
+        "severity_value": -0.045057249429361436, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_pca_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k\n  Metric id: qnn\n  Worst score: 0.045057249429361436%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_pca_logCP10k qnn", 
+        "value": 0.4983294782832177, 
+        "severity": 0, 
+        "severity_value": 0.24916473914160886, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_pca_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k\n  Metric id: qnn\n  Best score: 0.4983294782832177%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_pca_logCP10k_1kHVG qnn", 
+        "value": 0.03826525878226659, 
+        "severity": 0, 
+        "severity_value": -0.03826525878226659, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_pca_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k_1kHVG\n  Metric id: qnn\n  Worst score: 0.03826525878226659%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_pca_logCP10k_1kHVG qnn", 
+        "value": 0.4384476998200977, 
+        "severity": 0, 
+        "severity_value": 0.21922384991004884, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_pca_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k_1kHVG\n  Metric id: qnn\n  Best score: 0.4384476998200977%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score neuralee_default qnn", 
+        "value": 0.021378068922003453, 
+        "severity": 0, 
+        "severity_value": -0.021378068922003453, 
+        "code": "worst_score >= -1", 
+        "message": "Method neuralee_default performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_default\n  Metric id: qnn\n  Worst score: 0.021378068922003453%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score neuralee_default qnn", 
+        "value": 0.49889488563351325, 
+        "severity": 0, 
+        "severity_value": 0.24944744281675663, 
+        "code": "best_score <= 2", 
+        "message": "Method neuralee_default performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_default\n  Metric id: qnn\n  Best score: 0.49889488563351325%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score neuralee_logCP10k_1kHVG qnn", 
+        "value": 0.03116397894359183, 
+        "severity": 0, 
+        "severity_value": -0.03116397894359183, 
+        "code": "worst_score >= -1", 
+        "message": "Method neuralee_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_logCP10k_1kHVG\n  Metric id: qnn\n  Worst score: 0.03116397894359183%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score neuralee_logCP10k_1kHVG qnn", 
+        "value": 0.41989205859676176, 
+        "severity": 0, 
+        "severity_value": 0.20994602929838088, 
+        "code": "best_score <= 2", 
+        "message": "Method neuralee_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_logCP10k_1kHVG\n  Metric id: qnn\n  Best score: 0.41989205859676176%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pca_logCP10k qnn", 
+        "value": 0.02343174915409406, 
+        "severity": 0, 
+        "severity_value": -0.02343174915409406, 
+        "code": "worst_score >= -1", 
+        "message": "Method pca_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k\n  Metric id: qnn\n  Worst score: 0.02343174915409406%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pca_logCP10k qnn", 
+        "value": 0.3852994088923156, 
+        "severity": 0, 
+        "severity_value": 0.1926497044461578, 
+        "code": "best_score <= 2", 
+        "message": "Method pca_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k\n  Metric id: qnn\n  Best score: 0.3852994088923156%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pca_logCP10k_1kHVG qnn", 
+        "value": 0.023301847693630497, 
+        "severity": 0, 
+        "severity_value": -0.023301847693630497, 
+        "code": "worst_score >= -1", 
+        "message": "Method pca_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k_1kHVG\n  Metric id: qnn\n  Worst score: 0.023301847693630497%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pca_logCP10k_1kHVG qnn", 
+        "value": 0.4376766897969674, 
+        "severity": 0, 
+        "severity_value": 0.2188383448984837, 
+        "code": "best_score <= 2", 
+        "message": "Method pca_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k_1kHVG\n  Metric id: qnn\n  Best score: 0.4376766897969674%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_default qnn", 
+        "value": 0.035673415356826936, 
+        "severity": 0, 
+        "severity_value": -0.035673415356826936, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_default performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_default\n  Metric id: qnn\n  Worst score: 0.035673415356826936%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_default qnn", 
+        "value": 0.4149061937805192, 
+        "severity": 0, 
+        "severity_value": 0.2074530968902596, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_default performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_default\n  Metric id: qnn\n  Best score: 0.4149061937805192%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_logCP10k qnn", 
+        "value": 0.03175781419142526, 
+        "severity": 0, 
+        "severity_value": -0.03175781419142526, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k\n  Metric id: qnn\n  Worst score: 0.03175781419142526%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_logCP10k qnn", 
+        "value": 0.40519146748907736, 
+        "severity": 0, 
+        "severity_value": 0.20259573374453868, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k\n  Metric id: qnn\n  Best score: 0.40519146748907736%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_logCP10k_1kHVG qnn", 
+        "value": 0.039824076307829345, 
+        "severity": 0, 
+        "severity_value": -0.039824076307829345, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k_1kHVG\n  Metric id: qnn\n  Worst score: 0.039824076307829345%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_logCP10k_1kHVG qnn", 
+        "value": 0.40806990490876377, 
+        "severity": 0, 
+        "severity_value": 0.20403495245438188, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k_1kHVG\n  Metric id: qnn\n  Best score: 0.40806990490876377%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_sqrt qnn", 
+        "value": 0.0364961246064295, 
+        "severity": 0, 
+        "severity_value": -0.0364961246064295, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_sqrt performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_sqrt\n  Metric id: qnn\n  Worst score: 0.0364961246064295%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_sqrt qnn", 
+        "value": 0.3896170650218453, 
+        "severity": 0, 
+        "severity_value": 0.19480853251092264, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_sqrt performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_sqrt\n  Metric id: qnn\n  Best score: 0.3896170650218453%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_distances_log_cp10k qnn", 
+        "value": 0.024068884888748674, 
+        "severity": 0, 
+        "severity_value": -0.024068884888748674, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_distances_log_cp10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k\n  Metric id: qnn\n  Worst score: 0.024068884888748674%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_distances_log_cp10k qnn", 
+        "value": 0.18082755075815987, 
+        "severity": 0, 
+        "severity_value": 0.09041377537907994, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_distances_log_cp10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k\n  Metric id: qnn\n  Best score: 0.18082755075815987%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_distances_log_cp10k_hvg qnn", 
+        "value": 0.0198130656126091, 
+        "severity": 0, 
+        "severity_value": -0.0198130656126091, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_distances_log_cp10k_hvg performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k_hvg\n  Metric id: qnn\n  Worst score: 0.0198130656126091%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_distances_log_cp10k_hvg qnn", 
+        "value": 0.2830634798252377, 
+        "severity": 0, 
+        "severity_value": 0.14153173991261886, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_distances_log_cp10k_hvg performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k_hvg\n  Metric id: qnn\n  Best score: 0.2830634798252377%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_neighbors_log_cp10k qnn", 
+        "value": 0.04365307649958865, 
+        "severity": 0, 
+        "severity_value": -0.04365307649958865, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_neighbors_log_cp10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k\n  Metric id: qnn\n  Worst score: 0.04365307649958865%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_neighbors_log_cp10k qnn", 
+        "value": 0.4640452325880236, 
+        "severity": 0, 
+        "severity_value": 0.2320226162940118, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_neighbors_log_cp10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k\n  Metric id: qnn\n  Best score: 0.4640452325880236%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_neighbors_log_cp10k_hvg qnn", 
+        "value": 0.03901373862588997, 
+        "severity": 0, 
+        "severity_value": -0.03901373862588997, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_neighbors_log_cp10k_hvg performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k_hvg\n  Metric id: qnn\n  Worst score: 0.03901373862588997%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_neighbors_log_cp10k_hvg qnn", 
+        "value": 0.4451297866872269, 
+        "severity": 0, 
+        "severity_value": 0.22256489334361346, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_neighbors_log_cp10k_hvg performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k_hvg\n  Metric id: qnn\n  Best score: 0.4451297866872269%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score random_features qnn", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qnn\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score random_features qnn", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qnn\n  Best score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score true_features qnn", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method true_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: qnn\n  Worst score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score true_features qnn", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method true_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: qnn\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score tsne_logCP10k qnn", 
+        "value": 0.04711092966145205, 
+        "severity": 0, 
+        "severity_value": -0.04711092966145205, 
+        "code": "worst_score >= -1", 
+        "message": "Method tsne_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k\n  Metric id: qnn\n  Worst score: 0.04711092966145205%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score tsne_logCP10k qnn", 
+        "value": 0.5159599074787973, 
+        "severity": 0, 
+        "severity_value": 0.25797995373939864, 
+        "code": "best_score <= 2", 
+        "message": "Method tsne_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k\n  Metric id: qnn\n  Best score: 0.5159599074787973%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score tsne_logCP10k_1kHVG qnn", 
+        "value": 0.04265097951886973, 
+        "severity": 0, 
+        "severity_value": -0.04265097951886973, 
+        "code": "worst_score >= -1", 
+        "message": "Method tsne_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k_1kHVG\n  Metric id: qnn\n  Worst score: 0.04265097951886973%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score tsne_logCP10k_1kHVG qnn", 
+        "value": 0.4677974813672578, 
+        "severity": 0, 
+        "severity_value": 0.2338987406836289, 
+        "code": "best_score <= 2", 
+        "message": "Method tsne_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k_1kHVG\n  Metric id: qnn\n  Best score: 0.4677974813672578%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_logCP10k qnn", 
+        "value": 0.025182325978436355, 
+        "severity": 0, 
+        "severity_value": -0.025182325978436355, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k\n  Metric id: qnn\n  Worst score: 0.025182325978436355%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_logCP10k qnn", 
+        "value": 0.4810588537650989, 
+        "severity": 0, 
+        "severity_value": 0.24052942688254944, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k\n  Metric id: qnn\n  Best score: 0.4810588537650989%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_logCP10k_1kHVG qnn", 
+        "value": 0.03730027650453727, 
+        "severity": 0, 
+        "severity_value": -0.03730027650453727, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k_1kHVG\n  Metric id: qnn\n  Worst score: 0.03730027650453727%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_logCP10k_1kHVG qnn", 
+        "value": 0.4189154459007967, 
+        "severity": 0, 
+        "severity_value": 0.20945772295039836, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k_1kHVG\n  Metric id: qnn\n  Best score: 0.4189154459007967%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_pca_logCP10k qnn", 
+        "value": 0.0430963559547448, 
+        "severity": 0, 
+        "severity_value": -0.0430963559547448, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_pca_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k\n  Metric id: qnn\n  Worst score: 0.0430963559547448%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_pca_logCP10k qnn", 
+        "value": 0.46599845797995376, 
+        "severity": 0, 
+        "severity_value": 0.23299922898997688, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_pca_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k\n  Metric id: qnn\n  Best score: 0.46599845797995376%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_pca_logCP10k_1kHVG qnn", 
+        "value": 0.037461106884158824, 
+        "severity": 0, 
+        "severity_value": -0.037461106884158824, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_pca_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k_1kHVG\n  Metric id: qnn\n  Worst score: 0.037461106884158824%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_pca_logCP10k_1kHVG qnn", 
+        "value": 0.4198406579285531, 
+        "severity": 0, 
+        "severity_value": 0.20992032896427654, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_pca_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k_1kHVG\n  Metric id: qnn\n  Best score: 0.4198406579285531%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_logCP10k qnn_auc", 
+        "value": 0.06381211292868438, 
+        "severity": 0, 
+        "severity_value": -0.06381211292868438, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k\n  Metric id: qnn_auc\n  Worst score: 0.06381211292868438%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_logCP10k qnn_auc", 
+        "value": 0.42663875636111914, 
+        "severity": 0, 
+        "severity_value": 0.21331937818055957, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k\n  Metric id: qnn_auc\n  Best score: 0.42663875636111914%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_logCP10k_1kHVG qnn_auc", 
+        "value": 0.04774813953795953, 
+        "severity": 0, 
+        "severity_value": -0.04774813953795953, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k_1kHVG\n  Metric id: qnn_auc\n  Worst score: 0.04774813953795953%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_logCP10k_1kHVG qnn_auc", 
+        "value": 0.31110589761959195, 
+        "severity": 0, 
+        "severity_value": 0.15555294880979598, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k_1kHVG\n  Metric id: qnn_auc\n  Best score: 0.31110589761959195%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_pca_logCP10k qnn_auc", 
+        "value": 0.11362816796119901, 
+        "severity": 0, 
+        "severity_value": -0.11362816796119901, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_pca_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k\n  Metric id: qnn_auc\n  Worst score: 0.11362816796119901%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_pca_logCP10k qnn_auc", 
+        "value": 0.37179354765376793, 
+        "severity": 0, 
+        "severity_value": 0.18589677382688397, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_pca_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k\n  Metric id: qnn_auc\n  Best score: 0.37179354765376793%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_pca_logCP10k_1kHVG qnn_auc", 
+        "value": 0.04762869339158726, 
+        "severity": 0, 
+        "severity_value": -0.04762869339158726, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_pca_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k_1kHVG\n  Metric id: qnn_auc\n  Worst score: 0.04762869339158726%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_pca_logCP10k_1kHVG qnn_auc", 
+        "value": 0.3887483047146201, 
+        "severity": 0, 
+        "severity_value": 0.19437415235731004, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_pca_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k_1kHVG\n  Metric id: qnn_auc\n  Best score: 0.3887483047146201%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score neuralee_default qnn_auc", 
+        "value": 0.031294650049384476, 
+        "severity": 0, 
+        "severity_value": -0.031294650049384476, 
+        "code": "worst_score >= -1", 
+        "message": "Method neuralee_default performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_default\n  Metric id: qnn_auc\n  Worst score: 0.031294650049384476%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score neuralee_default qnn_auc", 
+        "value": 0.39557703065019045, 
+        "severity": 0, 
+        "severity_value": 0.19778851532509523, 
+        "code": "best_score <= 2", 
+        "message": "Method neuralee_default performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_default\n  Metric id: qnn_auc\n  Best score: 0.39557703065019045%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score neuralee_logCP10k_1kHVG qnn_auc", 
+        "value": 0.06633089060034147, 
+        "severity": 0, 
+        "severity_value": -0.06633089060034147, 
+        "code": "worst_score >= -1", 
+        "message": "Method neuralee_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_logCP10k_1kHVG\n  Metric id: qnn_auc\n  Worst score: 0.06633089060034147%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score neuralee_logCP10k_1kHVG qnn_auc", 
+        "value": 0.3784103085388195, 
+        "severity": 0, 
+        "severity_value": 0.18920515426940976, 
+        "code": "best_score <= 2", 
+        "message": "Method neuralee_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_logCP10k_1kHVG\n  Metric id: qnn_auc\n  Best score: 0.3784103085388195%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pca_logCP10k qnn_auc", 
+        "value": 0.048609193171115894, 
+        "severity": 0, 
+        "severity_value": -0.048609193171115894, 
+        "code": "worst_score >= -1", 
+        "message": "Method pca_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k\n  Metric id: qnn_auc\n  Worst score: 0.048609193171115894%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pca_logCP10k qnn_auc", 
+        "value": 0.378382825970478, 
+        "severity": 0, 
+        "severity_value": 0.189191412985239, 
+        "code": "best_score <= 2", 
+        "message": "Method pca_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k\n  Metric id: qnn_auc\n  Best score: 0.378382825970478%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pca_logCP10k_1kHVG qnn_auc", 
+        "value": 0.008228956222214645, 
+        "severity": 0, 
+        "severity_value": -0.008228956222214645, 
+        "code": "worst_score >= -1", 
+        "message": "Method pca_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k_1kHVG\n  Metric id: qnn_auc\n  Worst score: 0.008228956222214645%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pca_logCP10k_1kHVG qnn_auc", 
+        "value": 0.35714129651361337, 
+        "severity": 0, 
+        "severity_value": 0.17857064825680669, 
+        "code": "best_score <= 2", 
+        "message": "Method pca_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k_1kHVG\n  Metric id: qnn_auc\n  Best score: 0.35714129651361337%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_default qnn_auc", 
+        "value": 0.036320400958046006, 
+        "severity": 0, 
+        "severity_value": -0.036320400958046006, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_default performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_default\n  Metric id: qnn_auc\n  Worst score: 0.036320400958046006%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_default qnn_auc", 
+        "value": 0.33867408358933626, 
+        "severity": 0, 
+        "severity_value": 0.16933704179466813, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_default performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_default\n  Metric id: qnn_auc\n  Best score: 0.33867408358933626%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_logCP10k qnn_auc", 
+        "value": 0.04979156336251944, 
+        "severity": 0, 
+        "severity_value": -0.04979156336251944, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k\n  Metric id: qnn_auc\n  Worst score: 0.04979156336251944%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_logCP10k qnn_auc", 
+        "value": 0.3308407881540312, 
+        "severity": 0, 
+        "severity_value": 0.1654203940770156, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k\n  Metric id: qnn_auc\n  Best score: 0.3308407881540312%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_logCP10k_1kHVG qnn_auc", 
+        "value": 0.04215838844020503, 
+        "severity": 0, 
+        "severity_value": -0.04215838844020503, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k_1kHVG\n  Metric id: qnn_auc\n  Worst score: 0.04215838844020503%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_logCP10k_1kHVG qnn_auc", 
+        "value": 0.3206646055253646, 
+        "severity": 0, 
+        "severity_value": 0.1603323027626823, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k_1kHVG\n  Metric id: qnn_auc\n  Best score: 0.3206646055253646%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_sqrt qnn_auc", 
+        "value": 0.0355021997439422, 
+        "severity": 0, 
+        "severity_value": -0.0355021997439422, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_sqrt performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_sqrt\n  Metric id: qnn_auc\n  Worst score: 0.0355021997439422%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_sqrt qnn_auc", 
+        "value": 0.3566399042144517, 
+        "severity": 0, 
+        "severity_value": 0.17831995210722584, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_sqrt performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_sqrt\n  Metric id: qnn_auc\n  Best score: 0.3566399042144517%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_distances_log_cp10k qnn_auc", 
+        "value": 0.15308339061487897, 
+        "severity": 0, 
+        "severity_value": -0.15308339061487897, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_distances_log_cp10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k\n  Metric id: qnn_auc\n  Worst score: 0.15308339061487897%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_distances_log_cp10k qnn_auc", 
+        "value": 0.43292629180525943, 
+        "severity": 0, 
+        "severity_value": 0.21646314590262972, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_distances_log_cp10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k\n  Metric id: qnn_auc\n  Best score: 0.43292629180525943%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_distances_log_cp10k_hvg qnn_auc", 
+        "value": 0.07490893023461354, 
+        "severity": 0, 
+        "severity_value": -0.07490893023461354, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_distances_log_cp10k_hvg performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k_hvg\n  Metric id: qnn_auc\n  Worst score: 0.07490893023461354%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_distances_log_cp10k_hvg qnn_auc", 
+        "value": 0.3108425862193607, 
+        "severity": 0, 
+        "severity_value": 0.15542129310968034, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_distances_log_cp10k_hvg performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k_hvg\n  Metric id: qnn_auc\n  Best score: 0.3108425862193607%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_neighbors_log_cp10k qnn_auc", 
+        "value": 0.09273414559680093, 
+        "severity": 0, 
+        "severity_value": -0.09273414559680093, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_neighbors_log_cp10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k\n  Metric id: qnn_auc\n  Worst score: 0.09273414559680093%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_neighbors_log_cp10k qnn_auc", 
+        "value": 0.36516316191821585, 
+        "severity": 0, 
+        "severity_value": 0.18258158095910793, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_neighbors_log_cp10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k\n  Metric id: qnn_auc\n  Best score: 0.36516316191821585%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_neighbors_log_cp10k_hvg qnn_auc", 
+        "value": 0.0549672677895614, 
+        "severity": 0, 
+        "severity_value": -0.0549672677895614, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_neighbors_log_cp10k_hvg performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k_hvg\n  Metric id: qnn_auc\n  Worst score: 0.0549672677895614%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_neighbors_log_cp10k_hvg qnn_auc", 
+        "value": 0.3643047571072111, 
+        "severity": 0, 
+        "severity_value": 0.18215237855360555, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_neighbors_log_cp10k_hvg performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k_hvg\n  Metric id: qnn_auc\n  Best score: 0.3643047571072111%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score random_features qnn_auc", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qnn_auc\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score random_features qnn_auc", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qnn_auc\n  Best score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score true_features qnn_auc", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method true_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: qnn_auc\n  Worst score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score true_features qnn_auc", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method true_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: qnn_auc\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score tsne_logCP10k qnn_auc", 
+        "value": 0.1263301285942906, 
+        "severity": 0, 
+        "severity_value": -0.1263301285942906, 
+        "code": "worst_score >= -1", 
+        "message": "Method tsne_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k\n  Metric id: qnn_auc\n  Worst score: 0.1263301285942906%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score tsne_logCP10k qnn_auc", 
+        "value": 0.35028537456534514, 
+        "severity": 0, 
+        "severity_value": 0.17514268728267257, 
+        "code": "best_score <= 2", 
+        "message": "Method tsne_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k\n  Metric id: qnn_auc\n  Best score: 0.35028537456534514%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score tsne_logCP10k_1kHVG qnn_auc", 
+        "value": 0.07901588209385801, 
+        "severity": 0, 
+        "severity_value": -0.07901588209385801, 
+        "code": "worst_score >= -1", 
+        "message": "Method tsne_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k_1kHVG\n  Metric id: qnn_auc\n  Worst score: 0.07901588209385801%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score tsne_logCP10k_1kHVG qnn_auc", 
+        "value": 0.3378502165560655, 
+        "severity": 0, 
+        "severity_value": 0.16892510827803275, 
+        "code": "best_score <= 2", 
+        "message": "Method tsne_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k_1kHVG\n  Metric id: qnn_auc\n  Best score: 0.3378502165560655%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_logCP10k qnn_auc", 
+        "value": 0.03135711909651273, 
+        "severity": 0, 
+        "severity_value": -0.03135711909651273, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k\n  Metric id: qnn_auc\n  Worst score: 0.03135711909651273%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_logCP10k qnn_auc", 
+        "value": 0.3758566921243207, 
+        "severity": 0, 
+        "severity_value": 0.18792834606216036, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k\n  Metric id: qnn_auc\n  Best score: 0.3758566921243207%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_logCP10k_1kHVG qnn_auc", 
+        "value": 0.04005272682254235, 
+        "severity": 0, 
+        "severity_value": -0.04005272682254235, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k_1kHVG\n  Metric id: qnn_auc\n  Worst score: 0.04005272682254235%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_logCP10k_1kHVG qnn_auc", 
+        "value": 0.274273897331335, 
+        "severity": 0, 
+        "severity_value": 0.1371369486656675, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k_1kHVG\n  Metric id: qnn_auc\n  Best score: 0.274273897331335%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_pca_logCP10k qnn_auc", 
+        "value": 0.09223154215706741, 
+        "severity": 0, 
+        "severity_value": -0.09223154215706741, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_pca_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k\n  Metric id: qnn_auc\n  Worst score: 0.09223154215706741%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_pca_logCP10k qnn_auc", 
+        "value": 0.37824924741180155, 
+        "severity": 0, 
+        "severity_value": 0.18912462370590077, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_pca_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k\n  Metric id: qnn_auc\n  Best score: 0.37824924741180155%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_pca_logCP10k_1kHVG qnn_auc", 
+        "value": 0.040191835238509555, 
+        "severity": 0, 
+        "severity_value": -0.040191835238509555, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_pca_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k_1kHVG\n  Metric id: qnn_auc\n  Worst score: 0.040191835238509555%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_pca_logCP10k_1kHVG qnn_auc", 
+        "value": 0.2960501392521868, 
+        "severity": 0, 
+        "severity_value": 0.1480250696260934, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_pca_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k_1kHVG\n  Metric id: qnn_auc\n  Best score: 0.2960501392521868%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_logCP10k trustworthiness", 
+        "value": 0.23804282915550892, 
+        "severity": 0, 
+        "severity_value": -0.23804282915550892, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k\n  Metric id: trustworthiness\n  Worst score: 0.23804282915550892%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_logCP10k trustworthiness", 
+        "value": 0.9270138601875144, 
+        "severity": 0, 
+        "severity_value": 0.4635069300937572, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k\n  Metric id: trustworthiness\n  Best score: 0.9270138601875144%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_logCP10k_1kHVG trustworthiness", 
+        "value": 0.2712969117133404, 
+        "severity": 0, 
+        "severity_value": -0.2712969117133404, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k_1kHVG\n  Metric id: trustworthiness\n  Worst score: 0.2712969117133404%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_logCP10k_1kHVG trustworthiness", 
+        "value": 0.8869670629354698, 
+        "severity": 0, 
+        "severity_value": 0.4434835314677349, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_logCP10k_1kHVG\n  Metric id: trustworthiness\n  Best score: 0.8869670629354698%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_pca_logCP10k trustworthiness", 
+        "value": 0.3746770211560517, 
+        "severity": 0, 
+        "severity_value": -0.3746770211560517, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_pca_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k\n  Metric id: trustworthiness\n  Worst score: 0.3746770211560517%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_pca_logCP10k trustworthiness", 
+        "value": 0.9282137313160833, 
+        "severity": 0, 
+        "severity_value": 0.46410686565804166, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_pca_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k\n  Metric id: trustworthiness\n  Best score: 0.9282137313160833%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap_pca_logCP10k_1kHVG trustworthiness", 
+        "value": 0.27159155811473956, 
+        "severity": 0, 
+        "severity_value": -0.27159155811473956, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap_pca_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k_1kHVG\n  Metric id: trustworthiness\n  Worst score: 0.27159155811473956%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap_pca_logCP10k_1kHVG trustworthiness", 
+        "value": 0.904530351500083, 
+        "severity": 0, 
+        "severity_value": 0.4522651757500415, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap_pca_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap_pca_logCP10k_1kHVG\n  Metric id: trustworthiness\n  Best score: 0.904530351500083%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score neuralee_default trustworthiness", 
+        "value": 0.20737045046795977, 
+        "severity": 0, 
+        "severity_value": -0.20737045046795977, 
+        "code": "worst_score >= -1", 
+        "message": "Method neuralee_default performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_default\n  Metric id: trustworthiness\n  Worst score: 0.20737045046795977%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score neuralee_default trustworthiness", 
+        "value": 0.910741238532558, 
+        "severity": 0, 
+        "severity_value": 0.455370619266279, 
+        "code": "best_score <= 2", 
+        "message": "Method neuralee_default performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_default\n  Metric id: trustworthiness\n  Best score: 0.910741238532558%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score neuralee_logCP10k_1kHVG trustworthiness", 
+        "value": 0.254156485291974, 
+        "severity": 0, 
+        "severity_value": -0.254156485291974, 
+        "code": "worst_score >= -1", 
+        "message": "Method neuralee_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_logCP10k_1kHVG\n  Metric id: trustworthiness\n  Worst score: 0.254156485291974%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score neuralee_logCP10k_1kHVG trustworthiness", 
+        "value": 0.9000123664504707, 
+        "severity": 0, 
+        "severity_value": 0.45000618322523533, 
+        "code": "best_score <= 2", 
+        "message": "Method neuralee_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee_logCP10k_1kHVG\n  Metric id: trustworthiness\n  Best score: 0.9000123664504707%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pca_logCP10k trustworthiness", 
+        "value": 0.2379860634269009, 
+        "severity": 0, 
+        "severity_value": -0.2379860634269009, 
+        "code": "worst_score >= -1", 
+        "message": "Method pca_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k\n  Metric id: trustworthiness\n  Worst score: 0.2379860634269009%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pca_logCP10k trustworthiness", 
+        "value": 0.7933006381739308, 
+        "severity": 0, 
+        "severity_value": 0.3966503190869654, 
+        "code": "best_score <= 2", 
+        "message": "Method pca_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k\n  Metric id: trustworthiness\n  Best score: 0.7933006381739308%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pca_logCP10k_1kHVG trustworthiness", 
+        "value": 0.19831796692149514, 
+        "severity": 0, 
+        "severity_value": -0.19831796692149514, 
+        "code": "worst_score >= -1", 
+        "message": "Method pca_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k_1kHVG\n  Metric id: trustworthiness\n  Worst score: 0.19831796692149514%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pca_logCP10k_1kHVG trustworthiness", 
+        "value": 0.8901836417894905, 
+        "severity": 0, 
+        "severity_value": 0.44509182089474525, 
+        "code": "best_score <= 2", 
+        "message": "Method pca_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca_logCP10k_1kHVG\n  Metric id: trustworthiness\n  Best score: 0.8901836417894905%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_default trustworthiness", 
+        "value": 0.31674631164861705, 
+        "severity": 0, 
+        "severity_value": -0.31674631164861705, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_default performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_default\n  Metric id: trustworthiness\n  Worst score: 0.31674631164861705%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_default trustworthiness", 
+        "value": 0.9054884259786582, 
+        "severity": 0, 
+        "severity_value": 0.4527442129893291, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_default performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_default\n  Metric id: trustworthiness\n  Best score: 0.9054884259786582%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_logCP10k trustworthiness", 
+        "value": 0.24975362096958287, 
+        "severity": 0, 
+        "severity_value": -0.24975362096958287, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k\n  Metric id: trustworthiness\n  Worst score: 0.24975362096958287%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_logCP10k trustworthiness", 
+        "value": 0.9003866142936642, 
+        "severity": 0, 
+        "severity_value": 0.4501933071468321, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k\n  Metric id: trustworthiness\n  Best score: 0.9003866142936642%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_logCP10k_1kHVG trustworthiness", 
+        "value": 0.3256185603397142, 
+        "severity": 0, 
+        "severity_value": -0.3256185603397142, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k_1kHVG\n  Metric id: trustworthiness\n  Worst score: 0.3256185603397142%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_logCP10k_1kHVG trustworthiness", 
+        "value": 0.9061972188503757, 
+        "severity": 0, 
+        "severity_value": 0.45309860942518787, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_logCP10k_1kHVG\n  Metric id: trustworthiness\n  Best score: 0.9061972188503757%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate_sqrt trustworthiness", 
+        "value": 0.3243236563289846, 
+        "severity": 0, 
+        "severity_value": -0.3243236563289846, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate_sqrt performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_sqrt\n  Metric id: trustworthiness\n  Worst score: 0.3243236563289846%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate_sqrt trustworthiness", 
+        "value": 0.9035595851381301, 
+        "severity": 0, 
+        "severity_value": 0.45177979256906503, 
+        "code": "best_score <= 2", 
+        "message": "Method phate_sqrt performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate_sqrt\n  Metric id: trustworthiness\n  Best score: 0.9035595851381301%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_distances_log_cp10k trustworthiness", 
+        "value": 0.23227916417231775, 
+        "severity": 0, 
+        "severity_value": -0.23227916417231775, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_distances_log_cp10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k\n  Metric id: trustworthiness\n  Worst score: 0.23227916417231775%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_distances_log_cp10k trustworthiness", 
+        "value": 0.5674148173605298, 
+        "severity": 0, 
+        "severity_value": 0.2837074086802649, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_distances_log_cp10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k\n  Metric id: trustworthiness\n  Best score: 0.5674148173605298%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_distances_log_cp10k_hvg trustworthiness", 
+        "value": 0.23486662529026897, 
+        "severity": 0, 
+        "severity_value": -0.23486662529026897, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_distances_log_cp10k_hvg performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k_hvg\n  Metric id: trustworthiness\n  Worst score: 0.23486662529026897%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_distances_log_cp10k_hvg trustworthiness", 
+        "value": 0.643931164431485, 
+        "severity": 0, 
+        "severity_value": 0.3219655822157425, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_distances_log_cp10k_hvg performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_distances_log_cp10k_hvg\n  Metric id: trustworthiness\n  Best score: 0.643931164431485%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_neighbors_log_cp10k trustworthiness", 
+        "value": 0.367436457129132, 
+        "severity": 0, 
+        "severity_value": -0.367436457129132, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_neighbors_log_cp10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k\n  Metric id: trustworthiness\n  Worst score: 0.367436457129132%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_neighbors_log_cp10k trustworthiness", 
+        "value": 0.9215596046641045, 
+        "severity": 0, 
+        "severity_value": 0.46077980233205224, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_neighbors_log_cp10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k\n  Metric id: trustworthiness\n  Best score: 0.9215596046641045%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde_neighbors_log_cp10k_hvg trustworthiness", 
+        "value": 0.28100381463496016, 
+        "severity": 0, 
+        "severity_value": -0.28100381463496016, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde_neighbors_log_cp10k_hvg performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k_hvg\n  Metric id: trustworthiness\n  Worst score: 0.28100381463496016%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde_neighbors_log_cp10k_hvg trustworthiness", 
+        "value": 0.90264056260841, 
+        "severity": 0, 
+        "severity_value": 0.451320281304205, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde_neighbors_log_cp10k_hvg performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde_neighbors_log_cp10k_hvg\n  Metric id: trustworthiness\n  Best score: 0.90264056260841%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score random_features trustworthiness", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: trustworthiness\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score random_features trustworthiness", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: trustworthiness\n  Best score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score true_features trustworthiness", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method true_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: trustworthiness\n  Worst score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score true_features trustworthiness", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method true_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: trustworthiness\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score tsne_logCP10k trustworthiness", 
+        "value": 0.4004174554615469, 
+        "severity": 0, 
+        "severity_value": -0.4004174554615469, 
+        "code": "worst_score >= -1", 
+        "message": "Method tsne_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k\n  Metric id: trustworthiness\n  Worst score: 0.4004174554615469%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score tsne_logCP10k trustworthiness", 
+        "value": 0.9310306785601548, 
+        "severity": 0, 
+        "severity_value": 0.4655153392800774, 
+        "code": "best_score <= 2", 
+        "message": "Method tsne_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k\n  Metric id: trustworthiness\n  Best score: 0.9310306785601548%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score tsne_logCP10k_1kHVG trustworthiness", 
+        "value": 0.2992037946496101, 
+        "severity": 0, 
+        "severity_value": -0.2992037946496101, 
+        "code": "worst_score >= -1", 
+        "message": "Method tsne_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k_1kHVG\n  Metric id: trustworthiness\n  Worst score: 0.2992037946496101%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score tsne_logCP10k_1kHVG trustworthiness", 
+        "value": 0.911506331297208, 
+        "severity": 0, 
+        "severity_value": 0.455753165648604, 
+        "code": "best_score <= 2", 
+        "message": "Method tsne_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne_logCP10k_1kHVG\n  Metric id: trustworthiness\n  Best score: 0.911506331297208%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_logCP10k trustworthiness", 
+        "value": 0.2022884876132082, 
+        "severity": 0, 
+        "severity_value": -0.2022884876132082, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k\n  Metric id: trustworthiness\n  Worst score: 0.2022884876132082%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_logCP10k trustworthiness", 
+        "value": 0.9201589414318397, 
+        "severity": 0, 
+        "severity_value": 0.46007947071591987, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k\n  Metric id: trustworthiness\n  Best score: 0.9201589414318397%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_logCP10k_1kHVG trustworthiness", 
+        "value": 0.284432714001388, 
+        "severity": 0, 
+        "severity_value": -0.284432714001388, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k_1kHVG\n  Metric id: trustworthiness\n  Worst score: 0.284432714001388%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_logCP10k_1kHVG trustworthiness", 
+        "value": 0.8836108733642928, 
+        "severity": 0, 
+        "severity_value": 0.4418054366821464, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_logCP10k_1kHVG\n  Metric id: trustworthiness\n  Best score: 0.8836108733642928%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_pca_logCP10k trustworthiness", 
+        "value": 0.38140541016264234, 
+        "severity": 0, 
+        "severity_value": -0.38140541016264234, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_pca_logCP10k performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k\n  Metric id: trustworthiness\n  Worst score: 0.38140541016264234%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_pca_logCP10k trustworthiness", 
+        "value": 0.9215221798797851, 
+        "severity": 0, 
+        "severity_value": 0.46076108993989257, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_pca_logCP10k performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k\n  Metric id: trustworthiness\n  Best score: 0.9215221798797851%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap_pca_logCP10k_1kHVG trustworthiness", 
+        "value": 0.27764510235157885, 
+        "severity": 0, 
+        "severity_value": -0.27764510235157885, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap_pca_logCP10k_1kHVG performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k_1kHVG\n  Metric id: trustworthiness\n  Worst score: 0.27764510235157885%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap_pca_logCP10k_1kHVG trustworthiness", 
+        "value": 0.904420680610382, 
+        "severity": 0, 
+        "severity_value": 0.452210340305191, 
+        "code": "best_score <= 2", 
+        "message": "Method umap_pca_logCP10k_1kHVG performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap_pca_logCP10k_1kHVG\n  Metric id: trustworthiness\n  Best score: 0.904420680610382%\n"
     }
 ]

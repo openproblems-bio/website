@@ -11,7 +11,6 @@ EXPECTED_METRIC_FIELDS = ["task_id", "commit_sha", "metric_id", "metric_name", "
 EXPECTED_DATASET_FIELDS = ["task_id", "commit_sha", "dataset_id", "dataset_name", "dataset_summary", "data_reference"]
 
 
-
 def dump_json(obj, fp):
     """Dump to JSON in a numpy-safe fashion."""
     json.dump(
@@ -267,7 +266,7 @@ def create_quality_control(task_info, dataset_info, method_info, metric_info, re
     return result_qc
 
 def main():
-    benchmark_dir = Path("content/benchmarks")
+    benchmark_dir = Path("results")
 
     task_info_files = benchmark_dir.glob("*/data/task_info.json")
 
@@ -294,7 +293,7 @@ def main():
 
         # write data to files
         with open(task_dest_path / "quality_control.json", "w", encoding="utf8") as file:
-            dump_json(quality_control[:306], file)
+            dump_json(quality_control, file)
 
 if __name__ == "__main__":
     main()
