@@ -1,6 +1,7 @@
 [
     {
         "method_name": "densMAP (logCP10k)",
+        "method_summary": "densMAP is a modification of UMAP that adds an extra cost term in order to preserve information about the relative local density of the data. It is performed on the same inputs as UMAP.",
         "paper_name": "Assessing single-cell transcriptomic variability through density-preserving data visualization",
         "paper_reference": "narayan2021assessing",
         "paper_year": 2021,
@@ -9,11 +10,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "densmap_logCP10k"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "densmap_logCP10k",
+        "method_description": ""
     },
     {
         "method_name": "densMAP (logCP10k, 1kHVG)",
+        "method_summary": "densMAP is a modification of UMAP that adds an extra cost term in order to preserve information about the relative local density of the data. It is performed on the same inputs as UMAP.",
         "paper_name": "Assessing single-cell transcriptomic variability through density-preserving data visualization",
         "paper_reference": "narayan2021assessing",
         "paper_year": 2021,
@@ -22,11 +25,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "densmap_logCP10k_1kHVG"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "densmap_logCP10k_1kHVG",
+        "method_description": ""
     },
     {
         "method_name": "densMAP PCA (logCP10k)",
+        "method_summary": "densMAP is a modification of UMAP that adds an extra cost term in order to preserve information about the relative local density of the data. It is performed on the same inputs as UMAP.",
         "paper_name": "Assessing single-cell transcriptomic variability through density-preserving data visualization",
         "paper_reference": "narayan2021assessing",
         "paper_year": 2021,
@@ -35,11 +40,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "densmap_pca_logCP10k"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "densmap_pca_logCP10k",
+        "method_description": ""
     },
     {
         "method_name": "densMAP PCA (logCP10k, 1kHVG)",
+        "method_summary": "densMAP is a modification of UMAP that adds an extra cost term in order to preserve information about the relative local density of the data. It is performed on the same inputs as UMAP.",
         "paper_name": "Assessing single-cell transcriptomic variability through density-preserving data visualization",
         "paper_reference": "narayan2021assessing",
         "paper_year": 2021,
@@ -48,11 +55,28 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "densmap_pca_logCP10k_1kHVG"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "densmap_pca_logCP10k_1kHVG",
+        "method_description": ""
+    },
+    {
+        "method_name": "Diffusion maps",
+        "method_summary": "Diffusion maps is an affinity-based method that attempts to preserve \"diffusion distances\", or graph random walk distances, by embedding data using the eigenvalue-weighted eigenvectors of the graph Laplacian. Diffusion maps is calculated on the logCPM expression matrix.",
+        "paper_name": "Diffusion maps",
+        "paper_reference": "coifman2006diffusion",
+        "paper_year": 2006,
+        "code_url": "https://github.com/openproblems-bio/openproblems",
+        "image": "openproblems",
+        "is_baseline": false,
+        "code_version": null,
+        "task_id": "dimensionality_reduction",
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "diffusion_map",
+        "method_description": ""
     },
     {
         "method_name": "NeuralEE (CPU) (Default)",
+        "method_summary": "NeuralEE is a neural network implementation of elastic embedding. It is computed on both the recommended input from the package authors of 500 HVGs selected from a logged expression matrix (without sequencing depth scaling) and the default logCPM matrix with 1000 HVGs.",
         "paper_name": "NeuralEE: A GPU-Accelerated Elastic Embedding Dimensionality Reduction Method for Visualizing Large-Scale scRNA-Seq Data",
         "paper_reference": "xiong2020neuralee",
         "paper_year": 2020,
@@ -61,11 +85,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "neuralee_default"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "neuralee_default",
+        "method_description": ""
     },
     {
         "method_name": "NeuralEE (CPU) (logCP10k, 1kHVG)",
+        "method_summary": "NeuralEE is a neural network implementation of elastic embedding. It is computed on both the recommended input from the package authors of 500 HVGs selected from a logged expression matrix (without sequencing depth scaling) and the default logCPM matrix with 1000 HVGs.",
         "paper_name": "NeuralEE: A GPU-Accelerated Elastic Embedding Dimensionality Reduction Method for Visualizing Large-Scale scRNA-Seq Data",
         "paper_reference": "xiong2020neuralee",
         "paper_year": 2020,
@@ -74,11 +100,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "neuralee_logCP10k_1kHVG"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "neuralee_logCP10k_1kHVG",
+        "method_description": ""
     },
     {
         "method_name": "Principle Component Analysis (PCA) (logCP10k)",
+        "method_summary": "PCA is a linear dimensionality reduction using singular value decomposition of the data to project it to a lower dimensional space. We select only the first two principal components as the two-dimensional embedding. PCA is calculated on the logCPM expression matrix with and without selecting 1000 HVGs.",
         "paper_name": "On lines and planes of closest fit to systems of points in space",
         "paper_reference": "pearson1901pca",
         "paper_year": 1901,
@@ -87,11 +115,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "pca_logCP10k"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "pca_logCP10k",
+        "method_description": ""
     },
     {
         "method_name": "Principle Component Analysis (PCA) (logCP10k, 1kHVG)",
+        "method_summary": "PCA is a linear dimensionality reduction using singular value decomposition of the data to project it to a lower dimensional space. We select only the first two principal components as the two-dimensional embedding. PCA is calculated on the logCPM expression matrix with and without selecting 1000 HVGs.",
         "paper_name": "On lines and planes of closest fit to systems of points in space",
         "paper_reference": "pearson1901pca",
         "paper_year": 1901,
@@ -100,11 +130,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "pca_logCP10k_1kHVG"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "pca_logCP10k_1kHVG",
+        "method_description": ""
     },
     {
         "method_name": "PHATE (default)",
+        "method_summary": "PHATE or \u201cPotential of Heat-diffusion for Affinity-based Transition Embedding\u201d is an affinity-based method that attempts to preserve trajectories in a dataset via a diffusion process. We evaluate several variants including using the recommended square-root transformed CPM matrix as input, this input with the gamma parameter set to zero and the normal logCPM transformed matrix with and without HVG selection.",
         "paper_name": "Visualizing Structure and Transitions in High-Dimensional Biological Data",
         "paper_reference": "moon2019visualizing",
         "paper_year": 2019,
@@ -113,11 +145,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "phate_default"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "phate_default",
+        "method_description": ""
     },
     {
         "method_name": "PHATE (logCP10k, 1kHVG)",
+        "method_summary": "PHATE or \u201cPotential of Heat-diffusion for Affinity-based Transition Embedding\u201d is an affinity-based method that attempts to preserve trajectories in a dataset via a diffusion process. We evaluate several variants including using the recommended square-root transformed CPM matrix as input, this input with the gamma parameter set to zero and the normal logCPM transformed matrix with and without HVG selection.",
         "paper_name": "Visualizing Structure and Transitions in High-Dimensional Biological Data",
         "paper_reference": "moon2019visualizing",
         "paper_year": 2019,
@@ -126,11 +160,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "phate_logCP10k"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "phate_logCP10k",
+        "method_description": ""
     },
     {
         "method_name": "PHATE (logCP10k)",
+        "method_summary": "PHATE or \u201cPotential of Heat-diffusion for Affinity-based Transition Embedding\u201d is an affinity-based method that attempts to preserve trajectories in a dataset via a diffusion process. We evaluate several variants including using the recommended square-root transformed CPM matrix as input, this input with the gamma parameter set to zero and the normal logCPM transformed matrix with and without HVG selection.",
         "paper_name": "Visualizing Structure and Transitions in High-Dimensional Biological Data",
         "paper_reference": "moon2019visualizing",
         "paper_year": 2019,
@@ -139,11 +175,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "phate_logCP10k_1kHVG"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "phate_logCP10k_1kHVG",
+        "method_description": ""
     },
     {
         "method_name": "PHATE (gamma=0)",
+        "method_summary": "PHATE or \u201cPotential of Heat-diffusion for Affinity-based Transition Embedding\u201d is an affinity-based method that attempts to preserve trajectories in a dataset via a diffusion process. We evaluate several variants including using the recommended square-root transformed CPM matrix as input, this input with the gamma parameter set to zero and the normal logCPM transformed matrix with and without HVG selection.",
         "paper_name": "Visualizing Structure and Transitions in High-Dimensional Biological Data",
         "paper_reference": "moon2019visualizing",
         "paper_year": 2019,
@@ -152,11 +190,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "phate_sqrt"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "phate_sqrt",
+        "method_description": ""
     },
     {
         "method_name": "PyMDE Preserve Distances (logCP10k)",
+        "method_summary": "PyMDE is a Python implementation of minimum-distortion embedding. It is computed with options to preserve distances between cells or neighbourhoods and with the logCPM matrix with and without HVG selection as input.",
         "paper_name": "Minimum-Distortion Embedding",
         "paper_reference": "agrawal2021mde",
         "paper_year": 2021,
@@ -165,11 +205,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "pymde_distances_log_cp10k"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "pymde_distances_log_cp10k",
+        "method_description": ""
     },
     {
         "method_name": "PyMDE Preserve Distances (logCP10k, 1kHVG)",
+        "method_summary": "PyMDE is a Python implementation of minimum-distortion embedding. It is computed with options to preserve distances between cells or neighbourhoods and with the logCPM matrix with and without HVG selection as input.",
         "paper_name": "Minimum-Distortion Embedding",
         "paper_reference": "agrawal2021mde",
         "paper_year": 2021,
@@ -178,11 +220,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "pymde_distances_log_cp10k_hvg"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "pymde_distances_log_cp10k_hvg",
+        "method_description": ""
     },
     {
         "method_name": "PyMDE Preserve Neighbors (logCP10k)",
+        "method_summary": "PyMDE is a Python implementation of minimum-distortion embedding. It is computed with options to preserve distances between cells or neighbourhoods and with the logCPM matrix with and without HVG selection as input.",
         "paper_name": "Minimum-Distortion Embedding",
         "paper_reference": "agrawal2021mde",
         "paper_year": 2021,
@@ -191,11 +235,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "pymde_neighbors_log_cp10k"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "pymde_neighbors_log_cp10k",
+        "method_description": ""
     },
     {
         "method_name": "PyMDE Preserve Neighbors (logCP10k, 1kHVG)",
+        "method_summary": "PyMDE is a Python implementation of minimum-distortion embedding. It is computed with options to preserve distances between cells or neighbourhoods and with the logCPM matrix with and without HVG selection as input.",
         "paper_name": "Minimum-Distortion Embedding",
         "paper_reference": "agrawal2021mde",
         "paper_year": 2021,
@@ -204,11 +250,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "pymde_neighbors_log_cp10k_hvg"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "pymde_neighbors_log_cp10k_hvg",
+        "method_description": ""
     },
     {
         "method_name": "Random Features",
+        "method_summary": "Randomly generated two-dimensional coordinates from a normal distribution.",
         "paper_name": "Open Problems for Single Cell Analysis",
         "paper_reference": "openproblems",
         "paper_year": 2022,
@@ -217,11 +265,28 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "random_features"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "random_features",
+        "method_description": ""
+    },
+    {
+        "method_name": "Spectral Features",
+        "method_summary": "TODO",
+        "paper_name": "Open Problems for Single Cell Analysis",
+        "paper_reference": "openproblems",
+        "paper_year": 2022,
+        "code_url": "https://github.com/openproblems-bio/openproblems",
+        "image": "openproblems",
+        "is_baseline": true,
+        "code_version": null,
+        "task_id": "dimensionality_reduction",
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "spectral_features",
+        "method_description": ""
     },
     {
         "method_name": "True Features",
+        "method_summary": "Use of the original feature inputs as the 'embedding'.",
         "paper_name": "Open Problems for Single Cell Analysis",
         "paper_reference": "openproblems",
         "paper_year": 2022,
@@ -230,37 +295,13 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "true_features"
-    },
-    {
-        "method_name": "True Features (logCP10k)",
-        "paper_name": "Open Problems for Single Cell Analysis",
-        "paper_reference": "openproblems",
-        "paper_year": 2022,
-        "code_url": "https://github.com/openproblems-bio/openproblems",
-        "image": "openproblems",
-        "is_baseline": true,
-        "code_version": null,
-        "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "true_features_log_cp10k"
-    },
-    {
-        "method_name": "True Features (logCP10k, 1kHVG)",
-        "paper_name": "Open Problems for Single Cell Analysis",
-        "paper_reference": "openproblems",
-        "paper_year": 2022,
-        "code_url": "https://github.com/openproblems-bio/openproblems",
-        "image": "openproblems",
-        "is_baseline": true,
-        "code_version": null,
-        "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "true_features_log_cp10k_hvg"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "true_features",
+        "method_description": ""
     },
     {
         "method_name": "t-Distributed Stochastic Neighbor Embedding (t-SNE) (logCP10k)",
+        "method_summary": "t-SNE or t-distributed Stochastic Neighbor Embedding converts similarities between data points to joint probabilities and tries to minimize the Kullback-Leibler divergence between the joint probabilities of the low-dimensional embedding and the high-dimensional data. We use the implementation in the scanpy package with the result of PCA on the logCPM expression matrix (with and without HVG selection).",
         "paper_name": "Visualizing Data using t-SNE",
         "paper_reference": "vandermaaten2008visualizing",
         "paper_year": 2008,
@@ -269,11 +310,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "tsne_logCP10k"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "tsne_logCP10k",
+        "method_description": ""
     },
     {
         "method_name": "t-Distributed Stochastic Neighbor Embedding (t-SNE) (logCP10k, 1kHVG)",
+        "method_summary": "t-SNE or t-distributed Stochastic Neighbor Embedding converts similarities between data points to joint probabilities and tries to minimize the Kullback-Leibler divergence between the joint probabilities of the low-dimensional embedding and the high-dimensional data. We use the implementation in the scanpy package with the result of PCA on the logCPM expression matrix (with and without HVG selection).",
         "paper_name": "Visualizing Data using t-SNE",
         "paper_reference": "vandermaaten2008visualizing",
         "paper_year": 2008,
@@ -282,11 +325,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "tsne_logCP10k_1kHVG"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "tsne_logCP10k_1kHVG",
+        "method_description": ""
     },
     {
         "method_name": "UMAP (logCP10k)",
+        "method_summary": "UMAP or Uniform Manifold Approximation and Projection is an algorithm for dimension reduction based on manifold learning techniques and ideas from topological data analysis. We perform UMAP on the logCPM expression matrix before and after HVG selection and with and without PCA as a pre-processing step.",
         "paper_name": "UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction",
         "paper_reference": "mcinnes2018umap",
         "paper_year": 2018,
@@ -295,11 +340,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "umap_logCP10k"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "umap_logCP10k",
+        "method_description": ""
     },
     {
         "method_name": "UMAP (logCP10k, 1kHVG)",
+        "method_summary": "UMAP or Uniform Manifold Approximation and Projection is an algorithm for dimension reduction based on manifold learning techniques and ideas from topological data analysis. We perform UMAP on the logCPM expression matrix before and after HVG selection and with and without PCA as a pre-processing step.",
         "paper_name": "UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction",
         "paper_reference": "mcinnes2018umap",
         "paper_year": 2018,
@@ -308,11 +355,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "umap_logCP10k_1kHVG"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "umap_logCP10k_1kHVG",
+        "method_description": ""
     },
     {
         "method_name": "UMAP PCA (logCP10k)",
+        "method_summary": "UMAP or Uniform Manifold Approximation and Projection is an algorithm for dimension reduction based on manifold learning techniques and ideas from topological data analysis. We perform UMAP on the logCPM expression matrix before and after HVG selection and with and without PCA as a pre-processing step.",
         "paper_name": "UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction",
         "paper_reference": "mcinnes2018umap",
         "paper_year": 2018,
@@ -321,11 +370,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "umap_pca_logCP10k"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "umap_pca_logCP10k",
+        "method_description": ""
     },
     {
         "method_name": "UMAP PCA (logCP10k, 1kHVG)",
+        "method_summary": "UMAP or Uniform Manifold Approximation and Projection is an algorithm for dimension reduction based on manifold learning techniques and ideas from topological data analysis. We perform UMAP on the logCPM expression matrix before and after HVG selection and with and without PCA as a pre-processing step.",
         "paper_name": "UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction",
         "paper_reference": "mcinnes2018umap",
         "paper_year": 2018,
@@ -334,7 +385,8 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "method_id": "umap_pca_logCP10k_1kHVG"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "method_id": "umap_pca_logCP10k_1kHVG",
+        "method_description": ""
     }
 ]

@@ -1,20 +1,24 @@
 [
     {
         "metric_name": "Mean-squared error",
+        "metric_summary": "The mean squared error between the denoised counts of the training dataset and the true counts of the test dataset after reweighting by the train/test ratio.",
         "paper_reference": "batson2019molecular",
         "maximize": false,
         "image": "openproblems",
         "task_id": "denoising",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "metric_id": "mse"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "metric_id": "mse",
+        "metric_description": ""
     },
     {
         "metric_name": "Poisson loss",
+        "metric_summary": "The Poisson log likelihood of observing the true counts of the test dataset given the distribution given in the denoised dataset.",
         "paper_reference": "batson2019molecular",
         "maximize": false,
         "image": "openproblems-python-pytorch",
         "task_id": "denoising",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "metric_id": "poisson"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "metric_id": "poisson",
+        "metric_description": ""
     }
 ]

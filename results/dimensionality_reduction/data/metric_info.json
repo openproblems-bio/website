@@ -1,92 +1,112 @@
 [
     {
         "metric_name": "continuity",
+        "metric_summary": "Continuity measures error of hard extrusions based on nearest neighbor coranking",
         "paper_reference": "zhang2021pydrmetrics",
         "maximize": true,
         "image": "openproblems",
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "metric_id": "continuity"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "metric_id": "continuity",
+        "metric_description": ""
     },
     {
-        "metric_name": "density preservation",
+        "metric_name": "Density preservation",
+        "metric_summary": "Similarity between local densities in the high-dimensional data and the reduced data.",
         "paper_reference": "narayan2021assessing",
         "maximize": true,
-        "image": "openproblems-python-extras",
+        "image": "openproblems",
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "metric_id": "density_preservation"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "metric_id": "density_preservation",
+        "metric_description": ""
     },
     {
         "metric_name": "Distance correlation",
+        "metric_summary": "Spearman correlation between all pairwise Euclidean distances in the original and dimension-reduced data",
         "paper_reference": "schober2018correlation",
         "maximize": true,
         "image": "openproblems",
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "metric_id": "distance_correlation"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "metric_id": "distance_correlation",
+        "metric_description": ""
     },
     {
         "metric_name": "Distance correlation (spectral)",
+        "metric_summary": "Spearman correlation between all pairwise diffusion distances in the original and dimension-reduced data",
         "paper_reference": "coifman2006diffusion",
         "maximize": true,
         "image": "openproblems",
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "metric_id": "distance_correlation_spectral"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "metric_id": "distance_correlation_spectral",
+        "metric_description": ""
     },
     {
         "metric_name": "local continuity meta criterion",
+        "metric_summary": "The local continuity meta criterion is the co-KNN size with baseline removal which favors locality",
         "paper_reference": "zhang2021pydrmetrics",
         "maximize": true,
         "image": "openproblems",
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "metric_id": "lcmc"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "metric_id": "lcmc",
+        "metric_description": ""
     },
     {
         "metric_name": "global property",
+        "metric_summary": "The global property metric is a summary of the global co-KNN",
         "paper_reference": "zhang2021pydrmetrics",
         "maximize": true,
         "image": "openproblems",
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "metric_id": "qglobal"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "metric_id": "qglobal",
+        "metric_description": ""
     },
     {
         "metric_name": "local property",
+        "metric_summary": "The local property metric is a summary of the local co-KNN",
         "paper_reference": "zhang2021pydrmetrics",
         "maximize": true,
         "image": "openproblems",
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "metric_id": "qlocal"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "metric_id": "qlocal",
+        "metric_description": ""
     },
     {
         "metric_name": "co-KNN size",
+        "metric_summary": "co-KNN size counts how many points are in both k-nearest neighbors before and after the dimensionality reduction",
         "paper_reference": "zhang2021pydrmetrics",
         "maximize": true,
         "image": "openproblems",
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "metric_id": "qnn"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "metric_id": "qnn",
+        "metric_description": ""
     },
     {
         "metric_name": "co-KNN AUC",
+        "metric_summary": "co-KNN AUC is area under the co-KNN curve",
         "paper_reference": "zhang2021pydrmetrics",
         "maximize": true,
         "image": "openproblems",
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "metric_id": "qnn_auc"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "metric_id": "qnn_auc",
+        "metric_description": ""
     },
     {
         "metric_name": "trustworthiness",
+        "metric_summary": "a measurement of similarity between the rank of each point's nearest neighbors in the high-dimensional data and the reduced data.",
         "paper_reference": "venna2001neighborhood",
         "maximize": true,
         "image": "openproblems",
         "task_id": "dimensionality_reduction",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
-        "metric_id": "trustworthiness"
+        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
+        "metric_id": "trustworthiness",
+        "metric_description": ""
     }
 ]
