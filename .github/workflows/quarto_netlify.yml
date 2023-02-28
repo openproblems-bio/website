@@ -75,4 +75,19 @@ jobs:
           authToken: ${{ secrets.GITHUB_TOKEN }}
           context: Netlify preview
           state: success
-          target_url: https://${{ env.BRANCH_NAME }}--openproblems-experimental.netlify.app
+          target_url: ${{ steps.deploy_preview.outputs.NETLIFY_PREVIEW_URL }}
+
+      - uses: thollander/actions-comment-pull-request@v2
+        if: github.event_name == 'pull_request'
+        with:
+          message: |
+            [![Deploy: success](https://img.shields.io/badge/Deploy-success-success)](${{ env.NETLIFY_PREVIEW_URL }})
+          comment_tag: deploy_status
+
+      - uses: thollander/actions-comment-pull-request@v2
+        if: github.event_name == 'pull_request' && failure()
+        with:
+          message: |
+            [![Deploy: failure](https://img.shields.io/badge/Deploy-failure-critical)](${{ env.NETLIFY_LOGS_URL }})
+          comment_tag: deploy_status
+
