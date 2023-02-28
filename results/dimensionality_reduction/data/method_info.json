@@ -10,9 +10,8 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "densmap_logCP10k",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "densmap_logCP10k"
     },
     {
         "method_name": "densMAP (logCP10k, 1kHVG)",
@@ -25,9 +24,8 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "densmap_logCP10k_1kHVG",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "densmap_logCP10k_1kHVG"
     },
     {
         "method_name": "densMAP PCA (logCP10k)",
@@ -40,9 +38,8 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "densmap_pca_logCP10k",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "densmap_pca_logCP10k"
     },
     {
         "method_name": "densMAP PCA (logCP10k, 1kHVG)",
@@ -55,13 +52,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "densmap_pca_logCP10k_1kHVG",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "densmap_pca_logCP10k_1kHVG"
     },
     {
         "method_name": "Diffusion maps",
-        "method_summary": "Diffusion maps is an affinity-based method that attempts to preserve \"diffusion distances\", or graph random walk distances, by embedding data using the eigenvalue-weighted eigenvectors of the graph Laplacian. Diffusion maps is calculated on the logCPM expression matrix.",
+        "method_summary": "Diffusion maps uses an affinity matrix to describe the similarity between data points, which is then transformed into a graph Laplacian. The eigenvalue-weighted eigenvectors of the graph Laplacian are then used to create the embedding. Diffusion maps is calculated on the logCPM expression matrix.",
         "paper_name": "Diffusion maps",
         "paper_reference": "coifman2006diffusion",
         "paper_year": 2006,
@@ -70,13 +66,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "diffusion_map",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "diffusion_map"
     },
     {
         "method_name": "NeuralEE (CPU) (Default)",
-        "method_summary": "NeuralEE is a neural network implementation of elastic embedding. It is computed on both the recommended input from the package authors of 500 HVGs selected from a logged expression matrix (without sequencing depth scaling) and the default logCPM matrix with 1000 HVGs.",
+        "method_summary": "NeuralEE is a neural network implementation of elastic embedding. It is a non-linear method that preserves pairwise distances between data points. NeuralEE uses a neural network to optimize an objective function that measures the difference between pairwise distances in the original high-dimensional space and the two-dimensional space. It is computed on both the recommended input from the package authors of 500 HVGs selected from a logged expression matrix (without sequencing depth scaling) and the default logCPM matrix with 1000 HVGs.",
         "paper_name": "NeuralEE: A GPU-Accelerated Elastic Embedding Dimensionality Reduction Method for Visualizing Large-Scale scRNA-Seq Data",
         "paper_reference": "xiong2020neuralee",
         "paper_year": 2020,
@@ -85,13 +80,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "neuralee_default",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "neuralee_default"
     },
     {
         "method_name": "NeuralEE (CPU) (logCP10k, 1kHVG)",
-        "method_summary": "NeuralEE is a neural network implementation of elastic embedding. It is computed on both the recommended input from the package authors of 500 HVGs selected from a logged expression matrix (without sequencing depth scaling) and the default logCPM matrix with 1000 HVGs.",
+        "method_summary": "NeuralEE is a neural network implementation of elastic embedding. It is a non-linear method that preserves pairwise distances between data points. NeuralEE uses a neural network to optimize an objective function that measures the difference between pairwise distances in the original high-dimensional space and the two-dimensional space. It is computed on both the recommended input from the package authors of 500 HVGs selected from a logged expression matrix (without sequencing depth scaling) and the default logCPM matrix with 1000 HVGs.",
         "paper_name": "NeuralEE: A GPU-Accelerated Elastic Embedding Dimensionality Reduction Method for Visualizing Large-Scale scRNA-Seq Data",
         "paper_reference": "xiong2020neuralee",
         "paper_year": 2020,
@@ -100,13 +94,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "neuralee_logCP10k_1kHVG",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "neuralee_logCP10k_1kHVG"
     },
     {
         "method_name": "Principle Component Analysis (PCA) (logCP10k)",
-        "method_summary": "PCA is a linear dimensionality reduction using singular value decomposition of the data to project it to a lower dimensional space. We select only the first two principal components as the two-dimensional embedding. PCA is calculated on the logCPM expression matrix with and without selecting 1000 HVGs.",
+        "method_summary": "PCA or \"Principal Component Analysis\" is a linear method that finds orthogonal directions in the data that capture the most variance. The first two principal components are chosen as the two-dimensional embedding. We select only the first two principal components as the two-dimensional embedding. PCA is calculated on the logCPM expression matrix with and without selecting 1000 HVGs.",
         "paper_name": "On lines and planes of closest fit to systems of points in space",
         "paper_reference": "pearson1901pca",
         "paper_year": 1901,
@@ -115,13 +108,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "pca_logCP10k",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "pca_logCP10k"
     },
     {
         "method_name": "Principle Component Analysis (PCA) (logCP10k, 1kHVG)",
-        "method_summary": "PCA is a linear dimensionality reduction using singular value decomposition of the data to project it to a lower dimensional space. We select only the first two principal components as the two-dimensional embedding. PCA is calculated on the logCPM expression matrix with and without selecting 1000 HVGs.",
+        "method_summary": "PCA or \"Principal Component Analysis\" is a linear method that finds orthogonal directions in the data that capture the most variance. The first two principal components are chosen as the two-dimensional embedding. We select only the first two principal components as the two-dimensional embedding. PCA is calculated on the logCPM expression matrix with and without selecting 1000 HVGs.",
         "paper_name": "On lines and planes of closest fit to systems of points in space",
         "paper_reference": "pearson1901pca",
         "paper_year": 1901,
@@ -130,13 +122,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "pca_logCP10k_1kHVG",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "pca_logCP10k_1kHVG"
     },
     {
         "method_name": "PHATE (default)",
-        "method_summary": "PHATE or \u201cPotential of Heat-diffusion for Affinity-based Transition Embedding\u201d is an affinity-based method that attempts to preserve trajectories in a dataset via a diffusion process. We evaluate several variants including using the recommended square-root transformed CPM matrix as input, this input with the gamma parameter set to zero and the normal logCPM transformed matrix with and without HVG selection.",
+        "method_summary": "PHATE or \u201cPotential of Heat - diffusion for Affinity - based Transition Embedding\u201d uses the potential of heat diffusion to preserve trajectories in a dataset via a diffusion process. It is an affinity - based method that creates an embedding by finding the dominant eigenvalues of a Markov transition matrix. We evaluate several variants including using the recommended square - root transformed CPM matrix as input, this input with the gamma parameter set to zero and the normal logCPM transformed matrix with and without HVG selection.",
         "paper_name": "Visualizing Structure and Transitions in High-Dimensional Biological Data",
         "paper_reference": "moon2019visualizing",
         "paper_year": 2019,
@@ -145,13 +136,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "phate_default",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "phate_default"
     },
     {
         "method_name": "PHATE (logCP10k, 1kHVG)",
-        "method_summary": "PHATE or \u201cPotential of Heat-diffusion for Affinity-based Transition Embedding\u201d is an affinity-based method that attempts to preserve trajectories in a dataset via a diffusion process. We evaluate several variants including using the recommended square-root transformed CPM matrix as input, this input with the gamma parameter set to zero and the normal logCPM transformed matrix with and without HVG selection.",
+        "method_summary": "PHATE or \u201cPotential of Heat - diffusion for Affinity - based Transition Embedding\u201d uses the potential of heat diffusion to preserve trajectories in a dataset via a diffusion process. It is an affinity - based method that creates an embedding by finding the dominant eigenvalues of a Markov transition matrix. We evaluate several variants including using the recommended square - root transformed CPM matrix as input, this input with the gamma parameter set to zero and the normal logCPM transformed matrix with and without HVG selection.",
         "paper_name": "Visualizing Structure and Transitions in High-Dimensional Biological Data",
         "paper_reference": "moon2019visualizing",
         "paper_year": 2019,
@@ -160,13 +150,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "phate_logCP10k",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "phate_logCP10k"
     },
     {
         "method_name": "PHATE (logCP10k)",
-        "method_summary": "PHATE or \u201cPotential of Heat-diffusion for Affinity-based Transition Embedding\u201d is an affinity-based method that attempts to preserve trajectories in a dataset via a diffusion process. We evaluate several variants including using the recommended square-root transformed CPM matrix as input, this input with the gamma parameter set to zero and the normal logCPM transformed matrix with and without HVG selection.",
+        "method_summary": "PHATE or \u201cPotential of Heat - diffusion for Affinity - based Transition Embedding\u201d uses the potential of heat diffusion to preserve trajectories in a dataset via a diffusion process. It is an affinity - based method that creates an embedding by finding the dominant eigenvalues of a Markov transition matrix. We evaluate several variants including using the recommended square - root transformed CPM matrix as input, this input with the gamma parameter set to zero and the normal logCPM transformed matrix with and without HVG selection.",
         "paper_name": "Visualizing Structure and Transitions in High-Dimensional Biological Data",
         "paper_reference": "moon2019visualizing",
         "paper_year": 2019,
@@ -175,13 +164,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "phate_logCP10k_1kHVG",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "phate_logCP10k_1kHVG"
     },
     {
         "method_name": "PHATE (gamma=0)",
-        "method_summary": "PHATE or \u201cPotential of Heat-diffusion for Affinity-based Transition Embedding\u201d is an affinity-based method that attempts to preserve trajectories in a dataset via a diffusion process. We evaluate several variants including using the recommended square-root transformed CPM matrix as input, this input with the gamma parameter set to zero and the normal logCPM transformed matrix with and without HVG selection.",
+        "method_summary": "PHATE or \u201cPotential of Heat - diffusion for Affinity - based Transition Embedding\u201d uses the potential of heat diffusion to preserve trajectories in a dataset via a diffusion process. It is an affinity - based method that creates an embedding by finding the dominant eigenvalues of a Markov transition matrix. We evaluate several variants including using the recommended square - root transformed CPM matrix as input, this input with the gamma parameter set to zero and the normal logCPM transformed matrix with and without HVG selection.",
         "paper_name": "Visualizing Structure and Transitions in High-Dimensional Biological Data",
         "paper_reference": "moon2019visualizing",
         "paper_year": 2019,
@@ -190,13 +178,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "phate_sqrt",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "phate_sqrt"
     },
     {
         "method_name": "PyMDE Preserve Distances (logCP10k)",
-        "method_summary": "PyMDE is a Python implementation of minimum-distortion embedding. It is computed with options to preserve distances between cells or neighbourhoods and with the logCPM matrix with and without HVG selection as input.",
+        "method_summary": "PyMDE is a Python implementation of minimum-distortion embedding. It is a non-linear method that preserves distances between cells or neighborhoods in the high-dimensional space. It is computed with options to preserve distances between cells or neighbourhoods and with the logCPM matrix with and without HVG selection as input.",
         "paper_name": "Minimum-Distortion Embedding",
         "paper_reference": "agrawal2021mde",
         "paper_year": 2021,
@@ -205,13 +192,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "pymde_distances_log_cp10k",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "pymde_distances_log_cp10k"
     },
     {
         "method_name": "PyMDE Preserve Distances (logCP10k, 1kHVG)",
-        "method_summary": "PyMDE is a Python implementation of minimum-distortion embedding. It is computed with options to preserve distances between cells or neighbourhoods and with the logCPM matrix with and without HVG selection as input.",
+        "method_summary": "PyMDE is a Python implementation of minimum-distortion embedding. It is a non-linear method that preserves distances between cells or neighborhoods in the high-dimensional space. It is computed with options to preserve distances between cells or neighbourhoods and with the logCPM matrix with and without HVG selection as input.",
         "paper_name": "Minimum-Distortion Embedding",
         "paper_reference": "agrawal2021mde",
         "paper_year": 2021,
@@ -220,13 +206,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "pymde_distances_log_cp10k_hvg",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "pymde_distances_log_cp10k_hvg"
     },
     {
         "method_name": "PyMDE Preserve Neighbors (logCP10k)",
-        "method_summary": "PyMDE is a Python implementation of minimum-distortion embedding. It is computed with options to preserve distances between cells or neighbourhoods and with the logCPM matrix with and without HVG selection as input.",
+        "method_summary": "PyMDE is a Python implementation of minimum-distortion embedding. It is a non-linear method that preserves distances between cells or neighborhoods in the high-dimensional space. It is computed with options to preserve distances between cells or neighbourhoods and with the logCPM matrix with and without HVG selection as input.",
         "paper_name": "Minimum-Distortion Embedding",
         "paper_reference": "agrawal2021mde",
         "paper_year": 2021,
@@ -235,13 +220,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "pymde_neighbors_log_cp10k",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "pymde_neighbors_log_cp10k"
     },
     {
         "method_name": "PyMDE Preserve Neighbors (logCP10k, 1kHVG)",
-        "method_summary": "PyMDE is a Python implementation of minimum-distortion embedding. It is computed with options to preserve distances between cells or neighbourhoods and with the logCPM matrix with and without HVG selection as input.",
+        "method_summary": "PyMDE is a Python implementation of minimum-distortion embedding. It is a non-linear method that preserves distances between cells or neighborhoods in the high-dimensional space. It is computed with options to preserve distances between cells or neighbourhoods and with the logCPM matrix with and without HVG selection as input.",
         "paper_name": "Minimum-Distortion Embedding",
         "paper_reference": "agrawal2021mde",
         "paper_year": 2021,
@@ -250,9 +234,8 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "pymde_neighbors_log_cp10k_hvg",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "pymde_neighbors_log_cp10k_hvg"
     },
     {
         "method_name": "Random Features",
@@ -265,13 +248,12 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "random_features",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "random_features"
     },
     {
         "method_name": "Spectral Features",
-        "method_summary": "TODO",
+        "method_summary": "Use 1000-dimensional diffusions maps as an embedding",
         "paper_name": "Open Problems for Single Cell Analysis",
         "paper_reference": "openproblems",
         "paper_year": 2022,
@@ -280,9 +262,8 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "spectral_features",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "spectral_features"
     },
     {
         "method_name": "True Features",
@@ -295,9 +276,8 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "true_features",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "true_features"
     },
     {
         "method_name": "t-Distributed Stochastic Neighbor Embedding (t-SNE) (logCP10k)",
@@ -310,9 +290,8 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "tsne_logCP10k",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "tsne_logCP10k"
     },
     {
         "method_name": "t-Distributed Stochastic Neighbor Embedding (t-SNE) (logCP10k, 1kHVG)",
@@ -325,9 +304,8 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "tsne_logCP10k_1kHVG",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "tsne_logCP10k_1kHVG"
     },
     {
         "method_name": "UMAP (logCP10k)",
@@ -340,9 +318,8 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "umap_logCP10k",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "umap_logCP10k"
     },
     {
         "method_name": "UMAP (logCP10k, 1kHVG)",
@@ -355,9 +332,8 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "umap_logCP10k_1kHVG",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "umap_logCP10k_1kHVG"
     },
     {
         "method_name": "UMAP PCA (logCP10k)",
@@ -370,9 +346,8 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "umap_pca_logCP10k",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "umap_pca_logCP10k"
     },
     {
         "method_name": "UMAP PCA (logCP10k, 1kHVG)",
@@ -385,8 +360,7 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "60444e75411e346d7b2673fac484f43fbadaf061",
-        "method_id": "umap_pca_logCP10k_1kHVG",
-        "method_description": ""
+        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "method_id": "umap_pca_logCP10k_1kHVG"
     }
 ]
