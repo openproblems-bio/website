@@ -1,0 +1,51 @@
+name: Render website
+on:
+  push:
+    branches:
+    - '**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+      - uses: quarto-dev/quarto-actions/setup
+
+      - uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.110.0'
+
+      - uses: quarto-dev/quarto-actions/render
+
+      - name: Build
+        run: hugo --gc --minify
+
+      - name: Commit files
+        if: startsWith(github.ref, 'refs/heads')
+        run: |
+          if [[ `git status --porcelain` ]]; then
+            git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git config --local user.name "github-actions[bot]"
+            git add .
+            git commit -m "quarto render && hugo --minify"
+          fi
+        shell: bash -e {0}
+
+      - name: Push changes
+        if: startsWith(github.ref, 'refs/heads')
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
