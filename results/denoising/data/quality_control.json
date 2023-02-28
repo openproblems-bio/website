@@ -253,31 +253,31 @@
         "task_id": "denoising", 
         "category": "Raw data", 
         "name": "Number of results", 
-        "value": 33, 
+        "value": 39, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": -1.8181818181818188, 
         "code": "len(results) == len(method_info) * len(metric_info) * len(dataset_info)", 
-        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: denoising\n  Number of results: 33\n  Number of methods: 11\n  Number of metrics: 2\n  Number of datasets: 3\n"
+        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: denoising\n  Number of results: 39\n  Number of methods: 11\n  Number of metrics: 2\n  Number of datasets: 3\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Raw results", 
         "name": "Metric 'mse' %missing", 
-        "value": 0.0, 
+        "value": -0.18181818181818188, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": -1.8181818181818188, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  Metric id: mse\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  Metric id: mse\n  Percentage missing: -18%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Raw results", 
         "name": "Metric 'poisson' %missing", 
-        "value": 0.0, 
+        "value": -0.18181818181818188, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": -1.8181818181818188, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  Metric id: poisson\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  Metric id: poisson\n  Percentage missing: -18%\n"
     }, 
     {
         "task_id": "denoising", 
@@ -393,111 +393,111 @@
         "task_id": "denoising", 
         "category": "Raw results", 
         "name": "Dataset 'pancreas' %missing", 
-        "value": 0.0, 
+        "value": -0.18181818181818188, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": -1.8181818181818188, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: pancreas\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: pancreas\n  Percentage missing: -18%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Raw results", 
         "name": "Dataset 'pbmc' %missing", 
-        "value": 0.0, 
+        "value": -0.18181818181818188, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": -1.8181818181818188, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: pbmc\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: pbmc\n  Percentage missing: -18%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Raw results", 
         "name": "Dataset 'tabula_muris_senis_lung_random' %missing", 
-        "value": 0.0, 
+        "value": -0.18181818181818188, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": -1.8181818181818188, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: tabula_muris_senis_lung_random\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: tabula_muris_senis_lung_random\n  Percentage missing: -18%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Worst score alra_log mse", 
-        "value": -0.08834819573179065, 
+        "value": -0.08824883049777621, 
         "severity": 0, 
-        "severity_value": 0.08834819573179065, 
+        "severity_value": 0.08824883049777621, 
         "code": "worst_score >= -1", 
-        "message": "Method alra_log performs much worse than baselines.\n  Task id: denoising\n  Method id: alra_log\n  Metric id: mse\n  Worst score: -0.08834819573179065%\n"
+        "message": "Method alra_log performs much worse than baselines.\n  Task id: denoising\n  Method id: alra_log\n  Metric id: mse\n  Worst score: -0.08824883049777621%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score alra_log mse", 
-        "value": -0.043307320532413485, 
+        "value": -0.0432249510912992, 
         "severity": 0, 
-        "severity_value": -0.021653660266206742, 
+        "severity_value": -0.0216124755456496, 
         "code": "best_score <= 2", 
-        "message": "Method alra_log performs a lot better than baselines.\n  Task id: denoising\n  Method id: alra_log\n  Metric id: mse\n  Best score: -0.043307320532413485%\n"
+        "message": "Method alra_log performs a lot better than baselines.\n  Task id: denoising\n  Method id: alra_log\n  Metric id: mse\n  Best score: -0.0432249510912992%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Worst score alra_sqrt mse", 
-        "value": -0.041030368146266705, 
+        "value": -0.04036796164907197, 
         "severity": 0, 
-        "severity_value": 0.041030368146266705, 
+        "severity_value": 0.04036796164907197, 
         "code": "worst_score >= -1", 
-        "message": "Method alra_sqrt performs much worse than baselines.\n  Task id: denoising\n  Method id: alra_sqrt\n  Metric id: mse\n  Worst score: -0.041030368146266705%\n"
+        "message": "Method alra_sqrt performs much worse than baselines.\n  Task id: denoising\n  Method id: alra_sqrt\n  Metric id: mse\n  Worst score: -0.04036796164907197%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score alra_sqrt mse", 
-        "value": 0.02799261981616863, 
+        "value": 0.027482608312493717, 
         "severity": 0, 
-        "severity_value": 0.013996309908084315, 
+        "severity_value": 0.013741304156246859, 
         "code": "best_score <= 2", 
-        "message": "Method alra_sqrt performs a lot better than baselines.\n  Task id: denoising\n  Method id: alra_sqrt\n  Metric id: mse\n  Best score: 0.02799261981616863%\n"
+        "message": "Method alra_sqrt performs a lot better than baselines.\n  Task id: denoising\n  Method id: alra_sqrt\n  Metric id: mse\n  Best score: 0.027482608312493717%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Worst score dca mse", 
-        "value": 0.11837251035204932, 
+        "value": 0.11691012188156669, 
         "severity": 0, 
-        "severity_value": -0.11837251035204932, 
+        "severity_value": -0.11691012188156669, 
         "code": "worst_score >= -1", 
-        "message": "Method dca performs much worse than baselines.\n  Task id: denoising\n  Method id: dca\n  Metric id: mse\n  Worst score: 0.11837251035204932%\n"
+        "message": "Method dca performs much worse than baselines.\n  Task id: denoising\n  Method id: dca\n  Metric id: mse\n  Worst score: 0.11691012188156669%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score dca mse", 
-        "value": 0.19523568805127933, 
+        "value": 0.19457688013784935, 
         "severity": 0, 
-        "severity_value": 0.09761784402563967, 
+        "severity_value": 0.09728844006892468, 
         "code": "best_score <= 2", 
-        "message": "Method dca performs a lot better than baselines.\n  Task id: denoising\n  Method id: dca\n  Metric id: mse\n  Best score: 0.19523568805127933%\n"
+        "message": "Method dca performs a lot better than baselines.\n  Task id: denoising\n  Method id: dca\n  Metric id: mse\n  Best score: 0.19457688013784935%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Worst score knn_naive mse", 
-        "value": 0.08170499978095669, 
+        "value": 0.08175097425019529, 
         "severity": 0, 
-        "severity_value": -0.08170499978095669, 
+        "severity_value": -0.08175097425019529, 
         "code": "worst_score >= -1", 
-        "message": "Method knn_naive performs much worse than baselines.\n  Task id: denoising\n  Method id: knn_naive\n  Metric id: mse\n  Worst score: 0.08170499978095669%\n"
+        "message": "Method knn_naive performs much worse than baselines.\n  Task id: denoising\n  Method id: knn_naive\n  Metric id: mse\n  Worst score: 0.08175097425019529%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score knn_naive mse", 
-        "value": 0.16130361154571582, 
+        "value": 0.16114857838168273, 
         "severity": 0, 
-        "severity_value": 0.08065180577285791, 
+        "severity_value": 0.08057428919084136, 
         "code": "best_score <= 2", 
-        "message": "Method knn_naive performs a lot better than baselines.\n  Task id: denoising\n  Method id: knn_naive\n  Metric id: mse\n  Best score: 0.16130361154571582%\n"
+        "message": "Method knn_naive performs a lot better than baselines.\n  Task id: denoising\n  Method id: knn_naive\n  Metric id: mse\n  Best score: 0.16114857838168273%\n"
     }, 
     {
         "task_id": "denoising", 
@@ -523,81 +523,81 @@
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Worst score magic mse", 
-        "value": 0.23899996833307435, 
+        "value": 0.23906123480992536, 
         "severity": 0, 
-        "severity_value": -0.23899996833307435, 
+        "severity_value": -0.23906123480992536, 
         "code": "worst_score >= -1", 
-        "message": "Method magic performs much worse than baselines.\n  Task id: denoising\n  Method id: magic\n  Metric id: mse\n  Worst score: 0.23899996833307435%\n"
+        "message": "Method magic performs much worse than baselines.\n  Task id: denoising\n  Method id: magic\n  Metric id: mse\n  Worst score: 0.23906123480992536%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score magic mse", 
-        "value": 0.3036821059179492, 
+        "value": 0.3037404140348672, 
         "severity": 0, 
-        "severity_value": 0.1518410529589746, 
+        "severity_value": 0.1518702070174336, 
         "code": "best_score <= 2", 
-        "message": "Method magic performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic\n  Metric id: mse\n  Best score: 0.3036821059179492%\n"
+        "message": "Method magic performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic\n  Metric id: mse\n  Best score: 0.3037404140348672%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Worst score magic_approx mse", 
-        "value": 0.23897584896484425, 
+        "value": 0.2389228519856721, 
         "severity": 0, 
-        "severity_value": -0.23897584896484425, 
+        "severity_value": -0.2389228519856721, 
         "code": "worst_score >= -1", 
-        "message": "Method magic_approx performs much worse than baselines.\n  Task id: denoising\n  Method id: magic_approx\n  Metric id: mse\n  Worst score: 0.23897584896484425%\n"
+        "message": "Method magic_approx performs much worse than baselines.\n  Task id: denoising\n  Method id: magic_approx\n  Metric id: mse\n  Worst score: 0.2389228519856721%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score magic_approx mse", 
-        "value": 0.30431175977292035, 
+        "value": 0.3042795795970009, 
         "severity": 0, 
-        "severity_value": 0.15215587988646018, 
+        "severity_value": 0.15213978979850046, 
         "code": "best_score <= 2", 
-        "message": "Method magic_approx performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic_approx\n  Metric id: mse\n  Best score: 0.30431175977292035%\n"
+        "message": "Method magic_approx performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic_approx\n  Metric id: mse\n  Best score: 0.3042795795970009%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Worst score magic_approx_reverse_norm mse", 
-        "value": 0.24000208706369985, 
+        "value": 0.24000776413948743, 
         "severity": 0, 
-        "severity_value": -0.24000208706369985, 
+        "severity_value": -0.24000776413948743, 
         "code": "worst_score >= -1", 
-        "message": "Method magic_approx_reverse_norm performs much worse than baselines.\n  Task id: denoising\n  Method id: magic_approx_reverse_norm\n  Metric id: mse\n  Worst score: 0.24000208706369985%\n"
+        "message": "Method magic_approx_reverse_norm performs much worse than baselines.\n  Task id: denoising\n  Method id: magic_approx_reverse_norm\n  Metric id: mse\n  Worst score: 0.24000776413948743%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score magic_approx_reverse_norm mse", 
-        "value": 0.3038216025520948, 
+        "value": 0.30381809668430537, 
         "severity": 0, 
-        "severity_value": 0.1519108012760474, 
+        "severity_value": 0.15190904834215269, 
         "code": "best_score <= 2", 
-        "message": "Method magic_approx_reverse_norm performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic_approx_reverse_norm\n  Metric id: mse\n  Best score: 0.3038216025520948%\n"
+        "message": "Method magic_approx_reverse_norm performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic_approx_reverse_norm\n  Metric id: mse\n  Best score: 0.30381809668430537%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Worst score magic_reverse_norm mse", 
-        "value": 0.24052624851776638, 
+        "value": 0.24054344382246362, 
         "severity": 0, 
-        "severity_value": -0.24052624851776638, 
+        "severity_value": -0.24054344382246362, 
         "code": "worst_score >= -1", 
-        "message": "Method magic_reverse_norm performs much worse than baselines.\n  Task id: denoising\n  Method id: magic_reverse_norm\n  Metric id: mse\n  Worst score: 0.24052624851776638%\n"
+        "message": "Method magic_reverse_norm performs much worse than baselines.\n  Task id: denoising\n  Method id: magic_reverse_norm\n  Metric id: mse\n  Worst score: 0.24054344382246362%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score magic_reverse_norm mse", 
-        "value": 0.3032482640049825, 
+        "value": 0.3033183444568984, 
         "severity": 0, 
-        "severity_value": 0.15162413200249125, 
+        "severity_value": 0.1516591722284492, 
         "code": "best_score <= 2", 
-        "message": "Method magic_reverse_norm performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic_reverse_norm\n  Metric id: mse\n  Best score: 0.3032482640049825%\n"
+        "message": "Method magic_reverse_norm performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic_reverse_norm\n  Metric id: mse\n  Best score: 0.3033183444568984%\n"
     }, 
     {
         "task_id": "denoising", 
@@ -643,81 +643,81 @@
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Worst score alra_log poisson", 
-        "value": -0.4897053063035217, 
+        "value": -0.4910232707982263, 
         "severity": 0, 
-        "severity_value": 0.4897053063035217, 
+        "severity_value": 0.4910232707982263, 
         "code": "worst_score >= -1", 
-        "message": "Method alra_log performs much worse than baselines.\n  Task id: denoising\n  Method id: alra_log\n  Metric id: poisson\n  Worst score: -0.4897053063035217%\n"
+        "message": "Method alra_log performs much worse than baselines.\n  Task id: denoising\n  Method id: alra_log\n  Metric id: poisson\n  Worst score: -0.4910232707982263%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score alra_log poisson", 
-        "value": -0.1689460931744371, 
+        "value": -0.17080706376936683, 
         "severity": 0, 
-        "severity_value": -0.08447304658721855, 
+        "severity_value": -0.08540353188468341, 
         "code": "best_score <= 2", 
-        "message": "Method alra_log performs a lot better than baselines.\n  Task id: denoising\n  Method id: alra_log\n  Metric id: poisson\n  Best score: -0.1689460931744371%\n"
+        "message": "Method alra_log performs a lot better than baselines.\n  Task id: denoising\n  Method id: alra_log\n  Metric id: poisson\n  Best score: -0.17080706376936683%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Worst score alra_sqrt poisson", 
-        "value": 0.9759069227533328, 
-        "severity": 0, 
-        "severity_value": -0.9759069227533328, 
+        "value": -2.3012026201185467, 
+        "severity": 2, 
+        "severity_value": 2.3012026201185467, 
         "code": "worst_score >= -1", 
-        "message": "Method alra_sqrt performs much worse than baselines.\n  Task id: denoising\n  Method id: alra_sqrt\n  Metric id: poisson\n  Worst score: 0.9759069227533328%\n"
+        "message": "Method alra_sqrt performs much worse than baselines.\n  Task id: denoising\n  Method id: alra_sqrt\n  Metric id: poisson\n  Worst score: -2.3012026201185467%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score alra_sqrt poisson", 
-        "value": 0.9834783317064063, 
+        "value": -1.7521723656810537, 
         "severity": 0, 
-        "severity_value": 0.49173916585320315, 
+        "severity_value": -0.8760861828405269, 
         "code": "best_score <= 2", 
-        "message": "Method alra_sqrt performs a lot better than baselines.\n  Task id: denoising\n  Method id: alra_sqrt\n  Metric id: poisson\n  Best score: 0.9834783317064063%\n"
+        "message": "Method alra_sqrt performs a lot better than baselines.\n  Task id: denoising\n  Method id: alra_sqrt\n  Metric id: poisson\n  Best score: -1.7521723656810537%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Worst score dca poisson", 
-        "value": -0.07390325709127299, 
+        "value": -0.07602158378601098, 
         "severity": 0, 
-        "severity_value": 0.07390325709127299, 
+        "severity_value": 0.07602158378601098, 
         "code": "worst_score >= -1", 
-        "message": "Method dca performs much worse than baselines.\n  Task id: denoising\n  Method id: dca\n  Metric id: poisson\n  Worst score: -0.07390325709127299%\n"
+        "message": "Method dca performs much worse than baselines.\n  Task id: denoising\n  Method id: dca\n  Metric id: poisson\n  Worst score: -0.07602158378601098%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score dca poisson", 
-        "value": -0.03504288923180465, 
+        "value": -0.03348925480745857, 
         "severity": 0, 
-        "severity_value": -0.017521444615902326, 
+        "severity_value": -0.016744627403729284, 
         "code": "best_score <= 2", 
-        "message": "Method dca performs a lot better than baselines.\n  Task id: denoising\n  Method id: dca\n  Metric id: poisson\n  Best score: -0.03504288923180465%\n"
+        "message": "Method dca performs a lot better than baselines.\n  Task id: denoising\n  Method id: dca\n  Metric id: poisson\n  Best score: -0.03348925480745857%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Worst score knn_naive poisson", 
-        "value": -0.07993688408845046, 
+        "value": -0.07984726373877193, 
         "severity": 0, 
-        "severity_value": 0.07993688408845046, 
+        "severity_value": 0.07984726373877193, 
         "code": "worst_score >= -1", 
-        "message": "Method knn_naive performs much worse than baselines.\n  Task id: denoising\n  Method id: knn_naive\n  Metric id: poisson\n  Worst score: -0.07993688408845046%\n"
+        "message": "Method knn_naive performs much worse than baselines.\n  Task id: denoising\n  Method id: knn_naive\n  Metric id: poisson\n  Worst score: -0.07984726373877193%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score knn_naive poisson", 
-        "value": -0.02880060068017376, 
+        "value": -0.028799829793881626, 
         "severity": 0, 
-        "severity_value": -0.01440030034008688, 
+        "severity_value": -0.014399914896940813, 
         "code": "best_score <= 2", 
-        "message": "Method knn_naive performs a lot better than baselines.\n  Task id: denoising\n  Method id: knn_naive\n  Metric id: poisson\n  Best score: -0.02880060068017376%\n"
+        "message": "Method knn_naive performs a lot better than baselines.\n  Task id: denoising\n  Method id: knn_naive\n  Metric id: poisson\n  Best score: -0.028799829793881626%\n"
     }, 
     {
         "task_id": "denoising", 
@@ -743,81 +743,81 @@
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Worst score magic poisson", 
-        "value": 0.5000797160051643, 
+        "value": 0.5000706596522453, 
         "severity": 0, 
-        "severity_value": -0.5000797160051643, 
+        "severity_value": -0.5000706596522453, 
         "code": "worst_score >= -1", 
-        "message": "Method magic performs much worse than baselines.\n  Task id: denoising\n  Method id: magic\n  Metric id: poisson\n  Worst score: 0.5000797160051643%\n"
+        "message": "Method magic performs much worse than baselines.\n  Task id: denoising\n  Method id: magic\n  Metric id: poisson\n  Worst score: 0.5000706596522453%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score magic poisson", 
-        "value": 0.5902887637804882, 
+        "value": 0.5903190095352917, 
         "severity": 0, 
-        "severity_value": 0.2951443818902441, 
+        "severity_value": 0.29515950476764585, 
         "code": "best_score <= 2", 
-        "message": "Method magic performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic\n  Metric id: poisson\n  Best score: 0.5902887637804882%\n"
+        "message": "Method magic performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic\n  Metric id: poisson\n  Best score: 0.5903190095352917%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Worst score magic_approx poisson", 
-        "value": 0.5047268257379136, 
+        "value": 0.5047105153603313, 
         "severity": 0, 
-        "severity_value": -0.5047268257379136, 
+        "severity_value": -0.5047105153603313, 
         "code": "worst_score >= -1", 
-        "message": "Method magic_approx performs much worse than baselines.\n  Task id: denoising\n  Method id: magic_approx\n  Metric id: poisson\n  Worst score: 0.5047268257379136%\n"
+        "message": "Method magic_approx performs much worse than baselines.\n  Task id: denoising\n  Method id: magic_approx\n  Metric id: poisson\n  Worst score: 0.5047105153603313%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score magic_approx poisson", 
-        "value": 0.5934813375710479, 
+        "value": 0.5933196737483786, 
         "severity": 0, 
-        "severity_value": 0.29674066878552396, 
+        "severity_value": 0.2966598368741893, 
         "code": "best_score <= 2", 
-        "message": "Method magic_approx performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic_approx\n  Metric id: poisson\n  Best score: 0.5934813375710479%\n"
+        "message": "Method magic_approx performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic_approx\n  Metric id: poisson\n  Best score: 0.5933196737483786%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Worst score magic_approx_reverse_norm poisson", 
-        "value": 0.9770398789690318, 
+        "value": 0.9770398381710521, 
         "severity": 0, 
-        "severity_value": -0.9770398789690318, 
+        "severity_value": -0.9770398381710521, 
         "code": "worst_score >= -1", 
-        "message": "Method magic_approx_reverse_norm performs much worse than baselines.\n  Task id: denoising\n  Method id: magic_approx_reverse_norm\n  Metric id: poisson\n  Worst score: 0.9770398789690318%\n"
+        "message": "Method magic_approx_reverse_norm performs much worse than baselines.\n  Task id: denoising\n  Method id: magic_approx_reverse_norm\n  Metric id: poisson\n  Worst score: 0.9770398381710521%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score magic_approx_reverse_norm poisson", 
-        "value": 0.9847398880442504, 
+        "value": 0.9847398989203555, 
         "severity": 0, 
-        "severity_value": 0.4923699440221252, 
+        "severity_value": 0.49236994946017776, 
         "code": "best_score <= 2", 
-        "message": "Method magic_approx_reverse_norm performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic_approx_reverse_norm\n  Metric id: poisson\n  Best score: 0.9847398880442504%\n"
+        "message": "Method magic_approx_reverse_norm performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic_approx_reverse_norm\n  Metric id: poisson\n  Best score: 0.9847398989203555%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Worst score magic_reverse_norm poisson", 
-        "value": 0.977038271979162, 
+        "value": 0.9770382645348494, 
         "severity": 0, 
-        "severity_value": -0.977038271979162, 
+        "severity_value": -0.9770382645348494, 
         "code": "worst_score >= -1", 
-        "message": "Method magic_reverse_norm performs much worse than baselines.\n  Task id: denoising\n  Method id: magic_reverse_norm\n  Metric id: poisson\n  Worst score: 0.977038271979162%\n"
+        "message": "Method magic_reverse_norm performs much worse than baselines.\n  Task id: denoising\n  Method id: magic_reverse_norm\n  Metric id: poisson\n  Worst score: 0.9770382645348494%\n"
     }, 
     {
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score magic_reverse_norm poisson", 
-        "value": 0.9847373746700339, 
+        "value": 0.9847373494114091, 
         "severity": 0, 
-        "severity_value": 0.49236868733501693, 
+        "severity_value": 0.49236867470570456, 
         "code": "best_score <= 2", 
-        "message": "Method magic_reverse_norm performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic_reverse_norm\n  Metric id: poisson\n  Best score: 0.9847373746700339%\n"
+        "message": "Method magic_reverse_norm performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic_reverse_norm\n  Metric id: poisson\n  Best score: 0.9847373494114091%\n"
     }, 
     {
         "task_id": "denoising", 
