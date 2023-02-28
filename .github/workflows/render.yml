@@ -28,11 +28,6 @@ jobs:
         with:
           version: 0.3.71
 
-      - uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: '0.110.0'
-          extended: true
-
       - name: Install R packages
         run: |
           renv::install("rmarkdown")
@@ -40,10 +35,8 @@ jobs:
 
       - uses: quarto-dev/quarto-actions/render@v2
         with: 
+          to: md
           path: content/benchmarks
-
-      - name: Build
-        run: hugo --gc --minify
 
       - name: Commit files
         if: startsWith(github.ref, 'refs/heads')
@@ -52,7 +45,7 @@ jobs:
             git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git config --local user.name "github-actions[bot]"
             git add .
-            git commit -m "quarto render && hugo --minify"
+            git commit -m "quarto render"
           fi
         shell: bash -e {0}
 
