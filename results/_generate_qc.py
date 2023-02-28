@@ -123,7 +123,7 @@ def create_quality_control(task_info, dataset_info, method_info, metric_info, re
             "method_id": x["method_id"],
             "dataset_id": x["dataset_id"],
             "metric_id": metric["metric_id"],
-            "metric_value" : x["metric_values"][metric["metric_id"]],
+            "metric_value" : x["metric_values"].get(metric["metric_id"]),
             "scaled_score" : x["scaled_scores"].get(metric["metric_id"]),
         }
         for metric in metric_info
