@@ -18,7 +18,6 @@ jobs:
 
     env:
       BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-      RENV_PATHS_ROOT: ~/.local/share/renv
 
     steps:
       - uses: actions/checkout@v3
@@ -32,24 +31,12 @@ jobs:
         with:
           python-version: "3.10"
 
-      # - name: Cache packages
-      #   uses: actions/cache@v3
-      #   with:
-      #     path: ${{ env.RENV_PATHS_ROOT }}
-      #     key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-renv-
-
-      - name: Restore packages
-        shell: Rscript {0}
-        run: |
-          if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
-          renv::restore()
+      - uses: r-lib/actions/setup-renv@v2
           
       - name: Install Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          tinytex: true 
+          tinytex: true
 
       - name: Render with Quarto
         shell: bash -l {0}  
