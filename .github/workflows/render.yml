@@ -21,13 +21,15 @@ jobs:
         with:
           fetch-depth: 1
 
-      - uses: quarto-dev/quarto-actions/setup
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 0.3.71
 
       - uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.110.0'
 
-      - uses: quarto-dev/quarto-actions/render
+      - uses: quarto-dev/quarto-actions/render@v2
 
       - name: Build
         run: hugo --gc --minify
