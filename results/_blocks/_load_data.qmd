@@ -82,7 +82,7 @@ results_long <-
 
 overall_ranking <- results_long %>%
   group_by(method_id) %>%
-  summarise(mean_score = mean(score)) %>%
+  summarise(mean_score = mean(score %|% 0)) %>%
   arrange(desc(mean_score))
 
 # order by ranking

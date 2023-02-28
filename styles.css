@@ -1,12 +1,12 @@
 img,
 svg {
   max-width: 100%;
+  display: block;
 }
 
 a {
   text-decoration: none;
 }
-
 
 .navbar-logo {
   max-height: 48px;
@@ -28,16 +28,26 @@ a {
 
 /* Card fx */
 .card {
-  margin-bottom: 1.5rem;
   overflow: hidden;
   text-overflow: ellipsis;
   background: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,.2);
+  box-shadow: 0 2px 4px rgba(0,0,0,.4);
   transition: all .2s ease-out;
 }
 .card:hover {
-  box-shadow: 0 8px 16px rgba(0,0,0,.2);
+  box-shadow: 0 8px 16px rgba(0,0,0,.4);
 }
 .card .btn {
+  margin-top: 0.5rem;
   padding: .2rem;
+}
+
+.card .info-text {
+  padding: 0.5rem 0;
+}
+
+.card:hover .info-text,
+.card:focus .info-text {
+  color: #ff414b;
+
 }
