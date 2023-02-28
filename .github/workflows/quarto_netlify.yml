@@ -58,6 +58,7 @@ jobs:
 
       - name: Deploy preview
         if: github.event_name == 'pull_request'
+        id: deploy_preview
         uses: jsmrcaga/action-netlify-deploy@v1.7.2
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -75,4 +76,19 @@ jobs:
           authToken: ${{ secrets.GITHUB_TOKEN }}
           context: Netlify preview
           state: success
-          target_url: https://${{ env.BRANCH_NAME }}--openproblems-experimental.netlify.app
+          target_url: ${{ steps.deploy_preview.outputs.NETLIFY_PREVIEW_URL }}
+
+      - uses: thollander/actions-comment-pull-request@v2
+        if: github.event_name == 'pull_request'
+        with:
+          message: |
+            [![Deploy: success](https://img.shields.io/badge/Deploy-success-success)](${{ steps.deploy_preview.outputs.NETLIFY_PREVIEW_URL }})
+          comment_tag: deploy_status
+
+      - uses: thollander/actions-comment-pull-request@v2
+        if: github.event_name == 'pull_request' && failure()
+        with:
+          message: |
+            [![Deploy: failure](https://img.shields.io/badge/Deploy-failure-critical)](${{ steps.deploy_preview.outputs.NETLIFY_LOGS_URL }})
+          comment_tag: deploy_status
+
