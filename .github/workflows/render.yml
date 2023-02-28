@@ -35,7 +35,7 @@ jobs:
 
       - name: Install R packages
         run: |
-          renv::install("rmarkdown")
+          renv::install(c("rmarkdown", "tidyverse"))
         shell: Rscript {0}
 
       - uses: quarto-dev/quarto-actions/render@v2
