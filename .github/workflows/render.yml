@@ -30,7 +30,8 @@ jobs:
           hugo-version: '0.110.0'
 
       - uses: quarto-dev/quarto-actions/render@v2
-        working-directory: content/benchmarks
+        with: 
+          path: content/benchmarks
 
       - name: Build
         run: hugo --gc --minify
