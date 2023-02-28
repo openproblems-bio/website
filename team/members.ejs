@@ -1,12 +1,10 @@
 ```{=html}
-<div class="grid people-widget quarto-listing-cols-3">
+<div class="grid people-widget quarto-listing-cols-4 justify-content-center">
 <% for (const item of items) { %>
   <div class="people-person">
-    <a href="<%- item.path %>">
-      <img loading="lazy" class="avatar avatar-circle" src="<%- item.image %>"/>
-    </a>
+    <img loading="lazy" class="avatar avatar-circle" src="<%- item.image %>"/>
     <div class="portrait-title">
-      <h5><a href="<%- item.path %>"><%= item.title %></a></h5>
+      <h5><%= item.title %></h5>
       <% if (item.role) { %>
       <h6><%= item.role %></h6>
       <% } %>
