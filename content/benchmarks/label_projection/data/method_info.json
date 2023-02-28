@@ -1,6 +1,7 @@
 [
     {
         "method_name": "K-neighbors classifier (log CP10k)",
+        "method_summary": "K-neighbors classifier uses the \"k-nearest neighbours\" approach, which is a popular machine learning algorithm for classification and regression tasks. The assumption underlying KNN in this context is that cells with similar gene expression profiles tend to belong to the same cell type. For each unlabelled cell, this method computes the $k$ labelled cells (in this case, 5) with the smallest distance in PCA space, and assigns that cell the most common cell type among its $k$ nearest neighbors.",
         "paper_name": "Nearest neighbor pattern classification",
         "paper_reference": "cover1967nearest",
         "paper_year": 1967,
@@ -9,11 +10,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "label_projection",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "knn_classifier_log_cp10k"
     },
     {
         "method_name": "K-neighbors classifier (log scran)",
+        "method_summary": "K-neighbors classifier uses the \"k-nearest neighbours\" approach, which is a popular machine learning algorithm for classification and regression tasks. The assumption underlying KNN in this context is that cells with similar gene expression profiles tend to belong to the same cell type. For each unlabelled cell, this method computes the $k$ labelled cells (in this case, 5) with the smallest distance in PCA space, and assigns that cell the most common cell type among its $k$ nearest neighbors.",
         "paper_name": "Nearest neighbor pattern classification",
         "paper_reference": "cover1967nearest",
         "paper_year": 1967,
@@ -22,11 +24,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "label_projection",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "knn_classifier_scran"
     },
     {
         "method_name": "Logistic regression (log CP10k)",
+        "method_summary": "Logistic Regression estimates parameters of a logistic function for multivariate classification tasks. Here, we use 100-dimensional whitened PCA coordinates as independent variables, and the model minimises the cross entropy loss over all cell type classes. ",
         "paper_name": "Applied Logistic Regression",
         "paper_reference": "hosmer2013applied",
         "paper_year": 2013,
@@ -35,11 +38,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "label_projection",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "logistic_regression_log_cp10k"
     },
     {
         "method_name": "Logistic regression (log scran)",
+        "method_summary": "Logistic Regression estimates parameters of a logistic function for multivariate classification tasks. Here, we use 100-dimensional whitened PCA coordinates as independent variables, and the model minimises the cross entropy loss over all cell type classes. ",
         "paper_name": "Applied Logistic Regression",
         "paper_reference": "hosmer2013applied",
         "paper_year": 2013,
@@ -48,12 +52,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "label_projection",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "logistic_regression_scran"
     },
     {
         "method_name": "Majority Vote",
-        "paper_name": "Majority Vote (baseline)",
+        "method_summary": "Assignment of all predicted labels as the most common label in the training data",
+        "paper_name": "Open Problems for Single Cell Analysis",
         "paper_reference": "openproblems",
         "paper_year": 2022,
         "code_url": "https://github.com/openproblems-bio/openproblems",
@@ -61,11 +66,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "label_projection",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "majority_vote"
     },
     {
         "method_name": "Multilayer perceptron (log CP10k)",
+        "method_summary": "MLP or \"Multi-Layer Perceptron\" is a type of artificial neural network that consists of multiple layers of interconnected neurons. Each neuron computes a weighted sum of all neurons in the previous layer and transforms it with nonlinear activation function. The output layer provides the final prediction, and network weights are updated by gradient descent to minimize the cross entropy loss. Here, the input data is 100-dimensional whitened PCA coordinates for each cell, and we use two hidden layers of 100 neurons each.",
         "paper_name": "Connectionist learning procedures",
         "paper_reference": "hinton1989connectionist",
         "paper_year": 1990,
@@ -74,11 +80,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "label_projection",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "mlp_log_cp10k"
     },
     {
         "method_name": "Multilayer perceptron (log scran)",
+        "method_summary": "MLP or \"Multi-Layer Perceptron\" is a type of artificial neural network that consists of multiple layers of interconnected neurons. Each neuron computes a weighted sum of all neurons in the previous layer and transforms it with nonlinear activation function. The output layer provides the final prediction, and network weights are updated by gradient descent to minimize the cross entropy loss. Here, the input data is 100-dimensional whitened PCA coordinates for each cell, and we use two hidden layers of 100 neurons each.",
         "paper_name": "Connectionist learning procedures",
         "paper_reference": "hinton1989connectionist",
         "paper_year": 1990,
@@ -87,12 +94,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "label_projection",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "mlp_scran"
     },
     {
         "method_name": "Random Labels",
-        "paper_name": "Random Labels (baseline)",
+        "method_summary": "Random assignment of predicted labels proportionate to label abundance in training data",
+        "paper_name": "Open Problems for Single Cell Analysis",
         "paper_reference": "openproblems",
         "paper_year": 2022,
         "code_url": "https://github.com/openproblems-bio/openproblems",
@@ -100,11 +108,12 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "label_projection",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "random_labels"
     },
     {
         "method_name": "scANVI (All genes)",
+        "method_summary": "scANVI or \"single-cell ANnotation using Variational Inference\" is a semi-supervised variant of the scVI(Lopez et al. 2018) algorithm. Like scVI, scANVI uses deep neural networks and stochastic optimization to model uncertainty caused by technical noise and bias in single - cell transcriptomics measurements. However, scANVI also leverages cell type labels in the generative modelling. In this approach, scANVI is used to predict the cell type labels of the unlabelled test data.",
         "paper_name": "Probabilistic harmonization and annotation of single-cell transcriptomics data with deep generative models",
         "paper_reference": "xu2021probabilistic",
         "paper_year": 2021,
@@ -113,11 +122,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "label_projection",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "scanvi_all_genes"
     },
     {
         "method_name": "scANVI (Seurat v3 2000 HVG)",
+        "method_summary": "scANVI or \"single-cell ANnotation using Variational Inference\" is a semi-supervised variant of the scVI(Lopez et al. 2018) algorithm. Like scVI, scANVI uses deep neural networks and stochastic optimization to model uncertainty caused by technical noise and bias in single - cell transcriptomics measurements. However, scANVI also leverages cell type labels in the generative modelling. In this approach, scANVI is used to predict the cell type labels of the unlabelled test data.",
         "paper_name": "Probabilistic harmonization and annotation of single-cell transcriptomics data with deep generative models",
         "paper_reference": "xu2021probabilistic",
         "paper_year": 2021,
@@ -126,11 +136,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "label_projection",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "scanvi_hvg"
     },
     {
         "method_name": "scArches+scANVI (All genes)",
+        "method_summary": "scArches+scANVI or \"Single-cell architecture surgery\" is a deep learning method for mapping new datasets onto a pre-existing reference model, using transfer learning and parameter optimization. It first uses scANVI to build a reference model from the training data, and then apply scArches to map the test data onto the reference model and make predictions.",
         "paper_name": "Query to reference single-cell integration with transfer learning",
         "paper_reference": "lotfollahi2020query",
         "paper_year": 2021,
@@ -139,11 +150,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "label_projection",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "scarches_scanvi_all_genes"
     },
     {
         "method_name": "scArches+scANVI (Seurat v3 2000 HVG)",
+        "method_summary": "scArches+scANVI or \"Single-cell architecture surgery\" is a deep learning method for mapping new datasets onto a pre-existing reference model, using transfer learning and parameter optimization. It first uses scANVI to build a reference model from the training data, and then apply scArches to map the test data onto the reference model and make predictions.",
         "paper_name": "Query to reference single-cell integration with transfer learning",
         "paper_reference": "lotfollahi2020query",
         "paper_year": 2021,
@@ -152,11 +164,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "label_projection",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "scarches_scanvi_hvg"
     },
     {
         "method_name": "Seurat reference mapping (SCTransform)",
+        "method_summary": "Seurat reference mapping is a cell type label transfer method provided by the Seurat package. Gene expression counts are first normalised by SCTransform before computing PCA. Then it finds mutual nearest neighbours, known as transfer anchors, between the labelled and unlabelled part of the data in PCA space, and computes each cell\u2019s distance to each of the anchor pairs. Finally, it uses the labelled anchors to predict cell types for unlabelled cells based on these distances.",
         "paper_name": "Integrated analysis of multimodal single-cell data",
         "paper_reference": "hao2021integrated",
         "paper_year": 2021,
@@ -165,12 +178,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "label_projection",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "seurat"
     },
     {
         "method_name": "True Labels",
-        "paper_name": "True Labels (baseline)",
+        "method_summary": "Perfect assignment of the predicted labels from the test labels",
+        "paper_name": "Open Problems for Single Cell Analysis",
         "paper_reference": "openproblems",
         "paper_year": 2022,
         "code_url": "https://github.com/openproblems-bio/openproblems",
@@ -178,11 +192,12 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "label_projection",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "true_labels"
     },
     {
         "method_name": "XGBoost (log CP10k)",
+        "method_summary": "XGBoost is a gradient boosting decision tree model that learns multiple tree structures in the form of a series of input features and their values, leading to a prediction decision, and averages predictions from all its trees. Here, input features are normalised gene expression values.",
         "paper_name": "XGBoost: A Scalable Tree Boosting System",
         "paper_reference": "chen2016xgboost",
         "paper_year": 2016,
@@ -191,11 +206,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "label_projection",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "xgboost_log_cp10k"
     },
     {
         "method_name": "XGBoost (log scran)",
+        "method_summary": "XGBoost is a gradient boosting decision tree model that learns multiple tree structures in the form of a series of input features and their values, leading to a prediction decision, and averages predictions from all its trees. Here, input features are normalised gene expression values.",
         "paper_name": "XGBoost: A Scalable Tree Boosting System",
         "paper_reference": "chen2016xgboost",
         "paper_year": 2016,
@@ -204,7 +220,7 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "label_projection",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "xgboost_scran"
     }
 ]

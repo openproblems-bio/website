@@ -1,7 +1,8 @@
 [
     {
         "method_name": "Random Integration by Batch",
-        "paper_name": "Random Integration by Batch (baseline)",
+        "method_summary": "Feature values, embedding coordinates, and graph connectivity are all randomly permuted within each batch label",
+        "paper_name": "Open Problems for Single Cell Analysis",
         "paper_reference": "openproblems",
         "paper_year": 2022,
         "code_url": "https://github.com/openproblems-bio/openproblems",
@@ -9,12 +10,13 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "batch_random_integration"
     },
     {
-        "method_name": "Random Integration by Celltype",
-        "paper_name": "Random Integration by Celltype (baseline)",
+        "method_name": "Random Embedding by Celltype",
+        "method_summary": "Cells are embedded as a one-hot encoding of celltype labels",
+        "paper_name": "Open Problems for Single Cell Analysis",
         "paper_reference": "openproblems",
         "paper_year": 2022,
         "code_url": "https://github.com/openproblems-bio/openproblems",
@@ -22,11 +24,40 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
+        "method_id": "celltype_random_embedding"
+    },
+    {
+        "method_name": "Random Graph by Celltype",
+        "method_summary": "Cells are embedded as a one-hot encoding of celltype labels. A graph is then built on this embedding",
+        "paper_name": "Open Problems for Single Cell Analysis",
+        "paper_reference": "openproblems",
+        "paper_year": 2022,
+        "code_url": "https://github.com/openproblems-bio/openproblems",
+        "image": "openproblems",
+        "is_baseline": true,
+        "code_version": null,
+        "task_id": "batch_integration_feature",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
+        "method_id": "celltype_random_graph"
+    },
+    {
+        "method_name": "Random Integration by Celltype",
+        "method_summary": "Feature values, embedding coordinates, and graph connectivity are all randomly permuted within each celltype label",
+        "paper_name": "Open Problems for Single Cell Analysis",
+        "paper_reference": "openproblems",
+        "paper_year": 2022,
+        "code_url": "https://github.com/openproblems-bio/openproblems",
+        "image": "openproblems",
+        "is_baseline": true,
+        "code_version": null,
+        "task_id": "batch_integration_feature",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "celltype_random_integration"
     },
     {
         "method_name": "Combat (full/scaled)",
+        "method_summary": "ComBat uses an Empirical Bayes (EB) approach to correct for batch effects. It estimates batch-specific parameters by pooling information across genes in each batch and shrinks the estimates towards the overall mean of the batch effect estimates across all genes. These parameters are then used to adjust the data for batch effects, leading to more accurate and reproducible results.",
         "paper_name": "Adjusting batch effects in microarray expression data using empirical Bayes methods",
         "paper_reference": "hansen2012removing",
         "paper_year": 2007,
@@ -35,11 +66,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "combat_full_scaled"
     },
     {
         "method_name": "Combat (full/unscaled)",
+        "method_summary": "ComBat uses an Empirical Bayes (EB) approach to correct for batch effects. It estimates batch-specific parameters by pooling information across genes in each batch and shrinks the estimates towards the overall mean of the batch effect estimates across all genes. These parameters are then used to adjust the data for batch effects, leading to more accurate and reproducible results.",
         "paper_name": "Adjusting batch effects in microarray expression data using empirical Bayes methods",
         "paper_reference": "hansen2012removing",
         "paper_year": 2007,
@@ -48,11 +80,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "combat_full_unscaled"
     },
     {
         "method_name": "Combat (hvg/scaled)",
+        "method_summary": "ComBat uses an Empirical Bayes (EB) approach to correct for batch effects. It estimates batch-specific parameters by pooling information across genes in each batch and shrinks the estimates towards the overall mean of the batch effect estimates across all genes. These parameters are then used to adjust the data for batch effects, leading to more accurate and reproducible results.",
         "paper_name": "Adjusting batch effects in microarray expression data using empirical Bayes methods",
         "paper_reference": "hansen2012removing",
         "paper_year": 2007,
@@ -61,11 +94,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "combat_hvg_scaled"
     },
     {
         "method_name": "Combat (hvg/unscaled)",
+        "method_summary": "ComBat uses an Empirical Bayes (EB) approach to correct for batch effects. It estimates batch-specific parameters by pooling information across genes in each batch and shrinks the estimates towards the overall mean of the batch effect estimates across all genes. These parameters are then used to adjust the data for batch effects, leading to more accurate and reproducible results.",
         "paper_name": "Adjusting batch effects in microarray expression data using empirical Bayes methods",
         "paper_reference": "hansen2012removing",
         "paper_year": 2007,
@@ -74,11 +108,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "combat_hvg_unscaled"
     },
     {
         "method_name": "FastMNN feature (full/scaled)",
+        "method_summary": "fastMNN performs a multi-sample PCA to reduce dimensionality, identifying MNN paris in the low-dimensional space, and then correcting the target batch towards the reference using locally weighted correction vectors. The corrected target batch is then merged with the reference. The process is repeated with the next target batch except for the PCA step.",
         "paper_name": "A description of the theory behind the fastMNN algorithm",
         "paper_reference": "lun2019fastmnn",
         "paper_year": 2019,
@@ -87,11 +122,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "fastmnn_feature_full_scaled"
     },
     {
         "method_name": "FastMNN feature (full/unscaled)",
+        "method_summary": "fastMNN performs a multi-sample PCA to reduce dimensionality, identifying MNN paris in the low-dimensional space, and then correcting the target batch towards the reference using locally weighted correction vectors. The corrected target batch is then merged with the reference. The process is repeated with the next target batch except for the PCA step.",
         "paper_name": "A description of the theory behind the fastMNN algorithm",
         "paper_reference": "lun2019fastmnn",
         "paper_year": 2019,
@@ -100,11 +136,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "fastmnn_feature_full_unscaled"
     },
     {
         "method_name": "FastMNN feature (hvg/scaled)",
+        "method_summary": "fastMNN performs a multi-sample PCA to reduce dimensionality, identifying MNN paris in the low-dimensional space, and then correcting the target batch towards the reference using locally weighted correction vectors. The corrected target batch is then merged with the reference. The process is repeated with the next target batch except for the PCA step.",
         "paper_name": "A description of the theory behind the fastMNN algorithm",
         "paper_reference": "lun2019fastmnn",
         "paper_year": 2019,
@@ -113,11 +150,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "fastmnn_feature_hvg_scaled"
     },
     {
         "method_name": "FastMNN feature (hvg/unscaled)",
+        "method_summary": "fastMNN performs a multi-sample PCA to reduce dimensionality, identifying MNN paris in the low-dimensional space, and then correcting the target batch towards the reference using locally weighted correction vectors. The corrected target batch is then merged with the reference. The process is repeated with the next target batch except for the PCA step.",
         "paper_name": "A description of the theory behind the fastMNN algorithm",
         "paper_reference": "lun2019fastmnn",
         "paper_year": 2019,
@@ -126,11 +164,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "fastmnn_feature_hvg_unscaled"
     },
     {
         "method_name": "MNN (full/scaled)",
+        "method_summary": "MNN first detects mutual nearest neighbours in two of the batches and infers a projection of the second onto the first batch. After that, additional batches are added iteratively.",
         "paper_name": "Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors",
         "paper_reference": "haghverdi2018batch",
         "paper_year": 2018,
@@ -139,11 +178,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "mnn_full_scaled"
     },
     {
         "method_name": "MNN (full/unscaled)",
+        "method_summary": "MNN first detects mutual nearest neighbours in two of the batches and infers a projection of the second onto the first batch. After that, additional batches are added iteratively.",
         "paper_name": "Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors",
         "paper_reference": "haghverdi2018batch",
         "paper_year": 2018,
@@ -152,11 +192,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "mnn_full_unscaled"
     },
     {
         "method_name": "MNN (hvg/scaled)",
+        "method_summary": "MNN first detects mutual nearest neighbours in two of the batches and infers a projection of the second onto the first batch. After that, additional batches are added iteratively.",
         "paper_name": "Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors",
         "paper_reference": "haghverdi2018batch",
         "paper_year": 2018,
@@ -165,11 +206,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "mnn_hvg_scaled"
     },
     {
         "method_name": "MNN (hvg/unscaled)",
+        "method_summary": "MNN first detects mutual nearest neighbours in two of the batches and infers a projection of the second onto the first batch. After that, additional batches are added iteratively.",
         "paper_name": "Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors",
         "paper_reference": "haghverdi2018batch",
         "paper_year": 2018,
@@ -178,12 +220,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "mnn_hvg_unscaled"
     },
     {
         "method_name": "No Integration",
-        "paper_name": "No Integration (baseline)",
+        "method_summary": "Cells are embedded by PCA on the unintegrated data. A graph is built on this PCA embedding.",
+        "paper_name": "Open Problems for Single Cell Analysis",
         "paper_reference": "openproblems",
         "paper_year": 2022,
         "code_url": "https://github.com/openproblems-bio/openproblems",
@@ -191,12 +234,13 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "no_integration"
     },
     {
-        "method_name": "Random Integration",
-        "paper_name": "Random Integration (baseline)",
+        "method_name": "No Integration by Batch",
+        "method_summary": "Cells are embedded by computing PCA independently on each batch",
+        "paper_name": "Open Problems for Single Cell Analysis",
         "paper_reference": "openproblems",
         "paper_year": 2022,
         "code_url": "https://github.com/openproblems-bio/openproblems",
@@ -204,11 +248,26 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
+        "method_id": "no_integration_batch"
+    },
+    {
+        "method_name": "Random Integration",
+        "method_summary": "Feature values, embedding coordinates, and graph connectivity are all randomly permuted",
+        "paper_name": "Open Problems for Single Cell Analysis",
+        "paper_reference": "openproblems",
+        "paper_year": 2022,
+        "code_url": "https://github.com/openproblems-bio/openproblems",
+        "image": "openproblems",
+        "is_baseline": true,
+        "code_version": null,
+        "task_id": "batch_integration_feature",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "random_integration"
     },
     {
         "method_name": "SCALEX (full)",
+        "method_summary": "SCALEX is a method for integrating heterogeneous single-cell data online using a VAE framework. Its generalised encoder disentangles batch-related components from batch-invariant biological components, which are then projected into a common cell-embedding space.",
         "paper_name": "Online single-cell data integration through projecting heterogeneous datasets into a common cell-embedding space",
         "paper_reference": "xiong2021online",
         "paper_year": 2022,
@@ -217,11 +276,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "scalex_full"
     },
     {
         "method_name": "SCALEX (hvg)",
+        "method_summary": "SCALEX is a method for integrating heterogeneous single-cell data online using a VAE framework. Its generalised encoder disentangles batch-related components from batch-invariant biological components, which are then projected into a common cell-embedding space.",
         "paper_name": "Online single-cell data integration through projecting heterogeneous datasets into a common cell-embedding space",
         "paper_reference": "xiong2021online",
         "paper_year": 2022,
@@ -230,11 +290,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "scalex_hvg"
     },
     {
         "method_name": "Scanorama gene output (full/scaled)",
+        "method_summary": "Scanorama is an extension of the MNN method. Other then MNN, it finds mutual nearest neighbours over all batches and embeds observations into a joint hyperplane.",
         "paper_name": "Efficient integration of heterogeneous single-cell transcriptomes using Scanorama",
         "paper_reference": "hie2019efficient",
         "paper_year": 2019,
@@ -243,11 +304,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "scanorama_feature_full_scaled"
     },
     {
         "method_name": "Scanorama gene output (full/unscaled)",
+        "method_summary": "Scanorama is an extension of the MNN method. Other then MNN, it finds mutual nearest neighbours over all batches and embeds observations into a joint hyperplane.",
         "paper_name": "Efficient integration of heterogeneous single-cell transcriptomes using Scanorama",
         "paper_reference": "hie2019efficient",
         "paper_year": 2019,
@@ -256,11 +318,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "scanorama_feature_full_unscaled"
     },
     {
         "method_name": "Scanorama gene output (hvg/scaled)",
+        "method_summary": "Scanorama is an extension of the MNN method. Other then MNN, it finds mutual nearest neighbours over all batches and embeds observations into a joint hyperplane.",
         "paper_name": "Efficient integration of heterogeneous single-cell transcriptomes using Scanorama",
         "paper_reference": "hie2019efficient",
         "paper_year": 2019,
@@ -269,11 +332,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "scanorama_feature_hvg_scaled"
     },
     {
         "method_name": "Scanorama gene output (hvg/unscaled)",
+        "method_summary": "Scanorama is an extension of the MNN method. Other then MNN, it finds mutual nearest neighbours over all batches and embeds observations into a joint hyperplane.",
         "paper_name": "Efficient integration of heterogeneous single-cell transcriptomes using Scanorama",
         "paper_reference": "hie2019efficient",
         "paper_year": 2019,
@@ -282,7 +346,7 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "batch_integration_feature",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "scanorama_feature_hvg_unscaled"
     }
 ]

@@ -1,6 +1,7 @@
 [
     {
         "method_name": "Harmonic Alignment (log scran)",
+        "method_summary": "Harmonic alignment embeds cellular data from each modality into a common space by computing a mapping between the 100-dimensional diffusion maps of each modality. This mapping is computed by computing an isometric transformation of the eigenmaps, and concatenating the resulting diffusion maps together into a joint 200-dimensional space. This joint diffusion map space is used as output for the task.",
         "paper_name": "Harmonic Alignment",
         "paper_reference": "stanley2020harmonic",
         "paper_year": 2020,
@@ -9,11 +10,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "matching_modalities",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "harmonic_alignment_log_scran_pooling"
     },
     {
         "method_name": "Harmonic Alignment (sqrt CP10k)",
+        "method_summary": "Harmonic alignment embeds cellular data from each modality into a common space by computing a mapping between the 100-dimensional diffusion maps of each modality. This mapping is computed by computing an isometric transformation of the eigenmaps, and concatenating the resulting diffusion maps together into a joint 200-dimensional space. This joint diffusion map space is used as output for the task.",
         "paper_name": "Harmonic Alignment",
         "paper_reference": "stanley2020harmonic",
         "paper_year": 2020,
@@ -22,11 +24,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "matching_modalities",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "harmonic_alignment_sqrt_cp10k"
     },
     {
         "method_name": "Mutual Nearest Neighbors (log CP10k)",
+        "method_summary": "Mutual nearest neighbors (MNN) embeds cellular data from each modality into a common space by computing a mapping between modality-specific 100-dimensional SVD embeddings. The embeddings are integrated using the FastMNN version of the MNN algorithm, which generates an embedding of the second modality mapped to the SVD space of the first. This corrected joint SVD space is used as output for the task.",
         "paper_name": "Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors",
         "paper_reference": "haghverdi2018batch",
         "paper_year": 2018,
@@ -35,11 +38,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "matching_modalities",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "mnn_log_cp10k"
     },
     {
         "method_name": "Mutual Nearest Neighbors (log scran)",
+        "method_summary": "Mutual nearest neighbors (MNN) embeds cellular data from each modality into a common space by computing a mapping between modality-specific 100-dimensional SVD embeddings. The embeddings are integrated using the FastMNN version of the MNN algorithm, which generates an embedding of the second modality mapped to the SVD space of the first. This corrected joint SVD space is used as output for the task.",
         "paper_name": "Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors",
         "paper_reference": "haghverdi2018batch",
         "paper_year": 2018,
@@ -48,11 +52,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "matching_modalities",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "mnn_log_scran_pooling"
     },
     {
         "method_name": "Procrustes superimposition",
+        "method_summary": "Procrustes superimposition embeds cellular data from each modality into a common space by aligning the 100-dimensional SVD embeddings to one another by using an isomorphic transformation that minimizes the root mean squared distance between points. The unmodified SVD embedding and the transformed second modality are used as output for the task.",
         "paper_name": "Generalized Procrustes analysis",
         "paper_reference": "gower1975generalized",
         "paper_year": 1975,
@@ -61,12 +66,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "matching_modalities",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "procrustes"
     },
     {
         "method_name": "Random Features",
-        "paper_name": "Random Features (baseline)",
+        "method_summary": "20-dimensional SVD is computed on the first modality, and is then randomly permuted twice, once for use as the output for each modality, producing random features with no correlation between modalities.",
+        "paper_name": "Open Problems for Single Cell Analysis",
         "paper_reference": "openproblems",
         "paper_year": 2022,
         "code_url": "https://github.com/openproblems-bio/openproblems",
@@ -74,12 +80,13 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "matching_modalities",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "random_features"
     },
     {
         "method_name": "True Features",
-        "paper_name": "True Features (baseline)",
+        "method_summary": "20-dimensional SVD is computed on the first modality, and this same embedding is used as output for both modalities, producing perfectly aligned features from each modality.",
+        "paper_name": "Open Problems for Single Cell Analysis",
         "paper_reference": "openproblems",
         "paper_year": 2022,
         "code_url": "https://github.com/openproblems-bio/openproblems",
@@ -87,7 +94,7 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "matching_modalities",
-        "commit_sha": "6a6ddc706cff9ff9b6d2085c9d3ff87d0bcd88be",
+        "commit_sha": "49b96d8332797b8b1fe34ba1f998162bb4b18e83",
         "method_id": "true_features"
     }
 ]
