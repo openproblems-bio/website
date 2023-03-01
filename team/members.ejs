@@ -1,26 +1,24 @@
 ```{=html}
-<div class="grid people-widget quarto-listing-cols-4 justify-content-center">
-<% for (const item of items) { %>
+<div class="people-widget justify-content-center">
+  <% for (const item of items) { %>
   <div class="people-person">
-    <img loading="lazy" class="avatar avatar-circle" src="<%- item.image %>"/>
+    <img loading="lazy" class="avatar avatar-circle" src="<%- item.image %>" />
     <div class="portrait-title">
       <h5><%= item.title %></h5>
       <% if (item.role) { %>
       <h6><%= item.role %></h6>
-      <% } %>
-      <% for (const organization of item.organizations || []) { %>
+      <% } %> <% for (const organization of item.organizations || []) { %>
       <h6>
-      <%= organization.role %>
-      <% if (organization.name) { %> at <%= organization.name %> <% } %>
+        <%= organization.role %> <% if (organization.name) { %> at <%=
+        organization.name %> <% } %>
       </h6>
-      <% } %>
-      <% for (const link of item.about.links || []) { %>
+      <% } %> <% for (const link of item.about.links || []) { %>
       <a class="network-icon" href="<%- link.href %>">
-        <i class=" bi-<%- link.icon %>"></i>
+        <i class="bi-<%- link.icon %>"></i>
       </a>
       <% } %>
     </div>
   </div>
-<% } %>
+  <% } %>
 </div>
 ```
