@@ -29,7 +29,7 @@ jobs:
       - name: Cache apt packages
         uses: actions/cache@v3
         with:
-          path: /var/cache/apt/archives
+          path: /var/cache/apt/archives/*.deb
           key: apt-${{env.LINUX_VERSION}}-${{ hashFiles('.github/workflows/quarto_netlify.yml') }}
           restore-keys: apt-${{env.LINUX_VERSION}}-
 
