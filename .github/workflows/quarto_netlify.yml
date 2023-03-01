@@ -38,7 +38,7 @@ jobs:
       - name: Cache Python packages
         uses: actions/cache@v3
         with:
-          path: ${{ env.pythonLocation }}
+          path: .cache/pip
           key: python-pip-${{env.LINUX_VERSION}}-${{ env.pythonLocation }}-${{ hashFiles('requirements.txt') }}
           restore-keys: python-pip-${{env.LINUX_VERSION}}-${{ env.pythonLocation }}-
 
