@@ -22,17 +22,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up environment
-        run: |
-          echo "LINUX_VERSION=$(uname -rs)" >> $GITHUB_ENV
-
-      - name: Cache apt packages
-        uses: actions/cache@v3
-        with:
-          path: /var/cache/apt/archives/*.deb
-          key: apt-${{env.LINUX_VERSION}}-${{ hashFiles('.github/workflows/quarto_netlify.yml') }}
-          restore-keys: apt-${{env.LINUX_VERSION}}-
-
       - uses: r-lib/actions/setup-r@v2
         with:
           r-version: "4.1"
@@ -41,6 +30,10 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: "3.10"
+
+      - name: Set up environment
+        run: |
+          echo "LINUX_VERSION=$(uname -rs)" >> $GITHUB_ENV
 
       - name: Cache Python packages
         uses: actions/cache@v3
