@@ -38,9 +38,9 @@ jobs:
       - name: Cache Python packages
         uses: actions/cache@v3
         with:
-          path: renv/python/virtualenvs/renv-python-3.10/lib/python3.10/site-packages
-          key: python-pip-${{env.LINUX_VERSION}}-${{ env.pythonLocation }}-${{ hashFiles('requirements.txt') }}
-          restore-keys: python-pip-${{env.LINUX_VERSION}}-${{ env.pythonLocation }}-
+          path: renv/python/virtualenvs/renv-python-3.10
+          key: python-${{env.LINUX_VERSION}}-${{ env.pythonLocation }}-${{ hashFiles('requirements.txt') }}
+          restore-keys: python-${{env.LINUX_VERSION}}-${{ env.pythonLocation }}-
 
       - uses: r-lib/actions/setup-renv@v2
           
