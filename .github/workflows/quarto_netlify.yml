@@ -44,50 +44,38 @@ jobs:
           source renv/python/virtualenvs/renv-python-3.10/bin/activate
           quarto render
 
-      - name: Deploy 🚀
-        uses: jsmrcaga/action-netlify-deploy@v1.7.2
+      - name: Deploy to Netlify 🚀
+        uses: data-intuitive/netlify-deploy-site@v1
         if: github.event_name != 'pull_request'
         with:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_DEPLOY_MESSAGE: "Prod deploy v${{ github.ref }}"
-          NETLIFY_DEPLOY_TO_PROD: true
-          build_directory: _site
-          install_command: echo no install required
-          build_command: echo no build required
+          auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          site: ${{ secrets.NETLIFY_SITE_ID }}
+          dir: '_site'
+          prod: true
+          message: 'Deploy production ${{ github.ref }}'
 
       - name: Deploy preview
+        id: deploy_preview
         if: github.event_name == 'pull_request'
-        uses: jsmrcaga/action-netlify-deploy@v1.7.2
+        uses: data-intuitive/netlify-deploy-site@v1
         with:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_DEPLOY_MESSAGE: "PR deploy v${{ github.ref }}"
-          deploy_alias: ${{ env.BRANCH_NAME }}
-          build_directory: _site
-          install_command: echo no install required
-          build_command: echo no build required
-
-      - name: Status check
-        if: github.event_name == 'pull_request'
-        uses: Sibz/github-status-action@v1.1.6
-        with:
-          authToken: ${{ secrets.GITHUB_TOKEN }}
-          context: Netlify preview
-          state: success
-          target_url: ${{ steps.deploy_preview.outputs.NETLIFY_PREVIEW_URL }}
+          auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          site: ${{ secrets.NETLIFY_SITE_ID }}
+          dir: '_site'
+          alias: "${{ env.BRANCH_NAME }}"
+          message: 'Deploy prooduction ${{ github.ref }}'
 
       - uses: thollander/actions-comment-pull-request@v2
         if: github.event_name == 'pull_request'
         with:
           message: |
-            [![Deploy: success](https://img.shields.io/badge/Deploy-success-success)](${{ env.NETLIFY_PREVIEW_URL }})
+            [![Deploy: success](https://img.shields.io/badge/Deploy-success-success)](${{ steps.deploy_preview.outputs.deploy-url }})
           comment_tag: deploy_status
 
       - uses: thollander/actions-comment-pull-request@v2
         if: github.event_name == 'pull_request' && failure()
         with:
           message: |
-            [![Deploy: failure](https://img.shields.io/badge/Deploy-failure-critical)](${{ env.NETLIFY_LOGS_URL }})
+            [![Deploy: failure](https://img.shields.io/badge/Deploy-failure-critical)]${{ steps.deploy_preview.outputs.logs }})
           comment_tag: deploy_status
 
