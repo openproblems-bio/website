@@ -18,6 +18,7 @@ jobs:
 
     env:
       BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+      NETLIFY_SITE_ID: 50eb8c92-d903-4d5d-a896-58a092b37874
 
     steps:
       - uses: actions/checkout@v3
@@ -60,7 +61,7 @@ jobs:
         if: github.event_name != 'pull_request'
         with:
           auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          site: ${{ secrets.NETLIFY_SITE_ID }}
+          site: ${{ env.NETLIFY_SITE_ID }}
           dir: '_site'
           prod: true
           message: 'Deploy production ${{ github.ref }}'
@@ -71,7 +72,7 @@ jobs:
         uses: data-intuitive/netlify-deploy-site@v1
         with:
           auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          site: ${{ secrets.NETLIFY_SITE_ID }}
+          site: ${{ env.NETLIFY_SITE_ID }}
           dir: '_site'
           alias: "${{ env.BRANCH_NAME }}"
           message: 'Deploy prooduction ${{ github.ref }}'
