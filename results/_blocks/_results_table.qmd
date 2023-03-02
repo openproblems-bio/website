@@ -100,10 +100,11 @@ ojs_define(
 ```
 
 ```{ojs}
+//| echo: false
 function sparkbar(min, max) {
   return x => htl.html`<div style="
     background: lightblue;
-    width: ${100 * (x - min) / (max - min)}%;
+    width: ${100 * (Math.max(Math.min(x, max), min) - min) / (max - min)}%;
     float: right;
     padding-right: 3px;
     box-sizing: border-box;
@@ -114,6 +115,7 @@ function sparkbar(min, max) {
 ```
 
 ```{ojs}
+//| echo: false
 //| column: screen-inset-shaded
 
 res_tib = transpose(res_tib_t)
@@ -139,9 +141,16 @@ Inputs.table(res_tib, {
 
       return htl.html`${dataset.dataset_name} <a href="/bibliography.html#${dataset.data_reference}"><sup>ref</sup></a>`;
     }),
-    mean_score: sparkbar(d3.min(res_tib, d => d.mean_score), d3.max(res_tib, d => d.mean_score))
+    // mean_score: sparkbar(d3.min(res_tib, d => d.mean_score), d3.max(res_tib, d => d.mean_score))
+    mean_score: sparkbar(0, 1)
   },
+  // width: {method_id: 100, dataset_id: 100},
+  // maxWidth: 840,
+  // layout: "fixed",
   sort: "Mean score",
-  reverse: true
+  reverse: true,
+  rows: 50
 })
 ```
+
+<!-- https://observablehq.com/@observablehq/input-table -->
