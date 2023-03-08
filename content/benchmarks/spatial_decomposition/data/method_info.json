@@ -1,7 +1,7 @@
 [
     {
-        "method_name": "Cell2location, amortised (detection_alpha=20, reference hard-coded)",
-        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step.",
+        "method_name": "Cell2location (alpha=20, amortised, hard-coded)",
+        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step. Note that since batch information is unavailable in this task, here we use either a hard-coded reference, or a negative-binomial learned reference without batch labels. The parameter alpha refers to the detection efficiency prior.",
         "paper_name": "Cell2location maps fine-grained cell types in spatial transcriptomics",
         "paper_reference": "kleshchevnikov2022cell2location",
         "paper_year": 2022,
@@ -10,12 +10,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "commit_sha": "6cd9e1e3b3b8549a872b901e84b4c7e3d59ae294",
         "method_id": "cell2location_amortised_detection_alpha_20"
     },
     {
-        "method_name": "Cell2location (detection_alpha=1, reference hard-coded)",
-        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step.",
+        "method_name": "Cell2location (alpha=1, reference hard-coded)",
+        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step. Note that since batch information is unavailable in this task, here we use either a hard-coded reference, or a negative-binomial learned reference without batch labels. The parameter alpha refers to the detection efficiency prior.",
         "paper_name": "Cell2location maps fine-grained cell types in spatial transcriptomics",
         "paper_reference": "kleshchevnikov2022cell2location",
         "paper_year": 2022,
@@ -24,12 +24,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "commit_sha": "6cd9e1e3b3b8549a872b901e84b4c7e3d59ae294",
         "method_id": "cell2location_detection_alpha_1"
     },
     {
-        "method_name": "Cell2location (detection_alpha=20, reference hard-coded)",
-        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step.",
+        "method_name": "Cell2location (alpha=20, reference hard-coded)",
+        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step. Note that since batch information is unavailable in this task, here we use either a hard-coded reference, or a negative-binomial learned reference without batch labels. The parameter alpha refers to the detection efficiency prior.",
         "paper_name": "Cell2location maps fine-grained cell types in spatial transcriptomics",
         "paper_reference": "kleshchevnikov2022cell2location",
         "paper_year": 2022,
@@ -38,12 +38,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "commit_sha": "6cd9e1e3b3b8549a872b901e84b4c7e3d59ae294",
         "method_id": "cell2location_detection_alpha_20"
     },
     {
-        "method_name": "Cell2location (detection_alpha=200, reference hard-coded)",
-        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step.",
+        "method_name": "Cell2location (alpha=200, reference hard-coded)",
+        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step. Note that since batch information is unavailable in this task, here we use either a hard-coded reference, or a negative-binomial learned reference without batch labels. The parameter alpha refers to the detection efficiency prior.",
         "paper_name": "Cell2location maps fine-grained cell types in spatial transcriptomics",
         "paper_reference": "kleshchevnikov2022cell2location",
         "paper_year": 2022,
@@ -52,12 +52,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "commit_sha": "6cd9e1e3b3b8549a872b901e84b4c7e3d59ae294",
         "method_id": "cell2location_detection_alpha_200"
     },
     {
-        "method_name": "Cell2location (detection_alpha=20, reference NB without batch info)",
-        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step.",
+        "method_name": "Cell2location (alpha=20, NB reference)",
+        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step. Note that since batch information is unavailable in this task, here we use either a hard-coded reference, or a negative-binomial learned reference without batch labels. The parameter alpha refers to the detection efficiency prior.",
         "paper_name": "Cell2location maps fine-grained cell types in spatial transcriptomics",
         "paper_reference": "kleshchevnikov2022cell2location",
         "paper_year": 2022,
@@ -66,7 +66,7 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "commit_sha": "6cd9e1e3b3b8549a872b901e84b4c7e3d59ae294",
         "method_id": "cell2location_detection_alpha_20_nb"
     },
     {
@@ -80,7 +80,7 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "commit_sha": "6cd9e1e3b3b8549a872b901e84b4c7e3d59ae294",
         "method_id": "destvi"
     },
     {
@@ -94,7 +94,7 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "commit_sha": "6cd9e1e3b3b8549a872b901e84b4c7e3d59ae294",
         "method_id": "nmf"
     },
     {
@@ -108,7 +108,7 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "commit_sha": "6cd9e1e3b3b8549a872b901e84b4c7e3d59ae294",
         "method_id": "nmfreg"
     },
     {
@@ -122,7 +122,7 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "commit_sha": "6cd9e1e3b3b8549a872b901e84b4c7e3d59ae294",
         "method_id": "nnls_scipy"
     },
     {
@@ -136,7 +136,7 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "commit_sha": "6cd9e1e3b3b8549a872b901e84b4c7e3d59ae294",
         "method_id": "random_proportions"
     },
     {
@@ -150,7 +150,7 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "commit_sha": "6cd9e1e3b3b8549a872b901e84b4c7e3d59ae294",
         "method_id": "rctd"
     },
     {
@@ -164,7 +164,7 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "commit_sha": "6cd9e1e3b3b8549a872b901e84b4c7e3d59ae294",
         "method_id": "seuratv3"
     },
     {
@@ -178,7 +178,7 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "commit_sha": "6cd9e1e3b3b8549a872b901e84b4c7e3d59ae294",
         "method_id": "stereoscope"
     },
     {
@@ -192,7 +192,7 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "commit_sha": "6cd9e1e3b3b8549a872b901e84b4c7e3d59ae294",
         "method_id": "tangram"
     },
     {
@@ -206,7 +206,7 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+        "commit_sha": "6cd9e1e3b3b8549a872b901e84b4c7e3d59ae294",
         "method_id": "true_proportions"
     }
 ]

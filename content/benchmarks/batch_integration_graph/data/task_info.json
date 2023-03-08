@@ -1,6 +1,6 @@
 {
     "task_id": "batch_integration_graph",
-    "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
+    "commit_sha": "6cd9e1e3b3b8549a872b901e84b4c7e3d59ae294",
     "task_name": "Batch integration graph",
     "task_summary": "Removing batch effects while preserving biological variation (graph output)",
     "task_description": "\nThis is a sub-task of the overall batch integration task. Batch (or data) integration\nmethods integrate datasets across batches that arise from various biological and\ntechnical sources. Methods that integrate batches typically have three different types\nof output: a corrected feature matrix, a joint embedding across batches, and/or an\nintegrated cell-cell similarity graph (e.g., a kNN graph). This sub-task focuses on all\nmethods that can output integrated graphs, and includes methods that canonically output\nthe other two data formats with subsequent postprocessing to generate a graph. Other\nsub-tasks for batch integration can be found for:\n\n* [embeddings](../batch_integration_embed/), and\n* [corrected features](../batch_integration_feature/)\n\nThis sub-task was taken from a [benchmarking study of data integration\nmethods](https://openproblems.bio/bibliography#luecken2022benchmarking).\n\n",
