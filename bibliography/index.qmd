@@ -1,0 +1,87 @@
+---
+title: "Bibliography"
+sidebar: false
+page-layout: full
+resources: 
+  - "library.bib"
+css: [biblio.css]
+---
+
+```{=html}
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/gh/pcooksey/bibtex-js@1.0.0/src/bibtex_js.js"
+></script>
+<bibtex src="library.bib"></bibtex>
+
+<div class="bibtex_template">
+  <div class="bibtexVar bibtex-citation" id="+BIBTEXKEY+" extra="BIBTEXKEY">
+    <!-- author -->
+    <span class="author" max="3">
+      <span class="if von"><span class="von"> </span></span
+      ><span class="last"></span
+      ><span class="if junior"> <span class="junior"></span></span>,
+      <span class="first_initial"></span></span
+    >,
+    <!-- title, journal, year etc -->
+    <span class="if BIBTEXTYPEKEY==ARTICLE">
+      "<span class="title"></span>". <em><span class="journal"></span></em>,
+      <span class="if volume">vol. <span class="volume"></span>, </span>
+      <span class="if number">no. <span class="number"></span>, </span>
+      <span class="if pages">pp. <span class="pages"></span>, </span>
+      <span class="if month">no. <span class="month"></span>, </span>
+      <span class="year"></span>.
+    </span>
+    <span class="if BIBTEXTYPEKEY==BOOK || BIBTEXTYPEKEY==INBOOK">
+      <span class="if chapter">"<span class="chapter"></span>", in "</span>
+      <em><span class="title"></span></em>. <span class="publisher"></span>,
+      <span class="year"></span>
+      <span class="if pages">, pp. <span class="pages"></span></span>.
+    </span>
+    <span class="if BIBTEXTYPEKEY==INPROCEEDINGS">
+      "<span class="title"></span>", in
+      <em><span class="booktitle"></span></em>,
+      <span class="if editor"><span class="editor"></span>, Ed., </span>
+      <span class="if month"><span class="month"></span> </span>
+      <span class="year"></span>
+      <span class="if pages">, pp. <span class="pages"></span></span>.
+    </span>
+    <span class="if BIBTEXTYPEKEY==MISC">
+      "<span class="title"></span>", <span class="year"></span>.
+    </span>
+    <!-- doi / url -->
+    <span class="if doi">
+      <a class="bibtexVar" href="http://dx.doi.org/+DOI+" extra="doi"
+        >doi:<span class="doi"></span></a
+      >.
+    </span>
+    <span class="if !doi">
+      <span class="if arxivid">
+        <a
+          class="bibtexVar"
+          href="https://arxiv.org/abs/+ARXIVID+"
+          extra="arxivid"
+          >arXiv:<span class="arxivid"></span></a
+        >.
+      </span>
+      <span class="if !arxivid">
+        <span class="if url">
+          Available: <a class="url"><span class="url"></span></a>.
+        </span>
+      </span>
+    </span>
+  </div>
+</div>
+
+<div id="bibtex_display" callback="add_anchors(bibtex_display)"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+<script>
+  function add_anchors(bibtex_display) {
+    anchors.add(".bibtex-citation");
+    if (window.location.hash != "") {
+      window.location.href = window.location.hash;
+    }
+  }
+</script>
+```

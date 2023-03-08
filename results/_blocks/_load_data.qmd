@@ -56,7 +56,7 @@ cite_fun <- function(key, format = "markdown") {
     # options("citation_map" = cm)
   }
   num <- cite_map[[key]]
-  link_fun(num, paste0("/bibliography#", key), format = format)
+  link_fun(num, paste0("/bibliography/#", key), format = format)
 }
 
 ```
