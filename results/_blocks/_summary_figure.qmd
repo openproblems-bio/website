@@ -30,30 +30,40 @@ summary_all <-
   left_join(per_metric, by = "method_id") %>%
   arrange(desc(method_id))
 
-column_info <- tibble(
-  id = colnames(summary_all)[-1],
-  name = id %>%
-    gsub("^[^_]+_", "", .) %>%
-    gsub("_", " ", .) %>%
-    str_to_title(),
-  group = gsub("_.*", "", id),
-  geom = case_when(
-    group == "method" ~ "text",
-    group == "mean" ~ "bar",
-    group %in% c("dataset", "metric") ~ "funkyrect"
-  ),
-  palette = ifelse(group %in% c("mean", "dataset", "metric"), group, NA_character_),
-  options = map2(id, geom, function(id, geom) {
-    if (id == "method_name") {
-      list(width = 15, hjust = 0)
-    } else if (id == "is_baseline") {
-      list(width = 1)
-    } else if (geom == "bar") {
-      list(width = 4)
-    } else {
-      list()
+column_info <- 
+  bind_rows(
+    tribble(
+      ~id, ~name, ~group, ~geom,
+      "method_name", "Name", "method", "text",
+      "mean_score", "Score", "mean", "bar",
+    ),
+    dataset_info %>% transmute(
+      id = paste0("dataset_", dataset_id),
+      name = dataset_name,
+      group = "dataset",
+      geom = "funkyrect"
+    ),
+    metric_info %>% transmute(
+      id = paste0("metric_", metric_id),
+      name = metric_name,
+      group = "metric",
+      geom = "funkyrect"
+    )
+  ) %>%
+  mutate(
+    palette = ifelse(group %in% c("mean", "dataset", "metric"), group, NA_character_),
+    options = map2(id, geom, function(id, geom) {
+      if (id == "method_name") {
+        list(width = 15, hjust = 0)
+      } else if (id == "is_baseline") {
+        list(width = 1)
+      } else if (geom == "bar") {
+        list(width = 4)
+      } else {
+        list()
+      }
     }
-  })
+  )
 )
 column_groups <- tribble(
   ~Category, ~group, ~palette,
@@ -85,8 +95,10 @@ g_all <- funky_heatmap(
   column_info = column_info %>% filter(id %in% colnames(summary_all)),
   column_groups = column_groups,
   palettes = palettes,
-  expand = c(xmax = 3),
-  col_annot_offset = 5,
+  # determine xmax expand heuristically
+  expand = c(xmax = max(str_length(tail(column_info$name, 4))) / 5),
+  # determine offset heuristically
+  col_annot_offset = max(str_length(column_info$name)) / 5,
   add_abc = FALSE,
   scale_column = FALSE
 )
