@@ -1,11 +1,9 @@
-.csl-entry:target::before {
-    font: 70% sans-serif;
-    content: "►";
-    margin-right: 0.25em;
+.bibtexentry > .bibtex-citation {
+    line-height: 1.05;
+    margin-bottom: 10px;
 }
 
-
-.csl-entry:target {
+.bibtexentry > .bibtex-citation:target {
     -webkit-animation: target-fade 2s;
     -moz-animation: target-fade 2s;
     -o-animation: target-fade 2s;
@@ -30,4 +28,10 @@
 @keyframes target-fade {
     from { background-color: #ff414b; }
     to { background-color: #ff414b44; }
+}
+
+.bibtexentry > .bibtex-citation:target::before {
+    font: 70% sans-serif;
+    content: "►";
+    margin-right: 0.25em;
 }
