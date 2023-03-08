@@ -53,18 +53,15 @@ dt <- DT::datatable(
   res_tib,
   colnames = res_cn,
   options = list(
-    dom = "Bt",
+    dom = "Pt",
     paging = FALSE,
-    columnDefs = list(
-      list(
-        searchPanes = list(show = FALSE),
-        targets = seq(2, ncol(res_tib)-1)
-      ),
-      list(
-        searchPanes = list(
-          preSelect = "Overall mean"
-        ),
-        targets = 1
+    searchPanes = list(
+      initCollapsed = TRUE,
+      preSelect = list(
+        list(
+          rows = c( "Overall mean"),
+          column = 1
+        )
       )
     ),
     buttons = list(
@@ -72,15 +69,12 @@ dt <- DT::datatable(
       "csv",
       "excel"
     ),
-    language = list(
-      searchPanes = list(collapse = "Filter datasets / methods")
-    ),
     scrollX = TRUE
   ),
   escape = FALSE,
   class = "stripe compact",
   rownames = FALSE,
-  extensions = c("Select", "SearchPanes", "Buttons"),
+  extensions = c("Select", "SearchPanes"),
   caption = "Results table of the scores per method, dataset and metric (after scaling). Use the filters to make a custom subselection of methods and datasets. The \"Overall mean\" dataset is the mean value across all datasets."
 ) %>%
   DT::formatRound(c("peak_memory_gb", "mean_score", metric_info$metric_id), digits = 2) %>%
