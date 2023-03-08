@@ -27,27 +27,26 @@ a {
 }
 
 /* Card fx */
-.card {
+.card-shadow {
   overflow: hidden;
   text-overflow: ellipsis;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,.4);
   transition: all .2s ease-out;
 }
-.card:hover {
+a .card-shadow:hover {
   box-shadow: 0 8px 16px rgba(0,0,0,.4);
 }
-.card .btn {
+.card-shadow .btn {
   margin-top: 0.5rem;
   padding: .2rem;
 }
 
-.card .info-text {
+.card-shadow .info-text {
   padding: 0.5rem 0;
 }
 
-.card:hover .info-text,
-.card:focus .info-text {
+.card-shadow:hover .info-text,
+.card-shadow:focus .info-text {
   color: #ff414b;
-
 }
