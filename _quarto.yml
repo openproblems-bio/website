@@ -1,0 +1,65 @@
+project:
+  type: website
+  preview:
+    port: 4200
+
+website:
+  title: "OpenProblems"
+  description: Open Problems in Single Cell Analysis
+  favicon: images/icon.png
+  site-url: https://openproblems-experimental.netlify.app
+  repo-url: https://github.com/openproblems-bio/website-experimental
+  repo-actions: [edit, issue] 
+
+  page-footer:
+    left: "&copy; Open Problems 2023 · View on [GitHub](https://github.com/openproblems-bio/openproblems). Made with [Quarto♥](https://quarto.org)."
+  
+  navbar:
+    logo: images/logo.png
+    title: false
+    left:
+      - href: index.qmd
+        text: About
+      - text: Benchmarks
+        href: results/index.qmd
+      - text: Competitions
+        menu: 
+          - text: NeurIPS 2022 Competition
+            href: competitions/neurips_2022
+          - text: NeurIPS 2021 Competition
+            href: competitions/neurips_2021
+          - text: NeurIPS 2021 Documentation
+            href: competitions/neurips_2021_docs
+      - href: team/index.qmd
+        text: Team
+      - text: Documentation
+        menu:
+          - text: OpenProblems v1
+            href: https://github.com/openproblems-bio/openproblems/blob/main/CONTRIBUTING.md
+          - text: OpenProblems v2
+            href: https://github.com/openproblems-bio/openproblems-v2/blob/main/CONTRIBUTING.md
+          - text: Bibliography
+            href: bibliography/index.qmd
+
+  sidebar:
+    - id: documentation
+      collapse-level: 3
+      title: Documentation
+      contents: documentation
+
+    - id: neurips2021_docs
+      title: NeurIPS2021
+      contents: competitions/neurips_2021_docs
+format:
+  html:
+    # theme:
+    #   light: [ simplex, theme.scss ]
+    #   dark: [ darkly, theme.scss ]
+    theme: [ simplex, theme.scss ]
+    css: styles.css
+    toc: true
+    link-external-newwindow: true
+    smooth-scroll: true
+
+execute:
+  freeze: auto

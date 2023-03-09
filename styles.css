@@ -1,0 +1,86 @@
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar-logo {
+  max-height: 48px;
+}
+
+@media screen and (max-width: 575.98px) {
+  .navbar-logo {
+    max-height: 30px;
+  }
+  .navbar-toggler {
+    font-size: 1rem;
+  }
+  .navbar-brand {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+}
+
+@media screen and (min-width: 575.98px) and (max-width: 992px) {
+  .navbar-logo {
+    max-height: 40px;
+  }
+  .navbar-brand {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+  }
+}
+
+
+
+.mermaid svg {
+  display: block;
+  margin: auto;
+}
+
+header#quarto-header {
+    transition: all 200ms linear;
+}
+
+.quarto-title-banner {
+  height: 22em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Card fx */
+.card-shadow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.4);
+  transition: all .2s ease-out;
+}
+a .card-shadow:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,.4);
+}
+.card-shadow .btn {
+  margin-top: 0.5rem;
+  padding: .2rem;
+}
+
+.card-shadow .info-text {
+  padding: 0.5rem 0;
+}
+
+.card-shadow:hover .info-text,
+.card-shadow:focus .info-text {
+  color: #ff414b;
+}
+
+/* Fix overflow of wide funkyheatmap */
+.quarto-figure > figure {
+    overflow-x: auto;
+}

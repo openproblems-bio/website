@@ -1,0 +1,15 @@
+---
+title: Create pull request
+order: 80
+---
+
+
+## Merge upstream repository
+
+When you want to contribute your changes back to the OpenProblems repository, you might need to merge the upstream main branch into your fork. This ensures that your changes are based on the latest version of the code. To do this, enter the following commands in your terminal or command prompt:
+
+```shell
+git remote add upstream https://github.com/openproblems-bio/openproblems-v2.git
+git fetch upstream
+git merge upstream/main
+```
