@@ -1,15 +1,33 @@
+## openproblems.bio v2.0.0
 
-## website-experimental 0.1.0
+Quarto reimplementation of the original openproblems.bio website.
 
-Initial release
+Pages:
 
-* Main page (hero + text)
+* Main page
 
-* v1 results:
-  - Per-task summary funky heatmap
-  - Per-task QC report
+* Benchmark results:
+  - Per task:
+    - Summary funky heatmap (implemented in funkyheatmap-js)
+    - Results table (using DataTables)
+    - Additional information on datasets, methods, metrics
+    - QC report
+    - Data files as jsons
   - Overall QC report
 
-* Team view (cards)
+* Competitions pages:
+  - NeurIPS 2021
+  - NeurIPS 2021 Documentation
+  - NeurIPS 2022
 
-* Documentation (proposed structure, no content yet)
+* Team view
+
+* Documentation
+  - OpenProblems v1 (links to v1 repo CONTRIBUTING.md)
+  - OpenProblems v2 (links to v2 repo CONTRIBUTING.md)
+  - Bibliography
+  - OpenProblems v2 WIP documentation (hidden)
+
+## openproblems.bio v1.0.0
+
+Website created with Hugo + Wowchemy.
