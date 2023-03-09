@@ -75,7 +75,7 @@ jobs:
           site: ${{ env.NETLIFY_SITE_ID }}
           dir: '_site'
           alias: "${{ env.BRANCH_NAME }}"
-          message: 'Deploy prooduction ${{ github.ref }}'
+          message: 'Deploy preview ${{ github.ref }}'
 
       - name: Comment on PR (success)
         uses: thollander/actions-comment-pull-request@v2
