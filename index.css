@@ -1,6 +1,6 @@
 
 .quarto-title-banner {
-  height: 30em;
+  height: 540px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8,4 +8,22 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+@media screen and (max-width: 575.98px) {
+    .quarto-title-banner {
+        height:325px
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width:767.98px) {
+    .quarto-title-banner {
+        height:350px
+    }
+}
+
+@media screen and (min-width: 767.98px) and (max-width:930px) {
+    .quarto-title-banner {
+        height:415.797px
+    }
 }

@@ -1,3 +1,4 @@
+Results table of the scores per method, dataset and metric (after scaling). Use the filters to make a custom subselection of methods and datasets. The "Overall mean" dataset is the mean value across all datasets.
 
 ```{r resultstable}
 #| echo: false
@@ -8,9 +9,13 @@ res_tib0 <- results %>%
   filter(!is_baseline) %>%
   left_join(dataset_info %>% select(dataset_id, dataset_name, data_reference), by = "dataset_id")
 
+mean_na_zero <- function(x) {
+  mean(ifelse(is.na(x), 0, x))
+}
+
 res_tib1 <- res_tib0 %>% 
   group_by(method_id, method_name, paper_reference, code_url, code_version) %>%
-  summarise_if(is.numeric, mean) %>%
+  summarise_if(is.numeric, mean_na_zero) %>%
   ungroup() %>%
   mutate(
     dataset_name = "Overall mean"
@@ -55,6 +60,12 @@ dt <- DT::datatable(
   options = list(
     dom = "Pt",
     paging = FALSE,
+    columnDefs = list(
+      list(
+        searchPanes = list(show = FALSE),
+        targets = seq(2, ncol(res_tib)-1)
+      )
+    ),
     searchPanes = list(
       initCollapsed = TRUE,
       preSelect = list(
@@ -74,11 +85,11 @@ dt <- DT::datatable(
   escape = FALSE,
   class = "stripe compact",
   rownames = FALSE,
-  extensions = c("Select", "SearchPanes"),
-  caption = "Results table of the scores per method, dataset and metric (after scaling). Use the filters to make a custom subselection of methods and datasets. The \"Overall mean\" dataset is the mean value across all datasets."
+  extensions = c("Select", "SearchPanes")
 ) %>%
   DT::formatRound(c("peak_memory_gb", "mean_score", metric_info$metric_id), digits = 2) %>%
-  DT::formatRound(c("cpu_pct", "duration_sec"), digits = 0)
+  DT::formatRound(c("cpu_pct", "duration_sec"), digits = 0) %>%
+  DT::formatStyle(seq_len(ncol(res_tib)), fontSize = "80%")
 
 dt
 ```
