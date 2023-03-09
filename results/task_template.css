@@ -1,3 +1,5 @@
+/* Data table */
+
 div.datatables {
     color: var(--bs-body-color);
 }
@@ -21,4 +23,14 @@ div.dtsp-topRow.dtsp-bordered:hover {
 
 div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane button.dtsp-paneButton {
     filter: invert(1);
+}
+
+/* Funkyheatmap */
+
+.quarto-figure svg text {
+    fill: var(--bs-body-color);
+}
+
+.quarto-figure svg rect.row ~ text {
+    fill: var(--bs-dark);
 }
