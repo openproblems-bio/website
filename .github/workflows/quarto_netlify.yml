@@ -77,17 +77,27 @@ jobs:
           alias: "${{ env.BRANCH_NAME }}"
           message: 'Deploy prooduction ${{ github.ref }}'
 
-      - uses: thollander/actions-comment-pull-request@v2
+      - name: Comment on PR (success)
+        uses: thollander/actions-comment-pull-request@v2
         if: github.event_name == 'pull_request'
         with:
           message: |
             [![Deploy: success](https://img.shields.io/badge/Deploy-success-success)](${{ steps.deploy_preview.outputs.deploy-url }})
           comment_tag: deploy_status
 
-      - uses: thollander/actions-comment-pull-request@v2
-        if: github.event_name == 'pull_request' && failure()
+      - name: Comment on PR (deploy failure)
+        uses: thollander/actions-comment-pull-request@v2
+        if: github.event_name == 'pull_request' && failure() && steps.deploy_preview.outcome == 'failure'
         with:
           message: |
             [![Deploy: failure](https://img.shields.io/badge/Deploy-failure-critical)](${{ steps.deploy_preview.outputs.logs }})
+          comment_tag: deploy_status
+
+      - name: Comment on PR (actions failure)
+        uses: thollander/actions-comment-pull-request@v2
+        if: github.event_name == 'pull_request' && failure() && steps.deploy_preview.outcome != 'failure'
+        with:
+          message: |
+            [![Deploy: failure](https://img.shields.io/badge/Deploy-failure-critical)](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
           comment_tag: deploy_status
 
