@@ -12,6 +12,31 @@ a {
   max-height: 48px;
 }
 
+@media screen and (max-width: 575.98px) {
+  .navbar-logo {
+    max-height: 30px;
+  }
+  .navbar-toggler {
+    font-size: 1rem;
+  }
+  .navbar-brand {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+}
+
+@media screen and (min-width: 575.98px) and (max-width: 992px) {
+  .navbar-logo {
+    max-height: 40px;
+  }
+  .navbar-brand {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+  }
+}
+
+
+
 .mermaid svg {
   display: block;
   margin: auto;
