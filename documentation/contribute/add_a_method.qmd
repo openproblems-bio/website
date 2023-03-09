@@ -3,11 +3,12 @@ title: Add a method
 order: 40
 ---
 
+{{< include ../_blocks/_clone_repo.qmd >}}
 
 OpenProblems has been build with Viash components including the methods of a task. A Viash component consists of a script and a Viash config. The config defines the documentation, input/output arguments and dependencies of the script. This page describes how to add a method to an existing task.
 
 :::{.callout-tip}
-Make sure you have followed the [Requirements](requirements.qmd) and [getting started](getting_started.qmd) pages.
+Make sure you have followed the ["Requirements"](requirements.qmd) and ["Getting started"](getting_started.qmd) pages.
 :::
 
 :::{.callout-note}
@@ -33,7 +34,7 @@ This will create a new folder at `src/label_projection/methods/my_method` contai
         ├── config.vsh.yaml              config file for method
         └── additional files             Helper files like e.g. tsv file, unit test specific for method, ...
 
-## config.vsh.yaml
+## Viash config
 
 Full documentation on the Viash configuration file is available on the [Viash documentation site](https://viash.io/reference/).
 
