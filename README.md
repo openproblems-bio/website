@@ -4,7 +4,7 @@ This is a repository for hosting experimental website designs.
 
 ## Installation
 
-* Install [quarto](https://quarto.org), R and Python.
+* Install [quarto](https://quarto.org) v1.2, R v4.2 and Python v3.10.
 
 * Run `Rscript -e 'install.packages("renv")'` if you don't have `{renv}` installed.
 
