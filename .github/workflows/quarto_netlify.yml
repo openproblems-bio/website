@@ -12,6 +12,10 @@ on:
 
 name: Render project
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -98,6 +102,6 @@ jobs:
         if: github.event_name == 'pull_request' && failure() && steps.deploy_preview.outcome != 'failure'
         with:
           message: |
-            [![Deploy: failure](https://img.shields.io/badge/Deploy-failure-critical)](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
+            [![Deploy: failure](https://img.shields.io/badge/Deploy-failure-critical)](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}/jobs/${{github.job}})
           comment_tag: deploy_status
 
