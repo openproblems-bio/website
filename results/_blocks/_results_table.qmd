@@ -78,7 +78,8 @@ dt <- DT::datatable(
   caption = "Results table of the scores per method, dataset and metric (after scaling). Use the filters to make a custom subselection of methods and datasets. The \"Overall mean\" dataset is the mean value across all datasets."
 ) %>%
   DT::formatRound(c("peak_memory_gb", "mean_score", metric_info$metric_id), digits = 2) %>%
-  DT::formatRound(c("cpu_pct", "duration_sec"), digits = 0)
+  DT::formatRound(c("cpu_pct", "duration_sec"), digits = 0) %>%
+  DT::formatStyle(seq_len(ncol(res_tib)), fontSize = "80%")
 
 dt
 ```
