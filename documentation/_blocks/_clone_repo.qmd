@@ -1,0 +1,24 @@
+
+```{r setup, include=FALSE}
+repo_path <- system("git rev-parse --show-toplevel", intern = TRUE)
+proj_dir <- paste0(repo_path, "/documentation/_openproblems-v2")
+if (!dir.exists(proj_dir)) {
+  processx::run(
+    "git",
+    c("clone", "https://github.com/openproblems-bio/openproblems-v2.git", basename(proj_dir)),
+    wd = dirname(proj_dir)
+  )
+} else {
+  processx::run(
+    "git", 
+    c("reset", "--hard", "origin/main"),
+    wd = proj_dir
+  )
+}
+processx::run(
+  "viash",
+  c("run", "src/common/sync_test_resources/config.vsh.yaml"),
+  wd = proj_dir
+)
+knitr::opts_knit$set(root.dir = proj_dir)
+```
