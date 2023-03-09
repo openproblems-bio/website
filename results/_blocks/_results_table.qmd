@@ -1,3 +1,4 @@
+Results table of the scores per method, dataset and metric (after scaling). Use the filters to make a custom subselection of methods and datasets. The "Overall mean" dataset is the mean value across all datasets.
 
 ```{r resultstable}
 #| echo: false
@@ -55,6 +56,12 @@ dt <- DT::datatable(
   options = list(
     dom = "Pt",
     paging = FALSE,
+    columnDefs = list(
+      list(
+        searchPanes = list(show = FALSE),
+        targets = seq(2, ncol(res_tib)-1)
+      )
+    ),
     searchPanes = list(
       initCollapsed = TRUE,
       preSelect = list(
@@ -74,8 +81,7 @@ dt <- DT::datatable(
   escape = FALSE,
   class = "stripe compact",
   rownames = FALSE,
-  extensions = c("Select", "SearchPanes"),
-  caption = "Results table of the scores per method, dataset and metric (after scaling). Use the filters to make a custom subselection of methods and datasets. The \"Overall mean\" dataset is the mean value across all datasets."
+  extensions = c("Select", "SearchPanes")
 ) %>%
   DT::formatRound(c("peak_memory_gb", "mean_score", metric_info$metric_id), digits = 2) %>%
   DT::formatRound(c("cpu_pct", "duration_sec"), digits = 0) %>%
