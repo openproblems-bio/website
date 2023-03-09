@@ -36,4 +36,3 @@ params <- list(data_dir = "./data")
     print(f"Write to {index_qmd}", flush=True)
     with index_qmd.open("w", encoding ="utf-8") as f:
         f.write(content)
-    
