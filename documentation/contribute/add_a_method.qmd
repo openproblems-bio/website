@@ -24,15 +24,16 @@ viash run src/common/create_skeleton/config.vsh.yaml -- \
   --task label_projection \
   --comp_type method \
   --name my_method \
-  --language python
+  --language python \
+  --output src/label_projection/methods/my_method
 ```
 
-This will create a new folder at `src/label_projection/methods/my_method` containing a Viash config (`config.vsh.yaml`) and a script (`script.py` or `script.R`).
+This will create a new folder at `src/label_projection/methods/my_method` containing a Viash config and a script.
 
     src/label_projection/methods/my_method
-        ├── script.py/R                  method script
-        ├── config.vsh.yaml              config file for method
-        └── additional files             Helper files like e.g. tsv file, unit test specific for method, ...
+        ├── script.py                    Script for running the method.
+        ├── config.vsh.yaml              Config file for method.
+        └── ...                          Optional additional resources.
 
 ## Viash config
 
