@@ -1,4 +1,10 @@
-## openproblems.bio v2.0.0
+# openproblems.bio v2.0.1
+
+## MINOR CHANGES
+
+* Ported missing metadata.
+
+# openproblems.bio v2.0.0
 
 Quarto reimplementation of the original openproblems.bio website.
 
@@ -28,6 +34,6 @@ Pages:
   - Bibliography
   - OpenProblems v2 WIP documentation (hidden)
 
-## openproblems.bio v1.0.0
+# openproblems.bio v1.0.0
 
 Website created with Hugo + Wowchemy.
