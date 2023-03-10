@@ -47,12 +47,18 @@ header#quarto-header {
 }
 
 .quarto-title-banner {
-  height: 22em;
+  height: 16em;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   align-items: flex-end;
+}
+
+@media screen and (min-width: 768px) {
+  .quarto-title-banner {
+    height: 22em;
+  }
 }
 
 /* Card fx */
