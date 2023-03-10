@@ -67,6 +67,7 @@ jobs:
           auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           site: ${{ env.NETLIFY_SITE_ID }}
           dir: '_site'
+          alias: "main"
           message: 'Deploy main ${{ github.ref }}'
 
       ## release actions
