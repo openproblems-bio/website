@@ -1,8 +1,11 @@
 # openproblems.bio v2.0.1
 
+
 ## MINOR CHANGES
 
 * Ported missing metadata.
+
+* Dark mode was added.
 
 # openproblems.bio v2.0.0
 
