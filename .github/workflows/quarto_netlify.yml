@@ -7,8 +7,7 @@ on:
       - reopened
       - synchronize
       - closed
-  # to be able to trigger a manual build
-  workflow_dispatch:
+  release:
 
 name: Render project
 
@@ -59,10 +58,21 @@ jobs:
         run: |
           source renv/python/virtualenvs/renv-python-3.10/bin/activate
           quarto render
-
-      - name: Deploy to Netlify 🚀
+      
+      ## push actions
+      - name: Deploy push
         uses: data-intuitive/netlify-deploy-site@v1
-        if: github.event_name != 'pull_request'
+        if: github.event_name == 'push'
+        with:
+          auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          site: ${{ env.NETLIFY_SITE_ID }}
+          dir: '_site'
+          message: 'Deploy main ${{ github.ref }}'
+
+      ## release actions
+      - name: Deploy release to Netlify 🚀
+        uses: data-intuitive/netlify-deploy-site@v1
+        if: github.event_name == 'release'
         with:
           auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           site: ${{ env.NETLIFY_SITE_ID }}
@@ -70,6 +80,7 @@ jobs:
           prod: true
           message: 'Deploy production ${{ github.ref }}'
 
+      ## PR actions
       - name: Deploy preview
         id: deploy_preview
         if: github.event_name == 'pull_request'
@@ -104,4 +115,4 @@ jobs:
           message: |
             [![Deploy: failure](https://img.shields.io/badge/Deploy-failure-critical)](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}/jobs/${{github.job}})
           comment_tag: deploy_status
-
+  
