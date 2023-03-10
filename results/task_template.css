@@ -1,0 +1,64 @@
+details > summary {
+    color: var(--bs-secondary-text-color);
+}
+
+/* Data table */
+
+.dataTables_wrapper {
+    color: var(--bs-body-color);
+}
+.dataTables_wrapper button {
+    color: var(--bs-body-color);
+}
+
+div.dtsp-searchCont input.dtsp-search::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--bs-body-color);
+    opacity: 1; /* Firefox */
+}
+
+div.dtsp-searchCont input.dtsp-search:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--bs-body-color);
+}
+
+div.dtsp-searchCont input.dtsp-search::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--bs-body-color);
+}
+
+div.dtsp-panesContainer .dtsp-titleRow button {
+    color: var(--bs-body-color);
+}
+div.dtsp-panesContainer .dtsp-titleRow button.dtsp-disabledButton {
+    color: var(--bs-secondary);
+}
+div.dtsp-panesContainer .dtsp-titleRow button:hover {
+    background-color: var(--bs-button-hover);
+}
+div.dtsp-panesContainer .dtsp-titleRow button.dtsp-disabledButton:hover {
+    background-color: unset;
+}
+
+div.dtsp-topRow.dtsp-bordered:hover {
+    background-color: var(--bs-button-hover);
+}
+div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane input.dtsp-paneInputButton:hover, div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane button.dtsp-paneButton:hover {
+    background-color: var(--bs-button-hover);
+}
+div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane button.dtsp-paneButton.dtsp-searchIcon, div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane button.dtsp-paneButton.dtsp-nameButton, div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane button.dtsp-paneButton.dtsp-countButton {
+    filter: invert(var(--invert-colors));
+}
+div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane button.dtsp-paneButton.dtsp-searchIcon:hover, div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane button.dtsp-paneButton.dtsp-nameButton:hover, div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane button.dtsp-paneButton.dtsp-countButton:hover {
+    background-color: var(--bs-invert-button-hover);
+}
+div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody {
+    background-color: var(--bs-body-bg) !important;
+}
+
+/* Funkyheatmap */
+
+.quarto-figure svg text {
+    fill: var(--bs-body-color);
+}
+
+.quarto-figure svg rect.row ~ text {
+    fill: var(--bs-dark);
+}

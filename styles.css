@@ -8,8 +8,39 @@ a {
   text-decoration: none;
 }
 
+code {
+  color: var(--bs-code-color);
+}
+
+.navbar {
+  border-width: 0px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.nav-link {
+  padding: 0.9rem 1rem;
+}
+
+.navbar-brand {
+  padding-top: 0.7125rem;
+  padding-bottom: 0.7125rem;
+}
+
+.navbar-dark {
+  background-color: var(--bs-body-bg);
+}
+
 .navbar-logo {
   max-height: 48px;
+}
+
+.navbar .quarto-color-scheme-toggle .bi::before {
+  background-image: var(--moon-svg) !important;
+}
+
+.navbar-collapse .quarto-color-scheme-toggle {
+  margin-top: -20px;
 }
 
 @media screen and (max-width: 575.98px) {
@@ -34,8 +65,6 @@ a {
     padding-bottom: 0.4rem;
   }
 }
-
-
 
 .mermaid svg {
   display: block;
@@ -65,14 +94,13 @@ header#quarto-header {
 .card-shadow {
   overflow: hidden;
   text-overflow: ellipsis;
-  background: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,.4);
+  background: var(--bs-body-bg);
+  box-shadow: 0 2px 4px var(--shadow-color);
   transition: all .2s ease-out;
 }
-
 a .card-shadow:hover,
 .card-shadow:has(a):hover {
-  box-shadow: 0 8px 16px rgba(0,0,0,.4);
+  box-shadow: 0 8px 16px var(--shadow-color);
 }
 .card .btn {
   margin-top: 0.5rem;
