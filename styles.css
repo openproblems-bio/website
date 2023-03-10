@@ -47,12 +47,18 @@ header#quarto-header {
 }
 
 .quarto-title-banner {
-  height: 22em;
+  height: 16em;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   align-items: flex-end;
+}
+
+@media screen and (min-width: 768px) {
+  .quarto-title-banner {
+    height: 22em;
+  }
 }
 
 /* Card fx */
@@ -63,21 +69,14 @@ header#quarto-header {
   box-shadow: 0 2px 4px rgba(0,0,0,.4);
   transition: all .2s ease-out;
 }
-a .card-shadow:hover {
+
+a .card-shadow:hover,
+.card-shadow:has(a):hover {
   box-shadow: 0 8px 16px rgba(0,0,0,.4);
 }
-.card-shadow .btn {
+.card .btn {
   margin-top: 0.5rem;
   padding: .2rem;
-}
-
-.card-shadow .info-text {
-  padding: 0.5rem 0;
-}
-
-.card-shadow:hover .info-text,
-.card-shadow:focus .info-text {
-  color: #ff414b;
 }
 
 /* Fix overflow of wide funkyheatmap */
