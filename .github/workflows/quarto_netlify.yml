@@ -1,0 +1,118 @@
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+  release:
+
+name: Render project
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+      NETLIFY_SITE_ID: 397b6416-708f-4133-afe9-9a07ed2e03bf
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: "4.2"
+          use-public-rspm: true
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Set up environment
+        run: |
+          echo "LINUX_VERSION=$(uname -rs)" >> $GITHUB_ENV
+
+      - name: Cache Python packages
+        uses: actions/cache@v3
+        with:
+          path: renv/python/virtualenvs/renv-python-3.10
+          key: python-${{env.LINUX_VERSION}}-${{ env.pythonLocation }}-${{ hashFiles('requirements.txt') }}
+          restore-keys: python-${{env.LINUX_VERSION}}-${{ env.pythonLocation }}-
+
+      - uses: r-lib/actions/setup-renv@v2
+          
+      - name: Install Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
+
+      - name: Render with Quarto
+        shell: bash -l {0}  
+        run: |
+          source renv/python/virtualenvs/renv-python-3.10/bin/activate
+          quarto render
+      
+      ## push actions
+      - name: Deploy push
+        uses: data-intuitive/netlify-deploy-site@v1
+        if: github.event_name == 'push'
+        with:
+          auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          site: ${{ env.NETLIFY_SITE_ID }}
+          dir: '_site'
+          message: 'Deploy main ${{ github.ref }}'
+
+      ## release actions
+      - name: Deploy release to Netlify 🚀
+        uses: data-intuitive/netlify-deploy-site@v1
+        if: github.event_name == 'release'
+        with:
+          auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          site: ${{ env.NETLIFY_SITE_ID }}
+          dir: '_site'
+          prod: true
+          message: 'Deploy production ${{ github.ref }}'
+
+      ## PR actions
+      - name: Deploy preview
+        id: deploy_preview
+        if: github.event_name == 'pull_request'
+        uses: data-intuitive/netlify-deploy-site@v1
+        with:
+          auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          site: ${{ env.NETLIFY_SITE_ID }}
+          dir: '_site'
+          alias: "${{ env.BRANCH_NAME }}"
+          message: 'Deploy preview ${{ github.ref }}'
+
+      - name: Comment on PR (success)
+        uses: thollander/actions-comment-pull-request@v2
+        if: github.event_name == 'pull_request'
+        with:
+          message: |
+            [![Deploy: success](https://img.shields.io/badge/Deploy-success-success)](${{ steps.deploy_preview.outputs.deploy-url }})
+          comment_tag: deploy_status
+
+      - name: Comment on PR (deploy failure)
+        uses: thollander/actions-comment-pull-request@v2
+        if: github.event_name == 'pull_request' && failure() && steps.deploy_preview.outcome == 'failure'
+        with:
+          message: |
+            [![Deploy: failure](https://img.shields.io/badge/Deploy-failure-critical)](${{ steps.deploy_preview.outputs.logs }})
+          comment_tag: deploy_status
+
+      - name: Comment on PR (actions failure)
+        uses: thollander/actions-comment-pull-request@v2
+        if: github.event_name == 'pull_request' && failure() && steps.deploy_preview.outcome != 'failure'
+        with:
+          message: |
+            [![Deploy: failure](https://img.shields.io/badge/Deploy-failure-critical)](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}/jobs/${{github.job}})
+          comment_tag: deploy_status
+  

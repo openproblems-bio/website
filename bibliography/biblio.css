@@ -1,0 +1,37 @@
+.bibtexentry > .bibtex-citation {
+    line-height: 1.05;
+    margin-bottom: 10px;
+}
+
+.bibtexentry > .bibtex-citation:target {
+    -webkit-animation: target-fade 3s;
+    -moz-animation: target-fade 3s;
+    -o-animation: target-fade 3s;
+    animation: target-fade 3s;
+    background-color: #ff414b44;
+}
+
+
+@-webkit-keyframes target-fade {
+    from { background-color: #ff000d; }
+    to { background-color: #ff414b44; }
+}
+
+@-moz-keyframes target-fade {
+    from { background-color: #ff000d; }
+    to { background-color: #ff414b44; }
+}
+@-o-keyframes target-fade {
+    from { background-color: #ff000d; }
+    to { background-color: #ff414b44; }
+}
+@keyframes target-fade {
+    from { background-color: #ff000d; }
+    to { background-color: #ff414b44; }
+}
+
+.bibtexentry > .bibtex-citation:target::before {
+    font: 70% sans-serif;
+    content: "►";
+    margin-right: 0.25em;
+}
