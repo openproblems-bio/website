@@ -8,6 +8,8 @@
 * Dark mode was added.
 
 * Changed the bibliography hero.
+  
+* use filter to determine external link 
 
 # openproblems.bio v2.0.0
 
