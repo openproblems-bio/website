@@ -9,7 +9,9 @@
 
 * Changed the bibliography hero.
   
-* use filter to determine external link 
+## BUG FIXES
+
+* Fix internal links being treated as external links in PR previews (#179).
 
 # openproblems.bio v2.0.0
 
