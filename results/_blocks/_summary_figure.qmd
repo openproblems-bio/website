@@ -3,7 +3,7 @@
 #| echo: false
 #| message: false
 #| warning: false
-overall <- results_long %>% 
+overall <- results_long %>%
   group_by(method_id) %>%
   summarise(mean_score = mean(score %|% 0), .groups = "drop") %>%
   mutate(mean_score = pmin(1, pmax(mean_score, 0))) %>%
@@ -21,7 +21,7 @@ per_metric <- results_long %>%
   mutate(score = pmin(1, pmax(score, 0))) %>%
   spread(metric_id, score)
 
-summary_all <- 
+summary_all <-
   method_info %>%
   filter(!is_baseline) %>%
   select(method_id, method_name) %>%
@@ -30,7 +30,7 @@ summary_all <-
   left_join(per_metric, by = "method_id") %>%
   arrange(desc(method_id))
 
-column_info <- 
+column_info <-
   bind_rows(
     tribble(
       ~id, ~name, ~group, ~geom,
@@ -90,30 +90,70 @@ palettes <- list(
   metric = "Reds"
 )
 
-g_all <- funky_heatmap(
-  data = summary_all,
-  column_info = column_info %>% filter(id %in% colnames(summary_all)),
-  column_groups = column_groups,
-  palettes = palettes,
-  # determine xmax expand heuristically
-  expand = c(xmax = max(str_length(tail(column_info$name, 4))) / 5),
-  # determine offset heuristically
-  col_annot_offset = max(str_length(column_info$name)) / 5,
-  add_abc = FALSE,
-  scale_column = FALSE
+# g_all <- funky_heatmap(
+#   data = summary_all,
+#   column_info = column_info %>% filter(id %in% colnames(summary_all)),
+#   column_groups = column_groups,
+#   palettes = palettes,
+#   # determine xmax expand heuristically
+#   expand = c(xmax = max(str_length(tail(column_info$name, 4))) / 5),
+#   # determine offset heuristically
+#   col_annot_offset = max(str_length(column_info$name)) / 5,
+#   add_abc = FALSE,
+#   scale_column = FALSE
+# )
+
+ojs_define(
+    method_info = method_info,
+    funky_heatmap_args = list(
+        data = summary_all,
+        columns = colnames(summary_all)[2:ncol(summary_all)],
+        column_info = column_info %>% filter(id %in% colnames(summary_all)),
+        column_groups = column_groups %>% rename(name = Category),
+        palettes = palettes,
+        expand = c(xmax = 3),
+        col_annot_offset = 5,
+        add_abc = FALSE,
+        scale_column = FALSE
+    )
 )
 ```
 
-```{r}
-#| include: false
-knitr::opts_chunk$set(
-  fig.width = g_all$width,
-  fig.height = g_all$height
-)
+```{ojs}
+//| include: false
+//| echo: false
+// panel: input
+viewof color_by_rank = Inputs.toggle({label: "Color by rank"})
+viewof scale_column = Inputs.toggle({label: "Rescale per column"})
 ```
 
-```{r summary}
-#| echo: false
-#| fig-cap: "Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)."
-g_all
+```{ojs}
+//| echo: false
+//| fig-cap: "Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)."
+
+funkyheatmap(
+    funky_heatmap_args.data,
+    funky_heatmap_args.columns,
+    funky_heatmap_args.column_info,
+    funky_heatmap_args.column_groups,
+    funky_heatmap_args.palettes,
+    funky_heatmap_args.expand,
+    funky_heatmap_args.col_annot_offset,
+    funky_heatmap_args.add_abc,
+    scale_column,
+    {
+        fontSize: 14,
+        rowHeight: 26,
+        rootStyle: 'max-width: none',
+        colorByRank: color_by_rank
+    }
+);
+```
+
+```{ojs}
+//| echo: false
+funkyheatmap = (await require('d3@7').then(d3 => {
+  window.d3 = d3;
+  return import('https://unpkg.com/funkyheatmap-js@0.1.7');
+})).default;
 ```

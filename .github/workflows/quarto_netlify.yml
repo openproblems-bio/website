@@ -7,10 +7,13 @@ on:
       - reopened
       - synchronize
       - closed
-  # to be able to trigger a manual build
-  workflow_dispatch:
+  release:
 
 name: Render project
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-deploy:
@@ -18,7 +21,7 @@ jobs:
 
     env:
       BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-      NETLIFY_SITE_ID: 50eb8c92-d903-4d5d-a896-58a092b37874
+      NETLIFY_SITE_ID: 397b6416-708f-4133-afe9-9a07ed2e03bf
 
     steps:
       - uses: actions/checkout@v3
@@ -55,10 +58,22 @@ jobs:
         run: |
           source renv/python/virtualenvs/renv-python-3.10/bin/activate
           quarto render
-
-      - name: Deploy to Netlify 🚀
+      
+      ## push actions
+      - name: Deploy push
         uses: data-intuitive/netlify-deploy-site@v1
-        if: github.event_name != 'pull_request'
+        if: github.event_name == 'push'
+        with:
+          auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          site: ${{ env.NETLIFY_SITE_ID }}
+          dir: '_site'
+          alias: "main"
+          message: 'Deploy main ${{ github.ref }}'
+
+      ## release actions
+      - name: Deploy release to Netlify 🚀
+        uses: data-intuitive/netlify-deploy-site@v1
+        if: github.event_name == 'release'
         with:
           auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           site: ${{ env.NETLIFY_SITE_ID }}
@@ -66,6 +81,7 @@ jobs:
           prod: true
           message: 'Deploy production ${{ github.ref }}'
 
+      ## PR actions
       - name: Deploy preview
         id: deploy_preview
         if: github.event_name == 'pull_request'
@@ -75,19 +91,29 @@ jobs:
           site: ${{ env.NETLIFY_SITE_ID }}
           dir: '_site'
           alias: "${{ env.BRANCH_NAME }}"
-          message: 'Deploy prooduction ${{ github.ref }}'
+          message: 'Deploy preview ${{ github.ref }}'
 
-      - uses: thollander/actions-comment-pull-request@v2
+      - name: Comment on PR (success)
+        uses: thollander/actions-comment-pull-request@v2
         if: github.event_name == 'pull_request'
         with:
           message: |
             [![Deploy: success](https://img.shields.io/badge/Deploy-success-success)](${{ steps.deploy_preview.outputs.deploy-url }})
           comment_tag: deploy_status
 
-      - uses: thollander/actions-comment-pull-request@v2
-        if: github.event_name == 'pull_request' && failure()
+      - name: Comment on PR (deploy failure)
+        uses: thollander/actions-comment-pull-request@v2
+        if: github.event_name == 'pull_request' && failure() && steps.deploy_preview.outcome == 'failure'
         with:
           message: |
             [![Deploy: failure](https://img.shields.io/badge/Deploy-failure-critical)](${{ steps.deploy_preview.outputs.logs }})
           comment_tag: deploy_status
 
+      - name: Comment on PR (actions failure)
+        uses: thollander/actions-comment-pull-request@v2
+        if: github.event_name == 'pull_request' && failure() && steps.deploy_preview.outcome != 'failure'
+        with:
+          message: |
+            [![Deploy: failure](https://img.shields.io/badge/Deploy-failure-critical)](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}/jobs/${{github.job}})
+          comment_tag: deploy_status
+  

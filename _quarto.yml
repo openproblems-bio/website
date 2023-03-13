@@ -4,12 +4,13 @@ project:
     port: 4200
 
 website:
-  title: "OpenProblems"
-  description: Open Problems in Single Cell Analysis
+  title: "Open Problems in Single Cell Analysis"
+  description: "Aggregating and Benchmarking Open Problems in Single Cell Analysis"
   favicon: images/icon.png
-  site-url: https://openproblems-experimental.netlify.app
-  repo-url: https://github.com/openproblems-bio/website-experimental
+  site-url: https://openproblems.bio
+  repo-url: https://github.com/openproblems-bio/website
   repo-actions: [edit, issue] 
+  google-analytics: 'UA-178400615-1'
 
   page-footer:
     left: "&copy; Open Problems 2023 · View on [GitHub](https://github.com/openproblems-bio/openproblems). Made with [Quarto♥](https://quarto.org)."
@@ -52,10 +53,9 @@ website:
       contents: competitions/neurips_2021_docs
 format:
   html:
-    # theme:
-    #   light: [ simplex, theme.scss ]
-    #   dark: [ darkly, theme.scss ]
-    theme: [ simplex, theme.scss ]
+    theme:
+      light: [ simplex, theme.scss, theme-light.scss]
+      dark: [ darkly, theme.scss, theme-dark.scss ]
     css: styles.css
     toc: true
     link-external-newwindow: true
