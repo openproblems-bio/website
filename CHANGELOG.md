@@ -9,6 +9,8 @@
 
 * Changed the bibliography hero.
 
+* Add viash install to CI
+
 # openproblems.bio v2.0.0
 
 Quarto reimplementation of the original openproblems.bio website.
