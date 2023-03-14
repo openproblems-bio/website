@@ -13,6 +13,8 @@
 
 * Fix internal links being treated as external links in PR previews (#179).
 
+* Changed the results hero.
+
 # openproblems.bio v2.0.0
 
 Quarto reimplementation of the original openproblems.bio website.
