@@ -5,7 +5,7 @@
 
 * Ported missing metadata.
 
-* Dark mode was added.
+* Dark mode was added (disabled for now).
 
 * Changed the bibliography hero.
   
@@ -14,8 +14,6 @@
 * Fix internal links being treated as external links in PR previews (#179).
 
 * Changed the results hero.
-
-* Add viash install to CI
 
 # openproblems.bio v2.0.0
 
