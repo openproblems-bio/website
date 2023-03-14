@@ -8,6 +8,10 @@
 * Dark mode was added.
 
 * Changed the bibliography hero.
+  
+## BUG FIXES
+
+* Fix internal links being treated as external links in PR previews (#179).
 
 # openproblems.bio v2.0.0
 
