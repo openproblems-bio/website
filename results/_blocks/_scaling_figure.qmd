@@ -13,6 +13,9 @@ ggplot(results_long %>% arrange(method_id)) +
   geom_point(aes(score, method_id, colour = is_baseline)) +
   facet_wrap(~metric_id, ncol = 1, scales = "free") +
   theme_bw() +
-  theme(panel.background = element_rect(fill="#00000000")) +
+  theme(
+    panel.background = element_rect(fill = "transparent", colour = NA),
+    plot.background = element_rect(fill = "transparent", colour = NA)
+  ) +
   labs(x = NULL, y = NULL)
 ```
