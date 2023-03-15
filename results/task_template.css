@@ -59,10 +59,30 @@ div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody {
     fill: var(--bs-body-color);
 }
 
+.quarto-figure svg rect.row:first-child ~ text {
+    fill: var(--bs-body-color);
+}
+
 .quarto-figure svg rect:first-child ~ text {
     fill: var(--bs-white);
 }
 
-.quarto-figure svg rect.row ~ text {
-    fill: var(--bs-black);
+.quarto-figure svg rect.row:nth-child(2n) {
+    fill: var(--bs-button-hover);
+}
+
+.quarto-figure svg rect.row {
+    fill: var(--bs-body-bg);
+}
+
+.quarto-figure svg g:first-child ~ g text ~ rect {
+    stroke: var(--bs-body-color) !important;
+}
+
+.quarto-figure svg g:first-child ~ g text ~ circle {
+    stroke: var(--bs-body-color) !important;
+}
+
+.quarto-figure svg line {
+    stroke: var(--bs-body-color);
 }
