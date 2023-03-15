@@ -13,5 +13,6 @@ ggplot(results_long %>% arrange(method_id)) +
   geom_point(aes(score, method_id, colour = is_baseline)) +
   facet_wrap(~metric_id, ncol = 1, scales = "free") +
   theme_bw() +
+  theme(panel.background = element_rect(fill="#00000000")) +
   labs(x = NULL, y = NULL)
 ```
