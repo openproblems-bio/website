@@ -1,0 +1,63 @@
+## alternative methods
+
+There is also a possibility to add a __control method__ to the the task. These methods form the baseline that will be used to compare the methods from the same task against to see how they perform.
+These `controls` can divided in 2 type:
+
+* __negative control__: These methods contain no or a random prediction. Which will make these have a bad result when performing metrics. 
+* __Positive control__: These methods contain the ground truth. This ensures they have the good result when performing the metrics.
+
+For most of the time these methods are added in the same way as the methods above. The differences will be shown below.
+
+### Create a new component
+
+Create a new Viash component by running the following command:
+
+```bash
+viash run src/common/create_skeleton/config.vsh.yaml -- \
+  --task label_projection \
+  --comp-type negative_control \
+  --name my_method \
+  --language python
+```
+
+This will create a new folder at `src/label_projection/control_methods/my_method`. You will need to change the `--comp-type` to postivie control depending on wich typ you want to add.
+
+    src/label_projection/control_methods/my_method
+        ├── script.py/R                  method script
+        ├── config.vsh.yaml              config file for method
+        └── additional files             Helper files like e.g. tsv file, unit test specific for method, ...
+
+### config.vsh.yaml
+
+The main difference:
+
+1. `namespace` -> `control_methods`
+2. `info/type`: This will be `negative_control` or `positive_control`.
+
+
+```yaml
+__merge__: ../../api/comp_control_method.yaml
+functionality:
+  name: my_method
+  namespace: label_projection/control_methods
+  description: A description for your method.
+  info:
+    type: negative_control
+    method_name: My Method
+    variants:
+      my_method:
+    preferred_normalization: counts
+  resources:
+    - type: python_script
+      path: script.py
+platforms:
+  - type: docker
+    image: "python:3.8"
+    setup:
+      - type: python
+        packages:
+          - "anndata>=0.8"
+  - type: nextflow
+    directives: 
+      label: [ lowmem, lowcpu ]
+```
