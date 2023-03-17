@@ -8,6 +8,8 @@
 * Dark mode was added.
 
 * Changed the bibliography hero.
+
+* Removed sub-stub regulatory effect prediction task.
   
 ## BUG FIXES
 
