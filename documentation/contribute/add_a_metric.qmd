@@ -2,3 +2,267 @@
 title: Add a metric
 order: 60
 ---
+
+{{< include ../_blocks/_clone_repo.qmd >}}
+
+OpenProblems has been build with Viash components including the metrics of a task. A Viash component consists of a script and a Viash config. The config defines the documentation, input/output arguments and dependencies of the script. This page describes how to add a method to an existing task.
+
+:::{.callout-tip}
+Make sure you have followed the ["Requirements"](requirements.qmd) and ["Getting started"](getting_started.qmd) pages.
+:::
+
+:::{.callout-note}
+This guide will explain how to add a new metric for the Label projection task. Every time you encounter the string `label_projection`, replace it with your task of interest.
+:::
+
+## Create a new component
+
+Create a new Viash component by running the following command:
+
+::: {.panel-tabset}
+## Python
+```bash
+viash run src/common/create_skeleton/config.vsh.yaml \
+  --task label_projection \
+  --type metric \
+  --name my_metric \
+```
+
+```{bash}
+#| echo: false
+viash run src/common/create_skeleton/config.vsh.yaml -- --task label_projection --type metric --name my_metric
+```
+
+This will create a new folder at `src/label_projection/metrics/my_metric` containing a Viash config and a script.
+
+    src/label_projection/metric/my_metric
+        ├── script.py                    Script for running the metric.
+        ├── config.vsh.yaml              Config file for metric.
+        └── ...                          Optional additional resources.
+
+## R
+
+```bash
+viash run src/common/create_skeleton/config.vsh.yaml \
+  --task label_projection \
+  --type metric \
+  --name my_metric_r \
+  --language r
+```
+
+```{bash}
+#| echo: false
+viash run src/common/create_skeleton/config.vsh.yaml -- --task label_projection --type metric --name my_metric_r --language r
+```
+
+This will create a new folder at `src/label_projection/metrics/my_metric_r` containing a Viash config and a script.
+
+    src/label_projection/metrics/my_metric_r
+        ├── script.R                     Script for running the metric.
+        ├── config.vsh.yaml              Config file for metric.
+        └── ...                          Optional additional resources.
+
+:::
+
+Change the `--name` to a unique name for your method. It must match the regex `[a-z][a-z0-9_]*` (snakecase).
+
+## Viash config
+
+Full documentation on the Viash configuration file is available on the [Viash documentation site](https://viash.io/reference/).
+
+### Functionality
+
+This section of the configuration file contains information about the metadata of the script including script specific parameters and a list of resource files. 
+
+````yaml
+
+```{python}
+#| echo: false
+#| output: asis
+out = 1
+with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/metrics/my_metric/config.vsh.yaml") as f:
+  lines = f.readlines()
+
+for line in lines:
+  if "platforms" in line:
+    out=0
+  
+  if out == 1:
+    print(line, end="")
+```
+
+````
+
+In this section of the configuration you should focus on updating the following sections:
+
+1. `description` - Add a description about the method.
+2. `info` - Change the `pretty_name` field to the formatted text version of `my_metric`
+2. `Arguments` - Each section here defines a command-line argument for the script. These sections are all passed to the script in the form of a dictionary called `par`. You only need to add the method-specific parameters. If no additional arguments are required then the ones provdided in the `__merge__` file then you can remove this section entirely.
+
+
+
+### Platform
+
+The Platform section defines the information about how the Viash component is run on various backend platforms.
+
+::: {.panel-tabset}
+## Python
+````yaml
+
+```{python}
+#| echo: false
+#| output: asis
+out = 0
+with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/metrics/my_metric/config.vsh.yaml") as f:
+  lines = f.readlines()
+
+for line in lines:
+  if "platforms" in line:
+    out=1
+  
+  if out == 1:
+    print(line, end="")
+```
+
+````
+
+## R
+````yaml
+
+```{python}
+#| echo: false
+#| output: asis
+out = 0
+with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/metrics/my_metric_r/config.vsh.yaml") as f:
+  lines = f.readlines()
+
+for line in lines:
+  if "platforms" in line:
+    out=1
+  
+  if out == 1:
+    print(line, end="")
+```
+
+````
+:::
+
+The most important part of this section to update is the `setup` definition that describes the packages that need to be installed in the docker container and are required for your metric to run.
+
+:::{.callout-caution}
+Do not remove:
+
+1. `pyyaml` package due to general unit testing done. 
+2. `anndata~=0.8` python package when creating an Rscript.
+:::
+
+There are many different ways for specifying these requirements described in the Viash [docs](https://viash.io/reference). 
+
+:::{.callout-note}
+**Tip:** After making changes to the components dependencies, you will need to rebuild the docker container as follows:
+
+```bash
+viash run src/label_projection/metrics/my_metric/config.vsh.yaml -- \
+  ---setup cachedbuild
+```
+<details>
+  <summary>Output</summary>
+```{bash}
+#| echo: false
+viash run src/label_projection/metrics/my_metric/config.vsh.yaml -- ---setup cachedbuild
+```
+</details>
+:::
+
+
+## Script file
+
+The script has three main sections: Imports/libraries, Viash block, and code block.
+
+:::{.panel-tabset}
+
+### Python
+
+````python
+
+```{python}
+#| echo: false
+#| output: asis
+out = 0
+with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/metrics/my_metric/script.py") as f:
+  lines = f.readlines()
+
+for line in lines:
+    print(line, end="")
+```
+
+````
+
+### R
+
+````r
+
+```{python}
+#| echo: false
+#| output: asis
+out = 0
+with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/metrics/my_metric_r/script.R") as f:
+  lines = f.readlines()
+
+for line in lines:
+    print(line, end="")
+```
+
+````
+
+:::
+
+### Packages
+
+In the top section of the script you can define which packages the metric needs. If you add a new or different package add the dependency to `config.vsh.yaml` in the `setup` field (see above).
+
+### Viash block
+
+This optional code block exists to facilitate prototyping so your script can run when called directly by running `python script.py` (or `Rscript script.R` for R users). 
+
+Here, the `par` dictionary contains all the `arguments` defined in the `config.vsh.yaml` file. Including those from the defined `__merge__` file. 
+
+When adding a `argument` in the `par` dict **also** add it to the `config.vsh.yaml` in the `arguments` section.
+
+### Code block
+
+
+
+## Testing
+
+Check out the in depth documentation [here](run_tests.qmd).
+
+You can test your method by using the following command:
+
+```bash
+viash test src/label_projection/metrics/my_method/config.vsh.yaml
+```
+<details>
+  <summary>Output</summary>
+```{bash}
+#| echo: false
+viash test src/label_projection/metrics/f1/config.vsh.yaml
+```
+</details>
+
+There is a general unit test that you can find in the `comp_metric.yaml` that will be executed. 
+
+Depending on the result you will get a notification on how many tests succeeded:
+
+```text
+SUCCESS! All 1 out of 1 test scripts succeeded!
+```
+
+## Final steps
+
+Add yourself to the `task_name/api/authors.yaml` file.
+
+When you are finished with your component create a Pull Request according to the instructions [here](create_pull_request.qmd).
+
+## Advanced
+

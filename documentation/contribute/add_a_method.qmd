@@ -20,16 +20,19 @@ This guide will explain how to add a new method for the Label projection task. E
 Create a new Viash component by running the following command:
 
 ::: {.panel-tabset}
-<!-- TODO: add script -->
 ## Python
 ```bash
-bin/create_skeleton \
+viash run src/common/create_skeleton/config.vsh.yaml \
   --task label_projection \
-  --comp_type method \
+  --type method \
   --name my_method \
-  --language python \
-  --output src/label_projection/methods/my_method
 ```
+
+```{bash}
+#| echo: false
+viash run src/common/create_skeleton/config.vsh.yaml -- --task label_projection --type method --name my_method
+```
+
 This will create a new folder at `src/label_projection/methods/my_method` containing a Viash config and a script.
 
     src/label_projection/methods/my_method
@@ -40,17 +43,21 @@ This will create a new folder at `src/label_projection/methods/my_method` contai
 ## R
 
 ```bash
-bin/create_skeleton \
+viash run src/common/create_skeleton/config.vsh.yaml \
   --task label_projection \
-  --comp_type method \
+  --type method \
   --name my_method_r \
-  --language r \
-  --output src/label_projection/methods/my_method_r
+  --language r
 ```
 
-This will create a new folder at `src/label_projection/methods/my_method` containing a Viash config and a script.
+```{bash}
+#| echo: false
+viash run src/common/create_skeleton/config.vsh.yaml -- --task label_projection --type method --name my_method_r --language r
+```
 
-    src/label_projection/methods/my_method
+This will create a new folder at `src/label_projection/methods/my_method_r` containing a Viash config and a script.
+
+    src/label_projection/methods/my_method_r
         ├── script.R                     Script for running the method.
         ├── config.vsh.yaml              Config file for method.
         └── ...                          Optional additional resources.
@@ -67,46 +74,29 @@ Full documentation on the Viash configuration file is available on the [Viash do
 
 This section of the configuration file contains information about the metadata of the script including script specific parameters and a list of resource files. 
 
-```yaml
-__merge__: ../../api/comp_method.yaml
-functionality:
-  # a unique name for your method, same as what is being output by the script.
-  # must match the regex [a-z][a-z0-9_]*
-  name: my_method
-  namespace: label_projection/methods
-  # metadata for your method
-  description: A description for your method.
-  info:
-    type: method
-    method_name: My Method
-    preferred_normalization: log_cpm
-    variants:
-      my_method:
-      method_variant:
+````yaml
 
-  # component parameters
-  arguments:
-    # Method-specific parameters. 
-    # Change these to expose parameters of your method to Nextflow (optional)
-    - name: "--n_neighbors"
-      type: "integer"
-      default: 5
-      description: Number of neighbors to use.
+```{python}
+#| echo: false
+#| output: asis
+out = 1
+with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/methods/my_method/config.vsh.yaml") as f:
+  lines = f.readlines()
 
-  # files your script needs
-  resources:
-    # the script itself
-    - type: python_script
-      path: script.py
-    # additional resources your script needs (optional)
-    - type: file
-      path: weights.pt
+for line in lines:
+  if "platforms" in line:
+    out=0
+  
+  if out == 1:
+    print(line, end="")
 ```
+
+````
 
 In this section of the configuration you should focus on updating the following sections:
 
 1. `description` - Add a description about the method.
-2. `info` - Change the `method_name` field to the written text version of `my_method`
+2. `info` - Change the `pretty_name` field to the formatted text version of `my_method`
 2. `Arguments` - Each section here defines a command-line argument for the script. These sections are all passed to the script in the form of a dictionary called `par`. You only need to add the method-specific parameters. If no additional arguments are required then the ones provdided in the `__merge__` file then you can remove this section entirely.
 
 
@@ -116,50 +106,54 @@ In this section of the configuration you should focus on updating the following 
 The Platform section defines the information about how the Viash component is run on various backend platforms.
 
 ::: {.panel-tabset}
-<!-- TODO: change to script-->
 ## Python
-```yaml
-# Target platforms
-platforms:
-  - type: docker
-    image: python:3.10
-    # You can specify additional dependencies with 'setup'.
-    setup:
-      - type: python
-        pip:
-          - pyyaml
-          - anndata>=0.8
-  - type: nextflow
-    directives:
-      label: [ midmem, midcpu ]
+````yaml
+
+```{python}
+#| echo: false
+#| output: asis
+out = 0
+with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/methods/my_method/config.vsh.yaml") as f:
+  lines = f.readlines()
+
+for line in lines:
+  if "platforms" in line:
+    out=1
+  
+  if out == 1:
+    print(line, end="")
 ```
 
+````
+
 ## R
-```yaml
-# Target platforms
-platforms:
-  - type: docker
-    image: eddelbuettel/r2u:22.04
-    # You can specify additional dependencies with 'setup'.
-    setup:
-      - type: apt
-        packages: [ libhdf5-dev, libgeos-dev, python3, python3-pip, python3-dev, python-is-python3, git ]
-      - type: python
-        pip: [ anndata>=0.8, pyyaml ]
-      - type: r
-        cran: [ anndata]
-  - type: nextflow
-    directives:
-      label: [ lowmem, lowcpu ]
+````yaml
+
+```{python}
+#| echo: false
+#| output: asis
+out = 0
+with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/methods/my_method_r/config.vsh.yaml") as f:
+  lines = f.readlines()
+
+for line in lines:
+  if "platforms" in line:
+    out=1
+  
+  if out == 1:
+    print(line, end="")
 ```
+
+````
 :::
 
 The most important part of this section to update is the `setup` definition that describes the packages that need to be installed in the docker container and are required for your method to run.
 
 :::{.callout-caution}
 Do not remove:
+
 1. `pyyaml` package due to general unit testing done. 
-2. `anndata>=0.8` python package when creating an Rscript.
+2. `anndata~=0.8` python package when creating an Rscript.
 :::
 
 There are many different ways for specifying these requirements described in the Viash [docs](https://viash.io/reference). 
@@ -167,15 +161,15 @@ There are many different ways for specifying these requirements described in the
 :::{.callout-note}
 **Tip:** After making changes to the components dependencies, you will need to rebuild the docker container as follows:
 
-```sh
-$ viash run src/label_projection/methods/my_method/config.vsh.yaml -- ---setup cachedbuild
+```bash
+viash run src/label_projection/methods/my_method/config.vsh.yaml -- \
+  ---setup cachedbuild
 ```
-<!-- TODO: change to src/label_projection/methods/my_method/config.vsh.yaml -->
 <details>
   <summary>Output</summary>
 ```{bash}
 #| echo: false
-viash run src/label_projection/methods/knn/config.vsh.yaml -- ---setup cachedbuild
+viash run src/label_projection/methods/my_method/config.vsh.yaml -- ---setup cachedbuild
 ```
 </details>
 :::
@@ -185,129 +179,60 @@ viash run src/label_projection/methods/knn/config.vsh.yaml -- ---setup cachedbui
 
 The script has three main sections: Imports/libraries, Viash block, and Method.
 
-### Imports
+:::{.panel-tabset}
 
-This section defines which packages the method expects. If you want to import a new different package, add the `import` statement here **and** add the dependency to `config.vsh.yaml` in the `setup` field (see above).
-
-::: {.panel-tabset}
-<!-- TODO: change to script-->
 ### Python
-```python
-import anndata as ad
+
+````python
+
+```{python}
+#| echo: false
+#| output: asis
+out = 0
+with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/methods/my_method/script.py") as f:
+  lines = f.readlines()
+
+for line in lines:
+    print(line, end="")
 ```
+
+````
 
 ### R
-```R
-library(anndata, warn.conflicts = FALSE)
+
+````r
+
+```{python}
+#| echo: false
+#| output: asis
+out = 0
+with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/methods/my_method_r/script.R") as f:
+  lines = f.readlines()
+
+for line in lines:
+    print(line, end="")
 ```
+
+````
+
 :::
+
+### Packages/libraries
+
+In the top section of the script you can define which packages/libraries the method needs. If you add a new or different package add the dependency to `config.vsh.yaml` in the `setup` field (see above).
 
 ### Viash block
 
 This optional code block exists to facilitate prototyping so your script can run when called directly by running `python script.py` (or `Rscript script.R` for R users). 
 
-::: {.panel-tabset}
-<!-- TODO: change to script-->
-## Python
-```python
-## VIASH START
-# Anything within this block will be removed by `viash` and will be
-# replaced with the parameters as specified in your config.vsh.yaml.
-par = {
-    # Required arguments for the task
-    'input_train': 'train.h5ad',
-    'input_test': '.test.h5ad',
-    'output': 'output.h5ad',
-    # Optional method-specific arguments
-    'n_neighbors': 5,
-}
-meta = { 
-  'functionality_name': 'foo' 
-}
-## VIASH END
-```
-
-## R
-```R
-## VIASH START
-# Anything within this block will be removed by `viash` and will be
-# replaced with the parameters as specified in your config.vsh.yaml.
-par <- list(
-    # Required arguments for the task
-    input_train= 'train.h5ad',
-    input_test= 'test_mod1.h5ad',
-    output= 'output.h5ad',
-    # Optional method-specific arguments
-    n_neighbors= 5,
-)
-meta <- list (
-  functionality_name= 'foo' 
-)
-## VIASH END
-```
-:::
-
 Here, the `par` dictionary contains all the `arguments` defined in the `config.vsh.yaml` file. Including those from the defined `__merge__` file. 
 
 When adding a `argument` in the `par` dict **also** add it to the `config.vsh.yaml` in the `arguments` section.
 
-### Method
+### code block
 
 This code block will typically consist of reading the input files, performing some preprocessing, training a model on the train cells, generating predictions for the test cells, and outputting the predictions as an AnnData file.
 
-::: {.panel-tabset}
-<!-- TODO: change to script-->
-
-## Python
-```python
-## Data reader
-print('Reading input files', flush=True)
-
-input_train = ad.read_h5ad(par['input_train_mod1'])
-input_test = ad.read_h5ad(par['input_test_mod1'])
-
-print('processing Data', flush=True)
-# ... preprocessing ... 
-# ... train model ...
-# ... generate predictions ...
-
-# write output to file
-adata = ad.AnnData(
-    X=y_pred,
-    uns={
-        'dataset_id': input_train.uns['dataset_id'],
-        'method_id': meta['functionality_name'],
-    },
-)
-
-print('writing to output files', flush=True)
-adata.write_h5ad(par['output'], compress='gzip')
-```
-## R
-```R
-## Data reader
-cat('Reading input files')
-
-input_train <- ad.read_h5ad(par['input_train_mod1'])
-input_test <- ad.read_h5ad(par['input_test_mod1'])
-
-cat('processing Data')
-# ... preprocessing ... 
-# ... train model ...
-# ... generate predictions ...
-
-# write output to file
-out <- anndata::AnnData(
-  X = y_pred,
-  uns = list(
-    dataset_id = adata$uns$dataset_id,
-    method_id = meta$functionality_name,
-  )
-)
-out("writing to output files\\n")
-zzz <- adata$write_h5ad(par$output, compression = "gzip")
-```
-:::
 
 Depending on the task, the output is stored in different locations in the anndata. e.g. for `label_projection` it is located in the `.obs["label_pred"]` and for `dimensionality_reduction` it is stored in `.obsm[X_emb]`. You will be able to find this information in the `anndata_*.yaml` file determined in the `output` argument of the `comp_method.yaml` file.
 
@@ -333,7 +258,7 @@ viash test src/label_projection/methods/knn/config.vsh.yaml
 
 There is a general unit test that you can find in the `comp_method.yaml` that will be executed. 
 
-Depending on the result you will get a notification on how many tests succeeded or failed:
+Depending on the result you will get a notification on how many tests succeeded:
 
 ```text
 SUCCESS! All 1 out of 1 test scripts succeeded!
