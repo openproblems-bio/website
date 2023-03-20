@@ -1,63 +1,274 @@
-## alternative methods
+---
+title: Add a baseline method
+order: 50
+---
 
-There is also a possibility to add a __control method__ to the the task. These methods form the baseline that will be used to compare the methods from the same task against to see how they perform.
-These `controls` can divided in 2 type:
+{{< include ../_blocks/_clone_repo.qmd >}}
 
-* __negative control__: These methods contain no or a random prediction. Which will make these have a bad result when performing metrics. 
-* __Positive control__: These methods contain the ground truth. This ensures they have the good result when performing the metrics.
+OpenProblems has been build with Viash components including the control methods of a task. A Viash component consists of a script and a Viash config. The config defines the documentation, input/output arguments and dependencies of the script. This page describes how to add a method to an existing task.
 
-For most of the time these methods are added in the same way as the methods above. The differences will be shown below.
+:::{.callout-tip}
+Make sure you have followed the ["Requirements"](requirements.qmd) and ["Getting started"](getting_started.qmd) pages.
+:::
 
-### Create a new component
+:::{.callout-note}
+This guide will explain how to add a new control method for the Label projection task. Every time you encounter the string `label_projection`, replace it with your task of interest.
+:::
+
+## Create a new component
 
 Create a new Viash component by running the following command:
 
+::: {.panel-tabset}
+## Python
 ```bash
-viash run src/common/create_skeleton/config.vsh.yaml -- \
+viash run src/common/create_skeleton/config.vsh.yaml \
   --task label_projection \
-  --comp-type negative_control \
+  --type control_method \
   --name my_method \
-  --language python
 ```
 
-This will create a new folder at `src/label_projection/control_methods/my_method`. You will need to change the `--comp-type` to postivie control depending on wich typ you want to add.
+```{bash}
+#| echo: false
+viash run src/common/create_skeleton/config.vsh.yaml -- --task label_projection --type control_method --name my_method
+```
+
+This will create a new folder at `src/label_projection/control_methods/my_method` containing a Viash config and a script.
 
     src/label_projection/control_methods/my_method
-        ├── script.py/R                  method script
-        ├── config.vsh.yaml              config file for method
-        └── additional files             Helper files like e.g. tsv file, unit test specific for method, ...
+        ├── script.py                    Script for running the method.
+        ├── config.vsh.yaml              Config file for method.
+        └── ...                          Optional additional resources.
 
-### config.vsh.yaml
+## R
 
-The main difference:
-
-1. `namespace` -> `control_methods`
-2. `info/type`: This will be `negative_control` or `positive_control`.
-
-
-```yaml
-__merge__: ../../api/comp_control_method.yaml
-functionality:
-  name: my_method
-  namespace: label_projection/control_methods
-  description: A description for your method.
-  info:
-    type: negative_control
-    method_name: My Method
-    variants:
-      my_method:
-    preferred_normalization: counts
-  resources:
-    - type: python_script
-      path: script.py
-platforms:
-  - type: docker
-    image: "python:3.8"
-    setup:
-      - type: python
-        packages:
-          - "anndata>=0.8"
-  - type: nextflow
-    directives: 
-      label: [ lowmem, lowcpu ]
+```bash
+viash run src/common/create_skeleton/config.vsh.yaml \
+  --task label_projection \
+  --type control_method \
+  --name my_method_r \
+  --language r
 ```
+
+```{bash}
+#| echo: false
+viash run src/common/create_skeleton/config.vsh.yaml -- --task label_projection --type control_method --name my_method_r --language r
+```
+
+This will create a new folder at `src/label_projection/control_methods/my_method_r` containing a Viash config and a script.
+
+    src/label_projection/control_methods/my_method_r
+        ├── script.R                     Script for running the method.
+        ├── config.vsh.yaml              Config file for method.
+        └── ...                          Optional additional resources.
+
+:::
+
+Change the `--name` to a unique name for your method. It must match the regex `[a-z][a-z0-9_]*` (snakecase).
+
+## Viash config
+
+Full documentation on the Viash configuration file is available on the [Viash documentation site](https://viash.io/reference/).
+
+### Functionality
+
+This section of the configuration file contains information about the metadata of the script including script specific parameters and a list of resource files. 
+
+````yaml
+
+```{python}
+#| echo: false
+#| output: asis
+out = 1
+with open("src/label_projection/control_methods/my_method/config.vsh.yaml") as f:
+  lines = f.readlines()
+
+for line in lines:
+  if "platforms" in line:
+    out=0
+  
+  if out == 1:
+    print(line, end="")
+```
+
+````
+
+In this section of the configuration you should focus on updating the following sections:
+
+1. `description` - Add a description about the method.
+2. `info` - Change the `pretty_name` field to the formatted text version of `my_method`
+2. `Arguments` - Each section here defines a command-line argument for the script. These sections are all passed to the script in the form of a dictionary called `par`. You only need to add the method-specific parameters. If no additional arguments are required then the ones provdided in the `__merge__` file then you can remove this section entirely.
+
+
+
+### Platform
+
+The Platform section defines the information about how the Viash component is run on various backend platforms.
+
+::: {.panel-tabset}
+## Python
+````yaml
+
+```{python}
+#| echo: false
+#| output: asis
+out = 0
+with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/control_methods/my_method/config.vsh.yaml") as f:
+  lines = f.readlines()
+
+for line in lines:
+  if "platforms" in line:
+    out=1
+  
+  if out == 1:
+    print(line, end="")
+```
+
+````
+
+## R
+````yaml
+
+```{python}
+#| echo: false
+#| output: asis
+out = 0
+with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/control_methods/my_method_r/config.vsh.yaml") as f:
+  lines = f.readlines()
+
+for line in lines:
+  if "platforms" in line:
+    out=1
+  
+  if out == 1:
+    print(line, end="")
+```
+
+````
+:::
+
+The most important part of this section to update is the `setup` definition that describes the packages that need to be installed in the docker container and are required for your method to run.
+
+:::{.callout-caution}
+Do not remove:
+
+1. `pyyaml` package due to general unit testing done. 
+2. `anndata~=0.8` python package when creating an Rscript.
+:::
+
+There are many different ways for specifying these requirements described in the Viash [docs](https://viash.io/reference). 
+
+:::{.callout-note}
+**Tip:** After making changes to the components dependencies, you will need to rebuild the docker container as follows:
+
+```bash
+viash run src/label_projection/control_methods/my_method/config.vsh.yaml -- \
+  ---setup cachedbuild
+```
+<details>
+  <summary>Output</summary>
+```{bash}
+#| echo: false
+viash run src/label_projection/methods/my_method/config.vsh.yaml -- ---setup cachedbuild
+```
+</details>
+:::
+
+
+## Script file
+
+The script has three main sections: Imports/libraries, Viash block, and Method.
+
+:::{.panel-tabset}
+
+### Python
+
+````python
+
+```{python}
+#| echo: false
+#| output: asis
+out = 0
+with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/control_methods/my_method/script.py") as f:
+  lines = f.readlines()
+
+for line in lines:
+    print(line, end="")
+```
+
+````
+
+### R
+
+````r
+
+```{python}
+#| echo: false
+#| output: asis
+out = 0
+with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/control_methods/my_method_r/script.R") as f:
+  lines = f.readlines()
+
+for line in lines:
+    print(line, end="")
+```
+
+````
+
+:::
+
+### Packages/libraries
+
+In the top section of the script you can define which packages/libraries the method needs. If you add a new or different package add the dependency to `config.vsh.yaml` in the `setup` field (see above).
+
+### Viash block
+
+This optional code block exists to facilitate prototyping so your script can run when called directly by running `python script.py` (or `Rscript script.R` for R users). 
+
+Here, the `par` dictionary contains all the `arguments` defined in the `config.vsh.yaml` file. Including those from the defined `__merge__` file. 
+
+When adding a `argument` in the `par` dict **also** add it to the `config.vsh.yaml` in the `arguments` section.
+
+### Code block
+
+This code block will typically consist of reading the input files, performing some preprocessing, training a model on the train cells, generating predictions for the test cells, and outputting the predictions as an AnnData file.
+
+
+Depending on the task, the output is stored in different locations in the anndata. e.g. for `label_projection` it is located in the `.obs["label_pred"]` and for `dimensionality_reduction` it is stored in `.obsm[X_emb]`. You will be able to find this information in the `anndata_*.yaml` file determined in the `output` argument of the `comp_control_method.yaml` file.
+
+For the `label_projection` this will be `anndata_predictions.yaml`.
+
+
+## Testing
+
+Check out the in depth documentation [here](run_tests.qmd).
+
+You can test your method by using the following command:
+
+```bash
+viash test src/label_projection/control_methods/my_method/config.vsh.yaml
+```
+<details>
+  <summary>Output</summary>
+```{bash}
+#| echo: false
+viash test src/label_projection/control_methods/majority_vote/config.vsh.yaml
+```
+</details>
+
+There is a general unit test that you can find in the `comp_control_method.yaml` that will be executed. 
+
+Depending on the result you will get a notification on how many tests succeeded:
+
+```text
+SUCCESS! All 1 out of 1 test scripts succeeded!
+```
+
+## Final steps
+
+Add yourself to the `task_name/api/authors.yaml` file.
+
+When you are finished with your component create a Pull Request according to the instructions [here](create_pull_request.qmd).
+
+## Advanced
+
