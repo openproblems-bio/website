@@ -1,5 +1,5 @@
 ---
-title: Add a baseline method
+title: Add a baseline
 order: 50
 ---
 
@@ -177,7 +177,7 @@ viash run src/label_projection/methods/my_method/config.vsh.yaml -- ---setup cac
 
 ## Script file
 
-The script has three main sections: Imports/libraries, Viash block, and Method.
+The script has three main sections: Imports/libraries, Viash block, and Code block.
 
 :::{.panel-tabset}
 
@@ -231,8 +231,7 @@ When adding a `argument` in the `par` dict **also** add it to the `config.vsh.ya
 
 ### Code block
 
-This code block will typically consist of reading the input files, performing some preprocessing, training a model on the train cells, generating predictions for the test cells, and outputting the predictions as an AnnData file.
-
+The code block will typically consist of reading the input files, performing some preprocessing, randomly generating predictions or using the solution to get a perfect prediction, and outputting the predictions as an AnnData file.
 
 Depending on the task, the output is stored in different locations in the anndata. e.g. for `label_projection` it is located in the `.obs["label_pred"]` and for `dimensionality_reduction` it is stored in `.obsm[X_emb]`. You will be able to find this information in the `anndata_*.yaml` file determined in the `output` argument of the `comp_control_method.yaml` file.
 

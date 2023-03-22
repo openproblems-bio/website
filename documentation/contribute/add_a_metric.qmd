@@ -64,7 +64,7 @@ This will create a new folder at `src/label_projection/metrics/my_metric_r` cont
 
 :::
 
-Change the `--name` to a unique name for your method. It must match the regex `[a-z][a-z0-9_]*` (snakecase).
+Change the `--name` to a unique name for your metric. It must match the regex `[a-z][a-z0-9_]*` (snakecase).
 
 ## Viash config
 
@@ -95,11 +95,8 @@ for line in lines:
 
 In this section of the configuration you should focus on updating the following sections:
 
-1. `description` - Add a description about the method.
-2. `info` - Change the `pretty_name` field to the formatted text version of `my_metric`
-2. `Arguments` - Each section here defines a command-line argument for the script. These sections are all passed to the script in the form of a dictionary called `par`. You only need to add the method-specific parameters. If no additional arguments are required then the ones provdided in the `__merge__` file then you can remove this section entirely.
-
-
+1. `info` - Update the general info fields `summary`, `description`, `reference`, `documentation_url`, `repository_url`.
+2. `Arguments` - Uncomment this section if you need to add metric-specific parameters. Remove the example and add your own arguments.
 
 ### Platform
 
@@ -149,14 +146,14 @@ for line in lines:
 
 The most important part of this section to update is the `setup` definition that describes the packages that need to be installed in the docker container and are required for your metric to run.
 
+For more in depth ways to specify setups see [docs](https://viash.io/reference/config/platforms/docker/).
+
 :::{.callout-caution}
 Do not remove:
 
 1. `pyyaml` package due to general unit testing done. 
 2. `anndata~=0.8` python package when creating an Rscript.
 :::
-
-There are many different ways for specifying these requirements described in the Viash [docs](https://viash.io/reference). 
 
 :::{.callout-note}
 **Tip:** After making changes to the components dependencies, you will need to rebuild the docker container as follows:
@@ -177,7 +174,7 @@ viash run src/label_projection/metrics/my_metric/config.vsh.yaml -- ---setup cac
 
 ## Script file
 
-The script has three main sections: Imports/libraries, Viash block, and code block.
+The script has three main sections: Imports/libraries, Viash block, and Code block.
 
 :::{.panel-tabset}
 
@@ -231,16 +228,18 @@ When adding a `argument` in the `par` dict **also** add it to the `config.vsh.ya
 
 ### Code block
 
+The code block will typically consist of reading the input files, computing the metrics and outputting the predictions as an AnnData file.
 
+The metric values are stored as a list in the `uns.metric_values` with the metric names resp. stored in the `uns.metric_ids` list.
 
 ## Testing
 
 Check out the in depth documentation [here](run_tests.qmd).
 
-You can test your method by using the following command:
+You can test your metric by using the following command:
 
 ```bash
-viash test src/label_projection/metrics/my_method/config.vsh.yaml
+viash test src/label_projection/metrics/my_metric/config.vsh.yaml
 ```
 <details>
   <summary>Output</summary>
