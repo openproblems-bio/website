@@ -2,3 +2,105 @@
 title: Run tests
 order: 70
 ---
+
+
+{{< include ../_blocks/_clone_repo.qmd >}}
+{{< include ../_blocks/_output_details.qmd >}}
+
+Testing is the same for all components (`metrics`, `methods`, and `control_methods`)
+
+
+
+By default there are 2 unit tests already done when running the `viash test`:
+
+* The first test will check if the config file has all the required fields
+* The second test will generally test if your component works and if the out has the expected diemensions and fields.
+
+
+You can find an in depth guide on viash testing [here](https://viash.io/guide/component/unit-testing.html)
+
+You can add your own unit test by following these steps 
+
+## Step 1: create a test script
+
+Create a new script file e.g. `my_test.py` or `my_test.R` in you component directory e.g. `src/label_projection/control_methods/my_method_py`
+
+the example given is the second unit test already defined (see above)
+````python
+import anndata as ad
+import subprocess
+from os import path
+
+input_train_path = meta["resources_dir"] + "/pancreas/train.h5ad"
+input_test_path = meta["resources_dir"] + "/pancreas/test.h5ad"
+input_solution_path = meta["resources_dir"] + "/pancreas/solution.h5ad"
+output_path = "output.h5ad"
+
+cmd = [
+    meta['executable'],
+    "--input_train", input_train_path,
+    "--input_test", input_test_path,
+    "--output", output_path
+]
+
+if meta['functionality_name'] == 'true_labels':
+    cmd = cmd + ["--input_solution", input_solution_path]
+
+print(">> Running script as test")
+out = subprocess.check_output(cmd).decode("utf-8")
+
+print(">> Checking whether output file exists")
+assert path.exists(output_path)
+
+print(">> Reading h5ad files")
+input_test = ad.read_h5ad(input_test_path)
+output = ad.read_h5ad(output_path)
+print("input_test:", input_test)
+print("output:", output)
+
+print(">> Checking whether predictions were added")
+assert "label_pred" in output.obs
+assert meta['functionality_name'] == output.uns["method_id"]
+
+print("Checking whether data from input was copied properly to output")
+assert input_test.n_obs == output.n_obs
+assert input_test.uns["dataset_id"] == output.uns["dataset_id"]
+
+print("All checks succeeded!")
+````
+
+## Step 2 Add to config
+
+Add your test script to the config file `.functionality.test_resources` section:
+
+```yaml
+functionality:
+    ...
+    resources:
+        - ...
+    test_resources:
+        - type: file
+        path: my_test.py
+    ...
+```
+
+## Step 3 Run test
+
+You can test your component by running the following command:
+
+```bash
+viash test src/label_projection/control_methods/my_method_py/config.vsh.yaml
+```
+<details>
+  <summary>Output</summary>
+```{bash}
+#| echo: false
+# use knn instead of 'my_method' because the script won't work.
+# maybe copy a 'working' script here
+viash test src/label_projection/control_methods/majority_vote/config.vsh.yaml
+```
+</details>
+
+## Common errors
+
+
