@@ -21,17 +21,13 @@ Create a new Viash component by running the following command:
 
 ::: {.panel-tabset}
 ## Python
-```bash
-viash run src/common/create_skeleton/config.vsh.yaml \
+```{bash}
+viash run src/common/create_skeleton/config.vsh.yaml -- \
   --task label_projection \
   --type method \
   --name my_method \
 ```
 
-```{bash}
-#| echo: false
-viash run src/common/create_skeleton/config.vsh.yaml -- --task label_projection --type method --name my_method
-```
 
 This will create a new folder at `src/label_projection/methods/my_method` containing a Viash config and a script.
 
@@ -42,18 +38,14 @@ This will create a new folder at `src/label_projection/methods/my_method` contai
 
 ## R
 
-```bash
-viash run src/common/create_skeleton/config.vsh.yaml \
+```{bash}
+viash run src/common/create_skeleton/config.vsh.yaml -- \
   --task label_projection \
   --type method \
   --name my_method_r \
   --language r
 ```
 
-```{bash}
-#| echo: false
-viash run src/common/create_skeleton/config.vsh.yaml -- --task label_projection --type method --name my_method_r --language r
-```
 
 This will create a new folder at `src/label_projection/methods/my_method_r` containing a Viash config and a script.
 
@@ -80,7 +72,7 @@ This section of the configuration file contains information about the metadata o
 #| echo: false
 #| output: asis
 out = 1
-with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/methods/my_method/config.vsh.yaml") as f:
+with open("src/label_projection/methods/my_method/config.vsh.yaml") as f:
   lines = f.readlines()
 
 for line in lines:
@@ -110,7 +102,7 @@ The Platform section defines the information about how the Viash component is ru
 #| echo: false
 #| output: asis
 out = 0
-with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/methods/my_method/config.vsh.yaml") as f:
+with open("src/label_projection/methods/my_method/config.vsh.yaml") as f:
   lines = f.readlines()
 
 for line in lines:
@@ -130,7 +122,7 @@ for line in lines:
 #| echo: false
 #| output: asis
 out = 0
-with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/methods/my_method_r/config.vsh.yaml") as f:
+with open("src/label_projection/methods/my_method_r/config.vsh.yaml") as f:
   lines = f.readlines()
 
 for line in lines:
@@ -166,7 +158,8 @@ viash run src/label_projection/methods/my_method/config.vsh.yaml -- \
   <summary>Output</summary>
 ```{bash}
 #| echo: false
-viash run src/label_projection/methods/my_method/config.vsh.yaml -- ---setup cachedbuild
+viash run src/label_projection/methods/my_method/config.vsh.yaml -- \
+  ---setup cachedbuild
 ```
 </details>
 :::
@@ -186,7 +179,7 @@ The script has three main sections: Imports/libraries, Viash block, and Code blo
 #| echo: false
 #| output: asis
 out = 0
-with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/methods/my_method/script.py") as f:
+with open("src/label_projection/methods/my_method/script.py") as f:
   lines = f.readlines()
 
 for line in lines:
@@ -203,7 +196,7 @@ for line in lines:
 #| echo: false
 #| output: asis
 out = 0
-with open("/home/kai/Documents/openroblems/website/documentation/_openproblems-v2/src/label_projection/methods/my_method_r/script.R") as f:
+with open("src/label_projection/methods/my_method_r/script.R") as f:
   lines = f.readlines()
 
 for line in lines:
@@ -248,6 +241,8 @@ viash test src/label_projection/methods/my_method/config.vsh.yaml
   <summary>Output</summary>
 ```{bash}
 #| echo: false
+# use knn instead of 'my_method' because the script won't work.
+# maybe copy a 'working' script here
 viash test src/label_projection/methods/knn/config.vsh.yaml
 ```
 </details>
