@@ -1,8 +1,8 @@
 # openproblems.bio v2.1.0
 
 Dark mode has been added to the website, along with minor changes such as
-an improved hero image for the results and bibliography pages and removing a
-stub task.
+an improved hero image for the results and bibliography pages and the removal
+of a stub task.
 
 ## NEW FUNCTIONALITY
 
