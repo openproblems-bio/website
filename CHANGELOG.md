@@ -1,21 +1,24 @@
-# openproblems.bio v2.0.1
+# openproblems.bio v2.1.0
 
+Dark mode has been added to the website, along with minor changes such as
+an improved hero image for the results and bibliography pages and removing a
+stub task.
+
+## NEW FUNCTIONALITY
+
+* Dark mode was added (#153, #162, #172, #173, #184, #190, #191, #194).
 
 ## MINOR CHANGES
 
-* Ported missing metadata.
+* Ported missing site metadata (#160).
 
-* Dark mode was added.
+* Changed the results and bibliography heros (#178, #181).
 
-* Changed the results and bibliography heros.
-
-* Removed sub-stub regulatory effect prediction task.
+* Removed sub-stub regulatory effect prediction task (#197).
   
 ## BUG FIXES
 
 * Fix internal links being treated as external links in PR previews (#179).
-
-* Add viash install to CI
 
 # openproblems.bio v2.0.0
 
