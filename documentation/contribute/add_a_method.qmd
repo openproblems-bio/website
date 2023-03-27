@@ -27,7 +27,7 @@ viash run src/common/create_skeleton/config.vsh.yaml -- \
 ```
 
 
-This will create a new folder at `src/label_projection/methods/my_method` containing a Viash config and a script.
+This will create a new folder at `src/label_projection/methods/my_method_py` containing a Viash config and a script.
 
     src/label_projection/methods/my_method
         ├── script.py                    Script for running the method.
@@ -145,8 +145,6 @@ The file specified in this field contains information regarding the input and ou
 Each component has it's own set of dependencies, because different components might have conflicting dependencies.
 
 In the platforms section of the config file update the `setup` definition that describes the packages that need to be installed in the Docker image and are required for your method to run. Note that both `anndata~=0.8` and `pyyaml` are necessary Python package dependencies.
-
-Please check out this [guide](https://viash.io/guide/component/add-dependencies.html) for more information on how to add extra package dependencies.
 
 Please check out this [guide](https://viash.io/guide/component/add-dependencies.html) for more information on how to add extra package dependencies.
 
