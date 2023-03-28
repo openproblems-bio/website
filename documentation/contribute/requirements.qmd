@@ -1,6 +1,7 @@
 ---
 title: Requirements
 order: 10
+engine: knitr
 ---
 
 This page describes how to set up your system so you can start contributing to OpenProblems. If you just want to [analyse the results](/documentation/analyse_results/) or [run a method, metric or pipeline](/documentation/execute/), please click on on the respective links.
@@ -71,10 +72,13 @@ Verify that you have Bash version 3.2 or higher.
 bash --version
 ```
 
-Example output:
+<details><summary>Output</summary>
+```{bash}
+#| echo: false
+bash --version
+```
 
-    GNU bash, version 5.1.8
-    ...
+</details>
 
 
 ## Step 2: install Java
@@ -139,9 +143,13 @@ Verify that you have Java version 11 or higher.
 java -version
 ```
 
-Example output:
+<details><summary>Output</summary>
+```{bash}
+#| echo: false
+java --version
+```
 
-    openjdk version "19.0.1" 2022-10-18
+</details>
 
 
 ## Step 3: install Docker
@@ -255,11 +263,14 @@ Verify that Docker is working by running:
 docker run hello-world
 ```
 
-Example output:
+<details><summary>Output</summary>
+```{bash}
+#| echo: false
+docker run hello-world
+```
 
-    Hello from Docker!
-    This message shows that your installation appears to be working correctly.
-    ...
+</details>
+
 
 ## Step 4: install Viash
 
@@ -335,9 +346,13 @@ Verify that you have Viash version 0.6.7 or higher.
 viash -v
 ```
 
-Example output:
+<details><summary>Output</summary>
+```{bash}
+#| echo: false
+viash -v
+```
 
-    viash 0.6.7 (c) 2020 Data Intuitive
+</details>
 
 
 ## Step 5: install Nextflow
@@ -398,15 +413,13 @@ Verify that Nextflow and Docker are working by running:
 nextflow run hello -with-docker
 ```
 
-    N E X T F L O W  ~  version 22.10.4
-    Launching `https://github.com/nextflow-io/hello` [compassionate_keller] DSL2 - revision: 4eab81bd42 [master]
-    executor >  local (4)
-    [d5/78e7a6] process > sayHello (2) [100%] 4 of 4 ✔
-    Bonjour world!
-    Hello world!
-    Hola world!
-    Ciao world!
+<details><summary>Output</summary>
+```{bash}
+#| echo: false
+nextflow run hello -with-docker
+```
 
+</details>
 
 ## Troubleshooting common problems
 
