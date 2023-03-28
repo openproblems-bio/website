@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
     detailsElement.appendChild(summaryElement);
 
     // Move the content of the 'details' div into the new 'details' element
-    while (detailsDiv.firstChild) {
-      detailsElement.appendChild(detailsDiv.firstChild);
+    while (detailsDiv) {
+      detailsElement.appendChild(detailsDiv.parentElement);
     }
 
     // Replace the 'details' div with the new 'details' element
