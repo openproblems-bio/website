@@ -19,7 +19,11 @@ git checkout main
 git merge upstream/main
 ```
 
-## Step 2 Create Pull request
+## Step 2 Changelog.md
+
+Add an entry to the CHANGELOG.md file describing the proposed changes.
+
+## Step 3 Create Pull request
 
 The following steps were adapted from [Creating a pull request from a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
 
@@ -38,3 +42,7 @@ The following steps were adapted from [Creating a pull request from a fork](http
 
 Whenever a Pull Request (including draft) is created a github worklfow will perform checks. These checks need to be succesfull as a minimum requirement before a merge can be done.
 When there are errors in the checks, try to fix them while waiting on a review. If it is not possible to fix the error, add a comment to the PR to let the reviewers know.
+
+### Review
+
+Your PR will be reviewed by maintainers of OpenProblems. During the review, you can be asked for changes to the code.
