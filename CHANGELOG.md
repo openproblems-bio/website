@@ -19,6 +19,7 @@ of a stub task.
 ## BUG FIXES
 
 * Fix internal links being treated as external links in PR previews (#179).
+* FIx `link-external-filter` te recognise internal filters on published website (#202)
 
 # openproblems.bio v2.0.0
 
