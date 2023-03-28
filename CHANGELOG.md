@@ -1,3 +1,10 @@
+# openproblems.bio v2.1.1
+
+## BUG FIXES
+
+* Fixed a typo in batch_integration_embed task description (#201)
+* FIx `link-external-filter` te recognise internal filters on published website (#202)
+
 # openproblems.bio v2.1.0
 
 Dark mode has been added to the website, along with minor changes such as
