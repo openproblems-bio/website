@@ -106,22 +106,51 @@ cat src/label_projection/metrics/my_metric_r/config.vsh.yaml
 
 ### Required metadata fields
 
-Please edit `.functionality.info` section in the config file to fill in the necessary metadata.
+Please edit `.functionality` and `.functionality.info` section in the config file to fill in the necessary metadata. The metrics component can contain several metric values these are listed in the `functionality.info.metrics`.
 
 #### `.functionality.name`
-A unique identifier for the metric. Must be written in snake case. Example: `my_new_metric`.
 
-#### `.functionality.info.pretty_name`
+A unique identifier for the metric component. Must be written in snake case. Example: `my_new_metric`.
+
+#### `.functionality.info.metrics.name`
+
+A unique identifier for the metric (if only 1 metric in the component can be the same as `.functionality.name`). Must be written in snake case. Example: `my_new_metric`.
+
+#### `.functionality.info.metrics.pretty_name`
 
 A label for the metric used for visualisations and documentation. Example: `"My new metric"`.
 
-#### `.functionality.info.summary`
+#### `.functionality.info.metrics.summary`
 
 A one sentence summary of the metric. Used for creating short overviews of the components in a task.
 
-#### `.functionality.info.description`
+#### `.functionality.info.metrics.description`
 
 An explanation for how the metric works. Used for creating reference documentation of a task.
+
+#### `.functionality.info.metrics.reference`
+
+A bibtex reference key to the paper where the metrics is used.
+
+#### `.functionality.info.metrics.documentation_url`
+
+The url to the documentation of the metrics used.
+
+#### `.functionality.info.metrics.repository_url`
+
+The repository url for the metrics used
+
+#### `.functionality.info.metrics.min`
+
+The minimum value of the metrics (`-inf` if there's not a min).
+
+#### `.functionality.info.metrics.max`
+
+The maximum value of the metrics (`+inf` if there's not a max).
+
+#### `.functionality.info.metrics.maximize`
+
+Set to `true` if a higher value is better.
 
 #### `.__merge__`
 
