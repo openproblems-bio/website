@@ -109,20 +109,18 @@ cat src/label_projection/methods/my_method_r/config.vsh.yaml
 
 :::
 
+
 ### Required metadata fields
 
 Please edit `.functionality.info` section in the config file to fill in the necessary metadata.
 
 #### `.functionality.name`
+
 A unique identifier for the method. Must be written in snake case. Example: `my_new_method`.
 
 #### `.functionality.info.pretty_name`
 
 A label for the method used for visualisations and documentation. Example: `"My new method"`.
-
-#### `.functionality.info.subtype`
-
-Whether the method is a `"positive_control"` or a `"negative_control"`.
 
 #### `.functionality.info.summary`
 
@@ -131,6 +129,18 @@ A one sentence summary of the method. Used for creating short overviews of the c
 #### `.functionality.info.description`
 
 An explanation for how the method works. Used for creating reference documentation of a task.
+
+#### `.functionality.info.reference`
+
+A bibtex reference key to the paper where the method is described.
+
+#### `.functionality.info.documentation_url`
+
+The url to the documentation of the method.
+
+#### `.functionality.info.reporsitory_url`
+
+The repository url for the method.
 
 #### `.functionality.info.preferred_normalization`
 
