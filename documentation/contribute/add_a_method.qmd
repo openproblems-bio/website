@@ -5,7 +5,7 @@ engine: knitr
 ---
 
 {{< include ../_blocks/_clone_repo.qmd >}}
-{{< include ../_blocks/_output_details.qmd >}}
+<!-- {{< include ../_blocks/_output_details.qmd >}} -->
 
 This guide will show you how to create a new method. Note that the Label Projection task is used throughout the guide, so make sure to replace any occurrences of `"label_projection"` with your task of interest.
 
@@ -151,10 +151,17 @@ Please check out this [guide](https://viash.io/guide/component/add-dependencies.
 :::{.callout-note}
 **Tip:** After making changes to the components dependencies, you will need to rebuild the docker container as follows:
 
-```{bash class.output="output-details"}
+```bash
 viash run src/label_projection/methods/my_method_py/config.vsh.yaml -- \
   ---setup cachedbuild
 ```
+<details><summary>output</summary>
+```{bash}
+#| echo: false
+viash run src/label_projection/methods/my_method_py/config.vsh.yaml -- \
+  ---setup cachedbuild
+```
+</details>
 
 :::
 
