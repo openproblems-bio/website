@@ -8,6 +8,15 @@ engine: knitr
 
 To get started with contributing to OpenProblems, you'll need to fork and clone the OpenProblems repository to your local machine.
 
+
+## Project structure
+
+The project repository is structured as follows:
+
+![](../images/repositories-thin.svg)
+
+For detailed information on how this project is structured, see the ["Project structure"](../more_information/project_structure.qmd).
+
 ## Step 1: Create a fork
 
 Go to the OpenProblems repository at [https://github.com/openproblems-bio/openproblems-v2](https://github.com/openproblems-bio/openproblems-v2) and click on the "Fork" button in the top right corner of the page.
@@ -43,33 +52,6 @@ rm -r resources_test
 viash run src/common/sync_test_resources/config.vsh.yaml
 ```
 </details>
-
-## Project structure
-
-<!-- TODO: Add overview figure -->
-
-The project repository is structured as follows:
-
-* `resources_test`: Datasets for testing components. This folder can be obtained by running step 3.
-* `src`: Source files for each component in the pipeline.
-  - `common`: Common processing components.
-  - `datasets`: Components and pipelines for building the 'Common datasets'
-  - `label_projection`: Source files related to the 'Label projection' task.
-  - `...`: Other tasks.
-* `target`: Artifacts built from the components in `src/` by running `viash ns build`.
-  - `docker`: Bash executables which can be used from a terminal.
-  - `nextflow`: Nextflow modules which can be used as a standalone pipeline or as part of a bigger pipeline.
-
-Detailed overview of a task folder (e.g. `src/label_projection`):
-
-* `api`: Specifications for the components and data files in this task.
-* `control_methods`: Control methods which serve as quality control checks for the benchmark.
-* `methods`: Label projection method components.
-* `metrics`: Label projection metric components.
-* `resources_scripts`: The scripts needed to run the benchmark.
-* `resources_test_scripts`: The scripts needed to generate the test resources, which are required for unit testing.
-* `split_dataset`: A component that splits a common dataset into a solution and a masked dataset.
-* `workflows`: The benchmarking workflow.
 
 ## Ready, set, go!
 
@@ -126,7 +108,7 @@ viash ns test --query label_projection --parallel --platform docker
 ```
 <details>
   <summary>Output</summary>
-                  namespace        functionality             platform            test_name exit_code duration               result
+                   namespace        functionality             platform            test_name exit_code duration               result
     label_projection/methods  logistic_regression               docker                start                                        
     label_projection/methods               scanvi               docker                start                                        
     label_projection/methods                  knn               docker                start                                        
