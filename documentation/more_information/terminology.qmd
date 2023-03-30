@@ -1,0 +1,24 @@
+---
+title: Terminology
+---
+
+## OpenProblems
+Consists of dataset loaders and tasks
+
+## Dataset loader
+
+## Task
+Consists of a dataset processor, methods, metrics and baseline methods.
+
+### Dataset processor
+
+### Method
+
+### Baseline method
+A baseline method (or control method) is a method against which other methods are compared. It serves as a starting point to test the relative accuracy of new methods in the task, and also as a quality control for the metrics defined in the task. A baseline method can either be a positive control or a negative control.
+
+A positive control is a method where the expected results are known, thus resulting in the best possible value for any metric outcome measure. A negative control is a simple, naive, or random method that does not rely on any sophisticated techniques or domain knowledge.
+
+The positive control and negative control methods set a maximum and minimum threshold for performance, so any new method should perform better than the negative control methods and worse than the positive control method.
+
+### Metrics
