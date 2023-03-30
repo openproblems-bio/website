@@ -1,101 +1,47 @@
 ---
 title: Run tests
 order: 70
-engine: knitr
 ---
 
 
 {{< include ../_blocks/_clone_repo.qmd >}}
 {{< include ../_blocks/_output_details.qmd >}}
 
-Testing is the same for all components (`metrics`, `methods`, and `control_methods`)
-
-
+### Unit test a component
 
 By default there are 2 unit tests already done when running the `viash test`:
 
-* The first test will check if the config file has all the required fields
-* The second test will generally test if your component works and if the out has the expected diemensions and fields.
+* The first test will check if the config file has all the required fields.
+* The second test will generally test if your component works and if the out has the expected dimensions and fields.
 
+You can find an in-depth guide on viash testing [here](https://viash.io/guide/component/unit-testing.html).
 
-You can find an in depth guide on viash testing [here](https://viash.io/guide/component/unit-testing.html)
-
-You can add your own unit test by following these steps 
-
-## Step 1: create a test script
-
-Create a new script file e.g. `my_test.py` or `my_test.R` in you component directory e.g. `src/label_projection/control_methods/my_method_py`
-
-the example given is the second unit test already defined (see above)
-````python
-import anndata as ad
-import subprocess
-from os import path
-
-input_train_path = meta["resources_dir"] + "/pancreas/train.h5ad"
-input_test_path = meta["resources_dir"] + "/pancreas/test.h5ad"
-input_solution_path = meta["resources_dir"] + "/pancreas/solution.h5ad"
-output_path = "output.h5ad"
-
-cmd = [
-    meta['executable'],
-    "--input_train", input_train_path,
-    "--input_test", input_test_path,
-    "--output", output_path
-]
-
-print(">> Running script as test")
-subprocess.run(cmd, check=True)
-
-print(">> Checking whether output file exists")
-assert path.exists(output_path)
-
-print(">> Reading h5ad files")
-input_test = ad.read_h5ad(input_test_path)
-output = ad.read_h5ad(output_path)
-print("input_test:", input_test)
-print("output:", output)
-
-print(">> Checking whether predictions were added")
-assert "label_pred" in output.obs
-assert meta['functionality_name'] == output.uns["method_id"]
-
-print("Checking whether data from input was copied properly to output")
-assert input_test.n_obs == output.n_obs
-assert input_test.uns["dataset_id"] == output.uns["dataset_id"]
-
-print("All checks succeeded!")
-````
-
-## Step 2 Add to config
-
-Add your test script to the config file `.functionality.test_resources` section:
-
-```yaml
-functionality:
-    ...
-    resources:
-        - ...
-    test_resources:
-        - type: file
-          path: my_test.py
-    ...
-```
-
-## Step 3 Run test
-
-You can test your component by running the following command:
+Use `viash test` to run all of the component's unit tests.
 
 ```bash
-viash test src/label_projection/methods/my_method_py/config.vsh.yaml
+viash test src/label_projection/methods/knn/config.vsh.yaml
 ```
 <details>
   <summary>Output</summary>
 ```{bash}
 #| echo: false
-# use knn instead of 'my_method' because the script won't work.
-# maybe copy a 'working' script here
 viash test src/label_projection/methods/knn/config.vsh.yaml
+```
+</details>
+
+### Unit test task components
+
+Use `viash ns test` to unit test all of the components of a given task.
+
+```bash
+viash ns test --query label_projection --parallel --platform docker
+```
+
+<details>
+  <summary>Output</summary>
+```{bash}
+#| echo: false
+viash ns test --query label_projection --parallel --platform docker
 ```
 </details>
 
@@ -105,10 +51,6 @@ viash test src/label_projection/methods/knn/config.vsh.yaml
 1. assertion error
 
 2. test script error
-It is also possible to you are using an import/library in your test script that is not used in the component so it will not be present in the docker container.
-There 2 options you can take to resolve this issue.
-* Add your import/library to the `setup` depency of your config file, or
-* Create a `test_setup` field below the `setup` field and add your dependency here. This will install the dependency only when you are running your test script.
 
 3. script error
 ```bash
@@ -129,8 +71,8 @@ to
 ```python
 print(subprocess.run(cmd, stderr=subprocess.STDOUT).stdout)
 ```
-Running the `viash test` again will give you an output of the executed script. That will give you an idea what went wrong. In this case the Input file does not exist:
-This will give the output of the script:
+Running the `viash test` again will give you an output of the executed script. That will give you an idea what went wrong:
+
 ```bash
 +/tmp/viash_test_knn15835562876927731077/test_generic_test/test_executable
 [error] Input file '/viash_automount/tmp/viash_test_knn15835562876927731077/test_generic_test//pancreas/test_wrong.h5ad' does not exist.
@@ -142,6 +84,3 @@ Traceback (most recent call last):
     assert path.exists(output_path)
 AssertionError
 ```
-4. file does not exist
-Your unit test is not being executed. You did not properly add it to the config file see [step 2](#step-2-add-to-config)
-5. 
