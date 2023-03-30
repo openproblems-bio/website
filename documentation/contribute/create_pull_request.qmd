@@ -6,6 +6,8 @@ order: 80
 #     code-overflow: wrap
 ---
 
+<!-- TODO: at which step would you want to create a PR? -->
+
 ## Step 1: Merge upstream repository
 
 Before you contribute your changes need to merge the upstream main branch into your fork. This ensures that your changes are based on the latest version of the code. 
@@ -19,16 +21,16 @@ git checkout main
 git merge upstream/main
 ```
 
-## Step 2: Edit Changelog
+## Step 2: Edit changelog
 
 Add an entry to the CHANGELOG.md file describing the proposed changes.
 
-## Step 3: Create Pull request
+## Step 3: Create pull request
 
 The following steps were adapted from [Creating a pull request from a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
 
 1. Go to <https://github.com/openproblems-bio/openproblems-v2/pulls>.
-2. click on the `New pull request` button.
+2. Click on the `New pull request` button.
 3. On the compare page click on the link `compare across forks` below the title. ![](../images/compare_across_forks.png)
 4. On the right side in the `head` section select your fork repo and the correct branch you want to merge.
 5. Click on `Create pull request`.
@@ -40,7 +42,7 @@ The following steps were adapted from [Creating a pull request from a fork](http
 
 ### Github Actions
 
-Whenever a Pull Request (including draft) is created a github worklfow will perform checks. These checks need to be succesfull as a minimum requirement before a merge can be done.
+Whenever a Pull Request (including draft) is created a github workflow will perform checks. These checks need to be succesful as a minimum requirement before a merge can be done.
 When there are errors in the checks, try to fix them while waiting on a review. If it is not possible to fix the error, add a comment to the PR to let the reviewers know.
 
 ### Review
