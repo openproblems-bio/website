@@ -7,6 +7,8 @@ engine: knitr
 {{< include ../_blocks/_clone_repo.qmd >}}
 <!-- {{< include ../_blocks/_output_details.qmd >}} -->
 
+<!-- TODO: add one sentence describing what a metric is -->
+
 This guide will show you how to create a new metric. Note that the Label Projection task is used throughout the guide, so make sure to replace any occurrences of `"label_projection"` with your task of interest.
 
 :::{.callout-tip}
@@ -106,49 +108,51 @@ cat src/label_projection/metrics/my_metric_r/config.vsh.yaml
 
 ### Required metadata fields
 
-Please edit `.functionality` and `.functionality.info` section in the config file to fill in the necessary metadata. The metrics component can contain several metric values these are listed in the `functionality.info.metrics`.
+Please edit `functionality` and `functionality.info` section in the config file to fill in the necessary metadata. The metrics component can contain several metric values these are listed in the `functionality.info.metrics`.
 
-#### `.functionality.name`
+<!-- TODO: think about how to make this listing easier on the eye -->
+
+#### `functionality.name`
 
 A unique identifier for the metric component. Must be written in snake case. Example: `my_new_metric`.
 
-#### `.functionality.info.metrics.name`
+#### `functionality.info.metrics[].name`
 
-A unique identifier for the metric (if only 1 metric in the component can be the same as `.functionality.name`). Must be written in snake case. Example: `my_new_metric`.
+A unique identifier for the metric (if only 1 metric in the component can be the same as `functionality.name`). Must be written in snake case. Example: `my_new_metric`.
 
-#### `.functionality.info.metrics.pretty_name`
+#### `functionality.info.metrics[].pretty_name`
 
 A label for the metric used for visualisations and documentation. Example: `"My new metric"`.
 
-#### `.functionality.info.metrics.summary`
+#### `functionality.info.metrics[].summary`
 
 A one sentence summary of the metric. Used for creating short overviews of the components in a task.
 
-#### `.functionality.info.metrics.description`
+#### `functionality.info.metrics[].description`
 
 An explanation for how the metric works. Used for creating reference documentation of a task.
 
-#### `.functionality.info.metrics.reference`
+#### `functionality.info.metrics[].reference`
 
 A bibtex reference key to the paper where the metrics is used.
 
-#### `.functionality.info.metrics.documentation_url`
+#### `functionality.info.metrics[].documentation_url`
 
 The url to the documentation of the metrics used.
 
-#### `.functionality.info.metrics.repository_url`
+#### `functionality.info.metrics[].repository_url`
 
 The repository url for the metrics used.
 
-#### `.functionality.info.metrics.min`
+#### `functionality.info.metrics[].min`
 
 The minimum value of the metrics (`-inf` if there's not a min).
 
-#### `.functionality.info.metrics.max`
+#### `functionality.info.metrics[].max`
 
 The maximum value of the metrics (`+inf` if there's not a max).
 
-#### `.functionality.info.metrics.maximize`
+#### `functionality.info.metrics[].maximize`
 
 Set to `true` if a higher value is better.
 
