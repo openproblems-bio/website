@@ -39,10 +39,20 @@ viash ns test --query label_projection --parallel --platform docker
 
 <details>
   <summary>Output</summary>
-```{bash}
-#| echo: false
-viash ns test --query label_projection --parallel --platform docker
-```
+                  namespace        functionality             platform            test_name exit_code duration               result
+    label_projection/methods  logistic_regression               docker                start                                        
+    label_projection/methods               scanvi               docker                start                                        
+    label_projection/methods                  knn               docker                start                                        
+    label_projection/methods                  mlp               docker                start                                        
+    label_projection/metrics             accuracy               docker                start                                        
+    label_projection/metrics                   f1               docker                start
+    label_projection/methods  logistic_regression               docker     build_executable         0        4              SUCCESS
+    label_projection/methods  logistic_regression               docker      generic_test.py         0        9              SUCCESS
+    label_projection/metrics                   f1               docker     build_executable         0        7              SUCCESS
+    label_projection/metrics                   f1               docker      format_check.py         0        8              SUCCESS
+    label_projection/metrics             accuracy               docker     build_executable         0        8              SUCCESS
+    label_projection/metrics             accuracy               docker      format_check.py         0        7              SUCCESS
+    ...
 </details>
 
 ## Common errors
