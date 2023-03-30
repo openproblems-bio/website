@@ -7,6 +7,8 @@ engine: knitr
 {{< include ../_blocks/_clone_repo.qmd >}}
 <!-- {{< include ../_blocks/_output_details.qmd >}} -->
 
+<!-- TODO: add one sentence describing what a method is -->
+
 This guide will show you how to create a new method. Note that the Label Projection task is used throughout the guide, so make sure to replace any occurrences of `"label_projection"` with your task of interest.
 
 :::{.callout-tip}
@@ -112,37 +114,37 @@ cat src/label_projection/methods/my_method_r/config.vsh.yaml
 
 ### Required metadata fields
 
-Please edit `.functionality.info` section in the config file to fill in the necessary metadata.
+Please edit `functionality.info` section in the config file to fill in the necessary metadata.
 
-#### `.functionality.name`
+#### `functionality.name`
 
 A unique identifier for the method. Must be written in snake case. Example: `my_new_method`.
 
-#### `.functionality.info.pretty_name`
+#### `functionality.info.pretty_name`
 
 A label for the method used for visualisations and documentation. Example: `"My new method"`.
 
-#### `.functionality.info.summary`
+#### `functionality.info.summary`
 
 A one sentence summary of the method. Used for creating short overviews of the components in a task.
 
-#### `.functionality.info.description`
+#### `functionality.info.description`
 
 An explanation for how the method works. Used for creating reference documentation of a task.
 
-#### `.functionality.info.reference`
+#### `functionality.info.reference`
 
 A bibtex reference key to the paper where the method is described.
 
-#### `.functionality.info.documentation_url`
+#### `functionality.info.documentation_url`
 
 The url to the documentation of the method.
 
-#### `.functionality.info.reporsitory_url`
+#### `functionality.info.reporsitory_url`
 
 The repository url for the method.
 
-#### `.functionality.info.preferred_normalization`
+#### `functionality.info.preferred_normalization`
 
 Which normalization method a component _prefers_. Possible values are `r norm_methods_str`. Each value corresponds to a normalization component in the directory [`src/datasets/normalization`](https://github.com/openproblems-bio/openproblems-v2/tree/main/src/datasets/normalization).
 
