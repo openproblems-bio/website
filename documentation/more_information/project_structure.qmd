@@ -1,0 +1,118 @@
+---
+title: Project structure
+---
+
+The OpenProblems repositories are structured as follows.
+
+![](../images/repositories-thin.svg)
+
+## OpenProblems codebase
+
+### Common components (`src/common`)
+
+#### Create component (`src/common/create_component`)
+
+#### Metadata collectors (`src/common/metadata`)
+
+#### Migration helpers (`src/common/migration`)
+
+#### Component format checkers (`src/common/check_component_format`)
+
+#### File format checkers (`src/common/check_file_format`)
+
+#### Test resource generation scripts (`src/common/resources_test_scripts`)
+
+#### Sync test resources (`src/common/sync_test_resources`)
+
+
+
+### Dataset components (`src/datasets`)
+
+#### Dataset loader (`src/datasets/loaders`)
+
+#### Dataset normalization (`src/datasets/normalization`)
+
+#### Dataset processors (`src/datasets/processors`)
+
+#### Dataset file and component formats (`src/datasets/api`)
+
+#### Resource generation scripts (`src/common/resources_scripts`)
+
+#### Test resource generation scripts (`src/common/resources_test_scripts`)
+
+
+
+### Task-specific components (`src/<task_id>`)
+
+#### Process dataset (`src/<task_id>/process_dataset`)
+
+#### Control methods (`src/<task_id>/control_methods`)
+
+#### Methods (`src/<task_id>/methods`)
+
+#### Metrics (`src/<task_id>/metrics`)
+
+#### Benchmarking pipeline (`src/<task_id>/workflows`)
+
+#### File and component formats (`src/<task_id>/api`)
+
+#### Resource generation scripts (`src/common/resources_scripts`)
+
+#### Test resource generation scripts (`src/common/resources_test_scripts`)
+
+
+### Resources (`resources`)
+
+### Test resources (`test_resources`)
+
+### Artifact folder (`target`)
+
+#### Docker artifacts (`target/docker`)
+
+#### Nextflow artifacts (`target/nextflow`)
+
+
+## Website
+
+### About
+
+### Benchmark results
+
+### Competition pages
+
+### Team
+
+### Documentation
+
+### Technology stack
+
+#### GitHub Actions
+
+#### Quarto
+
+#### Netlify
+
+:::{.content-hidden}
+The project repository is structured as follows:
+
+* `resources_test`: Datasets for testing components. This folder can be obtained by running step 3.
+* `src`: Source files for each component in the pipeline.
+  - `common`: Common processing components.
+  - `datasets`: Components and pipelines for building the 'Common datasets'
+  - `label_projection`: Source files related to the 'Label projection' task.
+  - `...`: Other tasks.
+* `target`: Artifacts built from the components in `src/` by running `viash ns build`.
+  - `docker`: Bash executables which can be used from a terminal.
+  - `nextflow`: Nextflow modules which can be used as a standalone pipeline or as part of a bigger pipeline.
+
+Detailed overview of a task folder (e.g. `src/label_projection`):
+
+* `api`: Specifications for the components and data files in this task.
+* `control_methods`: Control methods which serve as quality control checks for the benchmark.
+* `methods`: Label projection method components.
+* `metrics`: Label projection metric components.
+* `process_dataset`: A component that splits a common dataset into a solution and training dataset.
+* `resources_scripts`: The scripts needed to run the benchmark.
+* `resources_test_scripts`: The scripts needed to generate the test resources, which are required for unit testing.
+* `workflows`: The benchmarking workflow.
+:::
