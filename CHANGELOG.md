@@ -1,3 +1,9 @@
+# openproblems.bio v2.1.2
+
+## MINOR CHANGES
+
+* Updating task images from `.png` to `.svg` (#205).
+
 # openproblems.bio v2.1.1
 
 ## BUG FIXES
