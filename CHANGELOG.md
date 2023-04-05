@@ -10,7 +10,6 @@
 
 * Fixed a typo in batch_integration_embed task description (#201)
 * Fix `link-external-filter` to recognise internal filters on published website (#202)
-* Updated task images for compatibility with dark mode (#207)
 
 # openproblems.bio v2.1.0
 
