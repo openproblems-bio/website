@@ -4,6 +4,8 @@ order: 10
 engine: knitr
 ---
 
+{{< include /_include/_synchonize_tabs.qmd >}}
+
 This page describes how to set up your system so you can start contributing to OpenProblems. If you just want to [analyse the results](/documentation/analyse_results/) or [run a method, metric or pipeline](/documentation/execute/), please click on on the respective links.
 
 To start contributing to OpenProblems, you need to have the following software installed:
@@ -21,6 +23,7 @@ The following sections provide instructions on how to install each of these tool
 
 ::: {.panel-tabset}
 ## Debian/Ubuntu
+
 Bash is already included in most Debian- and Ubuntu-based distributions. However, if for some reason it's not installed, open a terminal and run the following commands:
 
 ```bash
@@ -30,6 +33,7 @@ sudo apt-get install bash
 
 
 ## RHEL/Fedora
+
 Bash is already included in most RHEL- and Fedora-based distributions. However, if for some reason it's not installed, open a terminal and run the following commands:
 
 ```bash
@@ -38,6 +42,7 @@ sudo yum install bash
 
 
 ## Arch
+
 Bash is already included in most Arch-based distributions. However, if for some reason it's not installed, open a terminal and run the following commands:
 
 ```bash
@@ -47,7 +52,6 @@ sudo pacman -S bash
 ## macOS
 
 Bash is already included in macOS.
-
 
 ## Windows
 
@@ -87,6 +91,7 @@ You will need Oracle Java >=11 or OpenJDK >=11 to be installed.
 
 ::: {.panel-tabset}
 ## Debian/Ubuntu
+
 Run the following commands:
 
 ```bash
@@ -96,6 +101,7 @@ sudo apt-get install openjdk-11-jdk
 
 
 ## RHEL/Fedora
+
 Run the following command:
 
 ```bash
@@ -103,6 +109,7 @@ sudo yum install java-11-openjdk-devel
 ```
 
 ## Arch
+
 Run the following command:
 
 ```bash
@@ -153,7 +160,6 @@ java --version
 
 
 ## Step 3: install Docker
-
 
 ::: {.panel-tabset}
 ## Debian/Ubuntu
@@ -273,7 +279,6 @@ docker run hello-world
 
 
 ## Step 4: install Viash
-
 
 ::: {.panel-tabset}
 ## Debian/Ubuntu
@@ -425,83 +430,3 @@ nextflow run hello -with-docker
 ## Troubleshooting common problems
 
 If you run into any problems, please take a look at our [troubleshooting](/documentation/more_information/troubleshooting.qmd) page.
-
-```{=html}
-<script type="text/javascript">
-let tabDict = {
-  "debian": "Debian/Ubuntu",
-  "rhel": "RHEL/Fedora",
-  "arch": "Arch",
-  "macos": "macOS",
-  "windows": "Windows/WSL"
-};
-
-let invertedTabDict = invertDictionary(tabDict);
-
-document.addEventListener("DOMContentLoaded", function() {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-
-    let lang = 'debian';
-
-    if (urlParams.has('lang')){
-        lang = urlParams.get('lang');
-    }
-
-    changeTabSelections(lang);
-
-    var tabs = document.querySelectorAll('[role="tab"]');
-    
-    for(var i = 0; i < tabs.length; i++) {
-        tab = tabs[i];
-        if (tab.textContent in invertedTabDict) {
-            tab.addEventListener('click', onTabClicked);
-        }
-    }
-
-});
-
-function changeTabSelections(language) {
-    var tabs = document.querySelectorAll('[role="tab"]');
-    var tab_panels = document.querySelectorAll('[role="tabpanel"]');
-
-    // Disable all tab panels
-    for(var i = 0; i < tab_panels.length; i++) {
-        panel = tab_panels[i];
-        panel.classList.remove('active')
-    }
-
-    // Iterate over all tabs
-    for(var i = 0; i < tabs.length; i++) {
-        tab = tabs[i];
-
-        // Disable all tabs
-        tab.classList.remove('active');
-
-        // If the tab is the chosen language
-        if (tab.textContent == tabDict[language]) {
-            // Mark it active
-            tab.classList.add('active');
-            // Find the linked tab panel and make it active
-            var linked_panel = tab.getAttribute('aria-controls')
-            var panel = document.getElementById(linked_panel);
-            panel.classList.add('active');
-        }
-    }
-
-}
-
-function onTabClicked(event) {
-    changeTabSelections(invertedTabDict[event.srcElement.textContent]);
-}
-
-function invertDictionary(dict){
-    var ret = {};
-    for(var key in dict){
-        ret[dict[key]] = key;
-    }
-    return ret;
-}
-
-</script>
-```
