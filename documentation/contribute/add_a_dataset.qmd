@@ -3,3 +3,347 @@ title: Add a dataset
 order: 30
 engine: knitr
 ---
+
+{{< include ../_blocks/_clone_repo.qmd >}}
+{{< include /_include/_synchonize_tabs.qmd >}}
+
+Common datasets are created by generating raw datasets with a data loader and running them through the pre-processing pipeline (@fig-dataflow). Afterwards, further task-specific processing occurs prior to the task-specific benchmarking workflow.
+
+{{< include ../more_information/_project_structure_dataflow.qmd >}}
+
+See ["Project structure"](../more_information/project_structure.qmd) for more information on how each of these steps works.
+
+
+
+```{r setup-packages, include=FALSE}
+library(tidyverse)
+library(rlang)
+```
+
+
+## Step 1: Create a directory for the dataset loader
+
+To add a dataset to OpenProblems, you will need to create a Viash component for a dataset loader. 
+
+```{r, include=FALSE}
+dir <- "src/datasets/loaders/myloader"
+if (!dir.exists(dir)) {
+  dir.create(dir)
+}
+```
+```{bash, eval=FALSE}
+mkdir src/datasets/loaders/myloader
+```
+
+:::{.callout-tip}
+Take a look at the dataset loaders that are already in the `src/datasets/loaders`! Likely there is already a dataset loader that already does something similar to what you need.
+:::
+
+## Step 2: Create a Viash config
+
+Next, create a config for the dataset loader. The simplest dataset loader you can create looks as follows.
+
+```{bash, include=FALSE}
+cat > src/datasets/loaders/myloader/config.vsh.yaml << 'HERE'
+functionality:
+  name: "myloader"
+  namespace: "datasets/loaders"
+  description: "A new dataset loader"
+  arguments:
+    - name: "--output"
+      __merge__: ../../api/anndata_raw.yaml
+      direction: "output"
+  resources:
+    - type: python_script
+      path: script.py
+platforms:
+  - type: docker
+    image: python:3.10
+    setup:
+      - type: python
+        pypi: anndata~=0.8.0
+  - type: nextflow
+HERE
+```
+
+:::{.panel-tabset}
+
+## Python
+
+Contents of `src/datasets/loaders/myloader/config.vsh.yaml`:
+
+```{embed, lang="yaml"}
+src/datasets/loaders/myloader/config.vsh.yaml
+```
+
+## R
+
+Contents of `src/datasets/loaders/myloader/config.vsh.yaml`:
+
+```yaml
+functionality:
+  name: "myloader"
+  namespace: "datasets/loaders"
+  description: "A new dataset loader"
+  arguments:
+    - name: "--output"
+      __merge__: ../../api/anndata_raw.yaml
+      direction: "output"
+  resources:
+    - type: python_script
+      path: script.py
+platforms:
+  - type: docker
+    image: eddelbuettel/r2u:22.04
+    setup:
+      - type: r
+        cran: anndata
+      - type: apt
+        packages: [ libhdf5-dev, libgeos-dev, python3, python3-pip, python3-dev, python-is-python3 ]
+  - type: nextflow
+```
+:::
+
+## Step 3: Create a script
+
+```{bash, include=FALSE}
+cat > src/datasets/loaders/myloader/script.py << 'HERE'
+import anndata as ad
+import pandas as pd
+import scipy
+import numpy as np
+import random
+
+## VIASH START
+par = {"output": "output.h5ad"}
+## VIASH END
+
+# Create obs data for the cells
+obs = pd.DataFrame({
+    "celltype": random.choices(["enterocyte", "intestine goblet cell", "stem cell"], k=100),
+    "batch": random.choices(["experiment1", "experiment2"], k=100),
+    "tissue": random.choices(["colon", "ileum"], k=100)
+})
+
+# Create var data for the genes
+var = pd.DataFrame(
+    index=["APP", "AXL", "ADA", "AMH"]
+)
+
+# Create counts data
+counts = scipy.sparse.csr_matrix(
+  np.random.poisson(0.3, (obs.shape[0], var.shape[0]))
+)
+
+# Create an AnnData dataset
+adata = ad.AnnData(
+  layers = {
+    "counts": counts
+  },
+  obs = obs,
+  var = var,
+  uns = {
+    "dataset_id": "my_dataset",
+    "dataset_name": "My dataset",
+    "data_url": "https://url.to/dataset/source",
+    "data_reference": "mydatasetbibtexreference",
+    "dataset_summary": "A short description of the dataset.",
+    "dataset_description": "Long description of the dataset.",
+    "dataset_organism": "homo_sapiens"
+  }
+)
+
+# Write to file
+adata.write_h5ad(par["output"])
+HERE
+```
+
+:::{.panel-tabset}
+
+## Python
+
+Contents of `src/datasets/loaders/myloader/script.py`:
+
+```{embed, lang="python"}
+src/datasets/loaders/myloader/script.py
+```
+
+## R
+
+Contents of `src/datasets/loaders/myloader/script.R`:
+
+```r
+library(anndata)
+library(Matrix)
+library(dplyr)
+
+## VIASH START
+par <- list("output" = "output.h5ad")
+## VIASH END
+
+# Create obs data for the cells
+obs <- data.frame(
+  "celltype" = sample(c("enterocyte", "intestine goblet cell", "stem cell"), 100, replace = TRUE),
+  "batch" = sample(c("experiment1", "experiment2"), 100, replace = TRUE),
+  "tissue" = sample(c("colon", "ileum"), 100, replace = TRUE)
+)
+
+# Create var data for the genes
+var <- data.frame(
+  row.names = c("APP", "AXL", "ADA", "AMH")
+)
+
+# Create counts data
+counts <- Matrix::rsparsematrix(
+  nrow(obs), 
+  nrow(var),
+  density = 0.3,
+  rand.x = function(n) rpois(n, 100)
+)
+
+# Create an AnnData dataset
+adata <- AnnData(
+  layers = list(
+    "counts" = counts
+  ),
+  obs = obs,
+  var = var,
+  uns = list(
+    dataset_id = "my_dataset",
+    dataset_name = "My dataset",
+    data_url = "https://url.to/dataset/source",
+    data_reference = "mydatasetbibtexreference",
+    dataset_summary = "A short description of the dataset.",
+    dataset_description = "Long description of the dataset.",
+    dataset_organism = "homo_sapiens"
+  )
+)
+
+# Write to file
+adata$write_h5ad(par[["output"]])
+```
+
+:::
+
+## Step 4: Run the component
+
+Try running your component! You can start off by running your script inside your IDE.
+
+To check whether your component works as a standalone component, run the following commands.
+
+(Re)build the Docker container after changing the `platforms` section in the Viash config:
+```bash
+viash run src/datasets/loaders/myloader/config.vsh.yaml -- \
+  ---setup cachedbuild
+```
+
+Run the component:
+```bash
+viash run src/datasets/loaders/myloader/config.vsh.yaml -- \
+  --output mydataset.h5ad
+```
+
+<!-- TODO: write a generic dataset loader unit test and use that instead, see #103 -->
+
+## Parameters
+
+It's possible to add arguments to the dataset loader by adding additional entries to the `functionality.arguments` section in the `config.vsh.yaml`. For example:
+
+```yaml
+arguments:
+  - name: "--n_obs"
+    type: "integer"
+    description: "Number of cells to generate."
+    default: 100
+  - name: "--n_vars"
+    type: "integer"
+    description: "Number of genes to generate."
+    default: 100
+```
+
+You can then use the `n_obs` and `n_vars` values in the `par` object to get access to the runtime parameters:
+
+:::{.panel-tabset}
+
+## Python
+
+```python
+obs = pd.DataFrame({
+    "celltype": random.choices(["enterocyte", "intestine goblet cell", "stem cell"], k=par["n_obs"]),
+    "batch": random.choices(["experiment1", "experiment2"], k=par["n_obs"]),
+    "tissue": random.choices(["colon", "ileum"], k=par["n_obs"])
+})
+var = pd.DataFrame(
+    index=[f"Gene_{i}" for i in range(100)]
+)
+```
+
+## R
+
+```r
+obs <- data.frame(
+  "celltype" = sample(c("enterocyte", "intestine goblet cell", "stem cell"), par$n_obs, replace = TRUE),
+  "batch" = sample(c("experiment1", "experiment2"), par$n_obs, replace = TRUE),
+  "tissue" = sample(c("colon", "ileum"), par$n_obs, replace = TRUE)
+)
+var <- data.frame(
+  row.names = paste0("Gene_", seq_len(par$n_vars))
+)
+```
+
+:::
+
+## Format of a raw dataset object
+
+```{r, include=FALSE}
+yaml_file <- "src/datasets/api/anndata_raw.yaml"
+spec_anndata_raw <- yaml::read_yaml(yaml_file)
+arg <- spec_anndata_raw
+
+slots <- map2_df(
+  names(arg$info$slots), 
+  arg$info$slots, 
+  function(group_name, slot) {
+    df <- map_df(slot, as.data.frame)
+    df$struct <- group_name
+    df$file_name <- basename(yaml_file) %>% gsub("\\.yaml", "", .)
+    df$multiple <- df$multiple %||% FALSE %|% FALSE
+    as_tibble(df)
+  }
+)
+
+example <- slots %>%
+  group_by(struct) %>%
+  summarise(
+    str = paste0(unique(struct), ": ", paste0("'", name, "'", collapse = ", "))
+  ) %>%
+  arrange(match(struct, c("obs", "var", "uns", "obsm", "obsp", "varm", "varp", "layers")))
+
+example_str <- c("    AnnData object", paste0("     ", example$str))
+```
+
+Ideally, the AnnData output object should at least contain the following slots:
+
+```{r, echo=FALSE, output="asis"}
+cat(paste0(example_str, "\n"))
+```
+
+The full file format spec of a raw dataset AnnData is shown in the table below.
+
+:::{.column-body-outset}
+```{r, echo=FALSE}
+slots %>%
+  transmute(
+    Struct = struct,
+    Name = name,
+    Type = type,
+    Required = ifelse(required, "yes", ""),
+    Description = description
+  ) %>%
+  knitr::kable()
+```
+:::
+
+## Next steps
+
+If your component works, please [create a pull request](create_pull_request.qmd). After your dataset loader has been merged into the main branch, it will be used to generate a common dataset. After the common datasets have been generated, it will be picked up by the task-specific dataset processors if it has all of the slots required by the task.
