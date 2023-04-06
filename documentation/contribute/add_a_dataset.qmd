@@ -7,13 +7,19 @@ engine: knitr
 {{< include ../_blocks/_clone_repo.qmd >}}
 {{< include /_include/_synchonize_tabs.qmd >}}
 
+This page explains how to create a new dataset loader in order to add datasets to OpenProblems.
+
+:::{.callout-tip}
+Make sure you have followed the ["Requirements"](requirements.qmd) and ["Getting started"](getting_started.qmd) pages.
+:::
+
+## OpenProblems datasets
+
 Common datasets are created by generating raw datasets with a data loader and running them through the pre-processing pipeline (@fig-dataflow). Afterwards, further task-specific processing occurs prior to the task-specific benchmarking workflow.
 
 {{< include ../more_information/_project_structure_dataflow.qmd >}}
 
 See ["Project structure"](../more_information/project_structure.qmd) for more information on how each of these steps works.
-
-
 
 ```{r setup-packages, include=FALSE}
 library(tidyverse)
