@@ -1,21 +1,38 @@
-# openproblems.bio v2.0.1
-
+# openproblems.bio v2.1.2
 
 ## MINOR CHANGES
 
-* Ported missing metadata.
+* Updating task images from `.png` to `.svg` (#205).
 
-* Dark mode was added.
+# openproblems.bio v2.1.1
 
-* Changed the bibliography hero.
+## BUG FIXES
+
+* Fixed a typo in batch_integration_embed task description (#201)
+* Fix `link-external-filter` to recognise internal filters on published website (#202)
+
+# openproblems.bio v2.1.0
+
+Dark mode has been added to the website, along with minor changes such as
+an improved hero image for the results and bibliography pages and the removal
+of a stub task.
+
+## NEW FUNCTIONALITY
+
+* Dark mode was added (#153, #162, #172, #173, #184, #190, #191, #194).
+
+## MINOR CHANGES
+
+* Ported missing site metadata (#160).
+
+* Changed the results and bibliography heros (#178, #181).
+
+* Removed sub-stub regulatory effect prediction task (#197).
   
 ## BUG FIXES
 
 * Fix internal links being treated as external links in PR previews (#179).
-
-* Changed the results hero.
-
-* Add viash install to CI
+* FIx `link-external-filter` te recognise internal filters on published website (#202)
 
 # openproblems.bio v2.0.0
 

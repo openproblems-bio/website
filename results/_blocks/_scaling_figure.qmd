@@ -6,12 +6,20 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r raw_results, echo=FALSE}
+```{r raw_results, echo=FALSE, dev="svg", dev.args=list(bg="transparent")}
 ggplot(results_long %>% arrange(method_id)) +
-  geom_vline(aes(xintercept = x), tibble(x = c(0, 1)), linetype = "dashed", alpha = .5, colour = "red") +
+  geom_vline(aes(xintercept = x), tibble(x = c(0, 1)), linetype = "dashed", alpha = .7, colour = "black") +
   geom_path(aes(score, method_id, group = dataset_id), alpha = .25) +
   geom_point(aes(score, method_id, colour = is_baseline)) +
   facet_wrap(~metric_id, ncol = 1, scales = "free") +
   theme_bw() +
+  theme(
+    panel.background = element_rect(fill = "transparent", colour = NA),
+    plot.background = element_rect(fill = "transparent", colour = NA),
+    legend.background = element_rect(fill = "transparent", colour = NA),
+    legend.key = element_rect(fill = "transparent", colour = NA),
+    strip.background = element_rect(fill = "#00000028"),
+    panel.grid = element_line(color = "#00000022")
+  ) +
   labs(x = NULL, y = NULL)
 ```
