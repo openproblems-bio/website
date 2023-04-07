@@ -148,7 +148,7 @@ The repository url for the method.
 
 Which normalization method a component _prefers_. Possible values are `r norm_methods_str`. Each value corresponds to a normalization component in the directory [`src/datasets/normalization`](https://github.com/openproblems-bio/openproblems-v2/tree/main/src/datasets/normalization).
 
-#### `.__merge__`
+#### `__merge__`
 
 The file specified in this field contains information regarding the input and output arguments of the component, as well as a unit test to ensure that the component is functioning properly. Normally you don't need to change this if you gave the right arguments to the `create_skeleton` component.
 
@@ -248,7 +248,11 @@ This is the most important section of your script, as it defines the core functi
 
 The output stored in a AnnData object and then written to an `.h5ad` file. The format is specified by the API file specified in the `__merge__` field in the config file.
 
-## Step 5: Try component
+## Step 5: Add resources (optional)
+
+It is possible to add additional resources such as a file containing helper functions or other resources. Please visit [this page](https://viash.io/guide/component/use-helper-functions.html) for more information on how to do this.
+
+## Step 6: Try component
 
 Your component's API file contains the necessary unit tests to check whether your component works and the output is in the correct format.
 
