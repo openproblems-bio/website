@@ -12,7 +12,7 @@ order: 70
 By default there are 2 unit tests already done when running the `viash test`:
 
 * The first test will check if the config file has all the required fields.
-* The second test will generally test if your component works and if the out has the expected dimensions and fields.
+* The second test will generally test if your component works and if the output has the expected dimensions and fields.
 
 You can find an in-depth guide on viash testing [here](https://viash.io/guide/component/unit-testing.html).
 
@@ -57,48 +57,93 @@ viash ns test --query label_projection --parallel --platform docker
 
 ## Common errors
 
-<!-- TODO: Add examples of when:
-* A metadata field is missing
-* Output is not in the right format
-* Docker image does not exist
-* Python / R dependency does not exist
-* Something else is wrong in the docker build
--->
+:::{.callout-note}
+These are triggered errors to create examples.
+:::
+
 
 1. Assertion error
 
-2. Test script error
+An `AssertionError` occurs when something is not true. When this occurs look at the `assert ...` line to check what went wrong.
 
-3. Script error
+component script errors:
 
-```bash
-Traceback (most recent call last):
-  File "/viash_automount/tmp/viash_test_knn8482744173130031159/test_generic_test/tmp//viash-run-knn-V7rFbs.py", line 45, in <module>
-    out = subprocess.check_output(cmd).decode("utf-8")
-  File "/usr/local/lib/python3.10/subprocess.py", line 421, in check_output
-    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
-  File "/usr/local/lib/python3.10/subprocess.py", line 526, in run
-    raise CalledProcessError(retcode, process.args,
-subprocess.CalledProcessError: Command '['/viash_automount/tmp/viash_test_knn8482744173130031159/test_generic_test/knn', '--input_train', '/viash_automount/tmp/viash_test_knn8482744173130031159/test_generic_test//pancreas/train.h5ad', '--input_test', '/viash_automount/tmp/viash_test_knn8482744173130031159/test_generic_test//pancreas/test_wrong.h5ad', '--output', 'output.h5ad']' returned non-zero exit status 1.
-```
-whenever you see this error make sure that all the parameters are correct. If not sure you can go to the test script and change the line that has following code:
-```python
-subprocess.run(cmd, check=True)
-```
-to
-```python
-print(subprocess.run(cmd, stderr=subprocess.STDOUT).stdout)
-```
-Running the `viash test` again will give you an output of the executed script. That will give you an idea what went wrong:
+* Output file cannot be found: Check that your script writes to the correct output filename.
+* Some fields/objects cannot be found in the output file: Check whether the correct fields are written in the output file.
 
 ```bash
-+/tmp/viash_test_knn15835562876927731077/test_generic_test/test_executable
-[error] Input file '/viash_automount/tmp/viash_test_knn15835562876927731077/test_generic_test//pancreas/test_wrong.h5ad' does not exist.
++/tmp/viash_test_knn12471306149427017048/test_generic_test/test_executable
 >> Running script as test
-None
 >> Checking whether output file exists
+>> Reading h5ad files
+>> Checking whether predictions were added
 Traceback (most recent call last):
-  File "/viash_automount/tmp/viash_test_knn15835562876927731077/test_generic_test/tmp//viash-run-knn-ZI0VGu.py", line 48, in <module>
-    assert path.exists(output_path)
+  File "/viash_automount/tmp/viash_test_knn12471306149427017048/test_generic_test/tmp//viash-run-knn-QTKmUM.py", line 57, in <module>
+    assert "label_predi" in output.obs
 AssertionError
+```
+
+component config errors:
+
+When these `AssertionErrors` occur, check the spelling of the missing value if it is present in the file. If the field is irrelevant you can simply add an empty string `""` to make sure it is included in the composed config file.
+
+
+```bash
++/tmp/viash_test_knn12945373156205296243/test_check_method_config/test_executable
+Load config data
+check general fields
+Traceback (most recent call last):
+Check info fields
+  File "/viash_automount/tmp/viash_test_knn12945373156205296243/test_check_method_config/tmp//viash-run-knn-Xn2Vd7.py", line 42, in <module>
+    assert "summary" in info is not None, "summary not an info field or is empty"
+AssertionError: summary not an info field or is empty
+```
+
+2. Python / R dependency does not exist
+
+When a dependency for the unit test or the executed script is not added to the setup of the docker you will get a `ModuleNotFoundError`. [Add the dependency](add_a_method.qmd#step-3-add-dependencies) to the setup.
+
+```bash
+ModuleNotFoundError: No module named 'yaml'
+```
+
+3. Docker image not found
+
+When this kind of error occurs make sure there are no spelling mistakes in the image name.
+
+```bash
+#3 ERROR: docker.io/library/python:3.1: not found
+------
+> [internal] load metadata for docker.io/library/python:3.1:
+------
+Dockerfile:1
+--------------------
+  1 | >>> FROM python:3.1
+  2 |     
+  3 |     RUN pip install --upgrade pip && \
+--------------------
+ERROR: failed to solve: python:3.1: docker.io/library/python:3.1: not found
+[error] Error occurred while building container 'ghcr.io/openproblems-bio/label_projection/methods/knn:test'
+ERROR! Setup failed!
+```
+
+4. Script error
+
+When the executed script has an error it will be printed out like the example below. In most cases you can find the problem in the stack trace.
+
+```bash
++/tmp/viash_test_knn14797416935521308344/test_generic_test/test_executable
+>> Running script as test
+Load input data
+Traceback (most recent call last):
+File "/tmp/viash-run-knn-p4pvkA.py", line 31, in <module>
+  input_test = ad.read_h5ad(par['input_test'])
+File "/usr/local/lib/python3.10/site-packages/anndata/_io/h5ad.py", line 224, in read_h5ad
+  with h5py.File(filename, "r") as f:
+File "/usr/local/lib/python3.10/site-packages/h5py/_hl/files.py", line 542, in __init__
+  name = filename_encode(name)
+File "/usr/local/lib/python3.10/site-packages/h5py/_hl/compat.py", line 19, in filename_encode
+  filename = fspath(filename)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Method script with returncode ...
 ```
