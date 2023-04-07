@@ -160,7 +160,7 @@ adata = ad.AnnData(
 )
 
 # Write to file
-adata.write_h5ad(par["output"])
+adata.write_h5ad(par["output"], compression="gzip")
 HERE
 ```
 
@@ -226,7 +226,7 @@ adata <- AnnData(
 )
 
 # Write to file
-adata$write_h5ad(par[["output"]])
+adata$write_h5ad(par[["output"]], compression = "gzip")
 ```
 
 :::
