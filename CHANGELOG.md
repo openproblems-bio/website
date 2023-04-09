@@ -1,8 +1,10 @@
 # openproblems.bio v2.2.0
 
+Documentation was added for future OpenProblems v2. This is still in development and the main focus was on how to contribute to already existing tasks in OpenProblems v2.
+
 ## NEW FUNCTIONALITY
 
-### Documentation
+### Documentation (#199)
 
 * Add intro text to documentation.
 
