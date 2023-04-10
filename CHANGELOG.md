@@ -3,6 +3,7 @@
 ## MINOR CHANGES
 
 * Updating task images from `.png` to `.svg` (#205).
+* Set funkyheatmap colors for dark mode via js instead of css (#208).
 
 # openproblems.bio v2.1.1
 
