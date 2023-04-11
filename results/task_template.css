@@ -58,3 +58,9 @@ div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody {
 section#details details img.img-fluid {
     filter: invert(var(--invert-colors));
 }
+
+/* funkyheatmap */
+.quarto-figure svg g:first-child ~ g text ~ rect, .quarto-figure svg g:first-child ~ g text ~ circle {
+    stroke: var(--bs-body-bg) !important;
+    filter: hue-rotate(var(--hue-rotate)) brightness(var(--brightness-dim)) invert(var(--invert-colors)) brightness(var(--brightness-lighten));
+}
