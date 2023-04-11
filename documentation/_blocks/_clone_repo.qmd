@@ -11,6 +11,11 @@ if (!dir.exists(proj_dir)) {
 } else {
   processx::run(
     "git", 
+    "fetch",
+    wd = proj_dir
+  )
+  processx::run(
+    "git", 
     c("reset", "--hard", "origin/main"),
     wd = proj_dir
   )

@@ -1,0 +1,29 @@
+```{=html}
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  // Find all divs with the class 'details'
+  const detailsDivs = document.querySelectorAll(".output-details");
+
+  // Iterate through each div with class 'details'
+  detailsDivs.forEach(detailsDiv => {
+    // Create a new 'details' element
+    const detailsElement = document.createElement("details");
+
+    // Create a new 'summary' element
+    const summaryElement = document.createElement("summary");
+    summaryElement.innerText = "Output";
+
+    // Append the 'summary' element to the 'details' element
+    detailsElement.appendChild(summaryElement);
+
+    // Move the content of the 'details' div into the new 'details' element
+    while (detailsDiv) {
+      detailsElement.appendChild(detailsDiv.parentElement);
+    }
+
+    // Replace the 'details' div with the new 'details' element
+    detailsDiv.parentNode.replaceChild(detailsElement, detailsDiv);
+  });
+});
+</script>
+```
