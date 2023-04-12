@@ -36,6 +36,10 @@ Documentation was added for future OpenProblems v2. This is still in development
 
 * `More information/Troubleshooting`: Describes the most common errors that can occur when contributing/developing.
 
+## BUG FIX
+
+Rename `create_skeleton` to `create_component` in documentation. (#213)
+
 # openproblems.bio v2.1.2
 
 ## MINOR CHANGES
