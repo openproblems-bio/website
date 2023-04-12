@@ -1,5 +1,5 @@
 ---
-title: Add a baseline
+title: Add a baseline method
 order: 50
 engine: knitr
 ---
@@ -10,7 +10,9 @@ engine: knitr
 
 A baseline method (or control method) is used to test the relative performance of all other methods, and also as a quality control for the pipeline as a whole. A baseline method can either be a positive control or a negative control. The positive control and negative control methods set a maximum and minimum threshold for performance, so any new method should perform better than the negative control methods and worse than the positive control method.
 
-This guide will show you how to create a new baseline method. Note that the Label Projection task is used throughout the guide, so make sure to replace any occurrences of `"label_projection"` with your task of interest.
+This guide will show you how to create a new [Viash](https://viash.io) component.
+In the following we will show examples for both Python and R.
+Note that the Label Projection task is used throughout the guide, so make sure to replace any occurrences of `"label_projection"` with your task of interest.
 
 :::{.callout-tip}
 Make sure you have followed the ["Requirements"](requirements.qmd) and ["Getting started"](getting_started.qmd) pages.
