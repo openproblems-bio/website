@@ -12,4 +12,4 @@ header:
   image: ""
 ---
 
-Open Problems for Single Cell Analysis is a free resource with all data licensed under CC-BY.
+Open Problems for Single Cell Analysis is a free resource with all data licensed under [CC-BY](https://creativecommons.org/licenses/by/2.0/).
