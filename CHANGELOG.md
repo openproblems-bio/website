@@ -36,12 +36,11 @@ Documentation was added for future OpenProblems v2. This is still in development
 
 * `More information/Troubleshooting`: Describes the most common errors that can occur when contributing/developing.
 
-# openproblems.bio v2.1.2
-
 ## MINOR CHANGES
 
 * Updating task images from `.png` to `.svg` (#205).
 * Set funkyheatmap colors for dark mode via js instead of css (#208).
+* Set color palette dynamically for funkyheatmap (#210).
 
 # openproblems.bio v2.1.1
 
