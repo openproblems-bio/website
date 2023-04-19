@@ -150,7 +150,7 @@ funkyheatmap(
             oddRowBackground: 'var(--bs-body-bg)',
             evenRowBackground: 'var(--bs-button-hover)',
             textColor: 'var(--bs-body-color)',
-            strokeColor: 'var(--bs-body-color)',
+            strokeColor: 'var(--bs-dark)',
             headerColor: 'var(--bs-white)',
             hoverColor: 'var(--bs-body-color)'
         }
@@ -163,6 +163,6 @@ funkyheatmap(
 funkyheatmap = (await require('d3@7').then(d3 => {
   window.d3 = d3;
   window._ = _;
-  return import('https://unpkg.com/funkyheatmap-js@0.1.8');
+  return import('https://unpkg.com/funkyheatmap-js@0.1.9');
 })).default;
 ```

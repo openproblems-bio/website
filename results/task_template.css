@@ -60,7 +60,6 @@ section#details details img.img-fluid {
 }
 
 /* funkyheatmap */
-.quarto-figure svg g:first-child ~ g text ~ rect, .quarto-figure svg g:first-child ~ g text ~ circle {
-    stroke: var(--bs-dark) !important;
+.quarto-figure .funkyheatmap .fh-geom {
     filter: hue-rotate(var(--hue-rotate)) brightness(var(--brightness-dim)) invert(var(--invert-colors)) brightness(var(--brightness-lighten));
 }
