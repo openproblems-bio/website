@@ -5,6 +5,7 @@ engine: knitr
 ---
 
 {{< include ../_blocks/_clone_repo.qmd >}}
+{{< include /_include/_evaluate_code.qmd >}}
 {{< include /_include/_synchonize_tabs.qmd >}}
 
 A baseline method (or control method) is used to test the relative performance of all other methods, and also as a quality control for the pipeline as a whole. A baseline method can either be a positive control or a negative control. The positive control and negative control methods set a maximum and minimum threshold for performance, so any new method should perform better than the negative control methods and worse than the positive control method.
@@ -14,7 +15,7 @@ This guide will show you how to create a new baseline method. Note that the Labe
 :::{.callout-tip}
 Make sure you have followed the ["Requirements"](requirements.qmd) and ["Getting started"](getting_started.qmd) pages.
 :::
-
+ 
 ## Step 1: Create a new component
 
 Use the `create_component` component to start creating a new baseline method.
@@ -65,7 +66,8 @@ Use the command `viash run src/common/create_component/config.vsh.yaml -- --help
 
 ## Step 2: Fill in metadata
 
-```{r, include=FALSE}
+```{r, include=FALSE, eval=TRUE}
+# set eval to TRUE to make sure is always run, even when profile is not 'evaluate_code'
 norm_methods <- list.files("src/datasets/normalization")
 norm_methods_str <- paste(paste0("`", norm_methods, "`"), collapse = ", ")
 ```
