@@ -29,18 +29,10 @@ Tip: Make sure that the $HOME/.local/bin folder is in your $PATH variable.
 
 ## Preview
 
-### without documentation (Recommended)
+Run `quarto preview` to render a preview version of the site.
 
-Run `quarto preview --profile no_docs` to render a preview version of the site without documentation pages.
-
-### with documentation
-
-Run `quarto preview` to render a preview version of the site. This will take longer because of the codeblocks that are being evaluated.
-
+To reduce the time it takes to render the site, quarto is set to not execute runnable code by default. As such, some content may be missing -- mostly the output of code blocks. Use `quarto preview --profile evaluate_code` to evaluate runnable code blocks.
 
 ## Build
 
-Run `quarto render` to render the site.
-
-Add `--profile no_docs` to not render the documentation if you have not installed the dependencies. This is __recommended__ if not working on the documentation
-
+Run `quarto render --profile evaluate_code` to render the site.
