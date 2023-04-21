@@ -5,6 +5,7 @@ engine: knitr
 ---
 
 {{< include ../_blocks/_clone_repo.qmd >}}
+{{< include /_include/_evaluate_code.qmd >}}
 {{< include /_include/_synchonize_tabs.qmd >}}
 
 This page explains how to create a new dataset loader in order to add datasets to OpenProblems.
@@ -31,7 +32,8 @@ library(rlang)
 
 To add a dataset to OpenProblems, you will need to create a Viash component for a dataset loader. 
 
-```{r, include=FALSE}
+```{r, include=FALSE, eval=TRUE}
+# set eval to TRUE to make sure is always run, even when profile is not 'evaluate_code'
 dir <- "src/datasets/loaders/myloader"
 if (!dir.exists(dir)) {
   dir.create(dir)
@@ -49,7 +51,8 @@ Take a look at the dataset loaders that are already in the `src/datasets/loaders
 
 Next, create a config for the dataset loader. The simplest dataset loader you can create looks as follows.
 
-```{bash, include=FALSE}
+```{bash, include=FALSE, eval=TRUE}
+# set eval to TRUE to make sure is always run, even when profile is not 'evaluate_code'
 cat > src/datasets/loaders/myloader/config.vsh.yaml << 'HERE'
 functionality:
   name: "myloader"
@@ -112,7 +115,8 @@ platforms:
 
 ## Step 3: Create a script
 
-```{bash, include=FALSE}
+```{bash, include=FALSE, eval=TRUE}
+# set eval to TRUE to make sure is always run, even when profile is not 'evaluate_code'
 cat > src/datasets/loaders/myloader/script.py << 'HERE'
 import anndata as ad
 import pandas as pd

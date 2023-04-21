@@ -1,44 +1,45 @@
 # openproblems.bio v2.2.0
 
-Documentation was added for future OpenProblems v2. This is still in development and the main focus was on how to contribute to already existing tasks in OpenProblems v2.
-
 ## NEW FUNCTIONALITY
 
-### Documentation (#199)
+* Documentation was added for future OpenProblems v2 (#199). This is still in development and the main focus was on how to contribute to already existing tasks in OpenProblems v2. Content:
 
-* Add intro text to documentation.
+  * Add intro text to documentation.
 
-* Add `contribute` intro and pages.
+  * Add `contribute` intro and pages.
 
-* `contribute/Requirements`: Describes how to set up your system to start contributing.
+  * `contribute/Requirements`: Describes how to set up your system to start contributing.
 
-* `contribute/Getting started`: Describes how to get started with contributing.
+  * `contribute/Getting started`: Describes how to get started with contributing.
 
-* `contribute/Add a dataset`: Describes how to create a new dataset loader.
+  * `contribute/Add a dataset`: Describes how to create a new dataset loader.
 
-* `contribute/Add a method`: Describes how to create a new method for an existing task.
+  * `contribute/Add a method`: Describes how to create a new method for an existing task.
 
-* `contribute/Add a baseline`: Describes how to create a new control method for an existing task.
+  * `contribute/Add a baseline`: Describes how to create a new control method for an existing task.
 
-* `contribute/Add a metric`: Describes how to create a new metric for an existing task.
-  
-* `contribute/Run tests`: Describes how to run tests for the newly created components.
+  * `contribute/Add a metric`: Describes how to create a new metric for an existing task.
+    
+  * `contribute/Run tests`: Describes how to run tests for the newly created components.
 
-* `contribute/Create Pull Request`: Describes how to contribute your changes.
+  * `contribute/Create Pull Request`: Describes how to contribute your changes.
 
-* Add `More information` intro and pages
+  * Add `More information` intro and pages
 
-* `More information/Project structure`: Describes the repository structure and technology stack
+  * `More information/Project structure`: Describes the repository structure and technology stack
 
-* `More information/Code of conduct`: Describes the Code of conduct that OpenProblems uses.
-  
-* `More information/FAQ`: Frequently Asked Questions
+  * `More information/Code of conduct`: Describes the Code of conduct that OpenProblems uses.
+    
+  * `More information/FAQ`: Frequently Asked Questions
 
-* `More information/Troubleshooting`: Describes the most common errors that can occur when contributing/developing.
+  * `More information/Troubleshooting`: Describes the most common errors that can occur when contributing/developing.
 
+## MAJOR CHANGES
+
+* For some of the pages, only render executable code when the 'evaluate_code' profile is active. (#214).
 ## BUG FIX
 
-Rename `create_skeleton` to `create_component` in documentation. (#213)
+* Rename `create_skeleton` to `create_component` in documentation (#213).
 
 ## MINOR CHANGES
 
