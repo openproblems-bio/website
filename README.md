@@ -1,4 +1,4 @@
-## OpenProblems.bio
+# OpenProblems.bio
 
 This repository is used to build [openproblems.bio](https://openproblems.bio).
 
@@ -19,3 +19,9 @@ Run `quarto preview` to render a preview version of the site.
 
 Run `quarto render` to render the site.
 
+## License
+
+This repository contains a Quarto website with different types of content:
+
+- Markdown content and JSON data files are licensed under the Creative Commons Attribution 4.0 International License (CC-BY). See [`LICENSE-CC-BY`](./LICENSE-CC-BY) for details.
+- All other source files (e.g. R, Python, CSS, SCSS, and EJS) are licensed under the MIT License. See [`LICENSE-MIT`](./LICENSE-MIT) for details.
