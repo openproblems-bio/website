@@ -31,7 +31,9 @@ Tip: Make sure that the $HOME/.local/bin folder is in your $PATH variable.
 
 Run `quarto preview` to render a preview version of the site.
 
-To reduce the time it takes to render the site, quarto is set to not execute runnable code by default. As such, some content may be missing -- mostly the output of code blocks. Use `quarto preview --profile evaluate_code` to evaluate runnable code blocks.
+To reduce the time it takes to render the site, quarto is set to not execute runnable code by default. As such, some content may be missing -- mostly the output of code blocks. Use `quarto preview --profile evaluate_code` to evaluate runnable code blocks. 
+
+Tip: When you already did a render or preview with or without the profile argument, you need to remove the `_site` and `_freeze` directories to see a change by executing `rm -r _site _freeze`
 
 ## Build
 
