@@ -40,6 +40,10 @@ Documentation was added for future OpenProblems v2. This is still in development
 
 Rename `create_skeleton` to `create_component` in documentation. (#213)
 
+## MINOR CHANGES
+
+* Update license to Creative Commons CC-BY (#216)
+
 # openproblems.bio v2.1.2
 
 ## MINOR CHANGES
