@@ -207,26 +207,26 @@ cat src/label_projection/methods/my_method_r/script.R
 
 The required sections are explained here in more detail:
 
-### 1. Imports and libraries
+### a. Imports and libraries
 
 In the top section of the script you can define which packages/libraries the method needs. If you add a new or different package add the dependency to `config.vsh.yaml` in the `setup` field (see above).
 
-### 2. Argument block
+### b. Argument block
 
 The [Viash code block](https://viash.io/reference/viash_code_block/) is designed to facilitate prototyping, by enabling you to execute directly by running `python script.py` (or `Rscript script.R` for R users). Note that anything between "VIASH START" and "VIASH END" will be removed and replaced with a CLI argument parser when the components are being built by Viash.
 
 Here, the `par` dictionary contains all the `arguments` defined in the `config.vsh.yaml` file (including those from the defined `__merge__` file). When adding a `argument` in the `par` dict **also** add it to the `config.vsh.yaml` in the `arguments` section.
 
-### 3. Read input data
+### c. Read input data
 
 This section reads any input AnnData files passed to the component.
 
-### 4. Generate results
+### d. Generate results
 
 This is the most important section of your script, as it defines the core functionality provided by the component. It processes the input data to create results for the particular task at hand.
 
 
-### 5. Write output data to file
+### e. Write output data to file
 
 The output stored in a AnnData object and then written to an `.h5ad` file. The format is specified by the API file specified in the `__merge__` field in the config file.
 
