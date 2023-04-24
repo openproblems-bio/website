@@ -4,7 +4,21 @@ description: Adding a new task from scratch
 order: 30
 ---
 
-Steps to follow:
+A task is a set of components that are used to evaluate existing methods that tackle a specific problem.
+Some examples that are currently implemented in openproblems are batch integration, label projection and dimensionality reduction.
+In the following we will show you how to create a new task from scratch.
+
+The main parts that make up a task are:
+
+* a written [task description](create_task_proposal.qmd)
+* API specifications for the [components](api_component_specs.qmd) and the [file formats](api_file_formats.qmd)
+* a [dataset processing](api_masking_component.qmd) component for preparing the data for the method and metric inputs
+* [method](create_methods.qmd) and [metric](create_metrics.qmd) components that adhere to the API specifications
+* a [baseline](create_baselines.qmd) method for comparison
+* a [testing framework](test_framework.qmd)
+
+
+<!-- Steps to follow:
 
 - [Creating the file format specifications](api_file_formats.qmd)
 - [Creating the component specifications](api_component_specs.qmd)
@@ -14,4 +28,4 @@ Steps to follow:
 - Create metric
 - Add unit tests
 - Create baseline methods
-- [Add task metadata](task_metadata.qmd)
+- [Add task metadata](task_metadata.qmd) -->
