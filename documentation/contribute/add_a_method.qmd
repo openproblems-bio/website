@@ -5,6 +5,7 @@ engine: knitr
 ---
 
 {{< include ../_blocks/_clone_repo.qmd >}}
+{{< include /_include/_evaluate_code.qmd >}}
 {{< include /_include/_synchonize_tabs.qmd >}}
 
 A method is a specific technique used to solve the task problem and is compared to the baseline methods and other methods to determine the best approach for the task depending on the type of dataset.
@@ -69,7 +70,8 @@ Use the command `viash run src/common/create_component/config.vsh.yaml -- --help
 
 ## Step 2: Fill in metadata
 
-```{r, include=FALSE}
+```{r, include=FALSE, eval=TRUE}
+# set eval to TRUE to make sure is always run, even when profile is not 'evaluate_code'
 norm_methods <- list.files("src/datasets/normalization")
 norm_methods_str <- paste(paste0("`", norm_methods, "`"), collapse = ", ")
 ```

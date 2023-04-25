@@ -60,7 +60,7 @@ jobs:
         shell: bash -l {0}  
         run: |
           source renv/python/virtualenvs/renv-python-3.10/bin/activate
-          quarto render
+          quarto render --profile evaluate_code
       
       ## push actions
       - name: Deploy push
