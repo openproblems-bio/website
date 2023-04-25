@@ -36,7 +36,12 @@
 
 ## MAJOR CHANGES
 
-* For some of the pages, only render executable code when the 'evaluate_code' profile is active. (#214).
+* For some of the pages, only render executable code when the 'evaluate_code' profile is active (#214).
+
+## MINOR CHANGES
+
+* Update to Quarto 1.3 (#221).
+
 ## BUG FIX
 
 * Rename `create_skeleton` to `create_component` in documentation (#213).
