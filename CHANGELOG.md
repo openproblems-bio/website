@@ -46,6 +46,8 @@
 
 * Rename `create_skeleton` to `create_component` in documentation (#213).
 
+* Add `target: _blank` to external links in navbar (#188).
+
 ## MINOR CHANGES
 
 * Update license to Creative Commons CC-BY (#216)
