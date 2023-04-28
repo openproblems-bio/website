@@ -50,6 +50,8 @@
 
 * Update license to Creative Commons CC-BY (#216)
 
+* Revert intentional typo `.thumnail-image` to `.thumbnail-image` (#232)
+
 # openproblems.bio v2.1.2
 
 ## MINOR CHANGES
