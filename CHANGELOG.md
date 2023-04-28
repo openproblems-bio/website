@@ -41,6 +41,8 @@
 ## MINOR CHANGES
 
 * Update to Quarto 1.3 (#221).
+  
+* revert temporary navbar transition fix (#231)
 
 ## BUG FIX
 
