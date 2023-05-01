@@ -41,18 +41,16 @@
 ## MINOR CHANGES
 
 * Update to Quarto 1.3 (#221).
+
+* Update license to Creative Commons CC-BY (#216)
   
-* revert temporary navbar transition fix (#231)
+* Revert temporary navbar transition fix (#231)
 
 ## BUG FIX
 
 * Rename `create_skeleton` to `create_component` in documentation (#213).
 
 * Add `target: _blank` to external links in navbar (#230).
-
-## MINOR CHANGES
-
-* Update license to Creative Commons CC-BY (#216)
 
 # openproblems.bio v2.1.2
 
