@@ -54,6 +54,9 @@
 
 * Revert intentional typo `.thumnail-image` to `.thumbnail-image` (#232)
 
+* add `../docs.css` to neurips 2022 documentation to activate the `.thumbnail-image` change (#232)
+
+
 # openproblems.bio v2.1.2
 
 ## MINOR CHANGES
