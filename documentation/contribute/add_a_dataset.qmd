@@ -119,14 +119,15 @@ platforms:
 ```
 :::
 
-For more parameter options, refer to @sec-parameters.
+For more parameter options, refer to [Parameters](#parameters) section.
 
 
 ## Step 3: Create a script
 
 Next, create a script that will generate or load the dataset.
 Here we show an example script that generates a random dataset, but check out `src/datasets/loaders` for real data examples.
-The script must ensure that that the output anndata object has the format as described in @sec-format.
+The script must ensure that that the output anndata object has the format as described in the [format](#format-of-a-raw-dataset-object) section.
+
 
 ```{bash, include=FALSE, eval=TRUE}
 # set eval to TRUE to make sure is always run, even when profile is not 'evaluate_code'
@@ -268,7 +269,7 @@ viash run src/datasets/loaders/myloader/config.vsh.yaml -- \
 
 <!-- TODO: write a generic dataset loader unit test and use that instead, see #103 -->
 
-## Parameters {#sec-parameters}
+## Parameters
 
 It's possible to add arguments to the dataset loader by adding additional entries to the `functionality.arguments` section in the `config.vsh.yaml`. For example:
 
@@ -316,7 +317,7 @@ var <- data.frame(
 
 :::
 
-## Format of a raw dataset object {#sec-format}
+## Format of a raw dataset object
 
 ```{r, include=FALSE}
 yaml_file <- "src/datasets/api/anndata_raw.yaml"
