@@ -13,7 +13,7 @@ The functioning of organs, tissues, and whole organisms is determined by the int
 
 ## Task API
 
-The following section describes the task API for the Joint Embedding task. Competitors must submit their code as a Viash component. To facilitate creation of these components, [starter kits](/competitions/neurips_2021_docs/submission/starter_kit_contents.qmd) have been provided.
+The following section describes the task API for the Joint Embedding task. Competitors must submit their code as a Viash component. To facilitate creation of these components, [starter kits](/events/2021-09_neurips/documentation/submission/starter_kit_contents.qmd) have been provided.
 
 ### Input data formats
 
@@ -50,7 +50,7 @@ adata
 
 To make the task more straightforward, we have followed common practices for normalizing and transforming data of each modality. The raw data is also provided in `adata.layers` as described below.
 
-For full details on preprocessing, see the [Data Preprocessing](/competitions/neurips_2021_docs/data/dataset.qmd#preprocessing) notes.
+For full details on preprocessing, see the [Data Preprocessing](/events/2021-09_neurips/documentation/data/dataset.qmd#preprocessing) notes.
 
 **GEX**  
 
@@ -143,9 +143,9 @@ Further information on any of these metrics can be found at [biorxiv.org/content
 
 ## Prizes
 
-Because labels used for the metric calculations are available for some of the data as described in the [Benchmark Dataset](/competitions/neurips_2021_docs/data/dataset.qmd) notes, we anticipate a bias in performance in models that use this information in model training. As there is no way for us to distinguish between pre-trained models that use these labels and those that don't, we are splitting the prizes into two categories.
+Because labels used for the metric calculations are available for some of the data as described in the [Benchmark Dataset](/events/2021-09_neurips/documentation/data/dataset.qmd) notes, we anticipate a bias in performance in models that use this information in model training. As there is no way for us to distinguish between pre-trained models that use these labels and those that don't, we are splitting the prizes into two categories.
 
-**Pre-trained models** are any method that includes model parameters through the `resources` block of the `config.vsh.yaml` file. For more information, see the [FAQs](/competitions/neurips_2021_docs/submission/faq.qmd#how-can-i-upload-a-pre-trained-model). This also includes models that may download model weights during execution.
+**Pre-trained models** are any method that includes model parameters through the `resources` block of the `config.vsh.yaml` file. For more information, see the [FAQs](/events/2021-09_neurips/documentation/submission/faq.qmd#how-can-i-upload-a-pre-trained-model). This also includes models that may download model weights during execution.
 
 **Non pre-trained models** are any method that uses only the `input_mod[1|2]` files to generate the embedding.
 
@@ -156,4 +156,4 @@ For this task, four $1250 prizes will be awarded to the submissions for each of 
 1. Best performance embedding GEX and ATAC without pre-training
 2. Best performance embedding GEX and ADT without pre-training
 
-[Terms and Conditions](/competitions/neurips_2021_docs/submission/terms.qmd) apply.
+[Terms and Conditions](/events/2021-09_neurips/documentation/submission/terms.qmd) apply.

@@ -7,7 +7,7 @@ The typical workflow for developing a new method and submitting the results to t
 
 ## Editing the script and config file
 
-Implement your method in `script.py` (or `script.R` for R users) and update the Viash config accordingly. The file format of the script and config are described in the [Starter kit contents](/competitions/neurips_2021_docs/submission/starter_kit_contents.qmd) description.
+Implement your method in `script.py` (or `script.R` for R users) and update the Viash config accordingly. The file format of the script and config are described in the [Starter kit contents](/events/2021-09_neurips/documentation/submission/starter_kit_contents.qmd) description.
 
 ## Manually running the component
 
@@ -65,7 +65,7 @@ If you can run your contribution on sample data, you can now proceed to generati
 $ ./scripts/2_generate_submission.sh
 ```
 
-If this process runs successfully, then you will be instructed to upload the submission to EvalAI. If you see any warnings, please consult our [FAQ](/competitions/neurips_2021_docs/submission/faq.qmd).
+If this process runs successfully, then you will be instructed to upload the submission to EvalAI. If you see any warnings, please consult our [FAQ](/events/2021-09_neurips/documentation/submission/faq.qmd).
 
 ## Evaluate locally
 
@@ -95,4 +95,4 @@ For your component to be able to access additional files (such as a pre-trained 
 For Python users, you can access the file at `meta['resources_dir'] + '/pretrained_model.pt'`. Similarly, R users can access the script at `paste0(meta$resources_dir, "/pretrained_model.pt")`.
 
 ## Troubleshooting
-If you encounter any issues, please look at the [Frequently Asked Questions](/competitions/neurips_2021_docs/submission/faq.qmd). If this doesn't solve your problem, visit the #support channel on Discord.
+If you encounter any issues, please look at the [Frequently Asked Questions](/events/2021-09_neurips/documentation/submission/faq.qmd). If this doesn't solve your problem, visit the #support channel on Discord.
