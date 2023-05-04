@@ -1,5 +1,7 @@
 project:
   type: website
+  resources: 
+    - "_redirects"
   preview:
     port: 4200
 
@@ -23,14 +25,8 @@ website:
         text: About
       - text: Benchmarks
         href: results/index.qmd
-      - text: Competitions
-        menu: 
-          - text: NeurIPS 2022 Competition
-            href: competitions/neurips_2022
-          - text: NeurIPS 2021 Competition
-            href: competitions/neurips_2021
-          - text: NeurIPS 2021 Documentation
-            href: competitions/neurips_2021_docs
+      - href: events/index.qmd
+        text: Events
       - href: team/index.qmd
         text: Team
       - text: Documentation
