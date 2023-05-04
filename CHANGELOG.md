@@ -36,14 +36,26 @@
 
 ## MAJOR CHANGES
 
-* For some of the pages, only render executable code when the 'evaluate_code' profile is active. (#214).
+* For some of the pages, only render executable code when the 'evaluate_code' profile is active (#214).
+
+## MINOR CHANGES
+
+* Update to Quarto 1.3 (#221).
+
+* Update license to Creative Commons CC-BY (#216)
+  
+* Revert temporary navbar transition fix (#231)
+
 ## BUG FIX
 
 * Rename `create_skeleton` to `create_component` in documentation (#213).
 
-## MINOR CHANGES
+* Add `target: _blank` to external links in navbar (#230).
 
-* Update license to Creative Commons CC-BY (#216)
+* Revert intentional typo `.thumnail-image` to `.thumbnail-image` (#232)
+
+* add `../docs.css` to neurips 2021 documentation to activate the `.thumbnail-image` change (#232)
+
 
 # openproblems.bio v2.1.2
 
