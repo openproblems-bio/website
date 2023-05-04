@@ -46,6 +46,8 @@
   
 * Revert temporary navbar transition fix (#231)
 
+* Revert changes made in quarto v1.3 to our own style (#236)
+
 ## BUG FIX
 
 * Rename `create_skeleton` to `create_component` in documentation (#213).
