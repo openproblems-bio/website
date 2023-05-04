@@ -5,15 +5,16 @@ page-layout: full
 title-block-banner: ../images/heros/competition_dark.jpg
 title-block-banner-color: "white"
 listing:
-  - id: events
-    type: table
-    contents:
-      - 2022-08_neurips/index.qmd
-      - 2021-09_neurips/index.qmd
-      - 2021-03_jamboree/index.qmd
+  id: events
+  type: table
+  contents:
+    - 2022-08_neurips/index.qmd
+    - 2021-09_neurips/index.qmd
+    - 2021-03_jamboree/index.qmd
+  date-format: MM/YYYY
+  fields: [ date, title, reading-time]
+  sort: 
+    - "date desc"
 toc: false
-css: [../style-hero.css, competitions-list.css]
+css: [../style-hero.css,]
 ---
-
-:::{#competitions}
-:::
