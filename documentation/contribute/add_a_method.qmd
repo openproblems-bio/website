@@ -121,17 +121,42 @@ cat src/label_projection/methods/my_method_r/config.vsh.yaml
 
 Please edit `functionality.info` section in the config file to fill in the necessary metadata.
 
-| Metadata field                               | Description                                                                                                                                                                                                                                                                                                |
-|----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `functionality.name`                         | A unique identifier for the method. Must be written in snake case. Example:  `my_new_method` .                                                                                                                                                                                                             |
-| `functionality.info.pretty_name`             | A label for the method used for visualisations and documentation. Example:  `"My new method"` .                                                                                                                                                                                                            |
-| `functionality.info.summary`                 | A one sentence summary of the method. Used for creating short overviews of the components in a task.                                                                                                                                                                                                       |
-| `functionality.info.description`             | An explanation for how the method works. Used for creating reference documentation of a task.                                                                                                                                                                                                              |
-| `functionality.info.reference`               | A bibtex reference key to the paper where the method is described.                                                                                                                                                                                                                                         |
-| `functionality.info.documentation_url`       | The url to the documentation of the method.                                                                                                                                                                                                                                                                |
-| `functionality.info.repository_url`         | The repository url for the method.                                                                                                                                                                                                                                                                         |
-| `functionality.info.preferred_normalization` | Which normalization method a component _prefers_. Possible values are  `r norm_methods_str` . Each value corresponds to a normalization component in the directory [ `src/datasets/normalization` ]( https://github.com/openproblems-bio/openproblems-v2/tree/main/src/datasets/normalization ).           |
-| `__merge__`                                  | The file specified in this field contains information regarding the input and output arguments of the component, as well as a unit test to ensure that the component is functioning properly. Normally you don't need to change this if you gave the right arguments to the  `create_component`  component. |
+#### `functionality.name`
+
+A unique identifier for the method. Must be written in snake case. Example: `my_new_method`.
+
+#### `functionality.info.pretty_name`
+
+A label for the method used for visualisations and documentation. Example: `"My new method"`.
+
+#### `functionality.info.summary`
+
+A one sentence summary of the method. Used for creating short overviews of the components in a task.
+
+#### `functionality.info.description`
+
+An explanation for how the method works. Used for creating reference documentation of a task.
+
+#### `functionality.info.reference`
+
+A bibtex reference key to the paper where the method is described.
+
+#### `functionality.info.documentation_url`
+
+The url to the documentation of the method.
+
+#### `functionality.info.repository_url`
+
+The repository url for the method.
+
+#### `functionality.info.preferred_normalization`
+
+Which normalization method a component _prefers_. Possible values are `r norm_methods_str`. Each value corresponds to a normalization component in the directory [`src/datasets/normalization`](https://github.com/openproblems-bio/openproblems-v2/tree/main/src/datasets/normalization).
+
+#### `__merge__`
+
+The file specified in this field contains information regarding the input and output arguments of the component, as well as a unit test to ensure that the component is functioning properly. Normally you don't need to change this if you gave the right arguments to the `create_component` component.
+
 
 ## Step 3: Add dependencies
 
