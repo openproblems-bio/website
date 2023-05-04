@@ -25,7 +25,8 @@ To clone this forked repository to your local machine, copy the URL of the forke
 In your terminal or command prompt, navigate to the directory where you want to clone the repository and enter the following command:
 
 ```bash
-git clone <forked repository URL>
+git clone <forked repository URL> openproblems-v2
+cd openproblems-v2
 ```
 
 This will download a copy of the repository to your local machine. You can now make changes to the code, add new functionality, and commit your changes.
@@ -33,6 +34,8 @@ This will download a copy of the repository to your local machine. You can now m
 ## Step 3: Download test resources
 
 You will also need to download the test resources by running the following command.
+These are needed for testing the existing components and can be used for developing new unit tests.
+From the repository root, run:
 
 ```bash
 viash run src/common/sync_test_resources/config.vsh.yaml
@@ -46,23 +49,40 @@ viash run src/common/sync_test_resources/config.vsh.yaml
 ```
 </details>
 
+The test resources are stored in the `resources_test` directory.
+
 ## Ready, set, go!
 
-That's it! Now you should be able to start adding functionality to the pipeline.
-Please check the relevant documentation for adding a [dataset](add_a_dataset.qmd), 
-[method](add_a_method.qmd), or [metric](add_a_metric.qmd). Here are a few example
-pointers to help you get started quickly.
+That's it! Now you should be able to test whether the existing components work as expected and then start adding functionality to the pipeline.
+The main workflow consists of the following steps:
+
+* Loading and preparing datasets (add a new [dataset](add_a_dataset.qmd))
+* Running methods on those datasets (add a new [method](add_a_method.qmd))
+* Evaluating the method outputs via metrics (add a new [metric](add_a_metric.qmd))
+
+Since the components are written in Viash, we recommend that you familiarize yourself with the [Viash documentation](https://viash.io/).
+Below are a few example pointers to help you get started quickly.
 
 
-### Review project structure
+### Project structure
 
 The project repository is structured as follows:
 
 ![](../images/repositories-half.svg)
 
+In general, there are multiple components in `src`, reflecting different tasks and utils.
+A component is a self-contained unit of functionality that can be run independently and multiple components can be combined to form a task.
+The `src/common` directory contains components that are used across multiple tasks.
+Datasets required as input for tasks can be loaded and prepared in `src/datasets`.
+The tasks themselves contain the respective methods and metrics implementations.
+
 For detailed information on how this project is structured, see the ["Project structure"](../more_information/project_structure.qmd).
 
+
 ### Run a component on a test dataset
+
+Running an existing component is as simple as running a command in your terminal.
+Using test data as input, you can try this out immediately.
 
 Use the `viash run` command to run a Viash component. Everything after the
 `--` separator counts as the arguments of the component itself. In this case,
@@ -86,9 +106,10 @@ viash run src/label_projection/methods/knn/config.vsh.yaml -- \
 ```
 </details>
 
-### Unit test a component
+### Testing components
 
-Use `viash test` to run all of the component's unit tests.
+Testing components is an important part of the development process.
+Each tasks comes with pre-defined unit tests that can be run using the `viash test` command.
 
 ```bash
 viash test src/label_projection/methods/knn/config.vsh.yaml
@@ -101,9 +122,7 @@ viash test src/label_projection/methods/knn/config.vsh.yaml
 ```
 </details>
 
-### Run all unit tests for one of the tasks
-
-Use `viash ns test` to unit test all of the components of a given task.
+If you want to run the unit tests for all of the components of a task, you can use the `viash ns test` command.
 
 ```bash
 viash ns test --query label_projection --parallel --platform docker
@@ -127,4 +146,6 @@ viash ns test --query label_projection --parallel --platform docker
 </details>
 
 ## Conclusion
+The OpenProblems repository contain multiple components and tasks made up of components that can be run independently or combined into more complex workflows.
+All components are written in Viash, so check out the [Viash documentation](https://viash.io/) for more options for the given commands.
 Please note that if you encounter any issues during the first-time setup, there are several resources available to help you troubleshoot. These include the ["Troubleshooting"](/documentation/more_information/troubleshooting.qmd) page of this documentation and the OpenProblems community on GitHub. We encourage you to explore these resources and reach out to the community for help if needed.
