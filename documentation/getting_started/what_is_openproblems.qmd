@@ -1,0 +1,53 @@
+---
+title: What is OpenProblems?
+order: 10
+engine: knitr
+bibliography: ../../bibliography/library.bib
+---
+
+OpenProblems is a living benchmarking platform designed to address and measure progress towards open challenges in single-cell genomics. It follows the Common Task Framework (CTF) [@donoho2017yearsdatascience], which has driven innovation in machine learning research by providing clear definitions and quantifications of progress. 
+
+OpenProblems tasks consist of datasets, methods, and metrics ([@fig-task-structure]). Datasets define the input and ground truth for a task, methods attempt to solve the task, and metrics evaluate the success of a method on a given dataset. Metrics are normalized between 0 and 1 based on the inclusion of "baseline" methods, which are designed to emulate either random or perfect performance. Methods are then ranked on a per-dataset basis by the average normalized metric score and presented in a summary table on the OpenProblems website (https://openproblems.bio).
+
+```{mermaid}
+%%| label: fig-task-structure
+%%| fig-cap: "The structure of an OpenProblems task."
+graph LR
+  subgraph OpenProblems Task
+    Dataset --> Method --> Metric
+  end
+```
+
+To 
+
+That's it! Now you should be able to test whether the existing components work as expected and then start adding functionality to the pipeline.
+The main workflow consists of the following steps:
+
+* Loading and preparing datasets (add a new [dataset](add_a_dataset.qmd))
+* Running methods on those datasets (add a new [method](add_a_method.qmd))
+* Evaluating the method outputs via metrics (add a new [metric](add_a_metric.qmd))
+
+Since the components are written in Viash, we recommend that you familiarize yourself with the [Viash documentation](https://viash.io/).
+Below are a few example pointers to help you get started quickly.
+
+
+### Project structure
+
+The project repository is structured as follows:
+
+![](../images/repositories-half.svg)
+
+In general, there are multiple components in `src`, reflecting different tasks and utils.
+A component is a self-contained unit of functionality that can be run independently and multiple components can be combined to form a task.
+The `src/common` directory contains components that are used across multiple tasks.
+Datasets required as input for tasks can be loaded and prepared in `src/datasets`.
+The tasks themselves contain the respective methods and metrics implementations.
+
+For detailed information on how this project is structured, see the ["Project structure"](../more_information/project_structure.qmd).
+
+
+
+## Conclusion
+The OpenProblems repository contain multiple components and tasks made up of components that can be run independently or combined into more complex workflows.
+All components are written in Viash, so check out the [Viash documentation](https://viash.io/) for more options for the given commands.
+Please note that if you encounter any issues during the first-time setup, there are several resources available to help you troubleshoot. These include the ["Troubleshooting"](/documentation/more_information/troubleshooting.qmd) page of this documentation and the OpenProblems community on GitHub. We encourage you to explore these resources and reach out to the community for help if needed.
