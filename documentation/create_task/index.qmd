@@ -4,27 +4,20 @@ description: Adding a new task from scratch
 order: 30
 ---
 
-A task is a set of components that are used to evaluate existing methods that tackle a specific problem.
-Some examples that are currently implemented in openproblems are batch integration, label projection and dimensionality reduction.
-In the following we will show you how to create a new task from scratch.
+This chapter provides a step-by-step overview of the process, including understanding the typical structure of an OpenProblems task, defining a new task, selecting datasets, designing the API for files and components, adding components, and creating a workflow that ties everything together.
 
-The main parts that make up a task are:
+Here are the main sections of this guide, each represented by a file with headers:
 
-* a written [task description](define_task.qmd)
-* generic, but task specific [API specifications](design_api.qmd) for the component interfaces and file formats
-* a [dataset processing](select_datasets.qmd) component for preparing the data for the method and metric inputs
-* create method, metric and baseline [components](create_components.qmd) that adhere to the API specifications
-* a [benchmarking workflow](create_workflow.qmd)
+1. **[Task Structure](task_structure.qmd)**: The structure of a typical OpenProblems task, including its components and file formats.
 
+2. **[Define the Task](define_task.qmd)**: How to plan and document your task before diving into the code, including creating a README and submitting it to the OpenProblems community.
 
-<!-- Steps to follow:
+3. **[Design the API](design_api.qmd)**: Design a consistent API for your task components and input/output files, and learn how to create API files for each component.
 
-- [Creating the file format specifications](api_file_formats.qmd)
-- [Creating the component specifications](api_component_specs.qmd)
-- Create masking component
-- Generate testing resources
-- Create method
-- Create metric
-- Add unit tests
-- Create baseline methods
-- [Add task metadata](task_metadata.qmd) -->
+4. **[Select Datasets](select_datasets.qmd)**: How to choose appropriate datasets for your task and create a dataset processing component to handle the data.
+
+5. **[Create Components](create_components.qmd)**: Dive into the process of adding components to your task, such as dataset loaders, methods, control methods, and metrics.
+
+6. **[Create Workflow](create_workflow.qmd)**: Combine your components into a cohesive Nextflow workflow.
+
+By following this guide, you'll gain a thorough understanding of the process and best practices for creating a new OpenProblems task from scratch.
