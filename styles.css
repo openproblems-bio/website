@@ -15,6 +15,13 @@ main.quarto-banner-title-block section:first-of-type .h4:first-of-type {
   margin-top: 0;
 }
 
+/* Fix mermaid background rendering */
+/* See https://github.com/openproblems-bio/website/issues/239 */
+.cluster rect {
+  fill: #ffffde !important;
+  stroke: #aaaa33 !important;
+}
+
 img,
 svg {
   max-width: 100%;
