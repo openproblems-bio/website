@@ -1,0 +1,265 @@
+---
+title: "NeurIPS 2021: Multimodal Single-Cell Data Integration"
+subtitle: Solving various multimodal integration tasks using ML
+description: |
+  A NeurIPS Competition (2021)
+
+  [See on EvalAI](https://eval.ai/web/challenges/challenge-page/1111/overview){class="btn btn-primary" style="border: 1px solid white;"}
+  [Sign up for updates](https://docs.google.com/forms/d/e/1FAIpQLSe90Oky4-1b0HbdLsp5Yqo9juCd2mq-NlGHU9NHRW1ECok1xQ/viewform){class="btn btn-primary" style="border: 1px solid white;"}
+
+  [Watch the video](https://www.youtube.com/watch?v=ZXDILOyiy7A){class="btn btn-secondary" style="border: 1px solid white; font-size: 0.8rem; padding: 3px 10px;"}
+  [Download the data](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE194122){class="btn btn-secondary" style="border: 1px solid white; font-size: 0.8rem; padding: 3px 10px;"}
+
+  [Read the datasets paper (NeurIPS 2021)](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/158f3069a435b314a80bdcb024f8e422-Abstract-round2.html){class="btn btn-secondary" style="border: 1px solid white; font-size: 0.8rem; padding: 3px 10px;"} 
+  [Read the competition paper (ICML 2022)](https://proceedings.mlr.press/v176/lance22a.html){class="btn btn-secondary" style="border: 1px solid white; font-size: 0.8rem; padding: 3px 10px;"}
+title-block-banner-color: white
+title-block-banner: ../../images/heros/competition_dark.jpg
+page-layout: full
+date: "2021-09-01"
+start-date: "2021-09-01"
+end-date: "2021-11-27"
+categories:
+  - competition
+css: ../events.css
+image: image.svg
+---
+
+:::{layout="[[30,70]]"}
+::::{.section-header}
+## Summary
+::::
+
+::::{.section-content}
+Scaling from a dozen cells a decade ago to millions of cells today, single-cell measurement technologies are driving a revolution in the life sciences. Recent advances make it possible to measure multiple high-dimensional modalities (e.g. DNA accessibility, RNA, and proteins) simultaneously in the same cell. Such data provides, for the first time, a direct and comprehensive view into the layers of gene regulation that drive biological diversity and disease.
+
+In this competition for [NeurIPS 2021](https://neurips.cc/Conferences/2021/CompetitionTrack), we present three tasks on multimodal single-cell data using a first-of-its-kind multi-omics benchmarking dataset. Teams will predict one modality from another and learn representations of multiple modalities measured in the same cells. Progress will reveal how a common genetic blueprint gives rise to distinct cell types and processes, as a foundation for improving human health.
+
+{{< video https://www.youtube.com/embed/y5YbM0tbvCo >}}
+
+To learn more, you can watch a [lecture](https://www.youtube.com/watch?v=ZXDILOyiy7A) presented at the Broad Institute's Models Inferences and Algorithms meeting (<a href="https://drive.google.com/file/d/1olW-WN-kHYuG15MSgAK3GUqNtMCPFBq3/view?usp=sharing" style="color: #EB5252;">slides</a>).
+::::
+:::
+
+:::{layout="[[30,70]]"}
+::::{.section-header}
+## Winners
+::::
+
+::::{.section-content}
+We're proud to announce the winners of our 2021 NeurIPS competition!
+
+#### Task 1 - Modality Prediction
+_Given one modality, predict the other._
+
+##### GEX→ATAC: Living Systems Lab
+**KAUST, [code](https://github.com/openproblems-bio/neurips2021_multimodal_topmethods/tree/main/src/predict_modality/methods/LS_lab)**   
+Aidyn Ubingazhibov, Sumeer Khan, Robert Lehman, Xabier Martinez De Morentin, Minxing Pang, David Gomez-Cabrero, Narsis Kiani, Jesper Tegner
+
+##### ATAC→GEX: Cajal
+**Francis Crick Institute, [code](https://github.com/openproblems-bio/neurips2021_multimodal_topmethods/tree/main/src/predict_modality/methods/cajal)**  
+Anna Laddach, Roman Laddach, Michael Shapiro
+
+##### GEX→ADT: Dengkw
+**University of Michigan, [code](https://github.com/openproblems-bio/neurips2021_multimodal_topmethods/tree/main/src/predict_modality/methods/Guanlab-dengkw)**  
+Kaiwen Deng
+
+##### ADT→GEX: Novel
+**Novel Software Systems, [code](https://github.com/openproblems-bio/neurips2021_multimodal_topmethods/tree/main/src/predict_modality/methods/novel)**   
+Nikolay	Russkikh, Gleb	Ryazantsev, Igor	I
+
+##### Overall: DANCE
+**Michigan State University, [code](https://github.com/openproblems-bio/neurips2021_multimodal_topmethods/tree/main/src/predict_modality/methods/DANCE)**  
+Hongzhi Wen, Jiayuan	Ding, Wei	Jin, Xiaoyan	Li, Zhaoheng	Li, Yiqi	Wang, Haoyu	Han, Yanyi	Ding, Xiaochun	Ni, Yu	Lei, Yuying	Xie, Jiliang	Tang
+
+#### Task 2 - Match Modality
+_Given collections of cells in each modality, match profiles that originated from the same cell._
+
+##### Winner in all categories: CLUE  
+**Peking University, University of Washington, [code](https://github.com/openproblems-bio/neurips2021_multimodal_topmethods/tree/main/src/match_modality/methods/clue)**  
+Zhi-Jie	Cao, Xinming	Tu, Chen-Rui	Xia
+
+#### Task 3 - Joint Embedding
+_Learn a low dimensional embedding of both modalities that preserves biology and removes batch effects._
+
+##### Multiome, pre-trained & CITE, pre-trained: Amateur
+**Stanford University, Tsinghua University, [code](https://github.com/openproblems-bio/neurips2021_multimodal_topmethods/tree/main/src/joint_embedding/methods/jae)**  
+Qiao	Liu, Wanwen	Zeng, Chencheng	Xu
+
+##### Multiome, online: Living Systems Lab
+**KAUST, [code](https://github.com/openproblems-bio/neurips2021_multimodal_topmethods/tree/main/src/joint_embedding/methods/lsl_ae)**  
+Sumeer	Khan, Robert 	Lehman, Xabier Martinez	De Morentin, Minxing	Pang, Aidyn	Ubingazhibov, David	Gomez-Cabrero, Narsis	Kiani, Jesper	Tegner
+
+##### CITE, online: Dengkw
+**University of Michigan, [code](https://github.com/openproblems-bio/neurips2021_multimodal_topmethods/tree/main/src/joint_embedding/methods/Guanlab-dengkw)**  
+Kaiwen Deng
+::::
+:::
+
+
+:::{layout="[[30,70]]"}
+::::{.section-header}
+## Details
+::::
+
+::::{.section-content}
+The competition will focus on three tasks:
+
+1. **Predicting one modality from another** - Given one modality, predict the other.
+2. **Modality alignment** - Re-align multi-modal data measured in the same cells when we hide the correspondences between the two measurements.
+3. **Learning a joint embedding** - Learn a meaningful embedding of multimodal data measured in the same cells that preserves expert-annotated data organization
+
+To get started:
+
+1.  Read [about the tasks](/events/2021-09_neurips/documentation/about_tasks/index.qmd) and the [submission quickstart](/events/2021-09_neurips/documentation/submission/quickstart.qmd) on our competition website
+2.  View the [starter kit contents](/events/2021-09_neurips/documentation/submission/starter_kit_contents.qmd)
+4.  Explore the data and prototype methods for free on [Saturn Cloud](/events/2021-09_neurips/documentation/about/explore.qmd) (Optional)
+5.  Implement your method and [generate a submission](/events/2021-09_neurips/documentation/submission/development_process.qmd)!
+
+Full details about all the above can be found in the [Competition Documentation](/events/2021-09_neurips/documentation/index.qmd).
+
+If you ever have any questions, please feel free to reach out on the Open Problems [Discord Server](https://discord.gg/hDE5bYEcHF).
+
+If you'd like to get updates, please fill out the interest list below:
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSe90Oky4-1b0HbdLsp5Yqo9juCd2mq-NlGHU9NHRW1ECok1xQ/viewform" target="blank"><button type="button" class="btn btn-primary" style="font-size: 1rem; border: 1px solid #c4c4c4; color:white; height: 40px; padding: 0px 15px;"><strong>Sign up for updates</strong></button></a>
+::::
+:::
+
+
+
+:::{layout="[[30,70]]"}
+::::{.section-header}
+## Sponsors
+::::
+
+::::{.section-content}
+
+```{=html}
+<div class="grid">
+  <div class="card card-shadow g-col-12 g-col-lg-5 g-start-lg-2">
+    <img class="card-img-top" src="/images/sponsor/logotypemarkcolor.svg" alt="Card image cap" style="width:200px;  margin: 40px 50px 20px; background-color:white;">
+    <div class="card-body" style="padding-top: 0px;">
+      <p class="card-text">Cellarity is redefining drug discovery by targeting cell behaviors as opposed to individual proteins.<br><a class="stretched-link" href="https://cellarity.com/careers?utm_source=neurips&utm_medium=push-notification&utm_campaign=neurips&utm_content=neurips-competition">Learn more.</a></p>
+    </div>
+  </div>
+
+
+  <div class="card card-shadow g-col-12 g-col-lg-5">
+    <img class="card-img-top" src="/images/sponsor/CZI_Logotype.svg" style="width:150px; margin: 20px 60px 10px; background-color:white;">
+    <div class="card-body" style="padding-top: 0px;">
+      <p class="card-text" style="line-height: 1.3rem;">CZI leverages technology and collaboration to accelerate progress in science, education and community work.<br> <a class="stretched-link" href="https://czi.org">Learn more.</a></p>
+    </div>
+  </div>
+
+  <div class="card card-shadow g-col-12 g-col-lg-4">
+      <img class="card-img-top" src="/images/sponsor/biohub_logo.svg" alt="Card image cap" style="width:170px;  margin: 25px 40px;">
+      <div class="card-body" style="padding-top: 0px;">
+        <a class="stretched-link" href="https://www.czbiohub.org/"></a>
+      </div>
+  </div>
+
+  <div class="card card-shadow g-col-12 g-col-lg-4">
+      <img class="card-img-top" src="/images/sponsor/yale-logo-sprite.svg" alt="Card image cap" style="width:130px;  margin: 22px 60px;">
+      <div class="card-body" style="padding-top: 0px;">
+        <a class="stretched-link" href="https://www.yale.edu/"></a>
+      </div>
+  </div>
+
+
+  <div class="card card-shadow g-col-12 g-col-lg-4">
+      <img class="card-img-top" src="/images/sponsor/helmholtz_logotype.svg" alt="Card image cap" style="width:225px;  margin: 40px 12.5px">
+      <div class="card-body" style="padding-top: 0px;">
+        <a class="stretched-link" href="https://www.helmholtz-muenchen.de/icb/index.html"></a>
+      </div>
+  </div>
+</div>
+```
+::::
+:::
+
+:::{layout="[[30,70]]"}
+::::{.section-header}
+## Organizers
+::::
+
+::::{.section-content}
+
+_In alphabetical order_
+
+-   **Daniel Burkhardt** (<a href="mailto:dburkhardt@cellarity.com?subject=%5BNeurIPS_2021%5D" style="color: #EB5252;">Primary contact</a>) is a Machine Learning
+    Scientist at [Cellarity.](https://cellarity.com) He is a core organizer of the Open Problems
+    in Single-Cell Analysis. Daniel completed his PhD in Genetics at
+    Yale University with a specialization in machine learning under the
+    supervision of Smita Krishnaswamy.
+
+-   **Jonathan M. Bloom** leads Perturbation Biology and Machine Learning at Cellarity. As an Institute Scientist at the Broad Institute, he cofounded the Hail team, Learning Meaningful Representations of Life, and Models, Inference & Algorithms, while contributing to sequencing benchmarks, statistical genetics, ML theory, and neuroscience efforts. Jonathan completed his PhD at Columbia and Moore Instructorship and NSF postdoc at MIT, conducting research on algebraic topology and geometry while reimagining the teaching of statistics.  
+
+-   **Robrecht Cannoodt** is a postdoctoral researcher in Saeys lab at 
+    VIB-UGent and a computer science consultant at Data Intuitive.
+    During his PhD, his research was focused mainly on unsupervised learning in 
+    single-cell omics, more specifically on trajectory inference. Robrecht 
+    oversees infrastructure development for building collaborative, scalable 
+    and reproducible pipelines using NextFlow and Viash.
+
+-   **Smita Krishnaswamy** is an associate professor of Computer Science and
+    Genetics at Yale University. Her research focuses on unsupervised
+    learning, using data geometry, topology and deep learning methods
+    for big biomedical data. She is a faculty advisor for Open Problems
+    in Single-Cell Analysis.
+
+-   **Malte Lücken** is a senior postdoctoral researcher and team leader
+    for integrative single-cell analysis in the Machine Learning Group
+    of Prof. Fabian Theis. His research focuses on evaluating
+    computational methods for single-cell analysis and investigating how
+    environmental stimuli and natural variation manifests on the level
+    of single cells.
+
+-   **Debora Marks** is an
+    Associate Professor in the Department of Systems Biology at Harvard
+    Medical School. Over the past five years, her lab has
+    developed methods that accelerate structural biology with
+    applications to cryoEM, crystallography, protein design and computed
+    3D structures of thousands of proteins with unknown folds, protein
+    complexes and RNA interactions, as well as flexible, dynamic and
+    even disordered protein ensembles.
+
+-   **Angela Pisco** is the Associate Director of Bioinformatics at the Chan Zuckerberg Biohub.
+    Her group is responsible for generating and annotated atlas-scale single-cell
+    datasets across biological systems.
+
+-   **Bastian Rieck** is a senior assistant in the Machine Learning and
+    Computational Biology Lab of Prof. Dr. Karsten Borgwardt at ETH
+    Zurich. His main research interests are manifold learning approaches
+    based on concepts from topological data analysis, with a focus on
+    personalized medicine and computational biology.
+
+-   **Jian Tang** is currently an assistant professor at HEC Montreal
+    (business school of University of Montreal) and a core faculty
+    member at Mila-Quebec AI Institute. His research focuses on graph
+    representation learning, graph neural networks, drug discovery, and
+    knowledge graphs.
+
+-   **Fabian Theis** is the Professor of Mathematical Modeling of Biological
+    Systems at the Department of Mathematics of the Technical University
+    of Munich; the director of the Institute of Computational Biology,
+    Helmholtz Zentrum München; the scientific director of the Helmholtz
+    Artificial Intelligence Cooperation Unit; and a faculty member of
+    the Wellcome Trust Sanger Institute, Cambridge, UK. His lab develops innovative
+    methods for single-cell analysis.
+
+-   **Alexander Tong** is a PhD candidate in Computer Science in the lab of
+    Prof. Smita Krishnaswamy at Yale University. His research focuses on
+    manifold learning and optimal transport with a focus on single-cell
+    data. Alexander will be responsible for supporting the comparison
+    infrastructure and evaluating submissions.
+
+-   **Guy Wolf** is an assistant professor in the Department of Mathematics
+    and Statistics at the Université de Montréal and a Core Member of
+    Mila---the Québec AI Institute. His research
+    focuses on manifold learning, representation learning, and geometric
+    deep learning for exploratory data analysis, including methods for
+    dimensionality reduction, visualization, denoising, data
+    augmentation, and coarse graining, with particular focus on
+    applications in biomedical data exploration.
+::::
+:::

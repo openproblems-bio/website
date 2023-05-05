@@ -53,12 +53,8 @@ div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody {
     background-color: var(--bs-body-bg) !important;
 }
 
-/* Funkyheatmap */
+/* Raw results figure */
 
-.quarto-figure svg text {
-    fill: var(--bs-body-color);
-}
-
-.quarto-figure svg rect.row ~ text {
-    fill: var(--bs-dark);
+section#details details img.img-fluid {
+    filter: invert(var(--invert-colors));
 }

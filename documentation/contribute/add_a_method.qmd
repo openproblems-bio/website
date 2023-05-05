@@ -1,474 +1,296 @@
 ---
 title: Add a method
 order: 40
+engine: knitr
 ---
 
+{{< include ../_blocks/_clone_repo.qmd >}}
+{{< include /_include/_evaluate_code.qmd >}}
+{{< include /_include/_synchonize_tabs.qmd >}}
 
-OpenProblems has been build with Viash components including the methods of a task. A Viash component consists of a script and a Viash config. The config defines the documentation, input/output arguments and dependencies of the script. This page describes how to add a method to an existing task.
+A method is a specific technique used to solve the task problem and is compared to the baseline methods and other methods to determine the best approach for the task depending on the type of dataset.
+
+This guide will show you how to create a new [Viash](https://viash.io) component.
+In the following we will show examples for both Python and R.
+Note that the Label Projection task is used throughout the guide, so make sure to replace any occurrences of `"label_projection"` with your task of interest.
 
 :::{.callout-tip}
-Make sure you have followed the [Requirements](requirements.qmd) and [getting started](getting_started.qmd) pages.
+Make sure you have followed the ["Requirements"](requirements.qmd) and ["Getting started"](getting_started.qmd) pages.
 :::
 
-:::{.callout-note}
-This guide will explain how to add a new method for the Label projection task. Every time you encounter the string `label_projection`, replace it with your task of interest.
-:::
+## Step 1:  Create a new component
 
-## Create a new component
+Use the `create_component` component to start creating a new method.
 
-Create a new Viash component by running the following command:
-
-```bash
-viash run src/common/create_skeleton/config.vsh.yaml -- \
+::: {.panel-tabset}
+## Python
+```{bash}
+viash run src/common/create_component/config.vsh.yaml -- \
   --task label_projection \
-  --comp_type method \
-  --name my_method \
+  --type method \
+  --name my_method_py \
   --language python
 ```
 
-This will create a new folder at `src/label_projection/methods/my_method` containing a Viash config (`config.vsh.yaml`) and a script (`script.py` or `script.R`).
 
-    src/label_projection/methods/my_method
-        ├── script.py/R                  method script
-        ├── config.vsh.yaml              config file for method
-        └── additional files             Helper files like e.g. tsv file, unit test specific for method, ...
+This will create a new folder at `src/label_projection/methods/my_method_py` containing a Viash config and a script.
 
-## config.vsh.yaml
-
-Full documentation on the Viash configuration file is available on the [Viash documentation site](https://viash.io/reference/).
-
-### Merge
-```yaml
-__merge__: ../../api/comp_method.yaml
-```
-This file contains metadata that is needed for all the methods. It will contain the required arguments such as the `--input` files and the `--output` files that are common among all the methods in the task.
-
-```yaml
-functionality:
-  arguments:
-    - name: "--input_train"
-      __merge__: anndata_train.yaml
-    - name: "--input_test"
-      __merge__: anndata_test.yaml
-    - name: "--output"
-      __merge__: anndata_prediction.yaml
-      direction: output
-  test_resources:
-    - path: ../../../../resources_test/label_projection/pancreas
-    - type: python_script
-      path: generic_test.py
-      text: |
-        import anndata as ad
-        import subprocess
-        from os import path
-...
-```
-
-You can find more in depth information [here](../create_task/api_component_specs.qmd).
-
-### Functionality
-
-This section of the configuration file contains information about the metadata of the script including script specific parameters and a list of resource files. 
-
-```yaml
-functionality:
-  # a unique name for your method, same as what is being output by the script.
-  # must match the regex [a-z][a-z0-9_]*
-  name: my_method
-  namespace: label_projection/methods
-  # metadata for your method
-  description: A description for your method.
-  info:
-    type: method
-    method_name: My Method
-    preferred_normalization: log_cpm
-    variants:
-      my_method:
-      method_variant:
-
-
-  # component parameters
-  arguments:
-    # Method-specific parameters. 
-    # Change these to expose parameters of your method to Nextflow (optional)
-    - name: "--n_neighbors"
-      type: "integer"
-      default: 5
-      description: Number of neighbors to use.
-
-  # files your script needs
-  resources:
-    # the script itself
-    - type: python_script
-      path: script.py
-    # additional resources your script needs (optional)
-    - type: file
-      path: weights.pt
-```
-
-In this section of the configuration you should focus on updating the following sections:
-
-1. Description and Info - Information about the method. 
-2. Arguments - Each section here defines a command-line argument for the script. These sections are all passed to the script in the form of a dictionary called `par`. You only need to add the method-specific parameters. If no additional arguments are required then the ones provdided in `__merge__` file above then you can remove this section entirely
-3. Resources - This section describes the files that need to be included in your component. For example if you'd like to add a file containing model weights called `weights.pt`, add `{ type: file, path: weights.pt }` to the resources. You can now load the additional resource in your script by using at the path `meta['resources_dir'] + '/weights.pt'`.
-
-
-### Platform
-
-The Platform section defines the information about how the Viash component is run on various backend platforms.
-
-1. Docker ([docs](https://viash.io/guide))
-2. Nextflow ([docs](https://viash.io/guide))
-
-::: {.panel-tabset}
-
-## Python
-```yaml
-# target platforms
-platforms:
-
-  # By specifying 'docker' platform, viash will build a standalone
-  # executable which uses docker in the back end to run your method.
-  - type: docker
-    # you need to specify a base image that contains at least bash and python
-    image: python:3.10
-    # You can specify additional dependencies with 'setup'.
-    setup:
-      # - type: apt
-      #   packages:
-      #     - bash
-      - type: python
-        pip:
-          - pyyaml
-          - anndata>=0.8
-
-  # By specifying a 'nextflow', viash will also build a viash module
-  # which uses the docker container built above to also be able to
-  # run your method as part of a nextflow pipeline.
-  - type: nextflow
-    directives:
-      label: [ lowmem, lowcpu ]
-```
+    src/label_projection/methods/my_method_py
+        ├── script.py                    Script for running the method.
+        ├── config.vsh.yaml              Config file for method.
+        └── ...                          Optional additional resources.
 
 ## R
-```yaml
-# target platforms
-platforms:
 
-  # By specifying 'docker' platform, viash will build a standalone
-  # executable which uses docker in the back end to run your method.
-  - type: docker
-    # you need to specify a base image that contains at least bash and python
-    image: eddelbuettel/r2u:22.04
-    # You can specify additional dependencies with 'setup'.
-    setup:
-      - type: apt
-        packages: [ libhdf5-dev, libgeos-dev, python3, python3-pip, python3-dev, python-is-python3, git ]
-      - type: python
-        pip: [ anndata>=0.8, pyyaml ]
-      - type: r
-        cran: [ anndata]
-
-  # By specifying a 'nextflow', viash will also build a viash module
-  # which uses the docker container built above to also be able to
-  # run your method as part of a nextflow pipeline.
-  - type: nextflow
-    directives:
-      label: [ lowmem, lowcpu ]
+```{bash}
+viash run src/common/create_component/config.vsh.yaml -- \
+  --task label_projection \
+  --type method \
+  --name my_method_r \
+  --language r
 ```
+
+
+This will create a new folder at `src/label_projection/methods/my_method_r` containing a Viash config and a script.
+
+    src/label_projection/methods/my_method_r
+        ├── script.R                     Script for running the method.
+        ├── config.vsh.yaml              Config file for method.
+        └── ...                          Optional additional resources.
+
 :::
 
-The most important part of this section to update is the `setup` definition that describes the packages that need to be installed in the docker container for the method to run. There are many different methods for specifying these requirements described in the Viash [docs](https://viash.io/reference). It is required to add the python setup to include the `pyyaml` package due to general unit testing done (if not already in the image). When creating an Rscript also add the `anndata>=0.8` package in the python setup.
+Change the `--name` to a unique name for your method. It must match the regex `[a-z][a-z0-9_]*` (snakecase).
 
-You can also change the memory and CPU utilization be editing the Nextflow labels section. Available options are `[low|med|high]` for each of `mem` and `cpu`. The corresponding resource values can be found in the `/src/wf_utils/labels.config` file.
+* A **config file** contains metadata of the component and the dependencies required to run it. In steps 2 and 3 we will fill in the required information.
+* A **script** contains the code to run the method. In step 4 we will edit the script. 
+
+:::{.callout-tip}
+Use the command `viash run src/common/create_component/config.vsh.yaml -- --help` to get information on all of the parameters if the `create_component` component.
+:::
+
+
+## Step 2: Fill in metadata
+
+```{r, include=FALSE, eval=TRUE}
+# set eval to TRUE to make sure is always run, even when profile is not 'evaluate_code'
+norm_methods <- list.files("src/datasets/normalization")
+norm_methods_str <- paste(paste0("`", norm_methods, "`"), collapse = ", ")
+```
+
+The [Viash config](https://viash.io/reference/config/) contains metadata of your method, which script is used to run it, and the required dependencies. 
+
+### Generated config file
+
+This is what the `config.vsh.yaml` generated by the `create_component` component looks like:
+
+:::{.panel-tabset}
+
+### Python
+
+<details><summary>Contents of `config.vsh.yaml`</summary>
+
+````yaml
+```{bash}
+#| echo: false
+#| output: asis
+cat src/label_projection/methods/my_method_py/config.vsh.yaml
+```
+````
+
+</details>
+
+### R
+
+<details><summary>Contents of `config.vsh.yaml`</summary>
+
+````yaml
+```{bash}
+#| echo: false
+#| output: asis
+cat src/label_projection/methods/my_method_r/config.vsh.yaml
+```
+````
+
+</details>
+
+:::
+
+
+### Required metadata fields
+
+Please edit `functionality.info` section in the config file to fill in the necessary metadata.
+
+#### `functionality.name`
+
+A unique identifier for the method. Must be written in snake case. Example: `my_new_method`.
+
+#### `functionality.info.pretty_name`
+
+A label for the method used for visualisations and documentation. Example: `"My new method"`.
+
+#### `functionality.info.summary`
+
+A one sentence summary of the method. Used for creating short overviews of the components in a task.
+
+#### `functionality.info.description`
+
+An explanation for how the method works. Used for creating reference documentation of a task.
+
+#### `functionality.info.reference`
+
+A bibtex reference key to the paper where the method is described.
+
+#### `functionality.info.documentation_url`
+
+The url to the documentation of the method.
+
+#### `functionality.info.repository_url`
+
+The repository url for the method.
+
+#### `functionality.info.preferred_normalization`
+
+Which normalization method a component _prefers_. Possible values are `r norm_methods_str`. Each value corresponds to a normalization component in the directory [`src/datasets/normalization`](https://github.com/openproblems-bio/openproblems-v2/tree/main/src/datasets/normalization).
+
+#### `__merge__`
+
+The file specified in this field contains information regarding the input and output arguments of the component, as well as a unit test to ensure that the component is functioning properly. Normally you don't need to change this if you gave the right arguments to the `create_component` component.
+
+
+## Step 3: Add dependencies
+
+Each component has it's own set of dependencies, because different components might have conflicting dependencies.
+
+Update the `setup` definition in the `platforms` section of the config file.
+This section describes the packages that need to be installed in the Docker image and are required for your method to run.
+Note that both `anndata~=0.8.0` and `pyyaml` are necessary Python package dependencies.
+
+Please check out this [guide](https://viash.io/guide/component/add-dependencies.html) for more information on how to add extra package dependencies.
 
 :::{.callout-note}
 **Tip:** After making changes to the components dependencies, you will need to rebuild the docker container as follows:
 
-```sh
-$ viash run -- ---setup cachedbuild
-[notice] Running 'docker build -t method:dev /tmp/viashsetupdocker-method-tEX78c'
+```bash
+viash run src/label_projection/methods/my_method_py/config.vsh.yaml -- \
+  ---setup cachedbuild
 ```
+<details><summary>output</summary>
+```{bash}
+#| echo: false
+viash run src/label_projection/methods/my_method_py/config.vsh.yaml -- \
+  ---setup cachedbuild
+```
+</details>
+
 :::
 
-:::{.callout-note}
-**Tip #2:** You can view the dockerfile that Viash generates from the config file using the `---dockerfile` argument:
-```sh
-$ viash run -- ---dockerfile
-```
-:::
+## Step 4: Edit script
 
-## script file
+A component's script typically has five sections:
 
-The script has three main sections: Imports/libraries, Viash block, and Method.
+1. Imports and libraries
+2. Argument values
+3. Read input data
+4. Generate results
+5. Write output data to file
 
-### Imports
 
-This section defines which packages the method expects, if you want to import a new different package, add the `import` statement here **and** add the dependency to `config.vsh.yaml` (see above).
+This is what the script generated by the `create_component` component looks like:
 
-::: {.panel-tabset}
+:::{.panel-tabset}
 
 ### Python
-```python
-import anndata as ad
+
+<details><summary>Contents of `script.py`</summary>
+
+````python
+```{bash}
+#| echo: false
+#| output: asis
+cat src/label_projection/methods/my_method_py/script.py
 ```
+````
+
+</details>
 
 ### R
-```R
-library(anndata, warn.conflicts = FALSE)
+
+<details><summary>Contents of `script.R`</summary>
+
+````r
+```{bash}
+#| echo: false
+#| output: asis
+cat src/label_projection/methods/my_method_r/script.R
 ```
+````
+
+</details>
+
 :::
 
+The required sections are explained here in more detail:
 
-### Viash block
+### a. Imports and libraries
 
-This optional code block exists to facilitate prototyping so your script can run when called directly by running `python script.py` (or `Rscript script.R` for R users). 
+In the top section of the script you can define which packages/libraries the method needs. If you add a new or different package add the dependency to `config.vsh.yaml` in the `setup` field (see above).
 
-::: {.panel-tabset}
-## Python
-```python
-## VIASH START
-# Anything within this block will be removed by `viash` and will be
-# replaced with the parameters as specified in your config.vsh.yaml.
-par = {
-    # Required arguments for the task
-    'input_train': 'train.h5ad',
-    'input_test': '.test.h5ad',
-    'output': 'output.h5ad',
-    # Optional method-specific arguments
-    'n_neighbors': 5,
-}
-meta = { 
-  'functionality_name': 'foo' 
-}
-## VIASH END
-```
+### b. Argument block
 
-## R
-```R
-## VIASH START
-# Anything within this block will be removed by `viash` and will be
-# replaced with the parameters as specified in your config.vsh.yaml.
-par <- list(
-    # Required arguments for the task
-    input_train= 'train.h5ad',
-    input_test= 'test_mod1.h5ad',
-    output= 'output.h5ad',
-    # Optional method-specific arguments
-    n_neighbors= 5,
-)
-meta <- list (
-  functionality_name= 'foo' 
-)
-## VIASH END
-```
-:::
+The [Viash code block](https://viash.io/reference/viash_code_block/) is designed to facilitate prototyping, by enabling you to execute directly by running `python script.py` (or `Rscript script.R` for R users). Note that anything between "VIASH START" and "VIASH END" will be removed and replaced with a CLI argument parser when the components are being built by Viash.
 
-Here, the `par` dictionary contains all the `arguments` defined in the `config.vsh.yaml` file. Including those from the defined `__merge__` file.
+Here, the `par` dictionary contains all the `arguments` defined in the `config.vsh.yaml` file (including those from the defined `__merge__` file). When adding a `argument` in the `par` dict **also** add it to the `config.vsh.yaml` in the `arguments` section.
 
-### Method
+### c. Read input data
 
-This code block will typically consist of reading the input files, performing some preprocessing, training a model on the train cells, generating predictions for the test cells, and outputting the predictions as an AnnData file.
+This section reads any input AnnData files passed to the component.
 
-::: {.panel-tabset}
-## Python
-```python
-## Data reader
-print('Reading input files', flush=True)
+### d. Generate results
 
-input_train = ad.read_h5ad(par['input_train_mod1'])
-input_test = ad.read_h5ad(par['input_test_mod1'])
-
-print('processing Data', flush=True)
-# ... preprocessing ... 
-# ... train model ...
-# ... generate predictions ...
-
-# write output to file
-adata = ad.AnnData(
-    X=y_pred,
-    uns={
-        'dataset_id': input_train.uns['dataset_id'],
-        'method_id': meta['functionality_name'],
-    },
-)
-
-print('writing to output files', flush=True)
-adata.write_h5ad(par['output'], compress='gzip')
-```
-## R
-```R
-
-```
-:::
-
-Depending on the task The output is stored in different locations in the anndata. e.g. for `label_projection` it is located in the `.obs["label_pred"]` and for `dimensionality_reduction` it is stored in `.obsm[X_emb]`. You will be able to find this information in the `anndata_*.yaml` file determined in the `output` argument of the `comp_method.yaml` file.
-
-For the `label_projection` this will be `anndata_predictions.yaml`
-
-```yaml
-type: file
-description: "The prediction file"
-example: "prediction.h5ad"
-info:
-  short_description: "Prediction"
-  slots:
-    obs:
-      - type: string
-        name: label_pred
-        description: Predicted labels for the test cells.
-    uns:
-      - type: string
-        name: dataset_id
-        description: "A unique identifier for the dataset"
-        required: true
-      - type: string
-        name: normalization_id
-        description: "Which normalization was used"
-        required: true
-      - type: string
-        name: method_id
-        description: "A unique identifier for the method"
-```
-
-## API
-
-For in depth documentation see [API file formats](../create_task/api_file_formats.qmd) and [API components specs](../create_task/api_component_specs.qmd).
-
-In the API directory there are yaml files that have info about the anndata objects. These files all start with `anndata_*.yaml`.
-
-When developing a method it can be useful to check these files on what the anndata objects consist of. For instance the `anndata_dataset.yaml` has information on what is required that the datasets has.
-
-If a new field needs to be added...
+This is the most important section of your script, as it defines the core functionality provided by the component. It processes the input data to create results for the particular task at hand.
 
 
-## Nextflow
+### e. Write output data to file
 
-After developing your method you add it to the nextflow workflow that can be found at `task_name/workflows/run/main.nf`
+The output stored in a AnnData object and then written to an `.h5ad` file. The format is specified by the API file specified in the `__merge__` field in the config file.
 
-Execute the cmd below to create and build the docker and nextflow filepaths.
+
+## Step 5: Add resources (optional)
+
+It is possible to add additional resources such as a file containing helper functions or other resources. Please visit [this page](https://viash.io/guide/component/use-helper-functions.html) for more information on how to do this.
+
+## Step 6: Try component
+
+Your component's API file contains the necessary unit tests to check whether your component works and the output is in the correct format.
+
+You can test your component by using the following command:
 
 ```bash
-viash ns build -q task_name --paralell --setup cachedbuild
+viash test src/label_projection/methods/my_method_py/config.vsh.yaml
 ```
-
-```nextflow
-// import control methods
-include { true_labels } from "$targetDir/label_projection/control_methods/true_labels/main.nf"
-include { majority_vote } from "$targetDir/label_projection/control_methods/majority_vote/main.nf"
-include { random_labels } from "$targetDir/label_projection/control_methods/random_labels/main.nf"
-
-// import methods
-include { knn } from "$targetDir/label_projection/methods/knn/main.nf"
-include { mlp } from "$targetDir/label_projection/methods/mlp/main.nf"
-include { logistic_regression } from "$targetDir/label_projection/methods/logistic_regression/main.nf"
-include { scanvi } from "$targetDir/label_projection/methods/scanvi/main.nf"
-include { seurat_transferdata } from "$targetDir/label_projection/methods/seurat_transferdata/main.nf"
-include { xgboost } from "$targetDir/label_projection/methods/xgboost/main.nf"
+<details>
+  <summary>Output</summary>
+```{bash}
+#| echo: false
+# use knn instead of 'my_method' because the script won't work.
+# maybe copy a 'working' script here
+viash test src/label_projection/methods/knn/config.vsh.yaml
 ```
+</details>
 
-Also add your method further down the file with the include name you have given.
+Visit ["Run tests"](run_tests.qmd) for more information on running unit tests and how to interpret common error messages.
 
-```nextflow
-// construct a map of methods (id -> method_module)
-methods = [ true_labels, majority_vote, random_labels, knn, mlp, logistic_regression, scanvi, seurat_transferdata, xgboost ]
-  .collectEntries{method ->
-    [method.config.functionality.name, method]
-  }
-```
-
-## testing
-
-Check out the in depth documentation [here](run_tests.qmd)
-
-### unit test
-
-You can test your method by using the following command:
+You can also run your component on local files using the `viash run` command. For example:
 
 ```bash
-viash test path/to/method/config.vsh.yaml
+viash run src/label_projection/methods/my_method_py/config.vsh.yaml -- \
+  --input_train resources_test/label_projection/pancreas/train.h5ad \
+  --input_test resources_test/label_projection/pancreas/test.h5ad \
+  --output output.h5ad
 ```
 
-There is a general unit test that you can find in the `comp_method.yaml` that will be executed. If you added a specific unit test for your method it will also be executed if added correctly.
+## Next steps
 
-Depending on the result you will get a notification on how many tests succeeded or failed:
+If your component works, please [create a pull request](create_pull_request.qmd).
 
-```bash
-SUCCESS! All 1 out of 1 test scripts succeeded!
-```
-
-### Workflow test
-
-testing of the full workflow can be done by using the following command:
-
-`task_name/workflows/run/run_test.sh`
-
-## Final steps
-
-Add yourself to the `task_name/api/authors.yaml` file.
-
-When you are finished with your component create a Pull Request according to the instructions [here](create_pull_request.qmd).
-
-## alternative methods
-
-There is also a possibility to add a __control method__ to the the task. These methods form the baseline that will be used to compare the methods from the same task against to see how they perform.
-These `controls` can divided in 2 type:
-
-* __negative control__: These methods contain no or a random prediction. Which will make these have a bad result when performing metrics. 
-* __Positive control__: These methods contain the ground truth. This ensures they have the good result when performing the metrics.
-
-For most of the time these methods are added in the same way as the methods above. The differences will be shown below.
-
-### Create a new component
-
-Create a new Viash component by running the following command:
-
-```bash
-viash run src/common/create_skeleton/config.vsh.yaml -- \
-  --task label_projection \
-  --comp-type negative_control \
-  --name my_method \
-  --language python
-```
-
-This will create a new folder at `src/label_projection/control_methods/my_method`. You will need to change the `--comp-type` to postivie control depending on wich typ you want to add.
-
-    src/label_projection/control_methods/my_method
-        ├── script.py/R                  method script
-        ├── config.vsh.yaml              config file for method
-        └── additional files             Helper files like e.g. tsv file, unit test specific for method, ...
-
-### config.vsh.yaml
-
-The main difference:
-
-1. `namespace` -> `control_methods`
-2. `info/type`: This will be `negative_control` or `positive_control`.
-
-
-```yaml
-__merge__: ../../api/comp_control_method.yaml
-functionality:
-  name: my_method
-  namespace: label_projection/control_methods
-  description: A description for your method.
-  info:
-    type: negative_control
-    method_name: My Method
-    variants:
-      my_method:
-    preferred_normalization: counts
-  resources:
-    - type: python_script
-      path: script.py
-platforms:
-  - type: docker
-    image: "python:3.8"
-    setup:
-      - type: python
-        packages:
-          - "anndata>=0.8"
-  - type: nextflow
-    directives: 
-      label: [ lowmem, lowcpu ]
-```
