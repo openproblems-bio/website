@@ -70,12 +70,11 @@
   
 * Fix redirects with subdirs to events link (#245)
 
-# openproblems.bio v2.1.2
-
 ## MINOR CHANGES
 
 * Updating task images from `.png` to `.svg` (#205).
 * Set funkyheatmap colors for dark mode via js instead of css (#208).
+* Set color palette dynamically for funkyheatmap (#210).
 
 # openproblems.bio v2.1.1
 
