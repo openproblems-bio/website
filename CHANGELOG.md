@@ -50,9 +50,11 @@
   
 * Revert temporary navbar transition fix (#231).
 
-* Revert quarto 1.3 weight changes (#236).
+* Revert quarto 1.3 weight changes (#236 & #244).
 
 * Fix alignment issues in headings (#236).
+
+* Fix mermaid background rendering (#243)
 
 ## BUG FIX
 
@@ -65,6 +67,8 @@
 * Added `../docs.css` to neurips 2021 documentation to activate the `.thumbnail-image` change (#232).
 
 * Fix broken links (on other websites) by adding redirects to previously existing pages (#227).
+  
+* Fix redirects with subdirs to events link (#245)
 
 # openproblems.bio v2.1.2
 
