@@ -1,6 +1,8 @@
 # openproblems.bio v2.2.1
 
-... nothing here yet ...
+## BUG FIX
+
+* Minor fixes to the documentation pages (#246).
 
 # openproblems.bio v2.2.0
 
