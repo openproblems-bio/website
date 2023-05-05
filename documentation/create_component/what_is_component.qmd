@@ -4,6 +4,9 @@ order: 20
 engine: knitr
 ---
 
+{{< include ../_blocks/_clone_repo.qmd >}}
+{{< include /_include/_evaluate_code.qmd >}}
+
 In OpenProblems, each component (dataset loader, dataset processor, method, metric) is a modular Viash component. A Viash component is a combination of a code block or script and a small amount of metadata that makes it easy to generate pipeline modules, facilitating the separation of component functionality from the pipeline workflow. This enables developers to create reusable, modular, and robust components for OpenProblems, focusing on the specific functionality without having to worry about the chosen pipeline framework.
 
 
