@@ -1,0 +1,28 @@
+---
+title: Concepts
+order: 15
+engine: knitr
+bibliography: ../../bibliography/library.bib
+---
+
+Every component in OpenProblems, including dataset loaders, dataset processors, methods, and metrics, is a Viash component. To assemble these components into flexible benchmarking pipelines, AnnData serves as the standard file format for both input and output files of a component.
+
+{{< include ../_figures/_fig_task_structure.qmd >}}
+
+## AnnData file format
+
+AnnData, short for "Annotated Data", is a file format for handling annotated, high-dimensional biological data [@virshup2021anndataannotateddata]. In the context of OpenProblems, AnnData is used as the standard data format for both input and output files of components. This ensures a consistent and seamless exchange of data between different components of the benchmarking pipelines, allowing developers to focus on the core functionality of their components without worrying about data format compatibility.
+
+![AnnData objects have a structured format that includes the main data matrix (`X`, e.g. gene expression values), annotations of observations (`obs`, e.g. cell metadata), annotations of variables (`var`, e.g. gene metadata), and unstructured annotations (`uns`). This organization makes it easy to work with complex datasets while maintaining data integrity and ensuring a standardized structure across different components.](../images/anndata.svg){#fig-anndata-format}
+
+Files with the `.h5ad` extension represent AnnData objects stored in an HDF5 file. AnnData objects can be opened in Python using the [`anndata.read_h5ad()`](https://anndata.readthedocs.io/en/latest/generated/anndata.read_h5ad.html#anndata.read_h5ad) function, and in R using the [`anndata::read_h5ad()`](https://anndata.dynverse.org/reference/read_h5ad.html) function. Technically it can be read in any language using an HDF5 library.
+
+## Viash component
+
+A Viash component is a combination of a code block or script and a small amount of metadata that makes it easy to generate pipeline modules, facilitating the separation of component functionality from the pipeline workflow. This enables developers to create reusable, modular, and robust components for OpenProblems, focusing on the specific functionality without having to worry about the chosen pipeline framework.
+
+A Viash component consists of three main parts: a Viash config, a script, and one or more[^zero] unit tests ([@fig-viash-runtime]). Check out the [Viash cheat sheet](../more_information/cheat_sheets.qmd#fig-viash-cheat-sheet) for more information on how to interact with Viash components.
+
+[^zero]: Of course can choose not to write any tests at all, though we highly encourage you to add tests to your component.
+
+![Viash supports robust pipeline development by allowing users to build their component as a standalone executable (with auto-generated CLI), build a Docker container to run the script inside, or turn the component into a standalone Nextflow module.](../images/viash_figure_2.svg){#fig-viash-runtime}

@@ -1,6 +1,6 @@
 ---
 title: Getting started
-order: 20
+order: 25
 engine: knitr
 ---
 
@@ -18,6 +18,11 @@ Go to the OpenProblems repository at [https://github.com/openproblems-bio/openpr
 
 This will create a copy of the repository under your GitHub account. 
 
+:::{.callout-tip}
+While you're at it, why not click the "Star" button as well?
+
+[![](../images/stargazers.png){width=500px}](https://github.com/openproblems-bio/openproblems-v2/stargazers)
+:::
 
 ## Step 2: Clone the repository
 To clone this forked repository to your local machine, copy the URL of the forked repository by clicking the green "Code" button and selecting HTTPS or SSH.
@@ -51,43 +56,14 @@ viash run src/common/sync_test_resources/config.vsh.yaml
 
 The test resources are stored in the `resources_test` directory.
 
+
 ## Ready, set, go!
 
-That's it! Now you should be able to test whether the existing components work as expected and then start adding functionality to the pipeline.
-The main workflow consists of the following steps:
+That's it! Now you should be able to test whether the existing components work as expected and then start adding functionality to the pipeline. Running an existing component is as simple as running a command in your terminal. Using test data as input, you can try this out immediately.
 
-* Loading and preparing datasets (add a new [dataset](add_a_dataset.qmd))
-* Running methods on those datasets (add a new [method](add_a_method.qmd))
-* Evaluating the method outputs via metrics (add a new [metric](add_a_metric.qmd))
+### Run a component
 
-Since the components are written in Viash, we recommend that you familiarize yourself with the [Viash documentation](https://viash.io/).
-Below are a few example pointers to help you get started quickly.
-
-
-### Project structure
-
-The project repository is structured as follows:
-
-![](../images/repositories-half.svg)
-
-In general, there are multiple components in `src`, reflecting different tasks and utils.
-A component is a self-contained unit of functionality that can be run independently and multiple components can be combined to form a task.
-The `src/common` directory contains components that are used across multiple tasks.
-Datasets required as input for tasks can be loaded and prepared in `src/datasets`.
-The tasks themselves contain the respective methods and metrics implementations.
-
-For detailed information on how this project is structured, see the ["Project structure"](../more_information/project_structure.qmd).
-
-
-### Run a component on a test dataset
-
-Running an existing component is as simple as running a command in your terminal.
-Using test data as input, you can try this out immediately.
-
-Use the `viash run` command to run a Viash component. Everything after the
-`--` separator counts as the arguments of the component itself. In this case,
-the `knn` component has an `--input_train` and `--input_test` argument to which
-the test resources are passed.
+Use the `viash run` command to run a Viash component. Everything after the `--` separator counts as the arguments of the component itself. In this case, the `knn` component has an `--input_train` and `--input_test` argument to which the test resources are passed.
 
 ```bash
 viash run src/label_projection/methods/knn/config.vsh.yaml -- \
@@ -144,8 +120,3 @@ viash ns test --query label_projection --parallel --platform docker
     label_projection/metrics             accuracy               docker      format_check.py         0        7              SUCCESS
     ...
 </details>
-
-## Conclusion
-The OpenProblems repository contain multiple components and tasks made up of components that can be run independently or combined into more complex workflows.
-All components are written in Viash, so check out the [Viash documentation](https://viash.io/) for more options for the given commands.
-Please note that if you encounter any issues during the first-time setup, there are several resources available to help you troubleshoot. These include the ["Troubleshooting"](/documentation/more_information/troubleshooting.qmd) page of this documentation and the OpenProblems community on GitHub. We encourage you to explore these resources and reach out to the community for help if needed.

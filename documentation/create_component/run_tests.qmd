@@ -9,16 +9,14 @@ engine: knitr
 {{< include /_include/_evaluate_code.qmd >}}
 {{< include ../_blocks/_output_details.qmd >}}
 
-### Unit test a component
-
-By default there are 2 unit tests already done when running the `viash test`:
+A component in OpenProblems will typically come with at least two unit tests out of the box:
 
 * The first test will check if the config file has all the required fields.
 * The second test will generally test if your component works and if the output has the expected dimensions and fields.
 
-You can find an in-depth guide on viash testing [here](https://viash.io/guide/component/unit-testing.html).
-
 Use `viash test` to run all of the component's unit tests.
+
+## Example
 
 ```bash
 viash test src/label_projection/methods/knn/config.vsh.yaml
@@ -31,7 +29,7 @@ viash test src/label_projection/methods/knn/config.vsh.yaml
 ```
 </details>
 
-### Unit test task components
+### Test multiple components
 
 Use `viash ns test` to unit test all of the components of a given task.
 

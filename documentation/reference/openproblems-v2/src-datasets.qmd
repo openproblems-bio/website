@@ -1,0 +1,20 @@
+---
+title: src/datasets/
+---
+
+The dataset processing pipeline uses dataset loaders to create raw dataset files (@fig-dataset-workflow). The raw dataset files are then processed to generate common dataset files. Common dataset files are used in one or more tasks.
+
+{{< include /documentation/_figures/_project_structure_dataset_workflow.qmd >}}
+
+- **Dataset loader** (`src/datasets/loaders`): This folder contains components to load and format datasets for various sources.
+
+- **Dataset normalization** (`src/datasets/normalization`): This folder contains various dataset normalization methods.
+
+- **Dataset processors** (`src/datasets/processors`): This folder contains components for processing datasets, such as computing a KNN, PCA, HVG or subsetting.
+
+- **Dataset file and component formats** (`src/datasets/api`): This folder contains specifications for dataset file formats and component interfaces.
+
+- **Resource generation scripts** (`src/common/resources_scripts`): This folder contains scripts for generating the datasets using the dataset loaders, normalization methods and processors.
+
+- **Test resource generation scripts** (`src/common/resources_test_scripts`): This folder contains scripts for generating test resources.
+

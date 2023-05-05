@@ -1,0 +1,26 @@
+---
+title: src/\<task_id\>/
+---
+
+Each task should contain a data processor (to transform common datasets into task-specific datasets), methods, control methods (for quality control), and metrics (@fig-task-workflow).
+
+{{< include /documentation/_figures/_project_structure_task_workflow.qmd >}}
+
+- **Process dataset** (`src/<task_id>/process_dataset`): This components processes common components into task-specific dataset objects. In supervised tasks, this component will usually output a solution, a training dataset and a test dataset. In unsupervised tasks, this component usually output a solution and a masked dataset.
+
+- **Control methods** (`src/<task_id>/control_methods`): This folder contains control (or control) components for the task. These components have the same interface as the regular methods but also receive the solution object as input.  It serves as a starting point to test the relative accuracy of new methods in the task, and also as a quality control for the metrics defined in the task. A control method can either be a positive control or a negative control, which set a maximum and minimum threshold for performance, so any new method should perform better than the negative control methods and worse than the positive control method.
+    * A *positive control* is a method where the expected results are known, thus resulting in the best possible value for any metric outcome measure. 
+    * A *negative control* is a simple, naive, or random method that does not rely on any sophisticated techniques or domain knowledge. 
+
+- **Methods** (`src/<task_id>/methods`): This folder contains method components. Each method component outputs a method output object given the training and test datasets (when applicable).
+
+- **Metrics** (`src/<task_id>/metrics`): This folder contains metric components. Each metric component outputs one or more metric results given a solution object and a method output object.
+
+- **Benchmarking pipeline** (`src/<task_id>/workflows`): This folder contains a Nextflow pipeline defining the benchmarking workflow for this task.
+
+- **File and component formats** (`src/<task_id>/api`): This folder contains specifications for task-specific file formats and component interfaces.
+
+- **Resource generation scripts** (`src/<task_id>/resources_scripts`): This folder contains scripts for generating benchmarking resources required for the task.
+
+- **Test resource generation scripts** (`src/<task_id>/resources_test_scripts`): This folder contains scripts for generating test resources for the task.
+
