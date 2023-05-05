@@ -1,5 +1,5 @@
 ---
-title: What is OpenProblems?
+title: Concepts
 order: 10
 engine: knitr
 bibliography: ../../bibliography/library.bib
@@ -9,22 +9,9 @@ OpenProblems is a living benchmarking platform designed to address and measure p
 
 The platform combines an open GitHub repository with community-defined tasks, an automated benchmarking workflow, and a website for exploring the results. Each task consists of datasets, methods, and metrics ([@fig-task-structure]). Datasets define the input and ground truth for a task, methods attempt to solve the task, and metrics evaluate the success of a method on a given dataset.
 
-```{mermaid}
-%%| label: fig-task-structure
-%%| fig-cap: "The structure of an OpenProblems task. *Legend: Grey rectangles are AnnData .h5ad files, purple rhomboids are Viash components.*"
-graph LR
-  classDef component fill:#decbe4,stroke:#333
-  classDef anndata fill:#d9d9d9,stroke:#333
-  loader[/Dataset<br/>loader/]:::component
-  dataset[Dataset]:::anndata
-  method[/Method/]:::component
-  output[Output]:::anndata
-  metric[/Metric/]:::component
-  score[Score]:::anndata
-  loader --> dataset --- method --> output --- metric --> score
-```
+{{< include _fig_task_structure.qmd >}}
 
-A key feature of OpenProblems is the use of [Viash](https://viash.io) components, which ensures that every component can be implemented in Python or R, has a well-defined API, is unit tested, and is made reproducible using customisable Docker images [@cannoodt2021viashfromscripts]. Viash components make it easy for developers to create, maintain, and share components while ensuring consistency and interoperability across the platform.
+A key feature of OpenProblems is the use of Viash [@cannoodt2021viashfromscripts], which ensures that every component can be implemented in Python or R, has a well-defined API, is unit tested, and is made reproducible using customisable Docker images. Viash components make it easy for developers to create, maintain, and share components while ensuring consistency and interoperability across the platform.
 
 To facilitate seamless community involvement, OpenProblems has designed its infrastructure to take advantage of automated workflows through GitHub Actions, Nextflow, and AWS Batch, as well as the integration of Viash components ([@fig-project-structure]). When a community member adds a task, dataset, method, or metric, the new contributions are automatically tested in the cloud. Once all tests pass and the new contribution is merged into the main repository, the results from the new contribution are automatically submitted to the OpenProblems website.
 

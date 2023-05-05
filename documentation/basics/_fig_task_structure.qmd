@@ -1,0 +1,14 @@
+```{mermaid}
+%%| label: fig-task-structure
+%%| fig-cap: "The structure of an OpenProblems task. *Legend: Grey rectangles represent AnnData .h5ad files, while purple rhomboids represent Viash components.*"
+graph LR
+  classDef component fill:#decbe4,stroke:#333
+  classDef anndata fill:#d9d9d9,stroke:#333
+  loader[/Dataset<br/>loader/]:::component
+  dataset[Dataset]:::anndata
+  method[/Method/]:::component
+  output[Output]:::anndata
+  metric[/Metric/]:::component
+  score[Score]:::anndata
+  loader --> dataset --- method --> output --- metric --> score
+```
