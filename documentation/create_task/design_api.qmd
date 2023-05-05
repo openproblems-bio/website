@@ -29,9 +29,9 @@ In general, an API follows the structure of a viash component and can contain an
 It is up you to decide which directives you consider general-purpose for your specific components.
 An example could look like the following:
 
-```{.yaml filename="api/component/generic_component.yaml"}
+```{.yaml filename="src/<task_id>/api/component/generic_component.yaml"}
 functionality:
-  namespace: <task>/<category>  # <1>
+  namespace: <task_id>/<category>  # <1>
   info:  # <2>
     ...
   arguments: # <3>
@@ -64,7 +64,7 @@ cat src/label_projection/api/comp_method.yaml
 ```
 ````
 
-### Connecting the component API to a specific component
+### Applying the API to a specific component
 
 A component can inherit from an API specification, which follows the basic viash component.
 The directive for inheriting from an API specification is `__merge__` at the topmost level of the component API.
@@ -72,8 +72,8 @@ That way, all the specifications under the `functionality` directive of the API 
 These specifications do not need to be defined again in the component config, unless you want to override them for select tasks.
 Note, that the API file path must be relative to the location of the `config.vsh.yaml` file.
 
-```{.yaml filename="<task>/<category>/<subtask>/config.vsh.yaml"}
-__merge__: ../../api/component/<>.yaml  # <1>
+```{.yaml filename="src/<task>/<category>/<component>/config.vsh.yaml"}
+__merge__: ../../api/component/generic_component.yaml  # <1>
 functionality:  # <2>
   name: ...
   description: ...
@@ -86,7 +86,7 @@ platforms:  # <5>
 ```
 
 1. The generic component type API specification file.
-2. Specify any component-specific directives that are not in the generic API or overwrite directives if neeeded
+2. Specify any component-specific directives that are not in the generic API or overwrite directives if needed.
 3. The metadata of the component.
 4. Resource files of the component (typically a Python or an R script).
 5. Platform specification info (typically which Docker image to use and which Python/R packages to install on top of that).
@@ -100,7 +100,7 @@ While they can be defined in a viash config file or a component API directly, de
 When specifying the API file formats, you should describe the contents, structure, and any additional metadata required for the files. This information will be useful for developers to understand the expected file formats and components quickly. Use YAML to define the file formats, as shown below:
 
 
-```{.yaml filename="api/file/anndata_specification_1.yaml"}
+```{.yaml filename="src/<task_id>/api/file/anndata_specification_1.yaml"}
 type: file # <1>
 description: ... # <2>
 example: ...  # <3>
@@ -148,10 +148,9 @@ cat src/label_projection/api/anndata_train.yaml
 ```
 ````
 
-### Connecting the file API to a specific component
+### Applying the API to a specific component
 
-The File API YAML files are best stored under the `api/file` of a task in `src/<task>/`.
-It can be used in a generic component API YAML or in the component configuration directly.
+The File API YAML files can be used in a generic component API YAML or in the component configuration directly.
 Note, that the API file path must be relative to the location of the corresponding component API or `config.vsh.yaml` file.
 
 ```{yaml}
