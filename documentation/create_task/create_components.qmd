@@ -2,3 +2,39 @@
 title: Create components
 order: 40
 ---
+
+Once you have defined the task README and designed an API for the input/outputs of components and their file formats, the next step is to start adding components to your task. In this guide, we will walk you through the process of adding components to your new task, using the "create component" guide as a reference. The "create component" guide includes detailed instructions on how to:
+
+- [Add a dataset loader](#add-a-dataset-loader)
+- [Add a method](#add-a-method)
+- [Add a control method method](#add-a-control-method-method)
+- [Add a metric](#add-a-metric)
+- [Run tests](#run-tests)
+- [Create a pull request](#create-pull-request)
+
+Iterating over each of these steps will help you create the necessary components for your new task. Creating a small Bash script that runs an example component of each component type will also be useful for testing and ensuring that everything works as expected.
+
+## Add a dataset loader
+
+The dataset loader is responsible for loading and processing the data used in your task. Follow the guide on [how to create a dataset loader](/documentation/create_component/add_a_dataset.qmd) to create a custom dataset loader for your task. Make sure to test your dataset loader and verify that it produces the expected output format.
+
+## Add a method
+
+Methods are the algorithms or approaches you want to benchmark in your task. To add a new method, follow the guide on [how to create a method](/documentation/create_component/add_a_method.qmd). Ensure that your method is compatible with the input/output format defined in your API and test it thoroughly.
+
+## Add a control method method
+
+Control method methods serve as reference points for evaluating the performance of other methods in your task. They can be positive or negative controls, depending on their intended purpose. To add a control method method, follow the guide on [how to create a control method method](/documentation/create_component/add_a_baseline.qmd). Make sure your control method method adheres to the input/output format defined in your API and test it for correctness.
+
+## Add a metric
+
+Metrics are used to evaluate the performance of methods on your task. To add a new metric, follow the guide on [how to create a metric](/documentation/create_component/add_a_metric.qmd). Ensure that your metric is compatible with the input/output format defined in your API and test it to confirm its accuracy.
+
+## Run tests
+
+Testing is a crucial part of the development process, ensuring that all components of your task function correctly and produce the expected results. To run tests on your components, follow the guide on [how to run tests](/documentation/create_component/run_tests.qmd). Regularly running tests as you develop your task will help you identify and fix any issues early on, leading to a more robust and reliable benchmarking task.
+
+## Next steps
+Once you have iterated through these steps and have a working set of components for your task, you can proceed to integrate them into the OpenProblems framework and submit your task for review by [creating a pull request](/documentation/create_component/create_pull_request.qmd).
+
+Remember, the OpenProblems community is here to help and support you throughout the process. Good luck!

@@ -4,30 +4,10 @@ order: 60
 engine: knitr
 ---
 
-{{< include ../_blocks/_clone_repo.qmd >}}
-{{< include /_include/_synchonize_tabs.qmd >}}
+Once dataset processor, method and metric components are created, it is time to combine them into a workflow. A workflow is a sequence of components that are executed in a specific order.
 
+:::{.callout-important}
+This page is still under construction.
 
-Once dataset processor, method and metric components are created, it is time to combine them into a workflow.
-A workflow is a sequence of components that are executed in a specific order.
-
-The standard workflow is as follows:
-
-1. Dataset processing
-2. Running methods (run methods in parallel)
-3. Evaluation (applying metrics and aggregating results)
-
-<!-- TODO: diagram of example workflow -->
-
-## Build the main workflow with Nextflow
-
-```{groovy}
-#| eval: false
-
-nextflow.enable.dsl=2
-
-workflow {
-    // Insert beatiful example pipeline here
-}
-
-```
+For now, this step is not an essential step of creating a new task before submitting it for review.
+:::
