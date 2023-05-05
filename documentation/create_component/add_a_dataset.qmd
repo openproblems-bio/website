@@ -22,7 +22,7 @@ Make sure you have followed the ["Getting started"](../fundamentals/getting_star
 
 Common datasets are created by generating raw datasets with a data loader and running them through the pre-processing pipeline (@fig-dataflow). Afterwards, further task-specific processing occurs prior to the task-specific benchmarking workflow.
 
-{{< include ../more_information/_project_structure_dataflow.qmd >}}
+{{< include ../_figures/_project_structure_dataflow.qmd >}}
 
 See ["Repository structure"](../more_information/repository_structure.qmd) for more information on how each of these steps works.
 
@@ -370,4 +370,4 @@ slots %>%
 
 ## Next steps
 
-If your component works, please [create a pull request](../more_information/create_pull_request.qmd). After your dataset loader has been merged into the main branch, it will be used to generate a common dataset. After the common datasets have been generated, it will be picked up by the task-specific dataset processors if it has all of the slots required by the task.
+If your component works, please [create a pull request](../create_component/create_pull_request.qmd). After your dataset loader has been merged into the main branch, it will be used to generate a common dataset. After the common datasets have been generated, it will be picked up by the task-specific dataset processors if it has all of the slots required by the task.
