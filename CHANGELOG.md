@@ -54,6 +54,8 @@
 
 * Fix alignment issues in headings (#236).
 
+* Fix mermaid background rendering (#243)
+
 ## BUG FIX
 
 * Rename `create_skeleton` to `create_component` in documentation (#213).
