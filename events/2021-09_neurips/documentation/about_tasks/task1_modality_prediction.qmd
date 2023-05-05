@@ -14,17 +14,17 @@ This task requires translating information between multiple layers of gene regul
 
 ## Task API
 
-The following section describes the task API for the Modality Prediction task. Competitors must submit their code as a Viash component. To facilitate creation of these components, [starter kits](/competitions/neurips_2021_docs/submission/starter_kit_contents.qmd) have been provided.
+The following section describes the task API for the Modality Prediction task. Competitors must submit their code as a Viash component. To facilitate creation of these components, [starter kits](/events/2021-09_neurips/documentation/submission/starter_kit_contents.qmd) have been provided.
 
 ### Input data formats
 
 :::{.callout-note}
-The data format and attributes provided in the input data is tailored to each task and may differ from the publicly released [benchmarking dataset](/competitions/neurips_2021_docs/data/dataset.qmd).  **Only the attributes listed in the following section will be accessible to methods submitted to the competition.**
+The data format and attributes provided in the input data is tailored to each task and may differ from the publicly released [benchmarking dataset](/events/2021-09_neurips/documentation/data/dataset.qmd).  **Only the attributes listed in the following section will be accessible to methods submitted to the competition.**
 :::
 
 #### Inputs to methods
 
-Method components should expect three inputs, `--input_train_mod1`, `--input_train_mod2`, and `--input_test_mod1`. They are all paths to [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad files with the attributes below. More information can be found on AnnData objects [here](/competitions/neurips_2021_docs/submission/quickstart.qmd). `mod1` and `mod2` refer to the modality of the datasets as defined by `feature_type`.  One file will always have `feature_type` be `"GEX"` and the other will be `"ATAC"` or `"ADT"`. For the purposes of the competition, components should expect the following 4 combinations of modalities:
+Method components should expect three inputs, `--input_train_mod1`, `--input_train_mod2`, and `--input_test_mod1`. They are all paths to [AnnData](https://anndata.readthedocs.io/en/latest/) h5ad files with the attributes below. More information can be found on AnnData objects [here](/events/2021-09_neurips/documentation/submission/quickstart.qmd). `mod1` and `mod2` refer to the modality of the datasets as defined by `feature_type`.  One file will always have `feature_type` be `"GEX"` and the other will be `"ATAC"` or `"ADT"`. For the purposes of the competition, components should expect the following 4 combinations of modalities:
 
 | `mod1`   | `mod2`   |
 |----------|----------|
@@ -39,7 +39,7 @@ Method components should expect three inputs, `--input_train_mod1`, `--input_tra
 Submission components must predict `mod2` for the cells provided in `--input_test_mod1`. For methods that do not involve pre-trained models, training data is also provided in the `--input_train_mod[1|2]` files. For methods that involve pre-trained models, these training datasets can be ignored.
 
 :::{.callout-note}
-Note, you do not need to return predictions for all four combinations of inputs and outputs. We will be independently ranking and awarding prizes to each combination as described below in [Prizes](#prizes). For more details, see the [FAQs](/competitions/neurips_2021_docs/submission/faq.qmd#what-if-i-only-want-to-compete-for-one-of-the-prizes-in-a-task)
+Note, you do not need to return predictions for all four combinations of inputs and outputs. We will be independently ranking and awarding prizes to each combination as described below in [Prizes](#prizes). For more details, see the [FAQs](/events/2021-09_neurips/documentation/submission/faq.qmd#what-if-i-only-want-to-compete-for-one-of-the-prizes-in-a-task)
 :::
 
 
@@ -72,13 +72,13 @@ adata
     Ids for the features.
 ```
 
-Examples of how to load and process the data are contained in the [starter kits](/competitions/neurips_2021_docs/submission/starter_kit_contents.qmd) for the respective programming language.
+Examples of how to load and process the data are contained in the [starter kits](/events/2021-09_neurips/documentation/submission/starter_kit_contents.qmd) for the respective programming language.
 
 #### Normalization and transformation of data for the prediction task
 
 To make the task more straightforward, we have followed common practices for normalizing and transforming data of each modality. The raw data is also provided in `adata.layers` as described below. Please note, **the performance metric will be calculated on the normalized and transformed data stored in** `adata.X` **for each of the modality types below.**
 
-For full details on preprocessing, see the [Data Preprocessing](/competitions/neurips_2021_docs/data/dataset.qmd#preprocessing) notes.
+For full details on preprocessing, see the [Data Preprocessing](/events/2021-09_neurips/documentation/data/dataset.qmd#preprocessing) notes.
 
 **GEX**  
 
@@ -151,4 +151,4 @@ For this task, five prizes of $1000 will be awarded to the submissions for each 
 2. Best performance predicting ADT → GEX
 3. Best performance on average across modalities
 
-[Terms and Conditions](/competitions/neurips_2021_docs/submission/terms.qmd) apply.
+[Terms and Conditions](/events/2021-09_neurips/documentation/submission/terms.qmd) apply.
