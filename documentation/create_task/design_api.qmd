@@ -1,165 +1,120 @@
 ---
 title: Design the API
 order: 20
+engine: knitr
 ---
 
-# API file formats
+{{< include ../_blocks/_clone_repo.qmd >}}
+{{< include /_include/_evaluate_code.qmd >}}
 
+When creating a new OpenProblems task, it's essential to design the API for the input/outputs of components and their file formats. The API ensures consistency and interoperability across different components of your task, making it easier for others to contribute and build upon your work. Not only that, but creating API files partially automates the following steps:
 
+* [Selecting and subsetting dataset files](select_datasets.qmd)
+* Creating new  [methods](../create_component/add_a_method.qmd) and [metrics](../create_component/add_a_metric.qmd) using the `create_component` method.
+* [Automated testing](../create_component/run_tests.qmd) of components using the `src/common/comp_tests/run_and_check_adata.py` unit test.
+* Generate [reference documentation](../reference/) are partially automated by having defined these API files.
+
+{{< include /documentation/_figures/_project_structure_task_workflow.qmd >}}
+
+Notice how the Viash components and AnnData files are coloured differently in @fig-task-workflow? We'll need to create API files for each component and AnnData file separately. However, this is actually quite easy to do, as we will show in the following sections.
+
+## Define file formats
+
+When specifying the API file formats, you should describe the contents, structure, and any additional metadata required for the files. This information will be useful for developers to understand the expected file formats and components quickly. Use YAML to define the file formats, as shown below:
+
+Contents of `src/<task_id>/api/anndata_train.yaml`:
 
 ```{yaml}
 type: file # <1>
-description: "A normalised data with a PCA embedding, HVG selection and a kNN graph" # <2>
-example: "dataset.h5ad"  # <3>
-info:  # <4>
-  label: "Dataset+PCA+HVG+kNN"
-  slots:
-    # 
-
-```
-
-1. Type of the entry. For file speicifications, it is always `file`
-2. Description of the file, useful for quickly understanding what the file contains
-3. Example of the file name in the command line
-4. Info
-
-
-### Example
-
-```{yaml}
-type: file
-description: "A normalised data with a PCA embedding, HVG selection and a kNN graph"
-example: "dataset.h5ad"
+description: "The training data" # <2>
+example: "resources_test/label_projection/pancreas/train.h5ad" # <3>
 info:
-  label: "Dataset+PCA+HVG+kNN"
+  short_description: "Training data" # <4>
   slots:
-    layers: 
-      - type: integer
-        name: counts
-        description: Raw counts
-        required: true
-      - type: double
-        name: normalized
-        description: Normalised expression values
-    obs:
-      - type: string
-        name: celltype
-        description: Cell type information
-        required: false
-    var:
-      - type: boolean
-        name: hvg
-        description: Whether or not the feature is considered to be a 'highly variable gene'
-        required: true
-    uns:
-      - type: string
-        name: dataset_id
-        description: "A unique identifier for the dataset"
-        required: true
+    ... # <5>
 ```
 
-# API component specs
-
-
-{{< include ../_blocks/_clone_repo.qmd >}}
-{{< include /_include/_synchonize_tabs.qmd >}}
-
-Components are the most modular building blocks of the overall task.
-Each method, metric or data processing workflow should have its own component.
-This way, components can be separated arranged into end-to-end workflows.
-
-For different variants of the same task, such as multiple different methods or metrics, we can define a common API so that the further processing of the outputs can be kept the same across methods or metrics.
-It is good practice to formalise the common metadata of all methods or metrics in a generic API specification.
-
-## Specification
-
-madtory vs optional vs extendable
-
-<!-- TODO: generate table with different  -->
-
-```{yaml}
-functionality:  # <1>
-  namespace: <task_name>/<subtask>
-  info:
-    type: method
-    output_type: embedding
-  arguments:
-    - name: --input
-      __merge__: anndata_unintegrated.yaml
-    - name: --output
-      direction: output
-      __merge__: anndata_integrated_embedding.yaml
-    - name: --hvg
-      type: boolean
-      description: Whether to subset to highly variable genes
-      default: false
-      required: false
-  test_resources:
-    - path: ../../../../resources_test/batch_integration/pancreas/
-    - type: python_script
-      path: generic_test.py
-```
+1. The type of Viash argument when used in components. This should always be set to `"file"`.
+2. Description of the file, useful for quickly understanding what type of data such a file represents. Used for generating reference documentation.
+3. An example of this file. This path will be used for unit tests to try to run components with.
+4. A short label used to represent the file in diagrams in the reference documentation.
+5. The mandatory and optional slots in the AnnData file.
 
 ### Example
 
+Here is an example of a file specification API file.
+
+Contents of `src/label_projection/api/anndata_train.yaml`:
+
+````yaml
+```{bash}
+#| echo: false
+#| output: asis
+cat src/label_projection/api/anndata_train.yaml
+```
+````
+
+
+## Define component type API
+
+Next, we need to define the component API for all component types in your task, including methods, control methods, and metrics.
+
+### Specification
+
 ```{yaml}
 functionality:
-  namespace: <task_name>/<subtask>
-  info:
+  namespace: "label_projection/methods" # <1>
+  info: # <2>
     type: method
-    output_type: embedding
-  arguments:
-    - name: --input
-      __merge__: anndata_unintegrated.yaml
-    - name: --output
+  arguments: # <3>
+    - name: "--input_train"
+      __merge__: anndata_train.yaml
+    - name: "--input_test"
+      __merge__: anndata_test.yaml
+    - name: "--output"
+      __merge__: anndata_prediction.yaml
       direction: output
-      __merge__: anndata_integrated_embedding.yaml
-    - name: --hvg
-      type: boolean
-      description: Whether to subset to highly variable genes
-      default: false
-      required: false
   test_resources:
-    - path: ../../../../resources_test/batch_integration/pancreas/
-    - type: python_script
-      path: generic_test.py
+    - ... # <4>
 ```
 
+1. The `namespace` for the functionality. It follows the format `<task_name>/<category>`. In this case, the task is "label_projection" and the category is "methods". The namespace is used to group similar components together and ensures that they can be easily found and used within the task.
+2. General `info` about the functionality. In this example, it specifies that the functionality type is a "method". This information is used to categorize and describe the component in the overall task.
+3. The `arguments` that the component accepts. Each argument has a name (e.g., `--input_train`), and its specification is merged from another YAML file (e.g., `"anndata_train.yaml"`). 
+4. The resources and unit tests used for testing the component during development and evaluation.
 
-## Applying API to specific component
+### Example
+
+Here is an example of a file specification API file.
+
+Contents of `src/label_projection/api/comp_method.yaml`:
+
+````yaml
+```{bash}
+#| echo: false
+#| output: asis
+cat src/label_projection/api/comp_method.yaml
+```
+````
+
+### Applying API to specific component
+
+Use the `__merge__` field to include the component type API and extend it with the specific component details. Here's an example:
 
 ```{yaml}
-__merge__: ../../api/comp_method_embedding.yaml
+__merge__: ../../api/comp_method.yaml # <1>
 functionality:
-  name: scanorama_embed
-  description: "Efficient integration of heterogeneous single-cell 
-    transcriptomes using Scanorama"
-  info:
-    method_name: Scanorama
-    paper_reference: "hie2019efficient"
-    code_url: https://github.com/brianhie/scanorama
-    v1_url: openproblems/tasks/_batch_integration/batch_integration_graph/methods/scanorama.py
-    v1_commit: 29803b95c88b4ec5921df2eec7111fd5d1a95daf
-    preferred_normalization: log_cpm
-    variants:
-      scanorama_embed_full_unscaled:
-      scanorama_embed_hvg_unscaled:
-        hvg: true
-      scanorama_embed_hvg_scaled:
-        hvg: true
-        preferred_normalization: log_cpm_scaled
-      scanorama_embed_full_scaled:
-        preferred_normalization: log_cpm_scaled
-  resources:
-    - type: python_script
-      path: script.py
-platforms:
-  - type: docker
-    image: mumichae/scib-base:1.1.3
-    setup:
-      - type: python
-        pypi:
-          - scanorama
-          - pyyaml
-  - type: nextflow
+  name: "knn" # <2>
+  info: # <3>
+    ...
+  resources: # <4>
+    # ...
+platforms: # <5>
+  # ...
 ```
+
+1. The component type API specification file.
+2. The name of the component.
+3. The metadata of the component.
+4. Resource files of the component (typically a Python or an R script).
+5. Platform specification info (typically which Docker image to use and which Python/R packages to install on top of that).
