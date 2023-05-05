@@ -50,7 +50,7 @@
   
 * Revert temporary navbar transition fix (#231).
 
-* Revert quarto 1.3 weight changes (#236).
+* Revert quarto 1.3 weight changes (#236 & #244).
 
 * Fix alignment issues in headings (#236).
 
