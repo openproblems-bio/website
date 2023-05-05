@@ -7,47 +7,28 @@ bibliography: ../../bibliography/library.bib
 
 OpenProblems is a living benchmarking platform designed to address and measure progress towards open challenges in single-cell genomics. It follows the Common Task Framework (CTF) [@donoho2017yearsdatascience], which has driven innovation in machine learning research by providing clear definitions and quantifications of progress. 
 
-OpenProblems tasks consist of datasets, methods, and metrics ([@fig-task-structure]). Datasets define the input and ground truth for a task, methods attempt to solve the task, and metrics evaluate the success of a method on a given dataset. Metrics are normalized between 0 and 1 based on the inclusion of "baseline" methods, which are designed to emulate either random or perfect performance. Methods are then ranked on a per-dataset basis by the average normalized metric score and presented in a summary table on the OpenProblems website (https://openproblems.bio).
+The platform combines an open GitHub repository with community-defined tasks, an automated benchmarking workflow, and a website for exploring the results. Each task consists of datasets, methods, and metrics ([@fig-task-structure]). Datasets define the input and ground truth for a task, methods attempt to solve the task, and metrics evaluate the success of a method on a given dataset.
 
 ```{mermaid}
 %%| label: fig-task-structure
-%%| fig-cap: "The structure of an OpenProblems task."
+%%| fig-cap: "The structure of an OpenProblems task. *Legend: Grey rectangles are AnnData .h5ad files, purple rhomboids are Viash components.*"
 graph LR
-  subgraph OpenProblems Task
-    Dataset --> Method --> Metric
-  end
+  classDef component fill:#decbe4,stroke:#333
+  classDef anndata fill:#d9d9d9,stroke:#333
+  loader[/Dataset<br/>loader/]:::component
+  dataset[Dataset]:::anndata
+  method[/Method/]:::component
+  output[Output]:::anndata
+  metric[/Metric/]:::component
+  score[Score]:::anndata
+  loader --> dataset --- method --> output --- metric --> score
 ```
 
-To 
+A key feature of OpenProblems is the use of [Viash](https://viash.io) components, which ensures that every component can be implemented in Python or R, has a well-defined API, is unit tested, and is made reproducible using customisable Docker images [@cannoodt2021viashfromscripts]. Viash components make it easy for developers to create, maintain, and share components while ensuring consistency and interoperability across the platform.
 
-That's it! Now you should be able to test whether the existing components work as expected and then start adding functionality to the pipeline.
-The main workflow consists of the following steps:
+To facilitate seamless community involvement, OpenProblems has designed its infrastructure to take advantage of automated workflows through GitHub Actions, Nextflow, and AWS Batch, as well as the integration of Viash components ([@fig-project-structure]). When a community member adds a task, dataset, method, or metric, the new contributions are automatically tested in the cloud. Once all tests pass and the new contribution is merged into the main repository, the results from the new contribution are automatically submitted to the OpenProblems website.
 
-* Loading and preparing datasets (add a new [dataset](add_a_dataset.qmd))
-* Running methods on those datasets (add a new [method](add_a_method.qmd))
-* Evaluating the method outputs via metrics (add a new [metric](add_a_metric.qmd))
+![Overview of the OpenProblems repositories, mainly consisting of the main repository and the website. For detailed information on how this project is structured, see the ["Project structure"](../more_information/project_structure.qmd).](../images/repositories-thin.svg){#fig-project-structure}
 
-Since the components are written in Viash, we recommend that you familiarize yourself with the [Viash documentation](https://viash.io/).
-Below are a few example pointers to help you get started quickly.
+OpenProblems aims to raise the standards for method selection and evaluation in single-cell data science by offering a platform that quantitatively defines open challenges, determines current state-of-the-art solutions, promotes method development, and monitors progress towards these goals. By leveraging Viash components, the platform ensures consistency, modularity, and interoperability, making it a valuable resource for data analysts, method developers, and the single-cell genomics community at large.
 
-
-### Project structure
-
-The project repository is structured as follows:
-
-![](../images/repositories-half.svg)
-
-In general, there are multiple components in `src`, reflecting different tasks and utils.
-A component is a self-contained unit of functionality that can be run independently and multiple components can be combined to form a task.
-The `src/common` directory contains components that are used across multiple tasks.
-Datasets required as input for tasks can be loaded and prepared in `src/datasets`.
-The tasks themselves contain the respective methods and metrics implementations.
-
-For detailed information on how this project is structured, see the ["Project structure"](../more_information/project_structure.qmd).
-
-
-
-## Conclusion
-The OpenProblems repository contain multiple components and tasks made up of components that can be run independently or combined into more complex workflows.
-All components are written in Viash, so check out the [Viash documentation](https://viash.io/) for more options for the given commands.
-Please note that if you encounter any issues during the first-time setup, there are several resources available to help you troubleshoot. These include the ["Troubleshooting"](/documentation/more_information/troubleshooting.qmd) page of this documentation and the OpenProblems community on GitHub. We encourage you to explore these resources and reach out to the community for help if needed.

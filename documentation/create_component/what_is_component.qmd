@@ -1,0 +1,86 @@
+---
+title: What is a component?
+order: 20
+---
+
+
+### Project structure
+
+The project repository is structured as follows:
+
+![](../images/repositories-half.svg)
+
+In general, there are multiple components in `src`, reflecting different tasks and utils.
+A component is a self-contained unit of functionality that can be run independently and multiple components can be combined to form a task.
+The `src/common` directory contains components that are used across multiple tasks.
+Datasets required as input for tasks can be loaded and prepared in `src/datasets`.
+The tasks themselves contain the respective methods and metrics implementations.
+
+For detailed information on how this project is structured, see the ["Project structure"](../more_information/project_structure.qmd).
+
+
+### Run a component on a test dataset
+
+Running an existing component is as simple as running a command in your terminal.
+Using test data as input, you can try this out immediately.
+
+Use the `viash run` command to run a Viash component. Everything after the
+`--` separator counts as the arguments of the component itself. In this case,
+the `knn` component has an `--input_train` and `--input_test` argument to which
+the test resources are passed.
+
+```bash
+viash run src/label_projection/methods/knn/config.vsh.yaml -- \
+  --input_train resources_test/label_projection/pancreas/train.h5ad \
+  --input_test resources_test/label_projection/pancreas/test.h5ad \
+  --output output.h5ad
+```
+<details>
+  <summary>Output</summary>
+```{bash}
+#| echo: false
+viash run src/label_projection/methods/knn/config.vsh.yaml -- \
+  --input_train resources_test/label_projection/pancreas/train.h5ad \
+  --input_test resources_test/label_projection/pancreas/test.h5ad \
+  --output output.h5ad
+```
+</details>
+
+### Testing components
+
+Testing components is an important part of the development process.
+Each tasks comes with pre-defined unit tests that can be run using the `viash test` command.
+
+```bash
+viash test src/label_projection/methods/knn/config.vsh.yaml
+```
+<details>
+  <summary>Output</summary>
+```{bash}
+#| echo: false
+viash test src/label_projection/methods/knn/config.vsh.yaml
+```
+</details>
+
+If you want to run the unit tests for all of the components of a task, you can use the `viash ns test` command.
+
+```bash
+viash ns test --query label_projection --parallel --platform docker
+```
+<details>
+  <summary>Output</summary>
+                   namespace        functionality             platform            test_name exit_code duration               result
+    label_projection/methods  logistic_regression               docker                start                                        
+    label_projection/methods               scanvi               docker                start                                        
+    label_projection/methods                  knn               docker                start                                        
+    label_projection/methods                  mlp               docker                start                                        
+    label_projection/metrics             accuracy               docker                start                                        
+    label_projection/metrics                   f1               docker                start
+    label_projection/methods  logistic_regression               docker     build_executable         0        4              SUCCESS
+    label_projection/methods  logistic_regression               docker      generic_test.py         0        9              SUCCESS
+    label_projection/metrics                   f1               docker     build_executable         0        7              SUCCESS
+    label_projection/metrics                   f1               docker      format_check.py         0        8              SUCCESS
+    label_projection/metrics             accuracy               docker     build_executable         0        8              SUCCESS
+    label_projection/metrics             accuracy               docker      format_check.py         0        7              SUCCESS
+    ...
+</details>
