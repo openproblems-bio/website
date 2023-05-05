@@ -65,6 +65,8 @@
 * Added `../docs.css` to neurips 2021 documentation to activate the `.thumbnail-image` change (#232).
 
 * Fix broken links (on other websites) by adding redirects to previously existing pages (#227).
+  
+* Fix redirects with subdirs to events link (#245)
 
 # openproblems.bio v2.1.2
 
