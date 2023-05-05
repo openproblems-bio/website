@@ -46,7 +46,9 @@
   
 * Revert temporary navbar transition fix (#231)
 
-* Revert changes made in quarto v1.3 to our own style (#236)
+* Revert quarto 1.3 weight changes (#236).
+
+* Fix alignment issues in headings (#236).
 
 ## BUG FIX
 
