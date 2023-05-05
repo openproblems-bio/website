@@ -34,16 +34,37 @@
 
   * `More information/Troubleshooting`: Describes the most common errors that can occur when contributing/developing.
 
+* Added an events page at `/events` (#227).
+
 ## MAJOR CHANGES
 
-* For some of the pages, only render executable code when the 'evaluate_code' profile is active. (#214).
+* For some of the pages, only render executable code when the 'evaluate_code' profile is active (#214).
+
+* Moved competition pages from `/competitions` to `/events` (#227). Added redirects to ensure links on external websites keep working.
+
+## MINOR CHANGES
+
+* Update to Quarto 1.3 (#221).
+
+* Update license to Creative Commons CC-BY (#216).
+  
+* Revert temporary navbar transition fix (#231).
+
+* Revert quarto 1.3 weight changes (#236).
+
+* Fix alignment issues in headings (#236).
+
 ## BUG FIX
 
 * Rename `create_skeleton` to `create_component` in documentation (#213).
 
-## MINOR CHANGES
+* Add `target: _blank` to external links in navbar (#230).
 
-* Update license to Creative Commons CC-BY (#216)
+* Revert intentional typo `.thumnail-image` to `.thumbnail-image` (#232)
+
+* Added `../docs.css` to neurips 2021 documentation to activate the `.thumbnail-image` change (#232).
+
+* Fix broken links (on other websites) by adding redirects to previously existing pages (#227).
 
 # openproblems.bio v2.1.2
 

@@ -1,3 +1,20 @@
+/* Fix changes to weight with quarto 1.3 */
+/* See https://github.com/openproblems-bio/website/issues/234 */
+h1, .h1, h2, .h2 {
+  font-weight: 500;
+}
+
+/* Fix alignment issues in headings */
+/* See https://github.com/openproblems-bio/website/issues/235 */
+main.quarto-banner-title-block section:first-of-type h2:first-of-type, 
+main.quarto-banner-title-block section:first-of-type .h2:first-of-type, 
+main.quarto-banner-title-block section:first-of-type h3:first-of-type, 
+main.quarto-banner-title-block section:first-of-type .h3:first-of-type, 
+main.quarto-banner-title-block section:first-of-type h4:first-of-type, 
+main.quarto-banner-title-block section:first-of-type .h4:first-of-type {
+  margin-top: 0;
+}
+
 img,
 svg {
   max-width: 100%;
@@ -69,10 +86,6 @@ code {
 .mermaid svg {
   display: block;
   margin: auto;
-}
-
-header#quarto-header {
-    transition: all 200ms linear;
 }
 
 .quarto-title-banner {

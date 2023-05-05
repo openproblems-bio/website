@@ -8,7 +8,11 @@ engine: knitr
 {{< include /_include/_evaluate_code.qmd >}}
 {{< include /_include/_synchonize_tabs.qmd >}}
 
-This page explains how to create a new dataset loader in order to add datasets to OpenProblems.
+Datasets are required for any benchmarking workflow and need to be preprocessed in a standardized way.
+The `datasets` task provides a framework for loading and preprocessing datasets.
+
+This guide will show you how to create a new [Viash](https://viash.io) component.
+In the following we will show examples for both Python and R.
 
 :::{.callout-tip}
 Make sure you have followed the ["Requirements"](requirements.qmd) and ["Getting started"](getting_started.qmd) pages.
@@ -49,7 +53,9 @@ Take a look at the dataset loaders that are already in the `src/datasets/loaders
 
 ## Step 2: Create a Viash config
 
-Next, create a config for the dataset loader. The simplest dataset loader you can create looks as follows.
+Next, create a config for the dataset loader.
+The [Viash config](https://viash.io/reference/config/) contains metadata of your dataset, which script is used to run it, and the required dependencies. 
+The simplest dataset loader you can create looks as follows.
 
 ```{bash, include=FALSE, eval=TRUE}
 # set eval to TRUE to make sure is always run, even when profile is not 'evaluate_code'
@@ -113,7 +119,15 @@ platforms:
 ```
 :::
 
+For more parameter options, refer to ["Parameters"](#parameters) section.
+
+
 ## Step 3: Create a script
+
+Next, create a script that will generate or load the dataset.
+Here we show an example script that generates a random dataset, but check out `src/datasets/loaders` for real data examples.
+The script must ensure that that the output anndata object has the format as described in the ["Format of a raw dataset object"](#format-of-a-raw-dataset-object-format) section.
+
 
 ```{bash, include=FALSE, eval=TRUE}
 # set eval to TRUE to make sure is always run, even when profile is not 'evaluate_code'
