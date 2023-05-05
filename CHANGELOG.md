@@ -26,6 +26,8 @@
 
 * Fix mermaid background rendering (#243).
 
+* Make the funkyheatmap interactive settings visible (#169).
+
 ## BUG FIX
 
 * Rename `create_skeleton` to `create_component` in documentation (#213).
