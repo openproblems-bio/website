@@ -8,7 +8,7 @@ The OpenProblems repositories are structured as follows.
 
 ## OpenProblems codebase
 
-In the OpenProblems codebase, the `src` directory contains Viash components that manage various aspects of the project, such as common datasets, tasks, and common processing components. The `target` folder is where artifacts generated from these Viash components are stored, including Dockerized Nextflow modules. The `resources_test` directory contains the test resources required for running unit tests on the Viash components. It is important to note that these test resources are not stored within the git repository. Instead, they are obtained by running the sync test resources component (See ["Getting started"](../contribute/getting_started.qmd)).
+In the OpenProblems codebase, the `src` directory contains Viash components that manage various aspects of the project, such as common datasets, tasks, and common processing components. The `target` folder is where artifacts generated from these Viash components are stored, including Dockerized Nextflow modules. The `resources_test` directory contains the test resources required for running unit tests on the Viash components. It is important to note that these test resources are not stored within the git repository. Instead, they are obtained by running the sync test resources component (See ["Getting started"](../fundamentals/getting_started.qmd)).
 
 The main data flow of the pipeline is shown in @fig-dataflow. The common dataset components create common dataset objects which are used in one or more tasks.
 
@@ -95,7 +95,7 @@ Root path: `resources`.
 
 Root path: `test_resources`.
 
-- This directory contains the test resources required for running unit tests on the Viash components. It is important to note that these test resources are not stored within the git repository. Instead, they are obtained by running the sync test resources component (See ["Getting started"](../contribute/getting_started.qmd)).
+- This directory contains the test resources required for running unit tests on the Viash components. It is important to note that these test resources are not stored within the git repository. Instead, they are obtained by running the sync test resources component (See ["Getting started"](../fundamentals/getting_started.qmd)).
 
 ### Artifact folder 
 
