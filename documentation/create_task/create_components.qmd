@@ -7,7 +7,7 @@ Once you have defined the task README and designed an API for the input/outputs 
 
 - [Add a dataset loader](#add-a-dataset-loader)
 - [Add a method](#add-a-method)
-- [Add a control method method](#add-a-control-method-method)
+- [Add a control method](#add-a-control-method)
 - [Add a metric](#add-a-metric)
 - [Run tests](#run-tests)
 - [Create a pull request](#create-pull-request)
@@ -22,9 +22,9 @@ The dataset loader is responsible for loading and processing the data used in yo
 
 Methods are the algorithms or approaches you want to benchmark in your task. To add a new method, follow the guide on [how to create a method](/documentation/create_component/add_a_method.qmd). Ensure that your method is compatible with the input/output format defined in your API and test it thoroughly.
 
-## Add a control method method
+## Add a control method
 
-Control method methods serve as reference points for evaluating the performance of other methods in your task. They can be positive or negative controls, depending on their intended purpose. To add a control method method, follow the guide on [how to create a control method method](/documentation/create_component/add_a_baseline.qmd). Make sure your control method method adheres to the input/output format defined in your API and test it for correctness.
+Control method methods serve as reference points for evaluating the performance of other methods in your task. They can be positive or negative controls, depending on their intended purpose. To add a control method method, follow the guide on [how to create a control method](/documentation/create_component/add_a_baseline.qmd). Make sure your control method method adheres to the input/output format defined in your API and test it for correctness.
 
 ## Add a metric
 
