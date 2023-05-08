@@ -46,7 +46,7 @@ functionality:
     ...
 ```
 
-1. The `namespace` for the functionality. It follows the format `<task>/<category>`. The namespace is used to group similar components together and ensures that they can be easily found and used within the task.
+1. The `namespace` for the functionality. It follows the format `<task_id>/<category>`. The namespace is used to group similar components together and ensures that they can be easily found and used within the task.
 2. General `info` about the functionality. This information is used to categorize and describe the component in the overall task.
 3. The `arguments` that the component accepts. Each argument has a name (e.g., `--input_train`), and its specification can be defined dirctly or merged from a file API YAML file. 
 4. The resources and unit tests used for testing the component during development and evaluation.
@@ -72,7 +72,7 @@ That way, all the specifications under the `functionality` directive of the API 
 These specifications do not need to be defined again in the component config, unless you want to override them for select tasks.
 Note, that the API file path must be relative to the location of the `config.vsh.yaml` file.
 
-```{.yaml filename="src/<task>/<category>/<component>/config.vsh.yaml"}
+```{.yaml filename="src/<task_id>/<category>/<component>/config.vsh.yaml"}
 __merge__: ../../api/component/generic_component.yaml  # <1>
 functionality:  # <2>
   name: ...
