@@ -5,5 +5,5 @@ lines <- pmap_chr(baselines, function(method_name, method_summary, reference, co
   summ <- (method_summary %|% "Missing 'method_summary'") %>% str_replace_all("\\. *$", "")
   glue::glue("* **{method_name}**: {summ}.")
 })
-knitr::asis_output(lines)
+knitr::asis_output(paste(lines, collapse = "\n"))
 ```
