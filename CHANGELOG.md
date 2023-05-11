@@ -4,15 +4,15 @@
 
 * Minor changes to the documentation pages (PR #248).
 
-* Add documentation link to Neurips 2021 documentation on the Neurips 2021 page. (PR #250)
+* Add documentation link to Neurips 2021 documentation on the Neurips 2021 page (PR #250).
 
-* Add PR to PR # in changlog from v2.2.2
+* Add prefix "PR " to PR references in changelog (PR #250).
 
 # openproblems.bio v2.2.1
 
 ## BUG FIX
 
-* Minor fixes to the documentation pages (#246).
+* Minor fixes to the documentation pages (PR #246).
 
 # openproblems.bio v2.2.0
 
@@ -20,56 +20,56 @@
 
 * Documentation was added for OpenProblems v2 at `/documentation` (multiple PRs).
 
-* Added an events page at `/events` (#227).
+* Added an events page at `/events` (PR #227).
 
 ## MAJOR CHANGES
 
-* For some of the pages, only render executable code when the 'evaluate_code' profile is active (#214).
+* For some of the pages, only render executable code when the 'evaluate_code' profile is active (PR #214).
 
-* Moved competition pages from `/competitions` to `/events` (#227). Added redirects to ensure links on external websites keep working.
+* Moved competition pages from `/competitions` to `/events` (PR #227). Added redirects to ensure links on external websites keep working.
 
 ## MINOR CHANGES
 
-* Update to Quarto 1.3 (#221).
+* Update to Quarto 1.3 (PR #221).
 
-* Update license to Creative Commons CC-BY (#216).
+* Update license to Creative Commons CC-BY (PR #216).
   
-* Revert temporary navbar transition fix (#231).
+* Revert temporary navbar transition fix (PR #231).
 
-* Revert quarto 1.3 weight changes (#236 & #244).
+* Revert quarto 1.3 weight changes (PR #236 & PR #244).
 
-* Fix alignment issues in headings (#236).
+* Fix alignment issues in headings (PR #236).
 
-* Fix mermaid background rendering (#243).
+* Fix mermaid background rendering (PR #243).
 
-* Make the funkyheatmap interactive settings visible (#169).
+* Make the funkyheatmap interactive settings visible (PR #169).
 
 ## BUG FIX
 
-* Rename `create_skeleton` to `create_component` in documentation (#213).
+* Rename `create_skeleton` to `create_component` in documentation (PR #213).
 
-* Add `target: _blank` to external links in navbar (#230).
+* Add `target: _blank` to external links in navbar (PR #230).
 
-* Revert intentional typo `.thumnail-image` to `.thumbnail-image` (#232)
+* Revert intentional typo `.thumnail-image` to `.thumbnail-image` (PR #232)
 
-* Added `../docs.css` to neurips 2021 documentation to activate the `.thumbnail-image` change (#232).
+* Added `../docs.css` to neurips 2021 documentation to activate the `.thumbnail-image` change (PR #232).
 
-* Fix broken links (on other websites) by adding redirects to previously existing pages (#227).
+* Fix broken links (on other websites) by adding redirects to previously existing pages (PR #227).
   
-* Fix redirects with subdirs to events link (#245).
+* Fix redirects with subdirs to events link (PR #245).
 
 # openproblems.bio v2.1.2
 
 ## MINOR CHANGES
 
-* Updating task images from `.png` to `.svg` (#205).
-* Set funkyheatmap colors for dark mode via js instead of css (#208).
+* Updating task images from `.png` to `.svg` (PR #205).
+* Set funkyheatmap colors for dark mode via js instead of css (PR #208).
 
 # openproblems.bio v2.1.1
 
 ## BUG FIXES
 
-* Fixed a typo in batch_integration_embed task description (#201)
+* Fixed a typo in batch_integration_embed task description (PR #201)
 * Fix `link-external-filter` to recognise internal filters on published website (#202)
 
 # openproblems.bio v2.1.0
@@ -80,19 +80,19 @@ of a stub task.
 
 ## NEW FUNCTIONALITY
 
-* Dark mode was added (#153, #162, #172, #173, #184, #190, #191, #194).
+* Dark mode was added (PR #153, PR #162, PR #172, PR #173, PR #184, PR #190, PR #191, PR #194).
 
 ## MINOR CHANGES
 
-* Ported missing site metadata (#160).
+* Ported missing site metadata (PR #160).
 
-* Changed the results and bibliography heros (#178, #181).
+* Changed the results and bibliography heros (PR #178, PR #181).
 
-* Removed sub-stub regulatory effect prediction task (#197).
+* Removed sub-stub regulatory effect prediction task (PR #197).
   
 ## BUG FIXES
 
-* Fix internal links being treated as external links in PR previews (#179).
+* Fix internal links being treated as external links in PR eviews (PR #179).
 * FIx `link-external-filter` te recognise internal filters on published website (#202)
 
 # openproblems.bio v2.0.0
