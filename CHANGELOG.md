@@ -1,6 +1,6 @@
 # openproblems.bio v2.2.2
 
-## MINOR changes
+## MINOR CHANGES
 
 * Minor changes to the documentation pages (PR #248).
 
@@ -8,9 +8,13 @@
 
 * Add prefix "PR " to PR references in changelog (PR #250).
 
+## BUG FIXES
+
+* All tasks were moved from `src/<task_id>` to the `src/tasks/<task_id>` subdirectory (PR #251).
+
 # openproblems.bio v2.2.1
 
-## BUG FIX
+## BUG FIXES
 
 * Minor fixes to the documentation pages (PR #246).
 
