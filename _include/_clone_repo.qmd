@@ -1,25 +1,21 @@
 
 ```{r setup, include=FALSE}
+# discard local changes from the /_openproblems-v2 repo and
+# sets the work directory to that directory.
 repo_path <- system("git rev-parse --show-toplevel", intern = TRUE)
-proj_dir <- paste0(repo_path, "/documentation/_openproblems-v2")
+proj_dir <- paste0(repo_path, "/_openproblems-v2")
 if (!dir.exists(proj_dir)) {
   processx::run(
     "git",
-    c("clone", "https://github.com/openproblems-bio/openproblems-v2.git", basename(proj_dir)),
+    c("submodule", "update", "--init", "--recursive"),
     wd = dirname(proj_dir)
   )
-} else {
-  processx::run(
-    "git", 
-    "fetch",
-    wd = proj_dir
-  )
-  processx::run(
-    "git", 
-    c("reset", "--hard", "origin/main"),
-    wd = proj_dir
-  )
 }
+processx::run(
+  "git", 
+  c("clean", "-fxd"),
+  wd = proj_dir
+)
 processx::run(
   "viash",
   c("run", "src/common/sync_test_resources/config.vsh.yaml"),

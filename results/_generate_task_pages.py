@@ -29,7 +29,7 @@ params <- list(data_dir = "results/{task_id}/data")
 params <- list(data_dir = "./data")
 ```
 
-{{{{< include ../_blocks/_task_template.qmd >}}}}
+{{{{< include ../_include/_task_template.qmd >}}}}
 """
 
     index_qmd = task_info_file.parent.parent / "index.qmd"
