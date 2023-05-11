@@ -66,7 +66,7 @@ That's it! Now you should be able to test whether the existing components work a
 Use the `viash run` command to run a Viash component. Everything after the `--` separator counts as the arguments of the component itself. In this case, the `knn` component has an `--input_train` and `--input_test` argument to which the test resources are passed.
 
 ```bash
-viash run src/label_projection/methods/knn/config.vsh.yaml -- \
+viash run src/tasks/label_projection/methods/knn/config.vsh.yaml -- \
   --input_train resources_test/label_projection/pancreas/train.h5ad \
   --input_test resources_test/label_projection/pancreas/test.h5ad \
   --output output.h5ad
@@ -75,7 +75,7 @@ viash run src/label_projection/methods/knn/config.vsh.yaml -- \
   <summary>Output</summary>
 ```{bash}
 #| echo: false
-viash run src/label_projection/methods/knn/config.vsh.yaml -- \
+viash run src/tasks/label_projection/methods/knn/config.vsh.yaml -- \
   --input_train resources_test/label_projection/pancreas/train.h5ad \
   --input_test resources_test/label_projection/pancreas/test.h5ad \
   --output output.h5ad
@@ -88,13 +88,13 @@ Testing components is an important part of the development process.
 Each tasks comes with pre-defined unit tests that can be run using the `viash test` command.
 
 ```bash
-viash test src/label_projection/methods/knn/config.vsh.yaml
+viash test src/tasks/label_projection/methods/knn/config.vsh.yaml
 ```
 <details>
   <summary>Output</summary>
 ```{bash}
 #| echo: false
-viash test src/label_projection/methods/knn/config.vsh.yaml
+viash test src/tasks/label_projection/methods/knn/config.vsh.yaml
 ```
 </details>
 

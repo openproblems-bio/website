@@ -29,7 +29,7 @@ In general, an API follows the structure of a viash component and can contain an
 It is up you to decide which directives you consider general-purpose for your specific components.
 An example could look like the following:
 
-```{.yaml filename="src/<task_id>/api/component/generic_component.yaml"}
+```{.yaml filename="src/tasks/<task_id>/api/component/generic_component.yaml"}
 functionality:
   namespace: <task_id>/<category>  # <1>
   info:  # <2>
@@ -56,11 +56,11 @@ functionality:
 
 Here is an example of a file specification API file.
 
-````{.yaml filename=src/label_projection/api/comp_method.yaml}
+````{.yaml filename=src/tasks/label_projection/api/comp_method.yaml}
 ```{bash}
 #| echo: false
 #| output: asis
-cat src/label_projection/api/comp_method.yaml
+cat src/tasks/label_projection/api/comp_method.yaml
 ```
 ````
 
@@ -72,7 +72,7 @@ That way, all the specifications under the `functionality` directive of the API 
 These specifications do not need to be defined again in the component config, unless you want to override them for select tasks.
 Note, that the API file path must be relative to the location of the `config.vsh.yaml` file.
 
-```{.yaml filename="src/<task_id>/<category>/<component>/config.vsh.yaml"}
+```{.yaml filename="src/tasks/<task_id>/<category>/<component>/config.vsh.yaml"}
 __merge__: ../../api/component/generic_component.yaml  # <1>
 functionality:  # <2>
   name: ...
@@ -100,7 +100,7 @@ While they can be defined in a viash config file or a component API directly, de
 When specifying the API file formats, you should describe the contents, structure, and any additional metadata required for the files. This information will be useful for developers to understand the expected file formats and components quickly. Use YAML to define the file formats, as shown below:
 
 
-```{.yaml filename="src/<task_id>/api/file/anndata_specification_1.yaml"}
+```{.yaml filename="src/tasks/<task_id>/api/file/anndata_specification_1.yaml"}
 type: file # <1>
 description: ... # <2>
 example: ...  # <3>
@@ -140,11 +140,11 @@ info:
 
 Here is an example of a file specification API file.
 
-````{.yaml filename="src/label_projection/api/anndata_train.yaml"}
+````{.yaml filename="src/tasks/label_projection/api/anndata_train.yaml"}
 ```{bash}
 #| echo: false
 #| output: asis
-cat src/label_projection/api/anndata_train.yaml
+cat src/tasks/label_projection/api/anndata_train.yaml
 ```
 ````
 
