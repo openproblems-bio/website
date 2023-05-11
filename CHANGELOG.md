@@ -2,7 +2,11 @@
 
 ## MINOR changes
 
-* Minor changes to the documentation pages (#248).
+* Minor changes to the documentation pages (PR #248).
+
+* Add documentation link to Neurips 2021 documentation on the Neurips 2021 page. (PR #250)
+
+* Add PR to PR # in changlog from v2.2.2
 
 # openproblems.bio v2.2.1
 
