@@ -1,0 +1,25 @@
+
+```{r setup, include=FALSE}
+# discard local changes from the /_openproblems-v2 repo and
+# sets the work directory to that directory.
+repo_path <- system("git rev-parse --show-toplevel", intern = TRUE)
+proj_dir <- paste0(repo_path, "/_openproblems-v2")
+if (!dir.exists(proj_dir)) {
+  processx::run(
+    "git",
+    c("submodule", "update", "--init", "--recursive"),
+    wd = dirname(proj_dir)
+  )
+}
+processx::run(
+  "git", 
+  c("clean", "-fxd"),
+  wd = proj_dir
+)
+processx::run(
+  "viash",
+  c("run", "src/common/sync_test_resources/config.vsh.yaml"),
+  wd = proj_dir
+)
+knitr::opts_knit$set(root.dir = proj_dir)
+```

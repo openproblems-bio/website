@@ -1,0 +1,170 @@
+
+```{r funkyheatmap_data}
+#| echo: false
+#| message: false
+#| warning: false
+overall <- results_long %>%
+  group_by(method_id) %>%
+  summarise(mean_score = mean(score %|% 0), .groups = "drop") %>%
+  mutate(mean_score = pmin(1, pmax(mean_score, 0))) %>%
+  arrange(mean_score)
+per_dataset <- results_long %>%
+  group_by(method_id, dataset_id) %>%
+  summarise(score = mean(score %|% 0), .groups = "drop") %>%
+  mutate(dataset_id = paste0("dataset_", dataset_id)) %>%
+  mutate(score = pmin(1, pmax(score, 0))) %>%
+  spread(dataset_id, score)
+per_metric <- results_long %>%
+  group_by(method_id, metric_id) %>%
+  summarise(score = mean(score %|% 0), .groups = "drop") %>%
+  mutate(metric_id = paste0("metric_", metric_id)) %>%
+  mutate(score = pmin(1, pmax(score, 0))) %>%
+  spread(metric_id, score)
+
+summary_all <-
+  method_info %>%
+  filter(!is_baseline) %>%
+  select(method_id, method_name) %>%
+  left_join(overall, by = "method_id") %>%
+  left_join(per_dataset, by = "method_id") %>%
+  left_join(per_metric, by = "method_id") %>%
+  arrange(desc(method_id))
+
+column_info <-
+  bind_rows(
+    tribble(
+      ~id, ~name, ~group, ~geom,
+      "method_name", "Name", "method", "text",
+      "mean_score", "Score", "mean", "bar",
+    ),
+    dataset_info %>% transmute(
+      id = paste0("dataset_", dataset_id),
+      name = dataset_name,
+      group = "dataset",
+      geom = "funkyrect"
+    ),
+    metric_info %>% transmute(
+      id = paste0("metric_", metric_id),
+      name = metric_name,
+      group = "metric",
+      geom = "funkyrect"
+    )
+  ) %>%
+  mutate(
+    palette = ifelse(group %in% c("mean", "dataset", "metric"), group, NA_character_),
+    options = map2(id, geom, function(id, geom) {
+      if (id == "method_name") {
+        list(width = 15, hjust = 0)
+      } else if (id == "is_baseline") {
+        list(width = 1)
+      } else if (geom == "bar") {
+        list(width = 4)
+      } else {
+        list()
+      }
+    }
+  )
+)
+column_groups <- tribble(
+  ~Category, ~group, ~palette,
+  "", "method", NA_character_,
+  "Overall", "mean", "mean"
+)
+if (nrow(dataset_info) >= 3) {
+  column_groups <- column_groups %>%
+    add_row(Category = "Dataset", group = "dataset", palette = "dataset")
+} else {
+  column_groups <- column_groups %>%
+    add_row(Category = "", group = "dataset", palette = NA_character_)
+}
+if (nrow(metric_info) >= 3) {
+  column_groups <- column_groups %>%
+    add_row(Category = "Metric", group = "metric", palette = "metric")
+} else {
+  column_groups <- column_groups %>%
+    add_row(Category = "", group = "metric", palette = NA_character_)
+}
+palettes <- list(
+  mean = "Greys",
+  dataset = "Blues",
+  metric = "Reds"
+)
+
+# g_all <- funky_heatmap(
+#   data = summary_all,
+#   column_info = column_info %>% filter(id %in% colnames(summary_all)),
+#   column_groups = column_groups,
+#   palettes = palettes,
+#   # determine xmax expand heuristically
+#   expand = c(xmax = max(str_length(tail(column_info$name, 4))) / 5),
+#   # determine offset heuristically
+#   col_annot_offset = max(str_length(column_info$name)) / 5,
+#   add_abc = FALSE,
+#   scale_column = FALSE
+# )
+
+ojs_define(
+    method_info = method_info,
+    funky_heatmap_args = list(
+        data = summary_all,
+        columns = colnames(summary_all)[2:ncol(summary_all)],
+        column_info = column_info %>% filter(id %in% colnames(summary_all)),
+        column_groups = column_groups %>% rename(name = Category),
+        palettes = palettes,
+        expand = c(xmax = 3),
+        col_annot_offset = 5,
+        add_abc = FALSE,
+        scale_column = FALSE
+    )
+)
+```
+
+
+```{ojs}
+//| echo: false
+//| panel: input
+//| layout-ncol: 2
+viewof color_by_rank = Inputs.toggle({label: "Color by rank"})
+viewof scale_column = Inputs.toggle({label: "Minmax column"})
+```
+
+
+```{ojs}
+//| echo: false
+//| fig-cap: "Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)."
+
+funkyheatmap(
+    funky_heatmap_args.data,
+    funky_heatmap_args.columns,
+    funky_heatmap_args.column_info,
+    funky_heatmap_args.column_groups,
+    funky_heatmap_args.palettes,
+    funky_heatmap_args.expand,
+    funky_heatmap_args.col_annot_offset,
+    funky_heatmap_args.add_abc,
+    scale_column,
+    {
+        fontSize: 14,
+        rowHeight: 26,
+        rootStyle: 'max-width: none',
+        colorByRank: color_by_rank,
+        theme: {
+            oddRowBackground: 'var(--bs-body-bg)',
+            evenRowBackground: 'var(--bs-button-hover)',
+            textColor: 'var(--bs-body-color)',
+            strokeColor: 'var(--bs-body-color)',
+            headerColor: 'var(--bs-white)',
+            hoverColor: 'var(--bs-body-color)'
+        }
+    }
+);
+```
+
+```{ojs}
+//| echo: false
+funkyheatmap = (await require('d3@7').then(d3 => {
+  window.d3 = d3;
+  window._ = _;
+  return import('https://unpkg.com/funkyheatmap-js@0.1.8');
+})).default;
+```

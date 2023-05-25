@@ -10,8 +10,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "densmap_logCP10k"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "densmap_logCP10k",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/umap.py"
     },
     {
         "method_name": "densMAP (logCP10k, 1kHVG)",
@@ -24,8 +25,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "densmap_logCP10k_1kHVG"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "densmap_logCP10k_1kHVG",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/umap.py"
     },
     {
         "method_name": "densMAP PCA (logCP10k)",
@@ -38,8 +40,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "densmap_pca_logCP10k"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "densmap_pca_logCP10k",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/umap.py"
     },
     {
         "method_name": "densMAP PCA (logCP10k, 1kHVG)",
@@ -52,8 +55,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "densmap_pca_logCP10k_1kHVG"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "densmap_pca_logCP10k_1kHVG",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/umap.py"
     },
     {
         "method_name": "Diffusion maps",
@@ -66,8 +70,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "diffusion_map"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "diffusion_map",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/diffusion_map.py"
     },
     {
         "method_name": "NeuralEE (CPU) (Default)",
@@ -80,8 +85,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "neuralee_default"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "neuralee_default",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/neuralee.py"
     },
     {
         "method_name": "NeuralEE (CPU) (logCP10k, 1kHVG)",
@@ -94,11 +100,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "neuralee_logCP10k_1kHVG"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "neuralee_logCP10k_1kHVG",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/neuralee.py"
     },
     {
-        "method_name": "Principle Component Analysis (PCA) (logCP10k)",
+        "method_name": "PCA (logCP10k)",
         "method_summary": "PCA or \"Principal Component Analysis\" is a linear method that finds orthogonal directions in the data that capture the most variance. The first two principal components are chosen as the two-dimensional embedding. We select only the first two principal components as the two-dimensional embedding. PCA is calculated on the logCPM expression matrix with and without selecting 1000 HVGs.",
         "paper_name": "On lines and planes of closest fit to systems of points in space",
         "paper_reference": "pearson1901pca",
@@ -108,11 +115,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "pca_logCP10k"
+        "commit_sha": "154ccb9fd99113f3d28d9c3f139194539a0290f9",
+        "method_id": "pca_logCP10k",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/pca.py"
     },
     {
-        "method_name": "Principle Component Analysis (PCA) (logCP10k, 1kHVG)",
+        "method_name": "PCA (logCP10k, 1kHVG)",
         "method_summary": "PCA or \"Principal Component Analysis\" is a linear method that finds orthogonal directions in the data that capture the most variance. The first two principal components are chosen as the two-dimensional embedding. We select only the first two principal components as the two-dimensional embedding. PCA is calculated on the logCPM expression matrix with and without selecting 1000 HVGs.",
         "paper_name": "On lines and planes of closest fit to systems of points in space",
         "paper_reference": "pearson1901pca",
@@ -122,8 +130,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "pca_logCP10k_1kHVG"
+        "commit_sha": "154ccb9fd99113f3d28d9c3f139194539a0290f9",
+        "method_id": "pca_logCP10k_1kHVG",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/pca.py"
     },
     {
         "method_name": "PHATE (default)",
@@ -136,8 +145,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "phate_default"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "phate_default",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/phate.py"
     },
     {
         "method_name": "PHATE (logCP10k, 1kHVG)",
@@ -150,8 +160,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "phate_logCP10k"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "phate_logCP10k",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/phate.py"
     },
     {
         "method_name": "PHATE (logCP10k)",
@@ -164,8 +175,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "phate_logCP10k_1kHVG"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "phate_logCP10k_1kHVG",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/phate.py"
     },
     {
         "method_name": "PHATE (gamma=0)",
@@ -178,8 +190,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "phate_sqrt"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "phate_sqrt",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/phate.py"
     },
     {
         "method_name": "PyMDE Preserve Distances (logCP10k)",
@@ -192,8 +205,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "pymde_distances_log_cp10k"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "pymde_distances_log_cp10k",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/pymde.py"
     },
     {
         "method_name": "PyMDE Preserve Distances (logCP10k, 1kHVG)",
@@ -206,8 +220,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "pymde_distances_log_cp10k_hvg"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "pymde_distances_log_cp10k_hvg",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/pymde.py"
     },
     {
         "method_name": "PyMDE Preserve Neighbors (logCP10k)",
@@ -220,8 +235,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "pymde_neighbors_log_cp10k"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "pymde_neighbors_log_cp10k",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/pymde.py"
     },
     {
         "method_name": "PyMDE Preserve Neighbors (logCP10k, 1kHVG)",
@@ -234,8 +250,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "pymde_neighbors_log_cp10k_hvg"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "pymde_neighbors_log_cp10k_hvg",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/pymde.py"
     },
     {
         "method_name": "Random Features",
@@ -248,8 +265,9 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "random_features"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "random_features",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/baseline.py"
     },
     {
         "method_name": "Spectral Features",
@@ -262,8 +280,9 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "spectral_features"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "spectral_features",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/baseline.py"
     },
     {
         "method_name": "True Features",
@@ -276,11 +295,12 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "true_features"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "true_features",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/baseline.py"
     },
     {
-        "method_name": "t-Distributed Stochastic Neighbor Embedding (t-SNE) (logCP10k)",
+        "method_name": "t-SNE (logCP10k)",
         "method_summary": "t-SNE or t-distributed Stochastic Neighbor Embedding converts similarities between data points to joint probabilities and tries to minimize the Kullback-Leibler divergence between the joint probabilities of the low-dimensional embedding and the high-dimensional data. We use the implementation in the scanpy package with the result of PCA on the logCPM expression matrix (with and without HVG selection).",
         "paper_name": "Visualizing Data using t-SNE",
         "paper_reference": "vandermaaten2008visualizing",
@@ -290,11 +310,12 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "tsne_logCP10k"
+        "commit_sha": "154ccb9fd99113f3d28d9c3f139194539a0290f9",
+        "method_id": "tsne_logCP10k",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/tsne.py"
     },
     {
-        "method_name": "t-Distributed Stochastic Neighbor Embedding (t-SNE) (logCP10k, 1kHVG)",
+        "method_name": "t-SNE (logCP10k, 1kHVG)",
         "method_summary": "t-SNE or t-distributed Stochastic Neighbor Embedding converts similarities between data points to joint probabilities and tries to minimize the Kullback-Leibler divergence between the joint probabilities of the low-dimensional embedding and the high-dimensional data. We use the implementation in the scanpy package with the result of PCA on the logCPM expression matrix (with and without HVG selection).",
         "paper_name": "Visualizing Data using t-SNE",
         "paper_reference": "vandermaaten2008visualizing",
@@ -304,8 +325,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "tsne_logCP10k_1kHVG"
+        "commit_sha": "154ccb9fd99113f3d28d9c3f139194539a0290f9",
+        "method_id": "tsne_logCP10k_1kHVG",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/tsne.py"
     },
     {
         "method_name": "UMAP (logCP10k)",
@@ -318,8 +340,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "umap_logCP10k"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "umap_logCP10k",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/umap.py"
     },
     {
         "method_name": "UMAP (logCP10k, 1kHVG)",
@@ -332,8 +355,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "umap_logCP10k_1kHVG"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "umap_logCP10k_1kHVG",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/umap.py"
     },
     {
         "method_name": "UMAP PCA (logCP10k)",
@@ -346,8 +370,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "umap_pca_logCP10k"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "umap_pca_logCP10k",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/umap.py"
     },
     {
         "method_name": "UMAP PCA (logCP10k, 1kHVG)",
@@ -360,7 +385,8 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "dimensionality_reduction",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "umap_pca_logCP10k_1kHVG"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "umap_pca_logCP10k_1kHVG",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/methods/umap.py"
     }
 ]

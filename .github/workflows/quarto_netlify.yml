@@ -7,10 +7,13 @@ on:
       - reopened
       - synchronize
       - closed
-  # to be able to trigger a manual build
-  workflow_dispatch:
+  release:
 
 name: Render project
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-deploy:
@@ -18,9 +21,12 @@ jobs:
 
     env:
       BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+      NETLIFY_SITE_ID: 397b6416-708f-4133-afe9-9a07ed2e03bf
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
       - uses: r-lib/actions/setup-r@v2
         with:
@@ -43,50 +49,76 @@ jobs:
           restore-keys: python-${{env.LINUX_VERSION}}-${{ env.pythonLocation }}-
 
       - uses: r-lib/actions/setup-renv@v2
+
+      - uses: viash-io/viash-actions/setup@v3
           
       - name: Install Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
+          version: 1.3.340
           tinytex: true
 
       - name: Render with Quarto
         shell: bash -l {0}  
         run: |
           source renv/python/virtualenvs/renv-python-3.10/bin/activate
-          quarto render
-
-      - name: Deploy to Netlify 🚀
+          quarto render --profile evaluate_code
+      
+      ## push actions
+      - name: Deploy push
         uses: data-intuitive/netlify-deploy-site@v1
-        if: github.event_name != 'pull_request'
+        if: github.event_name == 'push'
         with:
           auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          site: ${{ secrets.NETLIFY_SITE_ID }}
+          site: ${{ env.NETLIFY_SITE_ID }}
+          dir: '_site'
+          alias: "main"
+          message: 'Deploy main ${{ github.ref }}'
+
+      ## release actions
+      - name: Deploy release to Netlify 🚀
+        uses: data-intuitive/netlify-deploy-site@v1
+        if: github.event_name == 'release'
+        with:
+          auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          site: ${{ env.NETLIFY_SITE_ID }}
           dir: '_site'
           prod: true
           message: 'Deploy production ${{ github.ref }}'
 
+      ## PR actions
       - name: Deploy preview
         id: deploy_preview
         if: github.event_name == 'pull_request'
         uses: data-intuitive/netlify-deploy-site@v1
         with:
           auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          site: ${{ secrets.NETLIFY_SITE_ID }}
+          site: ${{ env.NETLIFY_SITE_ID }}
           dir: '_site'
           alias: "${{ env.BRANCH_NAME }}"
-          message: 'Deploy prooduction ${{ github.ref }}'
+          message: 'Deploy preview ${{ github.ref }}'
 
-      - uses: thollander/actions-comment-pull-request@v2
+      - name: Comment on PR (success)
+        uses: thollander/actions-comment-pull-request@v2
         if: github.event_name == 'pull_request'
         with:
           message: |
             [![Deploy: success](https://img.shields.io/badge/Deploy-success-success)](${{ steps.deploy_preview.outputs.deploy-url }})
           comment_tag: deploy_status
 
-      - uses: thollander/actions-comment-pull-request@v2
-        if: github.event_name == 'pull_request' && failure()
+      - name: Comment on PR (deploy failure)
+        uses: thollander/actions-comment-pull-request@v2
+        if: github.event_name == 'pull_request' && failure() && steps.deploy_preview.outcome == 'failure'
         with:
           message: |
-            [![Deploy: failure](https://img.shields.io/badge/Deploy-failure-critical)]${{ steps.deploy_preview.outputs.logs }})
+            [![Deploy: failure](https://img.shields.io/badge/Deploy-failure-critical)](${{ steps.deploy_preview.outputs.logs }})
           comment_tag: deploy_status
 
+      - name: Comment on PR (actions failure)
+        uses: thollander/actions-comment-pull-request@v2
+        if: github.event_name == 'pull_request' && failure() && steps.deploy_preview.outcome != 'failure'
+        with:
+          message: |
+            [![Deploy: failure](https://img.shields.io/badge/Deploy-failure-critical)](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}/jobs/${{github.job}})
+          comment_tag: deploy_status
+  

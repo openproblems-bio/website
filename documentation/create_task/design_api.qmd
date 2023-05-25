@@ -1,0 +1,177 @@
+---
+title: Design the API
+order: 20
+---
+
+{{< include ../../_include/_clone_repo.qmd >}}
+{{< include /_include/_evaluate_code.qmd >}}
+
+When creating a new OpenProblems task, it's essential to design the API for the input/outputs of components and their file formats. The API ensures consistency and interoperability across different components of your task, making it easier for others to contribute and build upon your work. Not only that, but creating API files partially automates the following steps:
+
+* [Selecting and subsetting dataset files](select_datasets.qmd)
+* Creating new  [methods](../create_component/add_a_method.qmd) and [metrics](../create_component/add_a_metric.qmd) using the `create_component` method.
+* [Automated testing](../create_component/run_tests.qmd) of components using the `src/common/comp_tests/run_and_check_adata.py` unit test.
+* Generate [reference documentation](../reference/) are partially automated by having defined these API files.
+
+{{< include /documentation/_figures/_project_structure_task_workflow.qmd >}}
+
+Notice how the Viash components and AnnData files are coloured differently in @fig-task-workflow? We'll need to create API files for each component and AnnData file separately. However, this is actually quite easy to do, as we will show in the following sections.
+
+## Component API
+
+Components are the most modular building blocks of the overall task.
+Each method, metric or data processing workflow should be defined as its own component, allowing them to be arranged easily in an end-to-end workflows.
+
+For different variants of the same task, for example multiple different methods or metrics, we can define a common API so that the further processing of the outputs can be kept consistent across methods or metrics.
+It is good practice to formalise the common metadata of all methods or metrics in a generic API specification.
+
+In general, an API follows the structure of a viash component and can contain any subset of the specifications that are available for viash components.
+It is up you to decide which directives you consider general-purpose for your specific components.
+An example could look like the following:
+
+```{.yaml filename="src/tasks/<task_id>/api/component/generic_component.yaml"}
+functionality:
+  namespace: <task_id>/<category>  # <1>
+  info:  # <2>
+    ...
+  arguments: # <3>
+    - name: "--input_train"
+     ...
+    - name: "--input_test"
+      ...
+    - name: "--output"
+      ...
+      direction: output
+  test_resources:  # <4>
+    ...
+```
+
+1. The `namespace` for the functionality. It follows the format `<task_id>/<category>`. The namespace is used to group similar components together and ensures that they can be easily found and used within the task.
+2. General `info` about the functionality. This information is used to categorize and describe the component in the overall task.
+3. The `arguments` that the component accepts. Each argument has a name (e.g., `--input_train`), and its specification can be defined dirctly or merged from a file API YAML file. 
+4. The resources and unit tests used for testing the component during development and evaluation.
+
+
+### Example
+
+Here is an example of a file specification API file.
+
+````{.yaml filename=src/tasks/label_projection/api/comp_method.yaml}
+```{bash}
+#| echo: false
+#| output: asis
+cat src/tasks/label_projection/api/comp_method.yaml
+```
+````
+
+### Applying the API to a specific component
+
+A component can inherit from an API specification, which follows the basic viash component.
+The directive for inheriting from an API specification is `__merge__` at the topmost level of the component API.
+That way, all the specifications under the `functionality` directive of the API definition will be merged into the `functionality` component configuration.
+These specifications do not need to be defined again in the component config, unless you want to override them for select tasks.
+Note, that the API file path must be relative to the location of the `config.vsh.yaml` file.
+
+```{.yaml filename="src/tasks/<task_id>/<category>/<component>/config.vsh.yaml"}
+__merge__: ../../api/component/generic_component.yaml  # <1>
+functionality:  # <2>
+  name: ...
+  description: ...
+  info:  # <3>
+    ...
+  resources:  # <4>
+    ...
+platforms:  # <5>
+  ...
+```
+
+1. The generic component type API specification file.
+2. Specify any component-specific directives that are not in the generic API or overwrite directives if needed.
+3. The metadata of the component.
+4. Resource files of the component (typically a Python or an R script).
+5. Platform specification info (typically which Docker image to use and which Python/R packages to install on top of that).
+
+
+## File format API
+
+Files make up the input and output of components.
+While they can be defined in a viash config file or a component API directly, defining them in a separate API file makes them reusable across different components.
+
+When specifying the API file formats, you should describe the contents, structure, and any additional metadata required for the files. This information will be useful for developers to understand the expected file formats and components quickly. Use YAML to define the file formats, as shown below:
+
+
+```{.yaml filename="src/tasks/<task_id>/api/file/anndata_specification_1.yaml"}
+type: file # <1>
+description: ... # <2>
+example: ...  # <3>
+info:
+  label: ...  # <4>
+  slots:  # <5>
+    layers:  # <6>
+      - type: integer
+        name: counts
+        description: Raw counts
+        required: true
+      - type: double
+        name: normalized
+        description: Normalised expression values
+      ...
+    obs:  # <7>
+      ...
+    var:  # <8>
+      ...
+    uns:  # <9>
+      ...
+    ...  # <10>
+```
+
+1. The type of Viash argument when used in components. This should always be set to `"file"`.
+2. Description of the file, useful for quickly understanding what type of data such a file represents. Used for generating reference documentation.
+3. An example of this file. This path will be used for unit tests to try to run components with.
+4. A short label used to represent the file in diagrams in the reference documentation.
+5. The mandatory and optional slots in the AnnData file.
+6. Specification of one or more AnnData layers (matrices).
+7. Specification for cell-level metadata (one or more columns).
+8. Specification for feature-level metadata (one or more columns).
+9. Specification for unstructured data.
+10. Other AnnData slots.
+
+### Example
+
+Here is an example of a file specification API file.
+
+````{.yaml filename="src/tasks/label_projection/api/anndata_train.yaml"}
+```{bash}
+#| echo: false
+#| output: asis
+cat src/tasks/label_projection/api/anndata_train.yaml
+```
+````
+
+### Applying the API to a specific component
+
+The File API YAML files can be used in a generic component API YAML or in the component configuration directly.
+Note, that the API file path must be relative to the location of the corresponding component API or `config.vsh.yaml` file.
+
+```{yaml}
+functionality:
+  namespace: ...
+  name: ...
+  description: ...
+  info:
+    ...
+  arguments:  # <1>
+    - name: --input
+      __merge__: ../../api/anndata/anndata_specification_1.yaml
+    - name: --output
+      direction: output
+      __merge__: ../../api/anndata/anndata_specification_2.yaml
+    ...  # <2>
+  resources:
+    ...
+platforms:
+  ...
+```
+
+1. Reference file APIs under the `arguments` directive
+2. Other non-file arguments if applicable for the component

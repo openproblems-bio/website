@@ -2,8 +2,9 @@
 title: "Denoising"
 subtitle: "Removing noise in sparse single-cell RNA-sequencing count data"
 engine: knitr
-image: featured.png
+image: thumbnail.svg
 page-layout: full
+css: ../task_template.css
 ---
 
 ```{r}
@@ -12,4 +13,4 @@ params <- list(data_dir = "results/denoising/data")
 params <- list(data_dir = "./data")
 ```
 
-{{< include ../_blocks/_task_template.qmd >}}
+{{< include ../_include/_task_template.qmd >}}

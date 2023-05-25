@@ -1,7 +1,7 @@
 [
     {
-        "method_name": "Cell2location, amortised (detection_alpha=20, reference hard-coded)",
-        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step.",
+        "method_name": "Cell2location (alpha=20, amortised, hard-coded)",
+        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step. Note that since batch information is unavailable in this task, here we use either a hard-coded reference, or a negative-binomial learned reference without batch labels. The parameter alpha refers to the detection efficiency prior.",
         "paper_name": "Cell2location maps fine-grained cell types in spatial transcriptomics",
         "paper_reference": "kleshchevnikov2022cell2location",
         "paper_year": 2022,
@@ -10,12 +10,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "cell2location_amortised_detection_alpha_20"
+        "commit_sha": "154ccb9fd99113f3d28d9c3f139194539a0290f9",
+        "method_id": "cell2location_amortised_detection_alpha_20",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/spatial_decomposition/methods/cell2location.py"
     },
     {
-        "method_name": "Cell2location (detection_alpha=1, reference hard-coded)",
-        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step.",
+        "method_name": "Cell2location (alpha=1, reference hard-coded)",
+        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step. Note that since batch information is unavailable in this task, here we use either a hard-coded reference, or a negative-binomial learned reference without batch labels. The parameter alpha refers to the detection efficiency prior.",
         "paper_name": "Cell2location maps fine-grained cell types in spatial transcriptomics",
         "paper_reference": "kleshchevnikov2022cell2location",
         "paper_year": 2022,
@@ -24,12 +25,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "cell2location_detection_alpha_1"
+        "commit_sha": "154ccb9fd99113f3d28d9c3f139194539a0290f9",
+        "method_id": "cell2location_detection_alpha_1",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/spatial_decomposition/methods/cell2location.py"
     },
     {
-        "method_name": "Cell2location (detection_alpha=20, reference hard-coded)",
-        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step.",
+        "method_name": "Cell2location (alpha=20, reference hard-coded)",
+        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step. Note that since batch information is unavailable in this task, here we use either a hard-coded reference, or a negative-binomial learned reference without batch labels. The parameter alpha refers to the detection efficiency prior.",
         "paper_name": "Cell2location maps fine-grained cell types in spatial transcriptomics",
         "paper_reference": "kleshchevnikov2022cell2location",
         "paper_year": 2022,
@@ -38,12 +40,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "cell2location_detection_alpha_20"
+        "commit_sha": "154ccb9fd99113f3d28d9c3f139194539a0290f9",
+        "method_id": "cell2location_detection_alpha_20",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/spatial_decomposition/methods/cell2location.py"
     },
     {
-        "method_name": "Cell2location (detection_alpha=200, reference hard-coded)",
-        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step.",
+        "method_name": "Cell2location (alpha=200, reference hard-coded)",
+        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step. Note that since batch information is unavailable in this task, here we use either a hard-coded reference, or a negative-binomial learned reference without batch labels. The parameter alpha refers to the detection efficiency prior.",
         "paper_name": "Cell2location maps fine-grained cell types in spatial transcriptomics",
         "paper_reference": "kleshchevnikov2022cell2location",
         "paper_year": 2022,
@@ -52,12 +55,13 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "cell2location_detection_alpha_200"
+        "commit_sha": "154ccb9fd99113f3d28d9c3f139194539a0290f9",
+        "method_id": "cell2location_detection_alpha_200",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/spatial_decomposition/methods/cell2location.py"
     },
     {
-        "method_name": "Cell2location (detection_alpha=20, reference NB without batch info)",
-        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step.",
+        "method_name": "Cell2location (alpha=20, NB reference)",
+        "method_summary": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step. Note that since batch information is unavailable in this task, here we use either a hard-coded reference, or a negative-binomial learned reference without batch labels. The parameter alpha refers to the detection efficiency prior.",
         "paper_name": "Cell2location maps fine-grained cell types in spatial transcriptomics",
         "paper_reference": "kleshchevnikov2022cell2location",
         "paper_year": 2022,
@@ -66,8 +70,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "cell2location_detection_alpha_20_nb"
+        "commit_sha": "154ccb9fd99113f3d28d9c3f139194539a0290f9",
+        "method_id": "cell2location_detection_alpha_20_nb",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/spatial_decomposition/methods/cell2location.py"
     },
     {
         "method_name": "DestVI",
@@ -80,8 +85,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "destvi"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "destvi",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/spatial_decomposition/methods/destvi.py"
     },
     {
         "method_name": "Non-Negative Matrix Factorization (NMF)",
@@ -94,8 +100,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "nmf"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "nmf",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/spatial_decomposition/methods/vanillanmf.py"
     },
     {
         "method_name": "NMF-reg",
@@ -108,8 +115,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "nmfreg"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "nmfreg",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/spatial_decomposition/methods/nmfreg.py"
     },
     {
         "method_name": "Non-Negative Least Squares",
@@ -122,8 +130,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "nnls_scipy"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "nnls_scipy",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/spatial_decomposition/methods/nnls.py"
     },
     {
         "method_name": "Random Proportions",
@@ -136,8 +145,9 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "random_proportions"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "random_proportions",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/spatial_decomposition/methods/baseline.py"
     },
     {
         "method_name": "RCTD",
@@ -150,8 +160,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "rctd"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "rctd",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/spatial_decomposition/methods/rctd.py"
     },
     {
         "method_name": "SeuratV3",
@@ -164,8 +175,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "seuratv3"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "seuratv3",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/spatial_decomposition/methods/seuratv3.py"
     },
     {
         "method_name": "Stereoscope",
@@ -178,8 +190,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "stereoscope"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "stereoscope",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/spatial_decomposition/methods/stereoscope.py"
     },
     {
         "method_name": "Tangram",
@@ -192,8 +205,9 @@
         "is_baseline": false,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "tangram"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "tangram",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/spatial_decomposition/methods/tangram.py"
     },
     {
         "method_name": "True Proportions",
@@ -206,7 +220,8 @@
         "is_baseline": true,
         "code_version": null,
         "task_id": "spatial_decomposition",
-        "commit_sha": "3655ad406b960edce01b4981bed2580258249a28",
-        "method_id": "true_proportions"
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "method_id": "true_proportions",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/spatial_decomposition/methods/baseline.py"
     }
 ]

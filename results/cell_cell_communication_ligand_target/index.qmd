@@ -2,8 +2,9 @@
 title: "Cell-Cell Communication Inference (Ligand-Target)"
 subtitle: "Detect interactions between ligands and target cell types"
 engine: knitr
-image: featured.png
+image: thumbnail.svg
 page-layout: full
+css: ../task_template.css
 ---
 
 ```{r}
@@ -12,4 +13,4 @@ params <- list(data_dir = "results/cell_cell_communication_ligand_target/data")
 params <- list(data_dir = "./data")
 ```
 
-{{< include ../_blocks/_task_template.qmd >}}
+{{< include ../_include/_task_template.qmd >}}

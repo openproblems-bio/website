@@ -1,19 +1,22 @@
 project:
   type: website
+  resources: 
+    - "_redirects"
   preview:
     port: 4200
 
 website:
-  title: "OpenProblems"
-  description: Open Problems in Single Cell Analysis
+  title: "Open Problems in Single Cell Analysis"
+  description: "Aggregating and Benchmarking Open Problems in Single Cell Analysis"
   favicon: images/icon.png
-  site-url: https://openproblems-experimental.netlify.app
-  repo-url: https://github.com/openproblems-bio/website-experimental
+  site-url: https://openproblems.bio
+  repo-url: https://github.com/openproblems-bio/website
   repo-actions: [edit, issue] 
+  google-analytics: 'UA-178400615-1'
 
   page-footer:
-    left: "&copy; Open Problems 2023 · View on [GitHub](https://github.com/openproblems-bio/openproblems). Made with [Quarto♥](https://quarto.org)."
-  
+    left: "&copy; Open Problems 2023 with all data licensed under [CC-BY](https://creativecommons.org/licenses/by/2.0/). View on [GitHub](https://github.com/openproblems-bio/openproblems). Made with [Quarto♥](https://quarto.org)."
+    
   navbar:
     logo: images/logo.png
     title: false
@@ -22,24 +25,19 @@ website:
         text: About
       - text: Benchmarks
         href: results/index.qmd
-      - text: Competitions
-        menu: 
-          - text: NeurIPS 2022
-            href: competitions/neurips_2022
-          - text: NeurIPS 2021
-            href: competitions/neurips_2021
-          - text: NeurIPS 2021 docs
-            href: competitions/neurips_2021_docs
+      - href: events/index.qmd
+        text: Events
       - href: team/index.qmd
         text: Team
       - text: Documentation
         menu:
           - text: OpenProblems v1
             href: https://github.com/openproblems-bio/openproblems/blob/main/CONTRIBUTING.md
+            target: _blank
           - text: OpenProblems v2
             href: documentation/index.qmd
           - text: Bibliography
-            href: bibliography.qmd
+            href: bibliography/index.qmd
 
   sidebar:
     - id: documentation
@@ -49,16 +47,17 @@ website:
 
     - id: neurips2021_docs
       title: NeurIPS2021
-      contents: competitions/neurips_2021_docs
+      contents: events/2021-09_neurips/documentation
 format:
   html:
-    # theme:
-    #   light: [ simplex, theme.scss ]
-    #   dark: [ darkly, theme.scss ]
-    theme: [ simplex, theme.scss ]
+    theme:
+      light: [ simplex, theme.scss, theme-light.scss]
+      dark: [ darkly, theme.scss, theme-dark.scss ]
     css: styles.css
     toc: true
     link-external-newwindow: true
+    # link-external-icon: true
+    link-external-filter: '^(?:http:|https:)\/\/(openproblems\.bio|[^.]*--openproblems\.netlify\.app)'
     smooth-scroll: true
 
 execute:
