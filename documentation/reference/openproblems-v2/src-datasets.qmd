@@ -84,7 +84,7 @@ normalized_dataset <- comp_normalization[comp_normalization$arg_name == "output"
 
 ```{r, include=FALSE}
 anndata_normalized <- read_slots_spec("src/datasets/api/anndata_normalized.yaml")
-anndata_normalized_str <- format_slots(api_raw)
+anndata_normalized_str <- format_slots(anndata_normalized)
 ```
 
 Example format:
@@ -107,7 +107,7 @@ A dataset processed by the common dataset processing pipeline.
 
 ```{r, include=FALSE}
 api_dataset <- read_slots_spec("src/datasets/api/anndata_dataset.yaml")
-api_dataset_str <- format_slots(api_raw)
+api_dataset_str <- format_slots(api_dataset)
 ```
 
 Example format:
