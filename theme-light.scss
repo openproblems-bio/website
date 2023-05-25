@@ -15,3 +15,21 @@
     --shadow-color: #5a6268;
     --card-bg-color: #ffffff;
 }
+
+/* Fix mermaid background rendering */
+/* See https://github.com/openproblems-bio/website/issues/239 */
+
+/* edges */
+$mermaid-edge-color: #333333;
+/* labels */
+$mermaid-label-fg-color: #333;
+/* groups */
+$mermaid-fg-color--lightest: #eee;
+$mermaid-fg-color--lighter: #ccc;
+/* nodes */
+$mermaid-node-bg-color: #ddd;
+$mermaid-node-fg-color: #999;
+
+.component circle, .component ellipse, .component path, .component polygon, .component rect {
+  fill: #decbe4 !important;
+}

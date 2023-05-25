@@ -8,7 +8,9 @@
 
 * Add prefix "PR " to PR references in changelog (PR #250).
 
-* Replace "baseline" with "control" in v2 documentation pages (PR #252)
+* Replace "baseline" with "control" in v2 documentation pages (PR #252).
+
+* Add Dark/Light mode theming for Mermaid diagrams.
 
 ## BUG FIXES
 
