@@ -10,7 +10,7 @@
 
 * Replace "baseline" with "control" in v2 documentation pages (PR #252)
 
-* Use `api` to add more information to the datasets reference documentation.
+* Use `api` to add more information to the datasets reference documentation (PR #255).
 
 ## BUG FIXES
 
