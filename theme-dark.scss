@@ -1,11 +1,11 @@
 /*-- scss:defaults --*/
 $font-family-sans-serif: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$body-bg: #1d2527;
+$body-bg: #1e1e20;
 
 :root {
   --invert-colors: 1;
   --bs-secondary-text-color: #bcc5cd;
-  --bs-code-color: #bf6de8;
+  --bs-code-color: #ffb0b4;
   --bs-button-hover: #444;
   --bs-invert-button-hover: #cfcfcf;
 }
@@ -19,6 +19,21 @@ $body-bg: #1d2527;
     --card-bg-color: #323839;
 }
 
-.node circle, .node ellipse, .node path, .node polygon, .node rect {
-  --mermaid-node-bg-color: #222 !important;
+
+/* Fix mermaid background rendering */
+/* See https://github.com/openproblems-bio/website/issues/239 */
+
+/* edges */
+$mermaid-edge-color: lightgrey;
+/* labels */
+$mermaid-label-fg-color: #eee;
+/* groups */
+$mermaid-fg-color--lightest: hsl(180, 1.5873015873%, 28.3529411765%);
+$mermaid-fg-color--lighter: rgba(255, 255, 255, 0.25);
+/* nodes */
+$mermaid-node-bg-color: #1f2020;
+$mermaid-node-fg-color: #d4d4d4;
+
+.component circle, .component ellipse, .component path, .component polygon, .component rect {
+  fill: #451653 !important;
 }

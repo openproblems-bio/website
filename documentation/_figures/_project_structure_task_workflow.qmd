@@ -2,8 +2,6 @@
 %%| fig-cap: "Overview of a typical benchmarking workflow in an OpenProblems task. *Legend: Grey rectangles are AnnData .h5ad files, purple rhomboids are Viash components.*"
 %%| label: fig-task-workflow
 graph LR
-  classDef component fill:#decbe4,stroke:#333
-  classDef anndata fill:#d9d9d9,stroke:#333
   common_dataset[Common<br/>dataset]:::anndata
   subgraph task_specific[Task-specific workflow]
     dataset_processor[/Dataset<br/>processor/]:::component
