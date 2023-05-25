@@ -1,0 +1,39 @@
+```{r, include=FALSE}
+read_comp_spec <- function(comp_api_yaml) {
+  spec <- yaml::read_yaml(comp_api_yaml)
+
+  map_df(spec$functionality$arguments, function(arg) {
+    arg_spec <- 
+      if ("__merge__" %in% names(arg)) {
+        arg_merge_path <- paste0(dirname(comp_api_yaml), "/", arg$`__merge__`)
+        yaml::read_yaml(arg_merge_path)
+      } else {
+        list()
+      }
+    
+    arg_combined <- c(arg_spec, arg)
+
+    tibble(
+      comp_name = basename(comp_api_yaml) %>% gsub("\\.yaml", "", .) %>% gsub("^comp_", "", .),
+      arg_name = str_replace_all(arg_combined$name, "^-*", ""),
+      type = arg_combined$type,
+      direction = arg_combined$direction %||% "input",
+      file_name = ifelse("__merge__" %in% names(arg), basename(arg$`__merge__`) %>% gsub("\\.yaml", "", .), NA_character_),
+      description = arg_combined$description,
+      label = arg_combined$info$label
+    )
+  })
+}
+
+format_comp_spec_as_tibble <- function(comp_spec) {
+  comp_spec %>%
+    transmute(
+      Name = paste0("`--", arg_name, "`"),
+      # `File format` = paste0("[", str_to_title(file_label), "](#", file_label, ")"),
+      Type = paste0("`", type, "`"),
+      Direction = direction,
+      Description = description
+    ) %>%
+    knitr::kable()
+}
+```

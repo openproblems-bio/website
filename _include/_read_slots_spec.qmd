@@ -1,0 +1,45 @@
+```{r, include=FALSE}
+read_slots_spec <- function(anndata_api_yaml) {
+  spec <- yaml::read_yaml(anndata_api_yaml)
+
+  map2_df(
+    names(spec$info$slots), 
+    spec$info$slots, 
+    function(group_name, slot) {
+      df <- map_df(slot, as.data.frame)
+      df$struct <- group_name
+      df$file_name <- basename(anndata_api_yaml) %>% gsub("\\.yaml", "", .)
+      df$multiple <- df$multiple %||% FALSE %|% FALSE
+      as_tibble(df)
+    }
+  )
+}
+
+format_slots <- function(slots) {
+  example <- slots %>%
+    group_by(struct) %>%
+    summarise(
+      str = paste0(unique(struct), ": ", paste0("'", name, "'", collapse = ", "))
+    ) %>%
+    arrange(match(struct, c("obs", "var", "uns", "obsm", "obsp", "varm", "varp", "layers")))
+
+  c("    AnnData object", paste0("     ", example$str))
+}
+
+format_slots_as_kable <- function(slots) {
+  api_raw %>%
+    transmute(
+      Slot = paste0("`", struct, "[\"", name, "\"]`"),
+      # Struct = struct,
+      # Name = name,
+      Type = paste0("`", type, "`"),
+      # Required = ifelse(required, "yes", ""),
+      Description = paste0(
+        ifelse(required, "", "_(Optional)_ "),
+        gsub("\\. *$", "", description), "."
+        # "Type: ", type, "."
+      )
+    ) %>%
+    knitr::kable()
+}
+```

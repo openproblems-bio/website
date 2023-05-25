@@ -1,20 +1,143 @@
 ---
 title: src/datasets/
+engine: knitr
 ---
+
+```{r setup-packages, include=FALSE}
+library(tidyverse)
+library(rlang)
+
+strip_margin <- function(text, symbol = "\\|") {
+  str_replace_all(text, paste0("(\n?)[ \t]*", symbol), "\\1") 
+}
+```
+
+{{< include /_include/_clone_repo.qmd >}}
+{{< include /_include/_evaluate_code.qmd >}}
+{{< include /_include/_read_slots_spec.qmd >}}
+{{< include /_include/_read_comp_spec.qmd >}}
 
 The dataset processing pipeline uses dataset loaders to create raw dataset files (@fig-dataset-workflow). The raw dataset files are then processed to generate common dataset files. Common dataset files are used in one or more tasks.
 
 {{< include /documentation/_figures/_project_structure_dataset_workflow.qmd >}}
 
-- **Dataset loader** (`src/datasets/loaders`): This folder contains components to load and format datasets for various sources.
+## Component type: Dataset loader
 
-- **Dataset normalization** (`src/datasets/normalization`): This folder contains various dataset normalization methods.
+Path: `src/datasets/loaders`
 
-- **Dataset processors** (`src/datasets/processors`): This folder contains components for processing datasets, such as computing a KNN, PCA, HVG or subsetting.
+```{r, include=FALSE}
+comp_loader <- read_comp_spec("src/datasets/api/comp_dataset_loader.yaml")
+```
 
-- **Dataset file and component formats** (`src/datasets/api`): This folder contains specifications for dataset file formats and component interfaces.
+Arguments:
+ 
+```{r, echo=FALSE}
+format_comp_spec_as_tibble(comp_loader)
+```
 
-- **Resource generation scripts** (`src/common/resources_scripts`): This folder contains scripts for generating the datasets using the dataset loaders, normalization methods and processors.
+```{r, include=FALSE}
+raw_dataset <- comp_loader[comp_loader$arg_name == "output", , drop = FALSE]
+```
 
-- **Test resource generation scripts** (`src/common/resources_test_scripts`): This folder contains scripts for generating test resources.
+## File format: `r raw_dataset$label`
+
+`r raw_dataset$description`
+
+```{r, include=FALSE}
+api_raw <- read_slots_spec("src/datasets/api/anndata_raw.yaml")
+api_raw_str <- format_slots(api_raw)
+```
+
+Example format:
+
+```{r, echo=FALSE, output="asis"}
+cat(paste0(api_raw_str, "\n"))
+```
+ 
+```{r, echo=FALSE}
+format_slots_as_kable(api_raw)
+```
+
+## Component type: Dataset normalization
+
+Path: `src/datasets/normalization`
+
+This folder contains various dataset normalization methods.
+
+```{r, include=FALSE}
+comp_normalization <- read_comp_spec("src/datasets/api/comp_normalization.yaml")
+```
+
+Arguments:
+ 
+```{r, echo=FALSE}
+format_comp_spec_as_tibble(comp_normalization)
+```
+
+```{r, include=FALSE}
+normalized_dataset <- comp_normalization[comp_normalization$arg_name == "output", , drop = FALSE]
+```
+
+## File format: `r normalized_dataset$label`
+
+`r normalized_dataset$description`
+
+```{r, include=FALSE}
+anndata_normalized <- read_slots_spec("src/datasets/api/anndata_normalized.yaml")
+anndata_normalized_str <- format_slots(api_raw)
+```
+
+Example format:
+
+```{r, echo=FALSE, output="asis"}
+cat(paste0(anndata_normalized_str, "\n"))
+```
+ 
+```{r, echo=FALSE}
+format_slots_as_kable(anndata_normalized)
+```
+
+## Component type: Dataset processors
+
+Path: `src/datasets/processors`: This folder contains components for processing datasets, such as computing a KNN, PCA, HVG or subsetting.
+
+## File format: Common dataset
+
+A dataset processed by the common dataset processing pipeline.
+
+```{r, include=FALSE}
+api_dataset <- read_slots_spec("src/datasets/api/anndata_dataset.yaml")
+api_dataset_str <- format_slots(api_raw)
+```
+
+Example format:
+
+```{r, echo=FALSE, output="asis"}
+cat(paste0(api_dataset_str, "\n"))
+```
+ 
+```{r, echo=FALSE}
+format_slots_as_kable(api_dataset)
+```
+
+
+## Dataset file and component formats
+
+Path: `src/datasets/api`
+
+This folder contains specifications for dataset file formats and component interfaces. This documentation page was generated mostly by reading in these files.
+
+## Resource generation scripts
+
+Path: `src/common/resources_scripts`
+
+This folder contains scripts for generating the datasets using the dataset loaders, normalization methods and processors.
+
+## Test resource generation scripts
+
+Path: `src/common/resources_test_scripts`
+
+This folder contains scripts for generating test resources.
+
+
 

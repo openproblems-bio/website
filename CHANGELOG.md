@@ -10,6 +10,8 @@
 
 * Replace "baseline" with "control" in v2 documentation pages (PR #252)
 
+* Use `api` to add more information to the datasets reference documentation.
+
 ## BUG FIXES
 
 * All tasks were moved from `src/<task_id>` to the `src/tasks/<task_id>` subdirectory (PR #251).
