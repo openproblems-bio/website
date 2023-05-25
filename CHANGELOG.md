@@ -10,7 +10,7 @@
 
 * Replace "baseline" with "control" in v2 documentation pages (PR #252).
 
-* Add Dark/Light mode theming for Mermaid diagrams.
+* Add Dark/Light mode theming for Mermaid diagrams (PR #254).
 
 ## BUG FIXES
 
