@@ -32,7 +32,7 @@ This folder contains method components. Each method component outputs a predicti
 
 Path: `src/tasks/<task_id>/control_methods`
 
-This folder contains control (or baseline) components for the task. These components have the same interface as the regular methods but also receive the solution object as input.  It serves as a starting point to test the relative accuracy of new methods in the task, and also as a quality control for the metrics defined in the task. A control method can either be a positive control or a negative control, which set a maximum and minimum threshold for performance, so any new method should perform better than the negative control methods and worse than the positive control method.
+This folder contains control components for the task. These components have the same interface as the regular methods but also receive the solution object as input.  It serves as a starting point to test the relative accuracy of new methods in the task, and also as a quality control for the metrics defined in the task. A control method can either be a positive control or a negative control, which set a maximum and minimum threshold for performance, so any new method should perform better than the negative control methods and worse than the positive control method.
 
 A *positive control* is a method where the expected results are known, thus resulting in the best possible value for any metric outcome measure.
 
