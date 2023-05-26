@@ -12,6 +12,8 @@
 
 * Add Dark/Light mode theming for Mermaid diagrams (PR #254).
 
+* Use `api` to add more information to the datasets reference documentation (PR #255).
+
 ## BUG FIXES
 
 * All tasks were moved from `src/<task_id>` to the `src/tasks/<task_id>` subdirectory (PR #251).

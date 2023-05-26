@@ -7,6 +7,7 @@ engine: knitr
 {{< include ../../_include/_clone_repo.qmd >}}
 {{< include /_include/_evaluate_code.qmd >}}
 {{< include /_include/_synchonize_tabs.qmd >}}
+{{< include /_include/_read_api.qmd >}}
 
 Datasets are required for any benchmarking workflow and need to be preprocessed in a standardized way.
 The `datasets` task provides a framework for loading and preprocessing datasets.
@@ -320,54 +321,22 @@ var <- data.frame(
 ## Format of a raw dataset object
 
 ```{r, include=FALSE}
-yaml_file <- "src/datasets/api/anndata_raw.yaml"
-spec_anndata_raw <- yaml::read_yaml(yaml_file)
-arg <- spec_anndata_raw
-
-slots <- map2_df(
-  names(arg$info$slots), 
-  arg$info$slots, 
-  function(group_name, slot) {
-    df <- map_df(slot, as.data.frame)
-    df$struct <- group_name
-    df$file_name <- basename(yaml_file) %>% gsub("\\.yaml", "", .)
-    df$multiple <- df$multiple %||% FALSE %|% FALSE
-    as_tibble(df)
-  }
-)
-
-example <- slots %>%
-  group_by(struct) %>%
-  summarise(
-    str = paste0(unique(struct), ": ", paste0("'", name, "'", collapse = ", "))
-  ) %>%
-  arrange(match(struct, c("obs", "var", "uns", "obsm", "obsp", "varm", "varp", "layers")))
-
-example_str <- c("    AnnData object", paste0("     ", example$str))
+api_raw <- read_anndata_spec("src/datasets/api/anndata_raw.yaml")
+api_raw_str <- format_slots(api_raw$slots)
 ```
 
 Ideally, the AnnData output object should at least contain the following slots:
 
 ```{r, echo=FALSE, output="asis"}
-cat(paste0(example_str, "\n"))
+cat(paste0(api_raw_str, "\n"))
 ```
 
 The full file format spec of a raw dataset AnnData is shown in the table below.
-
-:::{.column-body-outset}
+ 
 ```{r, echo=FALSE}
-slots %>%
-  transmute(
-    Struct = struct,
-    Name = name,
-    Type = type,
-    Required = ifelse(required, "yes", ""),
-    Description = description
-  ) %>%
-  knitr::kable()
+format_slots_as_kable(api_raw$slots)
 ```
-:::
 
 ## Next steps
 
-If your component works, please [create a pull request](../create_component/create_pull_request.qmd). After your dataset loader has been merged into the main branch, it will be used to generate a common dataset. After the common datasets have been generated, it will be picked up by the task-specific dataset processors if it has all of the slots required by the task.
+If your component works, please [create a pull request](../create_component/create_pull_request.qmd). After your dataset loader has been merged into the main branch, it will be used to [generate a common dataset](/documentation/reference/openproblems-v2/src-datasets.qmd). After the common datasets have been generated, it will be picked up by the task-specific dataset processors if it has all of the slots required by the task.

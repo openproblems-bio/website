@@ -1,0 +1,220 @@
+```{r include=FALSE}
+library(tidyverse)
+library(rlang)
+```
+
+```{r, include=FALSE}
+# interpreted from https://github.com/openproblems-bio/openproblems-v2/blob/b2b4da9fe418587813e8066fb5691dbe07838525/src/label_projection/README.qmd
+strip_margin <- function(text, symbol = "\\|") {
+  str_replace_all(text, paste0("(\n?)[ \t]*", symbol), "\\1") 
+}
+
+read_and_merge_yaml <- function(path) {
+  data <- suppressWarnings(yaml::read_yaml(path))
+  read_and_merge_process_merge(data, path)
+}
+read_and_merge_is_named_list <- function(obj) {
+  is.null(obj) || (is.list(obj) && (length(obj) == 0 || !is.null(names(obj))))
+}
+read_and_merge_process_merge <- function(data, path) {
+  if (read_and_merge_is_named_list(data)) {
+    # check whether children have `__merge__` entries
+    processed_data <- lapply(data, function(dat) {
+      read_and_merge_process_merge(dat, path)
+    })
+    names(processed_data) <- names(data)
+
+    # if current element has __merge__, read list2 yaml and combine with data
+    new_data <- 
+      if ("__merge__" %in% names(processed_data)) {
+        new_data_path <- paste0(dirname(path), "/", processed_data$`__merge__`)
+        read_and_merge_yaml(new_data_path)
+      } else {
+        list()
+      }
+    
+    read_and_merge_deep_merge(new_data, processed_data)
+  } else if (is.list(data)) {
+    lapply(data, function(dat) {
+      read_and_merge_process_merge(dat, path)
+    })
+  } else {
+    data
+  }
+}
+read_and_merge_deep_merge <- function(list1, list2) {
+  if (read_and_merge_is_named_list(list1) && read_and_merge_is_named_list(list2)) {
+    # if list1 and list2 are objects, recursively merge
+    keys <- unique(c(names(list1), names(list2)))
+    out <- lapply(keys, function(key) {
+      if (key %in% names(list1)) {
+        if (key %in% names(list2)) {
+          read_and_merge_deep_merge(list1[[key]], list2[[key]])
+        } else {
+          list1[[key]]
+        }
+      } else {
+        list2[[key]]
+      }
+    })
+    names(out) <- keys
+    out
+  } else if (is.list(list1) && is.list(list2)) {
+    # if list1 and list2 are both lists, append
+    c(list1, list2)
+  } else {
+    # else override list1 with list2
+    list2
+  }
+}
+anndata_struct_names <- c("obs", "var", "obsm", "obsp", "varm", "varp", "layers", "uns")
+
+read_anndata_spec <- function(path) {
+  spec <- read_and_merge_yaml(path)
+  list(
+    info = read_anndata_info(spec, path),
+    slots = read_anndata_slots(spec, path)
+  )
+}
+read_anndata_info <- function(spec, path) {
+  # TEMP: make it readable
+  spec$info$slots <- NULL
+  
+  df <- list_as_tibble(spec)
+  if (!is.null(spec$info)) {
+    df <- bind_cols(df, list_as_tibble(spec$info))
+  }
+  df$file_name <- basename(path) %>% gsub("\\.yaml", "", .)
+  as_tibble(df)
+}
+read_anndata_slots <- function(spec, path) {
+  map_df(
+    anndata_struct_names,
+    function(struct_name, slot) {
+      slot <- spec$info$slots[[struct_name]]
+      if (is.null(slot)) return(NULL)
+      df <- map_df(slot, as.data.frame)
+      df$struct <- struct_name
+      df$file_name <- basename(path) %>% gsub("\\.yaml", "", .)
+      df$multiple <- df$multiple %||% FALSE %|% FALSE
+      as_tibble(df)
+    }
+  )
+}
+
+format_slots <- function(slots) {
+  example <- slots %>%
+    group_by(struct) %>%
+    summarise(
+      str = paste0(unique(struct), ": ", paste0("'", name, "'", collapse = ", "))
+    ) %>%
+    arrange(match(struct, anndata_struct_names))
+
+  c("    AnnData object", paste0("     ", example$str))
+}
+
+format_slots_as_kable <- function(slots) {
+  slots %>%
+    transmute(
+      Slot = paste0("`", struct, "[\"", name, "\"]`"),
+      # Struct = struct,
+      # Name = name,
+      Type = paste0("`", type, "`"),
+      # Required = ifelse(required, "yes", ""),
+      Description = paste0(
+        ifelse(required %|% FALSE, "", "_(Optional)_ "),
+        gsub("\\. *$", "", description), "."
+        # "Type: ", type, "."
+      )
+    ) %>%
+    knitr::kable()
+}
+list_as_tibble <- function(li) {
+  as.data.frame(li[sapply(li, is.atomic)], check.names = FALSE)
+}
+read_comp_spec <- function(path) {
+  spec <- read_and_merge_yaml(path)
+  list(
+    info = read_comp_info(spec, path),
+    args = read_comp_args(spec, path)
+  )
+}
+read_comp_info <- function(spec, path) {
+  # TEMP: make it readable
+  spec$functionality$arguments <- NULL
+  spec$functionality$argument_groups <- NULL
+  
+  df <- list_as_tibble(spec$functionality)
+  if (!is.null(spec$functionality$info)) {
+    df <- bind_cols(df, list_as_tibble(spec$functionality$info))
+  }
+  df$file_name <- basename(path) %>% gsub("\\.yaml", "", .)
+  as_tibble(df)
+}
+read_comp_args <- function(spec, path) {
+  arguments <- spec$functionality$arguments
+  for (arg_group in spec$functionality$argument_groups) {
+    arguments <- c(arguments, arg_group$arguments)
+  }
+  map_df(arguments, function(arg) {
+    df <- tibble(
+      comp_name = basename(path) %>% gsub("\\.yaml", "", .),
+      arg_name = str_replace_all(arg$name, "^-*", ""),
+      type = arg$type,
+      direction = arg$direction %||% "input",
+      file_name = ifelse("__merge__" %in% names(arg), basename(arg$`__merge__`) %>% gsub("\\.yaml", "", .), NA_character_),
+      description = arg$description,
+      label = arg$info$label
+    )
+  })
+}
+
+format_comp_args_as_tibble <- function(comp_spec) {
+  comp_spec %>%
+    transmute(
+      Name = paste0("`--", arg_name, "`"),
+      # `File format` = paste0("[", str_to_title(file_label), "](#", file_label, ")"),
+      Type = paste0("`", type, "`"),
+      Direction = direction,
+      Description = description
+    ) %>%
+    knitr::kable()
+}
+
+
+# TODO: move label and src_path info to the spec itself
+render_component <- function(path, label, src_path) {
+  comp_spec <- read_comp_spec(path)
+
+  cat(strip_margin(glue::glue("
+    §## Component type: {label}
+    §
+    §Path: [`{src_path}`](https://github.com/openproblems-bio/openproblems-v2/tree/main/{src_path})
+    §
+    §Arguments:
+    §
+    §{paste(format_comp_args_as_tibble(comp_spec$args), collapse = '\n')}
+    §
+    §"), symbol = "§"))
+}
+
+
+render_file <- function(path) {
+  spec <- read_anndata_spec(path)
+
+  cat(strip_margin(glue::glue("
+    §## File format: {spec$info$label}
+    §
+    §{spec$info$description}
+    §
+    §Example format:
+    §
+    §{paste(format_slots(spec$slots), collapse = '\n')}
+    §
+    §Slots:
+    §
+    §{paste(format_slots_as_kable(spec$slots), collapse = '\n')}
+    §
+    §"), symbol = "§"))
+}
+```
