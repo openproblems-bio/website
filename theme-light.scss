@@ -2,7 +2,7 @@
 :root {
   --invert-colors: 0;
   --bs-secondary-text-color: #6c757d;
-  --bs-code-color: #9753b8;
+  --bs-code-color: #ff414b;
   --bs-button-hover: #f0f0f0;
   --bs-invert-button-hover: #f0f0f0;
 }
@@ -14,4 +14,22 @@
 .card-shadow {
     --shadow-color: #5a6268;
     --card-bg-color: #ffffff;
+}
+
+/* Fix mermaid background rendering */
+/* See https://github.com/openproblems-bio/website/issues/239 */
+
+/* edges */
+$mermaid-edge-color: #333333;
+/* labels */
+$mermaid-label-fg-color: #333;
+/* groups */
+$mermaid-fg-color--lightest: #eee;
+$mermaid-fg-color--lighter: #ccc;
+/* nodes */
+$mermaid-node-bg-color: #ddd;
+$mermaid-node-fg-color: #999;
+
+.component circle, .component ellipse, .component path, .component polygon, .component rect {
+  fill: #decbe4 !important;
 }
