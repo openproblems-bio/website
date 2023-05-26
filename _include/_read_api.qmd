@@ -1,4 +1,14 @@
+```{r include=FALSE}
+library(tidyverse)
+library(rlang)
+```
+
 ```{r, include=FALSE}
+# interpreted from https://github.com/openproblems-bio/openproblems-v2/blob/b2b4da9fe418587813e8066fb5691dbe07838525/src/label_projection/README.qmd
+strip_margin <- function(text, symbol = "\\|") {
+  str_replace_all(text, paste0("(\n?)[ \t]*", symbol), "\\1") 
+}
+
 read_and_merge_yaml <- function(path) {
   data <- suppressWarnings(yaml::read_yaml(path))
   read_and_merge_process_merge(data, path)
@@ -169,5 +179,42 @@ format_comp_args_as_tibble <- function(comp_spec) {
       Description = description
     ) %>%
     knitr::kable()
+}
+
+
+# TODO: move label and src_path info to the spec itself
+render_component <- function(path, label, src_path) {
+  comp_spec <- read_comp_spec(path)
+
+  cat(strip_margin(glue::glue("
+    §## Component type: {label}
+    §
+    §Path: [`{src_path}`](https://github.com/openproblems-bio/openproblems-v2/tree/main/{src_path})
+    §
+    §Arguments:
+    §
+    §{paste(format_comp_args_as_tibble(comp_spec$args), collapse = '\n')}
+    §
+    §"), symbol = "§"))
+}
+
+
+render_file <- function(path) {
+  spec <- read_anndata_spec(path)
+
+  cat(strip_margin(glue::glue("
+    §## File format: {spec$info$label}
+    §
+    §{spec$info$description}
+    §
+    §Example format:
+    §
+    §{paste(format_slots(spec$slots), collapse = '\n')}
+    §
+    §Slots:
+    §
+    §{paste(format_slots_as_kable(spec$slots), collapse = '\n')}
+    §
+    §"), symbol = "§"))
 }
 ```
