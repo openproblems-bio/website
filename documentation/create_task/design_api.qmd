@@ -7,172 +7,243 @@ engine: knitr
 {{< include ../../_include/_clone_repo.qmd >}}
 {{< include /_include/_evaluate_code.qmd >}}
 
-When creating a new OpenProblems task, it's essential to design the API for the input/outputs of components and their file formats. The API ensures consistency and interoperability across different components of your task, making it easier for others to contribute and build upon your work. Not only that, but creating API files partially automates the following steps:
+When creating a new OpenProblems task, it's essential to design the API for the input/outputs of components and their file formats. Concretely, you need to define:
 
-* [Selecting and subsetting dataset files](select_datasets.qmd)
-* Creating new  [methods](../create_component/add_a_method.qmd) and [metrics](../create_component/add_a_metric.qmd) using the `create_component` method.
-* [Automated testing](../create_component/run_tests.qmd) of components using the `src/common/comp_tests/run_and_check_adata.py` unit test.
-* Generate [reference documentation](../reference/) are partially automated by having defined these API files.
+* Which **types of components** your task consists of (e.g. a dataset processor, methods, control methods, and metrics).
+* Which **arguments** each of these component types has (e.g. one or more input files, one or more output files).
+* The **file format** of each of these files (e.g. an AnnData object with layers and one or more obs, obsm or obsp slots).
+
+When put together, a typical task API looks somewhat like this:
 
 {{< include /documentation/_figures/_project_structure_task_workflow.qmd >}}
 
-Notice how the Viash components and AnnData files are coloured differently in @fig-task-workflow? We'll need to create API files for each component and AnnData file separately. However, this is actually quite easy to do, as we will show in the following sections.
+[Dimensionality reduction](https://github.com/openproblems-bio/openproblems-v2/tree/main/src/tasks/dimensionality_reduction/api) is an example of an OpenProblems task with this topology, where the output is an embedding of the original dataset, and the solution is cell annotations which are used to verify whether the resulting embedding represents the intended biological information.
 
-## Component API
+# Why?
 
-Components are the most modular building blocks of the overall task.
-Each method, metric or data processing workflow should be defined as its own component, allowing them to be arranged easily in an end-to-end workflows.
+Having a formally defined API ensures consistency and interoperability across different components of your task. This makes it easier for others to contribute and build upon your work. Not only that, but creating API files (partially) automates the following steps:
 
-For different variants of the same task, for example multiple different methods or metrics, we can define a common API so that the further processing of the outputs can be kept consistent across methods or metrics.
-It is good practice to formalise the common metadata of all methods or metrics in a generic API specification.
+* Creating new [methods](../create_component/add_a_method.qmd) and [metrics](../create_component/add_a_metric.qmd) using the `create_component` method.
+* [Automated testing](../create_component/run_tests.qmd) of components.
+* Generating [reference documentation](../reference/).
+* [Selecting and subsetting common datasets](select_datasets.qmd).
 
-In general, an API follows the structure of a viash component and can contain any subset of the specifications that are available for viash components.
-It is up you to decide which directives you consider general-purpose for your specific components.
-An example could look like the following:
+# How?
 
-```{.yaml filename="src/tasks/<task_id>/api/component/generic_component.yaml"}
-functionality:
-  namespace: <task_id>/<category>  # <1>
-  info:  # <2>
-    ...
-  arguments: # <3>
-    - name: "--input_train"
-     ...
-    - name: "--input_test"
-      ...
-    - name: "--output"
-      ...
-      direction: output
-  test_resources:  # <4>
-    ...
+We'll need to create API files for each component and AnnData file separately. However, this is actually quite easy to do, as we will show in the following sections.
+
+## Step 1: Create task API workflow {#step-1}
+
+:::{.content-hidden}
+TODO: rework 'create_task' documentation such that it uses github issues in the initial design steps.
+:::
+
+First start by creating a workflow similar to what is shown in [@fig-task-workflow]. We recommend drawing the workflow on paper at first.
+
+:::{.content-hidden}
+TODO: Create a reference page of which datasets are part of OpenProblems, and refer to that page here.
+:::
+
+Here are the most common types of components and file formats:
+
+:::{.small}
+* **Common dataset**: OpenProblems offers a standard collection of datasets, which can be used to kickstart a new task. Please check the [reference documentation](/documentation/reference/openproblems-v2/src-datasets.qmd#file-format-common-dataset) regarding the format of the common dataset file format.
+* **Dataset processor**: This component ingests a Common dataset and splits it into one or more task-specific dataset objects. We recommend at least having a Dataset and Solution object, such that a Method component never "sees" the ground-truth information needed by the Metric component.
+* **Dataset**: The data used by a method to create an output (i.e. prediction).
+* **Solution**: The ground-truth information needed by a Metric to compare an output against. It's highly recommended to store the ground-truth information as a separate AnnData object, such that a Method cannot (accidentally) cheat.
+* **Method**: An algorithm used to make predictions for or process an input dataset in some way.
+* **Control method**: A quality control for methods, metrics and the pipeline as a whole. A control method can either be a positive control (which uses the ground-truth information in from the solution to create a perfect output) or a negative control (which uses random distributions to generate outputs in the correct format).
+* **Output**: The output generated by a (control) method.
+* **Metric**: A quatitative measure used to evaluate the performance of a method.
+* **Score**: An AnnData object containing one or more metric values.
+:::
+
+[@fig-example-traintest] and [@fig-example-multimodal] are examples of two OpenProblems tasks with slightly different workflow layouts.
+
+```{mermaid}
+%%| fig-cap: "Example of a task where a dataset's cells are split into a training dataset and test dataset. Example: in the [Label projection](https://github.com/openproblems-bio/openproblems-v2/tree/main/src/tasks/label_projection/api) task, the Train dataset contains both the raw counts and the cell type labels of one set of cells, while the Test and Solution datasets contain the raw counts and cell type labels of the remaining set of cells (respectively)."
+%%| label: fig-example-traintest
+graph LR
+  common_dataset[Common<br/>dataset]:::anndata
+  processor[/Dataset<br/>processor/]:::component
+  solution[Solution]:::anndata
+  train[Training<br/>dataset]:::anndata
+  test[Test<br/>dataset]:::anndata
+  method[/Method/]:::component
+  control[/Control<br/>method/]:::component
+  output[Output]:::anndata
+  metric[/Metric/]:::component
+  score[Score]:::anndata
+
+  common_dataset --- processor --> train & test & solution
+  train & test --- method --> output
+  train & test & solution --- control --> output
+  solution & output --- metric --> score
 ```
 
-1. The `namespace` for the functionality. It follows the format `<task_id>/<category>`. The namespace is used to group similar components together and ensures that they can be easily found and used within the task.
-2. General `info` about the functionality. This information is used to categorize and describe the component in the overall task.
-3. The `arguments` that the component accepts. Each argument has a name (e.g., `--input_train`), and its specification can be defined dirctly or merged from a file API YAML file. 
-4. The resources and unit tests used for testing the component during development and evaluation.
+:::{.content-hidden}
+TODO: Fix multimodal data integration task and add link to the documentation
+:::
 
+```{mermaid}
+%%| fig-cap: "Example of a multimodal task. Example: in the Multimodal data integration task, a dataset consists of both an RNA AnnData and ADT AnnData. However, the RNA and ADT AnnData objects are stored as two separate files."
+%%| label: fig-example-multimodal
+graph LR
+  subgraph common_dataset[Common dataset]
+    common_mod1[RNA counts]:::anndata
+    common_mod2[ADT counts]:::anndata
+  end
+  subgraph dataset[Dataset]
+    mod1[RNA counts]:::anndata
+    mod2[ADT counts]:::anndata
+  end
+  processor[/Dataset<br/>processor/]:::component
+  solution[Solution]:::anndata
+  dataset[Dataset]:::anndata
+  method[/Method/]:::component
+  control[/Control<br/>method/]:::component
+  output[Output]:::anndata
+  metric[/Metric/]:::component
+  score[Score]:::anndata
 
-### Example
-
-Here is an example of a file specification API file.
-
-````{.yaml filename=src/tasks/label_projection/api/comp_method.yaml}
-```{bash}
-#| echo: false
-#| output: asis
-cat src/tasks/label_projection/api/comp_method.yaml
-```
-````
-
-### Applying the API to a specific component
-
-A component can inherit from an API specification, which follows the basic viash component.
-The directive for inheriting from an API specification is `__merge__` at the topmost level of the component API.
-That way, all the specifications under the `functionality` directive of the API definition will be merged into the `functionality` component configuration.
-These specifications do not need to be defined again in the component config, unless you want to override them for select tasks.
-Note, that the API file path must be relative to the location of the `config.vsh.yaml` file.
-
-```{.yaml filename="src/tasks/<task_id>/<category>/<component>/config.vsh.yaml"}
-__merge__: ../../api/component/generic_component.yaml  # <1>
-functionality:  # <2>
-  name: ...
-  description: ...
-  info:  # <3>
-    ...
-  resources:  # <4>
-    ...
-platforms:  # <5>
-  ...
+  common_mod1 & common_mod2 --- processor --> mod1 & mod2 & solution
+  mod1 & mod2 --- method --> output
+  mod1 & mod2 & solution --- control --> output
+  solution & output --- metric --> score
 ```
 
-1. The generic component type API specification file.
-2. Specify any component-specific directives that are not in the generic API or overwrite directives if needed.
-3. The metadata of the component.
-4. Resource files of the component (typically a Python or an R script).
-5. Platform specification info (typically which Docker image to use and which Python/R packages to install on top of that).
+## Step 2: Create file formats {#step-2}
 
+Now that you've created the topology of the task workflow, the next step is to translate that information into the required file format specification files.
 
-## File format API
+Let's start by creating one for the solution object:
 
-Files make up the input and output of components.
-While they can be defined in a viash config file or a component API directly, defining them in a separate API file makes them reusable across different components.
-
-When specifying the API file formats, you should describe the contents, structure, and any additional metadata required for the files. This information will be useful for developers to understand the expected file formats and components quickly. Use YAML to define the file formats, as shown below:
-
-
-```{.yaml filename="src/tasks/<task_id>/api/file/anndata_specification_1.yaml"}
+```{.yaml filename="src/tasks/<task_id>/api/anndata_solution.yaml"}
 type: file # <1>
-description: ... # <2>
-example: ...  # <3>
+description: "FILL IN: what this file represents" # <2>
+example: "resources_test/<task_id>/pancreas/solution.h5ad"  # <3>
 info:
-  label: ...  # <4>
-  slots:  # <5>
-    layers:  # <6>
+  label: Solution  # <4>
+  slots: # <5>
+```
+
+1. This YAML file will be used to define the arguments of a Viash component. This must always be set to [`type: file`](https://viash.io/reference/config/functionality/arguments/file.html).
+2. Description of the file, useful for quickly understanding what type of data such a file represents. Used for generating reference documentation.
+3. An example of this file. At this stage, this file does not exist yet, but it will be created later on, as this file is used for unit testing components.
+4. A short label used to represent the file in diagrams in the reference documentation.
+5. Which AnnData slots need to be present in the file which will be defined in [Step 4](#step-4).
+
+Create a YAML file for each of the other AnnData files in the task workflow. For example, `src/tasks/<task_id>/api/anndata_dataset.yaml`, `src/tasks/<task_id>/api/anndata_output.yaml`, and so on.
+
+:::{.callout-tip}
+Each file format specification file is actually a [Viash file argument](https://viash.io/reference/config/functionality/arguments/file.html). That's because these YAML files will be used as arguments in the different component types.
+:::
+
+## Step 3: Create component types {#step-3}
+
+Next, we will create the API specification files for each of the components (i.e. purple rhomboids) in your diagram.
+
+Start by creating the method component type:
+
+```{.yaml filename="src/tasks/<task_id>/api/comp_method.yaml"}
+functionality:
+  namespace: <task_id>/methods # <1>
+  info: # <2>
+    type: method # <3>
+    type_info:
+      label: "Method" # <4>
+      description: "FILL IN: A description of what this type of component does." # <5>
+  arguments: # <6>
+    - name: "--input_train"
+      __merge__: anndata_train.yaml
+    - name: "--input_test"
+      __merge__: anndata_test.yaml
+    - name: "--output"
+      __merge__: anndata_prediction.yaml
+      direction: output
+```
+
+1. The `namespace` for the component type. format `<task_id>/<component_type>`. The namespace is used to group similar components together and ensures that they can be easily found and used within the task.
+2. Metadata about the component type.
+3. A unique identifier for the type of component.
+4. A formatted label for the component type.
+5. A description of the component type.
+6. The `arguments` that the component accepts. Each argument has a name (e.g., `--input_train`), a direction (`input` (default) or `output`), and its specification can be defined directly or merged from a file API YAML file.
+
+Create a YAML file for each of the other component types files in the task workflow. For example, `src/tasks/<task_id>/api/comp_dataset_processor.yaml`, `src/tasks/<task_id>/api/comp_metric.yaml`, and so on.
+
+:::{.callout-tip}
+Again, each component type is formatted as a [Viash config file](https://viash.io/reference/config/), because they will be used to create components.
+:::
+
+## Step 4: Add slots to file formats {#step-4}
+
+Finally, the last step is to define the actual required and optional slots each of the file format specifications. Since each of these files are AnnData HDF5 files, the file format specifications is structured analagously to the [AnnData data structures](https://anndata.readthedocs.io/en/latest/generated/anndata.AnnData.html): `layers`, `obs`, `obsm`, `obsp`, `var`, `varm`, `varp`, and `uns`.
+
+Below is the slot information of the solution AnnData object:
+
+```{.yaml filename="src/tasks/<task_id>/api/anndata_solution.yaml"}
+type: file
+description: "FILL IN: what this file represents"
+example: "resources_test/<task_id>/pancreas/solution.h5ad"
+info:
+  label: Solution
+  slots: # <1>
+    layers: # <2>
       - type: integer
         name: counts
         description: Raw counts
-        required: true
       - type: double
         name: normalized
-        description: Normalised expression values
-      ...
-    obs:  # <7>
-      ...
-    var:  # <8>
-      ...
-    uns:  # <9>
-      ...
-    ...  # <10>
+        description: Normalized counts
+    obs: # <3>
+      - type: string
+        name: label
+        description: Ground truth cell type labels
+      - type: string
+        name: batch
+        description: Batch information
+    var: # <4>
+      - type: boolean
+        name: hvg
+        description: Whether or not the feature is considered to be a 'highly variable gene'
+        required: true
+      - type: integer
+        name: hvg_score
+        description: A ranking of the features by hvg.
+        required: true
+    obsm: # <5>
+      - type: double
+        name: X_pca
+        description: The resulting PCA embedding.
+        required: true
+    uns: # <6>
+      - type: string
+        name: dataset_id
+        description: "A unique identifier for the dataset"
+        required: true
+      - type: string
+        name: normalization_id
+        description: "Which normalization was used"
+        required: true
 ```
 
-1. The type of Viash argument when used in components. This should always be set to `"file"`.
-2. Description of the file, useful for quickly understanding what type of data such a file represents. Used for generating reference documentation.
-3. An example of this file. This path will be used for unit tests to try to run components with.
-4. A short label used to represent the file in diagrams in the reference documentation.
-5. The mandatory and optional slots in the AnnData file.
-6. Specification of one or more AnnData layers (matrices).
-7. Specification for cell-level metadata (one or more columns).
-8. Specification for feature-level metadata (one or more columns).
-9. Specification for unstructured data.
-10. Other AnnData slots.
+1. The mandatory and optional slots in the AnnData file.
+2. Specification of one or more AnnData layers (matrices).
+3. Specification for cell-level metadata (one or more columns).
+4. Specification for feature-level metadata (one or more columns).
+5. Specification for unstructured data.
+6. Other AnnData slots.
 
-### Example
+Each required or optional slot in the file format should have the following fields:
 
-Here is an example of a file specification API file.
+* `name`: The name of the slot.
+* `type`: Which data type (string, boolean, integer or double).
+* `description`: What this data represents.
+* `required`: Whether or not this slot is required (default: `true`).
 
-````{.yaml filename="src/tasks/label_projection/api/anndata_train.yaml"}
-```{bash}
-#| echo: false
-#| output: asis
-cat src/tasks/label_projection/api/anndata_train.yaml
-```
-````
+Go through each file format specification file and add the expected slots accordingly.
 
-### Applying the API to a specific component
-
-The File API YAML files can be used in a generic component API YAML or in the component configuration directly.
-Note, that the API file path must be relative to the location of the corresponding component API or `config.vsh.yaml` file.
-
-```yaml
-functionality:
-  namespace: ...
-  name: ...
-  description: ...
-  info:
-    ...
-  arguments:  # <1>
-    - name: --input
-      __merge__: ../../api/anndata/anndata_specification_1.yaml
-    - name: --output
-      direction: output
-      __merge__: ../../api/anndata/anndata_specification_2.yaml
-    ...  # <2>
-  resources:
-    ...
-platforms:
-  ...
-```
-
-1. Reference file APIs under the `arguments` directive
-2. Other non-file arguments if applicable for the component
+:::{.callout-tip}
+Look at the [Common dataset](/documentation/reference/openproblems-v2/src-datasets.qmd#file-format-common-dataset) reference docs to see which slots the common datasets have.
+:::
