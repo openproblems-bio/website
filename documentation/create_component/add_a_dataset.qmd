@@ -321,8 +321,8 @@ var <- data.frame(
 ## Format of a raw dataset object
 
 ```{r, include=FALSE}
-api_raw <- read_slots_spec("src/datasets/api/anndata_raw.yaml")
-api_raw_str <- format_slots(api_raw)
+api_raw <- read_anndata_spec("src/datasets/api/anndata_raw.yaml")
+api_raw_str <- format_slots(api_raw$slots)
 ```
 
 Ideally, the AnnData output object should at least contain the following slots:
@@ -334,7 +334,7 @@ cat(paste0(api_raw_str, "\n"))
 The full file format spec of a raw dataset AnnData is shown in the table below.
  
 ```{r, echo=FALSE}
-format_slots_as_kable(api_raw)
+format_slots_as_kable(api_raw$slots)
 ```
 
 ## Next steps

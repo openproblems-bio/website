@@ -7,6 +7,7 @@ engine: knitr
 library(tidyverse)
 library(rlang)
 
+# copied from https://github.com/openproblems-bio/openproblems-v2/blob/b2b4da9fe418587813e8066fb5691dbe07838525/src/label_projection/README.qmd
 strip_margin <- function(text, symbol = "\\|") {
   str_replace_all(text, paste0("(\n?)[ \t]*", symbol), "\\1") 
 }
@@ -20,123 +21,94 @@ The dataset processing pipeline uses dataset loaders to create raw dataset files
 
 {{< include /documentation/_figures/_project_structure_dataset_workflow.qmd >}}
 
-## Component type: Dataset loader
 
-Path: `src/datasets/loaders`
 
-```{r, include=FALSE}
-comp_loader <- read_comp_spec("src/datasets/api/comp_dataset_loader.yaml")
+# Directory structure
+
+
+- **Dataset file and component formats** (`src/datasets/api`): This folder contains specifications for dataset file formats and component interfaces. This documentation page was generated mostly by reading in these files.
+
+- **Dataset loader** (`src/datasets/loaders`): This folder contains components to load and format datasets for various sources.
+
+- **Dataset normalization** (`src/datasets/normalization`): This folder contains various dataset normalization methods.
+
+- **Dataset processors** (`src/datasets/processors`): This folder contains components for processing datasets, such as computing a KNN, PCA, HVG or subsetting.
+
+- **Resource generation scripts** (`src/common/resources_scripts`): This folder contains scripts for generating the datasets using the dataset loaders, normalization methods and processors.
+
+- **Test resource generation scripts** (`src/common/resources_test_scripts`): This folder contains scripts for generating test resources.
+
+
+# Components and file formats
+
+```{r include=FALSE}
+# TODO: move label and src_path info to the spec itself
+render_component <- function(path, label, src_path) {
+  comp_spec <- read_comp_spec(path)
+
+  strip_margin(glue::glue("
+    §## Component type: {label}
+    §
+    §Path: [`{src_path}`](https://github.com/openproblems-bio/openproblems-v2/tree/main/{src_path})
+    §
+    §Arguments:
+    §
+    §{paste(format_comp_args_as_tibble(comp_spec$args), collapse = '\n')}
+    §
+    §"), symbol = "§")
+}
 ```
 
-Arguments:
- 
-```{r, echo=FALSE}
-format_comp_spec_as_tibble(comp_loader)
+```{r include=FALSE}
+render_file <- function(path) {
+  spec <- read_anndata_spec(path)
+
+  strip_margin(glue::glue("
+    §## File format: {spec$info$label}
+    §
+    §{spec$info$description}
+    §
+    §Example format:
+    §
+    §{paste(format_slots(spec$slots), collapse = '\n')}
+    §
+    §Slots:
+    §
+    §{paste(format_slots_as_kable(spec$slots), collapse = '\n')}
+    §
+    §"), symbol = "§")
+}
 ```
 
-```{r, include=FALSE}
-raw_dataset <- comp_loader[comp_loader$arg_name == "output", , drop = FALSE]
+```{r echo=FALSE, warning=FALSE, error=FALSE, output="asis"}
+lines <- render_component("src/datasets/api/comp_dataset_loader.yaml", "Dataset loader", "src/datasets/loaders")
+cat(lines)
 ```
 
-## File format: `r raw_dataset$label`
-
-`r raw_dataset$description`
-
-```{r, include=FALSE}
-api_raw <- read_slots_spec("src/datasets/api/anndata_raw.yaml")
-api_raw_str <- format_slots(api_raw)
+```{r echo=FALSE, warning=FALSE, error=FALSE, output="asis"}
+lines <- render_file("src/datasets/api/anndata_raw.yaml")
+cat(lines)
 ```
 
-Example format:
-
-```{r, echo=FALSE, output="asis"}
-cat(paste0(api_raw_str, "\n"))
-```
- 
-```{r, echo=FALSE}
-format_slots_as_kable(api_raw)
+```{r echo=FALSE, warning=FALSE, error=FALSE, output="asis"}
+lines <- render_component("src/datasets/api/comp_normalization.yaml", "Dataset normalization", "src/datasets/normalization")
+cat(lines)
 ```
 
-## Component type: Dataset normalization
-
-Path: `src/datasets/normalization`
-
-This folder contains various dataset normalization methods.
-
-```{r, include=FALSE}
-comp_normalization <- read_comp_spec("src/datasets/api/comp_normalization.yaml")
+```{r echo=FALSE, warning=FALSE, error=FALSE, output="asis"}
+lines <- render_file("src/datasets/api/anndata_normalized.yaml")
+cat(lines)
 ```
 
-Arguments:
- 
-```{r, echo=FALSE}
-format_comp_spec_as_tibble(comp_normalization)
-```
-
-```{r, include=FALSE}
-normalized_dataset <- comp_normalization[comp_normalization$arg_name == "output", , drop = FALSE]
-```
-
-## File format: `r normalized_dataset$label`
-
-`r normalized_dataset$description`
-
-```{r, include=FALSE}
-anndata_normalized <- read_slots_spec("src/datasets/api/anndata_normalized.yaml")
-anndata_normalized_str <- format_slots(anndata_normalized)
-```
-
-Example format:
-
-```{r, echo=FALSE, output="asis"}
-cat(paste0(anndata_normalized_str, "\n"))
-```
- 
-```{r, echo=FALSE}
-format_slots_as_kable(anndata_normalized)
-```
-
+<!-- todo: create separate spec for dataset processor? -->
 ## Component type: Dataset processors
 
 Path: `src/datasets/processors`: This folder contains components for processing datasets, such as computing a KNN, PCA, HVG or subsetting.
 
-## File format: Common dataset
 
-A dataset processed by the common dataset processing pipeline.
-
-```{r, include=FALSE}
-api_dataset <- read_slots_spec("src/datasets/api/anndata_dataset.yaml")
-api_dataset_str <- format_slots(api_dataset)
+```{r echo=FALSE, warning=FALSE, error=FALSE, output="asis"}
+lines <- render_file("src/datasets/api/anndata_common_dataset.yaml")
+cat(lines)
 ```
-
-Example format:
-
-```{r, echo=FALSE, output="asis"}
-cat(paste0(api_dataset_str, "\n"))
-```
- 
-```{r, echo=FALSE}
-format_slots_as_kable(api_dataset)
-```
-
-
-## Dataset file and component formats
-
-Path: `src/datasets/api`
-
-This folder contains specifications for dataset file formats and component interfaces. This documentation page was generated mostly by reading in these files.
-
-## Resource generation scripts
-
-Path: `src/common/resources_scripts`
-
-This folder contains scripts for generating the datasets using the dataset loaders, normalization methods and processors.
-
-## Test resource generation scripts
-
-Path: `src/common/resources_test_scripts`
-
-This folder contains scripts for generating test resources.
-
 
 

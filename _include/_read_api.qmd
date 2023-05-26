@@ -1,14 +1,91 @@
 ```{r, include=FALSE}
-read_slots_spec <- function(anndata_api_yaml) {
-  spec <- yaml::read_yaml(anndata_api_yaml)
+read_and_merge_yaml <- function(path) {
+  data <- suppressWarnings(yaml::read_yaml(path))
+  read_and_merge_process_merge(data, path)
+}
+read_and_merge_is_named_list <- function(obj) {
+  is.null(obj) || (is.list(obj) && (length(obj) == 0 || !is.null(names(obj))))
+}
+read_and_merge_process_merge <- function(data, path) {
+  if (read_and_merge_is_named_list(data)) {
+    # check whether children have `__merge__` entries
+    processed_data <- lapply(data, function(dat) {
+      read_and_merge_process_merge(dat, path)
+    })
+    names(processed_data) <- names(data)
 
-  map2_df(
-    names(spec$info$slots), 
-    spec$info$slots, 
-    function(group_name, slot) {
+    # if current element has __merge__, read list2 yaml and combine with data
+    new_data <- 
+      if ("__merge__" %in% names(processed_data)) {
+        new_data_path <- paste0(dirname(path), "/", processed_data$`__merge__`)
+        read_and_merge_yaml(new_data_path)
+      } else {
+        list()
+      }
+    
+    read_and_merge_deep_merge(new_data, processed_data)
+  } else if (is.list(data)) {
+    lapply(data, function(dat) {
+      read_and_merge_process_merge(dat, path)
+    })
+  } else {
+    data
+  }
+}
+read_and_merge_deep_merge <- function(list1, list2) {
+  if (read_and_merge_is_named_list(list1) && read_and_merge_is_named_list(list2)) {
+    # if list1 and list2 are objects, recursively merge
+    keys <- unique(c(names(list1), names(list2)))
+    out <- lapply(keys, function(key) {
+      if (key %in% names(list1)) {
+        if (key %in% names(list2)) {
+          read_and_merge_deep_merge(list1[[key]], list2[[key]])
+        } else {
+          list1[[key]]
+        }
+      } else {
+        list2[[key]]
+      }
+    })
+    names(out) <- keys
+    out
+  } else if (is.list(list1) && is.list(list2)) {
+    # if list1 and list2 are both lists, append
+    c(list1, list2)
+  } else {
+    # else override list1 with list2
+    list2
+  }
+}
+anndata_struct_names <- c("obs", "var", "obsm", "obsp", "varm", "varp", "layers", "uns")
+
+read_anndata_spec <- function(path) {
+  spec <- read_and_merge_yaml(path)
+  list(
+    info = read_anndata_info(spec, path),
+    slots = read_anndata_slots(spec, path)
+  )
+}
+read_anndata_info <- function(spec, path) {
+  # TEMP: make it readable
+  spec$info$slots <- NULL
+  
+  df <- list_as_tibble(spec)
+  if (!is.null(spec$info)) {
+    df <- bind_cols(df, list_as_tibble(spec$info))
+  }
+  df$file_name <- basename(path) %>% gsub("\\.yaml", "", .)
+  as_tibble(df)
+}
+read_anndata_slots <- function(spec, path) {
+  map_df(
+    anndata_struct_names,
+    function(struct_name, slot) {
+      slot <- spec$info$slots[[struct_name]]
+      if (is.null(slot)) return(NULL)
       df <- map_df(slot, as.data.frame)
-      df$struct <- group_name
-      df$file_name <- basename(anndata_api_yaml) %>% gsub("\\.yaml", "", .)
+      df$struct <- struct_name
+      df$file_name <- basename(path) %>% gsub("\\.yaml", "", .)
       df$multiple <- df$multiple %||% FALSE %|% FALSE
       as_tibble(df)
     }
@@ -21,7 +98,7 @@ format_slots <- function(slots) {
     summarise(
       str = paste0(unique(struct), ": ", paste0("'", name, "'", collapse = ", "))
     ) %>%
-    arrange(match(struct, c("obs", "var", "uns", "obsm", "obsp", "varm", "varp", "layers")))
+    arrange(match(struct, anndata_struct_names))
 
   c("    AnnData object", paste0("     ", example$str))
 }
@@ -35,41 +112,54 @@ format_slots_as_kable <- function(slots) {
       Type = paste0("`", type, "`"),
       # Required = ifelse(required, "yes", ""),
       Description = paste0(
-        ifelse(required, "", "_(Optional)_ "),
+        ifelse(required %|% FALSE, "", "_(Optional)_ "),
         gsub("\\. *$", "", description), "."
         # "Type: ", type, "."
       )
     ) %>%
     knitr::kable()
 }
-
-read_comp_spec <- function(comp_api_yaml) {
-  spec <- yaml::read_yaml(comp_api_yaml)
-
-  map_df(spec$functionality$arguments, function(arg) {
-    arg_spec <- 
-      if ("__merge__" %in% names(arg)) {
-        arg_merge_path <- paste0(dirname(comp_api_yaml), "/", arg$`__merge__`)
-        yaml::read_yaml(arg_merge_path)
-      } else {
-        list()
-      }
-    
-    arg_combined <- c(arg_spec, arg)
-
-    tibble(
-      comp_name = basename(comp_api_yaml) %>% gsub("\\.yaml", "", .) %>% gsub("^comp_", "", .),
-      arg_name = str_replace_all(arg_combined$name, "^-*", ""),
-      type = arg_combined$type,
-      direction = arg_combined$direction %||% "input",
+list_as_tibble <- function(li) {
+  as.data.frame(li[sapply(li, is.atomic)], check.names = FALSE)
+}
+read_comp_spec <- function(path) {
+  spec <- read_and_merge_yaml(path)
+  list(
+    info = read_comp_info(spec, path),
+    args = read_comp_args(spec, path)
+  )
+}
+read_comp_info <- function(spec, path) {
+  # TEMP: make it readable
+  spec$functionality$arguments <- NULL
+  spec$functionality$argument_groups <- NULL
+  
+  df <- list_as_tibble(spec$functionality)
+  if (!is.null(spec$functionality$info)) {
+    df <- bind_cols(df, list_as_tibble(spec$functionality$info))
+  }
+  df$file_name <- basename(path) %>% gsub("\\.yaml", "", .)
+  as_tibble(df)
+}
+read_comp_args <- function(spec, path) {
+  arguments <- spec$functionality$arguments
+  for (arg_group in spec$functionality$argument_groups) {
+    arguments <- c(arguments, arg_group$arguments)
+  }
+  map_df(arguments, function(arg) {
+    df <- tibble(
+      comp_name = basename(path) %>% gsub("\\.yaml", "", .),
+      arg_name = str_replace_all(arg$name, "^-*", ""),
+      type = arg$type,
+      direction = arg$direction %||% "input",
       file_name = ifelse("__merge__" %in% names(arg), basename(arg$`__merge__`) %>% gsub("\\.yaml", "", .), NA_character_),
-      description = arg_combined$description,
-      label = arg_combined$info$label
+      description = arg$description,
+      label = arg$info$label
     )
   })
 }
 
-format_comp_spec_as_tibble <- function(comp_spec) {
+format_comp_args_as_tibble <- function(comp_spec) {
   comp_spec %>%
     transmute(
       Name = paste0("`--", arg_name, "`"),
