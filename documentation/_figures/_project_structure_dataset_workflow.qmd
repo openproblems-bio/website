@@ -6,6 +6,7 @@ graph LR
   dataset_processors:::group
   raw_dataset["Raw dataset"]:::anndata
   common_dataset[Common<br/>dataset]:::anndata
+  test_dataset[Test<br/>dataset]:::anndata
   dataset_loader[/Dataset<br/>loader/]:::component
   subgraph normalization [Normalization methods]
     log_cpm[/"Log CPM"/]:::component
@@ -19,4 +20,6 @@ graph LR
     knn[/KNN/]:::component
   end
   dataset_loader --> raw_dataset --> log_cpm & l1_sqrt & log_scran_pooling & sqrt_cpm --> pca --> hvg --> knn --> common_dataset
+  subset[/Subset/]:::component
+  common_dataset --> subset --> test_dataset
 ```
