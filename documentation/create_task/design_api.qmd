@@ -32,7 +32,7 @@ Having a formally defined API ensures consistency and interoperability across di
 
 We'll need to create API files for each component and AnnData file separately. However, this is actually quite easy to do, as we will show in the following sections.
 
-## Step 1: Create task API workflow {#step-1}
+# Step 1: Create task API workflow {#step-1}
 
 :::{.content-hidden}
 TODO: rework 'create_task' documentation such that it uses github issues in the initial design steps.
@@ -112,7 +112,7 @@ graph LR
   solution & output --- metric --> score
 ```
 
-## Step 2: Create file formats {#step-2}
+# Step 2: Create file formats {#step-2}
 
 Now that you've created the topology of the task workflow, the next step is to translate that information into the required file format specification files.
 
@@ -139,7 +139,7 @@ Create a YAML file for each of the other AnnData files in the task workflow. For
 Each file format specification file is actually a [Viash file argument](https://viash.io/reference/config/functionality/arguments/file.html). That's because these YAML files will be used as arguments in the different component types.
 :::
 
-## Step 3: Create component types {#step-3}
+# Step 3: Create component types {#step-3}
 
 Next, we will create the API specification files for each of the components (i.e. purple rhomboids) in your diagram.
 
@@ -156,10 +156,13 @@ functionality:
   arguments: # <6>
     - name: "--input_train"
       __merge__: anndata_train.yaml
+      required: true
     - name: "--input_test"
       __merge__: anndata_test.yaml
+      required: true
     - name: "--output"
       __merge__: anndata_prediction.yaml
+      required: true
       direction: output
 ```
 
@@ -176,7 +179,7 @@ Create a YAML file for each of the other component types files in the task workf
 Again, each component type is formatted as a [Viash config file](https://viash.io/reference/config/), because they will be used to create components.
 :::
 
-## Step 4: Add slots to file formats {#step-4}
+# Step 4: Add slots to file formats {#step-4}
 
 Finally, the last step is to define the actual required and optional slots each of the file format specifications. Since each of these files are AnnData HDF5 files, the file format specifications is structured analagously to the [AnnData data structures](https://anndata.readthedocs.io/en/latest/generated/anndata.AnnData.html): `layers`, `obs`, `obsm`, `obsp`, `var`, `varm`, `varp`, and `uns`.
 
@@ -245,5 +248,5 @@ Each required or optional slot in the file format should have the following fiel
 Go through each file format specification file and add the expected slots accordingly.
 
 :::{.callout-tip}
-Look at the [Common dataset](/documentation/reference/openproblems-v2/src-datasets.qmd#file-format-common-dataset) reference docs to see which slots the common datasets have.
+Look at the [Common dataset](/documentation/reference/openproblems-v2/src-datasets.qmd#file-format-common-dataset) reference docs to see which slots the common datasets have. The AnnData file at `resources_test/common/pancreas/dataset.h5ad` is also an example of a Common dataset, though note that this object contains _more_ slots than what is defined by the spec.
 :::

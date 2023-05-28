@@ -11,10 +11,7 @@ The dataset processing pipeline uses dataset loaders to create raw dataset files
 
 {{< include /documentation/_figures/_project_structure_dataset_workflow.qmd >}}
 
-
-
 # Directory structure
-
 
 - **Dataset file and component formats** (`src/datasets/api`): This folder contains specifications for dataset file formats and component interfaces. This documentation page was generated mostly by reading in these files.
 
@@ -28,33 +25,14 @@ The dataset processing pipeline uses dataset loaders to create raw dataset files
 
 - **Test resource generation scripts** (`src/common/resources_test_scripts`): This folder contains scripts for generating test resources.
 
-
-# Components and file formats
-
 ```{r echo=FALSE, warning=FALSE, error=FALSE, output="asis"}
-render_component("src/datasets/api/comp_dataset_loader.yaml", "Dataset loader", "src/datasets/loaders")
-```
-
-```{r echo=FALSE, warning=FALSE, error=FALSE, output="asis"}
+render_component("src/datasets/api/comp_dataset_loader.yaml")
 render_file("src/datasets/api/anndata_raw.yaml")
-```
-
-```{r echo=FALSE, warning=FALSE, error=FALSE, output="asis"}
-render_component("src/datasets/api/comp_normalization.yaml", "Dataset normalization", "src/datasets/normalization")
-```
-
-```{r echo=FALSE, warning=FALSE, error=FALSE, output="asis"}
+render_component("src/datasets/api/comp_normalization.yaml")
 render_file("src/datasets/api/anndata_normalized.yaml")
-```
-
-<!-- todo: create separate spec for dataset processor? -->
-## Component type: Dataset processors
-
-Path: `src/datasets/processors`: This folder contains components for processing datasets, such as computing a KNN, PCA, HVG or subsetting.
-
-
-```{r echo=FALSE, warning=FALSE, error=FALSE, output="asis"}
+render_component("src/datasets/api/comp_processor_pca.yaml")
+render_component("src/datasets/api/comp_processor_hvg.yaml")
+render_component("src/datasets/api/comp_processor_knn.yaml")
 render_file("src/datasets/api/anndata_common_dataset.yaml")
+render_component("src/datasets/api/comp_processor_subset.yaml")
 ```
-
-

@@ -33,11 +33,11 @@ api_dataset <- read_anndata_spec("src/datasets/api/anndata_common_dataset.yaml")
 Example format:
 
 ```{r, echo=FALSE, output="asis"}
-cat(paste0(format_slots(api_dataset$slots), "\n"))
+cat(paste0(format_slots(api_dataset), "\n"))
 ```
 
 ```{r, echo=FALSE}
-format_slots_as_kable(api_dataset$slots)
+format_slots_as_kable(api_dataset)
 ```
 
 
