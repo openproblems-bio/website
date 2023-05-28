@@ -9,15 +9,15 @@ engine: knitr
 
 When creating a new OpenProblems task, it's essential to design the API for the input/outputs of components and their file formats. Concretely, you need to define:
 
-* Which **types of components** your task consists of (e.g. a dataset processor, methods, control methods, and metrics).
-* Which **arguments** each of these component types has (e.g. one or more input files, one or more output files).
-* The **file format** of each of these files (e.g. an AnnData object with layers and one or more obs, obsm or obsp slots).
+* Which **types of components** your task consists of, that is, a dataset processor, methods, control methods, and metrics.
+* Which **arguments** each of these component types has, that is, one or more input files and one or more output files.
+* The **file format** of each of these files, that is an AnnData ([Annotated Data](https://anndata.readthedocs.io)) object.
 
 When put together, a typical task API looks somewhat like this:
 
 {{< include /documentation/_figures/_project_structure_task_workflow.qmd >}}
 
-[Dimensionality reduction](https://github.com/openproblems-bio/openproblems-v2/tree/main/src/tasks/dimensionality_reduction/api) is an example of an OpenProblems task with this topology, where the output is an embedding of the original dataset, and the solution is cell annotations which are used to verify whether the resulting embedding represents the intended biological information.
+The [dimensionality reduction](https://github.com/openproblems-bio/openproblems-v2/tree/main/src/tasks/dimensionality_reduction/api) task is an example of an OpenProblems task with this topology, where the output is an embedding of the original dataset, and the solution is cell annotations which are used to verify whether the resulting embedding represents the intended biological information.
 
 # Why?
 
