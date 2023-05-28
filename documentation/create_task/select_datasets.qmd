@@ -18,11 +18,7 @@ strip_margin <- function(text, symbol = "\\|") {
 {{< include /_include/_evaluate_code.qmd >}}
 {{< include /_include/_read_api.qmd >}}
 
-:::{.callout-important}
-This page is still under construction.
-:::
-
-In this section, we'll create the Dataset processor component, which uses one of the pre-defined Common datasets to create the AnnData objects which get passed to the methods and metrics. 
+In this section, we'll create the Dataset processor component and generate the first test resources. The Dataset processor component uses one of the pre-defined Common datasets to create the AnnData objects. These AnnData object can then serve as the first test resources to be used to test Method and Metric components.
 
 # Why?
 
@@ -246,4 +242,5 @@ src/tasks/<task_id>/resource_test_script/pancreas.sh
 
 # Next steps
 
-Having created the first test resources, you can now start creating method and metric components. We recommend creating one method component and then one metric component first, so you can use those components to generate the test resources needed for testing all of the components.
+Having created the dataset processor and the first test resources, you can now start creating method and metric components. 
+We recommend creating one method component and then one metric component first, so you can use those components to generate the test resources needed for testing all of the components.
