@@ -154,11 +154,8 @@ functionality:
       label: "Method" # <4>
       description: "FILL IN: A description of what this type of component does." # <5>
   arguments: # <6>
-    - name: "--input_train"
-      __merge__: anndata_train.yaml
-      required: true
-    - name: "--input_test"
-      __merge__: anndata_test.yaml
+    - name: "--input"
+      __merge__: anndata_dataset.yaml
       required: true
     - name: "--output"
       __merge__: anndata_prediction.yaml
@@ -171,7 +168,7 @@ functionality:
 3. A unique identifier for the type of component.
 4. A formatted label for the component type.
 5. A description of the component type.
-6. The `arguments` that the component accepts. Each argument has a name (e.g., `--input_train`), a direction (`input` (default) or `output`), and its specification can be defined directly or merged from a file API YAML file.
+6. The `arguments` that the component accepts. Each argument has a name (e.g., `--input`), a direction (`input` (default) or `output`), and its specification can be defined directly or merged from a file API YAML file.
 
 Create a YAML file for each of the other component types files in the task workflow. For example, `src/tasks/<task_id>/api/comp_dataset_processor.yaml`, `src/tasks/<task_id>/api/comp_metric.yaml`, and so on.
 
