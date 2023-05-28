@@ -219,14 +219,14 @@ viash run "src/tasks/$TASK_ID/process_dataset/config.vsh.yaml" -- \
     --output_dataset "$DATASET_DIR/dataset.h5ad" \
     --output_solution "$DATASET_DIR/solution.h5ad"
 
-# TODO: uncomment this when a method component has been added to your task
-# Run one method
+# TODO: uncomment and update this code block when a method component has been added to your task
+# # Run one method
 # viash run "src/tasks/$TASK_ID/methods/<method_id>/config.vsh.yaml" -- \
 #     --input "$DATASET_DIR/dataset.h5ad" \
 #     --output "$DATASET_DIR/prediction.h5ad"
 
-# TODO: uncomment this when a method component has been added to your task
-# Run one metric
+# TODO: uncomment and update this code block when a metric component has been added to your task
+# # Run one metric
 # viash run src/tasks/$TASK_ID/metrics/<metric_id>/config.vsh.yaml -- \
 #     --input_prediction $DATASET_DIR/prediction.h5ad \
 #     --input_solution $DATASET_DIR/solution.h5ad \
