@@ -16,7 +16,7 @@
 
 * Extend the documentation on designing the task API (PR #257).
 
-* Inform users that they might need to specifiy a different value for `--type` in tasks with multiple method / metric subtypes (#259).
+* Inform users that they might need to specify a different value for `--type` in tasks with multiple method / metric subtypes (#259, PR #260).
 
 ## BUG FIXES
 
