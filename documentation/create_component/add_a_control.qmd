@@ -50,6 +50,9 @@ viash run src/common/create_component/config.vsh.yaml -- \
   --language r
 ```
 
+:::{.callout-tip}
+Some tasks have multiple method subtypes (e.g. `batch_integration`), which will require you to use a different value for `--type` corresponding to the desired method subtype.
+:::
 
 This creates a new folder at `src/tasks/label_projection/control_methods/my_method_r` containing a Viash config and a script.
 
