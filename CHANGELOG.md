@@ -18,6 +18,7 @@
 
 * Inform users that they might need to specify a different value for `--type` in tasks with multiple method / metric subtypes (#259, PR #260).
 
+* Add general information on AnnData and Viash (PR #261).
 ## BUG FIXES
 
 * All tasks were moved from `src/<task_id>` to the `src/tasks/<task_id>` subdirectory (PR #251).
