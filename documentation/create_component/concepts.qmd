@@ -5,7 +5,7 @@ engine: knitr
 bibliography: ../../_openproblems-v2/src/common/library.bib
 ---
 
-Every component in OpenProblems is a Viash component. To assemble these components into flexible benchmarking pipelines, AnnData serves as the standard file format for both input and output files of a component.
+Our benchmarking pipeline consists of [Viash components](#viash-component) and [AnnData HDF5 files](#anndata-file-format).
 
 {{< include ../_figures/_fig_task_structure.qmd >}}
 
@@ -17,6 +17,29 @@ AnnData, short for "Annotated Data", is a file format for handling annotated, hi
 
 Files with the `.h5ad` extension represent AnnData objects stored in an HDF5 file. AnnData objects can be opened in Python using the [`anndata.read_h5ad()`](https://anndata.readthedocs.io/en/latest/generated/anndata.read_h5ad.html#anndata.read_h5ad) function, and in R using the [`anndata::read_h5ad()`](https://anndata.dynverse.org/reference/read_h5ad.html) function. Technically it can be read in any language using an HDF5 library.
 
+### Common dataset format
+
+In OpenProblems, most of the AnnData datasets will have a subset of the following slots:
+
+    AnnData object
+      obs: 'celltype', 'batch', 'tissue', 'size_factors'
+      var: 'hvg', 'hvg_score'
+      obsm: 'X_pca'
+      obsp: 'knn_distances', 'knn_connectivities'
+      varm: 'pca_loadings'
+      layers: 'counts', 'normalized'
+      uns: 'dataset_id', 'dataset_name', 'data_url', 'data_reference', 'dataset_summary', 'dataset_description', 'dataset_organism', 'pca_variance', 'knn'
+
+:::{.callout-note}
+Unlike common AnnData objects, the X slot in the AnnData objects are typically not defined (`None` in Python, `NULL` in R). Instead, the raw counts and normalised expression data are defined as layers.
+:::
+
+Please visit the reference documentation on the [common dataset file format](/documentation/reference/openproblems-v2/src-datasets.qmd#file-format-common-dataset) used by OpenProblems for more information on each of the different slots.
+
+### Dataset format specifications
+
+OpenProblems tasks contain specifications for the required and optional slots in AnnData files. For more information on how these specifications are formatted, see ["Design the API"](/documentation/create_task/design_api.qmd).
+
 ## Viash component
 
 A Viash component is a combination of a code block or script and a small amount of metadata that makes it easy to generate pipeline modules, facilitating the separation of component functionality from the pipeline workflow [@cannoodt2021viashfromscripts]. This enables developers to create reusable, modular, and robust components for OpenProblems, focusing on the specific functionality without having to worry about the chosen pipeline framework.
@@ -27,7 +50,50 @@ A Viash component consists of three main parts: a Viash config, a script, and on
 
 ## Example component
 
-Below is an example of a simple Viash component written in Python. For examples of components written in Bash, JavaScript or R, please visit the [Viash documentation](https://viash.io/guide/component/create-component.html).
+When creating a new Viash component, you will need to create a script and a config file. Below is an example of a simple Viash component written in Python. For examples of components written in Bash, JavaScript or R, please visit the [Viash documentation](https://viash.io/guide/component/create-component.html).
+
+### Script
+
+To help with prototyping, a Viash component's script should be runnable. You can do this by defining a [Viash placeholder](https://viash.io/guide/component/variables.html) code block denoted by the `## VIASH START` and `## VIASH END` comments.
+
+The Viash placeholder should contain a dictionary (or named list) which contains example values for all of the input/output arguments your component needs. During execution, Viash will remove the placeholder and replace it with the actual parameter values at runtime.
+
+
+:::{.small}
+```{.python filename="script.py"}
+import anndata
+
+## VIASH START
+# Note: This codeblock is for prototyping and
+# is removed by Viash at runtime.
+par = {
+  'input': 'test_resource.txt',
+  'output': 'output.txt'
+}
+## VIASH END
+
+# Print par
+print(f"par: {par}")
+
+# Read input file
+adata = anndata.read_h5ad(par["input"])
+
+# Print adata
+print(f"adata: {adata}")
+
+# Write output file
+adata.write_h5ad(par["output"])
+```
+:::
+
+:::{.callout-tip}
+It's possible to store helper functions in separate files. Visit the [Viash documentation](https://viash.io/guide/component/use-helper-functions.html) for more information.
+:::
+
+
+### Viash config
+
+Next, we'll write a Viash config file for this component. 
 
 :::{.small}
 ```{.yaml filename="config.vsh.yaml"}
@@ -64,39 +130,23 @@ platforms:
 ```
 :::
 
-
-:::{.small}
-```{.python filename="script.py"}
-import anndata
-
-## VIASH START
-par = {
-  'input': 'test_resource.txt',
-  'output': 'output.txt'
-}
-## VIASH END
-
-# Print par
-print(f"par: {par}")
-
-# Read input file
-adata = anndata.read_h5ad(par["input"])
-
-# Print adata
-print(f"adata: {adata}")
-
-# Write output file
-adata.write_h5ad(par["output"])
-```
+:::{.callout-tip}
+After adding more arguments to the config, you can update your script using the [`viash config inject`](#config-inject)
 :::
 
-### Example run commands
+## Commonly used commands
+
+Below is a list of common Viash commands to develop and maintain components. 
+Check out this [Cheat sheet](/documentation/more_information/cheat_sheets.qmd) to get a printable version of the same information. Please visit the[Viash guide](https://viash.io/guide) or [reference documentation](https://viash.io/reference/) for more in-depth information.
+
+
+### Run a component
 
 ##### Display help text
 
 :::{.small}
 ```bash
-viash run config.vsh.yaml -- --help
+viash run path/to/config.vsh.yaml -- --help
 ```
 :::
 
@@ -104,17 +154,19 @@ viash run config.vsh.yaml -- --help
 
 :::{.small}
 ```bash
-viash run config.vsh.yaml -- --input dataset.h5ad --output output.h5ad
+viash run path/to/config.vsh.yaml -- --input dataset.h5ad --output output.h5ad
 ```
 :::
 
-## Example build commands
+
+
+### Build a component
 
 ##### Generate an executable
 
 :::{.small}
 ```bash
-viash build config.vsh.yaml --output bin
+viash build path/to/config.vsh.yaml --output bin --setup cachedbuild
 ```
 :::
 
@@ -138,17 +190,19 @@ bin/mycomponent --input dataset.h5ad --output output.h5ad
 
 :::{.small}
 ```bash
-viash ns build --query "label_projection"
+viash ns build --query "label_projection" --setup cachedbuild --parallel
 ```
 :::
 
-## Example test commands
+
+
+### Test a component
 
 ##### Run unit test
 
 :::{.small}
 ```bash
-viash test config.vsh.yaml
+viash test path/to/config.vsh.yaml
 ```
 :::
 
@@ -156,125 +210,27 @@ viash test config.vsh.yaml
 
 :::{.small}
 ```bash
-viash ns test --query "label_projection"
+viash ns test --query "label_projection" --parallel
 ```
 :::
 
-### Add dependencies
+### Edit script
 
+##### Update the `VIASH START`--`VIASH END` placeholder {#config-inject}
 
-### Par and meta variables
-
-More information can be found [here](https://viash.io/guide/component/variables.html) including the syntax for multiple languages.
-
-When adding a method or metric to the OPv2 you will need to define the arguments in the config file. To help with local development you can add a viash placeholder code block to define these arguments. This code block strats with `## VIASH START` and ends with `## VIASH END`.
-
-This makes it easier to run the script locally e.g. `python script.py`.
-
-If you want to set your variables for local development add a viash code block either manually e.g.
-
-```python
-## VIASH START
-# Note: This codeblock is for debugging purposes and
-# is removed by Viash at runtime.
-par = {
-  'input': 'test_resource.txt',
-  'output': 'output.txt'
-}
-## VIASH END
-```
-
-Everything that is in the `par` must be the same as what is defined in the `functionality.arguments` section of your `config.vsh.yaml`.
-
-Or you can add all available variables by using the following command:
-
+:::{.small}
 ```bash
 viash config inject path/to/config.vsh.yaml
 ```
-
-Which will update your script in the correct laguage format with a code block similar to this:
-
-```python
-## VIASH START
-# The following code has been auto-generated by Viash.
-par = {
-  'input': r'file.txt',
-  'output': r'output.txt'
-}
-meta = {
-  'functionality_name': r'example_python',
-  'resources_dir': r'/tmp/viash_inject_example_python6207454802050445393',
-  'executable': r'/tmp/viash_inject_example_python6207454802050445393/example_python',
-  'config': r'/tmp/viash_inject_example_python6207454802050445393/.config.vsh.yaml',
-  'temp_dir': r'/tmp',
-  'cpus': int(r'123'),
-  'memory_b': int(r'123'),
-  'memory_kb': int(r'123'),
-  'memory_mb': int(r'123'),
-  'memory_gb': int(r'123'),
-  'memory_tb': int(r'123'),
-  'memory_pb': int(r'123')
-}
-
-## VIASH END
-```
-
-When you run your script using `viash run` the code block will be overwritten with the arguments provided at runtime.
-
-::: {.callout-caution}
-## Update config file
-
-If you want to add a new argument to your script, add it to the config `functionality.arguments` section first before adding it to the par in the viash code block. Or use the `injectt command` to update your script.
 :::
 
+### View component
 
-### Use helper functions
+##### View config
 
-visit [here](https://viash.io/guide/component/use-helper-functions.html) for more information.
-
-You can create helper functions which can then be used in the different methods and metrics of the task. 
-
-1. Create the helper script where you define functions that can be called e.g.
-   
-    ```python
-    import shutil
-
-    def copy_file(source, dest):
-        print(f"Copying '{source}' to '{dest}'.")
-        shutil.copyfile(source, dest) 
-    ```
-
-2. Add the helper script to the `functionality.resources` section of the viash config file of your method/metric e.g.
-   
-    ```yaml
-    resources:
-        - type: python_script
-          path: script.py
-        - path: helper.py
-    ```
-
-3. Import the helper function in your script e.g.
-   
-    ```python
-    # import helper function
-    source(paste0(meta$resources_dir, "/helper.R"))
-
-    # copy file
-    copy_file(par$input, par$output)
-
-    ```
-
-### viash config view
-
-More information [here](https://viash.io/reference/cli/config_view.html).
-
-When using the `__merge__` it can be possbile to lose oversight of the whole config file. You can view how the config file is rendered for viash by using the following command:
-
+:::{.small}
 ```bash
 viash config view path/to/config.vsh.yaml
 ```
+:::
 
-## More information
-
-Check out the [Viash cheat sheet](../more_information/cheat_sheets.qmd#fig-viash-cheat-sheet) for more information on how to interact with Viash components.
-Check the [Viash guide](https://viash.io/guide) or [reference documentation](https://viash.io/reference/) for more information.
