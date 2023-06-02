@@ -16,6 +16,8 @@
 
 * Extend the documentation on designing the task API (PR #257).
 
+* Inform users that they might need to specify a different value for `--type` in tasks with multiple method / metric subtypes (#259, PR #260).
+
 ## BUG FIXES
 
 * All tasks were moved from `src/<task_id>` to the `src/tasks/<task_id>` subdirectory (PR #251).

@@ -60,14 +60,14 @@ This will create a new folder at `src/tasks/label_projection/metrics/my_metric_r
 
 :::
 
+:::{.callout-tip}
+Some tasks have multiple metric subtypes (e.g. `batch_integration`), which will require you to use a different value for `--type` corresponding to the desired metric subtype.
+:::
+
 Change the `--name` to a unique name for your metric. It must match the regex `[a-z][a-z0-9_]*` (snakecase).
 
 * A **config file** contains metadata of the component and the dependencies required to run it. In steps 2 and 3 we will fill in the required information.
 * A **script** contains the code to run the metric. In step 4 we will edit the script. 
-
-:::{.callout-tip}
-Use the command `viash run src/common/create_component/config.vsh.yaml -- --help` to get information on all of the parameters if the `create_component` component.
-:::
 
 ## Step 2: Fill in metadata
 

@@ -5,68 +5,8 @@ library(rlang)
 
 ```{r, include=FALSE}
 # interpreted from https://github.com/openproblems-bio/openproblems-v2/blob/b2b4da9fe418587813e8066fb5691dbe07838525/src/label_projection/README.qmd
-strip_margin <- function(text, symbol = "\\|") {
-  str_replace_all(text, paste0("(\n?)[ \t]*", symbol), "\\1") 
-}
+source("src/common/helper_functions/read_and_merge_yaml.R")
 
-read_and_merge_yaml <- function(path) {
-  data <- suppressWarnings(yaml::read_yaml(path))
-  read_and_merge_process_merge(data, path)
-}
-read_and_merge_is_named_list <- function(obj) {
-  is.null(obj) || (is.list(obj) && (length(obj) == 0 || !is.null(names(obj))))
-}
-read_and_merge_process_merge <- function(data, path) {
-  if (read_and_merge_is_named_list(data)) {
-    # check whether children have `__merge__` entries
-    processed_data <- lapply(data, function(dat) {
-      read_and_merge_process_merge(dat, path)
-    })
-    names(processed_data) <- names(data)
-
-    # if current element has __merge__, read list2 yaml and combine with data
-    new_data <- 
-      if ("__merge__" %in% names(processed_data)) {
-        new_data_path <- paste0(dirname(path), "/", processed_data$`__merge__`)
-        read_and_merge_yaml(new_data_path)
-      } else {
-        list()
-      }
-    
-    read_and_merge_deep_merge(new_data, processed_data)
-  } else if (is.list(data)) {
-    lapply(data, function(dat) {
-      read_and_merge_process_merge(dat, path)
-    })
-  } else {
-    data
-  }
-}
-read_and_merge_deep_merge <- function(list1, list2) {
-  if (read_and_merge_is_named_list(list1) && read_and_merge_is_named_list(list2)) {
-    # if list1 and list2 are objects, recursively merge
-    keys <- unique(c(names(list1), names(list2)))
-    out <- lapply(keys, function(key) {
-      if (key %in% names(list1)) {
-        if (key %in% names(list2)) {
-          read_and_merge_deep_merge(list1[[key]], list2[[key]])
-        } else {
-          list1[[key]]
-        }
-      } else {
-        list2[[key]]
-      }
-    })
-    names(out) <- keys
-    out
-  } else if (is.list(list1) && is.list(list2)) {
-    # if list1 and list2 are both lists, append
-    c(list1, list2)
-  } else {
-    # else override list1 with list2
-    list2
-  }
-}
 anndata_struct_names <- c("obs", "var", "obsm", "obsp", "varm", "varp", "layers", "uns")
 
 read_anndata_spec <- function(path) {
@@ -221,6 +161,10 @@ format_comp_args_as_tibble <- function(spec) {
       )
     ) %>%
     knitr::kable()
+}
+
+strip_margin <- function(text, symbol = "\\|") {
+  str_replace_all(text, paste0("(\n?)[ \t]*", symbol), "\\1") 
 }
 
 # path <- "_openproblems-v2/src/datasets/api/comp_processor_knn.yaml"
