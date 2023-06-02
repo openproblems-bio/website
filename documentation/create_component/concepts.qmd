@@ -31,7 +31,7 @@ In OpenProblems, most of the AnnData datasets will have a subset of the followin
       uns: 'dataset_id', 'dataset_name', 'data_url', 'data_reference', 'dataset_summary', 'dataset_description', 'dataset_organism', 'pca_variance', 'knn'
 
 :::{.callout-note}
-Unlike common AnnData objects, the X slot in the AnnData objects are typically not defined (`None` in Python, `NULL` in R). Instead, the raw counts and normalised expression data are defined as layers.
+In OpenProblems, the X slot in the AnnData objects is typically not defined (`None` in Python, `NULL` in R). Instead, the raw counts and normalised expression data are defined as layers.
 :::
 
 Please visit the reference documentation on the [common dataset file format](/documentation/reference/openproblems-v2/src-datasets.qmd#file-format-common-dataset) used by OpenProblems for more information on each of the different slots.
