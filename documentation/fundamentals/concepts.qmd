@@ -50,7 +50,7 @@ A Viash component consists of three main parts: a Viash config, a script, and on
 
 ## Example component
 
-When creating a new Viash component, you will need to create a script and a config file. Below is an example of a simple Viash component written in Python. For examples of components written in Bash, JavaScript or R, please visit the [Viash documentation](https://viash.io/guide/component/create-component.html).
+When creating a new Viash component, you will need to create a script and a config file. Below is an example of a simple Viash component written in Python. For a detailed explanation of the structure of a Viash component in more programming languages (e.g. Bash, Python, R), please visit review documentation on how to create a [Viash component](https://viash.io/guide/component/create-component.html).
 
 ### Script
 
@@ -234,3 +234,14 @@ viash config view path/to/config.vsh.yaml
 ```
 :::
 
+## Common concepts
+
+### Loading helper functions from external files
+
+It is possible to add additional resources such as a file containing helper functions or other resources. All you need to do is list those files under the `functionality.resources` section of your component and refer to them in your script using `meta["resources_dir"] + /myresource.txt`. Please visit the Viash documentation for concrete examples on how to add [helper functions](https://viash.io/guide/component/use-helper-functions.html) and [other resources](https://viash.io/guide/component/add-resources.html) to your component.
+
+### Merging YAMLs (`__merge__`)
+
+The `__merge__` field is used to merge another YAML into a Viash config. One of its uses is in making sure that all of the components in a task has the same API.
+
+Each task in OpenProblems contains strict definitions of the input/output file interface of its components and the file formats of those files. These interfaces are stored as YAML files in the `api` subdirectory of each task.
