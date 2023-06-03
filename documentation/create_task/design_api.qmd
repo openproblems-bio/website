@@ -168,7 +168,7 @@ functionality:
 3. A unique identifier for the type of component.
 4. A formatted label for the component type.
 5. A description of the component type.
-6. The `arguments` that the component accepts. Each argument has a name (e.g., `--input`), a direction (`input` (default) or `output`), and its specification can be defined directly or merged from a file API YAML file.
+6. The `arguments` that the component accepts. Each argument has a name (e.g., `--input`), a direction (`input` (default) or `output`) and whether it's required or not. Note that this information is partially provided by merging the file API YAML file specified earlier, using the `__merge__` notation.
 
 Create a YAML file for each of the other component types files in the task workflow. For example, `src/tasks/<task_id>/api/comp_dataset_processor.yaml`, `src/tasks/<task_id>/api/comp_metric.yaml`, and so on.
 
