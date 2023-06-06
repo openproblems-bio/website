@@ -1,4 +1,4 @@
-# openproblems.bio v2.2.2
+# openproblems.bio v2.3.0
 
 ## MINOR CHANGES
 
