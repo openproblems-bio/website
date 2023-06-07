@@ -22,6 +22,8 @@
 
 * Explicitly mention the `__merge__` notation in the docs (PR #267).
 
+* Add link to task issue example (PR #271)
+
 ## BUG FIXES
 
 * All tasks were moved from `src/<task_id>` to the `src/tasks/<task_id>` subdirectory (PR #251).
