@@ -19,7 +19,7 @@ If not, [create a new issue](https://github.com/openproblems-bio/openproblems-v2
 
 This collaborative process will help ensure that your task is well-defined, relevant, and compatible with the OpenProblems framework. Additionally, it informs others of your ongoing work in this area and establishes a foundation for potential collaboration.
 
-```{r echo=FALSE, warning=FALSE, error=FALSEqua}
+```{r echo=FALSE, warning=FALSE, error=FALSE}
 new_task_yml <- yaml::read_yaml(".github/ISSUE_TEMPLATE/new_task.yml")
 md <- paste(sapply(new_task_yml$body, function(section) {
   if (section$type == "textarea") {
