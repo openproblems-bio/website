@@ -13,7 +13,7 @@ if (!dir.exists(proj_dir)) {
 }
 processx::run(
   "git", 
-  c("clean", "-fxd"),
+  c("clean", "-fxd", "-e", "resources_test"),
   wd = proj_dir
 )
 processx::run(
