@@ -2,6 +2,8 @@
 
 ## MAJOR CHANGES
 
+* All tasks were moved from `src/<task_id>` to the `src/tasks/<task_id>` subdirectory (PR #251).
+
 * Upgrade to quarto v1.4 (PR #273).
 
 ## MINOR CHANGES
@@ -29,10 +31,6 @@
 * Add link to task issue example (PR #271).
 
 * Add page for NeurIPS 2023 competition (PR #273).
-
-## BUG FIXES
-
-* All tasks were moved from `src/<task_id>` to the `src/tasks/<task_id>` subdirectory (PR #251).
 
 # openproblems.bio v2.2.1
 
