@@ -1,5 +1,9 @@
 # openproblems.bio v2.3.0
 
+## MAJOR CHANGES
+
+* Upgrade to quarto v1.4 (PR #273).
+
 ## MINOR CHANGES
 
 * Minor changes to the documentation pages (PR #248).
