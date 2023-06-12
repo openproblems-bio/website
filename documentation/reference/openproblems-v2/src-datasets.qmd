@@ -11,7 +11,7 @@ The dataset processing pipeline uses dataset loaders to create raw dataset files
 
 {{< include /documentation/_figures/_project_structure_dataset_workflow.qmd >}}
 
-# Directory structure
+## Directory structure
 
 - **Dataset file and component formats** (`src/datasets/api`): This folder contains specifications for dataset file formats and component interfaces. This documentation page was generated mostly by reading in these files.
 
@@ -26,13 +26,13 @@ The dataset processing pipeline uses dataset loaders to create raw dataset files
 - **Test resource generation scripts** (`src/common/resources_test_scripts`): This folder contains scripts for generating test resources.
 
 ```{r echo=FALSE, warning=FALSE, error=FALSE, output="asis"}
-render_component("src/datasets/api/comp_dataset_loader.yaml")
-render_file("src/datasets/api/anndata_raw.yaml")
-render_component("src/datasets/api/comp_normalization.yaml")
-render_file("src/datasets/api/anndata_normalized.yaml")
-render_component("src/datasets/api/comp_processor_pca.yaml")
-render_component("src/datasets/api/comp_processor_hvg.yaml")
-render_component("src/datasets/api/comp_processor_knn.yaml")
-render_file("src/datasets/api/anndata_common_dataset.yaml")
-render_component("src/datasets/api/comp_processor_subset.yaml")
+cat(render_component("src/datasets/api/comp_dataset_loader.yaml"))
+cat(render_file("src/datasets/api/anndata_raw.yaml"))
+cat(render_component("src/datasets/api/comp_normalization.yaml"))
+cat(render_file("src/datasets/api/anndata_normalized.yaml"))
+cat(render_component("src/datasets/api/comp_processor_pca.yaml"))
+cat(render_component("src/datasets/api/comp_processor_hvg.yaml"))
+cat(render_component("src/datasets/api/comp_processor_knn.yaml"))
+cat(render_file("src/datasets/api/anndata_common_dataset.yaml"))
+cat(render_component("src/datasets/api/comp_processor_subset.yaml"))
 ```
