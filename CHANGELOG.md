@@ -22,7 +22,7 @@
 
 * Explicitly mention the `__merge__` notation in the docs (PR #267).
 
-* Add page for NeurIPS 2023 competition.
+* Add page for NeurIPS 2023 competition (PR #273).
 
 ## BUG FIXES
 
