@@ -22,6 +22,8 @@
 
 * Explicitly mention the `__merge__` notation in the docs (PR #267).
 
+* Add page for NeurIPS 2023 competition.
+
 ## BUG FIXES
 
 * All tasks were moved from `src/<task_id>` to the `src/tasks/<task_id>` subdirectory (PR #251).
