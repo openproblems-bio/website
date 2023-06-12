@@ -1,5 +1,9 @@
 # openproblems.bio v2.3.0
 
+## MAJOR CHANGES
+
+* Upgrade to quarto v1.4 (PR #273).
+
 ## MINOR CHANGES
 
 * Minor changes to the documentation pages (PR #248).
@@ -22,7 +26,9 @@
 
 * Explicitly mention the `__merge__` notation in the docs (PR #267).
 
-* Add link to task issue example (PR #271)
+* Add link to task issue example (PR #271).
+
+* Add page for NeurIPS 2023 competition (PR #273).
 
 ## BUG FIXES
 
