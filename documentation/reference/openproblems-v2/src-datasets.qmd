@@ -27,12 +27,12 @@ The dataset processing pipeline uses dataset loaders to create raw dataset files
 
 ```{r echo=FALSE, warning=FALSE, error=FALSE, output="asis"}
 cat(render_component("src/datasets/api/comp_dataset_loader.yaml"))
-cat(render_file("src/datasets/api/anndata_raw.yaml"))
+cat(render_file("src/datasets/api/file_raw.yaml"))
 cat(render_component("src/datasets/api/comp_normalization.yaml"))
-cat(render_file("src/datasets/api/anndata_normalized.yaml"))
+cat(render_file("src/datasets/api/file_normalized.yaml"))
 cat(render_component("src/datasets/api/comp_processor_pca.yaml"))
 cat(render_component("src/datasets/api/comp_processor_hvg.yaml"))
 cat(render_component("src/datasets/api/comp_processor_knn.yaml"))
-cat(render_file("src/datasets/api/anndata_common_dataset.yaml"))
+cat(render_file("src/datasets/api/file_common_dataset.yaml"))
 cat(render_component("src/datasets/api/comp_processor_subset.yaml"))
 ```

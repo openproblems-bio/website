@@ -1,5 +1,9 @@
 # openproblems.bio unreleased
 
+## BREAKING CHANGES
+
+* Updates for component API changes.
+
 # openproblems.bio v2.3.0
 
 ## MAJOR CHANGES
