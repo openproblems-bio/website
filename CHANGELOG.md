@@ -34,6 +34,8 @@
 
 * Add page for NeurIPS 2023 competition (PR #273).
 
+* changed cheat sheet to link hosted on viash.io (PR #276)
+
 # openproblems.bio v2.2.1
 
 ## BUG FIXES
