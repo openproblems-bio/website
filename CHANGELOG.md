@@ -34,7 +34,7 @@
 
 * Add page for NeurIPS 2023 competition (PR #273).
 
-* Add VS Code install to requirements page (PR #275)
+* Add VS Code install to requirements page (PR #275).
 
 # openproblems.bio v2.2.1
 
