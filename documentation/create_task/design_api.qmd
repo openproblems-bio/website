@@ -118,7 +118,7 @@ Now that you've created the topology of the task workflow, the next step is to t
 
 Let's start by creating one for the solution object:
 
-```{.yaml filename="src/tasks/<task_id>/api/anndata_solution.yaml"}
+```{.yaml filename="src/tasks/<task_id>/api/file_solution.yaml"}
 type: file # <1>
 description: "FILL IN: what this file represents" # <2>
 example: "resources_test/<task_id>/pancreas/solution.h5ad"  # <3>
@@ -133,7 +133,7 @@ info:
 4. A short label used to represent the file in diagrams in the reference documentation.
 5. Which AnnData slots need to be present in the file which will be defined in [Step 4](#step-4).
 
-Create a YAML file for each of the other AnnData files in the task workflow. For example, `src/tasks/<task_id>/api/anndata_dataset.yaml`, `src/tasks/<task_id>/api/anndata_output.yaml`, and so on.
+Create a YAML file for each of the other AnnData files in the task workflow. For example, `src/tasks/<task_id>/api/file_dataset.yaml`, `src/tasks/<task_id>/api/file_output.yaml`, and so on.
 
 :::{.callout-tip}
 Each file format specification file is actually a [Viash file argument](https://viash.io/reference/config/functionality/arguments/file.html). That's because these YAML files will be used as arguments in the different component types.
@@ -155,10 +155,10 @@ functionality:
       description: "FILL IN: A description of what this type of component does." # <5>
   arguments: # <6>
     - name: "--input"
-      __merge__: anndata_dataset.yaml
+      __merge__: file_dataset.yaml
       required: true
     - name: "--output"
-      __merge__: anndata_prediction.yaml
+      __merge__: file_prediction.yaml
       required: true
       direction: output
 ```
