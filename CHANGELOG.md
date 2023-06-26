@@ -1,5 +1,9 @@
 # openproblems.bio v2.3.1
 
+## MINOR CHANGES
+
+* Remove old hero image (PR #280).
+
 ## BUG FIXES
 
 * Updated the openproblems-v2 submodule (PR #280).
