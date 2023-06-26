@@ -1,4 +1,16 @@
-# openproblems.bio unreleased
+# openproblems.bio v2.3.1
+
+## MINOR CHANGES
+
+* Remove old hero image (PR #280).
+
+## BUG FIXES
+
+* Updated the openproblems-v2 submodule (PR #280).
+
+  - Docker base images were renamed.
+
+  - File format specification files were renamed from `**/api/anndata_*.yaml` to `**/api/file_*.yaml`.
 
 # openproblems.bio v2.3.0
 

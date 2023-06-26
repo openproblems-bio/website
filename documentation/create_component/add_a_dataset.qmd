@@ -67,7 +67,7 @@ functionality:
   description: "A new dataset loader"
   arguments:
     - name: "--output"
-      __merge__: ../../api/anndata_raw.yaml
+      __merge__: ../../api/file_raw.yaml
       direction: "output"
   resources:
     - type: python_script
@@ -103,7 +103,7 @@ functionality:
   description: "A new dataset loader"
   arguments:
     - name: "--output"
-      __merge__: ../../api/anndata_raw.yaml
+      __merge__: ../../api/file_raw.yaml
       direction: "output"
   resources:
     - type: python_script
@@ -321,7 +321,7 @@ var <- data.frame(
 ## Format of a raw dataset object
 
 ```{r, include=FALSE}
-api_raw <- read_anndata_spec("src/datasets/api/anndata_raw.yaml")
+api_raw <- read_anndata_spec("src/datasets/api/file_raw.yaml")
 ```
 
 Ideally, the AnnData output object should at least contain the following slots:
