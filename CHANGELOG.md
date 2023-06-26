@@ -1,5 +1,9 @@
 # openproblems.bio unreleased
 
+## MINOR CHANGES
+
+* Updated the openproblems-v2 submodule.
+
 # openproblems.bio v2.3.0
 
 ## MAJOR CHANGES
