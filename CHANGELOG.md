@@ -2,7 +2,7 @@
 
 ## MINOR CHANGES
 
-* Updated the openproblems-v2 submodule.
+* Updated the openproblems-v2 submodule (PR #280).
 
 # openproblems.bio v2.3.0
 
