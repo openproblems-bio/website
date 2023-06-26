@@ -2,6 +2,8 @@
 
 ## MINOR CHANGES
 
+* Added updates button to the NeurIPS 2023 landing page (PR #279).
+
 * Remove old hero image (PR #280).
 
 ## BUG FIXES
