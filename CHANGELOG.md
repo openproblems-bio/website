@@ -2,6 +2,8 @@
 
 ## MINOR CHANGES
 
+* Added updates button to the NeurIPS 2023 landing page (PR #279).
+
 * Remove old hero image (PR #280).
 
 ## BUG FIXES
@@ -11,12 +13,6 @@
   - Docker base images were renamed.
 
   - File format specification files were renamed from `**/api/anndata_*.yaml` to `**/api/file_*.yaml`.
-
-## MINOR CHANGES
-
-* Added updates button to the NeurIPS 2023 landing page (PR #279).
-
-* Updated the openproblems-v2 submodule (PR #280).
 
 # openproblems.bio v2.3.0
 
