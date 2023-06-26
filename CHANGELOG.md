@@ -4,6 +4,10 @@
 
 * Updated the openproblems-v2 submodule (PR #280).
 
+  - Docker base images were renamed.
+
+  - File format specification files were renamed from `**/api/anndata_*.yaml` to `**/api/file_*.yaml`.
+
 # openproblems.bio v2.3.0
 
 ## MAJOR CHANGES
