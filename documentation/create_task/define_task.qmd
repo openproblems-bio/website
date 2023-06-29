@@ -37,18 +37,26 @@ knitr::asis_output(md)
 Now create a task info metadata file at `src/tasks/<task_id>/api/task_info.yaml`:
 
 ```{.yaml filename="src/tasks/<task_id>/api/task_info.yaml"}
-task_id: your_task_id
-task_name: Your task name
-summary: "FILL IN: A one line description of what this purpose of this task is."
-description: |
-  FILL IN: The task description and motivation you created earlier.
-authors:
-  - name: "Your name"
-    roles: [ author, maintainer ]
-    props:
-      github: your-github-account
-      orcid: "0000-1111-2222-3333"
+task_id: your_task_id # <1>
+task_name: Your task name # <2>
+summary: "FILL IN: A one line description of what this purpose of this task is." # <3>
+description: | # <4>
+  FILL IN: The task description and motivation you created earlier. # <4>
+authors: # <5>
+  - name: "Your name" # <5>
+    roles: [ author, maintainer ] # <5>
+    props: # <5>
+      github: your-github-account # <5>
+      orcid: "0000-1111-2222-3333" # <5>
 ```
+1. Provide the task id in snakecase format e.g. label_projection
+2. Provide the full task name in normal formatted text e.g. Label Projection
+3. Provide a one line description of what the purpose of the task is.
+4. Provide the task description and motivation from the previous created github issue.
+5. Provide all authors who helped create the task. Authors who only helped with certain aspects can be "contributor" as role. Please provide only one author with a role as "author" and "maintainer".
+
+This yaml file is used to automatically create a readme in the repo directory of this task.
+
 
 ## Next steps
 
