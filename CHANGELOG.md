@@ -6,6 +6,8 @@
 
 * Remove old hero image (PR #280).
 
+* Reference base-images in `create-component` pages (PR #282)
+
 ## BUG FIXES
 
 * Updated the openproblems-v2 submodule (PR #280).
