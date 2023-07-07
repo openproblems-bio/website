@@ -54,6 +54,8 @@
 
 * Add VS Code install to requirements page (PR #275).
 
+* changed cheat sheet to link hosted on viash.io (PR #276)
+
 # openproblems.bio v2.2.1
 
 ## BUG FIXES
