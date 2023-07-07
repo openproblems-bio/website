@@ -1,4 +1,20 @@
-# openproblems.bio unreleased
+# openproblems.bio v2.3.1
+
+## MINOR CHANGES
+
+* Added updates button to the NeurIPS 2023 landing page (PR #279).
+
+* Remove old hero image (PR #280).
+
+## BUG FIXES
+
+* Updated the openproblems-v2 submodule (PR #280).
+
+  - Docker base images were renamed.
+
+  - File format specification files were renamed from `**/api/anndata_*.yaml` to `**/api/file_*.yaml`.
+
+* Restored summary figures by updating funkyheatmapjs (PR #283).
 
 # openproblems.bio v2.3.0
 
@@ -34,6 +50,8 @@
 
 * Add page for NeurIPS 2023 competition (PR #273).
 
+* Add VS Code install to requirements page (PR #275).
+
 * changed cheat sheet to link hosted on viash.io (PR #276)
 
 # openproblems.bio v2.2.1
@@ -61,7 +79,7 @@
 * Update to Quarto 1.3 (PR #221).
 
 * Update license to Creative Commons CC-BY (PR #216).
-  
+
 * Revert temporary navbar transition fix (PR #231).
 
 * Revert quarto 1.3 weight changes (PR #236 & PR #244).
@@ -83,7 +101,7 @@
 * Added `../docs.css` to neurips 2021 documentation to activate the `.thumbnail-image` change (PR #232).
 
 * Fix broken links (on other websites) by adding redirects to previously existing pages (PR #227).
-  
+
 * Fix redirects with subdirs to events link (PR #245).
 
 # openproblems.bio v2.1.2
@@ -117,7 +135,7 @@ of a stub task.
 * Changed the results and bibliography heros (PR #178, PR #181).
 
 * Removed sub-stub regulatory effect prediction task (PR #197).
-  
+
 ## BUG FIXES
 
 * Fix internal links being treated as external links in PR eviews (PR #179).

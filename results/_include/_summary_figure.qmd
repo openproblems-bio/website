@@ -135,14 +135,11 @@ viewof scale_column = Inputs.toggle({label: "Minmax column"})
 
 funkyheatmap(
     funky_heatmap_args.data,
-    funky_heatmap_args.columns,
     funky_heatmap_args.column_info,
+    [],
     funky_heatmap_args.column_groups,
+    [],
     funky_heatmap_args.palettes,
-    funky_heatmap_args.expand,
-    funky_heatmap_args.col_annot_offset,
-    funky_heatmap_args.add_abc,
-    scale_column,
     {
         fontSize: 14,
         rowHeight: 26,
@@ -156,7 +153,8 @@ funkyheatmap(
             headerColor: 'var(--bs-white)',
             hoverColor: 'var(--bs-body-color)'
         }
-    }
+    },
+    scale_column
 );
 ```
 
@@ -165,6 +163,6 @@ funkyheatmap(
 funkyheatmap = (await require('d3@7').then(d3 => {
   window.d3 = d3;
   window._ = _;
-  return import('https://unpkg.com/funkyheatmap-js@0.1.8');
+  return import('https://unpkg.com/funkyheatmapjs@0.2.3');
 })).default;
 ```
