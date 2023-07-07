@@ -1,0 +1,62 @@
+Each component has it's own set of dependencies, because different components might have conflicting dependencies.
+
+For your convenience we have created 2 base images that can be used for python or R scripts. These images can be found in the OpenProblems github repo [base-images](https://github.com/openproblems-bio/base-images).
+Click on the packages to view the url you need to use. You are not required to use these images but make sure the required packages are installed to make sure OpenProblems works properly.
+
+Update the `setup` definition in the `platforms` section of the config file.
+This section describes the packages that need to be installed in the Docker image and are required for your method to run.
+
+If you're using a custom image use the following minimum setup:
+
+::: {.panel-tabset}
+## Python
+```{yaml}
+platforms:
+  - type: docker
+    Image: your custom image
+    setup:
+      - type: apt
+        packages:
+          - procps
+      - type: python
+        packages:
+          - anndata~=0.8.0
+          - scanpy
+          - pyyaml
+          - requests
+          - jsonschema
+```
+
+## R
+
+```{yaml}
+platforms:
+  - type: docker
+    Image: your custom image
+    setup:
+      - type: apt
+        packages:
+          - procps
+          - libhdf5-dev
+          - libgeos-dev
+          - python3
+          - python3-pip
+          - python3-dev
+          - python-is-python3
+      - type: python
+        packages:
+          - rpy2
+          - anndata~=0.8.0
+          - scanpy
+          - pyyaml
+          - requests
+          - jsonschema
+      - type: r
+        packages:
+          - anndata
+          - BiocManager
+```
+
+:::
+
+Please check out this [guide](https://viash.io/guide/component/add-dependencies.html) for more information on how to add extra package dependencies.

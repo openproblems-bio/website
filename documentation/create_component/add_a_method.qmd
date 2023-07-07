@@ -160,13 +160,7 @@ The file specified in this field contains information regarding the input and ou
 
 ## Step 3: Add dependencies
 
-Each component has it's own set of dependencies, because different components might have conflicting dependencies.
-
-Update the `setup` definition in the `platforms` section of the config file.
-This section describes the packages that need to be installed in the Docker image and are required for your method to run.
-Note that both `anndata~=0.8.0` and `pyyaml` are necessary Python package dependencies.
-
-Please check out this [guide](https://viash.io/guide/component/add-dependencies.html) for more information on how to add extra package dependencies.
+{{< include _include/_add_dependencies.qmd >}}
 
 :::{.callout-note}
 **Tip:** After making changes to the components dependencies, you will need to rebuild the docker container as follows:
