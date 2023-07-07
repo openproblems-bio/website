@@ -11,44 +11,50 @@ If using a custom image us the following minimum setup:
 ::: {.panel-tabset}
 ## Python
 ```{yaml}
-setup:
-  - type: apt
-    packages:
-      - procps
-  - type: python
-    packages:
-      - anndata~=0.8.0
-      - scanpy
-      - pyyaml
-      - requests
-      - jsonschema
+platforms:
+  - type: docker
+    Image: your custom image
+    setup:
+      - type: apt
+        packages:
+          - procps
+      - type: python
+        packages:
+          - anndata~=0.8.0
+          - scanpy
+          - pyyaml
+          - requests
+          - jsonschema
 ```
 
 ## R
 
 ```{yaml}
-setup:
-  - type: apt
-    packages:
-      - procps
-      - libhdf5-dev
-      - libgeos-dev
-      - python3
-      - python3-pip
-      - python3-dev
-      - python-is-python3
-  - type: python
-    packages:
-      - rpy2
-      - anndata~=0.8.0
-      - scanpy
-      - pyyaml
-      - requests
-      - jsonschema
-  - type: r
-    packages:
-      - anndata
-      - BiocManager
+platforms:
+  - type: docker
+    Image: your custom image
+    setup:
+      - type: apt
+        packages:
+          - procps
+          - libhdf5-dev
+          - libgeos-dev
+          - python3
+          - python3-pip
+          - python3-dev
+          - python-is-python3
+      - type: python
+        packages:
+          - rpy2
+          - anndata~=0.8.0
+          - scanpy
+          - pyyaml
+          - requests
+          - jsonschema
+      - type: r
+        packages:
+          - anndata
+          - BiocManager
 ```
 
 :::
