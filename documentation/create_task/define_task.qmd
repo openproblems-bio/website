@@ -34,7 +34,7 @@ knitr::asis_output(md)
 
 ## Step 3: Create task info
 
-Now create a task info metadata file at `src/tasks/<task_id>/api/task_info.yaml`:
+Now create a task info metadata file in the `src/tasks/<task_id>/api` directory. This file will be part of the automatic "readme" creation in the repo directory of this task. The task info file should be named `task_info.yaml` and should contain the following information:
 
 ```{.yaml filename="src/tasks/<task_id>/api/task_info.yaml"}
 task_id: your_task_id # <1>
@@ -45,17 +45,16 @@ description: | # <4>
 authors: # <5>
   - name: "Your name" # <5>
     roles: [ author, maintainer ] # <5>
-    props: # <5>
+    info: # <5>
       github: your-github-account # <5>
       orcid: "0000-1111-2222-3333" # <5>
 ```
-1. Provide the task id in snakecase format e.g. label_projection
-2. Provide the full task name in normal formatted text e.g. Label Projection
+1. Provide the task id in snakecase format e.g. label_projection (no spaces, no special characters, only lowercase letters and underscores).
+2. Provide the full task name in normal formatted text e.g. Label Projection (can contain spaces and special characters).
 3. Provide a one line description of what the purpose of the task is.
 4. Provide the task description and motivation from the previous created github issue.
-5. Provide all authors who helped create the task. Authors who only helped with certain aspects can be "contributor" as role. Authors with the role of "maintainer" will be appointed task leader.
+5. Provide all authors who helped create the task. You can add more authors by adding more `- name: ...` entries. The `roles` field can be used to specify the role of the author. The `info` field can be used to specify additional information about the author. For more information about the `roles` and `info` fields see the [viash documentation](https://viash.io/reference/config/functionality/author.html).
 
-This yaml file is used to automatically create a readme in the repo directory of this task.
 
 
 ## Next steps
