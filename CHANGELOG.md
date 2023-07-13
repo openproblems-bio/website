@@ -1,3 +1,10 @@
+# openproblems.bio v2.3.2
+
+## MINOR CHANGES
+
+* Add more information about task_info.yaml to the documentation (PR #285).
+
+
 # openproblems.bio v2.3.1
 
 ## MINOR CHANGES
