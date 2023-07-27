@@ -146,7 +146,21 @@ process <- function(info, prefix = "", required = NA) {
       }
     ))
   } else if (type == "array") {
-    c() # ignore for now
+    prop_names <-
+      if (is.na(required)) {
+        names(info$items$properties)
+      } else if (required) {
+        info$items$required
+      } else {
+        setdiff(names(info$items$properties), info$items$required)
+      }
+    unlist(lapply(
+      prop_names,
+      function(prop_name) {
+        prop <- info$items$properties[[prop_name]]
+        process(prop, prefix = paste0(prefix, ".", prop_name), required = required)
+      }
+    )) # ignore for now
   } else if (is.list(info)) {
     paste0(
       "#### `", prefix, "`\n",
@@ -182,7 +196,6 @@ viash run src/tasks/label_projection/metrics/my_metric_py/config.vsh.yaml -- \
 ```
 </details>
 :::
-
 
 ## Step 4: Edit script
 
