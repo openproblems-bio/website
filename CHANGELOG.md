@@ -1,3 +1,9 @@
+# openproblems.bio v2.3.2
+
+## MINOR CHANGES
+
+* Minor updates to the NeurIPS 2023 landing page (PR #286).
+
 # openproblems.bio v2.3.1
 
 ## MINOR CHANGES
