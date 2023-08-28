@@ -1,11 +1,13 @@
 ---
 title: Define the task
 order: 10
+engine: knitr
 ---
 
 
-{{< include ../../_include/_clone_repo.qmd >}}
+{{< include /_include/_clone_repo.qmd >}}
 {{< include /_include/_evaluate_code.qmd >}}
+{{< include /_include/_read_api.qmd >}}
 
 Before writing any code, it's essential to carefully plan and document your task to ensure its relevance, feasibility, and compatibility with the OpenProblems framework. 
 
@@ -36,7 +38,45 @@ knitr::asis_output(md)
 
 Now create a task info metadata file in the `src/tasks/<task_id>/api` directory. This file will be part of the automatic "readme" creation in the repo directory of this task. The task info file should be named `task_info.yaml` and should contain the following information:
 
-```{.yaml filename="src/tasks/<task_id>/api/task_info.yaml"}
+
+```{r echo=FALSE, warning=TRUE, error=TRUE}
+info <- read_and_merge_yaml("src/common/schemas/task_info.yaml")
+
+process <- function(info, prefix = "", required = NA) {
+
+    prop_names <-
+      names(info$properties)
+    req_prop <-
+      info$required
+
+    unlist(lapply(
+      prop_names,
+      function(prop_name) {
+        prop <- info$properties[[prop_name]]
+        process(prop, prefix = paste0(prefix, ".", prop_name), required = required)
+      }
+    ))
+  # } else if (type == "array") {
+  #   c() # ignore for now
+  # } else if (is.list(info)) {
+  #   paste0(
+  #     prefix, "`\n",
+  #     "\n",
+  #     info$description
+  #   )
+  # } else {
+  #   c()
+  # }
+}
+info_str <- paste(process(info, required = TRUE), collapse = "\n\n")
+
+knitr::asis_output(info_str)
+```
+
+
+
+
+<!-- ```{.yaml filename="src/tasks/<task_id>/api/task_info.yaml"}
 task_id: your_task_id # <1>
 task_name: Your task name # <2>
 summary: "FILL IN: A one line description of what this purpose of this task is." # <3>
@@ -48,7 +88,7 @@ authors: # <5>
     info: # <5>
       github: your-github-account # <5>
       orcid: "0000-1111-2222-3333" # <5>
-```
+``` -->
 1. Provide the task id in snakecase format e.g. label_projection (no spaces, no special characters, only lowercase letters and underscores).
 2. Provide the full task name in normal formatted text e.g. Label Projection (can contain spaces and special characters).
 3. Provide a one line description of what the purpose of the task is.
