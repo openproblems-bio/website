@@ -42,58 +42,51 @@ Now create a task info metadata file in the `src/tasks/<task_id>/api` directory.
 ```{r echo=FALSE, warning=TRUE, error=TRUE}
 info <- read_and_merge_yaml("src/common/schemas/task_info.yaml")
 
-process <- function(info, prefix = "", required = NA) {
-
-    prop_names <-
-      names(info$properties)
-    req_prop <-
-      info$required
-
-    unlist(lapply(
-      prop_names,
-      function(prop_name) {
-        prop <- info$properties[[prop_name]]
-        process(prop, prefix = paste0(prefix, ".", prop_name), required = required)
-      }
-    ))
-  # } else if (type == "array") {
-  #   c() # ignore for now
-  # } else if (is.list(info)) {
-  #   paste0(
-  #     prefix, "`\n",
-  #     "\n",
-  #     info$description
-  #   )
-  # } else {
-  #   c()
-  # }
-}
-info_str <- paste(process(info, required = TRUE), collapse = "\n\n")
-
-knitr::asis_output(info_str)
 ```
 
 
+```{python}
+#| echo: false
+#| output: asis
+info = r.info
+
+task_info = open("task_info_template.yaml", "w")
+
+def process(info, prefix = ""):
+  for prop in info["properties"]:
+    if prop != "additionalProperties":
+      task_info.write(f"{prefix}{prop}: ")
+      if info["properties"][prop]["type"] == "string" and "description" in info["properties"][prop]:
+        task_info.write(f"{info['properties'][prop]['description']}" )
+      elif info["properties"][prop]["type"] == "string" and "description" not in info["properties"][prop]:
+        task_info.write(f"{prefix}\n" )
+      elif info["properties"][prop]["type"] == "object":
+        subinfo = info["properties"][prop]
+        task_info.write("\n")
+        process(subinfo, prefix = "  ")
+      elif info["properties"][prop]["type"] == "array":
+        if "description" in info["properties"][prop]:
+          task_info.write(f"{info['properties'][prop]['description']}" )
+        subinfo = info["properties"][prop]["items"]
+        if "properties" in subinfo:
+          task_info.write("\n  -")
+          process(subinfo, prefix = "  ")
 
 
-<!-- ```{.yaml filename="src/tasks/<task_id>/api/task_info.yaml"}
-task_id: your_task_id # <1>
-task_name: Your task name # <2>
-summary: "FILL IN: A one line description of what this purpose of this task is." # <3>
-description: | # <4>
-  FILL IN: The task description and motivation you created earlier. # <4>
-authors: # <5>
-  - name: "Your name" # <5>
-    roles: [ author, maintainer ] # <5>
-    info: # <5>
-      github: your-github-account # <5>
-      orcid: "0000-1111-2222-3333" # <5>
-``` -->
-1. Provide the task id in snakecase format e.g. label_projection (no spaces, no special characters, only lowercase letters and underscores).
-2. Provide the full task name in normal formatted text e.g. Label Projection (can contain spaces and special characters).
-3. Provide a one line description of what the purpose of the task is.
-4. Provide the task description and motivation from the previous created github issue.
-5. Provide all authors who helped create the task. You can add more authors by adding more `- name: ...` entries. The `roles` field can be used to specify the role of the author. The `info` field can be used to specify additional information about the author. For more information about the `roles` and `info` fields see the [viash documentation](https://viash.io/reference/config/functionality/author.html).
+
+process(info)
+
+task_info.close()
+```
+
+```` yaml
+```{bash}
+#| echo: false
+#| output: asis
+cat task_info_template.yaml
+```
+````
+
 
 
 
