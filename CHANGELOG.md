@@ -1,14 +1,10 @@
-# openproblems.bio v2.3.4
-
-## MINOR CHANGES
-
-* Minor updates to the NeurIPS 2023 landing page.
-
 # openproblems.bio v2.3.3
 
 ## MINOR CHANGES
 
 * Update renv to v1.0.2 to improve processing time.
+
+* Minor updates to the NeurIPS 2023 landing page.
 
 # openproblems.bio v2.3.2
 
