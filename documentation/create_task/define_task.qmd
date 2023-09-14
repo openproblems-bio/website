@@ -57,7 +57,7 @@ def process(info, prefix = ""):
     if prop != "additionalProperties":
       task_info.write(f"{prefix}{prop}: ")
       if info["properties"][prop]["type"] == "string" and "description" in info["properties"][prop]:
-        task_info.write(f"{info['properties'][prop]['description']}" )
+        task_info.write(f"\'{info['properties'][prop]['description'].strip()}\'\n" ) 
       elif info["properties"][prop]["type"] == "string" and "description" not in info["properties"][prop]:
         task_info.write(f"{prefix}\n" )
       elif info["properties"][prop]["type"] == "object":
@@ -66,10 +66,10 @@ def process(info, prefix = ""):
         process(subinfo, prefix = "  ")
       elif info["properties"][prop]["type"] == "array":
         if "description" in info["properties"][prop]:
-          task_info.write(f"{info['properties'][prop]['description']}" )
+          task_info.write(f"\'{info['properties'][prop]['description'].strip()}\'\n" )
         subinfo = info["properties"][prop]["items"]
         if "properties" in subinfo:
-          task_info.write("\n  -")
+          task_info.write("\n  - ")
           process(subinfo, prefix = "  ")
 
 
