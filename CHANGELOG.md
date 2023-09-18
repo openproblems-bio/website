@@ -1,3 +1,9 @@
+# openproblems.bio v2.3.4
+
+## BUG FIXES
+
+* Fix viash cheat sheet URL (PR #289)
+
 # openproblems.bio v2.3.3
 
 ## MINOR CHANGES
