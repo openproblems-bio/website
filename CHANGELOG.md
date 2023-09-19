@@ -1,8 +1,14 @@
+# openproblems.bio v2.3.5
+
+## MINOR CHANGES
+
+* Update Neurips 2023 hero.
+
 # openproblems.bio v2.3.4
 
 ## MINOR CHANGES
 
-* Update Neurips 2023 title and button to kaggle page (PR #289)
+* Update Neurips 2023 title and button to kaggle page (PR #289).
 
 ## BUG FIXES
 
