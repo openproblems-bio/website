@@ -7,7 +7,6 @@ on:
       - reopened
       - synchronize
       - closed
-  release:
 
 name: Render project
 
@@ -77,7 +76,7 @@ jobs:
       ## release actions
       - name: Deploy release to Netlify 🚀
         uses: data-intuitive/netlify-deploy-site@v1
-        if: github.event_name == 'release'
+        if: github.event_name == 'push'
         with:
           auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           site: ${{ env.NETLIFY_SITE_ID }}
