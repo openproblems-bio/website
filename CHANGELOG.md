@@ -4,6 +4,10 @@
 
 * Update Neurips 2023 hero.
 
+## BUG FIXES
+
+* Fix CI failure by updating the `openproblems-v2` submodule (PR #291).
+
 # openproblems.bio v2.3.4
 
 ## MINOR CHANGES
