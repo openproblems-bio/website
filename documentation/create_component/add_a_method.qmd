@@ -18,7 +18,12 @@ Note that the Label Projection task is used throughout the guide, so make sure t
 Make sure you have followed the ["Getting started"](../fundamentals/getting_started.qmd) guide.
 :::
 
-## Step 1:  Create a new component
+
+```{bash, include=FALSE, eval=TRUE}
+viash run src/common/create_component/config.vsh.yaml -- ---setup cb
+```
+
+## Step 1: Create a new component
 
 Use the `create_component` component to start creating a new method.
 
