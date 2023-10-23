@@ -23,9 +23,6 @@ jobs:
           submodules: recursive
           fetch-depth: 0
       
-      - name: Update Docker engine
-        uses: viash-io/viash-actions/update-docker-engine@v3
-
       - uses: viash-io/viash-actions/setup@v4
 
       - name: Debug failing command
@@ -38,4 +35,14 @@ jobs:
             --name my_method_py \
             --language python
           set -e
+          
+          echo tree
           tree /tmp
+          echo
+
+          echo ls
+          ls -l /tmp/viash_create_componen*/
+          echo
+
+          echo cat
+          cat /tmp/viash_create_component*/*
