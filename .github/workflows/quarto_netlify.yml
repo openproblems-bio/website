@@ -28,12 +28,14 @@ jobs:
 
       - uses: viash-io/viash-actions/setup@v4
 
-      - name: Render with Quarto
+      - name: Debug failing command
         run: |
           cd _openproblems-v2
-          # manually run failing command
+          set +e
           viash run src/common/create_component/config.vsh.yaml -- \
             --task label_projection \
             --type method \
             --name my_method_py \
             --language python
+          set -e
+          tree /tmp
