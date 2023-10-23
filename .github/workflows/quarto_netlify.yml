@@ -24,6 +24,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
       
       - name: Update Docker engine
         uses: viash-io/viash-actions/update-docker-engine@v3
