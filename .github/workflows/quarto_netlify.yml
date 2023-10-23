@@ -27,6 +27,10 @@ jobs:
         with:
           submodules: recursive
 
+      
+      - name: Update Docker engine
+        uses: viash-io/viash-actions/update-docker-engine@v3
+
       - uses: r-lib/actions/setup-r@v2
         with:
           r-version: "4.2"
