@@ -1,3 +1,13 @@
+# openproblems.bio unreleased
+
+## BUG FIXES
+
+* Updated the `openproblems-v2` submodule (PR #295). This fixes a deprecation error due to an update in ruamel.yaml.
+
+* Add redirect from `/benchmark_dataset` to `/events/2021-09_neurips/documentation/data/dataset.html` (#292, PR #295).
+
+* Fixed minor issues in qmd files.
+
 # openproblems.bio v2.3.5
 
 ## MINOR CHANGES
