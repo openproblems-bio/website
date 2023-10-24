@@ -6,7 +6,7 @@
 
 * Add redirect from `/benchmark_dataset` to `/events/2021-09_neurips/documentation/data/dataset.html` (#292, PR #295).
 
-* Fixed minor issues in qmd files.
+* Fixed minor issues in qmd files (PR #295).
 
 # openproblems.bio v2.3.5
 
