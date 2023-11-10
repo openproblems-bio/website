@@ -3,7 +3,7 @@ Results table of the scores per method, dataset and metric (after scaling). Use 
 ```{r resultstable}
 #| echo: false
 res_tib0 <- results %>%
-  unnest(scaled_scores) %>%
+  unnest(metric_values) %>%
   unnest(resources) %>%
   left_join(method_info %>% select(-commit_sha, -code_version, -task_id), by = "method_id") %>%
   filter(!is_baseline) %>%
