@@ -39,7 +39,7 @@ column_info <-
     ),
     dataset_info %>% transmute(
       id = paste0("dataset_", dataset_id),
-      name = dataset_name,
+      name = dataset_id,
       group = "dataset",
       geom = "funkyrect"
     ),

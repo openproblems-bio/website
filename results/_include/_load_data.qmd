@@ -72,7 +72,7 @@ results_long <-
       mutate(value = ifelse(is.na(value), NA_real_, value)) %>%
       select(method_id, dataset_id, metric_id, value),
     results %>%
-      unnest(metric_values) %>%
+      unnest(scaled_scores) %>%
       gather(metric_id, score, any_of(metric_info$metric_id)) %>%
       mutate(score = ifelse(is.na(score), NA_real_, score)) %>%
       select(method_id, dataset_id, metric_id, score),
