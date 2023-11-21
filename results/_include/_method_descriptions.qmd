@@ -1,13 +1,19 @@
 ```{r method_description}
 #| echo: false
 # show each method just once
-lines <- pmap_chr(method_info, function(method_name, method_summary, paper_reference, code_url, code_version, ...) {
+lines <- map_chr(seq_len(nrow(method_info)), function(i) {
+  method_name <- method_info$method_name[[i]]
+  method_summary <- method_info$method_summary[[i]]
+  paper_reference <- method_info$paper_reference[[i]]
+  code_url <- method_info$code_url[[i]]
+  code_version <- method_info$code_version[[i]]
+
   links <- c()
   if (!is.na(code_url)) {
     links <- c(links, glue::glue(" [Docs]({code_url})"))
   }
   version_label <- 
-    if (!is.na(code_version)) {
+    if (!is.na(code_version) && code_version != "missing-version") {
       glue::glue(" Software version {code_version}.")
     } else {
       ""
@@ -18,7 +24,12 @@ lines <- pmap_chr(method_info, function(method_name, method_summary, paper_refer
     } else {
       ""
     }
-  links_label <- glue::glue(" Links: {paste(links, collapse = ', ')}.")
+  links_label <-
+    if (length(links) > 0) {
+      glue::glue(" Links: {paste(links, collapse = ', ')}.")
+    } else {
+      ""
+    }
   summ <- (method_summary %|% "Missing 'method_summary'") %>% str_replace_all("\\. *$", "")
   glue::glue("* **{method_name}**{ref}: {summ}.{version_label}{links_label}")
 })
