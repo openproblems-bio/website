@@ -1,23 +1,9 @@
 [
   {
     "documentation_url": "https://github.com/Teichlab/bbknn#readme",
-    "v1": {
-      "path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/bbknn.py",
-      "commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32"
-    },
     "preferred_normalization": "log_cp10k",
-    "variants": {
-      "bbknn_full_scaled": {
-        "preferred_normalization": "log_cp10k_scaled"
-      }
-    },
     "type": "method",
     "subtype": "graph",
-    "type_info": {
-      "label": "Method (graph)",
-      "summary": "A batch integration graph method.",
-      "description": "A batch integration method which outputs a batch-corrected cell graphs.\n"
-    },
     "config_path": "/home/runner/work/openproblems-v2/openproblems-v2/src/tasks/batch_integration/methods/bbknn/config.vsh.yaml",
     "task_id": "batch_integration",
     "method_id": "bbknn",
@@ -29,27 +15,18 @@
     "method_summary": "BBKNN creates k nearest neighbours graph by identifying neighbours within batches, then combining and processing them with UMAP for visualization.",
     "method_description": "\"BBKNN or batch balanced k nearest neighbours graph is built for each cell by\nidentifying its k nearest neighbours within each defined batch separately,\ncreating independent neighbour sets for each cell in each batch. These sets\nare then combined and processed with the UMAP algorithm for visualisation.\"\n",
     "paper_reference": "polanski2020bbknn",
-    "code_url": "https://github.com/Teichlab/bbknn"
+    "code_url": "https://github.com/Teichlab/bbknn",
+    "v1.path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/bbknn.py",
+    "v1.commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+    "type_info.label": "Method (graph)",
+    "type_info.summary": "A batch integration graph method.",
+    "type_info.description": "A batch integration method which outputs a batch-corrected cell graphs.\n"
   },
   {
     "documentation_url": "https://scanpy.readthedocs.io/en/stable/api/scanpy.pp.combat.html",
-    "v1": {
-      "path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/combat.py",
-      "commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32"
-    },
     "preferred_normalization": "log_cp10k",
-    "variants": {
-      "combat_full_scaled": {
-        "preferred_normalization": "log_cp10k_scaled"
-      }
-    },
     "type": "method",
     "subtype": "feature",
-    "type_info": {
-      "label": "Method (feature)",
-      "summary": "A batch integration feature method.",
-      "description": "A batch integration method which outputs a batch-corrected feature-space.\n"
-    },
     "config_path": "/home/runner/work/openproblems-v2/openproblems-v2/src/tasks/batch_integration/methods/combat/config.vsh.yaml",
     "task_id": "batch_integration",
     "method_id": "combat",
@@ -61,22 +38,18 @@
     "method_summary": "Adjusting batch effects in microarray expression data using empirical Bayes methods",
     "method_description": "\"An Empirical Bayes (EB) approach to correct for batch effects. It\nestimates batch-specific parameters by pooling information across genes in\neach batch and shrinks the estimates towards the overall mean of the batch\neffect estimates across all genes. These parameters are then used to adjust\nthe data for batch effects, leading to more accurate and reproducible\nresults.\"\n",
     "paper_reference": "hansen2012removing",
-    "code_url": "https://scanpy.readthedocs.io/en/stable/api/scanpy.pp.combat.html"
+    "code_url": "https://scanpy.readthedocs.io/en/stable/api/scanpy.pp.combat.html",
+    "v1.path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/combat.py",
+    "v1.commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+    "type_info.label": "Method (feature)",
+    "type_info.summary": "A batch integration feature method.",
+    "type_info.description": "A batch integration method which outputs a batch-corrected feature-space.\n"
   },
   {
     "documentation_url": "https://bioconductor.org/packages/batchelor/",
     "preferred_normalization": "log_cp10k",
-    "v1": {
-      "path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/fastmnn.py",
-      "commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32"
-    },
     "type": "method",
     "subtype": "embedding",
-    "type_info": {
-      "label": "Method (embedding)",
-      "summary": "A batch integration embedding method.",
-      "description": "A batch integration method which outputs a batch-corrected embedding.\n"
-    },
     "config_path": "/home/runner/work/openproblems-v2/openproblems-v2/src/tasks/batch_integration/methods/fastmnn_embedding/config.vsh.yaml",
     "task_id": "batch_integration",
     "method_id": "fastmnn_embedding",
@@ -88,22 +61,18 @@
     "method_summary": "A simpler version of the original mnnCorrect algorithm.",
     "method_description": "The fastMNN() approach is much simpler than the original mnnCorrect() algorithm, and proceeds in several steps.\n\n1. Perform a multi-sample PCA on the (cosine-)normalized expression values to reduce dimensionality.\n2. Identify MNN pairs in the low-dimensional space between a reference batch and a target batch.\n3. Remove variation along the average batch vector in both reference and target batches.\n4. Correct the cells in the target batch towards the reference, using locally weighted correction vectors.\n5. Merge the corrected target batch with the reference, and repeat with the next target batch.\n",
     "paper_reference": "haghverdi2018batch",
-    "code_url": "https://code.bioconductor.org/browse/batchelor/"
+    "code_url": "https://code.bioconductor.org/browse/batchelor/",
+    "v1.path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/fastmnn.py",
+    "v1.commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+    "type_info.label": "Method (embedding)",
+    "type_info.summary": "A batch integration embedding method.",
+    "type_info.description": "A batch integration method which outputs a batch-corrected embedding.\n"
   },
   {
     "documentation_url": "https://bioconductor.org/packages/batchelor/",
     "preferred_normalization": "log_cp10k",
-    "v1": {
-      "path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/fastmnn.py",
-      "commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32"
-    },
     "type": "method",
     "subtype": "feature",
-    "type_info": {
-      "label": "Method (feature)",
-      "summary": "A batch integration feature method.",
-      "description": "A batch integration method which outputs a batch-corrected feature-space.\n"
-    },
     "config_path": "/home/runner/work/openproblems-v2/openproblems-v2/src/tasks/batch_integration/methods/fastmnn_feature/config.vsh.yaml",
     "task_id": "batch_integration",
     "method_id": "fastmnn_feature",
@@ -115,18 +84,18 @@
     "method_summary": "A simpler version of the original mnnCorrect algorithm.",
     "method_description": "The fastMNN() approach is much simpler than the original mnnCorrect() algorithm, and proceeds in several steps.\n\n1. Perform a multi-sample PCA on the (cosine-)normalized expression values to reduce dimensionality.\n2. Identify MNN pairs in the low-dimensional space between a reference batch and a target batch.\n3. Remove variation along the average batch vector in both reference and target batches.\n4. Correct the cells in the target batch towards the reference, using locally weighted correction vectors.\n5. Merge the corrected target batch with the reference, and repeat with the next target batch.\n",
     "paper_reference": "haghverdi2018batch",
-    "code_url": "https://code.bioconductor.org/browse/batchelor/"
+    "code_url": "https://code.bioconductor.org/browse/batchelor/",
+    "v1.path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/fastmnn.py",
+    "v1.commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+    "type_info.label": "Method (feature)",
+    "type_info.summary": "A batch integration feature method.",
+    "type_info.description": "A batch integration method which outputs a batch-corrected feature-space.\n"
   },
   {
     "documentation_url": "https://github.com/welch-lab/liger",
     "preferred_normalization": "log_cp10k",
     "type": "method",
     "subtype": "embedding",
-    "type_info": {
-      "label": "Method (embedding)",
-      "summary": "A batch integration embedding method.",
-      "description": "A batch integration method which outputs a batch-corrected embedding.\n"
-    },
     "config_path": "/home/runner/work/openproblems-v2/openproblems-v2/src/tasks/batch_integration/methods/liger/config.vsh.yaml",
     "task_id": "batch_integration",
     "method_id": "liger",
@@ -138,18 +107,16 @@
     "method_summary": "Linked Inference of Genomic Experimental Relationships",
     "method_description": "LIGER or linked inference of genomic experimental relationships uses iNMF \nderiving and implementing a novel coordinate descent algorithm to efficiently \ndo the factorization. Joint clustering is performed and factor loadings are \nnormalised.\n",
     "paper_reference": "welch2019",
-    "code_url": "https://github.com/welch-lab/liger"
+    "code_url": "https://github.com/welch-lab/liger",
+    "type_info.label": "Method (embedding)",
+    "type_info.summary": "A batch integration embedding method.",
+    "type_info.description": "A batch integration method which outputs a batch-corrected embedding.\n"
   },
   {
     "documentation_url": "https://bioconductor.org/packages/batchelor/",
     "preferred_normalization": "log_cp10k",
     "type": "method",
     "subtype": "feature",
-    "type_info": {
-      "label": "Method (feature)",
-      "summary": "A batch integration feature method.",
-      "description": "A batch integration method which outputs a batch-corrected feature-space.\n"
-    },
     "config_path": "/home/runner/work/openproblems-v2/openproblems-v2/src/tasks/batch_integration/methods/mnn_correct/config.vsh.yaml",
     "task_id": "batch_integration",
     "method_id": "mnn_correct",
@@ -161,27 +128,16 @@
     "method_summary": "Correct for batch effects in single-cell expression data using the mutual nearest neighbors method.",
     "method_description": "We present a strategy for batch correction based on the detection of mutual nearest neighbors (MNNs) in the high-dimensional expression space.\nOur approach does not rely on predefined or equal population compositions across batches; instead, it requires only that a subset of the population be shared between batches.\n",
     "paper_reference": "haghverdi2018batch",
-    "code_url": "https://code.bioconductor.org/browse/batchelor/"
+    "code_url": "https://code.bioconductor.org/browse/batchelor/",
+    "type_info.label": "Method (feature)",
+    "type_info.summary": "A batch integration feature method.",
+    "type_info.description": "A batch integration method which outputs a batch-corrected feature-space.\n"
   },
   {
     "documentation_url": "https://github.com/chriscainx/mnnpy#readme",
-    "v1": {
-      "path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/mnn.py",
-      "commit": "29803b95c88b4ec5921df2eec7111fd5d1a95daf"
-    },
     "preferred_normalization": "log_cp10k",
-    "variants": {
-      "mnn_full_scaled": {
-        "preferred_normalization": "log_cp10k_scaled"
-      }
-    },
     "type": "method",
     "subtype": "feature",
-    "type_info": {
-      "label": "Method (feature)",
-      "summary": "A batch integration feature method.",
-      "description": "A batch integration method which outputs a batch-corrected feature-space.\n"
-    },
     "config_path": "/home/runner/work/openproblems-v2/openproblems-v2/src/tasks/batch_integration/methods/mnnpy/config.vsh.yaml",
     "task_id": "batch_integration",
     "method_id": "mnnpy",
@@ -193,23 +149,18 @@
     "method_summary": "Batch effect correction by matching mutual nearest neighbors, Python implementation.",
     "method_description": "An implementation of MNN correct in python featuring low memory usage, full multicore support and compatibility with the scanpy framework.\n\nBatch effect correction by matching mutual nearest neighbors (Haghverdi et al, 2018) has been implemented as a function 'mnnCorrect' in the R package scran. Sadly it's extremely slow for big datasets and doesn't make full use of the parallel architecture of modern CPUs.\n\nThis project is a python implementation of the MNN correct algorithm which takes advantage of python's extendability and hackability. It seamlessly integrates with the scanpy framework and has multicore support in its bones.\n",
     "paper_reference": "hie2019efficient",
-    "code_url": "https://github.com/chriscainx/mnnpy"
+    "code_url": "https://github.com/chriscainx/mnnpy",
+    "v1.path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/mnn.py",
+    "v1.commit": "29803b95c88b4ec5921df2eec7111fd5d1a95daf",
+    "type_info.label": "Method (feature)",
+    "type_info.summary": "A batch integration feature method.",
+    "type_info.description": "A batch integration method which outputs a batch-corrected feature-space.\n"
   },
   {
     "documentation_url": "https://github.com/welch-lab/pyliger",
     "preferred_normalization": "log_cp10k",
-    "variants": {
-      "liger_scaled": {
-        "preferred_normalization": "log_cp10k_scaled"
-      }
-    },
     "type": "method",
     "subtype": "embedding",
-    "type_info": {
-      "label": "Method (embedding)",
-      "summary": "A batch integration embedding method.",
-      "description": "A batch integration method which outputs a batch-corrected embedding.\n"
-    },
     "config_path": "/home/runner/work/openproblems-v2/openproblems-v2/src/tasks/batch_integration/methods/pyliger/config.vsh.yaml",
     "task_id": "batch_integration",
     "method_id": "pyliger",
@@ -221,27 +172,16 @@
     "method_summary": "Python implementation of LIGER (Linked Inference of Genomic Experimental Relationships",
     "method_description": "LIGER (installed as rliger) is a package for integrating and analyzing multiple \nsingle-cell datasets, developed by the Macosko lab and maintained/extended by the \nWelch lab. It relies on integrative non-negative matrix factorization to identify \nshared and dataset-specific factors.\n",
     "paper_reference": "welch2019",
-    "code_url": "https://github.com/welch-lab/pyliger"
+    "code_url": "https://github.com/welch-lab/pyliger",
+    "type_info.label": "Method (embedding)",
+    "type_info.summary": "A batch integration embedding method.",
+    "type_info.description": "A batch integration method which outputs a batch-corrected embedding.\n"
   },
   {
     "documentation_url": "https://scalex.readthedocs.io",
-    "v1": {
-      "path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/scalex.py",
-      "commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32"
-    },
     "preferred_normalization": "log_cp10k",
-    "variants": {
-      "scanorama_feature_scaled": {
-        "preferred_normalization": "log_cp10k_scaled"
-      }
-    },
     "type": "method",
     "subtype": "embedding",
-    "type_info": {
-      "label": "Method (embedding)",
-      "summary": "A batch integration embedding method.",
-      "description": "A batch integration method which outputs a batch-corrected embedding.\n"
-    },
     "config_path": "/home/runner/work/openproblems-v2/openproblems-v2/src/tasks/batch_integration/methods/scalex_embed/config.vsh.yaml",
     "task_id": "batch_integration",
     "method_id": "scalex_embed",
@@ -253,27 +193,18 @@
     "method_summary": "Online single-cell data integration through projecting heterogeneous datasets into a common cell-embedding space",
     "method_description": "SCALEX is a method for integrating heterogeneous single-cell data online using a VAE framework. Its generalised encoder disentangles batch-related components from batch-invariant biological components, which are then projected into a common cell-embedding space.\n",
     "paper_reference": "xiong2021online",
-    "code_url": "https://github.com/jsxlei/SCALEX"
+    "code_url": "https://github.com/jsxlei/SCALEX",
+    "v1.path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/scalex.py",
+    "v1.commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+    "type_info.label": "Method (embedding)",
+    "type_info.summary": "A batch integration embedding method.",
+    "type_info.description": "A batch integration method which outputs a batch-corrected embedding.\n"
   },
   {
     "documentation_url": "https://scalex.readthedocs.io",
-    "v1": {
-      "path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/scalex.py",
-      "commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32"
-    },
     "preferred_normalization": "log_cp10k",
-    "variants": {
-      "scanorama_feature_scaled": {
-        "preferred_normalization": "log_cp10k_scaled"
-      }
-    },
     "type": "method",
     "subtype": "feature",
-    "type_info": {
-      "label": "Method (feature)",
-      "summary": "A batch integration feature method.",
-      "description": "A batch integration method which outputs a batch-corrected feature-space.\n"
-    },
     "config_path": "/home/runner/work/openproblems-v2/openproblems-v2/src/tasks/batch_integration/methods/scalex_feature/config.vsh.yaml",
     "task_id": "batch_integration",
     "method_id": "scalex_feature",
@@ -285,27 +216,18 @@
     "method_summary": "Online single-cell data integration through projecting heterogeneous datasets into a common cell-embedding space",
     "method_description": "SCALEX is a method for integrating heterogeneous single-cell data online using a VAE framework. Its generalised encoder disentangles batch-related components from batch-invariant biological components, which are then projected into a common cell-embedding space.\n",
     "paper_reference": "xiong2021online",
-    "code_url": "https://github.com/jsxlei/SCALEX"
+    "code_url": "https://github.com/jsxlei/SCALEX",
+    "v1.path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/scalex.py",
+    "v1.commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+    "type_info.label": "Method (feature)",
+    "type_info.summary": "A batch integration feature method.",
+    "type_info.description": "A batch integration method which outputs a batch-corrected feature-space.\n"
   },
   {
     "documentation_url": "https://github.com/brianhie/scanorama#readme",
-    "v1": {
-      "path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/scanorama.py",
-      "commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32"
-    },
     "preferred_normalization": "log_cp10k",
-    "variants": {
-      "scanorama_embed_full_scaled": {
-        "preferred_normalization": "log_cp10k_scaled"
-      }
-    },
     "type": "method",
     "subtype": "embedding",
-    "type_info": {
-      "label": "Method (embedding)",
-      "summary": "A batch integration embedding method.",
-      "description": "A batch integration method which outputs a batch-corrected embedding.\n"
-    },
     "config_path": "/home/runner/work/openproblems-v2/openproblems-v2/src/tasks/batch_integration/methods/scanorama_embed/config.vsh.yaml",
     "task_id": "batch_integration",
     "method_id": "scanorama_embed",
@@ -317,27 +239,18 @@
     "method_summary": "Efficient integration of heterogeneous single-cell transcriptomes using Scanorama",
     "method_description": "\"Scanorama is an extension of the MNN method. Other then MNN, it finds mutual nearest neighbours over all batches and embeds observations into a joint hyperplane.\"\n",
     "paper_reference": "hie2019efficient",
-    "code_url": "https://github.com/brianhie/scanorama"
+    "code_url": "https://github.com/brianhie/scanorama",
+    "v1.path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/scanorama.py",
+    "v1.commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+    "type_info.label": "Method (embedding)",
+    "type_info.summary": "A batch integration embedding method.",
+    "type_info.description": "A batch integration method which outputs a batch-corrected embedding.\n"
   },
   {
     "documentation_url": "https://github.com/brianhie/scanorama#readme",
-    "v1": {
-      "path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/scanorama.py",
-      "commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32"
-    },
     "preferred_normalization": "log_cp10k",
-    "variants": {
-      "scanorama_feature_full_scaled": {
-        "preferred_normalization": "log_cp10k_scaled"
-      }
-    },
     "type": "method",
     "subtype": "feature",
-    "type_info": {
-      "label": "Method (feature)",
-      "summary": "A batch integration feature method.",
-      "description": "A batch integration method which outputs a batch-corrected feature-space.\n"
-    },
     "config_path": "/home/runner/work/openproblems-v2/openproblems-v2/src/tasks/batch_integration/methods/scanorama_feature/config.vsh.yaml",
     "task_id": "batch_integration",
     "method_id": "scanorama_feature",
@@ -349,22 +262,18 @@
     "method_summary": "Efficient integration of heterogeneous single-cell transcriptomes using Scanorama",
     "method_description": "\"Scanorama is an extension of the MNN method. Other then MNN, it finds mutual nearest neighbours over all batches and embeds observations into a joint hyperplane.\"\n",
     "paper_reference": "hie2019efficient",
-    "code_url": "https://github.com/brianhie/scanorama"
+    "code_url": "https://github.com/brianhie/scanorama",
+    "v1.path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/scanorama.py",
+    "v1.commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+    "type_info.label": "Method (feature)",
+    "type_info.summary": "A batch integration feature method.",
+    "type_info.description": "A batch integration method which outputs a batch-corrected feature-space.\n"
   },
   {
     "documentation_url": "https://github.com/YosefLab/scvi-tools#readme",
-    "v1": {
-      "path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/scanvi.py",
-      "commit": "29803b95c88b4ec5921df2eec7111fd5d1a95daf"
-    },
     "preferred_normalization": "log_cp10k",
     "type": "method",
     "subtype": "embedding",
-    "type_info": {
-      "label": "Method (embedding)",
-      "summary": "A batch integration embedding method.",
-      "description": "A batch integration method which outputs a batch-corrected embedding.\n"
-    },
     "config_path": "/home/runner/work/openproblems-v2/openproblems-v2/src/tasks/batch_integration/methods/scanvi/config.vsh.yaml",
     "task_id": "batch_integration",
     "method_id": "scanvi",
@@ -376,22 +285,18 @@
     "method_summary": "ScanVI is a deep learning method that considers cell type labels.",
     "method_description": "scANVI (single-cell ANnotation using Variational Inference; Python class SCANVI) is a semi-supervised model for single-cell transcriptomics data. In a sense, it can be seen as a scVI extension that can leverage the cell type knowledge for a subset of the cells present in the data sets to infer the states of the rest of the cells.\n",
     "paper_reference": "lopez2018deep",
-    "code_url": "https://github.com/YosefLab/scvi-tools"
+    "code_url": "https://github.com/YosefLab/scvi-tools",
+    "v1.path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/scanvi.py",
+    "v1.commit": "29803b95c88b4ec5921df2eec7111fd5d1a95daf",
+    "type_info.label": "Method (embedding)",
+    "type_info.summary": "A batch integration embedding method.",
+    "type_info.description": "A batch integration method which outputs a batch-corrected embedding.\n"
   },
   {
     "documentation_url": "https://github.com/YosefLab/scvi-tools#readme",
-    "v1": {
-      "path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/scvi.py",
-      "commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32"
-    },
     "preferred_normalization": "log_cp10k",
     "type": "method",
     "subtype": "embedding",
-    "type_info": {
-      "label": "Method (embedding)",
-      "summary": "A batch integration embedding method.",
-      "description": "A batch integration method which outputs a batch-corrected embedding.\n"
-    },
     "config_path": "/home/runner/work/openproblems-v2/openproblems-v2/src/tasks/batch_integration/methods/scvi/config.vsh.yaml",
     "task_id": "batch_integration",
     "method_id": "scvi",
@@ -403,21 +308,17 @@
     "method_summary": "scVI combines a variational autoencoder with a hierarchical Bayesian model.",
     "method_description": "scVI combines a variational autoencoder with a hierarchical Bayesian model. It uses the negative binomial distribution to describe gene expression of each cell, conditioned on unobserved factors and the batch variable. ScVI is run as implemented in Luecken et al.\n",
     "paper_reference": "lopez2018deep",
-    "code_url": "https://github.com/YosefLab/scvi-tools"
+    "code_url": "https://github.com/YosefLab/scvi-tools",
+    "v1.path": "openproblems/tasks/_batch_integration/batch_integration_graph/methods/scvi.py",
+    "v1.commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+    "type_info.label": "Method (embedding)",
+    "type_info.summary": "A batch integration embedding method.",
+    "type_info.description": "A batch integration method which outputs a batch-corrected embedding.\n"
   },
   {
-    "v1": {
-      "path": "openproblems/tasks/_batch_integration/batch_integration_embed/methods/baseline.py",
-      "commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32"
-    },
     "preferred_normalization": "log_cp10k",
     "type": "control_method",
     "subtype": "embedding",
-    "type_info": {
-      "label": "Control method (embedding)",
-      "summary": "A batch integration embedding control method.",
-      "description": "A batch integration control method which outputs a batch-corrected embedding.\n"
-    },
     "config_path": "/home/runner/work/openproblems-v2/openproblems-v2/src/tasks/batch_integration/control_methods/no_integration_batch/config.vsh.yaml",
     "task_id": "batch_integration",
     "method_id": "no_integration_batch",
@@ -427,21 +328,17 @@
     "code_version": "missing-version",
     "method_name": "No integration by Batch",
     "method_summary": "Cells are embedded by computing PCA independently on each batch",
-    "method_description": "Cells are embedded by computing PCA independently on each batch"
+    "method_description": "Cells are embedded by computing PCA independently on each batch",
+    "v1.path": "openproblems/tasks/_batch_integration/batch_integration_embed/methods/baseline.py",
+    "v1.commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+    "type_info.label": "Control method (embedding)",
+    "type_info.summary": "A batch integration embedding control method.",
+    "type_info.description": "A batch integration control method which outputs a batch-corrected embedding.\n"
   },
   {
-    "v1": {
-      "path": "openproblems/tasks/_batch_integration/batch_integration_embed/methods/baseline.py",
-      "commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32"
-    },
     "preferred_normalization": "log_cp10k",
     "type": "control_method",
     "subtype": "embedding",
-    "type_info": {
-      "label": "Control method (embedding)",
-      "summary": "A batch integration embedding control method.",
-      "description": "A batch integration control method which outputs a batch-corrected embedding.\n"
-    },
     "config_path": "/home/runner/work/openproblems-v2/openproblems-v2/src/tasks/batch_integration/control_methods/random_embed_cell/config.vsh.yaml",
     "task_id": "batch_integration",
     "method_id": "random_embed_cell",
@@ -451,21 +348,17 @@
     "code_version": "missing-version",
     "method_name": "Random Embedding by Celltype",
     "method_summary": "Cells are embedded as a one-hot encoding of celltype labels",
-    "method_description": "Cells are embedded as a one-hot encoding of celltype labels"
+    "method_description": "Cells are embedded as a one-hot encoding of celltype labels",
+    "v1.path": "openproblems/tasks/_batch_integration/batch_integration_embed/methods/baseline.py",
+    "v1.commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+    "type_info.label": "Control method (embedding)",
+    "type_info.summary": "A batch integration embedding control method.",
+    "type_info.description": "A batch integration control method which outputs a batch-corrected embedding.\n"
   },
   {
-    "v1": {
-      "path": "openproblems/tasks/_batch_integration/batch_integration_embed/methods/baseline.py",
-      "commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32"
-    },
     "preferred_normalization": "log_cp10k",
     "type": "control_method",
     "subtype": "embedding",
-    "type_info": {
-      "label": "Control method (embedding)",
-      "summary": "A batch integration embedding control method.",
-      "description": "A batch integration control method which outputs a batch-corrected embedding.\n"
-    },
     "config_path": "/home/runner/work/openproblems-v2/openproblems-v2/src/tasks/batch_integration/control_methods/random_embed_cell_jitter/config.vsh.yaml",
     "task_id": "batch_integration",
     "method_id": "random_embed_cell_jitter",
@@ -475,21 +368,17 @@
     "code_version": "missing-version",
     "method_name": "Random Embedding by Celltype with jitter",
     "method_summary": "Cells are embedded as a one-hot encoding of celltype labels, with a small amount of random noise added to the embedding",
-    "method_description": "Cells are embedded as a one-hot encoding of celltype labels, with a small amount of random noise added to the embedding"
+    "method_description": "Cells are embedded as a one-hot encoding of celltype labels, with a small amount of random noise added to the embedding",
+    "v1.path": "openproblems/tasks/_batch_integration/batch_integration_embed/methods/baseline.py",
+    "v1.commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+    "type_info.label": "Control method (embedding)",
+    "type_info.summary": "A batch integration embedding control method.",
+    "type_info.description": "A batch integration control method which outputs a batch-corrected embedding.\n"
   },
   {
-    "v1": {
-      "path": "openproblems/tasks/_batch_integration/batch_integration_embed/methods/baseline.py",
-      "commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32"
-    },
     "preferred_normalization": "log_cp10k",
     "type": "control_method",
     "subtype": "graph",
-    "type_info": {
-      "label": "Control method (graph)",
-      "summary": "A batch integration graph control method.",
-      "description": "A batch integration control method which outputs a batch-corrected cell graphs.\n"
-    },
     "config_path": "/home/runner/work/openproblems-v2/openproblems-v2/src/tasks/batch_integration/control_methods/random_integration/config.vsh.yaml",
     "task_id": "batch_integration",
     "method_id": "random_integration",
@@ -499,6 +388,11 @@
     "code_version": "missing-version",
     "method_name": "Random integration",
     "method_summary": "Feature values, embedding coordinates, and graph connectivity are all randomly permuted.",
-    "method_description": "Feature values, embedding coordinates, and graph connectivity are all randomly permuted."
+    "method_description": "Feature values, embedding coordinates, and graph connectivity are all randomly permuted.",
+    "v1.path": "openproblems/tasks/_batch_integration/batch_integration_embed/methods/baseline.py",
+    "v1.commit": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+    "type_info.label": "Control method (graph)",
+    "type_info.summary": "A batch integration graph control method.",
+    "type_info.description": "A batch integration control method which outputs a batch-corrected cell graphs.\n"
   }
 ]
