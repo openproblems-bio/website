@@ -1,12 +1,7 @@
 ```{r method_description}
 #| echo: false
 # show each method just once
-lines <- map_chr(seq_len(nrow(method_info)), function(i) {
-  method_name <- method_info$method_name[[i]]
-  method_summary <- method_info$method_summary[[i]]
-  paper_reference <- method_info$paper_reference[[i]]
-  code_url <- method_info$code_url[[i]]
-  code_version <- method_info$code_version[[i]]
+lines <- pmap_chr(method_info, function(method_name, method_summary, paper_reference, code_url, code_version, ...) {
 
   links <- c()
   if (!is.na(code_url)) {
