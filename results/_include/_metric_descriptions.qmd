@@ -7,7 +7,7 @@ lines <- pmap_chr(metric_info, function(metric_name, metric_summary, paper_refer
     } else {
       ""
     }
-  summ <- (metric_summary %|% "Missing 'metric_summary'") %>% str_replace_all("\\. *$", "")
+  summ <- (metric_summary %|% "Missing 'metric_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "") 
   glue::glue("* **{metric_name}**{ref}: {summ}.")
 })
 knitr::asis_output(paste(lines, collapse = "\n"))

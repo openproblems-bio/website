@@ -25,7 +25,7 @@ lines <- pmap_chr(method_info, function(method_name, method_summary, paper_refer
     } else {
       ""
     }
-  summ <- (method_summary %|% "Missing 'method_summary'") %>% str_replace_all("\\. *$", "")
+  summ <- (method_summary %|% "Missing 'method_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
   glue::glue("* **{method_name}**{ref}: {summ}.{version_label}{links_label}")
 })
 knitr::asis_output(paste(lines, collapse = "\n"))
