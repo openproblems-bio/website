@@ -1,5 +1,9 @@
 # openproblems.bio unreleased
 
+## NEW CONTENT
+
+* Added an event page for the Weekly wednesday work meeting (PR #299).
+
 ## BUG FIXES
 
 * Updated the `openproblems-v2` submodule (PR #295). This fixes a deprecation error due to an update in ruamel.yaml.
