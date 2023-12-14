@@ -3,7 +3,9 @@
 lines <- pmap_chr(metric_info, function(metric_name, metric_summary, paper_reference, ...) {
   ref <- 
     if (!is.na(paper_reference)) {
-      paste0("<sup>", cite_fun(paper_reference, "html"), "</sup>")
+      refs <- str_split(paper_reference, ", ")[[1]]
+      inner_str <- sapply(refs, function(ref) cite_fun(ref, "html"))
+      paste0("<sup>", paste(inner_str, collapse = ", "), "</sup>")
     } else {
       ""
     }
