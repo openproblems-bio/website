@@ -13,12 +13,8 @@ lines <- pmap_chr(method_info, function(method_name, method_summary, paper_refer
     } else {
       ""
     }
-  ref <- 
-    if (!is.na(paper_reference)) {
-      paste0("<sup>", cite_fun(paper_reference, "html"), "</sup>")
-    } else {
-      ""
-    }
+  ref <- split_cite_fun(paper_reference)
+  if (ref != "") ref <- paste0(" ", ref)
   links_label <-
     if (length(links) > 0) {
       glue::glue(" Links: {paste(links, collapse = ', ')}.")

@@ -1,12 +1,8 @@
 ```{r dataset_description}
 #| echo: false
 lines <- pmap_chr(dataset_info, function(dataset_name, dataset_summary, data_reference, ...) {
-  ref <- 
-    if (!is.na(data_reference)) {
-      paste0("<sup>", cite_fun(data_reference, "html"), "</sup>")
-    } else {
-      ""
-    }
+  ref <- split_cite_fun(data_reference)
+  if (ref != "") ref <- paste0(" ", ref)
   summ <- (dataset_summary %|% "Missing 'dataset_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
   glue::glue("* **{dataset_name}**{ref}: {summ}.")
 })

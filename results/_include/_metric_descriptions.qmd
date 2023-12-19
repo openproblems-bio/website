@@ -1,14 +1,8 @@
 ```{r}
 #| echo: false
 lines <- pmap_chr(metric_info, function(metric_name, metric_summary, paper_reference, ...) {
-  ref <- 
-    if (!is.na(paper_reference)) {
-      refs <- str_split(paper_reference, ", ")[[1]]
-      inner_str <- sapply(refs, function(ref) cite_fun(ref, "html"))
-      paste0("<sup>", paste(inner_str, collapse = ", "), "</sup>")
-    } else {
-      ""
-    }
+  ref <- split_cite_fun(paper_reference)
+  if (ref != "") ref <- paste0(" ", ref)
   summ <- (metric_summary %|% "Missing 'metric_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "") 
   glue::glue("* **{metric_name}**{ref}: {summ}.")
 })
