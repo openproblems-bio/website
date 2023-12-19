@@ -21,6 +21,7 @@ subtitle: "{task_summary}"
 engine: knitr
 image: featured.png
 page-layout: full
+bibliography: ../../bibliography/library.bib
 ---
 
 ```{{r}}
