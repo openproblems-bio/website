@@ -1,0 +1,21 @@
+---
+title: Data
+order: 10
+engine: knitr
+---
+
+## Resources
+
+Path: `s3://openproblems-data/resources`
+
+## Test resources
+
+Path: `s3://openproblems-data/resources_test`
+
+## TODO
+
+TODO: go through structure of S3 bucket and explain contents
+
+```{bash}
+aws s3 ls --recursive s3://openproblems-data | grep state.yaml
+```
