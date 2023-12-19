@@ -1,5 +1,17 @@
 # openproblems.bio unreleased
 
+## MINOR CHANGES
+
+
+* Several infrastructure updates (PR #298):
+
+  - Update R packages
+  - Remove Python from list of dependencies
+  - Update Quarto
+  - Fixes to styling
+  - Simplify footer
+  - Update openproblems-v2 submodule
+
 ## BUG FIXES
 
 * Updated the `openproblems-v2` submodule (PR #295). This fixes a deprecation error due to an update in ruamel.yaml.
