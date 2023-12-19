@@ -21,8 +21,10 @@ Files with the `.h5ad` extension represent AnnData objects stored in an HDF5 fil
 
 In OpenProblems, most of the AnnData datasets will have a subset of the following slots:
 
+<!-- TODO: update. Also mention that the format is aligned to the cellxgene schema -->
+
     AnnData object
-      obs: 'celltype', 'batch', 'tissue', 'size_factors'
+      obs: 'cell_type', 'batch', 'tissue', 'size_factors'
       var: 'hvg', 'hvg_score'
       obsm: 'X_pca'
       obsp: 'knn_distances', 'knn_connectivities'
