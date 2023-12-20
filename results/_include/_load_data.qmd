@@ -10,7 +10,10 @@ library(kableExtra)
 
 # read task info
 task_info <- jsonlite::read_json(paste0(params$data_dir, "/task_info.json"))
+
+# add missing data
 task_info$task_description <- task_info$task_description %||% NA_character_
+task_info$task_motivation <- task_info$task_motivation %||% NA_character_
 
 `%|%` <- function(x, y) {
   ifelse(is.na(x), y, x)
@@ -41,23 +44,6 @@ num_baselines <- sum(method_info$is_baseline)
 num_datasets <- nrow(dataset_info)
 num_metrics <- nrow(metric_info)
 
-
-# link_fun <- function(label, url, format = "markdown") {
-#   if (format == "markdown") {
-#     paste0("[", label, "](", url, ")")
-#   } else {
-#     paste0("<a href=\"", url, "\" target=\"_blank\">", label, "</a>")
-#   }
-# }
-# # cite_map <- list()
-# cite_fun <- function(key, format = "markdown") {
-#   if (!key %in% names(cite_map)) {
-#     cite_map[[key]] <<- length(cite_map) + 1
-#   }
-#   num <- cite_map[[key]]
-#   link_fun(num, paste0("/bibliography/#", key), format = format)
-#   paste0("[@", key, "]")
-# }
 split_cite_fun <- function(keys) {
   if (is.null(keys)) return("")
   
