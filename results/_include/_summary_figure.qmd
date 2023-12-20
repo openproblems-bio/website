@@ -95,10 +95,12 @@ palettes <- list(
 #   column_info = column_info %>% filter(id %in% colnames(summary_all)),
 #   column_groups = column_groups,
 #   palettes = palettes,
-#   # determine xmax expand heuristically
-#   expand = c(xmax = max(str_length(tail(column_info$name, 4))) / 5),
-#   # determine offset heuristically
-#   col_annot_offset = max(str_length(column_info$name)) / 5,
+#   position_args = position_arguments(
+#     # determine xmax expand heuristically
+#     expand_xmax = max(str_length(tail(column_info$name, 4))) / 5,
+#     # determine offset heuristically
+#     col_annot_offset = max(str_length(column_info$name)) / 5
+#   ),
 #   add_abc = FALSE,
 #   scale_column = FALSE
 # )

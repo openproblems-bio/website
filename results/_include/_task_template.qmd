@@ -5,8 +5,17 @@
 `r num_methods` methods • `r num_metrics` metrics • `r num_datasets` datasets
 :::
 
-## Description 
-`r task_info$task_description %|% "Missing 'task_description'"`
+Data:
+<a href="data/task_info.json" class="btn btn-secondary">Task info</a>
+<a href="data/method_info.json" class="btn btn-secondary">Method info</a>
+<a href="data/metric_info.json" class="btn btn-secondary">Metric info</a>
+<a href="data/dataset_info.json" class="btn btn-secondary">Dataset info</a>
+<a href="data/results.json" class="btn btn-secondary">Results</a>
+<a href="data/quality_control.json" class="btn btn-secondary">Quality control</a>
+
+`r task_info$task_motivation %|% ""`
+
+`r task_info$task_description %|% ""`
 
 ## Summary
 
@@ -39,19 +48,6 @@
 {{< include ../_include/_dataset_descriptions.qmd >}}
 
 </details>
-
-
-<details><summary>Download raw data</summary>
-
-<a href="data/task_info.json" class="btn btn-secondary">Task info</a>
-<a href="data/method_info.json" class="btn btn-secondary">Method info</a>
-<a href="data/metric_info.json" class="btn btn-secondary">Metric info</a>
-<a href="data/dataset_info.json" class="btn btn-secondary">Dataset info</a>
-<a href="data/results.json" class="btn btn-secondary">Results</a>
-<a href="data/quality_control.json" class="btn btn-secondary">Quality control</a>
-
-</details>
-
 
 <details><summary>Quality control results</summary>
 

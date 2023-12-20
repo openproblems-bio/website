@@ -3,7 +3,7 @@ Results table of the scores per method, dataset and metric (after scaling). Use 
 ```{r resultstable}
 #| echo: false
 res_tib0 <- results %>%
-  unnest(scaled_scores) %>%
+  unnest(metric_values) %>%
   unnest(resources) %>%
   left_join(method_info %>% select(-commit_sha, -code_version, -task_id), by = "method_id") %>%
   filter(!is_baseline) %>%
@@ -14,7 +14,7 @@ mean_na_zero <- function(x) {
 }
 
 res_tib1 <- res_tib0 %>% 
-  group_by(method_id, method_name, paper_reference, code_url, code_version) %>%
+  group_by(method_id, method_name, paper_reference, code_url) %>%
   summarise_if(is.numeric, mean_na_zero) %>%
   ungroup() %>%
   mutate(
@@ -27,16 +27,12 @@ res_tib <- res_tib1 %>%
   arrange(desc(mean_score)) %>%
   rowwise() %>%
   mutate(
-    method_label = ifelse(is.na(paper_reference), method_name, glue::glue("{method_name} <sup>{cite_fun(paper_reference, format = 'html')}</sup>")),
-    dataset_label = ifelse(is.na(data_reference), dataset_name, glue::glue("{dataset_name} <sup>{cite_fun(data_reference, format = 'html')}</sup>")),
-    # method_label = method_name,
-    # dataset_label = dataset_name,
     peak_memory_gb = peak_memory_mb / 1024
   ) %>%
   ungroup() %>%
   select(
-    method_label,
-    dataset_label,
+    method_name,
+    dataset_name,
     mean_score,
     any_of(metric_info$metric_id),
     duration_sec,

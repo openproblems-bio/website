@@ -1,7 +1,10 @@
 # openproblems.bio unreleased
 
-## MINOR CHANGES
+## NEW CONTENT
 
+* Added an event page for the Weekly wednesday work meeting (PR #299).
+
+## MINOR CHANGES
 
 * Several infrastructure updates (PR #298):
 
@@ -11,6 +14,13 @@
   - Fixes to styling
   - Simplify footer
   - Update openproblems-v2 submodule
+
+* Updates to the way tasks are rendered (PR #296):
+
+  - Show task motivation, if present.
+  - Allow multiple citations for datasets, methods, and metrics.
+  - Render dataset name instead of dataset id in figures and tables.
+  - Change the way bibliographic references are rendered.
 
 ## BUG FIXES
 
