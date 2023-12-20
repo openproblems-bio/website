@@ -1,11 +1,13 @@
 ---
 title: Define the task
 order: 10
+engine: knitr
 ---
 
 
-{{< include ../../_include/_clone_repo.qmd >}}
+{{< include /_include/_clone_repo.qmd >}}
 {{< include /_include/_evaluate_code.qmd >}}
+{{< include /_include/_read_api.qmd >}}
 
 Before writing any code, it's essential to carefully plan and document your task to ensure its relevance, feasibility, and compatibility with the OpenProblems framework. 
 
@@ -34,21 +36,59 @@ knitr::asis_output(md)
 
 ## Step 3: Create task info
 
-Now create a task info metadata file at `src/tasks/<task_id>/api/task_info.yaml`:
+Now create a task info metadata file in the `src/tasks/<task_id>/api` directory. This file will be part of the automatic "readme" creation in the repo directory of this task. The task info file should be named `task_info.yaml` and should contain the following information:
 
-```{.yaml filename="src/tasks/<task_id>/api/task_info.yaml"}
-task_id: your_task_id
-task_name: Your task name
-summary: "FILL IN: A one line description of what this purpose of this task is."
-description: |
-  FILL IN: The task description and motivation you created earlier.
-authors:
-  - name: "Your name"
-    roles: [ author, maintainer ]
-    props:
-      github: your-github-account
-      orcid: "0000-1111-2222-3333"
+
+```{r echo=FALSE, warning=TRUE, error=TRUE}
+info <- read_and_merge_yaml("src/common/schemas/task_info.yaml")
+
 ```
+
+
+```{python}
+#| echo: false
+#| output: asis
+info = r.info
+
+task_info = open("task_info_template.yaml", "w")
+
+def process(info, prefix = ""):
+  for prop in info["properties"]:
+    if prop != "additionalProperties":
+      task_info.write(f"{prefix}{prop}: ")
+      if info["properties"][prop]["type"] == "string" and "description" in info["properties"][prop]:
+        task_info.write(f"\'{info['properties'][prop]['description'].strip()}\'\n" ) 
+      elif info["properties"][prop]["type"] == "string" and "description" not in info["properties"][prop]:
+        task_info.write(f"{prefix}\n" )
+      elif info["properties"][prop]["type"] == "object":
+        subinfo = info["properties"][prop]
+        task_info.write("\n")
+        process(subinfo, prefix = "  ")
+      elif info["properties"][prop]["type"] == "array":
+        if "description" in info["properties"][prop]:
+          task_info.write(f"\'{info['properties'][prop]['description'].strip()}\'\n" )
+        subinfo = info["properties"][prop]["items"]
+        if "properties" in subinfo:
+          task_info.write("\n  - ")
+          process(subinfo, prefix = "  ")
+
+
+
+process(info)
+
+task_info.close()
+```
+
+```` yaml
+```{bash}
+#| echo: false
+#| output: asis
+cat task_info_template.yaml
+```
+````
+
+
+
 
 ## Next steps
 

@@ -7,6 +7,7 @@ engine: knitr
 {{< include ../../_include/_clone_repo.qmd >}}
 {{< include /_include/_evaluate_code.qmd >}}
 {{< include /_include/_synchonize_tabs.qmd >}}
+{{< include /_include/_read_api.qmd >}}
 
 A metric is a quantitative measure used to evaluate the performance of the different methods in solving the specific task problem.
 
@@ -116,36 +117,64 @@ Please make sure that the following fields in the `functionality` and `functiona
 
 <!-- TODO: think about how to make this listing easier on the eye -->
 
-#### `functionality.name`
+```{r echo=FALSE, warning=FALSE, error=FALSE}
+info <- read_and_merge_yaml("src/common/schemas/task_metric.yaml")
 
-A unique identifier for the metric component. Must be written in snake case. Example: `my_new_metric`. This will be the same as the name given in the `--name` argument of the  `create_component` command above.
+process <- function(info, prefix = "", required = NA) {
+  type <- 
+    if ("type" %in% names(info)) {
+      info$type
+    } else if ("enum" %in% names(info)) {
+      "enum"
+    } else {
+      "unknown"
+    }
+  if (type == "object") {
+    prop_names <-
+      if (is.na(required)) {
+        names(info$properties)
+      } else if (required) {
+        info$required
+      } else {
+        setdiff(names(info$properties), info$required)
+      }
+    unlist(lapply(
+      prop_names,
+      function(prop_name) {
+        prop <- info$properties[[prop_name]]
+        process(prop, prefix = paste0(prefix, ".", prop_name), required = required)
+      }
+    ))
+  } else if (type == "array") {
+    prop_names <-
+      if (is.na(required)) {
+        names(info$items$properties)
+      } else if (required) {
+        info$items$required
+      } else {
+        setdiff(names(info$items$properties), info$items$required)
+      }
+    unlist(lapply(
+      prop_names,
+      function(prop_name) {
+        prop <- info$items$properties[[prop_name]]
+        process(prop, prefix = paste0(prefix, ".", prop_name), required = required)
+      }
+    )) # ignore for now
+  } else if (is.list(info)) {
+    paste0(
+      "#### `", prefix, "`\n",
+      "\n",
+      info$description
+    )
+  } else {
+    c()
+  }
+}
+info_str <- paste(process(info, required = TRUE), collapse = "\n\n")
 
-
-#### `functionality.info.metrics[]`
-
-* `.name`: A unique identifier for the metric (if only 1 metric in the component can be the same as `functionality.name`). Must be written in snake case. Example: `my_new_metric`.
-
-* `.pretty_name`: A label for the metric used for visualisations and documentation. Example: `"My new metric"`.
-
-* `.summary`: A one sentence summary of the metric. Used for creating short overviews of the components in a task.
-
-* `.description`: An explanation for how the metric works. Used for creating reference documentation of a task.
-
-* `.reference`: A bibtex reference key to the paper where the metrics is used.
-
-* `.documentation_url`: The url to the documentation of the metrics used.
-
-* `.repository_url`: The repository url for the metrics used.
-
-* `.min`: The minimum value of the metrics (`-inf` if there isn't a min).
-
-* `.max`: The maximum value of the metrics (`+inf` if there isn't a max).
-
-* `.maximize`: Set to `true` if a higher value is better and `false` if a lower value is better.
-
-#### `__merge__`
-
-The file specified in this field contains information regarding the input and output arguments of the component, as well as a unit test to ensure that the component is functioning properly. Normally you don't need to change this if you gave the right arguments to the `create_component` component.
+knitr::asis_output(info_str)
+```
 
 
 ## Step 3: Add dependencies
@@ -167,7 +196,6 @@ viash run src/tasks/label_projection/metrics/my_metric_py/config.vsh.yaml -- \
 ```
 </details>
 :::
-
 
 ## Step 4: Edit script
 
