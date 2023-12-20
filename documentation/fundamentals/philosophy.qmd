@@ -2,24 +2,78 @@
 title: Philosophy
 order: 10
 engine: knitr
-bibliography: ../../_openproblems-v2/src/common/library.bib
+bibliography: ../../library.bib
+reference-location: margin
+citation-location: margin
 ---
 
-OpenProblems is a living benchmarking platform designed to address and measure progress towards open challenges in single-cell genomics. It follows the Common Task Framework (CTF), which has driven innovation in machine learning research by providing clear definitions and quantifications of progress [@donoho2017yearsdatascience].
+OpenProblems aims to revolutionize benchmarking in single-cell omics, addressing the critical issues of poor extensibility and maintainability seen in most studies [@sonrel2023metaanalysis]. Our approach prioritizes several key areas to elevate the standards and practices within the field:
 
-The platform combines an open GitHub repository with community-defined tasks, an automated benchmarking workflow, and a website for exploring the results. Each task consists of datasets, methods, and metrics ([@fig-task-structure]). Datasets define the input and ground truth for a task, methods attempt to solve the task, and metrics evaluate the success of a method on a given dataset.
+* [**Extensibility**](#extensibility): We emphasize the importance of modular frameworks and clear specifications for file formats and component interfaces.
+
+* [**Reusability**](#reusability): Leverage a shared core infrastructure, including a common dataset repository, shared compute infrastructure, and a unified platform for exploration of benchmarking results.
+
+* [**Community-driven**](#community-driven): Our benchmarks are shaped and enhanced by community contributions. Take a look at the [Events](/events) page to find out about the next hackathon or community event.
+
+* [**Inclusiveness**](#inclusiveness): We are committed to creating a welcoming and respectful environment for all participants. Our code of conduct outlines the expected behaviors and provides guidelines to ensure that everyone, regardless of their background or level of experience, feels valued and able to contribute.
+
+By focusing on these key areas, OpenProblems aspires not just to develop new best practices in single-cell omics but to foster a more dynamic, inclusive, and collaborative scientific community.
+
+## Extensibility
+
+To define benchmarking tasks, OpenProblems incorporates the principles of the Common Task Framework as outlined by @donoho2017yearsdatascience. As such, each benchmarking task consists of three main elements -- Datasets, Methods and Metrics -- which are linked together in a larger workflow ([@fig-task-structure]). Additionally, the nodes in this workflow represent either a file, or a computational component. The frameworks used for storing data structures -- AnnData -- and defining computational components -- Viash -- are chosen specifically to improve extensibility within the OpenProblems framework.
 
 {{< include ../_figures/_fig_task_structure.qmd >}}
 
-A benchmarking pipeline in OpenProblems consists of AnnData datasets.[@virshup2021anndataannotateddata] and Viash components [@cannoodt2021viashfromscripts], which both contribute to consistency and interoperability in OpenProblems by promoting a standardized data format and modular component structure. 
+AnnData, short for "Annotated Data", is a file format designed for handling annotated, high-dimensional biological data [@virshup2021anndataannotateddata]. In OpenProblems, AnnData serves as the standard data format for both input and output files of components, ensuring a consistent and seamless exchange of data between different components of the benchmarking pipelines.
 
-AnnData, short for "Annotated Data", is a file format designed for handling annotated, high-dimensional biological data. In OpenProblems, AnnData serves as the standard data format for both input and output files of components, ensuring a consistent and seamless exchange of data between different components of the benchmarking pipelines.
+Viash is a meta-framework which allows generating modular Nextflow components and workflows from Python and R scripts [@cannoodt2021viashfromscripts]. Viash components are used in OpenProblems for creating dataset loaders, dataset processors, methods, and metrics, enabling developers to focus on the core functionality of their components without worrying about the chosen pipeline framework (i.e. Nextflow).
 
-Viash is a tool that facilitates the creation of modular pipeline components by allowing developers to combine a code block or script with a small amount of metadata. Viash components are used in OpenProblems for dataset loaders, dataset processors, methods, and metrics, enabling developers to focus on the core functionality of their components without worrying about the chosen pipeline framework.
+Specifications for the format of AnnData files and the interface of the Viash component can be found in the `api` directory of each task, and are rendered in the readme of each task ([Example](https://github.com/openproblems-bio/openproblems-v2/tree/main/src/tasks/label_projection)).
 
-To facilitate seamless community involvement, OpenProblems has designed its infrastructure to take advantage of automated workflows through GitHub Actions, Nextflow, and AWS Batch, as well as the integration of Viash components. When a community member adds a task, dataset, method, or metric, the new contributions are automatically tested in the cloud. Once all tests pass and the new contribution is merged into the main repository, the results from the new contribution are automatically submitted to the OpenProblems website.
+Note that this task structure is an oversimplification -- both the [dataset](/documentation/reference/openproblems-v2/src-datasets.qmd) and [task](/documentation/reference/openproblems-v2/src-task_id.qmd) workflows contain additional steps to safeguard against common pitfalls.
 
-![Overview of the OpenProblems repositories, mainly consisting of the main repository and the website. For detailed information on how this project is structured, see the [reference documentation](../reference)](../images/repositories-thin.svg){#fig-project-structure}.
+<!-- TODO: update references to documentation pages that provide more information on _why_ these workflows are structured the way they are -->
 
-OpenProblems aims to raise the standards for method selection and evaluation in single-cell data science by offering a platform that quantitatively defines open challenges, determines current state-of-the-art solutions, promotes method development, and monitors progress towards these goals. By leveraging Viash components, the platform ensures consistency, modularity, and interoperability, making it a valuable resource for data analysts, method developers, and the single-cell genomics community at large.
 
+## Reusability
+
+OpenProblems is committed to maximizing the reusability of core infrastructure through careful selection of frameworks ([@fig-project-structure]). This approach allows developers to concentrate on the functionality of benchmarks, rather than the complexities of computational infrastructure. 
+
+![Overview of the OpenProblems repositories, mainly consisting of the main repository and the website. For detailed information on how this project is structured, see the [reference documentation](/documentation/reference).](../images/repositories-thin.svg){#fig-project-structure cap-location="margin"}
+
+
+Here's how our chosen frameworks contribute to this goal:
+
+1. **Viash for Component Development**: Viash ensures high modularity in workflow components. Its ability to generate modular Dockerized Nextflow modules from R, Bash, and Python scripts allows seamless interoperability between different frameworks through the common file formats.
+
+2. **Nextflow for Workflow Execution**: Nextflow is pivotal in enabling our benchmarking and dataset workflows to run across diverse computing environments, including local machines, High-Performance Computing (HPC) systems, and cloud infrastructure. This adaptability is crucial for seamless execution regardless of the computational environments provided by different institutions.
+
+3. **AnnData for File Formatting**: By adopting AnnData as a common file format, we facilitate interaction with data in both R and Python. This consistency aids in maintaining a uniform data structure across various computational tasks.
+
+4. **Standardized File Formats and Component Interfaces**: Our strict definitions for file formats and component interfaces significantly boost the extensibility of tasks. This standardization ensures a streamlined and well-documented data flow throughout the workflow.
+
+5. **GitHub Actions for Continuous Integration**: The use of GitHub Actions for running unit tests and building containers streamlines the development process, ensuring reliability and consistency in our software delivery.
+
+6. **Custom Docker Images for Component Reproducibility**: To guarantee reproducibility while avoiding dependency conflicts, each component in OpenProblems is equipped with a custom Docker image containing only the necessary dependencies.
+
+7. **Nextflow Tower, AWS Batch, and AWS S3**: While our workflows are executed on Nextflow Tower, AWS Batch, and AWS S3, they are designed not to be confined to this specific infrastructure. This flexibility allows for adaptation to various storage and computational environments.
+
+8. **Standardized Dataset Loaders and Processing Pipeline**: We offer a library of common datasets to be reused across tasks whenever possible. These datasets are derived from sources like CELLxGENE census and GEO and are processed by a standardized dataset processing pipeline. This uniformity in data processing ensures consistent data quality and structure across different tasks, facilitating comparability and consistency in benchmarking results.
+
+By leveraging these frameworks and tools, OpenProblems sets a high standard for reusability and efficiency in computational benchmarking, enabling developers to focus on innovating within the domain of single-cell omics.
+
+## Community-driven
+
+OpenProblems is deeply committed to being a community-driven platform, where we aim to create a dynamic feedback loop that propels the field of single-cell omics forward ([@fig-project-structure]). 
+Community members can actively contribute to the development and refinement of single-cell omics benchmarks, which are then run by our computational infrastructure. Once the results are available from our website, community members can use it to derive new best practices and steer future research for new computational methods.
+
+To help foster community participation and collaborative developments, we organise hackathons, competitions and weekly working meetings.
+
+## Inclusiveness
+
+We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
+
+We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
+
+Our full [Code of Conduct](https://github.com/openproblems-bio/openproblems-v2/blob/main/CODE_OF_CONDUCT.md) is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1.
