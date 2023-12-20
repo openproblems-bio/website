@@ -1,0 +1,31 @@
+```{mermaid}
+%%| label: fig-task-structure-extended
+%%| fig-cap: "The structure of an OpenProblems task. *Legend: Grey rectangles represent AnnData .h5ad files, while purple rhomboids represent Viash components.*"
+graph LR
+  subgraph Dataset workflow
+    loader[/Dataset<br/>loader/]:::component
+    raw_dataset[Raw<br/>dataset]:::anndata
+    preprocessing[/Preprocessing<br/>workflow/]:::component
+    common_dataset[Common<br/>dataset]:::anndata
+    loader --> raw_dataset --- preprocessing --> common_dataset
+  end
+  subgraph Benchmark task
+    process_dataset[/Process<br/>dataset/]:::component
+    train_dataset[Train dataset<br/>& labels]:::anndata
+    test_dataset[Test dataset]:::anndata
+    test_labels[Test labels]:::anndata
+    train_model[/Train model/]:::component
+    model[Model]:::file
+    apply_model[/Apply model/]:::component
+    control_method[/Control method/]:::component
+    output[Output]:::anndata
+    metric[/Metric/]:::component
+    score[Score]:::anndata
+
+    common_dataset --- process_dataset --> train_dataset & test_dataset & test_labels
+    train_dataset --- train_model --> model
+    model & test_dataset --- apply_model --> output
+    train_dataset & test_dataset & test_labels --- control_method --> output
+    output & test_labels --- metric --> score
+  end
+```
