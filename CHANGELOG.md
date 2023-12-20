@@ -1,5 +1,9 @@
 # openproblems.bio unreleased
 
+## NEW CONTENT
+
+* Added an event page for the Weekly wednesday work meeting (PR #299).
+
 ## MINOR CHANGES
 
 * Several infrastructure updates (PR #298):
