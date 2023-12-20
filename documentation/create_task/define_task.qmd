@@ -39,55 +39,16 @@ knitr::asis_output(md)
 Now create a task info metadata file in the `src/tasks/<task_id>/api` directory. This file will be part of the automatic "readme" creation in the repo directory of this task. The task info file should be named `task_info.yaml` and should contain the following information:
 
 
-```{r echo=FALSE, warning=TRUE, error=TRUE}
-info <- read_and_merge_yaml("src/common/schemas/task_info.yaml")
+```{r echo=FALSE, warning=FALSE, error=FALSE}
+json_schema <- read_and_merge_yaml("src/common/schemas/task_info.yaml")
+yaml_example <- render_example(json_schema)
 
+knitr::asis_output(paste0(
+  "```yaml\n",
+  yaml_example, "\n",
+  "```\n"
+))
 ```
-
-
-```{python}
-#| echo: false
-#| output: asis
-info = r.info
-
-task_info = open("task_info_template.yaml", "w")
-
-def process(info, prefix = ""):
-  for prop in info["properties"]:
-    if prop != "additionalProperties":
-      task_info.write(f"{prefix}{prop}: ")
-      if info["properties"][prop]["type"] == "string" and "description" in info["properties"][prop]:
-        task_info.write(f"\'{info['properties'][prop]['description'].strip()}\'\n" ) 
-      elif info["properties"][prop]["type"] == "string" and "description" not in info["properties"][prop]:
-        task_info.write(f"{prefix}\n" )
-      elif info["properties"][prop]["type"] == "object":
-        subinfo = info["properties"][prop]
-        task_info.write("\n")
-        process(subinfo, prefix = "  ")
-      elif info["properties"][prop]["type"] == "array":
-        if "description" in info["properties"][prop]:
-          task_info.write(f"\'{info['properties'][prop]['description'].strip()}\'\n" )
-        subinfo = info["properties"][prop]["items"]
-        if "properties" in subinfo:
-          task_info.write("\n  - ")
-          process(subinfo, prefix = "  ")
-
-
-
-process(info)
-
-task_info.close()
-```
-
-```` yaml
-```{bash}
-#| echo: false
-#| output: asis
-cat task_info_template.yaml
-```
-````
-
-
 
 
 ## Next steps
