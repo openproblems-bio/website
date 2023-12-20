@@ -21,7 +21,7 @@ subtitle: "{task_summary}"
 engine: knitr
 image: thumbnail.svg
 page-layout: full
-css: ../task-template.css
+css: ../task_template.css
 bibliography: ../../bibliography/library.bib
 ---
 
