@@ -10,7 +10,10 @@ library(kableExtra)
 
 # read task info
 task_info <- jsonlite::read_json(paste0(params$data_dir, "/task_info.json"))
+
+# add missing data
 task_info$task_description <- task_info$task_description %||% NA_character_
+task_info$task_motivation <- task_info$task_motivation %||% NA_character_
 
 `%|%` <- function(x, y) {
   ifelse(is.na(x), y, x)
@@ -22,43 +25,37 @@ dataset_info <- jsonlite::read_json(paste0(params$data_dir, "/dataset_info.json"
 results <- jsonlite::read_json(paste0(params$data_dir, "/results.json"), simplifyVector = TRUE)
 qc <- jsonlite::read_json(paste0(params$data_dir, "/quality_control.json"), simplifyVector = TRUE)
 
+# add missing columns
 for (col in c("method_summary")) {
   method_info[[col]] <- method_info[[col]] %||% NA_character_
 }
 for (col in c("metric_summary")) {
   metric_info[[col]] <- metric_info[[col]] %||% NA_character_
 }
-for (col in c("dataset_summary")) {
+for (col in c("dataset_summary", "dataset_name")) {
   dataset_info[[col]] <- dataset_info[[col]] %||% NA_character_
 }
+
+# fill missing data
+dataset_info$dataset_name <- dataset_info$dataset_name %|% dataset_info$dataset_id
 
 num_methods <- sum(!method_info$is_baseline)
 num_baselines <- sum(method_info$is_baseline)
 num_datasets <- nrow(dataset_info)
 num_metrics <- nrow(metric_info)
 
+split_cite_fun <- function(keys) {
+  if (is.null(keys)) return("")
+  
+  keys <- keys[!is.na(keys)]
+  if (length(keys) == 0) return("")
 
-link_fun <- function(label, url, format = "markdown") {
-  if (format == "markdown") {
-    paste0("[", label, "](", url, ")")
-  } else {
-    paste0("<a href=\"", url, "\" target=\"_blank\">", label, "</a>")
-  }
+  refs <- unlist(stringr::str_split(keys, ", *"))
+  # inner_str <- sapply(refs, function(ref) cite_fun(ref, format = format))
+  # paste0("<sup>", paste(inner_str, collapse = ", "), "</sup>")
+  # paste0("[", paste(inner_str, collapse = ", "), "]")
+  paste0("[@", paste(refs, collapse = "; @"), "]")
 }
-cite_map <- list()
-cite_fun <- function(key, format = "markdown") {
-  # if (is.null(options("citation_map"))) {
-  #   options("citation_map" = list())
-  # }
-  # cm <- options("citation_map")
-  if (!key %in% names(cite_map)) {
-    cite_map[[key]] <<- length(cite_map) + 1
-    # options("citation_map" = cm)
-  }
-  num <- cite_map[[key]]
-  link_fun(num, paste0("/bibliography/#", key), format = format)
-}
-
 ```
 
 

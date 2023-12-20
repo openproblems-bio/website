@@ -15,6 +15,13 @@
   - Simplify footer
   - Update openproblems-v2 submodule
 
+* Updates to the way tasks are rendered (PR #296):
+
+  - Show task motivation, if present.
+  - Allow multiple citations for datasets, methods, and metrics.
+  - Render dataset name instead of dataset id in figures and tables.
+  - Change the way bibliographic references are rendered.
+
 ## BUG FIXES
 
 * Updated the `openproblems-v2` submodule (PR #295). This fixes a deprecation error due to an update in ruamel.yaml.

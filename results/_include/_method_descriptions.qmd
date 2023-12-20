@@ -1,25 +1,27 @@
-```{r}
+```{r method_description}
 #| echo: false
 # show each method just once
 lines <- pmap_chr(method_info, function(method_name, method_summary, paper_reference, code_url, code_version, ...) {
+
   links <- c()
   if (!is.na(code_url)) {
     links <- c(links, glue::glue(" [Docs]({code_url})"))
   }
   version_label <- 
-    if (!is.na(code_version)) {
+    if (!is.na(code_version) && code_version != "missing-version") {
       glue::glue(" Software version {code_version}.")
     } else {
       ""
     }
-  ref <- 
-    if (!is.na(paper_reference)) {
-      paste0("<sup>", cite_fun(paper_reference, "html"), "</sup>")
+  ref <- split_cite_fun(paper_reference)
+  if (ref != "") ref <- paste0(" ", ref)
+  links_label <-
+    if (length(links) > 0) {
+      glue::glue(" Links: {paste(links, collapse = ', ')}.")
     } else {
       ""
     }
-  links_label <- glue::glue(" Links: {paste(links, collapse = ', ')}.")
-  summ <- (method_summary %|% "Missing 'method_summary'") %>% str_replace_all("\\. *$", "")
+  summ <- (method_summary %|% "Missing 'method_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
   glue::glue("* **{method_name}**{ref}: {summ}.{version_label}{links_label}")
 })
 knitr::asis_output(paste(lines, collapse = "\n"))
