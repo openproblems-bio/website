@@ -19,8 +19,9 @@ for task_info_file in task_info_files:
 title: "{task_name}"
 subtitle: "{task_summary}"
 engine: knitr
-image: featured.png
+image: thumbnail.svg
 page-layout: full
+css: ../task-template.css
 bibliography: ../../bibliography/library.bib
 ---
 
