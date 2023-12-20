@@ -1,0 +1,16 @@
+---
+title: "Batch integration graph"
+subtitle: "Removing batch effects while preserving biological variation (graph output)"
+engine: knitr
+image: thumbnail.svg
+page-layout: full
+css: ../task_template.css
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "results/batch_integration_graph/data")
+params <- list(data_dir = "./data")
+```
+
+{{< include ../_include/_task_template.qmd >}}

@@ -1,0 +1,46 @@
+[
+    {
+        "metric_name": "ARI",
+        "metric_summary": "ARI (Adjusted Rand Index) compares the overlap of two clusterings. It considers both correct clustering overlaps while also counting correct disagreements between two clustering.",
+        "paper_reference": "luecken2022benchmarking",
+        "maximize": true,
+        "image": "openproblems-r-pytorch",
+        "task_id": "batch_integration_graph",
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "metric_id": "ari",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/metrics/ari.py"
+    },
+    {
+        "metric_name": "Graph connectivity",
+        "metric_summary": "The graph connectivity metric assesses whether the kNN graph representation, G, of the integrated data connects all cells with the same cell identity label.",
+        "paper_reference": "luecken2022benchmarking",
+        "maximize": true,
+        "image": "openproblems-r-pytorch",
+        "task_id": "batch_integration_graph",
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "metric_id": "graph_connectivity",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/metrics/graph_connectivity.py"
+    },
+    {
+        "metric_name": "Isolated label F1",
+        "metric_summary": "Isolated cell labels are identified as the labels present in the least number of batches in the integration task. The score evaluates how well these isolated labels separate from other cell identities based on clustering.",
+        "paper_reference": "luecken2022benchmarking",
+        "maximize": true,
+        "image": "openproblems-r-pytorch",
+        "task_id": "batch_integration_graph",
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "metric_id": "isolated_labels_f1",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/metrics/iso_label_f1.py"
+    },
+    {
+        "metric_name": "NMI",
+        "metric_summary": "NMI compares the overlap of two clusterings. We used NMI to compare the cell-type labels with Louvain clusters computed on the integrated dataset.",
+        "paper_reference": "luecken2022benchmarking",
+        "maximize": true,
+        "image": "openproblems-r-pytorch",
+        "task_id": "batch_integration_graph",
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "metric_id": "nmi",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/_batch_integration/batch_integration_graph/metrics/nmi.py"
+    }
+]
