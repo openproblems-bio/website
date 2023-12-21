@@ -3,6 +3,7 @@ Results table of the scores per method, dataset and metric (after scaling). Use 
 ```{r resultstable}
 #| echo: false
 res_tib0 <- results %>%
+  select(dataset_id, method_id, metric_values, resources, mean_score) %>%
   unnest(metric_values) %>%
   unnest(resources) %>%
   left_join(method_info %>% select(-commit_sha, -code_version, -task_id), by = "method_id") %>%
