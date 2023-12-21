@@ -1,0 +1,124 @@
+---
+title: Commonly used commands
+order: 60
+engine: knitr
+bibliography: ../../library.bib
+reference-location: margin
+citation-location: margin
+---
+
+Below is a list of common Viash commands to develop and test components. 
+Check out this [Cheat sheet](/documentation/more_information/cheat_sheets.qmd) to get a printable version of the same information. Please visit the [Viash guide](https://viash.io/guide) or [reference documentation](https://viash.io/reference/) for more in-depth information.
+
+## Download test data
+
+This command will download the all of the test resources from the S3 bucket and store them under `resources_test/`.
+
+:::{.small}
+```bash
+viash run src/common/sync_test_resources/config.vsh.yaml
+```
+:::
+
+## Run a component
+
+Display the help text of a component.
+
+:::{.small}
+```bash
+viash run path/to/config.vsh.yaml -- --help
+```
+:::
+
+Run a component with arguments:
+
+:::{.small}
+```bash
+viash run path/to/config.vsh.yaml -- --input dataset.h5ad --output output.h5ad
+```
+:::
+
+
+
+## Build a component
+
+Build an executable:
+
+:::{.small}
+```bash
+viash build path/to/config.vsh.yaml --output bin --setup cachedbuild
+```
+:::
+
+Display the help text of the executable:
+
+:::{.small}
+```bash
+bin/mycomponent --help
+```
+:::
+
+Run the executable:
+
+:::{.small}
+```bash
+bin/mycomponent --input dataset.h5ad --output output.h5ad
+```
+:::
+
+Build all components in a task:
+
+:::{.small}
+```bash
+viash ns build --query "label_projection" --setup cachedbuild --parallel
+```
+:::
+
+
+
+## Test a component
+
+Test a component:
+
+:::{.small}
+```bash
+viash test path/to/config.vsh.yaml
+```
+:::
+
+Run all tests in a task:
+
+:::{.small}
+```bash
+viash ns test --query "label_projection" --parallel
+```
+:::
+
+## Edit script
+
+This command will auto-generate the `VIASH START`--`VIASH END` codeblock in your script:
+
+:::{.small}
+```bash
+viash config inject path/to/config.vsh.yaml
+```
+:::
+
+## View component
+
+Use this command to view the component's configuration file:
+
+:::{.small}
+```bash
+viash config view path/to/config.vsh.yaml
+```
+:::
+
+
+Use this command to view the component's Dockerfile.
+
+:::{.small}
+```bash
+viash run path/to/config.vsh.yaml -- ---dockerfile
+```
+:::

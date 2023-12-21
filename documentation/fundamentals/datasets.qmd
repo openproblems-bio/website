@@ -1,0 +1,45 @@
+---
+title: File formats
+order: 40
+engine: knitr
+bibliography: ../../library.bib
+reference-location: margin
+citation-location: margin
+---
+
+{{< include ../_figures/_fig_task_structure.qmd >}}
+{{< include ../../_include/_clone_repo.qmd >}}
+{{< include /_include/_evaluate_code.qmd >}}
+{{< include /_include/_read_api.qmd >}}
+
+AnnData, short for "Annotated Data", is a file format for handling annotated, high-dimensional biological data [@virshup2021anndataannotateddata]. In the context of OpenProblems, AnnData is used as the standard data format for both input and output files of components. This ensures a consistent and seamless exchange of data between different components of the benchmarking pipelines, allowing developers to focus on the core functionality of their components without worrying about data format compatibility.
+
+![AnnData objects have a structured format that includes the main data matrix (`X`, e.g. gene expression values), annotations of observations (`obs`, e.g. cell metadata), annotations of variables (`var`, e.g. gene metadata), and unstructured annotations (`uns`). This organization makes it easy to work with complex datasets while maintaining data integrity and ensuring a standardized structure across different components.](../images/anndata.svg){#fig-anndata-format cap-location="margin"}
+
+Files with the `.h5ad` extension represent AnnData objects stored in an HDF5 file. AnnData objects can be opened in Python using the [`anndata.read_h5ad()`](https://anndata.readthedocs.io/en/latest/generated/anndata.read_h5ad.html#anndata.read_h5ad) function, and in R using the [`anndata::read_h5ad()`](https://anndata.dynverse.org/reference/read_h5ad.html) function. Technically it can be read in any language using an HDF5 library.
+
+### Common dataset format
+
+In OpenProblems, most of the AnnData datasets will have a subset of the following slots:
+
+```{r echo=FALSE, warning=FALSE, error=FALSE}
+spec <- read_anndata_spec("src/datasets/api/file_common_dataset.yaml")
+
+str <- format_slots(spec)
+
+knitr::asis_output(c(
+  ":::{{.small}}\n\n",
+  paste0(str, "\n"),
+  "\n:::\n"
+))
+```
+
+Please visit the reference documentation on the [common dataset file format](/documentation/reference/openproblems-v2/src-datasets.qmd#file-format-common-dataset) used by OpenProblems for more information on each of the different slots.
+
+:::{.callout-note}
+In OpenProblems, the X slot in the AnnData objects is typically not defined (`None` in Python, `NULL` in R). Instead, the raw counts and normalised expression data are defined as layers.
+:::
+
+### Dataset format specifications
+
+OpenProblems tasks contain specifications for the required and optional slots in AnnData files. These specifications are defined in the `src/tasks/*/api/file_*.yaml`. For more information on how these specifications are formatted, see ["Design the API"](/documentation/create_task/design_api.qmd#step-2).

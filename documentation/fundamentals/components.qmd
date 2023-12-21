@@ -1,0 +1,104 @@
+---
+title: Components
+order: 50
+engine: knitr
+bibliography: ../../library.bib
+reference-location: margin
+citation-location: margin
+---
+
+A Viash component is a combination of a code block or script and a small amount of metadata that makes it easy to generate pipeline modules, facilitating the separation of component functionality from the pipeline workflow [@cannoodt2021viashfromscripts]. This enables developers to create reusable, modular, and robust components for OpenProblems, focusing on the specific functionality without having to worry about the chosen pipeline framework.
+
+A Viash component consists of three main parts: a Viash config, a script, and one or more unit tests ([@fig-viash-runtime]). 
+
+![Viash supports robust pipeline development by allowing users to build their component as a standalone executable (with auto-generated CLI), build a Docker container to run the script inside, or turn the component into a standalone Nextflow module.](../images/viash_figure_2.svg){#fig-viash-runtime cap-location="margin"}
+
+## Example component
+
+When creating a new Viash component, you will need to create a script and a config file. Below is an example of a simple Viash component written in Python. For a detailed explanation of the structure of a Viash component in more programming languages (e.g. Bash, Python, R), please visit review documentation on how to create a [Viash component](https://viash.io/guide/component/create-component.html).
+
+### Script
+
+To help with prototyping, a Viash component's script should be runnable. You can do this by defining a [Viash placeholder](https://viash.io/guide/component/variables.html) code block denoted by the `## VIASH START` and `## VIASH END` comments.
+
+The Viash placeholder should contain a dictionary (or named list) which contains example values for all of the input/output arguments your component needs. During execution, Viash will remove the placeholder and replace it with the actual parameter values at runtime.
+
+
+:::{.small}
+```{.python filename="script.py"}
+import anndata
+
+## VIASH START
+# Note: This codeblock is for prototyping and
+# is removed by Viash at runtime.
+par = {
+  'input': 'test_resource.txt',
+  'output': 'output.txt'
+}
+## VIASH END
+
+# Print par
+print(f"par: {par}")
+
+# Read input file
+adata = anndata.read_h5ad(par["input"])
+
+# Print adata
+print(f"adata: {adata}")
+
+# Write output file
+adata.write_h5ad(par["output"])
+```
+:::
+
+:::{.callout-tip}
+It's possible to store helper functions in separate files. Visit the [Viash documentation](https://viash.io/guide/component/use-helper-functions.html) for more information.
+:::
+
+
+### Viash config
+
+Next, we'll write a Viash config file for this component. 
+
+:::{.small}
+```{.yaml filename="config.vsh.yaml"}
+functionality:
+  name: mycomponent
+  description: |
+    A multiline description.
+  arguments:
+    - name: "--input"
+      type: file
+      description: Input h5ad
+      example: input.h5ad
+      required: true
+    - name: "--output"
+      type: file
+      direction: output
+      description: Output g5ad
+      example: output.h5ad
+      required: true
+  resources:
+    - type: python_script
+      path: script.py
+    tests:
+    - type: python_script
+      path: test.py
+platforms:
+  - type: docker
+      image: "python:3.10"
+      setup:
+        - type: python
+          pypi: anndata
+  - type: native
+  - type: nextflow
+```
+:::
+
+:::{.callout-tip}
+After adding more arguments to the config, you can update your script using the [`viash config inject`](#config-inject)
+:::
+
+### Component format specifications
+
+OpenProblems tasks contain specifications for the common config fields between the same component types. These specifications are defined in the `src/tasks/*/comp_*.yaml` files. For more information on how these specifications are formatted, see ["Design the API"](/documentation/create_task/design_api.qmd#step-3).
