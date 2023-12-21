@@ -1,10 +1,7 @@
 ---
 title: Philosophy
+description: The main philosophy behind the OpenProblems project and its goals.
 order: 10
-engine: knitr
-bibliography: ../../library.bib
-reference-location: margin
-citation-location: margin
 ---
 
 OpenProblems aims to revolutionize benchmarking in single-cell omics, addressing the critical issues of poor extensibility and maintainability seen in most studies [@sonrel2023metaanalysis]. Our approach prioritizes several key areas to elevate the standards and practices within the field:
@@ -40,12 +37,12 @@ Note that this task structure is an oversimplification -- both the [dataset](/do
 
 OpenProblems is committed to maximizing the reusability of core infrastructure through careful selection of frameworks ([@fig-project-structure]). This approach allows developers to concentrate on the functionality of benchmarks, rather than the complexities of computational infrastructure. 
 
-![Overview of the OpenProblems repositories, mainly consisting of the main repository and the website. For detailed information on how this project is structured, see the [reference documentation](/documentation/reference).](../images/repositories-thin.svg){#fig-project-structure cap-location="margin"}
+![Overview of the OpenProblems repositories, mainly consisting of the main repository and the website. For detailed information on how this project is structured, see the [reference documentation](/documentation/reference).](../images/repositories-thin.svg){#fig-project-structure cap-location="margin" width="70%"}
 
 
 Here's how our chosen frameworks contribute to this goal:
 
-1. **Viash for Component Development**: Viash ensures high modularity in workflow components. Its ability to generate modular Dockerized Nextflow modules from R, Bash, and Python scripts allows seamless interoperability between different frameworks through the common file formats.
+1. **{{< glossary Viash >}} for Component Development**: Viash ensures high modularity in workflow components. Its ability to generate modular Dockerized Nextflow modules from R, Bash, and Python scripts allows seamless interoperability between different frameworks through the common file formats.
 
 2. **Nextflow for Workflow Execution**: Nextflow is pivotal in enabling our benchmarking and dataset workflows to run across diverse computing environments, including local machines, High-Performance Computing (HPC) systems, and cloud infrastructure. This adaptability is crucial for seamless execution regardless of the computational environments provided by different institutions.
 
