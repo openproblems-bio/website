@@ -48,12 +48,11 @@ website:
 format:
   html:
     theme:
-      light: [ simplex, theme.scss, theme-light.scss]
-      dark: [ darkly, theme.scss, theme-dark.scss ]
-    css: styles.css
+      light: [ simplex, styles/theme.scss, styles/theme-light.scss]
+      dark: [ darkly, styles/theme.scss, styles/theme-dark.scss ]
+    css: styles/styles.css
     toc: true
     link-external-newwindow: true
-    # link-external-icon: true
     link-external-filter: '^(?:http:|https:)\/\/(openproblems\.bio|[^.]*--openproblems\.netlify\.app)'
     smooth-scroll: true
     bibliography: library.bib
@@ -63,7 +62,6 @@ format:
       show: true
     reference-location: margin
     citation-location: margin
-    engine: knitr
 
 execute:
   freeze: auto
