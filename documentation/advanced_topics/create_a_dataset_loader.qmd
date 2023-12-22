@@ -1,6 +1,6 @@
 ---
 title: Create a dataset loader
-order: 5
+order: 10
 engine: knitr
 ---
 
@@ -9,11 +9,9 @@ engine: knitr
 {{< include /_include/_synchonize_tabs.qmd >}}
 {{< include /_include/_read_api.qmd >}}
 
-Datasets are required for any benchmarking workflow and need to be preprocessed in a standardized way.
-The `datasets` task provides a framework for loading and preprocessing datasets.
+A {{< glossary "dataset loader" >}} is used to generate one or more {{< glossary "raw dataset" label="raw datasets" >}}. A raw dataset is processed by the [Dataset preprocessing workflow](/documentation/reference/openproblems-v2/src-datasets.qmd) to create a {{< glossary "common dataset" >}} that can be used by multiple benchmarking tasks.
 
-This guide will show you how to create a new [Viash](https://viash.io) component.
-In the following we will show examples for both Python and R.
+This guide will show you how to create a new {{< glossary Viash >}} component to fetch or generate datasets.
 
 :::{.callout-tip}
 Make sure you have followed the ["Getting started"](../fundamentals/getting_started.qmd) guide.
