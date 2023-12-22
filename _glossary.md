@@ -1,6 +1,21 @@
 
 ```glossary:Task
-A benchmarking task to evaluate the performance of different methods in solving a specific problem when analysing omics data.
+A benchmarking task to evaluate the performance of different methods in solving a specific problem when analysing omics data. A task typically consists of a dataset processor, methods, control methods and metrics. Each component has a well-defined input-output interface, for which the file formats in the resulting AnnData are also described.
+
+The source code of a task is located in `src/tasks/<task_id>` and is structured as follows:
+
+* `api/task_info.yaml`: Contains metadata about the task.
+* `api/comp_*.yaml`: Files defining component interfaces.
+* `api/file_*.yaml`: Files specifying file formats.
+* `dataset_processor/`: Converts common datasets into task-specific datasets.
+* `methods/`: Implements methods to solve the task.
+* `control_methods/`: Tests and controls the quality of other methods.
+* `metrics/`: Metrics for evaluating method performance.
+* `workflows/`: Nextflow workflow for benchmarking tasks.
+* `resources_scripts/`: Scripts to execute workflows.
+* `resources_test_scripts/`: Scripts to create test resources.
+
+See the [reference documentation](/documentation/reference/openproblems-v2/src-task_id.qmd) for more information.
 ```
 
 ```glossary:Metric
@@ -118,6 +133,10 @@ A workflow that processes a [raw dataset](#raw-dataset) into a [common dataset](
 
 ```glossary:File format specification
 A file format specification is a metadata file which describes the expected structure of an AnnData object. This is used to verify whether an AnnData object is valid and to automatically generate documentation for tasks and the components therein. File format specification files are typically stored in `src/**/api/file_*.yaml`.
+```
+
+```glossary:Component interface
+A component interface is a metadata file which describes the expected inputs and outputs of a component. This is used to verify whether a component is valid and to automatically generate documentation for tasks and the components therein. Component interface files are typically stored in `src/**/api/comp_*.yaml`.
 ```
 
 ```glossary:Docker
