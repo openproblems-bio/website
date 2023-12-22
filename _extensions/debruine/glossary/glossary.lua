@@ -1,5 +1,5 @@
 -- Glossary.lua
--- Authors: Lisa DeBruine, Robrecht Cannoodt
+-- Authors: Robrecht Cannoodt
 
 glossary = nil
 
@@ -18,16 +18,28 @@ local function readGlossary(meta)
   end
   
   local file = io.open(path, "rb")
-  local data
-  if file then
-    data = file:read('*all')
-    file:close()
-  end
-  if data == nil then
+  if file == nil then
     return {}
   end
-  local content = "---\n" .. data .. "\n---\n"
-  local glossary = pandoc.read(content, "markdown").meta
+  local data = file:read("*all") or ""
+
+  local glossary = {}
+  local currentTerm, currentEntry = nil, {}
+
+  for line in data:gmatch("[^\r\n]*") do
+      local term = line:match("^```glossary:(.+)")
+      if term then
+          if currentTerm then
+              glossary[currentTerm] = table.concat(currentEntry, "\n")
+          end
+          currentTerm, currentEntry = term, {}
+      elseif line == "```" and currentTerm then
+          glossary[currentTerm] = table.concat(currentEntry, "\n")
+          currentTerm, currentEntry = nil, {}
+      elseif currentEntry then
+          table.insert(currentEntry, line)
+      end
+  end
 
   local toLowerGlossary = {}
   for label, value in pairs(glossary) do
@@ -41,7 +53,6 @@ local function readGlossary(meta)
 end
 
 -- Main Glossary Function Shortcode
-
 return {
   ["glossary"] = function(args, kwargs2, meta)
     -- this will only run for HTML documents
@@ -73,7 +84,7 @@ return {
       for _, key in ipairs(keys) do
         local value = glossary[key]
         str = str .. "#### " .. value.label .. "{#" .. key .. "}\n\n"
-        str = str .. pandoc.utils.stringify(value.value) .. "\n\n"
+        str = str .. value.value .. "\n\n"
       end
 
       return pandoc.read(str, "markdown").blocks

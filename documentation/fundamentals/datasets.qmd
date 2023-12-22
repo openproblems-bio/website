@@ -9,9 +9,9 @@ engine: knitr
 {{< include /_include/_evaluate_code.qmd >}}
 {{< include /_include/_read_api.qmd >}}
 
-In the context of OpenProblems, AnnData is used as the standard data format for both input and output files of components.
-AnnData, short for "Annotated Data", is a file format for handling annotated, high-dimensional biological data [@virshup2021anndataannotateddata].
-Having one standard file format ensures a consistent and seamless exchange of data between different components of the benchmarking pipelines, allowing developers to focus on the core functionality of their components without worrying about data format compatibility.
+To ensure interoperability between components, OpenProblems uses {{< glossary AnnData >}} as the standard data format for both input and output files of components, and strict requirements are imposed on the format of these files.
+
+
 
 ![AnnData objects have a structured format that includes the main data matrix (`X`, e.g. gene expression values), annotations of observations (`obs`, e.g. cell metadata), annotations of variables (`var`, e.g. gene metadata), and unstructured annotations (`uns`). This organization makes it easy to work with complex datasets while maintaining data integrity and ensuring a standardized structure across different components.](../images/anndata.svg){#fig-anndata-format cap-location="margin" width="60%"}
 
