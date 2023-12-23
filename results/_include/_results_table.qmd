@@ -40,11 +40,14 @@ res_tib <- res_tib1 %>%
     peak_memory_gb
   )
 
+res_met <- metric_info %>%
+  filter(metric_id %in% colnames(res_tib))
+
 res_cn <- c(
   "Method",
   "Dataset",
   "Mean score",
-  metric_info$metric_name,
+  res_met$metric_name,
   "Runtime (s)",
   "CPU (%)",
   "Memory (GB)"
@@ -83,7 +86,7 @@ dt <- DT::datatable(
   rownames = FALSE,
   extensions = c("Select", "SearchPanes")
 ) %>%
-  DT::formatRound(c("peak_memory_gb", "mean_score", metric_info$metric_id), digits = 2) %>%
+  DT::formatRound(c("peak_memory_gb", "mean_score", res_met$metric_id), digits = 2) %>%
   DT::formatRound(c("cpu_pct", "duration_sec"), digits = 0) %>%
   DT::formatStyle(seq_len(ncol(res_tib)), fontSize = "80%")
 
