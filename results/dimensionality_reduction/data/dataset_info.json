@@ -1,46 +1,98 @@
 [
-    {
-        "dataset_name": "Mouse hematopoietic stem cell differentiation",
-        "image": "openproblems",
-        "data_url": "https://ndownloader.figshare.com/files/36088649",
-        "data_reference": "nestorowa2016single",
-        "dataset_summary": "1.6k hematopoietic stem and progenitor cells from mouse bone marrow. Sequenced by Smart-seq2. 1920 cells x 43258 features with 3 cell type labels",
-        "task_id": "dimensionality_reduction",
-        "commit_sha": "ff1feaf0b741ec05b10084319a1175dfbf5e6faa",
-        "dataset_id": "mouse_hspc_nestorowa2016",
-        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/datasets/mouse_hspc_nestorowa2016.py"
-    },
-    {
-        "dataset_name": "Mouse myeloid lineage differentiation",
-        "image": "openproblems",
-        "data_url": "https://figshare.com/ndownloader/files/36872214",
-        "data_reference": "olsson2016single",
-        "dataset_summary": "Myeloid lineage differentiation from mouse blood. Sequenced by SMARTseq in 2016 by Olsson et al. 660 cells x 112815 features with 4 cell type labels",
-        "task_id": "dimensionality_reduction",
-        "commit_sha": "ff1feaf0b741ec05b10084319a1175dfbf5e6faa",
-        "dataset_id": "olsson_2016_mouse_blood",
-        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/datasets/mouse_blood_olsson_labelled.py"
-    },
-    {
-        "dataset_name": "5k Peripheral blood mononuclear cells",
-        "image": "openproblems",
-        "data_url": "https://ndownloader.figshare.com/files/25555739",
-        "data_reference": "10x2019pbmc",
-        "dataset_summary": "5k Peripheral Blood Mononuclear Cells (PBMCs) from a healthy donor. Sequenced on 10X v3 chemistry in July 2019 by 10X Genomics. 5247 cells x 20822 features with no cell type labels",
-        "task_id": "dimensionality_reduction",
-        "commit_sha": "ff1feaf0b741ec05b10084319a1175dfbf5e6faa",
-        "dataset_id": "tenx_5k_pbmc",
-        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/datasets/tenx_5k_pbmc.py"
-    },
-    {
-        "dataset_name": "Zebrafish",
-        "image": "openproblems",
-        "data_url": "https://ndownloader.figshare.com/files/24566651?private_link=e3921450ec1bd0587870",
-        "data_reference": "wagner2018single",
-        "dataset_summary": "90k cells from zebrafish embryos throughout the first day of development, with and without a knockout of chordin, an important developmental gene. Dimensions: 26022 cells, 25258 genes. 24 cell types (avg. 1084\u00b11156 cells per cell type).",
-        "task_id": "dimensionality_reduction",
-        "commit_sha": "ff1feaf0b741ec05b10084319a1175dfbf5e6faa",
-        "dataset_id": "zebrafish_labs",
-        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/datasets/zebrafish.py"
-    }
+  {
+    "task_id": "dimensionality_reduction",
+    "dataset_id": "cellxgene_census/dkd",
+    "dataset_name": "Diabetic Kidney Disease",
+    "dataset_summary": "Multimodal single cell sequencing implicates chromatin accessibility and genetic background in diabetic kidney disease progression",
+    "data_reference": "wilson2022multimodal",
+    "data_url": "https://cellxgene.cziscience.com/collections/b3e2c6e3-9b05-4da9-8f42-da38a664b45b"
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "dataset_id": "openproblems_v1/mouse_hspc_nestorowa2016",
+    "dataset_name": "Mouse HSPC",
+    "dataset_summary": "Haematopoeitic stem and progenitor cells from mouse bone marrow",
+    "data_reference": "nestorowa2016single",
+    "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE81682"
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "dataset_id": "openproblems_v1/zebrafish",
+    "dataset_name": "Zebrafish embryonic cells",
+    "dataset_summary": "Single-cell mRNA sequencing of zebrafish embryonic cells.",
+    "data_reference": "wagner2018single",
+    "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE112294"
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "dataset_id": "openproblems_v1/tenx_1k_pbmc",
+    "dataset_name": "1k PBMCs",
+    "dataset_summary": "1k peripheral blood mononuclear cells from a healthy donor",
+    "data_reference": "10x2018pbmc",
+    "data_url": "https://www.10xgenomics.com/resources/datasets/1-k-pbm-cs-from-a-healthy-donor-v-3-chemistry-3-standard-3-0-0"
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "dataset_id": "openproblems_v1/mouse_blood_olsson_labelled",
+    "dataset_name": "Mouse myeloid",
+    "dataset_summary": "Myeloid lineage differentiation from mouse blood",
+    "data_reference": "olsson2016single",
+    "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE70245"
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "dataset_id": "openproblems_v1/tenx_5k_pbmc",
+    "dataset_name": "5k PBMCs",
+    "dataset_summary": "5k peripheral blood mononuclear cells from a healthy donor",
+    "data_reference": "10x2019pbmc",
+    "data_url": "https://www.10xgenomics.com/resources/datasets/5-k-peripheral-blood-mononuclear-cells-pbm-cs-from-a-healthy-donor-with-cell-surface-proteins-v-3-chemistry-3-1-standard-3-1-0"
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "dataset_id": "openproblems_v1/allen_brain_atlas",
+    "dataset_name": "Mouse Brain Atlas",
+    "dataset_summary": "Adult mouse primary visual cortex",
+    "data_reference": "tasic2016adult",
+    "data_url": "http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71585"
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "dataset_id": "openproblems_v1/tnbc_wu2021",
+    "dataset_name": "Triple-Negative Breast Cancer",
+    "dataset_summary": "1535 cells from six fresh triple-negative breast cancer tumors.",
+    "data_reference": "wu2021single",
+    "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE118389"
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "dataset_id": "openproblems_v1/immune_cells",
+    "dataset_name": "Human immune",
+    "dataset_summary": "Human immune cells dataset from the scIB benchmarks",
+    "data_reference": "luecken2022benchmarking",
+    "data_url": "https://theislab.github.io/scib-reproducibility/dataset_immune_cell_hum.html"
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "dataset_id": "openproblems_v1/pancreas",
+    "dataset_name": "Human pancreas",
+    "dataset_summary": "Human pancreas cells dataset from the scIB benchmarks",
+    "data_reference": "luecken2022benchmarking",
+    "data_url": "https://theislab.github.io/scib-reproducibility/dataset_pancreas.html"
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "dataset_id": "cellxgene_census/gtex_v9",
+    "dataset_name": "GTEX v9",
+    "dataset_summary": "Single-nucleus cross-tissue molecular reference maps to decipher disease gene function",
+    "data_reference": "eraslan2022singlenucleus",
+    "data_url": "https://cellxgene.cziscience.com/collections/a3ffde6c-7ad2-498a-903c-d58e732f7470"
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "dataset_id": "openproblems_v1/cengen",
+    "dataset_name": "CeNGEN",
+    "dataset_summary": "Complete Gene Expression Map of an Entire Nervous System",
+    "data_reference": "hammarlund2018cengen",
+    "data_url": "https://www.cengen.org"
+  }
 ]

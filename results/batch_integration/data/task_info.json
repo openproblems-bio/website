@@ -1,0 +1,8 @@
+{
+  "task_id": "batch_integration",
+  "commit_sha": null,
+  "task_name": "Batch Integration",
+  "task_summary": "Remove unwanted batch effects from scRNA data while retaining biologically meaningful variation.",
+  "task_description": "In this task we evaluate batch integration methods on their ability to remove batch effects in the data while conserving variation attributed to biological effects.\nAs input, methods require either normalised or unnormalised data with multiple batches and consistent cell type labels.\nThe batch integrated output can be a feature matrix, a low dimensional embedding and/or a neighbourhood graph.\nThe respective batch-integrated representation is then evaluated using sets of metrics that capture how well batch effects are removed and whether biological variance is conserved.\nWe have based this particular task on the latest, and most extensive benchmark of single-cell data integration methods.\n",
+  "repo": "openproblems-bio/openproblems-v2"
+}
