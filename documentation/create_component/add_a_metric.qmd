@@ -116,63 +116,12 @@ cat src/tasks/label_projection/metrics/my_metric_r/config.vsh.yaml
 
 Please make sure that the following fields in the `functionality` and `functionality.info` sections in the config file are filled in. The metrics component can contain several metric values these are listed in the `functionality.info.metrics`.
 
-<!-- TODO: think about how to make this listing easier on the eye -->
+{{< include _include/_render_schema_required_fields.qmd >}}
 
 ```{r echo=FALSE, warning=FALSE, error=FALSE}
 info <- read_and_merge_yaml("src/common/schemas/task_metric.yaml")
 
-process <- function(info, prefix = "", required = NA) {
-  type <- 
-    if ("type" %in% names(info)) {
-      info$type
-    } else if ("enum" %in% names(info)) {
-      "enum"
-    } else {
-      "unknown"
-    }
-  if (type == "object") {
-    prop_names <-
-      if (is.na(required)) {
-        names(info$properties)
-      } else if (required) {
-        info$required
-      } else {
-        setdiff(names(info$properties), info$required)
-      }
-    unlist(lapply(
-      prop_names,
-      function(prop_name) {
-        prop <- info$properties[[prop_name]]
-        process(prop, prefix = paste0(prefix, ".", prop_name), required = required)
-      }
-    ))
-  } else if (type == "array") {
-    prop_names <-
-      if (is.na(required)) {
-        names(info$items$properties)
-      } else if (required) {
-        info$items$required
-      } else {
-        setdiff(names(info$items$properties), info$items$required)
-      }
-    unlist(lapply(
-      prop_names,
-      function(prop_name) {
-        prop <- info$items$properties[[prop_name]]
-        process(prop, prefix = paste0(prefix, ".", prop_name), required = required)
-      }
-    )) # ignore for now
-  } else if (is.list(info)) {
-    paste0(
-      "#### `", prefix, "`\n",
-      "\n",
-      info$description
-    )
-  } else {
-    c()
-  }
-}
-info_str <- paste(process(info, required = TRUE), collapse = "\n\n")
+info_str <- paste(render_schema_required_fields(info, required = TRUE), collapse = "\n\n")
 
 knitr::asis_output(info_str)
 ```
