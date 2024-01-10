@@ -53,35 +53,6 @@ Please visit the reference documentation on the [common dataset file format](/do
 In OpenProblems, the X slot in the AnnData objects is typically not defined (`None` in Python, `NULL` in R). Instead, the raw counts and normalised expression data are defined as layers.
 :::
 
-## Available common datasets
+## Available datasets
 
-Our datasets are stored in `s3://openproblems-data/resources/datasets`
-
-```
-aws s3 ls --recursive s3://openproblems-data/resources/datasets | grep "resources/datasets/.*/log_cp10k/state.yaml"
-```
-
-
-TODO: show properties of each dataset
-
-    2023-12-16 10:58:11        112 resources/datasets/cellxgene_census/dkd/log_cp10k/state.yaml
-    2023-12-16 11:08:22        116 resources/datasets/cellxgene_census/gtex_v9/log_cp10k/state.yaml
-    2023-12-16 12:29:47        113 resources/datasets/cellxgene_census/hcla/log_cp10k/state.yaml
-    2023-12-16 11:46:33        116 resources/datasets/cellxgene_census/hypomap/log_cp10k/state.yaml
-    2023-12-16 11:31:02        126 resources/datasets/cellxgene_census/immune_cell_atlas/log_cp10k/state.yaml
-    2023-12-16 11:53:22        129 resources/datasets/cellxgene_census/mouse_pancreas_atlas/log_cp10k/state.yaml
-    2023-12-16 12:28:57        123 resources/datasets/cellxgene_census/tabula_sapiens/log_cp10k/state.yaml
-    2023-12-15 22:06:55        125 resources/datasets/openproblems_v1/allen_brain_atlas/log_cp10k/state.yaml
-    2023-12-15 22:01:13        114 resources/datasets/openproblems_v1/cengen/log_cp10k/state.yaml
-    2023-12-15 22:03:14        120 resources/datasets/openproblems_v1/immune_cells/log_cp10k/state.yaml
-    2023-12-15 21:59:13        135 resources/datasets/openproblems_v1/mouse_blood_olsson_labelled/log_cp10k/state.yaml
-    2023-12-15 22:00:53        132 resources/datasets/openproblems_v1/mouse_hspc_nestorowa2016/log_cp10k/state.yaml
-    2023-12-15 22:03:34        116 resources/datasets/openproblems_v1/pancreas/log_cp10k/state.yaml
-    2023-12-15 21:58:54        120 resources/datasets/openproblems_v1/tenx_1k_pbmc/log_cp10k/state.yaml
-    2023-12-15 21:59:24        120 resources/datasets/openproblems_v1/tenx_5k_pbmc/log_cp10k/state.yaml
-    2023-12-15 22:02:35        119 resources/datasets/openproblems_v1/tnbc_wu2021/log_cp10k/state.yaml
-    2023-12-15 22:02:05        117 resources/datasets/openproblems_v1/zebrafish/log_cp10k/state.yaml
-    2023-12-16 09:56:39        247 resources/datasets/openproblems_v1_multimodal/citeseq_cbmc/log_cp10k/state.yaml
-    2023-12-16 09:56:25        252 resources/datasets/openproblems_v1_multimodal/scicar_cell_lines/log_cp10k/state.yaml
-    2023-12-16 09:56:40        254 resources/datasets/openproblems_v1_multimodal/scicar_mouse_kidney/log_cp10k/state.yaml
-
+Our datasets are stored in `s3://openproblems-data/resources/datasets`. Please visit the [datasets](/datasets) page for more information on each of the available datasets.
