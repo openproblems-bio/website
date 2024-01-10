@@ -1,0 +1,101 @@
+---
+engine: knitr
+---
+
+```{r datalocation}
+#| include: false
+#| error: true
+
+library(tidyverse)
+library(jsonlite)
+
+meta <- read_json("meta.json")
+meta_uns <- meta$uns
+
+filesize <- format(structure(meta_uns$file_size, class="object_size"), units="auto", standard="IEC", digits=2)
+
+n_cells<- NULL
+
+for (item in meta$structure$var) {
+  if (item$name == "n_cells") {
+    n_cells <- item$shape[[1]]
+    break
+  }
+}
+
+```
+
+ 
+---
+title: "`r meta_uns$dataset_id`"
+subtitle: "`r meta_uns$dataset_summary`"
+description: |
+  `r meta_uns$dataset_description`
+  [Documentation](`r meta_uns$dataset_url`) [Download](`r meta_uns$data_url`)
+title-block-banner-color: white
+categories: 
+  - Openproblems v1
+  - public
+  - theis
+css: ../../../events/events.css
+toc: false
+listing:
+  - id: benchmarks
+    contents: "../../../results/*/index.qmd"
+    type: table
+---
+
+created on `r meta_uns$date_created`
+
+
+Dataset size: `r filesize`
+
+number of cells: `r n_cells`
+
+### Explore the dataset
+
+::: {.panel-tabset}
+
+## X
+```{r x_struct}
+#| echo: false
+
+structure <- meta$structure
+
+x_df <- fromJSON(toJSON(structure$X))
+
+x_df
+
+```
+
+## layers
+
+```{r layers_struct}
+#| echo: false
+
+layers_df <- fromJSON(toJSON(structure$layers))
+
+layers_df
+
+```
+
+## obs
+
+```{r obs_struct}
+#| echo: false
+
+obs_df <- fromJSON(toJSON(structure$obs))
+
+obs_df %>% 
+  select(name, type, shape, dtype)
+
+```
+
+:::
+
+
+
+#### Related Benchmarks
+
+::: {.benchmarks}
+:::

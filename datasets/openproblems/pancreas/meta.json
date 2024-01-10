@@ -1,0 +1,279 @@
+{
+  "structure": {
+    "X": [],
+    "layers": [
+      {
+        "dtype": "float32",
+        "name": "counts",
+        "shape": [
+          500,
+          500
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float32",
+        "name": "log_normalized",
+        "shape": [
+          500,
+          500
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float32",
+        "name": "normalized",
+        "shape": [
+          500,
+          500
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "obs": [
+      {
+        "dtype": "category",
+        "name": "tech",
+        "shape": [
+          500
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "celltype",
+        "shape": [
+          500
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "size_factors",
+        "shape": [
+          500
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "n_counts",
+        "shape": [
+          500
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "cell_type",
+        "shape": [
+          500
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "batch",
+        "shape": [
+          500
+        ],
+        "type": "vector"
+      }
+    ],
+    "obsm": [
+      {
+        "dtype": "float32",
+        "name": "X_pca",
+        "shape": [
+          500,
+          50
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "obsp": [
+      {
+        "dtype": "float32",
+        "name": "knn_connectivities",
+        "shape": [
+          500,
+          500
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "knn_distances",
+        "shape": [
+          500,
+          500
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "uns": [
+      {
+        "dtype": null,
+        "name": "_from_cache",
+        "shape": null,
+        "type": "other: <class 'numpy.bool_'>"
+      },
+      {
+        "dtype": "str",
+        "name": "data_reference",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "str",
+        "name": "data_url",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "str",
+        "name": "dataset_description",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "str",
+        "name": "dataset_id",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "str",
+        "name": "dataset_name",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "str",
+        "name": "dataset_organism",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "str",
+        "name": "dataset_reference",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "str",
+        "name": "dataset_summary",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "str",
+        "name": "dataset_url",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": null,
+        "name": "knn",
+        "shape": [
+          3
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": "str",
+        "name": "normalization_id",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": null,
+        "name": "pca_variance",
+        "shape": [
+          2
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": "object",
+        "name": "var_names_all",
+        "shape": [
+          19093
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "var": [
+      {
+        "dtype": "int64",
+        "name": "n_cells",
+        "shape": [
+          500
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "bool",
+        "name": "hvg",
+        "shape": [
+          500
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "hvg_score",
+        "shape": [
+          500
+        ],
+        "type": "vector"
+      }
+    ],
+    "varm": [
+      {
+        "dtype": "float32",
+        "name": "pca_loadings",
+        "shape": [
+          500,
+          50
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "varp": []
+  },
+  "uns": {
+    "data_reference": "luecken2022benchmarking",
+    "data_url": "https://ndownloader.figshare.com/files/36086813",
+    "dataset_description": "Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq).",
+    "dataset_id": "pancreas_subsample",
+    "dataset_name": "Human pancreas",
+    "dataset_organism": "homo_sapiens",
+    "dataset_reference": "luecken2022benchmarking",
+    "dataset_summary": "Human pancreas cells dataset from the scIB benchmarks",
+    "dataset_url": "https://theislab.github.io/scib-reproducibility/dataset_pancreas.html",
+    "date_created": "2023-12-15 15:55:58.244598",
+    "file_size": 2516016,
+    "normalization_id": "log_cp10k"
+  }
+}
