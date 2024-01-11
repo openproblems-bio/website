@@ -4,10 +4,38 @@ order: 20
 engine: knitr
 ---
 
-Which techniques do we use to safeguard our benchmarks against common pitfalls?
+OpenProblems is dedicated to ensuring the highest standards in benchmarking single-cell analysis methods. We have developed a set of safeguards to maintain the integrity of our benchmarks and to ensure that they are reproducible and comparable.
 
-* Common datasets
-* Dataset processors
-* Control methods
-* Strict file formats and component interfaces
-* Unit tests
+## Common datasets
+
+We maintain a library of standardized datasets that are specifically curated for benchmarking purposes. For the sake of reproducibility, we provide the exact code used to generate each dataset.
+
+This uniformity eliminates variations that can arise from using disparate datasets, leading to more reliable and comparable results.
+
+This uniformity eliminates variations that can arise from using disparate datasets, leading to more reliable and comparable results.
+
+## Dataset processors
+
+Each benchmarking task uses a dataset processor to transform a common dataset into two (or more) files: a censored dataset and a solution. 
+
+The censored dataset is what the methods work on, while the solution acts as a key for evaluation. This separation ensures that the methods being benchmarked cannot exploit the full dataset to artificially enhance their performance.
+
+Prevents method components from cheating (intentionally, or unintentionally due to bugs).
+
+## Control methods
+
+Every benchmarking task includes both positive and negative control methods.
+
+* **Positive Controls**: These controls simply return the solution. When the perfect solution does not exist (e.g. when evaluating dimensionality reductions), a positive control is expected to return a solution which will get a near-perfect score on at least one of the metrics. Positive control methods set an upper performance limit, indicating the best possible result under ideal conditions. 
+
+* **Negative Controls**: These controls return random information. They establish a baseline or lower limit of performance, against which all other methods are compared.
+
+These serve as a sanity check to ensure that the benchmark is working as intended, since method scores should fall between those of positive and negative controls.
+
+## Strict component interfaces and file formats
+
+All methods and metrics adhere to a strict file format interface. This standardization allows for automated checks to verify if any critical information is missing from a component’s output. It enhances the reliability of the benchmarking process by maintaining uniformity in data presentation and evaluation. It also allows automatically generating documentation for the different components.
+
+## Unit tests
+
+All components in our benchmarking framework undergo rigorous unit testing. This testing is crucial for identifying and resolving problems early in the development cycle, thus preventing these issues from impacting the integrity of the benchmarks.
