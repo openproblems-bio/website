@@ -103,8 +103,16 @@ return {
       end
 
       -- return link
+      -- local url = "/documentation/reference/glossary/index.qmd#" .. term
+      -- local infoIcon = pandoc.Span("ℹ️", pandoc.Attr("class", {"info-icon"}))
+      -- local link = pandoc.Link(label .. " ", url, "", pandoc.Attr("class", {"quarto-xref"}))
+      -- local linkWithIcon = pandoc.Span({link, infoIcon}, pandoc.Attr("class", {"link-with-info"}))
+
       local url = "/documentation/reference/glossary/index.qmd#" .. term
-      local link = pandoc.Link(label, url, "", pandoc.Attr("class", {"quarto-xref"}))
+      local infoIcon = pandoc.Span("Ⓘ", pandoc.Attr("class", {"info-icon"}))
+      local combinedLabel = pandoc.Span({pandoc.Str(label), infoIcon})
+      local link = pandoc.Link(combinedLabel, url, "", pandoc.Attr("class", {"quarto-xref"}))
+
       return link
     end
   end
