@@ -1,5 +1,6 @@
 ---
 title: Add a control method
+description: This guide will show you how to create a new control method.
 order: 50
 engine: knitr
 ---
@@ -7,6 +8,7 @@ engine: knitr
 {{< include ../../_include/_clone_repo.qmd >}}
 {{< include /_include/_evaluate_code.qmd >}}
 {{< include /_include/_synchonize_tabs.qmd >}}
+{{< include /_include/_read_api.qmd >}}
 
 A control method is used to test the relative performance of all other methods, and also as a quality control for the pipeline as a whole. A control method can either be a positive control or a negative control. The positive control and negative control methods set a maximum and minimum threshold for performance, so any new method should perform better than the negative control methods and worse than the positive control method.
 
@@ -117,32 +119,15 @@ cat src/tasks/label_projection/control_methods/my_method_r/config.vsh.yaml
 
 Please edit `functionality.info` section in the config file to fill in the necessary metadata.
 
-#### `functionality.name`
-A unique identifier for the method. Must be written in snake case. Example: `my_new_method`.
+{{< include _include/_render_schema_required_fields.qmd >}}
 
-#### `functionality.info.pretty_name`
+```{r echo=FALSE, warning=FALSE, error=FALSE}
+info <- read_and_merge_yaml("src/common/schemas/task_control_method.yaml")
 
-A label for the method used for visualisations and documentation. Example: `"My new method"`.
+info_str <- paste(render_schema_required_fields(info, required = TRUE), collapse = "\n\n")
 
-#### `functionality.info.subtype`
-
-Whether the method is a `"positive_control"` or a `"negative_control"`.
-
-#### `functionality.info.summary`
-
-A one sentence summary of the method. Used for creating short overviews of the components in a task.
-
-#### `functionality.info.description`
-
-An explanation for how the method works. Used for creating reference documentation of a task.
-
-#### `functionality.info.preferred_normalization`
-
-Which normalization method a component _prefers_. Possible values are `r norm_methods_str`. Each value corresponds to a normalization component in the directory [`src/datasets/normalization`](https://github.com/openproblems-bio/openproblems-v2/tree/main/src/datasets/normalization).
-
-#### `__merge__`
-
-The file specified in this field contains information regarding the input and output arguments of the component, as well as a unit test to ensure that the component is functioning properly. Normally you don't need to change this if you gave the right arguments to the `create_component` component.
+knitr::asis_output(info_str)
+```
 
 ## Step 3: Add dependencies
 

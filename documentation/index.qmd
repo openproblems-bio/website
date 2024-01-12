@@ -1,19 +1,21 @@
 ---
 title: Documentation
 order: 1
+listing:
+  id: chapters
+  template: ../style/listing.ejs
+  type: default
+  contents: "./*/index.qmd"
 ---
 
 Welcome to the OpenProblems documentation!
 
 OpenProblems is a framework for machine learning scientists, computational biologists, and single-cell data analysts to benchmark and compare single-cell omics methods on a variety of tasks. We believe that improving reproducibility and transparency in research will accelerate progress in single-cell omics.
 
-This documentation provides an overview of the framework and how to contribute to it. It is organized into several chapters, including: 
+This documentation provides an overview of the framework and how to contribute to it. It is organized into the following chapters: 
 
-* [Fundamentals](fundamentals/): the main philosophy of the Openproblems project, key concepts, requirements, and a short getting started guide.
-* [Create components](create_component/): How to contribute datasets, methods, or metrics to OpenProblems.
-* [Create a new task](create_task/): A step-by-step overview of the process of adding a new task
-* [Reference](reference/): Reference documentation on the structure of the OpenProblems repositories.
-* [More information](more_information/): Additional information such as our code of conduct, frequently asked questions, and troubleshooting tips.
+:::{#chapters}
+:::
 
 We encourage everyone who uses OpenProblems to contribute to the framework in any way they can. This can include submitting a pull request to improve the documentation, answering queries on the issue tracker, investigating bugs, reviewing other developers' pull requests, or simply reporting issues and giving a "thumbs up" to relevant issues. 
 
@@ -21,5 +23,5 @@ One simple but important way to contribute is to spread the word about the libra
 
 [![](images/stargazers.png){width=500px}](https://github.com/openproblems-bio/openproblems-v2/stargazers)
 
-Finally, we want to emphasize that OpenProblems is an inclusive community and we expect all members to adhere to our [code of conduct](more_information/code_of_conduct.qmd). We hope that this documentation helps you get started with OpenProblems and we look forward to your contributions.
+Finally, we want to emphasize that OpenProblems is an inclusive community and we expect all members to adhere to our [code of conduct](fundamentals/philosophy.qmd#inclusiveness). We hope that this documentation helps you get started with OpenProblems and we look forward to your contributions.
 

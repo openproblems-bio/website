@@ -1,0 +1,26 @@
+---
+title: Technology stack
+description: The OpenProblems technology stack
+order: 30
+engine: knitr
+---
+
+We use a variety of technologies to ensure the reliability, reproducibility, and extensibility of our workflows ([@fig-project-structure]):
+
+1. **{{< glossary Viash >}} for Component Development**: Viash ensures high modularity in workflow components. Its ability to generate modular Dockerized Nextflow modules from R, Bash, and Python scripts allows seamless interoperability between different frameworks through the common file formats.
+
+2. **{{< glossary Nextflow >}} for Workflow Execution**: Nextflow is pivotal in enabling our benchmarking and dataset workflows to run across diverse computing environments, including local machines, High-Performance Computing (HPC) systems, and cloud infrastructure. This adaptability is crucial for seamless execution regardless of the computational environments provided by different institutions.
+
+3. **{{< glossary AnnData >}} for File Formatting**: By adopting AnnData as a common file format, we facilitate interaction with data in both R and Python. This consistency aids in maintaining a uniform data structure across various computational tasks.
+
+4. **Standardized File Formats and Component Interfaces**: Our strict definitions for file formats and component interfaces significantly boost the extensibility of tasks. This standardization ensures a streamlined and well-documented data flow throughout the workflow.
+
+5. **GitHub Actions for Continuous Integration**: The use of GitHub Actions for running unit tests and building containers streamlines the development process, ensuring reliability and consistency in our software delivery.
+
+6. **Custom Docker Images for Component Reproducibility**: To guarantee reproducibility while avoiding dependency conflicts, each component in OpenProblems is equipped with a custom Docker image containing only the necessary dependencies.
+
+7. **Nextflow Tower, AWS Batch, and AWS S3**: While our workflows are executed on Nextflow Tower, AWS Batch, and AWS S3, they are designed not to be confined to this specific infrastructure. This flexibility allows for adaptation to various storage and computational environments.
+
+8. **Standardized Dataset Loaders and Processing Pipeline**: We offer a library of common datasets to be reused across tasks whenever possible. These datasets are derived from sources like CELLxGENE census and GEO and are processed by a standardized dataset processing pipeline. This uniformity in data processing ensures consistent data quality and structure across different tasks, facilitating comparability and consistency in benchmarking results.
+
+![Overview of the OpenProblems repositories, mainly consisting of the main repository and the website. For detailed information on how this project is structured, see the [reference documentation](/documentation/reference).](../images/repositories-thin.svg){#fig-project-structure}

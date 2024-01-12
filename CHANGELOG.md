@@ -54,7 +54,9 @@
 
 ## MINOR CHANGES
 
-* Update renv to v1.0.2 to improve processing time.
+* Update renv to v1.0.2 to improve processing time. (PR #287)
+
+* Add more information about task_info.yaml to the documentation (PR #285).
 
 * Minor updates to the NeurIPS 2023 landing page.
 

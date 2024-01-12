@@ -1,0 +1,53 @@
+
+```{r echo=FALSE, warning=FALSE, error=FALSE}
+render_schema_required_fields <- function(info, prefix = "", required = NA) {
+  type <- 
+    if ("type" %in% names(info)) {
+      info$type
+    } else if ("enum" %in% names(info)) {
+      "enum"
+    } else {
+      "unknown"
+    }
+  if (type == "object") {
+    prop_names <-
+      if (is.na(required)) {
+        names(info$properties)
+      } else if (required) {
+        info$required
+      } else {
+        setdiff(names(info$properties), info$required)
+      }
+    unlist(lapply(
+      prop_names,
+      function(prop_name) {
+        prop <- info$properties[[prop_name]]
+        render_schema_required_fields(prop, prefix = paste0(prefix, ".", prop_name), required = required)
+      }
+    ))
+  } else if (type == "array") {
+    prop_names <-
+      if (is.na(required)) {
+        names(info$items$properties)
+      } else if (required) {
+        info$items$required
+      } else {
+        setdiff(names(info$items$properties), info$items$required)
+      }
+    unlist(lapply(
+      prop_names,
+      function(prop_name) {
+        prop <- info$items$properties[[prop_name]]
+        render_schema_required_fields(prop, prefix = paste0(prefix, "[].", prop_name), required = required)
+      }
+    ))
+  } else if (is.list(info)) {
+    paste0(
+      " * **`", prefix, "`**: ",
+      gsub("\n", "\n   ", paste(info$description, collapse = "\n"))
+    )
+  } else {
+    c()
+  }
+}
+```

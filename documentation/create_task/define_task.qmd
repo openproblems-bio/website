@@ -1,11 +1,13 @@
 ---
 title: Define the task
 order: 10
+engine: knitr
 ---
 
 
-{{< include ../../_include/_clone_repo.qmd >}}
+{{< include /_include/_clone_repo.qmd >}}
 {{< include /_include/_evaluate_code.qmd >}}
+{{< include /_include/_read_api.qmd >}}
 
 Before writing any code, it's essential to carefully plan and document your task to ensure its relevance, feasibility, and compatibility with the OpenProblems framework. 
 
@@ -34,21 +36,20 @@ knitr::asis_output(md)
 
 ## Step 3: Create task info
 
-Now create a task info metadata file at `src/tasks/<task_id>/api/task_info.yaml`:
+Now create a task info metadata file in the `src/tasks/<task_id>/api` directory. This file will be part of the automatic "readme" creation in the repo directory of this task. The task info file should be named `task_info.yaml` and should contain the following information:
 
-```{.yaml filename="src/tasks/<task_id>/api/task_info.yaml"}
-task_id: your_task_id
-task_name: Your task name
-summary: "FILL IN: A one line description of what this purpose of this task is."
-description: |
-  FILL IN: The task description and motivation you created earlier.
-authors:
-  - name: "Your name"
-    roles: [ author, maintainer ]
-    props:
-      github: your-github-account
-      orcid: "0000-1111-2222-3333"
+
+```{r echo=FALSE, warning=FALSE, error=FALSE}
+json_schema <- read_and_merge_yaml("src/common/schemas/task_info.yaml")
+yaml_example <- render_example(json_schema)
+
+knitr::asis_output(paste0(
+  "```yaml\n",
+  yaml_example, "\n",
+  "```\n"
+))
 ```
+
 
 ## Next steps
 

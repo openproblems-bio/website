@@ -1,6 +1,7 @@
 ```{mermaid}
 %%| fig-cap: "Overview of the dataset processing workflow. *Legend: Grey rectangles are AnnData .h5ad files, purple rhomboids are Viash components.*"
 %%| label: fig-dataset-workflow
+%%| cap-location: margin
 graph LR
   normalization:::group
   dataset_processors:::group
@@ -9,17 +10,17 @@ graph LR
   test_dataset[Test<br/>dataset]:::anndata
   dataset_loader[/Dataset<br/>loader/]:::component
   subgraph normalization [Normalization methods]
-    log_cpm[/"Log CPM"/]:::component
+    log_cp10k[/"Log CP10k"/]:::component
     l1_sqrt[/"L1 sqrt"/]:::component
     log_scran_pooling[/"Log scran<br/>pooling"/]:::component
-    sqrt_cpm[/Sqrt CPM/]:::component
+    sqrt_cp10k[/Sqrt CP10k/]:::component
   end
   subgraph dataset_processors[Dataset processors]
     pca[/PCA/]:::component
     hvg[/HVG/]:::component
     knn[/KNN/]:::component
   end
-  dataset_loader --> raw_dataset --> log_cpm & l1_sqrt & log_scran_pooling & sqrt_cpm --> pca --> hvg --> knn --> common_dataset
+  dataset_loader --> raw_dataset --> log_cp10k & l1_sqrt & log_scran_pooling & sqrt_cp10k --> pca --> hvg --> knn --> common_dataset
   subset[/Subset/]:::component
   common_dataset --> subset --> test_dataset
 ```
