@@ -1,0 +1,87 @@
+<div class="quarto-title-meta">
+  $if(dataset-id)$
+  <div>
+    <div class="quarto-title-meta-heading"><i class="bi bi-database-check"></i> Dataset ID</div>
+    <div class="quarto-title-meta-contents">
+      <p class="author">$dataset-id$</p>
+    </div>
+  </div>
+  $endif$
+
+  $if(dataset-docs)$
+  <div>
+    <div class="quarto-title-meta-heading"><i class="bi bi-file-earmark-text"></i> Documentation</div>
+    <div class="quarto-title-meta-contents">
+      <p class="author">$dataset-docs$</p>
+    </div>
+  </div>
+  $endif$
+
+  $if(dataset-url)$
+  <div>
+    <div class="quarto-title-meta-heading"><i class="bi bi-globe"></i> url</div>
+    <div class="quarto-title-meta-contents">
+      <p class="author">$dataset-url$</p>
+    </div>
+  </div>
+  $endif$
+</div>
+
+<div class="quarto-title-meta">
+
+  $if(dataset-size)$
+  <div>
+    <div class="quarto-title-meta-heading bs-col"><i class="bi bi-cloud-download"> </i>size</div>
+    <div class="quarto-title-meta-contents">
+       <p class="author">$dataset-size$</p>
+    </div>
+  </div>
+  $endif$
+  
+  $if(date)$
+  <div>
+    <div class="quarto-title-meta-heading"><i class="bi bi-calendar"></i> Created</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">$date$</p>
+    </div>
+  </div>
+  $endif$
+
+  $if(cells)$
+  <div>
+    <div class="quarto-title-meta-heading"><i class="bi bi-box"></i> # cells:</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">$cells$</p>
+    </div>
+  </div>
+  $endif$
+  
+  $if(doi)$
+  <div>
+    <div class="quarto-title-meta-heading">$labels.doi$</div>
+    <div class="quarto-title-meta-contents">
+      <p class="doi">
+        <a href="https://doi.org/$doi$">$doi$</a>
+      </p>
+    </div>
+  </div>
+  $endif$
+</div>
+  
+$if(abstract)$
+<div>
+  <div class="abstract">
+    <div class="block-title">$labels.abstract$</div>
+    $abstract$
+  </div>
+</div>
+$endif$
+
+$if(keywords)$
+<div>
+  <div class="keywords">
+    <div class="block-title">$labels.keywords$</div>
+    <p>$for(keywords)$$it$$sep$, $endfor$</p>
+  </div>
+</div>
+$endif$
