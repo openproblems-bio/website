@@ -64,15 +64,15 @@ split_cite_fun <- function(keys) {
 results_long <-
   inner_join(
     results %>%
+      select(method_id, dataset_id, metric_values) %>%
       unnest(metric_values) %>%
       gather(metric_id, value, any_of(metric_info$metric_id)) %>%
-      mutate(value = ifelse(is.na(value), NA_real_, value)) %>%
-      select(method_id, dataset_id, metric_id, value),
+      mutate(value = ifelse(is.na(value), NA_real_, value)),
     results %>%
+      select(method_id, dataset_id, scaled_scores) %>%
       unnest(scaled_scores) %>%
       gather(metric_id, score, any_of(metric_info$metric_id)) %>%
-      mutate(score = ifelse(is.na(score), NA_real_, score)) %>%
-      select(method_id, dataset_id, metric_id, score),
+      mutate(score = ifelse(is.na(score), NA_real_, score)),
     by = c("method_id", "dataset_id", "metric_id")
   ) %>%
   left_join(method_info %>% select(method_id, is_baseline), "method_id")

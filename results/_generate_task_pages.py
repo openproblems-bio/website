@@ -18,11 +18,11 @@ for task_info_file in task_info_files:
 ---
 title: "{task_name}"
 subtitle: "{task_summary}"
-engine: knitr
 image: thumbnail.svg
 page-layout: full
 css: ../task_template.css
-bibliography: ../../bibliography/library.bib
+engine: knitr
+citation-location: document
 ---
 
 ```{{r}}

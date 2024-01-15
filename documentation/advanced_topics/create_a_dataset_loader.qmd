@@ -1,6 +1,6 @@
 ---
-title: Add a dataset
-order: 30
+title: Create a dataset loader
+order: 10
 engine: knitr
 ---
 
@@ -9,11 +9,9 @@ engine: knitr
 {{< include /_include/_synchonize_tabs.qmd >}}
 {{< include /_include/_read_api.qmd >}}
 
-Datasets are required for any benchmarking workflow and need to be preprocessed in a standardized way.
-The `datasets` task provides a framework for loading and preprocessing datasets.
+A {{< glossary "dataset loader" >}} is used to generate one or more {{< glossary "raw dataset" label="raw datasets" >}}. A raw dataset is processed by the [Dataset preprocessing workflow](/documentation/reference/openproblems-v2/src-datasets.qmd) to create a {{< glossary "common dataset" >}} that can be used by multiple benchmarking tasks.
 
-This guide will show you how to create a new [Viash](https://viash.io) component.
-In the following we will show examples for both Python and R.
+This guide will show you how to create a new {{< glossary Viash >}} component to fetch or generate datasets.
 
 :::{.callout-tip}
 Make sure you have followed the ["Getting started"](../fundamentals/getting_started.qmd) guide.
@@ -145,7 +143,7 @@ par = {"output": "output.h5ad"}
 
 # Create obs data for the cells
 obs = pd.DataFrame({
-    "celltype": random.choices(["enterocyte", "intestine goblet cell", "stem cell"], k=100),
+    "cell_type": random.choices(["enterocyte", "intestine goblet cell", "stem cell"], k=100),
     "batch": random.choices(["experiment1", "experiment2"], k=100),
     "tissue": random.choices(["colon", "ileum"], k=100)
 })
@@ -208,7 +206,7 @@ par <- list("output" = "output.h5ad")
 
 # Create obs data for the cells
 obs <- data.frame(
-  "celltype" = sample(c("enterocyte", "intestine goblet cell", "stem cell"), 100, replace = TRUE),
+  "cell_type" = sample(c("enterocyte", "intestine goblet cell", "stem cell"), 100, replace = TRUE),
   "batch" = sample(c("experiment1", "experiment2"), 100, replace = TRUE),
   "tissue" = sample(c("colon", "ileum"), 100, replace = TRUE)
 )
@@ -294,7 +292,7 @@ You can then use the `n_obs` and `n_vars` values in the `par` object to get acce
 
 ```python
 obs = pd.DataFrame({
-    "celltype": random.choices(["enterocyte", "intestine goblet cell", "stem cell"], k=par["n_obs"]),
+    "cell_type": random.choices(["enterocyte", "intestine goblet cell", "stem cell"], k=par["n_obs"]),
     "batch": random.choices(["experiment1", "experiment2"], k=par["n_obs"]),
     "tissue": random.choices(["colon", "ileum"], k=par["n_obs"])
 })
@@ -307,7 +305,7 @@ var = pd.DataFrame(
 
 ```r
 obs <- data.frame(
-  "celltype" = sample(c("enterocyte", "intestine goblet cell", "stem cell"), par$n_obs, replace = TRUE),
+  "cell_type" = sample(c("enterocyte", "intestine goblet cell", "stem cell"), par$n_obs, replace = TRUE),
   "batch" = sample(c("experiment1", "experiment2"), par$n_obs, replace = TRUE),
   "tissue" = sample(c("colon", "ileum"), par$n_obs, replace = TRUE)
 )
@@ -335,7 +333,3 @@ The full file format spec of a raw dataset AnnData is shown in the table below.
 ```{r, echo=FALSE}
 format_slots_as_kable(api_raw)
 ```
-
-## Next steps
-
-If your component works, please [create a pull request](../create_component/create_pull_request.qmd). After your dataset loader has been merged into the main branch, it will be used to [generate a common dataset](/documentation/reference/openproblems-v2/src-datasets.qmd). After the common datasets have been generated, it will be picked up by the task-specific dataset processors if it has all of the slots required by the task.
