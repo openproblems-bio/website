@@ -25,14 +25,20 @@ for (item in meta$structure$var) {
 
 ```
 
- 
 ---
-title: "`r meta_uns$dataset_id`"
+title: "`r meta_uns$dataset_name`"
 subtitle: "`r meta_uns$dataset_summary`"
 description: |
   `r meta_uns$dataset_description`
-  [Documentation](`r meta_uns$dataset_url`) [Download](`r meta_uns$data_url`)
-title-block-banner-color: white
+title-block-banner: true
+title-block-banner-color: White
+page-layout: full
+dataset-id: "`r meta_uns$dataset_id`"
+dataset-docs: "[`r meta_uns$dataset_url`](`r meta_uns$dataset_url`)"
+dataset-url: "[`r meta_uns$data_url`](`r meta_uns$data_url`)"
+dataset-size: "`r filesize`"
+date: "`r meta_uns$date_created`"
+cells: "`r n_cells`"
 categories: 
   - Openproblems v1
   - public
@@ -43,15 +49,13 @@ listing:
   - id: benchmarks
     contents: "../../../results/*/index.qmd"
     type: table
+    fields: [title]
+    field-display-names:
+      title: "Benchmark"
+template-partials:
+  - ../../_include/title-metadata.html
 ---
-
-created on `r meta_uns$date_created`
-
-
-Dataset size: `r filesize`
-
-number of cells: `r n_cells`
-
+ 
 ### Explore the dataset
 
 ::: {.panel-tabset}
@@ -59,12 +63,13 @@ number of cells: `r n_cells`
 ## X
 ```{r x_struct}
 #| echo: false
+library(knitr)
 
 structure <- meta$structure
 
 x_df <- fromJSON(toJSON(structure$X))
 
-x_df
+kable(x_df, format = "markdown")
 
 ```
 
@@ -73,9 +78,11 @@ x_df
 ```{r layers_struct}
 #| echo: false
 
-layers_df <- fromJSON(toJSON(structure$layers))
+layers_df <- fromJSON(toJSON(structure$layers)) %>% 
+  select(name, shape, type, dtype)
 
-layers_df
+kable(layers_df, format = "markdown")
+
 
 ```
 
@@ -99,3 +106,4 @@ obs_df %>%
 
 ::: {.benchmarks}
 :::
+ 
