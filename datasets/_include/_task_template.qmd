@@ -25,6 +25,7 @@ for (item in meta_structure$var) {
 ```
 
 ---
+data-url: "`r data_url`"
 dataset-size: "`r filesize`"
 date: "`r date_created`"
 cells: "`r n_cells`"
@@ -40,6 +41,19 @@ listing:
     field-display-names:
       title: "Benchmark"
 ---
+
+:::: {.column-margin}
+
+#### Quick links
+
+<div class="quarto-title-meta-heading">[<i class="bi bi-globe"></i> Data source]($data-url$)</div>
+
+#### Related Benchmarks
+
+::: {.benchmarks}
+:::
+ 
+::::
  
 ## Explore the dataset
 
@@ -64,8 +78,3 @@ for (name in names(meta_structure)) {
 
 :::
 
-## Related Benchmarks
-
-::: {.benchmarks}
-:::
- 

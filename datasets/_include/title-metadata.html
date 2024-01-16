@@ -1,3 +1,4 @@
+
 <div class="quarto-title-meta">
   $if(dataset-id)$
   <div>
@@ -17,27 +18,26 @@
   </div>
   $endif$
 
-  <!-- $if(dataset-url)$
   <div>
-    <div class="quarto-title-meta-heading"><i class="bi bi-globe"></i> Data url</div>
-    <div class="quarto-title-meta-contents">
-      <p class="author">$dataset-url$</p>
+    <!-- $if(dataset-url)$
+    <div>
+      <div class="quarto-title-meta-heading"><i class="bi bi-globe"></i> Data url</div>
+      <div class="quarto-title-meta-contents">
+        <p class="author">$dataset-url$</p>
+      </div>
     </div>
+    $endif$ -->
   </div>
-  $endif$ -->
-</div>
-
-<div class="quarto-title-meta">
 
   $if(dataset-size)$
   <div>
     <div class="quarto-title-meta-heading bs-col"><i class="bi bi-cloud-download"> </i>size</div>
     <div class="quarto-title-meta-contents">
-       <p class="author">$dataset-size$</p>
+        <p class="author">$dataset-size$</p>
     </div>
   </div>
   $endif$
-  
+
   $if(date)$
   <div>
     <div class="quarto-title-meta-heading"><i class="bi bi-calendar"></i> Created</div>
@@ -55,7 +55,7 @@
     </div>
   </div>
   $endif$
-  
+
   $if(doi)$
   <div>
     <div class="quarto-title-meta-heading">$labels.doi$</div>
@@ -67,21 +67,3 @@
   </div>
   $endif$
 </div>
-  
-$if(abstract)$
-<div>
-  <div class="abstract">
-    <div class="block-title">$labels.abstract$</div>
-    $abstract$
-  </div>
-</div>
-$endif$
-
-$if(keywords)$
-<div>
-  <div class="keywords">
-    <div class="block-title">$labels.keywords$</div>
-    <p>$for(keywords)$$it$$sep$, $endfor$</p>
-  </div>
-</div>
-$endif$
