@@ -13,12 +13,17 @@ for dataset_info_file in dataset_info_files:
     dataset_name = info_uns.get("dataset_name", "<Name missing>")
     dataset_summary = info_uns.get("dataset_summary", "<Summary missing>")
     dataset_description = info_uns.get("dataset_description", "<Description missing>")
+    dataset_id = info_uns.get("dataset_id", "<ID missing>")
+    dataset_ref = info_uns.get("dataset_reference", "<Ref missing>")
+
+    dataset_loader = dataset_id.split("/")[0]
 
     content = f"""\
 ---
 title: "{dataset_name}"
 subtitle: "{dataset_summary}"
 description: "{dataset_description}"
+categories: ["{dataset_loader}"]
 title-block-banner: true
 title-block-banner-color: white
 page-layout: full
@@ -28,6 +33,8 @@ engine: knitr
 citation-location: document
 template-partials:
   - ../../_include/title-metadata.html
+dataset-id: {dataset_id}
+dataset-ref: "@{dataset_ref}"
 ---
 
 ```{{r}}

@@ -10,7 +10,6 @@ meta <- read_json(params$data_file)
 meta_uns <- meta$uns
 meta_structure <- meta$structure
 
-dataset_id <- meta_uns$dataset_id
 dataset_url <- meta_uns$dataset_url
 data_url <- meta_uns$data_url
 date_created <- meta_uns$date_created
@@ -26,25 +25,12 @@ for (item in meta_structure$var) {
 ```
 
 ---
-dataset-id: "`r dataset_id`"
-dataset-docs: "[`r dataset_url`](`r dataset_url`)"
-dataset-url: "[`r data_url`](`r data_url`)"
 dataset-size: "`r filesize`"
 date: "`r date_created`"
 cells: "`r n_cells`"
 ---
 
-
-```{r categories, echo=FALSE}
-library(yaml)
-categories <- c(strsplit(dataset_id, "/")[[1]])
-
-# categories <- as.yaml(list(categories))
-
-```
-
 ---
-categories: ["`r categories`"]
 listing:
   - id: benchmarks
     contents: 
