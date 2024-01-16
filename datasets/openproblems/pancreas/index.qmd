@@ -1,109 +1,21 @@
 ---
-engine: knitr
----
-
-```{r datalocation}
-#| include: false
-#| error: true
-
-library(tidyverse)
-library(jsonlite)
-
-meta <- read_json("meta.json")
-meta_uns <- meta$uns
-
-filesize <- format(structure(meta_uns$file_size, class="object_size"), units="auto", standard="IEC", digits=2)
-
-n_cells<- NULL
-
-for (item in meta$structure$var) {
-  if (item$name == "n_cells") {
-    n_cells <- item$shape[[1]]
-    break
-  }
-}
-
-```
-
----
-title: "`r meta_uns$dataset_name`"
-subtitle: "`r meta_uns$dataset_summary`"
-description: |
-  `r meta_uns$dataset_description`
+title: "Human pancreas"
+subtitle: "Human pancreas cells dataset from the scIB benchmarks"
+description: "Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq)."
 title-block-banner: true
-title-block-banner-color: White
+title-block-banner-color: white
 page-layout: full
-dataset-id: "`r meta_uns$dataset_id`"
-dataset-docs: "[`r meta_uns$dataset_url`](`r meta_uns$dataset_url`)"
-dataset-url: "[`r meta_uns$data_url`](`r meta_uns$data_url`)"
-dataset-size: "`r filesize`"
-date: "`r meta_uns$date_created`"
-cells: "`r n_cells`"
-categories: 
-  - Openproblems v1
-  - public
-  - theis
 css: ../../../events/events.css
 toc: false
-listing:
-  - id: benchmarks
-    contents: "../../../results/*/index.qmd"
-    type: table
-    fields: [title]
-    field-display-names:
-      title: "Benchmark"
+engine: knitr
+citation-location: document
 template-partials:
   - ../../_include/title-metadata.html
 ---
- 
-### Explore the dataset
 
-::: {.panel-tabset}
-
-## X
-```{r x_struct}
-#| echo: false
-library(knitr)
-
-structure <- meta$structure
-
-x_df <- fromJSON(toJSON(structure$X))
-
-kable(x_df, format = "markdown")
-
+```{r}
+#| include: false
+params <- list(data_file = "./meta.json")
 ```
 
-## layers
-
-```{r layers_struct}
-#| echo: false
-
-layers_df <- fromJSON(toJSON(structure$layers)) %>% 
-  select(name, shape, type, dtype)
-
-kable(layers_df, format = "markdown")
-
-
-```
-
-## obs
-
-```{r obs_struct}
-#| echo: false
-
-obs_df <- fromJSON(toJSON(structure$obs))
-
-obs_df %>% 
-  select(name, type, shape, dtype)
-
-```
-
-:::
-
-
-
-#### Related Benchmarks
-
-::: {.benchmarks}
-:::
- 
+{{< include ../../_include/_task_template.qmd >}}

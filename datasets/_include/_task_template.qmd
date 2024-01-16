@@ -1,0 +1,85 @@
+```{r load_data}
+#| include: false
+#| error: true
+
+library(tidyverse)
+library(jsonlite)
+
+meta <- read_json(params$data_file)
+
+meta_uns <- meta$uns
+meta_structure <- meta$structure
+
+dataset_id <- meta_uns$dataset_id
+dataset_url <- meta_uns$dataset_url
+data_url <- meta_uns$data_url
+date_created <- meta_uns$date_created
+filesize <- format(structure(meta_uns$file_size, class="object_size"), units="auto", standard="IEC", digits=2)
+n_cells<- NULL
+
+for (item in meta_structure$var) {
+  if (item$name == "n_cells") {
+    n_cells <- item$shape[[1]]
+    break
+  }
+}
+```
+
+---
+dataset-id: "`r dataset_id`"
+dataset-docs: "[`r dataset_url`](`r dataset_url`)"
+dataset-url: "[`r data_url`](`r data_url`)"
+dataset-size: "`r filesize`"
+date: "`r date_created`"
+cells: "`r n_cells`"
+---
+
+
+```{r categories, echo=FALSE}
+library(yaml)
+categories <- c(strsplit(dataset_id, "/")[[1]])
+
+# categories <- as.yaml(list(categories))
+
+```
+
+---
+categories: ["`r categories`"]
+listing:
+  - id: benchmarks
+    contents: 
+      - "./../../results/*/index.qmd"
+    type: table
+    fields: [title]
+    field-display-names:
+      title: "Benchmark"
+---
+ 
+## Explore the dataset
+
+::: {.panel-tabset}
+
+
+```{r x_struct, results='asis'}
+#| echo: false
+library(knitr)
+
+for (name in names(meta_structure)) {
+  table <- fromJSON(toJSON(meta_structure[[name]]))
+  if (length(table) != 0) {
+    table <- table[c("name", "type", "shape", "dtype")]
+    cat(paste0("## ", name, "\n\n"))
+    print(kable(table, format = "markdown"))
+    cat("\n\n")
+  }
+}
+
+```
+
+:::
+
+## Related Benchmarks
+
+::: {.benchmarks}
+:::
+ 
