@@ -26,7 +26,6 @@ description: "{dataset_description}"
 categories: ["{dataset_loader}"]
 title-block-banner: true
 title-block-banner-color: white
-page-layout: full
 css: ../../../events/events.css
 toc: false
 engine: knitr

@@ -32,13 +32,22 @@ cells: "`r n_cells`"
 
 
 
-```{r margin-bar, results='asis'}
+```{r quick-links, results='asis'}
 #| echo: false
 #| column: margin
 
 cat("#### Quick links\n")
-cat(paste0('<div class="quarto-title-meta-heading"><i class="bi bi-globe"></i> [Data source](',data_url,')</div>\n'))
-cat(paste0('<div class="quarto-title-meta-heading"><i class="bi bi-file-earmark-text"></i> [Data docs](',dataset_url,')</div>\n'))
+cat(paste0('<div class="quarto-title-meta-heading"><i class="bi bi-file-earmark-text"></i> [Documentation](',dataset_url,')</div>\n'))
+cat(paste0('<div class="quarto-title-meta-heading"><i class="bi bi-globe"></i> [Source](',data_url,')</div>\n'))
+
+```
+
+```{r related benchmarks, results='asis'}
+#| echo: false
+#| column: margin
+
+cat("#### Related benchmarks\n")
+
 
 
 
