@@ -25,35 +25,25 @@ for (item in meta_structure$var) {
 ```
 
 ---
-data-url: "`r data_url`"
 dataset-size: "`r filesize`"
 date: "`r date_created`"
 cells: "`r n_cells`"
 ---
 
----
-listing:
-  - id: benchmarks
-    contents: 
-      - "./../../results/*/index.qmd"
-    type: table
-    fields: [title]
-    field-display-names:
-      title: "Benchmark"
----
 
-:::: {.column-margin}
 
-#### Quick links
+```{r margin-bar, results='asis'}
+#| echo: false
+#| column: margin
 
-<div class="quarto-title-meta-heading">[<i class="bi bi-globe"></i> Data source]($data-url$)</div>
+cat("#### Quick links\n")
+cat(paste0('<div class="quarto-title-meta-heading"><i class="bi bi-globe"></i> [Data source](',data_url,')</div>\n'))
+cat(paste0('<div class="quarto-title-meta-heading"><i class="bi bi-file-earmark-text"></i> [Data docs](',dataset_url,')</div>\n'))
 
-#### Related Benchmarks
 
-::: {.benchmarks}
-:::
- 
-::::
+
+```
+
  
 ## Explore the dataset
 
