@@ -11,6 +11,7 @@ meta <- read_json(params$data_file)
 meta_uns <- meta$uns
 meta_structure <- meta$structure
 
+dataset_description <- meta_uns$dataset_description
 dataset_url <- meta_uns$dataset_url
 data_url <- meta_uns$data_url
 date_created <- meta_uns$date_created
@@ -57,7 +58,7 @@ for (file in dataset_info_files) {
   benchm_datasets <- read_json(file)
   benchmark_ok <- FALSE
   for (item in benchm_datasets) {
-    if (item$dataset_id == "lung_batch") {
+    if (item$dataset_id == rmarkdown::metadata$`dataset-id`[1]) {
       benchmark_ok <- TRUE
     }
   }
@@ -67,6 +68,10 @@ for (file in dataset_info_files) {
     md_link <- paste0('[',basename(parent_dir),'](',parent_dir,')')
     rel_benchmarks <- c(rel_benchmarks, md_link)
   }
+}
+
+if (length(rel_benchmarks) == 0) {
+  cat("No related benchmarks found.\n")
 }
 
 table <- kable(rel_benchmarks,"markdown", col.names = NULL)
@@ -96,4 +101,13 @@ for (name in names(meta_structure)) {
 ```
 
 :::
+
+## Description
+
+```{r description, results='asis'}
+#| echo: false
+
+cat(dataset_description)
+
+```
 

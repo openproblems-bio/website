@@ -12,7 +12,6 @@ for dataset_file in dataset_meta_files:
     info_uns = dataset_info.get("uns")
     dataset_name = info_uns.get("dataset_name", "<Name missing>")
     dataset_summary = info_uns.get("dataset_summary", "<Summary missing>")
-    dataset_description = info_uns.get("dataset_description", "<Description missing>")
     dataset_id = info_uns.get("dataset_id", "<ID missing>")
     dataset_ref = info_uns.get("dataset_reference", "<Ref missing>")
 
@@ -22,7 +21,6 @@ for dataset_file in dataset_meta_files:
 ---
 title: "{dataset_name}"
 subtitle: "{dataset_summary}"
-description: "{dataset_description}"
 categories: ["{dataset_loader}"]
 title-block-banner: true
 title-block-banner-color: white
