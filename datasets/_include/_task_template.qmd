@@ -4,6 +4,7 @@
 
 library(tidyverse)
 library(jsonlite)
+library(knitr)
 
 meta <- read_json(params$data_file)
 
@@ -48,12 +49,32 @@ cat(paste0('<div class="quarto-title-meta-heading"><i class="bi bi-globe"></i> [
 
 cat("#### Related benchmarks\n")
 
+dataset_info_files <- Sys.glob("../../../results/*/data/dataset_info.json")
 
+rel_benchmarks <- NULL
 
+for (file in dataset_info_files) {
+  benchm_datasets <- read_json(file)
+  benchmark_ok <- FALSE
+  for (item in benchm_datasets) {
+    if (item$dataset_id == "lung_batch") {
+      benchmark_ok <- TRUE
+    }
+  }
+
+  if (benchmark_ok) {
+    parent_dir <- dirname(dirname(file))
+    md_link <- paste0('[',basename(parent_dir),'](',parent_dir,')')
+    rel_benchmarks <- c(rel_benchmarks, md_link)
+  }
+}
+
+table <- kable(rel_benchmarks,"markdown", col.names = NULL)
+print(table)
 
 ```
 
- 
+
 ## Explore the dataset
 
 ::: {.panel-tabset}
@@ -61,7 +82,6 @@ cat("#### Related benchmarks\n")
 
 ```{r x_struct, results='asis'}
 #| echo: false
-library(knitr)
 
 for (name in names(meta_structure)) {
   table <- fromJSON(toJSON(meta_structure[[name]]))
