@@ -1,0 +1,76 @@
+{
+  "structure": {
+    "layers": [
+      "counts",
+      "normalized"
+    ],
+    "obs": [
+      "soma_joinid",
+      "dataset_id",
+      "assay",
+      "assay_ontology_term_id",
+      "cell_type",
+      "cell_type_ontology_term_id",
+      "development_stage",
+      "development_stage_ontology_term_id",
+      "disease",
+      "disease_ontology_term_id",
+      "donor_id",
+      "is_primary_data",
+      "self_reported_ethnicity",
+      "self_reported_ethnicity_ontology_term_id",
+      "sex",
+      "sex_ontology_term_id",
+      "suspension_type",
+      "tissue",
+      "tissue_ontology_term_id",
+      "tissue_general",
+      "tissue_general_ontology_term_id",
+      "n_genes",
+      "batch",
+      "size_factors"
+    ],
+    "obsm": [
+      "X_pca"
+    ],
+    "obsp": [
+      "knn_connectivities",
+      "knn_distances"
+    ],
+    "uns": [
+      "dataset_description",
+      "dataset_id",
+      "dataset_name",
+      "dataset_organism",
+      "dataset_reference",
+      "dataset_summary",
+      "dataset_url",
+      "knn",
+      "normalization_id",
+      "pca_variance"
+    ],
+    "var": [
+      "soma_joinid",
+      "feature_id",
+      "feature_name",
+      "feature_length",
+      "n_cells",
+      "hvg",
+      "hvg_score"
+    ],
+    "varm": [
+      "pca_loadings"
+    ],
+    "varp": []
+  },
+  "uns": {
+    "dataset_description": "Multimodal single cell sequencing is a powerful tool for interrogating cell-specific changes in transcription and chromatin accessibility. We performed single nucleus RNA (snRNA-seq) and assay for transposase accessible chromatin sequencing (snATAC-seq) on human kidney cortex from donors with and without diabetic kidney disease (DKD) to identify altered signaling pathways and transcription factors associated with DKD. Both snRNA-seq and snATAC-seq had an increased proportion of VCAM1+ injured proximal tubule cells (PT_VCAM1) in DKD samples. PT_VCAM1 has a pro-inflammatory expression signature and transcription factor motif enrichment implicated NFkB signaling. We used stratified linkage disequilibrium score regression to partition heritability of kidney-function-related traits using publicly-available GWAS summary statistics. Cell-specific PT_VCAM1 peaks were enriched for heritability of chronic kidney disease (CKD), suggesting that genetic background may regulate chromatin accessibility and DKD progression. snATAC-seq found cell-specific differentially accessible regions (DAR) throughout the nephron that change accessibility in DKD and these regions were enriched for glucocorticoid receptor (GR) motifs. Changes in chromatin accessibility were associated with decreased expression of insulin receptor, increased gluconeogenesis, and decreased expression of the GR cytosolic chaperone, FKBP5, in the diabetic proximal tubule. Cleavage under targets and release using nuclease (CUT&RUN) profiling of GR binding in bulk kidney cortex and an in vitro model of the proximal tubule (RPTEC) showed that DAR co-localize with GR binding sites. CRISPRi silencing of GR response elements (GRE) in the FKBP5 gene body reduced FKBP5 expression in RPTEC, suggesting that reduced FKBP5 chromatin accessibility in DKD may alter cellular response to GR. We developed an open-source tool for single cell allele specific analysis (SALSA) to model the effect of genetic background on gene expression. Heterozygous germline single nucleotide variants (SNV) in proximal tubule ATAC peaks were associated with allele-specific chromatin accessibility and differential expression of target genes within cis-coaccessibility networks. Partitioned heritability of proximal tubule ATAC peaks with a predicted allele-specific effect was enriched for eGFR, suggesting that genetic background may modify DKD progression in a cell-specific manner.",
+    "dataset_id": "cellxgene_census/dkd",
+    "dataset_name": "Diabetic Kidney Disease",
+    "dataset_organism": "homo_sapiens",
+    "dataset_reference": "wilson2022multimodal",
+    "dataset_summary": "Multimodal single cell sequencing implicates chromatin accessibility and genetic background in diabetic kidney disease progression",
+    "dataset_url": "https://cellxgene.cziscience.com/collections/b3e2c6e3-9b05-4da9-8f42-da38a664b45b",
+    "normalization_id": "log_cp10k"
+  }
+}

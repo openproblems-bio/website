@@ -1,0 +1,22 @@
+---
+title: "5k PBMCs"
+subtitle: "5k peripheral blood mononuclear cells from a healthy donor"
+categories: ["openproblems_v1"]
+title-block-banner: true
+title-block-banner-color: white
+css: ../../../events/events.css
+toc: false
+engine: knitr
+citation-location: document
+template-partials:
+  - ../../_include/title-metadata.html
+dataset-id: openproblems_v1/tenx_5k_pbmc
+dataset-ref: "@10x2019pbmc"
+---
+
+```{r}
+#| include: false
+params <- list(data_file = "./meta.json")
+```
+
+{{< include ../../_include/_task_template.qmd >}}

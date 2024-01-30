@@ -1,0 +1,76 @@
+{
+  "structure": {
+    "layers": [
+      "counts",
+      "normalized"
+    ],
+    "obs": [
+      "soma_joinid",
+      "dataset_id",
+      "assay",
+      "assay_ontology_term_id",
+      "cell_type",
+      "cell_type_ontology_term_id",
+      "development_stage",
+      "development_stage_ontology_term_id",
+      "disease",
+      "disease_ontology_term_id",
+      "donor_id",
+      "is_primary_data",
+      "self_reported_ethnicity",
+      "self_reported_ethnicity_ontology_term_id",
+      "sex",
+      "sex_ontology_term_id",
+      "suspension_type",
+      "tissue",
+      "tissue_ontology_term_id",
+      "tissue_general",
+      "tissue_general_ontology_term_id",
+      "n_genes",
+      "batch",
+      "size_factors"
+    ],
+    "obsm": [
+      "X_pca"
+    ],
+    "obsp": [
+      "knn_connectivities",
+      "knn_distances"
+    ],
+    "uns": [
+      "dataset_description",
+      "dataset_id",
+      "dataset_name",
+      "dataset_organism",
+      "dataset_reference",
+      "dataset_summary",
+      "dataset_url",
+      "knn",
+      "normalization_id",
+      "pca_variance"
+    ],
+    "var": [
+      "soma_joinid",
+      "feature_id",
+      "feature_name",
+      "feature_length",
+      "n_cells",
+      "hvg",
+      "hvg_score"
+    ],
+    "varm": [
+      "pca_loadings"
+    ],
+    "varp": []
+  },
+  "uns": {
+    "dataset_description": "Understanding the function of genes and their regulation in tissue homeostasis and disease requires knowing the cellular context in which genes are expressed in tissues across the body. Single cell genomics allows the generation of detailed cellular atlases in human tissues, but most efforts are focused on single tissue types. Here, we establish a framework for profiling multiple tissues across the human body at single-cell resolution using single nucleus RNA-Seq (snRNA-seq), and apply it to 8 diverse, archived, frozen tissue types (three donors per tissue). We apply four snRNA-seq methods to each of 25 samples from 16 donors, generating a cross-tissue atlas of 209,126 nuclei profiles, and benchmark them vs. scRNA-seq of comparable fresh tissues. We use a conditional variational autoencoder (cVAE) to integrate an atlas across tissues, donors, and laboratory methods. We highlight shared and tissue-specific features of tissue-resident immune cells, identifying tissue-restricted and non-restricted resident myeloid populations. These include a cross-tissue conserved dichotomy between LYVE1- and HLA class II-expressing macrophages, and the broad presence of LAM-like macrophages across healthy tissues that is also observed in disease. For rare, monogenic muscle diseases, we identify cell types that likely underlie the neuromuscular, metabolic, and immune components of these diseases, and biological processes involved in their pathology. For common complex diseases and traits analyzed by GWAS, we identify the cell types and gene modules that potentially underlie disease mechanisms. The experimental and analytical frameworks we describe will enable the generation of large-scale studies of how cellular and molecular processes vary across individuals and populations.",
+    "dataset_id": "cellxgene_census/gtex_v9",
+    "dataset_name": "GTEX v9",
+    "dataset_organism": "homo_sapiens",
+    "dataset_reference": "eraslan2022singlenucleus",
+    "dataset_summary": "Single-nucleus cross-tissue molecular reference maps to decipher disease gene function",
+    "dataset_url": "https://cellxgene.cziscience.com/collections/a3ffde6c-7ad2-498a-903c-d58e732f7470",
+    "normalization_id": "log_cp10k"
+  }
+}

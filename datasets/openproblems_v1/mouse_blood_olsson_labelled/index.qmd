@@ -1,0 +1,22 @@
+---
+title: "Mouse myeloid"
+subtitle: "Myeloid lineage differentiation from mouse blood"
+categories: ["openproblems_v1"]
+title-block-banner: true
+title-block-banner-color: white
+css: ../../../events/events.css
+toc: false
+engine: knitr
+citation-location: document
+template-partials:
+  - ../../_include/title-metadata.html
+dataset-id: openproblems_v1/mouse_blood_olsson_labelled
+dataset-ref: "@olsson2016single"
+---
+
+```{r}
+#| include: false
+params <- list(data_file = "./meta.json")
+```
+
+{{< include ../../_include/_task_template.qmd >}}

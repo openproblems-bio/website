@@ -1,0 +1,22 @@
+---
+title: "Tabula Sapiens"
+subtitle: "A multiple-organ, single-cell transcriptomic atlas of humans"
+categories: ["cellxgene_census"]
+title-block-banner: true
+title-block-banner-color: white
+css: ../../../events/events.css
+toc: false
+engine: knitr
+citation-location: document
+template-partials:
+  - ../../_include/title-metadata.html
+dataset-id: cellxgene_census/tabula_sapiens
+dataset-ref: "@consortium2022tabula"
+---
+
+```{r}
+#| include: false
+params <- list(data_file = "./meta.json")
+```
+
+{{< include ../../_include/_task_template.qmd >}}

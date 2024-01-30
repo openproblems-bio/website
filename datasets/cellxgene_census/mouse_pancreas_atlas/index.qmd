@@ -1,0 +1,22 @@
+---
+title: "Mouse Pancreatic Islet Atlas"
+subtitle: "Mouse pancreatic islet scRNA-seq atlas across sexes, ages, and stress conditions including diabetes"
+categories: ["cellxgene_census"]
+title-block-banner: true
+title-block-banner-color: white
+css: ../../../events/events.css
+toc: false
+engine: knitr
+citation-location: document
+template-partials:
+  - ../../_include/title-metadata.html
+dataset-id: cellxgene_census/mouse_pancreas_atlas
+dataset-ref: "@hrovatin2023delineating"
+---
+
+```{r}
+#| include: false
+params <- list(data_file = "./meta.json")
+```
+
+{{< include ../../_include/_task_template.qmd >}}

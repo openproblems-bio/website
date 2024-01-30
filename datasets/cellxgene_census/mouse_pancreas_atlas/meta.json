@@ -1,0 +1,76 @@
+{
+  "structure": {
+    "layers": [
+      "counts",
+      "normalized"
+    ],
+    "obs": [
+      "soma_joinid",
+      "dataset_id",
+      "assay",
+      "assay_ontology_term_id",
+      "cell_type",
+      "cell_type_ontology_term_id",
+      "development_stage",
+      "development_stage_ontology_term_id",
+      "disease",
+      "disease_ontology_term_id",
+      "donor_id",
+      "is_primary_data",
+      "self_reported_ethnicity",
+      "self_reported_ethnicity_ontology_term_id",
+      "sex",
+      "sex_ontology_term_id",
+      "suspension_type",
+      "tissue",
+      "tissue_ontology_term_id",
+      "tissue_general",
+      "tissue_general_ontology_term_id",
+      "n_genes",
+      "batch",
+      "size_factors"
+    ],
+    "obsm": [
+      "X_pca"
+    ],
+    "obsp": [
+      "knn_connectivities",
+      "knn_distances"
+    ],
+    "uns": [
+      "dataset_description",
+      "dataset_id",
+      "dataset_name",
+      "dataset_organism",
+      "dataset_reference",
+      "dataset_summary",
+      "dataset_url",
+      "knn",
+      "normalization_id",
+      "pca_variance"
+    ],
+    "var": [
+      "soma_joinid",
+      "feature_id",
+      "feature_name",
+      "feature_length",
+      "n_cells",
+      "hvg",
+      "hvg_score"
+    ],
+    "varm": [
+      "pca_loadings"
+    ],
+    "varp": []
+  },
+  "uns": {
+    "dataset_description": "To better understand pancreatic \u03b2-cell heterogeneity we generated a mouse pancreatic islet atlas capturing a wide range of biological conditions. The atlas contains scRNA-seq datasets of over 300,000 mouse pancreatic islet cells, of which more than 100,000 are \u03b2-cells, from nine datasets with 56 samples, including two previously unpublished datasets. The samples vary in sex, age (ranging from embryonic to aged), chemical stress, and disease status (including T1D NOD model development and two T2D models, mSTZ and db/db) together with different diabetes treatments. Additional information about data fields is available in anndata uns field 'field_descriptions' and on https://github.com/theislab/mm_pancreas_atlas_rep/blob/main/resources/cellxgene.md.",
+    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
+    "dataset_name": "Mouse Pancreatic Islet Atlas",
+    "dataset_organism": "mus_musculus",
+    "dataset_reference": "hrovatin2023delineating",
+    "dataset_summary": "Mouse pancreatic islet scRNA-seq atlas across sexes, ages, and stress conditions including diabetes",
+    "dataset_url": "https://cellxgene.cziscience.com/collections/296237e2-393d-4e31-b590-b03f74ac5070",
+    "normalization_id": "log_cp10k"
+  }
+}

@@ -3,29 +3,24 @@
     "X": [],
     "layers": [
       {
+        "description": "Raw counts",
         "dtype": "float32",
         "name": "counts",
+        "schema_type": "integer",
         "shape": [
-          500,
-          500
+          100955,
+          22469
         ],
         "type": "sparsematrix"
       },
       {
-        "dtype": "float32",
-        "name": "log_normalized",
-        "shape": [
-          500,
-          500
-        ],
-        "type": "sparsematrix"
-      },
-      {
+        "description": "Normalised expression values",
         "dtype": "float32",
         "name": "normalized",
+        "schema_type": "double",
         "shape": [
-          500,
-          500
+          100955,
+          22469
         ],
         "type": "sparsematrix"
       }
@@ -33,25 +28,45 @@
     "obs": [
       {
         "dtype": "category",
-        "name": "tech",
+        "name": "dropbox_id",
         "shape": [
-          500
+          100955
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "counts",
+        "shape": [
+          100955
         ],
         "type": "vector"
       },
       {
         "dtype": "category",
-        "name": "celltype",
+        "name": "experiment_code",
         "shape": [
-          500
+          100955
         ],
         "type": "vector"
       },
       {
-        "dtype": "float32",
-        "name": "size_factors",
+        "description": "Classification of the cell type based on its characteristics and function within the tissue or organism.",
+        "dtype": "category",
+        "name": "cell_type",
+        "schema_type": "string",
         "shape": [
-          500
+          100955
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Specific tissue from which the cells were derived, key for context and specificity in cell studies.",
+        "dtype": "category",
+        "name": "tissue",
+        "schema_type": "string",
+        "shape": [
+          100955
         ],
         "type": "vector"
       },
@@ -59,33 +74,39 @@
         "dtype": "float32",
         "name": "n_counts",
         "shape": [
-          500
+          100955
         ],
         "type": "vector"
       },
       {
-        "dtype": "category",
-        "name": "cell_type",
-        "shape": [
-          500
-        ],
-        "type": "vector"
-      },
-      {
+        "description": "A batch identifier. This label is very context-dependent and may be a combination of the tissue, assay, donor, etc.",
         "dtype": "category",
         "name": "batch",
+        "schema_type": "string",
         "shape": [
-          500
+          100955
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "The size factors created by the normalisation method, if any.",
+        "dtype": "float32",
+        "name": "size_factors",
+        "schema_type": "double",
+        "shape": [
+          100955
         ],
         "type": "vector"
       }
     ],
     "obsm": [
       {
+        "description": "The resulting PCA embedding.",
         "dtype": "float32",
         "name": "X_pca",
+        "schema_type": "double",
         "shape": [
-          500,
+          100955,
           50
         ],
         "type": "densematrix"
@@ -93,20 +114,24 @@
     ],
     "obsp": [
       {
+        "description": "K nearest neighbors connectivities matrix.",
         "dtype": "float32",
         "name": "knn_connectivities",
+        "schema_type": "double",
         "shape": [
-          500,
-          500
+          100955,
+          100955
         ],
         "type": "sparsematrix"
       },
       {
+        "description": "K nearest neighbors distance matrix.",
         "dtype": "float64",
         "name": "knn_distances",
+        "schema_type": "double",
         "shape": [
-          500,
-          500
+          100955,
+          100955
         ],
         "type": "sparsematrix"
       }
@@ -135,80 +160,100 @@
         "type": "atomic"
       },
       {
+        "description": "Long description of the dataset.",
         "dtype": "str",
         "name": "dataset_description",
+        "schema_type": "string",
         "shape": [
           1
         ],
         "type": "atomic"
       },
       {
+        "description": "A unique identifier for the dataset. This is different from the `obs.dataset_id` field, which is the identifier for the dataset from which the cell data is derived.",
         "dtype": "str",
         "name": "dataset_id",
+        "schema_type": "string",
         "shape": [
           1
         ],
         "type": "atomic"
       },
       {
+        "description": "A human-readable name for the dataset.",
         "dtype": "str",
         "name": "dataset_name",
+        "schema_type": "string",
         "shape": [
           1
         ],
         "type": "atomic"
       },
       {
+        "description": "The organism of the sample in the dataset.",
         "dtype": "str",
         "name": "dataset_organism",
+        "schema_type": "string",
         "shape": [
           1
         ],
         "type": "atomic"
       },
       {
+        "description": "Bibtex reference of the paper in which the dataset was published.",
         "dtype": "str",
         "name": "dataset_reference",
+        "schema_type": "string",
         "shape": [
           1
         ],
         "type": "atomic"
       },
       {
+        "description": "Short description of the dataset.",
         "dtype": "str",
         "name": "dataset_summary",
+        "schema_type": "string",
         "shape": [
           1
         ],
         "type": "atomic"
       },
       {
+        "description": "Link to the original source of the dataset.",
         "dtype": "str",
         "name": "dataset_url",
+        "schema_type": "string",
         "shape": [
           1
         ],
         "type": "atomic"
       },
       {
+        "description": "Supplementary K nearest neighbors data.",
         "dtype": null,
         "name": "knn",
+        "schema_type": "object",
         "shape": [
           3
         ],
         "type": "dict"
       },
       {
+        "description": "Which normalization was used",
         "dtype": "str",
         "name": "normalization_id",
+        "schema_type": "string",
         "shape": [
           1
         ],
         "type": "atomic"
       },
       {
+        "description": "The PCA variance objects.",
         "dtype": null,
         "name": "pca_variance",
+        "schema_type": "double",
         "shape": [
           2
         ],
@@ -218,7 +263,7 @@
         "dtype": "object",
         "name": "var_names_all",
         "shape": [
-          19093
+          46911
         ],
         "type": "densematrix"
       }
@@ -228,33 +273,39 @@
         "dtype": "int64",
         "name": "n_cells",
         "shape": [
-          500
+          22469
         ],
         "type": "vector"
       },
       {
+        "description": "Whether or not the feature is considered to be a 'highly variable gene'",
         "dtype": "bool",
         "name": "hvg",
+        "schema_type": "boolean",
         "shape": [
-          500
+          22469
         ],
         "type": "vector"
       },
       {
+        "description": "A ranking of the features by hvg.",
         "dtype": "float64",
         "name": "hvg_score",
+        "schema_type": "integer",
         "shape": [
-          500
+          22469
         ],
         "type": "vector"
       }
     ],
     "varm": [
       {
+        "description": "The PCA loadings matrix.",
         "dtype": "float32",
         "name": "pca_loadings",
+        "schema_type": "double",
         "shape": [
-          500,
+          22469,
           50
         ],
         "type": "densematrix"
@@ -263,17 +314,17 @@
     "varp": []
   },
   "uns": {
-    "data_reference": "luecken2022benchmarking",
-    "data_url": "https://ndownloader.figshare.com/files/36086813",
-    "dataset_description": "Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq).",
-    "dataset_id": "pancreas_subsample",
-    "dataset_name": "Human pancreas",
-    "dataset_organism": "homo_sapiens",
-    "dataset_reference": "luecken2022benchmarking",
-    "dataset_summary": "Human pancreas cells dataset from the scIB benchmarks",
-    "dataset_url": "https://theislab.github.io/scib-reproducibility/dataset_pancreas.html",
-    "date_created": "15-12-2023",
-    "file_size": 2516016,
+    "data_reference": "hammarlund2018cengen",
+    "data_url": "https://github.com/Munfred/wormcells-data/releases/download/taylor2020/taylor2020.h5ad",
+    "dataset_description": "100k FACS-isolated C. elegans neurons from 17 experiments sequenced on 10x Genomics.",
+    "dataset_id": "openproblems_v1/cengen",
+    "dataset_name": "CeNGEN",
+    "dataset_organism": "caenorhabditis_elegans",
+    "dataset_reference": "hammarlund2018cengen",
+    "dataset_summary": "Complete Gene Expression Map of an Entire Nervous System",
+    "dataset_url": "https://www.cengen.org",
+    "date_created": "29-01-2024",
+    "file_size": 814891975,
     "normalization_id": "log_cp10k"
   }
 }

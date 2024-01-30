@@ -1,0 +1,76 @@
+{
+  "structure": {
+    "layers": [
+      "counts",
+      "normalized"
+    ],
+    "obs": [
+      "soma_joinid",
+      "dataset_id",
+      "assay",
+      "assay_ontology_term_id",
+      "cell_type",
+      "cell_type_ontology_term_id",
+      "development_stage",
+      "development_stage_ontology_term_id",
+      "disease",
+      "disease_ontology_term_id",
+      "donor_id",
+      "is_primary_data",
+      "self_reported_ethnicity",
+      "self_reported_ethnicity_ontology_term_id",
+      "sex",
+      "sex_ontology_term_id",
+      "suspension_type",
+      "tissue",
+      "tissue_ontology_term_id",
+      "tissue_general",
+      "tissue_general_ontology_term_id",
+      "n_genes",
+      "batch",
+      "size_factors"
+    ],
+    "obsm": [
+      "X_pca"
+    ],
+    "obsp": [
+      "knn_connectivities",
+      "knn_distances"
+    ],
+    "uns": [
+      "dataset_description",
+      "dataset_id",
+      "dataset_name",
+      "dataset_organism",
+      "dataset_reference",
+      "dataset_summary",
+      "dataset_url",
+      "knn",
+      "normalization_id",
+      "pca_variance"
+    ],
+    "var": [
+      "soma_joinid",
+      "feature_id",
+      "feature_name",
+      "feature_length",
+      "n_cells",
+      "hvg",
+      "hvg_score"
+    ],
+    "varm": [
+      "pca_loadings"
+    ],
+    "varp": []
+  },
+  "uns": {
+    "dataset_description": "Despite their crucial role in health and disease, our knowledge of immune cells within human tissues remains limited. We surveyed the immune compartment of 16 tissues from 12 adult donors by single-cell RNA sequencing and VDJ sequencing generating a dataset of ~360,000 cells. To systematically resolve immune cell heterogeneity across tissues, we developed CellTypist, a machine learning tool for rapid and precise cell type annotation. Using this approach, combined with detailed curation, we determined the tissue distribution of finely phenotyped immune cell types, revealing hitherto unappreciated tissue-specific features and clonal architecture of T and B cells. Our multitissue approach lays the foundation for identifying highly resolved immune cell types by leveraging a common reference dataset, tissue-integrated expression analysis, and antigen receptor sequencing.",
+    "dataset_id": "cellxgene_census/immune_cell_atlas",
+    "dataset_name": "Immune Cell Atlas",
+    "dataset_organism": "homo_sapiens",
+    "dataset_reference": "dominguez2022crosstissue",
+    "dataset_summary": "Cross-tissue immune cell analysis reveals tissue-specific features in humans",
+    "dataset_url": "https://cellxgene.cziscience.com/collections/62ef75e4-cbea-454e-a0ce-998ec40223d3",
+    "normalization_id": "log_cp10k"
+  }
+}

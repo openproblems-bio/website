@@ -1,0 +1,745 @@
+{
+  "structure": {
+    "X": [],
+    "layers": [
+      {
+        "description": "Raw counts",
+        "dtype": "float32",
+        "name": "counts",
+        "schema_type": "integer",
+        "shape": [
+          14249,
+          34617
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "description": "Normalised expression values",
+        "dtype": "float32",
+        "name": "normalized",
+        "schema_type": "double",
+        "shape": [
+          14249,
+          34617
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "obs": [
+      {
+        "dtype": "category",
+        "name": "label",
+        "shape": [
+          14249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "sizeFactor",
+        "shape": [
+          14249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "subclass",
+        "shape": [
+          14249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "n_counts",
+        "shape": [
+          14249
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Classification of the cell type based on its characteristics and function within the tissue or organism.",
+        "dtype": "category",
+        "name": "cell_type",
+        "schema_type": "string",
+        "shape": [
+          14249
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "The size factors created by the normalisation method, if any.",
+        "dtype": "float32",
+        "name": "size_factors",
+        "schema_type": "double",
+        "shape": [
+          14249
+        ],
+        "type": "vector"
+      }
+    ],
+    "obsm": [
+      {
+        "description": "The resulting PCA embedding.",
+        "dtype": "float32",
+        "name": "X_pca",
+        "schema_type": "double",
+        "shape": [
+          14249,
+          50
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "obsp": [
+      {
+        "description": "K nearest neighbors connectivities matrix.",
+        "dtype": "float32",
+        "name": "knn_connectivities",
+        "schema_type": "double",
+        "shape": [
+          14249,
+          14249
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "description": "K nearest neighbors distance matrix.",
+        "dtype": "float64",
+        "name": "knn_distances",
+        "schema_type": "double",
+        "shape": [
+          14249,
+          14249
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "uns": [
+      {
+        "dtype": null,
+        "name": "_from_cache",
+        "shape": null,
+        "type": "other: <class 'numpy.bool_'>"
+      },
+      {
+        "dtype": "int64",
+        "name": "age_days",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "brain_hemisphere",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "brain_region",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "brain_subregion",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": [
+          "category",
+          "category",
+          "int64"
+        ],
+        "name": "ccc_target",
+        "shape": [
+          506,
+          3
+        ],
+        "type": "dataframe"
+      },
+      {
+        "dtype": "object",
+        "name": "class",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "cluster",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "cluster_correlation",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "complexity_cg",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "confusion_score",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "core_intermediate_call",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "str",
+        "name": "data_reference",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "str",
+        "name": "data_url",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Long description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_description",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A unique identifier for the dataset. This is different from the `obs.dataset_id` field, which is the identifier for the dataset from which the cell data is derived.",
+        "dtype": "str",
+        "name": "dataset_id",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A human-readable name for the dataset.",
+        "dtype": "str",
+        "name": "dataset_name",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "The organism of the sample in the dataset.",
+        "dtype": "str",
+        "name": "dataset_organism",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Bibtex reference of the paper in which the dataset was published.",
+        "dtype": "str",
+        "name": "dataset_reference",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Short description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_summary",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Link to the original source of the dataset.",
+        "dtype": "str",
+        "name": "dataset_url",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "int64",
+        "name": "donor",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "driver_lines",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "eye_condition",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "facs_container",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "facs_date",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "facs_sort_criteria",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "int64",
+        "name": "genes_detected_cpm_criterion",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "int64",
+        "name": "genes_detected_fpkm_criterion",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "genotype",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "gfp_cpm",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "injection_exclusion_criterion",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "injection_label_direction",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "injection_material",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "injection_primary",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "injection_secondary",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "injection_tract",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "description": "Supplementary K nearest neighbors data.",
+        "dtype": null,
+        "name": "knn",
+        "schema_type": "object",
+        "shape": [
+          3
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": "int64",
+        "name": "library_prep_avg_size_bp",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "library_prep_set",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "nCount_RNA",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "int64",
+        "name": "nFeature_RNA",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "description": "Which normalization was used",
+        "dtype": "str",
+        "name": "normalization_id",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "object",
+        "name": "organism",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "orig.ident",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "description": "The PCA variance objects.",
+        "dtype": null,
+        "name": "pca_variance",
+        "schema_type": "double",
+        "shape": [
+          2
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": "float64",
+        "name": "percent_aligned_reads_total",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "percent_ecoli_reads",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "percent_exon_reads",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "percent_intergenic_reads",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "percent_intron_reads",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "percent_mt_exon_reads",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "percent_reads_unique",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "percent_rrna_reads",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "percent_synth_reads",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "reporter_lines",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "rna_amplification_set",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "int64",
+        "name": "sample_id",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "sample_type",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "seq_batch",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "seq_name",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "seq_tube",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "sex",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "subclass",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": null,
+        "name": "target_organism",
+        "shape": null,
+        "type": "other: <class 'numpy.int64'>"
+      },
+      {
+        "dtype": "float64",
+        "name": "tdt_cpm",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "int64",
+        "name": "total_reads",
+        "shape": [
+          14249
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "object",
+        "name": "var_names_all",
+        "shape": [
+          34617
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "var": [
+      {
+        "dtype": "int64",
+        "name": "n_cells",
+        "shape": [
+          34617
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Whether or not the feature is considered to be a 'highly variable gene'",
+        "dtype": "bool",
+        "name": "hvg",
+        "schema_type": "boolean",
+        "shape": [
+          34617
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A ranking of the features by hvg.",
+        "dtype": "float64",
+        "name": "hvg_score",
+        "schema_type": "integer",
+        "shape": [
+          34617
+        ],
+        "type": "vector"
+      }
+    ],
+    "varm": [
+      {
+        "description": "The PCA loadings matrix.",
+        "dtype": "float64",
+        "name": "pca_loadings",
+        "schema_type": "double",
+        "shape": [
+          34617,
+          50
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "varp": []
+  },
+  "uns": {
+    "data_reference": "tasic2016adult",
+    "data_url": "https://figshare.com/ndownloader/files/36509385",
+    "dataset_description": "A murine brain atlas with adjacent cell types as assumed benchmark truth, inferred from deconvolution proportion correlations using matching 10x Visium slides (see Dimitrov et al., 2022).",
+    "dataset_id": "openproblems_v1/allen_brain_atlas",
+    "dataset_name": "Mouse Brain Atlas",
+    "dataset_organism": "mus_musculus",
+    "dataset_reference": "tasic2016adult",
+    "dataset_summary": "Adult mouse primary visual cortex",
+    "dataset_url": "http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71585",
+    "date_created": "29-01-2024",
+    "file_size": 2048360453,
+    "normalization_id": "log_cp10k"
+  }
+}

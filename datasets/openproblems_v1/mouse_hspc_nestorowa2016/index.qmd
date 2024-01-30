@@ -1,0 +1,22 @@
+---
+title: "Mouse HSPC"
+subtitle: "Haematopoeitic stem and progenitor cells from mouse bone marrow"
+categories: ["openproblems_v1"]
+title-block-banner: true
+title-block-banner-color: white
+css: ../../../events/events.css
+toc: false
+engine: knitr
+citation-location: document
+template-partials:
+  - ../../_include/title-metadata.html
+dataset-id: openproblems_v1/mouse_hspc_nestorowa2016
+dataset-ref: "@nestorowa2016single"
+---
+
+```{r}
+#| include: false
+params <- list(data_file = "./meta.json")
+```
+
+{{< include ../../_include/_task_template.qmd >}}
