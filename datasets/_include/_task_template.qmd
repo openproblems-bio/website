@@ -91,7 +91,8 @@ print(table)
 for (name in names(meta_structure)) {
   table <- fromJSON(toJSON(meta_structure[[name]]))
   if (length(table) != 0) {
-    table <- table[c("name", "type", "shape", "dtype")]  %>% filter(!grepl("^_",table$name))
+    table <- table[c("name", "description", "type", "shape", "dtype")]  %>% filter(!grepl("^_",table$name)) 
+    table$description <- gsub("\n", " ", table$description)
     cat(paste0("## ", name, "\n\n"))
     print(kable(table, format = "markdown"))
     cat("\n\n")
