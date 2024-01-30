@@ -1,49 +1,315 @@
 {
   "structure": {
+    "X": [],
     "layers": [
-      "counts",
-      "normalized"
+      {
+        "description": "Raw counts",
+        "dtype": "float32",
+        "name": "counts",
+        "schema_type": "integer",
+        "shape": [
+          100955,
+          22469
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "description": "Normalised expression values",
+        "dtype": "float32",
+        "name": "normalized",
+        "schema_type": "double",
+        "shape": [
+          100955,
+          22469
+        ],
+        "type": "sparsematrix"
+      }
     ],
     "obs": [
-      "dropbox_id",
-      "counts",
-      "experiment_code",
-      "cell_type",
-      "tissue",
-      "n_counts",
-      "batch",
-      "size_factors"
+      {
+        "dtype": "category",
+        "name": "dropbox_id",
+        "shape": [
+          100955
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "counts",
+        "shape": [
+          100955
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "experiment_code",
+        "shape": [
+          100955
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Classification of the cell type based on its characteristics and function within the tissue or organism.",
+        "dtype": "category",
+        "name": "cell_type",
+        "schema_type": "string",
+        "shape": [
+          100955
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Specific tissue from which the cells were derived, key for context and specificity in cell studies.",
+        "dtype": "category",
+        "name": "tissue",
+        "schema_type": "string",
+        "shape": [
+          100955
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "n_counts",
+        "shape": [
+          100955
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A batch identifier. This label is very context-dependent and may be a combination of the tissue, assay, donor, etc.",
+        "dtype": "category",
+        "name": "batch",
+        "schema_type": "string",
+        "shape": [
+          100955
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "The size factors created by the normalisation method, if any.",
+        "dtype": "float32",
+        "name": "size_factors",
+        "schema_type": "double",
+        "shape": [
+          100955
+        ],
+        "type": "vector"
+      }
     ],
     "obsm": [
-      "X_pca"
+      {
+        "description": "The resulting PCA embedding.",
+        "dtype": "float32",
+        "name": "X_pca",
+        "schema_type": "double",
+        "shape": [
+          100955,
+          50
+        ],
+        "type": "densematrix"
+      }
     ],
     "obsp": [
-      "knn_connectivities",
-      "knn_distances"
+      {
+        "description": "K nearest neighbors connectivities matrix.",
+        "dtype": "float32",
+        "name": "knn_connectivities",
+        "schema_type": "double",
+        "shape": [
+          100955,
+          100955
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "description": "K nearest neighbors distance matrix.",
+        "dtype": "float64",
+        "name": "knn_distances",
+        "schema_type": "double",
+        "shape": [
+          100955,
+          100955
+        ],
+        "type": "sparsematrix"
+      }
     ],
     "uns": [
-      "_from_cache",
-      "data_reference",
-      "data_url",
-      "dataset_description",
-      "dataset_id",
-      "dataset_name",
-      "dataset_organism",
-      "dataset_reference",
-      "dataset_summary",
-      "dataset_url",
-      "knn",
-      "normalization_id",
-      "pca_variance",
-      "var_names_all"
+      {
+        "dtype": null,
+        "name": "_from_cache",
+        "shape": null,
+        "type": "other: <class 'numpy.bool_'>"
+      },
+      {
+        "dtype": "str",
+        "name": "data_reference",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "str",
+        "name": "data_url",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Long description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_description",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A unique identifier for the dataset. This is different from the `obs.dataset_id` field, which is the identifier for the dataset from which the cell data is derived.",
+        "dtype": "str",
+        "name": "dataset_id",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A human-readable name for the dataset.",
+        "dtype": "str",
+        "name": "dataset_name",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "The organism of the sample in the dataset.",
+        "dtype": "str",
+        "name": "dataset_organism",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Bibtex reference of the paper in which the dataset was published.",
+        "dtype": "str",
+        "name": "dataset_reference",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Short description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_summary",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Link to the original source of the dataset.",
+        "dtype": "str",
+        "name": "dataset_url",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Supplementary K nearest neighbors data.",
+        "dtype": null,
+        "name": "knn",
+        "schema_type": "object",
+        "shape": [
+          3
+        ],
+        "type": "dict"
+      },
+      {
+        "description": "Which normalization was used",
+        "dtype": "str",
+        "name": "normalization_id",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "The PCA variance objects.",
+        "dtype": null,
+        "name": "pca_variance",
+        "schema_type": "double",
+        "shape": [
+          2
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": "object",
+        "name": "var_names_all",
+        "shape": [
+          46911
+        ],
+        "type": "densematrix"
+      }
     ],
     "var": [
-      "n_cells",
-      "hvg",
-      "hvg_score"
+      {
+        "dtype": "int64",
+        "name": "n_cells",
+        "shape": [
+          22469
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Whether or not the feature is considered to be a 'highly variable gene'",
+        "dtype": "bool",
+        "name": "hvg",
+        "schema_type": "boolean",
+        "shape": [
+          22469
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A ranking of the features by hvg.",
+        "dtype": "float64",
+        "name": "hvg_score",
+        "schema_type": "integer",
+        "shape": [
+          22469
+        ],
+        "type": "vector"
+      }
     ],
     "varm": [
-      "pca_loadings"
+      {
+        "description": "The PCA loadings matrix.",
+        "dtype": "float32",
+        "name": "pca_loadings",
+        "schema_type": "double",
+        "shape": [
+          22469,
+          50
+        ],
+        "type": "densematrix"
+      }
     ],
     "varp": []
   },
@@ -57,6 +323,8 @@
     "dataset_reference": "hammarlund2018cengen",
     "dataset_summary": "Complete Gene Expression Map of an Entire Nervous System",
     "dataset_url": "https://www.cengen.org",
+    "date_created": "29-01-2024",
+    "file_size": 814891975,
     "normalization_id": "log_cp10k"
   }
 }
