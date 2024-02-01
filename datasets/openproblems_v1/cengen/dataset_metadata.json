@@ -8,8 +8,8 @@
         "name": "counts",
         "schema_type": "integer",
         "shape": [
-          660,
-          116918
+          100955,
+          22469
         ],
         "type": "sparsematrix"
       },
@@ -19,8 +19,8 @@
         "name": "normalized",
         "schema_type": "double",
         "shape": [
-          660,
-          116918
+          100955,
+          22469
         ],
         "type": "sparsematrix"
       }
@@ -28,17 +28,25 @@
     "obs": [
       {
         "dtype": "category",
-        "name": "celltype",
+        "name": "dropbox_id",
         "shape": [
-          660
+          100955
         ],
         "type": "vector"
       },
       {
-        "dtype": "float32",
-        "name": "n_counts",
+        "dtype": "int64",
+        "name": "counts",
         "shape": [
-          660
+          100955
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "experiment_code",
+        "shape": [
+          100955
         ],
         "type": "vector"
       },
@@ -48,7 +56,35 @@
         "name": "cell_type",
         "schema_type": "string",
         "shape": [
-          660
+          100955
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Specific tissue from which the cells were derived, key for context and specificity in cell studies.",
+        "dtype": "category",
+        "name": "tissue",
+        "schema_type": "string",
+        "shape": [
+          100955
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "n_counts",
+        "shape": [
+          100955
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A batch identifier. This label is very context-dependent and may be a combination of the tissue, assay, donor, etc.",
+        "dtype": "category",
+        "name": "batch",
+        "schema_type": "string",
+        "shape": [
+          100955
         ],
         "type": "vector"
       },
@@ -58,7 +94,7 @@
         "name": "size_factors",
         "schema_type": "double",
         "shape": [
-          660
+          100955
         ],
         "type": "vector"
       }
@@ -70,57 +106,21 @@
         "name": "X_pca",
         "schema_type": "double",
         "shape": [
-          660,
+          100955,
           50
-        ],
-        "type": "densematrix"
-      },
-      {
-        "dtype": "float32",
-        "name": "X_tsne",
-        "shape": [
-          660,
-          2
-        ],
-        "type": "densematrix"
-      },
-      {
-        "dtype": "float32",
-        "name": "X_umap",
-        "shape": [
-          660,
-          3
         ],
         "type": "densematrix"
       }
     ],
     "obsp": [
       {
-        "dtype": "float32",
-        "name": "connectivities",
-        "shape": [
-          660,
-          660
-        ],
-        "type": "sparsematrix"
-      },
-      {
-        "dtype": "float64",
-        "name": "distances",
-        "shape": [
-          660,
-          660
-        ],
-        "type": "sparsematrix"
-      },
-      {
         "description": "K nearest neighbors connectivities matrix.",
         "dtype": "float32",
         "name": "knn_connectivities",
         "schema_type": "double",
         "shape": [
-          660,
-          660
+          100955,
+          100955
         ],
         "type": "sparsematrix"
       },
@@ -130,8 +130,8 @@
         "name": "knn_distances",
         "schema_type": "double",
         "shape": [
-          660,
-          660
+          100955,
+          100955
         ],
         "type": "sparsematrix"
       }
@@ -240,12 +240,6 @@
         "type": "dict"
       },
       {
-        "dtype": null,
-        "name": "neighbors",
-        "shape": null,
-        "type": "other: <class 'anndata.compat._overloaded_dict.OverloadedDict'>"
-      },
-      {
         "description": "Which normalization was used",
         "dtype": "str",
         "name": "normalization_id",
@@ -266,18 +260,10 @@
         "type": "dict"
       },
       {
-        "dtype": null,
-        "name": "umap",
-        "shape": [
-          1
-        ],
-        "type": "dict"
-      },
-      {
         "dtype": "object",
         "name": "var_names_all",
         "shape": [
-          215595
+          46911
         ],
         "type": "densematrix"
       }
@@ -287,7 +273,17 @@
         "dtype": "int64",
         "name": "n_cells",
         "shape": [
-          116918
+          22469
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A human-readable name for the feature, usually a gene symbol.",
+        "dtype": "object",
+        "name": "feature_name",
+        "schema_type": "string",
+        "shape": [
+          22469
         ],
         "type": "vector"
       },
@@ -297,7 +293,7 @@
         "name": "hvg",
         "schema_type": "boolean",
         "shape": [
-          116918
+          22469
         ],
         "type": "vector"
       },
@@ -307,7 +303,7 @@
         "name": "hvg_score",
         "schema_type": "integer",
         "shape": [
-          116918
+          22469
         ],
         "type": "vector"
       }
@@ -315,11 +311,11 @@
     "varm": [
       {
         "description": "The PCA loadings matrix.",
-        "dtype": "float64",
+        "dtype": "float32",
         "name": "pca_loadings",
         "schema_type": "double",
         "shape": [
-          116918,
+          22469,
           50
         ],
         "type": "densematrix"
@@ -328,17 +324,17 @@
     "varp": []
   },
   "uns": {
-    "data_reference": "olsson2016single",
-    "data_url": "https://figshare.com/ndownloader/files/36872214",
-    "dataset_description": "660 FACS-isolated myeloid cells from 9 experiments sequenced using C1 Fluidigm and SMARTseq in 2016 by Olsson et al.",
-    "dataset_id": "openproblems_v1/mouse_blood_olsson_labelled",
-    "dataset_name": "Mouse myeloid",
-    "dataset_organism": "mus_musculus",
-    "dataset_reference": "olsson2016single",
-    "dataset_summary": "Myeloid lineage differentiation from mouse blood",
-    "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE70245",
-    "date_created": "29-01-2024",
-    "file_size": 118232902,
+    "data_reference": "hammarlund2018cengen",
+    "data_url": "https://github.com/Munfred/wormcells-data/releases/download/taylor2020/taylor2020.h5ad",
+    "dataset_description": "100k FACS-isolated C. elegans neurons from 17 experiments sequenced on 10x Genomics.",
+    "dataset_id": "openproblems_v1/cengen",
+    "dataset_name": "CeNGEN",
+    "dataset_organism": "caenorhabditis_elegans",
+    "dataset_reference": "hammarlund2018cengen",
+    "dataset_summary": "Complete Gene Expression Map of an Entire Nervous System",
+    "dataset_url": "https://www.cengen.org",
+    "date_created": "30-01-2024",
+    "file_size": 815972687,
     "normalization_id": "log_cp10k"
   }
 }

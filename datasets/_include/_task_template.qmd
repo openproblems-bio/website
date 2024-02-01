@@ -6,20 +6,30 @@ library(tidyverse)
 library(jsonlite)
 library(knitr)
 
-meta <- read_json(params$data_file)
 
-meta_uns <- meta$uns
-meta_structure <- meta$structure
+meta1 <- read_json(params$data_file[[1]])
+meta1_uns <- meta1$uns
+meta1_structure <- meta1$structure
+multimodal <- FALSE
+if (length(params$data_file)==2) {
+  multimodal <- TRUE
+  meta2 <- read_json(params$data_file[[2]])
+  meta2_uns <- meta2$uns
+  meta2_structure <- meta2$structure
+}
 
-dataset_description <- meta_uns$dataset_description
-dataset_url <- meta_uns$dataset_url
-data_url <- meta_uns$data_url
-date_created <- meta_uns$date_created
-filesize <- format(structure(meta_uns$file_size, class="object_size"), units="auto", standard="IEC", digits=2)
+dataset_description <- meta1_uns$dataset_description
+dataset_url <- meta1_uns$dataset_url
+data_url <- meta1_uns$data_url
+date_created <- meta1_uns$date_created
+filesize <- format(structure(meta1_uns$file_size, class="object_size"), units="auto", standard="IEC", digits=2)
+if (multimodal) {
+filesize <- c(filesize, format(structure(meta2$uns$file_size, class="object_size"), units="auto", standard="IEC", digits=2))
+}
 n_cells<- NULL
 
-for (item in meta_structure$var) {
-  if (item$name == "n_cells") {
+for (item in meta1_structure$obs) {
+  if (item$name == "n_counts") {
     n_cells <- item$shape[[1]]
     break
   }
@@ -82,14 +92,24 @@ print(table)
 
 ## Explore the dataset
 
+```{r mod1_title}
+#| eval: !expr multimodal
+#| echo: false
+#| results: "asis"
+
+cat("### Modality 1")
+
+
+```
+
 ::: {.panel-tabset}
 
 
 ```{r x_struct, results='asis'}
 #| echo: false
 
-for (name in names(meta_structure)) {
-  table <- fromJSON(toJSON(meta_structure[[name]]))
+for (name in names(meta1_structure)) {
+  table <- fromJSON(toJSON(meta1_structure[[name]]))
   if (length(table) != 0) {
     table <- table[c("name", "description", "type", "shape", "dtype")]  %>% filter(!grepl("^_",table$name)) 
     table$description <- gsub("\n", " ", table$description)
@@ -102,6 +122,38 @@ for (name in names(meta_structure)) {
 ```
 
 :::
+
+```{r mod2_title}
+#| eval: !expr multimodal
+#| echo: false
+#| results: "asis"
+
+cat("### Modality 2\n")
+cat(":::{.panel-tabset }\n")
+
+```
+
+
+```{r x2_struct, results='asis'}
+#| eval: !expr multimodal
+#| echo: false
+
+for (name in names(meta2_structure)) {
+  table <- fromJSON(toJSON(meta2_structure[[name]]))
+  if (length(table) != 0) {
+    table <- table[c("name", "description", "type", "shape", "dtype")]  %>% filter(!grepl("^_",table$name)) 
+    table$description <- gsub("\n", " ", table$description)
+    cat(paste0("## ", name, "\n\n"))
+    print(kable(table, format = "markdown"))
+    cat("\n\n")
+  }
+}
+
+cat(":::\n")
+
+```
+
+
 
 ## Description
 

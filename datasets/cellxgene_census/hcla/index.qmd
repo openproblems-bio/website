@@ -2,9 +2,8 @@
 title: "Human Lung Cell Atlas"
 subtitle: "An integrated cell atlas of the human lung in health and disease (core)"
 categories: ["cellxgene_census"]
-title-block-banner: true
-title-block-banner-color: white
-css: ../../../events/events.css
+title-block-banner: transparent
+css: [../../../events/events.css, ../../datasets.css]
 toc: false
 engine: knitr
 citation-location: document
@@ -14,9 +13,15 @@ dataset-id: cellxgene_census/hcla
 dataset-ref: "@sikkema2023integrated"
 ---
 
+```{=html}
+<img src="../../../images/hero/anndata_schema.png" alt="Anndata Schema" class="dataset_img">
+```
+
+
 ```{r}
 #| include: false
-params <- list(data_file = "./meta.json")
+meta_files <- c("dataset_metadata.json")
+params <- list(data_file = lapply(meta_files, function(x) paste0("./", x)))
 ```
 
 {{< include ../../_include/_task_template.qmd >}}

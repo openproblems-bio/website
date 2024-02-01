@@ -1,0 +1,27 @@
+---
+title: "OpenProblems NeurIPS2021 CITE-Seq"
+subtitle: "Single-cell CITE-Seq (GEX+ADT) data collected from bone marrow mononuclear cells of 12 healthy human donors."
+categories: ["openproblems_bmmc_cite"]
+title-block-banner: transparent
+css: [../../../events/events.css, ../../datasets.css]
+toc: false
+engine: knitr
+citation-location: document
+template-partials:
+  - ../../_include/title-metadata.html
+dataset-id: openproblems_bmmc_cite
+dataset-ref: "@luecken2021neurips"
+---
+
+```{=html}
+<img src="../../../images/hero/anndata_schema.png" alt="Anndata Schema" class="dataset_img">
+```
+
+
+```{r}
+#| include: false
+meta_files <- c("dataset_metadata_other_mod.json", "dataset_metadata_rna.json")
+params <- list(data_file = lapply(meta_files, function(x) paste0("./", x)))
+```
+
+{{< include ../../_include/_task_template.qmd >}}

@@ -8,8 +8,8 @@
         "name": "counts",
         "schema_type": "integer",
         "shape": [
-          26022,
-          25258
+          660,
+          116918
         ],
         "type": "sparsematrix"
       },
@@ -19,8 +19,8 @@
         "name": "normalized",
         "schema_type": "double",
         "shape": [
-          26022,
-          25258
+          660,
+          116918
         ],
         "type": "sparsematrix"
       }
@@ -28,25 +28,17 @@
     "obs": [
       {
         "dtype": "category",
-        "name": "lab",
+        "name": "celltype",
         "shape": [
-          26022
+          660
         ],
         "type": "vector"
       },
       {
-        "dtype": "category",
-        "name": "sample_label",
+        "dtype": "float32",
+        "name": "n_counts",
         "shape": [
-          26022
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "float64",
-        "name": "hpf",
-        "shape": [
-          26022
+          660
         ],
         "type": "vector"
       },
@@ -56,41 +48,7 @@
         "name": "cell_type",
         "schema_type": "string",
         "shape": [
-          26022
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "category",
-        "name": "labels",
-        "shape": [
-          26022
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "bool",
-        "name": "is_train",
-        "shape": [
-          26022
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "float32",
-        "name": "n_counts",
-        "shape": [
-          26022
-        ],
-        "type": "vector"
-      },
-      {
-        "description": "A batch identifier. This label is very context-dependent and may be a combination of the tissue, assay, donor, etc.",
-        "dtype": "category",
-        "name": "batch",
-        "schema_type": "string",
-        "shape": [
-          26022
+          660
         ],
         "type": "vector"
       },
@@ -100,7 +58,7 @@
         "name": "size_factors",
         "schema_type": "double",
         "shape": [
-          26022
+          660
         ],
         "type": "vector"
       }
@@ -112,21 +70,57 @@
         "name": "X_pca",
         "schema_type": "double",
         "shape": [
-          26022,
+          660,
           50
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float32",
+        "name": "X_tsne",
+        "shape": [
+          660,
+          2
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float32",
+        "name": "X_umap",
+        "shape": [
+          660,
+          3
         ],
         "type": "densematrix"
       }
     ],
     "obsp": [
       {
+        "dtype": "float32",
+        "name": "connectivities",
+        "shape": [
+          660,
+          660
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "distances",
+        "shape": [
+          660,
+          660
+        ],
+        "type": "sparsematrix"
+      },
+      {
         "description": "K nearest neighbors connectivities matrix.",
         "dtype": "float32",
         "name": "knn_connectivities",
         "schema_type": "double",
         "shape": [
-          26022,
-          26022
+          660,
+          660
         ],
         "type": "sparsematrix"
       },
@@ -136,8 +130,8 @@
         "name": "knn_distances",
         "schema_type": "double",
         "shape": [
-          26022,
-          26022
+          660,
+          660
         ],
         "type": "sparsematrix"
       }
@@ -246,6 +240,12 @@
         "type": "dict"
       },
       {
+        "dtype": null,
+        "name": "neighbors",
+        "shape": null,
+        "type": "other: <class 'anndata.compat._overloaded_dict.OverloadedDict'>"
+      },
+      {
         "description": "Which normalization was used",
         "dtype": "str",
         "name": "normalization_id",
@@ -266,10 +266,18 @@
         "type": "dict"
       },
       {
+        "dtype": null,
+        "name": "umap",
+        "shape": [
+          1
+        ],
+        "type": "dict"
+      },
+      {
         "dtype": "object",
         "name": "var_names_all",
         "shape": [
-          25313
+          215595
         ],
         "type": "densematrix"
       }
@@ -279,7 +287,17 @@
         "dtype": "int64",
         "name": "n_cells",
         "shape": [
-          25258
+          116918
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A human-readable name for the feature, usually a gene symbol.",
+        "dtype": "object",
+        "name": "feature_name",
+        "schema_type": "string",
+        "shape": [
+          116918
         ],
         "type": "vector"
       },
@@ -289,7 +307,7 @@
         "name": "hvg",
         "schema_type": "boolean",
         "shape": [
-          25258
+          116918
         ],
         "type": "vector"
       },
@@ -299,7 +317,7 @@
         "name": "hvg_score",
         "schema_type": "integer",
         "shape": [
-          25258
+          116918
         ],
         "type": "vector"
       }
@@ -307,11 +325,11 @@
     "varm": [
       {
         "description": "The PCA loadings matrix.",
-        "dtype": "float32",
+        "dtype": "float64",
         "name": "pca_loadings",
         "schema_type": "double",
         "shape": [
-          25258,
+          116918,
           50
         ],
         "type": "densematrix"
@@ -320,17 +338,17 @@
     "varp": []
   },
   "uns": {
-    "data_reference": "wagner2018single",
-    "data_url": "https://ndownloader.figshare.com/files/24566651?private_link=e3921450ec1bd0587870",
-    "dataset_description": "90k cells from zebrafish embryos throughout the first day of development, with and without a knockout of chordin, an important developmental gene.",
-    "dataset_id": "openproblems_v1/zebrafish",
-    "dataset_name": "Zebrafish embryonic cells",
-    "dataset_organism": "danio_rerio",
-    "dataset_reference": "wagner2018single",
-    "dataset_summary": "Single-cell mRNA sequencing of zebrafish embryonic cells.",
-    "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE112294",
-    "date_created": "29-01-2024",
-    "file_size": 814296462,
+    "data_reference": "olsson2016single",
+    "data_url": "https://figshare.com/ndownloader/files/36872214",
+    "dataset_description": "660 FACS-isolated myeloid cells from 9 experiments sequenced using C1 Fluidigm and SMARTseq in 2016 by Olsson et al.",
+    "dataset_id": "openproblems_v1/mouse_blood_olsson_labelled",
+    "dataset_name": "Mouse myeloid",
+    "dataset_organism": "mus_musculus",
+    "dataset_reference": "olsson2016single",
+    "dataset_summary": "Myeloid lineage differentiation from mouse blood",
+    "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE70245",
+    "date_created": "30-01-2024",
+    "file_size": 123102166,
     "normalization_id": "log_cp10k"
   }
 }

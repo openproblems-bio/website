@@ -8,8 +8,8 @@
         "name": "counts",
         "schema_type": "integer",
         "shape": [
-          1920,
-          43258
+          26022,
+          25258
         ],
         "type": "sparsematrix"
       },
@@ -19,8 +19,8 @@
         "name": "normalized",
         "schema_type": "double",
         "shape": [
-          1920,
-          43258
+          26022,
+          25258
         ],
         "type": "sparsematrix"
       }
@@ -28,17 +28,25 @@
     "obs": [
       {
         "dtype": "category",
-        "name": "cell_type_label",
+        "name": "lab",
         "shape": [
-          1920
+          26022
         ],
         "type": "vector"
       },
       {
-        "dtype": "float32",
-        "name": "n_counts",
+        "dtype": "category",
+        "name": "sample_label",
         "shape": [
-          1920
+          26022
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "hpf",
+        "shape": [
+          26022
         ],
         "type": "vector"
       },
@@ -48,7 +56,41 @@
         "name": "cell_type",
         "schema_type": "string",
         "shape": [
-          1920
+          26022
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "labels",
+        "shape": [
+          26022
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "bool",
+        "name": "is_train",
+        "shape": [
+          26022
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "n_counts",
+        "shape": [
+          26022
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A batch identifier. This label is very context-dependent and may be a combination of the tissue, assay, donor, etc.",
+        "dtype": "category",
+        "name": "batch",
+        "schema_type": "string",
+        "shape": [
+          26022
         ],
         "type": "vector"
       },
@@ -58,7 +100,7 @@
         "name": "size_factors",
         "schema_type": "double",
         "shape": [
-          1920
+          26022
         ],
         "type": "vector"
       }
@@ -70,7 +112,7 @@
         "name": "X_pca",
         "schema_type": "double",
         "shape": [
-          1920,
+          26022,
           50
         ],
         "type": "densematrix"
@@ -83,8 +125,8 @@
         "name": "knn_connectivities",
         "schema_type": "double",
         "shape": [
-          1920,
-          1920
+          26022,
+          26022
         ],
         "type": "sparsematrix"
       },
@@ -94,8 +136,8 @@
         "name": "knn_distances",
         "schema_type": "double",
         "shape": [
-          1920,
-          1920
+          26022,
+          26022
         ],
         "type": "sparsematrix"
       }
@@ -227,57 +269,27 @@
         "dtype": "object",
         "name": "var_names_all",
         "shape": [
-          46078
+          25313
         ],
         "type": "densematrix"
       }
     ],
     "var": [
       {
-        "dtype": "object",
-        "name": "initial_alias",
-        "shape": [
-          43258
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "category",
-        "name": "converted_alias",
-        "shape": [
-          43258
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "category",
-        "name": "name",
-        "shape": [
-          43258
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "category",
-        "name": "description",
-        "shape": [
-          43258
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "category",
-        "name": "namespace",
-        "shape": [
-          43258
-        ],
-        "type": "vector"
-      },
-      {
         "dtype": "int64",
         "name": "n_cells",
         "shape": [
-          43258
+          25258
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A human-readable name for the feature, usually a gene symbol.",
+        "dtype": "object",
+        "name": "feature_name",
+        "schema_type": "string",
+        "shape": [
+          25258
         ],
         "type": "vector"
       },
@@ -287,7 +299,7 @@
         "name": "hvg",
         "schema_type": "boolean",
         "shape": [
-          43258
+          25258
         ],
         "type": "vector"
       },
@@ -297,7 +309,7 @@
         "name": "hvg_score",
         "schema_type": "integer",
         "shape": [
-          43258
+          25258
         ],
         "type": "vector"
       }
@@ -305,11 +317,11 @@
     "varm": [
       {
         "description": "The PCA loadings matrix.",
-        "dtype": "float64",
+        "dtype": "float32",
         "name": "pca_loadings",
         "schema_type": "double",
         "shape": [
-          43258,
+          25258,
           50
         ],
         "type": "densematrix"
@@ -318,17 +330,17 @@
     "varp": []
   },
   "uns": {
-    "data_reference": "nestorowa2016single",
-    "data_url": "https://ndownloader.figshare.com/files/36088649",
-    "dataset_description": "1656 hematopoietic stem and progenitor cells from mouse bone marrow. Sequenced by Smart-seq2.",
-    "dataset_id": "openproblems_v1/mouse_hspc_nestorowa2016",
-    "dataset_name": "Mouse HSPC",
-    "dataset_organism": "mus_musculus",
-    "dataset_reference": "nestorowa2016single",
-    "dataset_summary": "Haematopoeitic stem and progenitor cells from mouse bone marrow",
-    "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE81682",
-    "date_created": "29-01-2024",
-    "file_size": 394449708,
+    "data_reference": "wagner2018single",
+    "data_url": "https://ndownloader.figshare.com/files/24566651?private_link=e3921450ec1bd0587870",
+    "dataset_description": "90k cells from zebrafish embryos throughout the first day of development, with and without a knockout of chordin, an important developmental gene.",
+    "dataset_id": "openproblems_v1/zebrafish",
+    "dataset_name": "Zebrafish embryonic cells",
+    "dataset_organism": "danio_rerio",
+    "dataset_reference": "wagner2018single",
+    "dataset_summary": "Single-cell mRNA sequencing of zebrafish embryonic cells.",
+    "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE112294",
+    "date_created": "30-01-2024",
+    "file_size": 815712710,
     "normalization_id": "log_cp10k"
   }
 }

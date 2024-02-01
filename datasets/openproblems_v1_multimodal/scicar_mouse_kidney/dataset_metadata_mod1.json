@@ -1,0 +1,316 @@
+{
+  "structure": {
+    "X": [],
+    "layers": [
+      {
+        "description": "Raw counts",
+        "dtype": "float32",
+        "name": "counts",
+        "schema_type": "integer",
+        "shape": [
+          11296,
+          29013
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "description": "Normalised expression values",
+        "dtype": "float32",
+        "name": "normalized",
+        "schema_type": "double",
+        "shape": [
+          11296,
+          29013
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "obs": [
+      {
+        "dtype": "category",
+        "name": "source",
+        "shape": [
+          11296
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "replicate",
+        "shape": [
+          11296
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "experiment",
+        "shape": [
+          11296
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "tsne_1",
+        "shape": [
+          11296
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "tsne_2",
+        "shape": [
+          11296
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "cell_name",
+        "shape": [
+          11296
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Classification of the cell type based on its characteristics and function within the tissue or organism.",
+        "dtype": "category",
+        "name": "cell_type",
+        "schema_type": "string",
+        "shape": [
+          11296
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A batch identifier. This label is very context-dependent and may be a combination of the tissue, assay, donor, etc.",
+        "dtype": "category",
+        "name": "batch",
+        "schema_type": "string",
+        "shape": [
+          11296
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "The size factors created by the normalisation method, if any.",
+        "dtype": "float32",
+        "name": "size_factors",
+        "schema_type": "double",
+        "shape": [
+          11296
+        ],
+        "type": "vector"
+      }
+    ],
+    "obsm": [
+      {
+        "description": "The resulting SVD embedding.",
+        "dtype": "float32",
+        "name": "X_svd",
+        "schema_type": "double",
+        "shape": [
+          11296,
+          100
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "mode2",
+        "shape": [
+          11296,
+          249448
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "obsp": [],
+    "uns": [
+      {
+        "dtype": null,
+        "name": "_from_cache",
+        "shape": null,
+        "type": "other: <class 'numpy.bool_'>"
+      },
+      {
+        "dtype": "str",
+        "name": "data_reference",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "str",
+        "name": "data_url",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Long description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_description",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A unique identifier for the dataset. This is different from the `obs.dataset_id` field, which is the identifier for the dataset from which the cell data is derived.",
+        "dtype": "str",
+        "name": "dataset_id",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A human-readable name for the dataset.",
+        "dtype": "str",
+        "name": "dataset_name",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "The organism of the sample in the dataset.",
+        "dtype": "str",
+        "name": "dataset_organism",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Bibtex reference of the paper in which the dataset was published.",
+        "dtype": "str",
+        "name": "dataset_reference",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Short description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_summary",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Link to the original source of the dataset.",
+        "dtype": "str",
+        "name": "dataset_url",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Which normalization was used",
+        "dtype": "str",
+        "name": "normalization_id",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "object",
+        "name": "var_names_all",
+        "shape": [
+          29013
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "var": [
+      {
+        "dtype": "category",
+        "name": "gene_type",
+        "shape": [
+          29013
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "gene_short_name",
+        "shape": [
+          29013
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "n_counts",
+        "shape": [
+          29013
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A human-readable name for the feature, usually a gene symbol.",
+        "dtype": "object",
+        "name": "feature_name",
+        "schema_type": "string",
+        "shape": [
+          29013
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Whether or not the feature is considered to be a 'highly variable gene'",
+        "dtype": "bool",
+        "name": "hvg",
+        "schema_type": "boolean",
+        "shape": [
+          29013
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A ranking of the features by hvg.",
+        "dtype": "float64",
+        "name": "hvg_score",
+        "schema_type": "integer",
+        "shape": [
+          29013
+        ],
+        "type": "vector"
+      }
+    ],
+    "varm": [],
+    "varp": []
+  },
+  "uns": {
+    "data_reference": "cao2018joint",
+    "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE117089",
+    "dataset_description": "Single cell RNA-seq and ATAC-seq co-profiling of 11k mouse kidney cells.",
+    "dataset_id": "openproblems_v1_multimodal/scicar_mouse_kidney",
+    "dataset_name": "sci-CAR Mouse Kidney",
+    "dataset_organism": "mus_musculus",
+    "dataset_reference": "cao2018joint",
+    "dataset_summary": "sci-CAR profiles of 11k mouse kidney cells",
+    "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE117089",
+    "date_created": "30-01-2024",
+    "file_size": 203247744,
+    "normalization_id": "log_cp10k"
+  }
+}

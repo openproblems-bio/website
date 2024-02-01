@@ -2,9 +2,8 @@
 title: "GTEX v9"
 subtitle: "Single-nucleus cross-tissue molecular reference maps to decipher disease gene function"
 categories: ["cellxgene_census"]
-title-block-banner: true
-title-block-banner-color: white
-css: ../../../events/events.css
+title-block-banner: transparent
+css: [../../../events/events.css, ../../datasets.css]
 toc: false
 engine: knitr
 citation-location: document
@@ -14,9 +13,15 @@ dataset-id: cellxgene_census/gtex_v9
 dataset-ref: "@eraslan2022singlenucleus"
 ---
 
+```{=html}
+<img src="../../../images/hero/anndata_schema.png" alt="Anndata Schema" class="dataset_img">
+```
+
+
 ```{r}
 #| include: false
-params <- list(data_file = "./meta.json")
+meta_files <- c("dataset_metadata.json")
+params <- list(data_file = lapply(meta_files, function(x) paste0("./", x)))
 ```
 
 {{< include ../../_include/_task_template.qmd >}}

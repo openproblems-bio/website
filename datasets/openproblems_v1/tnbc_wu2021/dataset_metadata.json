@@ -8,17 +8,8 @@
         "name": "counts",
         "schema_type": "integer",
         "shape": [
-          33506,
-          12303
-        ],
-        "type": "sparsematrix"
-      },
-      {
-        "dtype": "float32",
-        "name": "log_normalized",
-        "shape": [
-          33506,
-          12303
+          42512,
+          28200
         ],
         "type": "sparsematrix"
       },
@@ -28,60 +19,90 @@
         "name": "normalized",
         "schema_type": "double",
         "shape": [
-          33506,
-          12303
+          42512,
+          28200
         ],
         "type": "sparsematrix"
       }
     ],
     "obs": [
       {
-        "description": "A batch identifier. This label is very context-dependent and may be a combination of the tissue, assay, donor, etc.",
         "dtype": "category",
-        "name": "batch",
-        "schema_type": "string",
+        "name": "orig.ident",
         "shape": [
-          33506
+          42512
         ],
         "type": "vector"
       },
       {
-        "dtype": "category",
-        "name": "chemistry",
+        "dtype": "int32",
+        "name": "nCount_RNA",
         "shape": [
-          33506
+          42512
         ],
         "type": "vector"
       },
       {
-        "dtype": "category",
-        "name": "data_type",
+        "dtype": "int32",
+        "name": "nFeature_RNA",
         "shape": [
-          33506
+          42512
         ],
         "type": "vector"
       },
       {
-        "dtype": "float32",
-        "name": "dpt_pseudotime",
+        "dtype": "float64",
+        "name": "percent.mito",
         "shape": [
-          33506
+          42512
         ],
         "type": "vector"
       },
       {
         "dtype": "category",
-        "name": "final_annotation",
+        "name": "subtype",
         "shape": [
-          33506
+          42512
         ],
         "type": "vector"
       },
       {
-        "dtype": "float32",
-        "name": "mt_frac",
+        "dtype": "category",
+        "name": "celltype_subset",
         "shape": [
-          33506
+          42512
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "celltype_minor",
+        "shape": [
+          42512
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "celltype_major",
+        "shape": [
+          42512
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "ident",
+        "shape": [
+          42512
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "label",
+        "shape": [
+          42512
         ],
         "type": "vector"
       },
@@ -89,59 +110,7 @@
         "dtype": "float32",
         "name": "n_counts",
         "shape": [
-          33506
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "float64",
-        "name": "n_genes",
-        "shape": [
-          33506
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "category",
-        "name": "sample_ID",
-        "shape": [
-          33506
-        ],
-        "type": "vector"
-      },
-      {
-        "description": "The size factors created by the normalisation method, if any.",
-        "dtype": "float32",
-        "name": "size_factors",
-        "schema_type": "double",
-        "shape": [
-          33506
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "category",
-        "name": "species",
-        "shape": [
-          33506
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "category",
-        "name": "study",
-        "shape": [
-          33506
-        ],
-        "type": "vector"
-      },
-      {
-        "description": "Specific tissue from which the cells were derived, key for context and specificity in cell studies.",
-        "dtype": "category",
-        "name": "tissue",
-        "schema_type": "string",
-        "shape": [
-          33506
+          42512
         ],
         "type": "vector"
       },
@@ -151,7 +120,17 @@
         "name": "cell_type",
         "schema_type": "string",
         "shape": [
-          33506
+          42512
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "The size factors created by the normalisation method, if any.",
+        "dtype": "float32",
+        "name": "size_factors",
+        "schema_type": "double",
+        "shape": [
+          42512
         ],
         "type": "vector"
       }
@@ -163,7 +142,7 @@
         "name": "X_pca",
         "schema_type": "double",
         "shape": [
-          33506,
+          42512,
           50
         ],
         "type": "densematrix"
@@ -176,8 +155,8 @@
         "name": "knn_connectivities",
         "schema_type": "double",
         "shape": [
-          33506,
-          33506
+          42512,
+          42512
         ],
         "type": "sparsematrix"
       },
@@ -187,8 +166,8 @@
         "name": "knn_distances",
         "schema_type": "double",
         "shape": [
-          33506,
-          33506
+          42512,
+          42512
         ],
         "type": "sparsematrix"
       }
@@ -199,6 +178,19 @@
         "name": "_from_cache",
         "shape": null,
         "type": "other: <class 'numpy.bool_'>"
+      },
+      {
+        "dtype": [
+          "object",
+          "object",
+          "int64"
+        ],
+        "name": "ccc_target",
+        "shape": [
+          812,
+          3
+        ],
+        "type": "dataframe"
       },
       {
         "dtype": "str",
@@ -317,10 +309,16 @@
         "type": "dict"
       },
       {
+        "dtype": null,
+        "name": "target_organism",
+        "shape": null,
+        "type": "other: <class 'numpy.int64'>"
+      },
+      {
         "dtype": "object",
         "name": "var_names_all",
         "shape": [
-          12303
+          29733
         ],
         "type": "densematrix"
       }
@@ -330,7 +328,17 @@
         "dtype": "int64",
         "name": "n_cells",
         "shape": [
-          12303
+          28200
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A human-readable name for the feature, usually a gene symbol.",
+        "dtype": "object",
+        "name": "feature_name",
+        "schema_type": "string",
+        "shape": [
+          28200
         ],
         "type": "vector"
       },
@@ -340,7 +348,7 @@
         "name": "hvg",
         "schema_type": "boolean",
         "shape": [
-          12303
+          28200
         ],
         "type": "vector"
       },
@@ -350,7 +358,7 @@
         "name": "hvg_score",
         "schema_type": "integer",
         "shape": [
-          12303
+          28200
         ],
         "type": "vector"
       }
@@ -362,7 +370,7 @@
         "name": "pca_loadings",
         "schema_type": "double",
         "shape": [
-          12303,
+          28200,
           50
         ],
         "type": "densematrix"
@@ -371,17 +379,17 @@
     "varp": []
   },
   "uns": {
-    "data_reference": "luecken2022benchmarking",
-    "data_url": "https://ndownloader.figshare.com/files/36086786",
-    "dataset_description": "Human immune cells from peripheral blood and bone marrow taken from 5 datasets comprising 10 batches across technologies (10X, Smart-seq2).",
-    "dataset_id": "openproblems_v1/immune_cells",
-    "dataset_name": "Human immune",
+    "data_reference": "wu2021single",
+    "data_url": "https://figshare.com/ndownloader/files/37593188",
+    "dataset_description": "1535 cells from six TNBC donors by (Wu et al., 2021). This dataset includes cytokine activities, inferred using a multivariate linear model with cytokine-focused signatures, as assumed true cell-cell communication (Dimitrov et al., 2022).",
+    "dataset_id": "openproblems_v1/tnbc_wu2021",
+    "dataset_name": "Triple-Negative Breast Cancer",
     "dataset_organism": "homo_sapiens",
-    "dataset_reference": "luecken2022benchmarking",
-    "dataset_summary": "Human immune cells dataset from the scIB benchmarks",
-    "dataset_url": "https://theislab.github.io/scib-reproducibility/dataset_immune_cell_hum.html",
-    "date_created": "29-01-2024",
-    "file_size": 1261428129,
+    "dataset_reference": "wu2021single",
+    "dataset_summary": "1535 cells from six fresh triple-negative breast cancer tumors.",
+    "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE118389",
+    "date_created": "30-01-2024",
+    "file_size": 1269138232,
     "normalization_id": "log_cp10k"
   }
 }

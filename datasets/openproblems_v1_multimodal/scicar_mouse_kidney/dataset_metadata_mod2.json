@@ -4,23 +4,23 @@
     "layers": [
       {
         "description": "Raw counts",
-        "dtype": "float32",
+        "dtype": "float64",
         "name": "counts",
         "schema_type": "integer",
         "shape": [
-          100955,
-          22469
+          11296,
+          249448
         ],
         "type": "sparsematrix"
       },
       {
         "description": "Normalised expression values",
-        "dtype": "float32",
+        "dtype": "float64",
         "name": "normalized",
         "schema_type": "double",
         "shape": [
-          100955,
-          22469
+          11296,
+          249448
         ],
         "type": "sparsematrix"
       }
@@ -28,25 +28,49 @@
     "obs": [
       {
         "dtype": "category",
-        "name": "dropbox_id",
+        "name": "source",
         "shape": [
-          100955
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "int64",
-        "name": "counts",
-        "shape": [
-          100955
+          11296
         ],
         "type": "vector"
       },
       {
         "dtype": "category",
-        "name": "experiment_code",
+        "name": "replicate",
         "shape": [
-          100955
+          11296
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "experiment",
+        "shape": [
+          11296
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "tsne_1",
+        "shape": [
+          11296
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "tsne_2",
+        "shape": [
+          11296
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "cell_name",
+        "shape": [
+          11296
         ],
         "type": "vector"
       },
@@ -56,25 +80,7 @@
         "name": "cell_type",
         "schema_type": "string",
         "shape": [
-          100955
-        ],
-        "type": "vector"
-      },
-      {
-        "description": "Specific tissue from which the cells were derived, key for context and specificity in cell studies.",
-        "dtype": "category",
-        "name": "tissue",
-        "schema_type": "string",
-        "shape": [
-          100955
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "float32",
-        "name": "n_counts",
-        "shape": [
-          100955
+          11296
         ],
         "type": "vector"
       },
@@ -84,65 +90,36 @@
         "name": "batch",
         "schema_type": "string",
         "shape": [
-          100955
+          11296
         ],
         "type": "vector"
       },
       {
         "description": "The size factors created by the normalisation method, if any.",
-        "dtype": "float32",
+        "dtype": "float64",
         "name": "size_factors",
         "schema_type": "double",
         "shape": [
-          100955
+          11296
         ],
         "type": "vector"
       }
     ],
     "obsm": [
       {
-        "description": "The resulting PCA embedding.",
-        "dtype": "float32",
-        "name": "X_pca",
+        "description": "The resulting SVD embedding.",
+        "dtype": "float64",
+        "name": "X_svd",
         "schema_type": "double",
         "shape": [
-          100955,
-          50
+          11296,
+          100
         ],
         "type": "densematrix"
       }
     ],
-    "obsp": [
-      {
-        "description": "K nearest neighbors connectivities matrix.",
-        "dtype": "float32",
-        "name": "knn_connectivities",
-        "schema_type": "double",
-        "shape": [
-          100955,
-          100955
-        ],
-        "type": "sparsematrix"
-      },
-      {
-        "description": "K nearest neighbors distance matrix.",
-        "dtype": "float64",
-        "name": "knn_distances",
-        "schema_type": "double",
-        "shape": [
-          100955,
-          100955
-        ],
-        "type": "sparsematrix"
-      }
-    ],
+    "obsp": [],
     "uns": [
-      {
-        "dtype": null,
-        "name": "_from_cache",
-        "shape": null,
-        "type": "other: <class 'numpy.bool_'>"
-      },
       {
         "dtype": "str",
         "name": "data_reference",
@@ -230,16 +207,6 @@
         "type": "atomic"
       },
       {
-        "description": "Supplementary K nearest neighbors data.",
-        "dtype": null,
-        "name": "knn",
-        "schema_type": "object",
-        "shape": [
-          3
-        ],
-        "type": "dict"
-      },
-      {
         "description": "Which normalization was used",
         "dtype": "str",
         "name": "normalization_id",
@@ -248,32 +215,38 @@
           1
         ],
         "type": "atomic"
-      },
-      {
-        "description": "The PCA variance objects.",
-        "dtype": null,
-        "name": "pca_variance",
-        "schema_type": "double",
-        "shape": [
-          2
-        ],
-        "type": "dict"
-      },
-      {
-        "dtype": "object",
-        "name": "var_names_all",
-        "shape": [
-          46911
-        ],
-        "type": "densematrix"
       }
     ],
     "var": [
       {
         "dtype": "int64",
-        "name": "n_cells",
+        "name": "id",
         "shape": [
-          22469
+          249448
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "chr",
+        "shape": [
+          249448
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "start",
+        "shape": [
+          249448
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "end",
+        "shape": [
+          249448
         ],
         "type": "vector"
       },
@@ -283,7 +256,7 @@
         "name": "hvg",
         "schema_type": "boolean",
         "shape": [
-          22469
+          249448
         ],
         "type": "vector"
       },
@@ -293,38 +266,26 @@
         "name": "hvg_score",
         "schema_type": "integer",
         "shape": [
-          22469
+          249448
         ],
         "type": "vector"
       }
     ],
-    "varm": [
-      {
-        "description": "The PCA loadings matrix.",
-        "dtype": "float32",
-        "name": "pca_loadings",
-        "schema_type": "double",
-        "shape": [
-          22469,
-          50
-        ],
-        "type": "densematrix"
-      }
-    ],
+    "varm": [],
     "varp": []
   },
   "uns": {
-    "data_reference": "hammarlund2018cengen",
-    "data_url": "https://github.com/Munfred/wormcells-data/releases/download/taylor2020/taylor2020.h5ad",
-    "dataset_description": "100k FACS-isolated C. elegans neurons from 17 experiments sequenced on 10x Genomics.",
-    "dataset_id": "openproblems_v1/cengen",
-    "dataset_name": "CeNGEN",
-    "dataset_organism": "caenorhabditis_elegans",
-    "dataset_reference": "hammarlund2018cengen",
-    "dataset_summary": "Complete Gene Expression Map of an Entire Nervous System",
-    "dataset_url": "https://www.cengen.org",
-    "date_created": "29-01-2024",
-    "file_size": 814891975,
+    "data_reference": "cao2018joint",
+    "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE117089",
+    "dataset_description": "Single cell RNA-seq and ATAC-seq co-profiling of 11k mouse kidney cells.",
+    "dataset_id": "openproblems_v1_multimodal/scicar_mouse_kidney",
+    "dataset_name": "sci-CAR Mouse Kidney",
+    "dataset_organism": "mus_musculus",
+    "dataset_reference": "cao2018joint",
+    "dataset_summary": "sci-CAR profiles of 11k mouse kidney cells",
+    "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE117089",
+    "date_created": "30-01-2024",
+    "file_size": 226215456,
     "normalization_id": "log_cp10k"
   }
 }

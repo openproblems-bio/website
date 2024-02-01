@@ -1,0 +1,27 @@
+---
+title: "CITE-Seq CBMC"
+subtitle: "CITE-seq profiles of 8k Cord Blood Mononuclear Cells"
+categories: ["openproblems_v1_multimodal"]
+title-block-banner: transparent
+css: [../../../events/events.css, ../../datasets.css]
+toc: false
+engine: knitr
+citation-location: document
+template-partials:
+  - ../../_include/title-metadata.html
+dataset-id: openproblems_v1_multimodal/citeseq_cbmc
+dataset-ref: "@stoeckius2017simultaneous"
+---
+
+```{=html}
+<img src="../../../images/hero/anndata_schema.png" alt="Anndata Schema" class="dataset_img">
+```
+
+
+```{r}
+#| include: false
+meta_files <- c("dataset_metadata_mod1.json", "dataset_metadata_mod2.json")
+params <- list(data_file = lapply(meta_files, function(x) paste0("./", x)))
+```
+
+{{< include ../../_include/_task_template.qmd >}}

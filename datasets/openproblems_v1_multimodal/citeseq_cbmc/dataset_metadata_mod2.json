@@ -4,91 +4,54 @@
     "layers": [
       {
         "description": "Raw counts",
-        "dtype": "float32",
+        "dtype": "float64",
         "name": "counts",
         "schema_type": "integer",
         "shape": [
-          5247,
-          20822
+          8617,
+          13
         ],
         "type": "sparsematrix"
       },
       {
         "description": "Normalised expression values",
-        "dtype": "float32",
+        "dtype": "float64",
         "name": "normalized",
         "schema_type": "double",
         "shape": [
-          5247,
-          20822
+          8617,
+          13
         ],
         "type": "sparsematrix"
       }
     ],
     "obs": [
       {
-        "dtype": "float32",
-        "name": "n_counts",
-        "shape": [
-          5247
-        ],
-        "type": "vector"
-      },
-      {
         "description": "The size factors created by the normalisation method, if any.",
-        "dtype": "float32",
+        "dtype": "float64",
         "name": "size_factors",
         "schema_type": "double",
         "shape": [
-          5247
+          8617
         ],
         "type": "vector"
       }
     ],
     "obsm": [
       {
-        "description": "The resulting PCA embedding.",
-        "dtype": "float32",
-        "name": "X_pca",
+        "description": "The resulting SVD embedding.",
+        "dtype": "float64",
+        "name": "X_svd",
         "schema_type": "double",
         "shape": [
-          5247,
-          50
+          8617,
+          12
         ],
         "type": "densematrix"
       }
     ],
-    "obsp": [
-      {
-        "description": "K nearest neighbors connectivities matrix.",
-        "dtype": "float32",
-        "name": "knn_connectivities",
-        "schema_type": "double",
-        "shape": [
-          5247,
-          5247
-        ],
-        "type": "sparsematrix"
-      },
-      {
-        "description": "K nearest neighbors distance matrix.",
-        "dtype": "float64",
-        "name": "knn_distances",
-        "schema_type": "double",
-        "shape": [
-          5247,
-          5247
-        ],
-        "type": "sparsematrix"
-      }
-    ],
+    "obsp": [],
     "uns": [
-      {
-        "dtype": null,
-        "name": "_from_cache",
-        "shape": null,
-        "type": "other: <class 'numpy.bool_'>"
-      },
       {
         "dtype": "str",
         "name": "data_reference",
@@ -176,16 +139,6 @@
         "type": "atomic"
       },
       {
-        "description": "Supplementary K nearest neighbors data.",
-        "dtype": null,
-        "name": "knn",
-        "schema_type": "object",
-        "shape": [
-          3
-        ],
-        "type": "dict"
-      },
-      {
         "description": "Which normalization was used",
         "dtype": "str",
         "name": "normalization_id",
@@ -194,66 +147,16 @@
           1
         ],
         "type": "atomic"
-      },
-      {
-        "description": "The PCA variance objects.",
-        "dtype": null,
-        "name": "pca_variance",
-        "schema_type": "double",
-        "shape": [
-          2
-        ],
-        "type": "dict"
-      },
-      {
-        "dtype": "object",
-        "name": "var_names_all",
-        "shape": [
-          33538
-        ],
-        "type": "densematrix"
       }
     ],
     "var": [
-      {
-        "dtype": "object",
-        "name": "gene_ids",
-        "shape": [
-          20822
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "category",
-        "name": "feature_types",
-        "shape": [
-          20822
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "category",
-        "name": "genome",
-        "shape": [
-          20822
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "int64",
-        "name": "n_cells",
-        "shape": [
-          20822
-        ],
-        "type": "vector"
-      },
       {
         "description": "Whether or not the feature is considered to be a 'highly variable gene'",
         "dtype": "bool",
         "name": "hvg",
         "schema_type": "boolean",
         "shape": [
-          20822
+          13
         ],
         "type": "vector"
       },
@@ -263,38 +166,26 @@
         "name": "hvg_score",
         "schema_type": "integer",
         "shape": [
-          20822
+          13
         ],
         "type": "vector"
       }
     ],
-    "varm": [
-      {
-        "description": "The PCA loadings matrix.",
-        "dtype": "float64",
-        "name": "pca_loadings",
-        "schema_type": "double",
-        "shape": [
-          20822,
-          50
-        ],
-        "type": "densematrix"
-      }
-    ],
+    "varm": [],
     "varp": []
   },
   "uns": {
-    "data_reference": "10x2019pbmc",
-    "data_url": "https://ndownloader.figshare.com/files/25555739",
-    "dataset_description": "5k Peripheral Blood Mononuclear Cells (PBMCs) from a healthy donor. Sequenced on 10X v3 chemistry in July 2019 by 10X Genomics.",
-    "dataset_id": "openproblems_v1/tenx_5k_pbmc",
-    "dataset_name": "5k PBMCs",
+    "data_reference": "stoeckius2017simultaneous",
+    "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE100866",
+    "dataset_description": "8k cord blood mononuclear cells profiled by CITEsequsing a panel of 13 antibodies.",
+    "dataset_id": "openproblems_v1_multimodal/citeseq_cbmc",
+    "dataset_name": "CITE-Seq CBMC",
     "dataset_organism": "homo_sapiens",
-    "dataset_reference": "10x2019pbmc",
-    "dataset_summary": "5k peripheral blood mononuclear cells from a healthy donor",
-    "dataset_url": "https://www.10xgenomics.com/resources/datasets/5-k-peripheral-blood-mononuclear-cells-pbm-cs-from-a-healthy-donor-with-cell-surface-proteins-v-3-chemistry-3-1-standard-3-1-0",
-    "date_created": "29-01-2024",
-    "file_size": 163564234,
+    "dataset_reference": "stoeckius2017simultaneous",
+    "dataset_summary": "CITE-seq profiles of 8k Cord Blood Mononuclear Cells",
+    "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE100866",
+    "date_created": "30-01-2024",
+    "file_size": 4110200,
     "normalization_id": "log_cp10k"
   }
 }
