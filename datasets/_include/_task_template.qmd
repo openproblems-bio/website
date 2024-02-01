@@ -26,11 +26,11 @@ filesize <- format(structure(meta1_uns$file_size, class="object_size"), units="a
 if (multimodal) {
 filesize <- c(filesize, format(structure(meta2$uns$file_size, class="object_size"), units="auto", standard="IEC", digits=2))
 }
-n_cells<- NULL
+dim <- NULL
 
-for (item in meta1_structure$obs) {
-  if (item$name == "n_counts") {
-    n_cells <- item$shape[[1]]
+for (item in meta1_structure$layers) {
+  if (item$name == "counts") {
+    dim <- item$shape
     break
   }
 }
@@ -39,7 +39,7 @@ for (item in meta1_structure$obs) {
 ---
 dataset-size: "`r filesize`"
 date: "`r date_created`"
-cells: "`r n_cells`"
+dimension: "`r dim`"
 ---
 
 

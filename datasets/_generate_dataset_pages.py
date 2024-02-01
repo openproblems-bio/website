@@ -39,8 +39,8 @@ dataset-id: {dataset_id}
 dataset-ref: "@{dataset_ref}"
 ---
 
-```{=html}
-<img src="../../../images/hero/anndata_schema.png" alt="Anndata Schema" class="dataset_img">
+```{{=html}}
+<img src="../../../images/heros/anndata_schema.png" alt="Anndata Schema" class="dataset_img">
 ```
 
 
