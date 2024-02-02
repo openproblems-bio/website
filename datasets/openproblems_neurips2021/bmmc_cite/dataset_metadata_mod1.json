@@ -9,7 +9,7 @@
         "schema_type": "integer",
         "shape": [
           90261,
-          134
+          13953
         ],
         "type": "sparsematrix"
       },
@@ -20,7 +20,7 @@
         "schema_type": "double",
         "shape": [
           90261,
-          134
+          13953
         ],
         "type": "sparsematrix"
       }
@@ -28,7 +28,7 @@
     "obs": [
       {
         "dtype": "int32",
-        "name": "n_antibodies_by_counts",
+        "name": "n_genes_by_counts",
         "shape": [
           90261
         ],
@@ -36,15 +36,25 @@
       },
       {
         "dtype": "float32",
-        "name": "total_counts",
+        "name": "pct_counts_mt",
         "shape": [
           90261
         ],
         "type": "vector"
       },
       {
-        "dtype": "float64",
-        "name": "iso_count",
+        "description": "The size factors created by the normalisation method, if any.",
+        "dtype": "float32",
+        "name": "size_factors",
+        "schema_type": "double",
+        "shape": [
+          90261
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "phase",
         "shape": [
           90261
         ],
@@ -197,16 +207,6 @@
           90261
         ],
         "type": "vector"
-      },
-      {
-        "description": "The size factors created by the normalisation method, if any.",
-        "dtype": "float32",
-        "name": "size_factors",
-        "schema_type": "double",
-        "shape": [
-          90261
-        ],
-        "type": "vector"
       }
     ],
     "obsm": [
@@ -328,7 +328,7 @@
         "name": "feature_name",
         "schema_type": "string",
         "shape": [
-          134
+          13953
         ],
         "type": "vector"
       },
@@ -336,7 +336,7 @@
         "dtype": "category",
         "name": "feature_types",
         "shape": [
-          134
+          13953
         ],
         "type": "vector"
       },
@@ -346,7 +346,7 @@
         "name": "feature_id",
         "schema_type": "string",
         "shape": [
-          134
+          13953
         ],
         "type": "vector"
       },
@@ -356,7 +356,7 @@
         "name": "hvg",
         "schema_type": "boolean",
         "shape": [
-          134
+          13953
         ],
         "type": "vector"
       },
@@ -366,7 +366,7 @@
         "name": "hvg_score",
         "schema_type": "integer",
         "shape": [
-          134
+          13953
         ],
         "type": "vector"
       }
@@ -382,8 +382,8 @@
     "dataset_reference": "luecken2021neurips",
     "dataset_summary": "Single-cell CITE-Seq (GEX+ADT) data collected from bone marrow mononuclear cells of 12 healthy human donors.",
     "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE194122",
-    "date_created": "29-01-2024",
-    "file_size": 210624825,
+    "date_created": "02-02-2024",
+    "file_size": 2151691456,
     "genome": "GRCh38",
     "normalization_id": "log_cp10k",
     "organism": "human"

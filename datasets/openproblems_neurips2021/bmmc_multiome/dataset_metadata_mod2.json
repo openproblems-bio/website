@@ -9,7 +9,7 @@
         "schema_type": "integer",
         "shape": [
           69249,
-          13431
+          116490
         ],
         "type": "sparsematrix"
       },
@@ -20,49 +20,47 @@
         "schema_type": "double",
         "shape": [
           69249,
-          13431
+          116490
         ],
         "type": "sparsematrix"
       }
     ],
     "obs": [
       {
-        "dtype": "float32",
-        "name": "pct_counts_mt",
+        "dtype": "float64",
+        "name": "nCount_peaks",
         "shape": [
           69249
         ],
         "type": "vector"
       },
       {
-        "dtype": "float32",
-        "name": "n_counts",
+        "dtype": "int32",
+        "name": "atac_fragments",
         "shape": [
           69249
         ],
         "type": "vector"
       },
       {
-        "dtype": "int64",
-        "name": "n_genes",
+        "dtype": "float64",
+        "name": "reads_in_peaks_frac",
         "shape": [
           69249
         ],
         "type": "vector"
       },
       {
-        "description": "The size factors created by the normalisation method, if any.",
-        "dtype": "float32",
-        "name": "size_factors",
-        "schema_type": "double",
+        "dtype": "float64",
+        "name": "blacklist_fraction",
         "shape": [
           69249
         ],
         "type": "vector"
       },
       {
-        "dtype": "category",
-        "name": "phase",
+        "dtype": "float64",
+        "name": "nucleosome_signal",
         "shape": [
           69249
         ],
@@ -215,6 +213,16 @@
           69249
         ],
         "type": "vector"
+      },
+      {
+        "description": "The size factors created by the normalisation method, if any.",
+        "dtype": "float32",
+        "name": "size_factors",
+        "schema_type": "double",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
       }
     ],
     "obsm": [
@@ -226,6 +234,42 @@
         "shape": [
           69249,
           100
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float32",
+        "name": "gene_activity",
+        "shape": [
+          69249,
+          19039
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "lsi_full",
+        "shape": [
+          69249,
+          50
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "lsi_red",
+        "shape": [
+          69249,
+          39
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "umap",
+        "shape": [
+          69249,
+          2
         ],
         "type": "densematrix"
       }
@@ -303,6 +347,14 @@
         "type": "atomic"
       },
       {
+        "dtype": "object",
+        "name": "gene_activity_var_names",
+        "shape": [
+          19039
+        ],
+        "type": "densematrix"
+      },
+      {
         "dtype": "str",
         "name": "genome",
         "shape": [
@@ -336,7 +388,7 @@
         "name": "feature_name",
         "schema_type": "string",
         "shape": [
-          13431
+          116490
         ],
         "type": "vector"
       },
@@ -344,7 +396,7 @@
         "dtype": "category",
         "name": "feature_types",
         "shape": [
-          13431
+          116490
         ],
         "type": "vector"
       },
@@ -354,7 +406,7 @@
         "name": "feature_id",
         "schema_type": "string",
         "shape": [
-          13431
+          116490
         ],
         "type": "vector"
       },
@@ -364,7 +416,7 @@
         "name": "hvg",
         "schema_type": "boolean",
         "shape": [
-          13431
+          116490
         ],
         "type": "vector"
       },
@@ -374,7 +426,7 @@
         "name": "hvg_score",
         "schema_type": "integer",
         "shape": [
-          13431
+          116490
         ],
         "type": "vector"
       }
@@ -390,8 +442,8 @@
     "dataset_reference": "luecken2021neurips",
     "dataset_summary": "Single-cell Multiome (GEX+ATAC) data collected from bone marrow mononuclear cells of 12 healthy human donors.",
     "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE194122",
-    "date_created": "29-01-2024",
-    "file_size": 1271506268,
+    "date_created": "02-02-2024",
+    "file_size": 7084601341,
     "genome": "GRCh38",
     "normalization_id": "log_cp10k",
     "organism": "human"

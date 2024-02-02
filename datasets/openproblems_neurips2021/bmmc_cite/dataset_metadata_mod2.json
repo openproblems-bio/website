@@ -8,8 +8,8 @@
         "name": "counts",
         "schema_type": "integer",
         "shape": [
-          69249,
-          116490
+          90261,
+          134
         ],
         "type": "sparsematrix"
       },
@@ -19,50 +19,34 @@
         "name": "normalized",
         "schema_type": "double",
         "shape": [
-          69249,
-          116490
+          90261,
+          134
         ],
         "type": "sparsematrix"
       }
     ],
     "obs": [
       {
-        "dtype": "float64",
-        "name": "nCount_peaks",
-        "shape": [
-          69249
-        ],
-        "type": "vector"
-      },
-      {
         "dtype": "int32",
-        "name": "atac_fragments",
+        "name": "n_antibodies_by_counts",
         "shape": [
-          69249
+          90261
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "total_counts",
+        "shape": [
+          90261
         ],
         "type": "vector"
       },
       {
         "dtype": "float64",
-        "name": "reads_in_peaks_frac",
+        "name": "iso_count",
         "shape": [
-          69249
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "float64",
-        "name": "blacklist_fraction",
-        "shape": [
-          69249
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "float64",
-        "name": "nucleosome_signal",
-        "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -72,7 +56,7 @@
         "name": "cell_type",
         "schema_type": "string",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -82,7 +66,7 @@
         "name": "batch",
         "schema_type": "string",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -90,7 +74,7 @@
         "dtype": "float32",
         "name": "pseudotime_order",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -98,7 +82,7 @@
         "dtype": "category",
         "name": "Samplename",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -106,7 +90,7 @@
         "dtype": "category",
         "name": "Site",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -114,7 +98,7 @@
         "dtype": "category",
         "name": "DonorNumber",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -122,7 +106,7 @@
         "dtype": "category",
         "name": "Modality",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -130,7 +114,7 @@
         "dtype": "int64",
         "name": "VendorLot",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -138,7 +122,7 @@
         "dtype": "int64",
         "name": "DonorID",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -146,7 +130,7 @@
         "dtype": "int64",
         "name": "DonorAge",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -154,7 +138,7 @@
         "dtype": "float64",
         "name": "DonorBMI",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -162,7 +146,7 @@
         "dtype": "category",
         "name": "DonorBloodType",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -170,7 +154,7 @@
         "dtype": "category",
         "name": "DonorRace",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -178,7 +162,7 @@
         "dtype": "category",
         "name": "Ethnicity",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -186,7 +170,7 @@
         "dtype": "category",
         "name": "DonorGender",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -194,7 +178,7 @@
         "dtype": "category",
         "name": "QCMeds",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -202,7 +186,7 @@
         "dtype": "category",
         "name": "DonorSmoker",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -210,7 +194,7 @@
         "dtype": "category",
         "name": "is_train",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       },
@@ -220,7 +204,7 @@
         "name": "size_factors",
         "schema_type": "double",
         "shape": [
-          69249
+          90261
         ],
         "type": "vector"
       }
@@ -232,44 +216,8 @@
         "name": "X_svd",
         "schema_type": "double",
         "shape": [
-          69249,
+          90261,
           100
-        ],
-        "type": "densematrix"
-      },
-      {
-        "dtype": "float32",
-        "name": "gene_activity",
-        "shape": [
-          69249,
-          19039
-        ],
-        "type": "sparsematrix"
-      },
-      {
-        "dtype": "float64",
-        "name": "lsi_full",
-        "shape": [
-          69249,
-          50
-        ],
-        "type": "densematrix"
-      },
-      {
-        "dtype": "float64",
-        "name": "lsi_red",
-        "shape": [
-          69249,
-          39
-        ],
-        "type": "densematrix"
-      },
-      {
-        "dtype": "float64",
-        "name": "umap",
-        "shape": [
-          69249,
-          2
         ],
         "type": "densematrix"
       }
@@ -347,14 +295,6 @@
         "type": "atomic"
       },
       {
-        "dtype": "object",
-        "name": "gene_activity_var_names",
-        "shape": [
-          19039
-        ],
-        "type": "densematrix"
-      },
-      {
         "dtype": "str",
         "name": "genome",
         "shape": [
@@ -388,7 +328,7 @@
         "name": "feature_name",
         "schema_type": "string",
         "shape": [
-          116490
+          134
         ],
         "type": "vector"
       },
@@ -396,7 +336,7 @@
         "dtype": "category",
         "name": "feature_types",
         "shape": [
-          116490
+          134
         ],
         "type": "vector"
       },
@@ -406,7 +346,7 @@
         "name": "feature_id",
         "schema_type": "string",
         "shape": [
-          116490
+          134
         ],
         "type": "vector"
       },
@@ -416,7 +356,7 @@
         "name": "hvg",
         "schema_type": "boolean",
         "shape": [
-          116490
+          134
         ],
         "type": "vector"
       },
@@ -426,7 +366,7 @@
         "name": "hvg_score",
         "schema_type": "integer",
         "shape": [
-          116490
+          134
         ],
         "type": "vector"
       }
@@ -435,15 +375,15 @@
     "varp": []
   },
   "uns": {
-    "dataset_description": "Single-cell CITE-Seq data collected from bone marrow mononuclear cells of 12 healthy human donors using the 10X Multiome Gene Expression and Chromatin Accessibility kit. The dataset was generated to support Multimodal Single-Cell Data Integration Challenge at NeurIPS 2021. Samples were prepared using a standard protocol at four sites. The resulting data was then annotated to identify cell types and remove doublets. The dataset was designed with a nested batch layout such that some donor samples were measured at multiple sites with some donors measured at a single site.",
-    "dataset_id": "openproblems_bmmc_multiome",
-    "dataset_name": "OpenProblems NeurIPS2021 Multiome",
+    "dataset_description": "Single-cell CITE-Seq data collected from bone marrow mononuclear cells of 12 healthy human donors using the 10X 3 prime Single-Cell Gene Expression kit with Feature Barcoding in combination with the BioLegend TotalSeq B Universal Human Panel v1.0. The dataset was generated to support Multimodal Single-Cell Data Integration Challenge at NeurIPS 2021. Samples were prepared using a standard protocol at four sites. The resulting data was then annotated to identify cell types and remove doublets. The dataset was designed with a nested batch layout such that some donor samples were measured at multiple sites with some donors measured at a single site.",
+    "dataset_id": "openproblems_bmmc_cite",
+    "dataset_name": "OpenProblems NeurIPS2021 CITE-Seq",
     "dataset_organism": "homo_sapiens",
     "dataset_reference": "luecken2021neurips",
-    "dataset_summary": "Single-cell Multiome (GEX+ATAC) data collected from bone marrow mononuclear cells of 12 healthy human donors.",
+    "dataset_summary": "Single-cell CITE-Seq (GEX+ADT) data collected from bone marrow mononuclear cells of 12 healthy human donors.",
     "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE194122",
-    "date_created": "29-01-2024",
-    "file_size": 7084601341,
+    "date_created": "02-02-2024",
+    "file_size": 210624825,
     "genome": "GRCh38",
     "normalization_id": "log_cp10k",
     "organism": "human"
