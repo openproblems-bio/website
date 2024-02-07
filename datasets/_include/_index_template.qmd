@@ -112,50 +112,55 @@ cat(dataset_description)
 #| echo: false
 #| results: "asis"
 
-for (i in seq_along(metas)) {
+struc_names <- c("X", "obs", "var", "obsp", "varp", "obsm", "varm", "layers", "uns")
+
+# collect struct info across files
+meta_struc <- list_rbind(map2(
+  seq_along(metas),
+  metas,
+  function(meta_i, meta) {
+    list_rbind(map2(
+      names(meta$structure),
+      meta$structure,
+      function(name, slots) {
+        if (length(slots) == 0) {
+          return(NULL)
+        }
+        list_rbind(map(
+          slots,
+          function(li) {
+            li$file <- meta_i
+            li$struct_name <- name
+            for (n in names(li)) {
+              if (is.null(li[[n]])) {
+                li[[n]] <- NULL
+              } else if (length(li[[n]]) > 1) {
+                li[[n]] <- list(li[[n]])
+              }
+            }
+            tibble::as_tibble(li)
+          }
+        ))
+      }
+    ))
+  }
+)) %>%
+  mutate(
+    shape = map_chr(shape, paste, collapse = " × "),
+    description = gsub("\n", " ", description)
+  )
+
+for (meta_i in seq_along(metas)) {
   # only print heading if there are multiple objects
   if (length(metas) > 1) {
-    cat("### Modality ", i, "\n")
+    cat("### Modality ", meta_i, "\n")
   }
-
-  meta <- metas[[i]]
-
-  meta_struc <- list_rbind(map2(
-    names(meta$structure),
-    meta$structure,
-    function(name, slots) {
-      if (length(slots) == 0) {
-        return(NULL)
-      }
-      list_rbind(map(
-        slots,
-        function(li) {
-          li$struct_name <- name
-          for (n in names(li)) {
-            if (is.null(li[[n]])) {
-              li[[n]] <- NULL
-            } else if (length(li[[n]]) > 1) {
-              li[[n]] <- list(li[[n]])
-            }
-          }
-          tibble::as_tibble(li)
-        }
-      ))
-    }
-  ))
-
-  meta_struc_in_schema <- meta_struc %>%
-    filter(!is.na(description)) %>%
-    mutate(
-      shape = map_chr(shape, paste, collapse = " × "),
-      description = gsub("\n", " ", description)
-    )
 
   cat(":::{.panel-tabset }\n")
 
-  for (str_name in names(meta$struct)) {
-    table_sel <- meta_struc_in_schema %>%
-      filter(struct_name == str_name) %>% 
+  for (str_name in struc_names) {
+    table_sel <- meta_struc %>%
+      filter(file == meta_i, struct_name == str_name, !is.na(description)) %>%
       select(
         Name = name,
         Description = description,
