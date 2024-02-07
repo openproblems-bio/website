@@ -1,19 +1,17 @@
 from pathlib import Path
-import os
 import json
 
 print("Fetch template", flush=True)
-dataset_dir = Path("datasets/")
+datasets_dir = Path("datasets/")
 
-dataset_meta_files = dataset_dir.glob("*/*/*meta*.json")
+dataset_dirs = [state.parent.parent for state in datasets_dir.glob("**/data/state.yaml")]
 
-parent_dirs = [Path(file).parent for file in dataset_meta_files]
-parent_dirs = list(set(parent_dirs))
+for dir in dataset_dirs:
+  print(f"Processing {dir}", flush=True)
+  meta_files = list(dir.glob("data/*.json"))
 
-for dir in parent_dirs:
-  meta_files = list(dir.glob("*meta*.json"))  
-  print(f"Reading {meta_files[0]}", flush=True)
-  dataset_info = json.loads(meta_files[0].read_text())
+  print(f"  Reading {meta_files[0]}", flush=True)
+  dataset_info = json.loads(meta_files[0].read_text(encoding="UTF-8"))
   info_uns = dataset_info.get("uns")
   dataset_name = info_uns.get("dataset_name", "<Name missing>")
   dataset_summary = info_uns.get("dataset_summary", "<Summary missing>")
@@ -21,39 +19,32 @@ for dir in parent_dirs:
   dataset_ref = info_uns.get("dataset_reference", "<Ref missing>")
 
   dataset_loader = dataset_id.split("/")[0]
-  str_files = [str(file.name) for file in meta_files]
-  data_files=', '.join(f'"{file}"' for file in str_files)
   content = f"""\
 ---
 title: "{dataset_name}"
 subtitle: "{dataset_summary}"
 categories: ["{dataset_loader}"]
 title-block-banner: transparent
-css: [../../../events/events.css, ../../datasets.css]
+css: [/events/events.css, /datasets/datasets.css]
 toc: false
 engine: knitr
 citation-location: document
 template-partials:
-  - ../../_include/title-metadata.html
+  - /datasets/_include/title-metadata.html
 dataset-id: {dataset_id}
 dataset-ref: "@{dataset_ref}"
 ---
 
-```{{=html}}
-<img src="../../../images/heros/anndata_schema.png" alt="Anndata Schema" class="dataset_img">
-```
-
-
 ```{{r}}
 #| include: false
-meta_files <- c({data_files})
-params <- list(data_file = lapply(meta_files, function(x) paste0("./", x)))
+params <- list(data_dir = "{dir}/data")
+params <- list(data_dir = "./data")
 ```
 
-{{{{< include ../../_include/_task_template.qmd >}}}}
+{{{{< include /datasets/_include/_index_template.qmd >}}}}
 """
 
   index_qmd = dir / "index.qmd"
-  print(f"Write to {index_qmd}", flush=True)
+  print(f"  Writing to {index_qmd}", flush=True)
   with index_qmd.open("w", encoding ="utf-8") as f:
       f.write(content)

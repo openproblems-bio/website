@@ -3,25 +3,20 @@ title: "sci-CAR Cell Lines"
 subtitle: "sci-CAR profiles of 5k cell line cells (HEK293T, NIH/3T3, A549) across three treatment conditions (DEX 0h, 1h and 3h)"
 categories: ["openproblems_v1_multimodal"]
 title-block-banner: transparent
-css: [../../../events/events.css, ../../datasets.css]
+css: [/events/events.css, /datasets/datasets.css]
 toc: false
 engine: knitr
 citation-location: document
 template-partials:
-  - ../../_include/title-metadata.html
+  - /datasets/_include/title-metadata.html
 dataset-id: openproblems_v1_multimodal/scicar_cell_lines
 dataset-ref: "@cao2018joint"
 ---
 
-```{=html}
-<img src="../../../images/heros/anndata_schema.png" alt="Anndata Schema" class="dataset_img">
-```
-
-
 ```{r}
 #| include: false
-meta_files <- c("dataset_metadata_mod1.json", "dataset_metadata_mod2.json")
-params <- list(data_file = lapply(meta_files, function(x) paste0("./", x)))
+params <- list(data_dir = "datasets/openproblems_v1_multimodal/scicar_cell_lines/data")
+params <- list(data_dir = "./data")
 ```
 
-{{< include ../../_include/_task_template.qmd >}}
+{{< include /datasets/_include/_index_template.qmd >}}

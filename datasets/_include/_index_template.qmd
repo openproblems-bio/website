@@ -1,3 +1,5 @@
+![](/images/heros/anndata_schema.png){class="dataset_img"}
+
 ```{r load_data}
 #| include: false
 #| error: true
@@ -6,14 +8,15 @@ library(tidyverse)
 library(jsonlite)
 library(knitr)
 
+dataset_schemas <- list.files(params$data_dir, full.names = TRUE, pattern = "*.json")
 
-meta1 <- read_json(params$data_file[[1]])
+meta1 <- read_json(dataset_schemas[[1]])
 meta1_uns <- meta1$uns
 meta1_structure <- meta1$structure
 multimodal <- FALSE
-if (length(params$data_file)==2) {
+if (length(dataset_schemas)==2) {
   multimodal <- TRUE
-  meta2 <- read_json(params$data_file[[2]])
+  meta2 <- read_json(dataset_schemas[[2]])
   meta2_uns <- meta2$uns
   meta2_structure <- meta2$structure
 }
