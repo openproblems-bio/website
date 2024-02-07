@@ -93,9 +93,9 @@
         "task_id": "batch_integration", 
         "category": "Method info", 
         "name": "Pct 'paper_reference' missing", 
-        "value": 0.2222222222222222, 
-        "severity": 2, 
-        "severity_value": 3.0, 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
         "code": "percent_missing(method_info, field)", 
         "message": "Method metadata field 'paper_reference' should be defined\n  Task id: batch_integration\n  Field: paper_reference\n"
     }, 
@@ -247,15 +247,15 @@
         "severity": 0, 
         "severity_value": 0.0, 
         "code": "len(results) == len(method_info) * len(metric_info) * len(dataset_info)", 
-        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: batch_integration\n  Number of results: 180\n  Number of methods: 18\n  Number of metrics: 11\n  Number of datasets: 10\n"
+        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: batch_integration\n  Number of results: 180\n  Number of methods: 18\n  Number of metrics: 10\n  Number of datasets: 10\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Metric 'asw_batch' %missing", 
-        "value": 0.5444444444444445, 
+        "value": 0.5388888888888889, 
         "severity": 3, 
-        "severity_value": 5.444444444444445, 
+        "severity_value": 5.388888888888888, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  Metric id: asw_batch\n  Percentage missing: 54%\n"
     }, 
@@ -263,29 +263,19 @@
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Metric 'asw_label' %missing", 
-        "value": 0.5444444444444445, 
+        "value": 0.5388888888888889, 
         "severity": 3, 
-        "severity_value": 5.444444444444445, 
+        "severity_value": 5.388888888888888, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  Metric id: asw_label\n  Percentage missing: 54%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
-        "name": "Metric 'cell_cycle_conservation' %missing", 
-        "value": 0.85, 
-        "severity": 3, 
-        "severity_value": 8.5, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  Metric id: cell_cycle_conservation\n  Percentage missing: 85%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Raw results", 
         "name": "Metric 'ari' %missing", 
-        "value": 0.5666666666666667, 
+        "value": 0.5722222222222222, 
         "severity": 3, 
-        "severity_value": 5.666666666666666, 
+        "severity_value": 5.722222222222221, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  Metric id: ari\n  Percentage missing: 57%\n"
     }, 
@@ -293,9 +283,9 @@
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Metric 'nmi' %missing", 
-        "value": 0.5666666666666667, 
+        "value": 0.5722222222222222, 
         "severity": 3, 
-        "severity_value": 5.666666666666666, 
+        "severity_value": 5.722222222222221, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  Metric id: nmi\n  Percentage missing: 57%\n"
     }, 
@@ -303,9 +293,9 @@
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Metric 'graph_connectivity' %missing", 
-        "value": 0.4833333333333333, 
+        "value": 0.47777777777777775, 
         "severity": 3, 
-        "severity_value": 4.833333333333332, 
+        "severity_value": 4.777777777777777, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  Metric id: graph_connectivity\n  Percentage missing: 48%\n"
     }, 
@@ -313,19 +303,19 @@
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Metric 'hvg_overlap' %missing", 
-        "value": 0.9166666666666666, 
+        "value": 0.9111111111111111, 
         "severity": 3, 
-        "severity_value": 9.166666666666666, 
+        "severity_value": 9.11111111111111, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  Metric id: hvg_overlap\n  Percentage missing: 92%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  Metric id: hvg_overlap\n  Percentage missing: 91%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Metric 'isolated_label_asw' %missing", 
-        "value": 0.5611111111111111, 
+        "value": 0.5555555555555556, 
         "severity": 3, 
-        "severity_value": 5.611111111111111, 
+        "severity_value": 5.555555555555555, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  Metric id: isolated_label_asw\n  Percentage missing: 56%\n"
     }, 
@@ -353,9 +343,9 @@
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Metric 'pcr' %missing", 
-        "value": 0.6111111111111112, 
+        "value": 0.6055555555555556, 
         "severity": 3, 
-        "severity_value": 6.111111111111112, 
+        "severity_value": 6.055555555555556, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  Metric id: pcr\n  Percentage missing: 61%\n"
     }, 
@@ -363,51 +353,51 @@
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Method 'bbknn' %missing", 
-        "value": 0.8363636363636364, 
+        "value": 0.8200000000000001, 
         "severity": 3, 
-        "severity_value": 8.363636363636363, 
+        "severity_value": 8.2, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: bbknn\n  Percentage missing: 84%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: bbknn\n  Percentage missing: 82%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Method 'combat' %missing", 
-        "value": 0.6363636363636364, 
+        "value": 0.62, 
         "severity": 3, 
-        "severity_value": 6.363636363636363, 
+        "severity_value": 6.199999999999999, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: combat\n  Percentage missing: 64%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: combat\n  Percentage missing: 62%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Method 'fastmnn_embedding' %missing", 
-        "value": 0.2909090909090909, 
+        "value": 0.28, 
         "severity": 2, 
-        "severity_value": 2.9090909090909087, 
+        "severity_value": 2.8000000000000003, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: fastmnn_embedding\n  Percentage missing: 29%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: fastmnn_embedding\n  Percentage missing: 28%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Method 'fastmnn_feature' %missing", 
-        "value": 0.6363636363636364, 
+        "value": 0.62, 
         "severity": 3, 
-        "severity_value": 6.363636363636363, 
+        "severity_value": 6.199999999999999, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: fastmnn_feature\n  Percentage missing: 64%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: fastmnn_feature\n  Percentage missing: 62%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Method 'liger' %missing", 
-        "value": 0.7363636363636363, 
+        "value": 0.73, 
         "severity": 3, 
-        "severity_value": 7.363636363636363, 
+        "severity_value": 7.3, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: liger\n  Percentage missing: 74%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: liger\n  Percentage missing: 73%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -423,221 +413,221 @@
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Method 'mnnpy' %missing", 
-        "value": 0.9, 
+        "value": 0.8, 
         "severity": 3, 
-        "severity_value": 9.0, 
+        "severity_value": 8.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: mnnpy\n  Percentage missing: 90%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: mnnpy\n  Percentage missing: 80%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Method 'pyliger' %missing", 
-        "value": 0.5727272727272728, 
+        "value": 0.55, 
         "severity": 3, 
-        "severity_value": 5.7272727272727275, 
+        "severity_value": 5.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: pyliger\n  Percentage missing: 57%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: pyliger\n  Percentage missing: 55%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Method 'scalex_embed' %missing", 
-        "value": 0.6636363636363636, 
+        "value": 0.73, 
         "severity": 3, 
-        "severity_value": 6.636363636363636, 
+        "severity_value": 7.3, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: scalex_embed\n  Percentage missing: 66%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: scalex_embed\n  Percentage missing: 73%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Method 'scalex_feature' %missing", 
-        "value": 0.7181818181818183, 
+        "value": 0.71, 
         "severity": 3, 
-        "severity_value": 7.1818181818181825, 
+        "severity_value": 7.1, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: scalex_feature\n  Percentage missing: 72%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: scalex_feature\n  Percentage missing: 71%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Method 'scanorama_embed' %missing", 
-        "value": 0.7363636363636363, 
+        "value": 0.73, 
         "severity": 3, 
-        "severity_value": 7.363636363636363, 
+        "severity_value": 7.3, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: scanorama_embed\n  Percentage missing: 74%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: scanorama_embed\n  Percentage missing: 73%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Method 'scanorama_feature' %missing", 
-        "value": 0.709090909090909, 
+        "value": 0.7, 
         "severity": 3, 
-        "severity_value": 7.09090909090909, 
+        "severity_value": 6.999999999999999, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: scanorama_feature\n  Percentage missing: 71%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: scanorama_feature\n  Percentage missing: 70%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Method 'scanvi' %missing", 
-        "value": 0.5727272727272728, 
+        "value": 0.55, 
         "severity": 3, 
-        "severity_value": 5.7272727272727275, 
+        "severity_value": 5.5, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: scanvi\n  Percentage missing: 57%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: scanvi\n  Percentage missing: 55%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Method 'scvi' %missing", 
-        "value": 0.3727272727272727, 
-        "severity": 3, 
-        "severity_value": 3.7272727272727266, 
+        "value": 0.27, 
+        "severity": 2, 
+        "severity_value": 2.7, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: scvi\n  Percentage missing: 37%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: scvi\n  Percentage missing: 27%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Method 'no_integration_batch' %missing", 
-        "value": 0.4545454545454546, 
+        "value": 0.4, 
         "severity": 3, 
-        "severity_value": 4.545454545454546, 
+        "severity_value": 4.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: no_integration_batch\n  Percentage missing: 45%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: no_integration_batch\n  Percentage missing: 40%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Method 'random_embed_cell' %missing", 
-        "value": 0.28181818181818175, 
+        "value": 0.22999999999999998, 
         "severity": 2, 
-        "severity_value": 2.8181818181818175, 
+        "severity_value": 2.3, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: random_embed_cell\n  Percentage missing: 28%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: random_embed_cell\n  Percentage missing: 23%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Method 'random_embed_cell_jitter' %missing", 
-        "value": 0.32727272727272727, 
-        "severity": 3, 
-        "severity_value": 3.2727272727272725, 
+        "value": 0.28, 
+        "severity": 2, 
+        "severity_value": 2.8000000000000003, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: random_embed_cell_jitter\n  Percentage missing: 33%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: random_embed_cell_jitter\n  Percentage missing: 28%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Method 'random_integration' %missing", 
-        "value": 0.8545454545454545, 
+        "value": 0.84, 
         "severity": 3, 
-        "severity_value": 8.545454545454545, 
+        "severity_value": 8.399999999999999, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: random_integration\n  Percentage missing: 85%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  method id: random_integration\n  Percentage missing: 84%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
-        "name": "Dataset 'cellxgene_census/dkd' %missing", 
-        "value": 0.5606060606060606, 
-        "severity": 3, 
-        "severity_value": 5.6060606060606055, 
+        "name": "Dataset 'openproblems_v1/immune_cells' %missing", 
+        "value": 0.18333333333333335, 
+        "severity": 1, 
+        "severity_value": 1.8333333333333335, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: cellxgene_census/dkd\n  Percentage missing: 56%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: openproblems_v1/immune_cells\n  Percentage missing: 18%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/zebrafish' %missing", 
-        "value": 0.3282828282828283, 
-        "severity": 3, 
-        "severity_value": 3.282828282828283, 
+        "name": "Dataset 'openproblems_v1/pancreas' %missing", 
+        "value": 0.18333333333333335, 
+        "severity": 1, 
+        "severity_value": 1.8333333333333335, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: openproblems_v1/zebrafish\n  Percentage missing: 33%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: openproblems_v1/pancreas\n  Percentage missing: 18%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
-        "name": "Dataset 'cellxgene_census/tabula_sapiens' %missing", 
-        "value": 0.9545454545454546, 
+        "name": "Dataset 'openproblems_v1/cengen' %missing", 
+        "value": 0.6, 
         "severity": 3, 
-        "severity_value": 9.545454545454545, 
+        "severity_value": 5.999999999999999, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: cellxgene_census/tabula_sapiens\n  Percentage missing: 95%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: openproblems_v1/cengen\n  Percentage missing: 60%\n"
+    }, 
+    {
+        "task_id": "batch_integration", 
+        "category": "Raw results", 
+        "name": "Dataset 'cellxgene_census/gtex_v9' %missing", 
+        "value": 0.7666666666666666, 
+        "severity": 3, 
+        "severity_value": 7.666666666666666, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: cellxgene_census/gtex_v9\n  Percentage missing: 77%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
         "name": "Dataset 'cellxgene_census/mouse_pancreas_atlas' %missing", 
-        "value": 0.8585858585858586, 
+        "value": 0.8555555555555555, 
         "severity": 3, 
-        "severity_value": 8.585858585858585, 
+        "severity_value": 8.555555555555555, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: cellxgene_census/mouse_pancreas_atlas\n  Percentage missing: 86%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Raw results", 
-        "name": "Dataset 'cellxgene_census/immune_cell_atlas' %missing", 
-        "value": 0.8282828282828283, 
-        "severity": 3, 
-        "severity_value": 8.282828282828282, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: cellxgene_census/immune_cell_atlas\n  Percentage missing: 83%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/immune_cells' %missing", 
-        "value": 0.24242424242424243, 
-        "severity": 2, 
-        "severity_value": 2.4242424242424243, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: openproblems_v1/immune_cells\n  Percentage missing: 24%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/pancreas' %missing", 
-        "value": 0.18686868686868685, 
-        "severity": 1, 
-        "severity_value": 1.8686868686868685, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: openproblems_v1/pancreas\n  Percentage missing: 19%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Raw results", 
-        "name": "Dataset 'cellxgene_census/gtex_v9' %missing", 
-        "value": 0.7878787878787878, 
-        "severity": 3, 
-        "severity_value": 7.878787878787878, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: cellxgene_census/gtex_v9\n  Percentage missing: 79%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/cengen' %missing", 
-        "value": 0.6363636363636364, 
-        "severity": 3, 
-        "severity_value": 6.363636363636363, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: openproblems_v1/cengen\n  Percentage missing: 64%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Raw results", 
         "name": "Dataset 'cellxgene_census/hypomap' %missing", 
-        "value": 0.8939393939393939, 
+        "value": 0.8555555555555555, 
         "severity": 3, 
-        "severity_value": 8.93939393939394, 
+        "severity_value": 8.555555555555555, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: cellxgene_census/hypomap\n  Percentage missing: 89%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: cellxgene_census/hypomap\n  Percentage missing: 86%\n"
+    }, 
+    {
+        "task_id": "batch_integration", 
+        "category": "Raw results", 
+        "name": "Dataset 'cellxgene_census/immune_cell_atlas' %missing", 
+        "value": 0.8166666666666667, 
+        "severity": 3, 
+        "severity_value": 8.166666666666666, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: cellxgene_census/immune_cell_atlas\n  Percentage missing: 82%\n"
+    }, 
+    {
+        "task_id": "batch_integration", 
+        "category": "Raw results", 
+        "name": "Dataset 'cellxgene_census/tabula_sapiens' %missing", 
+        "value": 0.95, 
+        "severity": 3, 
+        "severity_value": 9.499999999999998, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: cellxgene_census/tabula_sapiens\n  Percentage missing: 95%\n"
+    }, 
+    {
+        "task_id": "batch_integration", 
+        "category": "Raw results", 
+        "name": "Dataset 'openproblems_v1/zebrafish' %missing", 
+        "value": 0.3055555555555556, 
+        "severity": 3, 
+        "severity_value": 3.055555555555556, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: openproblems_v1/zebrafish\n  Percentage missing: 31%\n"
+    }, 
+    {
+        "task_id": "batch_integration", 
+        "category": "Raw results", 
+        "name": "Dataset 'cellxgene_census/dkd' %missing", 
+        "value": 0.5166666666666667, 
+        "severity": 3, 
+        "severity_value": 5.166666666666667, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: batch_integration\n  dataset id: cellxgene_census/dkd\n  Percentage missing: 52%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -693,11 +683,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embedding asw_batch", 
-        "value": 0.6255, 
+        "value": 0.6254, 
         "severity": 0, 
-        "severity_value": 0.31275, 
+        "severity_value": 0.3127, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embedding performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: asw_batch\n  Best score: 0.6255%\n"
+        "message": "Method fastmnn_embedding performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: asw_batch\n  Best score: 0.6254%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -713,11 +703,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature asw_batch", 
-        "value": 0.4803, 
+        "value": 0.4798, 
         "severity": 0, 
-        "severity_value": 0.24015, 
+        "severity_value": 0.2399, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: asw_batch\n  Best score: 0.4803%\n"
+        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: asw_batch\n  Best score: 0.4798%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -773,11 +763,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score mnnpy asw_batch", 
-        "value": 0.1846, 
+        "value": 0.5784, 
         "severity": 0, 
-        "severity_value": 0.0923, 
+        "severity_value": 0.2892, 
         "code": "best_score <= 2", 
-        "message": "Method mnnpy performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: mnnpy\n  Metric id: asw_batch\n  Best score: 0.1846%\n"
+        "message": "Method mnnpy performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: mnnpy\n  Metric id: asw_batch\n  Best score: 0.5784%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -793,11 +783,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score pyliger asw_batch", 
-        "value": 0.2366, 
+        "value": 0.2229, 
         "severity": 0, 
-        "severity_value": 0.1183, 
+        "severity_value": 0.11145, 
         "code": "best_score <= 2", 
-        "message": "Method pyliger performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: pyliger\n  Metric id: asw_batch\n  Best score: 0.2366%\n"
+        "message": "Method pyliger performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: pyliger\n  Metric id: asw_batch\n  Best score: 0.2229%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -813,11 +803,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scalex_embed asw_batch", 
-        "value": 0.1515, 
+        "value": 0.214, 
         "severity": 0, 
-        "severity_value": 0.07575, 
+        "severity_value": 0.107, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_embed\n  Metric id: asw_batch\n  Best score: 0.1515%\n"
+        "message": "Method scalex_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_embed\n  Metric id: asw_batch\n  Best score: 0.214%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -833,11 +823,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scalex_feature asw_batch", 
-        "value": 0.4012, 
+        "value": 0.3621, 
         "severity": 0, 
-        "severity_value": 0.2006, 
+        "severity_value": 0.18105, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_feature\n  Metric id: asw_batch\n  Best score: 0.4012%\n"
+        "message": "Method scalex_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_feature\n  Metric id: asw_batch\n  Best score: 0.3621%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -893,11 +883,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanvi asw_batch", 
-        "value": 0.5711, 
+        "value": 0.5785, 
         "severity": 0, 
-        "severity_value": 0.28555, 
+        "severity_value": 0.28925, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: asw_batch\n  Best score: 0.5711%\n"
+        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: asw_batch\n  Best score: 0.5785%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -913,11 +903,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scvi asw_batch", 
-        "value": 0.6092, 
+        "value": 0.6062, 
         "severity": 0, 
-        "severity_value": 0.3046, 
+        "severity_value": 0.3031, 
         "code": "best_score <= 2", 
-        "message": "Method scvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scvi\n  Metric id: asw_batch\n  Best score: 0.6092%\n"
+        "message": "Method scvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scvi\n  Metric id: asw_batch\n  Best score: 0.6062%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -973,11 +963,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score random_embed_cell_jitter asw_batch", 
-        "value": 0.9723, 
+        "value": 0.9597, 
         "severity": 0, 
-        "severity_value": 0.48615, 
+        "severity_value": 0.47985, 
         "code": "best_score <= 2", 
-        "message": "Method random_embed_cell_jitter performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_embed_cell_jitter\n  Metric id: asw_batch\n  Best score: 0.9723%\n"
+        "message": "Method random_embed_cell_jitter performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_embed_cell_jitter\n  Metric id: asw_batch\n  Best score: 0.9597%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -1053,11 +1043,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embedding asw_label", 
-        "value": 0.3408, 
+        "value": 0.3394, 
         "severity": 0, 
-        "severity_value": 0.1704, 
+        "severity_value": 0.1697, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embedding performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: asw_label\n  Best score: 0.3408%\n"
+        "message": "Method fastmnn_embedding performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: asw_label\n  Best score: 0.3394%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -1073,11 +1063,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature asw_label", 
-        "value": 0.2909, 
+        "value": 0.2908, 
         "severity": 0, 
-        "severity_value": 0.14545, 
+        "severity_value": 0.1454, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: asw_label\n  Best score: 0.2909%\n"
+        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: asw_label\n  Best score: 0.2908%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -1173,11 +1163,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scalex_embed asw_label", 
-        "value": 0.0852, 
+        "value": 0.0819, 
         "severity": 0, 
-        "severity_value": 0.0426, 
+        "severity_value": 0.04095, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_embed\n  Metric id: asw_label\n  Best score: 0.0852%\n"
+        "message": "Method scalex_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_embed\n  Metric id: asw_label\n  Best score: 0.0819%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -1213,11 +1203,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanorama_embed asw_label", 
-        "value": 0.1433, 
+        "value": 0.0859, 
         "severity": 0, 
-        "severity_value": 0.07165, 
+        "severity_value": 0.04295, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_embed\n  Metric id: asw_label\n  Best score: 0.1433%\n"
+        "message": "Method scanorama_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_embed\n  Metric id: asw_label\n  Best score: 0.0859%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -1233,11 +1223,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanorama_feature asw_label", 
-        "value": 0.1374, 
+        "value": 0.0796, 
         "severity": 0, 
-        "severity_value": 0.0687, 
+        "severity_value": 0.0398, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_feature\n  Metric id: asw_label\n  Best score: 0.1374%\n"
+        "message": "Method scanorama_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_feature\n  Metric id: asw_label\n  Best score: 0.0796%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -1253,11 +1243,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanvi asw_label", 
-        "value": 0.4185, 
+        "value": 0.4269, 
         "severity": 0, 
-        "severity_value": 0.20925, 
+        "severity_value": 0.21345, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: asw_label\n  Best score: 0.4185%\n"
+        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: asw_label\n  Best score: 0.4269%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -1273,11 +1263,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scvi asw_label", 
-        "value": 0.3938, 
+        "value": 0.3982, 
         "severity": 0, 
-        "severity_value": 0.1969, 
+        "severity_value": 0.1991, 
         "code": "best_score <= 2", 
-        "message": "Method scvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scvi\n  Metric id: asw_label\n  Best score: 0.3938%\n"
+        "message": "Method scvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scvi\n  Metric id: asw_label\n  Best score: 0.3982%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -1293,11 +1283,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score no_integration_batch asw_label", 
-        "value": 0.2636, 
+        "value": 0.2621, 
         "severity": 0, 
-        "severity_value": 0.1318, 
+        "severity_value": 0.13105, 
         "code": "best_score <= 2", 
-        "message": "Method no_integration_batch performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: no_integration_batch\n  Metric id: asw_label\n  Best score: 0.2636%\n"
+        "message": "Method no_integration_batch performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: no_integration_batch\n  Metric id: asw_label\n  Best score: 0.2621%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -1362,366 +1352,6 @@
     {
         "task_id": "batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score bbknn cell_cycle_conservation", 
-        "value": 0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method bbknn performs much worse than baselines.\n  Task id: batch_integration\n  Method id: bbknn\n  Metric id: cell_cycle_conservation\n  Worst score: 0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score bbknn cell_cycle_conservation", 
-        "value": 0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
-        "code": "best_score <= 2", 
-        "message": "Method bbknn performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: bbknn\n  Metric id: cell_cycle_conservation\n  Best score: 0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score combat cell_cycle_conservation", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method combat performs much worse than baselines.\n  Task id: batch_integration\n  Method id: combat\n  Metric id: cell_cycle_conservation\n  Worst score: 0.0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score combat cell_cycle_conservation", 
-        "value": 1.0, 
-        "severity": 0, 
-        "severity_value": 0.5, 
-        "code": "best_score <= 2", 
-        "message": "Method combat performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: combat\n  Metric id: cell_cycle_conservation\n  Best score: 1.0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score fastmnn_embedding cell_cycle_conservation", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method fastmnn_embedding performs much worse than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: cell_cycle_conservation\n  Worst score: 0.0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score fastmnn_embedding cell_cycle_conservation", 
-        "value": 0.9565, 
-        "severity": 0, 
-        "severity_value": 0.47825, 
-        "code": "best_score <= 2", 
-        "message": "Method fastmnn_embedding performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: cell_cycle_conservation\n  Best score: 0.9565%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score fastmnn_feature cell_cycle_conservation", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method fastmnn_feature performs much worse than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: cell_cycle_conservation\n  Worst score: 0.0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score fastmnn_feature cell_cycle_conservation", 
-        "value": 0.9564, 
-        "severity": 0, 
-        "severity_value": 0.4782, 
-        "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: cell_cycle_conservation\n  Best score: 0.9564%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score liger cell_cycle_conservation", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method liger performs much worse than baselines.\n  Task id: batch_integration\n  Method id: liger\n  Metric id: cell_cycle_conservation\n  Worst score: 0.0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score liger cell_cycle_conservation", 
-        "value": 1.0, 
-        "severity": 0, 
-        "severity_value": 0.5, 
-        "code": "best_score <= 2", 
-        "message": "Method liger performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: liger\n  Metric id: cell_cycle_conservation\n  Best score: 1.0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score mnn_correct cell_cycle_conservation", 
-        "value": 0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method mnn_correct performs much worse than baselines.\n  Task id: batch_integration\n  Method id: mnn_correct\n  Metric id: cell_cycle_conservation\n  Worst score: 0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score mnn_correct cell_cycle_conservation", 
-        "value": 0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
-        "code": "best_score <= 2", 
-        "message": "Method mnn_correct performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: mnn_correct\n  Metric id: cell_cycle_conservation\n  Best score: 0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score mnnpy cell_cycle_conservation", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method mnnpy performs much worse than baselines.\n  Task id: batch_integration\n  Method id: mnnpy\n  Metric id: cell_cycle_conservation\n  Worst score: 0.0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score mnnpy cell_cycle_conservation", 
-        "value": 0.1668, 
-        "severity": 0, 
-        "severity_value": 0.0834, 
-        "code": "best_score <= 2", 
-        "message": "Method mnnpy performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: mnnpy\n  Metric id: cell_cycle_conservation\n  Best score: 0.1668%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score pyliger cell_cycle_conservation", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method pyliger performs much worse than baselines.\n  Task id: batch_integration\n  Method id: pyliger\n  Metric id: cell_cycle_conservation\n  Worst score: 0.0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score pyliger cell_cycle_conservation", 
-        "value": 0.7824, 
-        "severity": 0, 
-        "severity_value": 0.3912, 
-        "code": "best_score <= 2", 
-        "message": "Method pyliger performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: pyliger\n  Metric id: cell_cycle_conservation\n  Best score: 0.7824%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score scalex_embed cell_cycle_conservation", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method scalex_embed performs much worse than baselines.\n  Task id: batch_integration\n  Method id: scalex_embed\n  Metric id: cell_cycle_conservation\n  Worst score: 0.0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score scalex_embed cell_cycle_conservation", 
-        "value": 0.447, 
-        "severity": 0, 
-        "severity_value": 0.2235, 
-        "code": "best_score <= 2", 
-        "message": "Method scalex_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_embed\n  Metric id: cell_cycle_conservation\n  Best score: 0.447%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score scalex_feature cell_cycle_conservation", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method scalex_feature performs much worse than baselines.\n  Task id: batch_integration\n  Method id: scalex_feature\n  Metric id: cell_cycle_conservation\n  Worst score: 0.0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score scalex_feature cell_cycle_conservation", 
-        "value": 0.5289, 
-        "severity": 0, 
-        "severity_value": 0.26445, 
-        "code": "best_score <= 2", 
-        "message": "Method scalex_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_feature\n  Metric id: cell_cycle_conservation\n  Best score: 0.5289%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score scanorama_embed cell_cycle_conservation", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method scanorama_embed performs much worse than baselines.\n  Task id: batch_integration\n  Method id: scanorama_embed\n  Metric id: cell_cycle_conservation\n  Worst score: 0.0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score scanorama_embed cell_cycle_conservation", 
-        "value": 0.2812, 
-        "severity": 0, 
-        "severity_value": 0.1406, 
-        "code": "best_score <= 2", 
-        "message": "Method scanorama_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_embed\n  Metric id: cell_cycle_conservation\n  Best score: 0.2812%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score scanorama_feature cell_cycle_conservation", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method scanorama_feature performs much worse than baselines.\n  Task id: batch_integration\n  Method id: scanorama_feature\n  Metric id: cell_cycle_conservation\n  Worst score: 0.0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score scanorama_feature cell_cycle_conservation", 
-        "value": 0.2661, 
-        "severity": 0, 
-        "severity_value": 0.13305, 
-        "code": "best_score <= 2", 
-        "message": "Method scanorama_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_feature\n  Metric id: cell_cycle_conservation\n  Best score: 0.2661%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score scanvi cell_cycle_conservation", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method scanvi performs much worse than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: cell_cycle_conservation\n  Worst score: 0.0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score scanvi cell_cycle_conservation", 
-        "value": 0.8631, 
-        "severity": 0, 
-        "severity_value": 0.43155, 
-        "code": "best_score <= 2", 
-        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: cell_cycle_conservation\n  Best score: 0.8631%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score scvi cell_cycle_conservation", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method scvi performs much worse than baselines.\n  Task id: batch_integration\n  Method id: scvi\n  Metric id: cell_cycle_conservation\n  Worst score: 0.0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score scvi cell_cycle_conservation", 
-        "value": 0.7388, 
-        "severity": 0, 
-        "severity_value": 0.3694, 
-        "code": "best_score <= 2", 
-        "message": "Method scvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scvi\n  Metric id: cell_cycle_conservation\n  Best score: 0.7388%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score no_integration_batch cell_cycle_conservation", 
-        "value": 0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method no_integration_batch performs much worse than baselines.\n  Task id: batch_integration\n  Method id: no_integration_batch\n  Metric id: cell_cycle_conservation\n  Worst score: 0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score no_integration_batch cell_cycle_conservation", 
-        "value": 0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
-        "code": "best_score <= 2", 
-        "message": "Method no_integration_batch performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: no_integration_batch\n  Metric id: cell_cycle_conservation\n  Best score: 0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score random_embed_cell cell_cycle_conservation", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method random_embed_cell performs much worse than baselines.\n  Task id: batch_integration\n  Method id: random_embed_cell\n  Metric id: cell_cycle_conservation\n  Worst score: 0.0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score random_embed_cell cell_cycle_conservation", 
-        "value": 0.7386, 
-        "severity": 0, 
-        "severity_value": 0.3693, 
-        "code": "best_score <= 2", 
-        "message": "Method random_embed_cell performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_embed_cell\n  Metric id: cell_cycle_conservation\n  Best score: 0.7386%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score random_embed_cell_jitter cell_cycle_conservation", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method random_embed_cell_jitter performs much worse than baselines.\n  Task id: batch_integration\n  Method id: random_embed_cell_jitter\n  Metric id: cell_cycle_conservation\n  Worst score: 0.0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score random_embed_cell_jitter cell_cycle_conservation", 
-        "value": 0.739, 
-        "severity": 0, 
-        "severity_value": 0.3695, 
-        "code": "best_score <= 2", 
-        "message": "Method random_embed_cell_jitter performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_embed_cell_jitter\n  Metric id: cell_cycle_conservation\n  Best score: 0.739%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score random_integration cell_cycle_conservation", 
-        "value": 0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method random_integration performs much worse than baselines.\n  Task id: batch_integration\n  Method id: random_integration\n  Metric id: cell_cycle_conservation\n  Worst score: 0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score random_integration cell_cycle_conservation", 
-        "value": 0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
-        "code": "best_score <= 2", 
-        "message": "Method random_integration performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_integration\n  Metric id: cell_cycle_conservation\n  Best score: 0%\n"
-    }, 
-    {
-        "task_id": "batch_integration", 
-        "category": "Scaling", 
         "name": "Worst score bbknn ari", 
         "value": 0.0, 
         "severity": 0, 
@@ -1733,11 +1363,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score bbknn ari", 
-        "value": 0.9453, 
+        "value": 0.9454, 
         "severity": 0, 
-        "severity_value": 0.47265, 
+        "severity_value": 0.4727, 
         "code": "best_score <= 2", 
-        "message": "Method bbknn performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: bbknn\n  Metric id: ari\n  Best score: 0.9453%\n"
+        "message": "Method bbknn performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: bbknn\n  Metric id: ari\n  Best score: 0.9454%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -1773,11 +1403,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embedding ari", 
-        "value": 0.8639, 
+        "value": 0.8641, 
         "severity": 0, 
-        "severity_value": 0.43195, 
+        "severity_value": 0.43205, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embedding performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: ari\n  Best score: 0.8639%\n"
+        "message": "Method fastmnn_embedding performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: ari\n  Best score: 0.8641%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -1793,11 +1423,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature ari", 
-        "value": 0.8614, 
+        "value": 0.8593, 
         "severity": 0, 
-        "severity_value": 0.4307, 
+        "severity_value": 0.42965, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: ari\n  Best score: 0.8614%\n"
+        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: ari\n  Best score: 0.8593%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -1853,11 +1483,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score mnnpy ari", 
-        "value": 0.0298, 
+        "value": 0.0406, 
         "severity": 0, 
-        "severity_value": 0.0149, 
+        "severity_value": 0.0203, 
         "code": "best_score <= 2", 
-        "message": "Method mnnpy performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: mnnpy\n  Metric id: ari\n  Best score: 0.0298%\n"
+        "message": "Method mnnpy performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: mnnpy\n  Metric id: ari\n  Best score: 0.0406%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -1893,11 +1523,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scalex_embed ari", 
-        "value": 0.3101, 
+        "value": 0.3102, 
         "severity": 0, 
-        "severity_value": 0.15505, 
+        "severity_value": 0.1551, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_embed\n  Metric id: ari\n  Best score: 0.3101%\n"
+        "message": "Method scalex_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_embed\n  Metric id: ari\n  Best score: 0.3102%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -1913,11 +1543,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scalex_feature ari", 
-        "value": 0.4115, 
+        "value": 0.3238, 
         "severity": 0, 
-        "severity_value": 0.20575, 
+        "severity_value": 0.1619, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_feature\n  Metric id: ari\n  Best score: 0.4115%\n"
+        "message": "Method scalex_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_feature\n  Metric id: ari\n  Best score: 0.3238%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -1933,11 +1563,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanorama_embed ari", 
-        "value": 0.0958, 
+        "value": 0.0956, 
         "severity": 0, 
-        "severity_value": 0.0479, 
+        "severity_value": 0.0478, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_embed\n  Metric id: ari\n  Best score: 0.0958%\n"
+        "message": "Method scanorama_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_embed\n  Metric id: ari\n  Best score: 0.0956%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -1953,11 +1583,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanorama_feature ari", 
-        "value": 0.0846, 
+        "value": 0.0848, 
         "severity": 0, 
-        "severity_value": 0.0423, 
+        "severity_value": 0.0424, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_feature\n  Metric id: ari\n  Best score: 0.0846%\n"
+        "message": "Method scanorama_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_feature\n  Metric id: ari\n  Best score: 0.0848%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -1973,11 +1603,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanvi ari", 
-        "value": 0.9493, 
+        "value": 0.9536, 
         "severity": 0, 
-        "severity_value": 0.47465, 
+        "severity_value": 0.4768, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: ari\n  Best score: 0.9493%\n"
+        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: ari\n  Best score: 0.9536%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -1993,11 +1623,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scvi ari", 
-        "value": 0.948, 
+        "value": 0.9388, 
         "severity": 0, 
-        "severity_value": 0.474, 
+        "severity_value": 0.4694, 
         "code": "best_score <= 2", 
-        "message": "Method scvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scvi\n  Metric id: ari\n  Best score: 0.948%\n"
+        "message": "Method scvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scvi\n  Metric id: ari\n  Best score: 0.9388%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2013,11 +1643,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score no_integration_batch ari", 
-        "value": 0.0001, 
+        "value": 0.0004, 
         "severity": 0, 
-        "severity_value": 5e-05, 
+        "severity_value": 0.0002, 
         "code": "best_score <= 2", 
-        "message": "Method no_integration_batch performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: no_integration_batch\n  Metric id: ari\n  Best score: 0.0001%\n"
+        "message": "Method no_integration_batch performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: no_integration_batch\n  Metric id: ari\n  Best score: 0.0004%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2033,11 +1663,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score random_embed_cell ari", 
-        "value": 1.0, 
+        "value": 0.9999, 
         "severity": 0, 
-        "severity_value": 0.5, 
+        "severity_value": 0.49995, 
         "code": "best_score <= 2", 
-        "message": "Method random_embed_cell performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_embed_cell\n  Metric id: ari\n  Best score: 1.0%\n"
+        "message": "Method random_embed_cell performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_embed_cell\n  Metric id: ari\n  Best score: 0.9999%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2063,21 +1693,21 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Worst score random_integration ari", 
-        "value": 0.0, 
+        "value": 0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method random_integration performs much worse than baselines.\n  Task id: batch_integration\n  Method id: random_integration\n  Metric id: ari\n  Worst score: 0.0%\n"
+        "message": "Method random_integration performs much worse than baselines.\n  Task id: batch_integration\n  Method id: random_integration\n  Metric id: ari\n  Worst score: 0%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score random_integration ari", 
-        "value": 0.0001, 
+        "value": 0, 
         "severity": 0, 
-        "severity_value": 5e-05, 
+        "severity_value": 0.0, 
         "code": "best_score <= 2", 
-        "message": "Method random_integration performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_integration\n  Metric id: ari\n  Best score: 0.0001%\n"
+        "message": "Method random_integration performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_integration\n  Metric id: ari\n  Best score: 0%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2093,11 +1723,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score bbknn nmi", 
-        "value": 0.901, 
+        "value": 0.9009, 
         "severity": 0, 
-        "severity_value": 0.4505, 
+        "severity_value": 0.45045, 
         "code": "best_score <= 2", 
-        "message": "Method bbknn performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: bbknn\n  Metric id: nmi\n  Best score: 0.901%\n"
+        "message": "Method bbknn performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: bbknn\n  Metric id: nmi\n  Best score: 0.9009%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2113,11 +1743,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score combat nmi", 
-        "value": 0.8358, 
+        "value": 0.8353, 
         "severity": 0, 
-        "severity_value": 0.4179, 
+        "severity_value": 0.41765, 
         "code": "best_score <= 2", 
-        "message": "Method combat performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: combat\n  Metric id: nmi\n  Best score: 0.8358%\n"
+        "message": "Method combat performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: combat\n  Metric id: nmi\n  Best score: 0.8353%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2133,11 +1763,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embedding nmi", 
-        "value": 0.8709, 
+        "value": 0.87, 
         "severity": 0, 
-        "severity_value": 0.43545, 
+        "severity_value": 0.435, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embedding performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: nmi\n  Best score: 0.8709%\n"
+        "message": "Method fastmnn_embedding performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: nmi\n  Best score: 0.87%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2153,11 +1783,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature nmi", 
-        "value": 0.8673, 
+        "value": 0.8676, 
         "severity": 0, 
-        "severity_value": 0.43365, 
+        "severity_value": 0.4338, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: nmi\n  Best score: 0.8673%\n"
+        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: nmi\n  Best score: 0.8676%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2173,11 +1803,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score liger nmi", 
-        "value": 0.7452, 
+        "value": 0.745, 
         "severity": 0, 
-        "severity_value": 0.3726, 
+        "severity_value": 0.3725, 
         "code": "best_score <= 2", 
-        "message": "Method liger performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: liger\n  Metric id: nmi\n  Best score: 0.7452%\n"
+        "message": "Method liger performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: liger\n  Metric id: nmi\n  Best score: 0.745%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2213,11 +1843,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score mnnpy nmi", 
-        "value": 0.1563, 
+        "value": 0.1918, 
         "severity": 0, 
-        "severity_value": 0.07815, 
+        "severity_value": 0.0959, 
         "code": "best_score <= 2", 
-        "message": "Method mnnpy performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: mnnpy\n  Metric id: nmi\n  Best score: 0.1563%\n"
+        "message": "Method mnnpy performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: mnnpy\n  Metric id: nmi\n  Best score: 0.1918%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2253,11 +1883,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scalex_embed nmi", 
-        "value": 0.4639, 
+        "value": 0.464, 
         "severity": 0, 
-        "severity_value": 0.23195, 
+        "severity_value": 0.232, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_embed\n  Metric id: nmi\n  Best score: 0.4639%\n"
+        "message": "Method scalex_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_embed\n  Metric id: nmi\n  Best score: 0.464%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2273,11 +1903,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scalex_feature nmi", 
-        "value": 0.4778, 
+        "value": 0.4788, 
         "severity": 0, 
-        "severity_value": 0.2389, 
+        "severity_value": 0.2394, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_feature\n  Metric id: nmi\n  Best score: 0.4778%\n"
+        "message": "Method scalex_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_feature\n  Metric id: nmi\n  Best score: 0.4788%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2293,11 +1923,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanorama_embed nmi", 
-        "value": 0.1613, 
+        "value": 0.1621, 
         "severity": 0, 
-        "severity_value": 0.08065, 
+        "severity_value": 0.08105, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_embed\n  Metric id: nmi\n  Best score: 0.1613%\n"
+        "message": "Method scanorama_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_embed\n  Metric id: nmi\n  Best score: 0.1621%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2313,11 +1943,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanorama_feature nmi", 
-        "value": 0.1592, 
+        "value": 0.1595, 
         "severity": 0, 
-        "severity_value": 0.0796, 
+        "severity_value": 0.07975, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_feature\n  Metric id: nmi\n  Best score: 0.1592%\n"
+        "message": "Method scanorama_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_feature\n  Metric id: nmi\n  Best score: 0.1595%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2333,11 +1963,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanvi nmi", 
-        "value": 0.9149, 
+        "value": 0.9212, 
         "severity": 0, 
-        "severity_value": 0.45745, 
+        "severity_value": 0.4606, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: nmi\n  Best score: 0.9149%\n"
+        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: nmi\n  Best score: 0.9212%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2353,11 +1983,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scvi nmi", 
-        "value": 0.9138, 
+        "value": 0.9002, 
         "severity": 0, 
-        "severity_value": 0.4569, 
+        "severity_value": 0.4501, 
         "code": "best_score <= 2", 
-        "message": "Method scvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scvi\n  Metric id: nmi\n  Best score: 0.9138%\n"
+        "message": "Method scvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scvi\n  Metric id: nmi\n  Best score: 0.9002%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2373,11 +2003,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score no_integration_batch nmi", 
-        "value": 0.019, 
+        "value": 0.0186, 
         "severity": 0, 
-        "severity_value": 0.0095, 
+        "severity_value": 0.0093, 
         "code": "best_score <= 2", 
-        "message": "Method no_integration_batch performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: no_integration_batch\n  Metric id: nmi\n  Best score: 0.019%\n"
+        "message": "Method no_integration_batch performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: no_integration_batch\n  Metric id: nmi\n  Best score: 0.0186%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2393,11 +2023,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score random_embed_cell nmi", 
-        "value": 1.0, 
+        "value": 0.9998, 
         "severity": 0, 
-        "severity_value": 0.5, 
+        "severity_value": 0.4999, 
         "code": "best_score <= 2", 
-        "message": "Method random_embed_cell performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_embed_cell\n  Metric id: nmi\n  Best score: 1.0%\n"
+        "message": "Method random_embed_cell performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_embed_cell\n  Metric id: nmi\n  Best score: 0.9998%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2453,11 +2083,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score bbknn graph_connectivity", 
-        "value": 0.9975, 
+        "value": 0.9987, 
         "severity": 0, 
-        "severity_value": 0.49875, 
+        "severity_value": 0.49935, 
         "code": "best_score <= 2", 
-        "message": "Method bbknn performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: bbknn\n  Metric id: graph_connectivity\n  Best score: 0.9975%\n"
+        "message": "Method bbknn performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: bbknn\n  Metric id: graph_connectivity\n  Best score: 0.9987%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2483,11 +2113,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Worst score fastmnn_embedding graph_connectivity", 
-        "value": 0.8076, 
+        "value": 0.8046, 
         "severity": 0, 
-        "severity_value": -0.8076, 
+        "severity_value": -0.8046, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn_embedding performs much worse than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: graph_connectivity\n  Worst score: 0.8076%\n"
+        "message": "Method fastmnn_embedding performs much worse than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: graph_connectivity\n  Worst score: 0.8046%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2513,11 +2143,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature graph_connectivity", 
-        "value": 0.9664, 
+        "value": 0.9676, 
         "severity": 0, 
-        "severity_value": 0.4832, 
+        "severity_value": 0.4838, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: graph_connectivity\n  Best score: 0.9664%\n"
+        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: graph_connectivity\n  Best score: 0.9676%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2533,11 +2163,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score liger graph_connectivity", 
-        "value": 0.8578, 
+        "value": 0.8582, 
         "severity": 0, 
-        "severity_value": 0.4289, 
+        "severity_value": 0.4291, 
         "code": "best_score <= 2", 
-        "message": "Method liger performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: liger\n  Metric id: graph_connectivity\n  Best score: 0.8578%\n"
+        "message": "Method liger performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: liger\n  Metric id: graph_connectivity\n  Best score: 0.8582%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2573,11 +2203,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score mnnpy graph_connectivity", 
-        "value": 0.2316, 
+        "value": 0.2472, 
         "severity": 0, 
-        "severity_value": 0.1158, 
+        "severity_value": 0.1236, 
         "code": "best_score <= 2", 
-        "message": "Method mnnpy performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: mnnpy\n  Metric id: graph_connectivity\n  Best score: 0.2316%\n"
+        "message": "Method mnnpy performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: mnnpy\n  Metric id: graph_connectivity\n  Best score: 0.2472%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2613,11 +2243,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scalex_embed graph_connectivity", 
-        "value": 0.8008, 
+        "value": 0.8035, 
         "severity": 0, 
-        "severity_value": 0.4004, 
+        "severity_value": 0.40175, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_embed\n  Metric id: graph_connectivity\n  Best score: 0.8008%\n"
+        "message": "Method scalex_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_embed\n  Metric id: graph_connectivity\n  Best score: 0.8035%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2633,11 +2263,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scalex_feature graph_connectivity", 
-        "value": 0.8597, 
+        "value": 0.8647, 
         "severity": 0, 
-        "severity_value": 0.42985, 
+        "severity_value": 0.43235, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_feature\n  Metric id: graph_connectivity\n  Best score: 0.8597%\n"
+        "message": "Method scalex_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_feature\n  Metric id: graph_connectivity\n  Best score: 0.8647%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2653,11 +2283,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanorama_embed graph_connectivity", 
-        "value": 0.2466, 
+        "value": 0.2571, 
         "severity": 0, 
-        "severity_value": 0.1233, 
+        "severity_value": 0.12855, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_embed\n  Metric id: graph_connectivity\n  Best score: 0.2466%\n"
+        "message": "Method scanorama_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_embed\n  Metric id: graph_connectivity\n  Best score: 0.2571%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2693,11 +2323,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanvi graph_connectivity", 
-        "value": 0.9838, 
+        "value": 0.979, 
         "severity": 0, 
-        "severity_value": 0.4919, 
+        "severity_value": 0.4895, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: graph_connectivity\n  Best score: 0.9838%\n"
+        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: graph_connectivity\n  Best score: 0.979%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2713,11 +2343,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scvi graph_connectivity", 
-        "value": 0.9824, 
+        "value": 0.9839, 
         "severity": 0, 
-        "severity_value": 0.4912, 
+        "severity_value": 0.49195, 
         "code": "best_score <= 2", 
-        "message": "Method scvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scvi\n  Metric id: graph_connectivity\n  Best score: 0.9824%\n"
+        "message": "Method scvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scvi\n  Metric id: graph_connectivity\n  Best score: 0.9839%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2733,21 +2363,21 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score no_integration_batch graph_connectivity", 
-        "value": 0.0692, 
+        "value": 0.0717, 
         "severity": 0, 
-        "severity_value": 0.0346, 
+        "severity_value": 0.03585, 
         "code": "best_score <= 2", 
-        "message": "Method no_integration_batch performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: no_integration_batch\n  Metric id: graph_connectivity\n  Best score: 0.0692%\n"
+        "message": "Method no_integration_batch performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: no_integration_batch\n  Metric id: graph_connectivity\n  Best score: 0.0717%\n"
     }, 
     {
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Worst score random_embed_cell graph_connectivity", 
-        "value": 0.5021, 
+        "value": 0.5018, 
         "severity": 0, 
-        "severity_value": -0.5021, 
+        "severity_value": -0.5018, 
         "code": "worst_score >= -1", 
-        "message": "Method random_embed_cell performs much worse than baselines.\n  Task id: batch_integration\n  Method id: random_embed_cell\n  Metric id: graph_connectivity\n  Worst score: 0.5021%\n"
+        "message": "Method random_embed_cell performs much worse than baselines.\n  Task id: batch_integration\n  Method id: random_embed_cell\n  Metric id: graph_connectivity\n  Worst score: 0.5018%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2793,11 +2423,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score random_integration graph_connectivity", 
-        "value": 0.0228, 
+        "value": 0.0109, 
         "severity": 0, 
-        "severity_value": 0.0114, 
+        "severity_value": 0.00545, 
         "code": "best_score <= 2", 
-        "message": "Method random_integration performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_integration\n  Metric id: graph_connectivity\n  Best score: 0.0228%\n"
+        "message": "Method random_integration performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_integration\n  Metric id: graph_connectivity\n  Best score: 0.0109%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2873,11 +2503,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature hvg_overlap", 
-        "value": 0.4148, 
+        "value": 0.4144, 
         "severity": 0, 
-        "severity_value": 0.2074, 
+        "severity_value": 0.2072, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: hvg_overlap\n  Best score: 0.4148%\n"
+        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: hvg_overlap\n  Best score: 0.4144%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2933,11 +2563,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score mnnpy hvg_overlap", 
-        "value": 0.4245, 
+        "value": 0.483, 
         "severity": 0, 
-        "severity_value": 0.21225, 
+        "severity_value": 0.2415, 
         "code": "best_score <= 2", 
-        "message": "Method mnnpy performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: mnnpy\n  Metric id: hvg_overlap\n  Best score: 0.4245%\n"
+        "message": "Method mnnpy performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: mnnpy\n  Metric id: hvg_overlap\n  Best score: 0.483%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -2993,11 +2623,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scalex_feature hvg_overlap", 
-        "value": 0.3182, 
+        "value": 0.3461, 
         "severity": 0, 
-        "severity_value": 0.1591, 
+        "severity_value": 0.17305, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_feature\n  Metric id: hvg_overlap\n  Best score: 0.3182%\n"
+        "message": "Method scalex_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_feature\n  Metric id: hvg_overlap\n  Best score: 0.3461%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3213,11 +2843,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embedding isolated_label_asw", 
-        "value": 0.3782, 
+        "value": 0.3788, 
         "severity": 0, 
-        "severity_value": 0.1891, 
+        "severity_value": 0.1894, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embedding performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: isolated_label_asw\n  Best score: 0.3782%\n"
+        "message": "Method fastmnn_embedding performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: isolated_label_asw\n  Best score: 0.3788%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3233,11 +2863,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature isolated_label_asw", 
-        "value": 0.3554, 
+        "value": 0.3549, 
         "severity": 0, 
-        "severity_value": 0.1777, 
+        "severity_value": 0.17745, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: isolated_label_asw\n  Best score: 0.3554%\n"
+        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: isolated_label_asw\n  Best score: 0.3549%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3313,11 +2943,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score pyliger isolated_label_asw", 
-        "value": 0.3186, 
+        "value": 0.3059, 
         "severity": 0, 
-        "severity_value": 0.1593, 
+        "severity_value": 0.15295, 
         "code": "best_score <= 2", 
-        "message": "Method pyliger performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: pyliger\n  Metric id: isolated_label_asw\n  Best score: 0.3186%\n"
+        "message": "Method pyliger performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: pyliger\n  Metric id: isolated_label_asw\n  Best score: 0.3059%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3333,11 +2963,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scalex_embed isolated_label_asw", 
-        "value": 0.1612, 
+        "value": 0.2075, 
         "severity": 0, 
-        "severity_value": 0.0806, 
+        "severity_value": 0.10375, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_embed\n  Metric id: isolated_label_asw\n  Best score: 0.1612%\n"
+        "message": "Method scalex_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_embed\n  Metric id: isolated_label_asw\n  Best score: 0.2075%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3373,11 +3003,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanorama_embed isolated_label_asw", 
-        "value": 0.1259, 
+        "value": 0.1377, 
         "severity": 0, 
-        "severity_value": 0.06295, 
+        "severity_value": 0.06885, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_embed\n  Metric id: isolated_label_asw\n  Best score: 0.1259%\n"
+        "message": "Method scanorama_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_embed\n  Metric id: isolated_label_asw\n  Best score: 0.1377%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3413,11 +3043,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanvi isolated_label_asw", 
-        "value": 0.5726, 
+        "value": 0.5617, 
         "severity": 0, 
-        "severity_value": 0.2863, 
+        "severity_value": 0.28085, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: isolated_label_asw\n  Best score: 0.5726%\n"
+        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: isolated_label_asw\n  Best score: 0.5617%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3433,11 +3063,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scvi isolated_label_asw", 
-        "value": 0.5617, 
+        "value": 0.615, 
         "severity": 0, 
-        "severity_value": 0.28085, 
+        "severity_value": 0.3075, 
         "code": "best_score <= 2", 
-        "message": "Method scvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scvi\n  Metric id: isolated_label_asw\n  Best score: 0.5617%\n"
+        "message": "Method scvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scvi\n  Metric id: isolated_label_asw\n  Best score: 0.615%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3453,11 +3083,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score no_integration_batch isolated_label_asw", 
-        "value": 0.2799, 
+        "value": 0.2797, 
         "severity": 0, 
-        "severity_value": 0.13995, 
+        "severity_value": 0.13985, 
         "code": "best_score <= 2", 
-        "message": "Method no_integration_batch performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: no_integration_batch\n  Metric id: isolated_label_asw\n  Best score: 0.2799%\n"
+        "message": "Method no_integration_batch performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: no_integration_batch\n  Metric id: isolated_label_asw\n  Best score: 0.2797%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3493,11 +3123,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score random_embed_cell_jitter isolated_label_asw", 
-        "value": 0.9853, 
+        "value": 0.985, 
         "severity": 0, 
-        "severity_value": 0.49265, 
+        "severity_value": 0.4925, 
         "code": "best_score <= 2", 
-        "message": "Method random_embed_cell_jitter performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_embed_cell_jitter\n  Metric id: isolated_label_asw\n  Best score: 0.9853%\n"
+        "message": "Method random_embed_cell_jitter performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_embed_cell_jitter\n  Metric id: isolated_label_asw\n  Best score: 0.985%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3533,11 +3163,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score bbknn isolated_label_f1", 
-        "value": 0.8443, 
+        "value": 0.8451, 
         "severity": 0, 
-        "severity_value": 0.42215, 
+        "severity_value": 0.42255, 
         "code": "best_score <= 2", 
-        "message": "Method bbknn performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: bbknn\n  Metric id: isolated_label_f1\n  Best score: 0.8443%\n"
+        "message": "Method bbknn performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: bbknn\n  Metric id: isolated_label_f1\n  Best score: 0.8451%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3553,11 +3183,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score combat isolated_label_f1", 
-        "value": 0.7999, 
+        "value": 0.8048, 
         "severity": 0, 
-        "severity_value": 0.39995, 
+        "severity_value": 0.4024, 
         "code": "best_score <= 2", 
-        "message": "Method combat performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: combat\n  Metric id: isolated_label_f1\n  Best score: 0.7999%\n"
+        "message": "Method combat performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: combat\n  Metric id: isolated_label_f1\n  Best score: 0.8048%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3573,11 +3203,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embedding isolated_label_f1", 
-        "value": 0.8839, 
+        "value": 0.8846, 
         "severity": 0, 
-        "severity_value": 0.44195, 
+        "severity_value": 0.4423, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embedding performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: isolated_label_f1\n  Best score: 0.8839%\n"
+        "message": "Method fastmnn_embedding performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: isolated_label_f1\n  Best score: 0.8846%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3593,11 +3223,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature isolated_label_f1", 
-        "value": 0.7594, 
+        "value": 0.8271, 
         "severity": 0, 
-        "severity_value": 0.3797, 
+        "severity_value": 0.41355, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: isolated_label_f1\n  Best score: 0.7594%\n"
+        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: isolated_label_f1\n  Best score: 0.8271%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3613,11 +3243,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score liger isolated_label_f1", 
-        "value": 0.5591, 
+        "value": 0.5616, 
         "severity": 0, 
-        "severity_value": 0.27955, 
+        "severity_value": 0.2808, 
         "code": "best_score <= 2", 
-        "message": "Method liger performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: liger\n  Metric id: isolated_label_f1\n  Best score: 0.5591%\n"
+        "message": "Method liger performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: liger\n  Metric id: isolated_label_f1\n  Best score: 0.5616%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3653,11 +3283,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score mnnpy isolated_label_f1", 
-        "value": 0.0083, 
+        "value": 0.0692, 
         "severity": 0, 
-        "severity_value": 0.00415, 
+        "severity_value": 0.0346, 
         "code": "best_score <= 2", 
-        "message": "Method mnnpy performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: mnnpy\n  Metric id: isolated_label_f1\n  Best score: 0.0083%\n"
+        "message": "Method mnnpy performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: mnnpy\n  Metric id: isolated_label_f1\n  Best score: 0.0692%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3673,11 +3303,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score pyliger isolated_label_f1", 
-        "value": 0.8102, 
+        "value": 0.8098, 
         "severity": 0, 
-        "severity_value": 0.4051, 
+        "severity_value": 0.4049, 
         "code": "best_score <= 2", 
-        "message": "Method pyliger performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: pyliger\n  Metric id: isolated_label_f1\n  Best score: 0.8102%\n"
+        "message": "Method pyliger performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: pyliger\n  Metric id: isolated_label_f1\n  Best score: 0.8098%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3693,11 +3323,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scalex_embed isolated_label_f1", 
-        "value": 0.4649, 
+        "value": 0.4679, 
         "severity": 0, 
-        "severity_value": 0.23245, 
+        "severity_value": 0.23395, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_embed\n  Metric id: isolated_label_f1\n  Best score: 0.4649%\n"
+        "message": "Method scalex_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_embed\n  Metric id: isolated_label_f1\n  Best score: 0.4679%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3713,11 +3343,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scalex_feature isolated_label_f1", 
-        "value": 0.4687, 
+        "value": 0.4506, 
         "severity": 0, 
-        "severity_value": 0.23435, 
+        "severity_value": 0.2253, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_feature\n  Metric id: isolated_label_f1\n  Best score: 0.4687%\n"
+        "message": "Method scalex_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_feature\n  Metric id: isolated_label_f1\n  Best score: 0.4506%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3753,11 +3383,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanorama_feature isolated_label_f1", 
-        "value": 0.0576, 
+        "value": 0.0589, 
         "severity": 0, 
-        "severity_value": 0.0288, 
+        "severity_value": 0.02945, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_feature\n  Metric id: isolated_label_f1\n  Best score: 0.0576%\n"
+        "message": "Method scanorama_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_feature\n  Metric id: isolated_label_f1\n  Best score: 0.0589%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3773,11 +3403,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanvi isolated_label_f1", 
-        "value": 0.9075, 
+        "value": 0.9092, 
         "severity": 0, 
-        "severity_value": 0.45375, 
+        "severity_value": 0.4546, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: isolated_label_f1\n  Best score: 0.9075%\n"
+        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: isolated_label_f1\n  Best score: 0.9092%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3793,11 +3423,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scvi isolated_label_f1", 
-        "value": 0.8995, 
+        "value": 0.9001, 
         "severity": 0, 
-        "severity_value": 0.44975, 
+        "severity_value": 0.45005, 
         "code": "best_score <= 2", 
-        "message": "Method scvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scvi\n  Metric id: isolated_label_f1\n  Best score: 0.8995%\n"
+        "message": "Method scvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scvi\n  Metric id: isolated_label_f1\n  Best score: 0.9001%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3813,11 +3443,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score no_integration_batch isolated_label_f1", 
-        "value": 0.0529, 
+        "value": 0.0511, 
         "severity": 0, 
-        "severity_value": 0.02645, 
+        "severity_value": 0.02555, 
         "code": "best_score <= 2", 
-        "message": "Method no_integration_batch performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: no_integration_batch\n  Metric id: isolated_label_f1\n  Best score: 0.0529%\n"
+        "message": "Method no_integration_batch performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: no_integration_batch\n  Metric id: isolated_label_f1\n  Best score: 0.0511%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3873,11 +3503,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score random_integration isolated_label_f1", 
-        "value": 0.0044, 
+        "value": 0.0066, 
         "severity": 0, 
-        "severity_value": 0.0022, 
+        "severity_value": 0.0033, 
         "code": "best_score <= 2", 
-        "message": "Method random_integration performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_integration\n  Metric id: isolated_label_f1\n  Best score: 0.0044%\n"
+        "message": "Method random_integration performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_integration\n  Metric id: isolated_label_f1\n  Best score: 0.0066%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3913,11 +3543,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score combat kbet", 
-        "value": 0.2346, 
+        "value": 0.2373, 
         "severity": 0, 
-        "severity_value": 0.1173, 
+        "severity_value": 0.11865, 
         "code": "best_score <= 2", 
-        "message": "Method combat performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: combat\n  Metric id: kbet\n  Best score: 0.2346%\n"
+        "message": "Method combat performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: combat\n  Metric id: kbet\n  Best score: 0.2373%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3933,11 +3563,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embedding kbet", 
-        "value": 0.7979, 
+        "value": 0.799, 
         "severity": 0, 
-        "severity_value": 0.39895, 
+        "severity_value": 0.3995, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embedding performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: kbet\n  Best score: 0.7979%\n"
+        "message": "Method fastmnn_embedding performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: kbet\n  Best score: 0.799%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3953,11 +3583,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature kbet", 
-        "value": 0.4188, 
+        "value": 0.4292, 
         "severity": 0, 
-        "severity_value": 0.2094, 
+        "severity_value": 0.2146, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: kbet\n  Best score: 0.4188%\n"
+        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: kbet\n  Best score: 0.4292%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -3973,11 +3603,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score liger kbet", 
-        "value": 0.4658, 
+        "value": 0.4683, 
         "severity": 0, 
-        "severity_value": 0.2329, 
+        "severity_value": 0.23415, 
         "code": "best_score <= 2", 
-        "message": "Method liger performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: liger\n  Metric id: kbet\n  Best score: 0.4658%\n"
+        "message": "Method liger performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: liger\n  Metric id: kbet\n  Best score: 0.4683%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -4013,11 +3643,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score mnnpy kbet", 
-        "value": 0.0016, 
+        "value": 0.0018, 
         "severity": 0, 
-        "severity_value": 0.0008, 
+        "severity_value": 0.0009, 
         "code": "best_score <= 2", 
-        "message": "Method mnnpy performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: mnnpy\n  Metric id: kbet\n  Best score: 0.0016%\n"
+        "message": "Method mnnpy performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: mnnpy\n  Metric id: kbet\n  Best score: 0.0018%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -4033,11 +3663,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score pyliger kbet", 
-        "value": 0.6005, 
+        "value": 0.5965, 
         "severity": 0, 
-        "severity_value": 0.30025, 
+        "severity_value": 0.29825, 
         "code": "best_score <= 2", 
-        "message": "Method pyliger performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: pyliger\n  Metric id: kbet\n  Best score: 0.6005%\n"
+        "message": "Method pyliger performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: pyliger\n  Metric id: kbet\n  Best score: 0.5965%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -4053,11 +3683,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scalex_embed kbet", 
-        "value": 0.2756, 
+        "value": 0.253, 
         "severity": 0, 
-        "severity_value": 0.1378, 
+        "severity_value": 0.1265, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_embed\n  Metric id: kbet\n  Best score: 0.2756%\n"
+        "message": "Method scalex_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_embed\n  Metric id: kbet\n  Best score: 0.253%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -4073,11 +3703,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scalex_feature kbet", 
-        "value": 0.378, 
+        "value": 0.4048, 
         "severity": 0, 
-        "severity_value": 0.189, 
+        "severity_value": 0.2024, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_feature\n  Metric id: kbet\n  Best score: 0.378%\n"
+        "message": "Method scalex_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_feature\n  Metric id: kbet\n  Best score: 0.4048%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -4093,11 +3723,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanorama_embed kbet", 
-        "value": 0.0029, 
+        "value": 0.0022, 
         "severity": 0, 
-        "severity_value": 0.00145, 
+        "severity_value": 0.0011, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_embed\n  Metric id: kbet\n  Best score: 0.0029%\n"
+        "message": "Method scanorama_embed performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_embed\n  Metric id: kbet\n  Best score: 0.0022%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -4113,11 +3743,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanorama_feature kbet", 
-        "value": 0.0039, 
+        "value": 0.0054, 
         "severity": 0, 
-        "severity_value": 0.00195, 
+        "severity_value": 0.0027, 
         "code": "best_score <= 2", 
-        "message": "Method scanorama_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_feature\n  Metric id: kbet\n  Best score: 0.0039%\n"
+        "message": "Method scanorama_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanorama_feature\n  Metric id: kbet\n  Best score: 0.0054%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -4133,11 +3763,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanvi kbet", 
-        "value": 0.7769, 
+        "value": 0.7748, 
         "severity": 0, 
-        "severity_value": 0.38845, 
+        "severity_value": 0.3874, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: kbet\n  Best score: 0.7769%\n"
+        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: kbet\n  Best score: 0.7748%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -4153,11 +3783,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scvi kbet", 
-        "value": 0.7543, 
+        "value": 0.7557, 
         "severity": 0, 
-        "severity_value": 0.37715, 
+        "severity_value": 0.37785, 
         "code": "best_score <= 2", 
-        "message": "Method scvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scvi\n  Metric id: kbet\n  Best score: 0.7543%\n"
+        "message": "Method scvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scvi\n  Metric id: kbet\n  Best score: 0.7557%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -4173,11 +3803,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score no_integration_batch kbet", 
-        "value": 0.3472, 
+        "value": 0.3497, 
         "severity": 0, 
-        "severity_value": 0.1736, 
+        "severity_value": 0.17485, 
         "code": "best_score <= 2", 
-        "message": "Method no_integration_batch performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: no_integration_batch\n  Metric id: kbet\n  Best score: 0.3472%\n"
+        "message": "Method no_integration_batch performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: no_integration_batch\n  Metric id: kbet\n  Best score: 0.3497%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -4193,11 +3823,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score random_embed_cell kbet", 
-        "value": 0.9709, 
+        "value": 0.9707, 
         "severity": 0, 
-        "severity_value": 0.48545, 
+        "severity_value": 0.48535, 
         "code": "best_score <= 2", 
-        "message": "Method random_embed_cell performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_embed_cell\n  Metric id: kbet\n  Best score: 0.9709%\n"
+        "message": "Method random_embed_cell performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_embed_cell\n  Metric id: kbet\n  Best score: 0.9707%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -4293,11 +3923,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score fastmnn_embedding pcr", 
-        "value": 0.6276, 
+        "value": 0.6275, 
         "severity": 0, 
-        "severity_value": 0.3138, 
+        "severity_value": 0.31375, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_embedding performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: pcr\n  Best score: 0.6276%\n"
+        "message": "Method fastmnn_embedding performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_embedding\n  Metric id: pcr\n  Best score: 0.6275%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -4313,11 +3943,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score fastmnn_feature pcr", 
-        "value": 0.6276, 
+        "value": 0.6275, 
         "severity": 0, 
-        "severity_value": 0.3138, 
+        "severity_value": 0.31375, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: pcr\n  Best score: 0.6276%\n"
+        "message": "Method fastmnn_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: fastmnn_feature\n  Metric id: pcr\n  Best score: 0.6275%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -4433,11 +4063,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scalex_feature pcr", 
-        "value": 0.9977, 
+        "value": 0.9975, 
         "severity": 0, 
-        "severity_value": 0.49885, 
+        "severity_value": 0.49875, 
         "code": "best_score <= 2", 
-        "message": "Method scalex_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_feature\n  Metric id: pcr\n  Best score: 0.9977%\n"
+        "message": "Method scalex_feature performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scalex_feature\n  Metric id: pcr\n  Best score: 0.9975%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -4493,11 +4123,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score scanvi pcr", 
-        "value": 0.827, 
+        "value": 0.8513, 
         "severity": 0, 
-        "severity_value": 0.4135, 
+        "severity_value": 0.42565, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: pcr\n  Best score: 0.827%\n"
+        "message": "Method scanvi performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: scanvi\n  Metric id: pcr\n  Best score: 0.8513%\n"
     }, 
     {
         "task_id": "batch_integration", 
@@ -4553,11 +4183,11 @@
         "task_id": "batch_integration", 
         "category": "Scaling", 
         "name": "Best score random_embed_cell pcr", 
-        "value": 0.9992, 
+        "value": 0.9997, 
         "severity": 0, 
-        "severity_value": 0.4996, 
+        "severity_value": 0.49985, 
         "code": "best_score <= 2", 
-        "message": "Method random_embed_cell performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_embed_cell\n  Metric id: pcr\n  Best score: 0.9992%\n"
+        "message": "Method random_embed_cell performs a lot better than baselines.\n  Task id: batch_integration\n  Method id: random_embed_cell\n  Metric id: pcr\n  Best score: 0.9997%\n"
     }, 
     {
         "task_id": "batch_integration", 

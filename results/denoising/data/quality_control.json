@@ -93,9 +93,9 @@
         "task_id": "denoising", 
         "category": "Method info", 
         "name": "Pct 'paper_reference' missing", 
-        "value": 0.3333333333333333, 
-        "severity": 2, 
-        "severity_value": 3.0, 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
         "code": "percent_missing(method_info, field)", 
         "message": "Method metadata field 'paper_reference' should be defined\n  Task id: denoising\n  Field: paper_reference\n"
     }, 
@@ -332,22 +332,12 @@
     {
         "task_id": "denoising", 
         "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/mouse_blood_olsson_labelled' %missing", 
+        "name": "Dataset 'cellxgene_census/dkd' %missing", 
         "value": 0.0, 
         "severity": 0, 
         "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: openproblems_v1/mouse_blood_olsson_labelled\n  Percentage missing: 0%\n"
-    }, 
-    {
-        "task_id": "denoising", 
-        "category": "Raw results", 
-        "name": "Dataset 'cellxgene_census/hcla' %missing", 
-        "value": 1.0, 
-        "severity": 3, 
-        "severity_value": 10.0, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: cellxgene_census/hcla\n  Percentage missing: 100%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: cellxgene_census/dkd\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "denoising", 
@@ -362,12 +352,12 @@
     {
         "task_id": "denoising", 
         "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/cengen' %missing", 
-        "value": 0.33333333333333337, 
+        "name": "Dataset 'cellxgene_census/hcla' %missing", 
+        "value": 1.0, 
         "severity": 3, 
-        "severity_value": 3.3333333333333335, 
+        "severity_value": 10.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: openproblems_v1/cengen\n  Percentage missing: 33%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: cellxgene_census/hcla\n  Percentage missing: 100%\n"
     }, 
     {
         "task_id": "denoising", 
@@ -382,12 +372,42 @@
     {
         "task_id": "denoising", 
         "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/tnbc_wu2021' %missing", 
+        "name": "Dataset 'openproblems_v1/cengen' %missing", 
+        "value": 0.33333333333333337, 
+        "severity": 3, 
+        "severity_value": 3.3333333333333335, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: openproblems_v1/cengen\n  Percentage missing: 33%\n"
+    }, 
+    {
+        "task_id": "denoising", 
+        "category": "Raw results", 
+        "name": "Dataset 'openproblems_v1/zebrafish' %missing", 
         "value": 0.0, 
         "severity": 0, 
         "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: openproblems_v1/tnbc_wu2021\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: openproblems_v1/zebrafish\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "denoising", 
+        "category": "Raw results", 
+        "name": "Dataset 'openproblems_v1/tenx_5k_pbmc' %missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: openproblems_v1/tenx_5k_pbmc\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "denoising", 
+        "category": "Raw results", 
+        "name": "Dataset 'openproblems_v1/mouse_hspc_nestorowa2016' %missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: openproblems_v1/mouse_hspc_nestorowa2016\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "denoising", 
@@ -412,6 +432,36 @@
     {
         "task_id": "denoising", 
         "category": "Raw results", 
+        "name": "Dataset 'openproblems_v1/tenx_1k_pbmc' %missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: openproblems_v1/tenx_1k_pbmc\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "denoising", 
+        "category": "Raw results", 
+        "name": "Dataset 'openproblems_v1/mouse_blood_olsson_labelled' %missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: openproblems_v1/mouse_blood_olsson_labelled\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "denoising", 
+        "category": "Raw results", 
+        "name": "Dataset 'openproblems_v1/pancreas' %missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: openproblems_v1/pancreas\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "denoising", 
+        "category": "Raw results", 
         "name": "Dataset 'cellxgene_census/immune_cell_atlas' %missing", 
         "value": 1.0, 
         "severity": 3, 
@@ -432,72 +482,22 @@
     {
         "task_id": "denoising", 
         "category": "Raw results", 
+        "name": "Dataset 'openproblems_v1/tnbc_wu2021' %missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: openproblems_v1/tnbc_wu2021\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "denoising", 
+        "category": "Raw results", 
         "name": "Dataset 'cellxgene_census/hypomap' %missing", 
         "value": 1.0, 
         "severity": 3, 
         "severity_value": 10.0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: cellxgene_census/hypomap\n  Percentage missing: 100%\n"
-    }, 
-    {
-        "task_id": "denoising", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/pancreas' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: openproblems_v1/pancreas\n  Percentage missing: 0%\n"
-    }, 
-    {
-        "task_id": "denoising", 
-        "category": "Raw results", 
-        "name": "Dataset 'cellxgene_census/dkd' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: cellxgene_census/dkd\n  Percentage missing: 0%\n"
-    }, 
-    {
-        "task_id": "denoising", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/tenx_5k_pbmc' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: openproblems_v1/tenx_5k_pbmc\n  Percentage missing: 0%\n"
-    }, 
-    {
-        "task_id": "denoising", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/zebrafish' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: openproblems_v1/zebrafish\n  Percentage missing: 0%\n"
-    }, 
-    {
-        "task_id": "denoising", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/mouse_hspc_nestorowa2016' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: openproblems_v1/mouse_hspc_nestorowa2016\n  Percentage missing: 0%\n"
-    }, 
-    {
-        "task_id": "denoising", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/tenx_1k_pbmc' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: denoising\n  dataset id: openproblems_v1/tenx_1k_pbmc\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "denoising", 
@@ -513,11 +513,11 @@
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score no_denoising mse", 
-        "value": 0.9636, 
+        "value": 0.9621, 
         "severity": 0, 
-        "severity_value": 0.4818, 
+        "severity_value": 0.48105, 
         "code": "best_score <= 2", 
-        "message": "Method no_denoising performs a lot better than baselines.\n  Task id: denoising\n  Method id: no_denoising\n  Metric id: mse\n  Best score: 0.9636%\n"
+        "message": "Method no_denoising performs a lot better than baselines.\n  Task id: denoising\n  Method id: no_denoising\n  Metric id: mse\n  Best score: 0.9621%\n"
     }, 
     {
         "task_id": "denoising", 
@@ -593,11 +593,11 @@
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score knn_smoothing mse", 
-        "value": 0.9847, 
+        "value": 0.9832, 
         "severity": 0, 
-        "severity_value": 0.49235, 
+        "severity_value": 0.4916, 
         "code": "best_score <= 2", 
-        "message": "Method knn_smoothing performs a lot better than baselines.\n  Task id: denoising\n  Method id: knn_smoothing\n  Metric id: mse\n  Best score: 0.9847%\n"
+        "message": "Method knn_smoothing performs a lot better than baselines.\n  Task id: denoising\n  Method id: knn_smoothing\n  Metric id: mse\n  Best score: 0.9832%\n"
     }, 
     {
         "task_id": "denoising", 
@@ -613,11 +613,11 @@
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score magic mse", 
-        "value": 0.9926, 
+        "value": 0.991, 
         "severity": 0, 
-        "severity_value": 0.4963, 
+        "severity_value": 0.4955, 
         "code": "best_score <= 2", 
-        "message": "Method magic performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic\n  Metric id: mse\n  Best score: 0.9926%\n"
+        "message": "Method magic performs a lot better than baselines.\n  Task id: denoising\n  Method id: magic\n  Metric id: mse\n  Best score: 0.991%\n"
     }, 
     {
         "task_id": "denoising", 
@@ -633,11 +633,11 @@
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score no_denoising poisson", 
-        "value": 0.8408, 
+        "value": 0.865, 
         "severity": 0, 
-        "severity_value": 0.4204, 
+        "severity_value": 0.4325, 
         "code": "best_score <= 2", 
-        "message": "Method no_denoising performs a lot better than baselines.\n  Task id: denoising\n  Method id: no_denoising\n  Metric id: poisson\n  Best score: 0.8408%\n"
+        "message": "Method no_denoising performs a lot better than baselines.\n  Task id: denoising\n  Method id: no_denoising\n  Metric id: poisson\n  Best score: 0.865%\n"
     }, 
     {
         "task_id": "denoising", 
@@ -673,11 +673,11 @@
         "task_id": "denoising", 
         "category": "Scaling", 
         "name": "Best score alra poisson", 
-        "value": 0.9124, 
+        "value": 0.9125, 
         "severity": 0, 
-        "severity_value": 0.4562, 
+        "severity_value": 0.45625, 
         "code": "best_score <= 2", 
-        "message": "Method alra performs a lot better than baselines.\n  Task id: denoising\n  Method id: alra\n  Metric id: poisson\n  Best score: 0.9124%\n"
+        "message": "Method alra performs a lot better than baselines.\n  Task id: denoising\n  Method id: alra\n  Metric id: poisson\n  Best score: 0.9125%\n"
     }, 
     {
         "task_id": "denoising", 

@@ -1,0 +1,74 @@
+[
+  {
+    "task_id": "match_modalities",
+    "method_id": "random_features",
+    "method_name": "Random Features",
+    "method_summary": "Randomly permutated features",
+    "is_baseline": true,
+    "paper_reference": null,
+    "code_url": null,
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/90f8643e4c7ea1402487955080537c0ce00d1b32/src/tasks/match_modalities/control_methods/random_features/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "90f8643e4c7ea1402487955080537c0ce00d1b32"
+  },
+  {
+    "task_id": "match_modalities",
+    "method_id": "true_features",
+    "method_name": "True Features",
+    "method_summary": "A 1 to 1 mapping of features between modalities",
+    "is_baseline": true,
+    "paper_reference": null,
+    "code_url": null,
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/90f8643e4c7ea1402487955080537c0ce00d1b32/src/tasks/match_modalities/control_methods/true_features/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "90f8643e4c7ea1402487955080537c0ce00d1b32"
+  },
+  {
+    "task_id": "match_modalities",
+    "method_id": "scot",
+    "method_name": "Single Cell Optimal Transport",
+    "method_summary": "Run Single Cell Optimal Transport",
+    "is_baseline": false,
+    "paper_reference": "Demetci2020scot",
+    "code_url": "https://github.com/rsinghlab/SCOT",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/90f8643e4c7ea1402487955080537c0ce00d1b32/src/tasks/match_modalities/methods/scot/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "90f8643e4c7ea1402487955080537c0ce00d1b32"
+  },
+  {
+    "task_id": "match_modalities",
+    "method_id": "harmonic_alignment",
+    "method_name": "Harmonic Alignment",
+    "method_summary": "Harmonic Alignment",
+    "is_baseline": false,
+    "paper_reference": "stanley2020harmonic",
+    "code_url": "https://github.com/KrishnaswamyLab/harmonic-alignment",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/90f8643e4c7ea1402487955080537c0ce00d1b32/src/tasks/match_modalities/methods/harmonic_alignment/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "90f8643e4c7ea1402487955080537c0ce00d1b32"
+  },
+  {
+    "task_id": "match_modalities",
+    "method_id": "fastmnn",
+    "method_name": "fastMNN",
+    "method_summary": "A simpler version of the original mnnCorrect algorithm.",
+    "is_baseline": false,
+    "paper_reference": "haghverdi2018batch",
+    "code_url": "https://github.com/LTLA/batchelor",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/90f8643e4c7ea1402487955080537c0ce00d1b32/src/tasks/match_modalities/methods/fastmnn/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "90f8643e4c7ea1402487955080537c0ce00d1b32"
+  },
+  {
+    "task_id": "match_modalities",
+    "method_id": "procrustes",
+    "method_name": "Procrustes",
+    "method_summary": "\"Procrustes superimposition embeds cellular data from each modality into a common space.\"\n",
+    "is_baseline": false,
+    "paper_reference": "gower1975generalized",
+    "code_url": "https://github.com/scipy/scipy",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/90f8643e4c7ea1402487955080537c0ce00d1b32/src/tasks/match_modalities/methods/procrustes/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "90f8643e4c7ea1402487955080537c0ce00d1b32"
+  }
+]
