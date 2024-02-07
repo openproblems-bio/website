@@ -15,8 +15,8 @@ dataset-ref: "@10x2019pbmc"
 
 ```{r}
 #| include: false
-params <- list(data_dir = "datasets/openproblems_v1/tenx_5k_pbmc/data")
-params <- list(data_dir = "./data")
+params <- list(data_dir = "datasets/openproblems_v1/tenx_5k_pbmc/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
 ```
 
 {{< include /datasets/_include/_index_template.qmd >}}

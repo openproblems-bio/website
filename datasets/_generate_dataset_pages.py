@@ -37,8 +37,8 @@ dataset-ref: "@{dataset_ref}"
 
 ```{{r}}
 #| include: false
-params <- list(data_dir = "{dir}/data")
-params <- list(data_dir = "./data")
+params <- list(data_dir = "{dir}/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
 ```
 
 {{{{< include /datasets/_include/_index_template.qmd >}}}}

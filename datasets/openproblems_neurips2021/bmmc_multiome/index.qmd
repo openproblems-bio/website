@@ -15,8 +15,8 @@ dataset-ref: "@luecken2021neurips"
 
 ```{r}
 #| include: false
-params <- list(data_dir = "datasets/openproblems_neurips2021/bmmc_multiome/data")
-params <- list(data_dir = "./data")
+params <- list(data_dir = "datasets/openproblems_neurips2021/bmmc_multiome/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
 ```
 
 {{< include /datasets/_include/_index_template.qmd >}}

@@ -15,8 +15,8 @@ dataset-ref: "@consortium2022tabula"
 
 ```{r}
 #| include: false
-params <- list(data_dir = "datasets/cellxgene_census/tabula_sapiens/data")
-params <- list(data_dir = "./data")
+params <- list(data_dir = "datasets/cellxgene_census/tabula_sapiens/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
 ```
 
 {{< include /datasets/_include/_index_template.qmd >}}

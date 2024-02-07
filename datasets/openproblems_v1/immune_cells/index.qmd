@@ -15,8 +15,8 @@ dataset-ref: "@luecken2022benchmarking"
 
 ```{r}
 #| include: false
-params <- list(data_dir = "datasets/openproblems_v1/immune_cells/data")
-params <- list(data_dir = "./data")
+params <- list(data_dir = "datasets/openproblems_v1/immune_cells/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
 ```
 
 {{< include /datasets/_include/_index_template.qmd >}}

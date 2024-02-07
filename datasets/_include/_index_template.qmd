@@ -16,10 +16,7 @@ dataset_schemas <- list.files(params$data_dir, full.names = TRUE, pattern = "*.j
 metas <- lapply(dataset_schemas, read_json)
 
 # extract metadata
-dataset_description <- metas[[1]]$uns$dataset_description
-dataset_url <- metas[[1]]$uns$dataset_url
-data_url <- metas[[1]]$uns$data_url
-date_created <- metas[[1]]$uns$date_created
+uns <- metas[[1]]$uns
 shape <-
   if (length(metas[[1]]$struct$layers) > 0) {
     metas[[1]]$struct$layers[[1]]$shape
@@ -36,11 +33,51 @@ file_size_str <- format(
   digits = 2
 )
 
+struc_names <- c("X", "obs", "var", "obsp", "varp", "obsm", "varm", "layers", "uns")
+
+# collect struct info across files
+meta_struc <- list_rbind(map2(
+  seq_along(metas),
+  metas,
+  function(meta_i, meta) {
+    list_rbind(map2(
+      names(meta$structure),
+      meta$structure,
+      function(name, slots) {
+        if (length(slots) == 0) {
+          return(NULL)
+        }
+        list_rbind(map(
+          slots,
+          function(li) {
+            li$file <- meta_i
+            li$struct_name <- name
+            # fix rendering of dtype when type is dataframe
+            li$dtype <- paste0(li$dtype, collapse = ", ")
+            for (n in names(li)) {
+              if (is.null(li[[n]])) {
+                li[[n]] <- NULL
+              } else if (length(li[[n]]) > 1) {
+                li[[n]] <- list(li[[n]])
+              }
+            }
+            tibble::as_tibble(li)
+          }
+        ))
+      }
+    ))
+  }
+)) %>%
+  mutate(
+    shape = map_chr(shape, paste, collapse = " × "),
+    description = gsub("\n", " ", description)
+  )
+
 ```
 
 ---
 dataset-size: "`r file_size_str`"
-date: "`r date_created`"
+date: "`r uns$date_created`"
 dimension: "`r shape_str`"
 ---
 
@@ -52,20 +89,21 @@ dimension: "`r shape_str`"
 
 cat(glue::glue("#### Quick links
 
-<div class='quarto-title-meta-heading'><i class='bi bi-file-earmark-text'></i> [Documentation]({dataset_url})</div>
-<div class='quarto-title-meta-heading'><i class='bi bi-globe'></i> [Source]({data_url})</div>
+<div class='quarto-title-meta-heading'><i class='bi bi-file-earmark-text'></i> [Documentation]({uns$dataset_url})</div>
+<div class='quarto-title-meta-heading'><i class='bi bi-globe'></i> [Source]({uns$data_url})</div>
 "))
 
 
 ```
 
-```{r related benchmarks, results='asis', eval=FALSE}
+```{r related benchmarks, results='asis'}
 #| echo: false
 #| column: margin
 
 cat("#### Related benchmarks\n")
 
-dataset_info_files <- Sys.glob("../../../results/*/data/dataset_info.json")
+results_glob <- paste0(params$results_dir, "/*/data/dataset_info.json")
+dataset_info_files <- Sys.glob(results_glob)
 
 rel_benchmarks <- NULL
 
@@ -94,87 +132,91 @@ print(table)
 
 ```
 
-
 ## Description
 
 ```{r description, results='asis'}
 #| echo: false
 
-cat(dataset_description)
+cat(uns$dataset_description)
 
 ```
 
-
-
-## Dataset schema
-
-```{r mod1_title}
+```{r schema}
 #| echo: false
 #| results: "asis"
-
-struc_names <- c("X", "obs", "var", "obsp", "varp", "obsm", "varm", "layers", "uns")
-
-# collect struct info across files
-meta_struc <- list_rbind(map2(
-  seq_along(metas),
-  metas,
-  function(meta_i, meta) {
-    list_rbind(map2(
-      names(meta$structure),
-      meta$structure,
-      function(name, slots) {
-        if (length(slots) == 0) {
-          return(NULL)
-        }
-        list_rbind(map(
-          slots,
-          function(li) {
-            li$file <- meta_i
-            li$struct_name <- name
-            for (n in names(li)) {
-              if (is.null(li[[n]])) {
-                li[[n]] <- NULL
-              } else if (length(li[[n]]) > 1) {
-                li[[n]] <- list(li[[n]])
-              }
-            }
-            tibble::as_tibble(li)
-          }
-        ))
-      }
-    ))
-  }
-)) %>%
-  mutate(
-    shape = map_chr(shape, paste, collapse = " × "),
-    description = gsub("\n", " ", description)
-  )
 
 for (meta_i in seq_along(metas)) {
   # only print heading if there are multiple objects
   if (length(metas) > 1) {
-    cat("### Modality ", meta_i, "\n")
+    cat("## Modality ", meta_i, "\n")
+  } else {
+    cat("## Dataset\n")
   }
 
-  cat(":::{.panel-tabset }\n")
+  meta <- metas[[meta_i]]
+  shape <- meta$struct$layers[[1]]$shape
+  shape_str <- paste(shape, collapse = " × ")
+
+  cat("AnnData object with n_obs × n_vars = ", shape_str, "\n\n", sep = "")
+  cat("Slots:\n\n")
 
   for (str_name in struc_names) {
-    table_sel <- meta_struc %>%
-      filter(file == meta_i, struct_name == str_name, !is.na(description)) %>%
-      select(
-        Name = name,
-        Description = description,
-        Type = type,
-        Shape = shape,
-        `Data type` = dtype
+    meta_struc_sel <- meta_struc %>%
+      filter(file == meta_i, struct_name == str_name, !is.na(description))
+    if (nrow(meta_struc_sel) > 0) {
+      slot_str <- paste(
+        paste0("[`", meta_struc_sel$name, "`](#mod-", meta_i, "-slots-", str_name, "-", meta_struc_sel$name, "){class=\"quarto-xref\"}"),
+        collapse = ", "
       )
-    if (nrow(table_sel) > 0) {
-      cat("## ", str_name, "\n\n")
-
-      print(kable(table_sel, format = "markdown"))
+      cat("* ", str_name, ": ", slot_str, "  \n", sep = "")
     }
   }
 
-  cat(":::\n")
+  cat("\n\n")
+
 }
 ```
+
+
+:::{.hidden}
+
+```{r slots}
+#| echo: false
+#| results: "asis"
+
+for (meta_i in seq_along(metas)) {
+  # only print heading if there are multiple objects
+  if (length(metas) > 1) {
+    cat("## Modality ", meta_i, " slots\n")
+  } else {
+    cat("## Slots\n")
+  }
+
+  meta <- metas[[meta_i]]
+  shape <- meta$struct$layers[[1]]$shape
+  shape_str <- paste(shape, collapse = " × ")
+
+
+  for (str_name in struc_names) {
+
+    df <- meta_struc %>%
+      filter(file == meta_i, struct_name == str_name, !is.na(description))
+    if (nrow(df) > 0) {
+      
+      strs <- paste0(
+        "### `.", str_name, "['", df$name, "']` {#mod-", meta_i, "-slots-", str_name, "-", df$name, "}\n\n",
+
+        "Type: `", df$type, "`, data type: `", df$dtype, "`, shape: `", df$shape, "`\n\n",
+
+        df$description, "\n\n"
+      )
+
+      cat(paste(strs, collapse = "\n"))
+    }
+  }
+
+
+}
+```
+
+:::

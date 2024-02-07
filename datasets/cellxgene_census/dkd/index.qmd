@@ -15,8 +15,8 @@ dataset-ref: "@wilson2022multimodal"
 
 ```{r}
 #| include: false
-params <- list(data_dir = "datasets/cellxgene_census/dkd/data")
-params <- list(data_dir = "./data")
+params <- list(data_dir = "datasets/cellxgene_census/dkd/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
 ```
 
 {{< include /datasets/_include/_index_template.qmd >}}

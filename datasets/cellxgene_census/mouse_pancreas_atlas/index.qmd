@@ -15,8 +15,8 @@ dataset-ref: "@hrovatin2023delineating"
 
 ```{r}
 #| include: false
-params <- list(data_dir = "datasets/cellxgene_census/mouse_pancreas_atlas/data")
-params <- list(data_dir = "./data")
+params <- list(data_dir = "datasets/cellxgene_census/mouse_pancreas_atlas/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
 ```
 
 {{< include /datasets/_include/_index_template.qmd >}}
