@@ -95,64 +95,117 @@ slot_info <- list_rbind(map2(
     )
   )
 
-```
 
----
-dataset-size: "`r file_size_str`"
-date: "`r uns$date_created`"
-dimension: "`r shape_str`"
----
-
-
-
-```{r quick-links, results='asis'}
-#| echo: false
-#| column: margin
-
-cat(glue::glue("#### Quick links
-
-<div class='quarto-title-meta-heading'><i class='bi bi-file-earmark-text'></i> [Documentation]({uns$dataset_url})</div>
-<div class='quarto-title-meta-heading'><i class='bi bi-globe'></i> [Source]({uns$data_url})</div>
-"))
-
+capitalize_first <- function(x) {
+  paste0(
+    toupper(substring(x, 1, 1)),
+    substring(x, 2),
+    sep = ""
+  )
+}
 
 ```
 
-```{r related benchmarks, results='asis'}
+
+```{r margin, results='asis'}
 #| echo: false
 #| column: margin
 
-cat("#### Related benchmarks\n")
+cat("#### Info\n\n")
 
-results_glob <- paste0(params$results_dir, "/*/data/dataset_info.json")
-dataset_info_files <- Sys.glob(results_glob)
+metadata <- tribble(
+  ~name, ~icon, ~value,
+  "Dataset ID", "bi bi-database-check", uns$dataset_id,
+  "Reference", "bi bi-file-earmark-text", paste0("@", uns$dataset_reference),
+  "Size", "bi bi-cloud-download", file_size_str,
+  "Created", "bi bi-calendar", uns$date_created,
+  "Dimensions", "bi bi-box", shape_str
+)
+metadata_lines <- paste0(
+  "<i class=\"", metadata$icon, "\"></i> ", metadata$value, "  \n"
+)
 
-rel_benchmarks <- NULL
+cat(paste(metadata_lines, collapse = ""))
 
-for (file in dataset_info_files) {
-  benchm_datasets <- read_json(file)
-  benchmark_ok <- FALSE
-  for (item in benchm_datasets) {
-    if (item$dataset_id == rmarkdown::metadata$`dataset-id`[1]) {
-      benchmark_ok <- TRUE
+cat("\n\n")
+
+cat("#### Quick links\n\n")
+
+cat("<div class='quarto-title-meta-heading'><i class='bi bi-file-earmark-text'></i> [Documentation](", uns$dataset_url, ")</div>\n", sep = "")
+
+cat("<div class='quarto-title-meta-heading'><i class='bi bi-globe'></i> [Source](", uns$data_url, ")</div>\n", sep = "")
+
+task_info_files <- Sys.glob(paste0(params$results_dir, "/**/data/task_info.json"))
+
+tasks <- list_rbind(map(task_info_files, function(task_info_file){
+  task_info <- read_json(task_info_file)
+  dataset_info_file <- paste0(dirname(task_info_file), "/dataset_info.json")
+  dataset_infos <- read_json(dataset_info_file)
+
+  for (n in names(task_info)) {
+    if (is.null(task_info[[n]])) {
+      task_info[[n]] <- NULL
+    } else if (length(task_info[[n]]) > 1) {
+      task_info[[n]] <- list(task_info[[n]])
     }
   }
 
-  if (benchmark_ok) {
-    parent_dir <- dirname(dirname(file))
-    md_link <- paste0('[',basename(parent_dir),'](',parent_dir,')')
-    rel_benchmarks <- c(rel_benchmarks, md_link)
-  }
-}
+  task_info$dataset_ids <- list(map(dataset_infos, function(di) {
+    if (!is.null(di$source_dataset_id)) {
+      di$source_dataset_id
+    } else {
+      di$dataset_id
+    }
+  }))
+  tibble::as_tibble(task_info)
+}))
 
-if (length(rel_benchmarks) == 0) {
+related_tasks <- tasks %>%
+  filter(map_lgl(dataset_ids, ~ uns$dataset_id %in% .x))
+
+cat("#### Used in\n\n")
+
+if (nrow(related_tasks) == 0) {
   cat("No related benchmarks found.\n")
+} else {
+  links <- paste0("* [", related_tasks$task_name, "](/results/", related_tasks$task_id, ")  ")
+  cat(paste(links, collapse = "\n"))
 }
-
-table <- kable(rel_benchmarks,"markdown", col.names = NULL)
-print(table)
 
 ```
+
+:::{.hidden}
+:::{layout-ncol=3 layout-valign="top"}
+
+```{r metadata, echo=FALSE, results='asis'}
+metadata <- tribble(
+  ~name, ~icon, ~value,
+  "Dataset ID", "bi bi-database-check", uns$dataset_id,
+  "Reference", "bi bi-file-earmark-text", paste0("@", uns$dataset_reference),
+  "Size", "bi bi-cloud-download", file_size_str,
+  "Created", "bi bi-calendar", uns$date_created,
+  "Dimensions", "bi bi-box", shape_str
+)
+metadata_lines <- paste0(
+  ":::{.small}\n\n",
+  "####### <i class=\"", metadata$icon, "\"></i> ", stringr::str_to_upper(metadata$name), "\n\n",
+  
+  metadata$value, "\n\n",
+  ":::\n\n"
+)
+
+n_rest <- length(metadata_lines) %% 3
+if (n_rest > 0) {
+  metadata_lines <- metadata_lines |> c(
+    rep(":::{.fill}\n:::\n\n", 3 - n_rest)
+  )
+}
+
+cat(paste(metadata_lines, collapse = ""))
+```
+
+:::
+:::
 
 ## Description
 
@@ -163,23 +216,18 @@ cat(uns$dataset_description)
 
 ```
 
+## Preview
+
 ```{r schema}
 #| echo: false
 #| results: "asis"
 
 for (file_name in names(metas)) {
-  # only print heading if there are multiple objects
-  if (length(metas) > 1) {
-    cat("## Preview ", gsub("_", " ", file_name), "\n")
-  } else {
-    cat("## Preview\n")
-  }
-
   meta <- metas[[file_name]]
   shape <- meta$struct$layers[[1]]$shape
   shape_str <- paste(shape, collapse = " × ")
 
-  cat("AnnData object with n_obs × n_vars = ", shape_str, " with slots:\n\n", sep = "")
+  cat("`", file_name, "` is an AnnData object with n_obs × n_vars = ", shape_str, " with slots:\n\n", sep = "")
 
   for (struct_name in struc_names) {
     df <- slot_info %>%
@@ -202,6 +250,7 @@ for (file_name in names(metas)) {
 }
 ```
 
+## Reference
 
 :::{.column-page-inset}
 
@@ -214,16 +263,12 @@ library(gt)
 for (file_name in names(metas)) {
   # only print heading if there are multiple objects
   if (length(metas) > 1) {
-    cat("## Reference ", gsub("_", " ", file_name), "\n")
-  } else {
-    cat("## Reference\n")
+    cat("### ", capitalize_first(gsub("_", " ", file_name)), "\n")
   }
 
   meta <- metas[[file_name]]
   shape <- meta$struct$layers[[1]]$shape
   shape_str <- paste(shape, collapse = " × ")
-
-  cat("AnnData object with n_obs × n_vars = ", shape_str, " with slots:\n\n", sep = "")
 
   df <- slot_info %>%
     filter(
@@ -247,7 +292,7 @@ for (file_name in names(metas)) {
       description = "Description",
       type = "Type",
       dtype = "Data type",
-      shape_str = "Shape"
+      shape_str = "Size"
     ) |>
     fmt_markdown() |>
     cols_width(
@@ -273,13 +318,6 @@ for (file_name in names(metas)) {
 #| echo: false
 #| results: "asis"
 
-capitalize_first <- function(x) {
-  paste0(
-    toupper(substring(x, 1, 1)),
-    substring(x, 2),
-    sep = "",
-  )
-}
 
 df <- slot_info %>%
   filter(!is.na(description)) %>%

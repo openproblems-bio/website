@@ -2,6 +2,7 @@ from pathlib import Path
 import json
 
 print("Fetch template", flush=True)
+results_dir = Path("results/")
 datasets_dir = Path("datasets/")
 
 dataset_dirs = [state.parent.parent for state in datasets_dir.glob("**/data/state.yaml")]
@@ -19,26 +20,23 @@ for dir in dataset_dirs:
   dataset_ref = info_uns.get("dataset_reference", "<Ref missing>")
 
   dataset_loader = dataset_id.split("/")[0]
+  results_dir = "../" * len(dir.parts) + "results"
   content = f"""\
 ---
 title: "{dataset_name}"
 subtitle: "{dataset_summary}"
 categories: ["{dataset_loader}"]
+css: [/datasets/datasets.css]
 title-block-banner: transparent
-css: [/events/events.css, /datasets/datasets.css]
 toc: false
 engine: knitr
 citation-location: document
-template-partials:
-  - /datasets/_include/title-metadata.html
-dataset-id: {dataset_id}
-dataset-ref: "@{dataset_ref}"
 ---
 
 ```{{r}}
 #| include: false
 params <- list(data_dir = "{dir}/data", results_dir = "results")
-params <- list(data_dir = "./data", results_dir = "../../../results")
+params <- list(data_dir = "./data", results_dir = "{results_dir}")
 ```
 
 {{{{< include /datasets/_include/_index_template.qmd >}}}}
