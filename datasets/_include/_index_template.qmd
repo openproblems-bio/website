@@ -13,7 +13,12 @@ dataset_schemas <- list.files(params$data_dir, full.names = TRUE, pattern = "*.j
 
 # read dataset metadata
 #  -> add shape
-metas <- lapply(dataset_schemas, read_json)
+metas <- lapply(dataset_schemas, function(file) {
+  out <- read_json(file)
+  out$file_name <- gsub(".*/dataset_metadata(.*)\\.json", "dataset\\1", file)
+  out
+})
+names(metas) <- map_chr(metas, "file_name")
 
 # extract metadata
 uns <- metas[[1]]$uns
@@ -36,10 +41,10 @@ file_size_str <- format(
 struc_names <- c("X", "obs", "var", "obsp", "varp", "obsm", "varm", "layers", "uns")
 
 # collect struct info across files
-meta_struc <- list_rbind(map2(
-  seq_along(metas),
+slot_info <- list_rbind(map2(
+  names(metas),
   metas,
-  function(meta_i, meta) {
+  function(file_name, meta) {
     list_rbind(map2(
       names(meta$structure),
       meta$structure,
@@ -50,7 +55,7 @@ meta_struc <- list_rbind(map2(
         list_rbind(map(
           slots,
           function(li) {
-            li$file <- meta_i
+            li$file_name <- file_name
             li$struct_name <- name
             # fix rendering of dtype when type is dataframe
             li$dtype <- paste0(li$dtype, collapse = ", ")
@@ -69,8 +74,25 @@ meta_struc <- list_rbind(map2(
   }
 )) %>%
   mutate(
-    shape = map_chr(shape, paste, collapse = " × "),
-    description = gsub("\n", " ", description)
+    shape_str = map_chr(shape, paste, collapse = " × "),
+    internal_reference = paste0("#", file_name, "-slots-", struct_name, "-", name),
+    type_str = case_when(
+      type == "atomic" ~ "value",
+      type == "densematrix" ~ "Dense matrix",
+      type == "sparsematrix" ~ "Sparse matrix",
+      type == "dataframe" ~ "Data frame",
+      type == "vector" ~ "List",
+      type == "dict" ~ "Dictionary",
+      grepl("other:", type) ~ paste0("Other (`", gsub("other: ", "", type), "`)")
+    ),
+    data_type_str = case_when(
+      dtype == "bool" ~ "Boolean",
+      dtype == "int" ~ "Integer",
+      dtype == "float32" ~ "Real",
+      dtype == "float64" ~ "Real",
+      dtype == "str" ~ "String",
+      TRUE ~ NA_character_
+    )
   )
 
 ```
@@ -145,78 +167,138 @@ cat(uns$dataset_description)
 #| echo: false
 #| results: "asis"
 
-for (meta_i in seq_along(metas)) {
+for (file_name in names(metas)) {
   # only print heading if there are multiple objects
   if (length(metas) > 1) {
-    cat("## Modality ", meta_i, "\n")
+    cat("## Preview ", gsub("_", " ", file_name), "\n")
   } else {
-    cat("## Dataset\n")
+    cat("## Preview\n")
   }
 
-  meta <- metas[[meta_i]]
+  meta <- metas[[file_name]]
   shape <- meta$struct$layers[[1]]$shape
   shape_str <- paste(shape, collapse = " × ")
 
-  cat("AnnData object with n_obs × n_vars = ", shape_str, "\n\n", sep = "")
-  cat("Slots:\n\n")
+  cat("AnnData object with n_obs × n_vars = ", shape_str, " with slots:\n\n", sep = "")
 
-  for (str_name in struc_names) {
-    meta_struc_sel <- meta_struc %>%
-      filter(file == meta_i, struct_name == str_name, !is.na(description))
-    if (nrow(meta_struc_sel) > 0) {
+  for (struct_name in struc_names) {
+    df <- slot_info %>%
+      filter(
+        file_name == !!file_name,
+        struct_name == !!struct_name,
+        !is.na(description)
+      )
+
+    if (nrow(df) > 0) {
       slot_str <- paste(
-        paste0("[`", meta_struc_sel$name, "`](#mod-", meta_i, "-slots-", str_name, "-", meta_struc_sel$name, "){class=\"quarto-xref\"}"),
+        paste0("[`", df$name, "`](", df$internal_reference, "){class=\"quarto-xref\"}"),
         collapse = ", "
       )
-      cat("* ", str_name, ": ", slot_str, "  \n", sep = "")
+      cat("* ", struct_name, ": ", slot_str, "  \n", sep = "")
     }
   }
 
   cat("\n\n")
-
 }
 ```
 
 
+:::{.column-page-inset}
+
+```{r schema_table}
+#| echo: false
+#| results: "asis"
+
+library(gt)
+
+for (file_name in names(metas)) {
+  # only print heading if there are multiple objects
+  if (length(metas) > 1) {
+    cat("## Reference ", gsub("_", " ", file_name), "\n")
+  } else {
+    cat("## Reference\n")
+  }
+
+  meta <- metas[[file_name]]
+  shape <- meta$struct$layers[[1]]$shape
+  shape_str <- paste(shape, collapse = " × ")
+
+  cat("AnnData object with n_obs × n_vars = ", shape_str, " with slots:\n\n", sep = "")
+
+  df <- slot_info %>%
+    filter(
+      file_name == !!file_name,
+      !is.na(description)
+    ) %>%
+    transmute(
+      # struct_name = paste0("`", struct_name, "`"),
+      struct_name = struct_name,
+      name = paste0("`", name, "`"),
+      description = description,
+      type = ifelse(is.na(type) | type == "", " ", paste0("`", type, "`")),
+      dtype = ifelse(is.na(dtype) | dtype == "", " ", paste0("`", dtype, "`")),
+      shape_str = ifelse(is.na(shape_str), " ", shape_str)
+    )
+
+  gt_out <- df |>
+    gt(groupname_col = "struct_name") |>
+    cols_label(
+      name = "Name",
+      description = "Description",
+      type = "Type",
+      dtype = "Data type",
+      shape_str = "Shape"
+    ) |>
+    fmt_markdown() |>
+    cols_width(
+      name ~ pct(20),
+      type ~ pct(11),
+      description ~ pct(47),
+      dtype ~ pct(11),
+      shape_str ~ pct(11)
+    )
+  print(gt_out)
+
+  cat("\n\n")
+}
+```
+
+:::
+
 :::{.hidden}
+
+## Slot crossref data
 
 ```{r slots}
 #| echo: false
 #| results: "asis"
 
-for (meta_i in seq_along(metas)) {
-  # only print heading if there are multiple objects
-  if (length(metas) > 1) {
-    cat("## Modality ", meta_i, " slots\n")
-  } else {
-    cat("## Slots\n")
-  }
-
-  meta <- metas[[meta_i]]
-  shape <- meta$struct$layers[[1]]$shape
-  shape_str <- paste(shape, collapse = " × ")
-
-
-  for (str_name in struc_names) {
-
-    df <- meta_struc %>%
-      filter(file == meta_i, struct_name == str_name, !is.na(description))
-    if (nrow(df) > 0) {
-      
-      strs <- paste0(
-        "### `.", str_name, "['", df$name, "']` {#mod-", meta_i, "-slots-", str_name, "-", df$name, "}\n\n",
-
-        "Type: `", df$type, "`, data type: `", df$dtype, "`, shape: `", df$shape, "`\n\n",
-
-        df$description, "\n\n"
-      )
-
-      cat(paste(strs, collapse = "\n"))
-    }
-  }
-
-
+capitalize_first <- function(x) {
+  paste0(
+    toupper(substring(x, 1, 1)),
+    substring(x, 2),
+    sep = "",
+  )
 }
+
+df <- slot_info %>%
+  filter(!is.na(description)) %>%
+  mutate(
+    crossref = paste0(
+      "### `", file_name, ".", struct_name, "['", name, "']` {", internal_reference, "}\n\n",
+
+      "In R: `", file_name, "$", struct_name, "[[\"", name, "\"]]`\n\n",
+
+      "Type: `", type, "`",
+      ifelse(is.na(dtype), "", paste0(", data type: `", dtype, "`")),
+      ifelse(is.na(shape_str), "", paste0(", shape: ", shape_str)),
+      "\n\n",
+
+      description, "\n\n"
+    )
+  )
+
+cat(paste(df$crossref, collapse = "\n"))
 ```
 
 :::
