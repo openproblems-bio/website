@@ -2,16 +2,19 @@
 title: Datasets
 page-layout: full
 title-block-banner: true
-title-block-banner-color: white
+title-block-banner-color: "#fcfcfc"
 listing:
-  type: table
-  contents:
-    - "*/*/*.qmd"
-  fields: [title, dataset-id, subtitle, categories]
-  field-display-names:
-    title: Dataset
-    subtitle: Summary
-    dataset-id: "Dataset ID"
-    categories: "Dataset Loader"
-css: [../style/style-hero.css]
+  #sort: ["dataset-id"]
+  #template: listing.ejs
+  #type: default
+  categories: true
+  image-height: "0px"
+  type: grid
+  grid-columns: 2
+  contents: "**.qmd"
+  page-size: 100
+  filter-ui: true
+  
+css: [/style/style-hero.css]
+engine: knitr
 ---

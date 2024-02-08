@@ -23,6 +23,7 @@ for dir in dataset_dirs:
   results_dir = "../" * len(dir.parts) + "results"
   content = f"""\
 ---
+dataset-id: "{dataset_id}"
 title: "{dataset_name}"
 subtitle: "{dataset_summary}"
 categories: ["{dataset_loader}"]

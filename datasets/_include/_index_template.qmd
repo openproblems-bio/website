@@ -131,9 +131,7 @@ cat("\n\n")
 
 cat("#### Quick links\n\n")
 
-cat("<div class='quarto-title-meta-heading'><i class='bi bi-file-earmark-text'></i> [Documentation](", uns$dataset_url, ")</div>\n", sep = "")
-
-cat("<div class='quarto-title-meta-heading'><i class='bi bi-globe'></i> [Source](", uns$data_url, ")</div>\n", sep = "")
+cat("<div class='quarto-title-meta-heading'><i class='bi bi-globe'></i> [Source](", uns$dataset_url, ")</div>\n", sep = "")
 
 task_info_files <- Sys.glob(paste0(params$results_dir, "/**/data/task_info.json"))
 
