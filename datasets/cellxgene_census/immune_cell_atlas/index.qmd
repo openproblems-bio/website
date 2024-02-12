@@ -1,0 +1,19 @@
+---
+dataset-id: "cellxgene_census/immune_cell_atlas"
+title: "Immune Cell Atlas"
+subtitle: "Cross-tissue immune cell analysis reveals tissue-specific features in humans"
+categories: ["cellxgene_census"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/cellxgene_census/immune_cell_atlas/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

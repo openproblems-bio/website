@@ -1,0 +1,399 @@
+{
+  "structure": {
+    "X": [],
+    "layers": [
+      {
+        "description": "Raw counts",
+        "dtype": "float32",
+        "name": "counts",
+        "schema_type": "integer",
+        "shape": [
+          69249,
+          13431
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "description": "Normalised expression values",
+        "dtype": "float32",
+        "name": "normalized",
+        "schema_type": "double",
+        "shape": [
+          69249,
+          13431
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "obs": [
+      {
+        "dtype": "float32",
+        "name": "pct_counts_mt",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "n_counts",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "n_genes",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "The size factors created by the normalisation method, if any.",
+        "dtype": "float32",
+        "name": "size_factors",
+        "schema_type": "double",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "phase",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Classification of the cell type based on its characteristics and function within the tissue or organism.",
+        "dtype": "category",
+        "name": "cell_type",
+        "schema_type": "string",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A batch identifier. This label is very context-dependent and may be a combination of the tissue, assay, donor, etc.",
+        "dtype": "category",
+        "name": "batch",
+        "schema_type": "string",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "pseudotime_order",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "Samplename",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "Site",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "DonorNumber",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "Modality",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "VendorLot",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "DonorID",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "DonorAge",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "DonorBMI",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "DonorBloodType",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "DonorRace",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "Ethnicity",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "DonorGender",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "QCMeds",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "DonorSmoker",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "is_train",
+        "shape": [
+          69249
+        ],
+        "type": "vector"
+      }
+    ],
+    "obsm": [
+      {
+        "description": "The resulting SVD embedding.",
+        "dtype": "float32",
+        "name": "X_svd",
+        "schema_type": "double",
+        "shape": [
+          69249,
+          100
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "obsp": [],
+    "uns": [
+      {
+        "description": "Long description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_description",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A unique identifier for the dataset. This is different from the `obs.dataset_id` field, which is the identifier for the dataset from which the cell data is derived.",
+        "dtype": "str",
+        "name": "dataset_id",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A human-readable name for the dataset.",
+        "dtype": "str",
+        "name": "dataset_name",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "The organism of the sample in the dataset.",
+        "dtype": "str",
+        "name": "dataset_organism",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Bibtex reference of the paper in which the dataset was published.",
+        "dtype": "str",
+        "name": "dataset_reference",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Short description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_summary",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Link to the original source of the dataset.",
+        "dtype": "str",
+        "name": "dataset_url",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "str",
+        "name": "genome",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Which normalization was used",
+        "dtype": "str",
+        "name": "normalization_id",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "str",
+        "name": "organism",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      }
+    ],
+    "var": [
+      {
+        "description": "A human-readable name for the feature, usually a gene symbol.",
+        "dtype": "object",
+        "name": "feature_name",
+        "schema_type": "string",
+        "shape": [
+          13431
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "feature_types",
+        "shape": [
+          13431
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Unique identifier for the feature, usually a ENSEMBL gene id.",
+        "dtype": "object",
+        "name": "feature_id",
+        "schema_type": "string",
+        "shape": [
+          13431
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Whether or not the feature is considered to be a 'highly variable gene'",
+        "dtype": "bool",
+        "name": "hvg",
+        "schema_type": "boolean",
+        "shape": [
+          13431
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A ranking of the features by hvg.",
+        "dtype": "float64",
+        "name": "hvg_score",
+        "schema_type": "integer",
+        "shape": [
+          13431
+        ],
+        "type": "vector"
+      }
+    ],
+    "varm": [],
+    "varp": []
+  },
+  "uns": {
+    "dataset_description": "Single-cell CITE-Seq data collected from bone marrow mononuclear cells of 12 healthy human donors using the 10X Multiome Gene Expression and Chromatin Accessibility kit. The dataset was generated to support Multimodal Single-Cell Data Integration Challenge at NeurIPS 2021. Samples were prepared using a standard protocol at four sites. The resulting data was then annotated to identify cell types and remove doublets. The dataset was designed with a nested batch layout such that some donor samples were measured at multiple sites with some donors measured at a single site.",
+    "dataset_id": "openproblems_bmmc_multiome",
+    "dataset_name": "OpenProblems NeurIPS2021 Multiome",
+    "dataset_organism": "homo_sapiens",
+    "dataset_reference": "luecken2021neurips",
+    "dataset_summary": "Single-cell Multiome (GEX+ATAC) data collected from bone marrow mononuclear cells of 12 healthy human donors.",
+    "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE194122",
+    "date_created": "02-02-2024",
+    "file_size": 1271506268,
+    "genome": "GRCh38",
+    "normalization_id": "log_cp10k",
+    "organism": "human"
+  }
+}

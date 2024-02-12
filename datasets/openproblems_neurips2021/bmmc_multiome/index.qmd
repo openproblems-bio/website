@@ -1,0 +1,19 @@
+---
+dataset-id: "openproblems_bmmc_multiome"
+title: "OpenProblems NeurIPS2021 Multiome"
+subtitle: "Single-cell Multiome (GEX+ATAC) data collected from bone marrow mononuclear cells of 12 healthy human donors."
+categories: ["openproblems_bmmc_multiome"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/openproblems_neurips2021/bmmc_multiome/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

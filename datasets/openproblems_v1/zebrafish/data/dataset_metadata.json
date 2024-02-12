@@ -1,0 +1,346 @@
+{
+  "structure": {
+    "X": [],
+    "layers": [
+      {
+        "description": "Raw counts",
+        "dtype": "float32",
+        "name": "counts",
+        "schema_type": "integer",
+        "shape": [
+          26022,
+          25258
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "description": "Normalised expression values",
+        "dtype": "float32",
+        "name": "normalized",
+        "schema_type": "double",
+        "shape": [
+          26022,
+          25258
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "obs": [
+      {
+        "dtype": "category",
+        "name": "lab",
+        "shape": [
+          26022
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "sample_label",
+        "shape": [
+          26022
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "hpf",
+        "shape": [
+          26022
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Classification of the cell type based on its characteristics and function within the tissue or organism.",
+        "dtype": "category",
+        "name": "cell_type",
+        "schema_type": "string",
+        "shape": [
+          26022
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "labels",
+        "shape": [
+          26022
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "bool",
+        "name": "is_train",
+        "shape": [
+          26022
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "n_counts",
+        "shape": [
+          26022
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A batch identifier. This label is very context-dependent and may be a combination of the tissue, assay, donor, etc.",
+        "dtype": "category",
+        "name": "batch",
+        "schema_type": "string",
+        "shape": [
+          26022
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "The size factors created by the normalisation method, if any.",
+        "dtype": "float32",
+        "name": "size_factors",
+        "schema_type": "double",
+        "shape": [
+          26022
+        ],
+        "type": "vector"
+      }
+    ],
+    "obsm": [
+      {
+        "description": "The resulting PCA embedding.",
+        "dtype": "float32",
+        "name": "X_pca",
+        "schema_type": "double",
+        "shape": [
+          26022,
+          50
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "obsp": [
+      {
+        "description": "K nearest neighbors connectivities matrix.",
+        "dtype": "float32",
+        "name": "knn_connectivities",
+        "schema_type": "double",
+        "shape": [
+          26022,
+          26022
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "description": "K nearest neighbors distance matrix.",
+        "dtype": "float64",
+        "name": "knn_distances",
+        "schema_type": "double",
+        "shape": [
+          26022,
+          26022
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "uns": [
+      {
+        "dtype": null,
+        "name": "_from_cache",
+        "shape": null,
+        "type": "other: <class 'numpy.bool_'>"
+      },
+      {
+        "dtype": "str",
+        "name": "data_reference",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "str",
+        "name": "data_url",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Long description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_description",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A unique identifier for the dataset. This is different from the `obs.dataset_id` field, which is the identifier for the dataset from which the cell data is derived.",
+        "dtype": "str",
+        "name": "dataset_id",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A human-readable name for the dataset.",
+        "dtype": "str",
+        "name": "dataset_name",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "The organism of the sample in the dataset.",
+        "dtype": "str",
+        "name": "dataset_organism",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Bibtex reference of the paper in which the dataset was published.",
+        "dtype": "str",
+        "name": "dataset_reference",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Short description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_summary",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Link to the original source of the dataset.",
+        "dtype": "str",
+        "name": "dataset_url",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Supplementary K nearest neighbors data.",
+        "dtype": null,
+        "name": "knn",
+        "schema_type": "object",
+        "shape": [
+          3
+        ],
+        "type": "dict"
+      },
+      {
+        "description": "Which normalization was used",
+        "dtype": "str",
+        "name": "normalization_id",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "The PCA variance objects.",
+        "dtype": null,
+        "name": "pca_variance",
+        "schema_type": "double",
+        "shape": [
+          2
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": "object",
+        "name": "var_names_all",
+        "shape": [
+          25313
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "var": [
+      {
+        "dtype": "int64",
+        "name": "n_cells",
+        "shape": [
+          25258
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A human-readable name for the feature, usually a gene symbol.",
+        "dtype": "object",
+        "name": "feature_name",
+        "schema_type": "string",
+        "shape": [
+          25258
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Whether or not the feature is considered to be a 'highly variable gene'",
+        "dtype": "bool",
+        "name": "hvg",
+        "schema_type": "boolean",
+        "shape": [
+          25258
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A ranking of the features by hvg.",
+        "dtype": "float64",
+        "name": "hvg_score",
+        "schema_type": "integer",
+        "shape": [
+          25258
+        ],
+        "type": "vector"
+      }
+    ],
+    "varm": [
+      {
+        "description": "The PCA loadings matrix.",
+        "dtype": "float32",
+        "name": "pca_loadings",
+        "schema_type": "double",
+        "shape": [
+          25258,
+          50
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "varp": []
+  },
+  "uns": {
+    "data_reference": "wagner2018single",
+    "data_url": "https://ndownloader.figshare.com/files/24566651?private_link=e3921450ec1bd0587870",
+    "dataset_description": "90k cells from zebrafish embryos throughout the first day of development, with and without a knockout of chordin, an important developmental gene.",
+    "dataset_id": "openproblems_v1/zebrafish",
+    "dataset_name": "Zebrafish embryonic cells",
+    "dataset_organism": "danio_rerio",
+    "dataset_reference": "wagner2018single",
+    "dataset_summary": "Single-cell mRNA sequencing of zebrafish embryonic cells.",
+    "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE112294",
+    "date_created": "02-02-2024",
+    "file_size": 815712710,
+    "normalization_id": "log_cp10k"
+  }
+}

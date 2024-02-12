@@ -1,0 +1,502 @@
+{
+  "structure": {
+    "X": [],
+    "layers": [
+      {
+        "description": "Raw counts",
+        "dtype": "float32",
+        "name": "counts",
+        "schema_type": "integer",
+        "shape": [
+          584944,
+          28024
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "description": "Normalised expression values",
+        "dtype": "float32",
+        "name": "normalized",
+        "schema_type": "double",
+        "shape": [
+          584944,
+          28024
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "obs": [
+      {
+        "description": "If the dataset was retrieved from CELLxGENE census, this is a unique identifier for the cell.",
+        "dtype": "int64",
+        "name": "soma_joinid",
+        "schema_type": "integer",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Identifier for the dataset from which the cell data is derived, useful for tracking and referencing purposes.",
+        "dtype": "category",
+        "name": "dataset_id",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Type of assay used to generate the cell data, indicating the methodology or technique employed.",
+        "dtype": "category",
+        "name": "assay",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Experimental Factor Ontology (`EFO:`) term identifier for the assay, providing a standardized reference to the assay type.",
+        "dtype": "category",
+        "name": "assay_ontology_term_id",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Classification of the cell type based on its characteristics and function within the tissue or organism.",
+        "dtype": "category",
+        "name": "cell_type",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Cell Ontology (`CL:`) term identifier for the cell type, offering a standardized reference to the specific cell classification.",
+        "dtype": "category",
+        "name": "cell_type_ontology_term_id",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Stage of development of the organism or tissue from which the cell is derived, indicating its maturity or developmental phase.",
+        "dtype": "category",
+        "name": "development_stage",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Ontology term identifier for the developmental stage, providing a standardized reference to the organism's developmental phase.\n\nIf the organism is human (`organism_ontology_term_id == 'NCBITaxon:9606'`), then the Human Developmental Stages (`HsapDv:`) ontology is used.  \nIf the organism is mouse (`organism_ontology_term_id == 'NCBITaxon:10090'`), then the Mouse Developmental Stages (`MmusDv:`) ontology is used.\nOtherwise, the Uberon (`UBERON:`) ontology is used.\n",
+        "dtype": "category",
+        "name": "development_stage_ontology_term_id",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Information on any disease or pathological condition associated with the cell or donor.",
+        "dtype": "category",
+        "name": "disease",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Ontology term identifier for the disease, enabling standardized disease classification and referencing.\n\nMust be a term from the Mondo Disease Ontology (`MONDO:`) ontology term, or `PATO:0000461` from the Phenotype And Trait Ontology (`PATO:`).\n",
+        "dtype": "category",
+        "name": "disease_ontology_term_id",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Identifier for the donor from whom the cell sample is obtained.",
+        "dtype": "category",
+        "name": "donor_id",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Indicates whether the data is primary (directly obtained from experiments) or has been computationally derived from other primary data.",
+        "dtype": "bool",
+        "name": "is_primary_data",
+        "schema_type": "boolean",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Ethnicity of the donor as self-reported, relevant for studies considering genetic diversity and population-specific traits.",
+        "dtype": "category",
+        "name": "self_reported_ethnicity",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Ontology term identifier for the self-reported ethnicity, providing a standardized reference for ethnic classifications.\n\nIf the organism is human (`organism_ontology_term_id == 'NCBITaxon:9606'`), then the Human Ancestry Ontology (`HANCESTRO:`) is used.\n",
+        "dtype": "category",
+        "name": "self_reported_ethnicity_ontology_term_id",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Biological sex of the donor or source organism, crucial for studies involving sex-specific traits or conditions.",
+        "dtype": "category",
+        "name": "sex",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Ontology term identifier for the biological sex, ensuring standardized classification of sex. Only `PATO:0000383`, `PATO:0000384` and `PATO:0001340` are allowed.",
+        "dtype": "category",
+        "name": "sex_ontology_term_id",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Type of suspension or medium in which the cells were stored or processed, important for understanding cell handling and conditions.",
+        "dtype": "category",
+        "name": "suspension_type",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Specific tissue from which the cells were derived, key for context and specificity in cell studies.",
+        "dtype": "category",
+        "name": "tissue",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Ontology term identifier for the tissue, providing a standardized reference for the tissue type.\n\nFor organoid or tissue samples, the Uber-anatomy ontology (`UBERON:`) is used. The term ids must be a child term of `UBERON:0001062` (anatomical entity).\nFor cell cultures, the Cell Ontology (`CL:`) is used. The term ids cannot be `CL:0000255`, `CL:0000257` or `CL:0000548`.\n",
+        "dtype": "category",
+        "name": "tissue_ontology_term_id",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "General category or classification of the tissue, useful for broader grouping and comparison of cell data.",
+        "dtype": "category",
+        "name": "tissue_general",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Ontology term identifier for the general tissue category, aiding in standardizing and grouping tissue types.\n\nFor organoid or tissue samples, the Uber-anatomy ontology (`UBERON:`) is used. The term ids must be a child term of `UBERON:0001062` (anatomical entity).\nFor cell cultures, the Cell Ontology (`CL:`) is used. The term ids cannot be `CL:0000255`, `CL:0000257` or `CL:0000548`.\n",
+        "dtype": "category",
+        "name": "tissue_general_ontology_term_id",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "n_genes",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A batch identifier. This label is very context-dependent and may be a combination of the tissue, assay, donor, etc.",
+        "dtype": "category",
+        "name": "batch",
+        "schema_type": "string",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "The size factors created by the normalisation method, if any.",
+        "dtype": "float32",
+        "name": "size_factors",
+        "schema_type": "double",
+        "shape": [
+          584944
+        ],
+        "type": "vector"
+      }
+    ],
+    "obsm": [
+      {
+        "description": "The resulting PCA embedding.",
+        "dtype": "float32",
+        "name": "X_pca",
+        "schema_type": "double",
+        "shape": [
+          584944,
+          50
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "obsp": [
+      {
+        "description": "K nearest neighbors connectivities matrix.",
+        "dtype": "float32",
+        "name": "knn_connectivities",
+        "schema_type": "double",
+        "shape": [
+          584944,
+          584944
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "description": "K nearest neighbors distance matrix.",
+        "dtype": "float64",
+        "name": "knn_distances",
+        "schema_type": "double",
+        "shape": [
+          584944,
+          584944
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "uns": [
+      {
+        "description": "Long description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_description",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A unique identifier for the dataset. This is different from the `obs.dataset_id` field, which is the identifier for the dataset from which the cell data is derived.",
+        "dtype": "str",
+        "name": "dataset_id",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A human-readable name for the dataset.",
+        "dtype": "str",
+        "name": "dataset_name",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "The organism of the sample in the dataset.",
+        "dtype": "str",
+        "name": "dataset_organism",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Bibtex reference of the paper in which the dataset was published.",
+        "dtype": "str",
+        "name": "dataset_reference",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Short description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_summary",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Link to the original source of the dataset.",
+        "dtype": "str",
+        "name": "dataset_url",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Supplementary K nearest neighbors data.",
+        "dtype": null,
+        "name": "knn",
+        "schema_type": "object",
+        "shape": [
+          3
+        ],
+        "type": "dict"
+      },
+      {
+        "description": "Which normalization was used",
+        "dtype": "str",
+        "name": "normalization_id",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "The PCA variance objects.",
+        "dtype": null,
+        "name": "pca_variance",
+        "schema_type": "double",
+        "shape": [
+          2
+        ],
+        "type": "dict"
+      }
+    ],
+    "var": [
+      {
+        "description": "If the dataset was retrieved from CELLxGENE census, this is a unique identifier for the feature.",
+        "dtype": "int64",
+        "name": "soma_joinid",
+        "schema_type": "integer",
+        "shape": [
+          28024
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Unique identifier for the feature, usually a ENSEMBL gene id.",
+        "dtype": "object",
+        "name": "feature_id",
+        "schema_type": "string",
+        "shape": [
+          28024
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A human-readable name for the feature, usually a gene symbol.",
+        "dtype": "object",
+        "name": "feature_name",
+        "schema_type": "string",
+        "shape": [
+          28024
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "feature_length",
+        "shape": [
+          28024
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "n_cells",
+        "shape": [
+          28024
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Whether or not the feature is considered to be a 'highly variable gene'",
+        "dtype": "bool",
+        "name": "hvg",
+        "schema_type": "boolean",
+        "shape": [
+          28024
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A ranking of the features by hvg.",
+        "dtype": "float64",
+        "name": "hvg_score",
+        "schema_type": "integer",
+        "shape": [
+          28024
+        ],
+        "type": "vector"
+      }
+    ],
+    "varm": [
+      {
+        "description": "The PCA loadings matrix.",
+        "dtype": "float32",
+        "name": "pca_loadings",
+        "schema_type": "double",
+        "shape": [
+          28024,
+          50
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "varp": []
+  },
+  "uns": {
+    "dataset_description": "The integrated Human Lung Cell Atlas (HLCA) represents the first large-scale, integrated single-cell reference atlas of the human lung. It consists of over 2 million cells from the respiratory tract of 486 individuals, and includes 49 different datasets. It is split into the HLCA core, and the extended or full HLCA. The HLCA core includes data of healthy lung tissue from 107 individuals, and includes manual cell type annotations based on consensus across 6 independent experts, as well as demographic, biological and technical metadata.",
+    "dataset_id": "cellxgene_census/hcla",
+    "dataset_name": "Human Lung Cell Atlas",
+    "dataset_organism": "homo_sapiens",
+    "dataset_reference": "sikkema2023integrated",
+    "dataset_summary": "An integrated cell atlas of the human lung in health and disease (core)",
+    "dataset_url": "https://cellxgene.cziscience.com/collections/6f6d381a-7701-4781-935c-db10d30de293",
+    "date_created": "02-02-2024",
+    "file_size": 18631560176,
+    "normalization_id": "log_cp10k"
+  }
+}
