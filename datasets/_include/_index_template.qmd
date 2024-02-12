@@ -7,6 +7,7 @@
 library(tidyverse)
 library(jsonlite)
 library(knitr)
+library(kableExtra)
 
 # find files
 dataset_schemas <- list.files(params$data_dir, full.names = TRUE, pattern = "*.json")
@@ -262,8 +263,9 @@ for (file_name in names(metas)) {
     cat("### ", capitalize_first(gsub("_", " ", file_name)), "\n")
   }
 
-  print_header <- TRUE
-
+  total_df <- data.frame()
+  groups <- list()
+  start_row <- 1
   for (struc in struc_names) {
     df <- slot_info %>%
       filter(
@@ -279,17 +281,23 @@ for (file_name in names(metas)) {
         Size = ifelse(is.na(shape_str), " ", shape_str)
       )
 
-    if (nrow(df) > 0) {
-      cat("### `", struc, "`\n\n")
-      col.names <- if (print_header) colnames(df) else NULL
-      kdf <- knitr::kable(df, format = "markdown", col.names = col.names)
-      cat(paste(kdf, collapse = "\n"))
-
-      cat("\n: {tbl-colwidths=\"[20,47,11,11,11]\"}\n\n")
-
-      print_header <- FALSE
+    if (nrow(df) > 0 ) {
+      groups[[struc]] <- c(start_row, start_row + nrow(df) - 1)
+      start_row <- start_row + nrow(df)
+      total_df <- rbind(total_df, df)
     }
+
   }
+  kdf <- kbl(total_df, format = "html", col.names = colnames(total_df)) %>%
+    kable_styling(bootstrap_options = "striped",
+                full_width = F)
+
+  for (name in names(groups)) {
+    kdf <- pack_rows(kdf, name, groups[[name]][1], groups[[name]][2])
+  }
+
+  # cat(paste(groups))
+  cat(paste(kdf, collapse = "\n"))
 }
 ```
 
