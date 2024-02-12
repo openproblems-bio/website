@@ -9,6 +9,8 @@ library(jsonlite)
 library(knitr)
 library(kableExtra)
 
+substitute_underscores <- function(x) gsub("_", "_<wbr>", x)
+
 # find files
 dataset_schemas <- list.files(params$data_dir, full.names = TRUE, pattern = "*.json")
 
@@ -123,7 +125,7 @@ metadata <- tribble(
   "Dimensions", "bi bi-box", shape_str
 )
 metadata_lines <- paste0(
-  "<i class=\"", metadata$icon, "\"></i> ", metadata$value, "  \n"
+  "<i class=\"", metadata$icon, "\"></i> ", substitute_underscores(metadata$value), "  \n"
 )
 
 cat(paste(metadata_lines, collapse = ""))
@@ -263,37 +265,34 @@ for (file_name in names(metas)) {
     cat("#### ", capitalize_first(gsub("_", " ", file_name)), "\n")
   }
 
-  total_df <- data.frame()
-  groups <- list()
-  start_row <- 1
-  for (struc in struc_names) {
-    df <- slot_info %>%
-      filter(
-        file_name == !!file_name,
-        struct_name == !!struc,
-        !is.na(description)
-      ) %>%
-      transmute(
-        Name = paste0("`", name, "`"),
-        Description = gsub("\n", " ", description),
-        Type = ifelse(is.na(type) | type == "", " ", paste0("`", type, "`")),
-        `Data type` = ifelse(is.na(dtype) | dtype == "", " ", paste0("`", dtype, "`")),
-        Size = ifelse(is.na(shape_str), " ", shape_str)
-      )
+  df <- slot_info %>%
+    filter(
+      file_name == !!file_name,
+      !is.na(description)
+    ) %>%
+    arrange(match(struct_name, struc_names), name)
+    
+  kbl_df <- df %>%
+    transmute(
+      Name = paste0("<code>", substitute_underscores(name), "</code>"),
+      Description = gsub("\n", " ", description),
+      Type = ifelse(is.na(type) | type == "", " ", paste0("`", type, "`")),
+      `Data type` = ifelse(is.na(dtype) | dtype == "", " ", paste0("`", dtype, "`")),
+      Size = ifelse(is.na(shape_str), " ", shape_str)
+    )
 
-    if (nrow(df) > 0 ) {
-      groups[[struc]] <- c(start_row, start_row + nrow(df) - 1)
-      start_row <- start_row + nrow(df)
-      total_df <- rbind(total_df, df)
-    }
+  groups <- df %>%
+    mutate(ix = row_number()) %>%
+    group_by(struct_name) %>%
+    summarise(start = first(ix), end = last(ix)) %>%
+    arrange(match(struct_name, struc_names))
+  
+  kdf <- kbl(kbl_df, format = "html", col.names = colnames(kbl_df), escape = FALSE) %>%
+    kable_styling(bootstrap_options = "striped", full_width = TRUE)
 
-  }
-  kdf <- kbl(total_df, format = "html", col.names = colnames(total_df)) %>%
-    kable_styling(bootstrap_options = "striped",
-                full_width = F)
-
-  for (name in names(groups)) {
-    kdf <- pack_rows(kdf, name, groups[[name]][1], groups[[name]][2])
+  for (i in seq_len(nrow(groups))) {
+    kdf <- kdf %>%
+      pack_rows(groups$struct_name[[i]], groups$start[[i]], groups$end[[i]])
   }
 
   # cat(paste(groups))
