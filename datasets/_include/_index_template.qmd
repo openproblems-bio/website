@@ -260,7 +260,7 @@ for (file_name in names(metas)) {
 for (file_name in names(metas)) {
   # only print heading if there are multiple objects
   if (length(metas) > 1) {
-    cat("### ", capitalize_first(gsub("_", " ", file_name)), "\n")
+    cat("#### ", capitalize_first(gsub("_", " ", file_name)), "\n")
   }
 
   total_df <- data.frame()
