@@ -1,3 +1,8 @@
+/* Fix the overflow created by the dataset-image */
+body {
+  overflow-x: hidden;
+}
+
 /* Dataset image */
 
 #quarto-content {
@@ -17,6 +22,10 @@
 /* only use bottom border on pages with dataset-details */
 .quarto-title-banner:has(p){
   border-bottom: 1px solid var(--bs-gray-200);
+}
+
+.quarto-dark .quarto-title-banner:has(p){
+  border-bottom-color: #404041;
 }
 
 /* Fix title center on datasets overview page */
