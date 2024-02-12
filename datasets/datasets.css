@@ -14,7 +14,8 @@
   max-width: 500px;
 }
 
-.quarto-title-banner {
+/* only use bottom border on pages with dataset-details */
+.quarto-title-banner:has(p){
   border-bottom: 1px solid var(--bs-gray-200);
 }
 
