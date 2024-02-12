@@ -23,6 +23,8 @@ website:
     left:
       - href: index.qmd
         text: About
+      - href: datasets/index.qmd
+        text: Datasets
       - text: Benchmarks
         href: results/index.qmd
       - href: events/index.qmd
@@ -30,11 +32,7 @@ website:
       - href: team/index.qmd
         text: Team
       - text: Documentation
-        menu:
-          - text: Documentation
-            href: documentation/index.qmd
-          - text: Bibliography
-            href: bibliography/index.qmd
+        href: documentation/index.qmd
     right:
       - icon: github
         href: https://github.com/openproblems-bio
@@ -52,14 +50,19 @@ website:
 format:
   html:
     theme:
-      light: [ simplex, theme.scss, theme-light.scss]
-      dark: [ darkly, theme.scss, theme-dark.scss ]
-    css: styles.css
+      light: [ simplex, style/theme.scss, style/theme-light.scss]
+      dark: [ darkly, style/theme.scss, style/theme-dark.scss ]
+    css: style/styles.css
     toc: true
     link-external-newwindow: true
-    # link-external-icon: true
     link-external-filter: '^(?:http:|https:)\/\/(openproblems\.bio|[^.]*--openproblems\.netlify\.app)'
     smooth-scroll: true
+    bibliography: library.bib
+    glossary: _glossary.md
+    fig-cap-location: margin
+    tbl-cap-location: margin
+    reference-location: margin
+    citation-location: margin
 
 execute:
   freeze: auto

@@ -1,0 +1,19 @@
+---
+dataset-id: "openproblems_v1/mouse_hspc_nestorowa2016"
+title: "Mouse HSPC"
+subtitle: "Haematopoeitic stem and progenitor cells from mouse bone marrow"
+categories: ["openproblems_v1"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/openproblems_v1/mouse_hspc_nestorowa2016/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

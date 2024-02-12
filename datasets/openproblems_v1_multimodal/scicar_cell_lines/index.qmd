@@ -1,0 +1,19 @@
+---
+dataset-id: "openproblems_v1_multimodal/scicar_cell_lines"
+title: "sci-CAR Cell Lines"
+subtitle: "sci-CAR profiles of 5k cell line cells (HEK293T, NIH/3T3, A549) across three treatment conditions (DEX 0h, 1h and 3h)"
+categories: ["openproblems_v1_multimodal"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/openproblems_v1_multimodal/scicar_cell_lines/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

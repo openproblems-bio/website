@@ -1,0 +1,19 @@
+---
+dataset-id: "openproblems_v1_multimodal/citeseq_cbmc"
+title: "CITE-Seq CBMC"
+subtitle: "CITE-seq profiles of 8k Cord Blood Mononuclear Cells"
+categories: ["openproblems_v1_multimodal"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/openproblems_v1_multimodal/citeseq_cbmc/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

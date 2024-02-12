@@ -19,6 +19,8 @@ When put together, a typical task API looks somewhat like this:
 
 The [dimensionality reduction](https://github.com/openproblems-bio/openproblems-v2/tree/main/src/tasks/dimensionality_reduction/api) task is an example of an OpenProblems task with this topology, where the output is an embedding of the original dataset, and the solution is cell annotations which are used to verify whether the resulting embedding represents the intended biological information.
 
+Do not forget to add the **task info** yaml file, see [Define task](define_task.qmd#step-3-create-task-info).
+
 # Why?
 
 Having a formally defined API ensures consistency and interoperability across different components of your task. This makes it easier for others to contribute and build upon your work. Not only that, but creating API files (partially) automates the following steps:

@@ -1,0 +1,354 @@
+{
+  "structure": {
+    "X": [],
+    "layers": [
+      {
+        "description": "Raw counts",
+        "dtype": "float32",
+        "name": "counts",
+        "schema_type": "integer",
+        "shape": [
+          660,
+          116918
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "description": "Normalised expression values",
+        "dtype": "float32",
+        "name": "normalized",
+        "schema_type": "double",
+        "shape": [
+          660,
+          116918
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "obs": [
+      {
+        "dtype": "category",
+        "name": "celltype",
+        "shape": [
+          660
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "n_counts",
+        "shape": [
+          660
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Classification of the cell type based on its characteristics and function within the tissue or organism.",
+        "dtype": "category",
+        "name": "cell_type",
+        "schema_type": "string",
+        "shape": [
+          660
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "The size factors created by the normalisation method, if any.",
+        "dtype": "float32",
+        "name": "size_factors",
+        "schema_type": "double",
+        "shape": [
+          660
+        ],
+        "type": "vector"
+      }
+    ],
+    "obsm": [
+      {
+        "description": "The resulting PCA embedding.",
+        "dtype": "float32",
+        "name": "X_pca",
+        "schema_type": "double",
+        "shape": [
+          660,
+          50
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float32",
+        "name": "X_tsne",
+        "shape": [
+          660,
+          2
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float32",
+        "name": "X_umap",
+        "shape": [
+          660,
+          3
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "obsp": [
+      {
+        "dtype": "float32",
+        "name": "connectivities",
+        "shape": [
+          660,
+          660
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "distances",
+        "shape": [
+          660,
+          660
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "description": "K nearest neighbors connectivities matrix.",
+        "dtype": "float32",
+        "name": "knn_connectivities",
+        "schema_type": "double",
+        "shape": [
+          660,
+          660
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "description": "K nearest neighbors distance matrix.",
+        "dtype": "float64",
+        "name": "knn_distances",
+        "schema_type": "double",
+        "shape": [
+          660,
+          660
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "uns": [
+      {
+        "dtype": null,
+        "name": "_from_cache",
+        "shape": null,
+        "type": "other: <class 'numpy.bool_'>"
+      },
+      {
+        "dtype": "str",
+        "name": "data_reference",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "str",
+        "name": "data_url",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Long description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_description",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A unique identifier for the dataset. This is different from the `obs.dataset_id` field, which is the identifier for the dataset from which the cell data is derived.",
+        "dtype": "str",
+        "name": "dataset_id",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A human-readable name for the dataset.",
+        "dtype": "str",
+        "name": "dataset_name",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "The organism of the sample in the dataset.",
+        "dtype": "str",
+        "name": "dataset_organism",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Bibtex reference of the paper in which the dataset was published.",
+        "dtype": "str",
+        "name": "dataset_reference",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Short description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_summary",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Link to the original source of the dataset.",
+        "dtype": "str",
+        "name": "dataset_url",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Supplementary K nearest neighbors data.",
+        "dtype": null,
+        "name": "knn",
+        "schema_type": "object",
+        "shape": [
+          3
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": null,
+        "name": "neighbors",
+        "shape": null,
+        "type": "other: <class 'anndata.compat._overloaded_dict.OverloadedDict'>"
+      },
+      {
+        "description": "Which normalization was used",
+        "dtype": "str",
+        "name": "normalization_id",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "The PCA variance objects.",
+        "dtype": null,
+        "name": "pca_variance",
+        "schema_type": "double",
+        "shape": [
+          2
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": null,
+        "name": "umap",
+        "shape": [
+          1
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": "object",
+        "name": "var_names_all",
+        "shape": [
+          215595
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "var": [
+      {
+        "dtype": "int64",
+        "name": "n_cells",
+        "shape": [
+          116918
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A human-readable name for the feature, usually a gene symbol.",
+        "dtype": "object",
+        "name": "feature_name",
+        "schema_type": "string",
+        "shape": [
+          116918
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "Whether or not the feature is considered to be a 'highly variable gene'",
+        "dtype": "bool",
+        "name": "hvg",
+        "schema_type": "boolean",
+        "shape": [
+          116918
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A ranking of the features by hvg.",
+        "dtype": "float64",
+        "name": "hvg_score",
+        "schema_type": "integer",
+        "shape": [
+          116918
+        ],
+        "type": "vector"
+      }
+    ],
+    "varm": [
+      {
+        "description": "The PCA loadings matrix.",
+        "dtype": "float64",
+        "name": "pca_loadings",
+        "schema_type": "double",
+        "shape": [
+          116918,
+          50
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "varp": []
+  },
+  "uns": {
+    "data_reference": "olsson2016single",
+    "data_url": "https://figshare.com/ndownloader/files/36872214",
+    "dataset_description": "660 FACS-isolated myeloid cells from 9 experiments sequenced using C1 Fluidigm and SMARTseq in 2016 by Olsson et al.",
+    "dataset_id": "openproblems_v1/mouse_blood_olsson_labelled",
+    "dataset_name": "Mouse myeloid",
+    "dataset_organism": "mus_musculus",
+    "dataset_reference": "olsson2016single",
+    "dataset_summary": "Myeloid lineage differentiation from mouse blood",
+    "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE70245",
+    "date_created": "02-02-2024",
+    "file_size": 123102166,
+    "normalization_id": "log_cp10k"
+  }
+}

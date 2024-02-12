@@ -1,0 +1,19 @@
+---
+dataset-id: "cellxgene_census/tabula_sapiens"
+title: "Tabula Sapiens"
+subtitle: "A multiple-organ, single-cell transcriptomic atlas of humans"
+categories: ["cellxgene_census"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/cellxgene_census/tabula_sapiens/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

@@ -1,6 +1,7 @@
 ```{mermaid}
 %%| fig-cap: "Flow of data in OpenProblems benchmarks. All datasets are processed by a common processing pipeline. Further task-specific processing can occur at prior to the task-specific benchmarking workflow. *Legend: Grey rectangles are AnnData .h5ad files, purple rhomboids are Viash components.*"
 %%| label: fig-dataflow
+%%| cap-location: margin
 graph LR
   subgraph Common dataset components
     dataset_loader[/Dataset<br/>loader/]:::component
