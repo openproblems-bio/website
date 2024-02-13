@@ -1,0 +1,334 @@
+![](/images/heros/anndata_schema.png){class="dataset_img"}
+
+```{r load_data}
+#| include: false
+#| error: true
+
+library(tidyverse)
+library(jsonlite)
+library(knitr)
+library(kableExtra)
+
+substitute_underscores <- function(x) gsub("_", "_<wbr>", x)
+
+# find files
+dataset_schemas <- list.files(params$data_dir, full.names = TRUE, pattern = "*.json")
+
+# read dataset metadata
+#  -> add shape
+metas <- lapply(dataset_schemas, function(file) {
+  out <- read_json(file)
+  out$file_name <- gsub(".*/dataset_metadata(.*)\\.json", "dataset\\1", file)
+  out
+})
+names(metas) <- map_chr(metas, "file_name")
+
+# extract metadata
+uns <- metas[[1]]$uns
+shape <-
+  if (length(metas[[1]]$struct$layers) > 0) {
+    metas[[1]]$struct$layers[[1]]$shape
+  } else {
+    NULL
+  }
+shape_str <- paste(shape, collapse = " × ")
+
+file_size <- sum(sapply(metas, function(x) x$uns$file_size))
+file_size_str <- format(
+  structure(file_size, class = "object_size"),
+  units = "auto",
+  standard = "IEC",
+  digits = 2
+)
+
+struc_names <- c("X", "obs", "var", "obsp", "varp", "obsm", "varm", "layers", "uns")
+
+# collect struct info across files
+slot_info <- list_rbind(map2(
+  names(metas),
+  metas,
+  function(file_name, meta) {
+    list_rbind(map2(
+      names(meta$structure),
+      meta$structure,
+      function(name, slots) {
+        if (length(slots) == 0) {
+          return(NULL)
+        }
+        list_rbind(map(
+          slots,
+          function(li) {
+            li$file_name <- file_name
+            li$struct_name <- name
+            # fix rendering of dtype when type is dataframe
+            li$dtype <- paste0(li$dtype, collapse = ", ")
+            for (n in names(li)) {
+              if (is.null(li[[n]])) {
+                li[[n]] <- NULL
+              } else if (length(li[[n]]) > 1) {
+                li[[n]] <- list(li[[n]])
+              }
+            }
+            tibble::as_tibble(li)
+          }
+        ))
+      }
+    ))
+  }
+)) %>%
+  mutate(
+    shape_str = map_chr(shape, paste, collapse = " × "),
+    internal_reference = paste0("#", file_name, "-slots-", struct_name, "-", name),
+    type_str = case_when(
+      type == "atomic" ~ "value",
+      type == "densematrix" ~ "Dense matrix",
+      type == "sparsematrix" ~ "Sparse matrix",
+      type == "dataframe" ~ "Data frame",
+      type == "vector" ~ "List",
+      type == "dict" ~ "Dictionary",
+      grepl("other:", type) ~ paste0("Other (`", gsub("other: ", "", type), "`)")
+    ),
+    data_type_str = case_when(
+      dtype == "bool" ~ "Boolean",
+      dtype == "int" ~ "Integer",
+      dtype == "float32" ~ "Real",
+      dtype == "float64" ~ "Real",
+      dtype == "str" ~ "String",
+      TRUE ~ NA_character_
+    )
+  )
+
+
+capitalize_first <- function(x) {
+  paste0(
+    toupper(substring(x, 1, 1)),
+    substring(x, 2),
+    sep = ""
+  )
+}
+
+```
+
+
+```{r margin, results='asis'}
+#| echo: false
+#| column: margin
+
+cat("#### Info\n\n")
+
+metadata <- tribble(
+  ~name, ~icon, ~value,
+  "Dataset ID", "bi bi-database-check", uns$dataset_id,
+  "Reference", "bi bi-file-earmark-text", paste0("@", uns$dataset_reference),
+  "Size", "bi bi-cloud-download", file_size_str,
+  "Created", "bi bi-calendar", uns$date_created,
+  "Dimensions", "bi bi-box", shape_str
+)
+metadata_lines <- paste0(
+  "<i class=\"", metadata$icon, "\"></i> ", substitute_underscores(metadata$value), "  \n"
+)
+
+cat(paste(metadata_lines, collapse = ""))
+
+cat("\n\n")
+
+cat("#### Quick links\n\n")
+
+cat("<div class='quarto-title-meta-heading'><i class='bi bi-globe'></i> [Source](", uns$dataset_url, ")</div>\n", sep = "")
+
+task_info_files <- Sys.glob(paste0(params$results_dir, "/**/data/task_info.json"))
+
+tasks <- list_rbind(map(task_info_files, function(task_info_file){
+  task_info <- read_json(task_info_file)
+  dataset_info_file <- paste0(dirname(task_info_file), "/dataset_info.json")
+  dataset_infos <- read_json(dataset_info_file)
+
+  for (n in names(task_info)) {
+    if (is.null(task_info[[n]])) {
+      task_info[[n]] <- NULL
+    } else if (length(task_info[[n]]) > 1) {
+      task_info[[n]] <- list(task_info[[n]])
+    }
+  }
+
+  task_info$dataset_ids <- list(map(dataset_infos, function(di) {
+    if (!is.null(di$source_dataset_id)) {
+      di$source_dataset_id
+    } else {
+      di$dataset_id
+    }
+  }))
+  tibble::as_tibble(task_info)
+}))
+
+related_tasks <- tasks %>%
+  filter(map_lgl(dataset_ids, ~ uns$dataset_id %in% .x))
+
+cat("#### Used in\n\n")
+
+if (nrow(related_tasks) == 0) {
+  cat("No related benchmarks found.\n")
+} else {
+  links <- paste0("* [", related_tasks$task_name, "](/results/", related_tasks$task_id, ")  ")
+  cat(paste(links, collapse = "\n"))
+}
+
+```
+
+:::{.hidden}
+:::{layout-ncol=3 layout-valign="top"}
+
+```{r metadata, echo=FALSE, results='asis'}
+metadata <- tribble(
+  ~name, ~icon, ~value,
+  "Dataset ID", "bi bi-database-check", uns$dataset_id,
+  "Reference", "bi bi-file-earmark-text", paste0("@", uns$dataset_reference),
+  "Size", "bi bi-cloud-download", file_size_str,
+  "Created", "bi bi-calendar", uns$date_created,
+  "Dimensions", "bi bi-box", shape_str
+)
+metadata_lines <- paste0(
+  ":::{.small}\n\n",
+  "####### <i class=\"", metadata$icon, "\"></i> ", stringr::str_to_upper(metadata$name), "\n\n",
+  
+  metadata$value, "\n\n",
+  ":::\n\n"
+)
+
+n_rest <- length(metadata_lines) %% 3
+if (n_rest > 0) {
+  metadata_lines <- metadata_lines |> c(
+    rep(":::{.fill}\n:::\n\n", 3 - n_rest)
+  )
+}
+
+cat(paste(metadata_lines, collapse = ""))
+```
+
+:::
+:::
+
+## Description
+
+```{r description, results='asis'}
+#| echo: false
+
+cat(uns$dataset_description)
+
+```
+
+## Preview
+
+```{r schema}
+#| echo: false
+#| results: "asis"
+
+for (file_name in names(metas)) {
+  meta <- metas[[file_name]]
+  shape <- meta$struct$layers[[1]]$shape
+  shape_str <- paste(shape, collapse = " × ")
+
+  cat("`", file_name, "` is an AnnData object with n_obs × n_vars = ", shape_str, " with slots:\n\n", sep = "")
+
+  for (struct_name in struc_names) {
+    df <- slot_info %>%
+      filter(
+        file_name == !!file_name,
+        struct_name == !!struct_name,
+        !is.na(description)
+      )
+
+    if (nrow(df) > 0) {
+      slot_str <- paste(
+        paste0("[`", df$name, "`](", df$internal_reference, "){class=\"quarto-xref\"}"),
+        collapse = ", "
+      )
+      cat("* ", struct_name, ": ", slot_str, "  \n", sep = "")
+    }
+  }
+
+  cat("\n\n")
+}
+```
+
+## Reference
+
+:::{.column-page-inset}
+
+```{r schema_table}
+#| echo: false
+#| results: "asis"
+
+for (file_name in names(metas)) {
+  # only print heading if there are multiple objects
+  if (length(metas) > 1) {
+    cat("#### ", capitalize_first(gsub("_", " ", file_name)), "\n")
+  }
+
+  df <- slot_info %>%
+    filter(
+      file_name == !!file_name,
+      !is.na(description)
+    ) %>%
+    arrange(match(struct_name, struc_names), name)
+    
+  kbl_df <- df %>%
+    transmute(
+      Name = paste0("<code>", substitute_underscores(name), "</code>"),
+      Description = gsub("\n", " ", description),
+      Type = ifelse(is.na(type) | type == "", " ", paste0("`", type, "`")),
+      `Data type` = ifelse(is.na(dtype) | dtype == "", " ", paste0("`", dtype, "`")),
+      Size = ifelse(is.na(shape_str), " ", shape_str)
+    )
+
+  groups <- df %>%
+    mutate(ix = row_number()) %>%
+    group_by(struct_name) %>%
+    summarise(start = first(ix), end = last(ix)) %>%
+    arrange(match(struct_name, struc_names))
+  
+  kdf <- kbl(kbl_df, format = "html", col.names = colnames(kbl_df), escape = FALSE) %>%
+    kable_styling(bootstrap_options = "striped", full_width = TRUE)
+
+  for (i in seq_len(nrow(groups))) {
+    kdf <- kdf %>%
+      pack_rows(groups$struct_name[[i]], groups$start[[i]], groups$end[[i]])
+  }
+
+  # cat(paste(groups))
+  cat(paste(kdf, collapse = "\n"))
+}
+```
+
+:::
+
+:::{.hidden}
+
+## Slot crossref data
+
+```{r slots}
+#| echo: false
+#| results: "asis"
+
+
+df <- slot_info %>%
+  filter(!is.na(description)) %>%
+  mutate(
+    crossref = paste0(
+      "### `", file_name, ".", struct_name, "['", name, "']` {", internal_reference, "}\n\n",
+
+      "In R: `", file_name, "$", struct_name, "[[\"", name, "\"]]`\n\n",
+
+      "Type: `", type, "`",
+      ifelse(is.na(dtype), "", paste0(", data type: `", dtype, "`")),
+      ifelse(is.na(shape_str), "", paste0(", shape: ", shape_str)),
+      "\n\n",
+
+      description, "\n\n"
+    )
+  )
+
+cat(paste(df$crossref, collapse = "\n"))
+```
+
+:::

@@ -18,15 +18,15 @@ strip_margin <- function(text, symbol = "\\|") {
 {{< include /_include/_evaluate_code.qmd >}}
 {{< include /_include/_read_api.qmd >}}
 
-In this section, we'll create the Dataset processor component and generate the first test resources. The Dataset processor component uses one of the pre-defined Common datasets to create the AnnData objects. These AnnData object can then serve as the first test resources to be used to test Method and Metric components.
+In this section, we'll create the {{< glossary "Dataset processor" >}} component and generate the first {{< glossary "test resources" >}}. The Dataset processor component uses one of the pre-defined {{< glossary "common dataset" label="Common datasets" >}} to create the AnnData files used in your task. These AnnData object can then serve as the first test resources to be used to test Method and Metric components.
 
 # Why?
 
-The Dataset processor component splits up the Common dataset into different AnnData object such that both Method and Metric components can only observe the information specified by the file format specification files. This ensures that Methods can't get access to the ground-truth information or any other information that they're not supposed to access.
+The Dataset processor component splits up the Common dataset into different AnnData objects such that both Method and Metric components. This is done so the Method and Metric can only observe the information specified by the file format specification files. This not only safe-guards against data leakage, but also ensures that the Method component can't accidentally make changes to the data structure that the Metric component relies on.
 
 # How?
 
-The Dataset processor, like any component in OpenProblems, is a Viash component, which consists of a config and a script.
+The Dataset processor, like any component in OpenProblems, is a {{< glossary Viash component >}}, which consists of a config and a script.
 
 # Step 1: Create the Viash config
 

@@ -1,0 +1,19 @@
+---
+dataset-id: "cellxgene_census/mouse_pancreas_atlas"
+title: "Mouse Pancreatic Islet Atlas"
+subtitle: "Mouse pancreatic islet scRNA-seq atlas across sexes, ages, and stress conditions including diabetes"
+categories: ["cellxgene_census"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/cellxgene_census/mouse_pancreas_atlas/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

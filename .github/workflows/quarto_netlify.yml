@@ -37,7 +37,7 @@ jobs:
           echo "LINUX_VERSION=$(uname -rs)" >> $GITHUB_ENV
 
       - name: Cache Python packages
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: renv/python/virtualenvs/renv-python-3.10
           key: python-${{env.LINUX_VERSION}}-${{ env.pythonLocation }}-${{ hashFiles('requirements.txt') }}
@@ -45,7 +45,7 @@ jobs:
 
       - uses: r-lib/actions/setup-renv@v2
 
-      - uses: viash-io/viash-actions/setup@v4
+      - uses: viash-io/viash-actions/setup@v5
           
       - name: Install Quarto
         uses: quarto-dev/quarto-actions/setup@v2

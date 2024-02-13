@@ -1,0 +1,19 @@
+---
+dataset-id: "openproblems_v1/tnbc_wu2021"
+title: "Triple-Negative Breast Cancer"
+subtitle: "1535 cells from six fresh triple-negative breast cancer tumors."
+categories: ["openproblems_v1"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/openproblems_v1/tnbc_wu2021/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}
