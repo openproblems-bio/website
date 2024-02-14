@@ -138,15 +138,37 @@ a {
 }
 
 /* Card fx */
-.card-shadow {
+.card {
   overflow: hidden;
   text-overflow: ellipsis;
   background: var(--card-bg-color);
   box-shadow: 0 2px 4px var(--shadow-color);
   transition: all .2s ease-out;
 }
-a .card-shadow:hover,
-.card-shadow:has(a):hover {
+.card:hover {
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.card .card-body .card-title {
+  color: var(--);
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.card .card-body .card-subtitle {
+  font-size: .9em;
+  margin-bottom: 0.25rem;
+}
+
+.card {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: var(--card-bg-color);
+  box-shadow: 0 2px 4px var(--shadow-color);
+  transition: all .2s ease-out;
+}
+a .card:hover,
+.card:has(a):hover {
   box-shadow: 0 8px 16px var(--shadow-color);
 }
 .card .btn {
