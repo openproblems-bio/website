@@ -25,6 +25,12 @@ results_resources <- results %>%
   select(method_id, dataset_id, resources) %>%
   unnest(resources)
 
+# exit code is missing from openproblems-v1
+if (! "exit_code" %in% colnames(results_resources)) {
+  results_resources <- results_resources %>%
+    mutate(exit_code = ifelse(is.na(duration_sec), 1, 0))
+}
+
 resources <- results_resources %>%
   group_by(method_id) %>%
   summarise(
