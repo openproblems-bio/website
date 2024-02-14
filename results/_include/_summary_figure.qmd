@@ -21,6 +21,27 @@ per_metric <- results_long %>%
   mutate(score = pmin(1, pmax(score, 0))) %>%
   spread(metric_id, score)
 
+results_resources <- results %>%
+  select(method_id, dataset_id, resources) %>%
+  unnest(resources)
+
+resources <- results_resources %>%
+  group_by(method_id) %>%
+  summarise(
+    pct_oom = mean(exit_code %|% 0 == 137),
+    pct_timeout = mean(exit_code %|% 0 == 124),
+    pct_error = mean(exit_code %|% 0 != 0) - pct_oom - pct_timeout,
+    pct_ok = 1 - pct_oom - pct_timeout - pct_error,
+    error_reason = list(c("Out Of Memory" = pct_oom, "Timeout" = pct_timeout, "Execution Error" = pct_error, "None" = pct_ok)),
+    mean_cpu_pct = mean(cpu_pct, na.rm = TRUE),
+    mean_peak_memory_gb = mean(peak_memory_mb, na.rm = TRUE) / 1024,
+    mean_disk_read_gb = mean(disk_read_mb, na.rm = TRUE) / 1024,
+    mean_disk_write_gb = mean(disk_write_mb, na.rm = TRUE) / 1024,
+    mean_duration_hours = mean(duration_sec %|% 0) / 3600,
+    .groups = "drop"
+  ) %>%
+  select(-pct_oom, -pct_timeout, -pct_error, -pct_ok)
+
 summary_all <-
   method_info %>%
   filter(!is_baseline) %>%
@@ -28,6 +49,7 @@ summary_all <-
   left_join(overall, by = "method_id") %>%
   left_join(per_dataset, by = "method_id") %>%
   left_join(per_metric, by = "method_id") %>%
+  left_join(resources, by = "method_id") %>%
   arrange(desc(method_id))
 
 column_info <-
@@ -36,6 +58,7 @@ column_info <-
       ~id, ~name, ~group, ~geom,
       "method_name", "Name", "method", "text",
       "mean_score", "Score", "mean", "bar",
+      "error_reason", "Error reason", "error_reason", "pie",
     ),
     dataset_info %>% transmute(
       id = paste0("dataset_", dataset_id),
@@ -48,10 +71,16 @@ column_info <-
       name = metric_name,
       group = "metric",
       geom = "funkyrect"
+    ),
+    tibble(
+      id = c("mean_cpu_pct", "mean_peak_memory_gb", "mean_disk_read_gb", "mean_disk_write_gb", "mean_duration_hours"),
+      name = c("%CPU", "Peak Memory (GB)", "Disk Read (GB)", "Disk Write (GB)", "Duration (hours)"),
+      group = c("resources", "resources", "resources", "resources", "resources"),
+      geom = c("funkyrect", "funkyrect", "funkyrect", "funkyrect", "funkyrect")
     )
   ) %>%
   mutate(
-    palette = ifelse(group %in% c("mean", "dataset", "metric"), group, NA_character_),
+    palette = ifelse(group %in% c("mean", "dataset", "metric", "error_reason", "resources"), group, NA_character_),
     options = map2(id, geom, function(id, geom) {
       if (id == "method_name") {
         list(width = 15, hjust = 0)
@@ -68,7 +97,8 @@ column_info <-
 column_groups <- tribble(
   ~Category, ~group, ~palette,
   "", "method", NA_character_,
-  "Overall", "mean", "mean"
+  "Overall", "mean", "mean",
+  "Error reason", "error_reason", "error_reason"
 )
 if (nrow(dataset_info) >= 3) {
   column_groups <- column_groups %>%
@@ -84,10 +114,24 @@ if (nrow(metric_info) >= 3) {
   column_groups <- column_groups %>%
     add_row(Category = "", group = "metric", palette = NA_character_)
 }
+column_groups <- column_groups %>%
+  add_row(Category = "Resources", group = "resources", palette = "resources")
+
 palettes <- list(
   mean = "Greys",
   dataset = "Blues",
-  metric = "Reds"
+  metric = "Reds",
+  resources = "YlOrBr",
+  error_reason = list(
+    colors = c("#8DD3C7", "#FFFFB3", "#BEBADA", "#FFFFFF"),
+    names = c("Out Of Memory", "Timeout", "Execution Error", "None")
+  )
+  # error_reason = c(
+  #   Out Of Memory = "#8DD3C7",
+  #   Timeout = "#FFFFB3",
+  #   Execution Error = "#BEBADA",
+  #   OK = "#FFFFFF"
+  # )
 )
 
 # g_all <- funky_heatmap(
@@ -126,15 +170,14 @@ ojs_define(
 //| echo: false
 //| panel: input
 //| layout-ncol: 2
-viewof color_by_rank = Inputs.toggle({label: "Color by rank"})
-viewof scale_column = Inputs.toggle({label: "Minmax column"})
+viewof color_by_rank = Inputs.toggle({label: "Color by rank", value: true})
+viewof scale_column = Inputs.toggle({label: "Minmax column", value: true})
 ```
-
 
 ```{ojs}
 //| echo: false
 //| fig-cap: "Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)."
-
+//| column: page
 funkyheatmap(
     funky_heatmap_args.data,
     funky_heatmap_args.column_info,
@@ -165,6 +208,6 @@ funkyheatmap(
 funkyheatmap = (await require('d3@7').then(d3 => {
   window.d3 = d3;
   window._ = _;
-  return import('https://unpkg.com/funkyheatmapjs@0.2.3');
+  return import('https://unpkg.com/funkyheatmapjs@0.2.4');
 })).default;
 ```
