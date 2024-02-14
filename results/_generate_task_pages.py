@@ -23,6 +23,7 @@ page-layout: full
 css: ../task_template.css
 engine: knitr
 citation-location: document
+toc: false
 ---
 
 ```{{r}}

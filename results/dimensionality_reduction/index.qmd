@@ -6,12 +6,11 @@ page-layout: full
 css: ../task_template.css
 engine: knitr
 citation-location: document
+toc: false
 ---
-
 ```{r}
 #| include: false
 params <- list(data_dir = "results/dimensionality_reduction/data")
 params <- list(data_dir = "./data")
 ```
-
 {{< include ../_include/_task_template.qmd >}}

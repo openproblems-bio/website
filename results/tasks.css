@@ -1,15 +1,30 @@
-.quarto-grid-item.card {
-  height: 100%;
-}
-
-.quarto-grid-item .card-title {
-  margin-top: 0;
-}
 
 .quarto-grid-item .card-text {
   margin-bottom: auto;
 }
 
-.card .card-img-top {
-  background-color: var(--bs-white);
+div#listing-tasks .card {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: var(--bs-white);
+  box-shadow: 0 2px 4px var(--bs-card-box-shadow);
+  transition: all .2s ease-out;
+}
+
+div#listing-tasks .card:hover {
+  box-shadow: 0 4px 8px var(--bs-card-box-shadow);
+}
+
+div#listing-tasks .card .card-img-top img {
+  height: 100% !important;
+}
+
+div#listing-tasks .card .card-body .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+div#listing-tasks .card .card-body .card-subtitle {
+  font-size: .9em;
+  margin-bottom: 0.25rem;
 }

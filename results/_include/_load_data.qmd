@@ -39,11 +39,6 @@ for (col in c("dataset_summary", "dataset_name")) {
 # fill missing data
 dataset_info$dataset_name <- dataset_info$dataset_name %|% dataset_info$dataset_id
 
-num_methods <- sum(!method_info$is_baseline)
-num_baselines <- sum(method_info$is_baseline)
-num_datasets <- nrow(dataset_info)
-num_metrics <- nrow(metric_info)
-
 split_cite_fun <- function(keys) {
   if (is.null(keys)) return("")
   
