@@ -3,6 +3,30 @@
 #| echo: false
 #| message: false
 #| warning: false
+
+
+label_time <- function(time) {
+  case_when(
+    time < 1e-5 ~ "0s",
+    time < 1 ~ "<1s",
+    time < 60 ~ paste0(floor(time), "s"),
+    time < 3600 ~ paste0(floor(time / 60), "m"),
+    time < 3600 * 24 ~ paste0(floor(time / 3600), "h"),
+    time < 3600 * 24 * 7 ~ paste0(floor(time / 3600 / 24), "d"),
+    !is.na(time) ~ ">7d",
+    TRUE ~ NA_character_
+  )
+}
+
+label_memory <- function(x, include_mb = FALSE) {
+  case_when(
+    x < 1e9 ~ "<1G",
+    x < 1e12 ~ paste0(round(x / 1e9), "G"),
+    !is.na(x) ~ ">1T",
+    TRUE ~ NA_character_
+  )
+}
+
 overall <- results_long %>%
   group_by(method_id) %>%
   summarise(mean_score = mean(score %|% 0), .groups = "drop") %>%
@@ -21,6 +45,46 @@ per_metric <- results_long %>%
   mutate(score = pmin(1, pmax(score, 0))) %>%
   spread(metric_id, score)
 
+results_resources <- results %>%
+  select(method_id, dataset_id, resources) %>%
+  unnest(resources)
+
+# exit code is missing from openproblems-v1
+if (! "exit_code" %in% colnames(results_resources)) {
+  results_resources <- results_resources %>%
+    mutate(exit_code = ifelse(is.na(duration_sec), 1, 0))
+}
+
+resources <- results_resources %>%
+  group_by(method_id) %>%
+  summarise(
+    error_pct_oom = mean(exit_code %|% 0 %in% c(137)),
+    error_pct_timeout = mean(exit_code %|% 0 %in% c(143)),
+    error_pct_error = mean(exit_code %|% 0 != 0) - error_pct_oom - error_pct_timeout,
+    error_pct_ok = 1 - error_pct_oom - error_pct_timeout - error_pct_error,
+    error_reason = list(c(
+      "Memory limit exceeded" = error_pct_oom,
+      "Time limit exceeded" = error_pct_timeout,
+      "Execution error" = error_pct_error,
+      "No error" = error_pct_ok
+    )),
+    mean_cpu_pct = mean(cpu_pct, na.rm = TRUE),
+    mean_peak_memory_b = mean(peak_memory_mb, na.rm = TRUE) * 1000,
+    mean_peak_memory_log = -log10(mean_peak_memory_b),
+    mean_peak_memory_str = label_memory(mean_peak_memory_b * 1000),
+    mean_disk_read_b = mean(disk_read_mb, na.rm = TRUE) * 1000,
+    mean_disk_read_log = -log10(mean_disk_read_b),
+    mean_disk_read_str = label_memory(mean_disk_read_b * 1000),
+    mean_disk_write_mb = mean(disk_write_mb, na.rm = TRUE) * 1000,
+    mean_disk_write_log = -log10(mean_disk_write_mb),
+    mean_disk_write_str = label_memory(mean_disk_write_mb * 1000),
+    mean_duration_sec = mean(duration_sec %|% 0),
+    mean_duration_log = -log10(mean_duration_sec),
+    mean_duration_str = label_time(mean_duration_sec),
+    .groups = "drop"
+  ) %>%
+  mutate_at(vars(ends_with("_str")), function(x) paste0(" ", x, " "))
+
 summary_all <-
   method_info %>%
   filter(!is_baseline) %>%
@@ -28,30 +92,44 @@ summary_all <-
   left_join(overall, by = "method_id") %>%
   left_join(per_dataset, by = "method_id") %>%
   left_join(per_metric, by = "method_id") %>%
+  left_join(resources, by = "method_id") %>%
   arrange(desc(method_id))
 
 column_info <-
   bind_rows(
     tribble(
-      ~id, ~name, ~group, ~geom,
-      "method_name", "Name", "method", "text",
-      "mean_score", "Score", "mean", "bar",
+      ~id, ~name, ~group, ~geom, ~palette,
+      "method_name", "Name", "method", "text", NA_character_,
+      "mean_score", "Score", "overall", "bar", "overall",
+      "error_reason", "Error reason", "overall", "pie", "error_reason"
     ),
     dataset_info %>% transmute(
       id = paste0("dataset_", dataset_id),
       name = dataset_name,
       group = "dataset",
-      geom = "funkyrect"
+      geom = "funkyrect",
+      palette = "dataset"
     ),
     metric_info %>% transmute(
       id = paste0("metric_", metric_id),
       name = metric_name,
       group = "metric",
-      geom = "funkyrect"
+      geom = "funkyrect",
+      palette = "metric"
+    ),
+    tribble(
+      ~id, ~name, ~label, ~geom,
+      "mean_cpu_pct", "%CPU", NA_character_, "funkyrect",
+      "mean_peak_memory_log", "Peak memory", "mean_peak_memory_str", "rect",
+      "mean_disk_read_log", "Disk read", "mean_disk_read_str", "rect",
+      "mean_disk_write_log", "Disk write", "mean_disk_write_str", "rect",
+      "mean_duration_log", "Duration", "mean_duration_str", "rect"
+    ) %>% mutate(
+      group = "resources",
+      palette = "resources"
     )
   ) %>%
   mutate(
-    palette = ifelse(group %in% c("mean", "dataset", "metric"), group, NA_character_),
     options = map2(id, geom, function(id, geom) {
       if (id == "method_name") {
         list(width = 15, hjust = 0)
@@ -66,28 +144,37 @@ column_info <-
   )
 )
 column_groups <- tribble(
-  ~Category, ~group, ~palette,
-  "", "method", NA_character_,
-  "Overall", "mean", "mean"
+  ~group, ~palette, ~level1,
+  "method", NA_character_, "",
+  "overall", "overall", "Overall",
+  "error_reason", "error_reason", "Error reason"
 )
 if (nrow(dataset_info) >= 3) {
   column_groups <- column_groups %>%
-    add_row(Category = "Dataset", group = "dataset", palette = "dataset")
+    add_row(level1 = "Datasets", group = "dataset", palette = "dataset")
 } else {
   column_groups <- column_groups %>%
-    add_row(Category = "", group = "dataset", palette = NA_character_)
+    add_row(level1 = "", group = "dataset", palette = NA_character_)
 }
 if (nrow(metric_info) >= 3) {
   column_groups <- column_groups %>%
-    add_row(Category = "Metric", group = "metric", palette = "metric")
+    add_row(level1 = "Metrics", group = "metric", palette = "metric")
 } else {
   column_groups <- column_groups %>%
-    add_row(Category = "", group = "metric", palette = NA_character_)
+    add_row(level1 = "", group = "metric", palette = NA_character_)
 }
+column_groups <- column_groups %>%
+  add_row(level1 = "Resources", group = "resources", palette = "resources")
+
 palettes <- list(
-  mean = "Greys",
+  overall = "Greys",
   dataset = "Blues",
-  metric = "Reds"
+  metric = "Reds",
+  resources = "YlOrBr",
+  error_reason = list(
+    colors = c("#8DD3C7", "#FFFFB3", "#BEBADA", "#FFFFFF"),
+    names = c("Memory limit exceeded", "Time limit exceeded", "Execution error", "No error")
+  )
 )
 
 # g_all <- funky_heatmap(
@@ -109,9 +196,9 @@ ojs_define(
     method_info = method_info,
     funky_heatmap_args = list(
         data = summary_all,
-        columns = colnames(summary_all)[2:ncol(summary_all)],
+        columns = intersect(column_info$id, colnames(summary_all)),
         column_info = column_info %>% filter(id %in% colnames(summary_all)),
-        column_groups = column_groups %>% rename(name = Category),
+        column_groups = column_groups,
         palettes = palettes,
         expand = c(xmax = 3),
         col_annot_offset = 5,
@@ -126,15 +213,14 @@ ojs_define(
 //| echo: false
 //| panel: input
 //| layout-ncol: 2
-viewof color_by_rank = Inputs.toggle({label: "Color by rank"})
-viewof scale_column = Inputs.toggle({label: "Minmax column"})
+viewof color_by_rank = Inputs.toggle({label: "Color by rank", value: true})
+viewof scale_column = Inputs.toggle({label: "Minmax column", value: true})
 ```
-
 
 ```{ojs}
 //| echo: false
 //| fig-cap: "Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)."
-
+//| column: page
 funkyheatmap(
     funky_heatmap_args.data,
     funky_heatmap_args.column_info,
@@ -152,7 +238,7 @@ funkyheatmap(
             evenRowBackground: 'var(--bs-button-hover)',
             textColor: 'var(--bs-body-color)',
             strokeColor: 'var(--bs-body-color)',
-            headerColor: 'var(--bs-white)',
+            headerColor: 'var(--bs-body-color)',
             hoverColor: 'var(--bs-body-color)'
         }
     },
@@ -165,6 +251,6 @@ funkyheatmap(
 funkyheatmap = (await require('d3@7').then(d3 => {
   window.d3 = d3;
   window._ = _;
-  return import('https://unpkg.com/funkyheatmapjs@0.2.3');
+  return import('https://unpkg.com/funkyheatmapjs@0.2.4');
 })).default;
 ```
