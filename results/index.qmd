@@ -6,9 +6,12 @@ title-block-banner: ../images/heros/results.jpg
 title-block-banner-color: "#fcfcfc"
 listing:
   - id: tasks
+    fields: ["title", "categories", "subtitle", "description", "image"]
     type: grid
+    grid-columns: 2
     contents: "*/index.qmd"
-    template: tasks.ejs
+    page-size: 100
+    filter-ui: true
 toc: false
 css: [../style/style-hero.css, tasks.css]
 ---
