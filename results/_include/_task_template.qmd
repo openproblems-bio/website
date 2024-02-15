@@ -1,17 +1,23 @@
 
 {{< include ../_include/_load_data.qmd >}}
 
-:::{.content-hidden}
-`r num_methods` methods • `r num_metrics` metrics • `r num_datasets` datasets
-:::
+```{r description, results="asis", echo=FALSE}
+metadata <- tribble(
+  ~icon, ~value,
+  "bi bi-table", paste0(nrow(dataset_info), " datasets"),
+  "bi bi-gear", paste0(sum(!method_info$is_baseline), " methods"),
+  "bi bi-shield-check", paste0(sum(method_info$is_baseline), " control methods"),
+  "bi bi-graph-up", paste0(nrow(metric_info), " metrics")
+)
 
-Data:
-<a href="data/task_info.json" class="btn btn-secondary">Task info</a>
-<a href="data/method_info.json" class="btn btn-secondary">Method info</a>
-<a href="data/metric_info.json" class="btn btn-secondary">Metric info</a>
-<a href="data/dataset_info.json" class="btn btn-secondary">Dataset info</a>
-<a href="data/results.json" class="btn btn-secondary">Results</a>
-<a href="data/quality_control.json" class="btn btn-secondary">Quality control</a>
+cat(
+  paste(
+    paste0("<i class=\"", metadata$icon, "\"></i> ", metadata$value),
+    collapse = " · "
+  )
+)
+```
+
 
 `r task_info$task_motivation %|% ""`
 
@@ -52,6 +58,16 @@ Data:
 <details><summary>Quality control results</summary>
 
 {{< include ../_include/_qc_table.qmd >}}
+
+</details>
+
+<details><summary>Raw results</summary>
+
+[Task info](data/task_info.json){class="btn btn-secondary"} 
+[Method info](data/method_info.json){class="btn btn-secondary"} 
+[Metric info](data/metric_info.json){class="btn btn-secondary"} 
+[Dataset info](data/dataset_info.json){class="btn btn-secondary"} 
+[Results](data/results.json){class="btn btn-secondary"}
 
 </details>
 

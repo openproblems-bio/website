@@ -20,10 +20,11 @@ title: "{task_name}"
 subtitle: "{task_summary}"
 image: thumbnail.svg
 page-layout: full
-css: ../task_template.css
+css: ../_include/task_template.css
 engine: knitr
 fig-cap-location: bottom
 citation-location: document
+toc: false
 ---
 
 ```{{r}}

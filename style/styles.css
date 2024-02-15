@@ -138,7 +138,24 @@ a {
 }
 
 /* Card fx */
-.card-shadow {
+.quarto-listing .card .card-body .card-title {
+  color: var(--bs-primary);
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.quarto-listing .card .card-body .card-subtitle {
+  font-size: .9em;
+  margin-bottom: 0.25rem;
+}
+
+.quarto-listing .card .card-body .card-text {
+  color: var(--bs-secondary-text-color);
+  font-size: .9em;
+}
+
+.card-shadow,
+.quarto-listing .card {
   overflow: hidden;
   text-overflow: ellipsis;
   background: var(--card-bg-color);
@@ -146,8 +163,10 @@ a {
   transition: all .2s ease-out;
 }
 a .card-shadow:hover,
-.card-shadow:has(a):hover {
-  box-shadow: 0 8px 16px var(--shadow-color);
+.card-shadow:has(a):hover,
+.quarto-listing a .card:hover,
+.quarto-listing .card:has(a):hover {
+  box-shadow: 0 4px 8px var(--shadow-color);
 }
 .card .btn {
   margin-top: 0.5rem;
