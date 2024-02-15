@@ -22,6 +22,8 @@
   - Render dataset name instead of dataset id in figures and tables.
   - Change the way bibliographic references are rendered.
 
+* Update to funkyheatmapjs v0.2.5 (PR #316).
+
 ## BUG FIXES
 
 * Updated the `openproblems-v2` submodule (PR #295). This fixes a deprecation error due to an update in ruamel.yaml.
