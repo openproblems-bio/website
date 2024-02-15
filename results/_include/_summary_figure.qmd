@@ -58,8 +58,8 @@ if (! "exit_code" %in% colnames(results_resources)) {
 resources <- results_resources %>%
   group_by(method_id) %>%
   summarise(
-    error_pct_oom = mean(exit_code %|% 0 == 137),
-    error_pct_timeout = mean(exit_code %|% 0 == 124),
+    error_pct_oom = mean(exit_code %|% 0 %in% c(137)),
+    error_pct_timeout = mean(exit_code %|% 0 %in% c(143)),
     error_pct_error = mean(exit_code %|% 0 != 0) - error_pct_oom - error_pct_timeout,
     error_pct_ok = 1 - error_pct_oom - error_pct_timeout - error_pct_error,
     error_reason = list(c(
