@@ -288,7 +288,7 @@ for (file_name in names(metas)) {
     arrange(match(struct_name, struc_names))
   
   kdf <- kbl(kbl_df, format = "html", col.names = colnames(kbl_df), escape = FALSE) %>%
-    kable_styling(bootstrap_options = "striped", full_width = TRUE)
+    kable_styling(full_width = TRUE)
 
   for (i in seq_len(nrow(groups))) {
     kdf <- kdf %>%
