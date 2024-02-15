@@ -1,2378 +1,3330 @@
 [
-  {
-    "dataset_id": "cellxgene_census/dkd",
-    "method_id": "knn",
-    "metric_values": {
-      "accuracy": 0.9183,
-      "f1_macro": 0.8212,
-      "f1_micro": 0.9183,
-      "f1_weighted": 0.9099
-    },
-    "scaled_scores": {
-      "accuracy": 0.9008,
-      "f1_macro": 0.8148,
-      "f1_micro": 0.9008,
-      "f1_weighted": 0.8961
-    },
-    "mean_score": 0.8781,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 187,
-      "cpu_pct": 7.2,
-      "peak_memory_mb": 4096,
-      "disk_read_mb": 1332,
-      "disk_write_mb": 25
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/dkd",
-    "method_id": "logistic_regression",
-    "metric_values": {
-      "accuracy": 0.9128,
-      "f1_macro": 0.8294,
-      "f1_micro": 0.9128,
-      "f1_weighted": 0.9015
-    },
-    "scaled_scores": {
-      "accuracy": 0.8942,
-      "f1_macro": 0.8233,
-      "f1_micro": 0.8942,
-      "f1_weighted": 0.8865
-    },
-    "mean_score": 0.8745,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 12.3,
-      "cpu_pct": 540.5,
-      "peak_memory_mb": 4916,
-      "disk_read_mb": 1332,
-      "disk_write_mb": 24
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/dkd",
-    "method_id": "majority_vote",
-    "metric_values": {
-      "accuracy": 0.2925,
-      "f1_macro": 0.0348,
-      "f1_micro": 0.2925,
-      "f1_weighted": 0.1324
-    },
-    "scaled_scores": {
-      "accuracy": 0.1411,
-      "f1_macro": 0,
-      "f1_micro": 0.1411,
-      "f1_weighted": 0
-    },
-    "mean_score": 0.0706,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 79,
-      "cpu_pct": 16.9,
-      "peak_memory_mb": 6759,
-      "disk_read_mb": 1332,
-      "disk_write_mb": 24
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/dkd",
-    "method_id": "mlp",
-    "metric_values": {
-      "accuracy": 0.9146,
-      "f1_macro": 0.8274,
-      "f1_micro": 0.9146,
-      "f1_weighted": 0.9051
-    },
-    "scaled_scores": {
-      "accuracy": 0.8964,
-      "f1_macro": 0.8211,
-      "f1_micro": 0.8964,
-      "f1_weighted": 0.8907
-    },
-    "mean_score": 0.8761,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 42.3,
-      "cpu_pct": 2250.1,
-      "peak_memory_mb": 6861,
-      "disk_read_mb": 1332,
-      "disk_write_mb": 24
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/dkd",
-    "method_id": "random_labels",
-    "metric_values": {
-      "accuracy": 0.1762,
-      "f1_macro": 0.0751,
-      "f1_micro": 0.1762,
-      "f1_weighted": 0.1848
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0.0417,
-      "f1_micro": 0,
-      "f1_weighted": 0.0604
-    },
-    "mean_score": 0.0255,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 103,
-      "cpu_pct": 8.4,
-      "peak_memory_mb": 3482,
-      "disk_read_mb": 1332,
-      "disk_write_mb": 24
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/dkd",
-    "method_id": "scanvi_scarches",
-    "metric_values": {
-      "accuracy": 0.8976,
-      "f1_macro": 0.7231,
-      "f1_micro": 0.8976,
-      "f1_weighted": 0.8809
-    },
-    "scaled_scores": {
-      "accuracy": 0.8757,
-      "f1_macro": 0.7132,
-      "f1_micro": 0.8757,
-      "f1_weighted": 0.8627
-    },
-    "mean_score": 0.8318,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 9296,
-      "cpu_pct": 1415.5,
-      "peak_memory_mb": 19559,
-      "disk_read_mb": 1332,
-      "disk_write_mb": 36
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/dkd",
-    "method_id": "true_labels",
-    "metric_values": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "scaled_scores": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "mean_score": 1,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 101,
-      "cpu_pct": 8,
-      "peak_memory_mb": 3584,
-      "disk_read_mb": 167,
-      "disk_write_mb": 24
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/dkd",
-    "method_id": "xgboost",
-    "metric_values": {
-      "accuracy": 0.912,
-      "f1_macro": 0.8006,
-      "f1_micro": 0.912,
-      "f1_weighted": 0.9031
-    },
-    "scaled_scores": {
-      "accuracy": 0.8932,
-      "f1_macro": 0.7934,
-      "f1_micro": 0.8932,
-      "f1_weighted": 0.8883
-    },
-    "mean_score": 0.867,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 199,
-      "cpu_pct": 1819.4,
-      "peak_memory_mb": 18637,
-      "disk_read_mb": 1332,
-      "disk_write_mb": 25
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/gtex_v9",
-    "method_id": "knn",
-    "metric_values": {
-      "accuracy": 0.9353,
-      "f1_macro": 0.3655,
-      "f1_micro": 0.9353,
-      "f1_weighted": 0.9397
-    },
-    "scaled_scores": {
-      "accuracy": 0.9332,
-      "f1_macro": 0.3635,
-      "f1_micro": 0.9332,
-      "f1_weighted": 0.9396
-    },
-    "mean_score": 0.7924,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 152,
-      "cpu_pct": 26.9,
-      "peak_memory_mb": 7578,
-      "disk_read_mb": 2970,
-      "disk_write_mb": 39
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/gtex_v9",
-    "method_id": "logistic_regression",
-    "metric_values": {
-      "accuracy": 0.9447,
-      "f1_macro": 0.3964,
-      "f1_micro": 0.9447,
-      "f1_weighted": 0.9479
-    },
-    "scaled_scores": {
-      "accuracy": 0.9429,
-      "f1_macro": 0.3945,
-      "f1_micro": 0.9429,
-      "f1_weighted": 0.9478
-    },
-    "mean_score": 0.807,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 184,
-      "cpu_pct": 297.6,
-      "peak_memory_mb": 6144,
-      "disk_read_mb": 2970,
-      "disk_write_mb": 39
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/gtex_v9",
-    "method_id": "majority_vote",
-    "metric_values": {
-      "accuracy": 0.0319,
-      "f1_macro": 0.0031,
-      "f1_micro": 0.0319,
-      "f1_weighted": 0.002
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0,
-      "f1_micro": 0,
-      "f1_weighted": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 123,
-      "cpu_pct": 11.3,
-      "peak_memory_mb": 5837,
-      "disk_read_mb": 2970,
-      "disk_write_mb": 39
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/gtex_v9",
-    "method_id": "mlp",
-    "metric_values": {
-      "accuracy": 0.9258,
-      "f1_macro": 0.3603,
-      "f1_micro": 0.9258,
-      "f1_weighted": 0.9318
-    },
-    "scaled_scores": {
-      "accuracy": 0.9233,
-      "f1_macro": 0.3583,
-      "f1_micro": 0.9233,
-      "f1_weighted": 0.9317
-    },
-    "mean_score": 0.7842,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 2487,
-      "cpu_pct": 1190.7,
-      "peak_memory_mb": 5940,
-      "disk_read_mb": 2970,
-      "disk_write_mb": 39
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/gtex_v9",
-    "method_id": "random_labels",
-    "metric_values": {
-      "accuracy": 0.0648,
-      "f1_macro": 0.0094,
-      "f1_micro": 0.0648,
-      "f1_weighted": 0.097
-    },
-    "scaled_scores": {
-      "accuracy": 0.034,
-      "f1_macro": 0.0063,
-      "f1_micro": 0.034,
-      "f1_weighted": 0.0952
-    },
-    "mean_score": 0.0424,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 119,
-      "cpu_pct": 12.2,
-      "peak_memory_mb": 5837,
-      "disk_read_mb": 2970,
-      "disk_write_mb": 39
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/gtex_v9",
-    "method_id": "scanvi_scarches",
-    "metric_values": {
-      "accuracy": "NA",
-      "f1_macro": "NA",
-      "f1_micro": "NA",
-      "f1_weighted": "NA"
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0,
-      "f1_micro": 0,
-      "f1_weighted": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": "NA",
-      "duration_sec": 22170,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/gtex_v9",
-    "method_id": "true_labels",
-    "metric_values": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "scaled_scores": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "mean_score": 1,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 73,
-      "cpu_pct": 18.7,
-      "peak_memory_mb": 5428,
-      "disk_read_mb": 265,
-      "disk_write_mb": 39
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/gtex_v9",
-    "method_id": "xgboost",
-    "metric_values": {
-      "accuracy": 0.8734,
-      "f1_macro": 0.3326,
-      "f1_micro": 0.8734,
-      "f1_weighted": 0.8941
-    },
-    "scaled_scores": {
-      "accuracy": 0.8692,
-      "f1_macro": 0.3306,
-      "f1_micro": 0.8692,
-      "f1_weighted": 0.8939
-    },
-    "mean_score": 0.7407,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 1208,
-      "cpu_pct": 1663.3,
-      "peak_memory_mb": 26522,
-      "disk_read_mb": 2970,
-      "disk_write_mb": 39
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/hcla",
-    "method_id": "knn",
-    "metric_values": {
-      "accuracy": 0.8575,
-      "f1_macro": 0.6013,
-      "f1_micro": 0.8575,
-      "f1_weighted": 0.8571
-    },
-    "scaled_scores": {
-      "accuracy": 0.8568,
-      "f1_macro": 0.6012,
-      "f1_micro": 0.8568,
-      "f1_weighted": 0.8571
-    },
-    "mean_score": 0.793,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 27.8,
-      "cpu_pct": 149.6,
-      "peak_memory_mb": 21402,
-      "disk_read_mb": 17613,
-      "disk_write_mb": 11
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/hcla",
-    "method_id": "logistic_regression",
-    "metric_values": {
-      "accuracy": 0.8796,
-      "f1_macro": 0.6772,
-      "f1_micro": 0.8796,
-      "f1_weighted": 0.8799
-    },
-    "scaled_scores": {
-      "accuracy": 0.879,
-      "f1_macro": 0.6771,
-      "f1_micro": 0.879,
-      "f1_weighted": 0.8799
-    },
-    "mean_score": 0.8288,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 317,
-      "cpu_pct": 275.5,
-      "peak_memory_mb": 21197,
-      "disk_read_mb": 17613,
-      "disk_write_mb": 11
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/hcla",
-    "method_id": "majority_vote",
-    "metric_values": {
-      "accuracy": 0.0045,
-      "f1_macro": 0.0003,
-      "f1_micro": 0.0045,
-      "f1_weighted": 0
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0,
-      "f1_micro": 0,
-      "f1_weighted": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 136,
-      "cpu_pct": 28.1,
-      "peak_memory_mb": 21095,
-      "disk_read_mb": 17511,
-      "disk_write_mb": 11
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/hcla",
-    "method_id": "mlp",
-    "metric_values": {
-      "accuracy": 0.8769,
-      "f1_macro": 0.6798,
-      "f1_micro": 0.8769,
-      "f1_weighted": 0.876
-    },
-    "scaled_scores": {
-      "accuracy": 0.8763,
-      "f1_macro": 0.6797,
-      "f1_micro": 0.8763,
-      "f1_weighted": 0.876
-    },
-    "mean_score": 0.8271,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 952,
-      "cpu_pct": 2883.3,
-      "peak_memory_mb": 21402,
-      "disk_read_mb": 17613,
-      "disk_write_mb": 11
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/hcla",
-    "method_id": "random_labels",
-    "metric_values": {
-      "accuracy": 0.0622,
-      "f1_macro": 0.0154,
-      "f1_micro": 0.0622,
-      "f1_weighted": 0.0737
-    },
-    "scaled_scores": {
-      "accuracy": 0.058,
-      "f1_macro": 0.0152,
-      "f1_micro": 0.058,
-      "f1_weighted": 0.0737
-    },
-    "mean_score": 0.0512,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 151,
-      "cpu_pct": 35,
-      "peak_memory_mb": 20890,
-      "disk_read_mb": 17511,
-      "disk_write_mb": 11
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/hcla",
-    "method_id": "scanvi_scarches",
-    "metric_values": {
-      "accuracy": "NA",
-      "f1_macro": "NA",
-      "f1_micro": "NA",
-      "f1_weighted": "NA"
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0,
-      "f1_micro": 0,
-      "f1_weighted": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 16011,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/hcla",
-    "method_id": "true_labels",
-    "metric_values": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "scaled_scores": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "mean_score": 1,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 9.6,
-      "cpu_pct": 58.1,
-      "peak_memory_mb": 3584,
-      "disk_read_mb": 74,
-      "disk_write_mb": 11
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/hcla",
-    "method_id": "xgboost",
-    "metric_values": {
-      "accuracy": "NA",
-      "f1_macro": "NA",
-      "f1_micro": "NA",
-      "f1_weighted": "NA"
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0,
-      "f1_micro": 0,
-      "f1_weighted": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 230,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/hypomap",
-    "method_id": "knn",
-    "metric_values": {
-      "accuracy": 0.9963,
-      "f1_macro": 0.9707,
-      "f1_micro": 0.9963,
-      "f1_weighted": 0.9962
-    },
-    "scaled_scores": {
-      "accuracy": 0.9936,
-      "f1_macro": 0.9684,
-      "f1_micro": 0.9936,
-      "f1_weighted": 0.9928
-    },
-    "mean_score": 0.9871,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 27.3,
-      "cpu_pct": 99.8,
-      "peak_memory_mb": 15565,
-      "disk_read_mb": 12800,
-      "disk_write_mb": 9
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/hypomap",
-    "method_id": "logistic_regression",
-    "metric_values": {
-      "accuracy": 0.9963,
-      "f1_macro": 0.9707,
-      "f1_micro": 0.9963,
-      "f1_weighted": 0.9962
-    },
-    "scaled_scores": {
-      "accuracy": 0.9936,
-      "f1_macro": 0.9684,
-      "f1_micro": 0.9936,
-      "f1_weighted": 0.9928
-    },
-    "mean_score": 0.9871,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 46.9,
-      "cpu_pct": 745.2,
-      "peak_memory_mb": 16589,
-      "disk_read_mb": 12800,
-      "disk_write_mb": 9
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/hypomap",
-    "method_id": "majority_vote",
-    "metric_values": {
-      "accuracy": 0.6991,
-      "f1_macro": 0.1029,
-      "f1_micro": 0.6991,
-      "f1_weighted": 0.5753
-    },
-    "scaled_scores": {
-      "accuracy": 0.4775,
-      "f1_macro": 0.0296,
-      "f1_micro": 0.4775,
-      "f1_weighted": 0.2017
-    },
-    "mean_score": 0.2966,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 180,
-      "cpu_pct": 13.3,
-      "peak_memory_mb": 16282,
-      "disk_read_mb": 12698,
-      "disk_write_mb": 9
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/hypomap",
-    "method_id": "mlp",
-    "metric_values": {
-      "accuracy": 0.9975,
-      "f1_macro": 0.9959,
-      "f1_micro": 0.9975,
-      "f1_weighted": 0.9975
-    },
-    "scaled_scores": {
-      "accuracy": 0.9957,
-      "f1_macro": 0.9955,
-      "f1_micro": 0.9957,
-      "f1_weighted": 0.9954
-    },
-    "mean_score": 0.9956,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 371,
-      "cpu_pct": 2783.8,
-      "peak_memory_mb": 16384,
-      "disk_read_mb": 12800,
-      "disk_write_mb": 9
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/hypomap",
-    "method_id": "random_labels",
-    "metric_values": {
-      "accuracy": 0.4242,
-      "f1_macro": 0.0755,
-      "f1_micro": 0.4242,
-      "f1_weighted": 0.4681
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0,
-      "f1_micro": 0,
-      "f1_weighted": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 86,
-      "cpu_pct": 26.4,
-      "peak_memory_mb": 16282,
-      "disk_read_mb": 12698,
-      "disk_write_mb": 9
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/hypomap",
-    "method_id": "scanvi_scarches",
-    "metric_values": {
-      "accuracy": "NA",
-      "f1_macro": "NA",
-      "f1_micro": "NA",
-      "f1_weighted": "NA"
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0,
-      "f1_micro": 0,
-      "f1_weighted": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 20521,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/hypomap",
-    "method_id": "true_labels",
-    "metric_values": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "scaled_scores": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "mean_score": 1,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 8.8,
-      "cpu_pct": 86,
-      "peak_memory_mb": 3482,
-      "disk_read_mb": 64,
-      "disk_write_mb": 9
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/hypomap",
-    "method_id": "xgboost",
-    "metric_values": {
-      "accuracy": "NA",
-      "f1_macro": "NA",
-      "f1_micro": "NA",
-      "f1_weighted": "NA"
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0,
-      "f1_micro": 0,
-      "f1_weighted": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 631,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/immune_cell_atlas",
-    "method_id": "knn",
-    "metric_values": {
-      "accuracy": 0.8739,
-      "f1_macro": 0.811,
-      "f1_micro": 0.8739,
-      "f1_weighted": 0.8704
-    },
-    "scaled_scores": {
-      "accuracy": 0.8667,
-      "f1_macro": 0.8098,
-      "f1_micro": 0.8667,
-      "f1_weighted": 0.8672
-    },
-    "mean_score": 0.8526,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 52.3,
-      "cpu_pct": 184.3,
-      "peak_memory_mb": 14439,
-      "disk_read_mb": 9831,
-      "disk_write_mb": 96
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/immune_cell_atlas",
-    "method_id": "logistic_regression",
-    "metric_values": {
-      "accuracy": 0.902,
-      "f1_macro": 0.8277,
-      "f1_micro": 0.902,
-      "f1_weighted": 0.9004
-    },
-    "scaled_scores": {
-      "accuracy": 0.8964,
-      "f1_macro": 0.8266,
-      "f1_micro": 0.8964,
-      "f1_weighted": 0.898
-    },
-    "mean_score": 0.8793,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 113,
-      "cpu_pct": 281.1,
-      "peak_memory_mb": 13108,
-      "disk_read_mb": 9831,
-      "disk_write_mb": 95
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/immune_cell_atlas",
-    "method_id": "majority_vote",
-    "metric_values": {
-      "accuracy": 0.1159,
-      "f1_macro": 0.0063,
-      "f1_micro": 0.1159,
-      "f1_weighted": 0.0241
-    },
-    "scaled_scores": {
-      "accuracy": 0.0651,
-      "f1_macro": 0,
-      "f1_micro": 0.0651,
-      "f1_weighted": 0
-    },
-    "mean_score": 0.0326,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 161,
-      "cpu_pct": 16.3,
-      "peak_memory_mb": 12698,
-      "disk_read_mb": 9831,
-      "disk_write_mb": 95
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/immune_cell_atlas",
-    "method_id": "mlp",
-    "metric_values": {
-      "accuracy": 0.8969,
-      "f1_macro": 0.8445,
-      "f1_micro": 0.8969,
-      "f1_weighted": 0.8962
-    },
-    "scaled_scores": {
-      "accuracy": 0.891,
-      "f1_macro": 0.8435,
-      "f1_micro": 0.891,
-      "f1_weighted": 0.8937
-    },
-    "mean_score": 0.8798,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 3792,
-      "cpu_pct": 1584,
-      "peak_memory_mb": 12903,
-      "disk_read_mb": 9831,
-      "disk_write_mb": 95
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/immune_cell_atlas",
-    "method_id": "random_labels",
-    "metric_values": {
-      "accuracy": 0.0543,
-      "f1_macro": 0.0236,
-      "f1_micro": 0.0543,
-      "f1_weighted": 0.0625
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0.0174,
-      "f1_micro": 0,
-      "f1_weighted": 0.0394
-    },
-    "mean_score": 0.0142,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 58.1,
-      "cpu_pct": 48.1,
-      "peak_memory_mb": 12698,
-      "disk_read_mb": 9831,
-      "disk_write_mb": 95
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/immune_cell_atlas",
-    "method_id": "scanvi_scarches",
-    "metric_values": {
-      "accuracy": "NA",
-      "f1_macro": "NA",
-      "f1_micro": "NA",
-      "f1_weighted": "NA"
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0,
-      "f1_micro": 0,
-      "f1_weighted": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 14461,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/immune_cell_atlas",
-    "method_id": "true_labels",
-    "metric_values": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "scaled_scores": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "mean_score": 1,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 23.4,
-      "cpu_pct": 80.6,
-      "peak_memory_mb": 3482,
-      "disk_read_mb": 658,
-      "disk_write_mb": 95
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/immune_cell_atlas",
-    "method_id": "xgboost",
-    "metric_values": {
-      "accuracy": 0.8562,
-      "f1_macro": 0.7775,
-      "f1_micro": 0.8562,
-      "f1_weighted": 0.8544
-    },
-    "scaled_scores": {
-      "accuracy": 0.8479,
-      "f1_macro": 0.7761,
-      "f1_micro": 0.8479,
-      "f1_weighted": 0.8509
-    },
-    "mean_score": 0.8307,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 1734,
-      "cpu_pct": 2034.7,
-      "peak_memory_mb": 48845,
-      "disk_read_mb": 9831,
-      "disk_write_mb": 95
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
-    "method_id": "knn",
-    "metric_values": {
-      "accuracy": 0.9744,
-      "f1_macro": 0.7974,
-      "f1_micro": 0.9744,
-      "f1_weighted": 0.9733
-    },
-    "scaled_scores": {
-      "accuracy": 0.9645,
-      "f1_macro": 0.7861,
-      "f1_micro": 0.9645,
-      "f1_weighted": 0.9571
-    },
-    "mean_score": 0.9181,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 30,
-      "cpu_pct": 154.3,
-      "peak_memory_mb": 17818,
-      "disk_read_mb": 13312,
-      "disk_write_mb": 66
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
-    "method_id": "logistic_regression",
-    "metric_values": {
-      "accuracy": 0.9722,
-      "f1_macro": 0.8296,
-      "f1_micro": 0.9722,
-      "f1_weighted": 0.971
-    },
-    "scaled_scores": {
-      "accuracy": 0.9615,
-      "f1_macro": 0.82,
-      "f1_micro": 0.9615,
-      "f1_weighted": 0.9533
-    },
-    "mean_score": 0.9241,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 71,
-      "cpu_pct": 583.9,
-      "peak_memory_mb": 16487,
-      "disk_read_mb": 13312,
-      "disk_write_mb": 66
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
-    "method_id": "majority_vote",
-    "metric_values": {
-      "accuracy": 0.7926,
-      "f1_macro": 0.0804,
-      "f1_micro": 0.7926,
-      "f1_weighted": 0.7009
-    },
-    "scaled_scores": {
-      "accuracy": 0.7133,
-      "f1_macro": 0.029,
-      "f1_micro": 0.7133,
-      "f1_weighted": 0.5185
-    },
-    "mean_score": 0.4935,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 153,
-      "cpu_pct": 28.6,
-      "peak_memory_mb": 16180,
-      "disk_read_mb": 13312,
-      "disk_write_mb": 66
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
-    "method_id": "mlp",
-    "metric_values": {
-      "accuracy": 0.969,
-      "f1_macro": 0.8287,
-      "f1_micro": 0.969,
-      "f1_weighted": 0.968
-    },
-    "scaled_scores": {
-      "accuracy": 0.9571,
-      "f1_macro": 0.8192,
-      "f1_micro": 0.9571,
-      "f1_weighted": 0.9485
-    },
-    "mean_score": 0.9205,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 2070,
-      "cpu_pct": 1021.9,
-      "peak_memory_mb": 16896,
-      "disk_read_mb": 13312,
-      "disk_write_mb": 66
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
-    "method_id": "random_labels",
-    "metric_values": {
-      "accuracy": 0.2767,
-      "f1_macro": 0.0529,
-      "f1_micro": 0.2767,
-      "f1_weighted": 0.3789
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0,
-      "f1_micro": 0,
-      "f1_weighted": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 81,
-      "cpu_pct": 37.5,
-      "peak_memory_mb": 16794,
-      "disk_read_mb": 13312,
-      "disk_write_mb": 66
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
-    "method_id": "scanvi_scarches",
-    "metric_values": {
-      "accuracy": 0.926,
-      "f1_macro": 0.5174,
-      "f1_micro": 0.926,
-      "f1_weighted": 0.9038
-    },
-    "scaled_scores": {
-      "accuracy": 0.8977,
-      "f1_macro": 0.4904,
-      "f1_micro": 0.8977,
-      "f1_weighted": 0.8451
-    },
-    "mean_score": 0.7827,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 8790,
-      "cpu_pct": 1904.1,
-      "peak_memory_mb": 61133,
-      "disk_read_mb": 13312,
-      "disk_write_mb": 98
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
-    "method_id": "true_labels",
-    "metric_values": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "scaled_scores": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "mean_score": 1,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 31.9,
-      "cpu_pct": 42.1,
-      "peak_memory_mb": 3277,
-      "disk_read_mb": 471,
-      "disk_write_mb": 66
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
-    "method_id": "xgboost",
-    "metric_values": {
-      "accuracy": "NA",
-      "f1_macro": "NA",
-      "f1_micro": "NA",
-      "f1_weighted": "NA"
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0,
-      "f1_micro": 0,
-      "f1_weighted": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 500,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/tabula_sapiens",
-    "method_id": "knn",
-    "metric_values": {
-      "accuracy": 0.3091,
-      "f1_macro": 0.2679,
-      "f1_micro": 0.3091,
-      "f1_weighted": 0.3292
-    },
-    "scaled_scores": {
-      "accuracy": 0.2892,
-      "f1_macro": 0.2655,
-      "f1_micro": 0.2892,
-      "f1_weighted": 0.2985
-    },
-    "mean_score": 0.2856,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 28.3,
-      "cpu_pct": 144.4,
-      "peak_memory_mb": 25191,
-      "disk_read_mb": 19456,
-      "disk_write_mb": 21
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/tabula_sapiens",
-    "method_id": "logistic_regression",
-    "metric_values": {
-      "accuracy": 0.3446,
-      "f1_macro": 0.2748,
-      "f1_micro": 0.3446,
-      "f1_weighted": 0.3408
-    },
-    "scaled_scores": {
-      "accuracy": 0.3257,
-      "f1_macro": 0.2724,
-      "f1_micro": 0.3257,
-      "f1_weighted": 0.3106
-    },
-    "mean_score": 0.3086,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 490,
-      "cpu_pct": 356.6,
-      "peak_memory_mb": 23860,
-      "disk_read_mb": 19456,
-      "disk_write_mb": 21
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/tabula_sapiens",
-    "method_id": "majority_vote",
-    "metric_values": {
-      "accuracy": 0.2917,
-      "f1_macro": 0.0181,
-      "f1_micro": 0.2917,
-      "f1_weighted": 0.1318
-    },
-    "scaled_scores": {
-      "accuracy": 0.2714,
-      "f1_macro": 0.0148,
-      "f1_micro": 0.2714,
-      "f1_weighted": 0.092
-    },
-    "mean_score": 0.1624,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 158,
-      "cpu_pct": 24.2,
-      "peak_memory_mb": 22324,
-      "disk_read_mb": 19456,
-      "disk_write_mb": 21
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/tabula_sapiens",
-    "method_id": "mlp",
-    "metric_values": {
-      "accuracy": 0.3139,
-      "f1_macro": 0.2829,
-      "f1_micro": 0.3139,
-      "f1_weighted": 0.3292
-    },
-    "scaled_scores": {
-      "accuracy": 0.2942,
-      "f1_macro": 0.2805,
-      "f1_micro": 0.2942,
-      "f1_weighted": 0.2985
-    },
-    "mean_score": 0.2918,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 2239,
-      "cpu_pct": 2653.4,
-      "peak_memory_mb": 23757,
-      "disk_read_mb": 19456,
-      "disk_write_mb": 21
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/tabula_sapiens",
-    "method_id": "random_labels",
-    "metric_values": {
-      "accuracy": 0.028,
-      "f1_macro": 0.0034,
-      "f1_micro": 0.028,
-      "f1_weighted": 0.0438
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0,
-      "f1_micro": 0,
-      "f1_weighted": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 179,
-      "cpu_pct": 23.9,
-      "peak_memory_mb": 22938,
-      "disk_read_mb": 19456,
-      "disk_write_mb": 21
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/tabula_sapiens",
-    "method_id": "scanvi_scarches",
-    "metric_values": {
-      "accuracy": "NA",
-      "f1_macro": "NA",
-      "f1_micro": "NA",
-      "f1_weighted": "NA"
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0,
-      "f1_micro": 0,
-      "f1_weighted": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": "NA",
-      "duration_sec": 19891,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/tabula_sapiens",
-    "method_id": "true_labels",
-    "metric_values": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "scaled_scores": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "mean_score": 1,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 5.6,
-      "cpu_pct": 122.2,
-      "peak_memory_mb": 2970,
-      "disk_read_mb": 140,
-      "disk_write_mb": 21
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "cellxgene_census/tabula_sapiens",
-    "method_id": "xgboost",
-    "metric_values": {
-      "accuracy": "NA",
-      "f1_macro": "NA",
-      "f1_micro": "NA",
-      "f1_weighted": "NA"
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0,
-      "f1_micro": 0,
-      "f1_weighted": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 270,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/cengen",
-    "method_id": "knn",
-    "metric_values": {
-      "accuracy": 0.5974,
-      "f1_macro": 0.3903,
-      "f1_micro": 0.5974,
-      "f1_weighted": 0.6072
-    },
-    "scaled_scores": {
-      "accuracy": 0.5927,
-      "f1_macro": 0.39,
-      "f1_micro": 0.5927,
-      "f1_weighted": 0.6058
-    },
-    "mean_score": 0.5453,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 7.9,
-      "cpu_pct": 230.4,
-      "peak_memory_mb": 5223,
-      "disk_read_mb": 758,
-      "disk_write_mb": 14
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/cengen",
-    "method_id": "logistic_regression",
-    "metric_values": {
-      "accuracy": 0.7726,
-      "f1_macro": 0.6161,
-      "f1_micro": 0.7726,
-      "f1_weighted": 0.7756
-    },
-    "scaled_scores": {
-      "accuracy": 0.77,
-      "f1_macro": 0.6159,
-      "f1_micro": 0.77,
-      "f1_weighted": 0.7748
-    },
-    "mean_score": 0.7327,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 51.4,
-      "cpu_pct": 1246.4,
-      "peak_memory_mb": 4608,
-      "disk_read_mb": 757,
-      "disk_write_mb": 14
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/cengen",
-    "method_id": "majority_vote",
-    "metric_values": {
-      "accuracy": 0.0428,
-      "f1_macro": 0.0006,
-      "f1_micro": 0.0428,
-      "f1_weighted": 0.0035
-    },
-    "scaled_scores": {
-      "accuracy": 0.0317,
-      "f1_macro": 0,
-      "f1_micro": 0.0317,
-      "f1_weighted": 0
-    },
-    "mean_score": 0.0158,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 111,
-      "cpu_pct": 10.2,
-      "peak_memory_mb": 5632,
-      "disk_read_mb": 749,
-      "disk_write_mb": 14
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/cengen",
-    "method_id": "mlp",
-    "metric_values": {
-      "accuracy": 0.6911,
-      "f1_macro": 0.4718,
-      "f1_micro": 0.6911,
-      "f1_weighted": 0.714
-    },
-    "scaled_scores": {
-      "accuracy": 0.6875,
-      "f1_macro": 0.4715,
-      "f1_micro": 0.6875,
-      "f1_weighted": 0.713
-    },
-    "mean_score": 0.6399,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 445,
-      "cpu_pct": 3098.3,
-      "peak_memory_mb": 6452,
-      "disk_read_mb": 757,
-      "disk_write_mb": 14
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/cengen",
-    "method_id": "random_labels",
-    "metric_values": {
-      "accuracy": 0.0115,
-      "f1_macro": 0.002,
-      "f1_micro": 0.0115,
-      "f1_weighted": 0.0146
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0.0015,
-      "f1_micro": 0,
-      "f1_weighted": 0.0111
-    },
-    "mean_score": 0.0032,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 11.7,
-      "cpu_pct": 71.1,
-      "peak_memory_mb": 6247,
-      "disk_read_mb": 749,
-      "disk_write_mb": 14
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/cengen",
-    "method_id": "scanvi_scarches",
-    "metric_values": {
-      "accuracy": 0.242,
-      "f1_macro": 0.0665,
-      "f1_micro": 0.242,
-      "f1_weighted": 0.168
-    },
-    "scaled_scores": {
-      "accuracy": 0.2332,
-      "f1_macro": 0.066,
-      "f1_micro": 0.2332,
-      "f1_weighted": 0.1651
-    },
-    "mean_score": 0.1744,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 10970,
-      "cpu_pct": 2100.8,
-      "peak_memory_mb": 33178,
-      "disk_read_mb": 818,
-      "disk_write_mb": 19
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/cengen",
-    "method_id": "true_labels",
-    "metric_values": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "scaled_scores": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "mean_score": 1,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 13,
-      "cpu_pct": 53.1,
-      "peak_memory_mb": 5530,
-      "disk_read_mb": 88,
-      "disk_write_mb": 14
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/cengen",
-    "method_id": "xgboost",
-    "metric_values": {
-      "accuracy": 0.746,
-      "f1_macro": 0.622,
-      "f1_micro": 0.746,
-      "f1_weighted": 0.7541
-    },
-    "scaled_scores": {
-      "accuracy": 0.743,
-      "f1_macro": 0.6217,
-      "f1_micro": 0.743,
-      "f1_weighted": 0.7533
-    },
-    "mean_score": 0.7153,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 1667,
-      "cpu_pct": 2794.8,
-      "peak_memory_mb": 21402,
-      "disk_read_mb": 757,
-      "disk_write_mb": 14
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/immune_cells",
-    "method_id": "knn",
-    "metric_values": {
-      "accuracy": 0.8748,
-      "f1_macro": 0.64,
-      "f1_micro": 0.8748,
-      "f1_weighted": 0.8651
-    },
-    "scaled_scores": {
-      "accuracy": 0.8465,
-      "f1_macro": 0.6192,
-      "f1_micro": 0.8465,
-      "f1_weighted": 0.8329
-    },
-    "mean_score": 0.7863,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 13.6,
-      "cpu_pct": 105.7,
-      "peak_memory_mb": 5223,
-      "disk_read_mb": 816,
-      "disk_write_mb": 16
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/immune_cells",
-    "method_id": "logistic_regression",
-    "metric_values": {
-      "accuracy": 0.8656,
-      "f1_macro": 0.5734,
-      "f1_micro": 0.8656,
-      "f1_weighted": 0.8575
-    },
-    "scaled_scores": {
-      "accuracy": 0.8352,
-      "f1_macro": 0.5487,
-      "f1_micro": 0.8352,
-      "f1_weighted": 0.8234
-    },
-    "mean_score": 0.7606,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 100,
-      "cpu_pct": 224.4,
-      "peak_memory_mb": 6452,
-      "disk_read_mb": 816,
-      "disk_write_mb": 16
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/immune_cells",
-    "method_id": "majority_vote",
-    "metric_values": {
-      "accuracy": 0.3699,
-      "f1_macro": 0.06,
-      "f1_micro": 0.3699,
-      "f1_weighted": 0.1997
-    },
-    "scaled_scores": {
-      "accuracy": 0.2275,
-      "f1_macro": 0.0056,
-      "f1_micro": 0.2275,
-      "f1_weighted": 0.0082
-    },
-    "mean_score": 0.1172,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 25,
-      "cpu_pct": 30.1,
-      "peak_memory_mb": 3175,
-      "disk_read_mb": 807,
-      "disk_write_mb": 16
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/immune_cells",
-    "method_id": "mlp",
-    "metric_values": {
-      "accuracy": 0.8802,
-      "f1_macro": 0.6393,
-      "f1_micro": 0.8802,
-      "f1_weighted": 0.8701
-    },
-    "scaled_scores": {
-      "accuracy": 0.8531,
-      "f1_macro": 0.6184,
-      "f1_micro": 0.8531,
-      "f1_weighted": 0.8391
-    },
-    "mean_score": 0.7909,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 67,
-      "cpu_pct": 2013.9,
-      "peak_memory_mb": 3687,
-      "disk_read_mb": 815,
-      "disk_write_mb": 16
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/immune_cells",
-    "method_id": "random_labels",
-    "metric_values": {
-      "accuracy": 0.1843,
-      "f1_macro": 0.0547,
-      "f1_micro": 0.1843,
-      "f1_weighted": 0.1931
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0,
-      "f1_micro": 0,
-      "f1_weighted": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 10.9,
-      "cpu_pct": 64.2,
-      "peak_memory_mb": 3584,
-      "disk_read_mb": 807,
-      "disk_write_mb": 16
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/immune_cells",
-    "method_id": "scanvi_scarches",
-    "metric_values": {
-      "accuracy": 0.8503,
-      "f1_macro": 0.4463,
-      "f1_micro": 0.8503,
-      "f1_weighted": 0.8169
-    },
-    "scaled_scores": {
-      "accuracy": 0.8165,
-      "f1_macro": 0.4143,
-      "f1_micro": 0.8165,
-      "f1_weighted": 0.7731
-    },
-    "mean_score": 0.7051,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 2423,
-      "cpu_pct": 1451.8,
-      "peak_memory_mb": 15975,
-      "disk_read_mb": 877,
-      "disk_write_mb": 23
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/immune_cells",
-    "method_id": "true_labels",
-    "metric_values": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "scaled_scores": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "mean_score": 1,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 25.4,
-      "cpu_pct": 30.6,
-      "peak_memory_mb": 2765,
-      "disk_read_mb": 112,
-      "disk_write_mb": 16
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/immune_cells",
-    "method_id": "xgboost",
-    "metric_values": {
-      "accuracy": 0.8745,
-      "f1_macro": 0.6441,
-      "f1_micro": 0.8745,
-      "f1_weighted": 0.8714
-    },
-    "scaled_scores": {
-      "accuracy": 0.8462,
-      "f1_macro": 0.6235,
-      "f1_micro": 0.8462,
-      "f1_weighted": 0.8406
-    },
-    "mean_score": 0.7891,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 146,
-      "cpu_pct": 1958.9,
-      "peak_memory_mb": 12698,
-      "disk_read_mb": 815,
-      "disk_write_mb": 16
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/pancreas",
-    "method_id": "knn",
-    "metric_values": {
-      "accuracy": 0.9662,
-      "f1_macro": 0.8224,
-      "f1_micro": 0.9662,
-      "f1_weighted": 0.964
-    },
-    "scaled_scores": {
-      "accuracy": 0.9566,
-      "f1_macro": 0.8139,
-      "f1_micro": 0.9566,
-      "f1_weighted": 0.9532
-    },
-    "mean_score": 0.9201,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 28.6,
-      "cpu_pct": 58.8,
-      "peak_memory_mb": 5325,
-      "disk_read_mb": 876,
-      "disk_write_mb": 77
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/pancreas",
-    "method_id": "logistic_regression",
-    "metric_values": {
-      "accuracy": 0.2987,
-      "f1_macro": 0.3835,
-      "f1_micro": 0.2987,
-      "f1_weighted": 0.3265
-    },
-    "scaled_scores": {
-      "accuracy": 0.1012,
-      "f1_macro": 0.354,
-      "f1_micro": 0.1012,
-      "f1_weighted": 0.1264
-    },
-    "mean_score": 0.1707,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 26.6,
-      "cpu_pct": 239.1,
-      "peak_memory_mb": 3789,
-      "disk_read_mb": 876,
-      "disk_write_mb": 77
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/pancreas",
-    "method_id": "majority_vote",
-    "metric_values": {
-      "accuracy": 0.4211,
-      "f1_macro": 0.0456,
-      "f1_micro": 0.4211,
-      "f1_weighted": 0.2495
-    },
-    "scaled_scores": {
-      "accuracy": 0.258,
-      "f1_macro": 0,
-      "f1_micro": 0.258,
-      "f1_weighted": 0.0265
-    },
-    "mean_score": 0.1356,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 17.6,
-      "cpu_pct": 96.2,
-      "peak_memory_mb": 6349,
-      "disk_read_mb": 867,
-      "disk_write_mb": 77
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/pancreas",
-    "method_id": "mlp",
-    "metric_values": {
-      "accuracy": 0.911,
-      "f1_macro": 0.857,
-      "f1_micro": 0.911,
-      "f1_weighted": 0.8912
-    },
-    "scaled_scores": {
-      "accuracy": 0.886,
-      "f1_macro": 0.8502,
-      "f1_micro": 0.886,
-      "f1_weighted": 0.8589
-    },
-    "mean_score": 0.8703,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 42.8,
-      "cpu_pct": 856.9,
-      "peak_memory_mb": 3789,
-      "disk_read_mb": 875,
-      "disk_write_mb": 77
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/pancreas",
-    "method_id": "random_labels",
-    "metric_values": {
-      "accuracy": 0.2197,
-      "f1_macro": 0.0712,
-      "f1_micro": 0.2197,
-      "f1_weighted": 0.2291
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0.0269,
-      "f1_micro": 0,
-      "f1_weighted": 0
-    },
-    "mean_score": 0.0067,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 23,
-      "cpu_pct": 55.6,
-      "peak_memory_mb": 3687,
-      "disk_read_mb": 867,
-      "disk_write_mb": 77
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/pancreas",
-    "method_id": "scanvi_scarches",
-    "metric_values": {
-      "accuracy": 0.9607,
-      "f1_macro": 0.6308,
-      "f1_micro": 0.9607,
-      "f1_weighted": 0.9554
-    },
-    "scaled_scores": {
-      "accuracy": 0.9497,
-      "f1_macro": 0.6131,
-      "f1_micro": 0.9497,
-      "f1_weighted": 0.9422
-    },
-    "mean_score": 0.8637,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 1445,
-      "cpu_pct": 1417.6,
-      "peak_memory_mb": 15872,
-      "disk_read_mb": 937,
-      "disk_write_mb": 115
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/pancreas",
-    "method_id": "true_labels",
-    "metric_values": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "scaled_scores": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "mean_score": 1,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 17.7,
-      "cpu_pct": 78.1,
-      "peak_memory_mb": 3277,
-      "disk_read_mb": 442,
-      "disk_write_mb": 77
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/pancreas",
-    "method_id": "xgboost",
-    "metric_values": {
-      "accuracy": 0.9561,
-      "f1_macro": 0.878,
-      "f1_micro": 0.9561,
-      "f1_weighted": 0.9549
-    },
-    "scaled_scores": {
-      "accuracy": 0.9438,
-      "f1_macro": 0.8722,
-      "f1_micro": 0.9438,
-      "f1_weighted": 0.9415
-    },
-    "mean_score": 0.9253,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 115,
-      "cpu_pct": 1728.9,
-      "peak_memory_mb": 13415,
-      "disk_read_mb": 875,
-      "disk_write_mb": 77
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/zebrafish",
-    "method_id": "knn",
-    "metric_values": {
-      "accuracy": 0.2192,
-      "f1_macro": 0.2054,
-      "f1_micro": 0.2192,
-      "f1_weighted": 0.2672
-    },
-    "scaled_scores": {
-      "accuracy": 0.2192,
-      "f1_macro": 0.2054,
-      "f1_micro": 0.2192,
-      "f1_weighted": 0.2672
-    },
-    "mean_score": 0.2277,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 69,
-      "cpu_pct": 42,
-      "peak_memory_mb": 5223,
-      "disk_read_mb": 784,
-      "disk_write_mb": 145
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/zebrafish",
-    "method_id": "logistic_regression",
-    "metric_values": {
-      "accuracy": 0.295,
-      "f1_macro": 0.1843,
-      "f1_micro": 0.295,
-      "f1_weighted": 0.3458
-    },
-    "scaled_scores": {
-      "accuracy": 0.295,
-      "f1_macro": 0.1843,
-      "f1_micro": 0.295,
-      "f1_weighted": 0.3458
-    },
-    "mean_score": 0.28,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 57.5,
-      "cpu_pct": 149.2,
-      "peak_memory_mb": 3687,
-      "disk_read_mb": 783,
-      "disk_write_mb": 145
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/zebrafish",
-    "method_id": "majority_vote",
-    "metric_values": {
-      "accuracy": 0,
-      "f1_macro": 0,
-      "f1_micro": 0,
-      "f1_weighted": 0
-    },
-    "scaled_scores": {
-      "accuracy": 0,
-      "f1_macro": 0,
-      "f1_micro": 0,
-      "f1_weighted": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 47.2,
-      "cpu_pct": 41.6,
-      "peak_memory_mb": 3584,
-      "disk_read_mb": 775,
-      "disk_write_mb": 145
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/zebrafish",
-    "method_id": "mlp",
-    "metric_values": {
-      "accuracy": 0.2012,
-      "f1_macro": 0.1429,
-      "f1_micro": 0.2012,
-      "f1_weighted": 0.233
-    },
-    "scaled_scores": {
-      "accuracy": 0.2012,
-      "f1_macro": 0.1429,
-      "f1_micro": 0.2012,
-      "f1_weighted": 0.233
-    },
-    "mean_score": 0.1946,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 41.9,
-      "cpu_pct": 1564,
-      "peak_memory_mb": 4301,
-      "disk_read_mb": 783,
-      "disk_write_mb": 145
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/zebrafish",
-    "method_id": "random_labels",
-    "metric_values": {
-      "accuracy": 0.0299,
-      "f1_macro": 0.0165,
-      "f1_micro": 0.0299,
-      "f1_weighted": 0.0406
-    },
-    "scaled_scores": {
-      "accuracy": 0.0299,
-      "f1_macro": 0.0165,
-      "f1_micro": 0.0299,
-      "f1_weighted": 0.0406
-    },
-    "mean_score": 0.0292,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 18.1,
-      "cpu_pct": 101,
-      "peak_memory_mb": 4199,
-      "disk_read_mb": 775,
-      "disk_write_mb": 145
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/zebrafish",
-    "method_id": "scanvi_scarches",
-    "metric_values": {
-      "accuracy": 0.1192,
-      "f1_macro": 0.1754,
-      "f1_micro": 0.1192,
-      "f1_weighted": 0.1068
-    },
-    "scaled_scores": {
-      "accuracy": 0.1192,
-      "f1_macro": 0.1754,
-      "f1_micro": 0.1192,
-      "f1_weighted": 0.1068
-    },
-    "mean_score": 0.1301,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 2303,
-      "cpu_pct": 1425.9,
-      "peak_memory_mb": 15975,
-      "disk_read_mb": 844,
-      "disk_write_mb": 215
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/zebrafish",
-    "method_id": "true_labels",
-    "metric_values": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "scaled_scores": {
-      "accuracy": 1,
-      "f1_macro": 1,
-      "f1_micro": 1,
-      "f1_weighted": 1
-    },
-    "mean_score": 1,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 23,
-      "cpu_pct": 114,
-      "peak_memory_mb": 4506,
-      "disk_read_mb": 981,
-      "disk_write_mb": 145
-    },
-    "task_id": "label_projection"
-  },
-  {
-    "dataset_id": "openproblems_v1/zebrafish",
-    "method_id": "xgboost",
-    "metric_values": {
-      "accuracy": 0.2184,
-      "f1_macro": 0.228,
-      "f1_micro": 0.2184,
-      "f1_weighted": 0.2671
-    },
-    "scaled_scores": {
-      "accuracy": 0.2184,
-      "f1_macro": 0.228,
-      "f1_micro": 0.2184,
-      "f1_weighted": 0.2671
-    },
-    "mean_score": 0.233,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 217,
-      "cpu_pct": 1604.2,
-      "peak_memory_mb": 12596,
-      "disk_read_mb": 783,
-      "disk_write_mb": 145
-    },
-    "task_id": "label_projection"
-  }
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "knn_classifier_log_cp10k", 
+        "dataset_id": "cengen_random", 
+        "submission_time": "2023-02-21 17:53:22.005", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 410.0, 
+            "cpu_pct": 134.5, 
+            "peak_memory_mb": 2800.0, 
+            "disk_read_mb": 768.5, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8492439964423362, 
+            "f1": 0.8517360245741384, 
+            "f1_macro": 0.7672490394127152
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8467065266542732, 
+            "f1": 0.8492343712496994, 
+            "f1_macro": 0.7660191091277334
+        }, 
+        "mean_score": 0.8206533356772353
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "true_labels", 
+        "dataset_id": "cengen_random", 
+        "submission_time": "2023-02-21 17:54:52.087", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 379.0, 
+            "cpu_pct": 24.7, 
+            "peak_memory_mb": 989.8, 
+            "disk_read_mb": 768.5, 
+            "disk_write_mb": 722.9
+        }, 
+        "metric_values": {
+            "accuracy": 1.0, 
+            "f1": 1.0, 
+            "f1_macro": 1.0
+        }, 
+        "scaled_scores": {
+            "accuracy": 1.0, 
+            "f1": 1.0, 
+            "f1_macro": 1.0
+        }, 
+        "mean_score": 1.0
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "random_labels", 
+        "dataset_id": "cengen_random", 
+        "submission_time": "2023-02-21 17:55:02.568", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 379.0, 
+            "cpu_pct": 21.2, 
+            "peak_memory_mb": 992.6, 
+            "disk_read_mb": 768.5, 
+            "disk_write_mb": 722.9
+        }, 
+        "metric_values": {
+            "accuracy": 0.01655301907303093, 
+            "f1": 0.016592995002742705, 
+            "f1_macro": 0.005256541593617354
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.0, 
+            "f1": 0.0, 
+            "f1_macro": 0.0
+        }, 
+        "mean_score": 0.0
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "majority_vote", 
+        "dataset_id": "cengen_random", 
+        "submission_time": "2023-02-21 17:55:02.333", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 399.0, 
+            "cpu_pct": 25.9, 
+            "peak_memory_mb": 231.7, 
+            "disk_read_mb": 768.5, 
+            "disk_write_mb": 722.8
+        }, 
+        "metric_values": {
+            "accuracy": 0.048423757288269594, 
+            "f1": 0.004473115481431257, 
+            "f1_macro": 0.0005465940774858457
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.03240717479776919, 
+            "f1": -0.012324377861580568, 
+            "f1_macro": -0.004734836380504603
+        }, 
+        "mean_score": 0.005115986851894672
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "mlp_log_cp10k", 
+        "dataset_id": "cengen_random", 
+        "submission_time": "2023-02-21 17:55:02.509", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1079.0, 
+            "cpu_pct": 492.5, 
+            "peak_memory_mb": 1700.0, 
+            "disk_read_mb": 768.6, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8575946239747011, 
+            "f1": 0.8565399161183415, 
+            "f1_macro": 0.7710990297473443
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8551977088881073, 
+            "f1": 0.8541193187025766, 
+            "f1_macro": 0.7698894440388039
+        }, 
+        "mean_score": 0.8264021572098293
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "logistic_regression_log_cp10k", 
+        "dataset_id": "cengen_random", 
+        "submission_time": "2023-02-21 17:53:31.989", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1343.0, 
+            "cpu_pct": 280.7, 
+            "peak_memory_mb": 1900.0, 
+            "disk_read_mb": 768.5, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8904041901373654, 
+            "f1": 0.8907696437309108, 
+            "f1_macro": 0.8282477715392297
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8885595136411597, 
+            "f1": 0.8889266034164626, 
+            "f1_macro": 0.8273401780033578
+        }, 
+        "mean_score": 0.8682754316869934
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "knn_classifier_scran", 
+        "dataset_id": "cengen_random", 
+        "submission_time": "2023-02-21 18:33:05.132", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 2370.0, 
+            "cpu_pct": 101.1, 
+            "peak_memory_mb": 6800.0, 
+            "disk_read_mb": 807.8, 
+            "disk_write_mb": 1400.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8380274730704615, 
+            "f1": 0.8369482993272568, 
+            "f1_macro": 0.7495378715122704
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8353012108727328, 
+            "f1": 0.8341971331867847, 
+            "f1_macro": 0.7482143497691559
+        }, 
+        "mean_score": 0.8059042312762245
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "xgboost_log_cp10k", 
+        "dataset_id": "cengen_random", 
+        "submission_time": "2023-02-21 18:34:53.628", 
+        "code_version": "1.6.2", 
+        "resources": {
+            "duration_sec": 2728.0, 
+            "cpu_pct": 712.7, 
+            "peak_memory_mb": 2000.0, 
+            "disk_read_mb": 768.2, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.842474552821425, 
+            "f1": 0.8449181894595059, 
+            "f1_macro": 0.7863051512764242
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8398231422398633, 
+            "f1": 0.8423014990208183, 
+            "f1_macro": 0.7851759195622928
+        }, 
+        "mean_score": 0.8224335202743248
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "logistic_regression_scran", 
+        "dataset_id": "cengen_random", 
+        "submission_time": "2023-02-21 18:34:52.511", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 3188.0, 
+            "cpu_pct": 138.5, 
+            "peak_memory_mb": 6800.0, 
+            "disk_read_mb": 807.8, 
+            "disk_write_mb": 1400.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8271568336792173, 
+            "f1": 0.8404873765570953, 
+            "f1_macro": 0.7906956090555932
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8242476008641914, 
+            "f1": 0.8377959251537469, 
+            "f1_macro": 0.7895895779202001
+        }, 
+        "mean_score": 0.817211034646046
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "mlp_scran", 
+        "dataset_id": "cengen_random", 
+        "submission_time": "2023-02-21 18:34:53.797", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 3197.0, 
+            "cpu_pct": 162.2, 
+            "peak_memory_mb": 6800.0, 
+            "disk_read_mb": 807.9, 
+            "disk_write_mb": 1400.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8760252989425833, 
+            "f1": 0.8777868450203619, 
+            "f1_macro": 0.8148727355232758
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8739386022207708, 
+            "f1": 0.8757247463577108, 
+            "f1_macro": 0.813894464032661
+        }, 
+        "mean_score": 0.8545192708703809
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "seurat", 
+        "dataset_id": "cengen_random", 
+        "submission_time": "2023-02-21 18:49:02.216", 
+        "code_version": "4.3.0", 
+        "resources": {
+            "duration_sec": 3809.0, 
+            "cpu_pct": 105.6, 
+            "peak_memory_mb": 873000.0, 
+            "disk_read_mb": 4200.0, 
+            "disk_write_mb": 4400.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8321474453997431, 
+            "f1": 0.830794751253811, 
+            "f1_macro": 0.7342634929447799
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.829322212731749, 
+            "f1": 0.8279397564931308, 
+            "f1_macro": 0.7328592565153027
+        }, 
+        "mean_score": 0.7967070752467276
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "xgboost_scran", 
+        "dataset_id": "cengen_random", 
+        "submission_time": "2023-02-21 19:51:33.576", 
+        "code_version": "1.6.2", 
+        "resources": {
+            "duration_sec": 8268.0, 
+            "cpu_pct": 752.9, 
+            "peak_memory_mb": 6800.0, 
+            "disk_read_mb": 813.9, 
+            "disk_write_mb": 1400.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8207332740389367, 
+            "f1": 0.8261501329613843, 
+            "f1_macro": 0.7658604484655689
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8177159222227806, 
+            "f1": 0.8232167697045227, 
+            "f1_macro": 0.7646231804232906
+        }, 
+        "mean_score": 0.801851957450198
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scarches_scanvi_hvg", 
+        "dataset_id": "cengen_random", 
+        "submission_time": "2023-02-21 19:43:53.714", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 8917.0, 
+            "cpu_pct": 664.2, 
+            "peak_memory_mb": 3700.0, 
+            "disk_read_mb": 791.5, 
+            "disk_write_mb": 723.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.34884870046447275, 
+            "f1": 0.21567196436308758, 
+            "f1_macro": 0.04927592126738169
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.3378887604883686, 
+            "f1": 0.20243802245531098, 
+            "f1_macro": 0.044251992110895685
+        }, 
+        "mean_score": 0.19485959168485842
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scanvi_hvg", 
+        "dataset_id": "cengen_random", 
+        "submission_time": "2023-02-21 19:43:52.760", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 10728.0, 
+            "cpu_pct": 1184.6, 
+            "peak_memory_mb": 6400.0, 
+            "disk_read_mb": 791.5, 
+            "disk_write_mb": 722.9
+        }, 
+        "metric_values": {
+            "accuracy": 0.6517936554995553, 
+            "f1": 0.5691463256932892, 
+            "f1_macro": 0.23546364663002034
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.6459327739536753, 
+            "f1": 0.5618765454005359, 
+            "f1_macro": 0.2314235927775827
+        }, 
+        "mean_score": 0.4797443040439313
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scanvi_all_genes", 
+        "dataset_id": "cengen_random", 
+        "submission_time": "2023-02-21 22:54:11.681", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 6500.0, 
+            "cpu_pct": 2793.7, 
+            "peak_memory_mb": 10100.0, 
+            "disk_read_mb": 790.0, 
+            "disk_write_mb": 723.2
+        }, 
+        "metric_values": {
+            "accuracy": 0.6659254867081728, 
+            "f1": 0.5728069016471795, 
+            "f1_macro": 0.24022628852988878
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.6603024669647791, 
+            "f1": 0.5655988861356424, 
+            "f1_macro": 0.23621140199574875
+        }, 
+        "mean_score": 0.4873709183653901
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scarches_scanvi_all_genes", 
+        "dataset_id": "cengen_random", 
+        "submission_time": "2023-02-21 22:55:41.732", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 7540.0, 
+            "cpu_pct": 2733.6, 
+            "peak_memory_mb": 12900.0, 
+            "disk_read_mb": 790.0, 
+            "disk_write_mb": 723.2
+        }, 
+        "metric_values": {
+            "accuracy": 0.4243996442336199, 
+            "f1": 0.28984918948885136, 
+            "f1_macro": 0.07585896370042627
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.4147113500477315, 
+            "f1": 0.27786683753271696, 
+            "f1_macro": 0.07097550781577062
+        }, 
+        "mean_score": 0.25451789846540634
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "true_labels", 
+        "dataset_id": "cengen_batch", 
+        "submission_time": "2023-02-21 17:56:22.253", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 349.0, 
+            "cpu_pct": 11.5, 
+            "peak_memory_mb": 990.3, 
+            "disk_read_mb": 768.5, 
+            "disk_write_mb": 722.9
+        }, 
+        "metric_values": {
+            "accuracy": 1.0, 
+            "f1": 1.0, 
+            "f1_macro": 1.0
+        }, 
+        "scaled_scores": {
+            "accuracy": 1.0, 
+            "f1": 1.0, 
+            "f1_macro": 1.0
+        }, 
+        "mean_score": 1.0
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "majority_vote", 
+        "dataset_id": "cengen_batch", 
+        "submission_time": "2023-02-21 17:56:22.487", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 349.0, 
+            "cpu_pct": 12.5, 
+            "peak_memory_mb": 992.0, 
+            "disk_read_mb": 768.5, 
+            "disk_write_mb": 722.8
+        }, 
+        "metric_values": {
+            "accuracy": 0.022168963451168363, 
+            "f1": 0.0009616080277763535, 
+            "f1_macro": 0.0005289794984702484
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.00790273556231003, 
+            "f1": -0.023216507030202435, 
+            "f1_macro": -0.0016591611633974808
+        }, 
+        "mean_score": -0.005657644210429962
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "random_labels", 
+        "dataset_id": "cengen_batch", 
+        "submission_time": "2023-02-21 17:56:22.572", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 389.0, 
+            "cpu_pct": 12.9, 
+            "peak_memory_mb": 990.6, 
+            "disk_read_mb": 768.5, 
+            "disk_write_mb": 722.9
+        }, 
+        "metric_values": {
+            "accuracy": 0.014379868184541641, 
+            "f1": 0.023629520137584254, 
+            "f1_macro": 0.002184516197432137
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.0, 
+            "f1": 0.0, 
+            "f1_macro": 0.0
+        }, 
+        "mean_score": 0.0
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "knn_classifier_log_cp10k", 
+        "dataset_id": "cengen_batch", 
+        "submission_time": "2023-02-21 17:56:21.767", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 490.0, 
+            "cpu_pct": 108.2, 
+            "peak_memory_mb": 2600.0, 
+            "disk_read_mb": 768.5, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8124625524266027, 
+            "f1": 0.831091398368635, 
+            "f1_macro": 0.39834484361073036
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8097264437689969, 
+            "f1": 0.8270035758811894, 
+            "f1_macro": 0.39702764072529084
+        }, 
+        "mean_score": 0.6779192201251591
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "logistic_regression_log_cp10k", 
+        "dataset_id": "cengen_batch", 
+        "submission_time": "2023-02-21 18:34:32.765", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1438.0, 
+            "cpu_pct": 253.0, 
+            "peak_memory_mb": 1800.0, 
+            "disk_read_mb": 768.5, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8783702816057519, 
+            "f1": 0.875140390576727, 
+            "f1_macro": 0.5108683585871248
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.876595744680851, 
+            "f1": 0.8721186148101615, 
+            "f1_macro": 0.5097975032930467
+        }, 
+        "mean_score": 0.7528372875946864
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "mlp_log_cp10k", 
+        "dataset_id": "cengen_batch", 
+        "submission_time": "2023-02-21 18:34:53.012", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1468.0, 
+            "cpu_pct": 343.2, 
+            "peak_memory_mb": 1600.0, 
+            "disk_read_mb": 768.6, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8250449370880767, 
+            "f1": 0.832031507991959, 
+            "f1_macro": 0.402588128174668
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8224924012158055, 
+            "f1": 0.8279664374616179, 
+            "f1_macro": 0.4012802151068458
+        }, 
+        "mean_score": 0.6839130179280898
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "knn_classifier_scran", 
+        "dataset_id": "cengen_batch", 
+        "submission_time": "2023-02-21 18:34:52.676", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 3068.0, 
+            "cpu_pct": 103.5, 
+            "peak_memory_mb": 6800.0, 
+            "disk_read_mb": 807.8, 
+            "disk_write_mb": 1400.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.7872977831036548, 
+            "f1": 0.8046070625910249, 
+            "f1_macro": 0.3507138447877583
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.7841945288753799, 
+            "f1": 0.7998782824358754, 
+            "f1_macro": 0.3492923634158474
+        }, 
+        "mean_score": 0.6444550582423676
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "logistic_regression_scran", 
+        "dataset_id": "cengen_batch", 
+        "submission_time": "2023-02-21 18:35:22.428", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 3159.0, 
+            "cpu_pct": 145.7, 
+            "peak_memory_mb": 6800.0, 
+            "disk_read_mb": 807.8, 
+            "disk_write_mb": 1400.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.7723187537447573, 
+            "f1": 0.8036085106510055, 
+            "f1_macro": 0.48353704258985897
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.7689969604863222, 
+            "f1": 0.7988555641536101, 
+            "f1_macro": 0.48240635087966754
+        }, 
+        "mean_score": 0.6834196251732
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "mlp_scran", 
+        "dataset_id": "cengen_batch", 
+        "submission_time": "2023-02-21 18:35:24.021", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 3727.0, 
+            "cpu_pct": 219.0, 
+            "peak_memory_mb": 6800.0, 
+            "disk_read_mb": 807.9, 
+            "disk_write_mb": 1400.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8568004793289394, 
+            "f1": 0.8568529247812608, 
+            "f1_macro": 0.48583701291538395
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8547112462006079, 
+            "f1": 0.8533885669721287, 
+            "f1_macro": 0.48471135652736513
+        }, 
+        "mean_score": 0.7309370565667006
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "seurat", 
+        "dataset_id": "cengen_batch", 
+        "submission_time": "2023-02-21 18:50:21.245", 
+        "code_version": "4.3.0", 
+        "resources": {
+            "duration_sec": 3350.0, 
+            "cpu_pct": 119.2, 
+            "peak_memory_mb": 556200.0, 
+            "disk_read_mb": 3800.0, 
+            "disk_write_mb": 4000.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8478130617136009, 
+            "f1": 0.8432431418068973, 
+            "f1_macro": 0.4796671443590633
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8455927051671732, 
+            "f1": 0.839449408368848, 
+            "f1_macro": 0.4785279802854893
+        }, 
+        "mean_score": 0.7211900312738369
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "xgboost_log_cp10k", 
+        "dataset_id": "cengen_batch", 
+        "submission_time": "2023-02-21 19:47:32.145", 
+        "code_version": "1.6.2", 
+        "resources": {
+            "duration_sec": 5270.0, 
+            "cpu_pct": 3562.8, 
+            "peak_memory_mb": 1900.0, 
+            "disk_read_mb": 768.2, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8274415817855003, 
+            "f1": 0.834051379104698, 
+            "f1_macro": 0.4645690989104674
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8249240121580548, 
+            "f1": 0.8300351922574651, 
+            "f1_macro": 0.4633968807047743
+        }, 
+        "mean_score": 0.706118695040098
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "xgboost_scran", 
+        "dataset_id": "cengen_batch", 
+        "submission_time": "2023-02-21 20:03:11.377", 
+        "code_version": "1.6.2", 
+        "resources": {
+            "duration_sec": 9350.0, 
+            "cpu_pct": 741.9, 
+            "peak_memory_mb": 6800.0, 
+            "disk_read_mb": 813.9, 
+            "disk_write_mb": 1400.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8304373876572798, 
+            "f1": 0.84212350991216, 
+            "f1_macro": 0.4723773954428312
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8279635258358663, 
+            "f1": 0.8383026798289857, 
+            "f1_macro": 0.4712222719310231
+        }, 
+        "mean_score": 0.7124961591986251
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scanvi_hvg", 
+        "dataset_id": "cengen_batch", 
+        "submission_time": "2023-02-21 19:47:31.500", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 10520.0, 
+            "cpu_pct": 1185.1, 
+            "peak_memory_mb": 6600.0, 
+            "disk_read_mb": 791.5, 
+            "disk_write_mb": 722.9
+        }, 
+        "metric_values": {
+            "accuracy": 0.26243259436788496, 
+            "f1": 0.22423389962996945, 
+            "f1_macro": 0.16123904954334095
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.25167173252279634, 
+            "f1": 0.20545928377581954, 
+            "f1_macro": 0.15940275123790326
+        }, 
+        "mean_score": 0.20551125584550636
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scarches_scanvi_hvg", 
+        "dataset_id": "cengen_batch", 
+        "submission_time": "2023-02-21 23:00:52.616", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 5590.0, 
+            "cpu_pct": 2312.4, 
+            "peak_memory_mb": 17900.0, 
+            "disk_read_mb": 791.6, 
+            "disk_write_mb": 723.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.08028759736369083, 
+            "f1": 0.03725296782270025, 
+            "f1_macro": 0.036846248365176415
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.0668693009118541, 
+            "f1": 0.013953154018990551, 
+            "f1_macro": 0.034737617054860816
+        }, 
+        "mean_score": 0.03852002399523516
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scarches_scanvi_all_genes", 
+        "dataset_id": "cengen_batch", 
+        "submission_time": "2023-02-21 23:01:02.206", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 10970.0, 
+            "cpu_pct": 2702.7, 
+            "peak_memory_mb": 15800.0, 
+            "disk_read_mb": 790.0, 
+            "disk_write_mb": 723.2
+        }, 
+        "metric_values": {
+            "accuracy": 0.24565608148591972, 
+            "f1": 0.19501179569318067, 
+            "f1_macro": 0.09068453934420202
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.23465045592705167, 
+            "f1": 0.1755299643837517, 
+            "f1_macro": 0.08869377613735335
+        }, 
+        "mean_score": 0.16629139881605223
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scanvi_all_genes", 
+        "dataset_id": "cengen_batch", 
+        "submission_time": "2023-02-21 23:03:31.738", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 14580.0, 
+            "cpu_pct": 2792.0, 
+            "peak_memory_mb": 11700.0, 
+            "disk_read_mb": 790.0, 
+            "disk_write_mb": 723.2
+        }, 
+        "metric_values": {
+            "accuracy": 0.6470940683043739, 
+            "f1": 0.6168788176313944, 
+            "f1_macro": 0.19725738168553295
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.6419452887537994, 
+            "f1": 0.6076067535116458, 
+            "f1_macro": 0.19549993826984827
+        }, 
+        "mean_score": 0.48168399351176455
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "knn_classifier_log_cp10k", 
+        "dataset_id": "zebrafish_labs", 
+        "submission_time": "2023-02-21 17:58:01.982", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 260.0, 
+            "cpu_pct": 126.6, 
+            "peak_memory_mb": 3300.0, 
+            "disk_read_mb": 804.9, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.12981704943557804, 
+            "f1": 0.14229308051699885, 
+            "f1_macro": 0.16437714442609613
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.1049049049049049, 
+            "f1": 0.10780750046605095, 
+            "f1_macro": 0.15159754888561494
+        }, 
+        "mean_score": 0.12143665141885691
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "logistic_regression_log_cp10k", 
+        "dataset_id": "zebrafish_labs", 
+        "submission_time": "2023-02-21 17:58:01.995", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 260.0, 
+            "cpu_pct": 110.7, 
+            "peak_memory_mb": 1900.0, 
+            "disk_read_mb": 804.9, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.24802127935642923, 
+            "f1": 0.2875142098321384, 
+            "f1_macro": 0.2327128251184122
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.22649315982649318, 
+            "f1": 0.2588674947434843, 
+            "f1_macro": 0.22097832109787452
+        }, 
+        "mean_score": 0.23544632522261733
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "true_labels", 
+        "dataset_id": "zebrafish_labs", 
+        "submission_time": "2023-02-21 17:58:02.378", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 319.0, 
+            "cpu_pct": 46.9, 
+            "peak_memory_mb": 215.7, 
+            "disk_read_mb": 804.8, 
+            "disk_write_mb": 759.3
+        }, 
+        "metric_values": {
+            "accuracy": 1.0, 
+            "f1": 1.0, 
+            "f1_macro": 1.0
+        }, 
+        "scaled_scores": {
+            "accuracy": 1.0, 
+            "f1": 1.0, 
+            "f1_macro": 1.0
+        }, 
+        "mean_score": 1.0
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "majority_vote", 
+        "dataset_id": "zebrafish_labs", 
+        "submission_time": "2023-02-21 17:58:02.422", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 339.0, 
+            "cpu_pct": 28.5, 
+            "peak_memory_mb": 1022.1, 
+            "disk_read_mb": 804.8, 
+            "disk_write_mb": 759.3
+        }, 
+        "metric_values": {
+            "accuracy": 0.0, 
+            "f1": 0.0, 
+            "f1_macro": 0.0
+        }, 
+        "scaled_scores": {
+            "accuracy": -0.028628628628628628, 
+            "f1": -0.04020671778156426, 
+            "f1_macro": -0.015293496887066585
+        }, 
+        "mean_score": -0.028042947765753157
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "random_labels", 
+        "dataset_id": "zebrafish_labs", 
+        "submission_time": "2023-02-21 17:58:02.627", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 339.0, 
+            "cpu_pct": 32.8, 
+            "peak_memory_mb": 1023.4, 
+            "disk_read_mb": 804.8, 
+            "disk_write_mb": 759.3
+        }, 
+        "metric_values": {
+            "accuracy": 0.027831841183339822, 
+            "f1": 0.03865262268956753, 
+            "f1_macro": 0.015063128971038524
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.0, 
+            "f1": 0.0, 
+            "f1_macro": 0.0
+        }, 
+        "mean_score": 0.0
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "mlp_log_cp10k", 
+        "dataset_id": "zebrafish_labs", 
+        "submission_time": "2023-02-21 17:58:02.473", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 439.0, 
+            "cpu_pct": 141.8, 
+            "peak_memory_mb": 1900.0, 
+            "disk_read_mb": 804.9, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.23738160114181914, 
+            "f1": 0.27619561215999017, 
+            "f1_macro": 0.20373028688647557
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.2155488822155489, 
+            "f1": 0.24709381340904898, 
+            "f1_macro": 0.19155253850770848
+        }, 
+        "mean_score": 0.21806507804410213
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "xgboost_log_cp10k", 
+        "dataset_id": "zebrafish_labs", 
+        "submission_time": "2023-02-21 17:58:02.288", 
+        "code_version": "1.6.2", 
+        "resources": {
+            "duration_sec": 889.0, 
+            "cpu_pct": 278.3, 
+            "peak_memory_mb": 2200.0, 
+            "disk_read_mb": 804.5, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.22440638380692876, 
+            "f1": 0.27834682162039986, 
+            "f1_macro": 0.21439857736198084
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.2022022022022022, 
+            "f1": 0.2493315159411224, 
+            "f1_macro": 0.2023839844503912
+        }, 
+        "mean_score": 0.21797256753123861
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "mlp_scran", 
+        "dataset_id": "zebrafish_labs", 
+        "submission_time": "2023-02-21 17:58:02.452", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1093.0, 
+            "cpu_pct": 113.0, 
+            "peak_memory_mb": 5000.0, 
+            "disk_read_mb": 844.2, 
+            "disk_write_mb": 1500.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.23854937070195925, 
+            "f1": 0.3068204107545123, 
+            "f1_macro": 0.1682215736679451
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.2167500834167501, 
+            "f1": 0.2789499346377783, 
+            "f1_macro": 0.15550077289410666
+        }, 
+        "mean_score": 0.2170669303162117
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "knn_classifier_scran", 
+        "dataset_id": "zebrafish_labs", 
+        "submission_time": "2023-02-21 17:58:02.039", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1197.0, 
+            "cpu_pct": 97.7, 
+            "peak_memory_mb": 5000.0, 
+            "disk_read_mb": 844.2, 
+            "disk_write_mb": 1500.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.1913844556896328, 
+            "f1": 0.2018575253249313, 
+            "f1_macro": 0.1995615455583369
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.16823490156823492, 
+            "f1": 0.16976683609619148, 
+            "f1_macro": 0.18732004254704496
+        }, 
+        "mean_score": 0.17510726007049046
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "logistic_regression_scran", 
+        "dataset_id": "zebrafish_labs", 
+        "submission_time": "2023-02-21 17:58:02.159", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1499.0, 
+            "cpu_pct": 115.1, 
+            "peak_memory_mb": 5000.0, 
+            "disk_read_mb": 844.1, 
+            "disk_write_mb": 1500.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.24471259893603217, 
+            "f1": 0.29034414714676077, 
+            "f1_macro": 0.2245866122961815
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.22308975642308976, 
+            "f1": 0.26181121454905526, 
+            "f1_macro": 0.21272783006514337
+        }, 
+        "mean_score": 0.23254293367909615
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "xgboost_scran", 
+        "dataset_id": "zebrafish_labs", 
+        "submission_time": "2023-02-21 17:58:02.340", 
+        "code_version": "1.6.2", 
+        "resources": {
+            "duration_sec": 1589.0, 
+            "cpu_pct": 205.9, 
+            "peak_memory_mb": 5900.0, 
+            "disk_read_mb": 850.2, 
+            "disk_write_mb": 1500.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.23588945114830673, 
+            "f1": 0.2980572067652053, 
+            "f1_macro": 0.19838515450237226
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.21401401401401401, 
+            "f1": 0.26983439097881096, 
+            "f1_macro": 0.18612566035812791
+        }, 
+        "mean_score": 0.22332468845031764
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "seurat", 
+        "dataset_id": "zebrafish_labs", 
+        "submission_time": "2023-02-21 18:33:35.173", 
+        "code_version": "4.3.0", 
+        "resources": {
+            "duration_sec": 1646.0, 
+            "cpu_pct": 115.4, 
+            "peak_memory_mb": 60000.0, 
+            "disk_read_mb": 2400.0, 
+            "disk_write_mb": 2800.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.3442973919813157, 
+            "f1": 0.41030222359279184, 
+            "f1_macro": 0.28347167382711347
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.32552552552552555, 
+            "f1": 0.3865924115203712, 
+            "f1_macro": 0.2725134501012934
+        }, 
+        "mean_score": 0.3282104623823967
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scarches_scanvi_hvg", 
+        "dataset_id": "zebrafish_labs", 
+        "submission_time": "2023-02-21 18:35:21.411", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 3550.0, 
+            "cpu_pct": 355.3, 
+            "peak_memory_mb": 1700.0, 
+            "disk_read_mb": 827.8, 
+            "disk_write_mb": 759.5
+        }, 
+        "metric_values": {
+            "accuracy": 0.13280134942260283, 
+            "f1": 0.1309776775288379, 
+            "f1_macro": 0.21771900557535676
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.10797464130797463, 
+            "f1": 0.09603714226336035, 
+            "f1_macro": 0.20575519362231212
+        }, 
+        "mean_score": 0.13658899239788236
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scarches_scanvi_all_genes", 
+        "dataset_id": "zebrafish_labs", 
+        "submission_time": "2023-02-21 23:00:53.863", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 5048.0, 
+            "cpu_pct": 2616.4, 
+            "peak_memory_mb": 5500.0, 
+            "disk_read_mb": 826.4, 
+            "disk_write_mb": 759.5
+        }, 
+        "metric_values": {
+            "accuracy": 0.22602828597379007, 
+            "f1": 0.25597266236180566, 
+            "f1_macro": 0.23106180199762813
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.20387053720387055, 
+            "f1": 0.22605776517561812, 
+            "f1_macro": 0.21930204806013226
+        }, 
+        "mean_score": 0.21641011681320696
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scanvi_hvg", 
+        "dataset_id": "zebrafish_labs", 
+        "submission_time": "2023-02-21 23:00:55.616", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 5627.0, 
+            "cpu_pct": 2371.9, 
+            "peak_memory_mb": 7100.0, 
+            "disk_read_mb": 827.9, 
+            "disk_write_mb": 759.5
+        }, 
+        "metric_values": {
+            "accuracy": 0.21006876865187493, 
+            "f1": 0.22606919943933246, 
+            "f1_macro": 0.2371223938182558
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.18745412078745413, 
+            "f1": 0.19495198215872958, 
+            "f1_macro": 0.22545532752290248
+        }, 
+        "mean_score": 0.20262047682302872
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scanvi_all_genes", 
+        "dataset_id": "zebrafish_labs", 
+        "submission_time": "2023-02-21 23:00:54.531", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 6288.0, 
+            "cpu_pct": 2718.5, 
+            "peak_memory_mb": 4000.0, 
+            "disk_read_mb": 826.4, 
+            "disk_write_mb": 759.4
+        }, 
+        "metric_values": {
+            "accuracy": 0.21999480991306605, 
+            "f1": 0.2442120891364309, 
+            "f1_macro": 0.263874405982815
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.19766433099766434, 
+            "f1": 0.2138243379016213, 
+            "f1_macro": 0.2526164715022231
+        }, 
+        "mean_score": 0.22136838013383628
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "true_labels", 
+        "dataset_id": "zebrafish_random", 
+        "submission_time": "2023-02-21 17:58:02.896", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 309.0, 
+            "cpu_pct": 57.8, 
+            "peak_memory_mb": 1021.3, 
+            "disk_read_mb": 804.8, 
+            "disk_write_mb": 759.3
+        }, 
+        "metric_values": {
+            "accuracy": 1.0, 
+            "f1": 1.0, 
+            "f1_macro": 1.0
+        }, 
+        "scaled_scores": {
+            "accuracy": 1.0, 
+            "f1": 1.0, 
+            "f1_macro": 1.0
+        }, 
+        "mean_score": 1.0
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "majority_vote", 
+        "dataset_id": "zebrafish_random", 
+        "submission_time": "2023-02-21 17:58:03.064", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 348.0, 
+            "cpu_pct": 30.7, 
+            "peak_memory_mb": 233.8, 
+            "disk_read_mb": 804.8, 
+            "disk_write_mb": 759.3
+        }, 
+        "metric_values": {
+            "accuracy": 0.1740139211136891, 
+            "f1": 0.051585154480342614, 
+            "f1_macro": 0.012351778656126482
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.09491525423728814, 
+            "f1": -0.03961726272153891, 
+            "f1_macro": -0.03012033252188506
+        }, 
+        "mean_score": 0.008392552997954722
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "knn_classifier_log_cp10k", 
+        "dataset_id": "zebrafish_random", 
+        "submission_time": "2023-02-21 17:58:02.640", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 409.0, 
+            "cpu_pct": 98.2, 
+            "peak_memory_mb": 2500.0, 
+            "disk_read_mb": 804.9, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8060711523588554, 
+            "f1": 0.8014734891499417, 
+            "f1_macro": 0.6240963193194412
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.7875, 
+            "f1": 0.7823825842007892, 
+            "f1_macro": 0.6079312287810665
+        }, 
+        "mean_score": 0.7259379376606185
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "logistic_regression_log_cp10k", 
+        "dataset_id": "zebrafish_random", 
+        "submission_time": "2023-02-21 17:58:02.611", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 419.0, 
+            "cpu_pct": 118.7, 
+            "peak_memory_mb": 1600.0, 
+            "disk_read_mb": 804.9, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8426140757927301, 
+            "f1": 0.8410077225303916, 
+            "f1_macro": 0.7110845534586984
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8275423728813559, 
+            "f1": 0.8257185480829846, 
+            "f1_macro": 0.6986602421488979
+        }, 
+        "mean_score": 0.7839737210377461
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "mlp_log_cp10k", 
+        "dataset_id": "zebrafish_random", 
+        "submission_time": "2023-02-21 17:58:03.080", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 419.0, 
+            "cpu_pct": 290.1, 
+            "peak_memory_mb": 1600.0, 
+            "disk_read_mb": 804.9, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8397138437741686, 
+            "f1": 0.8403436701669355, 
+            "f1_macro": 0.7096306108366662
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8243644067796609, 
+            "f1": 0.8249906384518129, 
+            "f1_macro": 0.6971437752278746
+        }, 
+        "mean_score": 0.7821662734864495
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "random_labels", 
+        "dataset_id": "zebrafish_random", 
+        "submission_time": "2023-02-21 17:58:03.129", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 419.0, 
+            "cpu_pct": 20.9, 
+            "peak_memory_mb": 1022.3, 
+            "disk_read_mb": 804.8, 
+            "disk_write_mb": 759.3
+        }, 
+        "metric_values": {
+            "accuracy": 0.08739365815931942, 
+            "f1": 0.08772691688778744, 
+            "f1_macro": 0.0412302425620836
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.0, 
+            "f1": 0.0, 
+            "f1_macro": 0.0
+        }, 
+        "mean_score": 0.0
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "knn_classifier_scran", 
+        "dataset_id": "zebrafish_random", 
+        "submission_time": "2023-02-21 17:58:02.650", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1019.0, 
+            "cpu_pct": 102.1, 
+            "peak_memory_mb": 5000.0, 
+            "disk_read_mb": 844.2, 
+            "disk_write_mb": 1500.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8022041763341067, 
+            "f1": 0.8026197598424966, 
+            "f1_macro": 0.6493289517704377
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.7832627118644068, 
+            "f1": 0.7836390837224504, 
+            "f1_macro": 0.6342489471438408
+        }, 
+        "mean_score": 0.733716914243566
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "logistic_regression_scran", 
+        "dataset_id": "zebrafish_random", 
+        "submission_time": "2023-02-21 17:58:02.826", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1418.0, 
+            "cpu_pct": 106.4, 
+            "peak_memory_mb": 5000.0, 
+            "disk_read_mb": 844.1, 
+            "disk_write_mb": 1500.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8431941221964424, 
+            "f1": 0.8423899095360406, 
+            "f1_macro": 0.7090452154929959
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8281779661016949, 
+            "f1": 0.8272336503382587, 
+            "f1_macro": 0.696533205965412
+        }, 
+        "mean_score": 0.7839816074684552
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "xgboost_log_cp10k", 
+        "dataset_id": "zebrafish_random", 
+        "submission_time": "2023-02-21 17:58:02.910", 
+        "code_version": "1.6.2", 
+        "resources": {
+            "duration_sec": 1418.0, 
+            "cpu_pct": 331.9, 
+            "peak_memory_mb": 1900.0, 
+            "disk_read_mb": 804.5, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8031709203402939, 
+            "f1": 0.7995257960670158, 
+            "f1_macro": 0.6814826306177239
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.7843220338983051, 
+            "f1": 0.7802475951070835, 
+            "f1_macro": 0.6677853395861819
+        }, 
+        "mean_score": 0.7441183228638568
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "mlp_scran", 
+        "dataset_id": "zebrafish_random", 
+        "submission_time": "2023-02-21 17:58:03.015", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1718.0, 
+            "cpu_pct": 162.9, 
+            "peak_memory_mb": 5000.0, 
+            "disk_read_mb": 844.2, 
+            "disk_write_mb": 1500.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8343000773395205, 
+            "f1": 0.8347189502833389, 
+            "f1_macro": 0.6955124404833017
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8184322033898305, 
+            "f1": 0.8188250286276055, 
+            "f1_macro": 0.682418477267818
+        }, 
+        "mean_score": 0.7732252364284179
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "seurat", 
+        "dataset_id": "zebrafish_random", 
+        "submission_time": "2023-02-21 18:31:51.874", 
+        "code_version": "4.3.0", 
+        "resources": {
+            "duration_sec": 1589.0, 
+            "cpu_pct": 129.3, 
+            "peak_memory_mb": 376000.0, 
+            "disk_read_mb": 2200.0, 
+            "disk_write_mb": 2600.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8596287703016241, 
+            "f1": 0.8577182706160404, 
+            "f1_macro": 0.7417937504863691
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8461864406779661, 
+            "f1": 0.8440360326114561, 
+            "f1_macro": 0.7306900353181502
+        }, 
+        "mean_score": 0.8069708362025242
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "xgboost_scran", 
+        "dataset_id": "zebrafish_random", 
+        "submission_time": "2023-02-21 18:38:02.414", 
+        "code_version": "1.6.2", 
+        "resources": {
+            "duration_sec": 1899.0, 
+            "cpu_pct": 451.9, 
+            "peak_memory_mb": 5500.0, 
+            "disk_read_mb": 850.2, 
+            "disk_write_mb": 1500.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.7882830626450116, 
+            "f1": 0.7842438906348819, 
+            "f1_macro": 0.6613879616286572
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.7680084745762712, 
+            "f1": 0.7634961357962379, 
+            "f1_macro": 0.6468265339572217
+        }, 
+        "mean_score": 0.7261103814432435
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scanvi_hvg", 
+        "dataset_id": "zebrafish_random", 
+        "submission_time": "2023-02-21 23:00:53.522", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 4959.0, 
+            "cpu_pct": 2198.6, 
+            "peak_memory_mb": 7800.0, 
+            "disk_read_mb": 827.9, 
+            "disk_write_mb": 759.5
+        }, 
+        "metric_values": {
+            "accuracy": 0.7790023201856149, 
+            "f1": 0.7278565236325139, 
+            "f1_macro": 0.43734666546002615
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.7578389830508475, 
+            "f1": 0.7016863903963155, 
+            "f1_macro": 0.41315072761209043
+        }, 
+        "mean_score": 0.6242253670197512
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scarches_scanvi_all_genes", 
+        "dataset_id": "zebrafish_random", 
+        "submission_time": "2023-02-21 23:00:55.143", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 5357.0, 
+            "cpu_pct": 2746.9, 
+            "peak_memory_mb": 6000.0, 
+            "disk_read_mb": 826.4, 
+            "disk_write_mb": 759.5
+        }, 
+        "metric_values": {
+            "accuracy": 0.6477184841453983, 
+            "f1": 0.5550225618420579, 
+            "f1_macro": 0.3165801404765449
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.6139830508474576, 
+            "f1": 0.5122321962630915, 
+            "f1_macro": 0.2871908461633878
+        }, 
+        "mean_score": 0.47113536442464565
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scarches_scanvi_hvg", 
+        "dataset_id": "zebrafish_random", 
+        "submission_time": "2023-02-21 23:01:11.800", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 8230.0, 
+            "cpu_pct": 2354.3, 
+            "peak_memory_mb": 7700.0, 
+            "disk_read_mb": 827.9, 
+            "disk_write_mb": 759.5
+        }, 
+        "metric_values": {
+            "accuracy": 0.637277648878577, 
+            "f1": 0.5346413116985615, 
+            "f1_macro": 0.2832056442403825
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.6025423728813559, 
+            "f1": 0.48989102395318856, 
+            "f1_macro": 0.2523811371824248
+        }, 
+        "mean_score": 0.44827151133898974
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scanvi_all_genes", 
+        "dataset_id": "zebrafish_random", 
+        "submission_time": "2023-02-21 23:01:02.773", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 9589.0, 
+            "cpu_pct": 2729.8, 
+            "peak_memory_mb": 5100.0, 
+            "disk_read_mb": 826.4, 
+            "disk_write_mb": 759.4
+        }, 
+        "metric_values": {
+            "accuracy": 0.7521268368136118, 
+            "f1": 0.6923656409218792, 
+            "f1_macro": 0.40005402866576983
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.7283898305084746, 
+            "f1": 0.6627825979161541, 
+            "f1_macro": 0.37425438518477816
+        }, 
+        "mean_score": 0.588475604536469
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "majority_vote", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-21 17:58:22.547", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 350.0, 
+            "cpu_pct": 23.8, 
+            "peak_memory_mb": 1500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.34947254530700567, 
+            "f1": 0.1810056237869919, 
+            "f1_macro": 0.03699567620192996
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.1729711141678129, 
+            "f1": -0.042167518883946264, 
+            "f1_macro": -0.036296851094743135
+        }, 
+        "mean_score": 0.03150224806304117
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "mlp_log_cp10k", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-21 17:58:22.650", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 359.0, 
+            "cpu_pct": 207.0, 
+            "peak_memory_mb": 2300.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1700.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9640248850419258, 
+            "f1": 0.9645805182050861, 
+            "f1_macro": 0.8790308464162443
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9542640990371389, 
+            "f1": 0.9549288315836248, 
+            "f1_macro": 0.8698241016779394
+        }, 
+        "mean_score": 0.9263390107662345
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "logistic_regression_log_cp10k", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-21 17:58:22.080", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 430.0, 
+            "cpu_pct": 169.1, 
+            "peak_memory_mb": 2300.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1700.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9634839058696241, 
+            "f1": 0.9639430099980332, 
+            "f1_macro": 0.9390204193334389
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.953576341127923, 
+            "f1": 0.9541176045890214, 
+            "f1_macro": 0.9343793731095585
+        }, 
+        "mean_score": 0.9473577729421677
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "true_labels", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-21 17:58:22.340", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 460.0, 
+            "cpu_pct": 12.4, 
+            "peak_memory_mb": 1500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 1.0, 
+            "f1": 1.0, 
+            "f1_macro": 1.0
+        }, 
+        "scaled_scores": {
+            "accuracy": 1.0, 
+            "f1": 1.0, 
+            "f1_macro": 1.0
+        }, 
+        "mean_score": 1.0
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "knn_classifier_log_cp10k", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-21 17:58:22.067", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 520.0, 
+            "cpu_pct": 87.0, 
+            "peak_memory_mb": 2600.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1700.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.874492832025967, 
+            "f1": 0.8731145520258626, 
+            "f1_macro": 0.8089500380663799
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8404401650618981, 
+            "f1": 0.8385387051018135, 
+            "f1_macro": 0.7944095690321158
+        }, 
+        "mean_score": 0.8244628130652757
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "random_labels", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-21 17:58:22.740", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 529.0, 
+            "cpu_pct": 9.2, 
+            "peak_memory_mb": 1500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.21341628347308628, 
+            "f1": 0.21414325300594048, 
+            "f1_macro": 0.07072541735434873
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.0, 
+            "f1": 0.0, 
+            "f1_macro": 0.0
+        }, 
+        "mean_score": 0.0
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "xgboost_log_cp10k", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-21 17:58:22.380", 
+        "code_version": "1.6.2", 
+        "resources": {
+            "duration_sec": 769.0, 
+            "cpu_pct": 478.9, 
+            "peak_memory_mb": 2700.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1700.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.93913984311604, 
+            "f1": 0.9383958828902009, 
+            "f1_macro": 0.9050628910586268
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.922627235213205, 
+            "f1": 0.921608973460573, 
+            "f1_macro": 0.8978373984241703
+        }, 
+        "mean_score": 0.9140245356993161
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "knn_classifier_scran", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-21 17:58:22.239", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1369.0, 
+            "cpu_pct": 99.9, 
+            "peak_memory_mb": 8500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 2100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8290505815526102, 
+            "f1": 0.832422691059586, 
+            "f1_macro": 0.5774678768528779
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.782668500687758, 
+            "f1": 0.7867584523751875, 
+            "f1_macro": 0.5453097168070926
+        }, 
+        "mean_score": 0.7049122232900128
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "logistic_regression_scran", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-21 17:58:22.259", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1439.0, 
+            "cpu_pct": 121.7, 
+            "peak_memory_mb": 8500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 2100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9418447389775494, 
+            "f1": 0.940413163463306, 
+            "f1_macro": 0.6362141650537397
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9260660247592848, 
+            "f1": 0.9241759560319147, 
+            "f1_macro": 0.6085270793584396
+        }, 
+        "mean_score": 0.8195896867165464
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "xgboost_scran", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-21 17:58:22.452", 
+        "code_version": "1.6.2", 
+        "resources": {
+            "duration_sec": 1668.0, 
+            "cpu_pct": 236.9, 
+            "peak_memory_mb": 8500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 2100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9342710305653232, 
+            "f1": 0.9342714399948299, 
+            "f1_macro": 0.7880000488209941
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9164374140302614, 
+            "f1": 0.9163606341020992, 
+            "f1_macro": 0.7718651137799977
+        }, 
+        "mean_score": 0.8682210539707862
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "mlp_scran", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-21 18:37:31.536", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1480.0, 
+            "cpu_pct": 145.9, 
+            "peak_memory_mb": 8500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 2100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9537462807681905, 
+            "f1": 0.9546716872929825, 
+            "f1_macro": 0.7595492175376236
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9411966987620358, 
+            "f1": 0.9423198784251703, 
+            "f1_macro": 0.7412489408912797
+        }, 
+        "mean_score": 0.8749218393594953
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "seurat", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-21 18:44:41.862", 
+        "code_version": "4.3.0", 
+        "resources": {
+            "duration_sec": 1910.0, 
+            "cpu_pct": 109.7, 
+            "peak_memory_mb": 108200.0, 
+            "disk_read_mb": 2800.0, 
+            "disk_write_mb": 2400.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9588855829050582, 
+            "f1": 0.9582796607282135, 
+            "f1_macro": 0.8517420844591291
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9477303988995874, 
+            "f1": 0.9469110121770045, 
+            "f1_macro": 0.8404584411221284
+        }, 
+        "mean_score": 0.9116999507329068
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scanvi_hvg", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-21 18:36:19.798", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 2791.0, 
+            "cpu_pct": 337.8, 
+            "peak_memory_mb": 2200.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9596970516635109, 
+            "f1": 0.9583537069413711, 
+            "f1_macro": 0.6689106599819379
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9487620357634112, 
+            "f1": 0.9470052357278499, 
+            "f1_macro": 0.6437120457169414
+        }, 
+        "mean_score": 0.8464931057360676
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scarches_scanvi_hvg", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-21 18:36:51.529", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 2990.0, 
+            "cpu_pct": 328.4, 
+            "peak_memory_mb": 2300.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9540167703543414, 
+            "f1": 0.9517252686049228, 
+            "f1_macro": 0.5816215781285415
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9415405777166438, 
+            "f1": 0.9385705708072999, 
+            "f1_macro": 0.549779548817173
+        }, 
+        "mean_score": 0.8099635657803722
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scarches_scanvi_all_genes", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-21 19:52:42.299", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 8939.0, 
+            "cpu_pct": 2151.9, 
+            "peak_memory_mb": 5900.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9507708953205302, 
+            "f1": 0.9494991049364069, 
+            "f1_macro": 0.6454766237283966
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9374140302613481, 
+            "f1": 0.9357377852175203, 
+            "f1_macro": 0.6184944871059823
+        }, 
+        "mean_score": 0.8305487675282835
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scanvi_all_genes", 
+        "dataset_id": "pancreas_batch", 
+        "submission_time": "2023-02-21 23:00:59.251", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 5643.0, 
+            "cpu_pct": 2762.1, 
+            "peak_memory_mb": 4500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9575331349743035, 
+            "f1": 0.9561489780630695, 
+            "f1_macro": 0.6604518695765396
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9460110041265475, 
+            "f1": 0.9441997258346858, 
+            "f1_macro": 0.6346094719853796
+        }, 
+        "mean_score": 0.8416067339822044
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "knn_classifier_log_cp10k", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-21 17:58:13.196", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 368.0, 
+            "cpu_pct": 127.5, 
+            "peak_memory_mb": 2200.0, 
+            "disk_read_mb": 629.0, 
+            "disk_write_mb": 868.9
+        }, 
+        "metric_values": {
+            "accuracy": 0.8611835506519558, 
+            "f1": 0.8585497668879454, 
+            "f1_macro": 0.8714241831337218
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8475770925110132, 
+            "f1": 0.8446930196084786, 
+            "f1_macro": 0.868083461255843
+        }, 
+        "mean_score": 0.8534511911251116
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "logistic_regression_log_cp10k", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-21 17:58:13.233", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 418.0, 
+            "cpu_pct": 148.3, 
+            "peak_memory_mb": 1300.0, 
+            "disk_read_mb": 629.0, 
+            "disk_write_mb": 868.9
+        }, 
+        "metric_values": {
+            "accuracy": 0.925777331995988, 
+            "f1": 0.9252414029903501, 
+            "f1_macro": 0.9131036540313611
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9185022026431718, 
+            "f1": 0.9179179015514406, 
+            "f1_macro": 0.9108458692382295
+        }, 
+        "mean_score": 0.915755324477614
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "true_labels", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-21 17:58:13.419", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 458.0, 
+            "cpu_pct": 9.5, 
+            "peak_memory_mb": 846.9, 
+            "disk_read_mb": 629.0, 
+            "disk_write_mb": 583.6
+        }, 
+        "metric_values": {
+            "accuracy": 1.0, 
+            "f1": 1.0, 
+            "f1_macro": 1.0
+        }, 
+        "scaled_scores": {
+            "accuracy": 1.0, 
+            "f1": 1.0, 
+            "f1_macro": 1.0
+        }, 
+        "mean_score": 1.0
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "majority_vote", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-21 17:58:13.519", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 458.0, 
+            "cpu_pct": 10.1, 
+            "peak_memory_mb": 846.8, 
+            "disk_read_mb": 629.0, 
+            "disk_write_mb": 583.6
+        }, 
+        "metric_values": {
+            "accuracy": 0.22286860581745235, 
+            "f1": 0.0812358992989467, 
+            "f1_macro": 0.009346187495793795
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.14669603524229075, 
+            "f1": -0.00876806656780211, 
+            "f1_macro": -0.0163934807054105
+        }, 
+        "mean_score": 0.04051149598969272
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "random_labels", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-21 17:58:13.568", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 468.0, 
+            "cpu_pct": 9.8, 
+            "peak_memory_mb": 847.1, 
+            "disk_read_mb": 629.0, 
+            "disk_write_mb": 583.6
+        }, 
+        "metric_values": {
+            "accuracy": 0.08926780341023069, 
+            "f1": 0.0892216643742255, 
+            "f1_macro": 0.025324511313610666
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.0, 
+            "f1": 0.0, 
+            "f1_macro": 0.0
+        }, 
+        "mean_score": 0.0
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "mlp_log_cp10k", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-21 17:58:13.569", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 568.0, 
+            "cpu_pct": 384.9, 
+            "peak_memory_mb": 1300.0, 
+            "disk_read_mb": 629.1, 
+            "disk_write_mb": 868.9
+        }, 
+        "metric_values": {
+            "accuracy": 0.931394182547643, 
+            "f1": 0.9309033200595019, 
+            "f1_macro": 0.9072989997095794
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9246696035242291, 
+            "f1": 0.9241344713222418, 
+            "f1_macro": 0.9048903954532009
+        }, 
+        "mean_score": 0.9178981567665573
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "knn_classifier_scran", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-21 17:58:13.200", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1206.0, 
+            "cpu_pct": 100.2, 
+            "peak_memory_mb": 5400.0, 
+            "disk_read_mb": 668.3, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8686058174523571, 
+            "f1": 0.8638651253107504, 
+            "f1_macro": 0.8275820800516215
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8557268722466961, 
+            "f1": 0.8505290811559385, 
+            "f1_macro": 0.8231022304862172
+        }, 
+        "mean_score": 0.8431193946296173
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "xgboost_log_cp10k", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-21 17:58:13.447", 
+        "code_version": "1.6.2", 
+        "resources": {
+            "duration_sec": 1507.0, 
+            "cpu_pct": 290.0, 
+            "peak_memory_mb": 1500.0, 
+            "disk_read_mb": 628.7, 
+            "disk_write_mb": 869.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8736208625877633, 
+            "f1": 0.8711695852376224, 
+            "f1_macro": 0.797480077558899
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8612334801762115, 
+            "f1": 0.858549100562585, 
+            "f1_macro": 0.7922181025460633
+        }, 
+        "mean_score": 0.8373335610949533
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "logistic_regression_scran", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-21 17:58:13.305", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1568.0, 
+            "cpu_pct": 114.6, 
+            "peak_memory_mb": 5300.0, 
+            "disk_read_mb": 668.3, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9251755265797392, 
+            "f1": 0.9242577338820452, 
+            "f1_macro": 0.8758263593202537
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.91784140969163, 
+            "f1": 0.9168378702531237, 
+            "f1_macro": 0.872600017009661
+        }, 
+        "mean_score": 0.9024264323181382
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "xgboost_scran", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-21 17:58:13.434", 
+        "code_version": "1.6.2", 
+        "resources": {
+            "duration_sec": 1739.0, 
+            "cpu_pct": 330.1, 
+            "peak_memory_mb": 5700.0, 
+            "disk_read_mb": 674.4, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8651955867602809, 
+            "f1": 0.8639521670154929, 
+            "f1_macro": 0.8174603029898384
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8519823788546256, 
+            "f1": 0.8506246496398799, 
+            "f1_macro": 0.8127174642955494
+        }, 
+        "mean_score": 0.8384414975966848
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "seurat", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-21 18:34:05.334", 
+        "code_version": "4.3.0", 
+        "resources": {
+            "duration_sec": 1486.0, 
+            "cpu_pct": 122.6, 
+            "peak_memory_mb": 568500.0, 
+            "disk_read_mb": 1900.0, 
+            "disk_write_mb": 2100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9119358074222668, 
+            "f1": 0.909781894158941, 
+            "f1_macro": 0.8526389520351096
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9033039647577092, 
+            "f1": 0.9009439483657983, 
+            "f1_macro": 0.8488101427855799
+        }, 
+        "mean_score": 0.8843526853030292
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "mlp_scran", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-21 18:37:01.573", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1630.0, 
+            "cpu_pct": 165.7, 
+            "peak_memory_mb": 5400.0, 
+            "disk_read_mb": 668.4, 
+            "disk_write_mb": 1100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9285857572718155, 
+            "f1": 0.9280688834551714, 
+            "f1_macro": 0.8914942538629572
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9215859030837005, 
+            "f1": 0.9210223676484285, 
+            "f1_macro": 0.8886750027095885
+        }, 
+        "mean_score": 0.9104277578139058
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scanvi_hvg", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-21 18:36:51.552", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 3669.0, 
+            "cpu_pct": 361.2, 
+            "peak_memory_mb": 1600.0, 
+            "disk_read_mb": 651.9, 
+            "disk_write_mb": 583.7
+        }, 
+        "metric_values": {
+            "accuracy": 0.8409227683049147, 
+            "f1": 0.8013792223646742, 
+            "f1_macro": 0.39398162218102567
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8253303964757709, 
+            "f1": 0.7819219343871875, 
+            "f1_macro": 0.37823574630390006
+        }, 
+        "mean_score": 0.6618293590556195
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scarches_scanvi_all_genes", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-21 23:00:54.927", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 5527.0, 
+            "cpu_pct": 2559.0, 
+            "peak_memory_mb": 5900.0, 
+            "disk_read_mb": 650.5, 
+            "disk_write_mb": 583.7
+        }, 
+        "metric_values": {
+            "accuracy": 0.7837512537612839, 
+            "f1": 0.7239101602555007, 
+            "f1_macro": 0.2807778194761088
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.7625550660792951, 
+            "f1": 0.6968638482657754, 
+            "f1_macro": 0.26209062516467213
+        }, 
+        "mean_score": 0.5738365131699142
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scarches_scanvi_hvg", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-21 23:00:57.691", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 7265.0, 
+            "cpu_pct": 2359.4, 
+            "peak_memory_mb": 9300.0, 
+            "disk_read_mb": 652.1, 
+            "disk_write_mb": 583.8
+        }, 
+        "metric_values": {
+            "accuracy": 0.7223671013039117, 
+            "f1": 0.6280996816595446, 
+            "f1_macro": 0.23443165472180164
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.6951541850220264, 
+            "f1": 0.5916675838749157, 
+            "f1_macro": 0.21454027092649408
+        }, 
+        "mean_score": 0.5004540132744787
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scanvi_all_genes", 
+        "dataset_id": "tabula_muris_senis_lung_random", 
+        "submission_time": "2023-02-21 23:00:58.998", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 8423.0, 
+            "cpu_pct": 2801.4, 
+            "peak_memory_mb": 3900.0, 
+            "disk_read_mb": 650.5, 
+            "disk_write_mb": 583.7
+        }, 
+        "metric_values": {
+            "accuracy": 0.8641925777331996, 
+            "f1": 0.8323005307396097, 
+            "f1_macro": 0.43557549460855116
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.8508810572687224, 
+            "f1": 0.8158723558733225, 
+            "f1_macro": 0.4209103317534463
+        }, 
+        "mean_score": 0.6958879149651637
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "true_labels", 
+        "dataset_id": "pancreas_random", 
+        "submission_time": "2023-02-21 18:00:53.818", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 399.0, 
+            "cpu_pct": 29.9, 
+            "peak_memory_mb": 1500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 1.0, 
+            "f1": 1.0, 
+            "f1_macro": 1.0
+        }, 
+        "scaled_scores": {
+            "accuracy": 1.0, 
+            "f1": 1.0, 
+            "f1_macro": 1.0
+        }, 
+        "mean_score": 1.0
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "random_labels", 
+        "dataset_id": "pancreas_random", 
+        "submission_time": "2023-02-21 18:00:54.072", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 448.0, 
+            "cpu_pct": 22.5, 
+            "peak_memory_mb": 1500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.2209726443768997, 
+            "f1": 0.2207732992070331, 
+            "f1_macro": 0.07618531000986446
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.0, 
+            "f1": 0.0, 
+            "f1_macro": 0.0
+        }, 
+        "mean_score": 0.0
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "majority_vote", 
+        "dataset_id": "pancreas_random", 
+        "submission_time": "2023-02-21 18:00:54.102", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 478.0, 
+            "cpu_pct": 28.6, 
+            "peak_memory_mb": 1500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.32887537993920973, 
+            "f1": 0.16278278183633346, 
+            "f1_macro": 0.03535485557443472
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.13850955911041749, 
+            "f1": -0.07442059841081748, 
+            "f1_macro": -0.04419766743032169
+        }, 
+        "mean_score": 0.006630431089759438
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "knn_classifier_log_cp10k", 
+        "dataset_id": "pancreas_random", 
+        "submission_time": "2023-02-21 18:00:53.335", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 519.0, 
+            "cpu_pct": 97.1, 
+            "peak_memory_mb": 2400.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1700.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9650455927051672, 
+            "f1": 0.964346201217482, 
+            "f1_macro": 0.8962212379632082
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9551307062036676, 
+            "f1": 0.9542446392734802, 
+            "f1_macro": 0.8876627930241076
+        }, 
+        "mean_score": 0.9323460461670852
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "logistic_regression_log_cp10k", 
+        "dataset_id": "pancreas_random", 
+        "submission_time": "2023-02-21 18:00:53.294", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 529.0, 
+            "cpu_pct": 121.4, 
+            "peak_memory_mb": 2200.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1700.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9878419452887538, 
+            "f1": 0.9877826521340638, 
+            "f1_macro": 0.9723208693493605
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9843932891143191, 
+            "f1": 0.9843211893874999, 
+            "f1_macro": 0.9700382220043122
+        }, 
+        "mean_score": 0.9795842335020438
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "mlp_log_cp10k", 
+        "dataset_id": "pancreas_random", 
+        "submission_time": "2023-02-21 18:00:53.984", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 628.0, 
+            "cpu_pct": 205.7, 
+            "peak_memory_mb": 2200.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1700.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.988145896656535, 
+            "f1": 0.9880554686775588, 
+            "f1_macro": 0.9709369948626364
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9847834568864612, 
+            "f1": 0.9846713012910284, 
+            "f1_macro": 0.9685402219165037
+        }, 
+        "mean_score": 0.9793316600313311
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "xgboost_log_cp10k", 
+        "dataset_id": "pancreas_random", 
+        "submission_time": "2023-02-21 18:00:53.867", 
+        "code_version": "1.6.2", 
+        "resources": {
+            "duration_sec": 1056.0, 
+            "cpu_pct": 302.4, 
+            "peak_memory_mb": 2600.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1700.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9772036474164134, 
+            "f1": 0.977130825456685, 
+            "f1_macro": 0.9655956850535162
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9707374170893485, 
+            "f1": 0.970651449032685, 
+            "f1_macro": 0.9627584240440568
+        }, 
+        "mean_score": 0.9680490967220301
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "knn_classifier_scran", 
+        "dataset_id": "pancreas_random", 
+        "submission_time": "2023-02-21 18:00:53.751", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1307.0, 
+            "cpu_pct": 107.8, 
+            "peak_memory_mb": 8500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 2100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9644376899696049, 
+            "f1": 0.963539669184525, 
+            "f1_macro": 0.7715105401247113
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9543503706593836, 
+            "f1": 0.9532095976968298, 
+            "f1_macro": 0.752667431735981
+        }, 
+        "mean_score": 0.8867424666973981
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "logistic_regression_scran", 
+        "dataset_id": "pancreas_random", 
+        "submission_time": "2023-02-21 18:00:53.584", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1417.0, 
+            "cpu_pct": 103.2, 
+            "peak_memory_mb": 8500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 2100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9452887537993921, 
+            "f1": 0.9377988609786475, 
+            "f1_macro": 0.6317027390878511
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9297698010144363, 
+            "f1": 0.9201758115346219, 
+            "f1_macro": 0.6013299367256418
+        }, 
+        "mean_score": 0.8170918497582332
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scarches_scanvi_hvg", 
+        "dataset_id": "pancreas_random", 
+        "submission_time": "2023-02-21 18:00:53.717", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 1948.0, 
+            "cpu_pct": 320.4, 
+            "peak_memory_mb": 2300.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.956838905775076, 
+            "f1": 0.9478276041369139, 
+            "f1_macro": 0.529456773064677
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.944596176355833, 
+            "f1": 0.9330459341164852, 
+            "f1_macro": 0.490651932650749
+        }, 
+        "mean_score": 0.7894313477076892
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "xgboost_scran", 
+        "dataset_id": "pancreas_random", 
+        "submission_time": "2023-02-21 18:00:53.815", 
+        "code_version": "1.6.2", 
+        "resources": {
+            "duration_sec": 2028.0, 
+            "cpu_pct": 218.1, 
+            "peak_memory_mb": 8300.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 2100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9693009118541034, 
+            "f1": 0.9689284940816515, 
+            "f1_macro": 0.9185879119724563
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9605930550136559, 
+            "f1": 0.9601252037606909, 
+            "f1_macro": 0.9118740057831154
+        }, 
+        "mean_score": 0.9441974215191541
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "mlp_scran", 
+        "dataset_id": "pancreas_random", 
+        "submission_time": "2023-02-21 18:39:13.606", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 2002.0, 
+            "cpu_pct": 256.3, 
+            "peak_memory_mb": 8500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 2100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9851063829787234, 
+            "f1": 0.9849520807815663, 
+            "f1_macro": 0.8786949882795664
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.980881779165041, 
+            "f1": 0.9806886504233998, 
+            "f1_macro": 0.868691185543143
+        }, 
+        "mean_score": 0.9434205383771946
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "seurat", 
+        "dataset_id": "pancreas_random", 
+        "submission_time": "2023-02-21 18:43:52.071", 
+        "code_version": "4.3.0", 
+        "resources": {
+            "duration_sec": 1899.0, 
+            "cpu_pct": 110.2, 
+            "peak_memory_mb": 45700.0, 
+            "disk_read_mb": 2800.0, 
+            "disk_write_mb": 2400.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.982370820668693, 
+            "f1": 0.9816543811179429, 
+            "f1_macro": 0.8948274458832942
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9773702692157628, 
+            "f1": 0.9764566346823227, 
+            "f1_macro": 0.8861540574573145
+        }, 
+        "mean_score": 0.9466603204517999
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scanvi_hvg", 
+        "dataset_id": "pancreas_random", 
+        "submission_time": "2023-02-21 18:38:22.399", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 2879.0, 
+            "cpu_pct": 542.3, 
+            "peak_memory_mb": 2300.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.978419452887538, 
+            "f1": 0.975807690913863, 
+            "f1_macro": 0.6870492664816059
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9722980881779164, 
+            "f1": 0.9689534392731689, 
+            "f1_macro": 0.6612407911355731
+        }, 
+        "mean_score": 0.867497439528886
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scanvi_all_genes", 
+        "dataset_id": "pancreas_random", 
+        "submission_time": "2023-02-21 18:38:03.022", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 4448.0, 
+            "cpu_pct": 630.8, 
+            "peak_memory_mb": 3600.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9747720364741641, 
+            "f1": 0.9723111833999045, 
+            "f1_macro": 0.6753232347526958
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9676160749122122, 
+            "f1": 0.9644662887296875, 
+            "f1_macro": 0.6485477349891773
+        }, 
+        "mean_score": 0.8602100328770256
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scarches_scanvi_all_genes", 
+        "dataset_id": "pancreas_random", 
+        "submission_time": "2023-02-21 23:19:02.037", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 23550.0, 
+            "cpu_pct": 2606.3, 
+            "peak_memory_mb": 5900.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9556231003039514, 
+            "f1": 0.9460786047979668, 
+            "f1_macro": 0.5347595613474366
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9430355052672649, 
+            "f1": 0.9308014020218237, 
+            "f1_macro": 0.4963920321969213
+        }, 
+        "mean_score": 0.7900763131620033
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "majority_vote", 
+        "dataset_id": "pancreas_random_label_noise", 
+        "submission_time": "2023-02-21 18:02:03.447", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 389.0, 
+            "cpu_pct": 25.4, 
+            "peak_memory_mb": 1500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.3352850539291217, 
+            "f1": 0.16837763151390925, 
+            "f1_macro": 0.03587089116745244
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.19574944071588368, 
+            "f1": -0.024011749900275662, 
+            "f1_macro": -0.02854216688504238
+        }, 
+        "mean_score": 0.047731841310188546
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "random_labels", 
+        "dataset_id": "pancreas_random_label_noise", 
+        "submission_time": "2023-02-21 18:02:03.563", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 389.0, 
+            "cpu_pct": 27.1, 
+            "peak_memory_mb": 1500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.17349768875192603, 
+            "f1": 0.18787809947778522, 
+            "f1_macro": 0.06262558806662334
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.0, 
+            "f1": 0.0, 
+            "f1_macro": 0.0
+        }, 
+        "mean_score": 0.0
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "knn_classifier_log_cp10k", 
+        "dataset_id": "pancreas_random_label_noise", 
+        "submission_time": "2023-02-21 18:02:03.062", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 419.0, 
+            "cpu_pct": 113.8, 
+            "peak_memory_mb": 2300.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1700.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9463790446841295, 
+            "f1": 0.9460810866713062, 
+            "f1_macro": 0.8361237623993133
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9351230425055929, 
+            "f1": 0.9336073644929135, 
+            "f1_macro": 0.8251752602648021
+        }, 
+        "mean_score": 0.8979685557544362
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "true_labels", 
+        "dataset_id": "pancreas_random_label_noise", 
+        "submission_time": "2023-02-21 18:02:03.381", 
+        "code_version": "0.7.0", 
+        "resources": {
+            "duration_sec": 438.0, 
+            "cpu_pct": 15.3, 
+            "peak_memory_mb": 1500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 1.0, 
+            "f1": 1.0, 
+            "f1_macro": 1.0
+        }, 
+        "scaled_scores": {
+            "accuracy": 1.0, 
+            "f1": 1.0, 
+            "f1_macro": 1.0
+        }, 
+        "mean_score": 1.0
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "mlp_log_cp10k", 
+        "dataset_id": "pancreas_random_label_noise", 
+        "submission_time": "2023-02-21 18:02:03.624", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 548.0, 
+            "cpu_pct": 447.1, 
+            "peak_memory_mb": 2200.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1700.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8080123266563944, 
+            "f1": 0.8366856872231097, 
+            "f1_macro": 0.5463249016394928
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.767710663683818, 
+            "f1": 0.7989041883098151, 
+            "f1_macro": 0.516015060167066
+        }, 
+        "mean_score": 0.694209970720233
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "logistic_regression_log_cp10k", 
+        "dataset_id": "pancreas_random_label_noise", 
+        "submission_time": "2023-02-21 18:02:03.070", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 579.0, 
+            "cpu_pct": 121.8, 
+            "peak_memory_mb": 2200.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1700.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9796610169491525, 
+            "f1": 0.9791824244686764, 
+            "f1_macro": 0.8964053737821305
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9753914988814317, 
+            "f1": 0.9743664399175329, 
+            "f1_macro": 0.889484260612362
+        }, 
+        "mean_score": 0.9464140664704422
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "xgboost_log_cp10k", 
+        "dataset_id": "pancreas_random_label_noise", 
+        "submission_time": "2023-02-21 18:02:03.416", 
+        "code_version": "1.6.2", 
+        "resources": {
+            "duration_sec": 1108.0, 
+            "cpu_pct": 374.3, 
+            "peak_memory_mb": 2600.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1700.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9639445300462249, 
+            "f1": 0.9638063508972504, 
+            "f1_macro": 0.8934197028901939
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9563758389261745, 
+            "f1": 0.9554332310463785, 
+            "f1_macro": 0.8862991183107084
+        }, 
+        "mean_score": 0.9327027294277538
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "knn_classifier_scran", 
+        "dataset_id": "pancreas_random_label_noise", 
+        "submission_time": "2023-02-21 18:02:03.124", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1368.0, 
+            "cpu_pct": 95.9, 
+            "peak_memory_mb": 8500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 2100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9411402157164869, 
+            "f1": 0.9404360005933883, 
+            "f1_macro": 0.7218714554626218
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9287844891871737, 
+            "f1": 0.9266563315577248, 
+            "f1_macro": 0.7032898050164121
+        }, 
+        "mean_score": 0.8529102085871035
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "mlp_scran", 
+        "dataset_id": "pancreas_random_label_noise", 
+        "submission_time": "2023-02-21 18:02:03.503", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1477.0, 
+            "cpu_pct": 353.9, 
+            "peak_memory_mb": 8500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 2100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9208012326656394, 
+            "f1": 0.925397640256357, 
+            "f1_macro": 0.6930725021224952
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9041759880686054, 
+            "f1": 0.9081389632570285, 
+            "f1_macro": 0.6725668057820641
+        }, 
+        "mean_score": 0.8282939190358993
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "logistic_regression_scran", 
+        "dataset_id": "pancreas_random_label_noise", 
+        "submission_time": "2023-02-21 18:02:03.327", 
+        "code_version": "1.1.3", 
+        "resources": {
+            "duration_sec": 1518.0, 
+            "cpu_pct": 101.1, 
+            "peak_memory_mb": 8500.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 2100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.8046224961479199, 
+            "f1": 0.7759818120203118, 
+            "f1_macro": 0.42839154368293453
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.7636092468307234, 
+            "f1": 0.7241569426515417, 
+            "f1_macro": 0.3902026244368059
+        }, 
+        "mean_score": 0.6259896046396903
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "xgboost_scran", 
+        "dataset_id": "pancreas_random_label_noise", 
+        "submission_time": "2023-02-21 18:02:03.474", 
+        "code_version": "1.6.2", 
+        "resources": {
+            "duration_sec": 1729.0, 
+            "cpu_pct": 290.2, 
+            "peak_memory_mb": 8300.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 2100.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9531587057010786, 
+            "f1": 0.9528870337485718, 
+            "f1_macro": 0.7961599397904259
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9433258762117823, 
+            "f1": 0.9419878146111644, 
+            "f1_macro": 0.7825414715672205
+        }, 
+        "mean_score": 0.8892850541300558
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "seurat", 
+        "dataset_id": "pancreas_random_label_noise", 
+        "submission_time": "2023-02-21 18:45:41.465", 
+        "code_version": "4.3.0", 
+        "resources": {
+            "duration_sec": 1751.0, 
+            "cpu_pct": 109.7, 
+            "peak_memory_mb": 51500.0, 
+            "disk_read_mb": 2800.0, 
+            "disk_write_mb": 2400.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9756548536209553, 
+            "f1": 0.975085587274387, 
+            "f1_macro": 0.8955432565937734
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9705443698732289, 
+            "f1": 0.969321831230518, 
+            "f1_macro": 0.8885645457392208
+        }, 
+        "mean_score": 0.942810248947656
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scarches_scanvi_hvg", 
+        "dataset_id": "pancreas_random_label_noise", 
+        "submission_time": "2023-02-21 18:39:34.695", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 3756.0, 
+            "cpu_pct": 521.2, 
+            "peak_memory_mb": 2700.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9476117103235747, 
+            "f1": 0.9372298848234738, 
+            "f1_macro": 0.527328944140918
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9366144668158091, 
+            "f1": 0.9227085057844598, 
+            "f1_macro": 0.4957499907809764
+        }, 
+        "mean_score": 0.7850243211270818
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scarches_scanvi_all_genes", 
+        "dataset_id": "pancreas_random_label_noise", 
+        "submission_time": "2023-02-21 18:39:34.102", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 4127.0, 
+            "cpu_pct": 677.5, 
+            "peak_memory_mb": 4900.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9463790446841295, 
+            "f1": 0.9363141652450575, 
+            "f1_macro": 0.5241903797681743
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9351230425055929, 
+            "f1": 0.9215809415877211, 
+            "f1_macro": 0.4924017402497183
+        }, 
+        "mean_score": 0.7830352414476774
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scanvi_all_genes", 
+        "dataset_id": "pancreas_random_label_noise", 
+        "submission_time": "2023-02-21 18:39:41.726", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 4259.0, 
+            "cpu_pct": 667.3, 
+            "peak_memory_mb": 3700.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9704160246533128, 
+            "f1": 0.9672436357663169, 
+            "f1_macro": 0.6735752035664337
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9642058165548099, 
+            "f1": 0.9596657050959715, 
+            "f1_macro": 0.651766900954443
+        }, 
+        "mean_score": 0.8585461408684081
+    }, 
+    {
+        "task_id": "label_projection", 
+        "commit_sha": "65efdc87e3f4048b94b98c6f9fbfe10dae8d5ab0", 
+        "method_id": "scanvi_hvg", 
+        "dataset_id": "pancreas_random_label_noise", 
+        "submission_time": "2023-02-21 23:01:13.673", 
+        "code_version": "0.20.0", 
+        "resources": {
+            "duration_sec": 7679.0, 
+            "cpu_pct": 1860.6, 
+            "peak_memory_mb": 6000.0, 
+            "disk_read_mb": 1300.0, 
+            "disk_write_mb": 1200.0
+        }, 
+        "metric_values": {
+            "accuracy": 0.9673343605546996, 
+            "f1": 0.963942105070359, 
+            "f1_macro": 0.6849998633357023
+        }, 
+        "scaled_scores": {
+            "accuracy": 0.9604772557792692, 
+            "f1": 0.9556003908939597, 
+            "f1_macro": 0.6639548374116637
+        }, 
+        "mean_score": 0.8600108280282974
+    }
 ]

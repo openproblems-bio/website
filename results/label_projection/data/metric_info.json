@@ -1,46 +1,35 @@
 [
-  {
-    "task_id": "label_projection",
-    "metric_id": "accuracy",
-    "metric_name": "Accuracy",
-    "metric_summary": "The percentage of correctly predicted labels.",
-    "paper_reference": "grandini2020metrics",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/label_projection/metrics/accuracy/config.vsh.yaml",
-    "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
-    "maximize": true
-  },
-  {
-    "task_id": "label_projection",
-    "metric_id": "f1_weighted",
-    "metric_name": "F1 weighted",
-    "metric_summary": "Calculates the F1 score for each label, and find their average weighted by support (the number of true instances for each label). This alters 'macro' to account for label imbalance; it can result in an F-score that is not between precision and recall.",
-    "paper_reference": "grandini2020metrics",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/label_projection/metrics/f1/config.vsh.yaml",
-    "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
-    "maximize": true
-  },
-  {
-    "task_id": "label_projection",
-    "metric_id": "f1_macro",
-    "metric_name": "F1 macro",
-    "metric_summary": "Calculates the F1 score for each label, and find their unweighted mean. This does not take label imbalance into account.",
-    "paper_reference": "grandini2020metrics",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/label_projection/metrics/f1/config.vsh.yaml",
-    "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
-    "maximize": true
-  },
-  {
-    "task_id": "label_projection",
-    "metric_id": "f1_micro",
-    "metric_name": "F1 micro",
-    "metric_summary": "Calculates the F1 score globally by counting the total true positives, false negatives and false positives.",
-    "paper_reference": "grandini2020metrics",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/label_projection/metrics/f1/config.vsh.yaml",
-    "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
-    "maximize": true
-  }
+    {
+        "metric_name": "Accuracy",
+        "metric_summary": "Average number of correctly applied labels.",
+        "paper_reference": "grandini2020metrics",
+        "maximize": true,
+        "image": "openproblems",
+        "task_id": "label_projection",
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "metric_id": "accuracy",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/metrics/accuracy.py"
+    },
+    {
+        "metric_name": "F1 score",
+        "metric_summary": "The [F1 score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html) is a weighted average of the precision and recall over all class labels, where an F1 score reaches its best value at 1 and worst score at 0, where each class contributes to the score relative to its frequency in the dataset.",
+        "paper_reference": "grandini2020metrics",
+        "maximize": true,
+        "image": "openproblems",
+        "task_id": "label_projection",
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "metric_id": "f1",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/metrics/f1.py"
+    },
+    {
+        "metric_name": "Macro F1 score",
+        "metric_summary": "The macro F1 score is an unweighted F1 score, where each class contributes equally, regardless of its frequency.",
+        "paper_reference": "grandini2020metrics",
+        "maximize": true,
+        "image": "openproblems",
+        "task_id": "label_projection",
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "metric_id": "f1_macro",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/metrics/f1.py"
+    }
 ]

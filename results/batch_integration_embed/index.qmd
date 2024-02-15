@@ -1,0 +1,18 @@
+---
+title: "Batch integration embed"
+subtitle: "Removing batch effects while preserving biological variation (embedding output)"
+image: thumbnail.svg
+page-layout: full
+css: ../_include/task_template.css
+engine: knitr
+citation-location: document
+toc: false
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "results/batch_integration_embed/data")
+params <- list(data_dir = "./data")
+```
+
+{{< include ../_include/_task_template.qmd >}}

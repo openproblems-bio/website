@@ -1,123 +1,112 @@
 [
-  {
-    "task_id": "dimensionality_reduction",
-    "metric_id": "continuity_at_k30",
-    "metric_name": "Continuity at k=30",
-    "metric_summary": "The continuity metric at k=30 computed on the co-ranking matrix between expression matrix and embedding.",
-    "paper_reference": "venna2006local",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
-    "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
-    "maximize": true
-  },
-  {
-    "task_id": "dimensionality_reduction",
-    "metric_id": "trustworthiness_at_k30",
-    "metric_name": "Trustworthiness at k=30",
-    "metric_summary": "The trustworthiness metric at k=30 computed on the co-ranking matrix between expression matrix and embedding.",
-    "paper_reference": "venna2006local",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
-    "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
-    "maximize": true
-  },
-  {
-    "task_id": "dimensionality_reduction",
-    "metric_id": "qnx_at_k30",
-    "metric_name": "The value for QNX at k=30",
-    "metric_summary": "The QNX metric at k=30 computed on the co-ranking matrix between expression matrix and embedding.",
-    "paper_reference": "lee2009quality",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
-    "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
-    "maximize": true
-  },
-  {
-    "task_id": "dimensionality_reduction",
-    "metric_id": "lcmc_at_k30",
-    "metric_name": "The value for LCMC at k=30",
-    "metric_summary": "The LCMC metric at k=30 computed on the co-ranking matrix between expression matrix and embedding.",
-    "paper_reference": "chen2009local",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
-    "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
-    "maximize": true
-  },
-  {
-    "task_id": "dimensionality_reduction",
-    "metric_id": "qnx_auc",
-    "metric_name": "Area under the QNX curve",
-    "metric_summary": "The AU-QNX metric at k=30 computed on the co-ranking matrix between expression matrix and embedding.",
-    "paper_reference": "lueks2011evaluate",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
-    "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
-    "maximize": true
-  },
-  {
-    "task_id": "dimensionality_reduction",
-    "metric_id": "qlocal",
-    "metric_name": "Local quality measure",
-    "metric_summary": "The local quality metric computed on the co-ranking matrix between expression matrix and embedding.",
-    "paper_reference": "lueks2011evaluate",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
-    "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
-    "maximize": true
-  },
-  {
-    "task_id": "dimensionality_reduction",
-    "metric_id": "qglobal",
-    "metric_name": "Global quality measure",
-    "metric_summary": "The Global quality metric computed on the co-ranking matrix between expression matrix and embedding.",
-    "paper_reference": "lueks2011evaluate",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
-    "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
-    "maximize": true
-  },
-  {
-    "task_id": "dimensionality_reduction",
-    "metric_id": "density_preservation",
-    "metric_name": "Density preservation",
-    "metric_summary": "\"Similarity between local densities in the high-dimensional data and the reduced data.\nThis is computed as the pearson correlation of local radii with the local radii in the original data space.\"\n",
-    "paper_reference": "narayan2021assessing",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/density_preservation/config.vsh.yaml",
-    "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
-    "maximize": true
-  },
-  {
-    "task_id": "dimensionality_reduction",
-    "metric_id": "distance_correlation",
-    "metric_name": "Distance Correlation",
-    "metric_summary": "Calculates the distance correlation by computing Spearman correlations between distances on the full (or processed) data matrix and the dimensionally-reduced matrix.",
-    "paper_reference": "kruskal1964mds",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/distance_correlation/config.vsh.yaml",
-    "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
-    "maximize": false
-  },
-  {
-    "task_id": "dimensionality_reduction",
-    "metric_id": "distance_correlation_spectral",
-    "metric_name": "Distance Correlation Spectral",
-    "metric_summary": "Spearman correlation between all pairwise diffusion distances in the original and dimension-reduced data.",
-    "paper_reference": "coifman2006diffusion",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/distance_correlation/config.vsh.yaml",
-    "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
-    "maximize": false
-  },
-  {
-    "task_id": "dimensionality_reduction",
-    "metric_id": "trustworthiness",
-    "metric_name": "Trustworthiness at k=15",
-    "metric_summary": "A measurement of similarity between the rank of each point's nearest neighbors in the high-dimensional data and the reduced data.",
-    "paper_reference": "venna2006local",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/trustworthiness/config.vsh.yaml",
-    "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
-    "maximize": true
-  }
+    {
+        "metric_name": "continuity",
+        "metric_summary": "Continuity measures error of hard extrusions based on nearest neighbor coranking",
+        "paper_reference": "zhang2021pydrmetrics",
+        "maximize": true,
+        "image": "openproblems",
+        "task_id": "dimensionality_reduction",
+        "commit_sha": "ff1feaf0b741ec05b10084319a1175dfbf5e6faa",
+        "metric_id": "continuity",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/metrics/nn_ranking.py"
+    },
+    {
+        "metric_name": "Density preservation",
+        "metric_summary": "Similarity between local densities in the high-dimensional data and the reduced data.",
+        "paper_reference": "narayan2021assessing",
+        "maximize": true,
+        "image": "openproblems",
+        "task_id": "dimensionality_reduction",
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "metric_id": "density_preservation",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/metrics/density.py"
+    },
+    {
+        "metric_name": "Distance correlation",
+        "metric_summary": "Spearman correlation between all pairwise Euclidean distances in the original and dimension-reduced data",
+        "paper_reference": "schober2018correlation",
+        "maximize": true,
+        "image": "openproblems",
+        "task_id": "dimensionality_reduction",
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "metric_id": "distance_correlation",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/metrics/distance_correlation.py"
+    },
+    {
+        "metric_name": "Distance correlation (spectral)",
+        "metric_summary": "Spearman correlation between all pairwise diffusion distances in the original and dimension-reduced data",
+        "paper_reference": "coifman2006diffusion",
+        "maximize": true,
+        "image": "openproblems",
+        "task_id": "dimensionality_reduction",
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "metric_id": "distance_correlation_spectral",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/metrics/distance_correlation.py"
+    },
+    {
+        "metric_name": "local continuity meta criterion",
+        "metric_summary": "The local continuity meta criterion is the co-KNN size with baseline removal which favors locality",
+        "paper_reference": "zhang2021pydrmetrics",
+        "maximize": true,
+        "image": "openproblems",
+        "task_id": "dimensionality_reduction",
+        "commit_sha": "ff1feaf0b741ec05b10084319a1175dfbf5e6faa",
+        "metric_id": "lcmc",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/metrics/nn_ranking.py"
+    },
+    {
+        "metric_name": "global property",
+        "metric_summary": "The global property metric is a summary of the global co-KNN",
+        "paper_reference": "zhang2021pydrmetrics",
+        "maximize": true,
+        "image": "openproblems",
+        "task_id": "dimensionality_reduction",
+        "commit_sha": "ff1feaf0b741ec05b10084319a1175dfbf5e6faa",
+        "metric_id": "qglobal",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/metrics/nn_ranking.py"
+    },
+    {
+        "metric_name": "local property",
+        "metric_summary": "The local property metric is a summary of the local co-KNN",
+        "paper_reference": "zhang2021pydrmetrics",
+        "maximize": true,
+        "image": "openproblems",
+        "task_id": "dimensionality_reduction",
+        "commit_sha": "ff1feaf0b741ec05b10084319a1175dfbf5e6faa",
+        "metric_id": "qlocal",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/metrics/nn_ranking.py"
+    },
+    {
+        "metric_name": "co-KNN size",
+        "metric_summary": "co-KNN size counts how many points are in both k-nearest neighbors before and after the dimensionality reduction",
+        "paper_reference": "zhang2021pydrmetrics",
+        "maximize": true,
+        "image": "openproblems",
+        "task_id": "dimensionality_reduction",
+        "commit_sha": "ff1feaf0b741ec05b10084319a1175dfbf5e6faa",
+        "metric_id": "qnn",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/metrics/nn_ranking.py"
+    },
+    {
+        "metric_name": "co-KNN AUC",
+        "metric_summary": "co-KNN AUC is area under the co-KNN curve",
+        "paper_reference": "zhang2021pydrmetrics",
+        "maximize": true,
+        "image": "openproblems",
+        "task_id": "dimensionality_reduction",
+        "commit_sha": "ff1feaf0b741ec05b10084319a1175dfbf5e6faa",
+        "metric_id": "qnn_auc",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/metrics/nn_ranking.py"
+    },
+    {
+        "metric_name": "trustworthiness",
+        "metric_summary": "a measurement of similarity between the rank of each point's nearest neighbors in the high-dimensional data and the reduced data.",
+        "paper_reference": "venna2001neighborhood",
+        "maximize": true,
+        "image": "openproblems",
+        "task_id": "dimensionality_reduction",
+        "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+        "metric_id": "trustworthiness",
+        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/dimensionality_reduction/metrics/trustworthiness.py"
+    }
 ]
