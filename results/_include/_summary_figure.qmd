@@ -151,14 +151,14 @@ column_groups <- tribble(
 )
 if (nrow(dataset_info) >= 3) {
   column_groups <- column_groups %>%
-    add_row(level1 = "Dataset", group = "dataset", palette = "dataset")
+    add_row(level1 = "Datasets", group = "dataset", palette = "dataset")
 } else {
   column_groups <- column_groups %>%
     add_row(level1 = "", group = "dataset", palette = NA_character_)
 }
 if (nrow(metric_info) >= 3) {
   column_groups <- column_groups %>%
-    add_row(level1 = "Metric", group = "metric", palette = "metric")
+    add_row(level1 = "Metrics", group = "metric", palette = "metric")
 } else {
   column_groups <- column_groups %>%
     add_row(level1 = "", group = "metric", palette = NA_character_)
