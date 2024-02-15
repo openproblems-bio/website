@@ -6,6 +6,8 @@
 
 ## MINOR CHANGES
 
+* Update neurips 2021 datasets data with new dataset_id (PR #315)
+
 * Several infrastructure updates (PR #298):
 
   - Update R packages
