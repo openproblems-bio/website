@@ -144,3 +144,19 @@ A component interface is a metadata file which describes the expected inputs and
 ```glossary:Docker
 Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package. By doing so, thanks to the container, the developer can rest assured that the application will run on any other Linux machine regardless of any customized settings that machine might have that could differ from the machine used for writing and testing the code.
 ```
+
+```glossary:CELLxGENE census
+A cloud-based library of single-cell RNA-seq datasets, developed by the Chan Zuckerberg Initiative. It provides a user-friendly interface for exploring and retrieving single-cell RNA-seq data, and is widely used in the single-cell community.
+
+OpenProblems uses CELLxGENE census to retrieve raw datasets, and the CELLxGENE schema to define the file format specification for raw datasets.
+```
+
+```glossary:GitHub Actions
+GitHub Actions is a CI/CD service provided by GitHub that allows developers to automate their software development workflows. It is integrated into GitHub and is commonly used for testing, building, and deploying code.
+
+OpenProblems uses GitHub Actions to automatically run tests and build Docker containers and Nextflow modules for each component.
+```
+
+```glossary:AWS
+Amazon Web Services (AWS) is a subsidiary of Amazon providing on-demand cloud computing platforms and APIs to individuals, companies, and governments, on a metered pay-as-you-go basis. OpenProblems uses AWS to store and distribute datasets and resources on S3, and to run Nextflow workflows using AWS Batch.
+```
