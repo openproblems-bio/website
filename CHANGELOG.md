@@ -4,6 +4,8 @@
 
 * Added an event page for the Weekly wednesday work meeting (PR #299).
 
+* Added Predict Modality benchmark page (PR #320).
+
 ## MINOR CHANGES
 
 * Update neurips 2021 datasets data with new dataset_id (PR #315)
