@@ -25,6 +25,8 @@
   - Change the way bibliographic references are rendered.
 
 * Update to funkyheatmapjs v0.2.5 (PR #316).
+  
+* Add CSS to fix not active tab color in dark mode ( PR #319)
 
 ## BUG FIXES
 
