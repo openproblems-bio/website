@@ -26,6 +26,8 @@
 
 * Update to funkyheatmapjs v0.2.5 (PR #316).
 
+* Remove custom css in events.css (PR #318).
+
 ## BUG FIXES
 
 * Updated the `openproblems-v2` submodule (PR #295). This fixes a deprecation error due to an update in ruamel.yaml.
