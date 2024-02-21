@@ -6,7 +6,7 @@
 
 ## MINOR CHANGES
 
-* Update neurips 2021 datasets data with new dataset_id (PR #315)
+* Update neurips 2021 datasets data with new dataset_id (PR #315).
 
 * Several infrastructure updates (PR #298):
 
@@ -25,6 +25,8 @@
   - Change the way bibliographic references are rendered.
 
 * Update to funkyheatmapjs v0.2.5 (PR #316).
+  
+* Add CSS to fix not active tab color in dark mode (PR #319).
 
 * Remove custom css in events.css (PR #318).
 

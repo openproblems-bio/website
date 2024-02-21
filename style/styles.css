@@ -23,6 +23,20 @@
   & #quarto-appendix.default {
     border-top-color: #404041;
   }
+
+  /* Fix tabset not selected color to default */
+  .nav-tabs .nav-link {
+    color: var(--bs-nav-link-color)
+  }
+
+  .nav-tabs .nav-link.focus,
+  .nav-tabs .nav-link:hover{
+    color: var(--bs-nav-link-hover-color)
+  }
+
+  .nav-tabs .nav-link.active {
+    color: var(--bs-nav-tabs-link-active-color)
+  }
 }
 
 /* Fix changes to weight with quarto 1.3 */
