@@ -30,6 +30,8 @@
   - Refer to `task_info.yml` in multiple places.
   - Use glossary to help users find information more quickly.
 
+* Remove custom css in events.css (PR #318).
+
 ## BUG FIXES
 
 * Updated the `openproblems-v2` submodule (PR #295). This fixes a deprecation error due to an update in ruamel.yaml.
