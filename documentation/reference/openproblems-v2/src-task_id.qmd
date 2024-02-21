@@ -20,7 +20,12 @@ Each task should contain a data processor (to transform common datasets into tas
 
 - **Benchmarking pipeline** (`src/tasks/<task_id>/workflows`): This folder contains a Nextflow pipeline defining the benchmarking workflow for this task.
 
-- **File and component formats** (`src/tasks/<task_id>/api`): This folder contains specifications for task-specific file formats and component interfaces.
+- **File and component formats** (`src/tasks/<task_id>/api`): This folder contains task-specific file formats and component interfaces. More specifically:
+
+  * `task_info.yaml`: The task name, description and other metadata.
+  * `file_*.yaml`: File format specifications for the task.
+  * `comp_*.yaml`: Component interface specifications for the task.
+  * `thumbnail.svg`: A thumbnail image for the task.
 
 - **Resource generation scripts** (`src/tasks/<task_id>/resources_scripts`): This folder contains scripts for generating benchmarking resources required for the task.
 

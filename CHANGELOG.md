@@ -28,6 +28,10 @@
   
 * Add CSS to fix not active tab color in dark mode (PR #319).
 
+* Improvements to the documentation (PR #317).
+  - Refer to `task_info.yml` in multiple places.
+  - Use glossary to help users find information more quickly.
+
 * Remove custom css in events.css (PR #318).
 
 ## BUG FIXES
