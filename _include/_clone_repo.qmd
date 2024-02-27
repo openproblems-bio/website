@@ -4,7 +4,7 @@
 # sets the work directory to that directory.
 repo_path <- system("git rev-parse --show-toplevel", intern = TRUE)
 proj_dir <- paste0(repo_path, "/_openproblems-v2")
-if (!dir.exists(proj_dir)) {
+if (!dir.exists(paste0(proj_dir, "/_viash.yaml"))) {
   processx::run(
     "git",
     c("submodule", "update", "--init", "--recursive"),
