@@ -2,7 +2,7 @@
 
 ## MAJOR CHANGES
 
-* Update Denoising task to OpenProblems v2 results (PR #325)
+* Update Denoising task to OpenProblems v2 results (PR #325).
 
 # openproblems.bio v2.3.6
 
