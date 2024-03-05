@@ -2,7 +2,7 @@
 
 ## MAJOR CHANGES
 
-* Update Dimensionality Reduction task to OpenProblems v2 results (PR #326)
+* Update Dimensionality Reduction task to OpenProblems v2 results (PR #326).
 
 # openproblems.bio v2.3.6
 
