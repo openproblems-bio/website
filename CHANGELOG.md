@@ -2,13 +2,35 @@
 
 ## NEW CONTENT
 
-* Added an event page for the Weekly wednesday work meeting (PR #299).
+* Add an event page for the Weekly wednesday work meeting (PR #299).
+
+* Add `Advanced_topics` pages to documentation (PR #300).
+
+* Add `your first contribution` page to documentation (PR #300).
+
+* Add `Datasets` pages (PR #303).
+
+* Add nextflow used resources to benchmark results (PR #309).
+
+* Add git branch naming convention to documentation (PR #313).
+
+## NEW FUNCTIONALITY
+
+* Add gloassary function to pages and a glossary page (PR #300). 
+
+## MAJOR CHANGES
+
+* Update `fundamentals` pages (PR #300).
+  
+* Refactor the reference view (PR #300).
+
+* Update `reference` documentation (PR #300).
+
+* Update Neurips2021 datasets categories (PR #323).
 
 * Added Predict Modality benchmark page (PR #320).
 
 ## MINOR CHANGES
-
-* Update neurips 2021 datasets data with new dataset_id (PR #315).
 
 * Several infrastructure updates (PR #298):
 
@@ -25,6 +47,26 @@
   - Allow multiple citations for datasets, methods, and metrics.
   - Render dataset name instead of dataset id in figures and tables.
   - Change the way bibliographic references are rendered.
+
+* Update documentation (PR #300).
+
+* Update `events` pages (PR #300).
+
+* update `results` pages (PR #300).
+
+* Update styles (PR #300).
+
+* Relocate Style files to `styles` directory (PR #300).
+
+* Update results `dataset_info.json` file (PR #306).
+
+* Add benchmark statistics (PR #308).
+
+* Update benchmark listing cards (PR #308).
+
+* Update card styling (PR #308).
+
+* Update neurips 2021 datasets data with new dataset_id (PR #315).
 
 * Update to funkyheatmapjs v0.2.5 (PR #316).
   
@@ -43,6 +85,10 @@
 * Add redirect from `/benchmark_dataset` to `/events/2021-09_neurips/documentation/data/dataset.html` (#292, PR #295).
 
 * Fixed minor issues in qmd files (PR #295).
+
+* Fix missing metrics in the results table (PR #301).
+
+* Fix theme styling with quarto v1.4 update (PR #303).
 
 # openproblems.bio v2.3.5
 
