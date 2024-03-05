@@ -1,5 +1,11 @@
 # openproblems.bio unreleased
 
+## MAJOR CHANGES
+
+* Update Batch Integration task to OpenProblems v2 results (PR #324)
+
+# openproblems.bio v2.3.6
+
 ## NEW CONTENT
 
 * Add an event page for the Weekly wednesday work meeting (PR #299).
