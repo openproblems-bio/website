@@ -26,6 +26,7 @@
 
 * Update `reference` documentation (PR #300).
 
+* Update Neurips2021 datasets categories (PR #323).
 
 ## MINOR CHANGES
 
