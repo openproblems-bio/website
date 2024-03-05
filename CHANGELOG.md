@@ -2,7 +2,7 @@
 
 ## MAJOR CHANGES
 
-* Update Batch Integration task to OpenProblems v2 results (PR #324)
+* Update Batch Integration task to OpenProblems v2 results (PR #324).
 
 # openproblems.bio v2.3.6
 
