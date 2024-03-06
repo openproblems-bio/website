@@ -2,6 +2,12 @@
 
 ## NEW CONTENT
 
+* Add Predict Modality benchmark page (PR #320).
+
+# openproblems.bio v2.3.6
+
+## NEW CONTENT
+
 * Add an event page for the Weekly wednesday work meeting (PR #299).
 
 * Add `Advanced_topics` pages to documentation (PR #300).
@@ -27,8 +33,6 @@
 * Update `reference` documentation (PR #300).
 
 * Update Neurips2021 datasets categories (PR #323).
-
-* Added Predict Modality benchmark page (PR #320).
 
 ## MINOR CHANGES
 
