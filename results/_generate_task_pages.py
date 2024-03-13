@@ -25,7 +25,6 @@ engine: knitr
 fig-cap-location: bottom
 citation-location: document
 toc: false
-html-math-method: katex
 ---
 
 ```{{r}}
