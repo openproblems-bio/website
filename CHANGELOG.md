@@ -1,5 +1,11 @@
 # openproblems.bio unreleased
 
+## MINOR CHANGES
+
+* Improve Equations visualisation (PR #329).
+
+# openproblems.bio v2.3.6
+
 ## NEW CONTENT
 
 * Add an event page for the Weekly wednesday work meeting (PR #299).
