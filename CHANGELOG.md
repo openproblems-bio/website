@@ -4,6 +4,14 @@
 
 * Update Denoising task to OpenProblems v2 results (PR #325).
 
+## MINOR CHANGES
+
+* Improve Equations visualisation (PR #329).
+
+## BUG FIXES
+
+* Fix error in summary figure when not all method info ids are present in the results (PR #330).
+
 # openproblems.bio v2.3.6
 
 ## NEW CONTENT
