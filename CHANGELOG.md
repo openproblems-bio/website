@@ -1,5 +1,9 @@
 # openproblems.bio unreleased
 
+## MAJOR CHANGES
+
+* Update Denoising task to OpenProblems v2 results (PR #325).
+
 ## MINOR CHANGES
 
 * Improve Equations visualisation (PR #329).
