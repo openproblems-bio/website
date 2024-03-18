@@ -1,22 +1,6 @@
 [
   {
     "task_id": "dimensionality_reduction",
-    "dataset_id": "openproblems_v1/mouse_hspc_nestorowa2016",
-    "dataset_name": "Mouse HSPC",
-    "dataset_summary": "Haematopoeitic stem and progenitor cells from mouse bone marrow",
-    "data_reference": "nestorowa2016single",
-    "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE81682"
-  },
-  {
-    "task_id": "dimensionality_reduction",
-    "dataset_id": "cellxgene_census/hypomap",
-    "dataset_name": "HypoMap",
-    "dataset_summary": "A unified single cell gene expression atlas of the murine hypothalamus",
-    "data_reference": "steuernagel2022hypomap",
-    "data_url": "https://cellxgene.cziscience.com/collections/d86517f0-fa7e-4266-b82e-a521350d6d36"
-  },
-  {
-    "task_id": "dimensionality_reduction",
     "dataset_id": "openproblems_v1/zebrafish",
     "dataset_name": "Zebrafish embryonic cells",
     "dataset_summary": "Single-cell mRNA sequencing of zebrafish embryonic cells.",
@@ -25,11 +9,11 @@
   },
   {
     "task_id": "dimensionality_reduction",
-    "dataset_id": "openproblems_v1/tnbc_wu2021",
-    "dataset_name": "Triple-Negative Breast Cancer",
-    "dataset_summary": "1535 cells from six fresh triple-negative breast cancer tumors.",
-    "data_reference": "wu2021single",
-    "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE118389"
+    "dataset_id": "openproblems_v1/tenx_1k_pbmc",
+    "dataset_name": "1k PBMCs",
+    "dataset_summary": "1k peripheral blood mononuclear cells from a healthy donor",
+    "data_reference": "10x2018pbmc",
+    "data_url": "https://www.10xgenomics.com/resources/datasets/1-k-pbm-cs-from-a-healthy-donor-v-3-chemistry-3-standard-3-0-0"
   },
   {
     "task_id": "dimensionality_reduction",
@@ -57,11 +41,11 @@
   },
   {
     "task_id": "dimensionality_reduction",
-    "dataset_id": "cellxgene_census/gtex_v9",
-    "dataset_name": "GTEX v9",
-    "dataset_summary": "Single-nucleus cross-tissue molecular reference maps to decipher disease gene function",
-    "data_reference": "eraslan2022singlenucleus",
-    "data_url": "https://cellxgene.cziscience.com/collections/a3ffde6c-7ad2-498a-903c-d58e732f7470"
+    "dataset_id": "openproblems_v1/cengen",
+    "dataset_name": "CeNGEN",
+    "dataset_summary": "Complete Gene Expression Map of an Entire Nervous System",
+    "data_reference": "hammarlund2018cengen",
+    "data_url": "https://www.cengen.org"
   },
   {
     "task_id": "dimensionality_reduction",
@@ -73,11 +57,11 @@
   },
   {
     "task_id": "dimensionality_reduction",
-    "dataset_id": "cellxgene_census/hcla",
-    "dataset_name": "Human Lung Cell Atlas",
-    "dataset_summary": "An integrated cell atlas of the human lung in health and disease (core)",
-    "data_reference": "sikkema2023integrated",
-    "data_url": "https://cellxgene.cziscience.com/collections/6f6d381a-7701-4781-935c-db10d30de293"
+    "dataset_id": "openproblems_v1/allen_brain_atlas",
+    "dataset_name": "Mouse Brain Atlas",
+    "dataset_summary": "Adult mouse primary visual cortex",
+    "data_reference": "tasic2016adult",
+    "data_url": "http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71585"
   },
   {
     "task_id": "dimensionality_reduction",
@@ -89,19 +73,27 @@
   },
   {
     "task_id": "dimensionality_reduction",
-    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
-    "dataset_name": "Mouse Pancreatic Islet Atlas",
-    "dataset_summary": "Mouse pancreatic islet scRNA-seq atlas across sexes, ages, and stress conditions including diabetes",
-    "data_reference": "hrovatin2023delineating",
-    "data_url": "https://cellxgene.cziscience.com/collections/296237e2-393d-4e31-b590-b03f74ac5070"
+    "dataset_id": "cellxgene_census/immune_cell_atlas",
+    "dataset_name": "Immune Cell Atlas",
+    "dataset_summary": "Cross-tissue immune cell analysis reveals tissue-specific features in humans",
+    "data_reference": "dominguez2022crosstissue",
+    "data_url": "https://cellxgene.cziscience.com/collections/62ef75e4-cbea-454e-a0ce-998ec40223d3"
   },
   {
     "task_id": "dimensionality_reduction",
-    "dataset_id": "openproblems_v1/tenx_1k_pbmc",
-    "dataset_name": "1k PBMCs",
-    "dataset_summary": "1k peripheral blood mononuclear cells from a healthy donor",
-    "data_reference": "10x2018pbmc",
-    "data_url": "https://www.10xgenomics.com/resources/datasets/1-k-pbm-cs-from-a-healthy-donor-v-3-chemistry-3-standard-3-0-0"
+    "dataset_id": "openproblems_v1/mouse_hspc_nestorowa2016",
+    "dataset_name": "Mouse HSPC",
+    "dataset_summary": "Haematopoeitic stem and progenitor cells from mouse bone marrow",
+    "data_reference": "nestorowa2016single",
+    "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE81682"
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "dataset_id": "openproblems_v1/tnbc_wu2021",
+    "dataset_name": "Triple-Negative Breast Cancer",
+    "dataset_summary": "1535 cells from six fresh triple-negative breast cancer tumors.",
+    "data_reference": "wu2021single",
+    "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE118389"
   },
   {
     "task_id": "dimensionality_reduction",
@@ -113,26 +105,34 @@
   },
   {
     "task_id": "dimensionality_reduction",
-    "dataset_id": "openproblems_v1/cengen",
-    "dataset_name": "CeNGEN",
-    "dataset_summary": "Complete Gene Expression Map of an Entire Nervous System",
-    "data_reference": "hammarlund2018cengen",
-    "data_url": "https://www.cengen.org"
+    "dataset_id": "cellxgene_census/gtex_v9",
+    "dataset_name": "GTEX v9",
+    "dataset_summary": "Single-nucleus cross-tissue molecular reference maps to decipher disease gene function",
+    "data_reference": "eraslan2022singlenucleus",
+    "data_url": "https://cellxgene.cziscience.com/collections/a3ffde6c-7ad2-498a-903c-d58e732f7470"
   },
   {
     "task_id": "dimensionality_reduction",
-    "dataset_id": "openproblems_v1/allen_brain_atlas",
-    "dataset_name": "Mouse Brain Atlas",
-    "dataset_summary": "Adult mouse primary visual cortex",
-    "data_reference": "tasic2016adult",
-    "data_url": "http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71585"
+    "dataset_id": "cellxgene_census/hcla",
+    "dataset_name": "Human Lung Cell Atlas",
+    "dataset_summary": "An integrated cell atlas of the human lung in health and disease (core)",
+    "data_reference": "sikkema2023integrated",
+    "data_url": "https://cellxgene.cziscience.com/collections/6f6d381a-7701-4781-935c-db10d30de293"
   },
   {
     "task_id": "dimensionality_reduction",
-    "dataset_id": "cellxgene_census/immune_cell_atlas",
-    "dataset_name": "Immune Cell Atlas",
-    "dataset_summary": "Cross-tissue immune cell analysis reveals tissue-specific features in humans",
-    "data_reference": "dominguez2022crosstissue",
-    "data_url": "https://cellxgene.cziscience.com/collections/62ef75e4-cbea-454e-a0ce-998ec40223d3"
+    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
+    "dataset_name": "Mouse Pancreatic Islet Atlas",
+    "dataset_summary": "Mouse pancreatic islet scRNA-seq atlas across sexes, ages, and stress conditions including diabetes",
+    "data_reference": "hrovatin2023delineating",
+    "data_url": "https://cellxgene.cziscience.com/collections/296237e2-393d-4e31-b590-b03f74ac5070"
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "dataset_id": "cellxgene_census/hypomap",
+    "dataset_name": "HypoMap",
+    "dataset_summary": "A unified single cell gene expression atlas of the murine hypothalamus",
+    "data_reference": "steuernagel2022hypomap",
+    "data_url": "https://cellxgene.cziscience.com/collections/d86517f0-fa7e-4266-b82e-a521350d6d36"
   }
 ]

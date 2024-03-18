@@ -1,13 +1,35 @@
 [
   {
     "task_id": "dimensionality_reduction",
+    "metric_id": "normalized_mutual_information",
+    "metric_name": "NMI",
+    "metric_summary": "The Normalized Mutual Information (NMI) is a measure of the similarity between cluster labels obtained from the clustering of dimensionality reduction embeddings and the true cell labels. It is a normalization of the Mutual Information (MI) score to scale the results between 0 (no mutual information) and 1 (perfect correlation). \nMutual Information quantifies the \"amount of information\" obtained about one random variable by observing the other random variable. Assuming two label assignments X and Y, it is given by: \n  $MI(X,Y) = \\sum_{x=1}^{X}\\sum_{y=1}^{Y}p(x,y)log(\\frac{P(x,y)}{P(x)P'(y)})$, \nwhere P(x,y) is the joint probability mass function of X and Y, and P(x), P'(y) are the marginal probability mass functions of X and Y respectively. The mutual information is normalized by some generalized mean of H(X) and H(Y). Therefore, Normalized Mutual Information can be defined as: \n  $NMI(X,Y) = \\frac{MI(X,Y)}{mean(H(X),H(Y))}$, \nwhere H(X) and H(Y) are the entropies of X and Y respectively. Higher NMI score suggests that the method is effective in preserving relevant information.\n",
+    "paper_reference": "emmons2016analysis",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/metrics/clustering_performance/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446",
+    "maximize": true
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "metric_id": "adjusted_rand_index",
+    "metric_name": "ARI",
+    "metric_summary": "Adjusted Rand Index (ARI) is a measure of similarity between two clusterings by considering all pairs of samples and counting pairs that are assigned in the same or different clusters in the predicted (from the reduced dimensional embeddings) and true clusterings (cell type labels). It is the Rand Index (RI) adjusted for chance.\nAssuming the C as the cell type labels and K as the clustering of the reduced dimensional embedding, Rand Index can be defined as:\n  $RI = \\frac{a + b}{{C}_{2}^{n_{samples}}}$,\nwhere 'a' is the number of pairs of elements that are in the same set in C and in the same set in K, 'b' is the number of pairs of elements that are in different sets in C and in different sets in K, and ${C}_{2}^{n_{samples}}$ is the total number of possible pairs in the dataset. Random label assignments can be discounted as follows: \n  $ARI = \\frac{RI - E[RI]}{max(RI) - E[RI]}$, \nwhere E[RI] is the expected RI of random labellings.\n",
+    "paper_reference": "santos2009on",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/metrics/clustering_performance/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446",
+    "maximize": true
+  },
+  {
+    "task_id": "dimensionality_reduction",
     "metric_id": "continuity_at_k30",
     "metric_name": "Continuity at k=30",
     "metric_summary": "The continuity metric at k=30 computed on the co-ranking matrix between expression matrix and embedding.",
     "paper_reference": "venna2006local",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446",
     "maximize": true
   },
   {
@@ -16,9 +38,9 @@
     "metric_name": "Trustworthiness at k=30",
     "metric_summary": "The trustworthiness metric at k=30 computed on the co-ranking matrix between expression matrix and embedding.",
     "paper_reference": "venna2006local",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446",
     "maximize": true
   },
   {
@@ -27,9 +49,9 @@
     "metric_name": "The value for QNX at k=30",
     "metric_summary": "The QNX metric at k=30 computed on the co-ranking matrix between expression matrix and embedding.",
     "paper_reference": "lee2009quality",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446",
     "maximize": true
   },
   {
@@ -38,9 +60,9 @@
     "metric_name": "The value for LCMC at k=30",
     "metric_summary": "The LCMC metric at k=30 computed on the co-ranking matrix between expression matrix and embedding.",
     "paper_reference": "chen2009local",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446",
     "maximize": true
   },
   {
@@ -49,9 +71,9 @@
     "metric_name": "Area under the QNX curve",
     "metric_summary": "The AU-QNX metric at k=30 computed on the co-ranking matrix between expression matrix and embedding.",
     "paper_reference": "lueks2011evaluate",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446",
     "maximize": true
   },
   {
@@ -60,9 +82,9 @@
     "metric_name": "Local quality measure",
     "metric_summary": "The local quality metric computed on the co-ranking matrix between expression matrix and embedding.",
     "paper_reference": "lueks2011evaluate",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446",
     "maximize": true
   },
   {
@@ -71,9 +93,9 @@
     "metric_name": "Global quality measure",
     "metric_summary": "The Global quality metric computed on the co-ranking matrix between expression matrix and embedding.",
     "paper_reference": "lueks2011evaluate",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/metrics/coranking/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446",
     "maximize": true
   },
   {
@@ -82,9 +104,9 @@
     "metric_name": "Density preservation",
     "metric_summary": "\"Similarity between local densities in the high-dimensional data and the reduced data.\nThis is computed as the pearson correlation of local radii with the local radii in the original data space.\"\n",
     "paper_reference": "narayan2021assessing",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/density_preservation/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/metrics/density_preservation/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446",
     "maximize": true
   },
   {
@@ -93,9 +115,9 @@
     "metric_name": "Distance Correlation",
     "metric_summary": "Calculates the distance correlation by computing Spearman correlations between distances on the full (or processed) data matrix and the dimensionally-reduced matrix.",
     "paper_reference": "kruskal1964mds",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/distance_correlation/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/metrics/distance_correlation/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446",
     "maximize": false
   },
   {
@@ -104,9 +126,9 @@
     "metric_name": "Distance Correlation Spectral",
     "metric_summary": "Spearman correlation between all pairwise diffusion distances in the original and dimension-reduced data.",
     "paper_reference": "coifman2006diffusion",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/distance_correlation/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/metrics/distance_correlation/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446",
     "maximize": false
   },
   {
@@ -115,9 +137,9 @@
     "metric_name": "Trustworthiness at k=15",
     "metric_summary": "A measurement of similarity between the rank of each point's nearest neighbors in the high-dimensional data and the reduced data.",
     "paper_reference": "venna2006local",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/metrics/trustworthiness/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/metrics/trustworthiness/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb",
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446",
     "maximize": true
   }
 ]

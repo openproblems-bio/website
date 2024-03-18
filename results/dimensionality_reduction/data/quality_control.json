@@ -243,401 +243,1051 @@
         "task_id": "dimensionality_reduction", 
         "category": "Raw data", 
         "name": "Number of results", 
-        "value": 153, 
+        "value": 238, 
         "severity": 0, 
         "severity_value": 0.0, 
         "code": "len(results) == len(method_info) * len(metric_info) * len(dataset_info)", 
-        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: dimensionality_reduction\n  Number of results: 153\n  Number of methods: 9\n  Number of metrics: 11\n  Number of datasets: 17\n"
+        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: dimensionality_reduction\n  Number of results: 238\n  Number of methods: 14\n  Number of metrics: 13\n  Number of datasets: 17\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Metric 'normalized_mutual_information' %missing", 
+        "value": 0.32773109243697474, 
+        "severity": 3, 
+        "severity_value": 3.2773109243697474, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: normalized_mutual_information\n  Percentage missing: 33%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Metric 'adjusted_rand_index' %missing", 
+        "value": 0.32773109243697474, 
+        "severity": 3, 
+        "severity_value": 3.2773109243697474, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: adjusted_rand_index\n  Percentage missing: 33%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'continuity_at_k30' %missing", 
-        "value": 0.7973856209150327, 
+        "value": 0.773109243697479, 
         "severity": 3, 
-        "severity_value": 7.973856209150327, 
+        "severity_value": 7.73109243697479, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: continuity_at_k30\n  Percentage missing: 80%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: continuity_at_k30\n  Percentage missing: 77%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'trustworthiness_at_k30' %missing", 
-        "value": 0.7973856209150327, 
+        "value": 0.773109243697479, 
         "severity": 3, 
-        "severity_value": 7.973856209150327, 
+        "severity_value": 7.73109243697479, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: trustworthiness_at_k30\n  Percentage missing: 80%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: trustworthiness_at_k30\n  Percentage missing: 77%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'qnx_at_k30' %missing", 
-        "value": 0.7973856209150327, 
+        "value": 0.773109243697479, 
         "severity": 3, 
-        "severity_value": 7.973856209150327, 
+        "severity_value": 7.73109243697479, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: qnx_at_k30\n  Percentage missing: 80%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: qnx_at_k30\n  Percentage missing: 77%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'lcmc_at_k30' %missing", 
-        "value": 0.7973856209150327, 
+        "value": 0.773109243697479, 
         "severity": 3, 
-        "severity_value": 7.973856209150327, 
+        "severity_value": 7.73109243697479, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: lcmc_at_k30\n  Percentage missing: 80%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: lcmc_at_k30\n  Percentage missing: 77%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'qnx_auc' %missing", 
-        "value": 0.7973856209150327, 
+        "value": 0.773109243697479, 
         "severity": 3, 
-        "severity_value": 7.973856209150327, 
+        "severity_value": 7.73109243697479, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: qnx_auc\n  Percentage missing: 80%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: qnx_auc\n  Percentage missing: 77%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'qlocal' %missing", 
-        "value": 0.7973856209150327, 
+        "value": 0.773109243697479, 
         "severity": 3, 
-        "severity_value": 7.973856209150327, 
+        "severity_value": 7.73109243697479, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: qlocal\n  Percentage missing: 80%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: qlocal\n  Percentage missing: 77%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'qglobal' %missing", 
-        "value": 0.7973856209150327, 
+        "value": 0.773109243697479, 
         "severity": 3, 
-        "severity_value": 7.973856209150327, 
+        "severity_value": 7.73109243697479, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: qglobal\n  Percentage missing: 80%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: qglobal\n  Percentage missing: 77%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'density_preservation' %missing", 
-        "value": 0.4444444444444444, 
+        "value": 0.3655462184873949, 
         "severity": 3, 
-        "severity_value": 4.444444444444444, 
+        "severity_value": 3.6554621848739486, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: density_preservation\n  Percentage missing: 44%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: density_preservation\n  Percentage missing: 37%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'distance_correlation' %missing", 
-        "value": 0.5490196078431373, 
+        "value": 0.47478991596638653, 
         "severity": 3, 
-        "severity_value": 5.490196078431373, 
+        "severity_value": 4.747899159663865, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: distance_correlation\n  Percentage missing: 55%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: distance_correlation\n  Percentage missing: 47%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'distance_correlation_spectral' %missing", 
-        "value": 0.5490196078431373, 
+        "value": 0.47478991596638653, 
         "severity": 3, 
-        "severity_value": 5.490196078431373, 
+        "severity_value": 4.747899159663865, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: distance_correlation_spectral\n  Percentage missing: 55%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: distance_correlation_spectral\n  Percentage missing: 47%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Metric 'trustworthiness' %missing", 
-        "value": 0.4771241830065359, 
+        "value": 0.41176470588235303, 
         "severity": 3, 
-        "severity_value": 4.7712418300653585, 
+        "severity_value": 4.11764705882353, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: trustworthiness\n  Percentage missing: 48%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  Metric id: trustworthiness\n  Percentage missing: 41%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'random_features' %missing", 
-        "value": 0.641711229946524, 
+        "value": 0.5610859728506787, 
         "severity": 3, 
-        "severity_value": 6.41711229946524, 
+        "severity_value": 5.610859728506787, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: random_features\n  Percentage missing: 64%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: random_features\n  Percentage missing: 56%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Method 'spectral_features' %missing", 
+        "value": 0.5882352941176471, 
+        "severity": 3, 
+        "severity_value": 5.88235294117647, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: spectral_features\n  Percentage missing: 59%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'true_features' %missing", 
-        "value": 0.7165775401069518, 
+        "value": 0.6515837104072398, 
         "severity": 3, 
-        "severity_value": 7.165775401069518, 
+        "severity_value": 6.515837104072398, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: true_features\n  Percentage missing: 72%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: true_features\n  Percentage missing: 65%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'densmap' %missing", 
-        "value": 0.641711229946524, 
+        "value": 0.5610859728506787, 
         "severity": 3, 
-        "severity_value": 6.41711229946524, 
+        "severity_value": 5.610859728506787, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: densmap\n  Percentage missing: 64%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: densmap\n  Percentage missing: 56%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Method 'diffusion_map' %missing", 
+        "value": 0.755656108597285, 
+        "severity": 3, 
+        "severity_value": 7.5565610859728505, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: diffusion_map\n  Percentage missing: 76%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Method 'ivis' %missing", 
+        "value": 0.5610859728506787, 
+        "severity": 3, 
+        "severity_value": 5.610859728506787, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: ivis\n  Percentage missing: 56%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Method 'lmds' %missing", 
+        "value": 0.5610859728506787, 
+        "severity": 3, 
+        "severity_value": 5.610859728506787, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: lmds\n  Percentage missing: 56%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'neuralee' %missing", 
-        "value": 0.6524064171122994, 
+        "value": 0.5610859728506787, 
         "severity": 3, 
-        "severity_value": 6.524064171122994, 
+        "severity_value": 5.610859728506787, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: neuralee\n  Percentage missing: 65%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: neuralee\n  Percentage missing: 56%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'pca' %missing", 
-        "value": 0.641711229946524, 
+        "value": 0.5610859728506787, 
         "severity": 3, 
-        "severity_value": 6.41711229946524, 
+        "severity_value": 5.610859728506787, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: pca\n  Percentage missing: 64%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: pca\n  Percentage missing: 56%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'phate' %missing", 
-        "value": 0.641711229946524, 
+        "value": 0.5520361990950227, 
         "severity": 3, 
-        "severity_value": 6.41711229946524, 
+        "severity_value": 5.520361990950226, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: phate\n  Percentage missing: 64%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: phate\n  Percentage missing: 55%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Method 'pymde' %missing", 
+        "value": 0.5520361990950227, 
+        "severity": 3, 
+        "severity_value": 5.520361990950226, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: pymde\n  Percentage missing: 55%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'simlr' %missing", 
-        "value": 1.0, 
+        "value": 0.832579185520362, 
         "severity": 3, 
-        "severity_value": 10.0, 
+        "severity_value": 8.32579185520362, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: simlr\n  Percentage missing: 100%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: simlr\n  Percentage missing: 83%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'tsne' %missing", 
-        "value": 0.641711229946524, 
+        "value": 0.5429864253393665, 
         "severity": 3, 
-        "severity_value": 6.41711229946524, 
+        "severity_value": 5.4298642533936645, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: tsne\n  Percentage missing: 64%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: tsne\n  Percentage missing: 54%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Method 'umap' %missing", 
-        "value": 0.641711229946524, 
+        "value": 0.5520361990950227, 
         "severity": 3, 
-        "severity_value": 6.41711229946524, 
+        "severity_value": 5.520361990950226, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: umap\n  Percentage missing: 64%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/mouse_hspc_nestorowa2016' %missing", 
-        "value": 0.11111111111111116, 
-        "severity": 1, 
-        "severity_value": 1.1111111111111116, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/mouse_hspc_nestorowa2016\n  Percentage missing: 11%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Raw results", 
-        "name": "Dataset 'cellxgene_census/hypomap' %missing", 
-        "value": 1.0, 
-        "severity": 3, 
-        "severity_value": 10.0, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: cellxgene_census/hypomap\n  Percentage missing: 100%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  method id: umap\n  Percentage missing: 55%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Dataset 'openproblems_v1/zebrafish' %missing", 
-        "value": 0.696969696969697, 
+        "value": 0.6153846153846154, 
         "severity": 3, 
-        "severity_value": 6.96969696969697, 
+        "severity_value": 6.153846153846154, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/zebrafish\n  Percentage missing: 70%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/tnbc_wu2021' %missing", 
-        "value": 0.8484848484848485, 
-        "severity": 3, 
-        "severity_value": 8.484848484848484, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/tnbc_wu2021\n  Percentage missing: 85%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/immune_cells' %missing", 
-        "value": 0.6767676767676767, 
-        "severity": 3, 
-        "severity_value": 6.767676767676766, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/immune_cells\n  Percentage missing: 68%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/mouse_blood_olsson_labelled' %missing", 
-        "value": 0.11111111111111116, 
-        "severity": 1, 
-        "severity_value": 1.1111111111111116, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/mouse_blood_olsson_labelled\n  Percentage missing: 11%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/pancreas' %missing", 
-        "value": 0.6767676767676767, 
-        "severity": 3, 
-        "severity_value": 6.767676767676766, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/pancreas\n  Percentage missing: 68%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Raw results", 
-        "name": "Dataset 'cellxgene_census/gtex_v9' %missing", 
-        "value": 1.0, 
-        "severity": 3, 
-        "severity_value": 10.0, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: cellxgene_census/gtex_v9\n  Percentage missing: 100%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/tenx_5k_pbmc' %missing", 
-        "value": 0.18181818181818188, 
-        "severity": 1, 
-        "severity_value": 1.8181818181818188, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/tenx_5k_pbmc\n  Percentage missing: 18%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Raw results", 
-        "name": "Dataset 'cellxgene_census/hcla' %missing", 
-        "value": 1.0, 
-        "severity": 3, 
-        "severity_value": 10.0, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: cellxgene_census/hcla\n  Percentage missing: 100%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Raw results", 
-        "name": "Dataset 'cellxgene_census/dkd' %missing", 
-        "value": 0.7272727272727273, 
-        "severity": 3, 
-        "severity_value": 7.2727272727272725, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: cellxgene_census/dkd\n  Percentage missing: 73%\n"
-    }, 
-    {
-        "task_id": "dimensionality_reduction", 
-        "category": "Raw results", 
-        "name": "Dataset 'cellxgene_census/mouse_pancreas_atlas' %missing", 
-        "value": 1.0, 
-        "severity": 3, 
-        "severity_value": 10.0, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: cellxgene_census/mouse_pancreas_atlas\n  Percentage missing: 100%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/zebrafish\n  Percentage missing: 62%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Dataset 'openproblems_v1/tenx_1k_pbmc' %missing", 
-        "value": 0.11111111111111116, 
+        "value": 0.15384615384615385, 
         "severity": 1, 
-        "severity_value": 1.1111111111111116, 
+        "severity_value": 1.5384615384615385, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/tenx_1k_pbmc\n  Percentage missing: 11%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/tenx_1k_pbmc\n  Percentage missing: 15%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
-        "name": "Dataset 'cellxgene_census/tabula_sapiens' %missing", 
-        "value": 1.0, 
+        "name": "Dataset 'openproblems_v1/immune_cells' %missing", 
+        "value": 0.6043956043956045, 
         "severity": 3, 
-        "severity_value": 10.0, 
+        "severity_value": 6.043956043956045, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: cellxgene_census/tabula_sapiens\n  Percentage missing: 100%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/immune_cells\n  Percentage missing: 60%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Dataset 'openproblems_v1/mouse_blood_olsson_labelled' %missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/mouse_blood_olsson_labelled\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Dataset 'openproblems_v1/pancreas' %missing", 
+        "value": 0.5714285714285714, 
+        "severity": 3, 
+        "severity_value": 5.7142857142857135, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/pancreas\n  Percentage missing: 57%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Dataset 'openproblems_v1/cengen' %missing", 
-        "value": 0.9292929292929293, 
+        "value": 0.7362637362637363, 
         "severity": 3, 
-        "severity_value": 9.292929292929292, 
+        "severity_value": 7.362637362637363, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/cengen\n  Percentage missing: 93%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/cengen\n  Percentage missing: 74%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Dataset 'openproblems_v1/tenx_5k_pbmc' %missing", 
+        "value": 0.25274725274725274, 
+        "severity": 2, 
+        "severity_value": 2.5274725274725274, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/tenx_5k_pbmc\n  Percentage missing: 25%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Dataset 'openproblems_v1/allen_brain_atlas' %missing", 
-        "value": 0.6767676767676767, 
+        "value": 0.6043956043956045, 
         "severity": 3, 
-        "severity_value": 6.767676767676766, 
+        "severity_value": 6.043956043956045, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/allen_brain_atlas\n  Percentage missing: 68%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/allen_brain_atlas\n  Percentage missing: 60%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Dataset 'cellxgene_census/dkd' %missing", 
+        "value": 0.6153846153846154, 
+        "severity": 3, 
+        "severity_value": 6.153846153846154, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: cellxgene_census/dkd\n  Percentage missing: 62%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Raw results", 
         "name": "Dataset 'cellxgene_census/immune_cell_atlas' %missing", 
-        "value": 1.0, 
+        "value": 0.9010989010989011, 
         "severity": 3, 
-        "severity_value": 10.0, 
+        "severity_value": 9.010989010989011, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: cellxgene_census/immune_cell_atlas\n  Percentage missing: 100%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: cellxgene_census/immune_cell_atlas\n  Percentage missing: 90%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Dataset 'openproblems_v1/mouse_hspc_nestorowa2016' %missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/mouse_hspc_nestorowa2016\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Dataset 'openproblems_v1/tnbc_wu2021' %missing", 
+        "value": 0.6153846153846154, 
+        "severity": 3, 
+        "severity_value": 6.153846153846154, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: openproblems_v1/tnbc_wu2021\n  Percentage missing: 62%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Dataset 'cellxgene_census/tabula_sapiens' %missing", 
+        "value": 0.945054945054945, 
+        "severity": 3, 
+        "severity_value": 9.450549450549449, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: cellxgene_census/tabula_sapiens\n  Percentage missing: 95%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Dataset 'cellxgene_census/gtex_v9' %missing", 
+        "value": 0.8076923076923077, 
+        "severity": 3, 
+        "severity_value": 8.076923076923077, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: cellxgene_census/gtex_v9\n  Percentage missing: 81%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Dataset 'cellxgene_census/hcla' %missing", 
+        "value": 0.978021978021978, 
+        "severity": 3, 
+        "severity_value": 9.78021978021978, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: cellxgene_census/hcla\n  Percentage missing: 98%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Dataset 'cellxgene_census/mouse_pancreas_atlas' %missing", 
+        "value": 0.8901098901098901, 
+        "severity": 3, 
+        "severity_value": 8.9010989010989, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: cellxgene_census/mouse_pancreas_atlas\n  Percentage missing: 89%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Raw results", 
+        "name": "Dataset 'cellxgene_census/hypomap' %missing", 
+        "value": 0.9010989010989011, 
+        "severity": 3, 
+        "severity_value": 9.010989010989011, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dimensionality_reduction\n  dataset id: cellxgene_census/hypomap\n  Percentage missing: 90%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score random_features normalized_mutual_information", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: normalized_mutual_information\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score random_features normalized_mutual_information", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: normalized_mutual_information\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score spectral_features normalized_mutual_information", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method spectral_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: normalized_mutual_information\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score spectral_features normalized_mutual_information", 
+        "value": 0.8487, 
+        "severity": 0, 
+        "severity_value": 0.42435, 
+        "code": "best_score <= 2", 
+        "message": "Method spectral_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: normalized_mutual_information\n  Best score: 0.8487%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score true_features normalized_mutual_information", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method true_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: normalized_mutual_information\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score true_features normalized_mutual_information", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method true_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: normalized_mutual_information\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap normalized_mutual_information", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: normalized_mutual_information\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap normalized_mutual_information", 
+        "value": 0.9924, 
+        "severity": 0, 
+        "severity_value": 0.4962, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: normalized_mutual_information\n  Best score: 0.9924%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score diffusion_map normalized_mutual_information", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method diffusion_map performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: normalized_mutual_information\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score diffusion_map normalized_mutual_information", 
+        "value": 0.7297, 
+        "severity": 0, 
+        "severity_value": 0.36485, 
+        "code": "best_score <= 2", 
+        "message": "Method diffusion_map performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: normalized_mutual_information\n  Best score: 0.7297%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score ivis normalized_mutual_information", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ivis performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: normalized_mutual_information\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score ivis normalized_mutual_information", 
+        "value": 0.9964, 
+        "severity": 0, 
+        "severity_value": 0.4982, 
+        "code": "best_score <= 2", 
+        "message": "Method ivis performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: normalized_mutual_information\n  Best score: 0.9964%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score lmds normalized_mutual_information", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lmds performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: normalized_mutual_information\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score lmds normalized_mutual_information", 
+        "value": 0.8697, 
+        "severity": 0, 
+        "severity_value": 0.43485, 
+        "code": "best_score <= 2", 
+        "message": "Method lmds performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: normalized_mutual_information\n  Best score: 0.8697%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score neuralee normalized_mutual_information", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method neuralee performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: normalized_mutual_information\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score neuralee normalized_mutual_information", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: normalized_mutual_information\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pca normalized_mutual_information", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method pca performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: normalized_mutual_information\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pca normalized_mutual_information", 
+        "value": 0.8111, 
+        "severity": 0, 
+        "severity_value": 0.40555, 
+        "code": "best_score <= 2", 
+        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: normalized_mutual_information\n  Best score: 0.8111%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate normalized_mutual_information", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: normalized_mutual_information\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate normalized_mutual_information", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method phate performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: normalized_mutual_information\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde normalized_mutual_information", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: normalized_mutual_information\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde normalized_mutual_information", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: normalized_mutual_information\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score simlr normalized_mutual_information", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: normalized_mutual_information\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score simlr normalized_mutual_information", 
+        "value": 0.9847, 
+        "severity": 0, 
+        "severity_value": 0.49235, 
+        "code": "best_score <= 2", 
+        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: normalized_mutual_information\n  Best score: 0.9847%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score tsne normalized_mutual_information", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method tsne performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: normalized_mutual_information\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score tsne normalized_mutual_information", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: normalized_mutual_information\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap normalized_mutual_information", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: normalized_mutual_information\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap normalized_mutual_information", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: normalized_mutual_information\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score random_features adjusted_rand_index", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: adjusted_rand_index\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score random_features adjusted_rand_index", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: adjusted_rand_index\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score spectral_features adjusted_rand_index", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method spectral_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: adjusted_rand_index\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score spectral_features adjusted_rand_index", 
+        "value": 0.796, 
+        "severity": 0, 
+        "severity_value": 0.398, 
+        "code": "best_score <= 2", 
+        "message": "Method spectral_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: adjusted_rand_index\n  Best score: 0.796%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score true_features adjusted_rand_index", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method true_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: adjusted_rand_index\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score true_features adjusted_rand_index", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method true_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: adjusted_rand_index\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score densmap adjusted_rand_index", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method densmap performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: adjusted_rand_index\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score densmap adjusted_rand_index", 
+        "value": 0.9859, 
+        "severity": 0, 
+        "severity_value": 0.49295, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: adjusted_rand_index\n  Best score: 0.9859%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score diffusion_map adjusted_rand_index", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method diffusion_map performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: adjusted_rand_index\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score diffusion_map adjusted_rand_index", 
+        "value": 0.5929, 
+        "severity": 0, 
+        "severity_value": 0.29645, 
+        "code": "best_score <= 2", 
+        "message": "Method diffusion_map performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: adjusted_rand_index\n  Best score: 0.5929%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score ivis adjusted_rand_index", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ivis performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: adjusted_rand_index\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score ivis adjusted_rand_index", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method ivis performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: adjusted_rand_index\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score lmds adjusted_rand_index", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lmds performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: adjusted_rand_index\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score lmds adjusted_rand_index", 
+        "value": 0.7867, 
+        "severity": 0, 
+        "severity_value": 0.39335, 
+        "code": "best_score <= 2", 
+        "message": "Method lmds performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: adjusted_rand_index\n  Best score: 0.7867%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score neuralee adjusted_rand_index", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method neuralee performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: adjusted_rand_index\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score neuralee adjusted_rand_index", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: adjusted_rand_index\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pca adjusted_rand_index", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method pca performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: adjusted_rand_index\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pca adjusted_rand_index", 
+        "value": 0.7193, 
+        "severity": 0, 
+        "severity_value": 0.35965, 
+        "code": "best_score <= 2", 
+        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: adjusted_rand_index\n  Best score: 0.7193%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score phate adjusted_rand_index", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method phate performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: adjusted_rand_index\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score phate adjusted_rand_index", 
+        "value": 0.886, 
+        "severity": 0, 
+        "severity_value": 0.443, 
+        "code": "best_score <= 2", 
+        "message": "Method phate performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: adjusted_rand_index\n  Best score: 0.886%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde adjusted_rand_index", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: adjusted_rand_index\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde adjusted_rand_index", 
+        "value": 0.8884, 
+        "severity": 0, 
+        "severity_value": 0.4442, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: adjusted_rand_index\n  Best score: 0.8884%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score simlr adjusted_rand_index", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: adjusted_rand_index\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score simlr adjusted_rand_index", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: adjusted_rand_index\n  Best score: 1%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score tsne adjusted_rand_index", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method tsne performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: adjusted_rand_index\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score tsne adjusted_rand_index", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: adjusted_rand_index\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score umap adjusted_rand_index", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method umap performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: adjusted_rand_index\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score umap adjusted_rand_index", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: adjusted_rand_index\n  Best score: 1.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score random_features continuity_at_k30", 
-        "value": 0, 
+        "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: continuity_at_k30\n  Worst score: 0%\n"
+        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: continuity_at_k30\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score random_features continuity_at_k30", 
-        "value": 0, 
+        "value": 0.4881, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": 0.24405, 
         "code": "best_score <= 2", 
-        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: continuity_at_k30\n  Best score: 0%\n"
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: continuity_at_k30\n  Best score: 0.4881%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score spectral_features continuity_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method spectral_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: continuity_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score spectral_features continuity_at_k30", 
+        "value": 0.8152, 
+        "severity": 0, 
+        "severity_value": 0.4076, 
+        "code": "best_score <= 2", 
+        "message": "Method spectral_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: continuity_at_k30\n  Best score: 0.8152%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -673,11 +1323,71 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score densmap continuity_at_k30", 
-        "value": 0.9611, 
+        "value": 0.9669, 
         "severity": 0, 
-        "severity_value": 0.48055, 
+        "severity_value": 0.48345, 
         "code": "best_score <= 2", 
-        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: continuity_at_k30\n  Best score: 0.9611%\n"
+        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: continuity_at_k30\n  Best score: 0.9669%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score diffusion_map continuity_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method diffusion_map performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: continuity_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score diffusion_map continuity_at_k30", 
+        "value": 0.9091, 
+        "severity": 0, 
+        "severity_value": 0.45455, 
+        "code": "best_score <= 2", 
+        "message": "Method diffusion_map performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: continuity_at_k30\n  Best score: 0.9091%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score ivis continuity_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ivis performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: continuity_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score ivis continuity_at_k30", 
+        "value": 0.9381, 
+        "severity": 0, 
+        "severity_value": 0.46905, 
+        "code": "best_score <= 2", 
+        "message": "Method ivis performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: continuity_at_k30\n  Best score: 0.9381%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score lmds continuity_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lmds performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: continuity_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score lmds continuity_at_k30", 
+        "value": 0.9252, 
+        "severity": 0, 
+        "severity_value": 0.4626, 
+        "code": "best_score <= 2", 
+        "message": "Method lmds performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: continuity_at_k30\n  Best score: 0.9252%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -693,11 +1403,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score neuralee continuity_at_k30", 
-        "value": 0.9125, 
+        "value": 0.9277, 
         "severity": 0, 
-        "severity_value": 0.45625, 
+        "severity_value": 0.46385, 
         "code": "best_score <= 2", 
-        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: continuity_at_k30\n  Best score: 0.9125%\n"
+        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: continuity_at_k30\n  Best score: 0.9277%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -713,11 +1423,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score pca continuity_at_k30", 
-        "value": 0.9166, 
+        "value": 0.9291, 
         "severity": 0, 
-        "severity_value": 0.4583, 
+        "severity_value": 0.46455, 
         "code": "best_score <= 2", 
-        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: continuity_at_k30\n  Best score: 0.9166%\n"
+        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: continuity_at_k30\n  Best score: 0.9291%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -742,22 +1452,42 @@
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
-        "name": "Worst score simlr continuity_at_k30", 
-        "value": 0, 
+        "name": "Worst score pymde continuity_at_k30", 
+        "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: continuity_at_k30\n  Worst score: 0%\n"
+        "message": "Method pymde performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: continuity_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde continuity_at_k30", 
+        "value": 0.9551, 
+        "severity": 0, 
+        "severity_value": 0.47755, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: continuity_at_k30\n  Best score: 0.9551%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score simlr continuity_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: continuity_at_k30\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score simlr continuity_at_k30", 
-        "value": 0, 
+        "value": 0.9378, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": 0.4689, 
         "code": "best_score <= 2", 
-        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: continuity_at_k30\n  Best score: 0%\n"
+        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: continuity_at_k30\n  Best score: 0.9378%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -773,11 +1503,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score tsne continuity_at_k30", 
-        "value": 0.9544, 
+        "value": 0.9603, 
         "severity": 0, 
-        "severity_value": 0.4772, 
+        "severity_value": 0.48015, 
         "code": "best_score <= 2", 
-        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: continuity_at_k30\n  Best score: 0.9544%\n"
+        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: continuity_at_k30\n  Best score: 0.9603%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -793,31 +1523,51 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score umap continuity_at_k30", 
-        "value": 0.9143, 
+        "value": 0.9272, 
         "severity": 0, 
-        "severity_value": 0.45715, 
+        "severity_value": 0.4636, 
         "code": "best_score <= 2", 
-        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: continuity_at_k30\n  Best score: 0.9143%\n"
+        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: continuity_at_k30\n  Best score: 0.9272%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score random_features trustworthiness_at_k30", 
-        "value": 0, 
+        "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: trustworthiness_at_k30\n  Worst score: 0%\n"
+        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: trustworthiness_at_k30\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score random_features trustworthiness_at_k30", 
-        "value": 0, 
+        "value": 0.1646, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": 0.0823, 
         "code": "best_score <= 2", 
-        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: trustworthiness_at_k30\n  Best score: 0%\n"
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: trustworthiness_at_k30\n  Best score: 0.1646%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score spectral_features trustworthiness_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method spectral_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: trustworthiness_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score spectral_features trustworthiness_at_k30", 
+        "value": 0.6127, 
+        "severity": 0, 
+        "severity_value": 0.30635, 
+        "code": "best_score <= 2", 
+        "message": "Method spectral_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: trustworthiness_at_k30\n  Best score: 0.6127%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -853,11 +1603,71 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score densmap trustworthiness_at_k30", 
-        "value": 0.9564, 
+        "value": 0.9565, 
         "severity": 0, 
-        "severity_value": 0.4782, 
+        "severity_value": 0.47825, 
         "code": "best_score <= 2", 
-        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: trustworthiness_at_k30\n  Best score: 0.9564%\n"
+        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: trustworthiness_at_k30\n  Best score: 0.9565%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score diffusion_map trustworthiness_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method diffusion_map performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: trustworthiness_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score diffusion_map trustworthiness_at_k30", 
+        "value": 0.818, 
+        "severity": 0, 
+        "severity_value": 0.409, 
+        "code": "best_score <= 2", 
+        "message": "Method diffusion_map performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: trustworthiness_at_k30\n  Best score: 0.818%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score ivis trustworthiness_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ivis performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: trustworthiness_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score ivis trustworthiness_at_k30", 
+        "value": 0.8992, 
+        "severity": 0, 
+        "severity_value": 0.4496, 
+        "code": "best_score <= 2", 
+        "message": "Method ivis performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: trustworthiness_at_k30\n  Best score: 0.8992%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score lmds trustworthiness_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lmds performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: trustworthiness_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score lmds trustworthiness_at_k30", 
+        "value": 0.8055, 
+        "severity": 0, 
+        "severity_value": 0.40275, 
+        "code": "best_score <= 2", 
+        "message": "Method lmds performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: trustworthiness_at_k30\n  Best score: 0.8055%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -873,11 +1683,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score neuralee trustworthiness_at_k30", 
-        "value": 0.9215, 
+        "value": 0.917, 
         "severity": 0, 
-        "severity_value": 0.46075, 
+        "severity_value": 0.4585, 
         "code": "best_score <= 2", 
-        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: trustworthiness_at_k30\n  Best score: 0.9215%\n"
+        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: trustworthiness_at_k30\n  Best score: 0.917%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -893,11 +1703,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score pca trustworthiness_at_k30", 
-        "value": 0.813, 
+        "value": 0.8134, 
         "severity": 0, 
-        "severity_value": 0.4065, 
+        "severity_value": 0.4067, 
         "code": "best_score <= 2", 
-        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: trustworthiness_at_k30\n  Best score: 0.813%\n"
+        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: trustworthiness_at_k30\n  Best score: 0.8134%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -922,22 +1732,42 @@
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
-        "name": "Worst score simlr trustworthiness_at_k30", 
-        "value": 0, 
+        "name": "Worst score pymde trustworthiness_at_k30", 
+        "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: trustworthiness_at_k30\n  Worst score: 0%\n"
+        "message": "Method pymde performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: trustworthiness_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde trustworthiness_at_k30", 
+        "value": 0.9456, 
+        "severity": 0, 
+        "severity_value": 0.4728, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: trustworthiness_at_k30\n  Best score: 0.9456%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score simlr trustworthiness_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: trustworthiness_at_k30\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score simlr trustworthiness_at_k30", 
-        "value": 0, 
+        "value": 0.9275, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": 0.46375, 
         "code": "best_score <= 2", 
-        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: trustworthiness_at_k30\n  Best score: 0%\n"
+        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: trustworthiness_at_k30\n  Best score: 0.9275%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -953,11 +1783,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score tsne trustworthiness_at_k30", 
-        "value": 0.9557, 
+        "value": 0.9551, 
         "severity": 0, 
-        "severity_value": 0.47785, 
+        "severity_value": 0.47755, 
         "code": "best_score <= 2", 
-        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: trustworthiness_at_k30\n  Best score: 0.9557%\n"
+        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: trustworthiness_at_k30\n  Best score: 0.9551%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -973,31 +1803,51 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score umap trustworthiness_at_k30", 
-        "value": 0.9113, 
+        "value": 0.9115, 
         "severity": 0, 
-        "severity_value": 0.45565, 
+        "severity_value": 0.45575, 
         "code": "best_score <= 2", 
-        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: trustworthiness_at_k30\n  Best score: 0.9113%\n"
+        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: trustworthiness_at_k30\n  Best score: 0.9115%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score random_features qnx_at_k30", 
-        "value": 0, 
+        "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qnx_at_k30\n  Worst score: 0%\n"
+        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qnx_at_k30\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score random_features qnx_at_k30", 
-        "value": 0, 
+        "value": 0.0483, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": 0.02415, 
         "code": "best_score <= 2", 
-        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qnx_at_k30\n  Best score: 0%\n"
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qnx_at_k30\n  Best score: 0.0483%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score spectral_features qnx_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method spectral_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: qnx_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score spectral_features qnx_at_k30", 
+        "value": 0.1713, 
+        "severity": 0, 
+        "severity_value": 0.08565, 
+        "code": "best_score <= 2", 
+        "message": "Method spectral_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: qnx_at_k30\n  Best score: 0.1713%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1033,11 +1883,71 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score densmap qnx_at_k30", 
-        "value": 0.5277, 
+        "value": 0.5301, 
         "severity": 0, 
-        "severity_value": 0.26385, 
+        "severity_value": 0.26505, 
         "code": "best_score <= 2", 
-        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: qnx_at_k30\n  Best score: 0.5277%\n"
+        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: qnx_at_k30\n  Best score: 0.5301%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score diffusion_map qnx_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method diffusion_map performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: qnx_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score diffusion_map qnx_at_k30", 
+        "value": 0.4173, 
+        "severity": 0, 
+        "severity_value": 0.20865, 
+        "code": "best_score <= 2", 
+        "message": "Method diffusion_map performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: qnx_at_k30\n  Best score: 0.4173%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score ivis qnx_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ivis performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: qnx_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score ivis qnx_at_k30", 
+        "value": 0.4561, 
+        "severity": 0, 
+        "severity_value": 0.22805, 
+        "code": "best_score <= 2", 
+        "message": "Method ivis performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: qnx_at_k30\n  Best score: 0.4561%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score lmds qnx_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lmds performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: qnx_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score lmds qnx_at_k30", 
+        "value": 0.3501, 
+        "severity": 0, 
+        "severity_value": 0.17505, 
+        "code": "best_score <= 2", 
+        "message": "Method lmds performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: qnx_at_k30\n  Best score: 0.3501%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1053,11 +1963,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score neuralee qnx_at_k30", 
-        "value": 0.4254, 
+        "value": 0.4473, 
         "severity": 0, 
-        "severity_value": 0.2127, 
+        "severity_value": 0.22365, 
         "code": "best_score <= 2", 
-        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: qnx_at_k30\n  Best score: 0.4254%\n"
+        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: qnx_at_k30\n  Best score: 0.4473%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1073,11 +1983,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score pca qnx_at_k30", 
-        "value": 0.3721, 
+        "value": 0.3753, 
         "severity": 0, 
-        "severity_value": 0.18605, 
+        "severity_value": 0.18765, 
         "code": "best_score <= 2", 
-        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: qnx_at_k30\n  Best score: 0.3721%\n"
+        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: qnx_at_k30\n  Best score: 0.3753%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1102,22 +2012,42 @@
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
-        "name": "Worst score simlr qnx_at_k30", 
-        "value": 0, 
+        "name": "Worst score pymde qnx_at_k30", 
+        "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: qnx_at_k30\n  Worst score: 0%\n"
+        "message": "Method pymde performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: qnx_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde qnx_at_k30", 
+        "value": 0.6116, 
+        "severity": 0, 
+        "severity_value": 0.3058, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: qnx_at_k30\n  Best score: 0.6116%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score simlr qnx_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: qnx_at_k30\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score simlr qnx_at_k30", 
-        "value": 0, 
+        "value": 0.4583, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": 0.22915, 
         "code": "best_score <= 2", 
-        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: qnx_at_k30\n  Best score: 0%\n"
+        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: qnx_at_k30\n  Best score: 0.4583%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1133,11 +2063,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score tsne qnx_at_k30", 
-        "value": 0.6616, 
+        "value": 0.6548, 
         "severity": 0, 
-        "severity_value": 0.3308, 
+        "severity_value": 0.3274, 
         "code": "best_score <= 2", 
-        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: qnx_at_k30\n  Best score: 0.6616%\n"
+        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: qnx_at_k30\n  Best score: 0.6548%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1153,31 +2083,51 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score umap qnx_at_k30", 
-        "value": 0.5154, 
+        "value": 0.5119, 
         "severity": 0, 
-        "severity_value": 0.2577, 
+        "severity_value": 0.25595, 
         "code": "best_score <= 2", 
-        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: qnx_at_k30\n  Best score: 0.5154%\n"
+        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: qnx_at_k30\n  Best score: 0.5119%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score random_features lcmc_at_k30", 
-        "value": 0, 
+        "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: lcmc_at_k30\n  Worst score: 0%\n"
+        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: lcmc_at_k30\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score random_features lcmc_at_k30", 
-        "value": 0, 
+        "value": 0.0483, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": 0.02415, 
         "code": "best_score <= 2", 
-        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: lcmc_at_k30\n  Best score: 0%\n"
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: lcmc_at_k30\n  Best score: 0.0483%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score spectral_features lcmc_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method spectral_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: lcmc_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score spectral_features lcmc_at_k30", 
+        "value": 0.1713, 
+        "severity": 0, 
+        "severity_value": 0.08565, 
+        "code": "best_score <= 2", 
+        "message": "Method spectral_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: lcmc_at_k30\n  Best score: 0.1713%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1213,11 +2163,71 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score densmap lcmc_at_k30", 
-        "value": 0.5277, 
+        "value": 0.5301, 
         "severity": 0, 
-        "severity_value": 0.26385, 
+        "severity_value": 0.26505, 
         "code": "best_score <= 2", 
-        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: lcmc_at_k30\n  Best score: 0.5277%\n"
+        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: lcmc_at_k30\n  Best score: 0.5301%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score diffusion_map lcmc_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method diffusion_map performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: lcmc_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score diffusion_map lcmc_at_k30", 
+        "value": 0.4173, 
+        "severity": 0, 
+        "severity_value": 0.20865, 
+        "code": "best_score <= 2", 
+        "message": "Method diffusion_map performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: lcmc_at_k30\n  Best score: 0.4173%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score ivis lcmc_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ivis performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: lcmc_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score ivis lcmc_at_k30", 
+        "value": 0.4561, 
+        "severity": 0, 
+        "severity_value": 0.22805, 
+        "code": "best_score <= 2", 
+        "message": "Method ivis performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: lcmc_at_k30\n  Best score: 0.4561%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score lmds lcmc_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lmds performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: lcmc_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score lmds lcmc_at_k30", 
+        "value": 0.3501, 
+        "severity": 0, 
+        "severity_value": 0.17505, 
+        "code": "best_score <= 2", 
+        "message": "Method lmds performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: lcmc_at_k30\n  Best score: 0.3501%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1233,11 +2243,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score neuralee lcmc_at_k30", 
-        "value": 0.4254, 
+        "value": 0.4473, 
         "severity": 0, 
-        "severity_value": 0.2127, 
+        "severity_value": 0.22365, 
         "code": "best_score <= 2", 
-        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: lcmc_at_k30\n  Best score: 0.4254%\n"
+        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: lcmc_at_k30\n  Best score: 0.4473%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1253,11 +2263,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score pca lcmc_at_k30", 
-        "value": 0.3721, 
+        "value": 0.3753, 
         "severity": 0, 
-        "severity_value": 0.18605, 
+        "severity_value": 0.18765, 
         "code": "best_score <= 2", 
-        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: lcmc_at_k30\n  Best score: 0.3721%\n"
+        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: lcmc_at_k30\n  Best score: 0.3753%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1282,22 +2292,42 @@
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
-        "name": "Worst score simlr lcmc_at_k30", 
-        "value": 0, 
+        "name": "Worst score pymde lcmc_at_k30", 
+        "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: lcmc_at_k30\n  Worst score: 0%\n"
+        "message": "Method pymde performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: lcmc_at_k30\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde lcmc_at_k30", 
+        "value": 0.6116, 
+        "severity": 0, 
+        "severity_value": 0.3058, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: lcmc_at_k30\n  Best score: 0.6116%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score simlr lcmc_at_k30", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: lcmc_at_k30\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score simlr lcmc_at_k30", 
-        "value": 0, 
+        "value": 0.4583, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": 0.22915, 
         "code": "best_score <= 2", 
-        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: lcmc_at_k30\n  Best score: 0%\n"
+        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: lcmc_at_k30\n  Best score: 0.4583%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1313,11 +2343,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score tsne lcmc_at_k30", 
-        "value": 0.6616, 
+        "value": 0.6548, 
         "severity": 0, 
-        "severity_value": 0.3308, 
+        "severity_value": 0.3274, 
         "code": "best_score <= 2", 
-        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: lcmc_at_k30\n  Best score: 0.6616%\n"
+        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: lcmc_at_k30\n  Best score: 0.6548%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1333,31 +2363,51 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score umap lcmc_at_k30", 
-        "value": 0.5154, 
+        "value": 0.5119, 
         "severity": 0, 
-        "severity_value": 0.2577, 
+        "severity_value": 0.25595, 
         "code": "best_score <= 2", 
-        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: lcmc_at_k30\n  Best score: 0.5154%\n"
+        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: lcmc_at_k30\n  Best score: 0.5119%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score random_features qnx_auc", 
-        "value": 0, 
+        "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qnx_auc\n  Worst score: 0%\n"
+        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qnx_auc\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score random_features qnx_auc", 
-        "value": 0, 
+        "value": 0.0417, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": 0.02085, 
         "code": "best_score <= 2", 
-        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qnx_auc\n  Best score: 0%\n"
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qnx_auc\n  Best score: 0.0417%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score spectral_features qnx_auc", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method spectral_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: qnx_auc\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score spectral_features qnx_auc", 
+        "value": 0.2336, 
+        "severity": 0, 
+        "severity_value": 0.1168, 
+        "code": "best_score <= 2", 
+        "message": "Method spectral_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: qnx_auc\n  Best score: 0.2336%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1393,11 +2443,71 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score densmap qnx_auc", 
+        "value": 0.7499, 
+        "severity": 0, 
+        "severity_value": 0.37495, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: qnx_auc\n  Best score: 0.7499%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score diffusion_map qnx_auc", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method diffusion_map performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: qnx_auc\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score diffusion_map qnx_auc", 
         "value": 1.0, 
         "severity": 0, 
         "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: qnx_auc\n  Best score: 1.0%\n"
+        "message": "Method diffusion_map performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: qnx_auc\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score ivis qnx_auc", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ivis performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: qnx_auc\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score ivis qnx_auc", 
+        "value": 0.5193, 
+        "severity": 0, 
+        "severity_value": 0.25965, 
+        "code": "best_score <= 2", 
+        "message": "Method ivis performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: qnx_auc\n  Best score: 0.5193%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score lmds qnx_auc", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lmds performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: qnx_auc\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score lmds qnx_auc", 
+        "value": 0.6969, 
+        "severity": 0, 
+        "severity_value": 0.34845, 
+        "code": "best_score <= 2", 
+        "message": "Method lmds performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: qnx_auc\n  Best score: 0.6969%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1413,11 +2523,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score neuralee qnx_auc", 
-        "value": 0.7155, 
+        "value": 0.6327, 
         "severity": 0, 
-        "severity_value": 0.35775, 
+        "severity_value": 0.31635, 
         "code": "best_score <= 2", 
-        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: qnx_auc\n  Best score: 0.7155%\n"
+        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: qnx_auc\n  Best score: 0.6327%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1433,11 +2543,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score pca qnx_auc", 
-        "value": 0.8845, 
+        "value": 0.7647, 
         "severity": 0, 
-        "severity_value": 0.44225, 
+        "severity_value": 0.38235, 
         "code": "best_score <= 2", 
-        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: qnx_auc\n  Best score: 0.8845%\n"
+        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: qnx_auc\n  Best score: 0.7647%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1453,31 +2563,51 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score phate qnx_auc", 
-        "value": 0.9506, 
+        "value": 0.8227, 
         "severity": 0, 
-        "severity_value": 0.4753, 
+        "severity_value": 0.41135, 
         "code": "best_score <= 2", 
-        "message": "Method phate performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: qnx_auc\n  Best score: 0.9506%\n"
+        "message": "Method phate performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: qnx_auc\n  Best score: 0.8227%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde qnx_auc", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: qnx_auc\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde qnx_auc", 
+        "value": 0.6074, 
+        "severity": 0, 
+        "severity_value": 0.3037, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: qnx_auc\n  Best score: 0.6074%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score simlr qnx_auc", 
-        "value": 0, 
+        "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: qnx_auc\n  Worst score: 0%\n"
+        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: qnx_auc\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score simlr qnx_auc", 
-        "value": 0, 
+        "value": 0.3961, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": 0.19805, 
         "code": "best_score <= 2", 
-        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: qnx_auc\n  Best score: 0%\n"
+        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: qnx_auc\n  Best score: 0.3961%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1493,11 +2623,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score tsne qnx_auc", 
-        "value": 0.7207, 
+        "value": 0.6179, 
         "severity": 0, 
-        "severity_value": 0.36035, 
+        "severity_value": 0.30895, 
         "code": "best_score <= 2", 
-        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: qnx_auc\n  Best score: 0.7207%\n"
+        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: qnx_auc\n  Best score: 0.6179%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1513,11 +2643,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score umap qnx_auc", 
-        "value": 0.7175, 
+        "value": 0.567, 
         "severity": 0, 
-        "severity_value": 0.35875, 
+        "severity_value": 0.2835, 
         "code": "best_score <= 2", 
-        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: qnx_auc\n  Best score: 0.7175%\n"
+        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: qnx_auc\n  Best score: 0.567%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1533,11 +2663,31 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score random_features qlocal", 
-        "value": 0.1748, 
+        "value": 0.6557, 
         "severity": 0, 
-        "severity_value": 0.0874, 
+        "severity_value": 0.32785, 
         "code": "best_score <= 2", 
-        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qlocal\n  Best score: 0.1748%\n"
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qlocal\n  Best score: 0.6557%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score spectral_features qlocal", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method spectral_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: qlocal\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score spectral_features qlocal", 
+        "value": 0.2297, 
+        "severity": 0, 
+        "severity_value": 0.11485, 
+        "code": "best_score <= 2", 
+        "message": "Method spectral_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: qlocal\n  Best score: 0.2297%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1573,11 +2723,71 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score densmap qlocal", 
-        "value": 0.736, 
+        "value": 0.7176, 
         "severity": 0, 
-        "severity_value": 0.368, 
+        "severity_value": 0.3588, 
         "code": "best_score <= 2", 
-        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: qlocal\n  Best score: 0.736%\n"
+        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: qlocal\n  Best score: 0.7176%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score diffusion_map qlocal", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method diffusion_map performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: qlocal\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score diffusion_map qlocal", 
+        "value": 0.8691, 
+        "severity": 0, 
+        "severity_value": 0.43455, 
+        "code": "best_score <= 2", 
+        "message": "Method diffusion_map performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: qlocal\n  Best score: 0.8691%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score ivis qlocal", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ivis performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: qlocal\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score ivis qlocal", 
+        "value": 0.5841, 
+        "severity": 0, 
+        "severity_value": 0.29205, 
+        "code": "best_score <= 2", 
+        "message": "Method ivis performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: qlocal\n  Best score: 0.5841%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score lmds qlocal", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lmds performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: qlocal\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score lmds qlocal", 
+        "value": 0.5979, 
+        "severity": 0, 
+        "severity_value": 0.29895, 
+        "code": "best_score <= 2", 
+        "message": "Method lmds performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: qlocal\n  Best score: 0.5979%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1593,11 +2803,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score neuralee qlocal", 
-        "value": 0.6688, 
+        "value": 0.6764, 
         "severity": 0, 
-        "severity_value": 0.3344, 
+        "severity_value": 0.3382, 
         "code": "best_score <= 2", 
-        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: qlocal\n  Best score: 0.6688%\n"
+        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: qlocal\n  Best score: 0.6764%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1613,11 +2823,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score pca qlocal", 
-        "value": 0.6136, 
+        "value": 0.6453, 
         "severity": 0, 
-        "severity_value": 0.3068, 
+        "severity_value": 0.32265, 
         "code": "best_score <= 2", 
-        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: qlocal\n  Best score: 0.6136%\n"
+        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: qlocal\n  Best score: 0.6453%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1642,22 +2852,42 @@
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
-        "name": "Worst score simlr qlocal", 
-        "value": 0, 
+        "name": "Worst score pymde qlocal", 
+        "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: qlocal\n  Worst score: 0%\n"
+        "message": "Method pymde performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: qlocal\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde qlocal", 
+        "value": 0.7204, 
+        "severity": 0, 
+        "severity_value": 0.3602, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: qlocal\n  Best score: 0.7204%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score simlr qlocal", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: qlocal\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score simlr qlocal", 
-        "value": 0, 
+        "value": 0.3868, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": 0.1934, 
         "code": "best_score <= 2", 
-        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: qlocal\n  Best score: 0%\n"
+        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: qlocal\n  Best score: 0.3868%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1673,11 +2903,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score tsne qlocal", 
-        "value": 0.6224, 
+        "value": 0.6373, 
         "severity": 0, 
-        "severity_value": 0.3112, 
+        "severity_value": 0.31865, 
         "code": "best_score <= 2", 
-        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: qlocal\n  Best score: 0.6224%\n"
+        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: qlocal\n  Best score: 0.6373%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1693,11 +2923,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score umap qlocal", 
-        "value": 0.6234, 
+        "value": 0.6487, 
         "severity": 0, 
-        "severity_value": 0.3117, 
+        "severity_value": 0.32435, 
         "code": "best_score <= 2", 
-        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: qlocal\n  Best score: 0.6234%\n"
+        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: qlocal\n  Best score: 0.6487%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1713,11 +2943,31 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score random_features qglobal", 
-        "value": 0.7037, 
+        "value": 0.9702, 
         "severity": 0, 
-        "severity_value": 0.35185, 
+        "severity_value": 0.4851, 
         "code": "best_score <= 2", 
-        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qglobal\n  Best score: 0.7037%\n"
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: qglobal\n  Best score: 0.9702%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score spectral_features qglobal", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method spectral_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: qglobal\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score spectral_features qglobal", 
+        "value": 0.3625, 
+        "severity": 0, 
+        "severity_value": 0.18125, 
+        "code": "best_score <= 2", 
+        "message": "Method spectral_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: qglobal\n  Best score: 0.3625%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1753,11 +3003,71 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score densmap qglobal", 
+        "value": 0.6545, 
+        "severity": 0, 
+        "severity_value": 0.32725, 
+        "code": "best_score <= 2", 
+        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: qglobal\n  Best score: 0.6545%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score diffusion_map qglobal", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method diffusion_map performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: qglobal\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score diffusion_map qglobal", 
         "value": 1.0, 
         "severity": 0, 
         "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: qglobal\n  Best score: 1.0%\n"
+        "message": "Method diffusion_map performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: qglobal\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score ivis qglobal", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ivis performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: qglobal\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score ivis qglobal", 
+        "value": 0.6275, 
+        "severity": 0, 
+        "severity_value": 0.31375, 
+        "code": "best_score <= 2", 
+        "message": "Method ivis performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: qglobal\n  Best score: 0.6275%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score lmds qglobal", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lmds performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: qglobal\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score lmds qglobal", 
+        "value": 0.6662, 
+        "severity": 0, 
+        "severity_value": 0.3331, 
+        "code": "best_score <= 2", 
+        "message": "Method lmds performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: qglobal\n  Best score: 0.6662%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1773,11 +3083,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score neuralee qglobal", 
-        "value": 0.6684, 
+        "value": 0.6473, 
         "severity": 0, 
-        "severity_value": 0.3342, 
+        "severity_value": 0.32365, 
         "code": "best_score <= 2", 
-        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: qglobal\n  Best score: 0.6684%\n"
+        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: qglobal\n  Best score: 0.6473%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1793,11 +3103,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score pca qglobal", 
-        "value": 0.9347, 
+        "value": 0.7361, 
         "severity": 0, 
-        "severity_value": 0.46735, 
+        "severity_value": 0.36805, 
         "code": "best_score <= 2", 
-        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: qglobal\n  Best score: 0.9347%\n"
+        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: qglobal\n  Best score: 0.7361%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1813,31 +3123,51 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score phate qglobal", 
-        "value": 0.7807, 
+        "value": 0.6708, 
         "severity": 0, 
-        "severity_value": 0.39035, 
+        "severity_value": 0.3354, 
         "code": "best_score <= 2", 
-        "message": "Method phate performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: qglobal\n  Best score: 0.7807%\n"
+        "message": "Method phate performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: qglobal\n  Best score: 0.6708%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde qglobal", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: qglobal\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde qglobal", 
+        "value": 0.6648, 
+        "severity": 0, 
+        "severity_value": 0.3324, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: qglobal\n  Best score: 0.6648%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score simlr qglobal", 
-        "value": 0, 
+        "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: qglobal\n  Worst score: 0%\n"
+        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: qglobal\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score simlr qglobal", 
-        "value": 0, 
+        "value": 0.4821, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": 0.24105, 
         "code": "best_score <= 2", 
-        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: qglobal\n  Best score: 0%\n"
+        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: qglobal\n  Best score: 0.4821%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1853,11 +3183,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score tsne qglobal", 
-        "value": 0.6301, 
+        "value": 0.6234, 
         "severity": 0, 
-        "severity_value": 0.31505, 
+        "severity_value": 0.3117, 
         "code": "best_score <= 2", 
-        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: qglobal\n  Best score: 0.6301%\n"
+        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: qglobal\n  Best score: 0.6234%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1873,11 +3203,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score umap qglobal", 
-        "value": 0.6588, 
+        "value": 0.6326, 
         "severity": 0, 
-        "severity_value": 0.3294, 
+        "severity_value": 0.3163, 
         "code": "best_score <= 2", 
-        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: qglobal\n  Best score: 0.6588%\n"
+        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: qglobal\n  Best score: 0.6326%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1893,11 +3223,31 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score random_features density_preservation", 
-        "value": 0.3266, 
+        "value": 0.5349, 
         "severity": 0, 
-        "severity_value": 0.1633, 
+        "severity_value": 0.26745, 
         "code": "best_score <= 2", 
-        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: density_preservation\n  Best score: 0.3266%\n"
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: density_preservation\n  Best score: 0.5349%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score spectral_features density_preservation", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method spectral_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: density_preservation\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score spectral_features density_preservation", 
+        "value": 0.4664, 
+        "severity": 0, 
+        "severity_value": 0.2332, 
+        "code": "best_score <= 2", 
+        "message": "Method spectral_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: density_preservation\n  Best score: 0.4664%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1942,6 +3292,66 @@
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
+        "name": "Worst score diffusion_map density_preservation", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method diffusion_map performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: density_preservation\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score diffusion_map density_preservation", 
+        "value": 0.4289, 
+        "severity": 0, 
+        "severity_value": 0.21445, 
+        "code": "best_score <= 2", 
+        "message": "Method diffusion_map performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: density_preservation\n  Best score: 0.4289%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score ivis density_preservation", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ivis performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: density_preservation\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score ivis density_preservation", 
+        "value": 0.8475, 
+        "severity": 0, 
+        "severity_value": 0.42375, 
+        "code": "best_score <= 2", 
+        "message": "Method ivis performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: density_preservation\n  Best score: 0.8475%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score lmds density_preservation", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lmds performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: density_preservation\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score lmds density_preservation", 
+        "value": 0.6393, 
+        "severity": 0, 
+        "severity_value": 0.31965, 
+        "code": "best_score <= 2", 
+        "message": "Method lmds performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: density_preservation\n  Best score: 0.6393%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
         "name": "Worst score neuralee density_preservation", 
         "value": 0.0, 
         "severity": 0, 
@@ -1953,11 +3363,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score neuralee density_preservation", 
-        "value": 0.6657, 
+        "value": 0.7628, 
         "severity": 0, 
-        "severity_value": 0.33285, 
+        "severity_value": 0.3814, 
         "code": "best_score <= 2", 
-        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: density_preservation\n  Best score: 0.6657%\n"
+        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: density_preservation\n  Best score: 0.7628%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1973,11 +3383,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score pca density_preservation", 
-        "value": 0.6112, 
+        "value": 0.6407, 
         "severity": 0, 
-        "severity_value": 0.3056, 
+        "severity_value": 0.32035, 
         "code": "best_score <= 2", 
-        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: density_preservation\n  Best score: 0.6112%\n"
+        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: density_preservation\n  Best score: 0.6407%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -1993,31 +3403,51 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score phate density_preservation", 
-        "value": 0.3258, 
+        "value": 0.3951, 
         "severity": 0, 
-        "severity_value": 0.1629, 
+        "severity_value": 0.19755, 
         "code": "best_score <= 2", 
-        "message": "Method phate performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: density_preservation\n  Best score: 0.3258%\n"
+        "message": "Method phate performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: density_preservation\n  Best score: 0.3951%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde density_preservation", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: density_preservation\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde density_preservation", 
+        "value": 0.5818, 
+        "severity": 0, 
+        "severity_value": 0.2909, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: density_preservation\n  Best score: 0.5818%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score simlr density_preservation", 
-        "value": 0, 
+        "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: density_preservation\n  Worst score: 0%\n"
+        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: density_preservation\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score simlr density_preservation", 
-        "value": 0, 
+        "value": 0.724, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": 0.362, 
         "code": "best_score <= 2", 
-        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: density_preservation\n  Best score: 0%\n"
+        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: density_preservation\n  Best score: 0.724%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -2033,11 +3463,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score tsne density_preservation", 
-        "value": 0.6188, 
+        "value": 0.6316, 
         "severity": 0, 
-        "severity_value": 0.3094, 
+        "severity_value": 0.3158, 
         "code": "best_score <= 2", 
-        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: density_preservation\n  Best score: 0.6188%\n"
+        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: density_preservation\n  Best score: 0.6316%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -2053,31 +3483,51 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score umap density_preservation", 
-        "value": 0.3567, 
+        "value": 0.6107, 
         "severity": 0, 
-        "severity_value": 0.17835, 
+        "severity_value": 0.30535, 
         "code": "best_score <= 2", 
-        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: density_preservation\n  Best score: 0.3567%\n"
+        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: density_preservation\n  Best score: 0.6107%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score random_features distance_correlation", 
-        "value": 0.0, 
+        "value": 0.908, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -0.908, 
         "code": "worst_score >= -1", 
-        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: distance_correlation\n  Worst score: 0.0%\n"
+        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: distance_correlation\n  Worst score: 0.908%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score random_features distance_correlation", 
-        "value": 0.0338, 
+        "value": 1.0, 
         "severity": 0, 
-        "severity_value": 0.0169, 
+        "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: distance_correlation\n  Best score: 0.0338%\n"
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: distance_correlation\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score spectral_features distance_correlation", 
+        "value": 0.6273, 
+        "severity": 0, 
+        "severity_value": -0.6273, 
+        "code": "worst_score >= -1", 
+        "message": "Method spectral_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: distance_correlation\n  Worst score: 0.6273%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score spectral_features distance_correlation", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method spectral_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: distance_correlation\n  Best score: 1.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -2103,41 +3553,101 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score densmap distance_correlation", 
-        "value": 0.0, 
+        "value": 0.1107, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -0.1107, 
         "code": "worst_score >= -1", 
-        "message": "Method densmap performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: distance_correlation\n  Worst score: 0.0%\n"
+        "message": "Method densmap performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: distance_correlation\n  Worst score: 0.1107%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score densmap distance_correlation", 
-        "value": 0.9099, 
+        "value": 1.0, 
         "severity": 0, 
-        "severity_value": 0.45495, 
+        "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: distance_correlation\n  Best score: 0.9099%\n"
+        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: distance_correlation\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score diffusion_map distance_correlation", 
+        "value": 0.2461, 
+        "severity": 0, 
+        "severity_value": -0.2461, 
+        "code": "worst_score >= -1", 
+        "message": "Method diffusion_map performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: distance_correlation\n  Worst score: 0.2461%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score diffusion_map distance_correlation", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method diffusion_map performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: distance_correlation\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score ivis distance_correlation", 
+        "value": 0.1974, 
+        "severity": 0, 
+        "severity_value": -0.1974, 
+        "code": "worst_score >= -1", 
+        "message": "Method ivis performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: distance_correlation\n  Worst score: 0.1974%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score ivis distance_correlation", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method ivis performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: distance_correlation\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score lmds distance_correlation", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lmds performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: distance_correlation\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score lmds distance_correlation", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method lmds performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: distance_correlation\n  Best score: 1.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score neuralee distance_correlation", 
-        "value": 0.0, 
+        "value": 0.1338, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -0.1338, 
         "code": "worst_score >= -1", 
-        "message": "Method neuralee performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: distance_correlation\n  Worst score: 0.0%\n"
+        "message": "Method neuralee performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: distance_correlation\n  Worst score: 0.1338%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score neuralee distance_correlation", 
-        "value": 0.8605, 
+        "value": 1.0, 
         "severity": 0, 
-        "severity_value": 0.43025, 
+        "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: distance_correlation\n  Best score: 0.8605%\n"
+        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: distance_correlation\n  Best score: 1.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -2163,111 +3673,151 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score phate distance_correlation", 
-        "value": 0.0, 
+        "value": 0.344, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -0.344, 
         "code": "worst_score >= -1", 
-        "message": "Method phate performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: distance_correlation\n  Worst score: 0.0%\n"
+        "message": "Method phate performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: distance_correlation\n  Worst score: 0.344%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score phate distance_correlation", 
-        "value": 0.7993, 
+        "value": 1.0, 
         "severity": 0, 
-        "severity_value": 0.39965, 
+        "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method phate performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: distance_correlation\n  Best score: 0.7993%\n"
+        "message": "Method phate performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: distance_correlation\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde distance_correlation", 
+        "value": 0.2584, 
+        "severity": 0, 
+        "severity_value": -0.2584, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: distance_correlation\n  Worst score: 0.2584%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde distance_correlation", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: distance_correlation\n  Best score: 1.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score simlr distance_correlation", 
-        "value": 0, 
+        "value": 0.4202, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -0.4202, 
         "code": "worst_score >= -1", 
-        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: distance_correlation\n  Worst score: 0%\n"
+        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: distance_correlation\n  Worst score: 0.4202%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score simlr distance_correlation", 
-        "value": 0, 
+        "value": 1.0, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: distance_correlation\n  Best score: 0%\n"
+        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: distance_correlation\n  Best score: 1.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score tsne distance_correlation", 
-        "value": 0.0, 
+        "value": 0.206, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -0.206, 
         "code": "worst_score >= -1", 
-        "message": "Method tsne performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: distance_correlation\n  Worst score: 0.0%\n"
+        "message": "Method tsne performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: distance_correlation\n  Worst score: 0.206%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score tsne distance_correlation", 
-        "value": 0.7911, 
+        "value": 1.0, 
         "severity": 0, 
-        "severity_value": 0.39555, 
+        "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: distance_correlation\n  Best score: 0.7911%\n"
+        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: distance_correlation\n  Best score: 1.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score umap distance_correlation", 
-        "value": 0.0, 
+        "value": 0.249, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -0.249, 
         "code": "worst_score >= -1", 
-        "message": "Method umap performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: distance_correlation\n  Worst score: 0.0%\n"
+        "message": "Method umap performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: distance_correlation\n  Worst score: 0.249%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score umap distance_correlation", 
-        "value": 0.7405, 
+        "value": 1.0, 
         "severity": 0, 
-        "severity_value": 0.37025, 
+        "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: distance_correlation\n  Best score: 0.7405%\n"
+        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: distance_correlation\n  Best score: 1.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score random_features distance_correlation_spectral", 
-        "value": 0.0, 
+        "value": 0.8068, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -0.8068, 
         "code": "worst_score >= -1", 
-        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: distance_correlation_spectral\n  Worst score: 0.0%\n"
+        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: distance_correlation_spectral\n  Worst score: 0.8068%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score random_features distance_correlation_spectral", 
-        "value": 0.7357, 
+        "value": 1.0, 
         "severity": 0, 
-        "severity_value": 0.36785, 
+        "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: distance_correlation_spectral\n  Best score: 0.7357%\n"
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: distance_correlation_spectral\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score spectral_features distance_correlation_spectral", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method spectral_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: distance_correlation_spectral\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score spectral_features distance_correlation_spectral", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method spectral_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: distance_correlation_spectral\n  Best score: 1%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score true_features distance_correlation_spectral", 
-        "value": 0.0, 
+        "value": 0.6503, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -0.6503, 
         "code": "worst_score >= -1", 
-        "message": "Method true_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: distance_correlation_spectral\n  Worst score: 0.0%\n"
+        "message": "Method true_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: true_features\n  Metric id: distance_correlation_spectral\n  Worst score: 0.6503%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -2283,11 +3833,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score densmap distance_correlation_spectral", 
-        "value": 0.0, 
+        "value": 1.1102e-16, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -1.1102e-16, 
         "code": "worst_score >= -1", 
-        "message": "Method densmap performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: distance_correlation_spectral\n  Worst score: 0.0%\n"
+        "message": "Method densmap performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: distance_correlation_spectral\n  Worst score: 1.1102e-16%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -2302,12 +3852,72 @@
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
-        "name": "Worst score neuralee distance_correlation_spectral", 
-        "value": 0.0, 
+        "name": "Worst score diffusion_map distance_correlation_spectral", 
+        "value": 0.5554, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -0.5554, 
         "code": "worst_score >= -1", 
-        "message": "Method neuralee performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: distance_correlation_spectral\n  Worst score: 0.0%\n"
+        "message": "Method diffusion_map performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: distance_correlation_spectral\n  Worst score: 0.5554%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score diffusion_map distance_correlation_spectral", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method diffusion_map performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: distance_correlation_spectral\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score ivis distance_correlation_spectral", 
+        "value": 0.7113, 
+        "severity": 0, 
+        "severity_value": -0.7113, 
+        "code": "worst_score >= -1", 
+        "message": "Method ivis performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: distance_correlation_spectral\n  Worst score: 0.7113%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score ivis distance_correlation_spectral", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method ivis performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: distance_correlation_spectral\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score lmds distance_correlation_spectral", 
+        "value": 0.6432, 
+        "severity": 0, 
+        "severity_value": -0.6432, 
+        "code": "worst_score >= -1", 
+        "message": "Method lmds performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: distance_correlation_spectral\n  Worst score: 0.6432%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score lmds distance_correlation_spectral", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method lmds performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: distance_correlation_spectral\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score neuralee distance_correlation_spectral", 
+        "value": 0.7178, 
+        "severity": 0, 
+        "severity_value": -0.7178, 
+        "code": "worst_score >= -1", 
+        "message": "Method neuralee performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: distance_correlation_spectral\n  Worst score: 0.7178%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -2323,11 +3933,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score pca distance_correlation_spectral", 
-        "value": 0.0, 
+        "value": 0.6839, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -0.6839, 
         "code": "worst_score >= -1", 
-        "message": "Method pca performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: distance_correlation_spectral\n  Worst score: 0.0%\n"
+        "message": "Method pca performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: distance_correlation_spectral\n  Worst score: 0.6839%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -2343,51 +3953,71 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score phate distance_correlation_spectral", 
-        "value": 0.0, 
+        "value": 0.4959, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -0.4959, 
         "code": "worst_score >= -1", 
-        "message": "Method phate performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: distance_correlation_spectral\n  Worst score: 0.0%\n"
+        "message": "Method phate performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: distance_correlation_spectral\n  Worst score: 0.4959%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score phate distance_correlation_spectral", 
-        "value": 0.9653, 
+        "value": 1.0, 
         "severity": 0, 
-        "severity_value": 0.48265, 
+        "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method phate performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: distance_correlation_spectral\n  Best score: 0.9653%\n"
+        "message": "Method phate performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: distance_correlation_spectral\n  Best score: 1.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde distance_correlation_spectral", 
+        "value": 0.3237, 
+        "severity": 0, 
+        "severity_value": -0.3237, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: distance_correlation_spectral\n  Worst score: 0.3237%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde distance_correlation_spectral", 
+        "value": 1.0, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: distance_correlation_spectral\n  Best score: 1.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score simlr distance_correlation_spectral", 
-        "value": 0, 
+        "value": 0.4003, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -0.4003, 
         "code": "worst_score >= -1", 
-        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: distance_correlation_spectral\n  Worst score: 0%\n"
+        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: distance_correlation_spectral\n  Worst score: 0.4003%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score simlr distance_correlation_spectral", 
-        "value": 0, 
+        "value": 1.0, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: distance_correlation_spectral\n  Best score: 0%\n"
+        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: distance_correlation_spectral\n  Best score: 1.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score tsne distance_correlation_spectral", 
-        "value": 0.0, 
+        "value": 0.6707, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -0.6707, 
         "code": "worst_score >= -1", 
-        "message": "Method tsne performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: distance_correlation_spectral\n  Worst score: 0.0%\n"
+        "message": "Method tsne performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: distance_correlation_spectral\n  Worst score: 0.6707%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -2403,11 +4033,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score umap distance_correlation_spectral", 
-        "value": 0.0, 
+        "value": 0.7156, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -0.7156, 
         "code": "worst_score >= -1", 
-        "message": "Method umap performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: distance_correlation_spectral\n  Worst score: 0.0%\n"
+        "message": "Method umap performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: distance_correlation_spectral\n  Worst score: 0.7156%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -2423,21 +4053,41 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score random_features trustworthiness", 
-        "value": 0, 
+        "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: trustworthiness\n  Worst score: 0%\n"
+        "message": "Method random_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: trustworthiness\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score random_features trustworthiness", 
-        "value": 0, 
+        "value": 0.1213, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": 0.06065, 
         "code": "best_score <= 2", 
-        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: trustworthiness\n  Best score: 0%\n"
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: random_features\n  Metric id: trustworthiness\n  Best score: 0.1213%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score spectral_features trustworthiness", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method spectral_features performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: trustworthiness\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score spectral_features trustworthiness", 
+        "value": 0.8087, 
+        "severity": 0, 
+        "severity_value": 0.40435, 
+        "code": "best_score <= 2", 
+        "message": "Method spectral_features performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: spectral_features\n  Metric id: trustworthiness\n  Best score: 0.8087%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -2473,11 +4123,71 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score densmap trustworthiness", 
-        "value": 0.9289, 
+        "value": 0.9288, 
         "severity": 0, 
-        "severity_value": 0.46445, 
+        "severity_value": 0.4644, 
         "code": "best_score <= 2", 
-        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: trustworthiness\n  Best score: 0.9289%\n"
+        "message": "Method densmap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: densmap\n  Metric id: trustworthiness\n  Best score: 0.9288%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score diffusion_map trustworthiness", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method diffusion_map performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: trustworthiness\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score diffusion_map trustworthiness", 
+        "value": 0.8349, 
+        "severity": 0, 
+        "severity_value": 0.41745, 
+        "code": "best_score <= 2", 
+        "message": "Method diffusion_map performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: diffusion_map\n  Metric id: trustworthiness\n  Best score: 0.8349%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score ivis trustworthiness", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ivis performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: trustworthiness\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score ivis trustworthiness", 
+        "value": 0.8764, 
+        "severity": 0, 
+        "severity_value": 0.4382, 
+        "code": "best_score <= 2", 
+        "message": "Method ivis performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: ivis\n  Metric id: trustworthiness\n  Best score: 0.8764%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score lmds trustworthiness", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lmds performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: trustworthiness\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score lmds trustworthiness", 
+        "value": 0.7918, 
+        "severity": 0, 
+        "severity_value": 0.3959, 
+        "code": "best_score <= 2", 
+        "message": "Method lmds performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: lmds\n  Metric id: trustworthiness\n  Best score: 0.7918%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -2493,11 +4203,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score neuralee trustworthiness", 
-        "value": 0.9019, 
+        "value": 0.897, 
         "severity": 0, 
-        "severity_value": 0.45095, 
+        "severity_value": 0.4485, 
         "code": "best_score <= 2", 
-        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: trustworthiness\n  Best score: 0.9019%\n"
+        "message": "Method neuralee performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: neuralee\n  Metric id: trustworthiness\n  Best score: 0.897%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -2513,11 +4223,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score pca trustworthiness", 
-        "value": 0.7972, 
+        "value": 0.797, 
         "severity": 0, 
-        "severity_value": 0.3986, 
+        "severity_value": 0.3985, 
         "code": "best_score <= 2", 
-        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: trustworthiness\n  Best score: 0.7972%\n"
+        "message": "Method pca performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pca\n  Metric id: trustworthiness\n  Best score: 0.797%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -2533,31 +4243,51 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score phate trustworthiness", 
-        "value": 0.9235, 
+        "value": 0.9137, 
         "severity": 0, 
-        "severity_value": 0.46175, 
+        "severity_value": 0.45685, 
         "code": "best_score <= 2", 
-        "message": "Method phate performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: trustworthiness\n  Best score: 0.9235%\n"
+        "message": "Method phate performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: phate\n  Metric id: trustworthiness\n  Best score: 0.9137%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Worst score pymde trustworthiness", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method pymde performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: trustworthiness\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dimensionality_reduction", 
+        "category": "Scaling", 
+        "name": "Best score pymde trustworthiness", 
+        "value": 0.9226, 
+        "severity": 0, 
+        "severity_value": 0.4613, 
+        "code": "best_score <= 2", 
+        "message": "Method pymde performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: pymde\n  Metric id: trustworthiness\n  Best score: 0.9226%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Worst score simlr trustworthiness", 
-        "value": 0, 
+        "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: trustworthiness\n  Worst score: 0%\n"
+        "message": "Method simlr performs much worse than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: trustworthiness\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score simlr trustworthiness", 
-        "value": 0, 
+        "value": 0.9169, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": 0.45845, 
         "code": "best_score <= 2", 
-        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: trustworthiness\n  Best score: 0%\n"
+        "message": "Method simlr performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: simlr\n  Metric id: trustworthiness\n  Best score: 0.9169%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -2573,11 +4303,11 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score tsne trustworthiness", 
-        "value": 0.9327, 
+        "value": 0.9329, 
         "severity": 0, 
-        "severity_value": 0.46635, 
+        "severity_value": 0.46645, 
         "code": "best_score <= 2", 
-        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: trustworthiness\n  Best score: 0.9327%\n"
+        "message": "Method tsne performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: tsne\n  Metric id: trustworthiness\n  Best score: 0.9329%\n"
     }, 
     {
         "task_id": "dimensionality_reduction", 
@@ -2593,10 +4323,10 @@
         "task_id": "dimensionality_reduction", 
         "category": "Scaling", 
         "name": "Best score umap trustworthiness", 
-        "value": 0.8882, 
+        "value": 0.8881, 
         "severity": 0, 
-        "severity_value": 0.4441, 
+        "severity_value": 0.44405, 
         "code": "best_score <= 2", 
-        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: trustworthiness\n  Best score: 0.8882%\n"
+        "message": "Method umap performs a lot better than baselines.\n  Task id: dimensionality_reduction\n  Method id: umap\n  Metric id: trustworthiness\n  Best score: 0.8881%\n"
     }
 ]

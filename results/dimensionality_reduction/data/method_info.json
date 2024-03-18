@@ -7,9 +7,21 @@
     "is_baseline": true,
     "paper_reference": null,
     "code_url": null,
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/control_methods/random_features/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/control_methods/random_features/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb"
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446"
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "method_id": "spectral_features",
+    "method_name": "Spectral Features",
+    "method_summary": "Positive control by Use 1000-dimensional diffusions maps as an embedding.",
+    "is_baseline": true,
+    "paper_reference": null,
+    "code_url": null,
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/control_methods/spectral_features/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446"
   },
   {
     "task_id": "dimensionality_reduction",
@@ -19,9 +31,9 @@
     "is_baseline": true,
     "paper_reference": null,
     "code_url": null,
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/control_methods/true_features/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/control_methods/true_features/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb"
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446"
   },
   {
     "task_id": "dimensionality_reduction",
@@ -31,9 +43,45 @@
     "is_baseline": false,
     "paper_reference": "narayan2021assessing",
     "code_url": "https://github.com/lmcinnes/umap",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/methods/densmap/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/methods/densmap/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb"
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446"
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "method_id": "diffusion_map",
+    "method_name": "Diffusion Map",
+    "method_summary": "Finding meaningful geometric descriptions of datasets using diffusion maps.",
+    "is_baseline": false,
+    "paper_reference": "coifman2006diffusion",
+    "code_url": "https://github.com/theislab/destiny",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/methods/diffusion_map/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446"
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "method_id": "ivis",
+    "method_name": "ivis",
+    "method_summary": "Structure-preserving dimensionality reduction using a siamese neural network trained on triplets.",
+    "is_baseline": false,
+    "paper_reference": "szubert2019structurepreserving",
+    "code_url": "https://github.com/beringresearch/ivis",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/methods/ivis/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446"
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "method_id": "lmds",
+    "method_name": "LMDS",
+    "method_summary": "Landmark Multi-Dimensional Scaling",
+    "is_baseline": false,
+    "paper_reference": "saelens2019comparison",
+    "code_url": "https://github.com/dynverse/lmds",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/methods/lmds/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446"
   },
   {
     "task_id": "dimensionality_reduction",
@@ -43,9 +91,9 @@
     "is_baseline": false,
     "paper_reference": "xiong2020neuralee",
     "code_url": "https://github.com/HiBearME/NeuralEE",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/methods/neuralee/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/methods/neuralee/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb"
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446"
   },
   {
     "task_id": "dimensionality_reduction",
@@ -54,10 +102,10 @@
     "method_summary": "A linear method that finds orthogonal directions to compute the two-dimensional embedding.",
     "is_baseline": false,
     "paper_reference": "pearson1901pca",
-    "code_url": "https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/methods/pca/config.vsh.yaml",
+    "code_url": "https://github.com/scikit-learn/scikit-learn",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/methods/pca/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb"
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446"
   },
   {
     "task_id": "dimensionality_reduction",
@@ -67,9 +115,21 @@
     "is_baseline": false,
     "paper_reference": "moon2019visualizing",
     "code_url": "https://github.com/KrishnaswamyLab/PHATE",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/methods/phate/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/methods/phate/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb"
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446"
+  },
+  {
+    "task_id": "dimensionality_reduction",
+    "method_id": "pymde",
+    "method_name": "PyMDE",
+    "method_summary": "A Python implementation of Minimum-Distortion Embedding",
+    "is_baseline": false,
+    "paper_reference": "agrawal2021mde",
+    "code_url": "https://github.com/cvxgrp/pymde",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/methods/pymde/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446"
   },
   {
     "task_id": "dimensionality_reduction",
@@ -79,9 +139,9 @@
     "is_baseline": false,
     "paper_reference": "wang2017visualization",
     "code_url": "https://github.com/BatzoglouLabSU/SIMLR",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/methods/simlr/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/methods/simlr/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb"
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446"
   },
   {
     "task_id": "dimensionality_reduction",
@@ -91,9 +151,9 @@
     "is_baseline": false,
     "paper_reference": "vandermaaten2008visualizing",
     "code_url": "https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html#sklearn.manifold.TSNE",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/methods/tsne/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/methods/tsne/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb"
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446"
   },
   {
     "task_id": "dimensionality_reduction",
@@ -103,8 +163,8 @@
     "is_baseline": false,
     "paper_reference": "mcinnes2018umap",
     "code_url": "https://github.com/lmcinnes/umap",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/d9e44545337b90926df41f2f383e165eda6ef6fb/src/tasks/dimensionality_reduction/methods/umap/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/2c2d6f0a7ecc3cac51fa23acc0eec036cee39446/src/tasks/dimensionality_reduction/methods/umap/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "d9e44545337b90926df41f2f383e165eda6ef6fb"
+    "commit_sha": "2c2d6f0a7ecc3cac51fa23acc0eec036cee39446"
   }
 ]
