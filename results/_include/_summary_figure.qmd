@@ -27,10 +27,6 @@ label_memory <- function(x, include_mb = FALSE) {
   )
 }
 
-aggregate_scores <- function(scaled_score) {
-  mean(pmin(1, pmax(0, scaled_score)) %|% 0)
-}
-
 overall <- results_long %>%
   group_by(method_id) %>%
   summarise(mean_score = aggregate_scores(score), .groups = "drop") %>%
@@ -207,6 +203,10 @@ ojs_define(
         scale_column = FALSE
     )
 )
+```
+
+```{ojs}
+console.log(funky_heatmap_args.data)
 ```
 
 
