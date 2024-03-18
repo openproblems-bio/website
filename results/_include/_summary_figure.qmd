@@ -52,7 +52,7 @@ results_resources <- results %>%
 # exit code is missing from openproblems-v1
 if (! "exit_code" %in% colnames(results_resources)) {
   results_resources <- results_resources %>%
-    mutate(exit_code = ifelse(is.na(duration_sec), 1, 0))
+    mutate(exit_code = ifelse(is.na(duration_sec), 1L, 0L))
 }
 
 resources <- results_resources %>%
@@ -89,7 +89,7 @@ summary_all <-
   method_info %>%
   filter(!is_baseline) %>%
   select(method_id, method_name) %>%
-  left_join(overall, by = "method_id") %>%
+  inner_join(overall, by = "method_id") %>%
   left_join(per_dataset, by = "method_id") %>%
   left_join(per_metric, by = "method_id") %>%
   left_join(resources, by = "method_id") %>%
@@ -214,7 +214,7 @@ ojs_define(
 //| panel: input
 //| layout-ncol: 2
 viewof color_by_rank = Inputs.toggle({label: "Color by rank", value: true})
-viewof scale_column = Inputs.toggle({label: "Minmax column", value: true})
+viewof scale_column = Inputs.toggle({label: "Minmax column", value: false})
 ```
 
 ```{ojs}
