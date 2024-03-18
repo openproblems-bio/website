@@ -1,5 +1,9 @@
 # openproblems.bio unreleased
 
+## MAJOR CHANGES
+
+* Update Label Projection task to OpenProblems v2 results (PR #327).
+
 ## MINOR CHANGES
 
 * Improve Equations visualisation (PR #329).
