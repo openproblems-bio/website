@@ -8,6 +8,8 @@
 
 * Update Mathing Modalities task name to Match Modalities (PR #328).
 
+* Improve Equations visualisation (PR #329).
+
 # openproblems.bio v2.3.6
 
 ## NEW CONTENT
