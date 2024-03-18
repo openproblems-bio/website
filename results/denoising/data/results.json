@@ -3,22 +3,22 @@
     "dataset_id": "cellxgene_census/dkd",
     "method_id": "alra",
     "metric_values": {
-      "mse": 0.2267,
-      "poisson": 0.2706
+      "mse": 0.2283,
+      "poisson": 0.8484
     },
     "scaled_scores": {
-      "mse": 1,
-      "poisson": 0.155
+      "mse": 0,
+      "poisson": 0.4923
     },
-    "mean_score": 0.5775,
+    "mean_score": 0.2461,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 3992,
-      "cpu_pct": 100.5,
-      "peak_memory_mb": 86528,
+      "duration_sec": 3369,
+      "cpu_pct": 98.4,
+      "peak_memory_mb": 81613,
       "disk_read_mb": 927,
-      "disk_write_mb": 1127
+      "disk_write_mb": 3380
     },
     "task_id": "denoising"
   },
@@ -26,22 +26,22 @@
     "dataset_id": "cellxgene_census/dkd",
     "method_id": "dca",
     "metric_values": {
-      "mse": 0.1863,
-      "poisson": 0.1804
+      "mse": 0.1864,
+      "poisson": 0.1805
     },
     "scaled_scores": {
-      "mse": 0.8217,
-      "poisson": 0.1
+      "mse": 0.1837,
+      "poisson": 0.8998
     },
-    "mean_score": 0.4609,
+    "mean_score": 0.5417,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 2186,
-      "cpu_pct": 1728.9,
-      "peak_memory_mb": 52532,
+      "duration_sec": 1213,
+      "cpu_pct": 3074.9,
+      "peak_memory_mb": 27136,
       "disk_read_mb": 963,
-      "disk_write_mb": 5530
+      "disk_write_mb": 4096
     },
     "task_id": "denoising"
   },
@@ -50,21 +50,21 @@
     "method_id": "knn_smoothing",
     "metric_values": {
       "mse": 0.1989,
-      "poisson": 1.6567
+      "poisson": 1.6551
     },
     "scaled_scores": {
-      "mse": 0.8774,
-      "poisson": 1
+      "mse": 0.1289,
+      "poisson": 0
     },
-    "mean_score": 0.9387,
+    "mean_score": 0.0645,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 1193,
-      "cpu_pct": 227.2,
-      "peak_memory_mb": 78132,
-      "disk_read_mb": 919,
-      "disk_write_mb": 826
+      "duration_sec": 1120,
+      "cpu_pct": 372.8,
+      "peak_memory_mb": 80180,
+      "disk_read_mb": 920,
+      "disk_write_mb": 539
     },
     "task_id": "denoising"
   },
@@ -72,22 +72,22 @@
     "dataset_id": "cellxgene_census/dkd",
     "method_id": "magic",
     "metric_values": {
-      "mse": 0.1669,
-      "poisson": 0.0863
+      "mse": 0.187,
+      "poisson": 0.1823
     },
     "scaled_scores": {
-      "mse": 0.7361,
-      "poisson": 0.0426
+      "mse": 0.1808,
+      "poisson": 0.8988
     },
-    "mean_score": 0.3894,
+    "mean_score": 0.5398,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 983,
-      "cpu_pct": 103.7,
-      "peak_memory_mb": 39834,
+      "duration_sec": 1058,
+      "cpu_pct": 97.3,
+      "peak_memory_mb": 33076,
       "disk_read_mb": 930,
-      "disk_write_mb": 7168
+      "disk_write_mb": 6554
     },
     "task_id": "denoising"
   },
@@ -99,18 +99,18 @@
       "poisson": 0.168
     },
     "scaled_scores": {
-      "mse": 0.944,
-      "poisson": 0.0924
+      "mse": 0.0629,
+      "poisson": 0.9075
     },
-    "mean_score": 0.5182,
+    "mean_score": 0.4852,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 38.9,
-      "cpu_pct": 98.1,
-      "peak_memory_mb": 2356,
+      "duration_sec": 46.6,
+      "cpu_pct": 100.6,
+      "peak_memory_mb": 6452,
       "disk_read_mb": 911,
-      "disk_write_mb": 360
+      "disk_write_mb": 359
     },
     "task_id": "denoising"
   },
@@ -122,6 +122,259 @@
       "poisson": 0.0164
     },
     "scaled_scores": {
+      "mse": 1,
+      "poisson": 1
+    },
+    "mean_score": 1,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": 0,
+      "duration_sec": 29.9,
+      "cpu_pct": 111.1,
+      "peak_memory_mb": 6554,
+      "disk_read_mb": 1127,
+      "disk_write_mb": 214
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/gtex_v9",
+    "method_id": "alra",
+    "metric_values": {
+      "mse": "NA",
+      "poisson": "NA"
+    },
+    "scaled_scores": {
+      "mse": 1,
+      "poisson": 1
+    },
+    "mean_score": 1,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": "NA",
+      "duration_sec": 26380,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/gtex_v9",
+    "method_id": "dca",
+    "metric_values": {
+      "mse": 0.1804,
+      "poisson": 0.0602
+    },
+    "scaled_scores": {
+      "mse": 0.1012,
+      "poisson": 0
+    },
+    "mean_score": 0.0506,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": 0,
+      "duration_sec": 4074,
+      "cpu_pct": 2858.5,
+      "peak_memory_mb": 65946,
+      "disk_read_mb": 2048,
+      "disk_write_mb": 21095
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/gtex_v9",
+    "method_id": "knn_smoothing",
+    "metric_values": {
+      "mse": "NA",
+      "poisson": "NA"
+    },
+    "scaled_scores": {
+      "mse": 1,
+      "poisson": 1
+    },
+    "mean_score": 1,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": 137,
+      "duration_sec": 470,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/gtex_v9",
+    "method_id": "magic",
+    "metric_values": {
+      "mse": "NA",
+      "poisson": "NA"
+    },
+    "scaled_scores": {
+      "mse": 1,
+      "poisson": 1
+    },
+    "mean_score": 1,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": "NA",
+      "duration_sec": 21820,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/gtex_v9",
+    "method_id": "no_denoising",
+    "metric_values": {
+      "mse": 0.2007,
+      "poisson": 0.0593
+    },
+    "scaled_scores": {
+      "mse": 0,
+      "poisson": 0.0174
+    },
+    "mean_score": 0.0087,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": 0,
+      "duration_sec": 125,
+      "cpu_pct": 68.9,
+      "peak_memory_mb": 7578,
+      "disk_read_mb": 2048,
+      "disk_write_mb": 792
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/gtex_v9",
+    "method_id": "perfect_denoising",
+    "metric_values": {
+      "mse": 0,
+      "poisson": 0.0051
+    },
+    "scaled_scores": {
+      "mse": 1,
+      "poisson": 1
+    },
+    "mean_score": 1,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": 0,
+      "duration_sec": 55.5,
+      "cpu_pct": 95.2,
+      "peak_memory_mb": 5223,
+      "disk_read_mb": 2356,
+      "disk_write_mb": 458
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/immune_cell_atlas",
+    "method_id": "alra",
+    "metric_values": {
+      "mse": "NA",
+      "poisson": "NA"
+    },
+    "scaled_scores": {
+      "mse": 1,
+      "poisson": 1
+    },
+    "mean_score": 1,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": "NA",
+      "duration_sec": 32191,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/immune_cell_atlas",
+    "method_id": "dca",
+    "metric_values": {
+      "mse": "NA",
+      "poisson": "NA"
+    },
+    "scaled_scores": {
+      "mse": 1,
+      "poisson": 1
+    },
+    "mean_score": 1,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": "NA",
+      "duration_sec": 26181,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/immune_cell_atlas",
+    "method_id": "knn_smoothing",
+    "metric_values": {
+      "mse": "NA",
+      "poisson": "NA"
+    },
+    "scaled_scores": {
+      "mse": 1,
+      "poisson": 1
+    },
+    "mean_score": 1,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": 137,
+      "duration_sec": 540,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/immune_cell_atlas",
+    "method_id": "magic",
+    "metric_values": {
+      "mse": "NA",
+      "poisson": "NA"
+    },
+    "scaled_scores": {
+      "mse": 1,
+      "poisson": 1
+    },
+    "mean_score": 1,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": 143,
+      "duration_sec": 14410,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/immune_cell_atlas",
+    "method_id": "no_denoising",
+    "metric_values": {
+      "mse": 0.1439,
+      "poisson": 0.1322
+    },
+    "scaled_scores": {
       "mse": 0,
       "poisson": 0
     },
@@ -129,11 +382,172 @@
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 22.5,
-      "cpu_pct": 111.2,
-      "peak_memory_mb": 2560,
-      "disk_read_mb": 1127,
-      "disk_write_mb": 215
+      "duration_sec": 281,
+      "cpu_pct": 96.2,
+      "peak_memory_mb": 12391,
+      "disk_read_mb": 6861,
+      "disk_write_mb": 2663
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/immune_cell_atlas",
+    "method_id": "perfect_denoising",
+    "metric_values": {
+      "mse": 0,
+      "poisson": 0.0205
+    },
+    "scaled_scores": {
+      "mse": 1,
+      "poisson": 1
+    },
+    "mean_score": 1,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": 0,
+      "duration_sec": 176,
+      "cpu_pct": 95.2,
+      "peak_memory_mb": 13824,
+      "disk_read_mb": 8295,
+      "disk_write_mb": 1639
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
+    "method_id": "alra",
+    "metric_values": {
+      "mse": "NA",
+      "poisson": "NA"
+    },
+    "scaled_scores": {
+      "mse": 1,
+      "poisson": 1
+    },
+    "mean_score": 1,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": "NA",
+      "duration_sec": 26420,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
+    "method_id": "dca",
+    "metric_values": {
+      "mse": "NA",
+      "poisson": "NA"
+    },
+    "scaled_scores": {
+      "mse": 1,
+      "poisson": 1
+    },
+    "mean_score": 1,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": "NA",
+      "duration_sec": 18561,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
+    "method_id": "knn_smoothing",
+    "metric_values": {
+      "mse": "NA",
+      "poisson": "NA"
+    },
+    "scaled_scores": {
+      "mse": 1,
+      "poisson": 1
+    },
+    "mean_score": 1,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": 137,
+      "duration_sec": 490,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
+    "method_id": "magic",
+    "metric_values": {
+      "mse": "NA",
+      "poisson": "NA"
+    },
+    "scaled_scores": {
+      "mse": 1,
+      "poisson": 1
+    },
+    "mean_score": 1,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": "NA",
+      "duration_sec": 14411,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
+    "method_id": "no_denoising",
+    "metric_values": {
+      "mse": 0.1284,
+      "poisson": 0.0832
+    },
+    "scaled_scores": {
+      "mse": 0,
+      "poisson": 0
+    },
+    "mean_score": 0,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": 0,
+      "duration_sec": 492,
+      "cpu_pct": 86.9,
+      "peak_memory_mb": 14951,
+      "disk_read_mb": 9319,
+      "disk_write_mb": 3789
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
+    "method_id": "perfect_denoising",
+    "metric_values": {
+      "mse": 0,
+      "poisson": 0.0431
+    },
+    "scaled_scores": {
+      "mse": 1,
+      "poisson": 1
+    },
+    "mean_score": 1,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": 0,
+      "duration_sec": 293,
+      "cpu_pct": 98.4,
+      "peak_memory_mb": 16999,
+      "disk_read_mb": 11367,
+      "disk_write_mb": 2253
     },
     "task_id": "denoising"
   },
@@ -141,22 +555,22 @@
     "dataset_id": "openproblems_v1/allen_brain_atlas",
     "method_id": "alra",
     "metric_values": {
-      "mse": 0.022,
-      "poisson": -6.5314
+      "mse": 0.0333,
+      "poisson": -4.5388
     },
     "scaled_scores": {
-      "mse": 0.7602,
-      "poisson": 0.9125
+      "mse": 0,
+      "poisson": 0.0682
     },
-    "mean_score": 0.8364,
+    "mean_score": 0.0341,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 1702,
-      "cpu_pct": 100.1,
-      "peak_memory_mb": 41472,
+      "duration_sec": 2336,
+      "cpu_pct": 102.3,
+      "peak_memory_mb": 43623,
       "disk_read_mb": 1434,
-      "disk_write_mb": 1127
+      "disk_write_mb": 1434
     },
     "task_id": "denoising"
   },
@@ -164,22 +578,22 @@
     "dataset_id": "openproblems_v1/allen_brain_atlas",
     "method_id": "dca",
     "metric_values": {
-      "mse": 0.029,
-      "poisson": -4.7813
+      "mse": 0.0289,
+      "poisson": -4.7271
     },
     "scaled_scores": {
-      "mse": 1,
-      "poisson": 0.9295
+      "mse": 0.1319,
+      "poisson": 0.07
     },
-    "mean_score": 0.9648,
+    "mean_score": 0.1009,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 1927,
-      "cpu_pct": 2095.7,
-      "peak_memory_mb": 27956,
+      "duration_sec": 1458,
+      "cpu_pct": 3659.1,
+      "peak_memory_mb": 24064,
       "disk_read_mb": 1434,
-      "disk_write_mb": 2868
+      "disk_write_mb": 2151
     },
     "task_id": "denoising"
   },
@@ -188,21 +602,21 @@
     "method_id": "knn_smoothing",
     "metric_values": {
       "mse": 0.0259,
-      "poisson": -100.661
+      "poisson": -100.6326
     },
     "scaled_scores": {
-      "mse": 0.8918,
-      "poisson": 0
+      "mse": 0.2228,
+      "poisson": 1
     },
-    "mean_score": 0.4459,
+    "mean_score": 0.6114,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 356,
-      "cpu_pct": 291.2,
-      "peak_memory_mb": 30106,
+      "duration_sec": 289,
+      "cpu_pct": 560.9,
+      "peak_memory_mb": 32768,
       "disk_read_mb": 1434,
-      "disk_write_mb": 1229
+      "disk_write_mb": 589
     },
     "task_id": "denoising"
   },
@@ -210,22 +624,22 @@
     "dataset_id": "openproblems_v1/allen_brain_atlas",
     "method_id": "magic",
     "metric_values": {
-      "mse": 0.0258,
-      "poisson": -8.1711
+      "mse": 0.0263,
+      "poisson": -5.7382
     },
     "scaled_scores": {
-      "mse": 0.8904,
-      "poisson": 0.8966
+      "mse": 0.2093,
+      "poisson": 0.0798
     },
-    "mean_score": 0.8935,
+    "mean_score": 0.1445,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 500,
-      "cpu_pct": 425.6,
-      "peak_memory_mb": 24064,
+      "duration_sec": 450,
+      "cpu_pct": 682.4,
+      "peak_memory_mb": 20480,
       "disk_read_mb": 1434,
-      "disk_write_mb": 3892
+      "disk_write_mb": 3175
     },
     "task_id": "denoising"
   },
@@ -234,21 +648,21 @@
     "method_id": "no_denoising",
     "metric_values": {
       "mse": 0.003,
-      "poisson": -13.9182
+      "poisson": -13.9175
     },
     "scaled_scores": {
-      "mse": 0.1046,
-      "poisson": 0.8409
+      "mse": 0.9088,
+      "poisson": 0.1591
     },
-    "mean_score": 0.4728,
+    "mean_score": 0.534,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 96,
-      "cpu_pct": 91.5,
-      "peak_memory_mb": 4301,
+      "duration_sec": 93,
+      "cpu_pct": 98.8,
+      "peak_memory_mb": 6964,
       "disk_read_mb": 1434,
-      "disk_write_mb": 776
+      "disk_write_mb": 747
     },
     "task_id": "denoising"
   },
@@ -260,18 +674,18 @@
       "poisson": 2.4902
     },
     "scaled_scores": {
-      "mse": 0,
-      "poisson": 1
+      "mse": 1,
+      "poisson": 0
     },
     "mean_score": 0.5,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 140,
-      "cpu_pct": 56.2,
-      "peak_memory_mb": 5428,
+      "duration_sec": 80,
+      "cpu_pct": 95.9,
+      "peak_memory_mb": 8090,
       "disk_read_mb": 2560,
-      "disk_write_mb": 650
+      "disk_write_mb": 626
     },
     "task_id": "denoising"
   },
@@ -279,8 +693,8 @@
     "dataset_id": "openproblems_v1/cengen",
     "method_id": "alra",
     "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
+      "mse": 0.2554,
+      "poisson": 0.6193
     },
     "scaled_scores": {
       "mse": 0,
@@ -289,12 +703,12 @@
     "mean_score": 0,
     "normalization_id": "log_cp10k",
     "resources": {
-      "exit_code": 137,
-      "duration_sec": 10411,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
+      "exit_code": 0,
+      "duration_sec": 6858,
+      "cpu_pct": 102.3,
+      "peak_memory_mb": 213709,
+      "disk_read_mb": 531,
+      "disk_write_mb": 3277
     },
     "task_id": "denoising"
   },
@@ -302,22 +716,22 @@
     "dataset_id": "openproblems_v1/cengen",
     "method_id": "dca",
     "metric_values": {
-      "mse": 0.1423,
-      "poisson": 0.0448
+      "mse": 0.1428,
+      "poisson": 0.0443
     },
     "scaled_scores": {
-      "mse": 1,
-      "poisson": 1
+      "mse": 0.4409,
+      "poisson": 0.9377
     },
-    "mean_score": 1,
+    "mean_score": 0.6893,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 2258,
-      "cpu_pct": 1428.3,
-      "peak_memory_mb": 105165,
-      "disk_read_mb": 566,
-      "disk_write_mb": 11264
+      "duration_sec": 1680,
+      "cpu_pct": 2723.3,
+      "peak_memory_mb": 35021,
+      "disk_read_mb": 567,
+      "disk_write_mb": 8090
     },
     "task_id": "denoising"
   },
@@ -325,22 +739,22 @@
     "dataset_id": "openproblems_v1/cengen",
     "method_id": "knn_smoothing",
     "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
+      "mse": 0.157,
+      "poisson": 0.4719
     },
     "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
+      "mse": 0.3854,
+      "poisson": 0.2404
     },
-    "mean_score": 0,
+    "mean_score": 0.3129,
     "normalization_id": "log_cp10k",
     "resources": {
-      "exit_code": 137,
-      "duration_sec": 120,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
+      "exit_code": 0,
+      "duration_sec": 8689,
+      "cpu_pct": 224.3,
+      "peak_memory_mb": 273920,
+      "disk_read_mb": 523,
+      "disk_write_mb": 519
     },
     "task_id": "denoising"
   },
@@ -348,22 +762,22 @@
     "dataset_id": "openproblems_v1/cengen",
     "method_id": "magic",
     "metric_values": {
-      "mse": 0.0923,
-      "poisson": 0.0185
+      "mse": 0.1484,
+      "poisson": 0.0457
     },
     "scaled_scores": {
-      "mse": 0.6489,
-      "poisson": 0.3199
+      "mse": 0.4192,
+      "poisson": 0.9355
     },
-    "mean_score": 0.4844,
+    "mean_score": 0.6773,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 5351,
+      "duration_sec": 5175,
       "cpu_pct": 100.7,
-      "peak_memory_mb": 56218,
+      "peak_memory_mb": 56116,
       "disk_read_mb": 533,
-      "disk_write_mb": 9216
+      "disk_write_mb": 9114
     },
     "task_id": "denoising"
   },
@@ -372,21 +786,21 @@
     "method_id": "no_denoising",
     "metric_values": {
       "mse": 0.1267,
-      "poisson": 0.0396
+      "poisson": 0.0395
     },
     "scaled_scores": {
-      "mse": 0.8903,
-      "poisson": 0.865
+      "mse": 0.5039,
+      "poisson": 0.9455
     },
-    "mean_score": 0.8777,
+    "mean_score": 0.7247,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 142,
-      "cpu_pct": 19,
-      "peak_memory_mb": 3277,
-      "disk_read_mb": 514,
-      "disk_write_mb": 212
+      "duration_sec": 135,
+      "cpu_pct": 23.9,
+      "peak_memory_mb": 6042,
+      "disk_read_mb": 515,
+      "disk_write_mb": 210
     },
     "task_id": "denoising"
   },
@@ -398,18 +812,18 @@
       "poisson": 0.0061
     },
     "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
+      "mse": 1,
+      "poisson": 1
     },
-    "mean_score": 0,
+    "mean_score": 1,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 20.2,
-      "cpu_pct": 108,
-      "peak_memory_mb": 6144,
-      "disk_read_mb": 620,
-      "disk_write_mb": 129
+      "duration_sec": 31.3,
+      "cpu_pct": 59.1,
+      "peak_memory_mb": 3482,
+      "disk_read_mb": 621,
+      "disk_write_mb": 127
     },
     "task_id": "denoising"
   },
@@ -417,22 +831,22 @@
     "dataset_id": "openproblems_v1/immune_cells",
     "method_id": "alra",
     "metric_values": {
-      "mse": 0.3377,
-      "poisson": -0.1143
+      "mse": 0.3501,
+      "poisson": 3.8754
     },
     "scaled_scores": {
-      "mse": 1,
-      "poisson": 0.8933
+      "mse": 0,
+      "poisson": 0
     },
-    "mean_score": 0.9466,
+    "mean_score": 0,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 1166,
-      "cpu_pct": 101.9,
-      "peak_memory_mb": 39424,
-      "disk_read_mb": 582,
-      "disk_write_mb": 270
+      "duration_sec": 1111,
+      "cpu_pct": 100.3,
+      "peak_memory_mb": 37069,
+      "disk_read_mb": 583,
+      "disk_write_mb": 1844
     },
     "task_id": "denoising"
   },
@@ -440,22 +854,22 @@
     "dataset_id": "openproblems_v1/immune_cells",
     "method_id": "dca",
     "metric_values": {
-      "mse": 0.2104,
-      "poisson": 0.1551
+      "mse": 0.2117,
+      "poisson": 0.1649
     },
     "scaled_scores": {
-      "mse": 0.623,
-      "poisson": 1
+      "mse": 0.3952,
+      "poisson": 0.5934
     },
-    "mean_score": 0.8115,
+    "mean_score": 0.4943,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 641,
-      "cpu_pct": 1180.2,
-      "peak_memory_mb": 30823,
+      "duration_sec": 318,
+      "cpu_pct": 1970.3,
+      "peak_memory_mb": 20788,
       "disk_read_mb": 619,
-      "disk_write_mb": 2151
+      "disk_write_mb": 1536
     },
     "task_id": "denoising"
   },
@@ -463,22 +877,22 @@
     "dataset_id": "openproblems_v1/immune_cells",
     "method_id": "knn_smoothing",
     "metric_values": {
-      "mse": 0.2177,
-      "poisson": -2.3698
+      "mse": 0.2179,
+      "poisson": -2.3776
     },
     "scaled_scores": {
-      "mse": 0.6449,
-      "poisson": 0
+      "mse": 0.3777,
+      "poisson": 1
     },
-    "mean_score": 0.3224,
+    "mean_score": 0.6888,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 664,
-      "cpu_pct": 333.4,
+      "duration_sec": 851,
+      "cpu_pct": 279.4,
       "peak_memory_mb": 42189,
       "disk_read_mb": 575,
-      "disk_write_mb": 495
+      "disk_write_mb": 296
     },
     "task_id": "denoising"
   },
@@ -486,22 +900,22 @@
     "dataset_id": "openproblems_v1/immune_cells",
     "method_id": "magic",
     "metric_values": {
-      "mse": 0.1715,
-      "poisson": -0.3085
+      "mse": 0.2071,
+      "poisson": 0.0456
     },
     "scaled_scores": {
-      "mse": 0.5079,
-      "poisson": 0.8164
+      "mse": 0.4083,
+      "poisson": 0.6125
     },
-    "mean_score": 0.6621,
+    "mean_score": 0.5104,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 527,
-      "cpu_pct": 108.7,
-      "peak_memory_mb": 19559,
+      "duration_sec": 559,
+      "cpu_pct": 125.3,
+      "peak_memory_mb": 16589,
       "disk_read_mb": 586,
-      "disk_write_mb": 3380
+      "disk_write_mb": 2868
     },
     "task_id": "denoising"
   },
@@ -509,22 +923,22 @@
     "dataset_id": "openproblems_v1/immune_cells",
     "method_id": "no_denoising",
     "metric_values": {
-      "mse": 0.2581,
-      "poisson": -0.5963
+      "mse": 0.2582,
+      "poisson": -0.5961
     },
     "scaled_scores": {
-      "mse": 0.7643,
-      "poisson": 0.7024
+      "mse": 0.2624,
+      "poisson": 0.7151
     },
-    "mean_score": 0.7334,
+    "mean_score": 0.4887,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 22.4,
-      "cpu_pct": 112.9,
-      "peak_memory_mb": 2048,
-      "disk_read_mb": 566,
-      "disk_write_mb": 233
+      "duration_sec": 112,
+      "cpu_pct": 30.2,
+      "peak_memory_mb": 6042,
+      "disk_read_mb": 567,
+      "disk_write_mb": 230
     },
     "task_id": "denoising"
   },
@@ -536,18 +950,18 @@
       "poisson": 0.1369
     },
     "scaled_scores": {
-      "mse": 0,
-      "poisson": 0.9928
+      "mse": 1,
+      "poisson": 0.5979
     },
-    "mean_score": 0.4964,
+    "mean_score": 0.7989,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 14.9,
-      "cpu_pct": 118.7,
-      "peak_memory_mb": 2151,
-      "disk_read_mb": 711,
-      "disk_write_mb": 147
+      "duration_sec": 24.9,
+      "cpu_pct": 99.3,
+      "peak_memory_mb": 6247,
+      "disk_read_mb": 712,
+      "disk_write_mb": 145
     },
     "task_id": "denoising"
   },
@@ -555,22 +969,22 @@
     "dataset_id": "openproblems_v1/mouse_blood_olsson_labelled",
     "method_id": "alra",
     "metric_values": {
-      "mse": 0.046,
-      "poisson": 0.4006
+      "mse": 0.0505,
+      "poisson": 0.4419
     },
     "scaled_scores": {
-      "mse": 1,
-      "poisson": 0.1922
+      "mse": 0,
+      "poisson": 0.787
     },
-    "mean_score": 0.5961,
+    "mean_score": 0.3935,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 330,
-      "cpu_pct": 100.8,
-      "peak_memory_mb": 10855,
+      "duration_sec": 422,
+      "cpu_pct": 104,
+      "peak_memory_mb": 12186,
       "disk_read_mb": 68,
-      "disk_write_mb": 55
+      "disk_write_mb": 58
     },
     "task_id": "denoising"
   },
@@ -578,22 +992,22 @@
     "dataset_id": "openproblems_v1/mouse_blood_olsson_labelled",
     "method_id": "dca",
     "metric_values": {
-      "mse": 0.0449,
-      "poisson": 0.2144
+      "mse": 0.0448,
+      "poisson": 0.2126
     },
     "scaled_scores": {
-      "mse": 0.9762,
-      "poisson": 0.0976
+      "mse": 0.1135,
+      "poisson": 0.9033
     },
-    "mean_score": 0.5369,
+    "mean_score": 0.5084,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 258,
-      "cpu_pct": 4227.1,
-      "peak_memory_mb": 28058,
+      "duration_sec": 273,
+      "cpu_pct": 4651.6,
+      "peak_memory_mb": 29696,
       "disk_read_mb": 104,
-      "disk_write_mb": 360
+      "disk_write_mb": 268
     },
     "task_id": "denoising"
   },
@@ -602,21 +1016,21 @@
     "method_id": "knn_smoothing",
     "metric_values": {
       "mse": 0.0452,
-      "poisson": 1.992
+      "poisson": 1.9926
     },
     "scaled_scores": {
-      "mse": 0.9832,
-      "poisson": 1
+      "mse": 0.1056,
+      "poisson": 0
     },
-    "mean_score": 0.9916,
+    "mean_score": 0.0528,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 26.4,
-      "cpu_pct": 1774.7,
+      "duration_sec": 36.7,
+      "cpu_pct": 1283.9,
       "peak_memory_mb": 9114,
       "disk_read_mb": 61,
-      "disk_write_mb": 28
+      "disk_write_mb": 15
     },
     "task_id": "denoising"
   },
@@ -624,22 +1038,22 @@
     "dataset_id": "openproblems_v1/mouse_blood_olsson_labelled",
     "method_id": "magic",
     "metric_values": {
-      "mse": 0.0455,
-      "poisson": 0.1639
+      "mse": 0.0448,
+      "poisson": 0.2625
     },
     "scaled_scores": {
-      "mse": 0.991,
-      "poisson": 0.072
+      "mse": 0.1139,
+      "poisson": 0.878
     },
-    "mean_score": 0.5315,
+    "mean_score": 0.496,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 20.3,
-      "cpu_pct": 929.9,
-      "peak_memory_mb": 7168,
+      "duration_sec": 20.2,
+      "cpu_pct": 803.4,
+      "peak_memory_mb": 7680,
       "disk_read_mb": 71,
-      "disk_write_mb": 82
+      "disk_write_mb": 66
     },
     "task_id": "denoising"
   },
@@ -648,18 +1062,18 @@
     "method_id": "no_denoising",
     "metric_values": {
       "mse": 0.0402,
-      "poisson": 0.1586
+      "poisson": 0.1585
     },
     "scaled_scores": {
-      "mse": 0.8742,
-      "poisson": 0.0693
+      "mse": 0.2049,
+      "poisson": 0.9308
     },
-    "mean_score": 0.4718,
+    "mean_score": 0.5678,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 17,
-      "cpu_pct": 56.3,
+      "duration_sec": 3.8,
+      "cpu_pct": 231.4,
       "peak_memory_mb": 5530,
       "disk_read_mb": 52,
       "disk_write_mb": 17
@@ -674,15 +1088,15 @@
       "poisson": 0.0221
     },
     "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
+      "mse": 1,
+      "poisson": 1
     },
-    "mean_score": 0,
+    "mean_score": 1,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 10.7,
-      "cpu_pct": 104.7,
+      "duration_sec": 3.5,
+      "cpu_pct": 299.7,
       "peak_memory_mb": 5530,
       "disk_read_mb": 71,
       "disk_write_mb": 13
@@ -693,22 +1107,22 @@
     "dataset_id": "openproblems_v1/mouse_hspc_nestorowa2016",
     "method_id": "alra",
     "metric_values": {
-      "mse": 0.0422,
-      "poisson": -4.2661
+      "mse": 0.0487,
+      "poisson": -5.0796
     },
     "scaled_scores": {
-      "mse": 0.8869,
-      "poisson": 0.8952
+      "mse": 0,
+      "poisson": 0.1192
     },
-    "mean_score": 0.891,
+    "mean_score": 0.0596,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 437,
-      "cpu_pct": 84.6,
-      "peak_memory_mb": 12596,
-      "disk_read_mb": 279,
-      "disk_write_mb": 174
+      "duration_sec": 285,
+      "cpu_pct": 106.3,
+      "peak_memory_mb": 13927,
+      "disk_read_mb": 280,
+      "disk_write_mb": 164
     },
     "task_id": "denoising"
   },
@@ -716,22 +1130,22 @@
     "dataset_id": "openproblems_v1/mouse_hspc_nestorowa2016",
     "method_id": "dca",
     "metric_values": {
-      "mse": 0.0475,
-      "poisson": -2.5369
+      "mse": 0.0473,
+      "poisson": -3.0623
     },
     "scaled_scores": {
-      "mse": 1,
-      "poisson": 0.9257
+      "mse": 0.0288,
+      "poisson": 0.0836
     },
-    "mean_score": 0.9629,
+    "mean_score": 0.0562,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 125,
-      "cpu_pct": 2484.8,
-      "peak_memory_mb": 20583,
+      "duration_sec": 143,
+      "cpu_pct": 2124.2,
+      "peak_memory_mb": 18740,
       "disk_read_mb": 316,
-      "disk_write_mb": 469
+      "disk_write_mb": 358
     },
     "task_id": "denoising"
   },
@@ -740,21 +1154,21 @@
     "method_id": "knn_smoothing",
     "metric_values": {
       "mse": 0.0452,
-      "poisson": -54.96
+      "poisson": -54.9686
     },
     "scaled_scores": {
-      "mse": 0.9502,
-      "poisson": 0
+      "mse": 0.0733,
+      "poisson": 1
     },
-    "mean_score": 0.4751,
+    "mean_score": 0.5367,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 53.9,
-      "cpu_pct": 457.6,
-      "peak_memory_mb": 7066,
+      "duration_sec": 40.1,
+      "cpu_pct": 1024,
+      "peak_memory_mb": 9728,
       "disk_read_mb": 272,
-      "disk_write_mb": 198
+      "disk_write_mb": 100
     },
     "task_id": "denoising"
   },
@@ -762,22 +1176,22 @@
     "dataset_id": "openproblems_v1/mouse_hspc_nestorowa2016",
     "method_id": "magic",
     "metric_values": {
-      "mse": 0.0443,
-      "poisson": -5.9438
+      "mse": 0.0461,
+      "poisson": -2.6247
     },
     "scaled_scores": {
-      "mse": 0.9319,
-      "poisson": 0.8655
+      "mse": 0.0549,
+      "poisson": 0.0758
     },
-    "mean_score": 0.8987,
+    "mean_score": 0.0654,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 79,
-      "cpu_pct": 320.8,
-      "peak_memory_mb": 9626,
+      "duration_sec": 59.3,
+      "cpu_pct": 394.8,
+      "peak_memory_mb": 8295,
       "disk_read_mb": 283,
-      "disk_write_mb": 723
+      "disk_write_mb": 569
     },
     "task_id": "denoising"
   },
@@ -786,21 +1200,21 @@
     "method_id": "no_denoising",
     "metric_values": {
       "mse": 0.0112,
-      "poisson": -13.6558
+      "poisson": -13.6589
     },
     "scaled_scores": {
-      "mse": 0.2354,
-      "poisson": 0.7294
+      "mse": 0.7704,
+      "poisson": 0.2707
     },
-    "mean_score": 0.4824,
+    "mean_score": 0.5205,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 23.3,
-      "cpu_pct": 108.9,
+      "duration_sec": 27.3,
+      "cpu_pct": 84.4,
       "peak_memory_mb": 5735,
-      "disk_read_mb": 263,
-      "disk_write_mb": 122
+      "disk_read_mb": 264,
+      "disk_write_mb": 118
     },
     "task_id": "denoising"
   },
@@ -809,21 +1223,21 @@
     "method_id": "perfect_denoising",
     "metric_values": {
       "mse": 0,
-      "poisson": 1.6705
+      "poisson": 1.6707
     },
     "scaled_scores": {
-      "mse": 0,
-      "poisson": 1
+      "mse": 1,
+      "poisson": 0
     },
     "mean_score": 0.5,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 19.8,
-      "cpu_pct": 96,
-      "peak_memory_mb": 5837,
-      "disk_read_mb": 397,
-      "disk_write_mb": 93
+      "duration_sec": 56.3,
+      "cpu_pct": 37.9,
+      "peak_memory_mb": 5940,
+      "disk_read_mb": 398,
+      "disk_write_mb": 90
     },
     "task_id": "denoising"
   },
@@ -831,22 +1245,22 @@
     "dataset_id": "openproblems_v1/pancreas",
     "method_id": "alra",
     "metric_values": {
-      "mse": 0.2308,
-      "poisson": -0.8934
+      "mse": 0.2348,
+      "poisson": 2.6685
     },
     "scaled_scores": {
-      "mse": 1,
-      "poisson": 0.8504
+      "mse": 0,
+      "poisson": 0
     },
-    "mean_score": 0.9252,
+    "mean_score": 0,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 787,
-      "cpu_pct": 101.3,
-      "peak_memory_mb": 27648,
-      "disk_read_mb": 632,
-      "disk_write_mb": 351
+      "duration_sec": 1093,
+      "cpu_pct": 101.4,
+      "peak_memory_mb": 35738,
+      "disk_read_mb": 633,
+      "disk_write_mb": 832
     },
     "task_id": "denoising"
   },
@@ -854,22 +1268,22 @@
     "dataset_id": "openproblems_v1/pancreas",
     "method_id": "dca",
     "metric_values": {
-      "mse": 0.1859,
-      "poisson": 1.0028
+      "mse": 0.187,
+      "poisson": 1.196
     },
     "scaled_scores": {
-      "mse": 0.8052,
-      "poisson": 1
+      "mse": 0.2038,
+      "poisson": 0.1024
     },
-    "mean_score": 0.9026,
+    "mean_score": 0.1531,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 370,
-      "cpu_pct": 1304.2,
+      "duration_sec": 464,
+      "cpu_pct": 2538.7,
       "peak_memory_mb": 20276,
       "disk_read_mb": 669,
-      "disk_write_mb": 1639
+      "disk_write_mb": 1229
     },
     "task_id": "denoising"
   },
@@ -877,22 +1291,22 @@
     "dataset_id": "openproblems_v1/pancreas",
     "method_id": "knn_smoothing",
     "metric_values": {
-      "mse": 0.1851,
-      "poisson": -11.6721
+      "mse": 0.185,
+      "poisson": -11.7064
     },
     "scaled_scores": {
-      "mse": 0.8018,
-      "poisson": 0
+      "mse": 0.2123,
+      "poisson": 1
     },
-    "mean_score": 0.4009,
+    "mean_score": 0.6062,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 272,
-      "cpu_pct": 366.1,
-      "peak_memory_mb": 21709,
+      "duration_sec": 224,
+      "cpu_pct": 518.8,
+      "peak_memory_mb": 24372,
       "disk_read_mb": 625,
-      "disk_write_mb": 491
+      "disk_write_mb": 260
     },
     "task_id": "denoising"
   },
@@ -900,22 +1314,22 @@
     "dataset_id": "openproblems_v1/pancreas",
     "method_id": "magic",
     "metric_values": {
-      "mse": 0.1614,
-      "poisson": -1.537
+      "mse": 0.1828,
+      "poisson": -0.2833
     },
     "scaled_scores": {
-      "mse": 0.6992,
-      "poisson": 0.7996
+      "mse": 0.2215,
+      "poisson": 0.2053
     },
-    "mean_score": 0.7494,
+    "mean_score": 0.2134,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 307,
-      "cpu_pct": 667,
-      "peak_memory_mb": 14746,
+      "duration_sec": 315,
+      "cpu_pct": 1251.1,
+      "peak_memory_mb": 15668,
       "disk_read_mb": 636,
-      "disk_write_mb": 2151
+      "disk_write_mb": 1946
     },
     "task_id": "denoising"
   },
@@ -923,22 +1337,22 @@
     "dataset_id": "openproblems_v1/pancreas",
     "method_id": "no_denoising",
     "metric_values": {
-      "mse": 0.186,
-      "poisson": -3.081
+      "mse": 0.1859,
+      "poisson": -3.0797
     },
     "scaled_scores": {
-      "mse": 0.806,
-      "poisson": 0.6778
+      "mse": 0.2083,
+      "poisson": 0.3999
     },
-    "mean_score": 0.7419,
+    "mean_score": 0.3041,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 39,
-      "cpu_pct": 86.4,
-      "peak_memory_mb": 6144,
-      "disk_read_mb": 616,
-      "disk_write_mb": 263
+      "duration_sec": 28.8,
+      "cpu_pct": 111.4,
+      "peak_memory_mb": 3380,
+      "disk_read_mb": 617,
+      "disk_write_mb": 257
     },
     "task_id": "denoising"
   },
@@ -947,21 +1361,21 @@
     "method_id": "perfect_denoising",
     "metric_values": {
       "mse": 0,
-      "poisson": 0.3788
+      "poisson": 0.3785
     },
     "scaled_scores": {
-      "mse": 0,
-      "poisson": 0.9508
+      "mse": 1,
+      "poisson": 0.1593
     },
-    "mean_score": 0.4754,
+    "mean_score": 0.5797,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 35.4,
-      "cpu_pct": 108.9,
+      "duration_sec": 43.3,
+      "cpu_pct": 71.1,
       "peak_memory_mb": 6349,
       "disk_read_mb": 877,
-      "disk_write_mb": 187
+      "disk_write_mb": 183
     },
     "task_id": "denoising"
   },
@@ -969,22 +1383,22 @@
     "dataset_id": "openproblems_v1/tenx_1k_pbmc",
     "method_id": "alra",
     "metric_values": {
-      "mse": 0.2842,
-      "poisson": 0.3653
+      "mse": 0.3096,
+      "poisson": 0.7233
     },
     "scaled_scores": {
-      "mse": 1,
-      "poisson": 0.1202
+      "mse": 0,
+      "poisson": 0.7465
     },
-    "mean_score": 0.5601,
+    "mean_score": 0.3733,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 65,
-      "cpu_pct": 127.8,
-      "peak_memory_mb": 6861,
-      "disk_read_mb": 54,
-      "disk_write_mb": 24
+      "duration_sec": 52.8,
+      "cpu_pct": 135.8,
+      "peak_memory_mb": 7373,
+      "disk_read_mb": 55,
+      "disk_write_mb": 49
     },
     "task_id": "denoising"
   },
@@ -992,22 +1406,22 @@
     "dataset_id": "openproblems_v1/tenx_1k_pbmc",
     "method_id": "dca",
     "metric_values": {
-      "mse": 0.2175,
-      "poisson": 0.3099
+      "mse": 0.2171,
+      "poisson": 0.3083
     },
     "scaled_scores": {
-      "mse": 0.7655,
-      "poisson": 0.0995
+      "mse": 0.299,
+      "poisson": 0.9013
     },
-    "mean_score": 0.4325,
+    "mean_score": 0.6001,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 44.6,
-      "cpu_pct": 1899.2,
-      "peak_memory_mb": 17511,
-      "disk_read_mb": 90,
-      "disk_write_mb": 86
+      "duration_sec": 54.1,
+      "cpu_pct": 2086.8,
+      "peak_memory_mb": 17101,
+      "disk_read_mb": 91,
+      "disk_write_mb": 65
     },
     "task_id": "denoising"
   },
@@ -1015,22 +1429,22 @@
     "dataset_id": "openproblems_v1/tenx_1k_pbmc",
     "method_id": "knn_smoothing",
     "metric_values": {
-      "mse": 0.2239,
-      "poisson": 2.7203
+      "mse": 0.2238,
+      "poisson": 2.7255
     },
     "scaled_scores": {
-      "mse": 0.7879,
-      "poisson": 1
+      "mse": 0.2773,
+      "poisson": 0
     },
-    "mean_score": 0.8939,
+    "mean_score": 0.1387,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 12,
-      "cpu_pct": 1267.3,
+      "duration_sec": 14.2,
+      "cpu_pct": 1527,
       "peak_memory_mb": 6452,
       "disk_read_mb": 47,
-      "disk_write_mb": 22
+      "disk_write_mb": 13
     },
     "task_id": "denoising"
   },
@@ -1038,22 +1452,22 @@
     "dataset_id": "openproblems_v1/tenx_1k_pbmc",
     "method_id": "magic",
     "metric_values": {
-      "mse": 0.1886,
-      "poisson": 0.1618
+      "mse": 0.2159,
+      "poisson": 0.3142
     },
     "scaled_scores": {
-      "mse": 0.6636,
-      "poisson": 0.0441
+      "mse": 0.3026,
+      "poisson": 0.8991
     },
-    "mean_score": 0.3539,
+    "mean_score": 0.6008,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 23.9,
-      "cpu_pct": 499.4,
-      "peak_memory_mb": 6452,
+      "duration_sec": 18.3,
+      "cpu_pct": 674.3,
+      "peak_memory_mb": 6247,
       "disk_read_mb": 58,
-      "disk_write_mb": 133
+      "disk_write_mb": 110
     },
     "task_id": "denoising"
   },
@@ -1061,21 +1475,21 @@
     "dataset_id": "openproblems_v1/tenx_1k_pbmc",
     "method_id": "no_denoising",
     "metric_values": {
-      "mse": 0.2712,
-      "poisson": 0.3013
+      "mse": 0.2711,
+      "poisson": 0.3005
     },
     "scaled_scores": {
-      "mse": 0.9543,
-      "poisson": 0.0963
+      "mse": 0.1243,
+      "poisson": 0.9042
     },
-    "mean_score": 0.5253,
+    "mean_score": 0.5143,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 10.2,
-      "cpu_pct": 104.9,
+      "duration_sec": 2.6,
+      "cpu_pct": 500.7,
       "peak_memory_mb": 5530,
-      "disk_read_mb": 38,
+      "disk_read_mb": 39,
       "disk_write_mb": 11
     },
     "task_id": "denoising"
@@ -1085,20 +1499,20 @@
     "method_id": "perfect_denoising",
     "metric_values": {
       "mse": 0,
-      "poisson": 0.0436
+      "poisson": 0.0435
     },
     "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
+      "mse": 1,
+      "poisson": 1
     },
-    "mean_score": 0,
+    "mean_score": 1,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 9.2,
-      "cpu_pct": 95.6,
-      "peak_memory_mb": 5530,
-      "disk_read_mb": 44,
+      "duration_sec": 41.3,
+      "cpu_pct": 37.5,
+      "peak_memory_mb": 2765,
+      "disk_read_mb": 45,
       "disk_write_mb": 7
     },
     "task_id": "denoising"
@@ -1107,22 +1521,22 @@
     "dataset_id": "openproblems_v1/tenx_5k_pbmc",
     "method_id": "alra",
     "metric_values": {
-      "mse": 0.1957,
-      "poisson": 0.2884
+      "mse": 0.2245,
+      "poisson": 0.4582
     },
     "scaled_scores": {
-      "mse": 1,
-      "poisson": 0.1689
+      "mse": 0,
+      "poisson": 0.7209
     },
-    "mean_score": 0.5845,
+    "mean_score": 0.3605,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 321,
-      "cpu_pct": 103.1,
-      "peak_memory_mb": 11981,
+      "duration_sec": 342,
+      "cpu_pct": 105,
+      "peak_memory_mb": 15668,
       "disk_read_mb": 128,
-      "disk_write_mb": 121
+      "disk_write_mb": 206
     },
     "task_id": "denoising"
   },
@@ -1130,22 +1544,22 @@
     "dataset_id": "openproblems_v1/tenx_5k_pbmc",
     "method_id": "dca",
     "metric_values": {
-      "mse": 0.1443,
-      "poisson": 0.1788
+      "mse": 0.1439,
+      "poisson": 0.1783
     },
     "scaled_scores": {
-      "mse": 0.7375,
-      "poisson": 0.0983
+      "mse": 0.3591,
+      "poisson": 0.9018
     },
-    "mean_score": 0.4179,
+    "mean_score": 0.6305,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 253,
-      "cpu_pct": 2922.8,
-      "peak_memory_mb": 20480,
+      "duration_sec": 248,
+      "cpu_pct": 2129.3,
+      "peak_memory_mb": 17920,
       "disk_read_mb": 164,
-      "disk_write_mb": 548
+      "disk_write_mb": 407
     },
     "task_id": "denoising"
   },
@@ -1153,22 +1567,22 @@
     "dataset_id": "openproblems_v1/tenx_5k_pbmc",
     "method_id": "knn_smoothing",
     "metric_values": {
-      "mse": 0.1535,
-      "poisson": 1.5775
+      "mse": 0.1531,
+      "poisson": 1.574
     },
     "scaled_scores": {
-      "mse": 0.7845,
-      "poisson": 1
+      "mse": 0.3181,
+      "poisson": 0
     },
-    "mean_score": 0.8923,
+    "mean_score": 0.1591,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 57.6,
-      "cpu_pct": 723.9,
+      "duration_sec": 80,
+      "cpu_pct": 588.1,
       "peak_memory_mb": 11060,
-      "disk_read_mb": 120,
-      "disk_write_mb": 92
+      "disk_read_mb": 121,
+      "disk_write_mb": 64
     },
     "task_id": "denoising"
   },
@@ -1176,22 +1590,22 @@
     "dataset_id": "openproblems_v1/tenx_5k_pbmc",
     "method_id": "magic",
     "metric_values": {
-      "mse": 0.1187,
-      "poisson": 0.0908
+      "mse": 0.1443,
+      "poisson": 0.1806
     },
     "scaled_scores": {
-      "mse": 0.6065,
-      "poisson": 0.0416
+      "mse": 0.3574,
+      "poisson": 0.9003
     },
-    "mean_score": 0.324,
+    "mean_score": 0.6289,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 73,
-      "cpu_pct": 507.7,
-      "peak_memory_mb": 9421,
+      "duration_sec": 61,
+      "cpu_pct": 612.9,
+      "peak_memory_mb": 8500,
       "disk_read_mb": 131,
-      "disk_write_mb": 706
+      "disk_write_mb": 612
     },
     "task_id": "denoising"
   },
@@ -1199,22 +1613,22 @@
     "dataset_id": "openproblems_v1/tenx_5k_pbmc",
     "method_id": "no_denoising",
     "metric_values": {
-      "mse": 0.181,
-      "poisson": 0.1744
+      "mse": 0.1806,
+      "poisson": 0.174
     },
     "scaled_scores": {
-      "mse": 0.9253,
-      "poisson": 0.0955
+      "mse": 0.1956,
+      "poisson": 0.9046
     },
-    "mean_score": 0.5104,
+    "mean_score": 0.5501,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 5.4,
-      "cpu_pct": 214.8,
-      "peak_memory_mb": 2868,
+      "duration_sec": 5.8,
+      "cpu_pct": 249.5,
+      "peak_memory_mb": 5632,
       "disk_read_mb": 112,
-      "disk_write_mb": 42
+      "disk_write_mb": 41
     },
     "task_id": "denoising"
   },
@@ -1223,21 +1637,21 @@
     "method_id": "perfect_denoising",
     "metric_values": {
       "mse": 0,
-      "poisson": 0.0264
+      "poisson": 0.0263
     },
     "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
+      "mse": 1,
+      "poisson": 1
     },
-    "mean_score": 0,
+    "mean_score": 1,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 17.7,
-      "cpu_pct": 56.9,
+      "duration_sec": 4.8,
+      "cpu_pct": 211.5,
       "peak_memory_mb": 5632,
-      "disk_read_mb": 133,
-      "disk_write_mb": 26
+      "disk_read_mb": 134,
+      "disk_write_mb": 25
     },
     "task_id": "denoising"
   },
@@ -1245,22 +1659,22 @@
     "dataset_id": "openproblems_v1/tnbc_wu2021",
     "method_id": "alra",
     "metric_values": {
-      "mse": 0.1715,
-      "poisson": 0.5158
+      "mse": 0.1934,
+      "poisson": 0.7214
     },
     "scaled_scores": {
-      "mse": 1,
-      "poisson": 0.3541
+      "mse": 0,
+      "poisson": 0.4994
     },
-    "mean_score": 0.677,
+    "mean_score": 0.2497,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 3560,
-      "cpu_pct": 100.2,
-      "peak_memory_mb": 91546,
+      "duration_sec": 3949,
+      "cpu_pct": 100.1,
+      "peak_memory_mb": 87655,
       "disk_read_mb": 858,
-      "disk_write_mb": 1844
+      "disk_write_mb": 2765
     },
     "task_id": "denoising"
   },
@@ -1268,22 +1682,22 @@
     "dataset_id": "openproblems_v1/tnbc_wu2021",
     "method_id": "dca",
     "metric_values": {
-      "mse": 0.1277,
-      "poisson": 0.1641
+      "mse": 0.1282,
+      "poisson": 0.1703
     },
     "scaled_scores": {
-      "mse": 0.7447,
-      "poisson": 0.1018
+      "mse": 0.3374,
+      "poisson": 0.8939
     },
-    "mean_score": 0.4233,
+    "mean_score": 0.6156,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 1097,
-      "cpu_pct": 1229.6,
-      "peak_memory_mb": 47821,
+      "duration_sec": 1296,
+      "cpu_pct": 2004.5,
+      "peak_memory_mb": 27648,
       "disk_read_mb": 894,
-      "disk_write_mb": 5940
+      "disk_write_mb": 4301
     },
     "task_id": "denoising"
   },
@@ -1292,21 +1706,21 @@
     "method_id": "knn_smoothing",
     "metric_values": {
       "mse": 0.1329,
-      "poisson": 1.4165
+      "poisson": 1.419
     },
     "scaled_scores": {
-      "mse": 0.7752,
-      "poisson": 1
+      "mse": 0.3127,
+      "poisson": 0
     },
-    "mean_score": 0.8876,
+    "mean_score": 0.1563,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 1136,
-      "cpu_pct": 287.7,
-      "peak_memory_mb": 85914,
-      "disk_read_mb": 850,
-      "disk_write_mb": 736
+      "duration_sec": 1117,
+      "cpu_pct": 392.6,
+      "peak_memory_mb": 88679,
+      "disk_read_mb": 851,
+      "disk_write_mb": 504
     },
     "task_id": "denoising"
   },
@@ -1314,22 +1728,22 @@
     "dataset_id": "openproblems_v1/tnbc_wu2021",
     "method_id": "magic",
     "metric_values": {
-      "mse": 0.1042,
-      "poisson": 0.0751
+      "mse": 0.1263,
+      "poisson": 0.1488
     },
     "scaled_scores": {
-      "mse": 0.6079,
-      "poisson": 0.038
+      "mse": 0.3467,
+      "poisson": 0.9093
     },
-    "mean_score": 0.3229,
+    "mean_score": 0.628,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 1245,
-      "cpu_pct": 105.9,
-      "peak_memory_mb": 36250,
+      "duration_sec": 938,
+      "cpu_pct": 104.5,
+      "peak_memory_mb": 32359,
       "disk_read_mb": 861,
-      "disk_write_mb": 5837
+      "disk_write_mb": 5530
     },
     "task_id": "denoising"
   },
@@ -1338,21 +1752,21 @@
     "method_id": "no_denoising",
     "metric_values": {
       "mse": 0.146,
-      "poisson": 0.1314
+      "poisson": 0.1313
     },
     "scaled_scores": {
-      "mse": 0.8515,
-      "poisson": 0.0784
+      "mse": 0.2452,
+      "poisson": 0.9218
     },
-    "mean_score": 0.4649,
+    "mean_score": 0.5835,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 52.7,
-      "cpu_pct": 105.6,
+      "duration_sec": 36.8,
+      "cpu_pct": 108,
       "peak_memory_mb": 6349,
       "disk_read_mb": 842,
-      "disk_write_mb": 333
+      "disk_write_mb": 330
     },
     "task_id": "denoising"
   },
@@ -1364,18 +1778,18 @@
       "poisson": 0.0221
     },
     "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
+      "mse": 1,
+      "poisson": 1
     },
-    "mean_score": 0,
+    "mean_score": 1,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 29.8,
-      "cpu_pct": 92.1,
+      "duration_sec": 22.8,
+      "cpu_pct": 103.9,
       "peak_memory_mb": 6554,
       "disk_read_mb": 1024,
-      "disk_write_mb": 204
+      "disk_write_mb": 202
     },
     "task_id": "denoising"
   },
@@ -1383,22 +1797,22 @@
     "dataset_id": "openproblems_v1/zebrafish",
     "method_id": "alra",
     "metric_values": {
-      "mse": 0.1954,
-      "poisson": 0.2319
+      "mse": 0.2186,
+      "poisson": 0.6591
     },
     "scaled_scores": {
-      "mse": 1,
-      "poisson": 0.1259
+      "mse": 0,
+      "poisson": 0.6197
     },
-    "mean_score": 0.563,
+    "mean_score": 0.3098,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 1878,
-      "cpu_pct": 100.5,
-      "peak_memory_mb": 54580,
-      "disk_read_mb": 561,
-      "disk_write_mb": 559
+      "duration_sec": 2089,
+      "cpu_pct": 100.4,
+      "peak_memory_mb": 56013,
+      "disk_read_mb": 562,
+      "disk_write_mb": 1844
     },
     "task_id": "denoising"
   },
@@ -1406,22 +1820,22 @@
     "dataset_id": "openproblems_v1/zebrafish",
     "method_id": "dca",
     "metric_values": {
-      "mse": 0.1589,
-      "poisson": 0.1848
+      "mse": 0.1585,
+      "poisson": 0.1841
     },
     "scaled_scores": {
-      "mse": 0.8132,
-      "poisson": 0.0979
+      "mse": 0.2751,
+      "poisson": 0.9025
     },
-    "mean_score": 0.4556,
+    "mean_score": 0.5888,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 790,
-      "cpu_pct": 1469.5,
-      "peak_memory_mb": 30516,
-      "disk_read_mb": 597,
-      "disk_write_mb": 3277
+      "duration_sec": 1629,
+      "cpu_pct": 2091,
+      "peak_memory_mb": 23040,
+      "disk_read_mb": 598,
+      "disk_write_mb": 2458
     },
     "task_id": "denoising"
   },
@@ -1430,21 +1844,21 @@
     "method_id": "knn_smoothing",
     "metric_values": {
       "mse": 0.165,
-      "poisson": 1.6996
+      "poisson": 1.6999
     },
     "scaled_scores": {
-      "mse": 0.8448,
-      "poisson": 1
+      "mse": 0.2453,
+      "poisson": 0
     },
-    "mean_score": 0.9224,
+    "mean_score": 0.1226,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
       "duration_sec": 495,
-      "cpu_pct": 319.3,
-      "peak_memory_mb": 43930,
+      "cpu_pct": 469.4,
+      "peak_memory_mb": 46592,
       "disk_read_mb": 554,
-      "disk_write_mb": 461
+      "disk_write_mb": 340
     },
     "task_id": "denoising"
   },
@@ -1452,22 +1866,22 @@
     "dataset_id": "openproblems_v1/zebrafish",
     "method_id": "magic",
     "metric_values": {
-      "mse": 0.1412,
-      "poisson": 0.1056
+      "mse": 0.1584,
+      "poisson": 0.1857
     },
     "scaled_scores": {
-      "mse": 0.7226,
-      "poisson": 0.0507
+      "mse": 0.2756,
+      "poisson": 0.9016
     },
-    "mean_score": 0.3867,
+    "mean_score": 0.5886,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 565,
-      "cpu_pct": 108.6,
-      "peak_memory_mb": 25908,
+      "duration_sec": 513,
+      "cpu_pct": 108.2,
+      "peak_memory_mb": 19456,
       "disk_read_mb": 564,
-      "disk_write_mb": 4506
+      "disk_write_mb": 4301
     },
     "task_id": "denoising"
   },
@@ -1475,22 +1889,22 @@
     "dataset_id": "openproblems_v1/zebrafish",
     "method_id": "no_denoising",
     "metric_values": {
-      "mse": 0.188,
+      "mse": 0.1879,
       "poisson": 0.1791
     },
     "scaled_scores": {
-      "mse": 0.9621,
-      "poisson": 0.0945
+      "mse": 0.1404,
+      "poisson": 0.9055
     },
-    "mean_score": 0.5283,
+    "mean_score": 0.523,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 21.3,
-      "cpu_pct": 120.4,
-      "peak_memory_mb": 3380,
-      "disk_read_mb": 545,
-      "disk_write_mb": 215
+      "duration_sec": 20.7,
+      "cpu_pct": 140.4,
+      "peak_memory_mb": 6042,
+      "disk_read_mb": 546,
+      "disk_write_mb": 213
     },
     "task_id": "denoising"
   },
@@ -1502,70 +1916,24 @@
       "poisson": 0.0204
     },
     "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
+      "mse": 1,
+      "poisson": 1
     },
-    "mean_score": 0,
+    "mean_score": 1,
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 13.6,
-      "cpu_pct": 135.1,
-      "peak_memory_mb": 3482,
-      "disk_read_mb": 663,
-      "disk_write_mb": 131
+      "duration_sec": 13.9,
+      "cpu_pct": 177.5,
+      "peak_memory_mb": 6144,
+      "disk_read_mb": 664,
+      "disk_write_mb": 130
     },
     "task_id": "denoising"
   },
   {
-    "dataset_id": "cellxgene_census/gtex_v9",
-    "method_id": "no_denoising",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 86,
-      "cpu_pct": 95,
-      "peak_memory_mb": 3584,
-      "disk_read_mb": 2048,
-      "disk_write_mb": 795
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/gtex_v9",
-    "method_id": "perfect_denoising",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 53.6,
-      "cpu_pct": 96.7,
-      "peak_memory_mb": 5223,
-      "disk_read_mb": 2356,
-      "disk_write_mb": 459
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/gtex_v9",
-    "method_id": "knn_smoothing",
+    "dataset_id": "cellxgene_census/hcla",
+    "method_id": "alra",
     "metric_values": {
       "mse": "NA",
       "poisson": "NA"
@@ -1578,76 +1946,7 @@
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 137,
-      "duration_sec": 249,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/immune_cell_atlas",
-    "method_id": "dca",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 160,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/hypomap",
-    "method_id": "knn_smoothing",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 179,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/immune_cell_atlas",
-    "method_id": "knn_smoothing",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 240,
+      "duration_sec": 460,
       "cpu_pct": "NA",
       "peak_memory_mb": "NA",
       "disk_read_mb": "NA",
@@ -1669,8 +1968,100 @@
     "mean_score": 0,
     "normalization_id": "log_cp10k",
     "resources": {
-      "exit_code": 137,
-      "duration_sec": 240,
+      "exit_code": 1,
+      "duration_sec": 259,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/tabula_sapiens",
+    "method_id": "alra",
+    "metric_values": {
+      "mse": "NA",
+      "poisson": "NA"
+    },
+    "scaled_scores": {
+      "mse": 0,
+      "poisson": 0
+    },
+    "mean_score": 0,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": 1,
+      "duration_sec": 280,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/hcla",
+    "method_id": "dca",
+    "metric_values": {
+      "mse": "NA",
+      "poisson": "NA"
+    },
+    "scaled_scores": {
+      "mse": 0,
+      "poisson": 0
+    },
+    "mean_score": 0,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": "NA",
+      "duration_sec": 26151,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/hypomap",
+    "method_id": "dca",
+    "metric_values": {
+      "mse": "NA",
+      "poisson": "NA"
+    },
+    "scaled_scores": {
+      "mse": 0,
+      "poisson": 0
+    },
+    "mean_score": 0,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": "NA",
+      "duration_sec": 26241,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/tabula_sapiens",
+    "method_id": "dca",
+    "metric_values": {
+      "mse": "NA",
+      "poisson": "NA"
+    },
+    "scaled_scores": {
+      "mse": 0,
+      "poisson": 0
+    },
+    "mean_score": 0,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": "NA",
+      "duration_sec": 31731,
       "cpu_pct": "NA",
       "peak_memory_mb": "NA",
       "disk_read_mb": "NA",
@@ -1693,7 +2084,30 @@
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 137,
-      "duration_sec": 209,
+      "duration_sec": 1121,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
+    },
+    "task_id": "denoising"
+  },
+  {
+    "dataset_id": "cellxgene_census/hypomap",
+    "method_id": "knn_smoothing",
+    "metric_values": {
+      "mse": "NA",
+      "poisson": "NA"
+    },
+    "scaled_scores": {
+      "mse": 0,
+      "poisson": 0
+    },
+    "mean_score": 0,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": 137,
+      "duration_sec": 880,
       "cpu_pct": "NA",
       "peak_memory_mb": "NA",
       "disk_read_mb": "NA",
@@ -1716,53 +2130,7 @@
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 137,
-      "duration_sec": 219,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/hypomap",
-    "method_id": "dca",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 200,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/immune_cell_atlas",
-    "method_id": "alra",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 269,
+      "duration_sec": 970,
       "cpu_pct": "NA",
       "peak_memory_mb": "NA",
       "disk_read_mb": "NA",
@@ -1772,7 +2140,7 @@
   },
   {
     "dataset_id": "cellxgene_census/hcla",
-    "method_id": "dca",
+    "method_id": "magic",
     "metric_values": {
       "mse": "NA",
       "poisson": "NA"
@@ -1784,146 +2152,8 @@
     "mean_score": 0,
     "normalization_id": "log_cp10k",
     "resources": {
-      "exit_code": 137,
-      "duration_sec": 210,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/tabula_sapiens",
-    "method_id": "dca",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 230,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/immune_cell_atlas",
-    "method_id": "perfect_denoising",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 180,
-      "cpu_pct": 92.1,
-      "peak_memory_mb": 11162,
-      "disk_read_mb": 8295,
-      "disk_write_mb": 1639
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
-    "method_id": "knn_smoothing",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 290,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/hcla",
-    "method_id": "alra",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 309,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/tabula_sapiens",
-    "method_id": "alra",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 329,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
-    "method_id": "alra",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 350,
+      "exit_code": "NA",
+      "duration_sec": 21819,
       "cpu_pct": "NA",
       "peak_memory_mb": "NA",
       "disk_read_mb": "NA",
@@ -1933,7 +2163,7 @@
   },
   {
     "dataset_id": "cellxgene_census/hypomap",
-    "method_id": "perfect_denoising",
+    "method_id": "magic",
     "metric_values": {
       "mse": "NA",
       "poisson": "NA"
@@ -1945,18 +2175,18 @@
     "mean_score": 0,
     "normalization_id": "log_cp10k",
     "resources": {
-      "exit_code": 0,
-      "duration_sec": 235,
-      "cpu_pct": 89.3,
-      "peak_memory_mb": 13415,
-      "disk_read_mb": 10445,
-      "disk_write_mb": 2048
+      "exit_code": "NA",
+      "duration_sec": 21719,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
     },
     "task_id": "denoising"
   },
   {
-    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
-    "method_id": "perfect_denoising",
+    "dataset_id": "cellxgene_census/tabula_sapiens",
+    "method_id": "magic",
     "metric_values": {
       "mse": "NA",
       "poisson": "NA"
@@ -1968,17 +2198,17 @@
     "mean_score": 0,
     "normalization_id": "log_cp10k",
     "resources": {
-      "exit_code": 0,
-      "duration_sec": 256,
-      "cpu_pct": 91.4,
-      "peak_memory_mb": 14336,
-      "disk_read_mb": 11367,
-      "disk_write_mb": 2253
+      "exit_code": "NA",
+      "duration_sec": 21729,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
     },
     "task_id": "denoising"
   },
   {
-    "dataset_id": "cellxgene_census/immune_cell_atlas",
+    "dataset_id": "cellxgene_census/hcla",
     "method_id": "no_denoising",
     "metric_values": {
       "mse": "NA",
@@ -1992,130 +2222,38 @@
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 390,
-      "cpu_pct": 70.2,
-      "peak_memory_mb": 9728,
-      "disk_read_mb": 6861,
-      "disk_write_mb": 2663
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/hypomap",
-    "method_id": "no_denoising",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 430,
-      "cpu_pct": 84.7,
-      "peak_memory_mb": 11776,
-      "disk_read_mb": 8909,
-      "disk_write_mb": 3482
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/hcla",
-    "method_id": "perfect_denoising",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 330,
-      "cpu_pct": 91.8,
+      "duration_sec": 555,
+      "cpu_pct": 88.4,
       "peak_memory_mb": 17920,
-      "disk_read_mb": 14951,
-      "disk_write_mb": 2970
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/tabula_sapiens",
-    "method_id": "perfect_denoising",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 440,
-      "cpu_pct": 97.6,
-      "peak_memory_mb": 20071,
-      "disk_read_mb": 17101,
-      "disk_write_mb": 3482
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
-    "method_id": "no_denoising",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 434,
-      "cpu_pct": 86.5,
-      "peak_memory_mb": 12288,
-      "disk_read_mb": 9319,
-      "disk_write_mb": 3789
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/hcla",
-    "method_id": "no_denoising",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 525,
-      "cpu_pct": 93.8,
-      "peak_memory_mb": 15258,
       "disk_read_mb": 12288,
       "disk_write_mb": 4916
     },
     "task_id": "denoising"
   },
   {
+    "dataset_id": "cellxgene_census/hypomap",
+    "method_id": "no_denoising",
+    "metric_values": {
+      "mse": "NA",
+      "poisson": "NA"
+    },
+    "scaled_scores": {
+      "mse": 0,
+      "poisson": 0
+    },
+    "mean_score": 0,
+    "normalization_id": "log_cp10k",
+    "resources": {
+      "exit_code": 0,
+      "duration_sec": 362,
+      "cpu_pct": 96.8,
+      "peak_memory_mb": 14541,
+      "disk_read_mb": 8909,
+      "disk_write_mb": 3482
+    },
+    "task_id": "denoising"
+  },
+  {
     "dataset_id": "cellxgene_census/tabula_sapiens",
     "method_id": "no_denoising",
     "metric_values": {
@@ -2130,17 +2268,17 @@
     "normalization_id": "log_cp10k",
     "resources": {
       "exit_code": 0,
-      "duration_sec": 620,
-      "cpu_pct": 95.8,
-      "peak_memory_mb": 16692,
+      "duration_sec": 595,
+      "cpu_pct": 93,
+      "peak_memory_mb": 19354,
       "disk_read_mb": 13722,
       "disk_write_mb": 5530
     },
     "task_id": "denoising"
   },
   {
-    "dataset_id": "cellxgene_census/gtex_v9",
-    "method_id": "dca",
+    "dataset_id": "cellxgene_census/hcla",
+    "method_id": "perfect_denoising",
     "metric_values": {
       "mse": "NA",
       "poisson": "NA"
@@ -2152,64 +2290,18 @@
     "mean_score": 0,
     "normalization_id": "log_cp10k",
     "resources": {
-      "exit_code": 137,
-      "duration_sec": 3701,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/gtex_v9",
-    "method_id": "alra",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 6111,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/immune_cell_atlas",
-    "method_id": "magic",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 143,
-      "duration_sec": 14410,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
+      "exit_code": 0,
+      "duration_sec": 345,
+      "cpu_pct": 89.7,
+      "peak_memory_mb": 20583,
+      "disk_read_mb": 14951,
+      "disk_write_mb": 2970
     },
     "task_id": "denoising"
   },
   {
     "dataset_id": "cellxgene_census/hypomap",
-    "method_id": "magic",
+    "method_id": "perfect_denoising",
     "metric_values": {
       "mse": "NA",
       "poisson": "NA"
@@ -2221,41 +2313,18 @@
     "mean_score": 0,
     "normalization_id": "log_cp10k",
     "resources": {
-      "exit_code": 143,
-      "duration_sec": 14401,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
-    "method_id": "dca",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 137,
-      "duration_sec": 18761,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
+      "exit_code": 0,
+      "duration_sec": 243,
+      "cpu_pct": 100.8,
+      "peak_memory_mb": 16077,
+      "disk_read_mb": 10445,
+      "disk_write_mb": 2048
     },
     "task_id": "denoising"
   },
   {
     "dataset_id": "cellxgene_census/tabula_sapiens",
-    "method_id": "magic",
+    "method_id": "perfect_denoising",
     "metric_values": {
       "mse": "NA",
       "poisson": "NA"
@@ -2267,81 +2336,12 @@
     "mean_score": 0,
     "normalization_id": "log_cp10k",
     "resources": {
-      "exit_code": 143,
-      "duration_sec": 19270,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/gtex_v9",
-    "method_id": "magic",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": "NA",
-      "duration_sec": 23160,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
-    "method_id": "magic",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": "NA",
-      "duration_sec": 23101,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
-    },
-    "task_id": "denoising"
-  },
-  {
-    "dataset_id": "cellxgene_census/hcla",
-    "method_id": "magic",
-    "metric_values": {
-      "mse": "NA",
-      "poisson": "NA"
-    },
-    "scaled_scores": {
-      "mse": 0,
-      "poisson": 0
-    },
-    "mean_score": 0,
-    "normalization_id": "log_cp10k",
-    "resources": {
-      "exit_code": 143,
-      "duration_sec": 30361,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
+      "exit_code": 0,
+      "duration_sec": 374,
+      "cpu_pct": 94.4,
+      "peak_memory_mb": 22733,
+      "disk_read_mb": 17101,
+      "disk_write_mb": 3482
     },
     "task_id": "denoising"
   }
