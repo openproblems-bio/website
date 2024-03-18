@@ -4,6 +4,10 @@
 
 * Update Dimensionality Reduction task to OpenProblems v2 results (PR #326).
 
+## MINOR CHANGES
+
+* Improve Equations visualisation (PR #329).
+
 # openproblems.bio v2.3.6
 
 ## NEW CONTENT
