@@ -29,20 +29,17 @@ label_memory <- function(x, include_mb = FALSE) {
 
 overall <- results_long %>%
   group_by(method_id) %>%
-  summarise(mean_score = mean(score %|% 0), .groups = "drop") %>%
-  mutate(mean_score = pmin(1, pmax(mean_score, 0))) %>%
+  summarise(mean_score = aggregate_scores(score), .groups = "drop") %>%
   arrange(mean_score)
 per_dataset <- results_long %>%
   group_by(method_id, dataset_id) %>%
-  summarise(score = mean(score %|% 0), .groups = "drop") %>%
+  summarise(score = aggregate_scores(score), .groups = "drop") %>%
   mutate(dataset_id = paste0("dataset_", dataset_id)) %>%
-  mutate(score = pmin(1, pmax(score, 0))) %>%
   spread(dataset_id, score)
 per_metric <- results_long %>%
   group_by(method_id, metric_id) %>%
-  summarise(score = mean(score %|% 0), .groups = "drop") %>%
+  summarise(score = aggregate_scores(score), .groups = "drop") %>%
   mutate(metric_id = paste0("metric_", metric_id)) %>%
-  mutate(score = pmin(1, pmax(score, 0))) %>%
   spread(metric_id, score)
 
 results_resources <- results %>%
@@ -52,7 +49,7 @@ results_resources <- results %>%
 # exit code is missing from openproblems-v1
 if (! "exit_code" %in% colnames(results_resources)) {
   results_resources <- results_resources %>%
-    mutate(exit_code = ifelse(is.na(duration_sec), 1, 0))
+    mutate(exit_code = ifelse(is.na(duration_sec), 1L, 0L))
 }
 
 resources <- results_resources %>%
@@ -89,7 +86,7 @@ summary_all <-
   method_info %>%
   filter(!is_baseline) %>%
   select(method_id, method_name) %>%
-  left_join(overall, by = "method_id") %>%
+  inner_join(overall, by = "method_id") %>%
   left_join(per_dataset, by = "method_id") %>%
   left_join(per_metric, by = "method_id") %>%
   left_join(resources, by = "method_id") %>%
@@ -208,13 +205,17 @@ ojs_define(
 )
 ```
 
+```{ojs}
+console.log(funky_heatmap_args.data)
+```
+
 
 ```{ojs}
 //| echo: false
 //| panel: input
 //| layout-ncol: 2
 viewof color_by_rank = Inputs.toggle({label: "Color by rank", value: true})
-viewof scale_column = Inputs.toggle({label: "Minmax column", value: true})
+viewof scale_column = Inputs.toggle({label: "Minmax column", value: false})
 ```
 
 ```{ojs}

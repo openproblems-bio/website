@@ -51,6 +51,10 @@ split_cite_fun <- function(keys) {
   # paste0("[", paste(inner_str, collapse = ", "), "]")
   paste0("[@", paste(refs, collapse = "; @"), "]")
 }
+
+aggregate_scores <- function(scaled_score) {
+  mean(pmin(1, pmax(0, scaled_score)) %|% 0)
+}
 ```
 
 
@@ -74,7 +78,7 @@ results_long <-
 
 overall_ranking <- results_long %>%
   group_by(method_id) %>%
-  summarise(mean_score = mean(score %|% 0)) %>%
+  summarise(mean_score = aggregate_scores(score)) %>%
   arrange(desc(mean_score))
 
 # order by ranking
