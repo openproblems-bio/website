@@ -27,22 +27,23 @@ label_memory <- function(x, include_mb = FALSE) {
   )
 }
 
+aggregate_scores <- function(scaled_score) {
+  mean(pmin(1, pmax(0, scaled_score)) %|% 0)
+}
+
 overall <- results_long %>%
   group_by(method_id) %>%
-  summarise(mean_score = mean(score %|% 0), .groups = "drop") %>%
-  mutate(mean_score = pmin(1, pmax(mean_score, 0))) %>%
+  summarise(mean_score = aggregate_scores(score), .groups = "drop") %>%
   arrange(mean_score)
 per_dataset <- results_long %>%
   group_by(method_id, dataset_id) %>%
-  summarise(score = mean(score %|% 0), .groups = "drop") %>%
+  summarise(score = aggregate_scores(score), .groups = "drop") %>%
   mutate(dataset_id = paste0("dataset_", dataset_id)) %>%
-  mutate(score = pmin(1, pmax(score, 0))) %>%
   spread(dataset_id, score)
 per_metric <- results_long %>%
   group_by(method_id, metric_id) %>%
-  summarise(score = mean(score %|% 0), .groups = "drop") %>%
+  summarise(score = aggregate_scores(score), .groups = "drop") %>%
   mutate(metric_id = paste0("metric_", metric_id)) %>%
-  mutate(score = pmin(1, pmax(score, 0))) %>%
   spread(metric_id, score)
 
 results_resources <- results %>%
