@@ -7,7 +7,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r raw_results, echo=FALSE, dev="svg", dev.args=list(bg="transparent")}
-ggplot(results_long %>% arrange(method_id)) +
+ggplot(results_long %>% arrange(method_id) %>% mutate(score = ifelse(score > 2, Inf, ifelse(score < -1, -Inf, score)))) +
   geom_vline(aes(xintercept = x), tibble(x = c(0, 1)), linetype = "dashed", alpha = .7, colour = "black") +
   geom_path(aes(score, method_id, group = dataset_id), alpha = .25) +
   geom_point(aes(score, method_id, colour = is_baseline)) +
