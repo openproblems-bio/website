@@ -332,16 +332,6 @@
     {
         "task_id": "match_modalities", 
         "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1_multimodal/scicar_cell_lines' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: match_modalities\n  dataset id: openproblems_v1_multimodal/scicar_cell_lines\n  Percentage missing: 0%\n"
-    }, 
-    {
-        "task_id": "match_modalities", 
-        "category": "Raw results", 
         "name": "Dataset 'openproblems_v1_multimodal/scicar_mouse_kidney' %missing", 
         "value": 0.0, 
         "severity": 0, 
@@ -361,6 +351,16 @@
     }, 
     {
         "task_id": "match_modalities", 
+        "category": "Raw results", 
+        "name": "Dataset 'openproblems_v1_multimodal/scicar_cell_lines' %missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: match_modalities\n  dataset id: openproblems_v1_multimodal/scicar_cell_lines\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Worst score random_features knn_auc", 
         "value": 0, 
@@ -373,21 +373,21 @@
         "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Best score random_features knn_auc", 
-        "value": 1, 
+        "value": 0, 
         "severity": 0, 
-        "severity_value": 0.5, 
+        "severity_value": 0.0, 
         "code": "best_score <= 2", 
-        "message": "Method random_features performs a lot better than baselines.\n  Task id: match_modalities\n  Method id: random_features\n  Metric id: knn_auc\n  Best score: 1%\n"
+        "message": "Method random_features performs a lot better than baselines.\n  Task id: match_modalities\n  Method id: random_features\n  Metric id: knn_auc\n  Best score: 0%\n"
     }, 
     {
         "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Worst score true_features knn_auc", 
-        "value": 0, 
+        "value": 1, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -1.0, 
         "code": "worst_score >= -1", 
-        "message": "Method true_features performs much worse than baselines.\n  Task id: match_modalities\n  Method id: true_features\n  Metric id: knn_auc\n  Worst score: 0%\n"
+        "message": "Method true_features performs much worse than baselines.\n  Task id: match_modalities\n  Method id: true_features\n  Metric id: knn_auc\n  Worst score: 1%\n"
     }, 
     {
         "task_id": "match_modalities", 
@@ -403,81 +403,81 @@
         "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Worst score scot knn_auc", 
-        "value": -0.1298, 
+        "value": -0.0248, 
         "severity": 0, 
-        "severity_value": 0.1298, 
+        "severity_value": 0.0248, 
         "code": "worst_score >= -1", 
-        "message": "Method scot performs much worse than baselines.\n  Task id: match_modalities\n  Method id: scot\n  Metric id: knn_auc\n  Worst score: -0.1298%\n"
+        "message": "Method scot performs much worse than baselines.\n  Task id: match_modalities\n  Method id: scot\n  Metric id: knn_auc\n  Worst score: -0.0248%\n"
     }, 
     {
         "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Best score scot knn_auc", 
-        "value": 1.2458, 
+        "value": 0.0528, 
         "severity": 0, 
-        "severity_value": 0.6229, 
+        "severity_value": 0.0264, 
         "code": "best_score <= 2", 
-        "message": "Method scot performs a lot better than baselines.\n  Task id: match_modalities\n  Method id: scot\n  Metric id: knn_auc\n  Best score: 1.2458%\n"
+        "message": "Method scot performs a lot better than baselines.\n  Task id: match_modalities\n  Method id: scot\n  Metric id: knn_auc\n  Best score: 0.0528%\n"
     }, 
     {
         "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Worst score harmonic_alignment knn_auc", 
-        "value": -7.8462, 
-        "severity": 3, 
-        "severity_value": 7.8462, 
+        "value": -0.0052, 
+        "severity": 0, 
+        "severity_value": 0.0052, 
         "code": "worst_score >= -1", 
-        "message": "Method harmonic_alignment performs much worse than baselines.\n  Task id: match_modalities\n  Method id: harmonic_alignment\n  Metric id: knn_auc\n  Worst score: -7.8462%\n"
+        "message": "Method harmonic_alignment performs much worse than baselines.\n  Task id: match_modalities\n  Method id: harmonic_alignment\n  Metric id: knn_auc\n  Worst score: -0.0052%\n"
     }, 
     {
         "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Best score harmonic_alignment knn_auc", 
-        "value": 0.7456, 
+        "value": 0.0201, 
         "severity": 0, 
-        "severity_value": 0.3728, 
+        "severity_value": 0.01005, 
         "code": "best_score <= 2", 
-        "message": "Method harmonic_alignment performs a lot better than baselines.\n  Task id: match_modalities\n  Method id: harmonic_alignment\n  Metric id: knn_auc\n  Best score: 0.7456%\n"
+        "message": "Method harmonic_alignment performs a lot better than baselines.\n  Task id: match_modalities\n  Method id: harmonic_alignment\n  Metric id: knn_auc\n  Best score: 0.0201%\n"
     }, 
     {
         "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Worst score fastmnn knn_auc", 
-        "value": -6.5863, 
-        "severity": 3, 
-        "severity_value": 6.5863, 
+        "value": -0.0147, 
+        "severity": 0, 
+        "severity_value": 0.0147, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn performs much worse than baselines.\n  Task id: match_modalities\n  Method id: fastmnn\n  Metric id: knn_auc\n  Worst score: -6.5863%\n"
+        "message": "Method fastmnn performs much worse than baselines.\n  Task id: match_modalities\n  Method id: fastmnn\n  Metric id: knn_auc\n  Worst score: -0.0147%\n"
     }, 
     {
         "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Best score fastmnn knn_auc", 
-        "value": 0.6265, 
+        "value": 0.0274, 
         "severity": 0, 
-        "severity_value": 0.31325, 
+        "severity_value": 0.0137, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn performs a lot better than baselines.\n  Task id: match_modalities\n  Method id: fastmnn\n  Metric id: knn_auc\n  Best score: 0.6265%\n"
+        "message": "Method fastmnn performs a lot better than baselines.\n  Task id: match_modalities\n  Method id: fastmnn\n  Metric id: knn_auc\n  Best score: 0.0274%\n"
     }, 
     {
         "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Worst score procrustes knn_auc", 
-        "value": 2.9564, 
+        "value": -0.011, 
         "severity": 0, 
-        "severity_value": -2.9564, 
+        "severity_value": 0.011, 
         "code": "worst_score >= -1", 
-        "message": "Method procrustes performs much worse than baselines.\n  Task id: match_modalities\n  Method id: procrustes\n  Metric id: knn_auc\n  Worst score: 2.9564%\n"
+        "message": "Method procrustes performs much worse than baselines.\n  Task id: match_modalities\n  Method id: procrustes\n  Metric id: knn_auc\n  Worst score: -0.011%\n"
     }, 
     {
         "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Best score procrustes knn_auc", 
-        "value": 5.7299, 
-        "severity": 2, 
-        "severity_value": 2.86495, 
+        "value": 0.0432, 
+        "severity": 0, 
+        "severity_value": 0.0216, 
         "code": "best_score <= 2", 
-        "message": "Method procrustes performs a lot better than baselines.\n  Task id: match_modalities\n  Method id: procrustes\n  Metric id: knn_auc\n  Best score: 5.7299%\n"
+        "message": "Method procrustes performs a lot better than baselines.\n  Task id: match_modalities\n  Method id: procrustes\n  Metric id: knn_auc\n  Best score: 0.0432%\n"
     }, 
     {
         "task_id": "match_modalities", 
@@ -523,80 +523,80 @@
         "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Worst score scot mse", 
-        "value": -0.2718, 
+        "value": -0.2218, 
         "severity": 0, 
-        "severity_value": 0.2718, 
+        "severity_value": 0.2218, 
         "code": "worst_score >= -1", 
-        "message": "Method scot performs much worse than baselines.\n  Task id: match_modalities\n  Method id: scot\n  Metric id: mse\n  Worst score: -0.2718%\n"
+        "message": "Method scot performs much worse than baselines.\n  Task id: match_modalities\n  Method id: scot\n  Metric id: mse\n  Worst score: -0.2218%\n"
     }, 
     {
         "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Best score scot mse", 
-        "value": 0.1444, 
+        "value": 0.1505, 
         "severity": 0, 
-        "severity_value": 0.0722, 
+        "severity_value": 0.07525, 
         "code": "best_score <= 2", 
-        "message": "Method scot performs a lot better than baselines.\n  Task id: match_modalities\n  Method id: scot\n  Metric id: mse\n  Best score: 0.1444%\n"
+        "message": "Method scot performs a lot better than baselines.\n  Task id: match_modalities\n  Method id: scot\n  Metric id: mse\n  Best score: 0.1505%\n"
     }, 
     {
         "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Worst score harmonic_alignment mse", 
-        "value": -0.0143, 
+        "value": -0.0029, 
         "severity": 0, 
-        "severity_value": 0.0143, 
+        "severity_value": 0.0029, 
         "code": "worst_score >= -1", 
-        "message": "Method harmonic_alignment performs much worse than baselines.\n  Task id: match_modalities\n  Method id: harmonic_alignment\n  Metric id: mse\n  Worst score: -0.0143%\n"
+        "message": "Method harmonic_alignment performs much worse than baselines.\n  Task id: match_modalities\n  Method id: harmonic_alignment\n  Metric id: mse\n  Worst score: -0.0029%\n"
     }, 
     {
         "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Best score harmonic_alignment mse", 
-        "value": 0.0037, 
+        "value": 0.0143, 
         "severity": 0, 
-        "severity_value": 0.00185, 
+        "severity_value": 0.00715, 
         "code": "best_score <= 2", 
-        "message": "Method harmonic_alignment performs a lot better than baselines.\n  Task id: match_modalities\n  Method id: harmonic_alignment\n  Metric id: mse\n  Best score: 0.0037%\n"
+        "message": "Method harmonic_alignment performs a lot better than baselines.\n  Task id: match_modalities\n  Method id: harmonic_alignment\n  Metric id: mse\n  Best score: 0.0143%\n"
     }, 
     {
         "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Worst score fastmnn mse", 
-        "value": -0.1897, 
+        "value": -0.158, 
         "severity": 0, 
-        "severity_value": 0.1897, 
+        "severity_value": 0.158, 
         "code": "worst_score >= -1", 
-        "message": "Method fastmnn performs much worse than baselines.\n  Task id: match_modalities\n  Method id: fastmnn\n  Metric id: mse\n  Worst score: -0.1897%\n"
+        "message": "Method fastmnn performs much worse than baselines.\n  Task id: match_modalities\n  Method id: fastmnn\n  Metric id: mse\n  Worst score: -0.158%\n"
     }, 
     {
         "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Best score fastmnn mse", 
-        "value": 0.0563, 
+        "value": 0.0514, 
         "severity": 0, 
-        "severity_value": 0.02815, 
+        "severity_value": 0.0257, 
         "code": "best_score <= 2", 
-        "message": "Method fastmnn performs a lot better than baselines.\n  Task id: match_modalities\n  Method id: fastmnn\n  Metric id: mse\n  Best score: 0.0563%\n"
+        "message": "Method fastmnn performs a lot better than baselines.\n  Task id: match_modalities\n  Method id: fastmnn\n  Metric id: mse\n  Best score: 0.0514%\n"
     }, 
     {
         "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Worst score procrustes mse", 
-        "value": -0.0198, 
+        "value": -0.0095, 
         "severity": 0, 
-        "severity_value": 0.0198, 
+        "severity_value": 0.0095, 
         "code": "worst_score >= -1", 
-        "message": "Method procrustes performs much worse than baselines.\n  Task id: match_modalities\n  Method id: procrustes\n  Metric id: mse\n  Worst score: -0.0198%\n"
+        "message": "Method procrustes performs much worse than baselines.\n  Task id: match_modalities\n  Method id: procrustes\n  Metric id: mse\n  Worst score: -0.0095%\n"
     }, 
     {
         "task_id": "match_modalities", 
         "category": "Scaling", 
         "name": "Best score procrustes mse", 
-        "value": 0.0026, 
+        "value": 0.009, 
         "severity": 0, 
-        "severity_value": 0.0013, 
+        "severity_value": 0.0045, 
         "code": "best_score <= 2", 
-        "message": "Method procrustes performs a lot better than baselines.\n  Task id: match_modalities\n  Method id: procrustes\n  Metric id: mse\n  Best score: 0.0026%\n"
+        "message": "Method procrustes performs a lot better than baselines.\n  Task id: match_modalities\n  Method id: procrustes\n  Metric id: mse\n  Best score: 0.009%\n"
     }
 ]
