@@ -1,6 +1,12 @@
 # openproblems.bio unreleased
 
+## MAJOR CHANGES
+
+* Update Matching Modalities task to OpenProblems v2 results (PR #328).
+
 ## MINOR CHANGES
+
+* Update Mathing Modalities task name to Match Modalities (PR #328).
 
 * Improve Equations visualisation (PR #329).
 
