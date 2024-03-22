@@ -58,11 +58,11 @@ aggregate_scores <- function(scaled_score) {
 
 
 ojs_define(
-  task_info = jsonlite::read_json(paste0(params$data_dir, "/task_info.json"), simplifyVector = FALSE),
-  dataset_info = jsonlite::read_json(paste0(params$data_dir, "/dataset_info.json"), simplifyVector = FALSE),
-  method_info = jsonlite::read_json(paste0(params$data_dir, "/method_info.json"), simplifyVector = FALSE),
-  metric_info = jsonlite::read_json(paste0(params$data_dir, "/metric_info.json"), simplifyVector = FALSE),
-  results = jsonlite::read_json(paste0(params$data_dir, "/results.json"), simplifyVector = FALSE)
+  task_info = jsonlite::read_json(paste0(params$data_dir, "/task_info.json")),
+  dataset_info = jsonlite::read_json(paste0(params$data_dir, "/dataset_info.json")),
+  method_info = jsonlite::read_json(paste0(params$data_dir, "/method_info.json")),
+  metric_info = jsonlite::read_json(paste0(params$data_dir, "/metric_info.json")),
+  results = jsonlite::read_json(paste0(params$data_dir, "/results.json"))
 )
 ```
 
