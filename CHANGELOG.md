@@ -1,5 +1,9 @@
 # openproblems.bio unreleased
 
+## MAJOR CHANGES
+
+* Update Dimensionality Reduction task to OpenProblems v2 results (PR #326).
+
 ## MINOR CHANGES
 
 * Improve Equations visualisation (PR #329).
