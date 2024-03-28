@@ -1,5 +1,9 @@
 # openproblems.bio unreleased
 
+## MAJOR CHANGES
+
+* Update Batch Integration task to OpenProblems v2 results (PR #324).
+
 ## MINOR CHANGES
 
 * Improve Equations visualisation (PR #329).
