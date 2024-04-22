@@ -12,70 +12,6 @@ poss_metric_ids = metric_info
   .filter(d => results.map(r => Object.keys(r.scaled_scores)).flat().includes(d))
 ```
 
-<div class="cell panel-input card bg-light">
-<details><summary>Display settings</summary>
-
-```{ojs}
-//| echo: false
-
-viewof color_by_rank = Inputs.toggle({label: "Color by rank:", value: true})
-viewof scale_column = Inputs.toggle({label: "Minmax column:", value: false})
-viewof show_con = Inputs.toggle({label: "Show control methods:", value: false})
-```
-
-</details>
-
-<details><summary>Filter datasets</summary>
-
-```{ojs}
-//| echo: false
-viewof dataset_ids = Inputs.checkbox(
-  dataset_info.filter(d => poss_dataset_ids.includes(d.dataset_id)),
-  {
-    keyof: d => d.dataset_name,
-    valueof: d => d.dataset_id,
-    value: dataset_info.map(d => d.dataset_id),
-    label: "Datasets:"
-  }
-)
-```
-
-</details>
-
-<details><summary>Filter methods</summary>
-
-```{ojs}
-//| echo: false
-viewof method_ids = Inputs.checkbox(
-  method_info.filter(d => poss_method_ids.includes(d.method_id)),
-  {
-    keyof: d => d.method_name,
-    valueof: d => d.method_id,
-    value: method_info.map(d => d.method_id),
-    label: "Methods:"
-  }
-)
-```
-
-</details>
-
-<details><summary>Filter metrics</summary>
-
-```{ojs}
-//| echo: false
-viewof metric_ids = Inputs.checkbox(
-  metric_info.filter(d => poss_metric_ids.includes(d.metric_id)),
-  {
-    keyof: d => d.metric_name,
-    valueof: d => d.metric_id,
-    value: metric_info.map(d => d.metric_id),
-    label: "Metrics:"
-  }
-)
-```
-
-</details>
-</div>
 
 ```{ojs}
 //| echo: false
@@ -251,7 +187,6 @@ palettes = [
     }
   }
 ][0]
-
 ```
 
 ```{ojs}
@@ -283,6 +218,71 @@ funkyheatmap(
 );
 ```
 
+
+<div class="cell panel-input card bg-light">
+<details><summary>Display settings</summary>
+
+```{ojs}
+//| echo: false
+
+viewof color_by_rank = Inputs.toggle({label: "Color by rank:", value: true})
+viewof scale_column = Inputs.toggle({label: "Minmax column:", value: false})
+viewof show_con = Inputs.toggle({label: "Show control methods:", value: false})
+```
+
+</details>
+
+<details><summary>Filter datasets</summary>
+
+```{ojs}
+//| echo: false
+viewof dataset_ids = Inputs.checkbox(
+  dataset_info.filter(d => poss_dataset_ids.includes(d.dataset_id)),
+  {
+    keyof: d => d.dataset_name,
+    valueof: d => d.dataset_id,
+    value: dataset_info.map(d => d.dataset_id),
+    label: "Datasets:"
+  }
+)
+```
+
+</details>
+
+<details><summary>Filter methods</summary>
+
+```{ojs}
+//| echo: false
+viewof method_ids = Inputs.checkbox(
+  method_info.filter(d => poss_method_ids.includes(d.method_id)),
+  {
+    keyof: d => d.method_name,
+    valueof: d => d.method_id,
+    value: method_info.map(d => d.method_id),
+    label: "Methods:"
+  }
+)
+```
+
+</details>
+
+<details><summary>Filter metrics</summary>
+
+```{ojs}
+//| echo: false
+viewof metric_ids = Inputs.checkbox(
+  metric_info.filter(d => poss_metric_ids.includes(d.metric_id)),
+  {
+    keyof: d => d.metric_name,
+    valueof: d => d.metric_id,
+    value: metric_info.map(d => d.metric_id),
+    label: "Metrics:"
+  }
+)
+```
+
+</details>
+</div>
 
 ```{ojs}
 //| echo: false
