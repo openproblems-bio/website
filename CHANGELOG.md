@@ -4,6 +4,8 @@
 
 * Update Denoising task to OpenProblems v2 results (PR #325).
 
+* Migrated the result scaling from R to JavaScript to allow dynamically updating the results (PR #332).
+
 ## MINOR CHANGES
 
 * Improve Equations visualisation (PR #329).
