@@ -1,4 +1,17 @@
 
+```{ojs}
+//| echo: false
+poss_dataset_ids = dataset_info
+  .map(d => d.dataset_id)
+  .filter(d => results.map(r => r.dataset_id).includes(d))
+poss_method_ids = method_info
+  .map(d => d.method_id)
+  .filter(d => results.map(r => r.method_id).includes(d))
+poss_metric_ids = metric_info
+  .map(d => d.metric_id)
+  .filter(d => results.map(r => Object.keys(r.scaled_scores)).flat().includes(d))
+```
+
 <div class="cell panel-input card bg-light">
 <details><summary>Display settings</summary>
 
@@ -17,7 +30,7 @@ viewof show_con = Inputs.toggle({label: "Show control methods:", value: false})
 ```{ojs}
 //| echo: false
 viewof dataset_ids = Inputs.checkbox(
-  dataset_info,
+  dataset_info.filter(d => poss_dataset_ids.includes(d.dataset_id)),
   {
     keyof: d => d.dataset_name,
     valueof: d => d.dataset_id,
@@ -34,7 +47,7 @@ viewof dataset_ids = Inputs.checkbox(
 ```{ojs}
 //| echo: false
 viewof method_ids = Inputs.checkbox(
-  method_info,
+  method_info.filter(d => poss_method_ids.includes(d.method_id)),
   {
     keyof: d => d.method_name,
     valueof: d => d.method_id,
@@ -51,7 +64,7 @@ viewof method_ids = Inputs.checkbox(
 ```{ojs}
 //| echo: false
 viewof metric_ids = Inputs.checkbox(
-  metric_info,
+  metric_info.filter(d => poss_metric_ids.includes(d.metric_id)),
   {
     keyof: d => d.metric_name,
     valueof: d => d.metric_id,
@@ -107,7 +120,10 @@ function label_memory(x_mb, include_mb = true) {
 }
 
 function aggregate_scores(obj) {
-  return d3.mean(obj.map(val => Math.min(1, Math.max(0, val.score))));
+  return d3.mean(obj.map(val => {
+    if (val.score === undefined || isNaN(val.score)) return 0;
+    return Math.min(1, Math.max(0, val.score))
+  }));
 }
 
 function mean_na_rm(x) {
