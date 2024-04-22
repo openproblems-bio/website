@@ -4,6 +4,8 @@
 
 * Update Matching Modalities task to OpenProblems v2 results (PR #328).
 
+* Migrated the result scaling from R to JavaScript to allow dynamically updating the results (PR #332).
+
 ## MINOR CHANGES
 
 * Update Mathing Modalities task name to Match Modalities (PR #328).
