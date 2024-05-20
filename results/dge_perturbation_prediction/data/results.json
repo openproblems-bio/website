@@ -1,31 +1,6 @@
 [
   {
     "dataset_id": "neurips-2023-data",
-    "method_id": "first_place",
-    "metric_values": {
-      "mean_cosine_sim": 0.3459,
-      "mean_rowwise_mae": 0.2794,
-      "mean_rowwise_rmse": 0.7459
-    },
-    "scaled_scores": {
-      "mean_cosine_sim": 0.3337,
-      "mean_rowwise_mae": 0.5245,
-      "mean_rowwise_rmse": 0.7337
-    },
-    "mean_score": 0.5307,
-    "normalization_id": null,
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 5891,
-      "cpu_pct": 127.4,
-      "peak_memory_mb": 66048,
-      "disk_read_mb": 2151,
-      "disk_write_mb": 1946
-    },
-    "task_id": "dge_perturbation_prediction"
-  },
-  {
-    "dataset_id": "neurips-2023-data",
     "method_id": "ground_truth",
     "metric_values": {
       "mean_cosine_sim": 1,
@@ -41,9 +16,9 @@
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 1.8,
-      "cpu_pct": 99.6,
-      "peak_memory_mb": 418,
+      "duration_sec": 6,
+      "cpu_pct": 30.6,
+      "peak_memory_mb": 5735,
       "disk_read_mb": 15,
       "disk_write_mb": 9
     },
@@ -58,19 +33,44 @@
       "mean_rowwise_rmse": 0.7999
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.3049,
-      "mean_rowwise_mae": 0.475,
-      "mean_rowwise_rmse": 0.7145
+      "mean_cosine_sim": 0.3052,
+      "mean_rowwise_mae": 0.4769,
+      "mean_rowwise_rmse": 0.7166
     },
-    "mean_score": 0.4981,
+    "mean_score": 0.4995,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 3481,
-      "cpu_pct": 100.2,
-      "peak_memory_mb": 14951,
+      "duration_sec": 3064,
+      "cpu_pct": 100.3,
+      "peak_memory_mb": 19968,
       "disk_read_mb": 60,
       "disk_write_mb": 8
+    },
+    "task_id": "dge_perturbation_prediction"
+  },
+  {
+    "dataset_id": "neurips-2023-data",
+    "method_id": "lstm_gru_cnn_ensemble",
+    "metric_values": {
+      "mean_cosine_sim": 0.3459,
+      "mean_rowwise_mae": 0.2794,
+      "mean_rowwise_rmse": 0.7459
+    },
+    "scaled_scores": {
+      "mean_cosine_sim": 0.334,
+      "mean_rowwise_mae": 0.5262,
+      "mean_rowwise_rmse": 0.7357
+    },
+    "mean_score": 0.532,
+    "normalization_id": null,
+    "resources": {
+      "exit_code": 0,
+      "duration_sec": 6022,
+      "cpu_pct": 128.7,
+      "peak_memory_mb": 89293,
+      "disk_read_mb": 2151,
+      "disk_write_mb": 1946
     },
     "task_id": "dge_perturbation_prediction"
   },
@@ -83,16 +83,16 @@
       "mean_rowwise_rmse": 1.1049
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.1739,
-      "mean_rowwise_mae": 0.2018,
-      "mean_rowwise_rmse": 0.6056
+      "mean_cosine_sim": 0.1743,
+      "mean_rowwise_mae": 0.2046,
+      "mean_rowwise_rmse": 0.6085
     },
-    "mean_score": 0.3271,
+    "mean_score": 0.3291,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 4.1,
-      "cpu_pct": 196.8,
+      "duration_sec": 4.2,
+      "cpu_pct": 194.1,
       "peak_memory_mb": 1844,
       "disk_read_mb": 33,
       "disk_write_mb": 2
@@ -108,17 +108,17 @@
       "mean_rowwise_rmse": 0.8606
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.263,
-      "mean_rowwise_mae": 0.4126,
-      "mean_rowwise_rmse": 0.6928
+      "mean_cosine_sim": 0.2633,
+      "mean_rowwise_mae": 0.4147,
+      "mean_rowwise_rmse": 0.6951
     },
-    "mean_score": 0.4561,
+    "mean_score": 0.4577,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 5.5,
-      "cpu_pct": 154.9,
-      "peak_memory_mb": 1536,
+      "duration_sec": 5.9,
+      "cpu_pct": 161.4,
+      "peak_memory_mb": 2868,
       "disk_read_mb": 33,
       "disk_write_mb": 6
     },
@@ -133,17 +133,17 @@
       "mean_rowwise_rmse": 0.9628
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.1259,
-      "mean_rowwise_mae": 0.3571,
-      "mean_rowwise_rmse": 0.6563
+      "mean_cosine_sim": 0.1262,
+      "mean_rowwise_mae": 0.3594,
+      "mean_rowwise_rmse": 0.6589
     },
-    "mean_score": 0.3798,
+    "mean_score": 0.3815,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 6.2,
-      "cpu_pct": 138.7,
-      "peak_memory_mb": 1536,
+      "duration_sec": 4.4,
+      "cpu_pct": 240.7,
+      "peak_memory_mb": 2868,
       "disk_read_mb": 33,
       "disk_write_mb": 2
     },
@@ -151,26 +151,26 @@
   },
   {
     "dataset_id": "neurips-2023-data",
-    "method_id": "random_forest",
+    "method_id": "nn_retraining_with_pseudolabels",
     "metric_values": {
-      "mean_cosine_sim": 0.2073,
-      "mean_rowwise_mae": 0.4479,
-      "mean_rowwise_rmse": 1.144
+      "mean_cosine_sim": 0.3942,
+      "mean_rowwise_mae": 0.2864,
+      "mean_rowwise_rmse": 0.7266
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.1925,
-      "mean_rowwise_mae": 0.2378,
-      "mean_rowwise_rmse": 0.5916
+      "mean_cosine_sim": 0.3831,
+      "mean_rowwise_mae": 0.5142,
+      "mean_rowwise_rmse": 0.7425
     },
-    "mean_score": 0.3406,
+    "mean_score": 0.5466,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 10.5,
-      "cpu_pct": 1891.8,
-      "peak_memory_mb": 110388,
-      "disk_read_mb": 26,
-      "disk_write_mb": 15
+      "duration_sec": 2742,
+      "cpu_pct": 1393.5,
+      "peak_memory_mb": 36045,
+      "disk_read_mb": 71,
+      "disk_write_mb": 11
     },
     "task_id": "dge_perturbation_prediction"
   },
@@ -178,9 +178,9 @@
     "dataset_id": "neurips-2023-data",
     "method_id": "sample",
     "metric_values": {
-      "mean_cosine_sim": 0.0183,
-      "mean_rowwise_mae": 0.5875,
-      "mean_rowwise_rmse": 2.8013
+      "mean_cosine_sim": 0.0179,
+      "mean_rowwise_mae": 0.5896,
+      "mean_rowwise_rmse": 2.8223
     },
     "scaled_scores": {
       "mean_cosine_sim": 0,
@@ -191,9 +191,9 @@
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 4.3,
-      "cpu_pct": 104.3,
-      "peak_memory_mb": 3380,
+      "duration_sec": 3.7,
+      "cpu_pct": 103.4,
+      "peak_memory_mb": 5940,
       "disk_read_mb": 16,
       "disk_write_mb": 8
     },
@@ -216,36 +216,11 @@
     "normalization_id": null,
     "resources": {
       "exit_code": 1,
-      "duration_sec": 5082,
+      "duration_sec": 7521,
       "cpu_pct": "NA",
       "peak_memory_mb": "NA",
       "disk_read_mb": "NA",
       "disk_write_mb": "NA"
-    },
-    "task_id": "dge_perturbation_prediction"
-  },
-  {
-    "dataset_id": "neurips-2023-data",
-    "method_id": "third_place",
-    "metric_values": {
-      "mean_cosine_sim": 0.3938,
-      "mean_rowwise_mae": 0.2874,
-      "mean_rowwise_rmse": 0.7302
-    },
-    "scaled_scores": {
-      "mean_cosine_sim": 0.3825,
-      "mean_rowwise_mae": 0.5108,
-      "mean_rowwise_rmse": 0.7393
-    },
-    "mean_score": 0.5442,
-    "normalization_id": null,
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 2306,
-      "cpu_pct": 715,
-      "peak_memory_mb": 22528,
-      "disk_read_mb": 71,
-      "disk_write_mb": 11
     },
     "task_id": "dge_perturbation_prediction"
   },
@@ -259,43 +234,18 @@
     },
     "scaled_scores": {
       "mean_cosine_sim": 0,
-      "mean_rowwise_mae": 0.5088,
-      "mean_rowwise_rmse": 0.683
+      "mean_rowwise_mae": 0.5105,
+      "mean_rowwise_rmse": 0.6853
     },
-    "mean_score": 0.3973,
+    "mean_score": 0.3986,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 5.9,
-      "cpu_pct": 152.7,
-      "peak_memory_mb": 1536,
+      "duration_sec": 4.9,
+      "cpu_pct": 207.6,
+      "peak_memory_mb": 2868,
       "disk_read_mb": 33,
       "disk_write_mb": 2
-    },
-    "task_id": "dge_perturbation_prediction"
-  },
-  {
-    "dataset_id": "neurips-2023-kaggle",
-    "method_id": "first_place",
-    "metric_values": {
-      "mean_cosine_sim": "NA",
-      "mean_rowwise_mae": "NA",
-      "mean_rowwise_rmse": "NA"
-    },
-    "scaled_scores": {
-      "mean_cosine_sim": 0,
-      "mean_rowwise_mae": 0,
-      "mean_rowwise_rmse": 0
-    },
-    "mean_score": 0,
-    "normalization_id": null,
-    "resources": {
-      "exit_code": 1,
-      "duration_sec": 29432,
-      "cpu_pct": "NA",
-      "peak_memory_mb": "NA",
-      "disk_read_mb": "NA",
-      "disk_write_mb": "NA"
     },
     "task_id": "dge_perturbation_prediction"
   },
@@ -317,7 +267,7 @@
     "resources": {
       "exit_code": 0,
       "duration_sec": 3.3,
-      "cpu_pct": 120.5,
+      "cpu_pct": 114.7,
       "peak_memory_mb": 3994,
       "disk_read_mb": 15,
       "disk_write_mb": 47
@@ -335,17 +285,42 @@
     "scaled_scores": {
       "mean_cosine_sim": 0.3361,
       "mean_rowwise_mae": 0.5046,
-      "mean_rowwise_rmse": 0.5565
+      "mean_rowwise_rmse": 0.5587
     },
-    "mean_score": 0.4657,
+    "mean_score": 0.4665,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 3252,
-      "cpu_pct": 100.3,
-      "peak_memory_mb": 16384,
+      "duration_sec": 3382,
+      "cpu_pct": 100.5,
+      "peak_memory_mb": 21402,
       "disk_read_mb": 132,
       "disk_write_mb": 34
+    },
+    "task_id": "dge_perturbation_prediction"
+  },
+  {
+    "dataset_id": "neurips-2023-kaggle",
+    "method_id": "lstm_gru_cnn_ensemble",
+    "metric_values": {
+      "mean_cosine_sim": "NA",
+      "mean_rowwise_mae": "NA",
+      "mean_rowwise_rmse": "NA"
+    },
+    "scaled_scores": {
+      "mean_cosine_sim": 0,
+      "mean_rowwise_mae": 0,
+      "mean_rowwise_rmse": 0
+    },
+    "mean_score": 0,
+    "normalization_id": null,
+    "resources": {
+      "exit_code": 1,
+      "duration_sec": 25361,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
     },
     "task_id": "dge_perturbation_prediction"
   },
@@ -360,15 +335,15 @@
     "scaled_scores": {
       "mean_cosine_sim": 0.2743,
       "mean_rowwise_mae": 0,
-      "mean_rowwise_rmse": 0.1724
+      "mean_rowwise_rmse": 0.1765
     },
-    "mean_score": 0.1489,
+    "mean_score": 0.1503,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 14.7,
-      "cpu_pct": 117.7,
-      "peak_memory_mb": 1639,
+      "duration_sec": 14.5,
+      "cpu_pct": 126.5,
+      "peak_memory_mb": 2048,
       "disk_read_mb": 106,
       "disk_write_mb": 7
     },
@@ -385,15 +360,15 @@
     "scaled_scores": {
       "mean_cosine_sim": 0.2208,
       "mean_rowwise_mae": 0.4537,
-      "mean_rowwise_rmse": 0.5138
+      "mean_rowwise_rmse": 0.5162
     },
-    "mean_score": 0.3961,
+    "mean_score": 0.3969,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 15.4,
-      "cpu_pct": 118.1,
-      "peak_memory_mb": 1639,
+      "duration_sec": 18.8,
+      "cpu_pct": 106.5,
+      "peak_memory_mb": 3072,
       "disk_read_mb": 106,
       "disk_write_mb": 28
     },
@@ -410,15 +385,15 @@
     "scaled_scores": {
       "mean_cosine_sim": 0.2078,
       "mean_rowwise_mae": 0.4199,
-      "mean_rowwise_rmse": 0.4781
+      "mean_rowwise_rmse": 0.4807
     },
-    "mean_score": 0.3686,
+    "mean_score": 0.3695,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 18.2,
-      "cpu_pct": 121.5,
-      "peak_memory_mb": 2048,
+      "duration_sec": 18.8,
+      "cpu_pct": 129.2,
+      "peak_memory_mb": 2970,
       "disk_read_mb": 106,
       "disk_write_mb": 6
     },
@@ -426,26 +401,26 @@
   },
   {
     "dataset_id": "neurips-2023-kaggle",
-    "method_id": "random_forest",
+    "method_id": "nn_retraining_with_pseudolabels",
     "metric_values": {
-      "mean_cosine_sim": 0.3023,
-      "mean_rowwise_mae": 1.6468,
-      "mean_rowwise_rmse": 2.3973
+      "mean_cosine_sim": 0.4159,
+      "mean_rowwise_mae": 0.8262,
+      "mean_rowwise_rmse": 1.2861
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.2623,
-      "mean_rowwise_mae": 0.0573,
-      "mean_rowwise_rmse": 0.2054
+      "mean_cosine_sim": 0.3824,
+      "mean_rowwise_mae": 0.5271,
+      "mean_rowwise_rmse": 0.5758
     },
-    "mean_score": 0.175,
+    "mean_score": 0.4951,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 29.5,
-      "cpu_pct": 2792.5,
-      "peak_memory_mb": 173568,
-      "disk_read_mb": 56,
-      "disk_write_mb": 79
+      "duration_sec": 3994,
+      "cpu_pct": 1501.7,
+      "peak_memory_mb": 37479,
+      "disk_read_mb": 143,
+      "disk_write_mb": 52
     },
     "task_id": "dge_perturbation_prediction"
   },
@@ -454,19 +429,19 @@
     "method_id": "sample",
     "metric_values": {
       "mean_cosine_sim": 0.0543,
-      "mean_rowwise_mae": 1.4674,
-      "mean_rowwise_rmse": 3.0168
+      "mean_rowwise_mae": 1.4691,
+      "mean_rowwise_rmse": 3.0318
     },
     "scaled_scores": {
       "mean_cosine_sim": 0,
-      "mean_rowwise_mae": 0.16,
+      "mean_rowwise_mae": 0.1591,
       "mean_rowwise_rmse": 0
     },
-    "mean_score": 0.0533,
+    "mean_score": 0.053,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 25,
+      "duration_sec": 24.4,
       "cpu_pct": 103,
       "peak_memory_mb": 4301,
       "disk_read_mb": 16,
@@ -478,49 +453,24 @@
     "dataset_id": "neurips-2023-kaggle",
     "method_id": "scape",
     "metric_values": {
-      "mean_cosine_sim": 0.3907,
-      "mean_rowwise_mae": 0.8509,
-      "mean_rowwise_rmse": 1.3088
+      "mean_cosine_sim": 0.391,
+      "mean_rowwise_mae": 0.8505,
+      "mean_rowwise_rmse": 1.3083
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.3557,
-      "mean_rowwise_mae": 0.5129,
-      "mean_rowwise_rmse": 0.5661
+      "mean_cosine_sim": 0.356,
+      "mean_rowwise_mae": 0.5131,
+      "mean_rowwise_rmse": 0.5685
     },
-    "mean_score": 0.4783,
+    "mean_score": 0.4792,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 11335,
-      "cpu_pct": 959,
-      "peak_memory_mb": 53453,
+      "duration_sec": 12261,
+      "cpu_pct": 1522.9,
+      "peak_memory_mb": 67277,
       "disk_read_mb": 423,
-      "disk_write_mb": 111412
-    },
-    "task_id": "dge_perturbation_prediction"
-  },
-  {
-    "dataset_id": "neurips-2023-kaggle",
-    "method_id": "third_place",
-    "metric_values": {
-      "mean_cosine_sim": 0.4168,
-      "mean_rowwise_mae": 0.8251,
-      "mean_rowwise_rmse": 1.2865
-    },
-    "scaled_scores": {
-      "mean_cosine_sim": 0.3833,
-      "mean_rowwise_mae": 0.5277,
-      "mean_rowwise_rmse": 0.5736
-    },
-    "mean_score": 0.4949,
-    "normalization_id": null,
-    "resources": {
-      "exit_code": 0,
-      "duration_sec": 3424,
-      "cpu_pct": 840.5,
-      "peak_memory_mb": 24372,
-      "disk_read_mb": 143,
-      "disk_write_mb": 52
+      "disk_write_mb": 111616
     },
     "task_id": "dge_perturbation_prediction"
   },
@@ -535,17 +485,67 @@
     "scaled_scores": {
       "mean_cosine_sim": 0,
       "mean_rowwise_mae": 0.4434,
-      "mean_rowwise_rmse": 0.4799
+      "mean_rowwise_rmse": 0.4825
     },
-    "mean_score": 0.3078,
+    "mean_score": 0.3086,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 15.2,
-      "cpu_pct": 119.4,
-      "peak_memory_mb": 1639,
+      "duration_sec": 14.8,
+      "cpu_pct": 124.8,
+      "peak_memory_mb": 1946,
       "disk_read_mb": 106,
       "disk_write_mb": 6
+    },
+    "task_id": "dge_perturbation_prediction"
+  },
+  {
+    "dataset_id": "neurips-2023-data",
+    "method_id": "transformer_ensemble",
+    "metric_values": {
+      "mean_cosine_sim": "NA",
+      "mean_rowwise_rmse": "NA",
+      "mean_rowwise_mae": "NA"
+    },
+    "scaled_scores": {
+      "mean_cosine_sim": 0,
+      "mean_rowwise_rmse": 0,
+      "mean_rowwise_mae": 0
+    },
+    "mean_score": 0,
+    "normalization_id": null,
+    "resources": {
+      "exit_code": 143,
+      "duration_sec": 18471,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
+    },
+    "task_id": "dge_perturbation_prediction"
+  },
+  {
+    "dataset_id": "neurips-2023-kaggle",
+    "method_id": "transformer_ensemble",
+    "metric_values": {
+      "mean_cosine_sim": "NA",
+      "mean_rowwise_rmse": "NA",
+      "mean_rowwise_mae": "NA"
+    },
+    "scaled_scores": {
+      "mean_cosine_sim": 0,
+      "mean_rowwise_rmse": 0,
+      "mean_rowwise_mae": 0
+    },
+    "mean_score": 0,
+    "normalization_id": null,
+    "resources": {
+      "exit_code": 143,
+      "duration_sec": 14401,
+      "cpu_pct": "NA",
+      "peak_memory_mb": "NA",
+      "disk_read_mb": "NA",
+      "disk_write_mb": "NA"
     },
     "task_id": "dge_perturbation_prediction"
   }
