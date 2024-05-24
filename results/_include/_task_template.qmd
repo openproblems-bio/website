@@ -19,6 +19,13 @@ cat(
 ```
 
 
+[Task info](data/task_info.json){class="btn btn-secondary"}
+[Method info](data/method_info.json){class="btn btn-secondary"}
+[Metric info](data/metric_info.json){class="btn btn-secondary"}
+[Dataset info](data/dataset_info.json){class="btn btn-secondary"}
+[Results](data/results.json){class="btn btn-secondary"}
+
+
 `r task_info$task_motivation %|% ""`
 
 `r task_info$task_description %|% ""`
@@ -27,51 +34,53 @@ cat(
 
 {{< include ../_include/_summary_figure.qmd >}}
 
-## Metrics
-
-{{< include ../_include/_metric_descriptions.qmd >}}
-
 ## Results
 
 {{< include ../_include/_results_table.qmd >}}
 
-## Details
+## Dataset info
 
-<details><summary>Methods</summary>
-
-{{< include ../_include/_method_descriptions.qmd >}}
-
-</details>
-
-<details><summary>Baseline methods</summary>
-
-{{< include ../_include/_baseline_descriptions.qmd >}}
-
-</details>
-
-<details><summary>Datasets</summary>
+<details><summary>Show</summary>
 
 {{< include ../_include/_dataset_descriptions.qmd >}}
 
 </details>
 
-<details><summary>Quality control results</summary>
+## Method info
+
+<details><summary>Show</summary>
+
+{{< include ../_include/_method_descriptions.qmd >}}
+
+</details>
+
+## Control method info
+
+<details><summary>Show</summary>
+
+{{< include ../_include/_baseline_descriptions.qmd >}}
+
+</details>
+
+## Metric info
+
+<details><summary>Show</summary>
+
+{{< include ../_include/_metric_descriptions.qmd >}}
+
+</details>
+
+## Quality control results
+
+<details><summary>Show</summary>
 
 {{< include ../_include/_qc_table.qmd >}}
 
 </details>
 
-<details><summary>Raw results</summary>
+## Normalisation visualisation
 
-[Task info](data/task_info.json){class="btn btn-secondary"} 
-[Method info](data/method_info.json){class="btn btn-secondary"} 
-[Metric info](data/metric_info.json){class="btn btn-secondary"} 
-[Dataset info](data/dataset_info.json){class="btn btn-secondary"} 
-[Results](data/results.json){class="btn btn-secondary"}
-
-</details>
-
-<details><summary>Visualization of raw results</summary>
+<details><summary>Show</summary>
 
 {{< include ../_include/_scaling_figure.qmd >}}
 
