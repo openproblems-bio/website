@@ -247,7 +247,7 @@
         "severity": 0, 
         "severity_value": 0.0, 
         "code": "len(results) == len(method_info) * len(metric_info) * len(dataset_info)", 
-        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: dge_perturbation_prediction\n  Number of results: 24\n  Number of methods: 12\n  Number of metrics: 3\n  Number of datasets: 2\n"
+        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: dge_perturbation_prediction\n  Number of results: 24\n  Number of methods: 12\n  Number of metrics: 11\n  Number of datasets: 2\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
@@ -262,6 +262,26 @@
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Raw results", 
+        "name": "Metric 'mean_rowwise_rmse_clipped_05' %missing", 
+        "value": 0.04166666666666663, 
+        "severity": 0, 
+        "severity_value": 0.4166666666666663, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dge_perturbation_prediction\n  Metric id: mean_rowwise_rmse_clipped_05\n  Percentage missing: 4%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Raw results", 
+        "name": "Metric 'mean_rowwise_rmse_clipped_01' %missing", 
+        "value": 0.04166666666666663, 
+        "severity": 0, 
+        "severity_value": 0.4166666666666663, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dge_perturbation_prediction\n  Metric id: mean_rowwise_rmse_clipped_01\n  Percentage missing: 4%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Raw results", 
         "name": "Metric 'mean_rowwise_mae' %missing", 
         "value": 0.04166666666666663, 
         "severity": 0, 
@@ -272,12 +292,72 @@
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Raw results", 
+        "name": "Metric 'mean_rowwise_mae_clipped_05' %missing", 
+        "value": 0.04166666666666663, 
+        "severity": 0, 
+        "severity_value": 0.4166666666666663, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dge_perturbation_prediction\n  Metric id: mean_rowwise_mae_clipped_05\n  Percentage missing: 4%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Raw results", 
+        "name": "Metric 'mean_rowwise_mae_clipped_01' %missing", 
+        "value": 0.04166666666666663, 
+        "severity": 0, 
+        "severity_value": 0.4166666666666663, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dge_perturbation_prediction\n  Metric id: mean_rowwise_mae_clipped_01\n  Percentage missing: 4%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Raw results", 
         "name": "Metric 'mean_cosine_sim' %missing", 
         "value": 0.125, 
         "severity": 1, 
         "severity_value": 1.25, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: dge_perturbation_prediction\n  Metric id: mean_cosine_sim\n  Percentage missing: 12%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Raw results", 
+        "name": "Metric 'mean_cosine_sim_clipped_05' %missing", 
+        "value": 0.125, 
+        "severity": 1, 
+        "severity_value": 1.25, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dge_perturbation_prediction\n  Metric id: mean_cosine_sim_clipped_05\n  Percentage missing: 12%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Raw results", 
+        "name": "Metric 'mean_cosine_sim_clipped_01' %missing", 
+        "value": 0.125, 
+        "severity": 1, 
+        "severity_value": 1.25, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dge_perturbation_prediction\n  Metric id: mean_cosine_sim_clipped_01\n  Percentage missing: 12%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Raw results", 
+        "name": "Metric 'mean_pearson' %missing", 
+        "value": 0.125, 
+        "severity": 1, 
+        "severity_value": 1.25, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dge_perturbation_prediction\n  Metric id: mean_pearson\n  Percentage missing: 12%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Raw results", 
+        "name": "Metric 'mean_spearman' %missing", 
+        "value": 0.04166666666666663, 
+        "severity": 0, 
+        "severity_value": 0.4166666666666663, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dge_perturbation_prediction\n  Metric id: mean_spearman\n  Percentage missing: 4%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
@@ -333,11 +413,11 @@
         "task_id": "dge_perturbation_prediction", 
         "category": "Raw results", 
         "name": "Method 'zeros' %missing", 
-        "value": 0.33333333333333337, 
+        "value": 0.36363636363636365, 
         "severity": 3, 
-        "severity_value": 3.3333333333333335, 
+        "severity_value": 3.6363636363636362, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: dge_perturbation_prediction\n  method id: zeros\n  Percentage missing: 33%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: dge_perturbation_prediction\n  method id: zeros\n  Percentage missing: 36%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
@@ -403,9 +483,9 @@
         "task_id": "dge_perturbation_prediction", 
         "category": "Raw results", 
         "name": "Dataset 'neurips-2023-kaggle' %missing", 
-        "value": 0.11111111111111116, 
+        "value": 0.11363636363636365, 
         "severity": 1, 
-        "severity_value": 1.1111111111111116, 
+        "severity_value": 1.1363636363636365, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: dge_perturbation_prediction\n  dataset id: neurips-2023-kaggle\n  Percentage missing: 11%\n"
     }, 
@@ -413,9 +493,9 @@
         "task_id": "dge_perturbation_prediction", 
         "category": "Raw results", 
         "name": "Dataset 'neurips-2023-data' %missing", 
-        "value": 0.02777777777777779, 
+        "value": 0.030303030303030276, 
         "severity": 0, 
-        "severity_value": 0.2777777777777779, 
+        "severity_value": 0.30303030303030276, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: dge_perturbation_prediction\n  dataset id: neurips-2023-data\n  Percentage missing: 3%\n"
     }, 
@@ -443,11 +523,11 @@
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score mean_outcome mean_rowwise_rmse", 
-        "value": 0.4778, 
+        "value": 0.481, 
         "severity": 0, 
-        "severity_value": -0.4778, 
+        "severity_value": -0.481, 
         "code": "worst_score >= -1", 
-        "message": "Method mean_outcome performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_rowwise_rmse\n  Worst score: 0.4778%\n"
+        "message": "Method mean_outcome performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_rowwise_rmse\n  Worst score: 0.481%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
@@ -463,11 +543,11 @@
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score mean_across_celltypes mean_rowwise_rmse", 
-        "value": 0.1719, 
+        "value": 0.1769, 
         "severity": 0, 
-        "severity_value": -0.1719, 
+        "severity_value": -0.1769, 
         "code": "worst_score >= -1", 
-        "message": "Method mean_across_celltypes performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_rowwise_rmse\n  Worst score: 0.1719%\n"
+        "message": "Method mean_across_celltypes performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_rowwise_rmse\n  Worst score: 0.1769%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
@@ -483,11 +563,11 @@
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score mean_across_compounds mean_rowwise_rmse", 
-        "value": 0.5135, 
+        "value": 0.5164, 
         "severity": 0, 
-        "severity_value": -0.5135, 
+        "severity_value": -0.5164, 
         "code": "worst_score >= -1", 
-        "message": "Method mean_across_compounds performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_rowwise_rmse\n  Worst score: 0.5135%\n"
+        "message": "Method mean_across_compounds performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_rowwise_rmse\n  Worst score: 0.5164%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
@@ -523,11 +603,11 @@
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score zeros mean_rowwise_rmse", 
-        "value": 0.4796, 
+        "value": 0.4828, 
         "severity": 0, 
-        "severity_value": -0.4796, 
+        "severity_value": -0.4828, 
         "code": "worst_score >= -1", 
-        "message": "Method zeros performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_rowwise_rmse\n  Worst score: 0.4796%\n"
+        "message": "Method zeros performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_rowwise_rmse\n  Worst score: 0.4828%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
@@ -553,41 +633,41 @@
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score lstm_gru_cnn_ensemble mean_rowwise_rmse", 
-        "value": 0.7397, 
+        "value": 0.7451, 
         "severity": 0, 
-        "severity_value": 0.36985, 
+        "severity_value": 0.37255, 
         "code": "best_score <= 2", 
-        "message": "Method lstm_gru_cnn_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_rowwise_rmse\n  Best score: 0.7397%\n"
+        "message": "Method lstm_gru_cnn_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_rowwise_rmse\n  Best score: 0.7451%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score nn_retraining_with_pseudolabels mean_rowwise_rmse", 
-        "value": 0.573, 
+        "value": 0.5738, 
         "severity": 0, 
-        "severity_value": -0.573, 
+        "severity_value": -0.5738, 
         "code": "worst_score >= -1", 
-        "message": "Method nn_retraining_with_pseudolabels performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_rowwise_rmse\n  Worst score: 0.573%\n"
+        "message": "Method nn_retraining_with_pseudolabels performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_rowwise_rmse\n  Worst score: 0.5738%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score nn_retraining_with_pseudolabels mean_rowwise_rmse", 
-        "value": 0.7461, 
+        "value": 0.7463, 
         "severity": 0, 
-        "severity_value": 0.37305, 
+        "severity_value": 0.37315, 
         "code": "best_score <= 2", 
-        "message": "Method nn_retraining_with_pseudolabels performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_rowwise_rmse\n  Best score: 0.7461%\n"
+        "message": "Method nn_retraining_with_pseudolabels performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_rowwise_rmse\n  Best score: 0.7463%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score jn_ap_op2 mean_rowwise_rmse", 
-        "value": 0.5562, 
+        "value": 0.5589, 
         "severity": 0, 
-        "severity_value": -0.5562, 
+        "severity_value": -0.5589, 
         "code": "worst_score >= -1", 
-        "message": "Method jn_ap_op2 performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_rowwise_rmse\n  Worst score: 0.5562%\n"
+        "message": "Method jn_ap_op2 performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_rowwise_rmse\n  Worst score: 0.5589%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
@@ -603,61 +683,541 @@
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score scape mean_rowwise_rmse", 
-        "value": 0.5663, 
+        "value": 0.5686, 
         "severity": 0, 
-        "severity_value": -0.5663, 
+        "severity_value": -0.5686, 
         "code": "worst_score >= -1", 
-        "message": "Method scape performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_rowwise_rmse\n  Worst score: 0.5663%\n"
+        "message": "Method scape performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_rowwise_rmse\n  Worst score: 0.5686%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score scape mean_rowwise_rmse", 
-        "value": 0.7443, 
+        "value": 0.7447, 
         "severity": 0, 
-        "severity_value": 0.37215, 
+        "severity_value": 0.37235, 
         "code": "best_score <= 2", 
-        "message": "Method scape performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_rowwise_rmse\n  Best score: 0.7443%\n"
+        "message": "Method scape performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_rowwise_rmse\n  Best score: 0.7447%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score transformer_ensemble mean_rowwise_rmse", 
-        "value": 0.4874, 
+        "value": 0.4905, 
         "severity": 0, 
-        "severity_value": -0.4874, 
+        "severity_value": -0.4905, 
         "code": "worst_score >= -1", 
-        "message": "Method transformer_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_rowwise_rmse\n  Worst score: 0.4874%\n"
+        "message": "Method transformer_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_rowwise_rmse\n  Worst score: 0.4905%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score transformer_ensemble mean_rowwise_rmse", 
-        "value": 0.6902, 
+        "value": 0.6914, 
         "severity": 0, 
-        "severity_value": 0.3451, 
+        "severity_value": 0.3457, 
         "code": "best_score <= 2", 
-        "message": "Method transformer_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_rowwise_rmse\n  Best score: 0.6902%\n"
+        "message": "Method transformer_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_rowwise_rmse\n  Best score: 0.6914%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score pyboost mean_rowwise_rmse", 
-        "value": 0.5625, 
+        "value": 0.5649, 
         "severity": 0, 
-        "severity_value": -0.5625, 
+        "severity_value": -0.5649, 
         "code": "worst_score >= -1", 
-        "message": "Method pyboost performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_rowwise_rmse\n  Worst score: 0.5625%\n"
+        "message": "Method pyboost performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_rowwise_rmse\n  Worst score: 0.5649%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score pyboost mean_rowwise_rmse", 
-        "value": 0.7365, 
+        "value": 0.7363, 
         "severity": 0, 
-        "severity_value": 0.36825, 
+        "severity_value": 0.36815, 
         "code": "best_score <= 2", 
-        "message": "Method pyboost performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_rowwise_rmse\n  Best score: 0.7365%\n"
+        "message": "Method pyboost performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_rowwise_rmse\n  Best score: 0.7363%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score ground_truth mean_rowwise_rmse_clipped_05", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ground_truth performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: ground_truth\n  Metric id: mean_rowwise_rmse_clipped_05\n  Worst score: 1%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score ground_truth mean_rowwise_rmse_clipped_05", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method ground_truth performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: ground_truth\n  Metric id: mean_rowwise_rmse_clipped_05\n  Best score: 1%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_outcome mean_rowwise_rmse_clipped_05", 
+        "value": 0.185, 
+        "severity": 0, 
+        "severity_value": -0.185, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_outcome performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_rowwise_rmse_clipped_05\n  Worst score: 0.185%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_outcome mean_rowwise_rmse_clipped_05", 
+        "value": 0.2642, 
+        "severity": 0, 
+        "severity_value": 0.1321, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_outcome performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_rowwise_rmse_clipped_05\n  Best score: 0.2642%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_across_celltypes mean_rowwise_rmse_clipped_05", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_across_celltypes performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_rowwise_rmse_clipped_05\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_across_celltypes mean_rowwise_rmse_clipped_05", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_across_celltypes performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_rowwise_rmse_clipped_05\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_across_compounds mean_rowwise_rmse_clipped_05", 
+        "value": 0.2998, 
+        "severity": 0, 
+        "severity_value": -0.2998, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_across_compounds performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_rowwise_rmse_clipped_05\n  Worst score: 0.2998%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_across_compounds mean_rowwise_rmse_clipped_05", 
+        "value": 0.3191, 
+        "severity": 0, 
+        "severity_value": 0.15955, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_across_compounds performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_rowwise_rmse_clipped_05\n  Best score: 0.3191%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score sample mean_rowwise_rmse_clipped_05", 
+        "value": 0.0433, 
+        "severity": 0, 
+        "severity_value": -0.0433, 
+        "code": "worst_score >= -1", 
+        "message": "Method sample performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: sample\n  Metric id: mean_rowwise_rmse_clipped_05\n  Worst score: 0.0433%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score sample mean_rowwise_rmse_clipped_05", 
+        "value": 0.0658, 
+        "severity": 0, 
+        "severity_value": 0.0329, 
+        "code": "best_score <= 2", 
+        "message": "Method sample performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: sample\n  Metric id: mean_rowwise_rmse_clipped_05\n  Best score: 0.0658%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score zeros mean_rowwise_rmse_clipped_05", 
+        "value": 0.3089, 
+        "severity": 0, 
+        "severity_value": -0.3089, 
+        "code": "worst_score >= -1", 
+        "message": "Method zeros performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_rowwise_rmse_clipped_05\n  Worst score: 0.3089%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score zeros mean_rowwise_rmse_clipped_05", 
+        "value": 0.365, 
+        "severity": 0, 
+        "severity_value": 0.1825, 
+        "code": "best_score <= 2", 
+        "message": "Method zeros performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_rowwise_rmse_clipped_05\n  Best score: 0.365%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score lstm_gru_cnn_ensemble mean_rowwise_rmse_clipped_05", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lstm_gru_cnn_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_rowwise_rmse_clipped_05\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score lstm_gru_cnn_ensemble mean_rowwise_rmse_clipped_05", 
+        "value": 0.421, 
+        "severity": 0, 
+        "severity_value": 0.2105, 
+        "code": "best_score <= 2", 
+        "message": "Method lstm_gru_cnn_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_rowwise_rmse_clipped_05\n  Best score: 0.421%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score nn_retraining_with_pseudolabels mean_rowwise_rmse_clipped_05", 
+        "value": 0.3832, 
+        "severity": 0, 
+        "severity_value": -0.3832, 
+        "code": "worst_score >= -1", 
+        "message": "Method nn_retraining_with_pseudolabels performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_rowwise_rmse_clipped_05\n  Worst score: 0.3832%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score nn_retraining_with_pseudolabels mean_rowwise_rmse_clipped_05", 
+        "value": 0.4135, 
+        "severity": 0, 
+        "severity_value": 0.20675, 
+        "code": "best_score <= 2", 
+        "message": "Method nn_retraining_with_pseudolabels performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_rowwise_rmse_clipped_05\n  Best score: 0.4135%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score jn_ap_op2 mean_rowwise_rmse_clipped_05", 
+        "value": 0.3535, 
+        "severity": 0, 
+        "severity_value": -0.3535, 
+        "code": "worst_score >= -1", 
+        "message": "Method jn_ap_op2 performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_rowwise_rmse_clipped_05\n  Worst score: 0.3535%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score jn_ap_op2 mean_rowwise_rmse_clipped_05", 
+        "value": 0.3579, 
+        "severity": 0, 
+        "severity_value": 0.17895, 
+        "code": "best_score <= 2", 
+        "message": "Method jn_ap_op2 performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_rowwise_rmse_clipped_05\n  Best score: 0.3579%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score scape mean_rowwise_rmse_clipped_05", 
+        "value": 0.3606, 
+        "severity": 0, 
+        "severity_value": -0.3606, 
+        "code": "worst_score >= -1", 
+        "message": "Method scape performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_rowwise_rmse_clipped_05\n  Worst score: 0.3606%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score scape mean_rowwise_rmse_clipped_05", 
+        "value": 0.4007, 
+        "severity": 0, 
+        "severity_value": 0.20035, 
+        "code": "best_score <= 2", 
+        "message": "Method scape performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_rowwise_rmse_clipped_05\n  Best score: 0.4007%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score transformer_ensemble mean_rowwise_rmse_clipped_05", 
+        "value": 0.331, 
+        "severity": 0, 
+        "severity_value": -0.331, 
+        "code": "worst_score >= -1", 
+        "message": "Method transformer_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_rowwise_rmse_clipped_05\n  Worst score: 0.331%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score transformer_ensemble mean_rowwise_rmse_clipped_05", 
+        "value": 0.3734, 
+        "severity": 0, 
+        "severity_value": 0.1867, 
+        "code": "best_score <= 2", 
+        "message": "Method transformer_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_rowwise_rmse_clipped_05\n  Best score: 0.3734%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score pyboost mean_rowwise_rmse_clipped_05", 
+        "value": 0.3878, 
+        "severity": 0, 
+        "severity_value": -0.3878, 
+        "code": "worst_score >= -1", 
+        "message": "Method pyboost performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_rowwise_rmse_clipped_05\n  Worst score: 0.3878%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score pyboost mean_rowwise_rmse_clipped_05", 
+        "value": 0.4449, 
+        "severity": 0, 
+        "severity_value": 0.22245, 
+        "code": "best_score <= 2", 
+        "message": "Method pyboost performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_rowwise_rmse_clipped_05\n  Best score: 0.4449%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score ground_truth mean_rowwise_rmse_clipped_01", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ground_truth performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: ground_truth\n  Metric id: mean_rowwise_rmse_clipped_01\n  Worst score: 1%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score ground_truth mean_rowwise_rmse_clipped_01", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method ground_truth performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: ground_truth\n  Metric id: mean_rowwise_rmse_clipped_01\n  Best score: 1%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_outcome mean_rowwise_rmse_clipped_01", 
+        "value": 0.2112, 
+        "severity": 0, 
+        "severity_value": -0.2112, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_outcome performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_rowwise_rmse_clipped_01\n  Worst score: 0.2112%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_outcome mean_rowwise_rmse_clipped_01", 
+        "value": 0.3436, 
+        "severity": 0, 
+        "severity_value": 0.1718, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_outcome performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_rowwise_rmse_clipped_01\n  Best score: 0.3436%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_across_celltypes mean_rowwise_rmse_clipped_01", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_across_celltypes performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_rowwise_rmse_clipped_01\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_across_celltypes mean_rowwise_rmse_clipped_01", 
+        "value": 0.0034, 
+        "severity": 0, 
+        "severity_value": 0.0017, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_across_celltypes performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_rowwise_rmse_clipped_01\n  Best score: 0.0034%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_across_compounds mean_rowwise_rmse_clipped_01", 
+        "value": 0.3328, 
+        "severity": 0, 
+        "severity_value": -0.3328, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_across_compounds performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_rowwise_rmse_clipped_01\n  Worst score: 0.3328%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_across_compounds mean_rowwise_rmse_clipped_01", 
+        "value": 0.3694, 
+        "severity": 0, 
+        "severity_value": 0.1847, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_across_compounds performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_rowwise_rmse_clipped_01\n  Best score: 0.3694%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score sample mean_rowwise_rmse_clipped_01", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method sample performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: sample\n  Metric id: mean_rowwise_rmse_clipped_01\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score sample mean_rowwise_rmse_clipped_01", 
+        "value": 0.1263, 
+        "severity": 0, 
+        "severity_value": 0.06315, 
+        "code": "best_score <= 2", 
+        "message": "Method sample performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: sample\n  Metric id: mean_rowwise_rmse_clipped_01\n  Best score: 0.1263%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score zeros mean_rowwise_rmse_clipped_01", 
+        "value": 0.3611, 
+        "severity": 0, 
+        "severity_value": -0.3611, 
+        "code": "worst_score >= -1", 
+        "message": "Method zeros performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_rowwise_rmse_clipped_01\n  Worst score: 0.3611%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score zeros mean_rowwise_rmse_clipped_01", 
+        "value": 0.3695, 
+        "severity": 0, 
+        "severity_value": 0.18475, 
+        "code": "best_score <= 2", 
+        "message": "Method zeros performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_rowwise_rmse_clipped_01\n  Best score: 0.3695%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score lstm_gru_cnn_ensemble mean_rowwise_rmse_clipped_01", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lstm_gru_cnn_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_rowwise_rmse_clipped_01\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score lstm_gru_cnn_ensemble mean_rowwise_rmse_clipped_01", 
+        "value": 0.4306, 
+        "severity": 0, 
+        "severity_value": 0.2153, 
+        "code": "best_score <= 2", 
+        "message": "Method lstm_gru_cnn_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_rowwise_rmse_clipped_01\n  Best score: 0.4306%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score nn_retraining_with_pseudolabels mean_rowwise_rmse_clipped_01", 
+        "value": 0.4268, 
+        "severity": 0, 
+        "severity_value": -0.4268, 
+        "code": "worst_score >= -1", 
+        "message": "Method nn_retraining_with_pseudolabels performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_rowwise_rmse_clipped_01\n  Worst score: 0.4268%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score nn_retraining_with_pseudolabels mean_rowwise_rmse_clipped_01", 
+        "value": 0.4439, 
+        "severity": 0, 
+        "severity_value": 0.22195, 
+        "code": "best_score <= 2", 
+        "message": "Method nn_retraining_with_pseudolabels performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_rowwise_rmse_clipped_01\n  Best score: 0.4439%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score jn_ap_op2 mean_rowwise_rmse_clipped_01", 
+        "value": 0.3691, 
+        "severity": 0, 
+        "severity_value": -0.3691, 
+        "code": "worst_score >= -1", 
+        "message": "Method jn_ap_op2 performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_rowwise_rmse_clipped_01\n  Worst score: 0.3691%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score jn_ap_op2 mean_rowwise_rmse_clipped_01", 
+        "value": 0.4184, 
+        "severity": 0, 
+        "severity_value": 0.2092, 
+        "code": "best_score <= 2", 
+        "message": "Method jn_ap_op2 performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_rowwise_rmse_clipped_01\n  Best score: 0.4184%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score scape mean_rowwise_rmse_clipped_01", 
+        "value": 0.4139, 
+        "severity": 0, 
+        "severity_value": -0.4139, 
+        "code": "worst_score >= -1", 
+        "message": "Method scape performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_rowwise_rmse_clipped_01\n  Worst score: 0.4139%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score scape mean_rowwise_rmse_clipped_01", 
+        "value": 0.4254, 
+        "severity": 0, 
+        "severity_value": 0.2127, 
+        "code": "best_score <= 2", 
+        "message": "Method scape performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_rowwise_rmse_clipped_01\n  Best score: 0.4254%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score transformer_ensemble mean_rowwise_rmse_clipped_01", 
+        "value": 0.3781, 
+        "severity": 0, 
+        "severity_value": -0.3781, 
+        "code": "worst_score >= -1", 
+        "message": "Method transformer_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_rowwise_rmse_clipped_01\n  Worst score: 0.3781%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score transformer_ensemble mean_rowwise_rmse_clipped_01", 
+        "value": 0.3799, 
+        "severity": 0, 
+        "severity_value": 0.18995, 
+        "code": "best_score <= 2", 
+        "message": "Method transformer_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_rowwise_rmse_clipped_01\n  Best score: 0.3799%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score pyboost mean_rowwise_rmse_clipped_01", 
+        "value": 0.4452, 
+        "severity": 0, 
+        "severity_value": -0.4452, 
+        "code": "worst_score >= -1", 
+        "message": "Method pyboost performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_rowwise_rmse_clipped_01\n  Worst score: 0.4452%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score pyboost mean_rowwise_rmse_clipped_01", 
+        "value": 0.4545, 
+        "severity": 0, 
+        "severity_value": 0.22725, 
+        "code": "best_score <= 2", 
+        "message": "Method pyboost performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_rowwise_rmse_clipped_01\n  Best score: 0.4545%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
@@ -683,11 +1243,11 @@
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score mean_outcome mean_rowwise_mae", 
-        "value": 0.3628, 
+        "value": 0.3611, 
         "severity": 0, 
-        "severity_value": -0.3628, 
+        "severity_value": -0.3611, 
         "code": "worst_score >= -1", 
-        "message": "Method mean_outcome performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_rowwise_mae\n  Worst score: 0.3628%\n"
+        "message": "Method mean_outcome performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_rowwise_mae\n  Worst score: 0.3611%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
@@ -713,21 +1273,21 @@
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score mean_across_celltypes mean_rowwise_mae", 
-        "value": 0.2089, 
+        "value": 0.2067, 
         "severity": 0, 
-        "severity_value": 0.10445, 
+        "severity_value": 0.10335, 
         "code": "best_score <= 2", 
-        "message": "Method mean_across_celltypes performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_rowwise_mae\n  Best score: 0.2089%\n"
+        "message": "Method mean_across_celltypes performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_rowwise_mae\n  Best score: 0.2067%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score mean_across_compounds mean_rowwise_mae", 
-        "value": 0.4178, 
+        "value": 0.4162, 
         "severity": 0, 
-        "severity_value": -0.4178, 
+        "severity_value": -0.4162, 
         "code": "worst_score >= -1", 
-        "message": "Method mean_across_compounds performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_rowwise_mae\n  Worst score: 0.4178%\n"
+        "message": "Method mean_across_compounds performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_rowwise_mae\n  Worst score: 0.4162%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
@@ -753,11 +1313,11 @@
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score sample mean_rowwise_mae", 
-        "value": 0.1606, 
+        "value": 0.1595, 
         "severity": 0, 
-        "severity_value": 0.0803, 
+        "severity_value": 0.07975, 
         "code": "best_score <= 2", 
-        "message": "Method sample performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: sample\n  Metric id: mean_rowwise_mae\n  Best score: 0.1606%\n"
+        "message": "Method sample performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: sample\n  Metric id: mean_rowwise_mae\n  Best score: 0.1595%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
@@ -773,11 +1333,11 @@
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score zeros mean_rowwise_mae", 
-        "value": 0.5132, 
+        "value": 0.5118, 
         "severity": 0, 
-        "severity_value": 0.2566, 
+        "severity_value": 0.2559, 
         "code": "best_score <= 2", 
-        "message": "Method zeros performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_rowwise_mae\n  Best score: 0.5132%\n"
+        "message": "Method zeros performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_rowwise_mae\n  Best score: 0.5118%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
@@ -793,41 +1353,41 @@
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score lstm_gru_cnn_ensemble mean_rowwise_mae", 
-        "value": 0.5288, 
+        "value": 0.5423, 
         "severity": 0, 
-        "severity_value": 0.2644, 
+        "severity_value": 0.27115, 
         "code": "best_score <= 2", 
-        "message": "Method lstm_gru_cnn_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_rowwise_mae\n  Best score: 0.5288%\n"
+        "message": "Method lstm_gru_cnn_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_rowwise_mae\n  Best score: 0.5423%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score nn_retraining_with_pseudolabels mean_rowwise_mae", 
-        "value": 0.5167, 
+        "value": 0.5178, 
         "severity": 0, 
-        "severity_value": -0.5167, 
+        "severity_value": -0.5178, 
         "code": "worst_score >= -1", 
-        "message": "Method nn_retraining_with_pseudolabels performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_rowwise_mae\n  Worst score: 0.5167%\n"
+        "message": "Method nn_retraining_with_pseudolabels performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_rowwise_mae\n  Worst score: 0.5178%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score nn_retraining_with_pseudolabels mean_rowwise_mae", 
-        "value": 0.527, 
+        "value": 0.5255, 
         "severity": 0, 
-        "severity_value": 0.2635, 
+        "severity_value": 0.26275, 
         "code": "best_score <= 2", 
-        "message": "Method nn_retraining_with_pseudolabels performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_rowwise_mae\n  Best score: 0.527%\n"
+        "message": "Method nn_retraining_with_pseudolabels performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_rowwise_mae\n  Best score: 0.5255%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score jn_ap_op2 mean_rowwise_mae", 
-        "value": 0.4797, 
+        "value": 0.4783, 
         "severity": 0, 
-        "severity_value": -0.4797, 
+        "severity_value": -0.4783, 
         "code": "worst_score >= -1", 
-        "message": "Method jn_ap_op2 performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_rowwise_mae\n  Worst score: 0.4797%\n"
+        "message": "Method jn_ap_op2 performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_rowwise_mae\n  Worst score: 0.4783%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
@@ -843,61 +1403,541 @@
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score scape mean_rowwise_mae", 
-        "value": 0.5134, 
+        "value": 0.513, 
         "severity": 0, 
-        "severity_value": -0.5134, 
+        "severity_value": -0.513, 
         "code": "worst_score >= -1", 
-        "message": "Method scape performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_rowwise_mae\n  Worst score: 0.5134%\n"
+        "message": "Method scape performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_rowwise_mae\n  Worst score: 0.513%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score scape mean_rowwise_mae", 
-        "value": 0.5139, 
+        "value": 0.5131, 
         "severity": 0, 
-        "severity_value": 0.25695, 
+        "severity_value": 0.25655, 
         "code": "best_score <= 2", 
-        "message": "Method scape performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_rowwise_mae\n  Best score: 0.5139%\n"
+        "message": "Method scape performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_rowwise_mae\n  Best score: 0.5131%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score transformer_ensemble mean_rowwise_mae", 
-        "value": 0.4493, 
+        "value": 0.4515, 
         "severity": 0, 
-        "severity_value": -0.4493, 
+        "severity_value": -0.4515, 
         "code": "worst_score >= -1", 
-        "message": "Method transformer_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_rowwise_mae\n  Worst score: 0.4493%\n"
+        "message": "Method transformer_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_rowwise_mae\n  Worst score: 0.4515%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score transformer_ensemble mean_rowwise_mae", 
-        "value": 0.4802, 
+        "value": 0.4946, 
         "severity": 0, 
-        "severity_value": 0.2401, 
+        "severity_value": 0.2473, 
         "code": "best_score <= 2", 
-        "message": "Method transformer_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_rowwise_mae\n  Best score: 0.4802%\n"
+        "message": "Method transformer_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_rowwise_mae\n  Best score: 0.4946%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score pyboost mean_rowwise_mae", 
-        "value": 0.5248, 
+        "value": 0.5245, 
         "severity": 0, 
-        "severity_value": -0.5248, 
+        "severity_value": -0.5245, 
         "code": "worst_score >= -1", 
-        "message": "Method pyboost performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_rowwise_mae\n  Worst score: 0.5248%\n"
+        "message": "Method pyboost performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_rowwise_mae\n  Worst score: 0.5245%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score pyboost mean_rowwise_mae", 
-        "value": 0.5481, 
+        "value": 0.5467, 
         "severity": 0, 
-        "severity_value": 0.27405, 
+        "severity_value": 0.27335, 
         "code": "best_score <= 2", 
-        "message": "Method pyboost performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_rowwise_mae\n  Best score: 0.5481%\n"
+        "message": "Method pyboost performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_rowwise_mae\n  Best score: 0.5467%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score ground_truth mean_rowwise_mae_clipped_05", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ground_truth performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: ground_truth\n  Metric id: mean_rowwise_mae_clipped_05\n  Worst score: 1%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score ground_truth mean_rowwise_mae_clipped_05", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method ground_truth performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: ground_truth\n  Metric id: mean_rowwise_mae_clipped_05\n  Best score: 1%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_outcome mean_rowwise_mae_clipped_05", 
+        "value": 0.1912, 
+        "severity": 0, 
+        "severity_value": -0.1912, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_outcome performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_rowwise_mae_clipped_05\n  Worst score: 0.1912%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_outcome mean_rowwise_mae_clipped_05", 
+        "value": 0.2663, 
+        "severity": 0, 
+        "severity_value": 0.13315, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_outcome performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_rowwise_mae_clipped_05\n  Best score: 0.2663%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_across_celltypes mean_rowwise_mae_clipped_05", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_across_celltypes performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_rowwise_mae_clipped_05\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_across_celltypes mean_rowwise_mae_clipped_05", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_across_celltypes performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_rowwise_mae_clipped_05\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_across_compounds mean_rowwise_mae_clipped_05", 
+        "value": 0.324, 
+        "severity": 0, 
+        "severity_value": -0.324, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_across_compounds performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_rowwise_mae_clipped_05\n  Worst score: 0.324%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_across_compounds mean_rowwise_mae_clipped_05", 
+        "value": 0.339, 
+        "severity": 0, 
+        "severity_value": 0.1695, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_across_compounds performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_rowwise_mae_clipped_05\n  Best score: 0.339%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score sample mean_rowwise_mae_clipped_05", 
+        "value": 0.0757, 
+        "severity": 0, 
+        "severity_value": -0.0757, 
+        "code": "worst_score >= -1", 
+        "message": "Method sample performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: sample\n  Metric id: mean_rowwise_mae_clipped_05\n  Worst score: 0.0757%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score sample mean_rowwise_mae_clipped_05", 
+        "value": 0.1089, 
+        "severity": 0, 
+        "severity_value": 0.05445, 
+        "code": "best_score <= 2", 
+        "message": "Method sample performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: sample\n  Metric id: mean_rowwise_mae_clipped_05\n  Best score: 0.1089%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score zeros mean_rowwise_mae_clipped_05", 
+        "value": 0.3171, 
+        "severity": 0, 
+        "severity_value": -0.3171, 
+        "code": "worst_score >= -1", 
+        "message": "Method zeros performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_rowwise_mae_clipped_05\n  Worst score: 0.3171%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score zeros mean_rowwise_mae_clipped_05", 
+        "value": 0.4483, 
+        "severity": 0, 
+        "severity_value": 0.22415, 
+        "code": "best_score <= 2", 
+        "message": "Method zeros performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_rowwise_mae_clipped_05\n  Best score: 0.4483%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score lstm_gru_cnn_ensemble mean_rowwise_mae_clipped_05", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lstm_gru_cnn_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_rowwise_mae_clipped_05\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score lstm_gru_cnn_ensemble mean_rowwise_mae_clipped_05", 
+        "value": 0.4806, 
+        "severity": 0, 
+        "severity_value": 0.2403, 
+        "code": "best_score <= 2", 
+        "message": "Method lstm_gru_cnn_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_rowwise_mae_clipped_05\n  Best score: 0.4806%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score nn_retraining_with_pseudolabels mean_rowwise_mae_clipped_05", 
+        "value": 0.417, 
+        "severity": 0, 
+        "severity_value": -0.417, 
+        "code": "worst_score >= -1", 
+        "message": "Method nn_retraining_with_pseudolabels performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_rowwise_mae_clipped_05\n  Worst score: 0.417%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score nn_retraining_with_pseudolabels mean_rowwise_mae_clipped_05", 
+        "value": 0.4537, 
+        "severity": 0, 
+        "severity_value": 0.22685, 
+        "code": "best_score <= 2", 
+        "message": "Method nn_retraining_with_pseudolabels performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_rowwise_mae_clipped_05\n  Best score: 0.4537%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score jn_ap_op2 mean_rowwise_mae_clipped_05", 
+        "value": 0.3823, 
+        "severity": 0, 
+        "severity_value": -0.3823, 
+        "code": "worst_score >= -1", 
+        "message": "Method jn_ap_op2 performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_rowwise_mae_clipped_05\n  Worst score: 0.3823%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score jn_ap_op2 mean_rowwise_mae_clipped_05", 
+        "value": 0.4062, 
+        "severity": 0, 
+        "severity_value": 0.2031, 
+        "code": "best_score <= 2", 
+        "message": "Method jn_ap_op2 performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_rowwise_mae_clipped_05\n  Best score: 0.4062%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score scape mean_rowwise_mae_clipped_05", 
+        "value": 0.3918, 
+        "severity": 0, 
+        "severity_value": -0.3918, 
+        "code": "worst_score >= -1", 
+        "message": "Method scape performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_rowwise_mae_clipped_05\n  Worst score: 0.3918%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score scape mean_rowwise_mae_clipped_05", 
+        "value": 0.4372, 
+        "severity": 0, 
+        "severity_value": 0.2186, 
+        "code": "best_score <= 2", 
+        "message": "Method scape performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_rowwise_mae_clipped_05\n  Best score: 0.4372%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score transformer_ensemble mean_rowwise_mae_clipped_05", 
+        "value": 0.3349, 
+        "severity": 0, 
+        "severity_value": -0.3349, 
+        "code": "worst_score >= -1", 
+        "message": "Method transformer_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_rowwise_mae_clipped_05\n  Worst score: 0.3349%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score transformer_ensemble mean_rowwise_mae_clipped_05", 
+        "value": 0.4176, 
+        "severity": 0, 
+        "severity_value": 0.2088, 
+        "code": "best_score <= 2", 
+        "message": "Method transformer_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_rowwise_mae_clipped_05\n  Best score: 0.4176%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score pyboost mean_rowwise_mae_clipped_05", 
+        "value": 0.4205, 
+        "severity": 0, 
+        "severity_value": -0.4205, 
+        "code": "worst_score >= -1", 
+        "message": "Method pyboost performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_rowwise_mae_clipped_05\n  Worst score: 0.4205%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score pyboost mean_rowwise_mae_clipped_05", 
+        "value": 0.4875, 
+        "severity": 0, 
+        "severity_value": 0.24375, 
+        "code": "best_score <= 2", 
+        "message": "Method pyboost performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_rowwise_mae_clipped_05\n  Best score: 0.4875%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score ground_truth mean_rowwise_mae_clipped_01", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ground_truth performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: ground_truth\n  Metric id: mean_rowwise_mae_clipped_01\n  Worst score: 1%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score ground_truth mean_rowwise_mae_clipped_01", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method ground_truth performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: ground_truth\n  Metric id: mean_rowwise_mae_clipped_01\n  Best score: 1%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_outcome mean_rowwise_mae_clipped_01", 
+        "value": 0.2104, 
+        "severity": 0, 
+        "severity_value": -0.2104, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_outcome performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_rowwise_mae_clipped_01\n  Worst score: 0.2104%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_outcome mean_rowwise_mae_clipped_01", 
+        "value": 0.3583, 
+        "severity": 0, 
+        "severity_value": 0.17915, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_outcome performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_rowwise_mae_clipped_01\n  Best score: 0.3583%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_across_celltypes mean_rowwise_mae_clipped_01", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_across_celltypes performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_rowwise_mae_clipped_01\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_across_celltypes mean_rowwise_mae_clipped_01", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_across_celltypes performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_rowwise_mae_clipped_01\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_across_compounds mean_rowwise_mae_clipped_01", 
+        "value": 0.3408, 
+        "severity": 0, 
+        "severity_value": -0.3408, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_across_compounds performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_rowwise_mae_clipped_01\n  Worst score: 0.3408%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_across_compounds mean_rowwise_mae_clipped_01", 
+        "value": 0.4043, 
+        "severity": 0, 
+        "severity_value": 0.20215, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_across_compounds performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_rowwise_mae_clipped_01\n  Best score: 0.4043%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score sample mean_rowwise_mae_clipped_01", 
+        "value": 0.0897, 
+        "severity": 0, 
+        "severity_value": -0.0897, 
+        "code": "worst_score >= -1", 
+        "message": "Method sample performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: sample\n  Metric id: mean_rowwise_mae_clipped_01\n  Worst score: 0.0897%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score sample mean_rowwise_mae_clipped_01", 
+        "value": 0.162, 
+        "severity": 0, 
+        "severity_value": 0.081, 
+        "code": "best_score <= 2", 
+        "message": "Method sample performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: sample\n  Metric id: mean_rowwise_mae_clipped_01\n  Best score: 0.162%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score zeros mean_rowwise_mae_clipped_01", 
+        "value": 0.3975, 
+        "severity": 0, 
+        "severity_value": -0.3975, 
+        "code": "worst_score >= -1", 
+        "message": "Method zeros performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_rowwise_mae_clipped_01\n  Worst score: 0.3975%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score zeros mean_rowwise_mae_clipped_01", 
+        "value": 0.4502, 
+        "severity": 0, 
+        "severity_value": 0.2251, 
+        "code": "best_score <= 2", 
+        "message": "Method zeros performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_rowwise_mae_clipped_01\n  Best score: 0.4502%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score lstm_gru_cnn_ensemble mean_rowwise_mae_clipped_01", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lstm_gru_cnn_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_rowwise_mae_clipped_01\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score lstm_gru_cnn_ensemble mean_rowwise_mae_clipped_01", 
+        "value": 0.481, 
+        "severity": 0, 
+        "severity_value": 0.2405, 
+        "code": "best_score <= 2", 
+        "message": "Method lstm_gru_cnn_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_rowwise_mae_clipped_01\n  Best score: 0.481%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score nn_retraining_with_pseudolabels mean_rowwise_mae_clipped_01", 
+        "value": 0.4537, 
+        "severity": 0, 
+        "severity_value": -0.4537, 
+        "code": "worst_score >= -1", 
+        "message": "Method nn_retraining_with_pseudolabels performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_rowwise_mae_clipped_01\n  Worst score: 0.4537%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score nn_retraining_with_pseudolabels mean_rowwise_mae_clipped_01", 
+        "value": 0.487, 
+        "severity": 0, 
+        "severity_value": 0.2435, 
+        "code": "best_score <= 2", 
+        "message": "Method nn_retraining_with_pseudolabels performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_rowwise_mae_clipped_01\n  Best score: 0.487%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score jn_ap_op2 mean_rowwise_mae_clipped_01", 
+        "value": 0.4082, 
+        "severity": 0, 
+        "severity_value": -0.4082, 
+        "code": "worst_score >= -1", 
+        "message": "Method jn_ap_op2 performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_rowwise_mae_clipped_01\n  Worst score: 0.4082%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score jn_ap_op2 mean_rowwise_mae_clipped_01", 
+        "value": 0.4581, 
+        "severity": 0, 
+        "severity_value": 0.22905, 
+        "code": "best_score <= 2", 
+        "message": "Method jn_ap_op2 performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_rowwise_mae_clipped_01\n  Best score: 0.4581%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score scape mean_rowwise_mae_clipped_01", 
+        "value": 0.4392, 
+        "severity": 0, 
+        "severity_value": -0.4392, 
+        "code": "worst_score >= -1", 
+        "message": "Method scape performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_rowwise_mae_clipped_01\n  Worst score: 0.4392%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score scape mean_rowwise_mae_clipped_01", 
+        "value": 0.4655, 
+        "severity": 0, 
+        "severity_value": 0.23275, 
+        "code": "best_score <= 2", 
+        "message": "Method scape performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_rowwise_mae_clipped_01\n  Best score: 0.4655%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score transformer_ensemble mean_rowwise_mae_clipped_01", 
+        "value": 0.4112, 
+        "severity": 0, 
+        "severity_value": -0.4112, 
+        "code": "worst_score >= -1", 
+        "message": "Method transformer_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_rowwise_mae_clipped_01\n  Worst score: 0.4112%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score transformer_ensemble mean_rowwise_mae_clipped_01", 
+        "value": 0.4226, 
+        "severity": 0, 
+        "severity_value": 0.2113, 
+        "code": "best_score <= 2", 
+        "message": "Method transformer_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_rowwise_mae_clipped_01\n  Best score: 0.4226%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score pyboost mean_rowwise_mae_clipped_01", 
+        "value": 0.4892, 
+        "severity": 0, 
+        "severity_value": -0.4892, 
+        "code": "worst_score >= -1", 
+        "message": "Method pyboost performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_rowwise_mae_clipped_01\n  Worst score: 0.4892%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score pyboost mean_rowwise_mae_clipped_01", 
+        "value": 0.4896, 
+        "severity": 0, 
+        "severity_value": 0.2448, 
+        "code": "best_score <= 2", 
+        "message": "Method pyboost performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_rowwise_mae_clipped_01\n  Best score: 0.4896%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
@@ -923,61 +1963,61 @@
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score mean_outcome mean_cosine_sim", 
-        "value": 0.1234, 
+        "value": 0.1268, 
         "severity": 0, 
-        "severity_value": -0.1234, 
+        "severity_value": -0.1268, 
         "code": "worst_score >= -1", 
-        "message": "Method mean_outcome performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_cosine_sim\n  Worst score: 0.1234%\n"
+        "message": "Method mean_outcome performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_cosine_sim\n  Worst score: 0.1268%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score mean_outcome mean_cosine_sim", 
-        "value": 0.2078, 
+        "value": 0.2089, 
         "severity": 0, 
-        "severity_value": 0.1039, 
+        "severity_value": 0.10445, 
         "code": "best_score <= 2", 
-        "message": "Method mean_outcome performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_cosine_sim\n  Best score: 0.2078%\n"
+        "message": "Method mean_outcome performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_cosine_sim\n  Best score: 0.2089%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score mean_across_celltypes mean_cosine_sim", 
-        "value": 0.1716, 
+        "value": 0.1748, 
         "severity": 0, 
-        "severity_value": -0.1716, 
+        "severity_value": -0.1748, 
         "code": "worst_score >= -1", 
-        "message": "Method mean_across_celltypes performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_cosine_sim\n  Worst score: 0.1716%\n"
+        "message": "Method mean_across_celltypes performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_cosine_sim\n  Worst score: 0.1748%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score mean_across_celltypes mean_cosine_sim", 
-        "value": 0.2743, 
+        "value": 0.2753, 
         "severity": 0, 
-        "severity_value": 0.13715, 
+        "severity_value": 0.13765, 
         "code": "best_score <= 2", 
-        "message": "Method mean_across_celltypes performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_cosine_sim\n  Best score: 0.2743%\n"
+        "message": "Method mean_across_celltypes performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_cosine_sim\n  Best score: 0.2753%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score mean_across_compounds mean_cosine_sim", 
-        "value": 0.2208, 
+        "value": 0.2219, 
         "severity": 0, 
-        "severity_value": -0.2208, 
+        "severity_value": -0.2219, 
         "code": "worst_score >= -1", 
-        "message": "Method mean_across_compounds performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_cosine_sim\n  Worst score: 0.2208%\n"
+        "message": "Method mean_across_compounds performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_cosine_sim\n  Worst score: 0.2219%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score mean_across_compounds mean_cosine_sim", 
-        "value": 0.2609, 
+        "value": 0.2637, 
         "severity": 0, 
-        "severity_value": 0.13045, 
+        "severity_value": 0.13185, 
         "code": "best_score <= 2", 
-        "message": "Method mean_across_compounds performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_cosine_sim\n  Best score: 0.2609%\n"
+        "message": "Method mean_across_compounds performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_cosine_sim\n  Best score: 0.2637%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
@@ -1033,110 +2073,1070 @@
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score lstm_gru_cnn_ensemble mean_cosine_sim", 
-        "value": 0.3318, 
+        "value": 0.3304, 
         "severity": 0, 
-        "severity_value": 0.1659, 
+        "severity_value": 0.1652, 
         "code": "best_score <= 2", 
-        "message": "Method lstm_gru_cnn_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_cosine_sim\n  Best score: 0.3318%\n"
+        "message": "Method lstm_gru_cnn_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_cosine_sim\n  Best score: 0.3304%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score nn_retraining_with_pseudolabels mean_cosine_sim", 
-        "value": 0.3821, 
+        "value": 0.3824, 
         "severity": 0, 
-        "severity_value": -0.3821, 
+        "severity_value": -0.3824, 
         "code": "worst_score >= -1", 
-        "message": "Method nn_retraining_with_pseudolabels performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_cosine_sim\n  Worst score: 0.3821%\n"
+        "message": "Method nn_retraining_with_pseudolabels performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_cosine_sim\n  Worst score: 0.3824%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score nn_retraining_with_pseudolabels mean_cosine_sim", 
-        "value": 0.3822, 
+        "value": 0.3828, 
         "severity": 0, 
-        "severity_value": 0.1911, 
+        "severity_value": 0.1914, 
         "code": "best_score <= 2", 
-        "message": "Method nn_retraining_with_pseudolabels performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_cosine_sim\n  Best score: 0.3822%\n"
+        "message": "Method nn_retraining_with_pseudolabels performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_cosine_sim\n  Best score: 0.3828%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score jn_ap_op2 mean_cosine_sim", 
-        "value": 0.3029, 
+        "value": 0.3056, 
         "severity": 0, 
-        "severity_value": -0.3029, 
+        "severity_value": -0.3056, 
         "code": "worst_score >= -1", 
-        "message": "Method jn_ap_op2 performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_cosine_sim\n  Worst score: 0.3029%\n"
+        "message": "Method jn_ap_op2 performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_cosine_sim\n  Worst score: 0.3056%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score jn_ap_op2 mean_cosine_sim", 
-        "value": 0.3361, 
+        "value": 0.337, 
         "severity": 0, 
-        "severity_value": 0.16805, 
+        "severity_value": 0.1685, 
         "code": "best_score <= 2", 
-        "message": "Method jn_ap_op2 performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_cosine_sim\n  Best score: 0.3361%\n"
+        "message": "Method jn_ap_op2 performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_cosine_sim\n  Best score: 0.337%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score scape mean_cosine_sim", 
-        "value": 0.3484, 
+        "value": 0.3526, 
         "severity": 0, 
-        "severity_value": -0.3484, 
+        "severity_value": -0.3526, 
         "code": "worst_score >= -1", 
-        "message": "Method scape performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_cosine_sim\n  Worst score: 0.3484%\n"
+        "message": "Method scape performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_cosine_sim\n  Worst score: 0.3526%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score scape mean_cosine_sim", 
-        "value": 0.357, 
+        "value": 0.3567, 
         "severity": 0, 
-        "severity_value": 0.1785, 
+        "severity_value": 0.17835, 
         "code": "best_score <= 2", 
-        "message": "Method scape performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_cosine_sim\n  Best score: 0.357%\n"
+        "message": "Method scape performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_cosine_sim\n  Best score: 0.3567%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score transformer_ensemble mean_cosine_sim", 
-        "value": 0.1613, 
+        "value": 0.1635, 
         "severity": 0, 
-        "severity_value": -0.1613, 
+        "severity_value": -0.1635, 
         "code": "worst_score >= -1", 
-        "message": "Method transformer_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_cosine_sim\n  Worst score: 0.1613%\n"
+        "message": "Method transformer_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_cosine_sim\n  Worst score: 0.1635%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score transformer_ensemble mean_cosine_sim", 
-        "value": 0.1796, 
+        "value": 0.1827, 
         "severity": 0, 
-        "severity_value": 0.0898, 
+        "severity_value": 0.09135, 
         "code": "best_score <= 2", 
-        "message": "Method transformer_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_cosine_sim\n  Best score: 0.1796%\n"
+        "message": "Method transformer_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_cosine_sim\n  Best score: 0.1827%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Worst score pyboost mean_cosine_sim", 
-        "value": 0.362, 
+        "value": 0.3623, 
         "severity": 0, 
-        "severity_value": -0.362, 
+        "severity_value": -0.3623, 
         "code": "worst_score >= -1", 
-        "message": "Method pyboost performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_cosine_sim\n  Worst score: 0.362%\n"
+        "message": "Method pyboost performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_cosine_sim\n  Worst score: 0.3623%\n"
     }, 
     {
         "task_id": "dge_perturbation_prediction", 
         "category": "Scaling", 
         "name": "Best score pyboost mean_cosine_sim", 
-        "value": 0.4066, 
+        "value": 0.4089, 
         "severity": 0, 
-        "severity_value": 0.2033, 
+        "severity_value": 0.20445, 
         "code": "best_score <= 2", 
-        "message": "Method pyboost performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_cosine_sim\n  Best score: 0.4066%\n"
+        "message": "Method pyboost performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_cosine_sim\n  Best score: 0.4089%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score ground_truth mean_cosine_sim_clipped_05", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ground_truth performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: ground_truth\n  Metric id: mean_cosine_sim_clipped_05\n  Worst score: 1%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score ground_truth mean_cosine_sim_clipped_05", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method ground_truth performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: ground_truth\n  Metric id: mean_cosine_sim_clipped_05\n  Best score: 1%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_outcome mean_cosine_sim_clipped_05", 
+        "value": 0.1071, 
+        "severity": 0, 
+        "severity_value": -0.1071, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_outcome performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_cosine_sim_clipped_05\n  Worst score: 0.1071%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_outcome mean_cosine_sim_clipped_05", 
+        "value": 0.2107, 
+        "severity": 0, 
+        "severity_value": 0.10535, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_outcome performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_cosine_sim_clipped_05\n  Best score: 0.2107%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_across_celltypes mean_cosine_sim_clipped_05", 
+        "value": 0.1619, 
+        "severity": 0, 
+        "severity_value": -0.1619, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_across_celltypes performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_cosine_sim_clipped_05\n  Worst score: 0.1619%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_across_celltypes mean_cosine_sim_clipped_05", 
+        "value": 0.2466, 
+        "severity": 0, 
+        "severity_value": 0.1233, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_across_celltypes performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_cosine_sim_clipped_05\n  Best score: 0.2466%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_across_compounds mean_cosine_sim_clipped_05", 
+        "value": 0.1957, 
+        "severity": 0, 
+        "severity_value": -0.1957, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_across_compounds performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_cosine_sim_clipped_05\n  Worst score: 0.1957%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_across_compounds mean_cosine_sim_clipped_05", 
+        "value": 0.199, 
+        "severity": 0, 
+        "severity_value": 0.0995, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_across_compounds performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_cosine_sim_clipped_05\n  Best score: 0.199%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score sample mean_cosine_sim_clipped_05", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method sample performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: sample\n  Metric id: mean_cosine_sim_clipped_05\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score sample mean_cosine_sim_clipped_05", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method sample performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: sample\n  Metric id: mean_cosine_sim_clipped_05\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score zeros mean_cosine_sim_clipped_05", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method zeros performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_cosine_sim_clipped_05\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score zeros mean_cosine_sim_clipped_05", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method zeros performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_cosine_sim_clipped_05\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score lstm_gru_cnn_ensemble mean_cosine_sim_clipped_05", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lstm_gru_cnn_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_cosine_sim_clipped_05\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score lstm_gru_cnn_ensemble mean_cosine_sim_clipped_05", 
+        "value": 0.2766, 
+        "severity": 0, 
+        "severity_value": 0.1383, 
+        "code": "best_score <= 2", 
+        "message": "Method lstm_gru_cnn_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_cosine_sim_clipped_05\n  Best score: 0.2766%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score nn_retraining_with_pseudolabels mean_cosine_sim_clipped_05", 
+        "value": 0.3287, 
+        "severity": 0, 
+        "severity_value": -0.3287, 
+        "code": "worst_score >= -1", 
+        "message": "Method nn_retraining_with_pseudolabels performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_cosine_sim_clipped_05\n  Worst score: 0.3287%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score nn_retraining_with_pseudolabels mean_cosine_sim_clipped_05", 
+        "value": 0.3572, 
+        "severity": 0, 
+        "severity_value": 0.1786, 
+        "code": "best_score <= 2", 
+        "message": "Method nn_retraining_with_pseudolabels performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_cosine_sim_clipped_05\n  Best score: 0.3572%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score jn_ap_op2 mean_cosine_sim_clipped_05", 
+        "value": 0.231, 
+        "severity": 0, 
+        "severity_value": -0.231, 
+        "code": "worst_score >= -1", 
+        "message": "Method jn_ap_op2 performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_cosine_sim_clipped_05\n  Worst score: 0.231%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score jn_ap_op2 mean_cosine_sim_clipped_05", 
+        "value": 0.3062, 
+        "severity": 0, 
+        "severity_value": 0.1531, 
+        "code": "best_score <= 2", 
+        "message": "Method jn_ap_op2 performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_cosine_sim_clipped_05\n  Best score: 0.3062%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score scape mean_cosine_sim_clipped_05", 
+        "value": 0.2997, 
+        "severity": 0, 
+        "severity_value": -0.2997, 
+        "code": "worst_score >= -1", 
+        "message": "Method scape performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_cosine_sim_clipped_05\n  Worst score: 0.2997%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score scape mean_cosine_sim_clipped_05", 
+        "value": 0.3316, 
+        "severity": 0, 
+        "severity_value": 0.1658, 
+        "code": "best_score <= 2", 
+        "message": "Method scape performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_cosine_sim_clipped_05\n  Best score: 0.3316%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score transformer_ensemble mean_cosine_sim_clipped_05", 
+        "value": 0.1752, 
+        "severity": 0, 
+        "severity_value": -0.1752, 
+        "code": "worst_score >= -1", 
+        "message": "Method transformer_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_cosine_sim_clipped_05\n  Worst score: 0.1752%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score transformer_ensemble mean_cosine_sim_clipped_05", 
+        "value": 0.1963, 
+        "severity": 0, 
+        "severity_value": 0.09815, 
+        "code": "best_score <= 2", 
+        "message": "Method transformer_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_cosine_sim_clipped_05\n  Best score: 0.1963%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score pyboost mean_cosine_sim_clipped_05", 
+        "value": 0.3476, 
+        "severity": 0, 
+        "severity_value": -0.3476, 
+        "code": "worst_score >= -1", 
+        "message": "Method pyboost performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_cosine_sim_clipped_05\n  Worst score: 0.3476%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score pyboost mean_cosine_sim_clipped_05", 
+        "value": 0.3797, 
+        "severity": 0, 
+        "severity_value": 0.18985, 
+        "code": "best_score <= 2", 
+        "message": "Method pyboost performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_cosine_sim_clipped_05\n  Best score: 0.3797%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score ground_truth mean_cosine_sim_clipped_01", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ground_truth performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: ground_truth\n  Metric id: mean_cosine_sim_clipped_01\n  Worst score: 1%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score ground_truth mean_cosine_sim_clipped_01", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method ground_truth performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: ground_truth\n  Metric id: mean_cosine_sim_clipped_01\n  Best score: 1%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_outcome mean_cosine_sim_clipped_01", 
+        "value": 0.1089, 
+        "severity": 0, 
+        "severity_value": -0.1089, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_outcome performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_cosine_sim_clipped_01\n  Worst score: 0.1089%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_outcome mean_cosine_sim_clipped_01", 
+        "value": 0.2084, 
+        "severity": 0, 
+        "severity_value": 0.1042, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_outcome performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_cosine_sim_clipped_01\n  Best score: 0.2084%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_across_celltypes mean_cosine_sim_clipped_01", 
+        "value": 0.1641, 
+        "severity": 0, 
+        "severity_value": -0.1641, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_across_celltypes performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_cosine_sim_clipped_01\n  Worst score: 0.1641%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_across_celltypes mean_cosine_sim_clipped_01", 
+        "value": 0.2549, 
+        "severity": 0, 
+        "severity_value": 0.12745, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_across_celltypes performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_cosine_sim_clipped_01\n  Best score: 0.2549%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_across_compounds mean_cosine_sim_clipped_01", 
+        "value": 0.1993, 
+        "severity": 0, 
+        "severity_value": -0.1993, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_across_compounds performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_cosine_sim_clipped_01\n  Worst score: 0.1993%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_across_compounds mean_cosine_sim_clipped_01", 
+        "value": 0.2027, 
+        "severity": 0, 
+        "severity_value": 0.10135, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_across_compounds performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_cosine_sim_clipped_01\n  Best score: 0.2027%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score sample mean_cosine_sim_clipped_01", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method sample performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: sample\n  Metric id: mean_cosine_sim_clipped_01\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score sample mean_cosine_sim_clipped_01", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method sample performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: sample\n  Metric id: mean_cosine_sim_clipped_01\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score zeros mean_cosine_sim_clipped_01", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method zeros performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_cosine_sim_clipped_01\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score zeros mean_cosine_sim_clipped_01", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method zeros performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_cosine_sim_clipped_01\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score lstm_gru_cnn_ensemble mean_cosine_sim_clipped_01", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lstm_gru_cnn_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_cosine_sim_clipped_01\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score lstm_gru_cnn_ensemble mean_cosine_sim_clipped_01", 
+        "value": 0.2829, 
+        "severity": 0, 
+        "severity_value": 0.14145, 
+        "code": "best_score <= 2", 
+        "message": "Method lstm_gru_cnn_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_cosine_sim_clipped_01\n  Best score: 0.2829%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score nn_retraining_with_pseudolabels mean_cosine_sim_clipped_01", 
+        "value": 0.3359, 
+        "severity": 0, 
+        "severity_value": -0.3359, 
+        "code": "worst_score >= -1", 
+        "message": "Method nn_retraining_with_pseudolabels performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_cosine_sim_clipped_01\n  Worst score: 0.3359%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score nn_retraining_with_pseudolabels mean_cosine_sim_clipped_01", 
+        "value": 0.3612, 
+        "severity": 0, 
+        "severity_value": 0.1806, 
+        "code": "best_score <= 2", 
+        "message": "Method nn_retraining_with_pseudolabels performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_cosine_sim_clipped_01\n  Best score: 0.3612%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score jn_ap_op2 mean_cosine_sim_clipped_01", 
+        "value": 0.2376, 
+        "severity": 0, 
+        "severity_value": -0.2376, 
+        "code": "worst_score >= -1", 
+        "message": "Method jn_ap_op2 performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_cosine_sim_clipped_01\n  Worst score: 0.2376%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score jn_ap_op2 mean_cosine_sim_clipped_01", 
+        "value": 0.31, 
+        "severity": 0, 
+        "severity_value": 0.155, 
+        "code": "best_score <= 2", 
+        "message": "Method jn_ap_op2 performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_cosine_sim_clipped_01\n  Best score: 0.31%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score scape mean_cosine_sim_clipped_01", 
+        "value": 0.304, 
+        "severity": 0, 
+        "severity_value": -0.304, 
+        "code": "worst_score >= -1", 
+        "message": "Method scape performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_cosine_sim_clipped_01\n  Worst score: 0.304%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score scape mean_cosine_sim_clipped_01", 
+        "value": 0.3356, 
+        "severity": 0, 
+        "severity_value": 0.1678, 
+        "code": "best_score <= 2", 
+        "message": "Method scape performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_cosine_sim_clipped_01\n  Best score: 0.3356%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score transformer_ensemble mean_cosine_sim_clipped_01", 
+        "value": 0.1753, 
+        "severity": 0, 
+        "severity_value": -0.1753, 
+        "code": "worst_score >= -1", 
+        "message": "Method transformer_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_cosine_sim_clipped_01\n  Worst score: 0.1753%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score transformer_ensemble mean_cosine_sim_clipped_01", 
+        "value": 0.1922, 
+        "severity": 0, 
+        "severity_value": 0.0961, 
+        "code": "best_score <= 2", 
+        "message": "Method transformer_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_cosine_sim_clipped_01\n  Best score: 0.1922%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score pyboost mean_cosine_sim_clipped_01", 
+        "value": 0.3491, 
+        "severity": 0, 
+        "severity_value": -0.3491, 
+        "code": "worst_score >= -1", 
+        "message": "Method pyboost performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_cosine_sim_clipped_01\n  Worst score: 0.3491%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score pyboost mean_cosine_sim_clipped_01", 
+        "value": 0.3842, 
+        "severity": 0, 
+        "severity_value": 0.1921, 
+        "code": "best_score <= 2", 
+        "message": "Method pyboost performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_cosine_sim_clipped_01\n  Best score: 0.3842%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score ground_truth mean_pearson", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ground_truth performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: ground_truth\n  Metric id: mean_pearson\n  Worst score: 1%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score ground_truth mean_pearson", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method ground_truth performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: ground_truth\n  Metric id: mean_pearson\n  Best score: 1%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_outcome mean_pearson", 
+        "value": 0.1194, 
+        "severity": 0, 
+        "severity_value": -0.1194, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_outcome performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_pearson\n  Worst score: 0.1194%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_outcome mean_pearson", 
+        "value": 0.1894, 
+        "severity": 0, 
+        "severity_value": 0.0947, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_outcome performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_pearson\n  Best score: 0.1894%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_across_celltypes mean_pearson", 
+        "value": 0.1703, 
+        "severity": 0, 
+        "severity_value": -0.1703, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_across_celltypes performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_pearson\n  Worst score: 0.1703%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_across_celltypes mean_pearson", 
+        "value": 0.2694, 
+        "severity": 0, 
+        "severity_value": 0.1347, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_across_celltypes performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_pearson\n  Best score: 0.2694%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_across_compounds mean_pearson", 
+        "value": 0.2123, 
+        "severity": 0, 
+        "severity_value": -0.2123, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_across_compounds performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_pearson\n  Worst score: 0.2123%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_across_compounds mean_pearson", 
+        "value": 0.2613, 
+        "severity": 0, 
+        "severity_value": 0.13065, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_across_compounds performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_pearson\n  Best score: 0.2613%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score sample mean_pearson", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method sample performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: sample\n  Metric id: mean_pearson\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score sample mean_pearson", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method sample performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: sample\n  Metric id: mean_pearson\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score zeros mean_pearson", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method zeros performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_pearson\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score zeros mean_pearson", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method zeros performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_pearson\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score lstm_gru_cnn_ensemble mean_pearson", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lstm_gru_cnn_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_pearson\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score lstm_gru_cnn_ensemble mean_pearson", 
+        "value": 0.3256, 
+        "severity": 0, 
+        "severity_value": 0.1628, 
+        "code": "best_score <= 2", 
+        "message": "Method lstm_gru_cnn_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_pearson\n  Best score: 0.3256%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score nn_retraining_with_pseudolabels mean_pearson", 
+        "value": 0.3764, 
+        "severity": 0, 
+        "severity_value": -0.3764, 
+        "code": "worst_score >= -1", 
+        "message": "Method nn_retraining_with_pseudolabels performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_pearson\n  Worst score: 0.3764%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score nn_retraining_with_pseudolabels mean_pearson", 
+        "value": 0.3803, 
+        "severity": 0, 
+        "severity_value": 0.19015, 
+        "code": "best_score <= 2", 
+        "message": "Method nn_retraining_with_pseudolabels performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_pearson\n  Best score: 0.3803%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score jn_ap_op2 mean_pearson", 
+        "value": 0.3047, 
+        "severity": 0, 
+        "severity_value": -0.3047, 
+        "code": "worst_score >= -1", 
+        "message": "Method jn_ap_op2 performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_pearson\n  Worst score: 0.3047%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score jn_ap_op2 mean_pearson", 
+        "value": 0.3354, 
+        "severity": 0, 
+        "severity_value": 0.1677, 
+        "code": "best_score <= 2", 
+        "message": "Method jn_ap_op2 performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_pearson\n  Best score: 0.3354%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score scape mean_pearson", 
+        "value": 0.3488, 
+        "severity": 0, 
+        "severity_value": -0.3488, 
+        "code": "worst_score >= -1", 
+        "message": "Method scape performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_pearson\n  Worst score: 0.3488%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score scape mean_pearson", 
+        "value": 0.3531, 
+        "severity": 0, 
+        "severity_value": 0.17655, 
+        "code": "best_score <= 2", 
+        "message": "Method scape performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_pearson\n  Best score: 0.3531%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score transformer_ensemble mean_pearson", 
+        "value": 0.1535, 
+        "severity": 0, 
+        "severity_value": -0.1535, 
+        "code": "worst_score >= -1", 
+        "message": "Method transformer_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_pearson\n  Worst score: 0.1535%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score transformer_ensemble mean_pearson", 
+        "value": 0.1571, 
+        "severity": 0, 
+        "severity_value": 0.07855, 
+        "code": "best_score <= 2", 
+        "message": "Method transformer_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_pearson\n  Best score: 0.1571%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score pyboost mean_pearson", 
+        "value": 0.3578, 
+        "severity": 0, 
+        "severity_value": -0.3578, 
+        "code": "worst_score >= -1", 
+        "message": "Method pyboost performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_pearson\n  Worst score: 0.3578%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score pyboost mean_pearson", 
+        "value": 0.4052, 
+        "severity": 0, 
+        "severity_value": 0.2026, 
+        "code": "best_score <= 2", 
+        "message": "Method pyboost performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_pearson\n  Best score: 0.4052%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score ground_truth mean_spearman", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method ground_truth performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: ground_truth\n  Metric id: mean_spearman\n  Worst score: 1%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score ground_truth mean_spearman", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method ground_truth performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: ground_truth\n  Metric id: mean_spearman\n  Best score: 1%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_outcome mean_spearman", 
+        "value": 0.14, 
+        "severity": 0, 
+        "severity_value": -0.14, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_outcome performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_spearman\n  Worst score: 0.14%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_outcome mean_spearman", 
+        "value": 0.2222, 
+        "severity": 0, 
+        "severity_value": 0.1111, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_outcome performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_outcome\n  Metric id: mean_spearman\n  Best score: 0.2222%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_across_celltypes mean_spearman", 
+        "value": 0.1961, 
+        "severity": 0, 
+        "severity_value": -0.1961, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_across_celltypes performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_spearman\n  Worst score: 0.1961%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_across_celltypes mean_spearman", 
+        "value": 0.2908, 
+        "severity": 0, 
+        "severity_value": 0.1454, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_across_celltypes performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_celltypes\n  Metric id: mean_spearman\n  Best score: 0.2908%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score mean_across_compounds mean_spearman", 
+        "value": 0.2126, 
+        "severity": 0, 
+        "severity_value": -0.2126, 
+        "code": "worst_score >= -1", 
+        "message": "Method mean_across_compounds performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_spearman\n  Worst score: 0.2126%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score mean_across_compounds mean_spearman", 
+        "value": 0.2319, 
+        "severity": 0, 
+        "severity_value": 0.11595, 
+        "code": "best_score <= 2", 
+        "message": "Method mean_across_compounds performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: mean_across_compounds\n  Metric id: mean_spearman\n  Best score: 0.2319%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score sample mean_spearman", 
+        "value": 0.0303, 
+        "severity": 0, 
+        "severity_value": -0.0303, 
+        "code": "worst_score >= -1", 
+        "message": "Method sample performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: sample\n  Metric id: mean_spearman\n  Worst score: 0.0303%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score sample mean_spearman", 
+        "value": 0.0468, 
+        "severity": 0, 
+        "severity_value": 0.0234, 
+        "code": "best_score <= 2", 
+        "message": "Method sample performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: sample\n  Metric id: mean_spearman\n  Best score: 0.0468%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score zeros mean_spearman", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method zeros performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_spearman\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score zeros mean_spearman", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method zeros performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: zeros\n  Metric id: mean_spearman\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score lstm_gru_cnn_ensemble mean_spearman", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method lstm_gru_cnn_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_spearman\n  Worst score: 0.0%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score lstm_gru_cnn_ensemble mean_spearman", 
+        "value": 0.3122, 
+        "severity": 0, 
+        "severity_value": 0.1561, 
+        "code": "best_score <= 2", 
+        "message": "Method lstm_gru_cnn_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: lstm_gru_cnn_ensemble\n  Metric id: mean_spearman\n  Best score: 0.3122%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score nn_retraining_with_pseudolabels mean_spearman", 
+        "value": 0.3489, 
+        "severity": 0, 
+        "severity_value": -0.3489, 
+        "code": "worst_score >= -1", 
+        "message": "Method nn_retraining_with_pseudolabels performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_spearman\n  Worst score: 0.3489%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score nn_retraining_with_pseudolabels mean_spearman", 
+        "value": 0.3705, 
+        "severity": 0, 
+        "severity_value": 0.18525, 
+        "code": "best_score <= 2", 
+        "message": "Method nn_retraining_with_pseudolabels performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: nn_retraining_with_pseudolabels\n  Metric id: mean_spearman\n  Best score: 0.3705%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score jn_ap_op2 mean_spearman", 
+        "value": 0.2684, 
+        "severity": 0, 
+        "severity_value": -0.2684, 
+        "code": "worst_score >= -1", 
+        "message": "Method jn_ap_op2 performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_spearman\n  Worst score: 0.2684%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score jn_ap_op2 mean_spearman", 
+        "value": 0.3276, 
+        "severity": 0, 
+        "severity_value": 0.1638, 
+        "code": "best_score <= 2", 
+        "message": "Method jn_ap_op2 performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: jn_ap_op2\n  Metric id: mean_spearman\n  Best score: 0.3276%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score scape mean_spearman", 
+        "value": 0.3315, 
+        "severity": 0, 
+        "severity_value": -0.3315, 
+        "code": "worst_score >= -1", 
+        "message": "Method scape performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_spearman\n  Worst score: 0.3315%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score scape mean_spearman", 
+        "value": 0.352, 
+        "severity": 0, 
+        "severity_value": 0.176, 
+        "code": "best_score <= 2", 
+        "message": "Method scape performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: scape\n  Metric id: mean_spearman\n  Best score: 0.352%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score transformer_ensemble mean_spearman", 
+        "value": 0.1997, 
+        "severity": 0, 
+        "severity_value": -0.1997, 
+        "code": "worst_score >= -1", 
+        "message": "Method transformer_ensemble performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_spearman\n  Worst score: 0.1997%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score transformer_ensemble mean_spearman", 
+        "value": 0.2075, 
+        "severity": 0, 
+        "severity_value": 0.10375, 
+        "code": "best_score <= 2", 
+        "message": "Method transformer_ensemble performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: transformer_ensemble\n  Metric id: mean_spearman\n  Best score: 0.2075%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Worst score pyboost mean_spearman", 
+        "value": 0.3643, 
+        "severity": 0, 
+        "severity_value": -0.3643, 
+        "code": "worst_score >= -1", 
+        "message": "Method pyboost performs much worse than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_spearman\n  Worst score: 0.3643%\n"
+    }, 
+    {
+        "task_id": "dge_perturbation_prediction", 
+        "category": "Scaling", 
+        "name": "Best score pyboost mean_spearman", 
+        "value": 0.3958, 
+        "severity": 0, 
+        "severity_value": 0.1979, 
+        "code": "best_score <= 2", 
+        "message": "Method pyboost performs a lot better than baselines.\n  Task id: dge_perturbation_prediction\n  Method id: pyboost\n  Metric id: mean_spearman\n  Best score: 0.3958%\n"
     }
 ]

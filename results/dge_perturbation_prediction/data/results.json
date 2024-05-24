@@ -4,21 +4,37 @@
     "method_id": "ground_truth",
     "metric_values": {
       "mean_cosine_sim": 1,
+      "mean_cosine_sim_clipped_01": 1,
+      "mean_cosine_sim_clipped_05": 1,
+      "mean_pearson": 1,
       "mean_rowwise_mae": 0,
-      "mean_rowwise_rmse": 0
+      "mean_rowwise_mae_clipped_01": 0,
+      "mean_rowwise_mae_clipped_05": 0,
+      "mean_rowwise_rmse": 0,
+      "mean_rowwise_rmse_clipped_01": 0,
+      "mean_rowwise_rmse_clipped_05": 0,
+      "mean_spearman": 1
     },
     "scaled_scores": {
       "mean_cosine_sim": 1,
+      "mean_cosine_sim_clipped_01": 1,
+      "mean_cosine_sim_clipped_05": 1,
+      "mean_pearson": 1,
       "mean_rowwise_mae": 1,
-      "mean_rowwise_rmse": 1
+      "mean_rowwise_mae_clipped_01": 1,
+      "mean_rowwise_mae_clipped_05": 1,
+      "mean_rowwise_rmse": 1,
+      "mean_rowwise_rmse_clipped_01": 1,
+      "mean_rowwise_rmse_clipped_05": 1,
+      "mean_spearman": 1
     },
     "mean_score": 1,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 1.9,
-      "cpu_pct": 92.2,
-      "peak_memory_mb": 418,
+      "duration_sec": 2.5,
+      "cpu_pct": 64.6,
+      "peak_memory_mb": 5735,
       "disk_read_mb": 15,
       "disk_write_mb": 9
     },
@@ -29,21 +45,37 @@
     "method_id": "jn_ap_op2",
     "metric_values": {
       "mean_cosine_sim": 0.3176,
+      "mean_cosine_sim_clipped_01": 0.2724,
+      "mean_cosine_sim_clipped_05": 0.2688,
+      "mean_pearson": 0.3158,
       "mean_rowwise_mae": 0.3084,
-      "mean_rowwise_rmse": 0.7999
+      "mean_rowwise_mae_clipped_01": 0.2189,
+      "mean_rowwise_mae_clipped_05": 0.1975,
+      "mean_rowwise_rmse": 0.7999,
+      "mean_rowwise_rmse_clipped_01": 0.3659,
+      "mean_rowwise_rmse_clipped_05": 0.3142,
+      "mean_spearman": 0.2753
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.3029,
-      "mean_rowwise_mae": 0.4797,
-      "mean_rowwise_rmse": 0.7209
+      "mean_cosine_sim": 0.3056,
+      "mean_cosine_sim_clipped_01": 0.2376,
+      "mean_cosine_sim_clipped_05": 0.231,
+      "mean_pearson": 0.3047,
+      "mean_rowwise_mae": 0.4783,
+      "mean_rowwise_mae_clipped_01": 0.4082,
+      "mean_rowwise_mae_clipped_05": 0.4062,
+      "mean_rowwise_rmse": 0.7209,
+      "mean_rowwise_rmse_clipped_01": 0.3691,
+      "mean_rowwise_rmse_clipped_05": 0.3579,
+      "mean_spearman": 0.2684
     },
-    "mean_score": 0.5012,
+    "mean_score": 0.3716,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 2989,
-      "cpu_pct": 100.3,
-      "peak_memory_mb": 14951,
+      "duration_sec": 3013,
+      "cpu_pct": 100.4,
+      "peak_memory_mb": 19968,
       "disk_read_mb": 60,
       "disk_write_mb": 8
     },
@@ -53,24 +85,40 @@
     "dataset_id": "neurips-2023-data",
     "method_id": "lstm_gru_cnn_ensemble",
     "metric_values": {
-      "mean_cosine_sim": 0.3459,
-      "mean_rowwise_mae": 0.2794,
-      "mean_rowwise_rmse": 0.7459
+      "mean_cosine_sim": 0.3419,
+      "mean_cosine_sim_clipped_01": 0.3156,
+      "mean_cosine_sim_clipped_05": 0.3122,
+      "mean_pearson": 0.3364,
+      "mean_rowwise_mae": 0.2706,
+      "mean_rowwise_mae_clipped_01": 0.1919,
+      "mean_rowwise_mae_clipped_05": 0.1727,
+      "mean_rowwise_rmse": 0.7305,
+      "mean_rowwise_rmse_clipped_01": 0.3302,
+      "mean_rowwise_rmse_clipped_05": 0.2834,
+      "mean_spearman": 0.3187
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.3318,
-      "mean_rowwise_mae": 0.5288,
-      "mean_rowwise_rmse": 0.7397
+      "mean_cosine_sim": 0.3304,
+      "mean_cosine_sim_clipped_01": 0.2829,
+      "mean_cosine_sim_clipped_05": 0.2766,
+      "mean_pearson": 0.3256,
+      "mean_rowwise_mae": 0.5423,
+      "mean_rowwise_mae_clipped_01": 0.481,
+      "mean_rowwise_mae_clipped_05": 0.4806,
+      "mean_rowwise_rmse": 0.7451,
+      "mean_rowwise_rmse_clipped_01": 0.4306,
+      "mean_rowwise_rmse_clipped_05": 0.421,
+      "mean_spearman": 0.3122
     },
-    "mean_score": 0.5334,
+    "mean_score": 0.4208,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 6012,
-      "cpu_pct": 128.3,
-      "peak_memory_mb": 89191,
-      "disk_read_mb": 2151,
-      "disk_write_mb": 1946
+      "duration_sec": 7878,
+      "cpu_pct": 121.7,
+      "peak_memory_mb": 97792,
+      "disk_read_mb": 3482,
+      "disk_write_mb": 3380
     },
     "task_id": "dge_perturbation_prediction"
   },
@@ -79,20 +127,36 @@
     "method_id": "mean_across_celltypes",
     "metric_values": {
       "mean_cosine_sim": 0.1891,
+      "mean_cosine_sim_clipped_01": 0.2022,
+      "mean_cosine_sim_clipped_05": 0.2031,
+      "mean_pearson": 0.1836,
       "mean_rowwise_mae": 0.469,
-      "mean_rowwise_rmse": 1.1049
+      "mean_rowwise_mae_clipped_01": 0.3698,
+      "mean_rowwise_mae_clipped_05": 0.3326,
+      "mean_rowwise_rmse": 1.1049,
+      "mean_rowwise_rmse_clipped_01": 0.578,
+      "mean_rowwise_rmse_clipped_05": 0.4894,
+      "mean_spearman": 0.2037
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.1716,
-      "mean_rowwise_mae": 0.2089,
-      "mean_rowwise_rmse": 0.6144
+      "mean_cosine_sim": 0.1748,
+      "mean_cosine_sim_clipped_01": 0.1641,
+      "mean_cosine_sim_clipped_05": 0.1619,
+      "mean_pearson": 0.1703,
+      "mean_rowwise_mae": 0.2067,
+      "mean_rowwise_mae_clipped_01": 0,
+      "mean_rowwise_mae_clipped_05": 0,
+      "mean_rowwise_rmse": 0.6144,
+      "mean_rowwise_rmse_clipped_01": 0.0034,
+      "mean_rowwise_rmse_clipped_05": 0,
+      "mean_spearman": 0.1961
     },
-    "mean_score": 0.3316,
+    "mean_score": 0.1538,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 5.1,
-      "cpu_pct": 197.2,
+      "duration_sec": 3.9,
+      "cpu_pct": 257.6,
       "peak_memory_mb": 2868,
       "disk_read_mb": 33,
       "disk_write_mb": 2
@@ -104,21 +168,37 @@
     "method_id": "mean_across_compounds",
     "metric_values": {
       "mean_cosine_sim": 0.2765,
+      "mean_cosine_sim_clipped_01": 0.2391,
+      "mean_cosine_sim_clipped_05": 0.2352,
+      "mean_pearson": 0.2731,
       "mean_rowwise_mae": 0.3451,
-      "mean_rowwise_rmse": 0.8606
+      "mean_rowwise_mae_clipped_01": 0.2437,
+      "mean_rowwise_mae_clipped_05": 0.2198,
+      "mean_rowwise_rmse": 0.8606,
+      "mean_rowwise_rmse_clipped_01": 0.387,
+      "mean_rowwise_rmse_clipped_05": 0.3332,
+      "mean_spearman": 0.2392
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.2609,
-      "mean_rowwise_mae": 0.4178,
-      "mean_rowwise_rmse": 0.6997
+      "mean_cosine_sim": 0.2637,
+      "mean_cosine_sim_clipped_01": 0.2027,
+      "mean_cosine_sim_clipped_05": 0.1957,
+      "mean_pearson": 0.2613,
+      "mean_rowwise_mae": 0.4162,
+      "mean_rowwise_mae_clipped_01": 0.3408,
+      "mean_rowwise_mae_clipped_05": 0.339,
+      "mean_rowwise_rmse": 0.6997,
+      "mean_rowwise_rmse_clipped_01": 0.3328,
+      "mean_rowwise_rmse_clipped_05": 0.3191,
+      "mean_spearman": 0.2319
     },
-    "mean_score": 0.4594,
+    "mean_score": 0.3275,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 4.4,
-      "cpu_pct": 190.1,
-      "peak_memory_mb": 1844,
+      "duration_sec": 4.7,
+      "cpu_pct": 222.2,
+      "peak_memory_mb": 2868,
       "disk_read_mb": 33,
       "disk_write_mb": 6
     },
@@ -129,21 +209,37 @@
     "method_id": "mean_outcome",
     "metric_values": {
       "mean_cosine_sim": 0.1419,
+      "mean_cosine_sim_clipped_01": 0.1496,
+      "mean_cosine_sim_clipped_05": 0.151,
+      "mean_pearson": 0.1335,
       "mean_rowwise_mae": 0.3777,
-      "mean_rowwise_rmse": 0.9628
+      "mean_rowwise_mae_clipped_01": 0.292,
+      "mean_rowwise_mae_clipped_05": 0.269,
+      "mean_rowwise_rmse": 0.9628,
+      "mean_rowwise_rmse_clipped_01": 0.4575,
+      "mean_rowwise_rmse_clipped_05": 0.3989,
+      "mean_spearman": 0.1481
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.1234,
-      "mean_rowwise_mae": 0.3628,
-      "mean_rowwise_rmse": 0.664
+      "mean_cosine_sim": 0.1268,
+      "mean_cosine_sim_clipped_01": 0.1089,
+      "mean_cosine_sim_clipped_05": 0.1071,
+      "mean_pearson": 0.1194,
+      "mean_rowwise_mae": 0.3611,
+      "mean_rowwise_mae_clipped_01": 0.2104,
+      "mean_rowwise_mae_clipped_05": 0.1912,
+      "mean_rowwise_rmse": 0.664,
+      "mean_rowwise_rmse_clipped_01": 0.2112,
+      "mean_rowwise_rmse_clipped_05": 0.185,
+      "mean_spearman": 0.14
     },
-    "mean_score": 0.3834,
+    "mean_score": 0.2205,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 4.3,
-      "cpu_pct": 192.3,
-      "peak_memory_mb": 1844,
+      "duration_sec": 5.5,
+      "cpu_pct": 192.1,
+      "peak_memory_mb": 2868,
       "disk_read_mb": 33,
       "disk_write_mb": 2
     },
@@ -153,22 +249,38 @@
     "dataset_id": "neurips-2023-data",
     "method_id": "nn_retraining_with_pseudolabels",
     "metric_values": {
-      "mean_cosine_sim": 0.3951,
-      "mean_rowwise_mae": 0.2865,
-      "mean_rowwise_rmse": 0.7274
+      "mean_cosine_sim": 0.3935,
+      "mean_cosine_sim_clipped_01": 0.3662,
+      "mean_cosine_sim_clipped_05": 0.3617,
+      "mean_pearson": 0.3902,
+      "mean_rowwise_mae": 0.2851,
+      "mean_rowwise_mae_clipped_01": 0.202,
+      "mean_rowwise_mae_clipped_05": 0.1817,
+      "mean_rowwise_rmse": 0.7269,
+      "mean_rowwise_rmse_clipped_01": 0.3325,
+      "mean_rowwise_rmse_clipped_05": 0.2871,
+      "mean_spearman": 0.355
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.3821,
-      "mean_rowwise_mae": 0.5167,
-      "mean_rowwise_rmse": 0.7461
+      "mean_cosine_sim": 0.3828,
+      "mean_cosine_sim_clipped_01": 0.3359,
+      "mean_cosine_sim_clipped_05": 0.3287,
+      "mean_pearson": 0.3803,
+      "mean_rowwise_mae": 0.5178,
+      "mean_rowwise_mae_clipped_01": 0.4537,
+      "mean_rowwise_mae_clipped_05": 0.4537,
+      "mean_rowwise_rmse": 0.7463,
+      "mean_rowwise_rmse_clipped_01": 0.4268,
+      "mean_rowwise_rmse_clipped_05": 0.4135,
+      "mean_spearman": 0.3489
     },
-    "mean_score": 0.5483,
+    "mean_score": 0.4353,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 1930,
+      "duration_sec": 1893,
       "cpu_pct": 1400.2,
-      "peak_memory_mb": 49972,
+      "peak_memory_mb": 49869,
       "disk_read_mb": 72,
       "disk_write_mb": 11
     },
@@ -179,20 +291,36 @@
     "method_id": "pyboost",
     "metric_values": {
       "mean_cosine_sim": 0.4192,
-      "mean_rowwise_mae": 0.2679,
-      "mean_rowwise_rmse": 0.7549
+      "mean_cosine_sim_clipped_01": 0.4123,
+      "mean_cosine_sim_clipped_05": 0.4102,
+      "mean_pearson": 0.4148,
+      "mean_rowwise_mae": 0.268,
+      "mean_rowwise_mae_clipped_01": 0.1889,
+      "mean_rowwise_mae_clipped_05": 0.1705,
+      "mean_rowwise_rmse": 0.7556,
+      "mean_rowwise_rmse_clipped_01": 0.3164,
+      "mean_rowwise_rmse_clipped_05": 0.2717,
+      "mean_spearman": 0.4015
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.4066,
-      "mean_rowwise_mae": 0.5481,
-      "mean_rowwise_rmse": 0.7365
+      "mean_cosine_sim": 0.4089,
+      "mean_cosine_sim_clipped_01": 0.3842,
+      "mean_cosine_sim_clipped_05": 0.3797,
+      "mean_pearson": 0.4052,
+      "mean_rowwise_mae": 0.5467,
+      "mean_rowwise_mae_clipped_01": 0.4892,
+      "mean_rowwise_mae_clipped_05": 0.4875,
+      "mean_rowwise_rmse": 0.7363,
+      "mean_rowwise_rmse_clipped_01": 0.4545,
+      "mean_rowwise_rmse_clipped_05": 0.4449,
+      "mean_spearman": 0.3958
     },
-    "mean_score": 0.5638,
+    "mean_score": 0.4666,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 163,
-      "cpu_pct": 124.8,
+      "duration_sec": 160,
+      "cpu_pct": 128.1,
       "peak_memory_mb": 25088,
       "disk_read_mb": 92,
       "disk_write_mb": 17
@@ -203,21 +331,37 @@
     "dataset_id": "neurips-2023-data",
     "method_id": "sample",
     "metric_values": {
-      "mean_cosine_sim": 0.0211,
-      "mean_rowwise_mae": 0.5928,
-      "mean_rowwise_rmse": 2.8656
+      "mean_cosine_sim": 0.0173,
+      "mean_cosine_sim_clipped_01": 0.0456,
+      "mean_cosine_sim_clipped_05": 0.0492,
+      "mean_pearson": 0.016,
+      "mean_rowwise_mae": 0.5912,
+      "mean_rowwise_mae_clipped_01": 0.3366,
+      "mean_rowwise_mae_clipped_05": 0.2963,
+      "mean_rowwise_rmse": 2.8655,
+      "mean_rowwise_rmse_clipped_01": 0.58,
+      "mean_rowwise_rmse_clipped_05": 0.4682,
+      "mean_spearman": 0.0558
     },
     "scaled_scores": {
       "mean_cosine_sim": 0,
+      "mean_cosine_sim_clipped_01": 0,
+      "mean_cosine_sim_clipped_05": 0,
+      "mean_pearson": 0,
       "mean_rowwise_mae": 0,
-      "mean_rowwise_rmse": 0
+      "mean_rowwise_mae_clipped_01": 0.0897,
+      "mean_rowwise_mae_clipped_05": 0.1089,
+      "mean_rowwise_rmse": 0,
+      "mean_rowwise_rmse_clipped_01": 0,
+      "mean_rowwise_rmse_clipped_05": 0.0433,
+      "mean_spearman": 0.0468
     },
-    "mean_score": 0,
+    "mean_score": 0.0262,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 3.5,
-      "cpu_pct": 104.8,
+      "duration_sec": 3.4,
+      "cpu_pct": 103.4,
       "peak_memory_mb": 5940,
       "disk_read_mb": 16,
       "disk_write_mb": 8
@@ -228,24 +372,40 @@
     "dataset_id": "neurips-2023-data",
     "method_id": "scape",
     "metric_values": {
-      "mean_cosine_sim": 0.3622,
-      "mean_rowwise_mae": 0.2881,
-      "mean_rowwise_rmse": 0.7327
+      "mean_cosine_sim": 0.3638,
+      "mean_cosine_sim_clipped_01": 0.3357,
+      "mean_cosine_sim_clipped_05": 0.3341,
+      "mean_pearson": 0.3593,
+      "mean_rowwise_mae": 0.2878,
+      "mean_rowwise_mae_clipped_01": 0.2074,
+      "mean_rowwise_mae_clipped_05": 0.1872,
+      "mean_rowwise_rmse": 0.7315,
+      "mean_rowwise_rmse_clipped_01": 0.3399,
+      "mean_rowwise_rmse_clipped_05": 0.2933,
+      "mean_spearman": 0.3378
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.3484,
-      "mean_rowwise_mae": 0.5139,
-      "mean_rowwise_rmse": 0.7443
+      "mean_cosine_sim": 0.3526,
+      "mean_cosine_sim_clipped_01": 0.304,
+      "mean_cosine_sim_clipped_05": 0.2997,
+      "mean_pearson": 0.3488,
+      "mean_rowwise_mae": 0.5131,
+      "mean_rowwise_mae_clipped_01": 0.4392,
+      "mean_rowwise_mae_clipped_05": 0.4372,
+      "mean_rowwise_rmse": 0.7447,
+      "mean_rowwise_rmse_clipped_01": 0.4139,
+      "mean_rowwise_rmse_clipped_05": 0.4007,
+      "mean_spearman": 0.3315
     },
-    "mean_score": 0.5356,
+    "mean_score": 0.4169,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 9978,
-      "cpu_pct": 133.5,
-      "peak_memory_mb": 67789,
-      "disk_read_mb": 150,
-      "disk_write_mb": 29082
+      "duration_sec": 11538,
+      "cpu_pct": 141,
+      "peak_memory_mb": 83559,
+      "disk_read_mb": 149,
+      "disk_write_mb": 28365
     },
     "task_id": "dge_perturbation_prediction"
   },
@@ -253,24 +413,40 @@
     "dataset_id": "neurips-2023-data",
     "method_id": "transformer_ensemble",
     "metric_values": {
-      "mean_cosine_sim": 0.179,
-      "mean_rowwise_mae": 0.3082,
-      "mean_rowwise_rmse": 0.8879
+      "mean_cosine_sim": 0.178,
+      "mean_cosine_sim_clipped_01": 0.2129,
+      "mean_cosine_sim_clipped_05": 0.2157,
+      "mean_pearson": 0.1706,
+      "mean_rowwise_mae": 0.2988,
+      "mean_rowwise_mae_clipped_01": 0.2135,
+      "mean_rowwise_mae_clipped_05": 0.1937,
+      "mean_rowwise_rmse": 0.8843,
+      "mean_rowwise_rmse_clipped_01": 0.3607,
+      "mean_rowwise_rmse_clipped_05": 0.3066,
+      "mean_spearman": 0.215
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.1613,
-      "mean_rowwise_mae": 0.4802,
-      "mean_rowwise_rmse": 0.6902
+      "mean_cosine_sim": 0.1635,
+      "mean_cosine_sim_clipped_01": 0.1753,
+      "mean_cosine_sim_clipped_05": 0.1752,
+      "mean_pearson": 0.1571,
+      "mean_rowwise_mae": 0.4946,
+      "mean_rowwise_mae_clipped_01": 0.4226,
+      "mean_rowwise_mae_clipped_05": 0.4176,
+      "mean_rowwise_rmse": 0.6914,
+      "mean_rowwise_rmse_clipped_01": 0.3781,
+      "mean_rowwise_rmse_clipped_05": 0.3734,
+      "mean_spearman": 0.2075
     },
-    "mean_score": 0.4439,
+    "mean_score": 0.3324,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 5497,
-      "cpu_pct": 204.3,
-      "peak_memory_mb": 23348,
-      "disk_read_mb": 413,
-      "disk_write_mb": 147
+      "duration_sec": 6019,
+      "cpu_pct": 199.5,
+      "peak_memory_mb": 23245,
+      "disk_read_mb": 60,
+      "disk_write_mb": 11
     },
     "task_id": "dge_perturbation_prediction"
   },
@@ -279,20 +455,36 @@
     "method_id": "zeros",
     "metric_values": {
       "mean_cosine_sim": "NA",
+      "mean_cosine_sim_clipped_01": "NA",
+      "mean_cosine_sim_clipped_05": "NA",
+      "mean_pearson": "NA",
       "mean_rowwise_mae": 0.2886,
-      "mean_rowwise_rmse": 0.8881
+      "mean_rowwise_mae_clipped_01": 0.2033,
+      "mean_rowwise_mae_clipped_05": 0.1835,
+      "mean_rowwise_rmse": 0.8881,
+      "mean_rowwise_rmse_clipped_01": 0.3657,
+      "mean_rowwise_rmse_clipped_05": 0.3108,
+      "mean_spearman": 0.0095
     },
     "scaled_scores": {
       "mean_cosine_sim": 0,
-      "mean_rowwise_mae": 0.5132,
-      "mean_rowwise_rmse": 0.6901
+      "mean_cosine_sim_clipped_01": 0,
+      "mean_cosine_sim_clipped_05": 0,
+      "mean_pearson": 0,
+      "mean_rowwise_mae": 0.5118,
+      "mean_rowwise_mae_clipped_01": 0.4502,
+      "mean_rowwise_mae_clipped_05": 0.4483,
+      "mean_rowwise_rmse": 0.6901,
+      "mean_rowwise_rmse_clipped_01": 0.3695,
+      "mean_rowwise_rmse_clipped_05": 0.365,
+      "mean_spearman": 0
     },
-    "mean_score": 0.4011,
+    "mean_score": 0.2577,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 5.7,
-      "cpu_pct": 190.5,
+      "duration_sec": 6.1,
+      "cpu_pct": 208.1,
       "peak_memory_mb": 2868,
       "disk_read_mb": 33,
       "disk_write_mb": 2
@@ -304,21 +496,37 @@
     "method_id": "ground_truth",
     "metric_values": {
       "mean_cosine_sim": 1,
+      "mean_cosine_sim_clipped_01": 1,
+      "mean_cosine_sim_clipped_05": 1,
+      "mean_pearson": 1,
       "mean_rowwise_mae": 0,
-      "mean_rowwise_rmse": 0
+      "mean_rowwise_mae_clipped_01": 0,
+      "mean_rowwise_mae_clipped_05": 0,
+      "mean_rowwise_rmse": 0,
+      "mean_rowwise_rmse_clipped_01": 0,
+      "mean_rowwise_rmse_clipped_05": 0,
+      "mean_spearman": 1
     },
     "scaled_scores": {
       "mean_cosine_sim": 1,
+      "mean_cosine_sim_clipped_01": 1,
+      "mean_cosine_sim_clipped_05": 1,
+      "mean_pearson": 1,
       "mean_rowwise_mae": 1,
-      "mean_rowwise_rmse": 1
+      "mean_rowwise_mae_clipped_01": 1,
+      "mean_rowwise_mae_clipped_05": 1,
+      "mean_rowwise_rmse": 1,
+      "mean_rowwise_rmse_clipped_01": 1,
+      "mean_rowwise_rmse_clipped_05": 1,
+      "mean_spearman": 1
     },
     "mean_score": 1,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 3.4,
-      "cpu_pct": 113.7,
-      "peak_memory_mb": 3994,
+      "duration_sec": 4.1,
+      "cpu_pct": 95.8,
+      "peak_memory_mb": 5837,
       "disk_read_mb": 15,
       "disk_write_mb": 47
     },
@@ -329,19 +537,35 @@
     "method_id": "jn_ap_op2",
     "metric_values": {
       "mean_cosine_sim": 0.3722,
+      "mean_cosine_sim_clipped_01": 0.3566,
+      "mean_cosine_sim_clipped_05": 0.3515,
+      "mean_pearson": 0.3593,
       "mean_rowwise_mae": 0.8654,
-      "mean_rowwise_rmse": 1.3381
+      "mean_rowwise_mae_clipped_01": 0.5656,
+      "mean_rowwise_mae_clipped_05": 0.4936,
+      "mean_rowwise_rmse": 1.3381,
+      "mean_rowwise_rmse_clipped_01": 0.7491,
+      "mean_rowwise_rmse_clipped_05": 0.6397,
+      "mean_spearman": 0.3355
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.3361,
+      "mean_cosine_sim": 0.337,
+      "mean_cosine_sim_clipped_01": 0.31,
+      "mean_cosine_sim_clipped_05": 0.3062,
+      "mean_pearson": 0.3354,
       "mean_rowwise_mae": 0.5046,
-      "mean_rowwise_rmse": 0.5562
+      "mean_rowwise_mae_clipped_01": 0.4581,
+      "mean_rowwise_mae_clipped_05": 0.3823,
+      "mean_rowwise_rmse": 0.5589,
+      "mean_rowwise_rmse_clipped_01": 0.4184,
+      "mean_rowwise_rmse_clipped_05": 0.3535,
+      "mean_spearman": 0.3276
     },
-    "mean_score": 0.4656,
+    "mean_score": 0.3902,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 3286,
+      "duration_sec": 3348,
       "cpu_pct": 100.5,
       "peak_memory_mb": 21504,
       "disk_read_mb": 132,
@@ -354,19 +578,35 @@
     "method_id": "lstm_gru_cnn_ensemble",
     "metric_values": {
       "mean_cosine_sim": "NA",
+      "mean_cosine_sim_clipped_01": "NA",
+      "mean_cosine_sim_clipped_05": "NA",
+      "mean_pearson": "NA",
       "mean_rowwise_mae": "NA",
-      "mean_rowwise_rmse": "NA"
+      "mean_rowwise_mae_clipped_01": "NA",
+      "mean_rowwise_mae_clipped_05": "NA",
+      "mean_rowwise_rmse": "NA",
+      "mean_rowwise_rmse_clipped_01": "NA",
+      "mean_rowwise_rmse_clipped_05": "NA",
+      "mean_spearman": "NA"
     },
     "scaled_scores": {
       "mean_cosine_sim": 0,
+      "mean_cosine_sim_clipped_01": 0,
+      "mean_cosine_sim_clipped_05": 0,
+      "mean_pearson": 0,
       "mean_rowwise_mae": 0,
-      "mean_rowwise_rmse": 0
+      "mean_rowwise_mae_clipped_01": 0,
+      "mean_rowwise_mae_clipped_05": 0,
+      "mean_rowwise_rmse": 0,
+      "mean_rowwise_rmse_clipped_01": 0,
+      "mean_rowwise_rmse_clipped_05": 0,
+      "mean_spearman": 0
     },
     "mean_score": 0,
     "normalization_id": null,
     "resources": {
       "exit_code": 1,
-      "duration_sec": 29431,
+      "duration_sec": 84392,
       "cpu_pct": "NA",
       "peak_memory_mb": "NA",
       "disk_read_mb": "NA",
@@ -379,21 +619,37 @@
     "method_id": "mean_across_celltypes",
     "metric_values": {
       "mean_cosine_sim": 0.3137,
+      "mean_cosine_sim_clipped_01": 0.3053,
+      "mean_cosine_sim_clipped_05": 0.2957,
+      "mean_pearson": 0.2957,
       "mean_rowwise_mae": 1.7469,
-      "mean_rowwise_rmse": 2.4967
+      "mean_rowwise_mae_clipped_01": 1.0437,
+      "mean_rowwise_mae_clipped_05": 0.7991,
+      "mean_rowwise_rmse": 2.4967,
+      "mean_rowwise_rmse_clipped_01": 1.288,
+      "mean_rowwise_rmse_clipped_05": 0.9896,
+      "mean_spearman": 0.2991
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.2743,
+      "mean_cosine_sim": 0.2753,
+      "mean_cosine_sim_clipped_01": 0.2549,
+      "mean_cosine_sim_clipped_05": 0.2466,
+      "mean_pearson": 0.2694,
       "mean_rowwise_mae": 0,
-      "mean_rowwise_rmse": 0.1719
+      "mean_rowwise_mae_clipped_01": 0,
+      "mean_rowwise_mae_clipped_05": 0,
+      "mean_rowwise_rmse": 0.1769,
+      "mean_rowwise_rmse_clipped_01": 0,
+      "mean_rowwise_rmse_clipped_05": 0,
+      "mean_spearman": 0.2908
     },
-    "mean_score": 0.1487,
+    "mean_score": 0.1376,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 14.8,
-      "cpu_pct": 125.8,
-      "peak_memory_mb": 2048,
+      "duration_sec": 15.4,
+      "cpu_pct": 135.5,
+      "peak_memory_mb": 3072,
       "disk_read_mb": 106,
       "disk_write_mb": 7
     },
@@ -404,21 +660,37 @@
     "method_id": "mean_across_compounds",
     "metric_values": {
       "mean_cosine_sim": 0.2631,
+      "mean_cosine_sim_clipped_01": 0.2534,
+      "mean_cosine_sim_clipped_05": 0.2512,
+      "mean_pearson": 0.2406,
       "mean_rowwise_mae": 0.9543,
-      "mean_rowwise_rmse": 1.4669
+      "mean_rowwise_mae_clipped_01": 0.6217,
+      "mean_rowwise_mae_clipped_05": 0.5402,
+      "mean_rowwise_rmse": 1.4669,
+      "mean_rowwise_rmse_clipped_01": 0.8122,
+      "mean_rowwise_rmse_clipped_05": 0.693,
+      "mean_spearman": 0.2218
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.2208,
+      "mean_cosine_sim": 0.2219,
+      "mean_cosine_sim_clipped_01": 0.1993,
+      "mean_cosine_sim_clipped_05": 0.199,
+      "mean_pearson": 0.2123,
       "mean_rowwise_mae": 0.4537,
-      "mean_rowwise_rmse": 0.5135
+      "mean_rowwise_mae_clipped_01": 0.4043,
+      "mean_rowwise_mae_clipped_05": 0.324,
+      "mean_rowwise_rmse": 0.5164,
+      "mean_rowwise_rmse_clipped_01": 0.3694,
+      "mean_rowwise_rmse_clipped_05": 0.2998,
+      "mean_spearman": 0.2126
     },
-    "mean_score": 0.396,
+    "mean_score": 0.3102,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 15.3,
-      "cpu_pct": 126.2,
-      "peak_memory_mb": 2048,
+      "duration_sec": 19.8,
+      "cpu_pct": 132.6,
+      "peak_memory_mb": 3072,
       "disk_read_mb": 106,
       "disk_write_mb": 28
     },
@@ -429,20 +701,36 @@
     "method_id": "mean_outcome",
     "metric_values": {
       "mean_cosine_sim": 0.2508,
+      "mean_cosine_sim_clipped_01": 0.2618,
+      "mean_cosine_sim_clipped_05": 0.2622,
+      "mean_pearson": 0.2186,
       "mean_rowwise_mae": 1.0134,
-      "mean_rowwise_rmse": 1.5744
+      "mean_rowwise_mae_clipped_01": 0.6698,
+      "mean_rowwise_mae_clipped_05": 0.5863,
+      "mean_rowwise_rmse": 1.5744,
+      "mean_rowwise_rmse_clipped_01": 0.8454,
+      "mean_rowwise_rmse_clipped_05": 0.7281,
+      "mean_spearman": 0.2313
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.2078,
+      "mean_cosine_sim": 0.2089,
+      "mean_cosine_sim_clipped_01": 0.2084,
+      "mean_cosine_sim_clipped_05": 0.2107,
+      "mean_pearson": 0.1894,
       "mean_rowwise_mae": 0.4199,
-      "mean_rowwise_rmse": 0.4778
+      "mean_rowwise_mae_clipped_01": 0.3583,
+      "mean_rowwise_mae_clipped_05": 0.2663,
+      "mean_rowwise_rmse": 0.481,
+      "mean_rowwise_rmse_clipped_01": 0.3436,
+      "mean_rowwise_rmse_clipped_05": 0.2642,
+      "mean_spearman": 0.2222
     },
-    "mean_score": 0.3685,
+    "mean_score": 0.2884,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 15.2,
-      "cpu_pct": 137.2,
+      "duration_sec": 15.3,
+      "cpu_pct": 136.4,
       "peak_memory_mb": 2970,
       "disk_read_mb": 106,
       "disk_write_mb": 6
@@ -453,22 +741,38 @@
     "dataset_id": "neurips-2023-kaggle",
     "method_id": "nn_retraining_with_pseudolabels",
     "metric_values": {
-      "mean_cosine_sim": 0.4157,
-      "mean_rowwise_mae": 0.8263,
-      "mean_rowwise_rmse": 1.2873
+      "mean_cosine_sim": 0.4151,
+      "mean_cosine_sim_clipped_01": 0.4043,
+      "mean_cosine_sim_clipped_05": 0.3991,
+      "mean_pearson": 0.3989,
+      "mean_rowwise_mae": 0.8289,
+      "mean_rowwise_mae_clipped_01": 0.5354,
+      "mean_rowwise_mae_clipped_05": 0.4659,
+      "mean_rowwise_rmse": 1.2929,
+      "mean_rowwise_rmse_clipped_01": 0.7162,
+      "mean_rowwise_rmse_clipped_05": 0.6104,
+      "mean_spearman": 0.3778
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.3822,
-      "mean_rowwise_mae": 0.527,
-      "mean_rowwise_rmse": 0.573
+      "mean_cosine_sim": 0.3824,
+      "mean_cosine_sim_clipped_01": 0.3612,
+      "mean_cosine_sim_clipped_05": 0.3572,
+      "mean_pearson": 0.3764,
+      "mean_rowwise_mae": 0.5255,
+      "mean_rowwise_mae_clipped_01": 0.487,
+      "mean_rowwise_mae_clipped_05": 0.417,
+      "mean_rowwise_rmse": 0.5738,
+      "mean_rowwise_rmse_clipped_01": 0.4439,
+      "mean_rowwise_rmse_clipped_05": 0.3832,
+      "mean_spearman": 0.3705
     },
-    "mean_score": 0.4941,
+    "mean_score": 0.4253,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 2702,
-      "cpu_pct": 1481.2,
-      "peak_memory_mb": 51405,
+      "duration_sec": 2658,
+      "cpu_pct": 1478,
+      "peak_memory_mb": 51508,
       "disk_read_mb": 144,
       "disk_write_mb": 52
     },
@@ -478,22 +782,38 @@
     "dataset_id": "neurips-2023-kaggle",
     "method_id": "pyboost",
     "metric_values": {
-      "mean_cosine_sim": 0.3966,
-      "mean_rowwise_mae": 0.8301,
-      "mean_rowwise_rmse": 1.3192
+      "mean_cosine_sim": 0.3961,
+      "mean_cosine_sim_clipped_01": 0.3931,
+      "mean_cosine_sim_clipped_05": 0.3901,
+      "mean_pearson": 0.3809,
+      "mean_rowwise_mae": 0.8306,
+      "mean_rowwise_mae_clipped_01": 0.5327,
+      "mean_rowwise_mae_clipped_05": 0.463,
+      "mean_rowwise_rmse": 1.3199,
+      "mean_rowwise_rmse_clipped_01": 0.7145,
+      "mean_rowwise_rmse_clipped_05": 0.6058,
+      "mean_spearman": 0.3717
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.362,
-      "mean_rowwise_mae": 0.5248,
-      "mean_rowwise_rmse": 0.5625
+      "mean_cosine_sim": 0.3623,
+      "mean_cosine_sim_clipped_01": 0.3491,
+      "mean_cosine_sim_clipped_05": 0.3476,
+      "mean_pearson": 0.3578,
+      "mean_rowwise_mae": 0.5245,
+      "mean_rowwise_mae_clipped_01": 0.4896,
+      "mean_rowwise_mae_clipped_05": 0.4205,
+      "mean_rowwise_rmse": 0.5649,
+      "mean_rowwise_rmse_clipped_01": 0.4452,
+      "mean_rowwise_rmse_clipped_05": 0.3878,
+      "mean_spearman": 0.3643
     },
-    "mean_score": 0.4831,
+    "mean_score": 0.4194,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 169,
-      "cpu_pct": 150.6,
-      "peak_memory_mb": 26420,
+      "duration_sec": 178,
+      "cpu_pct": 155.8,
+      "peak_memory_mb": 25805,
       "disk_read_mb": 165,
       "disk_write_mb": 58
     },
@@ -503,22 +823,38 @@
     "dataset_id": "neurips-2023-kaggle",
     "method_id": "sample",
     "metric_values": {
-      "mean_cosine_sim": 0.0543,
-      "mean_rowwise_mae": 1.4664,
-      "mean_rowwise_rmse": 3.015
+      "mean_cosine_sim": 0.053,
+      "mean_cosine_sim_clipped_01": 0.0675,
+      "mean_cosine_sim_clipped_05": 0.0652,
+      "mean_pearson": 0.036,
+      "mean_rowwise_mae": 1.4683,
+      "mean_rowwise_mae_clipped_01": 0.8746,
+      "mean_rowwise_mae_clipped_05": 0.7386,
+      "mean_rowwise_rmse": 3.0335,
+      "mean_rowwise_rmse_clipped_01": 1.1253,
+      "mean_rowwise_rmse_clipped_05": 0.9245,
+      "mean_spearman": 0.0417
     },
     "scaled_scores": {
       "mean_cosine_sim": 0,
-      "mean_rowwise_mae": 0.1606,
-      "mean_rowwise_rmse": 0
+      "mean_cosine_sim_clipped_01": 0,
+      "mean_cosine_sim_clipped_05": 0,
+      "mean_pearson": 0,
+      "mean_rowwise_mae": 0.1595,
+      "mean_rowwise_mae_clipped_01": 0.162,
+      "mean_rowwise_mae_clipped_05": 0.0757,
+      "mean_rowwise_rmse": 0,
+      "mean_rowwise_rmse_clipped_01": 0.1263,
+      "mean_rowwise_rmse_clipped_05": 0.0658,
+      "mean_spearman": 0.0303
     },
-    "mean_score": 0.0535,
+    "mean_score": 0.0563,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 24.7,
-      "cpu_pct": 103.2,
-      "peak_memory_mb": 4301,
+      "duration_sec": 32,
+      "cpu_pct": 76.3,
+      "peak_memory_mb": 6042,
       "disk_read_mb": 16,
       "disk_write_mb": 41
     },
@@ -528,24 +864,40 @@
     "dataset_id": "neurips-2023-kaggle",
     "method_id": "scape",
     "metric_values": {
-      "mean_cosine_sim": 0.3919,
-      "mean_rowwise_mae": 0.85,
-      "mean_rowwise_rmse": 1.3077
+      "mean_cosine_sim": 0.3908,
+      "mean_cosine_sim_clipped_01": 0.3805,
+      "mean_cosine_sim_clipped_05": 0.3752,
+      "mean_pearson": 0.3764,
+      "mean_rowwise_mae": 0.8507,
+      "mean_rowwise_mae_clipped_01": 0.5579,
+      "mean_rowwise_mae_clipped_05": 0.486,
+      "mean_rowwise_rmse": 1.3086,
+      "mean_rowwise_rmse_clipped_01": 0.74,
+      "mean_rowwise_rmse_clipped_05": 0.6328,
+      "mean_spearman": 0.3596
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.357,
-      "mean_rowwise_mae": 0.5134,
-      "mean_rowwise_rmse": 0.5663
+      "mean_cosine_sim": 0.3567,
+      "mean_cosine_sim_clipped_01": 0.3356,
+      "mean_cosine_sim_clipped_05": 0.3316,
+      "mean_pearson": 0.3531,
+      "mean_rowwise_mae": 0.513,
+      "mean_rowwise_mae_clipped_01": 0.4655,
+      "mean_rowwise_mae_clipped_05": 0.3918,
+      "mean_rowwise_rmse": 0.5686,
+      "mean_rowwise_rmse_clipped_01": 0.4254,
+      "mean_rowwise_rmse_clipped_05": 0.3606,
+      "mean_spearman": 0.352
     },
-    "mean_score": 0.4789,
+    "mean_score": 0.4049,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 11413,
-      "cpu_pct": 145.7,
-      "peak_memory_mb": 88064,
+      "duration_sec": 11182,
+      "cpu_pct": 144.6,
+      "peak_memory_mb": 87860,
       "disk_read_mb": 425,
-      "disk_write_mb": 112640
+      "disk_write_mb": 112845
     },
     "task_id": "dge_perturbation_prediction"
   },
@@ -553,24 +905,40 @@
     "dataset_id": "neurips-2023-kaggle",
     "method_id": "transformer_ensemble",
     "metric_values": {
-      "mean_cosine_sim": 0.2242,
-      "mean_rowwise_mae": 0.9621,
-      "mean_rowwise_rmse": 1.5456
+      "mean_cosine_sim": 0.226,
+      "mean_cosine_sim_clipped_01": 0.2467,
+      "mean_cosine_sim_clipped_05": 0.2487,
+      "mean_pearson": 0.184,
+      "mean_rowwise_mae": 0.9582,
+      "mean_rowwise_mae_clipped_01": 0.6146,
+      "mean_rowwise_mae_clipped_05": 0.5315,
+      "mean_rowwise_rmse": 1.5456,
+      "mean_rowwise_rmse_clipped_01": 0.7986,
+      "mean_rowwise_rmse_clipped_05": 0.6621,
+      "mean_spearman": 0.2091
     },
     "scaled_scores": {
-      "mean_cosine_sim": 0.1796,
-      "mean_rowwise_mae": 0.4493,
-      "mean_rowwise_rmse": 0.4874
+      "mean_cosine_sim": 0.1827,
+      "mean_cosine_sim_clipped_01": 0.1922,
+      "mean_cosine_sim_clipped_05": 0.1963,
+      "mean_pearson": 0.1535,
+      "mean_rowwise_mae": 0.4515,
+      "mean_rowwise_mae_clipped_01": 0.4112,
+      "mean_rowwise_mae_clipped_05": 0.3349,
+      "mean_rowwise_rmse": 0.4905,
+      "mean_rowwise_rmse_clipped_01": 0.3799,
+      "mean_rowwise_rmse_clipped_05": 0.331,
+      "mean_spearman": 0.1997
     },
-    "mean_score": 0.3721,
+    "mean_score": 0.3021,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 7359,
-      "cpu_pct": 176.9,
-      "peak_memory_mb": 27239,
-      "disk_read_mb": 1639,
-      "disk_write_mb": 420
+      "duration_sec": 6701,
+      "cpu_pct": 180.3,
+      "peak_memory_mb": 26932,
+      "disk_read_mb": 132,
+      "disk_write_mb": 17
     },
     "task_id": "dge_perturbation_prediction"
   },
@@ -579,21 +947,37 @@
     "method_id": "zeros",
     "metric_values": {
       "mean_cosine_sim": "NA",
+      "mean_cosine_sim_clipped_01": "NA",
+      "mean_cosine_sim_clipped_05": "NA",
+      "mean_pearson": "NA",
       "mean_rowwise_mae": 0.9724,
-      "mean_rowwise_rmse": 1.569
+      "mean_rowwise_mae_clipped_01": 0.6288,
+      "mean_rowwise_mae_clipped_05": 0.5457,
+      "mean_rowwise_rmse": 1.569,
+      "mean_rowwise_rmse_clipped_01": 0.8229,
+      "mean_rowwise_rmse_clipped_05": 0.6839,
+      "mean_spearman": 0.0117
     },
     "scaled_scores": {
       "mean_cosine_sim": 0,
+      "mean_cosine_sim_clipped_01": 0,
+      "mean_cosine_sim_clipped_05": 0,
+      "mean_pearson": 0,
       "mean_rowwise_mae": 0.4434,
-      "mean_rowwise_rmse": 0.4796
+      "mean_rowwise_mae_clipped_01": 0.3975,
+      "mean_rowwise_mae_clipped_05": 0.3171,
+      "mean_rowwise_rmse": 0.4828,
+      "mean_rowwise_rmse_clipped_01": 0.3611,
+      "mean_rowwise_rmse_clipped_05": 0.3089,
+      "mean_spearman": 0
     },
-    "mean_score": 0.3077,
+    "mean_score": 0.2101,
     "normalization_id": null,
     "resources": {
       "exit_code": 0,
-      "duration_sec": 15.1,
-      "cpu_pct": 126.1,
-      "peak_memory_mb": 1946,
+      "duration_sec": 18.6,
+      "cpu_pct": 107.6,
+      "peak_memory_mb": 2970,
       "disk_read_mb": 106,
       "disk_write_mb": 6
     },
