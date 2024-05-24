@@ -8,6 +8,8 @@
 
 * Improve Equations visualisation (PR #329).
 
+* Fix task method and metric descriptions (PR #336).
+
 ## BUG FIXES
 
 * Fix error in summary figure when not all method info ids are present in the results (PR #330).

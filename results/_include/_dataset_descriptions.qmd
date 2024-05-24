@@ -1,10 +1,16 @@
 ```{r dataset_description}
 #| echo: false
-lines <- pmap_chr(dataset_info, function(dataset_name, dataset_summary, data_reference, ...) {
+lines <- pmap_chr(dataset_info, function(dataset_name, dataset_summary, dataset_description, data_reference, ...) {
   ref <- split_cite_fun(data_reference)
   if (ref != "") ref <- paste0(" ", ref)
   summ <- (dataset_summary %|% "Missing 'dataset_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
-  glue::glue("* **{dataset_name}**{ref}: {summ}.")
+  strip_margin(glue::glue("
+  |### {dataset_name}
+  |
+  |{summ}{ref}.
+  |
+  |{dataset_description %|% ''}
+  |"))
 })
 knitr::asis_output(paste(lines, collapse = "\n"))
 ```

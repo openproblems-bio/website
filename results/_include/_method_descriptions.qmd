@@ -1,7 +1,7 @@
 ```{r method_description}
 #| echo: false
 # show each method just once
-lines <- pmap_chr(method_info, function(method_name, method_summary, paper_reference, code_url, code_version, ...) {
+lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, method_summary, method_description, paper_reference, code_url, code_version, ...) {
 
   links <- c()
   if (!is.na(code_url)) {
@@ -22,8 +22,14 @@ lines <- pmap_chr(method_info, function(method_name, method_summary, paper_refer
       ""
     }
   summ <- (method_summary %|% "Missing 'method_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
-  glue::glue("* **{method_name}**{ref}: {summ}.{version_label}{links_label}")
+  strip_margin(glue::glue("
+    |### {method_name}
+    |
+    |{summ}{ref}.{version_label}{links_label}
+    |
+    |{method_description %|% ''}
+    |"
+  ))
 })
 knitr::asis_output(paste(lines, collapse = "\n"))
 ```
-
