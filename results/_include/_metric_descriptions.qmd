@@ -3,7 +3,7 @@
 lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_description, paper_reference, ...) {
   ref <- split_cite_fun(paper_reference)
   if (ref != "") ref <- paste0(" ", ref)
-  summ <- (metric_summary %|% "Missing 'metric_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "") 
+  summ <- (metric_summary %|% "Missing 'metric_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
   strip_margin(glue::glue("
   |### {metric_name}
   |
