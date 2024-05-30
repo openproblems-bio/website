@@ -6,9 +6,9 @@
     "metric_summary": "The mean of the root mean squared error (RMSE) of each row in the matrix.",
     "metric_description": "We use the **Mean Rowwise Root Mean Squared Error** to score submissions, computed as follows:\n\n$$\n\\textrm{MRRMSE} = \\frac{1}{R}\\sum_{i=1}^R\\left(\\frac{1}{n} \\sum_{j=1}^{n} (y_{ij} - \\widehat{y}_{ij})^2\\right)^{1/2}\n$$\n\nwhere $(R)$ is the number of scored rows, and $(y_{ij})$ and $(\\widehat{y}_{ij})$ are the actual and predicted values, respectively, for row $(i)$ and column $(j)$, and $(n)$ bis the number of columns.\n",
     "paper_reference": null,
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/af6057e6cc7ded2b6d872d4075857cda62c425f9//home/runner/work/task-dge-perturbation-prediction/task-dge-perturbation-prediction/src/task/metrics/mean_rowwise_error/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/9980593dab6035d52fa8d4a4194a7bdc8e52bbcc//home/runner/work/task-dge-perturbation-prediction/task-dge-perturbation-prediction/src/task/metrics/mean_rowwise_error/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "af6057e6cc7ded2b6d872d4075857cda62c425f9",
+    "commit_sha": "9980593dab6035d52fa8d4a4194a7bdc8e52bbcc",
     "maximize": false
   },
   {
@@ -18,9 +18,9 @@
     "metric_summary": "The mean of the root mean squared error (RMSE) of each row in the matrix, where the values are clipped to 0.0001 adjusted p-values",
     "metric_description": "This metric is the same as `mean_rowwise_rmse`, but with the values clipped to [-log10(0.0001), log10(0.0001)].",
     "paper_reference": null,
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/af6057e6cc7ded2b6d872d4075857cda62c425f9//home/runner/work/task-dge-perturbation-prediction/task-dge-perturbation-prediction/src/task/metrics/mean_rowwise_error/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/9980593dab6035d52fa8d4a4194a7bdc8e52bbcc//home/runner/work/task-dge-perturbation-prediction/task-dge-perturbation-prediction/src/task/metrics/mean_rowwise_error/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "af6057e6cc7ded2b6d872d4075857cda62c425f9",
+    "commit_sha": "9980593dab6035d52fa8d4a4194a7bdc8e52bbcc",
     "maximize": false
   },
   {
@@ -30,9 +30,9 @@
     "metric_summary": "The mean of the absolute error (MAE) of each row in the matrix.",
     "metric_description": "We use the **Mean Rowwise Absolute Error** to score submissions, computed as follows:\n\n$$\n\\textrm{MRMAE} = \\frac{1}{R}\\sum_{i=1}^R\\left(\\frac{1}{n} \\sum_{j=1}^{n} |y_{ij} - \\widehat{y}_{ij}|\\right)\n$$\n\nwhere $(R)$ is the number of scored rows, and $(y_{ij})$ and $(\\widehat{y}_{ij})$ are the actual and predicted values, respectively, for row $(i)$ and column $(j)$, and $(n)$ bis the number of columns.\n",
     "paper_reference": null,
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/af6057e6cc7ded2b6d872d4075857cda62c425f9//home/runner/work/task-dge-perturbation-prediction/task-dge-perturbation-prediction/src/task/metrics/mean_rowwise_error/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/9980593dab6035d52fa8d4a4194a7bdc8e52bbcc//home/runner/work/task-dge-perturbation-prediction/task-dge-perturbation-prediction/src/task/metrics/mean_rowwise_error/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "af6057e6cc7ded2b6d872d4075857cda62c425f9",
+    "commit_sha": "9980593dab6035d52fa8d4a4194a7bdc8e52bbcc",
     "maximize": false
   },
   {
@@ -42,9 +42,9 @@
     "metric_summary": "The mean of the absolute error (MAE) of each row in the matrix. The values are clipped to 0.0001 adjusted p-values.",
     "metric_description": "This metric is the same as `mean_rowwise_mae`, but with the values clipped to [-log10(0.0001), log10(0.0001)].",
     "paper_reference": null,
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/af6057e6cc7ded2b6d872d4075857cda62c425f9//home/runner/work/task-dge-perturbation-prediction/task-dge-perturbation-prediction/src/task/metrics/mean_rowwise_error/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/9980593dab6035d52fa8d4a4194a7bdc8e52bbcc//home/runner/work/task-dge-perturbation-prediction/task-dge-perturbation-prediction/src/task/metrics/mean_rowwise_error/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "af6057e6cc7ded2b6d872d4075857cda62c425f9",
+    "commit_sha": "9980593dab6035d52fa8d4a4194a7bdc8e52bbcc",
     "maximize": false
   },
   {
@@ -54,9 +54,9 @@
     "metric_summary": "The mean of cosine similarities per row (perturbation).",
     "metric_description": "We use the **Mean Cosine Similarity** to score submissions, computed as follows:\n\n$$\n\\textrm{Mean-Cosine} = \\frac{1}{R} \\sum_{i=1}^R \\frac{\\mathbf{y}_i \\cdot \\mathbf{\\hat{y}}_i}{\\|\\mathbf{y}_i\\| \\|\\mathbf{\\hat{y}}_i\\|}\n$$\n\nwhere $(R)$ is the number of scored rows, and $(\\mathbf{y}_i)$ and $(\\mathbf{\\hat{y}}_i)$ are the actual and predicted values, respectively, for row $(i)$.\n",
     "paper_reference": null,
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/af6057e6cc7ded2b6d872d4075857cda62c425f9//home/runner/work/task-dge-perturbation-prediction/task-dge-perturbation-prediction/src/task/metrics/mean_cosine_sim/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/9980593dab6035d52fa8d4a4194a7bdc8e52bbcc//home/runner/work/task-dge-perturbation-prediction/task-dge-perturbation-prediction/src/task/metrics/mean_cosine_sim/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "af6057e6cc7ded2b6d872d4075857cda62c425f9",
+    "commit_sha": "9980593dab6035d52fa8d4a4194a7bdc8e52bbcc",
     "maximize": true
   },
   {
@@ -66,9 +66,9 @@
     "metric_summary": "The mean of cosine similarities per row (perturbation). Values are clipped to 0.0001 adjusted p-values.",
     "metric_description": "This metric is the same as `mean_cosine_sim`, but with the values clipped to [-log10(0.0001), log10(0.0001)].",
     "paper_reference": null,
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/af6057e6cc7ded2b6d872d4075857cda62c425f9//home/runner/work/task-dge-perturbation-prediction/task-dge-perturbation-prediction/src/task/metrics/mean_cosine_sim/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/9980593dab6035d52fa8d4a4194a7bdc8e52bbcc//home/runner/work/task-dge-perturbation-prediction/task-dge-perturbation-prediction/src/task/metrics/mean_cosine_sim/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "af6057e6cc7ded2b6d872d4075857cda62c425f9",
+    "commit_sha": "9980593dab6035d52fa8d4a4194a7bdc8e52bbcc",
     "maximize": true
   },
   {
@@ -78,9 +78,9 @@
     "metric_summary": "The mean of Pearson correlations per row (perturbation).",
     "metric_description": "We use the **Mean Pearson Correlation** to score submissions.\n",
     "paper_reference": null,
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/af6057e6cc7ded2b6d872d4075857cda62c425f9//home/runner/work/task-dge-perturbation-prediction/task-dge-perturbation-prediction/src/task/metrics/mean_correlation/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/9980593dab6035d52fa8d4a4194a7bdc8e52bbcc//home/runner/work/task-dge-perturbation-prediction/task-dge-perturbation-prediction/src/task/metrics/mean_correlation/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "af6057e6cc7ded2b6d872d4075857cda62c425f9",
+    "commit_sha": "9980593dab6035d52fa8d4a4194a7bdc8e52bbcc",
     "maximize": true
   },
   {
@@ -90,9 +90,9 @@
     "metric_summary": "The mean of Spearman correlations per row (perturbation).",
     "metric_description": "We use the **Mean Spearman Correlation** to score submissions.\n",
     "paper_reference": null,
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/af6057e6cc7ded2b6d872d4075857cda62c425f9//home/runner/work/task-dge-perturbation-prediction/task-dge-perturbation-prediction/src/task/metrics/mean_correlation/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/9980593dab6035d52fa8d4a4194a7bdc8e52bbcc//home/runner/work/task-dge-perturbation-prediction/task-dge-perturbation-prediction/src/task/metrics/mean_correlation/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "af6057e6cc7ded2b6d872d4075857cda62c425f9",
+    "commit_sha": "9980593dab6035d52fa8d4a4194a7bdc8e52bbcc",
     "maximize": true
   }
 ]
