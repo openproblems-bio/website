@@ -1,98 +1,90 @@
 [
-    {
-        "dataset_name": "CeNGEN (split by batch)",
-        "image": "openproblems",
-        "data_url": "https://github.com/Munfred/wormcells-data/releases/download/taylor2020/taylor2020.h5ad",
-        "data_reference": "hammarlund2018cengen",
-        "dataset_summary": "100k FACS-isolated C. elegans neurons from 17 experiments sequenced on 10x Genomics. Split into train/test by experimental batch. Dimensions: 100955 cells, 22469 genes. 169 cell types (avg. 597\u00b1800 cells per cell type).",
-        "task_id": "label_projection",
-        "commit_sha": "9d1665076cf6215a31f89ed2be8be20a02502887",
-        "dataset_id": "cengen_batch",
-        "source_dataset_id": "openproblems_v1/cengen",
-        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/datasets/cengen.py"
-    },
-    {
-        "dataset_name": "CeNGEN (random split)",
-        "image": "openproblems",
-        "data_url": "https://github.com/Munfred/wormcells-data/releases/download/taylor2020/taylor2020.h5ad",
-        "data_reference": "hammarlund2018cengen",
-        "dataset_summary": "100k FACS-isolated C. elegans neurons from 17 experiments sequenced on 10x Genomics. Split into train/test randomly. Dimensions: 100955 cells, 22469 genes. 169 cell types avg. 597\u00b1800 cells per cell type).",
-        "task_id": "label_projection",
-        "commit_sha": "9d1665076cf6215a31f89ed2be8be20a02502887",
-        "dataset_id": "cengen_random",
-        "source_dataset_id": "openproblems_v1/cengen",
-        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/datasets/cengen.py"
-    },
-    {
-        "dataset_name": "Pancreas (by batch)",
-        "image": "openproblems",
-        "data_url": "https://ndownloader.figshare.com/files/36086813",
-        "data_reference": "luecken2022benchmarking",
-        "dataset_summary": "Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq). Split into train/test by experimental batch. Dimensions: 16382 cells, 18771 genes. 14 cell types (avg. 1170\u00b11703 cells per cell type).",
-        "task_id": "label_projection",
-        "commit_sha": "9d1665076cf6215a31f89ed2be8be20a02502887",
-        "dataset_id": "pancreas_batch",
-        "source_dataset_id": "openproblems_v1/pancreas",
-        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/datasets/pancreas.py"
-    },
-    {
-        "dataset_name": "Pancreas (random split)",
-        "image": "openproblems",
-        "data_url": "https://ndownloader.figshare.com/files/36086813",
-        "data_reference": "luecken2022benchmarking",
-        "dataset_summary": "Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq). Split into train/test randomly. Dimensions: 16382 cells, 18771 genes. 14 cell types (avg. 1170\u00b11703 cells per cell type).",
-        "task_id": "label_projection",
-        "commit_sha": "9d1665076cf6215a31f89ed2be8be20a02502887",
-        "dataset_id": "pancreas_random",
-        "source_dataset_id": "openproblems_v1/pancreas",
-        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/datasets/pancreas.py"
-    },
-    {
-        "dataset_name": "Pancreas (random split with label noise)",
-        "image": "openproblems",
-        "data_url": "https://ndownloader.figshare.com/files/36086813",
-        "data_reference": "luecken2022benchmarking",
-        "dataset_summary": "Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq). Split into train/test randomly with 20% label noise. Dimensions: 16382 cells, 18771 genes. 14 cell types (avg. 1170\u00b11703 cells per cell type).",
-        "task_id": "label_projection",
-        "commit_sha": "9d1665076cf6215a31f89ed2be8be20a02502887",
-        "dataset_id": "pancreas_random_label_noise",
-        "source_dataset_id": "openproblems_v1/pancreas",
-        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/datasets/pancreas.py"
-    },
-    {
-        "dataset_name": "Tabula Muris Senis Lung (random split)",
-        "image": "openproblems",
-        "data_url": "https://tabula-muris-senis.ds.czbiohub.org/",
-        "data_reference": "tabula2020single",
-        "dataset_summary": "All lung cells from Tabula Muris Senis, a 500k cell-atlas from 18 organs and tissues across the mouse lifespan. Split into train/test randomly. Dimensions: 24540 cells, 17985 genes. 39 cell types (avg. 629\u00b1999 cells per cell type).",
-        "task_id": "label_projection",
-        "commit_sha": "9d1665076cf6215a31f89ed2be8be20a02502887",
-        "dataset_id": "tabula_muris_senis_lung_random",
-        "source_dataset_id": "openproblems_v1/tabula_muris_senis_droplet_lung",
-        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/datasets/tabula_muris_senis.py"
-    },
-    {
-        "dataset_name": "Zebrafish (by laboratory)",
-        "image": "openproblems",
-        "data_url": "https://ndownloader.figshare.com/files/24566651?private_link=e3921450ec1bd0587870",
-        "data_reference": "wagner2018single",
-        "dataset_summary": "90k cells from zebrafish embryos throughout the first day of development, with and without a knockout of chordin, an important developmental gene. Split into train/test by laboratory. Dimensions: 26022 cells, 25258 genes. 24 cell types (avg. 1084\u00b11156 cells per cell type).",
-        "task_id": "label_projection",
-        "commit_sha": "9d1665076cf6215a31f89ed2be8be20a02502887",
-        "dataset_id": "zebrafish_labs",
-        "source_dataset_id": "openproblems_v1/zebrafish",
-        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/datasets/zebrafish.py"
-    },
-    {
-        "dataset_name": "Zebrafish (random split)",
-        "image": "openproblems",
-        "data_url": "https://ndownloader.figshare.com/files/24566651?private_link=e3921450ec1bd0587870",
-        "data_reference": "wagner2018single",
-        "dataset_summary": "90k cells from zebrafish embryos throughout the first day of development, with and without a knockout of chordin, an important developmental gene. Split into train/test randomly. Dimensions: 26022 cells, 25258 genes. 24 cell types (avg. 1084\u00b11156 cells per cell type).",
-        "task_id": "label_projection",
-        "commit_sha": "9d1665076cf6215a31f89ed2be8be20a02502887",
-        "dataset_id": "zebrafish_random",
-        "source_dataset_id": "openproblems_v1/zebrafish",
-        "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/main/openproblems/tasks/label_projection/datasets/zebrafish.py"
-    }
+  {
+    "task_id": "label_projection",
+    "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
+    "dataset_name": "Mouse Pancreatic Islet Atlas",
+    "dataset_summary": "Mouse pancreatic islet scRNA-seq atlas across sexes, ages, and stress conditions including diabetes",
+    "data_reference": "hrovatin2023delineating",
+    "data_url": "https://cellxgene.cziscience.com/collections/296237e2-393d-4e31-b590-b03f74ac5070"
+  },
+  {
+    "task_id": "label_projection",
+    "dataset_id": "cellxgene_census/hypomap",
+    "dataset_name": "HypoMap",
+    "dataset_summary": "A unified single cell gene expression atlas of the murine hypothalamus",
+    "data_reference": "steuernagel2022hypomap",
+    "data_url": "https://cellxgene.cziscience.com/collections/d86517f0-fa7e-4266-b82e-a521350d6d36"
+  },
+  {
+    "task_id": "label_projection",
+    "dataset_id": "cellxgene_census/dkd",
+    "dataset_name": "Diabetic Kidney Disease",
+    "dataset_summary": "Multimodal single cell sequencing implicates chromatin accessibility and genetic background in diabetic kidney disease progression",
+    "data_reference": "wilson2022multimodal",
+    "data_url": "https://cellxgene.cziscience.com/collections/b3e2c6e3-9b05-4da9-8f42-da38a664b45b"
+  },
+  {
+    "task_id": "label_projection",
+    "dataset_id": "cellxgene_census/hcla",
+    "dataset_name": "Human Lung Cell Atlas",
+    "dataset_summary": "An integrated cell atlas of the human lung in health and disease (core)",
+    "data_reference": "sikkema2023integrated",
+    "data_url": "https://cellxgene.cziscience.com/collections/6f6d381a-7701-4781-935c-db10d30de293"
+  },
+  {
+    "task_id": "label_projection",
+    "dataset_id": "cellxgene_census/gtex_v9",
+    "dataset_name": "GTEX v9",
+    "dataset_summary": "Single-nucleus cross-tissue molecular reference maps to decipher disease gene function",
+    "data_reference": "eraslan2022singlenucleus",
+    "data_url": "https://cellxgene.cziscience.com/collections/a3ffde6c-7ad2-498a-903c-d58e732f7470"
+  },
+  {
+    "task_id": "label_projection",
+    "dataset_id": "openproblems_v1/immune_cells",
+    "dataset_name": "Human immune",
+    "dataset_summary": "Human immune cells dataset from the scIB benchmarks",
+    "data_reference": "luecken2022benchmarking",
+    "data_url": "https://theislab.github.io/scib-reproducibility/dataset_immune_cell_hum.html"
+  },
+  {
+    "task_id": "label_projection",
+    "dataset_id": "openproblems_v1/cengen",
+    "dataset_name": "CeNGEN",
+    "dataset_summary": "Complete Gene Expression Map of an Entire Nervous System",
+    "data_reference": "hammarlund2018cengen",
+    "data_url": "https://www.cengen.org"
+  },
+  {
+    "task_id": "label_projection",
+    "dataset_id": "cellxgene_census/immune_cell_atlas",
+    "dataset_name": "Immune Cell Atlas",
+    "dataset_summary": "Cross-tissue immune cell analysis reveals tissue-specific features in humans",
+    "data_reference": "dominguez2022crosstissue",
+    "data_url": "https://cellxgene.cziscience.com/collections/62ef75e4-cbea-454e-a0ce-998ec40223d3"
+  },
+  {
+    "task_id": "label_projection",
+    "dataset_id": "openproblems_v1/zebrafish",
+    "dataset_name": "Zebrafish embryonic cells",
+    "dataset_summary": "Single-cell mRNA sequencing of zebrafish embryonic cells.",
+    "data_reference": "wagner2018single",
+    "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE112294"
+  },
+  {
+    "task_id": "label_projection",
+    "dataset_id": "cellxgene_census/tabula_sapiens",
+    "dataset_name": "Tabula Sapiens",
+    "dataset_summary": "A multiple-organ, single-cell transcriptomic atlas of humans",
+    "data_reference": "consortium2022tabula",
+    "data_url": "https://cellxgene.cziscience.com/collections/e5f58829-1a66-40b5-a624-9046778e74f5"
+  },
+  {
+    "task_id": "label_projection",
+    "dataset_id": "openproblems_v1/pancreas",
+    "dataset_name": "Human pancreas",
+    "dataset_summary": "Human pancreas cells dataset from the scIB benchmarks",
+    "data_reference": "luecken2022benchmarking",
+    "data_url": "https://theislab.github.io/scib-reproducibility/dataset_pancreas.html"
+  }
 ]
