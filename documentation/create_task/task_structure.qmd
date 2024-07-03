@@ -12,7 +12,7 @@ A task typically consists of a dataset processor, methods, control methods and m
 
 ## File and component formats
 
-Path: `src/tasks/<task_id>/api`
+Path: `src/api`
 
 This folder contains task-specific {{< glossary File format specification label="file formats" >}} and {{< glossary Component interface label="component interfaces" >}}. More specifically:
 
@@ -23,19 +23,19 @@ This folder contains task-specific {{< glossary File format specification label=
 
 ## Dataset processor
 
-Path: `src/tasks/<task_id>/process_dataset`
+Path: `src/process_dataset`
 
 The {{< glossary data processor >}} transforms a {{< glossary common dataset >}} into task-specific dataset objects. In supervised tasks, this component will usually output a solution, a training dataset and a test dataset. In unsupervised tasks, this component usually output a solution and a masked dataset.
 
 ## Methods
 
-Path: `src/tasks/<task_id>/methods`
+Path: `src/methods`
 
 This folder contains {{< glossary method >}} components. Each method component outputs a prediction given the training and test datasets (when applicable).
 
 ## Control methods
 
-Path: `src/tasks/<task_id>/control_methods`
+Path: `src/control_methods`
 
 This folder contains {{< glossary control methods >}} for the task. These components have the same interface as the regular methods but also receive the solution object as input.  It serves as a starting point to test the relative accuracy of new methods in the task, and also as a quality control for the metrics defined in the task. A control method can either be a positive control or a negative control, which set a maximum and minimum threshold for performance, so any new method should perform better than the negative control methods and worse than the positive control method.
 
@@ -45,24 +45,24 @@ A *negative control* is a simple, naive, or random method that does not rely on 
 
 ## Metrics
 
-Path: `src/tasks/<task_id>/metrics`
+Path: `src/metrics`
 
 This folder contains {{< glossary metric >}} components. Each metric component outputs one or more metric results given a solution object and a method output object.
 
 ## Benchmarking pipeline
 
-Path: `src/tasks/<task_id>/workflows`
+Path: `src/workflows`
 
 This folder contains a {{< glossary Nextflow >}} workflow defining the benchmarking workflow for this task.
 
 ## Resource generation scripts
 
-Path: `src/tasks/<task_id>/resources_scripts`
+Path: `src/resources_scripts`
 
 This folder contains scripts for generating benchmarking resources required for the task.
 
 ## Test resource generation scripts
 
-Path: `src/tasks/<task_id>/resources_test_scripts`
+Path: `src/resources_test_scripts`
 
 This folder contains scripts for generating test resources for the task.
