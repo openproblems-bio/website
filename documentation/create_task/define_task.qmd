@@ -38,21 +38,20 @@ knitr::asis_output(md)
 
 Upon approval of the task proposal, a new task repository within the OpenProblems-bio organization will be created using the [OpenProblems template](https://github.com/openproblems-bio/task_template). If it is not yet created and you have access to the organization, you can create it yourself using the [template instructions](https://github.com/openproblems-bio/task_template#readme).
 
-## Step 4: Create task info
+## Step 4: Update the task metadata
 
-Now create a task info metadata file in the `src/api` directory. This file will be part of the automatic "readme" creation in the repo directory of this task. The task info file should be named `task_info.yaml` and should contain the following information:
+Now update the _viash.yaml file in the root of the task repository with the following information:
 
+* Update the `name` field to the name of the task in snake_case the nane should start with `task_`.
+* Update the `description` field to a short description of the task.
+* Add a keyword to the `keywords` field that describes the task.
+* Update the `task_template` in the links/info field to the name of the task in snake_case.
 
-```{r echo=FALSE, warning=FALSE, error=FALSE}
-json_schema <- read_and_merge_yaml("src/common/schemas/task_info.yaml")
-yaml_example <- render_example(json_schema)
+Now update the fields int the `task_info.yaml` file in the `src/api` directory. Some small pointers for a few fields:
 
-knitr::asis_output(paste0(
-  "```yaml\n",
-  yaml_example, "\n",
-  "```\n"
-))
-```
+* The `name` field is the same as the task name in `_viash.yaml` but without the `task_` prefix.
+* The `image` field is the name of the thumbnail image for the task and is stored in the `src/api` directory. This can be empty is when there is no thumbnail image available. The image is used when displaying the results on the Open Problems website.
+* The `motivation` and `description` fields are from the github issue created for this task.
 
 
 ## Next steps
