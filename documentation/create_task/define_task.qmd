@@ -34,9 +34,13 @@ md <- paste(sapply(new_task_yml$body, function(section) {
 knitr::asis_output(md)
 ```
 
-## Step 3: Create task info
+## Step 3: Create task repository
 
-Now create a task info metadata file in the `src/tasks/<task_id>/api` directory. This file will be part of the automatic "readme" creation in the repo directory of this task. The task info file should be named `task_info.yaml` and should contain the following information:
+Upon approval of the task proposal, a new task repository within the OpenProblems-bio organization will be created using the [OpenProblems template](https://github.com/openproblems-bio/task_template). If it is not yet created and you have access to the organization, you can create it yourself using the [template instructions](https://github.com/openproblems-bio/task_template#readme).
+
+## Step 4: Create task info
+
+Now create a task info metadata file in the `src/api` directory. This file will be part of the automatic "readme" creation in the repo directory of this task. The task info file should be named `task_info.yaml` and should contain the following information:
 
 
 ```{r echo=FALSE, warning=FALSE, error=FALSE}
