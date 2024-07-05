@@ -121,7 +121,7 @@ info:
   slots: # <5>
 ```
 
-1. This YAML file will be used to define the arguments of a Viash component. This must always be set to [`type: file`](https://viash.io/reference/config/functionality/arguments/file.html).
+1. This YAML file will be used to define the arguments of a Viash component. This must always be set to [`type: file`](https://viash.io/reference/config/arguments/file.html).
 2. Description of the file, useful for quickly understanding what type of data such a file represents. Used for generating reference documentation.
 3. An example of this file. At this stage, this file does not exist yet, but it will be created later on, as this file is used for unit testing components.
 4. A short label used to represent the file in diagrams in the reference documentation.
@@ -130,7 +130,7 @@ info:
 Create a YAML file for each of the other AnnData files in the task workflow. For example, `src/api/file_dataset.yaml`, `src/api/file_output.yaml`, and so on.
 
 :::{.callout-tip}
-Each file format specification file is actually a [Viash file argument](https://viash.io/reference/config/functionality/arguments/file.html). That's because these YAML files will be used as arguments in the different component types.
+Each file format specification file is actually a [Viash file argument](https://viash.io/reference/config/arguments/file.html). That's because these YAML files will be used as arguments in the different component types.
 :::
 
 # Step 3: Create component types {#step-3}
@@ -140,21 +140,20 @@ Next, we will create the API specification files for each of the components (i.e
 Start by creating the method component type:
 
 ```{.yaml filename="src/api/comp_method.yaml"}
-functionality:
-  namespace: methods # <1>
-  info: # <2>
-    type: method # <3>
-    type_info:
-      label: "Method" # <4>
-      description: "FILL IN: A description of what this type of component does." # <5>
-  arguments: # <6>
-    - name: "--input"
-      __merge__: file_dataset.yaml
-      required: true
-    - name: "--output"
-      __merge__: file_prediction.yaml
-      required: true
-      direction: output
+namespace: methods # <1>
+info: # <2>
+  type: method # <3>
+  type_info:
+    label: "Method" # <4>
+    description: "FILL IN: A description of what this type of component does." # <5>
+arguments: # <6>
+  - name: "--input"
+    __merge__: file_dataset.yaml
+    required: true
+  - name: "--output"
+    __merge__: file_prediction.yaml
+    required: true
+    direction: output
 ```
 
 1. The `namespace` for the component type. format `<component_type>`. The namespace is used to group similar components together and ensures that they can be easily found and used within the task.
