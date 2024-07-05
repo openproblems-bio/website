@@ -33,6 +33,10 @@ Having a formally defined API ensures consistency and interoperability across di
 
 We'll need to create API files for each component and AnnData file separately. However, this is actually quite easy to do, as we will show in the following sections.
 
+::: {.callout-note}
+In the repo created with the task_template, most of these files are already created for you. They just need to be updated according to the specs for your task.
+:::
+
 # Step 1: Create task API diagram {#step-1}
 
 First start by creating a diagram similar to what is shown in [@fig-task-workflow]. We recommend drawing the diagram on paper at first.
@@ -108,7 +112,7 @@ Now that you've created the topology of the task workflow, the next step is to t
 
 Let's start by creating one for the solution object:
 
-```{.yaml filename="src/tasks/<task_id>/api/file_solution.yaml"}
+```{.yaml filename="src/api/file_solution.yaml"}
 type: file # <1>
 description: "FILL IN: what this file represents" # <2>
 example: "resources_test/<task_id>/pancreas/solution.h5ad"  # <3>
@@ -123,7 +127,7 @@ info:
 4. A short label used to represent the file in diagrams in the reference documentation.
 5. Which AnnData slots need to be present in the file which will be defined in [Step 4](#step-4).
 
-Create a YAML file for each of the other AnnData files in the task workflow. For example, `src/tasks/<task_id>/api/file_dataset.yaml`, `src/tasks/<task_id>/api/file_output.yaml`, and so on.
+Create a YAML file for each of the other AnnData files in the task workflow. For example, `src/api/file_dataset.yaml`, `src/api/file_output.yaml`, and so on.
 
 :::{.callout-tip}
 Each file format specification file is actually a [Viash file argument](https://viash.io/reference/config/functionality/arguments/file.html). That's because these YAML files will be used as arguments in the different component types.
@@ -135,7 +139,7 @@ Next, we will create the API specification files for each of the components (i.e
 
 Start by creating the method component type:
 
-```{.yaml filename="src/tasks/<task_id>/api/comp_method.yaml"}
+```{.yaml filename="src/api/comp_method.yaml"}
 functionality:
   namespace: <task_id>/methods # <1>
   info: # <2>
@@ -160,7 +164,7 @@ functionality:
 5. A description of the component type.
 6. The `arguments` that the component accepts. Each argument has a name (e.g., `--input`), a direction (`input` (default) or `output`) and whether it's required or not. Note that this information is partially provided by merging the file API YAML file specified earlier, using the `__merge__` notation.
 
-Create a YAML file for each of the other component types files in the task workflow. For example, `src/tasks/<task_id>/api/comp_dataset_processor.yaml`, `src/tasks/<task_id>/api/comp_metric.yaml`, and so on.
+Create a YAML file for each of the other component types files in the task workflow. For example, `src/api/comp_dataset_processor.yaml`, `src/api/comp_metric.yaml`, and so on.
 
 :::{.callout-tip}
 Again, each component type is formatted as a [Viash config file](https://viash.io/reference/config/), because they will be used to create components.
@@ -172,7 +176,7 @@ Finally, the last step is to define the actual required and optional slots each 
 
 Below is the slot information of the solution AnnData object:
 
-```{.yaml filename="src/tasks/<task_id>/api/file_solution.yaml"}
+```{.yaml filename="src/api/file_solution.yaml"}
 type: file
 description: "FILL IN: what this file represents"
 example: "resources_test/<task_id>/pancreas/solution.h5ad"
