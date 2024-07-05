@@ -141,7 +141,7 @@ Start by creating the method component type:
 
 ```{.yaml filename="src/api/comp_method.yaml"}
 functionality:
-  namespace: <task_id>/methods # <1>
+  namespace: methods # <1>
   info: # <2>
     type: method # <3>
     type_info:
@@ -157,7 +157,7 @@ functionality:
       direction: output
 ```
 
-1. The `namespace` for the component type. format `<task_id>/<component_type>`. The namespace is used to group similar components together and ensures that they can be easily found and used within the task.
+1. The `namespace` for the component type. format `<component_type>`. The namespace is used to group similar components together and ensures that they can be easily found and used within the task.
 2. Metadata about the component type.
 3. A unique identifier for the type of component.
 4. A formatted label for the component type.
