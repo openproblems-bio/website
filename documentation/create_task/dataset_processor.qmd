@@ -78,11 +78,6 @@ resources: #<3>
 engines:
 - type: docker #<6>
   image: ghcr.io/openproblems-bio/base_images/r:1.1.0
-  setup:
-    - type: r
-      cran: [ anndata, tidyverse ]
-    - type: apt
-      packages: [ libhdf5-dev, libgeos-dev, python3, python3-pip, python3-dev, python-is-python3 ]
 runners:
   - type: executable
   - type: nextflow #<7>
