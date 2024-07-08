@@ -33,10 +33,6 @@ The Dataset processor, like any component in OpenProblems, is a {{< glossary Via
 Start by creating the Viash config. Luckily, we already created its file format and argument list in the [previous section](design_api.qmd), so we can just import the interface using the `__merge__` field:
 
 
-:::{.content-hidden}
-TODO: use this config to use base docker images
-:::
-
 :::{.panel-tabset}
 # Python
 
@@ -49,12 +45,11 @@ resources: #<3>
   - path: /src/common/helper_functions/subset_anndata.py #<5>
 engines:
 - type: docker #<6>
-  image: "python:3.10"
+  image: ghcr.io/openproblems-bio/base_images/python:1.1.0
   setup:
     - type: python
       packages:
         - pyyaml
-        - "anndata~=0.8.0"
 runners:
   - type: executable
   - type: nextflow #<7>
@@ -82,14 +77,12 @@ resources: #<3>
   - path: /src/common/helper_functions/subset_anndata.R #<5>
 engines:
 - type: docker #<6>
-  image: "eddelbuettel/r2u:22.04"
+  image: ghcr.io/openproblems-bio/base_images/r:1.1.0
   setup:
     - type: r
       cran: [ anndata, tidyverse ]
     - type: apt
       packages: [ libhdf5-dev, libgeos-dev, python3, python3-pip, python3-dev, python-is-python3 ]
-    - type: python
-      pip: [ anndata~=0.8.0 ]
 runners:
   - type: executable
   - type: nextflow #<7>
