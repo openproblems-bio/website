@@ -1,6 +1,6 @@
 ---
 title: Dataset processor
-order: 25
+order: 50
 engine: knitr
 ---
 
@@ -22,7 +22,7 @@ In this section, we'll create the {{< glossary "Dataset processor" >}} component
 
 # Why?
 
-The Dataset processor component splits up the Common dataset into different AnnData objects such that both Method and Metric components. This is done so the Method and Metric can only observe the information specified by the file format specification files. This not only safe-guards against data leakage, but also ensures that the Method component can't accidentally make changes to the data structure that the Metric component relies on.
+The Dataset processor component splits up the Common dataset into different AnnData objects such that both Method and Metric components can only observe the information specified by the file format specification files. This not only safe-guards against data leakage, but also ensures that the Method component can't accidentally make changes to the data structure that the Metric component relies on.
 
 # How?
 
@@ -33,29 +33,25 @@ The Dataset processor, like any component in OpenProblems, is a {{< glossary Via
 Start by creating the Viash config. Luckily, we already created its file format and argument list in the [previous section](design_api.qmd), so we can just import the interface using the `__merge__` field:
 
 
-:::{.content-hidden}
-TODO: use this config to use base docker images
-:::
-
 :::{.panel-tabset}
 # Python
 
-```{.yaml filename="src/tasks/<task_id>/process_dataset/config.vsh.yaml"}
+```{.yaml filename="src/process_dataset/config.vsh.yaml"}
 __merge__: ../api/comp_process_dataset.yaml #<1>
-functionality:
-  name: "process_dataset" #<2>
-  resources: #<3>
-    - type: python_script #<4>
-      path: script.py
-    - path: /src/common/helper_functions/subset_anndata.py #<5>
-platforms:
-  - type: docker #<6>
-    image: "python:3.10"
-    setup:
-      - type: python
-        packages:
-          - pyyaml
-          - "anndata~=0.8.0"
+name: "process_dataset" #<2>
+resources: #<3>
+  - type: python_script #<4>
+    path: script.py
+  - path: /src/common/helper_functions/subset_anndata.py #<5>
+engines:
+- type: docker #<6>
+  image: ghcr.io/openproblems-bio/base_images/python:1.1.0
+  setup:
+    - type: python
+      packages:
+        - pyyaml
+runners:
+  - type: executable
   - type: nextflow #<7>
     directives: 
       label: [ highmem, highcpu ]
@@ -66,30 +62,24 @@ platforms:
 3. [Resources](https://viash.io/reference/config/functionality/resources/) are files that provide the logic of the component.
 4. We'll create the Python script in the next step.
 5. Optional [helper functions](https://viash.io/guide/component/use-helper-functions.html) you can use in your script.
-6. A [Docker platform](https://viash.io/guide/component/add-dependencies.html) to make the component reproducible.
-7. A [Nextflow platform](https://viash.io/guide/nextflow_vdsl3/create-a-module.html) to allow turning this component into a Nextflow module (and also standalone pipeline).
+6. A [Docker engine](https://viash.io/guide/component/add-dependencies.html) to make the component reproducible.
+7. A [Nextflow runner](https://viash.io/guide/nextflow_vdsl3/create-a-module.html) to allow turning this component into a Nextflow module (and also standalone pipeline).
 
 # R
 
 
-```{.yaml filename="src/tasks/<task_id>/process_dataset/config.vsh.yaml"}
+```{.yaml filename="src/process_dataset/config.vsh.yaml"}
 __merge__: ../api/comp_process_dataset.yaml #<1>
-functionality:
-  name: "process_dataset" #<2>
-  resources: #<3>
-    - type: r_script #<4>
-      path: script.R
-    - path: /src/common/helper_functions/subset_anndata.R #<5>
-platforms:
-  - type: docker #<6>
-    image: "eddelbuettel/r2u:22.04"
-    setup:
-      - type: r
-        cran: [ anndata, tidyverse ]
-      - type: apt
-        packages: [ libhdf5-dev, libgeos-dev, python3, python3-pip, python3-dev, python-is-python3 ]
-      - type: python
-        pip: [ anndata~=0.8.0 ]
+name: "process_dataset" #<2>
+resources: #<3>
+  - type: r_script #<4>
+    path: script.R
+  - path: /src/common/helper_functions/subset_anndata.R #<5>
+engines:
+- type: docker #<6>
+  image: ghcr.io/openproblems-bio/base_images/r:1.1.0
+runners:
+  - type: executable
   - type: nextflow #<7>
     directives: 
       label: [ highmem, highcpu ]
@@ -100,8 +90,8 @@ platforms:
 3. [Resources](https://viash.io/reference/config/functionality/resources/) are files that provide the logic of the component.
 4. We'll create the Python script in the next step.
 5. (_Optional_) [Helper functions](https://viash.io/guide/component/use-helper-functions.html) you can use in your script.
-6. A [Docker platform](https://viash.io/guide/component/add-dependencies.html) to make the component reproducible.
-7. A [Nextflow platform](https://viash.io/guide/nextflow_vdsl3/create-a-module.html) to allow turning this component into a Nextflow module (and also standalone pipeline).
+6. A [Docker engine](https://viash.io/guide/component/add-dependencies.html) to make the component reproducible.
+7. A [Nextflow runner](https://viash.io/guide/nextflow_vdsl3/create-a-module.html) to allow turning this component into a Nextflow module (and also standalone pipeline).
 
 :::
 
@@ -112,7 +102,7 @@ Next, create the script which will split the common dataset into a train
 :::{.panel-tabset}
 # Python
 
-```{.python filename="src/tasks/<task_id>/process_dataset/script.py"}
+```{.python filename="src/process_dataset/script.py"}
 import anndata as ad
 
 ## VIASH START
@@ -146,7 +136,7 @@ output_solution.write_h5ad(par["output_solution"])
 
 # R
 
-```{.r filename="src/tasks/<task_id>/process_dataset/script.R"}
+```{.r filename="src/process_dataset/script.R"}
 library(anndata)
 
 ## VIASH START
@@ -181,7 +171,7 @@ output_solution$write_h5ad(par[["output_solution"]])
 :::
 
 :::{.callout-tip}
-You can use helper functions `read_config_slots_info` and `subset_anndata` defined in [`src/common/helper_functions/subset_anndata.py`](https://github.com/openproblems-bio/openproblems-v2/blob/main/src/common/helper_functions/subset_anndata.py) to easily subset the AnnData to having only the slots specified by the corresponding API files. Examples of tasks where this is used: [Dimensionality reduction](https://github.com/openproblems-bio/openproblems-v2/blob/main/src/tasks/dimensionality_reduction/process_dataset/script.py), [Label projection](https://github.com/openproblems-bio/openproblems-v2/blob/main/src/tasks/label_projection/process_dataset/script.py).
+You can use helper functions `read_config_slots_info` and `subset_anndata` defined in [`common/helper_functions/subset_anndata.py`](https://github.com/openproblems-bio/openproblems-v2/blob/main/src/common/helper_functions/subset_anndata.py) to easily subset the AnnData to having only the slots specified by the corresponding API files. Examples of tasks where this is used: [Dimensionality reduction](https://github.com/openproblems-bio/openproblems-v2/blob/main/src/tasks/dimensionality_reduction/process_dataset/script.py), [Label projection](https://github.com/openproblems-bio/openproblems-v2/blob/main/src/tasks/label_projection/process_dataset/script.py).
 :::
 
 # Step 3: Create test resources
@@ -189,7 +179,7 @@ You can use helper functions `read_config_slots_info` and `subset_anndata` defin
 Next, we'll create part of the test resources by creating a test resource script. 
 Create a Bash script which runs the `process_dataset` component.
 
-```{.bash filename="src/tasks/<task_id>/resource_test_script/pancreas.sh"}
+```{.bash filename="scripts/create_test_resources.sh"}
 #!/bin/bash
 
 # get the root of the directory
@@ -198,7 +188,6 @@ REPO_ROOT=$(git rev-parse --show-toplevel)
 # ensure that the command below is run from the root of the repository
 cd "$REPO_ROOT"
 
-TASK_ID="<task_id>"
 RAW_DATA=resources_test/common/pancreas/dataset.h5ad
 DATASET_DIR=resources_test/$TASK_ID/pancreas
 
@@ -210,37 +199,32 @@ fi
 mkdir -p $DATASET_DIR
 
 # Run the process dataset component
-viash run "src/tasks/$TASK_ID/process_dataset/config.vsh.yaml" -- \
+viash run "src/process_dataset/config.vsh.yaml" -- \
     --input "$RAW_DATA" \
     --output_dataset "$DATASET_DIR/dataset.h5ad" \
     --output_solution "$DATASET_DIR/solution.h5ad"
 
 # TODO: uncomment and update this code block when a method component has been added to your task
 # # Run one method
-# viash run "src/tasks/$TASK_ID/methods/<method_id>/config.vsh.yaml" -- \
+# viash run "src/methods/<method_id>/config.vsh.yaml" -- \
 #     --input "$DATASET_DIR/dataset.h5ad" \
 #     --output "$DATASET_DIR/prediction.h5ad"
 
 # TODO: uncomment and update this code block when a metric component has been added to your task
 # # Run one metric
-# viash run src/tasks/$TASK_ID/metrics/<metric_id>/config.vsh.yaml -- \
+# viash run src/metrics/<metric_id>/config.vsh.yaml -- \
 #     --input_prediction $DATASET_DIR/prediction.h5ad \
 #     --input_solution $DATASET_DIR/solution.h5ad \
 #     --output $DATASET_DIR/score.h5ad
 ```
 
 :::{.callout-note}
-You'll have to substitute the correct value for `<task_id>`, and also update the arguments to the output arguments set in the API file.
+You'll have to update the arguments to the output arguments set in the API file.
 :::
 
 Now run the script to generate the first couple of test resources:
 
 ```bash
-chmod +x src/tasks/<task_id>/resource_test_script/pancreas.sh
-src/tasks/<task_id>/resource_test_script/pancreas.sh
+chmod +x scripts/create_test_resources.sh
+scripts/create_test_resources.sh
 ```
-
-# Next steps
-
-Having created the dataset processor and the first test resources, you can now start creating method and metric components. 
-We recommend creating one method component and then one metric component first, so you can use those components to generate the test resources needed for testing all of the components.
