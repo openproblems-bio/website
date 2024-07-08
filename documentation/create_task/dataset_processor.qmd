@@ -179,7 +179,7 @@ You can use helper functions `read_config_slots_info` and `subset_anndata` defin
 Next, we'll create part of the test resources by creating a test resource script. 
 Create a Bash script which runs the `process_dataset` component.
 
-```{.bash filename="src/tasks/<task_id>/resource_test_script/pancreas.sh"}
+```{.bash filename="scripts/create_test_resources.sh"}
 #!/bin/bash
 
 # get the root of the directory
@@ -188,7 +188,6 @@ REPO_ROOT=$(git rev-parse --show-toplevel)
 # ensure that the command below is run from the root of the repository
 cd "$REPO_ROOT"
 
-TASK_ID="<task_id>"
 RAW_DATA=resources_test/common/pancreas/dataset.h5ad
 DATASET_DIR=resources_test/$TASK_ID/pancreas
 
@@ -200,34 +199,34 @@ fi
 mkdir -p $DATASET_DIR
 
 # Run the process dataset component
-viash run "src/tasks/$TASK_ID/process_dataset/config.vsh.yaml" -- \
+viash run "src/process_dataset/config.vsh.yaml" -- \
     --input "$RAW_DATA" \
     --output_dataset "$DATASET_DIR/dataset.h5ad" \
     --output_solution "$DATASET_DIR/solution.h5ad"
 
 # TODO: uncomment and update this code block when a method component has been added to your task
 # # Run one method
-# viash run "src/tasks/$TASK_ID/methods/<method_id>/config.vsh.yaml" -- \
+# viash run "src/methods/<method_id>/config.vsh.yaml" -- \
 #     --input "$DATASET_DIR/dataset.h5ad" \
 #     --output "$DATASET_DIR/prediction.h5ad"
 
 # TODO: uncomment and update this code block when a metric component has been added to your task
 # # Run one metric
-# viash run src/tasks/$TASK_ID/metrics/<metric_id>/config.vsh.yaml -- \
+# viash run src/metrics/<metric_id>/config.vsh.yaml -- \
 #     --input_prediction $DATASET_DIR/prediction.h5ad \
 #     --input_solution $DATASET_DIR/solution.h5ad \
 #     --output $DATASET_DIR/score.h5ad
 ```
 
 :::{.callout-note}
-You'll have to substitute the correct value for `<task_id>`, and also update the arguments to the output arguments set in the API file.
+You'll have to update the arguments to the output arguments set in the API file.
 :::
 
 Now run the script to generate the first couple of test resources:
 
 ```bash
-chmod +x src/tasks/<task_id>/resource_test_script/pancreas.sh
-src/tasks/<task_id>/resource_test_script/pancreas.sh
+chmod +x scripts/create_test_resources.sh
+scripts/create_test_resources.sh
 ```
 
 # Next steps
