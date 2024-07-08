@@ -22,7 +22,7 @@ In this section, we'll create the {{< glossary "Dataset processor" >}} component
 
 # Why?
 
-The Dataset processor component splits up the Common dataset into different AnnData objects such that both Method and Metric components. This is done so the Method and Metric can only observe the information specified by the file format specification files. This not only safe-guards against data leakage, but also ensures that the Method component can't accidentally make changes to the data structure that the Metric component relies on.
+The Dataset processor component splits up the Common dataset into different AnnData objects such that both Method and Metric components can only observe the information specified by the file format specification files. This not only safe-guards against data leakage, but also ensures that the Method component can't accidentally make changes to the data structure that the Metric component relies on.
 
 # How?
 
