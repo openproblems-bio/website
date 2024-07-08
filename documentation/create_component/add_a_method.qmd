@@ -24,49 +24,33 @@ Make sure you have followed the ["Getting started"](../fundamentals/getting_star
 
 Use the `create_component` component to start creating a new method.
 
-::: {.panel-tabset}
-## Python
 ```{bash}
-viash run src/common/create_component/config.vsh.yaml -- \
-  --task label_projection \
-  --type method \
-  --name my_method_py \
-  --language python
+task_name="task_template"
+component_name="my_method"
+component_lang="python" # change this to "r" if need be
+
+common/create_component/create_component \
+  --task $task_name \
+  --language "$component_lang" \
+  --name "$component_name" \
+  --api_file src/api/comp_method.yaml \
+  --output "src/methods/$component_name"
 ```
 
 
-This will create a new folder at `src/tasks/label_projection/methods/my_method_py` containing a Viash config and a script.
+This will create a new folder at `src/methods/my_method` containing a Viash config and a script.
 
-    src/tasks/label_projection/methods/my_method_py
-        ├── script.py                    Script for running the method.
+    src/methods/my_method
+        ├── script.py/R                  Script for running the method.
         ├── config.vsh.yaml              Config file for method.
         └── ...                          Optional additional resources.
 
-## R
-
-```{bash}
-viash run src/common/create_component/config.vsh.yaml -- \
-  --task label_projection \
-  --type method \
-  --name my_method_r \
-  --language r
-```
-
-
-This will create a new folder at `src/tasks/label_projection/methods/my_method_r` containing a Viash config and a script.
-
-    src/tasks/label_projection/methods/my_method_r
-        ├── script.R                     Script for running the method.
-        ├── config.vsh.yaml              Config file for method.
-        └── ...                          Optional additional resources.
-
-:::
 
 :::{.callout-tip}
 Some tasks have multiple method subtypes (e.g. `batch_integration`), which will require you to use a different value for `--type` corresponding to the desired method subtype.
 :::
 
-Change the `--name` to a unique name for your method. It must match the regex `[a-z][a-z0-9_]*` (snakecase).
+Change the `component_name` variable to a unique name for your method. It must match the regex `[a-z][a-z0-9_]*` (snakecase).
 
 * A **config file** contains metadata of the component and the dependencies required to run it. In steps 2 and 3 we will fill in the required information.
 * A **script** contains the code to run the method. In step 4 we will edit the script. 
