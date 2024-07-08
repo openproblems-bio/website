@@ -73,7 +73,7 @@ runners:
 # R
 
 
-```{.yaml filename="src/tasks/<task_id>/process_dataset/config.vsh.yaml"}
+```{.yaml filename="src/process_dataset/config.vsh.yaml"}
 __merge__: ../api/comp_process_dataset.yaml #<1>
 name: "process_dataset" #<2>
 resources: #<3>
@@ -114,7 +114,7 @@ Next, create the script which will split the common dataset into a train
 :::{.panel-tabset}
 # Python
 
-```{.python filename="src/tasks/<task_id>/process_dataset/script.py"}
+```{.python filename="src/process_dataset/script.py"}
 import anndata as ad
 
 ## VIASH START
