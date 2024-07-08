@@ -36,7 +36,7 @@ Start by creating the Viash config. Luckily, we already created its file format 
 :::{.panel-tabset}
 # Python
 
-```{.yaml filename="src/tasks/<task_id>/process_dataset/config.vsh.yaml"}
+```{.yaml filename="src/process_dataset/config.vsh.yaml"}
 __merge__: ../api/comp_process_dataset.yaml #<1>
 name: "process_dataset" #<2>
 resources: #<3>
@@ -136,7 +136,7 @@ output_solution.write_h5ad(par["output_solution"])
 
 # R
 
-```{.r filename="src/tasks/<task_id>/process_dataset/script.R"}
+```{.r filename="src/process_dataset/script.R"}
 library(anndata)
 
 ## VIASH START
