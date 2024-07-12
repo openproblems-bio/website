@@ -77,14 +77,7 @@ functionality:
     - path: /src/common/helper_functions/subset_anndata.R #<5>
 platforms:
   - type: docker #<6>
-    image: "eddelbuettel/r2u:22.04"
-    setup:
-      - type: r
-        cran: [ anndata, tidyverse ]
-      - type: apt
-        packages: [ libhdf5-dev, libgeos-dev, python3, python3-pip, python3-dev, python-is-python3 ]
-      - type: python
-        pip: [ anndata~=0.8.0 ]
+    image: ghcr.io/openproblems-bio/base_images/r:1.1.0
   - type: nextflow #<7>
     directives: 
       label: [ highmem, highcpu ]
