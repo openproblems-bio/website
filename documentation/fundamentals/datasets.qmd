@@ -37,7 +37,7 @@ Here is what a typical common dataset looks like when printed to the console:
 ```{r echo=FALSE, warning=FALSE, error=FALSE}
 spec <- read_file_spec("src/datasets/api/file_common_dataset.yaml")
 
-str <- format_slots(spec)
+str <- format_file_format(spec)
 
 knitr::asis_output(c(
   ":::{{.small}}\n\n",

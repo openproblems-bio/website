@@ -325,7 +325,7 @@ api_raw <- read_file_spec("src/datasets/api/file_raw.yaml")
 Ideally, the AnnData output object should at least contain the following slots:
 
 ```{r, echo=FALSE, output="asis"}
-cat(paste0(format_slots(api_raw), "\n"))
+cat(paste0(format_file_format(api_raw), "\n"))
 ```
 
 The full file format spec of a raw dataset AnnData is shown in the table below.
