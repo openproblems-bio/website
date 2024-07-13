@@ -285,36 +285,36 @@ docker run hello-world
 Install Viash by running:
 
 ```bash
-mkdir -p "$HOME/.local/bin"
+curl -fsSL dl.viash.io | bash
 
-curl -fsSL get.viash.io | bash -s -- --bin "$HOME/.local/bin"
+sudo mv viash /usr/local/bin
 ```
 
-Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
+Tip: Make sure that the `/usr/local/bin` folder is in your `$PATH` variable.
 
 ## RHEL/Fedora
 
 Install Viash by running:
 
 ```bash
-mkdir -p "$HOME/.local/bin"
+curl -fsSL dl.viash.io | bash
 
-curl -fsSL get.viash.io | bash -s -- --bin "$HOME/.local/bin"
+sudo mv viash /usr/local/bin
 ```
 
-Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
+Tip: Make sure that the `/usr/local/bin` folder is in your `$PATH` variable.
 
 ## Arch
 
 Install Viash by running:
 
 ```bash
-mkdir -p "$HOME/.local/bin"
+curl -fsSL dl.viash.io | bash
 
-curl -fsSL get.viash.io | bash -s -- --bin "$HOME/.local/bin"
+sudo mv viash /usr/local/bin
 ```
 
-Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
+Tip: Make sure that the `/usr/local/bin` folder is in your `$PATH` variable.
 
 ## macOS
 
@@ -322,24 +322,24 @@ Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
 Install Viash by running:
 
 ```bash
-mkdir -p "$HOME/.local/bin"
+curl -fsSL dl.viash.io | bash
 
-curl -fsSL get.viash.io | bash -s -- --bin "$HOME/.local/bin"
+sudo mv viash /usr/local/bin
 ```
 
-Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
+Tip: Make sure that the `/usr/local/bin` folder is in your `$PATH` variable.
 
 ## Windows
 
 Install Viash in Ubuntu by running:
 
 ```bash
-mkdir -p "$HOME/.local/bin"
+curl -fsSL dl.viash.io | bash
 
-curl -fsSL get.viash.io | bash -s -- --bin "$HOME/.local/bin"
+sudo mv viash /usr/local/bin
 ```
 
-Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
+Tip: Make sure that the `/usr/local/bin` folder is in your `$PATH` variable.
 
 :::
 
@@ -368,7 +368,8 @@ Install Nextflow by running:
 
 ```bash
 curl -s https://get.nextflow.io | bash
-mv nextflow "$HOME/.local/bin"
+
+mv nextflow "/usr/local/bin"
 ```
 
 ## RHEL/Fedora
@@ -377,7 +378,8 @@ Install Nextflow by running:
 
 ```bash
 curl -s https://get.nextflow.io | bash
-mv nextflow "$HOME/.local/bin"
+
+mv nextflow "/usr/local/bin"
 ```
 
 ## Arch
@@ -386,7 +388,8 @@ Install Nextflow by running:
 
 ```bash
 curl -s https://get.nextflow.io | bash
-mv nextflow "$HOME/.local/bin"
+
+mv nextflow "/usr/local/bin"
 ```
 
 ## macOS
@@ -396,7 +399,8 @@ Install Nextflow by running:
 
 ```bash
 curl -s https://get.nextflow.io | bash
-mv nextflow "$HOME/.local/bin"
+
+mv nextflow "/usr/local/bin"
 ```
 
 ## Windows
@@ -405,7 +409,8 @@ Install Nextflow by running:
 
 ```bash
 curl -s https://get.nextflow.io | bash
-mv nextflow "$HOME/.local/bin"
+
+mv nextflow "/usr/local/bin"
 ```
 
 :::
