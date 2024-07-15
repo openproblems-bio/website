@@ -1,0 +1,24 @@
+[
+  {
+    "task_id": "match_modalities",
+    "metric_id": "knn_auc",
+    "metric_name": "kNN Area Under the Curve",
+    "metric_summary": "Let $f(i) \\in F$ be the scRNA-seq measurement of cell $i$, and $g(i) \\in G$ be the scATAC- seq measurement of cell $i$. kNN-AUC calculates the average percentage overlap of neighborhoods of $f(i)$ in $F$ with neighborhoods of $g(i)$ in $G$. Higher is better.\n",
+    "paper_reference": "lance2022multimodal",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/cf678cdaee2b5f1cc3bbae256de382ea3cc96acb/src/tasks/match_modalities/metrics/knn_auc/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "cf678cdaee2b5f1cc3bbae256de382ea3cc96acb",
+    "maximize": true
+  },
+  {
+    "task_id": "match_modalities",
+    "metric_id": "mse",
+    "metric_name": "Mean Squared Error",
+    "metric_summary": "Mean squared error (MSE) is the average distance between each pair of matched observations of the same cell in the learned latent space. Lower is better.\n",
+    "paper_reference": "lance2022multimodal",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/tree/cf678cdaee2b5f1cc3bbae256de382ea3cc96acb/src/tasks/match_modalities/metrics/mse/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "cf678cdaee2b5f1cc3bbae256de382ea3cc96acb",
+    "maximize": false
+  }
+]
