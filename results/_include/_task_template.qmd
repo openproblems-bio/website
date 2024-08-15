@@ -90,30 +90,32 @@ cat(
 
 ```{r}
 #| echo: false
-lines <- map_chr(task_info$authors, function(author) {
-  name <- author$name
-  roles <- author$roles %>% paste(collapse = ", ")
-  github <- author$info$github %||% NULL
-  orcid <- author$info$orcid %||% NULL
+if (!is.na(task_info$authors)) {
+  lines <- map_chr(task_info$authors, function(author) {
+    name <- author$name
+    roles <- author$roles %>% paste(collapse = ", ")
+    github <- author$info$github %||% NULL
+    orcid <- author$info$orcid %||% NULL
 
-  links <- c()
-  if (!is.null(github)) {
-    links <- c(links, glue::glue("[GitHub](https://github.com/{github})"))
-  }
-  if (!is.null(orcid)) {
-    links <- c(links, glue::glue("[ORCID](https://orcid.org/{orcid})"))
-  }  
-  links_label <- 
-    if (length(links) > 0) {
-      glue::glue("{paste(links, collapse = ', ')}")
-    } else {
-      ""
+    links <- c()
+    if (!is.null(github)) {
+      links <- c(links, glue::glue("[GitHub](https://github.com/{github})"))
     }
-  strip_margin(glue::glue("
-    |* {name} ({roles}) {links_label}
-    |"
-  ))
-})
-knitr::asis_output(paste(lines, collapse = "\n"))
+    if (!is.null(orcid)) {
+      links <- c(links, glue::glue("[ORCID](https://orcid.org/{orcid})"))
+    }  
+    links_label <- 
+      if (length(links) > 0) {
+        glue::glue("{paste(links, collapse = ', ')}")
+      } else {
+        ""
+      }
+    strip_margin(glue::glue("
+      |* {name} ({roles}) {links_label}
+      |"
+    ))
+  })
+  knitr::asis_output(paste(lines, collapse = "\n"))
+}
 ```
 
