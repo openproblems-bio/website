@@ -90,7 +90,7 @@ cat(
 
 ```{r}
 #| echo: false
-if (!is.na(task_info$authors)) {
+if (!is.null(task_info$authors) && length(task_info$authors) > 0) {
   lines <- map_chr(task_info$authors, function(author) {
     name <- author$name
     roles <- author$roles %>% paste(collapse = ", ")

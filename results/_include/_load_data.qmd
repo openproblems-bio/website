@@ -14,7 +14,6 @@ task_info <- jsonlite::read_json(paste0(params$data_dir, "/task_info.json"))
 # add missing data
 task_info$task_description <- task_info$task_description %||% NA_character_
 task_info$task_motivation <- task_info$task_motivation %||% NA_character_
-task_info$authors <- task_info$authors %||% NA_character_
 
 `%|%` <- function(x, y) {
   ifelse(is.na(x), y, x)
