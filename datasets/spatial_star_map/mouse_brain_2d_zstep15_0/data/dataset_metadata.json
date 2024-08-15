@@ -1,0 +1,389 @@
+{
+  "structure": {
+    "X": [],
+    "layers": [
+      {
+        "description": "Raw counts",
+        "dtype": "float32",
+        "name": "counts",
+        "schema_type": "integer",
+        "shape": [
+          4666,
+          28
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float32",
+        "name": "normalized",
+        "shape": [
+          4666,
+          28
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "obs": [
+      {
+        "dtype": "int64",
+        "name": "x",
+        "shape": [
+          4666
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "y",
+        "shape": [
+          4666
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "z",
+        "shape": [
+          4666
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "n_counts",
+        "shape": [
+          4666
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "leiden",
+        "shape": [
+          4666
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int32",
+        "name": "n_genes_by_counts",
+        "shape": [
+          4666
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "log1p_n_genes_by_counts",
+        "shape": [
+          4666
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "total_counts",
+        "shape": [
+          4666
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "log1p_total_counts",
+        "shape": [
+          4666
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "n_genes",
+        "shape": [
+          4666
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "size_factors",
+        "shape": [
+          4666
+        ],
+        "type": "vector"
+      }
+    ],
+    "obsm": [
+      {
+        "dtype": "float32",
+        "name": "X_umap",
+        "shape": [
+          4666,
+          3
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "int64",
+        "name": "spatial",
+        "shape": [
+          4666,
+          2
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "obsp": [
+      {
+        "dtype": "float32",
+        "name": "connectivities",
+        "shape": [
+          4666,
+          4666
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "distances",
+        "shape": [
+          4666,
+          4666
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "spatial_connectivities",
+        "shape": [
+          4666,
+          4666
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "spatial_distances",
+        "shape": [
+          4666,
+          4666
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "uns": [
+      {
+        "description": "Long description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_description",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A unique identifier for the dataset. This is different from the `obs.dataset_id` field, which is the identifier for the dataset from which the cell data is derived.",
+        "dtype": "str",
+        "name": "dataset_id",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A human-readable name for the dataset.",
+        "dtype": "str",
+        "name": "dataset_name",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "The organism of the sample in the dataset.",
+        "dtype": "str",
+        "name": "dataset_organism",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Bibtex reference of the paper in which the dataset was published.",
+        "dtype": "str",
+        "name": "dataset_reference",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Short description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_summary",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Link to the original source of the dataset.",
+        "dtype": "str",
+        "name": "dataset_url",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": null,
+        "name": "leiden",
+        "shape": [
+          1
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": "object",
+        "name": "leiden_colors",
+        "shape": [
+          16
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": [
+          "float64",
+          "float64",
+          "float64",
+          "float64"
+        ],
+        "name": "moranI",
+        "shape": [
+          28,
+          4
+        ],
+        "type": "dataframe"
+      },
+      {
+        "dtype": null,
+        "name": "neighbors",
+        "shape": null,
+        "type": "other: <class 'anndata.compat._overloaded_dict.OverloadedDict'>"
+      },
+      {
+        "dtype": "str",
+        "name": "normalization_id",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": null,
+        "name": "spatial_neighbors",
+        "shape": [
+          3
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": null,
+        "name": "umap",
+        "shape": [
+          1
+        ],
+        "type": "dict"
+      }
+    ],
+    "var": [
+      {
+        "dtype": "int64",
+        "name": "n_cells_by_counts",
+        "shape": [
+          28
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "mean_counts",
+        "shape": [
+          28
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "log1p_mean_counts",
+        "shape": [
+          28
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "pct_dropout_by_counts",
+        "shape": [
+          28
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "total_counts",
+        "shape": [
+          28
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "log1p_total_counts",
+        "shape": [
+          28
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "n_cells",
+        "shape": [
+          28
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A human-readable name for the feature, usually a gene symbol.",
+        "dtype": "object",
+        "name": "feature_name",
+        "schema_type": "string",
+        "shape": [
+          28
+        ],
+        "type": "vector"
+      }
+    ],
+    "varm": [],
+    "varp": []
+  },
+  "uns": {
+    "dataset_description": "3D architecture of cell types in visual cortex volumes.",
+    "dataset_id": "spatial_star_map/mouse_brain_2d_zstep15_0",
+    "dataset_name": "Mouse Brain 2D zstep15_0",
+    "dataset_organism": "Mus musculus",
+    "dataset_reference": "wang2018three",
+    "dataset_summary": "Three-dimensional intact-tissue sequencing of single-cell transcriptional states.",
+    "dataset_url": "https://www.science.org/doi/10.1126/science.aat5691",
+    "date_created": "26-07-2024",
+    "file_size": 2620518,
+    "normalization_id": "log_cp10k"
+  }
+}

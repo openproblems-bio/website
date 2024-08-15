@@ -1,0 +1,341 @@
+{
+  "structure": {
+    "X": [],
+    "layers": [
+      {
+        "description": "Raw counts",
+        "dtype": "float32",
+        "name": "counts",
+        "schema_type": "integer",
+        "shape": [
+          2781,
+          13866
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float32",
+        "name": "normalized",
+        "shape": [
+          2781,
+          13866
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "obs": [
+      {
+        "dtype": "int64",
+        "name": "in_tissue",
+        "shape": [
+          2781
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "array_row",
+        "shape": [
+          2781
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "array_col",
+        "shape": [
+          2781
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int32",
+        "name": "n_genes_by_counts",
+        "shape": [
+          2781
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "log1p_n_genes_by_counts",
+        "shape": [
+          2781
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "total_counts",
+        "shape": [
+          2781
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "log1p_total_counts",
+        "shape": [
+          2781
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "pct_counts_in_top_50_genes",
+        "shape": [
+          2781
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "pct_counts_in_top_100_genes",
+        "shape": [
+          2781
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "pct_counts_in_top_200_genes",
+        "shape": [
+          2781
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "pct_counts_in_top_500_genes",
+        "shape": [
+          2781
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "n_genes",
+        "shape": [
+          2781
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "size_factors",
+        "shape": [
+          2781
+        ],
+        "type": "vector"
+      }
+    ],
+    "obsm": [
+      {
+        "dtype": "int64",
+        "name": "spatial",
+        "shape": [
+          2781,
+          2
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "obsp": [],
+    "uns": [
+      {
+        "description": "Long description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_description",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A unique identifier for the dataset. This is different from the `obs.dataset_id` field, which is the identifier for the dataset from which the cell data is derived.",
+        "dtype": "str",
+        "name": "dataset_id",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A human-readable name for the dataset.",
+        "dtype": "str",
+        "name": "dataset_name",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "The organism of the sample in the dataset.",
+        "dtype": "str",
+        "name": "dataset_organism",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Bibtex reference of the paper in which the dataset was published.",
+        "dtype": "str",
+        "name": "dataset_reference",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Short description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_summary",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Link to the original source of the dataset.",
+        "dtype": "str",
+        "name": "dataset_url",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": "str",
+        "name": "normalization_id",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": null,
+        "name": "spatial",
+        "shape": [
+          1
+        ],
+        "type": "dict"
+      }
+    ],
+    "var": [
+      {
+        "description": "Unique identifier for the feature, usually a ENSEMBL gene id.",
+        "dtype": "object",
+        "name": "feature_id",
+        "schema_type": "string",
+        "shape": [
+          13866
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "feature_types",
+        "shape": [
+          13866
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "genome",
+        "shape": [
+          13866
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "n_cells_by_counts",
+        "shape": [
+          13866
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "mean_counts",
+        "shape": [
+          13866
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "log1p_mean_counts",
+        "shape": [
+          13866
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "pct_dropout_by_counts",
+        "shape": [
+          13866
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "total_counts",
+        "shape": [
+          13866
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "log1p_total_counts",
+        "shape": [
+          13866
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "n_cells",
+        "shape": [
+          13866
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A human-readable name for the feature, usually a gene symbol.",
+        "dtype": "object",
+        "name": "feature_name",
+        "schema_type": "string",
+        "shape": [
+          13866
+        ],
+        "type": "vector"
+      }
+    ],
+    "varm": [],
+    "varp": []
+  },
+  "uns": {
+    "dataset_description": "5 \u00b5m section from squamous cell carcinoma of human cervical cancer. FFPE tissue purchased from Discovery Life Sciences.",
+    "dataset_id": "spatial_10x_visium/human_cervical_cancer",
+    "dataset_name": "Human Cervical Cancer (FFPE)",
+    "dataset_organism": "Homo sapiens",
+    "dataset_reference": "10x2022cervical",
+    "dataset_summary": "Gene expression library of Human Cervical Cancer (Visium FFPE) using the Human Whole Transcriptome Probe Set",
+    "dataset_url": "https://www.10xgenomics.com/datasets/human-cervical-cancer-1-standard",
+    "date_created": "23-07-2024",
+    "file_size": 80870700,
+    "normalization_id": "log_cp10k"
+  }
+}
