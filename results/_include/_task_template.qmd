@@ -99,10 +99,10 @@ if (!is.null(task_info$authors) && length(task_info$authors) > 0) {
 
     links <- c()
     if (!is.null(github)) {
-      links <- c(links, glue::glue("[GitHub](https://github.com/{github})"))
+      links <- c(links, glue::glue("[{{{{< fa brands github >}}}}](https://github.com/{github})"))
     }
     if (!is.null(orcid)) {
-      links <- c(links, glue::glue("[ORCID](https://orcid.org/{orcid})"))
+      links <- c(links, glue::glue("[{{{{< fa brands orcid >}}}}](https://orcid.org/{orcid})"))
     }  
     links_label <- 
       if (length(links) > 0) {
