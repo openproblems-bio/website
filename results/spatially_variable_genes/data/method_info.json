@@ -8,9 +8,9 @@
     "is_baseline": true,
     "paper_reference": null,
     "code_url": null,
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/53b4c57a659171248367b41047338edcf002caad/src/tasks/spatially_variable_genes/control_methods/random_ranking/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/0b474ff9f32069b0a6d5b4945656f53f78c1918f/src/tasks/spatially_variable_genes/control_methods/random_ranking/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "53b4c57a659171248367b41047338edcf002caad"
+    "commit_sha": "0b474ff9f32069b0a6d5b4945656f53f78c1918f"
   },
   {
     "task_id": "spatially_variable_genes",
@@ -21,9 +21,22 @@
     "is_baseline": true,
     "paper_reference": null,
     "code_url": null,
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/53b4c57a659171248367b41047338edcf002caad/src/tasks/spatially_variable_genes/control_methods/true_ranking/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/0b474ff9f32069b0a6d5b4945656f53f78c1918f/src/tasks/spatially_variable_genes/control_methods/true_ranking/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "53b4c57a659171248367b41047338edcf002caad"
+    "commit_sha": "0b474ff9f32069b0a6d5b4945656f53f78c1918f"
+  },
+  {
+    "task_id": "spatially_variable_genes",
+    "method_id": "boostgp",
+    "method_name": "BOOST-GP",
+    "method_summary": "Bayesian modeling of spatial molecular profiling data via Gaussian process",
+    "method_description": "BOOST-GP a novel Bayesian hierarchical model to analyze spatial transcriptomics data, \nwith several unique characteristics. It models the zero-inflated and over-dispersed \ncounts by deploying a zero-inflated negative binomial model that greatly increases \nmodel stability and robustness. Besides, the Bayesian inference framework allows us \nto borrow strength in parameter estimation in a de novo fashion. As a result, \nthe proposed model shows competitive performances in accuracy and robustness \nover existing methods in both simulation studies and two real data applications.\n",
+    "is_baseline": false,
+    "paper_reference": "li2021bayesian",
+    "code_url": "https://github.com/Minzhe/BOOST-GP",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/0b474ff9f32069b0a6d5b4945656f53f78c1918f/src/tasks/spatially_variable_genes/methods/boostgp/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "0b474ff9f32069b0a6d5b4945656f53f78c1918f"
   },
   {
     "task_id": "spatially_variable_genes",
@@ -34,9 +47,9 @@
     "is_baseline": false,
     "paper_reference": "bintayyash2021non",
     "code_url": "https://github.com/ManchesterBioinference/GPcounts",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/53b4c57a659171248367b41047338edcf002caad/src/tasks/spatially_variable_genes/methods/gpcounts/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/0b474ff9f32069b0a6d5b4945656f53f78c1918f/src/tasks/spatially_variable_genes/methods/gpcounts/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "53b4c57a659171248367b41047338edcf002caad"
+    "commit_sha": "0b474ff9f32069b0a6d5b4945656f53f78c1918f"
   },
   {
     "task_id": "spatially_variable_genes",
@@ -47,9 +60,9 @@
     "is_baseline": false,
     "paper_reference": "palla2022squidpy",
     "code_url": "https://github.com/scverse/squidpy",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/53b4c57a659171248367b41047338edcf002caad/src/tasks/spatially_variable_genes/methods/moran_i/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/0b474ff9f32069b0a6d5b4945656f53f78c1918f/src/tasks/spatially_variable_genes/methods/moran_i/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "53b4c57a659171248367b41047338edcf002caad"
+    "commit_sha": "0b474ff9f32069b0a6d5b4945656f53f78c1918f"
   },
   {
     "task_id": "spatially_variable_genes",
@@ -60,9 +73,9 @@
     "is_baseline": false,
     "paper_reference": "weber2023nnsvg",
     "code_url": "https://github.com/lmweber/nnSVG",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/53b4c57a659171248367b41047338edcf002caad/src/tasks/spatially_variable_genes/methods/nnsvg/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/0b474ff9f32069b0a6d5b4945656f53f78c1918f/src/tasks/spatially_variable_genes/methods/nnsvg/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "53b4c57a659171248367b41047338edcf002caad"
+    "commit_sha": "0b474ff9f32069b0a6d5b4945656f53f78c1918f"
   },
   {
     "task_id": "spatially_variable_genes",
@@ -73,9 +86,9 @@
     "is_baseline": false,
     "paper_reference": "zhang2022identification",
     "code_url": "https://github.com/WangPeng-Lab/scGCO",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/53b4c57a659171248367b41047338edcf002caad/src/tasks/spatially_variable_genes/methods/scgco/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/0b474ff9f32069b0a6d5b4945656f53f78c1918f/src/tasks/spatially_variable_genes/methods/scgco/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "53b4c57a659171248367b41047338edcf002caad"
+    "commit_sha": "0b474ff9f32069b0a6d5b4945656f53f78c1918f"
   },
   {
     "task_id": "spatially_variable_genes",
@@ -86,9 +99,9 @@
     "is_baseline": false,
     "paper_reference": "andersson2021sepal",
     "code_url": "https://github.com/scverse/squidpy",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/53b4c57a659171248367b41047338edcf002caad/src/tasks/spatially_variable_genes/methods/sepal/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/0b474ff9f32069b0a6d5b4945656f53f78c1918f/src/tasks/spatially_variable_genes/methods/sepal/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "53b4c57a659171248367b41047338edcf002caad"
+    "commit_sha": "0b474ff9f32069b0a6d5b4945656f53f78c1918f"
   },
   {
     "task_id": "spatially_variable_genes",
@@ -99,9 +112,9 @@
     "is_baseline": false,
     "paper_reference": "hao2021somde",
     "code_url": "https://github.com/XuegongLab/somde",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/53b4c57a659171248367b41047338edcf002caad/src/tasks/spatially_variable_genes/methods/somde/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/0b474ff9f32069b0a6d5b4945656f53f78c1918f/src/tasks/spatially_variable_genes/methods/somde/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "53b4c57a659171248367b41047338edcf002caad"
+    "commit_sha": "0b474ff9f32069b0a6d5b4945656f53f78c1918f"
   },
   {
     "task_id": "spatially_variable_genes",
@@ -112,9 +125,9 @@
     "is_baseline": false,
     "paper_reference": "hu2021spagcn",
     "code_url": "https://github.com/jianhuupenn/SpaGCN",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/53b4c57a659171248367b41047338edcf002caad/src/tasks/spatially_variable_genes/methods/spagcn/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/0b474ff9f32069b0a6d5b4945656f53f78c1918f/src/tasks/spatially_variable_genes/methods/spagcn/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "53b4c57a659171248367b41047338edcf002caad"
+    "commit_sha": "0b474ff9f32069b0a6d5b4945656f53f78c1918f"
   },
   {
     "task_id": "spatially_variable_genes",
@@ -125,9 +138,9 @@
     "is_baseline": false,
     "paper_reference": "chang2022spatial",
     "code_url": "https://github.com/jxLiu-bio/SpaGFT",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/53b4c57a659171248367b41047338edcf002caad/src/tasks/spatially_variable_genes/methods/spagft/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/0b474ff9f32069b0a6d5b4945656f53f78c1918f/src/tasks/spatially_variable_genes/methods/spagft/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "53b4c57a659171248367b41047338edcf002caad"
+    "commit_sha": "0b474ff9f32069b0a6d5b4945656f53f78c1918f"
   },
   {
     "task_id": "spatially_variable_genes",
@@ -138,9 +151,9 @@
     "is_baseline": false,
     "paper_reference": "cai2023spanve",
     "code_url": "https://github.com/zjupgx/Spanve",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/53b4c57a659171248367b41047338edcf002caad/src/tasks/spatially_variable_genes/methods/spanve/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/0b474ff9f32069b0a6d5b4945656f53f78c1918f/src/tasks/spatially_variable_genes/methods/spanve/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "53b4c57a659171248367b41047338edcf002caad"
+    "commit_sha": "0b474ff9f32069b0a6d5b4945656f53f78c1918f"
   },
   {
     "task_id": "spatially_variable_genes",
@@ -151,9 +164,9 @@
     "is_baseline": false,
     "paper_reference": "sun2020statistical",
     "code_url": "https://github.com/xzhoulab/SPARK",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/53b4c57a659171248367b41047338edcf002caad/src/tasks/spatially_variable_genes/methods/spark/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/0b474ff9f32069b0a6d5b4945656f53f78c1918f/src/tasks/spatially_variable_genes/methods/spark/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "53b4c57a659171248367b41047338edcf002caad"
+    "commit_sha": "0b474ff9f32069b0a6d5b4945656f53f78c1918f"
   },
   {
     "task_id": "spatially_variable_genes",
@@ -164,9 +177,9 @@
     "is_baseline": false,
     "paper_reference": "zhu2021spark",
     "code_url": "https://github.com/xzhoulab/SPARK",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/53b4c57a659171248367b41047338edcf002caad/src/tasks/spatially_variable_genes/methods/spark_x/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/0b474ff9f32069b0a6d5b4945656f53f78c1918f/src/tasks/spatially_variable_genes/methods/spark_x/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "53b4c57a659171248367b41047338edcf002caad"
+    "commit_sha": "0b474ff9f32069b0a6d5b4945656f53f78c1918f"
   },
   {
     "task_id": "spatially_variable_genes",
@@ -177,9 +190,9 @@
     "is_baseline": false,
     "paper_reference": "svensson2018spatialde",
     "code_url": "https://github.com/Teichlab/SpatialDE",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/53b4c57a659171248367b41047338edcf002caad/src/tasks/spatially_variable_genes/methods/spatialde/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/0b474ff9f32069b0a6d5b4945656f53f78c1918f/src/tasks/spatially_variable_genes/methods/spatialde/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "53b4c57a659171248367b41047338edcf002caad"
+    "commit_sha": "0b474ff9f32069b0a6d5b4945656f53f78c1918f"
   },
   {
     "task_id": "spatially_variable_genes",
@@ -190,8 +203,8 @@
     "is_baseline": false,
     "paper_reference": "kats2021spatialde2",
     "code_url": "https://github.com/PMBio/SpatialDE",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/53b4c57a659171248367b41047338edcf002caad/src/tasks/spatially_variable_genes/methods/spatialde2/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/0b474ff9f32069b0a6d5b4945656f53f78c1918f/src/tasks/spatially_variable_genes/methods/spatialde2/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "53b4c57a659171248367b41047338edcf002caad"
+    "commit_sha": "0b474ff9f32069b0a6d5b4945656f53f78c1918f"
   }
 ]
