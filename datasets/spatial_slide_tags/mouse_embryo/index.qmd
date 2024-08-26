@@ -1,0 +1,19 @@
+---
+dataset-id: "spatial_slide_tags/mouse_embryo"
+title: "Slide-tags - Mouse Embryo"
+subtitle: "Slide-tags enables single-nucleus barcoding for multimodal spatial genomics"
+categories: ["spatial_slide_tags"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/spatial_slide_tags/mouse_embryo/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

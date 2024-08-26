@@ -1,0 +1,19 @@
+---
+dataset-id: "spatial_10x_visium/human_kidney"
+title: "10X Visium - Human Kidney"
+subtitle: "Gene expression library of Human Kidney (CytAssist FFPE) using the Human Whole Transcriptome Probe Set"
+categories: ["spatial_10x_visium"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/spatial_10x_visium/human_kidney/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

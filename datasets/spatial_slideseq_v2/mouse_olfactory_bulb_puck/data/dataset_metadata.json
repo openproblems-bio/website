@@ -8,8 +8,8 @@
         "name": "counts",
         "schema_type": "integer",
         "shape": [
-          14112,
-          4038
+          21376,
+          4163
         ],
         "type": "sparsematrix"
       },
@@ -17,8 +17,8 @@
         "dtype": "float64",
         "name": "normalized",
         "shape": [
-          14112,
-          4038
+          21376,
+          4163
         ],
         "type": "sparsematrix"
       }
@@ -28,7 +28,7 @@
         "dtype": "category",
         "name": "leiden",
         "shape": [
-          14112
+          21376
         ],
         "type": "vector"
       },
@@ -36,7 +36,7 @@
         "dtype": "int32",
         "name": "n_genes_by_counts",
         "shape": [
-          14112
+          21376
         ],
         "type": "vector"
       },
@@ -44,7 +44,7 @@
         "dtype": "float64",
         "name": "log1p_n_genes_by_counts",
         "shape": [
-          14112
+          21376
         ],
         "type": "vector"
       },
@@ -52,7 +52,7 @@
         "dtype": "int64",
         "name": "total_counts",
         "shape": [
-          14112
+          21376
         ],
         "type": "vector"
       },
@@ -60,7 +60,7 @@
         "dtype": "float64",
         "name": "log1p_total_counts",
         "shape": [
-          14112
+          21376
         ],
         "type": "vector"
       },
@@ -68,7 +68,7 @@
         "dtype": "int64",
         "name": "n_genes",
         "shape": [
-          14112
+          21376
         ],
         "type": "vector"
       },
@@ -76,7 +76,7 @@
         "dtype": "int64",
         "name": "size_factors",
         "shape": [
-          14112
+          21376
         ],
         "type": "vector"
       }
@@ -86,7 +86,7 @@
         "dtype": "float32",
         "name": "X_pca",
         "shape": [
-          14112,
+          21376,
           50
         ],
         "type": "densematrix"
@@ -95,7 +95,7 @@
         "dtype": "float32",
         "name": "X_umap",
         "shape": [
-          14112,
+          21376,
           3
         ],
         "type": "densematrix"
@@ -104,7 +104,7 @@
         "dtype": "float64",
         "name": "spatial",
         "shape": [
-          14112,
+          21376,
           2
         ],
         "type": "densematrix"
@@ -115,8 +115,8 @@
         "dtype": "float32",
         "name": "connectivities",
         "shape": [
-          14112,
-          14112
+          21376,
+          21376
         ],
         "type": "sparsematrix"
       },
@@ -124,8 +124,8 @@
         "dtype": "float64",
         "name": "distances",
         "shape": [
-          14112,
-          14112
+          21376,
+          21376
         ],
         "type": "sparsematrix"
       },
@@ -133,8 +133,8 @@
         "dtype": "float64",
         "name": "spatial_connectivities",
         "shape": [
-          14112,
-          14112
+          21376,
+          21376
         ],
         "type": "sparsematrix"
       },
@@ -142,8 +142,8 @@
         "dtype": "float64",
         "name": "spatial_distances",
         "shape": [
-          14112,
-          14112
+          21376,
+          21376
         ],
         "type": "sparsematrix"
       }
@@ -239,7 +239,7 @@
         "dtype": "object",
         "name": "leiden_colors",
         "shape": [
-          26
+          31
         ],
         "type": "densematrix"
       },
@@ -309,7 +309,7 @@
         "dtype": "bool",
         "name": "highly_variable",
         "shape": [
-          4038
+          4163
         ],
         "type": "vector"
       },
@@ -317,7 +317,7 @@
         "dtype": "float64",
         "name": "means",
         "shape": [
-          4038
+          4163
         ],
         "type": "vector"
       },
@@ -325,7 +325,7 @@
         "dtype": "float64",
         "name": "dispersions",
         "shape": [
-          4038
+          4163
         ],
         "type": "vector"
       },
@@ -333,7 +333,7 @@
         "dtype": "float32",
         "name": "dispersions_norm",
         "shape": [
-          4038
+          4163
         ],
         "type": "vector"
       },
@@ -341,7 +341,7 @@
         "dtype": "int64",
         "name": "n_cells_by_counts",
         "shape": [
-          4038
+          4163
         ],
         "type": "vector"
       },
@@ -349,7 +349,7 @@
         "dtype": "float64",
         "name": "mean_counts",
         "shape": [
-          4038
+          4163
         ],
         "type": "vector"
       },
@@ -357,7 +357,7 @@
         "dtype": "float64",
         "name": "log1p_mean_counts",
         "shape": [
-          4038
+          4163
         ],
         "type": "vector"
       },
@@ -365,7 +365,7 @@
         "dtype": "float64",
         "name": "pct_dropout_by_counts",
         "shape": [
-          4038
+          4163
         ],
         "type": "vector"
       },
@@ -373,7 +373,7 @@
         "dtype": "int64",
         "name": "total_counts",
         "shape": [
-          4038
+          4163
         ],
         "type": "vector"
       },
@@ -381,7 +381,7 @@
         "dtype": "float64",
         "name": "log1p_total_counts",
         "shape": [
-          4038
+          4163
         ],
         "type": "vector"
       },
@@ -389,7 +389,7 @@
         "dtype": "int64",
         "name": "n_cells",
         "shape": [
-          4038
+          4163
         ],
         "type": "vector"
       },
@@ -399,7 +399,7 @@
         "name": "feature_name",
         "schema_type": "string",
         "shape": [
-          4038
+          4163
         ],
         "type": "vector"
       }
@@ -409,7 +409,7 @@
         "dtype": "float64",
         "name": "PCs",
         "shape": [
-          4038,
+          4163,
           50
         ],
         "type": "densematrix"
@@ -420,13 +420,13 @@
   "uns": {
     "dataset_description": "Gene expression library of mouse olfactory bulk puck profiled using Slide-seq V2.",
     "dataset_id": "spatial_slideseq_v2/mouse_olfactory_bulb_puck",
-    "dataset_name": "Mouse Olfactory Bulb Puck",
+    "dataset_name": "Slide-seqV2 - Mouse Olfactory Bulb Puck",
     "dataset_organism": "Mus musculus",
     "dataset_reference": "stickels2020highly",
     "dataset_summary": "Highly sensitive spatial transcriptomics at near-cellular resolution with Slide-seqV2.",
     "dataset_url": "https://singlecell.broadinstitute.org/single_cell/study/SCP815/sensitive-spatial-genome-wide-expression-profiling-at-cellular-resolution#study-summary",
-    "date_created": "26-07-2024",
-    "file_size": 32929482,
+    "date_created": "20-08-2024",
+    "file_size": 39155935,
     "hvg": {
       "flavor": "seurat"
     },

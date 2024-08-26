@@ -1,0 +1,19 @@
+---
+dataset-id: "spatial_slideseq_v2/mouse_olfactory_bulb_puck"
+title: "Slide-seqV2 - Mouse Olfactory Bulb Puck"
+subtitle: "Highly sensitive spatial transcriptomics at near-cellular resolution with Slide-seqV2"
+categories: ["spatial_slideseq_v2"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/spatial_slideseq_v2/mouse_olfactory_bulb_puck/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

@@ -1,0 +1,19 @@
+---
+dataset-id: "spatial_10x_visium/human_breast_cancer_1"
+title: "10X Visium - Human Breast Cancer 1"
+subtitle: "Whole transcriptome analysis, Adult Human Breast Cancer (Visium)"
+categories: ["spatial_10x_visium"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/spatial_10x_visium/human_breast_cancer_1/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

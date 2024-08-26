@@ -1,0 +1,19 @@
+---
+dataset-id: "spatial_stereo_seq/drosophila_embryo_e10"
+title: "Stereo-seq - Drosophila embryo E10"
+subtitle: "Stereo-seq faithfully captures Drosophila spatial transcriptomes with high resolution"
+categories: ["spatial_stereo_seq"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/spatial_stereo_seq/drosophila_embryo_e10/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

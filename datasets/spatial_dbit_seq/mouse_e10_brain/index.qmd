@@ -1,0 +1,19 @@
+---
+dataset-id: "spatial_dbit_seq/mouse_e10_brain"
+title: "DBiT-seq - Mouse Brain (E10)"
+subtitle: "High-Spatial-Resolution Multi-Omics Sequencing via Deterministic Barcoding in Tissue"
+categories: ["spatial_dbit_seq"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/spatial_dbit_seq/mouse_e10_brain/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

@@ -1,0 +1,19 @@
+---
+dataset-id: "spatial_merfish/human_cortex_2"
+title: "MERFISH - Human Cortex 2"
+subtitle: "Spatially resolved profiling of human cerebral cortex using multiplexed error-robust fluorescence in situ hybridization (MERFISH)"
+categories: ["spatial_merfish"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/spatial_merfish/human_cortex_2/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}
