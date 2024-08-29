@@ -1,0 +1,19 @@
+---
+dataset-id: "10x_datasets/human_breast_cancer_2_visium"
+title: "10X Visium - Human Breast Cancer 2"
+subtitle: "Gene expression library of Human Breast Cancer (Visium FFPE) using the Human Whole Transcriptome Probe Set"
+categories: ["10x_datasets"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/10x_datasets/human_breast_cancer_2_visium/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

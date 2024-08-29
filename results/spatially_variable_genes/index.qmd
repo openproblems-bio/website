@@ -1,0 +1,19 @@
+---
+title: "Spatially Variable Genes"
+subtitle: "Detecting genes whose expression levels vary across spatial regions."
+image: thumbnail.svg
+page-layout: full
+css: ../_include/task_template.css
+engine: knitr
+fig-cap-location: bottom
+citation-location: document
+toc: false
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "results/spatially_variable_genes/data")
+params <- list(data_dir = "./data")
+```
+
+{{< include ../_include/_task_template.qmd >}}

@@ -1,0 +1,481 @@
+{
+  "structure": {
+    "X": [],
+    "layers": [
+      {
+        "description": "Raw counts",
+        "dtype": "float32",
+        "name": "counts",
+        "schema_type": "integer",
+        "shape": [
+          9259,
+          247
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float32",
+        "name": "normalized",
+        "shape": [
+          9259,
+          247
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "obs": [
+      {
+        "dtype": "object",
+        "name": "name",
+        "shape": [
+          9259
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "global.x",
+        "shape": [
+          9259
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "global.y",
+        "shape": [
+          9259
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "adjusted.x",
+        "shape": [
+          9259
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "adjusted.y",
+        "shape": [
+          9259
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "fov.x",
+        "shape": [
+          9259
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "fov.y",
+        "shape": [
+          9259
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "cluster_L1",
+        "shape": [
+          9259
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "cluster_L2",
+        "shape": [
+          9259
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "cluster_L3",
+        "shape": [
+          9259
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "n_counts",
+        "shape": [
+          9259
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "leiden",
+        "shape": [
+          9259
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "n_genes_by_counts",
+        "shape": [
+          9259
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "log1p_n_genes_by_counts",
+        "shape": [
+          9259
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "total_counts",
+        "shape": [
+          9259
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "log1p_total_counts",
+        "shape": [
+          9259
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "n_genes",
+        "shape": [
+          9259
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "size_factors",
+        "shape": [
+          9259
+        ],
+        "type": "vector"
+      }
+    ],
+    "obsm": [
+      {
+        "dtype": "float32",
+        "name": "X_pca",
+        "shape": [
+          9259,
+          50
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float32",
+        "name": "X_umap",
+        "shape": [
+          9259,
+          3
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "spatial",
+        "shape": [
+          9259,
+          2
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "obsp": [
+      {
+        "dtype": "float32",
+        "name": "connectivities",
+        "shape": [
+          9259,
+          9259
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "distances",
+        "shape": [
+          9259,
+          9259
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "spatial_connectivities",
+        "shape": [
+          9259,
+          9259
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "spatial_distances",
+        "shape": [
+          9259,
+          9259
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "uns": [
+      {
+        "description": "Long description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_description",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A unique identifier for the dataset. This is different from the `obs.dataset_id` field, which is the identifier for the dataset from which the cell data is derived.",
+        "dtype": "str",
+        "name": "dataset_id",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A human-readable name for the dataset.",
+        "dtype": "str",
+        "name": "dataset_name",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "The organism of the sample in the dataset.",
+        "dtype": "str",
+        "name": "dataset_organism",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Bibtex reference of the paper in which the dataset was published.",
+        "dtype": "str",
+        "name": "dataset_reference",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Short description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_summary",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Link to the original source of the dataset.",
+        "dtype": "str",
+        "name": "dataset_url",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": null,
+        "name": "leiden",
+        "shape": [
+          1
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": "object",
+        "name": "leiden_colors",
+        "shape": [
+          18
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": null,
+        "name": "log1p",
+        "shape": [
+          0
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": [
+          "float64",
+          "float64",
+          "float64",
+          "float64"
+        ],
+        "name": "moranI",
+        "shape": [
+          250,
+          4
+        ],
+        "type": "dataframe"
+      },
+      {
+        "dtype": null,
+        "name": "neighbors",
+        "shape": null,
+        "type": "other: <class 'anndata.compat._overloaded_dict.OverloadedDict'>"
+      },
+      {
+        "dtype": "str",
+        "name": "normalization_id",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": null,
+        "name": "pca",
+        "shape": [
+          3
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": null,
+        "name": "spatial_neighbors",
+        "shape": [
+          3
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": null,
+        "name": "umap",
+        "shape": [
+          1
+        ],
+        "type": "dict"
+      }
+    ],
+    "var": [
+      {
+        "dtype": "int64",
+        "name": "n_cells_by_counts",
+        "shape": [
+          247
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "mean_counts",
+        "shape": [
+          247
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "log1p_mean_counts",
+        "shape": [
+          247
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "pct_dropout_by_counts",
+        "shape": [
+          247
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "total_counts",
+        "shape": [
+          247
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "log1p_total_counts",
+        "shape": [
+          247
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "n_cells",
+        "shape": [
+          247
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A human-readable name for the feature, usually a gene symbol.",
+        "dtype": "object",
+        "name": "feature_name",
+        "schema_type": "string",
+        "shape": [
+          247
+        ],
+        "type": "vector"
+      }
+    ],
+    "varm": [
+      {
+        "dtype": "float32",
+        "name": "PCs",
+        "shape": [
+          247,
+          50
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "varp": []
+  },
+  "uns": {
+    "dataset_description": "Spatially resolved profiling of human cerebral cortex (middle temopral gyrus) replicate 1 using multiplexed error-robust fluorescence in situ hybridization (MERFISH) (250 gene panel).",
+    "dataset_id": "zenodo_spatial/human_cortex_1_merfish",
+    "dataset_name": "MERFISH - Human Cortex 1",
+    "dataset_organism": "Homo sapiens",
+    "dataset_reference": "fang2022conservation",
+    "dataset_summary": "Spatially resolved profiling of human cerebral cortex using multiplexed error-robust fluorescence in situ hybridization (MERFISH).",
+    "dataset_url": "https://www.science.org/doi/10.1126/science.abm1741",
+    "date_created": "20-08-2024",
+    "file_size": 9204060,
+    "log1p": {},
+    "normalization_id": "log_cp10k"
+  }
+}

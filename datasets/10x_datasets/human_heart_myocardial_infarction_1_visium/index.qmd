@@ -1,0 +1,19 @@
+---
+dataset-id: "10x_datasets/human_heart_myocardial_infarction_1_visium"
+title: "10X Visium - Human Heart MI 1"
+subtitle: "Gene expression library of human heart using 10x Visium"
+categories: ["10x_datasets"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/10x_datasets/human_heart_myocardial_infarction_1_visium/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}
