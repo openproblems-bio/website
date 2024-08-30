@@ -196,7 +196,7 @@ palettes = [
 ```{ojs}
 //| echo: false
 //| fig-cap: "Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)."
-//| column: screen
+//| column: page
 funkyheatmap(
     transpose_list_of_objects(summary_all),
     transpose_list_of_objects(column_info),
@@ -205,9 +205,8 @@ funkyheatmap(
     [],
     palettes,
     {
-        fontSize: 12,
-        rowHeight: 20,
-        // colWidth: 0.9,
+        fontSize: 14,
+        rowHeight: 26,
         rootStyle: 'max-width: none',
         colorByRank: color_by_rank,
         theme: {
