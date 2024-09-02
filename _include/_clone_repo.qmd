@@ -1,9 +1,9 @@
 
 ```{r setup, include=FALSE}
-# discard local changes from the /_openproblems-v2 repo and
+# discard local changes from the /task_template repo and
 # sets the work directory to that directory.
 repo_path <- system("git rev-parse --show-toplevel", intern = TRUE)
-proj_dir <- paste0(repo_path, "/_openproblems-v2")
+proj_dir <- paste0(repo_path, "/_task_template")
 if (!dir.exists(paste0(proj_dir, "/_viash.yaml"))) {
   processx::run(
     "git",
@@ -17,8 +17,7 @@ processx::run(
   wd = proj_dir
 )
 processx::run(
-  "viash",
-  c("run", "src/common/sync_test_resources/config.vsh.yaml"),
+  "common/scripts/sync_resources",
   wd = proj_dir
 )
 knitr::opts_knit$set(root.dir = proj_dir)

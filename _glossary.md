@@ -126,7 +126,7 @@ A Viash component that a common dataset into task-specific dataset objects.
 ```
 
 ```glossary:Test resources
-The test resources is a set of files located at `s3://openproblems-bio/resources_test/` that are used to test components and workflows. After first cloning the repository, the test resources can be downloaded by running the instructions in the [Getting Started](/documentation/fundamentals/getting_started.qmd) page. Test resources are typically subsampled versions of the [common datasets](#common-datasets).
+The test resources is a set of files located at `s3://openproblems-bio/resources_test/` that are used to test components and workflows. Test resources are typically subsampled versions of the [common datasets](#common-datasets).
 ```
 
 ```glossary:Dataset processing workflow

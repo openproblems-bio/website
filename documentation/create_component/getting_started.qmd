@@ -1,6 +1,6 @@
 ---
 title: Getting started
-description: A step-by-step guide to getting started with OpenProblems
+description: A step-by-step guide to getting started with contributing to an OpenProblems task
 order: 25
 engine: knitr
 ---
@@ -8,12 +8,11 @@ engine: knitr
 {{< include ../../_include/_clone_repo.qmd >}}
 {{< include /_include/_evaluate_code.qmd >}}
 
-To get started with contributing to OpenProblems, you'll need to fork and clone the OpenProblems repository to your local machine.
-
+To get started with contributing to OpenProblems, you'll need to fork and clone the OpenProblems repository task to your local machine.
 
 ## Step 1: Create a fork
 
-Go to the OpenProblems repository at [https://github.com/openproblems-bio/openproblems-v2](https://github.com/openproblems-bio/openproblems-v2) and click on the "Fork" button in the top right corner of the page.
+Go to the OpenProblems repository at [https://github.com/openproblems-bio](https://github.com/openproblems-bio) and search for the task repository you want to start contributing to. Open the repository and click on the "Fork" button in the top right corner of the page.
 
 ![](../images/fork_repo.png){width=500px}
 
@@ -31,8 +30,8 @@ To clone this forked repository to your local machine, copy the URL of the forke
 In your terminal or command prompt, navigate to the directory where you want to clone the repository and enter the following command:
 
 ```bash
-git clone <forked repository URL> openproblems-v2
-cd openproblems-v2
+git clone --recursive <forked repository URL>
+cd <repository name>
 ```
 
 This will download a copy of the repository to your local machine. You can now make changes to the code, add new functionality, and commit your changes. Please commit your changes to a new branch following the [branch naming convention](/documentation/reference/naming/index.qmd).
@@ -44,14 +43,14 @@ These are needed for testing the existing components and can be used for develop
 From the repository root, run:
 
 ```bash
-viash run src/common/sync_test_resources/config.vsh.yaml
+common/scripts/sync_resources
 ```
 <details>
   <summary>Output</summary>
 ```{bash}
 #| echo: false
 rm -r resources_test
-viash run src/common/sync_test_resources/config.vsh.yaml
+task_template/common/scripts/sync_resources
 ```
 </details>
 
