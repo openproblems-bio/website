@@ -50,7 +50,7 @@ common/scripts/sync_resources
 ```{bash}
 #| echo: false
 rm -r resources_test
-task_template/common/scripts/sync_resources
+common/scripts/sync_resources
 ```
 </details>
 
@@ -63,19 +63,19 @@ That's it! Now you should be able to test whether the existing components work a
 
 ### Run a component
 
-Use the `viash run` command to run a Viash component. Everything after the `--` separator counts as the arguments of the component itself. In this case, the `knn` component has an `--input_train` and `--input_test` argument to which the test resources are passed.
+Use the `viash run` command to run a Viash component. Everything after the `--` separator counts as the arguments of the component itself. In this case, the `logistic_regression` component has an `--input_train` and `--input_test` argument to which the test resources are passed.
 
 ```bash
-viash run src/tasks/label_projection/methods/knn/config.vsh.yaml -- \
-  --input_train resources_test/label_projection/pancreas/train.h5ad \
-  --input_test resources_test/label_projection/pancreas/test.h5ad \
+viash run src/methods/logistic_regression/config.vsh.yaml -- \
+  --input_train resources_test/task_template/pancreas/train.h5ad \
+  --input_test resources_test/task_template/pancreas/test.h5ad \
   --output output.h5ad
 ```
 <details>
   <summary>Output</summary>
 ```{bash}
 #| echo: false
-viash run src/tasks/label_projection/methods/knn/config.vsh.yaml -- \
+viash run src/methods/logistic_regression/config.vsh.yaml -- \
   --input_train resources_test/label_projection/pancreas/train.h5ad \
   --input_test resources_test/label_projection/pancreas/test.h5ad \
   --output output.h5ad
@@ -88,35 +88,39 @@ Testing components is an important part of the development process.
 Each tasks comes with pre-defined unit tests that can be run using the `viash test` command.
 
 ```bash
-viash test src/tasks/label_projection/methods/knn/config.vsh.yaml
+viash test src/methods/logistic_regression/config.vsh.yaml
 ```
 <details>
   <summary>Output</summary>
 ```{bash}
 #| echo: false
-viash test src/tasks/label_projection/methods/knn/config.vsh.yaml
+viash test src/methods/logistic_regression/config.vsh.yaml
 ```
 </details>
 
 If you want to run the unit tests for all of the components of a task, you can use the `viash ns test` command.
 
 ```bash
-viash ns test --query label_projection --parallel --platform docker
+viash ns test --parallel --engine docker
 ```
 <details>
   <summary>Output</summary>
-                   namespace        functionality             platform            test_name exit_code duration               result
-    label_projection/methods  logistic_regression               docker                start                                        
-    label_projection/methods               scanvi               docker                start                                        
-    label_projection/methods                  knn               docker                start                                        
-    label_projection/methods                  mlp               docker                start                                        
-    label_projection/metrics             accuracy               docker                start                                        
-    label_projection/metrics                   f1               docker                start
-    label_projection/methods  logistic_regression               docker     build_executable         0        4              SUCCESS
-    label_projection/methods  logistic_regression               docker      generic_test.py         0        9              SUCCESS
-    label_projection/metrics                   f1               docker     build_executable         0        7              SUCCESS
-    label_projection/metrics                   f1               docker      format_check.py         0        8              SUCCESS
-    label_projection/metrics             accuracy               docker     build_executable         0        8              SUCCESS
-    label_projection/metrics             accuracy               docker      format_check.py         0        7              SUCCESS
+          namespace                 name               runner               engine            test_name exit_code duration               result
+    control_methods          true_labels           executable               docker                start                                        
+            metrics             accuracy           executable               docker                start                                        
+    data_processors      process_dataset           executable               docker                start                                        
+            methods  logistic_regression           executable               docker                start                                        
+    data_processors      process_dataset           executable               docker     build_executable         0        2              SUCCESS
+    data_processors      process_dataset           executable               docker run_and_check_output.py         0        4              SUCCESS
+    control_methods          true_labels           executable               docker     build_executable         0        2              SUCCESS
+    control_methods          true_labels           executable               docker run_and_check_output.py         0        4              SUCCESS
+    control_methods          true_labels           executable               docker      check_config.py         0        3              SUCCESS
+            metrics             accuracy           executable               docker     build_executable         0        2              SUCCESS
+            metrics             accuracy           executable               docker run_and_check_output.py         0        5              SUCCESS
+            metrics             accuracy           executable               docker      check_config.py         0        2              SUCCESS
+            methods  logistic_regression           executable               docker     build_executable         0        2              SUCCESS
+            methods  logistic_regression           executable               docker run_and_check_output.py         0        5              SUCCESS
+            methods  logistic_regression           executable               docker      check_config.py         0        3              SUCCESS
+All 11 configs built and tested successfully
     ...
 </details>
