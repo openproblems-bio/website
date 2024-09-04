@@ -26,21 +26,18 @@ Use the `create_*_method.sh` script found in the scripts repository to start cre
 ::: {.panel-tabset}
 ## Python
 
-Update the `name` parameter in the script.
-
-```bash
-common/scripts/create_component \
-  --name my_python_method \
-  --language python \
-  --type method
-```
-
-Run the following command:
-
 ```{bash}
 scripts/create_component/create_python_method.sh
 ```
 
+
+```{bash filename="scripts/create_component/create_python_method.sh"}
+common/scripts/create_component \
+#| eval: false
+  --name my_python_method \
+  --language python \
+  --type method
+```
 
 This creates a new folder at `src/methods/my_python_method` containing a Viash config and a script.
 
@@ -51,17 +48,16 @@ This creates a new folder at `src/methods/my_python_method` containing a Viash c
 
 ## R
 
-Update the `name` parameter in the script.
+```{bash}
+scripts/create_component/create_r_method.sh
+```
 
-```bash
+```{bash filename="scripts/create_component/create_r_method.sh"}
+#| eval: false
 common/scripts/create_component \
   --name my_r_method \
   --language r \
   --type method
-```
-
-```{bash}
-scripts/create_component/create_r_method.sh
 ```
 
 This creates a new folder at `src/methods/my_r_method` containing a Viash config and a script.
@@ -72,13 +68,14 @@ This creates a new folder at `src/methods/my_r_method` containing a Viash config
         └── ...               Optional additional resources.
 :::
 
-:::{.callout-tip}
-Some tasks have multiple method subtypes (e.g. `batch_integration`), which will require you to use a different value for `--type` corresponding to the desired method subtype.
-:::
+Change the `--name` to a unique name for your method. It must match the regex `[a-z][a-z0-9_]*` (snakecase).
 
 * A **config file** contains metadata of the component and the dependencies required to run it. In steps 2 and 3 we will fill in the required information.
 * A **script** contains the code to run the method. In step 4 we will edit the script. 
 
+:::{.callout-tip}
+Some tasks have multiple method subtypes (e.g. `batch_integration`), which will require you to use a different value for `--type` corresponding to the desired method subtype.
+:::
 
 ## Step 2: Fill in metadata
 
