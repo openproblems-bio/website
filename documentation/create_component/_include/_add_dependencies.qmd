@@ -2,19 +2,19 @@ Each component has it's own set of dependencies, because different components mi
 
 ## base images
 
-For your convenience we have created several base images that can be used for python or R scripts. These images can be found in the OpenProblems github repo [base_images](https://github.com/openproblems-bio/base_images).
+For your convenience we have created several base images that can be used for python or R scripts. These images can be found in the OpenProblems docker repo [base_images](https://hub.docker.com/r/openproblems).
 Click on the packages to view the url you need to use. You are not required to use these images but install the required packages to make sure OpenProblems works properly.
 
-* `ghcr.io/openproblems-bio/base_images/python`
+* `openproblems/base_python`
   Base image for python scripts.
 
-* `ghcr.io/openproblems-bio/base_images/r`
+* `openproblems/base_r`
   Base image for R scripts.
 
-* `ghcr.io/openproblems-bio/base_images/pytorch_nvidia`
+* `openproblems/base_pytorch_nvidia`
   Base image for scripts that use pytorch with nvidia gpu support.
 
-* `ghcr.io/openproblems-bio/base_images/tensorflow_nvidia`
+* `openproblems/base_tensorflow_nvidia`
   Base image for scripts that use tensorflow with nvidia gpu support.
 
 
@@ -42,6 +42,9 @@ platforms:
           - pyyaml
           - requests
           - jsonschema
+    test_setup:
+      - type: python
+        github: openproblems-bio/core#subdirectory=packages/python/openproblems
 ```
 
 ## R
