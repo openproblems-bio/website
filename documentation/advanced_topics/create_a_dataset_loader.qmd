@@ -4,10 +4,9 @@ order: 10
 engine: knitr
 ---
 
-{{< include ../../_include/_clone_repo.qmd >}}
+{{< include ../../_include/_clone_repo_openproblems.qmd >}}
 {{< include /_include/_evaluate_code.qmd >}}
 {{< include /_include/_synchonize_tabs.qmd >}}
-{{< include /_include/_read_api.qmd >}}
 
 A {{< glossary "dataset loader" >}} is used to generate one or more {{< glossary "raw dataset" label="raw datasets" >}}. A raw dataset is processed by the [Dataset preprocessing workflow](/documentation/reference/openproblems-v2/src-datasets.qmd) to create a {{< glossary "common dataset" >}} that can be used by multiple benchmarking tasks.
 
@@ -319,17 +318,11 @@ var <- data.frame(
 ## Format of a raw dataset object
 
 ```{r, include=FALSE}
-api_raw <- read_anndata_spec("src/datasets/api/file_raw.yaml")
+api_raw <- openproblems.docs::read_file_format("src/datasets/api/file_raw.yaml")
 ```
 
 Ideally, the AnnData output object should at least contain the following slots:
 
-```{r, echo=FALSE, output="asis"}
-cat(paste0(format_slots(api_raw), "\n"))
-```
-
-The full file format spec of a raw dataset AnnData is shown in the table below.
- 
 ```{r, echo=FALSE}
-format_slots_as_kable(api_raw)
+openproblems.docs::render_file_format(api_raw)
 ```

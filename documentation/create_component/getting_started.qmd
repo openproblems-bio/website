@@ -1,7 +1,7 @@
 ---
 title: Getting started
 description: A step-by-step guide to getting started with contributing to an OpenProblems task
-order: 25
+order: 30
 engine: knitr
 ---
 
@@ -12,7 +12,7 @@ To get started with contributing to OpenProblems, you'll need to fork and clone 
 
 ## Step 1: Create a fork
 
-Go to the OpenProblems repository at [https://github.com/openproblems-bio](https://github.com/openproblems-bio) and search for the task repository you want to start contributing to. Open the repository and click on the "Fork" button in the top right corner of the page.
+Go to the OpenProblems organisation at [https://github.com/openproblems-bio](https://github.com/openproblems-bio) and search for the task repository you want to start contributing to. Open the repository and click on the "Fork" button in the top right corner of the page.
 
 ![](../images/fork_repo.png){width=500px}
 
@@ -36,6 +36,14 @@ cd <repository name>
 
 This will download a copy of the repository to your local machine. You can now make changes to the code, add new functionality, and commit your changes. Please commit your changes to a new branch following the [branch naming convention](/documentation/reference/naming/index.qmd).
 
+:::{.callout-note}
+If somehow there are no files visible in the submodule after cloning using the above command. Us the following command to update the submodule:
+
+```bash
+git submodule update --init --recursive
+```
+:::
+
 ## Step 3: Download test resources
 
 You will also need to download the test resources by running the following command.
@@ -43,14 +51,14 @@ These are needed for testing the existing components and can be used for develop
 From the repository root, run:
 
 ```bash
-common/scripts/sync_resources
+scripts/sync_resources.sh
 ```
 <details>
   <summary>Output</summary>
 ```{bash}
 #| echo: false
 rm -r resources_test
-common/scripts/sync_resources
+scripts/sync_resources.sh
 ```
 </details>
 

@@ -14,9 +14,8 @@ strip_margin <- function(text, symbol = "\\|") {
 ```
 
 {{< include /_include/_synchonize_tabs.qmd >}}
-{{< include /_include/_clone_repo.qmd >}}
+{{< include /_include/_clone_repo_task_template.qmd >}}
 {{< include /_include/_evaluate_code.qmd >}}
-{{< include /_include/_read_api.qmd >}}
 
 In this section, we'll create the {{< glossary "Dataset processor" >}} component and generate the first {{< glossary "test resources" >}}. The Dataset processor component uses one of the pre-defined {{< glossary "common dataset" label="Common datasets" >}} to create the AnnData files used in your task. These AnnData object can then serve as the first test resources to be used to test Method and Metric components.
 
@@ -36,8 +35,8 @@ Start by creating the Viash config. Luckily, we already created its file format 
 :::{.panel-tabset}
 # Python
 
-```{.yaml filename="src/process_dataset/config.vsh.yaml"}
-__merge__: ../api/comp_process_dataset.yaml #<1>
+```{.yaml filename="src/data_processors/process_dataset/config.vsh.yaml"}
+__merge__: ../../api/comp_process_dataset.yaml #<1>
 name: "process_dataset" #<2>
 resources: #<3>
   - type: python_script #<4>
@@ -45,7 +44,7 @@ resources: #<3>
   - path: /src/common/helper_functions/subset_anndata.py #<5>
 engines:
 - type: docker #<6>
-  image: ghcr.io/openproblems-bio/base_images/python:1.1.0
+  image: openproblems/base_python:1.0.0
   setup:
     - type: python
       packages:
@@ -68,8 +67,8 @@ runners:
 # R
 
 
-```{.yaml filename="src/process_dataset/config.vsh.yaml"}
-__merge__: ../api/comp_process_dataset.yaml #<1>
+```{.yaml filename="src/data_processors/process_dataset/config.vsh.yaml"}
+__merge__: ../../api/comp_process_dataset.yaml #<1>
 name: "process_dataset" #<2>
 resources: #<3>
   - type: r_script #<4>
@@ -77,7 +76,7 @@ resources: #<3>
   - path: /src/common/helper_functions/subset_anndata.R #<5>
 engines:
 - type: docker #<6>
-  image: ghcr.io/openproblems-bio/base_images/r:1.1.0
+  image: openproblems/base_r:1.0.0
 runners:
   - type: executable
   - type: nextflow #<7>
@@ -102,7 +101,7 @@ Next, create the script which will split the common dataset into a train
 :::{.panel-tabset}
 # Python
 
-```{.python filename="src/process_dataset/script.py"}
+```{.python filename="src/data_processors/process_dataset/script.py"}
 import anndata as ad
 
 ## VIASH START
@@ -136,7 +135,7 @@ output_solution.write_h5ad(par["output_solution"])
 
 # R
 
-```{.r filename="src/process_dataset/script.R"}
+```{.r filename="src/data_processors/process_dataset/script.R"}
 library(anndata)
 
 ## VIASH START
@@ -224,7 +223,7 @@ You'll have to update the arguments to the output arguments set in the API file.
 
 Now run the script to generate the first couple of test resources:
 
-```bash
+<!-- ```bash
 chmod +x scripts/create_test_resources.sh
 scripts/create_test_resources.sh
-```
+``` -->
