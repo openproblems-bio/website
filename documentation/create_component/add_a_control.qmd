@@ -26,16 +26,15 @@ Use the `create_*_method.sh` script found in the scripts repository to start cre
 ::: {.panel-tabset}
 ## Python
 
-```{bash}
+```bash
 scripts/create_component/create_python_method.sh
 ```
 
 ```{bash filename="scripts/create_component/create_python_method.sh"}
-#| eval: false
 common/scripts/create_component \
   --name my_python_method \
   --language python \
-  --type method
+  --type control_method
 ```
 
 This creates a new folder at `src/control_methods/my_python_method` containing a Viash config and a script.
@@ -52,11 +51,10 @@ scripts/create_component/create_r_method.sh
 ```
 
 ```{bash filename="scripts/create_component/create_r_method.sh"}
-#| eval: false
 common/scripts/create_component \
   --name my_r_method \
   --language r \
-  --type method
+  --type control_method
 ```
 
 This creates a new folder at `src/control_methods/my_r_method` containing a Viash config and a script.
@@ -132,13 +130,13 @@ Please edit `info` section in the config file to fill in the necessary metadata.
 
 {{< include _include/_render_schema_required_fields.qmd >}}
 
-<!-- ```{r echo=FALSE, warning=FALSE, error=FALSE}
-info <- read_nested_yaml("../_core/schemas/task_control_method.yaml")
+```{r echo=FALSE, warning=FALSE, error=FALSE}
+info <- openproblems::read_nested_yaml("../_core/schemas/task_control_method.yaml")
 
 info_str <- paste(render_schema_required_fields(info, required = TRUE), collapse = "\n\n")
 
 knitr::asis_output(info_str)
-``` -->
+```
 
 ## Step 3: Add dependencies
 
