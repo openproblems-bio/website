@@ -4,7 +4,12 @@ order: 20
 engine: knitr
 ---
 
-After having created the task metadata file (see "[Define task](define_task.qmd#step-4-create-task-info)"), we will next define the type of components and file formats your task consists of. Concretely, you need to define:
+:::{.callout-note}
+The task_template repository that has been used to create the new task already contains most of the files needed for the API. You just need to update them according to the specs for your task.
+:::
+
+
+After Updating the task config file (see "[Define task](getting_started.qmd#step-6-update-the-task-config-file)"), we will next define the type of components and file formats your task consists of. Concretely, you need to define:
 
 * Which **types of {{< glossary Viash component label="components" >}}** your task consists of, that is, {{< glossary "Dataset processor" label="a dataset processor" >}}, {{< glossary Method label="methods" >}}, {{< glossary "Control method" label="control methods" >}}, and {{< glossary Metric label="metrics" >}}.
 * Which **{{< glossary Component interface label="interface" >}}** each of these component types has, that is, one or more input files and one or more output files.
@@ -14,14 +19,14 @@ When put together, a typical task API looks somewhat like this:
 
 {{< include /documentation/_figures/_project_structure_task_workflow.qmd >}}
 
-The [dimensionality reduction](https://github.com/openproblems-bio/openproblems-v2/tree/main/src/tasks/dimensionality_reduction/api) task is an example of an OpenProblems task with this topology, where the output is an embedding of the original dataset, and the solution is cell annotations which are used to verify whether the resulting embedding represents the intended biological information.
+The [dimensionality reduction](https://github.com/openproblems-bio/task_dimensionality_reduction/tree/main/src/api) task is an example of an OpenProblems task with this topology, where the output is an embedding of the original dataset, and the solution is cell annotations which are used to verify whether the resulting embedding represents the intended biological information.
 
 
 # Why?
 
 Having a formally defined API ensures consistency and interoperability across different components of your task. This makes it easier for others to contribute and build upon your work. Not only that, but creating API files (partially) automates the following steps:
 
-* Creating new [methods](../create_component/add_a_method.qmd) and [metrics](../create_component/add_a_metric.qmd) using the `create_component` method.
+* Creating new [methods](../create_component/add_a_method.qmd) and [metrics](../create_component/add_a_metric.qmd) using the `create_component` scripts.
 * [Automated testing](../create_component/run_tests.qmd) of components.
 * Generating [reference documentation](../reference/).
 * Implement a component for [processing the common datasets](dataset_processor.qmd).
@@ -29,10 +34,6 @@ Having a formally defined API ensures consistency and interoperability across di
 # How?
 
 We'll need to create API files for each component and AnnData file separately. However, this is actually quite easy to do, as we will show in the following sections.
-
-::: {.callout-note}
-In the repo created with the task_template, most of these files are already created for you. They just need to be updated according to the specs for your task.
-:::
 
 # Step 1: Create task API diagram {#step-1}
 
@@ -55,7 +56,7 @@ Here are the most common types of components and file formats:
 [@fig-example-traintest] and [@fig-example-multimodal] are examples of two OpenProblems tasks with slightly different workflow layouts.
 
 ```{mermaid}
-%%| fig-cap: "Example of a task where a dataset's cells are split into a training dataset and test dataset. Example: in the [Label projection](https://github.com/openproblems-bio/openproblems-v2/tree/main/src/tasks/label_projection/api) task, the Train dataset contains both the raw counts and the cell type labels of one set of cells, while the Test and Solution datasets contain the raw counts and cell type labels of the remaining set of cells (respectively)."
+%%| fig-cap: "Example of a task where a dataset's cells are split into a training dataset and test dataset. Example: in the [Label projection](https://github.com/openproblems-bio/task_label_projection/tree/main/src/api) task, the Train dataset contains both the raw counts and the cell type labels of one set of cells, while the Test and Solution datasets contain the raw counts and cell type labels of the remaining set of cells (respectively)."
 %%| label: fig-example-traintest
 graph LR
   common_dataset[Common<br/>dataset]:::anndata
@@ -77,7 +78,7 @@ graph LR
 
 
 ```{mermaid}
-%%| fig-cap: "Example of a multimodal task. Example: in the [Match modalities](https://github.com/openproblems-bio/openproblems-v2/tree/main/src/tasks/match_modalities/api) task, a dataset consists of both an RNA AnnData and ADT AnnData. However, the RNA and ADT AnnData objects are stored as two separate files."
+%%| fig-cap: "Example of a multimodal task. Example: in the [Predict modality](https://github.com/openproblems-bio/task_predict_modality/tree/main/src/api) task, a dataset consists of both an RNA AnnData and ADT AnnData. However, the RNA and ADT/ATAC AnnData objects are stored as two separate files."
 %%| label: fig-example-multimodal
 graph LR
   subgraph common_dataset[Common dataset]
@@ -111,18 +112,20 @@ Let's start by creating one for the solution object:
 
 ```{.yaml filename="src/api/file_solution.yaml"}
 type: file # <1>
-description: "FILL IN: what this file represents" # <2>
-example: "resources_test/<task_id>/pancreas/solution.h5ad"  # <3>
+example: "resources_test/<task_id>/pancreas/solution.h5ad"  # <2>
+label: Solution  # <3>
+summary: "FILL IN: what this file represents" # <4>
 info:
-  label: Solution  # <4>
-  slots: # <5>
+  format: # <5>
+
 ```
 
 1. This YAML file will be used to define the arguments of a Viash component. This must always be set to [`type: file`](https://viash.io/reference/config/arguments/file.html).
-2. Description of the file, useful for quickly understanding what type of data such a file represents. Used for generating reference documentation.
-3. An example of this file. At this stage, this file does not exist yet, but it will be created later on, as this file is used for unit testing components.
-4. A short label used to represent the file in diagrams in the reference documentation.
-5. Which AnnData slots need to be present in the file which will be defined in [Step 4](#step-4).
+2. An example of this file. At this stage, this file does not exist yet, but it will be created later on, as this file is used for unit testing components.
+3. A short label used to represent the file in diagrams in the reference documentation.
+4. Summary of the file, useful for quickly understanding what type of data such a file represents. Used for generating reference documentation.
+5. Which slots need to be present in the file which will be defined in [Step 4](#step-4). First define the `type` field. In this case, the file is an AnnData file, so the type is `h5ad`. Next, define the slots that are expected in the file.
+
 
 Create a YAML file for each of the other AnnData files in the task workflow. For example, `src/api/file_dataset.yaml`, `src/api/file_output.yaml`, and so on.
 
@@ -142,8 +145,9 @@ info: # <2>
   type: method # <3>
   type_info:
     label: "Method" # <4>
-    description: "FILL IN: A description of what this type of component does." # <5>
-arguments: # <6>
+    summary: "FILL IN: A short summary of what this type of component does." # <5>
+    description: "FILL IN: A description of what this type of component does." # <6>
+arguments: # <7>
   - name: "--input"
     __merge__: file_dataset.yaml
     required: true
@@ -157,8 +161,9 @@ arguments: # <6>
 2. Metadata about the component type.
 3. A unique identifier for the type of component.
 4. A formatted label for the component type.
-5. A description of the component type.
-6. The `arguments` that the component accepts. Each argument has a name (e.g., `--input`), a direction (`input` (default) or `output`) and whether it's required or not. Note that this information is partially provided by merging the file API YAML file specified earlier, using the `__merge__` notation.
+5. A short summary of the component type.
+6. A Description of the component type.
+7. The `arguments` that the component accepts. Each argument has a name (e.g., `--input`), a direction (`input` (default) or `output`) and whether it's required or not. Note that this information is partially provided by merging the file API YAML file specified earlier, using the `__merge__` notation.
 
 Create a YAML file for each of the other component types files in the task workflow. For example, `src/api/comp_dataset_processor.yaml`, `src/api/comp_metric.yaml`, and so on.
 
@@ -178,22 +183,23 @@ description: "FILL IN: what this file represents"
 example: "resources_test/<task_id>/pancreas/solution.h5ad"
 info:
   label: Solution
-  slots: # <1>
-    layers: # <2>
+  format: # <1>
+    type: h5ad # <2>
+    layers: # <3>
       - type: integer
         name: counts
         description: Raw counts
       - type: double
         name: normalized
         description: Normalized counts
-    obs: # <3>
+    obs: # <4>
       - type: string
         name: label
         description: Ground truth cell type labels
       - type: string
         name: batch
         description: Batch information
-    var: # <4>
+    var: # <5>
       - type: boolean
         name: hvg
         description: Whether or not the feature is considered to be a 'highly variable gene'
@@ -202,12 +208,12 @@ info:
         name: hvg_score
         description: A ranking of the features by hvg.
         required: true
-    obsm: # <5>
+    obsm: # <6>
       - type: double
         name: X_pca
         description: The resulting PCA embedding.
         required: true
-    uns: # <6>
+    uns: # <7>
       - type: string
         name: dataset_id
         description: "A unique identifier for the dataset"
@@ -218,12 +224,13 @@ info:
         required: true
 ```
 
-1. The mandatory and optional slots in the AnnData file.
-2. Specification of one or more AnnData layers (matrices).
-3. Specification for cell-level metadata (one or more columns).
-4. Specification for feature-level metadata (one or more columns).
-5. Specification for unstructured data.
-6. Other AnnData slots.
+1. The mandatory and optional slots in the data file.
+2. Specify the file format. In this case, it's an AnnData file. We support `h5ad`, `csv` or `parquet`.
+3. Specification of one or more AnnData layers (matrices).
+4. Specification for cell-level metadata (one or more columns).
+5. Specification for feature-level metadata (one or more columns).
+6. Specification for unstructured data.
+7. Other AnnData slots.
 
 Each required or optional slot in the file format should have the following fields:
 
