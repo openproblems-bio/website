@@ -1,0 +1,179 @@
+---
+title: Getting started
+description: A step-by-step guide to getting started with OpenProblems
+order: 10
+engine: knitr
+---
+
+{{< include /_include/_clone_repo_openproblems.qmd >}}
+{{< include /_include/_evaluate_code.qmd >}}
+
+Before writing any code, it's essential to carefully plan and document your task to ensure its relevance, feasibility, and compatibility with the OpenProblems framework. 
+
+## Step 1: Check whether a similar task already exists
+
+Please check the [OpenProblems organisation](https://github.com/openproblems-bio/openproblems) to see whether a similar task has already been created. Tasks are created as separate repositories within the OpenProblems organisation, and you can search for them using the Repository search bar and look for `task`.
+
+## Step 2: Reach out to the OpenProblems team
+
+If not, reach out to the OpenProblems team by creating a new task proposal. This can be done by creating a new issue in the OpenProblems repository using the [new task proposal template](https://github.com/openproblems-bio/openproblems/issues/new?assignees=&labels=task&projects=&template=new_task.yml). You can also reach out through [disord](https://discord.gg/hDE5bYEcHF).
+
+This collaborative process will help ensure that your task is well-defined, relevant, and compatible with the OpenProblems framework. Additionally, it informs others of your ongoing work in this area and establishes a foundation for potential collaboration. Check out [some examples](https://github.com/openproblems-bio/openproblems/labels/task) by filtering on the 'task' label on GitHub.
+
+```{r echo=FALSE, warning=FALSE, error=FALSE}
+new_task_yml <- yaml::read_yaml(".github/ISSUE_TEMPLATE/new_task.yml")
+md <- paste(sapply(new_task_yml$body, function(section) {
+  if (section$type == "textarea") {
+    paste0("### ", section$attributes$label, "\n\n", section$attributes$description, "\n")
+  } else {
+    ""
+  }
+}), collapse = "\n")
+
+knitr::asis_output(md)
+```
+
+:::{.callout-important}
+Next steps are only applicable if you have access to the OpenProblems organisation.
+:::
+
+## Step 3: Create task repository
+
+Upon approval of the task proposal, a new task repository within the OpenProblems-bio organization will be created using the [OpenProblems template](https://github.com/openproblems-bio/task_template). If it is not yet created and you have access to the organization, you can create it yourself using the instructions below.
+
+* Click the "Use this template" button on the top right of the repository.
+* Use the Owner dropdown menu to select the `openproblems-bio` account.
+* Type a name for your repository (task_...), and a description.
+* Set the repository visibility to public.
+* Click "Create repository from template".
+
+
+## Step 4: Clone the task repository
+
+To clone this forked repository to your local machine, copy the URL of the forked repository by clicking the green "Code" button and selecting HTTPS or SSH.
+
+In your terminal or command prompt, navigate to the directory where you want to clone the repository and enter the following command:
+
+```bash
+git clone --recursive <forked repository URL>
+cd <repository name>
+```
+
+:::{.callout-note}
+If somehow there are no files visible in the `common` submodule after cloning using the above command. Use the following command to update the submodule:
+
+```bash
+git submodule update --init --recursive
+```
+:::
+
+```{r reset_wd, include=FALSE}
+knitr::opts_knit$set(root.dir = ".." )
+```
+
+{{< include /_include/_clone_repo_task_template.qmd >}}
+
+
+## Step 5: Testing the repository
+
+The task_template repository is a working task repository that contains all the necessary components to get started with developing a new task. Start by testing the existing components to ensure that everything is working as expected.
+
+You will need to download the test resources by running the following command.
+These are needed for testing the existing components and can be used for developing new unit tests.
+From the repository root, run:
+
+```bash
+viash run src/common/sync_test_resources/config.vsh.yaml
+```
+<details>
+  <summary>Output</summary>
+```{bash}
+#| echo: false
+rm -r resources_test
+scripts/sync_resources.sh
+```
+</details>
+
+The test resources are stored in the `resources_test` directory.
+
+That's it! Now you should be able to test whether the existing components work as expected and then start adding functionality to the pipeline. Running an existing component is as simple as running a command in your terminal. Using test data as input, you can try this out immediately.
+
+### Run a component
+
+Use the `viash run` command to run a Viash component. Everything after the `--` separator counts as the arguments of the component itself. In this case, the `knn` component has an `--input_train` and `--input_test` argument to which the test resources are passed.
+
+```bash
+viash run src/methods/logistic_regression/config.vsh.yaml -- \
+  --input_train resources_test/task_template/pancreas/train.h5ad \
+  --input_test resources_test/task_template/pancreas/test.h5ad \
+  --output output.h5ad
+```
+<details>
+  <summary>Output</summary>
+```{bash}
+#| echo: false
+viash run src/methods/logistic_regression/config.vsh.yaml -- \
+  --input_train resources_test/task_template/pancreas/train.h5ad \
+  --input_test resources_test/task_template/pancreas/test.h5ad \
+  --output output.h5ad
+```
+</details>
+
+### Testing components
+
+Testing components is an important part of the development process.
+Each tasks comes with pre-defined unit tests that can be run using the `viash test` command.
+
+```bash
+viash test src/methods/logistic_regression/config.vsh.yaml
+```
+<details>
+  <summary>Output</summary>
+```{bash}
+#| echo: false
+viash test src/methods/logistic_regression/config.vsh.yaml
+```
+</details>
+
+If you want to run the unit tests for all of the components of a task, you can use the `viash ns test` command.
+
+```bash
+viash ns test --parallel --engine docker
+```
+<details>
+  <summary>Output</summary>
+          namespace                 name               runner               engine            test_name exit_code duration               result
+    control_methods          true_labels           executable               docker                start                                        
+            metrics             accuracy           executable               docker                start                                        
+    data_processors      process_dataset           executable               docker                start                                        
+            methods  logistic_regression           executable               docker                start                                        
+    data_processors      process_dataset           executable               docker     build_executable         0        2              SUCCESS
+    data_processors      process_dataset           executable               docker run_and_check_output.py         0        4              SUCCESS
+    control_methods          true_labels           executable               docker     build_executable         0        2              SUCCESS
+    control_methods          true_labels           executable               docker run_and_check_output.py         0        4              SUCCESS
+    control_methods          true_labels           executable               docker      check_config.py         0        3              SUCCESS
+            metrics             accuracy           executable               docker     build_executable         0        2              SUCCESS
+            metrics             accuracy           executable               docker run_and_check_output.py         0        5              SUCCESS
+            metrics             accuracy           executable               docker      check_config.py         0        2              SUCCESS
+            methods  logistic_regression           executable               docker     build_executable         0        2              SUCCESS
+            methods  logistic_regression           executable               docker run_and_check_output.py         0        5              SUCCESS
+            methods  logistic_regression           executable               docker      check_config.py         0        3              SUCCESS
+All 11 configs built and tested successfully
+</details>
+
+## Step 6: Update the task metadata
+
+Now update the _viash.yaml file in the root of the task repository with the following information:
+
+1. Update the `name` field to the name of the task in snake_case the name should start with `task_`.
+2. Add a keyword to the `keywords` field that describes the task.
+3. Update the `task_template` to the name of the task from step 1.
+4. Update the `label`, `summary`, `description` and `reference` fields.
+5. Replace the task_template to the name of the task (this will not yet be of relevance at the start of a task).
+6. Update the `authors` field with the authors of the task.
+7. Remove all of the comments of the steps you completed.
+8. High five yourself!
+
+## Ready, set, go!
+
+You are now well-equipped to begin [designing the API](design_api.qmd) for the new benchmarking task.
