@@ -42,8 +42,6 @@ platforms:
           - pyyaml
           - requests
           - jsonschema
-    test_setup:
-      - type: python
         github: openproblems-bio/core#subdirectory=packages/python/openproblems
 ```
 
@@ -71,15 +69,15 @@ platforms:
           - pyyaml
           - requests
           - jsonschema
+          github: openproblems-bio/core#subdirectory=packages/python/openproblems
       - type: r
         packages:
           - anndata
           - BiocManager
           - reticulate
           - bit64
-    test_setup:
-      - type: python
-        github: openproblems-bio/core#subdirectory=packages/python/openproblems
+        github:
+          - openproblems-bio/core/packages/r/openproblems
 ```
 
 :::
