@@ -15,7 +15,7 @@ This command will download the all of the test resources from the S3 bucket and 
 
 :::{.small}
 ```bash
-viash run src/common/sync_test_resources/config.vsh.yaml
+scripts/create_datasets/test_resources.sh
 ```
 :::
 
@@ -26,16 +26,19 @@ Build all components in a namespace.
 
 :::{.small}
 ```bash
-viash ns build -q label_projection --setup cachedbuild --parallel
+scripts/project/build_all_components.sh
 ```
 :::
 
-Arguments:
+## Build all docker containers
 
-* `--query` or `-q` specifies the namespace to build (optional).
-* `--setup` specifies the Docker build setup to use (optional). Options are `cachedbuild` (`cb`), `build` (`b`), or omit the argument to skip the Docker build step.
-* `--parallel` or `-l` will build all components in parallel (optional).
+Build all docker containers.
 
+:::{.small}
+```bash
+scripts/project/build_all_docker_containers.sh
+```
+:::
 
 ## Test a component
 
@@ -51,14 +54,9 @@ Run all tests in a task:
 
 :::{.small}
 ```bash
-viash ns test --query label_projection --parallel
+scripts/project/test_all_components.sh
 ```
 :::
-
-Arguments:
-
-* `--query` or `-q` specifies the namespace to test (optional).
-* `--parallel` or `-l` will run all tests in parallel (optional).
 
 ## Edit script
 
@@ -96,6 +94,6 @@ Use this command to view the component's Dockerfile.
 
 :::{.small}
 ```bash
-viash run path/to/config.vsh.yaml -p docker -- ---dockerfile
+viash run path/to/config.vsh.yaml -engine docker -- ---dockerfile
 ```
 :::
