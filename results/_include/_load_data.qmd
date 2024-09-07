@@ -26,13 +26,13 @@ results <- jsonlite::read_json(paste0(params$data_dir, "/results.json"), simplif
 qc <- jsonlite::read_json(paste0(params$data_dir, "/quality_control.json"), simplifyVector = TRUE)
 
 # add missing columns
-for (col in c("method_summary")) {
+for (col in c("method_summary", "method_description")) {
   method_info[[col]] <- method_info[[col]] %||% NA_character_
 }
-for (col in c("metric_summary")) {
+for (col in c("metric_summary", "metric_description")) {
   metric_info[[col]] <- metric_info[[col]] %||% NA_character_
 }
-for (col in c("dataset_summary", "dataset_name")) {
+for (col in c("dataset_summary", "dataset_description", "dataset_name")) {
   dataset_info[[col]] <- dataset_info[[col]] %||% NA_character_
 }
 
@@ -56,6 +56,10 @@ aggregate_scores <- function(scaled_score) {
   mean(pmin(1, pmax(0, scaled_score)) %|% 0)
 }
 
+
+strip_margin <- function(text, symbol = "\\|") {
+  str_replace_all(text, paste0("(\n?)[ \t]*", symbol), "\\1") 
+}
 
 ojs_define(
   task_info = jsonlite::read_json(paste0(params$data_dir, "/task_info.json")),

@@ -1,0 +1,19 @@
+---
+dataset-id: "10x_datasets/mouse_kidney_v1_visium"
+title: "10X Visium - Mouse Kidney 1"
+subtitle: "Mouse Kidney Whole Transcriptome Analysis"
+categories: ["10x_datasets"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/10x_datasets/mouse_kidney_v1_visium/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

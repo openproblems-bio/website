@@ -1,0 +1,135 @@
+---
+title: Getting started
+description: A step-by-step guide to getting started with contributing to an OpenProblems task
+order: 30
+engine: knitr
+page-navigation: true
+---
+
+{{< include ../../_include/_clone_repo_task_template.qmd >}}
+{{< include /_include/_evaluate_code.qmd >}}
+
+To get started with contributing to OpenProblems, you'll need to fork and clone the OpenProblems repository task to your local machine.
+
+## Step 1: Create a fork
+
+Go to the OpenProblems organisation at [https://github.com/openproblems-bio](https://github.com/openproblems-bio) and search for the task repository you want to start contributing to. Open the repository and click on the "Fork" button in the top right corner of the page.
+
+![](../images/fork_repo.png){width=500px}
+
+This will create a copy of the repository under your GitHub account. 
+
+:::{.callout-tip}
+While you're at it, why not click the "Star" button as well?
+
+[![](../images/stargazers.png){width=500px}](https://github.com/openproblems-bio/openproblems/stargazers)
+:::
+
+## Step 2: Clone the repository
+To clone this forked repository to your local machine, copy the URL of the forked repository by clicking the green "Code" button and selecting HTTPS or SSH.
+
+In your terminal or command prompt, navigate to the directory where you want to clone the repository and enter the following command:
+
+```bash
+git clone --recursive <forked repository URL>
+cd <repository name>
+```
+
+This will download a copy of the repository to your local machine. You can now make changes to the code, add new functionality, and commit your changes. Please commit your changes to a new branch following the [branch naming convention](/documentation/reference/naming/index.qmd).
+
+:::{.callout-note}
+If somehow there are no files visible in the `common` submodule after cloning using the above command. Use the following command to update the submodule:
+
+```bash
+git submodule update --init --recursive
+```
+:::
+
+## Step 3: Download test resources
+
+You will also need to download the test resources by running the following command.
+These are needed for testing the existing components and can be used for developing new unit tests.
+From the repository root, run:
+
+```bash
+scripts/sync_resources.sh
+```
+<details>
+  <summary>Output</summary>
+```{bash}
+#| echo: false
+rm -r resources_test
+scripts/sync_resources.sh
+```
+</details>
+
+The test resources are stored in the `resources_test` directory.
+
+
+## Ready, set, go!
+
+That's it! Now you should be able to test whether the existing components work as expected and then start adding functionality to the pipeline. Running an existing component is as simple as running a command in your terminal. Using test data as input, you can try this out immediately.
+
+### Run a component
+
+Use the `viash run` command to run a Viash component. Everything after the `--` separator counts as the arguments of the component itself. In this case, the `logistic_regression` component has an `--input_train` and `--input_test` argument to which the test resources are passed.
+
+```bash
+viash run src/methods/logistic_regression/config.vsh.yaml -- \
+  --input_train resources_test/task_template/pancreas/train.h5ad \
+  --input_test resources_test/task_template/pancreas/test.h5ad \
+  --output output.h5ad
+```
+<details>
+  <summary>Output</summary>
+```{bash}
+#| echo: false
+viash run src/methods/logistic_regression/config.vsh.yaml -- \
+  --input_train resources_test/task_template/pancreas/train.h5ad \
+  --input_test resources_test/task_template/pancreas/test.h5ad \
+  --output output.h5ad
+```
+</details>
+
+### Testing components
+
+Testing components is an important part of the development process.
+Each tasks comes with pre-defined unit tests that can be run using the `viash test` command.
+
+```bash
+viash test src/methods/logistic_regression/config.vsh.yaml
+```
+<details>
+  <summary>Output</summary>
+```{bash}
+#| echo: false
+viash test src/methods/logistic_regression/config.vsh.yaml
+```
+</details>
+
+If you want to run the unit tests for all of the components of a task, you can use the `viash ns test` command.
+
+```bash
+viash ns test --parallel --engine docker
+```
+<details>
+  <summary>Output</summary>
+          namespace                 name               runner               engine            test_name exit_code duration               result
+    control_methods          true_labels           executable               docker                start                                        
+            metrics             accuracy           executable               docker                start                                        
+    data_processors      process_dataset           executable               docker                start                                        
+            methods  logistic_regression           executable               docker                start                                        
+    data_processors      process_dataset           executable               docker     build_executable         0        2              SUCCESS
+    data_processors      process_dataset           executable               docker run_and_check_output.py         0        4              SUCCESS
+    control_methods          true_labels           executable               docker     build_executable         0        2              SUCCESS
+    control_methods          true_labels           executable               docker run_and_check_output.py         0        4              SUCCESS
+    control_methods          true_labels           executable               docker      check_config.py         0        3              SUCCESS
+            metrics             accuracy           executable               docker     build_executable         0        2              SUCCESS
+            metrics             accuracy           executable               docker run_and_check_output.py         0        5              SUCCESS
+            metrics             accuracy           executable               docker      check_config.py         0        2              SUCCESS
+            methods  logistic_regression           executable               docker     build_executable         0        2              SUCCESS
+            methods  logistic_regression           executable               docker run_and_check_output.py         0        5              SUCCESS
+            methods  logistic_regression           executable               docker      check_config.py         0        3              SUCCESS
+All 11 configs built and tested successfully
+    ...
+</details>

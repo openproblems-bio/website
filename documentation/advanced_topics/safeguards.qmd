@@ -39,3 +39,15 @@ All methods and metrics adhere to a strict file format interface. This standardi
 ## Unit tests
 
 All components in our benchmarking framework undergo rigorous unit testing. This testing is crucial for identifying and resolving problems early in the development cycle, thus preventing these issues from impacting the integrity of the benchmarks.
+
+## Platform independence
+
+OpenProblems is designed to be platform-independent:
+
+* It can run on high-performance computing (HPC) clusters, cloud infrastructure, or locally. This flexibility allows researchers to run benchmarks on the infrastructure that best suits their needs.
+
+* The framework supports different programming languages through Viash and Docker, namely R and Python. This flexibility allows researchers to use their preferred programming language to develop methods and metrics.
+
+* The AnnData data format is used for data exchange. This format is widely supported and allows for seamless data exchange between different components of the benchmarking framework.
+
+See the [Technology Stack](technology_stack) for more information on the tools and technologies used in OpenProblems.
