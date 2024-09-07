@@ -5,8 +5,6 @@ order: 20
 engine: knitr
 ---
 
-{{< include /_include/_synchonize_tabs.qmd >}}
-
 To start contributing to OpenProblems, you need to have the following software installed:
 
 * Bash (>= 3.2)
@@ -20,7 +18,7 @@ The following sections provide instructions on how to install each of these tool
 
 ## Step 1: install Bash
 
-::: {.panel-tabset}
+::: {.panel-tabset group="os"}
 ## Debian/Ubuntu
 
 Bash is already included in most Debian- and Ubuntu-based distributions. However, if for some reason it's not installed, open a terminal and run the following commands:
@@ -160,7 +158,7 @@ java --version
 
 ## Step 3: install Docker
 
-::: {.panel-tabset}
+::: {.panel-tabset group="os"}
 ## Debian/Ubuntu
 
 Update package index by running:
