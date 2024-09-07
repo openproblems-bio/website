@@ -5,22 +5,20 @@ order: 20
 engine: knitr
 ---
 
-{{< include /_include/_synchonize_tabs.qmd >}}
-
 To start contributing to OpenProblems, you need to have the following software installed:
 
 * Bash (>= 3.2)
 * Java Development Kit (>= 11)
 * Docker
-* Viash (>= 0.6.7)
+* Viash (>= 0.9.0)
 * Nextflow (>= 21.04)
 
-The following sections provide instructions on how to install each of these tools. If you already have all of these tools installed, feel free to skip this boring page and go to the next page on ["Getting started"](getting_started.qmd).
+The following sections provide instructions on how to install each of these tools. If you already have all of these tools installed, feel free to skip this boring page and go to the respective page on what you want to do either [Create component](../create_component/index.qmd) or [Create a new task](../create_task/index.qmd).
 
 
 ## Step 1: install Bash
 
-::: {.panel-tabset}
+::: {.panel-tabset group="os"}
 ## Debian/Ubuntu
 
 Bash is already included in most Debian- and Ubuntu-based distributions. However, if for some reason it's not installed, open a terminal and run the following commands:
@@ -88,7 +86,7 @@ bash --version
 
 You will need Oracle Java >=11 or OpenJDK >=11 to be installed.
 
-::: {.panel-tabset}
+::: {.panel-tabset group="os"}
 ## Debian/Ubuntu
 
 Run the following commands:
@@ -160,7 +158,7 @@ java --version
 
 ## Step 3: install Docker
 
-::: {.panel-tabset}
+::: {.panel-tabset group="os"}
 ## Debian/Ubuntu
 
 Update package index by running:
@@ -279,15 +277,17 @@ docker run hello-world
 
 ## Step 4: install Viash
 
-::: {.panel-tabset}
+::: {.panel-tabset group="os"}
 ## Debian/Ubuntu
 
 Install Viash by running:
 
 ```bash
+curl -fsSL dl.viash.io | bash
+
 mkdir -p "$HOME/.local/bin"
 
-curl -fsSL get.viash.io | bash -s -- --bin "$HOME/.local/bin"
+mv viash "$HOME/.local/bin"
 ```
 
 Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
@@ -297,9 +297,11 @@ Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
 Install Viash by running:
 
 ```bash
+curl -fsSL dl.viash.io | bash
+
 mkdir -p "$HOME/.local/bin"
 
-curl -fsSL get.viash.io | bash -s -- --bin "$HOME/.local/bin"
+mv viash "$HOME/.local/bin"
 ```
 
 Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
@@ -309,9 +311,11 @@ Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
 Install Viash by running:
 
 ```bash
+curl -fsSL dl.viash.io | bash
+
 mkdir -p "$HOME/.local/bin"
 
-curl -fsSL get.viash.io | bash -s -- --bin "$HOME/.local/bin"
+mv viash "$HOME/.local/bin"
 ```
 
 Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
@@ -322,9 +326,11 @@ Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
 Install Viash by running:
 
 ```bash
+curl -fsSL dl.viash.io | bash
+
 mkdir -p "$HOME/.local/bin"
 
-curl -fsSL get.viash.io | bash -s -- --bin "$HOME/.local/bin"
+mv viash "$HOME/.local/bin"
 ```
 
 Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
@@ -334,9 +340,11 @@ Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
 Install Viash in Ubuntu by running:
 
 ```bash
+curl -fsSL dl.viash.io | bash
+
 mkdir -p "$HOME/.local/bin"
 
-curl -fsSL get.viash.io | bash -s -- --bin "$HOME/.local/bin"
+mv viash "$HOME/.local/bin"
 ```
 
 Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
@@ -361,13 +369,16 @@ viash -v
 
 ## Step 5: install Nextflow
 
-::: {.panel-tabset}
+::: {.panel-tabset group="os"}
 ## Debian/Ubuntu
 
 Install Nextflow by running:
 
 ```bash
 curl -s https://get.nextflow.io | bash
+
+mkdir -p "$HOME/.local/bin"
+
 mv nextflow "$HOME/.local/bin"
 ```
 
@@ -377,6 +388,9 @@ Install Nextflow by running:
 
 ```bash
 curl -s https://get.nextflow.io | bash
+
+mkdir -p "$HOME/.local/bin"
+
 mv nextflow "$HOME/.local/bin"
 ```
 
@@ -386,6 +400,9 @@ Install Nextflow by running:
 
 ```bash
 curl -s https://get.nextflow.io | bash
+
+mkdir -p "$HOME/.local/bin"
+
 mv nextflow "$HOME/.local/bin"
 ```
 
@@ -396,6 +413,9 @@ Install Nextflow by running:
 
 ```bash
 curl -s https://get.nextflow.io | bash
+
+mkdir -p "$HOME/.local/bin"
+
 mv nextflow "$HOME/.local/bin"
 ```
 
@@ -405,6 +425,9 @@ Install Nextflow by running:
 
 ```bash
 curl -s https://get.nextflow.io | bash
+
+mkdir -p "$HOME/.local/bin"
+
 mv nextflow "$HOME/.local/bin"
 ```
 
@@ -417,7 +440,7 @@ Verify that Nextflow and Docker are working by running:
 nextflow run hello -with-docker
 ```
 
-    N E X T F L O W  ~  version 22.10.4
+    N E X T F L O W  $HOME  version 22.10.4
     Launching `https://github.com/nextflow-io/hello` [compassionate_keller] DSL2 - revision: 4eab81bd42 [master]
     executor >  local (4)
     [d5/78e7a6] process > sayHello (2) [100%] 4 of 4 ✔

@@ -1,0 +1,600 @@
+{
+  "structure": {
+    "X": [],
+    "layers": [
+      {
+        "description": "Raw counts",
+        "dtype": "int64",
+        "name": "counts",
+        "schema_type": "integer",
+        "shape": [
+          17797,
+          127
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "normalized",
+        "shape": [
+          17797,
+          127
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "obs": [
+      {
+        "dtype": "object",
+        "name": "barcode",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "x",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "y",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int32",
+        "name": "n_genes_by_counts",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "log1p_n_genes_by_counts",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "total_counts",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "log1p_total_counts",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "pct_counts_in_top_50_genes",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "pct_counts_in_top_100_genes",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "pct_counts_in_top_200_genes",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "pct_counts_in_top_500_genes",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "total_counts_MT",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "log1p_total_counts_MT",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "pct_counts_MT",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "n_counts",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "leiden",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "category",
+        "name": "cluster",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "n_genes",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "size_factors",
+        "shape": [
+          17797
+        ],
+        "type": "vector"
+      }
+    ],
+    "obsm": [
+      {
+        "dtype": "float32",
+        "name": "X_pca",
+        "shape": [
+          17797,
+          50
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": "float32",
+        "name": "X_umap",
+        "shape": [
+          17797,
+          3
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": [
+          "float64",
+          "float64",
+          "float64",
+          "float64",
+          "float64",
+          "float64",
+          "float64",
+          "float64",
+          "float64",
+          "float64",
+          "float64",
+          "float64",
+          "float64",
+          "float64",
+          "object",
+          "int64",
+          "float64",
+          "float64"
+        ],
+        "name": "deconvolution_results",
+        "shape": [
+          17797,
+          18
+        ],
+        "type": "dataframe"
+      },
+      {
+        "dtype": "float64",
+        "name": "spatial",
+        "shape": [
+          17797,
+          2
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "obsp": [
+      {
+        "dtype": "float32",
+        "name": "connectivities",
+        "shape": [
+          17797,
+          17797
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "distances",
+        "shape": [
+          17797,
+          17797
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "spatial_connectivities",
+        "shape": [
+          17797,
+          17797
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "spatial_distances",
+        "shape": [
+          17797,
+          17797
+        ],
+        "type": "sparsematrix"
+      }
+    ],
+    "uns": [
+      {
+        "dtype": "object",
+        "name": "cluster_colors",
+        "shape": [
+          14
+        ],
+        "type": "densematrix"
+      },
+      {
+        "description": "Long description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_description",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A unique identifier for the dataset. This is different from the `obs.dataset_id` field, which is the identifier for the dataset from which the cell data is derived.",
+        "dtype": "str",
+        "name": "dataset_id",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "A human-readable name for the dataset.",
+        "dtype": "str",
+        "name": "dataset_name",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "The organism of the sample in the dataset.",
+        "dtype": "str",
+        "name": "dataset_organism",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Bibtex reference of the paper in which the dataset was published.",
+        "dtype": "str",
+        "name": "dataset_reference",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Short description of the dataset.",
+        "dtype": "str",
+        "name": "dataset_summary",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "description": "Link to the original source of the dataset.",
+        "dtype": "str",
+        "name": "dataset_url",
+        "schema_type": "string",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": null,
+        "name": "hvg",
+        "shape": [
+          1
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": null,
+        "name": "leiden",
+        "shape": [
+          1
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": "object",
+        "name": "leiden_colors",
+        "shape": [
+          17
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": null,
+        "name": "log1p",
+        "shape": [
+          0
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": [
+          "float64",
+          "float64",
+          "float64",
+          "float64"
+        ],
+        "name": "moranI",
+        "shape": [
+          2000,
+          4
+        ],
+        "type": "dataframe"
+      },
+      {
+        "dtype": null,
+        "name": "neighbors",
+        "shape": null,
+        "type": "other: <class 'anndata.compat._overloaded_dict.OverloadedDict'>"
+      },
+      {
+        "dtype": "str",
+        "name": "normalization_id",
+        "shape": [
+          1
+        ],
+        "type": "atomic"
+      },
+      {
+        "dtype": null,
+        "name": "pca",
+        "shape": [
+          3
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": null,
+        "name": "spatial_neighbors",
+        "shape": [
+          3
+        ],
+        "type": "dict"
+      },
+      {
+        "dtype": null,
+        "name": "umap",
+        "shape": [
+          1
+        ],
+        "type": "dict"
+      }
+    ],
+    "var": [
+      {
+        "dtype": "bool",
+        "name": "MT",
+        "shape": [
+          127
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "n_cells_by_counts",
+        "shape": [
+          127
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "mean_counts",
+        "shape": [
+          127
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "log1p_mean_counts",
+        "shape": [
+          127
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "pct_dropout_by_counts",
+        "shape": [
+          127
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "total_counts",
+        "shape": [
+          127
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "log1p_total_counts",
+        "shape": [
+          127
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "n_cells",
+        "shape": [
+          127
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "bool",
+        "name": "highly_variable",
+        "shape": [
+          127
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "highly_variable_rank",
+        "shape": [
+          127
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "means",
+        "shape": [
+          127
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "variances",
+        "shape": [
+          127
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "variances_norm",
+        "shape": [
+          127
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float64",
+        "name": "dispersions",
+        "shape": [
+          127
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "float32",
+        "name": "dispersions_norm",
+        "shape": [
+          127
+        ],
+        "type": "vector"
+      },
+      {
+        "description": "A human-readable name for the feature, usually a gene symbol.",
+        "dtype": "object",
+        "name": "feature_name",
+        "schema_type": "string",
+        "shape": [
+          127
+        ],
+        "type": "vector"
+      }
+    ],
+    "varm": [
+      {
+        "dtype": "float64",
+        "name": "PCs",
+        "shape": [
+          127,
+          50
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "varp": []
+  },
+  "uns": {
+    "dataset_description": "Gene expression library of Mouse cortex profiled using Slide-seq V2.",
+    "dataset_id": "zenodo_spatial/mouse_cortex_slideseqv2",
+    "dataset_name": "Slide-seqV2 - Mouse Cortex",
+    "dataset_organism": "Mus musculus",
+    "dataset_reference": "stickels2020highly",
+    "dataset_summary": "Highly sensitive spatial transcriptomics at near-cellular resolution with Slide-seqV2.",
+    "dataset_url": "https://singlecell.broadinstitute.org/single_cell/study/SCP815/sensitive-spatial-genome-wide-expression-profiling-at-cellular-resolution#study-summary",
+    "date_created": "20-08-2024",
+    "file_size": 23509771,
+    "hvg": {
+      "flavor": "seurat"
+    },
+    "log1p": {},
+    "normalization_id": "log_cp10k"
+  }
+}
