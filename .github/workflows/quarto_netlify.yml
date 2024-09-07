@@ -56,7 +56,8 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: actions/cache@v2
         with:
-          key: quarto-${{ github.base_ref }}
+          key: quarto-${{ github.ref_name }}
+          restore-keys: quarto
           path: |
             .quarto
             _site
