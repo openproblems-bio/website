@@ -13,7 +13,6 @@ strip_margin <- function(text, symbol = "\\|") {
 }
 ```
 
-{{< include /_include/_synchonize_tabs.qmd >}}
 {{< include /_include/_clone_repo.qmd >}}
 {{< include /_include/_evaluate_code.qmd >}}
 {{< include /_include/_read_api.qmd >}}
@@ -33,7 +32,8 @@ The Dataset processor, like any component in OpenProblems, is a {{< glossary Via
 Start by creating the Viash config. Luckily, we already created its file format and argument list in the [previous section](design_api.qmd), so we can just import the interface using the `__merge__` field:
 
 
-:::{.panel-tabset}
+:::{.panel-tabset group="language"}
+
 # Python
 
 ```{.yaml filename="src/tasks/<task_id>/process_dataset/config.vsh.yaml"}
@@ -97,7 +97,7 @@ platforms:
 
 Next, create the script which will split the common dataset into a train
 
-:::{.panel-tabset}
+:::{.panel-tabset group="language"}
 # Python
 
 ```{.python filename="src/tasks/<task_id>/process_dataset/script.py"}
