@@ -1,0 +1,19 @@
+---
+dataset-id: "zenodo_spatial/drosophila_embryo_e5_6_stereoseq"
+title: "Stereo-seq - Drosophila embryo E5_6"
+subtitle: "Stereo-seq faithfully captures Drosophila spatial transcriptomes with high resolution"
+categories: ["zenodo_spatial"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/zenodo_spatial/drosophila_embryo_e5_6_stereoseq/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}
