@@ -287,12 +287,12 @@ Install Viash by running:
 ```bash
 curl -fsSL dl.viash.io | bash
 
-mkdir -p ~/.local/bin
+mkdir -p "$HOME/.local/bin"
 
-mv viash ~/.local/bin
+mv viash "$HOME/.local/bin"
 ```
 
-Tip: Make sure that the `~/.local/bin` folder is in your `$PATH` variable.
+Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
 
 ## RHEL/Fedora
 
@@ -301,12 +301,12 @@ Install Viash by running:
 ```bash
 curl -fsSL dl.viash.io | bash
 
-mkdir -p ~/.local/bin
+mkdir -p "$HOME/.local/bin"
 
-mv viash ~/.local/bin
+mv viash "$HOME/.local/bin"
 ```
 
-Tip: Make sure that the `~/.local/bin` folder is in your `$PATH` variable.
+Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
 
 ## Arch
 
@@ -315,12 +315,12 @@ Install Viash by running:
 ```bash
 curl -fsSL dl.viash.io | bash
 
-mkdir -p ~/.local/bin
+mkdir -p "$HOME/.local/bin"
 
-mv viash ~/.local/bin
+mv viash "$HOME/.local/bin"
 ```
 
-Tip: Make sure that the `~/.local/bin` folder is in your `$PATH` variable.
+Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
 
 ## macOS
 
@@ -330,12 +330,12 @@ Install Viash by running:
 ```bash
 curl -fsSL dl.viash.io | bash
 
-mkdir -p ~/.local/bin
+mkdir -p "$HOME/.local/bin"
 
-mv viash ~/.local/bin
+mv viash "$HOME/.local/bin"
 ```
 
-Tip: Make sure that the `~/.local/bin` folder is in your `$PATH` variable.
+Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
 
 ## Windows
 
@@ -344,12 +344,12 @@ Install Viash in Ubuntu by running:
 ```bash
 curl -fsSL dl.viash.io | bash
 
-mkdir -p ~/.local/bin
+mkdir -p "$HOME/.local/bin"
 
-mv viash ~/.local/bin
+mv viash "$HOME/.local/bin"
 ```
 
-Tip: Make sure that the `~/.local/bin` folder is in your `$PATH` variable.
+Tip: Make sure that the `$HOME/.local/bin` folder is in your `$PATH` variable.
 
 :::
 
@@ -379,9 +379,9 @@ Install Nextflow by running:
 ```bash
 curl -s https://get.nextflow.io | bash
 
-mkdir -p ~/.local/bin
+mkdir -p "$HOME/.local/bin"
 
-mv nextflow "~/.local/bin"
+mv nextflow "$HOME/.local/bin"
 ```
 
 ## RHEL/Fedora
@@ -391,9 +391,9 @@ Install Nextflow by running:
 ```bash
 curl -s https://get.nextflow.io | bash
 
-mkdir -p ~/.local/bin
+mkdir -p "$HOME/.local/bin"
 
-mv nextflow "~/.local/bin"
+mv nextflow "$HOME/.local/bin"
 ```
 
 ## Arch
@@ -403,9 +403,9 @@ Install Nextflow by running:
 ```bash
 curl -s https://get.nextflow.io | bash
 
-mkdir -p ~/.local/bin
+mkdir -p "$HOME/.local/bin"
 
-mv nextflow "~/.local/bin"
+mv nextflow "$HOME/.local/bin"
 ```
 
 ## macOS
@@ -416,9 +416,9 @@ Install Nextflow by running:
 ```bash
 curl -s https://get.nextflow.io | bash
 
-mkdir -p ~/.local/bin
+mkdir -p "$HOME/.local/bin"
 
-mv nextflow "~/.local/bin"
+mv nextflow "$HOME/.local/bin"
 ```
 
 ## Windows
@@ -428,9 +428,9 @@ Install Nextflow by running:
 ```bash
 curl -s https://get.nextflow.io | bash
 
-mkdir -p ~/.local/bin
+mkdir -p "$HOME/.local/bin"
 
-mv nextflow "~/.local/bin"
+mv nextflow "$HOME/.local/bin"
 ```
 
 :::
@@ -442,7 +442,7 @@ Verify that Nextflow and Docker are working by running:
 nextflow run hello -with-docker
 ```
 
-    N E X T F L O W  ~  version 22.10.4
+    N E X T F L O W  $HOME  version 22.10.4
     Launching `https://github.com/nextflow-io/hello` [compassionate_keller] DSL2 - revision: 4eab81bd42 [master]
     executor >  local (4)
     [d5/78e7a6] process > sayHello (2) [100%] 4 of 4 ✔
