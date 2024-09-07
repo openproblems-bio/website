@@ -7,7 +7,7 @@ engine: knitr
 {{< include ../../_include/_clone_repo_openproblems.qmd >}}
 {{< include /_include/_evaluate_code.qmd >}}
 
-A {{< glossary "dataset loader" >}} is used to generate one or more {{< glossary "raw dataset" label="raw datasets" >}}. A raw dataset is processed by the [Dataset preprocessing workflow](/documentation/reference/openproblems-v2/src-datasets.qmd) to create a {{< glossary "common dataset" >}} that can be used by multiple benchmarking tasks.
+A {{< glossary "dataset loader" >}} is used to generate one or more {{< glossary "raw dataset" label="raw datasets" >}}. A raw dataset is processed by the [Dataset preprocessing workflow](/documentation/reference/openproblems/src-datasets.qmd) to create a {{< glossary "common dataset" >}} that can be used by multiple benchmarking tasks.
 
 This guide will show you how to create a new {{< glossary Viash >}} component to fetch or generate datasets.
 
@@ -21,7 +21,7 @@ Common datasets are created by generating raw datasets with a data loader and ru
 
 {{< include ../_figures/_project_structure_dataflow.qmd >}}
 
-See the [reference documentation](../reference/openproblems-v2/src-datasets.qmd) for more information on how each of these steps works.
+See the [reference documentation](../reference/openproblems/src-datasets.qmd) for more information on how each of these steps works.
 
 ```{r setup-packages, include=FALSE}
 library(tidyverse)
