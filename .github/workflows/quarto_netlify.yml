@@ -51,6 +51,16 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: 1.5.57
+      
+      - name: If PR, cache several directories
+        if: github.event_name == 'pull_request'
+        uses: actions/cache@v2
+        with:
+          key: ${{ runner.os }}-quarto-${{ hashFiles('**/*.qmd') }}
+          path: |
+            .quarto
+            _site
+            _freeze
 
       - name: Render with Quarto
         shell: bash -l {0}  
