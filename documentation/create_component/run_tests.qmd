@@ -21,7 +21,7 @@ Use `viash test` to run all of the component's unit tests.
 ## Example
 
 ```bash
-viash test src/tasks/label_projection/methods/knn/config.vsh.yaml
+viash test src/methods/logistic_regression/config.vsh.yaml
 ```
 <details>
   <summary>Output</summary>
@@ -41,24 +41,25 @@ viash ns test --parallel
 
 <details>
   <summary>Output</summary>
-          namespace                 name               runner               engine            test_name exit_code duration               result
-    control_methods          true_labels           executable               docker                start                                        
-            metrics             accuracy           executable               docker                start                                        
-    data_processors      process_dataset           executable               docker                start                                        
-            methods  logistic_regression           executable               docker                start                                        
-    data_processors      process_dataset           executable               docker     build_executable         0        2              SUCCESS
-    data_processors      process_dataset           executable               docker run_and_check_output.py         0        4              SUCCESS
-    control_methods          true_labels           executable               docker     build_executable         0        2              SUCCESS
-    control_methods          true_labels           executable               docker run_and_check_output.py         0        4              SUCCESS
-    control_methods          true_labels           executable               docker      check_config.py         0        3              SUCCESS
-            metrics             accuracy           executable               docker     build_executable         0        2              SUCCESS
-            metrics             accuracy           executable               docker run_and_check_output.py         0        5              SUCCESS
-            metrics             accuracy           executable               docker      check_config.py         0        2              SUCCESS
-            methods  logistic_regression           executable               docker     build_executable         0        2              SUCCESS
-            methods  logistic_regression           executable               docker run_and_check_output.py         0        5              SUCCESS
-            methods  logistic_regression           executable               docker      check_config.py         0        3              SUCCESS
-All 11 configs built and tested successfully
-    ...
+
+              namespace                 name               runner               engine            test_name exit_code duration               result
+        control_methods          true_labels           executable               docker                start                                        
+        control_methods          true_labels           executable               docker     build_executable         0        1              SUCCESS
+        control_methods          true_labels           executable               docker run_and_check_output.py         0        3              SUCCESS
+        control_methods          true_labels           executable               docker      check_config.py         0        3              SUCCESS
+        data_processors      process_dataset           executable               docker                start                                        
+        data_processors      process_dataset           executable               docker     build_executable         0        1              SUCCESS
+        data_processors      process_dataset           executable               docker run_and_check_output.py         0        3              SUCCESS
+                methods  logistic_regression           executable               docker                start                                        
+                methods  logistic_regression           executable               docker     build_executable         0        1              SUCCESS
+                methods  logistic_regression           executable               docker run_and_check_output.py         0        3              SUCCESS
+                methods  logistic_regression           executable               docker      check_config.py         0        3              SUCCESS
+                metrics             accuracy           executable               docker                start                                        
+                metrics             accuracy           executable               docker     build_executable         0        1              SUCCESS
+                metrics             accuracy           executable               docker run_and_check_output.py         0        3              SUCCESS
+                metrics             accuracy           executable               docker      check_config.py         0        3              SUCCESS
+    All 11 configs built and tested successfully
+
 </details>
 
 ## Common errors
