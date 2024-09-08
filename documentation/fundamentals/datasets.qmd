@@ -7,6 +7,7 @@ engine: knitr
 
 {{< include ../../_include/_clone_repo_openproblems.qmd >}}
 {{< include /_include/_evaluate_code.qmd >}}
+{{< include /_include/_read_api.qmd >}}
 
 To ensure interoperability between components, OpenProblems uses {{< glossary AnnData >}} as the standard data format for both input and output files of components, and strict requirements are imposed on the format of these files.
 
@@ -34,9 +35,11 @@ The format of common datasets is based on the [CELLxGENE schema](https://github.
 Here is what a typical common dataset looks like when printed to the console:
 
 ```{r echo=FALSE, warning=FALSE, error=FALSE}
-spec <- openproblems.docs::read_file_format("src/datasets/api/file_common_dataset.yaml")
+# to do: update this to openproblems.docs when the openproblems repository switches to the new format
+# library(openproblems.docs)
+# str <- render_file_format("src/datasets/api/file_common_dataset.yaml")
 
-str <- openproblems.docs::render_file_format(spec)
+str <- render_file("src/datasets/api/file_common_dataset.yaml")
 
 knitr::asis_output(c(
   ":::{{.small}}\n\n",
