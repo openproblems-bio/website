@@ -98,13 +98,15 @@ render_author <- function(author) {
     out <- list(
         title = author$name,
         image = out_image,
-        roles = list(author$roles),
-        organizations = author$info$organizations,
+        role = paste(author$roles, collapse = ", "),
         links = out_links,
         about = list(
             template = "jolla"
         )
     )
+    if (!is.null(author$info$organizations)) {
+        out$organizations <- author$info$organizations
+    }
     txt <- paste0("---\n", yaml::as.yaml(out), "---\n")
 
     txt
@@ -151,7 +153,7 @@ for (task_name in names(tasks)) {
         author <- task$authors[[author_id]]
         
         txt <- render_author(author)
-        file_path <- file.path("team", task_name, paste0(author_id, ".md"))
+        file_path <- file.path("team", task_name, paste0(author_id, ".qmd"))
 
         if (!dir.exists(file.path("team", task_name))) {
             dir.create(file.path("team", task_name))
