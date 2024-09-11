@@ -153,10 +153,10 @@ for (task_name in names(tasks)) {
         author <- task$authors[[author_id]]
         
         txt <- render_author(author)
-        file_path <- file.path("team", task_name, paste0(author_id, ".qmd"))
+        file_path <- file.path("team", task_name, paste0(author_id, "/index.qmd"))
 
-        if (!dir.exists(file.path("team", task_name))) {
-            dir.create(file.path("team", task_name))
+        if (!dir.exists(dirname(file_path))) {
+            dir.create(dirname(file_path), recursive = TRUE)
         }
         
         writeLines(txt, file_path)
