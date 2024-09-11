@@ -3,8 +3,8 @@ library(rlang)
 repositories <- c(
     "openproblems-bio/openproblems",
     # "openproblems-bio/task_dimensionality_reduction",
-    "openproblems-bio/task_perturbation_prediction",
     # "openproblems-bio/task_spatially_variable_genes",
+    "openproblems-bio/task_perturbation_prediction"
 )
 
 cache_repository <- function(repo) {
@@ -98,10 +98,10 @@ render_author <- function(author) {
     out <- list(
         title = author$name,
         image = out_image,
-        role = paste(author$roles, collapse = ", "),
-        links = out_links,
+        role = paste(stringr::str_to_title(author$roles), collapse = ", "),
         about = list(
-            template = "jolla"
+            template = "jolla",
+            links = out_links
         )
     )
     if (!is.null(author$info$organizations)) {
@@ -121,7 +121,7 @@ for (repo in repositories) {
 
     for (task_info_file in task_info_files) {
         task_info <- suppressWarnings(yaml::read_yaml(task_info_file))
-        task_name <- task_info$name
+        task_name <- gsub("task_", "", task_info$name)
 
         if (!task_name %in% names(tasks)) {
             tasks[[task_name]] <- list()
