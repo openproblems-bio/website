@@ -140,7 +140,7 @@ for (repo in repositories) {
         
         for (author in task_info$authors) {
             author_id <- gsub("[^a-z_]", "", gsub(" ", "_", tolower(author$name)))
-            if (!author_id %in% tasks[[task_name]]$authorrs) {
+            if (!author_id %in% names(tasks[[task_name]]$authors)) {
                 tasks[[task_name]]$authors[[author_id]] <- author
             }
         }
@@ -150,10 +150,18 @@ for (repo in repositories) {
 for (task_name in names(tasks)) {
     task <- tasks[[task_name]]
     for (author_id in names(task$authors)) {
+        if (author_id %in% c(
+            "robrecht_cannoodt",
+            "scott_gigante",
+            "malte_d_luecken",
+            "daniel_burkhardt"
+        )) {
+            next
+        }
         author <- task$authors[[author_id]]
         
         txt <- render_author(author)
-        file_path <- file.path("team", task_name, paste0(author_id, "/index.qmd"))
+        file_path <- file.path("team", "task_contributors", paste0(author_id, "/index.qmd"))
 
         if (!dir.exists(dirname(file_path))) {
             dir.create(dirname(file_path), recursive = TRUE)
