@@ -98,7 +98,8 @@ render_author <- function(author) {
     out <- list(
         title = author$name,
         image = out_image,
-        role = paste(stringr::str_to_title(author$roles), collapse = ", "),
+        # role = paste(stringr::str_to_title(author$roles), collapse = ", "),
+        role = "Task Contributor",
         about = list(
             template = "jolla",
             links = out_links
