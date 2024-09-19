@@ -8,6 +8,9 @@ engine: knitr
 Below is a list of common Viash commands to develop and test components. 
 Check out this [Cheat sheet](/documentation/more_information/cheat_sheets.qmd) to get a printable version of the same information. Please visit the [Viash guide](https://viash.io/guide) or [reference documentation](https://viash.io/reference/) for more in-depth information.
 
+:::{.callout-important}
+Most of the common commands are added to a script in the `scripts` directory. You can run these scripts from the root directory of the project. Some scripts might need some additional arguments, which you can find in the script itself.
+:::
 
 ## Download test data
 
@@ -25,8 +28,8 @@ scripts/create_datasets/test_resources.sh
 Build all components in a namespace.
 
 :::{.small}
-```bash
-scripts/project/build_all_components.sh
+```{.bash filename="scripts/project/build_all_components.sh"}
+viash ns build --parallel
 ```
 :::
 
