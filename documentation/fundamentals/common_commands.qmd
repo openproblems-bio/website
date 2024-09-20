@@ -38,8 +38,8 @@ viash ns build --parallel
 Build all docker containers.
 
 :::{.small}
-```bash
-scripts/project/build_all_docker_containers.sh
+```{.bash filename="scripts/project/build_all_docker_containers.sh"}
+viash ns build --parallel --setup cachedbuild
 ```
 :::
 
@@ -56,8 +56,8 @@ viash test path/to/config.vsh.yaml
 Run all tests in a task:
 
 :::{.small}
-```bash
-scripts/project/test_all_components.sh
+```{.bash filename="scripts/project/test_all_components.sh"}
+viash ns test --parallel
 ```
 :::
 
@@ -91,7 +91,6 @@ viash run path/to/config.vsh.yaml -- --input dataset.h5ad --output output.h5ad
 
 
 ## View Dockerfile
-
 
 Use this command to view the component's Dockerfile.
 
