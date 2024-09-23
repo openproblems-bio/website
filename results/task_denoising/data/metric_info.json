@@ -1,0 +1,30 @@
+[
+  {
+    "task_id": "metrics",
+    "metric_id": "mse",
+    "metric_name": "Mean-squared error",
+    "metric_summary": "The mean squared error between the denoised counts and the true counts.",
+    "metric_description": "The mean squared error between the denoised counts of the training dataset and the true counts of the test dataset after reweighing by the train/test ratio",
+    "paper_reference": {
+      "doi": "10.1101/786269"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_denoising/blob/f5021bb07bb8638aef9164cc64e742dde4c7fe76/src/metrics/mse/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "f5021bb07bb8638aef9164cc64e742dde4c7fe76",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "metric_id": "poisson",
+    "metric_name": "Poisson Loss",
+    "metric_summary": "The Poisson log likelihood of the true counts observed in the distribution of denoised counts",
+    "metric_description": "The Poisson log likelihood of observing the true counts of the test dataset given the distribution given in the denoised dataset.",
+    "paper_reference": {
+      "doi": "10.1101/786269"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_denoising/blob/f5021bb07bb8638aef9164cc64e742dde4c7fe76/src/metrics/poisson/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "f5021bb07bb8638aef9164cc64e742dde4c7fe76",
+    "maximize": false
+  }
+]
