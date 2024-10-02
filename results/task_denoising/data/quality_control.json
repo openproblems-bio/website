@@ -243,11 +243,11 @@
         "task_id": "task_denoising", 
         "category": "Raw data", 
         "name": "Number of results", 
-        "value": 204, 
+        "value": 102, 
         "severity": 0, 
-        "severity_value": -10.0, 
+        "severity_value": 0.0, 
         "code": "len(results) == len(method_info) * len(metric_info) * len(dataset_info)", 
-        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: task_denoising\n  Number of results: 204\n  Number of methods: 6\n  Number of metrics: 2\n  Number of datasets: 17\n"
+        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: task_denoising\n  Number of results: 102\n  Number of methods: 6\n  Number of metrics: 2\n  Number of datasets: 17\n"
     }, 
     {
         "task_id": "task_denoising", 
@@ -523,11 +523,11 @@
         "task_id": "task_denoising", 
         "category": "Scaling", 
         "name": "Worst score perfect_denoising mse", 
-        "value": 0, 
+        "value": 1, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -1.0, 
         "code": "worst_score >= -1", 
-        "message": "Method perfect_denoising performs much worse than baselines.\n  Task id: task_denoising\n  Method id: perfect_denoising\n  Metric id: mse\n  Worst score: 0%\n"
+        "message": "Method perfect_denoising performs much worse than baselines.\n  Task id: task_denoising\n  Method id: perfect_denoising\n  Metric id: mse\n  Worst score: 1%\n"
     }, 
     {
         "task_id": "task_denoising", 
