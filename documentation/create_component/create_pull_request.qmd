@@ -14,7 +14,7 @@ Before you contribute your changes need to merge the upstream main branch into y
 To do this, enter the following commands adapted from [Syncing a Fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork#syncing-a-fork-branch-from-the-command-line) in your terminal or command prompt:
 
 ```bash
-git remote add upstream https://github.com/openproblems-bio/openproblems.git
+git remote add upstream <original repository URL>
 git fetch upstream
 git checkout main
 git merge upstream/main
@@ -28,14 +28,14 @@ Add an entry to the CHANGELOG.md file describing the proposed changes.
 
 The following steps were adapted from [Creating a pull request from a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
 
-1. Go to <https://github.com/openproblems-bio/openproblems/pulls>.
+1. Go to the original repo where you want to request a change https://github.com/openproblems-bio.
 2. Click on the `New pull request` button.
 3. On the compare page click on the link `compare across forks` below the title. ![](../images/compare_across_forks.png)
 4. On the right side in the `head` section select your fork repo and the correct branch you want to merge.
 5. Click on `Create pull request`.
 6. Construct your PR by giving it a title and description.
 7. Make sure you select the box below the description `Allow edits from maintainers`.
-8. If the PR is ready for review click the button `Create Pull Request`. Otherwise you can click the arrow next to the button and select `Create Draft Pull Request` and click the button when it changes.
+8. If the PR is ready for review click the button `Create Pull Request`. (_If available_) Otherwise you can click the arrow next to the button and select `Create Draft Pull Request` and click the button when it changes.
 
 ## Next steps
 
