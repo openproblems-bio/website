@@ -41,7 +41,7 @@ common/scripts/create_component \
 
 This creates a new folder at `src/methods/my_python_method` containing a Viash config and a script.
 
-    tree src/tasks/label_projection/methods/my_python_method
+    tree src/methods/my_python_method
         ├── script.py         Script for running the method.
         ├── config.vsh.yaml   Config file for method.
         └── ...               Optional additional resources.
@@ -62,7 +62,7 @@ common/scripts/create_component \
 
 This creates a new folder at `src/methods/my_r_method` containing a Viash config and a script.
 
-    tree src/tasks/label_projection/methods/my_r_method
+    tree src/methods/my_r_method
         ├── script.R          Script for running the method.
         ├── config.vsh.yaml   Config file for method.
         └── ...               Optional additional resources.
@@ -121,13 +121,13 @@ Please edit `info` section in the config file to fill in the necessary metadata.
 
 {{< include _include/_render_schema_required_fields.qmd >}}
 
-<!-- ```{r echo=FALSE, warning=FALSE, error=FALSE}
-info <- read_and_merge_yaml("src/common/schemas/task_method.yaml")
+```{r echo=FALSE, warning=FALSE, error=FALSE}
+info <- openproblems::read_nested_yaml("../_core/schemas/task_method.yaml")
 
 info_str <- paste(render_schema_required_fields(info, required = TRUE), collapse = "\n\n")
 
 knitr::asis_output(info_str)
-``` -->
+```
 
 
 ## Step 3: Add dependencies
@@ -243,8 +243,8 @@ You can also run your component on local files using the `viash run` command. Fo
 
 ```bash
 viash run src/methods/my_python_method/config.vsh.yaml -- \
-  --input_train resources_test/task_template/pancreas/train.h5ad \
-  --input_test resources_test/task_template/pancreas/test.h5ad \
+  --input_train resources_test/task_template/cxg_mouse_pancreas_atlas/train.h5ad \
+  --input_test resources_test/task_template/cxg_mouse_pancreas_atlas/test.h5ad \
   --output output.h5ad
 ```
 

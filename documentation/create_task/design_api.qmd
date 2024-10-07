@@ -113,7 +113,7 @@ Let's start by creating one for the solution object:
 
 ```{.yaml filename="src/api/file_solution.yaml"}
 type: file # <1>
-example: "resources_test/<task_id>/pancreas/solution.h5ad"  # <2>
+example: "resources_test/<task_id>/cxg_mouse_pancreas_atlas/solution.h5ad"  # <2>
 label: Solution  # <3>
 summary: "FILL IN: what this file represents" # <4>
 info:
@@ -181,7 +181,7 @@ Below is the slot information of the solution AnnData object:
 ```{.yaml filename="src/api/file_solution.yaml"}
 type: file
 description: "FILL IN: what this file represents"
-example: "resources_test/<task_id>/pancreas/solution.h5ad"
+example: "resources_test/<task_id>/cxg_mouse_pancreas_atlas/solution.h5ad"
 info:
   label: Solution
   format: # <1>
@@ -248,5 +248,5 @@ Each required or optional slot in the file format should have the following fiel
 Go through each file format specification file and add the expected slots accordingly.
 
 :::{.callout-tip}
-Look at the [Common dataset](/documentation/reference/openproblems/src-datasets.qmd#file-format-common-dataset) reference docs to see which slots the common datasets have. The AnnData file at `resources_test/common/pancreas/dataset.h5ad` is also an example of a Common dataset, though note that this object contains _more_ slots than what is defined by the spec.
+Look at the [Common dataset](/documentation/reference/openproblems/src-datasets.qmd#file-format-common-dataset) reference docs to see which slots the common datasets have. The AnnData file at `resources_test/common/cxg_mouse_pancreas_atlas/dataset.h5ad` is also an example of a Common dataset, though note that this object contains _more_ slots than what is defined by the spec.
 :::
