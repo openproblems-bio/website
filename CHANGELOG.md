@@ -36,7 +36,7 @@
 
 ## NEW FUNCTIONALITY
 
-* Add gloassary function to pages and a glossary page (PR #300).
+* Add glossary function to pages and a glossary page (PR #300).
 
 ## MAJOR CHANGES
 
