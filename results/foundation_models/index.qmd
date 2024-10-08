@@ -1,0 +1,25 @@
+---
+title: "Foundation models"
+subtitle: "Modelling of single-cells to perform multiple tasks."
+image: thumbnail.svg
+page-layout: full
+css: ../_include/task_template.css
+engine: knitr
+fig-cap-location: bottom
+citation-location: document
+toc: false
+---
+
+Recent developments in deep-learning have led to the creation of several "foundation models" for single-cell data.
+These are large models that have been trained on data from millions of cells and am to fully capture the variability in the single-cell landscape.
+Typically, they use a transformer architecture and undergo self-supervised pre-training using masking of parts of the input data.
+Trained foundation models can then be applied to a variety of downstream tasks, either by directly feeding new data into the model or by fine-tuning to better fit a new dataset or to produce a specific output.
+The general nature of single-cell foundation models and the large amount of data they have been trained on makes them potentially powerful tools for single-cell analysis but their performance is yet to be fully established.
+
+Open Problems plans to build on the existing evaluation of foundation models by incorportating them into our continuous benchmarking framework.
+Models will be included in existing tasks where they will be compared to more traditional methods.
+We also plan to compare foundation models across tasks to evaluate their flexibility and compare them to each other.
+
+If you are interested in evaluating foundation models for single-cell data please fill in the form below to get in touch.
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeB6ZHTL8yvKpA8VNRoQY28p5WDpi2WEtwRkeGSgRz3Mqw8bA/viewform?embedded=true" width="640" height="959" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
