@@ -1,0 +1,19 @@
+---
+dataset-id: "tenx_visium/post_xenium/human_colon_cancer"
+title: "10X Post Xenium - Human Colon"
+subtitle: "Gene expression library of Post Xenium Human Colon Cancer (CytAssist FFPE) using the Human Whole Transcriptome Probe Set - Replicate 1"
+categories: ["tenx_visium"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/tenx_visium/post_xenium/human_colon_cancer/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

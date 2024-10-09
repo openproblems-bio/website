@@ -1,0 +1,19 @@
+---
+dataset-id: "zenodo_spatial/merfish/human_cortex_3"
+title: "MERFISH - Human Cortex 3"
+subtitle: "Spatially resolved profiling of human cerebral cortex using multiplexed error-robust fluorescence in situ hybridization (MERFISH)"
+categories: ["cellxgene_census"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/zenodo_spatial/merfish/human_cortex_3/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}
