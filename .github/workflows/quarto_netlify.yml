@@ -21,6 +21,8 @@ jobs:
     env:
       BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
       NETLIFY_SITE_ID: 397b6416-708f-4133-afe9-9a07ed2e03bf
+      supabase_url: https://bleficzaoyltozjjndha.supabase.co
+      SUPABASE_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJsZWZpY3phb3lsdG96ampuZGhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQyNDI2ODMsImV4cCI6MjAzOTgxODY4M30.fHtpJTveDUF1z07_k7FZX3wLy7bXpkYl5KyA5o_EuQY  # ${{ secrets.SUPABASE_KEY }}
 
     steps:
       - uses: actions/checkout@v4
