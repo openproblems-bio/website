@@ -22,3 +22,46 @@ css: [../style/style-hero.css, tasks.css]
 ## Additional information
 
 * [Task quality control](quality_control.qmd)
+
+
+<!-- add timeline in D3 -->
+
+:::{#timeline}
+:::
+
+```{python env-variables}
+import os
+
+supabase_url = os.environ.get("SUPABASE_URL")
+supabase_key = os.environ.get("SUPABASE_KEY")
+
+ojs_define(supabase_url=supabase_url, supabase_key=supabase_key)
+
+```
+
+```{ojs requires}
+ms = require('d3-milestones');
+sb = require('@supabase/supabase-js');
+```
+
+
+```{ojs supabase_data}
+supabase = sb.createClient(supabase_url, supabase_key);
+data  = await supabase
+  .from('timeline')
+  .select();
+```
+
+
+```{ojs timeline}
+
+ms('#timeline')
+	.mapping({
+		'timestamp': 'first_run',
+		'text': 'task'
+	})
+  .optimize(true)
+	.parseTime('%Y-%m-%d')
+	.aggregateBy('month')
+	.render(data.data);
+```
