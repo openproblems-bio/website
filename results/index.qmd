@@ -13,7 +13,9 @@ listing:
     page-size: 100
     filter-ui: true
 toc: false
-css: [../style/style-hero.css, tasks.css]
+execute:
+  echo: false
+css: [../style/style-hero.css, tasks.css, https://unpkg.com/d3-milestones/build/d3-milestones.css]
 ---
 
 :::{#tasks}
@@ -55,7 +57,7 @@ data  = await supabase
 
 ```{ojs timeline}
 
-ms('#timeline')
+timeline = ms('#timeline')
 	.mapping({
 		'timestamp': 'first_run',
 		'text': 'task'
