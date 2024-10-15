@@ -15,8 +15,15 @@ listing:
 toc: false
 execute:
   echo: false
-css: [../style/style-hero.css, tasks.css, https://unpkg.com/d3-milestones/build/d3-milestones.css]
+css: [../style/style-hero.css, tasks.css, milestones.css]
 ---
+
+:::{#timeline}
+
+## Timeline
+
+:::
+
 
 :::{#tasks}
 :::
@@ -28,8 +35,7 @@ css: [../style/style-hero.css, tasks.css, https://unpkg.com/d3-milestones/build/
 
 <!-- add timeline in D3 -->
 
-:::{#timeline}
-:::
+
 
 ```{python env-variables}
 import os
@@ -55,6 +61,18 @@ data  = await supabase
 ```
 
 
+```{ojs}
+timelineArray = [];
+{
+  for (let year = 2020; year <= 2025; year++) {
+    timelineArray.push({ first_run: `${year}-01-01`, task: ''});
+  } 
+}
+
+combined =data.data.concat(timelineArray);
+```
+
+
 ```{ojs timeline}
 
 timeline = ms('#timeline')
@@ -65,5 +83,5 @@ timeline = ms('#timeline')
   .optimize(true)
 	.parseTime('%Y-%m-%d')
 	.aggregateBy('month')
-	.render(data.data);
+	.render(combined);
 ```
