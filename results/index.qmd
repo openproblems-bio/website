@@ -37,11 +37,9 @@ css: [../style/style-hero.css, tasks.css, milestones.css]
 
 
 
-```{python env-variables}
-import os
-
-supabase_url = os.environ.get("SUPABASE_URL")
-supabase_key = os.environ.get("SUPABASE_KEY")
+```{R env-variables}
+supabase_url <- Sys.getenv("SUPABASE_URL")
+supabase_key <- Sys.getenv("SUPABASE_KEY")
 
 ojs_define(supabase_url=supabase_url, supabase_key=supabase_key)
 
