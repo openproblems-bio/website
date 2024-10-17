@@ -13,17 +13,8 @@ listing:
     page-size: 100
     filter-ui: true
 toc: false
-execute:
-  echo: false
-css: [../style/style-hero.css, tasks.css, milestones.css]
+css: [../style/style-hero.css, tasks.css]
 ---
-
-:::{#timeline}
-
-## Timeline
-
-:::
-
 
 :::{#tasks}
 :::
@@ -31,55 +22,3 @@ css: [../style/style-hero.css, tasks.css, milestones.css]
 ## Additional information
 
 * [Task quality control](quality_control.qmd)
-
-
-<!-- add timeline in D3 -->
-
-
-
-```{R env-variables}
-supabase_url <- Sys.getenv("SUPABASE_URL")
-supabase_key <- Sys.getenv("SUPABASE_KEY")
-
-ojs_define(supabase_url=supabase_url, supabase_key=supabase_key)
-
-```
-
-```{ojs requires}
-ms = require('d3-milestones');
-sb = require('@supabase/supabase-js');
-```
-
-
-```{ojs supabase_data}
-supabase = sb.createClient(supabase_url, supabase_key);
-data  = await supabase
-  .from('timeline')
-  .select();
-```
-
-
-```{ojs}
-timelineArray = [];
-{
-  for (let year = 2020; year <= 2025; year++) {
-    timelineArray.push({ first_run: `${year}-01-01`, task: ''});
-  } 
-}
-
-combined =data.data.concat(timelineArray);
-```
-
-
-```{ojs timeline}
-
-timeline = ms('#timeline')
-	.mapping({
-		'timestamp': 'first_run',
-		'text': 'task'
-	})
-  .optimize(true)
-	.parseTime('%Y-%m-%d')
-	.aggregateBy('month')
-	.render(combined);
-```

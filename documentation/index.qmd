@@ -6,6 +6,9 @@ listing:
   template: ../style/listing.ejs
   type: default
   contents: "./*/index.qmd"
+execute:
+  echo: false
+css: "milestones.css"
 ---
 
 Welcome to the OpenProblems documentation!
@@ -25,3 +28,54 @@ One simple but important way to contribute is to spread the word about the libra
 
 Finally, we want to emphasize that OpenProblems is an inclusive community and we expect all members to adhere to our [code of conduct](fundamentals/philosophy.qmd#inclusiveness). We hope that this documentation helps you get started with OpenProblems and we look forward to your contributions.
 
+
+<!-- add timeline in D3 -->
+:::{#timeline}
+
+## Timeline
+
+
+:::
+
+```{ojs requires}
+ms = require('d3-milestones');
+sb = require('@supabase/supabase-js');
+```
+
+
+```{ojs supabase_data}
+supabase_url="https://bleficzaoyltozjjndha.supabase.co"
+supabase_key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJsZWZpY3phb3lsdG96ampuZGhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQyNDI2ODMsImV4cCI6MjAzOTgxODY4M30.fHtpJTveDUF1z07_k7FZX3wLy7bXpkYl5KyA5o_EuQY"
+supabase = sb.createClient(supabase_url, supabase_key);
+data  = await supabase
+  .from('tasks')
+  .select();
+```
+
+
+```{ojs}
+timelineArray = [];
+
+{
+  for (let year = 2020; year <= 2025; year++) {
+    timelineArray.push({ first_run: `${year}-01-01`, task: ''});
+  }
+}
+
+
+combined=data.data.concat(timelineArray);
+```
+
+
+```{ojs timeline}
+
+timeline = ms('#timeline')
+	.mapping({
+		'timestamp': 'first_run',
+		'text': 'task'
+	})
+  .optimize(true)
+	.parseTime('%Y-%m-%d')
+	.aggregateBy('month')
+	.render(combined);
+```
