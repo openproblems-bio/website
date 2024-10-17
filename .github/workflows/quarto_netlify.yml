@@ -25,6 +25,11 @@ jobs:
       SUPABASE_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJsZWZpY3phb3lsdG96ampuZGhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQyNDI2ODMsImV4cCI6MjAzOTgxODY4M30.fHtpJTveDUF1z07_k7FZX3wLy7bXpkYl5KyA5o_EuQY  # ${{ secrets.SUPABASE_KEY }}
 
     steps:
+      - name: setup os env
+        run: |
+          export SUPABASE_URL=${{ env.SUPABASE_URL }} && \
+          export SUPABASE_KEY=${{ env.SUPABASE_KEY }}
+
       - uses: actions/checkout@v4
         with:
           submodules: recursive
