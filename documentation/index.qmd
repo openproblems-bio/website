@@ -8,6 +8,7 @@ listing:
   contents: "./*/index.qmd"
 execute:
   echo: false
+  output: false
 css: "milestones.css"
 ---
 
@@ -50,22 +51,18 @@ supabase = sb.createClient(supabase_url, supabase_key);
 data  = await supabase
   .from('timeline')
   .select('first_run, task, tasks ( task_name)' );
-data;
-```
+// flatten data array
+transformedData = data.data.map(item => ({
+  ...item,
+  ...item.tasks
+})).map(({ tasks, ...rest }) => rest)
 
+// Add result links
+UpdatedData = transformedData.map(item => ({
+  ...item,
+  'url': '../results/' + item.task_name.replace(/^task_/, '')
+}))
 
-
-```{ojs}
-timelineArray = [];
-
-{
-  for (let year = 2020; year <= 2025; year++) {
-    timelineArray.push({ first_run: `${year}-01-01`, task: ''});
-  }
-}
-
-
-combined=data.data.concat(timelineArray);
 ```
 
 
@@ -74,10 +71,24 @@ combined=data.data.concat(timelineArray);
 timeline = ms('#timeline')
 	.mapping({
 		'timestamp': 'first_run',
-		'text': 'task'
+		'text': 'task',
+    'url': 'url'
 	})
   .optimize(true)
 	.parseTime('%Y-%m-%d')
 	.aggregateBy('month')
-	.render(combined);
+	.render(UpdatedData);
 ```
+
+<!-- ```{ojs}
+timelineArray = [];
+
+{
+  for (let year = 2020; year <= 2025; year++) {
+    timelineArray.push({ first_run: `${year}-01-01`, task: '', url: ''});
+  }
+}
+
+
+combined=UpdatedData.concat(timelineArray);
+``` -->
