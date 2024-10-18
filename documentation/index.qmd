@@ -48,9 +48,11 @@ supabase_url="https://bleficzaoyltozjjndha.supabase.co"
 supabase_key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJsZWZpY3phb3lsdG96ampuZGhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQyNDI2ODMsImV4cCI6MjAzOTgxODY4M30.fHtpJTveDUF1z07_k7FZX3wLy7bXpkYl5KyA5o_EuQY"
 supabase = sb.createClient(supabase_url, supabase_key);
 data  = await supabase
-  .from('tasks')
-  .select();
+  .from('timeline')
+  .select('first_run, task, tasks ( task_name)' );
+data;
 ```
+
 
 
 ```{ojs}
