@@ -1,14 +1,16 @@
 [
   {
-    "task_id": "spatially_variable_genes",
+    "task_id": "metrics",
     "metric_id": "correlation",
     "metric_name": "correlation",
     "metric_summary": "Correlation represents the agreement of true and predicted spatial variability.",
     "metric_description": "Kendall rank correlation coefficient measures the ordinal association between two measured quantities. The best score and upper bound is 1 (observations have an identical rank), while the lower bound is -1 (observations have a completely different rank).\n",
-    "paper_reference": "kendall1938new",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/0b474ff9f32069b0a6d5b4945656f53f78c1918f/src/tasks/spatially_variable_genes/metrics/correlation/config.vsh.yaml",
+    "paper_reference": {
+      "doi": "10.1093/biomet/30.1-2.81"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatially_variable_genes/blob/a2cb02e6b6054ee0566843f2fd34fa6f63dc96ce/src/metrics/correlation/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "0b474ff9f32069b0a6d5b4945656f53f78c1918f",
+    "commit_sha": "a2cb02e6b6054ee0566843f2fd34fa6f63dc96ce",
     "maximize": true
   }
 ]
