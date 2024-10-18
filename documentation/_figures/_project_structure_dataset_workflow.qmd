@@ -16,11 +16,11 @@ graph LR
     sqrt_cp10k[/Sqrt CP10k/]:::component
   end
   subgraph dataset_processors[Dataset processors]
-    pca[/PCA/]:::component
     hvg[/HVG/]:::component
+    pca[/PCA/]:::component
     knn[/KNN/]:::component
   end
-  dataset_loader --> raw_dataset --> log_cp10k & l1_sqrt & log_scran_pooling & sqrt_cp10k --> pca --> hvg --> knn --> common_dataset
+  dataset_loader --> raw_dataset --> log_cp10k & l1_sqrt & log_scran_pooling & sqrt_cp10k --> hvg --> pca --> knn --> common_dataset
   subset[/Subset/]:::component
   common_dataset --> subset --> test_dataset
 ```
