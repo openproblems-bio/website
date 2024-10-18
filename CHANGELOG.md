@@ -14,6 +14,8 @@
 
 * Update base images documentation (PR #342).
 
+* Add foundation models benchmark page (PR #354)
+
 ## BUG FIXES
 
 * Fix error in summary figure when not all method info ids are present in the results (PR #330).
@@ -36,12 +38,12 @@
 
 ## NEW FUNCTIONALITY
 
-* Add gloassary function to pages and a glossary page (PR #300). 
+* Add glossary function to pages and a glossary page (PR #300).
 
 ## MAJOR CHANGES
 
 * Update `fundamentals` pages (PR #300).
-  
+
 * Refactor the reference view (PR #300).
 
 * Update `reference` documentation (PR #300).
@@ -87,7 +89,7 @@
 * Update neurips 2021 datasets data with new dataset_id (PR #315).
 
 * Update to funkyheatmapjs v0.2.5 (PR #316).
-  
+
 * Add CSS to fix not active tab color in dark mode (PR #319).
 
 * Improvements to the documentation (PR #317).
