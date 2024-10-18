@@ -50,7 +50,7 @@ supabase_key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZ
 supabase = sb.createClient(supabase_url, supabase_key);
 data  = await supabase
   .from('timeline')
-  .select('first_run, task, tasks ( task_name)' );
+  .select('first_release, task, tasks ( task_name)' );
 // flatten data array
 transformedData = data.data.map(item => ({
   ...item,
@@ -70,7 +70,7 @@ UpdatedData = transformedData.map(item => ({
 
 timeline = ms('#timeline')
 	.mapping({
-		'timestamp': 'first_run',
+		'timestamp': 'first_release',
 		'text': 'task',
     'url': 'url'
 	})
