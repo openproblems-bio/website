@@ -41,6 +41,79 @@ sb = require('@supabase/supabase-js');
 ```
 
 
+```{ojs}
+createMilestones = (
+  title,
+  description,
+  {
+    aggregateBy,
+    data,
+    distribution,
+    mapping,
+    optimize,
+    onEventClick,
+    onEventMouseOver,
+    onEventMouseLeave,
+    orientation,
+    parseTime,
+    autoResize,
+    urlTarget,
+  },
+  DIV_ID = 'timeline',
+  style = ''
+) => {
+  iteration++;
+
+  const divId = `${DIV_ID}-${iteration}`;
+
+  function render() {
+    const m = milestones(`#${divId}`);
+
+    mapping && m.mapping(mapping);
+    aggregateBy && m.aggregateBy(aggregateBy);
+    distribution && m.distribution(distribution);
+    optimize && m.optimize(optimize);
+    onEventClick && m.onEventClick(onEventClick);
+    onEventMouseOver && m.onEventMouseOver(onEventMouseOver);
+    onEventMouseLeave && m.onEventMouseLeave(onEventMouseLeave);
+    orientation && m.orientation(orientation);
+    parseTime && m.parseTime(parseTime);
+    autoResize && m.autoResize(autoResize);
+    urlTarget && m.urlTarget(urlTarget);
+
+    m.render(data);
+  }
+
+  // Wait until the wrapping DIV exists, only then render.
+  function checkElement() {
+    const wrapper = document.getElementById(divId);
+    if (!wrapper) {
+      window.setTimeout(checkElement, 100);
+    } else {
+      render();
+    }
+  }
+
+  checkElement();
+
+  const timeline = `<div id="${divId}" class="timeline" style="${style}"></div>`;
+
+  if (!title && !description) {
+    return timeline;
+  }
+
+  return `
+    <div class="d3Milestones">
+      ${title ? `<h2>${title}</h2>` : ''}
+      ${description ? `<p>${description}</p>` : ''}
+      ${timeline}
+    </div>
+  `;
+};
+```
+
+
+
 ```{ojs supabase_data}
 supabase_url="https://bleficzaoyltozjjndha.supabase.co"
 supabase_key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJsZWZpY3phb3lsdG96ampuZGhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQyNDI2ODMsImV4cCI6MjAzOTgxODY4M30.fHtpJTveDUF1z07_k7FZX3wLy7bXpkYl5KyA5o_EuQY"
@@ -80,6 +153,31 @@ combinedData = updatedBenchmarks.concat(timeline);
 
 ```
 
+<!-- ```{ojs}
+Template = (args) => {
+  gandalf = createMilestones(
+    Object.assign(args, {
+      distribution: 'top',
+      data: updatedBenchmarks,
+    }),
+    'timeline-benchmark',
+    'height: 200px !important'
+  );
+  frodo = createMilestones(
+    undefined,
+    undefined,
+    Object.assign(args, {
+      distribution: 'bottom',
+      data: frodoData,
+    }),
+    'timeline-frodo',
+    'height: 200px !important; margin-top: -200px !important'
+  );
+  return gandalf + frodo;
+};
+``` -->
+
+
 ```{ojs timeline}
 
 timelineChart = ms('#timeline')
@@ -92,4 +190,6 @@ timelineChart = ms('#timeline')
 	.parseTime('%Y-%m-%d')
 	.aggregateBy('month')
 	.render(combinedData);
+
+
 ```
