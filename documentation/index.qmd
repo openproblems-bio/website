@@ -35,6 +35,10 @@ Finally, we want to emphasize that OpenProblems is an inclusive community and we
 
 :::
 
+:::{#benchmark}
+:::
+
+
 ```{ojs requires}
 ms = require('d3-milestones');
 sb = require('@supabase/supabase-js');
@@ -55,15 +59,12 @@ benchmarks = (await supabase
     date: item.first_release,
     name: item.name,
     task_name: item.task_name.replace(/^task_/, ''),
-    character: "benchmark",
-    type: "benchmark"
+    type: "benchmark",
+    url: '../results/' + item.task_name.replace(/^task_/, ''),
+    category: "benchmark"
   }));
 
-// Add result links
-updatedBenchmarks = benchmarks.map(item => ({
-  ...item,
-  'url': '../results/' + item.task_name
-}))
+// Add result link
 
 timeline = (await supabase
   .from('timeline')
@@ -73,26 +74,45 @@ timeline = (await supabase
     name: item.name,
     date: item.date,
     type: item.type,
-    character: "timeline"
+    category: "timeline",
+    textStyle: {
+      color: item.type === 'event' ? '#d95f02' :
+             item.type === 'milestone' ? '#1b9e77' :
+             item.type === 'competition' ? '#e7298a' : 'default'
+    }
   }));
+  
 
-combinedData = updatedBenchmarks.concat(timeline);
+combinedData = benchmarks.concat(timeline);
 
 ```
 
 
 ```{ojs timeline}
 
-timelineChart = ms('#timeline')
-	.mapping({
-		'timestamp': 'date',
-		'text': 'name',
-    'character': 'character'
-	})
-  .optimize(true)
-	.parseTime('%Y-%m-%d')
-	.aggregateBy('month')
-	.render(combinedData);
+setTimeout(() => { 
+  const benchmarkChart = ms('#benchmark')
+    .mapping({
+      'timestamp': 'date',
+      'text': 'name',
+    })
+    .optimize(true)
+    .parseTime('%Y-%m-%d')
+    .aggregateBy('day')
+    .render(combinedData);
+}, 0);
+
+
+// timelineChart = ms('#timeline')
+// 	.mapping({
+// 		'timestamp': 'date',
+// 		'text': 'name'
+// 	})
+//   .optimize(true)
+// 	.parseTime('%Y-%m-%d')
+// 	.aggregateBy('day')
+// 	.render(timeline);
+
 
 
 ```
