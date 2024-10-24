@@ -113,11 +113,10 @@ svg = d3.select("#legend")
 
 // Handmade legend
 svg.append("circle").attr("cx",200).attr("cy",130).attr("r", 6).style("fill", "#d95f02")
-svg.append("circle").attr("cx",200).attr("cy",160).attr("r", 6).style("fill", "#1b9e77")
-svg.append("circle").attr("cx",200).attr("cy",190).attr("r", 6).style("fill", "#e7298a")
-svg.append("text").attr("x", 220).attr("y", 130).text("event").style("font-size", "15px").attr("alignment-baseline","middle")
-svg.append("text").attr("x", 220).attr("y", 160).text("milestone").style("font-size", "15px").attr("alignment-baseline","middle")
-svg.append("text").attr("x", 220).attr("y", 190).text("competition").style("font-size", "15px").attr("alignment-baseline","middle")
-
+svg.append("circle").attr("cx",280).attr("cy",130).attr("r", 6).style("fill", "#1b9e77")
+svg.append("circle").attr("cx",370).attr("cy",130).attr("r", 6).style("fill", "#e7298a")
+svg.append("text").attr("x", 210).attr("y", 130).text("event").style("font-size", "15px").attr("alignment-baseline","middle")
+svg.append("text").attr("x", 290).attr("y", 130).text("milestone").style("font-size", "15px").attr("alignment-baseline","middle")
+svg.append("text").attr("x", 380).attr("y", 130).text("competition").style("font-size", "15px").attr("alignment-baseline","middle")
 
 ```
