@@ -109,3 +109,42 @@
   background: #efefef;
   color: #313131;
 }
+
+/* legend */
+.legend-swatches {
+  
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1em;
+}
+
+.legend-swatches::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  margin-right: 0.5em;
+  background: var(--color);
+}
+
+
+.legend-swatches-item {
+  break-inside: avoid;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1px;
+}
+
+.legend-swatches-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 18px - 0.5em);
+}
+
+.legend-swatches-swatch {
+  width: 18px;
+  height: 18px;
+  margin: 0 0.5em 0 0;
+}
+
+  
