@@ -8,6 +8,7 @@ listing:
   contents: "./*/index.qmd"
 execute:
   echo: false
+  output: false
 css: "milestones.css"
 ---
 
@@ -32,14 +33,13 @@ Finally, we want to emphasize that OpenProblems is an inclusive community and we
 <!-- add timeline in D3 -->
 ## Timeline
 :::{#timeline}
-
 :::
 
-:::{#benchmark}
+:::{#legend}
 :::
-
 
 ```{ojs requires}
+require('d3');
 ms = require('d3-milestones');
 sb = require('@supabase/supabase-js');
 ```
@@ -91,28 +91,29 @@ combinedData = benchmarks.concat(timeline);
 ```{ojs timeline}
 
 setTimeout(() => { 
-  const benchmarkChart = ms('#benchmark')
+  const benchmarkChart = ms('#timeline')
     .mapping({
       'timestamp': 'date',
       'text': 'name',
     })
     .optimize(true)
     .parseTime('%Y-%m-%d')
-    .aggregateBy('day')
+    .aggregateBy('month')
     .render(combinedData);
 }, 0);
 
+```
 
-// timelineChart = ms('#timeline')
-// 	.mapping({
-// 		'timestamp': 'date',
-// 		'text': 'name'
-// 	})
-//   .optimize(true)
-// 	.parseTime('%Y-%m-%d')
-// 	.aggregateBy('day')
-// 	.render(timeline);
+```{ojs legend}
+// select the svg area
+svg = d3.select("#legend")
 
-
+// Handmade legend
+svg.append("circle").attr("cx",200).attr("cy",130).attr("r", 6).style("fill", "#d95f02")
+svg.append("circle").attr("cx",200).attr("cy",160).attr("r", 6).style("fill", "#1b9e77")
+svg.append("circle").attr("cx",200).attr("cy",190).attr("r", 6).style("fill", "#e7298a")
+svg.append("text").attr("x", 220).attr("y", 100).text("event").style("font-size", "15px").attr("alignment-baseline","middle")
+svg.append("text").attr("x", 220).attr("y", 130).text("milestone").style("font-size", "15px").attr("alignment-baseline","middle")
+svg.append("text").attr("x", 220).attr("y", 160).text("competition").style("font-size", "15px").attr("alignment-baseline","middle")
 
 ```
