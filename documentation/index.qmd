@@ -36,6 +36,8 @@ Finally, we want to emphasize that OpenProblems is an inclusive community and we
 
 
 ```{ojs requires}
+//| output: false
+
 require('d3');
 ms = require('d3-milestones');
 sb = require('@supabase/supabase-js');
@@ -43,6 +45,8 @@ sb = require('@supabase/supabase-js');
 
 
 ```{ojs supabase_data}
+//| output: false
+
 supabase_url="https://bleficzaoyltozjjndha.supabase.co"
 supabase_key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJsZWZpY3phb3lsdG96ampuZGhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQyNDI2ODMsImV4cCI6MjAzOTgxODY4M30.fHtpJTveDUF1z07_k7FZX3wLy7bXpkYl5KyA5o_EuQY"
 supabase = sb.createClient(supabase_url, supabase_key);
@@ -86,6 +90,7 @@ combinedData = benchmarks.concat(timeline);
 
 
 ```{ojs timeline}
+//| output: false
 
 setTimeout(() => { 
   const benchmarkChart = ms('#timeline')
@@ -107,12 +112,12 @@ function Swatches(color, {
   columns = null,
   format,
   unknown: formatUnknown,
-  swatchSize = 15,
+  swatchSize = 20,
   swatchWidth = swatchSize,
   swatchHeight = swatchSize,
-  marginLeft = 0
+  marginLeft = "auto"
 } = {}) {
-  const id = `-swatches-${Math.random().toString(16).slice(2)}`;
+  const id = `legend-swatches`;
   const unknown = formatUnknown == null ? undefined : color.unknown();
   const unknowns = unknown == null || unknown === d3.scaleImplicit ? [] : [unknown];
   const domain = color.domain().concat(unknowns);
@@ -122,7 +127,7 @@ function Swatches(color, {
     return `&#${character.charCodeAt(0).toString()};`;
   }
 
-  if (columns !== null) return htl.html`<div style="display: flex; align-items: center; margin-left: ${+marginLeft}px; min-height: 33px; font: 10px sans-serif;">
+  if (columns !== null) return htl.html`<div>
   <style>
 
 .${id}-item {
@@ -156,7 +161,7 @@ function Swatches(color, {
   </div>
 </div>`;
 
-  return htl.html`<div style="display: flex; align-items: center; min-height: 33px; margin-left: ${+marginLeft}px; font: 10px sans-serif;">
+  return htl.html`<div>
   <style>
 
 .${id} {
@@ -179,5 +184,5 @@ function Swatches(color, {
 ```
 
 ```{ojs}
-Swatches(d3.scaleOrdinal(["event", "milestone", "competition"], ["#d95f02", "#1b9e77", "#e7298a"]))
+Swatches(d3.scaleOrdinal(["event", "milestone", "competition", "benchmark"], ["#d95f02", "#1b9e77", "#e7298a", "#FF414B"]))
 ```
