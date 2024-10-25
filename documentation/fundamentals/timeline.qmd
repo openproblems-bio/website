@@ -1,0 +1,129 @@
+---
+title: Timeline
+execute:
+  echo: false
+css: "milestones.css"
+---
+
+```{ojs}
+//| output: false
+
+// Based on https://observablehq.com/@d3/color-legend
+function Swatches(color, {
+  columns = null,
+  format,
+  unknown: formatUnknown,
+  swatchSize = 20,
+  swatchWidth = swatchSize,
+  swatchHeight = swatchSize,
+  marginLeft = "auto"
+} = {}) {
+  const id = `legend-swatches`;
+  const unknown = formatUnknown == null ? undefined : color.unknown();
+  const unknowns = unknown == null || unknown === d3.scaleImplicit ? [] : [unknown];
+  const domain = color.domain().concat(unknowns);
+  if (format === undefined) format = x => x === unknown ? formatUnknown : x;
+
+  function entity(character) {
+    return `&#${character.charCodeAt(0).toString()};`;
+  }
+
+  if (columns !== null) return htl.html`<div>
+  <div style=${{columns}}>${domain.map(value => {
+    const label = `${format(value)}`;
+    return htl.html`<div class=${id}-item>
+      <div class=${id}-swatch style=${{background: color(value)}}></div>
+      <div class=${id}-label title=${label}>${label}</div>
+    </div>`;
+  })}
+  </div>
+</div>`;
+
+  return htl.html`<div>
+  <div>${domain.map(value => htl.html`<span class="${id}" style="--color: ${color(value)}">${format(value)}</span>`)}</div>`;
+}
+```
+
+```{ojs}
+Swatches(d3.scaleOrdinal(["event", "milestone", "competition", "benchmark"], ["#d95f02", "#1b9e77", "#e7298a", "#FF414B"]))
+```
+:::{#timeline}
+:::
+
+
+```{ojs requires}
+//| output: false
+
+require('d3');
+ms = require('d3-milestones');
+sb = require('@supabase/supabase-js');
+```
+
+
+
+```{ojs supabase_data}
+//| output: false
+
+supabase_url="https://bleficzaoyltozjjndha.supabase.co"
+supabase_key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJsZWZpY3phb3lsdG96ampuZGhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQyNDI2ODMsImV4cCI6MjAzOTgxODY4M30.fHtpJTveDUF1z07_k7FZX3wLy7bXpkYl5KyA5o_EuQY"
+supabase = sb.createClient(supabase_url, supabase_key);
+
+benchmarks = (await supabase
+  .from('tasks')
+  .select('first_release, name, task_name'))
+  .data
+  .filter(item => item.first_release !== null)
+  .map(item => ({
+    date: item.first_release,
+    name: item.name,
+    task_name: item.task_name.replace(/^task_/, ''),
+    type: "benchmark",
+    url: '../results/' + item.task_name.replace(/^task_/, ''),
+    category: "benchmark"
+  }));
+
+// Add result link
+
+timeline = (await supabase
+  .from('timeline')
+  .select('name, date, type'))
+  .data
+  .map(item => ({
+    name: item.name,
+    date: item.date,
+    type: item.type,
+    category: "timeline",
+    textStyle: {
+      color: item.type === 'event' ? '#d95f02' :
+             item.type === 'milestone' ? '#1b9e77' :
+             item.type === 'competition' ? '#e7298a' : 'default'
+    }
+  }));
+  
+
+combinedData = benchmarks.concat(timeline);
+
+```
+
+
+```{ojs timeline}
+//| output: false
+
+setTimeout(() => { 
+  const benchmarkChart = ms('#timeline')
+    .mapping({
+      'timestamp': 'date',
+      'text': 'name',
+    })
+    .optimize(true)
+    .parseTime('%Y-%m-%d')
+    .aggregateBy('day')
+    .orientation('vertical')
+    .render(combinedData);
+}, 0);
+
+```
+
+
+
+<!-- Possible other timeline: https://observablehq.com/@didoesdigital/2020-timeline -->
