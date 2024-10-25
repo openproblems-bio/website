@@ -7,6 +7,51 @@ css: "milestones.css"
 ---
 
 ```{ojs}
+//| output: false
+// Based on https://observablehq.com/@d3/color-legend
+function Swatches(color, {
+  columns = null,
+  format,
+  unknown: formatUnknown,
+  swatchSize = 20,
+  swatchWidth = swatchSize,
+  swatchHeight = swatchSize,
+  marginLeft = "auto"
+} = {}) {
+  const id = `legend-swatches`;
+  const unknown = formatUnknown == null ? undefined : color.unknown();
+  const unknowns = unknown == null || unknown === d3.scaleImplicit ? [] : [unknown];
+  const domain = color.domain().concat(unknowns);
+  if (format === undefined) format = x => x === unknown ? formatUnknown : x;
+
+  function entity(character) {
+    return `&#${character.charCodeAt(0).toString()};`;
+  }
+
+  if (columns !== null) return htl.html`<div>
+  <div style=${{columns}}>${domain.map(value => {
+    const label = `${format(value)}`;
+    return htl.html`<div class=${id}-item>
+      <div class=${id}-swatch style=${{background: color(value)}}></div>
+      <div class=${id}-label title=${label}>${label}</div>
+    </div>`;
+  })}
+  </div>
+</div>`;
+
+  return htl.html`<div>
+  <div>${domain.map(value => htl.html`<span class="${id}" style="--color: ${color(value)}">${format(value)}</span>`)}</div>`;
+}
+```
+
+```{ojs}
+//| output: true
+
+Swatches(d3.scaleOrdinal(["event", "milestone", "competition", "benchmark"], ["#d95f02", "#1b9e77", "#e7298a", "#FF414B"]))
+```
+
+
+```{ojs}
 require('d3');
 sb = require('@supabase/supabase-js');
 ```
@@ -191,7 +236,7 @@ params = {
   
   output["svg"] = {
     "width":  width,
-    "height": data.length * 100 // Roughly relative to number of data points but doesn't factor in the full timeline scale such as clustering or spread out data
+    "height": data.length * 50 // Roughly relative to number of data points but doesn't factor in the full timeline scale such as clustering or spread out data
   };
   
   output["margin"] = {
@@ -246,11 +291,13 @@ params = {
 axis = {
   const yAxis = width >= params.smallScreenSize ? 
         d3.axisRight(y)
+            .ticks(d3.timeYear)
             .tickPadding(-(params.margin.axisLeft))
             .tickSizeOuter(0)
             .tickSizeInner(-(params.margin.axisLeft))
         :
         d3.axisRight(y)
+            .ticks(d3.timeYear)
             .tickPadding(-(params.smallScreenMargin.axisLeft))
             .tickSizeOuter(0)
             .tickSizeInner(-(params.smallScreenMargin.axisLeft))
@@ -259,8 +306,14 @@ axis = {
   return {y: yAxis};
 }
 
+// Calculate the new domain
+firstDate = new Date(d3.min(data, d => d.date));
+lastDate = new Date(d3.max(data, d => d.date));
+startDate = new Date(firstDate.getUTCFullYear(), 0, 1); // 01/01/year of the first event
+endDate = new Date(lastDate.getUTCFullYear() + 1, 0, 1); // 01/01/year following the last event
+
 y = d3.scaleUtc()
-  .domain(d3.extent(data, d => d.date))//.nice()
+  .domain([startDate, endDate])//.nice()
   .range([params.plot.y, params.plot.height]);
   // .range([params.margin.top, height - params.margin.bottom]);
 
@@ -297,58 +350,6 @@ backgroundColor = "#FAF9FB";
 
 ```{ojs}
 //| output: true
-
-render_data_table = (data, options = {}) => {
-  
-  let caption = "";
-  let ariaLabelledbyCaption = "";
-  if (options.caption) {
-    caption = `<caption id="caption">${options.caption}</caption>`;
-    ariaLabelledbyCaption = `aria-labelledby="caption"`;
-  }
-  
-  let theadRowHeaderCells;
-  if (options.columns) {
-    theadRowHeaderCells = options.columns.map((d) => {
-      return `<th scope="col">${d}</th>`
-    });
-  }
-  else {
-    theadRowHeaderCells = Object.keys(data[0]).map((d, i) => {
-      return `<th scope="col">${d}</th>`
-    });
-  }
-  
-  let focusable = 'tabindex="0"';
-  if (options.focusable === false) {
-    focusable = '';
-  }
-  
-  return html`
-  <div class="table-container" ${focusable} role="group" ${ariaLabelledbyCaption}>  
-    <table>
-      ${caption}
-      <thead>
-        <tr>${theadRowHeaderCells}</tr>
-      <thead>
-      <tbody>
-        ${data.map(row => {
-          return html`<tr>${Object.values(row).map((col, index) => {
-            return index === 0 ? `<td>${d3.timeFormat("%Y")(col)}</td>`: `<td>${col}</td>`;
-          })}</tr>`;
-        })}
-      </tbody>
-    </table>
-  </div>
-`}
-
-
-accessibleDataTable = render_data_table(data, {focusable: false})
-```
-
-
-```{ojs}
-//| output: true
 DiDoesDigital2020Timeline = {
   const markerDefaultColor = "#FF414B";
   const markerSelectedColor = "#9880C2";
@@ -377,7 +378,7 @@ DiDoesDigital2020Timeline = {
   
   const plot = svg.append("g")
     .attr("id", "plot")
-    .attr("transform", `translate(${width >= params.smallScreenSize ? params.plot.x : params.smallScreenMargin.left}, ${params.plot.y})`);
+    .attr("transform", `translate(350, ${params.plot.y})`);
 
   const gy = plot.append("g")
     .attr("id", "y-axis")
@@ -421,7 +422,7 @@ DiDoesDigital2020Timeline = {
   eventLabels.append("tspan")
       .text(([d]) => d.eventName);
   eventLabels.append("tspan")
-      .text(([d]) => ` ${d.eventDescription} ${d3.timeFormat("Y")(d.date)}`)
+      .text(([d]) => ` ${d.eventDescription} ${d3.timeFormat("%Y")(d.date)}`)
         .attr("x", width);
       // .text(([d]) => d.eventName);
   
@@ -483,7 +484,7 @@ DiDoesDigital2020Timeline = {
       tooltip.style("opacity", 1);
       tooltip.style("transform", `translate(${(width >= params.smallScreenSize ? params.plot.x + 8 : 0)}px, calc(-100% + ${nearestEventY}px))`);
       tooltip.select("#date")
-        .text(d3.timeFormat("%Y")(dataEvent.date));
+        .text(d3.timeFormat("%d %m %Y")(dataEvent.date));
       tooltip.select("#name")
         .text(dataEvent.eventName);
       tooltip.select("#description")
