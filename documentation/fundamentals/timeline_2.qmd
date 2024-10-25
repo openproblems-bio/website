@@ -120,6 +120,7 @@ setTimeout(() => {
     .optimize(true)
     .parseTime('%Y-%m-%d')
     .aggregateBy('day')
+    .orientation('vertical')
     .render(combinedData);
 }, 0);
 
