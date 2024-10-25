@@ -1,5 +1,5 @@
 ---
-title: Timeline variation 1
+title: Timeline variation 2
 execute:
   echo: false
   output: false
@@ -47,7 +47,6 @@ function Swatches(color, {
 
 ```{ojs}
 //| output: true
-
 Swatches(d3.scaleOrdinal(["event", "milestone", "competition", "benchmark"], ["#d95f02", "#1b9e77", "#e7298a", "#FF414B"]))
 ```
 :::{#timeline}
@@ -121,7 +120,6 @@ setTimeout(() => {
     .optimize(true)
     .parseTime('%Y-%m-%d')
     .aggregateBy('day')
-    .orientation('vertical')
     .render(combinedData);
 }, 0);
 
