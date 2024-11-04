@@ -12,7 +12,11 @@
 
 * Update base images documentation (PR #342).
 
-* Add foundation models benchmark page (PR #354)
+* Add foundation models benchmark page (PR #354).
+
+* Add url to benchmark datasets to dataset page (PR #362).
+
+* Change "n x m" to "n cells × m genes" on dataset info (PR #362).
 
 ## BUG FIXES
 
