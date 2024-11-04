@@ -122,7 +122,7 @@ metadata <- tribble(
   "Reference", "bi bi-file-earmark-text", paste0("@", uns$dataset_reference),
   "Size", "bi bi-cloud-download", file_size_str,
   "Created", "bi bi-calendar", uns$date_created,
-  "Dimensions", "bi bi-box", shape_str
+  "Dimensions", "bi bi-box", glue::glue("{shape[[1]]} cells × {shape[[2]]} genes")
 )
 metadata_lines <- paste0(
   "<i class=\"", metadata$icon, "\"></i> ", substitute_underscores(metadata$value), "  \n"
