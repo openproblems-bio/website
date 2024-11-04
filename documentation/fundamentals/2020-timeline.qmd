@@ -3,8 +3,12 @@ title: alternate timeline
 execute:
   echo: false
   output: false
-css: "milestones.css"
+css: "timeline.css"
 ---
+```{ojs}
+require('d3');
+sb = require('@supabase/supabase-js');
+```
 
 ```{ojs}
 //| output: false
@@ -51,10 +55,7 @@ Swatches(d3.scaleOrdinal(["event", "milestone", "competition", "benchmark"], ["#
 ```
 
 
-```{ojs}
-require('d3');
-sb = require('@supabase/supabase-js');
-```
+
 
 ```{ojs supabase_data}
 supabase_url="https://bleficzaoyltozjjndha.supabase.co"
@@ -94,126 +95,6 @@ combinedData;
 ```{ojs}
 
 data = combinedData
-
-chartStyles = html`<style>
-  #chart-background {
-    fill: ${backgroundColor};
-  }
-
-  .tick line,
-  .domain {
-    stroke: #E2E0E5;
-  }
-`
-typographyStyles = html`<style>
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap');
-
-text {
-  fill: #3C3941;
-  font: 400 16px/1.4 "Source Sans Pro", "Noto Sans", sans-serif;
-}
-
-.event-title {
-  fill: #3C3941;
-  font-size: 16px;
-  line-height: 1.4;
-  font-family: "Source Sans Pro", "Noto Sans", sans-serif;
-}
-
-.event-title:hover {
-  cursor: default;
-}
-
-.event-description {
-  fill: #3C3941;
-  font: 400 16px/1.4 "Source Sans Pro", "Noto Sans", sans-serif;
-  transform: translateY(1em);
-}
-
-#title {
-  fill: #3C3941;
-  font: 600 16px/1.4 "Source Sans Pro", "Noto Sans", sans-serif;
-}
-
-.axis text {
-  font: 400 16px/1.4 "Source Sans Pro", "Noto Sans", sans-serif;
-  fill: #676170;
-}
-
-@media (max-width: ${params.smallScreenSize}px) {
-  text,
-  .event-title,
-  .event-description,
-  #title,
-  .axis text {
-    font-size: 14px;
-  }
-}
-
-</style>
-`
-
-tooltipStyles = html`
-<style>
-  .wrapper {
-    position: relative;
-  }
-
-  .tooltip {
-    background-color: #fff;
-    border: 1px solid #5F428F;
-    font-family: "Source Sans Pro", "Noto Sans", sans-serif;
-    left: 0;
-    max-width: 300px;
-    opacity: 0;
-    padding: calc(16px - 1px); /* border width adjustment */
-    pointer-events: none;
-    border-radius: 5px;
-    position: absolute;
-    top: -8px;
-    transition: opacity 0.1s linear, transform 0.05s ease-in-out;
-    z-index: 1;
-  }
-
-/*
-  .tooltip:before {
-    background-color: #fff;
-    border-left-color: transparent;
-    border-top-color: transparent;
-    bottom: 0;
-    content: '';
-    height: 12px;
-    left: 50%;
-    position: absolute;
-    transform-origin: center center;
-    transform: translate(-50%, 50%) rotate(45deg);
-    width: 12px;
-    z-index: 1;
-  }
-*/
-
-  .tooltip-date {
-    margin-bottom: 0.2em;
-    font-size: 0.7em;
-    line-height: 1.2;
-    font-weight: 400;
-  }
-
-  .tooltip-name {
-    margin-bottom: 0.2em;
-    font-size: 1em;
-    line-height: 1.4;
-    font-weight: 700;
-  }
-
-  .tooltip-description {
-    margin-bottom: 0.2em;
-    font-size: 0.8em;
-    line-height: 1.4;
-    font-weight: 400;
-  }
-</style>
-`
 
 function halo(text) {
   text.clone(true)
