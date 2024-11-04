@@ -378,7 +378,7 @@ DiDoesDigital2020Timeline = {
   
   const plot = svg.append("g")
     .attr("id", "plot")
-    .attr("transform", `translate(350, ${params.plot.y})`);
+    .attr("transform", `translate(350, 0)`);
 
   const gy = plot.append("g")
     .attr("id", "y-axis")
@@ -421,9 +421,9 @@ DiDoesDigital2020Timeline = {
     
   eventLabels.append("tspan")
       .text(([d]) => d.eventName);
-  eventLabels.append("tspan")
-      .text(([d]) => ` ${d.eventDescription} ${d3.timeFormat("%Y")(d.date)}`)
-        .attr("x", width);
+  // eventLabels.append("tspan")
+  //     .text(([d]) => ` ${d.eventDescription} ${d3.timeFormat("%Y")(d.date)}`)
+  //       .attr("x", width);
       // .text(([d]) => d.eventName);
   
   const tooltip = d3.create("div")
@@ -441,9 +441,9 @@ DiDoesDigital2020Timeline = {
       </div>
     `);
   
-  const rangeY = dodgedYValues.map(x => x + params.plot.y);
+  const rangeY = dodgedYValues.map(x => x);
   const rangeY0 = rangeY[0];
-  const fuzzyTextHeightAdjustment = 16
+  const fuzzyTextHeightAdjustment = 24
   
   svg.on("touchend mouseout", function(event) {
     markers
@@ -460,36 +460,33 @@ DiDoesDigital2020Timeline = {
     const dodgedIndex = rangeY.indexOf(nearestEventY);
     const dataEvent = data[dodgedIndex];
 
-    if (mouseY >= rangeY0 - fuzzyTextHeightAdjustment) {
+    eventLabels
+      .filter((d, i) => i !== dodgedIndex)
+      .style("opacity", 0.3);
 
-      eventLabels
-        .filter((d, i) => i !== dodgedIndex)
-        .style("opacity", 0.3);
+    eventLabels
+      .filter((d, i) => i === dodgedIndex)
+      .style("opacity", 1);
 
-      eventLabels
-        .filter((d, i) => i === dodgedIndex)
-        .style("opacity", 1);
+    markers
+      .filter((d, i) => i !== dodgedIndex)
+      .attr("fill", markerFadedColor)
+      .attr("stroke", markerFadedColor);
 
-      markers
-        .filter((d, i) => i !== dodgedIndex)
-        .attr("fill", markerFadedColor)
-        .attr("stroke", markerFadedColor);
-
-      markers
-        .filter((d, i) => i === dodgedIndex)
-        .attr("fill", d => eventTypeColors[d.eventType] || markerDefaultColor)
-        .attr("stroke", d => eventTypeColors[d.eventType] || markerDefaultColor)
-        .raise();
-      
-      tooltip.style("opacity", 1);
-      tooltip.style("transform", `translate(${(width >= params.smallScreenSize ? params.plot.x + 8 : 0)}px, calc(-100% + ${nearestEventY}px))`);
-      tooltip.select("#date")
-        .text(d3.timeFormat("%d %m %Y")(dataEvent.date));
-      tooltip.select("#name")
-        .text(dataEvent.eventName);
-      tooltip.select("#description")
-        .text(dataEvent.eventDescription);
-    }
+    markers
+      .filter((d, i) => i === dodgedIndex)
+      .attr("fill", d => eventTypeColors[d.eventType] || markerDefaultColor)
+      .attr("stroke", d => eventTypeColors[d.eventType] || markerDefaultColor)
+      .raise();
+    
+    tooltip.style("opacity", 1);
+    tooltip.style("transform", `translate(${(width >= params.smallScreenSize ? params.plot.x + 8 : 0)}px, calc(-100% + ${nearestEventY}px))`);
+    tooltip.select("#date")
+      .text(d3.timeFormat("%d %m %Y")(dataEvent.date));
+    tooltip.select("#name")
+      .text(dataEvent.eventName);
+    tooltip.select("#description")
+      .text(dataEvent.eventDescription);
   });
 
   svg.on("touchend mouseleave", () => tooltip.style("opacity", 0));
