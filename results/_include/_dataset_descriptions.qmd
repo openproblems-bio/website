@@ -6,8 +6,10 @@ lines <- pmap_chr(dataset_info, function(dataset_name, dataset_summary, dataset_
   source_dataset_id <- if ("source_dataset_id" %in% names(rest)) rest$source_dataset_id else NULL
   dataset_link <- if (!is.null(source_dataset_id)) {
     glue::glue("[{dataset_name}](/datasets/{source_dataset_id})")
-  } else {
+  } else if ("scPerturb" %in% dataset_name) {
     dataset_name
+  } else {
+    glue::glue("[{dataset_name}](/datasets/{rest$dataset_id})")
   }
   if (ref != "") ref <- paste0(" ", ref)
   summ <- (dataset_summary %|% "Missing 'dataset_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
