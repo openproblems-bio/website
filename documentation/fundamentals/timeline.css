@@ -19,6 +19,7 @@
   break-inside: avoid;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding-bottom: 1px;
 }
 
@@ -88,7 +89,7 @@
 
 .tooltip {
   background-color: #fff;
-  border: 1px solid #5F428F;
+  border: 1px solid;
   font-family: "Source Sans Pro", "Noto Sans", sans-serif;
   left: 0;
   max-width: 300px;
@@ -138,4 +139,11 @@
   font-size: 0.8em;
   line-height: 1.4;
   font-weight: 400;
+}
+
+/* timeline */
+
+#plot {
+  position: relative;
+  transform: translateX(50%);
 }

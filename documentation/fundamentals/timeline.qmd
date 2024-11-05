@@ -1,5 +1,5 @@
 ---
-title: alternate timeline
+title: Timeline
 execute:
   echo: false
   output: false
@@ -11,16 +11,12 @@ sb = require('@supabase/supabase-js');
 ```
 
 ```{ojs}
-//| output: false
 // Based on https://observablehq.com/@d3/color-legend
 function Swatches(color, {
   columns = null,
   format,
   unknown: formatUnknown,
   swatchSize = 20,
-  swatchWidth = swatchSize,
-  swatchHeight = swatchSize,
-  marginLeft = "auto"
 } = {}) {
   const id = `legend-swatches`;
   const unknown = formatUnknown == null ? undefined : color.unknown();
@@ -35,18 +31,19 @@ function Swatches(color, {
   if (columns !== null) return htl.html`<div>
   <div style=${{columns}}>${domain.map(value => {
     const label = `${format(value)}`;
-    return htl.html`<div class=${id}-item>
-      <div class=${id}-swatch style=${{background: color(value)}}></div>
-      <div class=${id}-label title=${label}>${label}</div>
+    return htl.html`<div class=legend-swatches-item>
+      <div class=legend-swatches-swatch style=${{background: color(value)}}></div>
+      <div class=legend-swatches-label title=${label}>${label}</div>
     </div>`;
   })}
   </div>
 </div>`;
 
-  return htl.html`<div>
-  <div>${domain.map(value => htl.html`<span class="${id}" style="--color: ${color(value)}">${format(value)}</span>`)}</div>`;
+  return htl.html`<div class=legend-swatches-item>
+  ${domain.map(value => htl.html`<span class="${id}" style="--color: ${color(value)}">${format(value)}</span>`)}`;
 }
 ```
+
 
 ```{ojs}
 //| output: true
@@ -259,7 +256,7 @@ DiDoesDigital2020Timeline = {
   
   const plot = svg.append("g")
     .attr("id", "plot")
-    .attr("transform", `translate(350, 0)`);
+    // .attr("transform", `translate(350, 0)`);
 
   const gy = plot.append("g")
     .attr("id", "y-axis")
@@ -376,7 +373,9 @@ DiDoesDigital2020Timeline = {
     <figure style="max-width: 100%;">
       <div id="wrapper" class="wrapper">
         ${tooltip.node()}
-        ${svg.node()}
+        <div class=timeline-svg>
+          ${svg.node()}
+        </div>
       </div>
     </figure>
   </div>`;
