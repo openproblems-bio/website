@@ -15,7 +15,7 @@
       },
       {
         "description": "Normalised expression values",
-        "dtype": "float64",
+        "dtype": "float32",
         "name": "normalized",
         "schema_type": "double",
         "shape": [
@@ -25,22 +25,11 @@
         "type": "sparsematrix"
       }
     ],
-    "obs": [
-      {
-        "description": "The size factors created by the normalisation method, if any.",
-        "dtype": "float64",
-        "name": "size_factors",
-        "schema_type": "double",
-        "shape": [
-          8617
-        ],
-        "type": "vector"
-      }
-    ],
+    "obs": [],
     "obsm": [
       {
         "description": "The resulting SVD embedding.",
-        "dtype": "float64",
+        "dtype": "float32",
         "name": "X_svd",
         "schema_type": "double",
         "shape": [
@@ -174,7 +163,7 @@
         "description": "A ranking of the features by hvg.",
         "dtype": "float64",
         "name": "hvg_score",
-        "schema_type": "integer",
+        "schema_type": "double",
         "shape": [
           13
         ],
@@ -187,15 +176,15 @@
   "uns": {
     "data_reference": "stoeckius2017simultaneous",
     "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE100866",
-    "dataset_description": "8k cord blood mononuclear cells profiled by CITEsequsing a panel of 13 antibodies.",
+    "dataset_description": "8k cord blood mononuclear cells profiled by CITEseq using a panel of 13 antibodies.",
     "dataset_id": "openproblems_v1_multimodal/citeseq_cbmc",
     "dataset_name": "CITE-Seq CBMC",
     "dataset_organism": "homo_sapiens",
     "dataset_reference": "stoeckius2017simultaneous",
     "dataset_summary": "CITE-seq profiles of 8k Cord Blood Mononuclear Cells",
     "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE100866",
-    "date_created": "02-02-2024",
-    "file_size": 4110512,
-    "normalization_id": "log_cp10k"
+    "date_created": "26-04-2024",
+    "file_size": 3144784,
+    "normalization_id": "prot_clr"
   }
 }

@@ -15,7 +15,7 @@
       },
       {
         "description": "Normalised expression values",
-        "dtype": "float64",
+        "dtype": "float32",
         "name": "normalized",
         "schema_type": "double",
         "shape": [
@@ -93,22 +93,12 @@
           11296
         ],
         "type": "vector"
-      },
-      {
-        "description": "The size factors created by the normalisation method, if any.",
-        "dtype": "float64",
-        "name": "size_factors",
-        "schema_type": "double",
-        "shape": [
-          11296
-        ],
-        "type": "vector"
       }
     ],
     "obsm": [
       {
         "description": "The resulting SVD embedding.",
-        "dtype": "float64",
+        "dtype": "float32",
         "name": "X_svd",
         "schema_type": "double",
         "shape": [
@@ -274,7 +264,7 @@
         "description": "A ranking of the features by hvg.",
         "dtype": "float64",
         "name": "hvg_score",
-        "schema_type": "integer",
+        "schema_type": "double",
         "shape": [
           249448
         ],
@@ -294,8 +284,8 @@
     "dataset_reference": "cao2018joint",
     "dataset_summary": "sci-CAR profiles of 11k mouse kidney cells",
     "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE117089",
-    "date_created": "02-02-2024",
-    "file_size": 240299400,
-    "normalization_id": "log_cp10k"
+    "date_created": "26-04-2024",
+    "file_size": 203456376,
+    "normalization_id": "atac_tfidf"
   }
 }

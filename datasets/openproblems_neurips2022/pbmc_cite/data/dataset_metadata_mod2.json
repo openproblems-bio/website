@@ -3,15 +3,33 @@
     "X": [],
     "layers": [
       {
+        "dtype": "float32",
+        "name": "clr",
+        "shape": [
+          119191,
+          140
+        ],
+        "type": "sparsematrix"
+      },
+      {
         "description": "Raw counts",
         "dtype": "float32",
         "name": "counts",
         "schema_type": "integer",
         "shape": [
-          11296,
-          29013
+          119191,
+          140
         ],
         "type": "sparsematrix"
+      },
+      {
+        "dtype": "float32",
+        "name": "dsb",
+        "shape": [
+          119191,
+          140
+        ],
+        "type": "densematrix"
       },
       {
         "description": "Normalised expression values",
@@ -19,8 +37,8 @@
         "name": "normalized",
         "schema_type": "double",
         "shape": [
-          11296,
-          29013
+          119191,
+          140
         ],
         "type": "sparsematrix"
       }
@@ -28,49 +46,25 @@
     "obs": [
       {
         "dtype": "category",
-        "name": "source",
+        "name": "kaggle_dataset",
         "shape": [
-          11296
+          119191
+        ],
+        "type": "vector"
+      },
+      {
+        "dtype": "int64",
+        "name": "day",
+        "shape": [
+          119191
         ],
         "type": "vector"
       },
       {
         "dtype": "category",
-        "name": "replicate",
+        "name": "donor",
         "shape": [
-          11296
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "category",
-        "name": "experiment",
-        "shape": [
-          11296
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "float64",
-        "name": "tsne_1",
-        "shape": [
-          11296
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "float64",
-        "name": "tsne_2",
-        "shape": [
-          11296
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "category",
-        "name": "cell_name",
-        "shape": [
-          11296
+          119191
         ],
         "type": "vector"
       },
@@ -80,7 +74,7 @@
         "name": "cell_type",
         "schema_type": "string",
         "shape": [
-          11296
+          119191
         ],
         "type": "vector"
       },
@@ -90,66 +84,78 @@
         "name": "batch",
         "schema_type": "string",
         "shape": [
-          11296
+          119191
         ],
         "type": "vector"
       },
       {
-        "description": "The size factors created by the normalisation method, if any.",
-        "dtype": "float32",
-        "name": "size_factors",
-        "schema_type": "double",
+        "dtype": "category",
+        "name": "is_train",
         "shape": [
-          11296
+          119191
         ],
         "type": "vector"
       }
     ],
     "obsm": [
       {
+        "dtype": "float32",
+        "name": "X_pca",
+        "shape": [
+          119191,
+          50
+        ],
+        "type": "densematrix"
+      },
+      {
         "description": "The resulting SVD embedding.",
         "dtype": "float32",
         "name": "X_svd",
         "schema_type": "double",
         "shape": [
-          11296,
+          119191,
           100
         ],
         "type": "densematrix"
       },
       {
-        "dtype": "float64",
-        "name": "mode2",
+        "dtype": "float32",
+        "name": "X_umap",
         "shape": [
-          11296,
-          249448
+          119191,
+          2
+        ],
+        "type": "densematrix"
+      }
+    ],
+    "obsp": [
+      {
+        "dtype": "float32",
+        "name": "connectivities",
+        "shape": [
+          119191,
+          119191
+        ],
+        "type": "sparsematrix"
+      },
+      {
+        "dtype": "float64",
+        "name": "distances",
+        "shape": [
+          119191,
+          119191
         ],
         "type": "sparsematrix"
       }
     ],
-    "obsp": [],
     "uns": [
       {
-        "dtype": null,
-        "name": "_from_cache",
-        "shape": null,
-        "type": "other: <class 'numpy.bool_'>"
-      },
-      {
-        "dtype": "str",
-        "name": "data_reference",
+        "dtype": "object",
+        "name": "cell_type_colors",
         "shape": [
-          1
+          7
         ],
-        "type": "atomic"
-      },
-      {
-        "dtype": "str",
-        "name": "data_url",
-        "shape": [
-          1
-        ],
-        "type": "atomic"
+        "type": "densematrix"
       },
       {
         "description": "Long description of the dataset.",
@@ -222,6 +228,20 @@
         "type": "atomic"
       },
       {
+        "dtype": "object",
+        "name": "donor_colors",
+        "shape": [
+          4
+        ],
+        "type": "densematrix"
+      },
+      {
+        "dtype": null,
+        "name": "neighbors",
+        "shape": null,
+        "type": "other: <class 'anndata.compat._overloaded_dict.OverloadedDict'>"
+      },
+      {
         "description": "Which normalization was used",
         "dtype": "str",
         "name": "normalization_id",
@@ -232,36 +252,30 @@
         "type": "atomic"
       },
       {
-        "dtype": "object",
-        "name": "var_names_all",
+        "dtype": null,
+        "name": "pca",
         "shape": [
-          29013
+          3
         ],
-        "type": "densematrix"
+        "type": "dict"
+      },
+      {
+        "dtype": null,
+        "name": "umap",
+        "shape": [
+          1
+        ],
+        "type": "dict"
       }
     ],
     "var": [
       {
-        "dtype": "category",
-        "name": "gene_type",
+        "description": "Unique identifier for the feature, usually a ENSEMBL gene id.",
+        "dtype": "object",
+        "name": "feature_id",
+        "schema_type": "string",
         "shape": [
-          29013
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "category",
-        "name": "gene_short_name",
-        "shape": [
-          29013
-        ],
-        "type": "vector"
-      },
-      {
-        "dtype": "float32",
-        "name": "n_counts",
-        "shape": [
-          29013
+          140
         ],
         "type": "vector"
       },
@@ -271,7 +285,7 @@
         "name": "feature_name",
         "schema_type": "string",
         "shape": [
-          29013
+          140
         ],
         "type": "vector"
       },
@@ -281,7 +295,7 @@
         "name": "hvg",
         "schema_type": "boolean",
         "shape": [
-          29013
+          140
         ],
         "type": "vector"
       },
@@ -291,26 +305,49 @@
         "name": "hvg_score",
         "schema_type": "double",
         "shape": [
-          29013
+          140
         ],
         "type": "vector"
       }
     ],
-    "varm": [],
+    "varm": [
+      {
+        "dtype": "float32",
+        "name": "PCs",
+        "shape": [
+          140,
+          50
+        ],
+        "type": "densematrix"
+      }
+    ],
     "varp": []
   },
   "uns": {
-    "data_reference": "cao2018joint",
-    "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE117089",
-    "dataset_description": "Single cell RNA-seq and ATAC-seq co-profiling of 11k mouse kidney cells.",
-    "dataset_id": "openproblems_v1_multimodal/scicar_mouse_kidney",
-    "dataset_name": "sci-CAR Mouse Kidney",
-    "dataset_organism": "mus_musculus",
-    "dataset_reference": "cao2018joint",
-    "dataset_summary": "sci-CAR profiles of 11k mouse kidney cells",
-    "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE117089",
+    "cell_type_colors": [
+      "#1f77b4",
+      "#ff7f0e",
+      "#2ca02c",
+      "#d62728",
+      "#9467bd",
+      "#8c564b",
+      "#e377c2"
+    ],
+    "dataset_description": "Single-cell CITE-Seq data collected from bone marrow mononuclear cells of 12 healthy human donors using the 10X 3 prime Single-Cell Gene Expression kit with Feature Barcoding in combination with the BioLegend TotalSeq B Universal Human Panel v1.0. The dataset was generated to support Multimodal Single-Cell Data Integration Challenge at NeurIPS 2022. Samples were prepared using a standard protocol at four sites. The resulting data was then annotated to identify cell types and remove doublets. The dataset was designed with a nested batch layout such that some donor samples were measured at multiple sites with some donors measured at a single site.",
+    "dataset_id": "openproblems_neurips2022/pbmc_cite",
+    "dataset_name": "OpenProblems NeurIPS2022 CITE-Seq",
+    "dataset_organism": "homo_sapiens",
+    "dataset_reference": "lance2024predicting",
+    "dataset_summary": "Single-cell CITE-Seq (GEX+ADT) data collected from bone marrow mononuclear cells of 12 healthy human donors.",
+    "dataset_url": "https://www.kaggle.com/competitions/open-problems-multimodal/data",
     "date_created": "26-04-2024",
-    "file_size": 203247744,
-    "normalization_id": "log_cp10k"
+    "donor_colors": [
+      "#1f77b4",
+      "#ff7f0e",
+      "#2ca02c",
+      "#d62728"
+    ],
+    "file_size": 524475883,
+    "normalization_id": "prot_clr"
   }
 }

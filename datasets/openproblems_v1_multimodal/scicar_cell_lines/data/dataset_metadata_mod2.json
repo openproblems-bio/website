@@ -15,7 +15,7 @@
       },
       {
         "description": "Normalised expression values",
-        "dtype": "float64",
+        "dtype": "float32",
         "name": "normalized",
         "schema_type": "double",
         "shape": [
@@ -75,22 +75,12 @@
           4739
         ],
         "type": "vector"
-      },
-      {
-        "description": "The size factors created by the normalisation method, if any.",
-        "dtype": "float64",
-        "name": "size_factors",
-        "schema_type": "double",
-        "shape": [
-          4739
-        ],
-        "type": "vector"
       }
     ],
     "obsm": [
       {
         "description": "The resulting SVD embedding.",
-        "dtype": "float64",
+        "dtype": "float32",
         "name": "X_svd",
         "schema_type": "double",
         "shape": [
@@ -256,7 +246,7 @@
         "description": "A ranking of the features by hvg.",
         "dtype": "float64",
         "name": "hvg_score",
-        "schema_type": "integer",
+        "schema_type": "double",
         "shape": [
           146713
         ],
@@ -276,8 +266,8 @@
     "dataset_reference": "cao2018joint",
     "dataset_summary": "sci-CAR profiles of 5k cell line cells (HEK293T, NIH/3T3, A549) across three treatment conditions (DEX 0h, 1h and 3h)",
     "dataset_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE117089",
-    "date_created": "02-02-2024",
-    "file_size": 62625377,
-    "normalization_id": "log_cp10k"
+    "date_created": "26-04-2024",
+    "file_size": 54536057,
+    "normalization_id": "atac_tfidf"
   }
 }
