@@ -22,6 +22,8 @@
 
 * Fix error in summary figure when not all method info ids are present in the results (PR #330).
 
+* Fix "used in" section in dataset pages (PR #362).
+
 # openproblems.bio v2.3.6
 
 ## NEW CONTENT
