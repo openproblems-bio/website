@@ -169,7 +169,8 @@ cat("#### Used in\n\n")
 if (nrow(related_tasks) == 0) {
   cat("No related benchmarks found.\n")
 } else {
-  links <- paste0("* [", related_tasks$task_name, "](/results/", related_tasks$task_id, ")  ")
+  task_id <- gsub("task_", "", related_tasks$task_id)
+  links <- paste0("* [", related_tasks$task_name, "](/results/", task_id, ")  ")
   cat(paste(links, collapse = "\n"))
 }
 
