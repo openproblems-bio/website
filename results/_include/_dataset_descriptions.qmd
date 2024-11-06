@@ -4,14 +4,14 @@ lines <- pmap_chr(dataset_info, function(dataset_name, dataset_summary, dataset_
   ref <- split_cite_fun(data_reference)
   rest <- list(...)
   source_dataset_id <- if ("source_dataset_id" %in% names(rest)) rest$source_dataset_id else NULL
-  dataset_link <- if (!is.null(source_dataset_id) && dir.exists(paste0("datasets/", source_dataset_id))) {
+  dataset_link <- if (!is.null(source_dataset_id) && dir.exists(paste0("../../datasets/", source_dataset_id))) {
     glue::glue("[{dataset_name}](/datasets/{source_dataset_id})")
   } else if ("scPerturb" %in% dataset_name) {
     dataset_name
-  } else if (dir.exists(paste0("datasets/", rest$dataset_id))) {
+  } else if (dir.exists(paste0("../../datasets/", rest$dataset_id))) {
     glue::glue("[{dataset_name}](/datasets/{rest$dataset_id})")
   } else {
-     dataset_name
+    dataset_name
   }
   if (ref != "") ref <- paste0(" ", ref)
   summ <- (dataset_summary %|% "Missing 'dataset_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
