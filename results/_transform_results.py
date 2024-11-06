@@ -39,7 +39,7 @@ for dir in dirs:
         info["code_url"] = info["code_url"] + "/tree/v1.0.0/openproblems/tasks"
         info["implementation_url"] = info["implementation_url"].replace("main", "v1.0.0")
         info["code_version"] = "v1.0.0"
-        info["image"] = "https://ghcr.io/openproblems-bio/" + info["image"]
+        info["image"] = "https://github.com/openproblems-bio/openproblems/pkgs/container/" + info["image"]
     
     
     # Read the task_info.json file
