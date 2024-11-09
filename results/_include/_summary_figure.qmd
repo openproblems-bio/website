@@ -90,10 +90,7 @@ per_metric = d3.groups(results_long, d => d.method_id)
   })
 
 resources = d3.groups(results_resources, d => d.method_id)
-  .map(([method_id, val]) => {
-    // Filter out resources that are not in the dataset_ids
-    const values = val.filter(d => dataset_ids.includes(d.dataset_id))
-
+  .map(([method_id, values]) => {
     // Calculate the error percentages
     const error_pct_oom = d3.mean(values, d => d.exit_code === 137)
     const error_pct_timeout = d3.mean(values, d => d.exit_code === 143)
