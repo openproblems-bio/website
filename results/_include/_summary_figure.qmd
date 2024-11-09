@@ -34,7 +34,7 @@ results_resources = results.flatMap(d => {
     dataset_id: d.dataset_id,
     ...d.resources
   })
-}).filter(d => dataset_ids.includes(d.dataset_id))
+})
 
 function label_time(time) {
   if (time < 1e-5) return "0s";
@@ -90,7 +90,11 @@ per_metric = d3.groups(results_long, d => d.method_id)
   })
 
 resources = d3.groups(results_resources, d => d.method_id)
-  .map(([method_id, values]) => {
+  .map(([method_id, val]) => {
+    // Filter out resources that are not in the dataset_ids
+    const values = val.filter(d => dataset_ids.includes(d.dataset_id))
+
+    // Calculate the error percentages
     const error_pct_oom = d3.mean(values, d => d.exit_code === 137)
     const error_pct_timeout = d3.mean(values, d => d.exit_code === 143)
     const error_pct_error = d3.mean(values, d => d.exit_code > 0) - error_pct_oom - error_pct_timeout
@@ -99,6 +103,8 @@ resources = d3.groups(results_resources, d => d.method_id)
     const mean_disk_read_mb = mean_na_rm(values.map(d => d.disk_read_mb))
     const mean_disk_write_mb = mean_na_rm(values.map(d => d.disk_write_mb))
     const mean_duration_sec = mean_na_rm(values.map(d => d.duration_sec))
+
+    // Return the resources
     return ({
       method_id,
       error_pct_error,
