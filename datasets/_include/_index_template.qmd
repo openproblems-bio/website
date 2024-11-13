@@ -122,7 +122,7 @@ metadata <- tribble(
   "Reference", "bi bi-file-earmark-text", paste0("@", uns$dataset_reference),
   "Size", "bi bi-cloud-download", file_size_str,
   "Created", "bi bi-calendar", uns$date_created,
-  "Dimensions", "bi bi-box", shape_str
+  "Dimensions", "bi bi-box", glue::glue("{shape[[1]]} cells × {shape[[2]]} genes")
 )
 metadata_lines <- paste0(
   "<i class=\"", metadata$icon, "\"></i> ", substitute_underscores(metadata$value), "  \n"
@@ -169,7 +169,8 @@ cat("#### Used in\n\n")
 if (nrow(related_tasks) == 0) {
   cat("No related benchmarks found.\n")
 } else {
-  links <- paste0("* [", related_tasks$task_name, "](/results/", related_tasks$task_id, ")  ")
+  task_id <- gsub("task_", "", related_tasks$task_id)
+  links <- paste0("* [", related_tasks$task_name, "](/results/", task_id, ")  ")
   cat(paste(links, collapse = "\n"))
 }
 
