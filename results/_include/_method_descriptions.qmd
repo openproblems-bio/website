@@ -31,7 +31,6 @@ lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, me
     "bi bi-tag", paste0(code_version),
     )
   
-
   meta_list <- paste(
       paste0("<i class=\"", method_meta$icon, "\"></i> ", method_meta$value),
       collapse = " · "
