@@ -1,11 +1,26 @@
 ```{r}
 #| echo: false
-lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_description, paper_reference, ...) {
+lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_description, paper_reference, implementation_url, code_version, image, ...) {
   ref <- split_cite_fun(paper_reference)
   if (ref != "") ref <- paste0(" ", ref)
   summ <- (metric_summary %|% "Missing 'metric_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
+
+  metric_meta <- tribble(
+    ~icon, ~value,
+    "bi bi-file-earmark-code", paste0("[implementation](", implementation_url, ")"),
+    "bi bi-box-seam", paste0("[container](", image, ")"),
+    "bi bi-tag", paste0(code_version),
+    )
+  
+  meta_list <- paste(
+      paste0("<i class=\"", metric_meta$icon, "\"></i> ", metric_meta$value),
+      collapse = " · "
+    )
+
   strip_margin(glue::glue("
   |### {metric_name}
+  |
+  |{meta_list}
   |
   |{summ}{ref}.
   |
