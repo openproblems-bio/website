@@ -1,7 +1,7 @@
 ```{r method_description}
 #| echo: false
 # show each method just once
-lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, method_summary, method_description, paper_reference, code_url, code_version, ...) {
+lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, method_summary, method_description, paper_reference, code_url, code_version, documentation_url, implementation_url, image, ...) {
 
   links <- c()
   if (!is.na(code_url)) {
@@ -22,10 +22,27 @@ lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, me
       ""
     }
   summ <- (method_summary %|% "Missing 'method_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
+  method_meta <- tribble(
+    ~icon, ~value,
+    "bi bi-book", paste0("[docs](", documentation_url, ")"),
+    "bi bi-globe", paste0("[source](", code_url, ")"),
+    "bi bi-file-earmark-code", paste0("[implementation](", implementation_url, ")"),
+    "bi bi-box-seam", paste0("[container](", image, ")"),
+    "bi bi-tag", paste0(code_version),
+    )
+  
+
+  meta_list <- paste(
+      paste0("<i class=\"", method_meta$icon, "\"></i> ", method_meta$value),
+      collapse = " · "
+    )
+
   strip_margin(glue::glue("
     |### {method_name}
     |
-    |{summ}{ref}.{version_label}{links_label}
+    |{meta_list}
+    |
+    |{summ}{ref}
     |
     |{method_description %|% ''}
     |"
