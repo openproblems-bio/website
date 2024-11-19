@@ -1,8 +1,40 @@
-```{r}
+```{r metric_descriptions}
 #| echo: false
-lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_description, paper_reference, implementation_url, code_version, image, ...) {
-  ref <- split_cite_fun(paper_reference)
-  if (ref != "") ref <- paste0(" ", ref)
+lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_description, references_doi, references_bibtex, implementation_url, code_version, image, ...) {
+  bibs <- c()
+  if (!is.null(references_doi)) {
+    bibs <- get_bibtex_from_doi(references_doi)
+  }
+  if (!is.null(references_bibtex)) {
+    bibs <- c(bibs, references_bibtex)
+  }
+  
+  # Read existing entries from library.bib
+  existing_bibs <- if (file.exists("library.bib")) {
+    readLines("library.bib")
+  } else {
+    c()
+  }
+
+  # Filter out bibs that already exist in library.bib
+  new_bibs <- bibs[!bibs %in% existing_bibs]
+
+  # Write new entries to library.bib
+  if (length(new_bibs) > 0) {
+    writeLines(new_bibs, "library.bib")
+  }
+  ref <- sapply(bibs, function(bib) {
+    matches <- regmatches(bib, regexpr("@.*?\\{(.*?),", bib))
+    if (length(matches) > 0) {
+      sub("@.*?\\{(.*?),", "\\1", matches)
+    } else {
+      NA
+    }
+  })
+
+  ref <- na.omit(ref)
+  ref_string <- paste0("[@", ref, "]", collapse = " ")
+  # if (ref != "") ref <- paste0(" ", ref)
   summ <- (metric_summary %|% "Missing 'metric_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
 
   metric_meta <- tribble(
@@ -22,7 +54,7 @@ lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_desc
   |
   |{meta_list}
   |
-  |{summ}{ref}.
+  |{summ}{ref_string}.
   |
   |{metric_description %|% ''}
   |"))
