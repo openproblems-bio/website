@@ -72,6 +72,8 @@ get_bibtex_from_doi <- function(dois) {
       rawToChar(res$content)
     }
   })
+
+  return(bibs)
 }
 
 
