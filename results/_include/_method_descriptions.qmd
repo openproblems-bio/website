@@ -1,7 +1,21 @@
 ```{r method_description}
 #| echo: false
 # show each method just once
-lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, method_summary, method_description, paper_reference, code_url, code_version, documentation_url, implementation_url, image, ...) {
+lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, method_summary, method_description, references_doi, references_bibtex, code_url, code_version, documentation_url, implementation_url, image, ...) {
+
+  bibs <- c()
+  if (!is.null(references_doi)) {
+    bibs <- get_bibtex_from_doi(references_doi)
+  }
+  if (!is.null(references_bibtex)) {
+    bibs <- c(bibs, references_bibtex)
+  }
+
+   # Write new entries to library.bib
+  write_library(bibs)
+
+  # Get bibtex references
+  ref <- get_bibtex_entries(bibs)
 
   links <- c()
   if (!is.na(code_url)) {
@@ -13,8 +27,8 @@ lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, me
     } else {
       ""
     }
-  ref <- split_cite_fun(paper_reference)
-  if (ref != "") ref <- paste0(" ", ref)
+  # ref <- split_cite_fun(paper_reference)
+  # if (ref != "") ref <- paste0(" ", ref)
   links_label <-
     if (length(links) > 0) {
       glue::glue(" Links: {paste(links, collapse = ', ')}.")
@@ -41,7 +55,7 @@ lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, me
     |
     |{meta_list}
     |
-    |{summ}{ref}
+    |{summ} {ref}
     |
     |{method_description %|% ''}
     |"
