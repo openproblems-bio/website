@@ -9,32 +9,12 @@ lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_desc
     bibs <- c(bibs, references_bibtex)
   }
   
-  # Read existing entries from library.bib
-  existing_bibs <- if (file.exists("library.bib")) {
-    readLines("library.bib")
-  } else {
-    c()
-  }
-
-  # Filter out bibs that already exist in library.bib
-  new_bibs <- bibs[!bibs %in% existing_bibs]
-
   # Write new entries to library.bib
-  if (length(new_bibs) > 0) {
-    writeLines(new_bibs, "library.bib")
-  }
-  ref <- sapply(bibs, function(bib) {
-    matches <- regmatches(bib, regexpr("@.*?\\{(.*?),", bib))
-    if (length(matches) > 0) {
-      sub("@.*?\\{(.*?),", "\\1", matches)
-    } else {
-      NA
-    }
-  })
+  write_library(bibs)
 
-  ref <- na.omit(ref)
-  ref_string <- paste0("[@", ref, "]", collapse = " ")
-  # if (ref != "") ref <- paste0(" ", ref)
+  # Get bibtex references
+  ref <- get_bibtex_entries(bibs)
+
   summ <- (metric_summary %|% "Missing 'metric_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
 
   metric_meta <- tribble(
@@ -54,7 +34,7 @@ lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_desc
   |
   |{meta_list}
   |
-  |{summ}{ref_string}.
+  |{summ} {ref}.
   |
   |{metric_description %|% ''}
   |"))
