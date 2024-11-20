@@ -1,28 +1,35 @@
 ```{r method_description}
 #| echo: false
 # show each method just once
-lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, method_summary, method_description, references_doi, references_bibtex, code_url, code_version, documentation_url, implementation_url, image, ...) {
-
-  bibs <- c()
-  if (!is.null(references_doi)) {
-    bibs <- get_bibtex_from_doi(references_doi)
-  }
-  if (!is.null(references_bibtex)) {
-    bibs <- c(bibs, references_bibtex)
-  }
-
-   # Write new entries to library.bib
+lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, method_summary, method_description, references_doi, references_bibtex, code_url, code_version,  implementation_url, image, ...) {
+  rest <- list(...)
+  documentation_url <- pluck(rest, "documentation_url", .default = NULL)
+  code_version <- pluck(rest, "code_version", .default = NULL)
+  if ("paper_reference" %in% names(rest)) {
+    ref <- split_cite_fun(rest$paper_reference)
+    if (ref != "") ref <- paste0(" ", ref)
+  } else {
+    bibs <- c()
+    if (!is.null(references_doi)) {
+      bibs <- get_bibtex_from_doi(references_doi)
+    }
+    if (!is.null(references_bibtex)) {
+      bibs <- c(bibs, references_bibtex)
+    }
+    # Write new entries to library.bib
   write_library(bibs)
 
   # Get bibtex references
   ref <- get_bibtex_entries(bibs)
+}
+  
 
   links <- c()
   if (!is.na(code_url)) {
     links <- c(links, glue::glue(" [Docs]({code_url})"))
   }
   version_label <- 
-    if (!is.na(code_version) && code_version != "missing-version") {
+    if (!is.na(code_version) || !is.null(code_version) && code_version != "missing-version") {
       glue::glue(" Software version {code_version}.")
     } else {
       ""
@@ -36,14 +43,22 @@ lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, me
       ""
     }
   summ <- (method_summary %|% "Missing 'method_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
+    # Create a list of metadata items
+  metadata_items <- list(
+    list(icon = "bi bi-book", value = if (!is.null(documentation_url)) paste0("[docs](", documentation_url, ")") else NULL),
+    list(icon = "bi bi-globe", value = if (!is.null(code_url)) paste0("[source](", code_url, ")") else NULL),
+    list(icon = "bi bi-file-earmark-code", value = if (!is.null(implementation_url)) paste0("[implementation](", implementation_url, ")") else NULL),
+    list(icon = "bi bi-box-seam", value = if (!is.null(image)) paste0("[container](", image, ")") else NULL),
+    list(icon = "bi bi-tag", value = if (!is.null(code_version)) code_version else NULL)
+  )
+
+  # Filter out items where the value is NULL
+  filtered_metadata_items <- compact(metadata_items)
+
   method_meta <- tribble(
     ~icon, ~value,
-    "bi bi-book", paste0("[docs](", documentation_url, ")"),
-    "bi bi-globe", paste0("[source](", code_url, ")"),
-    "bi bi-file-earmark-code", paste0("[implementation](", implementation_url, ")"),
-    "bi bi-box-seam", paste0("[container](", image, ")"),
-    "bi bi-tag", paste0(code_version),
-    )
+        !!!purrr::map(filtered_metadata_items, ~ c(.x$icon, .x$value)) %>% unlist() %>% matrix(ncol = 2, byrow = TRUE)
+  )
   
   meta_list <- paste(
       paste0("<i class=\"", method_meta$icon, "\"></i> ", method_meta$value),
