@@ -51,7 +51,7 @@ lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, me
     |
     |{meta_list}
     |
-    |{summ}{ref}
+    |{summ} {ref}
     |
     |{method_description %|% ''}
     |"
