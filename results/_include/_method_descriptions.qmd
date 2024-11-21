@@ -1,5 +1,5 @@
 ```{r method_description}
-#| echo: false
+#| echo: true
 # show each method just once
 lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, method_summary, method_description, code_url, implementation_url, ...) {
   rest <- list(...)
