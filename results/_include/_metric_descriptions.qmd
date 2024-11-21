@@ -1,26 +1,33 @@
 ```{r metric_descriptions}
 #| echo: false
-lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_description, references_doi, references_bibtex, implementation_url, code_version, ...) {
+lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_description, implementation_url, code_version, ...) {
   rest <- list(...)
   image <- pluck(rest, "image", .default = NULL)
   code_version <- pluck(rest, "code_version", .default = NULL)
+  references_doi <- pluck(rest, "references_doi", .default = NULL)
+  references_bibtex <- pluck(rest, "references_bibtex", .default = NULL)
   if ("paper_reference" %in% names(rest)) {
     ref <- split_cite_fun(rest$paper_reference)
-    if (ref != "") ref <- paste0(" ", ref)
   } else {
     bibs <- c()
-    if (!is.null(references_doi)) {
+    if (!is.null(references_doi) && !is.na(references_doi)) {
       bibs <- get_bibtex_from_doi(references_doi)
     }
-    if (!is.null(references_bibtex)) {
+    if (!is.null(references_bibtex) && !is.na(references_bibtex)) {
       bibs <- c(bibs, references_bibtex)
     }
     # Write new entries to library.bib
   write_library(bibs)
 
   # Get bibtex references
-  ref <- get_bibtex_entries(bibs)
-}
+    if (!is.null(bibs)) {
+      ref <- get_bibtex_entries(bibs)
+    } else {
+      ref <- ""
+    }
+  }
+
+  if (ref != "") ref <- paste0(" ", ref)
 
   summ <- (metric_summary %|% "Missing 'metric_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
 
@@ -41,7 +48,7 @@ lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_desc
   |
   |{meta_list}
   |
-  |{summ} {ref}.
+  |{summ}{ref}.
   |
   |{metric_description %|% ''}
   |"))
