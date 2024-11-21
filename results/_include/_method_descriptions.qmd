@@ -47,10 +47,10 @@ lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, me
 
   method_meta <- tribble(
     ~icon, ~value,
-    "bi bi-book", if (!is.null(documentation_url)) paste0("[docs](", documentation_url, ")") else NULL,
-    "bi bi-globe", if (!is.null(code_url)) paste0("[source](", code_url, ")") else NULL,
-    "bi bi-file-earmark-code", if (!is.null(implementation_url)) paste0("[implementation](", implementation_url, ")") else NULL,
-    "bi bi-box-seam", if (!is.null(image)) paste0("[container](", image, ")") else NULL,
+    "bi bi-book", if (!is.null(documentation_url)) paste0("[Documentation](", documentation_url, ")") else NULL,
+    "bi bi-globe", if (!is.null(code_url)) paste0("[Source](", code_url, ")") else NULL,
+    "bi bi-file-earmark-code", if (!is.null(implementation_url)) paste0("[Source Coude](", implementation_url, ")") else NULL,
+    "bi bi-box-seam", if (!is.null(image)) paste0("[Container](", image, ")") else NULL,
     "bi bi-tag", if (!is.null(code_version) && !is.na(code_version)) code_version else NULL,
     ) %>% filter(!sapply(value, is.null))
   
