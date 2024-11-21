@@ -1,5 +1,5 @@
 ```{r method_description}
-#| echo: false
+#| echo: true
 # show each method just once
 lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, method_summary, method_description, references_doi, references_bibtex, code_url, implementation_url, image, ...) {
   rest <- list(...)
@@ -43,22 +43,15 @@ lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, me
       ""
     }
   summ <- (method_summary %|% "Missing 'method_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
-    # Create a list of metadata items
-  metadata_items <- list(
-    list(icon = "bi bi-book", value = if (!is.null(documentation_url)) paste0("[docs](", documentation_url, ")") else NULL),
-    list(icon = "bi bi-globe", value = if (!is.null(code_url)) paste0("[source](", code_url, ")") else NULL),
-    list(icon = "bi bi-file-earmark-code", value = if (!is.null(implementation_url)) paste0("[implementation](", implementation_url, ")") else NULL),
-    list(icon = "bi bi-box-seam", value = if (!is.null(image)) paste0("[container](", image, ")") else NULL),
-    list(icon = "bi bi-tag", value = if (!is.null(code_version)) code_version else NULL)
-  )
-
-  # Filter out items where the value is NULL
-  filtered_metadata_items <- purrr::keep(metadata_items, ~ !is.null(.x$value))
 
   method_meta <- tribble(
     ~icon, ~value,
-        !!!purrr::map(filtered_metadata_items, ~ c(.x$icon, .x$value)) %>% unlist() %>% matrix(ncol = 2, byrow = TRUE)
-  )
+    "bi bi-book", if (!is.null(documentation_url)) paste0("[docs](", documentation_url, ")") else NULL,
+    "bi bi-globe", if (!is.null(code_url)) paste0("[source](", code_url, ")") else NULL,
+    "bi bi-file-earmark-code", if (!is.null(implementation_url)) paste0("[implementation](", implementation_url, ")") else NULL,
+    "bi bi-box-seam", if (!is.null(image)) paste0("[container](", image, ")") else NULL,
+    "bi bi-tag", if (!is.null(code_version) && !is.na(code_version)) code_version else NULL,
+    ) %>% filter(!sapply(value, is.null))
   
   meta_list <- paste(
       paste0("<i class=\"", method_meta$icon, "\"></i> ", method_meta$value),
