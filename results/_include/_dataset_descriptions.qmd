@@ -27,12 +27,22 @@ lines <- pmap_chr(dataset_info, function(dataset_id, dataset_name, dataset_summa
     NULL
   }
 
+  # Make file_size human readable
+  if (!is.null(file_size)) {
+    file_size_str <- format(
+    structure(file_size, class = "object_size"),
+    units = "auto",
+    standard = "IEC",
+    digits = 2
+    )
+  }
+
   dataset_meta <- tribble(
     ~icon, ~value,
-    "bi bi-calendar", if(!is.null(date_created)) paste0(date_created) else NULL,
-    "bi bi-file-earmark-text", if(!is.null(file_size)) paste0(file_size, "bytes") else NULL,
-    "bi bi-box-arrow-up-right", if(!is.null(data_url)) paste0("[Data source](", data_url, ")") else NULL,
     "bi bi-link-45deg", if(!is.null(dataset_link)) paste0("[Source dataset](", dataset_link, ")") else NULL,
+    "bi bi-box-arrow-up-right", if(!is.null(data_url)) paste0("[Data source](", data_url, ")") else NULL,
+    "bi bi-calendar", if(!is.null(date_created)) paste0(date_created) else NULL,
+    "bi bi-file-earmark-text", if(!is.null(file_size)) file_size_str else NULL,
     ) %>% filter(!sapply(value, is.null))
   
   meta_list <- paste(
