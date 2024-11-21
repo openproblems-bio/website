@@ -31,6 +31,16 @@ lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_desc
 
   summ <- (metric_summary %|% "Missing 'metric_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
 
+  # Create a list of metadata items
+  metadata_items <- list(
+    list(icon = "bi bi-file-earmark-code", value = if (!is.null(implementation_url)) paste0("[implementation](", implementation_url, ")") else NULL),
+    list(icon = "bi bi-box-seam", value = if (!is.null(image)) paste0("[container](", image, ")") else NULL),
+    list(icon = "bi bi-tag", value = if (!is.null(code_version)) code_version else NULL)
+  )
+
+  # Filter out items where the value is NULL
+  filtered_metadata_items <- purrr::keep(metadata_items, ~ !is.null(.x$value))
+
   metric_meta <- tribble(
     ~icon, ~value,
     "bi bi-file-earmark-code", if (!is.null(implementation_url)) paste0("[Source code](", implementation_url, ")") else NULL,
