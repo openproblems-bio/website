@@ -1,8 +1,9 @@
 ```{r method_description}
 #| echo: false
 # show each method just once
-lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, method_summary, method_description, references_doi, references_bibtex, code_url, implementation_url, image, ...) {
+lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, method_summary, method_description, references_doi, references_bibtex, code_url, implementation_url, ...) {
   rest <- list(...)
+  image <- pluck(rest, "image", .default = NULL)
   documentation_url <- pluck(rest, "documentation_url", .default = NULL)
   code_version <- pluck(rest, "code_version", .default = NULL)
   if ("paper_reference" %in% names(rest)) {

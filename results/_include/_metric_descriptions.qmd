@@ -1,7 +1,8 @@
 ```{r metric_descriptions}
 #| echo: false
-lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_description, references_doi, references_bibtex, implementation_url, code_version, image, ...) {
+lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_description, references_doi, references_bibtex, implementation_url, code_version, ...) {
   rest <- list(...)
+  image <- pluck(rest, "image", .default = NULL)
   code_version <- pluck(rest, "code_version", .default = NULL)
   if ("paper_reference" %in% names(rest)) {
     ref <- split_cite_fun(rest$paper_reference)
