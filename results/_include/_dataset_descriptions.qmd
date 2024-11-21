@@ -1,10 +1,15 @@
 ```{r dataset_description}
 #| echo: false
 lines <- pmap_chr(dataset_info, function(dataset_name, dataset_summary, dataset_description, data_reference, ...) {
-  bibs <- convert_to_bibtex(data_reference)
-  # Write new entries to library.bib
-  write_library(bibs)
-  ref <- get_bibtex_entries(bibs)
+  if (grep("^[a-zA-Z0-9]+[0-9]{4}[a-z]+$",data_reference) && !grepl("^@",data_reference)) {
+    ref <- split_cite_fun(data_reference)
+  } else {
+    bibs <- convert_to_bibtex(data_reference)
+    # Write new entries to library.bib
+    write_library(bibs)
+    ref <- get_bibtex_entries(bibs)
+  }
+
   rest <- list(...)
   source_dataset_id <- if ("source_dataset_id" %in% names(rest)) rest$source_dataset_id else NULL
   dataset_link <- if (!is.null(source_dataset_id) && dir.exists(paste0("../../datasets/", source_dataset_id))) {
