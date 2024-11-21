@@ -1,7 +1,7 @@
 ```{r method_description}
 #| echo: false
 # show each method just once
-lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, method_summary, method_description, references_doi, references_bibtex, code_url, code_version,  implementation_url, image, ...) {
+lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, method_summary, method_description, references_doi, references_bibtex, code_url, implementation_url, image, ...) {
   rest <- list(...)
   documentation_url <- pluck(rest, "documentation_url", .default = NULL)
   code_version <- pluck(rest, "code_version", .default = NULL)
@@ -29,7 +29,7 @@ lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, me
     links <- c(links, glue::glue(" [Docs]({code_url})"))
   }
   version_label <- 
-    if (!is.na(code_version) || !is.null(code_version) && code_version != "missing-version") {
+    if (!is.na(code_version) && code_version != "missing-version") {
       glue::glue(" Software version {code_version}.")
     } else {
       ""
@@ -53,7 +53,7 @@ lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, me
   )
 
   # Filter out items where the value is NULL
-  filtered_metadata_items <- compact(metadata_items)
+  filtered_metadata_items <- purrr::keep(metadata_items, ~ !is.null(.x$value))
 
   method_meta <- tribble(
     ~icon, ~value,

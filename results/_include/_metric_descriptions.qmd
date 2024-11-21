@@ -2,6 +2,7 @@
 #| echo: false
 lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_description, references_doi, references_bibtex, implementation_url, code_version, image, ...) {
   rest <- list(...)
+  code_version <- pluck(rest, "code_version", .default = NULL)
   if ("paper_reference" %in% names(rest)) {
     ref <- split_cite_fun(rest$paper_reference)
     if (ref != "") ref <- paste0(" ", ref)
@@ -22,13 +23,21 @@ lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_desc
 
   summ <- (metric_summary %|% "Missing 'metric_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
 
+  # Create a list of metadata items
+  metadata_items <- list(
+    list(icon = "bi bi-file-earmark-code", value = if (!is.null(implementation_url)) paste0("[implementation](", implementation_url, ")") else NULL),
+    list(icon = "bi bi-box-seam", value = if (!is.null(image)) paste0("[container](", image, ")") else NULL),
+    list(icon = "bi bi-tag", value = if (!is.null(code_version)) code_version else NULL)
+  )
+
+  # Filter out items where the value is NULL
+  filtered_metadata_items <- purrr::keep(metadata_items, ~ !is.null(.x$value))
+
   metric_meta <- tribble(
     ~icon, ~value,
-    "bi bi-file-earmark-code", paste0("[implementation](", implementation_url, ")"),
-    "bi bi-box-seam", paste0("[container](", image, ")"),
-    "bi bi-tag", paste0(code_version),
-    )
-  
+        !!!purrr::map(filtered_metadata_items, ~ c(.x$icon, .x$value)) %>% unlist() %>% matrix(ncol = 2, byrow = TRUE)
+  )
+
   meta_list <- paste(
       paste0("<i class=\"", metric_meta$icon, "\"></i> ", metric_meta$value),
       collapse = " · "
