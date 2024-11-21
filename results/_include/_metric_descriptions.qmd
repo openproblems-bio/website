@@ -26,8 +26,8 @@ lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_desc
 
   metric_meta <- tribble(
     ~icon, ~value,
-    "bi bi-file-earmark-code", if (!is.null(implementation_url)) paste0("[implementation](", implementation_url, ")") else NULL,
-    "bi bi-box-seam", if (!is.null(image)) paste0("[container](", image, ")") else NULL,
+    "bi bi-file-earmark-code", if (!is.null(implementation_url)) paste0("[Source code](", implementation_url, ")") else NULL,
+    "bi bi-box-seam", if (!is.null(image)) paste0("[Container](", image, ")") else NULL,
     "bi bi-tag", if (!is.null(code_version) && !is.na(code_version)) code_version else NULL,
     ) %>% filter(!sapply(value, is.null))
 

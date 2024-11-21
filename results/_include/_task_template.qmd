@@ -25,8 +25,8 @@ cat("#### Info\n\n")
 
 details <- tribble(
   ~icon, ~value,
-  "bi bi-github", paste0("[repo](",task_info$repo,")"),
-  "octicon--issue-opened-17", paste0("[issues](",task_info$issue_tracker,")"),
+  "bi bi-github", paste0("[Repository](",task_info$repo,")"),
+  "octicon--issue-opened-17", paste0("[Issues](",task_info$issue_tracker,")"),
   "bi bi-tag", paste0(task_info$version),
   "fa-solid fa-scale-balanced", paste0(task_info$license)
   )
