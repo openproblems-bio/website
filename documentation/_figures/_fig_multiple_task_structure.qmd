@@ -1,0 +1,42 @@
+```{mermaid}
+%%| label: fig-task-structure
+%%| fig-cap: "The structure of an OpenProblems task. **Legend**: Grey rectangles are HDF5-backed AnnData (`.h5ad`) files. Purple rhomboids are Viash components."
+%%| cap-location: margin
+graph LR
+  loader[/Dataset<br/>loader/]:::component
+  dataset[Dataset]:::anndata
+  loader --> dataset
+
+  processor0[/Processor/]:::component
+  processed0[Processed<br/>data]:::anndata
+  method0[/Method/]:::component
+  output0[Output]:::anndata
+  metric0[/Metric/]:::component
+  score0[Score]:::anndata
+  dataset --- processor0 --> processed0 --- method0 --> output0 --- metric0 --> score0
+
+  processor1[/Processor/]:::component
+  processed1[Processed<br/>data]:::anndata
+  method1[/Method/]:::component
+  output1[Output]:::anndata
+  metric1[/Metric/]:::component
+  score1[Score]:::anndata
+  dataset --- processor1 --> processed1 --- method1 --> output1 --- metric1 --> score1
+
+  processor2[/Processor/]:::component
+  processed2[Processed<br/>data]:::anndata
+  method2[/Method/]:::component
+  output2[Output]:::anndata
+  metric2[/Metric/]:::component
+  score2[Score]:::anndata
+  dataset --- processor2 --> processed2 --- method2 --> output2 --- metric2 --> score2
+
+  processor3[/Processor/]:::component
+  processed3[Processed<br/>data]:::anndata
+  method3[/Method/]:::component
+  output3[Output]:::anndata
+  metric3[/Metric/]:::component
+  score3[Score]:::anndata
+  dataset --- processor3 --> processed3 --- method3 --> output3 --- metric3 --> score3
+
+```
