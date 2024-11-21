@@ -23,20 +23,12 @@ lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_desc
 
   summ <- (metric_summary %|% "Missing 'metric_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
 
-  # Create a list of metadata items
-  metadata_items <- list(
-    list(icon = "bi bi-file-earmark-code", value = if (!is.null(implementation_url)) paste0("[implementation](", implementation_url, ")") else NULL),
-    list(icon = "bi bi-box-seam", value = if (!is.null(image)) paste0("[container](", image, ")") else NULL),
-    list(icon = "bi bi-tag", value = if (!is.null(code_version)) code_version else NULL)
-  )
-
-  # Filter out items where the value is NULL
-  filtered_metadata_items <- purrr::keep(metadata_items, ~ !is.null(.x$value))
-
   metric_meta <- tribble(
     ~icon, ~value,
-        !!!purrr::map(filtered_metadata_items, ~ c(.x$icon, .x$value)) %>% unlist() %>% matrix(ncol = 2, byrow = TRUE)
-  )
+    "bi bi-file-earmark-code", if (!is.null(implementation_url)) paste0("[implementation](", implementation_url, ")") else NULL,
+    "bi bi-box-seam", if (!is.null(image)) paste0("[container](", image, ")") else NULL,
+    "bi bi-tag", if (!is.null(code_version) && !is.na(code_version)) code_version else NULL,
+    ) %>% filter(!sapply(value, is.null))
 
   meta_list <- paste(
       paste0("<i class=\"", metric_meta$icon, "\"></i> ", metric_meta$value),
