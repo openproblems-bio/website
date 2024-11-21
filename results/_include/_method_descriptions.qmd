@@ -1,30 +1,35 @@
 ```{r method_description}
 #| echo: false
 # show each method just once
-lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, method_summary, method_description, references_doi, references_bibtex, code_url, implementation_url, ...) {
+lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, method_summary, method_description, code_url, implementation_url, ...) {
   rest <- list(...)
   image <- pluck(rest, "image", .default = NULL)
   documentation_url <- pluck(rest, "documentation_url", .default = NULL)
   code_version <- pluck(rest, "code_version", .default = NULL)
+  references_doi <- pluck(rest, "references_doi", .default = NULL)
+  references_bibtex <- pluck(rest, "references_bibtex", .default = NULL)
   if ("paper_reference" %in% names(rest)) {
     ref <- split_cite_fun(rest$paper_reference)
-    if (ref != "") ref <- paste0(" ", ref)
   } else {
     bibs <- c()
-    if (!is.null(references_doi)) {
+    if (!is.null(references_doi) && !is.na(references_doi)) {
       bibs <- get_bibtex_from_doi(references_doi)
     }
-    if (!is.null(references_bibtex)) {
+    if (!is.null(references_bibtex) && !is.na(references_bibtex)) {
       bibs <- c(bibs, references_bibtex)
     }
     # Write new entries to library.bib
-  write_library(bibs)
+    write_library(bibs)
+    # Get bibtex references
+    if (!is.null(bibs)) {
+      ref <- get_bibtex_entries(bibs)
+    } else {
+      ref <- ""
+    }
+  }
 
-  # Get bibtex references
-  ref <- get_bibtex_entries(bibs)
-}
+  if (ref != "") ref <- paste0(" ", ref)
   
-
   links <- c()
   if (!is.na(code_url)) {
     links <- c(links, glue::glue(" [Docs]({code_url})"))
@@ -35,8 +40,7 @@ lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, me
     } else {
       ""
     }
-  # ref <- split_cite_fun(paper_reference)
-  # if (ref != "") ref <- paste0(" ", ref)
+
   links_label <-
     if (length(links) > 0) {
       glue::glue(" Links: {paste(links, collapse = ', ')}.")
@@ -64,7 +68,7 @@ lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, me
     |
     |{meta_list}
     |
-    |{summ} {ref}
+    |{summ}{ref}
     |
     |{method_description %|% ''}
     |"

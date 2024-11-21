@@ -27,7 +27,7 @@ lines <- pmap_chr(dataset_info, function(dataset_name, dataset_summary, dataset_
   strip_margin(glue::glue("
   |### {dataset_link}
   |
-  |{summ} {ref}.
+  |{summ}{ref}.
   |
   |{dataset_description %|% ''}
   |"))
