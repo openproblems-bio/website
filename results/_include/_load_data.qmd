@@ -98,7 +98,7 @@ get_bibtex_from_doi <- function(dois) {
     }
   })
 
-  return(bibs)
+  return(unlist(bibs))
 }
 
 write_library <- function(library) {
