@@ -3,10 +3,11 @@ title: Run tests
 description: Run unit tests for a component
 order: 70
 engine: knitr
+page-navigation: true
 ---
 
 
-{{< include ../../_include/_clone_repo.qmd >}}
+{{< include ../../_include/_clone_repo_task_template.qmd >}}
 {{< include /_include/_evaluate_code.qmd >}}
 {{< include ../../_include/_output_details.qmd >}}
 
@@ -20,13 +21,13 @@ Use `viash test` to run all of the component's unit tests.
 ## Example
 
 ```bash
-viash test src/tasks/label_projection/methods/knn/config.vsh.yaml
+viash test src/methods/logistic_regression/config.vsh.yaml
 ```
 <details>
   <summary>Output</summary>
 ```{bash}
 #| echo: false
-viash test src/tasks/label_projection/methods/knn/config.vsh.yaml
+viash test src/methods/logistic_regression/config.vsh.yaml
 ```
 </details>
 
@@ -35,30 +36,35 @@ viash test src/tasks/label_projection/methods/knn/config.vsh.yaml
 Use `viash ns test` to unit test all of the components of a given task.
 
 ```bash
-viash ns test --query label_projection --parallel --platform docker
+viash ns test --parallel
 ```
 
 <details>
   <summary>Output</summary>
-                  namespace        functionality             platform            test_name exit_code duration               result
-    label_projection/methods  logistic_regression               docker                start                                        
-    label_projection/methods               scanvi               docker                start                                        
-    label_projection/methods                  knn               docker                start                                        
-    label_projection/methods                  mlp               docker                start                                        
-    label_projection/metrics             accuracy               docker                start                                        
-    label_projection/metrics                   f1               docker                start
-    label_projection/methods  logistic_regression               docker     build_executable         0        4              SUCCESS
-    label_projection/methods  logistic_regression               docker      generic_test.py         0        9              SUCCESS
-    label_projection/metrics                   f1               docker     build_executable         0        7              SUCCESS
-    label_projection/metrics                   f1               docker      format_check.py         0        8              SUCCESS
-    label_projection/metrics             accuracy               docker     build_executable         0        8              SUCCESS
-    label_projection/metrics             accuracy               docker      format_check.py         0        7              SUCCESS
-    ...
+
+              namespace                 name               runner               engine            test_name exit_code duration               result
+        control_methods          true_labels           executable               docker                start                                        
+        control_methods          true_labels           executable               docker     build_executable         0        1              SUCCESS
+        control_methods          true_labels           executable               docker run_and_check_output.py         0        3              SUCCESS
+        control_methods          true_labels           executable               docker      check_config.py         0        3              SUCCESS
+        data_processors      process_dataset           executable               docker                start                                        
+        data_processors      process_dataset           executable               docker     build_executable         0        1              SUCCESS
+        data_processors      process_dataset           executable               docker run_and_check_output.py         0        3              SUCCESS
+                methods  logistic_regression           executable               docker                start                                        
+                methods  logistic_regression           executable               docker     build_executable         0        1              SUCCESS
+                methods  logistic_regression           executable               docker run_and_check_output.py         0        3              SUCCESS
+                methods  logistic_regression           executable               docker      check_config.py         0        3              SUCCESS
+                metrics             accuracy           executable               docker                start                                        
+                metrics             accuracy           executable               docker     build_executable         0        1              SUCCESS
+                metrics             accuracy           executable               docker run_and_check_output.py         0        3              SUCCESS
+                metrics             accuracy           executable               docker      check_config.py         0        3              SUCCESS
+    All 11 configs built and tested successfully
+
 </details>
 
 ## Common errors
 
-Below is a listing of common errors and how to solve them. If you come across any other problems, please take a look at our [troubleshooting](../more_information/troubleshooting.qmd) page, or reach out via [GitHub issues](https://github.com/openproblems-bio/openproblems-v2/issues).
+Below is a listing of common errors and how to solve them. If you come across any other problems, please take a look at our [troubleshooting](../more_information/troubleshooting.qmd) page, or reach out via [GitHub issues](https://github.com/openproblems-bio/openproblems/issues).
 
 
 ### Assertion error

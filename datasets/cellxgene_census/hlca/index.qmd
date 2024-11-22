@@ -1,0 +1,19 @@
+---
+dataset-id: "cellxgene_census/hlca"
+title: "Human Lung Cell Atlas"
+subtitle: "An integrated cell atlas of the human lung in health and disease (core)"
+categories: ["cellxgene_census"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/cellxgene_census/hlca/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

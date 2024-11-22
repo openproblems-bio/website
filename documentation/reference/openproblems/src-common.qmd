@@ -1,0 +1,19 @@
+---
+title: Common components
+---
+
+This subdirectory contains helper components that help you create new components, unit test other components, or manage datasets.
+
+- **Create component** (`src/common/create_component`): This component helps you to create new method or metric components.
+
+- **Metadata collectors** (`src/common/metadata`): This folder contains scripts to collect and manage metadata information for the different components of the project.
+
+- **Component format checkers** (`src/common/check_component_format`): This folder contains scripts to check and validate the format of different components in the project.
+
+- **File format checkers** (`src/common/check_file_format`): This components validates whether the structure of an AnnData matches a given specification file.
+
+- **Test resource generation scripts** (`src/common/resources_test_scripts`): This folder contains scripts to generate test resources for various components and tasks.
+
+- **Sync test resources** (`src/common/sync_test_resources`): This component synchronizes test resources from S3 to the `test_resources/` directory.
+<!-- 
+- **Migration helpers** (`src/common/migration`): This folder contains components to speed up and track the code migration from the [OpenProblems v1](https://github.com/openproblems-bio/openproblems) codebase to the [OpenProblems v2](https://github.com/openproblems-bio/openproblems) codebase. -->
