@@ -132,36 +132,7 @@ get_bibtex_entries <- function(bibs) {
   return(ref_string)
 }
 
-write_library <- function(library) {
-  # Read existing entries from library.bib
-  existing_bibs <- if (file.exists("library.bib")) {
-    readLines("library.bib")
-  } else {
-    c()
-  }
 
-  # Filter out bibs that already exist in library.bib
-  new_bibs <- library[!library %in% existing_bibs]
-
-  # Write new entries to library.bib
-  if (length(new_bibs) > 0) {
-    writeLines(new_bibs, "library.bib")
-  }
-}
-
-get_bibtex_entries <- function(bibs) {
-  ref <-sapply(bibs, function(bib) {
-    matches <- regmatches(bib, regexpr("@.*?\\{(.*?),", bib))
-    if (length(matches) > 0) {
-      sub("@.*?\\{(.*?),", "\\1", matches)
-    } else {
-      NA
-    }
-  })
-  ref <- na.omit(ref)
-  ref_string <- paste0("[@", ref, "]", collapse = " ")
-  return(ref_string)
-}
 
 
 aggregate_scores <- function(scaled_score) {
