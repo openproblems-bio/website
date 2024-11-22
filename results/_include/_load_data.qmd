@@ -105,6 +105,7 @@ write_library <- function(library) {
   # Read existing entries from library.bib
   existing_bibs <- if (file.exists("library.bib")) {
     readLines("library.bib")
+    cat("file exists")
   } else {
     c()
   }
@@ -114,7 +115,7 @@ write_library <- function(library) {
 
   # Write new entries to library.bib
   if (length(new_bibs) > 0) {
-    writeLines(new_bibs, "library.bib")
+    write(new_bibs, "library.bib", append=TRUE)
   }
 }
 
