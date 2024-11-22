@@ -1,6 +1,7 @@
 [
   {
     "task_id": "metrics",
+    "component_name": "asw_batch",
     "metric_id": "asw_batch",
     "metric_name": "ASW batch",
     "metric_summary": "Modified average silhouette width (ASW) of batch",
@@ -8,13 +9,14 @@
     "paper_reference": {
       "doi": "10.1038/s41592-021-01336-8"
     },
-    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/68c4b96d64707f0c91d55bbca227964363891f55/src/metrics/asw_batch/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/6dc0f1de323435b219856e04203c26a1341898c5/src/metrics/asw_batch/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "68c4b96d64707f0c91d55bbca227964363891f55",
+    "commit_sha": "6dc0f1de323435b219856e04203c26a1341898c5",
     "maximize": true
   },
   {
     "task_id": "metrics",
+    "component_name": "asw_label",
     "metric_id": "asw_label",
     "metric_name": "ASW Label",
     "metric_summary": "Average silhouette of cell identity labels (cell types)",
@@ -22,13 +24,14 @@
     "paper_reference": {
       "doi": "10.1038/s41592-021-01336-8"
     },
-    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/68c4b96d64707f0c91d55bbca227964363891f55/src/metrics/asw_label/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/6dc0f1de323435b219856e04203c26a1341898c5/src/metrics/asw_label/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "68c4b96d64707f0c91d55bbca227964363891f55",
+    "commit_sha": "6dc0f1de323435b219856e04203c26a1341898c5",
     "maximize": true
   },
   {
     "task_id": "metrics",
+    "component_name": "cell_cycle_conservation",
     "metric_id": "cell_cycle_conservation",
     "metric_name": "Cell Cycle Conservation",
     "metric_summary": "Cell cycle conservation score based on principle component regression on cell cycle gene scores",
@@ -36,13 +39,14 @@
     "paper_reference": {
       "doi": "10.1038/s41592-021-01336-8"
     },
-    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/68c4b96d64707f0c91d55bbca227964363891f55/src/metrics/cell_cycle_conservation/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/6dc0f1de323435b219856e04203c26a1341898c5/src/metrics/cell_cycle_conservation/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "68c4b96d64707f0c91d55bbca227964363891f55",
+    "commit_sha": "6dc0f1de323435b219856e04203c26a1341898c5",
     "maximize": true
   },
   {
     "task_id": "metrics",
+    "component_name": "clustering_overlap",
     "metric_id": "ari",
     "metric_name": "ARI",
     "metric_summary": "Adjusted Rand Index compares clustering overlap, correcting for random labels and considering correct overlaps and disagreements.",
@@ -50,13 +54,14 @@
     "paper_reference": {
       "doi": ["10.1038/s41592-021-01336-8", "10.1007/bf01908075"]
     },
-    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/68c4b96d64707f0c91d55bbca227964363891f55/src/metrics/clustering_overlap/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/6dc0f1de323435b219856e04203c26a1341898c5/src/metrics/clustering_overlap/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "68c4b96d64707f0c91d55bbca227964363891f55",
+    "commit_sha": "6dc0f1de323435b219856e04203c26a1341898c5",
     "maximize": true
   },
   {
     "task_id": "metrics",
+    "component_name": "clustering_overlap",
     "metric_id": "nmi",
     "metric_name": "NMI",
     "metric_summary": "NMI compares overlap by scaling using mean entropy terms and optimizing Louvain clustering to obtain the best match between clusters and labels.",
@@ -64,13 +69,14 @@
     "paper_reference": {
       "doi": ["10.1145/2808797.2809344", "10.1038/s41592-021-01336-8"]
     },
-    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/68c4b96d64707f0c91d55bbca227964363891f55/src/metrics/clustering_overlap/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/6dc0f1de323435b219856e04203c26a1341898c5/src/metrics/clustering_overlap/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "68c4b96d64707f0c91d55bbca227964363891f55",
+    "commit_sha": "6dc0f1de323435b219856e04203c26a1341898c5",
     "maximize": true
   },
   {
     "task_id": "metrics",
+    "component_name": "graph_connectivity",
     "metric_id": "graph_connectivity",
     "metric_name": "Graph Connectivity",
     "metric_summary": "Connectivity of the subgraph per cell type label",
@@ -78,13 +84,14 @@
     "paper_reference": {
       "doi": "10.1038/s41592-021-01336-8"
     },
-    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/68c4b96d64707f0c91d55bbca227964363891f55/src/metrics/graph_connectivity/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/6dc0f1de323435b219856e04203c26a1341898c5/src/metrics/graph_connectivity/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "68c4b96d64707f0c91d55bbca227964363891f55",
+    "commit_sha": "6dc0f1de323435b219856e04203c26a1341898c5",
     "maximize": true
   },
   {
     "task_id": "metrics",
+    "component_name": "hvg_overlap",
     "metric_id": "hvg_overlap",
     "metric_name": "HVG overlap",
     "metric_summary": "Overlap of highly variable genes per batch before and after integration.",
@@ -92,13 +99,14 @@
     "paper_reference": {
       "doi": "10.1038/s41592-021-01336-8"
     },
-    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/68c4b96d64707f0c91d55bbca227964363891f55/src/metrics/hvg_overlap/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/6dc0f1de323435b219856e04203c26a1341898c5/src/metrics/hvg_overlap/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "68c4b96d64707f0c91d55bbca227964363891f55",
+    "commit_sha": "6dc0f1de323435b219856e04203c26a1341898c5",
     "maximize": true
   },
   {
     "task_id": "metrics",
+    "component_name": "isolated_label_asw",
     "metric_id": "isolated_label_asw",
     "metric_name": "Isolated label ASW",
     "metric_summary": "Evaluate how well isolated labels separate by average silhouette width",
@@ -106,13 +114,14 @@
     "paper_reference": {
       "doi": "10.1038/s41592-021-01336-8"
     },
-    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/68c4b96d64707f0c91d55bbca227964363891f55/src/metrics/isolated_label_asw/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/6dc0f1de323435b219856e04203c26a1341898c5/src/metrics/isolated_label_asw/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "68c4b96d64707f0c91d55bbca227964363891f55",
+    "commit_sha": "6dc0f1de323435b219856e04203c26a1341898c5",
     "maximize": true
   },
   {
     "task_id": "metrics",
+    "component_name": "isolated_label_f1",
     "metric_id": "isolated_label_f1",
     "metric_name": "Isolated label F1 score",
     "metric_summary": "Evaluate how well isolated labels coincide with clusters",
@@ -120,13 +129,14 @@
     "paper_reference": {
       "doi": "10.1038/s41592-021-01336-8"
     },
-    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/68c4b96d64707f0c91d55bbca227964363891f55/src/metrics/isolated_label_f1/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/6dc0f1de323435b219856e04203c26a1341898c5/src/metrics/isolated_label_f1/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "68c4b96d64707f0c91d55bbca227964363891f55",
+    "commit_sha": "6dc0f1de323435b219856e04203c26a1341898c5",
     "maximize": true
   },
   {
     "task_id": "metrics",
+    "component_name": "kbet",
     "metric_id": "kbet",
     "metric_name": "kBET",
     "metric_summary": "kBET algorithm to determine how well batches are mixed within a cell type",
@@ -134,13 +144,14 @@
     "paper_reference": {
       "doi": "10.1038/s41592-021-01336-8"
     },
-    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/68c4b96d64707f0c91d55bbca227964363891f55/src/metrics/kbet/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/6dc0f1de323435b219856e04203c26a1341898c5/src/metrics/kbet/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "68c4b96d64707f0c91d55bbca227964363891f55",
+    "commit_sha": "6dc0f1de323435b219856e04203c26a1341898c5",
     "maximize": true
   },
   {
     "task_id": "metrics",
+    "component_name": "lisi",
     "metric_id": "ilisi",
     "metric_name": "iLISI",
     "metric_summary": "Local inverse Simpson's Index",
@@ -148,13 +159,14 @@
     "paper_reference": {
       "doi": "10.1038/s41592-021-01336-8"
     },
-    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/68c4b96d64707f0c91d55bbca227964363891f55/src/metrics/lisi/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/6dc0f1de323435b219856e04203c26a1341898c5/src/metrics/lisi/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "68c4b96d64707f0c91d55bbca227964363891f55",
+    "commit_sha": "6dc0f1de323435b219856e04203c26a1341898c5",
     "maximize": true
   },
   {
     "task_id": "metrics",
+    "component_name": "lisi",
     "metric_id": "clisi",
     "metric_name": "cLISI",
     "metric_summary": "Local inverse Simpson's Index",
@@ -162,13 +174,14 @@
     "paper_reference": {
       "doi": "10.1038/s41592-021-01336-8"
     },
-    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/68c4b96d64707f0c91d55bbca227964363891f55/src/metrics/lisi/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/6dc0f1de323435b219856e04203c26a1341898c5/src/metrics/lisi/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "68c4b96d64707f0c91d55bbca227964363891f55",
+    "commit_sha": "6dc0f1de323435b219856e04203c26a1341898c5",
     "maximize": true
   },
   {
     "task_id": "metrics",
+    "component_name": "pcr",
     "metric_id": "pcr",
     "metric_name": "PCR",
     "metric_summary": "Compare explained variance by batch before and after integration",
@@ -176,9 +189,9 @@
     "paper_reference": {
       "doi": "10.1038/s41592-021-01336-8"
     },
-    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/68c4b96d64707f0c91d55bbca227964363891f55/src/metrics/pcr/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/task_batch_integration/blob/6dc0f1de323435b219856e04203c26a1341898c5/src/metrics/pcr/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "68c4b96d64707f0c91d55bbca227964363891f55",
+    "commit_sha": "6dc0f1de323435b219856e04203c26a1341898c5",
     "maximize": true
   }
 ]
