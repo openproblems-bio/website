@@ -17,9 +17,9 @@ lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_desc
       bibs <- c(bibs, references_bibtex)
     }
     # Write new entries to library.bib
-  write_library(bibs)
+    write_library(bibs)
 
-  # Get bibtex references
+    # Get bibtex references
     if (!is.null(bibs)) {
       ref <- get_bibtex_entries(bibs)
     } else {
