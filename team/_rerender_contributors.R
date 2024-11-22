@@ -1,10 +1,15 @@
 library(rlang)
 
 repositories <- c(
-    "openproblems-bio/openproblems",
-    # "openproblems-bio/task_dimensionality_reduction",
-    # "openproblems-bio/task_spatially_variable_genes",
-    "openproblems-bio/task_perturbation_prediction"
+    "openproblems-bio/task_denoising",
+    "openproblems-bio/task_dimensionality_reduction",
+    "openproblems-bio/task_spatially_variable_genes",
+    "openproblems-bio/task_perturbation_prediction",
+    "openproblems-bio/task_batch_integration",
+    "openproblems-bio/task_cell_cell_communication",
+    "openproblems-bio/task_label_projection",
+    "openproblems-bio/task_spatial_decomposition",
+    "openproblems-bio/task_predict_modality"
 )
 
 cache_repository <- function(repo) {
@@ -28,12 +33,12 @@ cache_repository <- function(repo) {
 
 find_task_info <- function(repo_dir) {
     # find all authors in the repository
-    task_info <- list.files(repo_dir, pattern = "task_info.yaml", full.names = TRUE, recursive = TRUE)
-    task_info <- task_info[grep("/api/task_info.yaml", task_info)]
+    # task_info <- list.files(repo_dir, pattern = "task_info.yaml", full.names = TRUE, recursive = TRUE)
+    # task_info <- task_info[grep("/api/task_info.yaml", task_info)]
 
-    if (length(task_info) > 0) {
-        return(task_info)
-    }
+    # if (length(task_info) > 0) {
+    #     return(task_info)
+    # }
 
     viash_yaml <- list.files(repo_dir, pattern = "_viash.yaml", full.names = TRUE, recursive = TRUE)
 
@@ -98,8 +103,8 @@ render_author <- function(author) {
     out <- list(
         title = author$name,
         image = out_image,
-        # role = paste(stringr::str_to_title(author$roles), collapse = ", "),
-        role = "Task Contributor",
+        role = paste(stringr::str_to_title(author$roles), collapse = ", "),
+        # role = "Task Contributor",
         about = list(
             template = "jolla",
             links = out_links
@@ -162,7 +167,7 @@ for (task_name in names(tasks)) {
         author <- task$authors[[author_id]]
         
         txt <- render_author(author)
-        file_path <- file.path("team", "task_contributors", paste0(author_id, "/index.qmd"))
+        file_path <- file.path("team", "task_contributors", task_name, paste0(author_id, "/index.qmd"))
 
         if (!dir.exists(dirname(file_path))) {
             dir.create(dirname(file_path), recursive = TRUE)
@@ -172,8 +177,8 @@ for (task_name in names(tasks)) {
     }
 }
 
-teams <- list.dirs("team", full.names = FALSE, recursive = FALSE)
-teams <- teams[!teams %in% c("core_members", "scientific_advisors")]
+teams <- list.dirs("team/task_contributors", full.names = FALSE, recursive = FALSE)
+teams <- teams[!teams %in% c("_old_data")]
 
 teams_headers <- paste0(
 "  - id: ", teams, "
@@ -183,7 +188,7 @@ teams_headers <- paste0(
     sort: ''"
 )
 teams_index <- paste0(
-"## ", stringr::str_to_title(gsub("_", " ", teams)), "
+"### ", stringr::str_to_title(gsub("_", " ", teams)), "
 
 :::{#", teams, "}
 :::
@@ -219,6 +224,8 @@ css: team.css
 
 :::{#scientific_advisors}
 :::
+
+## Task Contributors
 
 ", paste(teams_index, collapse = "\n"), "
 ")
