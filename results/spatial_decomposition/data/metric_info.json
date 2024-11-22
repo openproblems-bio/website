@@ -1,14 +1,16 @@
 [
   {
-    "task_id": "spatial_decomposition",
+    "task_id": "metrics",
     "metric_id": "r2",
     "metric_name": "R2",
     "metric_summary": "R2 represents the proportion of variance in the true proportions which is explained by the predicted proportions.",
     "metric_description": "R2, or the “coefficient of determination”, reports the fraction of the true proportion values' variance that can be explained by the predicted proportion values. The best score, and upper bound, is 1.0. There is no fixed lower bound for the metric. The uniform/non-weighted average across all cell types/states is used to summarise performance. By default, cases resulting in a score of NaN (perfect predictions) or -Inf (imperfect predictions) are replaced with 1.0 (perfect predictions) or 0.0 (imperfect predictions) respectively.\n",
-    "paper_reference": "miles2005rsquared",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/44694e82e86ee3d89737ae9474d54c5f0a29b6fc/src/tasks/spatial_decomposition/metrics/r2/config.vsh.yaml",
+    "paper_reference": {
+      "doi": "10.1002/0470013192.bsa526"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_decomposition/blob/9f32dec1f8fe366abd433021fe0d2e0cab492aac/src/metrics/r2/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "44694e82e86ee3d89737ae9474d54c5f0a29b6fc",
+    "commit_sha": "9f32dec1f8fe366abd433021fe0d2e0cab492aac",
     "maximize": true
   }
 ]

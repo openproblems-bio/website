@@ -1,6 +1,6 @@
 [
   {
-    "task_id": "spatial_decomposition",
+    "task_id": "control_methods",
     "method_id": "random_proportions",
     "method_name": "Random Proportions",
     "method_summary": "Negative control method that randomly assigns celltype proportions from a Dirichlet distribution.",
@@ -8,12 +8,12 @@
     "is_baseline": true,
     "paper_reference": null,
     "code_url": null,
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/44694e82e86ee3d89737ae9474d54c5f0a29b6fc/src/tasks/spatial_decomposition/control_methods/random_proportions/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_decomposition/blob/9f32dec1f8fe366abd433021fe0d2e0cab492aac/src/control_methods/random_proportions/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "44694e82e86ee3d89737ae9474d54c5f0a29b6fc"
+    "commit_sha": "9f32dec1f8fe366abd433021fe0d2e0cab492aac"
   },
   {
-    "task_id": "spatial_decomposition",
+    "task_id": "control_methods",
     "method_id": "true_proportions",
     "method_name": "True Proportions",
     "method_summary": "Positive control method that assigns celltype proportions from the ground truth.",
@@ -21,125 +21,125 @@
     "is_baseline": true,
     "paper_reference": null,
     "code_url": null,
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/44694e82e86ee3d89737ae9474d54c5f0a29b6fc/src/tasks/spatial_decomposition/control_methods/true_proportions/config.vsh.yaml",
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_decomposition/blob/9f32dec1f8fe366abd433021fe0d2e0cab492aac/src/control_methods/true_proportions/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "44694e82e86ee3d89737ae9474d54c5f0a29b6fc"
+    "commit_sha": "9f32dec1f8fe366abd433021fe0d2e0cab492aac"
   },
   {
-    "task_id": "spatial_decomposition",
+    "task_id": "methods",
     "method_id": "cell2location",
     "method_name": "Cell2Location",
     "method_summary": "Cell2location uses a Bayesian model to resolve cell types in spatial transcriptomic data and create comprehensive cellular maps of diverse tissues.",
     "method_description": "Cell2location is a decomposition method based on Negative Binomial regression that is able to account for batch effects in estimating the single-cell gene expression signature used for the spatial decomposition step. \nNote that when batch information is unavailable for this task, we can use either a hard-coded reference, or a negative-binomial learned reference without batch labels. The parameter alpha refers to the detection efficiency prior.\n",
     "is_baseline": false,
-    "paper_reference": "kleshchevnikov2022cell2location",
-    "code_url": "https://github.com/BayraktarLab/cell2location",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/44694e82e86ee3d89737ae9474d54c5f0a29b6fc/src/tasks/spatial_decomposition/methods/cell2location/config.vsh.yaml",
+    "paper_reference": null,
+    "code_url": null,
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_decomposition/blob/9f32dec1f8fe366abd433021fe0d2e0cab492aac/src/methods/cell2location/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "44694e82e86ee3d89737ae9474d54c5f0a29b6fc"
+    "commit_sha": "9f32dec1f8fe366abd433021fe0d2e0cab492aac"
   },
   {
-    "task_id": "spatial_decomposition",
+    "task_id": "methods",
     "method_id": "destvi",
     "method_name": "DestVI",
     "method_summary": "DestVI is a probabilistic method for multi-resolution analysis for spatial transcriptomics that explicitly models continuous variation within cell types",
     "method_description": "Deconvolution of Spatial Transcriptomics profiles using Variational Inference (DestVI) is a spatial decomposition method that leverages a conditional generative model of spatial transcriptomics down to the sub-cell-type variation level, which is then used to decompose the cell-type proportions determining the spatial organization of a tissue.\n",
     "is_baseline": false,
-    "paper_reference": "lopez2022destvi",
-    "code_url": "https://github.com/scverse/scvi-tools",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/44694e82e86ee3d89737ae9474d54c5f0a29b6fc/src/tasks/spatial_decomposition/methods/destvi/config.vsh.yaml",
+    "paper_reference": null,
+    "code_url": null,
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_decomposition/blob/9f32dec1f8fe366abd433021fe0d2e0cab492aac/src/methods/destvi/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "44694e82e86ee3d89737ae9474d54c5f0a29b6fc"
+    "commit_sha": "9f32dec1f8fe366abd433021fe0d2e0cab492aac"
   },
   {
-    "task_id": "spatial_decomposition",
+    "task_id": "methods",
     "method_id": "nmfreg",
     "method_name": "NMFreg",
     "method_summary": "NMFreg reconstructs gene expression as a weighted combination of cell type signatures defined by scRNA-seq.",
     "method_description": "Non-Negative Matrix Factorization regression (NMFreg) is a decomposition method that reconstructs expression of each spatial location as a weighted combination of cell-type signatures defined by scRNA-seq. It was originally developed for Slide-seq data. This is a re-implementation from https://github.com/tudaga/NMFreg_tutorial.\n",
     "is_baseline": false,
-    "paper_reference": "rodriques2019slide",
-    "code_url": "https://github.com/tudaga/NMFreg_tutorial/tree/master?tab=readme-ov-file",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/44694e82e86ee3d89737ae9474d54c5f0a29b6fc/src/tasks/spatial_decomposition/methods/nmfreg/config.vsh.yaml",
+    "paper_reference": null,
+    "code_url": null,
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_decomposition/blob/9f32dec1f8fe366abd433021fe0d2e0cab492aac/src/methods/nmfreg/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "44694e82e86ee3d89737ae9474d54c5f0a29b6fc"
+    "commit_sha": "9f32dec1f8fe366abd433021fe0d2e0cab492aac"
   },
   {
-    "task_id": "spatial_decomposition",
+    "task_id": "methods",
     "method_id": "nnls",
     "method_name": "NNLS",
     "method_summary": "NNLS is a decomposition method based on Non-Negative Least Square Regression.",
     "method_description": "NonNegative Least Squares (NNLS), is a convex optimization problem with convex constraints. It was used by the AutoGeneS method to infer cellular proporrtions by solvong a multi-objective optimization problem.\n",
     "is_baseline": false,
-    "paper_reference": "aliee2021autogenes",
-    "code_url": "https://github.com/scipy/scipy",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/44694e82e86ee3d89737ae9474d54c5f0a29b6fc/src/tasks/spatial_decomposition/methods/nnls/config.vsh.yaml",
+    "paper_reference": null,
+    "code_url": null,
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_decomposition/blob/9f32dec1f8fe366abd433021fe0d2e0cab492aac/src/methods/nnls/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "44694e82e86ee3d89737ae9474d54c5f0a29b6fc"
+    "commit_sha": "9f32dec1f8fe366abd433021fe0d2e0cab492aac"
   },
   {
-    "task_id": "spatial_decomposition",
+    "task_id": "methods",
     "method_id": "rctd",
     "method_name": "RCTD",
     "method_summary": "RCTD learns cell type profiles from scRNA-seq to decompose cell type mixtures while correcting for differences across sequencing technologies.",
     "method_description": "RCTD (Robust Cell Type Decomposition) is a decomposition method that uses signatures learnt from single-cell data to decompose spatial expression of tissues. It is able to use a platform effect normalization step, which normalizes the scRNA-seq cell type profiles to match the platform effects of the spatial transcriptomics dataset.\n",
     "is_baseline": false,
-    "paper_reference": "cable2021robust",
-    "code_url": "https://github.com/dmcable/spacexr",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/44694e82e86ee3d89737ae9474d54c5f0a29b6fc/src/tasks/spatial_decomposition/methods/rctd/config.vsh.yaml",
+    "paper_reference": null,
+    "code_url": null,
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_decomposition/blob/9f32dec1f8fe366abd433021fe0d2e0cab492aac/src/methods/rctd/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "44694e82e86ee3d89737ae9474d54c5f0a29b6fc"
+    "commit_sha": "9f32dec1f8fe366abd433021fe0d2e0cab492aac"
   },
   {
-    "task_id": "spatial_decomposition",
+    "task_id": "methods",
     "method_id": "seurat",
     "method_name": "Seurat",
     "method_summary": "Seurat method that is based on Canonical Correlation Analysis (CCA).",
     "method_description": "This method applies the 'anchor'-based integration workflow introduced in Seurat v3, that enables the probabilistic transfer of annotations from a reference to a query set. First, mutual nearest neighbors (anchors) are identified from the reference scRNA-seq and query spatial datasets. Then, annotations are transfered from the single cell reference data to the sptial data along with prediction scores for each spot.\n",
     "is_baseline": false,
-    "paper_reference": "stuart2019comprehensive",
-    "code_url": "https://github.com/satijalab/seurat",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/44694e82e86ee3d89737ae9474d54c5f0a29b6fc/src/tasks/spatial_decomposition/methods/seurat/config.vsh.yaml",
+    "paper_reference": null,
+    "code_url": null,
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_decomposition/blob/9f32dec1f8fe366abd433021fe0d2e0cab492aac/src/methods/seurat/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "44694e82e86ee3d89737ae9474d54c5f0a29b6fc"
+    "commit_sha": "9f32dec1f8fe366abd433021fe0d2e0cab492aac"
   },
   {
-    "task_id": "spatial_decomposition",
+    "task_id": "methods",
     "method_id": "stereoscope",
     "method_name": "Stereoscope",
     "method_summary": "Stereoscope is a decomposition method based on Negative Binomial regression.",
     "method_description": "Stereoscope is a decomposition method based on Negative Binomial regression. It is similar in scope and implementation to cell2location but less flexible to incorporate additional covariates such as batch effects and other type of experimental design annotations.\n",
     "is_baseline": false,
-    "paper_reference": "andersson2020single",
-    "code_url": "https://github.com/scverse/scvi-tools",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/44694e82e86ee3d89737ae9474d54c5f0a29b6fc/src/tasks/spatial_decomposition/methods/stereoscope/config.vsh.yaml",
+    "paper_reference": null,
+    "code_url": null,
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_decomposition/blob/9f32dec1f8fe366abd433021fe0d2e0cab492aac/src/methods/stereoscope/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "44694e82e86ee3d89737ae9474d54c5f0a29b6fc"
+    "commit_sha": "9f32dec1f8fe366abd433021fe0d2e0cab492aac"
   },
   {
-    "task_id": "spatial_decomposition",
+    "task_id": "methods",
     "method_id": "tangram",
     "method_name": "Tangram",
     "method_summary": "Tanagram maps single-cell gene expression data onto spatial gene expression data by fitting gene expression on shared genes",
     "method_description": "Tangram is a method to map gene expression signatures from scRNA-seq data to spatial data. It performs the cell type mapping by learning a similarity matrix between single-cell and spatial locations based on gene expression profiles.\n",
     "is_baseline": false,
-    "paper_reference": "biancalani2021deep",
-    "code_url": "https://github.com/broadinstitute/Tangram",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/44694e82e86ee3d89737ae9474d54c5f0a29b6fc/src/tasks/spatial_decomposition/methods/tangram/config.vsh.yaml",
+    "paper_reference": null,
+    "code_url": null,
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_decomposition/blob/9f32dec1f8fe366abd433021fe0d2e0cab492aac/src/methods/tangram/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "44694e82e86ee3d89737ae9474d54c5f0a29b6fc"
+    "commit_sha": "9f32dec1f8fe366abd433021fe0d2e0cab492aac"
   },
   {
-    "task_id": "spatial_decomposition",
+    "task_id": "methods",
     "method_id": "vanillanmf",
     "method_name": "NMF",
     "method_summary": "NMF reconstructs gene expression as a weighted combination of cell type signatures defined by scRNA-seq.",
     "method_description": "NMF is a decomposition method based on Non-negative Matrix Factorization (NMF) that reconstructs expression of each spatial location as a weighted combination of cell-type signatures defined by scRNA-seq. It is a simpler baseline than NMFreg as it only performs the NMF step based on mean expression signatures of cell types, returning the weights loading of the NMF as (normalized) cell type proportions, without the regression step.\n",
     "is_baseline": false,
-    "paper_reference": "cichocki2009fast",
-    "code_url": "https://github.com/scikit-learn/scikit-learn/blob/92c9b1866/sklearn/decomposition/",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems-v2/blob/44694e82e86ee3d89737ae9474d54c5f0a29b6fc/src/tasks/spatial_decomposition/methods/vanillanmf/config.vsh.yaml",
+    "paper_reference": null,
+    "code_url": null,
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_decomposition/blob/9f32dec1f8fe366abd433021fe0d2e0cab492aac/src/methods/vanillanmf/config.vsh.yaml",
     "code_version": null,
-    "commit_sha": "44694e82e86ee3d89737ae9474d54c5f0a29b6fc"
+    "commit_sha": "9f32dec1f8fe366abd433021fe0d2e0cab492aac"
   }
 ]
