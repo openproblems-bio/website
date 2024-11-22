@@ -57,8 +57,18 @@ render_author <- function(author) {
             email_clean <- tolower(stringr::str_trim(author$info$email))
             checksum <- digest::digest(email_clean, algo = "md5", serialize = FALSE)
             paste0("https://www.gravatar.com/avatar/", checksum)
-        } else {
+        } else if (file.exists("/images/avatar.svg")){
             "/images/avatar.svg"
+        } else {
+            # generate random avatar
+            name <- strsplit(author$name, " ")
+            url <- paste0("https://avatar.iran.liara.run/username?username=",name[[1]][[1]],"+",name[[1]][[2]])
+            output_dir <- file.path("tmp", gsub(" ", "_", author$name))
+            if (!dir.exists(output_dir)) {
+                dir.create(output_dir, recursive = TRUE)
+            }
+            download.file(url, file.path(output_dir, "avatar.png"), mode = "wb")
+            "avatar.png"
         }
 
     # process links
@@ -174,6 +184,11 @@ for (task_name in names(tasks)) {
         }
         
         writeLines(txt, file_path)
+
+        if (file.exists(file.path("tmp", gsub(" ", "_", author$name), "avatar.png"))) {
+            file.rename(file.path("tmp", gsub(" ", "_", author$name), "avatar.png"), file.path(dirname(file_path), "avatar.png"))
+        }
+
     }
 }
 
@@ -212,7 +227,10 @@ listing:
     template: members.ejs
     sort: ''
 ", paste(teams_headers, collapse = "\n"), "
-css: team.css
+css: 
+    - team.css
+    - ../_site/site_libs/quarto-contrib/fontawesome6-0.1.0/all.css
+    - ../_site/site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css
 ---
 
 ## Core members
