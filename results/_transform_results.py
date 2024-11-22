@@ -31,6 +31,15 @@ for dir in dirs:
     print(f"Processing directory: {dir}")
 
     data_path = dir.joinpath("data")
+
+    # Transform the method_info.json file
+    method_info_path = data_path.joinpath("method_info.json")
+    method_info = read_json_file(method_info_path)
+    for info in method_info:
+        info["code_url"] = info["code_url"] + "/tree/v1.0.0/openproblems/tasks"
+        info["implementation_url"] = info["implementation_url"].replace("main", "v1.0.0")
+        info["code_version"] = "v1.0.0"
+        info["image"] = "https://ghcr.io/openproblems-bio/" + info["image"]
     
     
     # Read the task_info.json file
