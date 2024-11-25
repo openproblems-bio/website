@@ -8,6 +8,9 @@ engine: knitr
 Below is a list of common Viash commands to develop and test components. 
 Check out this [Cheat sheet](/documentation/more_information/cheat_sheets.qmd) to get a printable version of the same information. Please visit the [Viash guide](https://viash.io/guide) or [reference documentation](https://viash.io/reference/) for more in-depth information.
 
+:::{.callout-important}
+Most of the common commands are added to a script in the `scripts` directory. You can run these scripts from the root directory of the project. Some scripts might need some additional arguments, which you can find in the script itself.
+:::
 
 ## Download test data
 
@@ -15,7 +18,7 @@ This command will download the all of the test resources from the S3 bucket and 
 
 :::{.small}
 ```bash
-viash run src/common/sync_test_resources/config.vsh.yaml
+scripts/create_datasets/test_resources.sh
 ```
 :::
 
@@ -25,17 +28,20 @@ viash run src/common/sync_test_resources/config.vsh.yaml
 Build all components in a namespace.
 
 :::{.small}
-```bash
-viash ns build -q label_projection --setup cachedbuild --parallel
+```{.bash filename="scripts/project/build_all_components.sh"}
+viash ns build --parallel
 ```
 :::
 
-Arguments:
+## Build all docker containers
 
-* `--query` or `-q` specifies the namespace to build (optional).
-* `--setup` specifies the Docker build setup to use (optional). Options are `cachedbuild` (`cb`), `build` (`b`), or omit the argument to skip the Docker build step.
-* `--parallel` or `-l` will build all components in parallel (optional).
+Build all docker containers.
 
+:::{.small}
+```{.bash filename="scripts/project/build_all_docker_containers.sh"}
+viash ns build --parallel --setup cachedbuild
+```
+:::
 
 ## Test a component
 
@@ -50,15 +56,10 @@ viash test path/to/config.vsh.yaml
 Run all tests in a task:
 
 :::{.small}
-```bash
-viash ns test --query label_projection --parallel
+```{.bash filename="scripts/project/test_all_components.sh"}
+viash ns test --parallel
 ```
 :::
-
-Arguments:
-
-* `--query` or `-q` specifies the namespace to test (optional).
-* `--parallel` or `-l` will run all tests in parallel (optional).
 
 ## Edit script
 
@@ -91,11 +92,10 @@ viash run path/to/config.vsh.yaml -- --input dataset.h5ad --output output.h5ad
 
 ## View Dockerfile
 
-
 Use this command to view the component's Dockerfile.
 
 :::{.small}
 ```bash
-viash run path/to/config.vsh.yaml -p docker -- ---dockerfile
+viash run path/to/config.vsh.yaml -engine docker -- ---dockerfile
 ```
 :::

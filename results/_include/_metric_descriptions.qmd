@@ -1,10 +1,16 @@
 ```{r}
 #| echo: false
-lines <- pmap_chr(metric_info, function(metric_name, metric_summary, paper_reference, ...) {
+lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_description, paper_reference, ...) {
   ref <- split_cite_fun(paper_reference)
   if (ref != "") ref <- paste0(" ", ref)
-  summ <- (metric_summary %|% "Missing 'metric_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "") 
-  glue::glue("* **{metric_name}**{ref}: {summ}.")
+  summ <- (metric_summary %|% "Missing 'metric_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
+  strip_margin(glue::glue("
+  |### {metric_name}
+  |
+  |{summ}{ref}.
+  |
+  |{metric_description %|% ''}
+  |"))
 })
 knitr::asis_output(paste(lines, collapse = "\n"))
 ```

@@ -1,0 +1,19 @@
+---
+title: "Perturbation Prediction"
+subtitle: "Predicting how small molecules change gene expression in different cell types."
+image: thumbnail.svg
+page-layout: full
+css: ../_include/task_template.css
+engine: knitr
+fig-cap-location: bottom
+citation-location: document
+toc: false
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "results/predict_modality/data")
+params <- list(data_dir = "./data")
+```
+
+{{< include ../_include/_task_template.qmd >}}
