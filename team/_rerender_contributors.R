@@ -193,7 +193,6 @@ for (task_name in names(tasks)) {
 }
 
 teams <- list.dirs("team/task_contributors", full.names = FALSE, recursive = FALSE)
-teams <- teams[!teams %in% c("_old_data")]
 
 teams_headers <- paste0(
 "  - id: ", teams, "
