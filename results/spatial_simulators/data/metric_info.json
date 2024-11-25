@@ -1,0 +1,437 @@
+[
+  {
+    "task_id": "metrics",
+    "component_name": "downstream",
+    "metric_id": "clustering_ari",
+    "metric_name": "clustering_ari",
+    "metric_summary": "ARI",
+    "metric_description": "Adjusted Rand Index used in spatial clustering to measure the similarity between two data clusterings, adjusted for chance.\n",
+    "paper_reference": {
+      "doi": "10.1145/1553374.1553511"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/downstream/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": true
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "downstream",
+    "metric_id": "clustering_nmi",
+    "metric_name": "clustering_nmi",
+    "metric_summary": "NMI",
+    "metric_description": "Normalized Mutual Information used in spatial clustering to measure the agreement between two different clusterings, scaled to [0, 1].\n",
+    "paper_reference": {
+      "doi": "10.1145/1553374.1553511"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/downstream/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": true
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "downstream",
+    "metric_id": "svg_recall",
+    "metric_name": "svg_recall",
+    "metric_summary": "Recall",
+    "metric_description": "Recall used in identifying spatial variable genes, measuring the true positive rate.\n",
+    "paper_reference": {
+      "doi": "10.9735/2229-3981"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/downstream/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": true
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "downstream",
+    "metric_id": "svg_precision",
+    "metric_name": "svg_precision",
+    "metric_summary": "Precision (Spatial Variable Gene)",
+    "metric_description": "Precision used in identifying spatial variable genes, measuring the accuracy of positive predictions.\n",
+    "paper_reference": {
+      "doi": "10.9735/2229-3981"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/downstream/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": true
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "downstream",
+    "metric_id": "ctdeconvolute_rmse",
+    "metric_name": "ctdeconvolute_rmse",
+    "metric_summary": "RMSE",
+    "metric_description": "Root Mean Squared Error used in cell type deconvolution to measure the difference between observed and predicted values.\n",
+    "paper_reference": {
+      "doi": "10.5194/gmd-15-5481-2022"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/downstream/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "downstream",
+    "metric_id": "ctdeconcolute_jsd",
+    "metric_name": "ctdeconcolute_jsd",
+    "metric_summary": "JSD",
+    "metric_description": "Jensen-Shannon Divergence used in cell type deconvolution to measure the similarity between two probability distributions.\n",
+    "paper_reference": {
+      "doi": "10.21105/joss.00765"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/downstream/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "downstream",
+    "metric_id": "crosscor_mantel",
+    "metric_name": "crosscor_mantel",
+    "metric_summary": "Mantel Statistic",
+    "metric_description": "Mantel statistic used in spatial cross-correlation to test the correlation between two distance matrices.\n",
+    "paper_reference": {
+      "doi": "10.1111/2041-210X.12425"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/downstream/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": true
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "downstream",
+    "metric_id": "crosscor_cosine",
+    "metric_name": "crosscor_cosine",
+    "metric_summary": "Cosine Similarity",
+    "metric_description": "Cosine similarity used in spatial cross-correlation to measure the cosine of the angle between two non-zero vectors.\n",
+    "paper_reference": {
+      "doi": "10.1002/asi.20130"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/downstream/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": true
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_gene_cell",
+    "metric_id": "ks_statistic_frac_zero_genes",
+    "metric_name": "Fraction of zeros per gene",
+    "metric_summary": "KS statistic of the fraction of zeros per gene.",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the fraction of zeros per gene in the real datasets versus the fraction of zeros per gene in the simulated datasets.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_gene_cell/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_gene_cell",
+    "metric_id": "ks_statistic_frac_zero_cells",
+    "metric_name": "Fraction of zeros per cell",
+    "metric_summary": "KS statistic of the fraction of zeros per spot (cell).",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the fraction of zeros per spot (cell) in the real datasets versus the fraction of zeros per spot (cell) in the simulated datasets.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_gene_cell/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_gene_cell",
+    "metric_id": "ks_statistic_lib_size_cells",
+    "metric_name": "Library size",
+    "metric_summary": "KS statistic of the library size.",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the total sum of UMI counts across all genes in the real datasets versus the total sum of UMI counts across all genes in the simmulated datasets.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_gene_cell/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_gene_cell",
+    "metric_id": "ks_statistic_efflib_size_cells",
+    "metric_name": "Effective library size",
+    "metric_summary": "KS statistic of the effective library size.",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the effective library size of the real datasets versus the effective library size of the simulated datasets.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_gene_cell/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_gene_cell",
+    "metric_id": "ks_statistic_tmm_cells",
+    "metric_name": "TMM",
+    "metric_summary": "KS statistic of the weight trimmed mean of M-values normalization factor (TMM).",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the weight trimmed mean of M-values normalization factor for the real datasets versus the weight trimmed mean of M-values normalization factor for the simulated datasets.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_gene_cell/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_gene_cell",
+    "metric_id": "ks_statistic_scaled_var_cells",
+    "metric_name": "Scaled variance cell",
+    "metric_summary": "KS statistic of the spot- (or cell-) level scaled variance of the expression matrix.",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the spot-level z-score standardization of the variance of expression matrix in terms of log2(CPM) in the real datasets versus the simulated datasets.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_gene_cell/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_gene_cell",
+    "metric_id": "ks_statistic_scaled_mean_cells",
+    "metric_name": "Scaled mean cells",
+    "metric_summary": "KS statistic of the spot- (or cell-) level scaled mean of the expression matrix.",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the z-score standardization of the mean of expression matrix in terms of log2(CPM) in the real datasets versus the simulated datasets.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_gene_cell/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_gene_cell",
+    "metric_id": "ks_statistic_lib_fraczero_cells",
+    "metric_name": "Library size vs fraction zero",
+    "metric_summary": "KS statistic of the relationship between library size and the proportion of zeros per spot (cell).",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the relationship between library size and the proportion of zeros per spot (cell) in the real datasets versus the simulated datasets.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_gene_cell/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_gene_cell",
+    "metric_id": "ks_statistic_pearson_cells",
+    "metric_name": "Sample Pearson correlation",
+    "metric_summary": "KS statistic of the sample Pearson correlation.",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the sample Pearson correlation of the real datasets versus the sample Pearson correlation of the simulated datasets.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_gene_cell/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_gene_cell",
+    "metric_id": "ks_statistic_scaled_var_genes",
+    "metric_name": "Scaled variance genes",
+    "metric_summary": "KS statistic of the gene-level scaled variance of the expression matrix.",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the gene-level z-score standardization of the variance of expression matrix in terms of log2(CPM) in the real datasets versus the simulated datasets.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_gene_cell/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_gene_cell",
+    "metric_id": "ks_statistic_scaled_mean_genes",
+    "metric_name": "Scaled mean genes",
+    "metric_summary": "KS statistic of the gene-level scaled mean of the expression matrix.",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the gene-level z-score standardization of the mean of expression matrix in terms of log2(CPM) in the real datasets versus the simulated datasets.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_gene_cell/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_gene_cell",
+    "metric_id": "ks_statistic_pearson_genes",
+    "metric_name": "Gene Pearson correlation",
+    "metric_summary": "KS statistic of the gene Pearson correlation.",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the gene Pearson correlation of the real datasets versus the gene Pearson correlation of the simulated datasets.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_gene_cell/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_gene_cell",
+    "metric_id": "ks_statistic_mean_var_genes",
+    "metric_name": "Mean vs variance",
+    "metric_summary": "KS statistic of the relationship between mean expression and variance expression.",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the relationship between mean expression and variance expression in the real datasets versus the simulated datasets.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_gene_cell/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_gene_cell",
+    "metric_id": "ks_statistic_mean_fraczero_genes",
+    "metric_name": "Mean vs fraction zero",
+    "metric_summary": "KS statistic of the relationship between mean expression and the proportion of zero per gene.",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the relationship between mean expression and the proportion of zero per gene in the real datasets versus the simulated datasets.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_gene_cell/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_sc_features",
+    "metric_id": "ks_statistic_L_stats",
+    "metric_name": "L statistics",
+    "metric_summary": "KS statistic of the L statistics",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the L statistics in the real datasets versus the L statistics in the simulated datasets.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_sc_features/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_sc_features",
+    "metric_id": "ks_statistic_celltype_interaction",
+    "metric_name": "Celltype interaction",
+    "metric_summary": "KS statistic of the celltype interaction",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the Celltype interaction in the real datasets versus the Celltype interaction in the simulated datasets.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_sc_features/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_sc_features",
+    "metric_id": "ks_statistic_nn_correlation",
+    "metric_name": "Library size",
+    "metric_summary": "KS statistic of the library size.",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the nn correlation in the real datasets versus the nn correlation in the simmulated datasets.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_sc_features/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_sc_features",
+    "metric_id": "ks_statistic_morans_I",
+    "metric_name": "Effective library size",
+    "metric_summary": "KS statistic of the effective library size.",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the morans I of the real datasets versus the morans I of the simulated datasets.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_sc_features/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_spatial",
+    "metric_id": "ks_statistic_transition_matrix",
+    "metric_name": "Transition matrix",
+    "metric_summary": "KS Statistic of the transition matrix.",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the transition matrix of the real dataset versus the simulated dataset. The transition matrix elucidates the interrelationships among spatial clusters in each space. Each element in the matrix signifies the transition probability from one spatial cluster to another, thereby mapping the dynamic interplay of spatial clusters.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_spatial/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_spatial",
+    "metric_id": "ks_statistic_central_score",
+    "metric_name": "Centralized score",
+    "metric_summary": "Ks Statistic of the centralized score matrix.",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the centralized score matrix of the real dataset versus the simulated dataset. The centralized score matrix is a vector of the group degree centrality (inter-cluster connectivity), average clustering coefficient (propensity for a spot within a spatial cluster to be connected to spots in another cluster), and the group closeness centrality (relative proximity or accessibility of one cluster to all spots in another). \n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_spatial/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "ks_statistic_spatial",
+    "metric_id": "ks_statistic_enrichment",
+    "metric_name": "Neighborhood enrichment",
+    "metric_summary": "Ks Statistic of the neighborhood enrichment.",
+    "metric_description": "The Kolmogorov-Smirnov statistic comparing the neighborhood enrichment matrices of the real dataset versus the simulated dataset. The neighborhood enrichment matrix quantifies the enrichment observed between each pair of spatial clusters. It serves to systematically assess the interaction between different clusters within a spatial context, providing insights into the relative connectivity between various spatial clusters.\n",
+    "paper_reference": {
+      "doi": "10.1201/9780429485572"
+    },
+    "implementation_url": "https://github.com/openproblems-bio/task_spatial_simulators/blob/df6409b000a8951078f2d233bb961eb8a706315a/src/metrics/ks_statistic_spatial/config.vsh.yaml",
+    "code_version": null,
+    "commit_sha": "df6409b000a8951078f2d233bb961eb8a706315a",
+    "maximize": false
+  }
+]
