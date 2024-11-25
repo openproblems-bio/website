@@ -89,7 +89,7 @@ render_author <- function(author) {
         },
         orcid = function(value) {
             list(
-                icon = "fa-brands fa-orcid",
+                icon = "fa-brands--orcid",
                 text = "ORCID",
                 href = paste0("https://orcid.org/", value)
             )
@@ -227,10 +227,7 @@ listing:
     template: members.ejs
     sort: ''
 ", paste(teams_headers, collapse = "\n"), "
-css: 
-    - team.css
-    - ../_site/site_libs/quarto-contrib/fontawesome6-0.1.0/all.css
-    - ../_site/site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css
+css: team.css
 ---
 
 ## Core members
