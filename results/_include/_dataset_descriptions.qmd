@@ -20,9 +20,9 @@ lines <- pmap_chr(dataset_info, function(dataset_id, dataset_name, dataset_summa
   if (ref != "") ref <- paste0(" ", ref)
   
   dataset_link <- if (!is.null(source_dataset_id) && dir.exists(paste0("../../datasets/", source_dataset_id))) {
-    glue::glue("(/datasets/{source_dataset_id})")
+    glue::glue("../../datasets/{source_dataset_id}")
   } else if (dir.exists(paste0("../../datasets/", dataset_id))) {
-    glue::glue("(/datasets/{dataset_id})")
+    glue::glue("../../datasets/{dataset_id}")
   } else {
     NULL
   }
