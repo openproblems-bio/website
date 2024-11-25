@@ -30,23 +30,6 @@ lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, me
 
   if (ref != "") ref <- paste0(" ", ref)
   
-  links <- c()
-  if (!is.na(code_url)) {
-    links <- c(links, glue::glue(" [Docs]({code_url})"))
-  }
-  version_label <- 
-    if (!is.na(code_version) && code_version != "missing-version") {
-      glue::glue(" Software version {code_version}.")
-    } else {
-      ""
-    }
-
-  links_label <-
-    if (length(links) > 0) {
-      glue::glue(" Links: {paste(links, collapse = ', ')}.")
-    } else {
-      ""
-    }
   summ <- (method_summary %|% "Missing 'method_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
 
   method_meta <- tribble(
