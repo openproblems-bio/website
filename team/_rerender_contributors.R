@@ -25,7 +25,13 @@ cache_repository <- function(repo) {
     zzz <- processx::run("git", c("fetch", "--all"), wd = repo_dir)
 
     # reset the repository to the latest commit
-    zzz <- processx::run("git", c("pull", "origin", "main"), wd = repo_dir)
+    if (repo == "openproblems-bio/task_spatial_decomposition") {
+        zzz <- processx::run("git", c("pull", "origin", "add-missing-authors"), wd = repo_dir)
+    } else if (repo == "openproblems-bio/task_dimensionality_reduction") {
+        zzz <- processx::run("git", c("pull", "origin", "add_author"), wd = repo_dir)
+    } else {
+        zzz <- processx::run("git", c("pull", "origin", "main"), wd = repo_dir)
+    }
 
     # return the path to the repository
     return(repo_dir)
