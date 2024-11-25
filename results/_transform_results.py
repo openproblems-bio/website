@@ -40,6 +40,25 @@ for dir in dirs:
         info["implementation_url"] = info["implementation_url"].replace("main", "v1.0.0")
         info["code_version"] = "v1.0.0"
         info["image"] = "https://github.com/openproblems-bio/openproblems/pkgs/container/" + info["image"]
-    
+
+    metric_info_path = data_path.joinpath("metric_info.json")
+    metric_info = read_json_file(metric_info_path)
+    for info in metric_info:
+        info["implementation_url"] = info["implementation_url"].replace("main", "v1.0.0")
+        info["code_version"] = "v1.0.0"
+        info["image"] = "https://github.com/openproblems-bio/openproblems/pkgs/container/" + info["image"]
+
+    # Transform the task_info.json file
+    task_info_path = data_path.joinpath("task_info.json")
+    task_info = read_json_file(task_info_path)
+    for info in task_info:
+        info["repo"]= "https://github.com/" + info["repo"] + "/tree/v1.0.0"
+        info["version"] = "v1.0.0"
+        info["license"] = "MIT"
+        
+        
+        info["authors"] = [{"name": "OpenProblems", "roles": ["maintainer"], "info": {"github": "openproblems-bio"}}]
+        
+
     
     # Read the task_info.json file
