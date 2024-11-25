@@ -4,8 +4,7 @@ repositories <- c(
     "openproblems-bio/task_batch_integration",
     "openproblems-bio/task_cell_cell_communication",
     "openproblems-bio/task_label_projection",
-    "openproblems-bio/task_spatial_decomposition",
-    "openproblems-bio/task_predict_modality"
+    "openproblems-bio/task_spatial_decomposition"
 )
 
 cache_repository <- function(repo) {
@@ -48,27 +47,66 @@ find_task_info <- function(repo_dir) {
 }
 
 
+write_json_file <- function(json, file) {
+    jsonlite::write_json(
+    json,
+    file,
+    auto_unbox = TRUE,
+    pretty = TRUE
+    )
+}
+
 for (repo in repositories) {
     repo_dir <- cache_repository(repo)
     task_info_files <- find_task_info(repo_dir)
 
+    # Update task_info.json
     for (task_info_file in task_info_files) {
         task_info <- suppressWarnings(yaml::read_yaml(task_info_file))
         task_name <- gsub("task_", "", task_info$name)
+    
+        # Read task_info.json
+        if (task_name == "batch_integration") {
+            dirs <- list.dirs("results")
+            dirs <- grep("batch_integration", dirs, value = TRUE)
+            dirs <- grep("data", dirs, value = TRUE)
+            for (dir in dirs) {
+                task_info_json <- jsonlite::read_json(file.path( dir, "task_info.json"))
+                task_info_json[["authors"]] <- task_info$authors
+                task_info_json$repo <- paste0("https://github.com/",task_info_json["repo"],"/tree/v1.0.0/openproblems/tasks/_batch_integration/",gsub("results/","",dirname(dir)))
+                task_info_json[["version"]] <- "v1.0.0"
+                task_info_json[["license"]] <- "MIT"
+                write_json_file(
+                task_info_json,
+                file.path( dir, "task_info.json")
+                )
+            }
+        } else if (task_name == "cell_cell_communication") {
+            dirs <- list.dirs("results")
+            dirs <- grep("cell_cell_communication", dirs, value = TRUE)
+            dirs <- grep("data", dirs, value = TRUE)
+            for (dir in dirs) {
+                task_info_json <- jsonlite::read_json(file.path( dir, "task_info.json"))
+                task_info_json[["authors"]] <- task_info$authors
+                task_info_json$repo <- paste0("https://github.com/",task_info_json["repo"],"/tree/v1.0.0/openproblems/tasks/_cell_cell_communication/",gsub("results/","",dirname(dir)))
+                task_info_json[["version"]] <- "v1.0.0"
+                task_info_json[["license"]] <- "MIT"
+                write_json_file(
+                task_info_json,
+                file.path( dir, "task_info.json")
+                )
+            }
+        } else {
+            task_info_json <- jsonlite::read_json(file.path("results", task_name, "data", "task_info.json"))
+            task_info_json[["authors"]] <- task_info$authors
+            task_info_json$repo <- paste0("https://github.com/",task_info_json["repo"],"/tree/v1.0.0/openproblems/tasks/",task_name)
+            task_info_json[["version"]] <- "v1.0.0"
+            task_info_json[["license"]] <- "MIT"
+            write_json_file(
+            task_info_json,
+            file.path("results", task_name, "data", "task_info.json")
+            )
+        }
+    }
 
-        if (!task_name %in% names(tasks)) {
-            tasks[[task_name]] <- list()
-        }
-
-        task_label <- task_info$label
-        if (is.null(task_label)) {
-            task_label <- stringr::str_to_title(gsub(" ", "_", tolower(task_name)))
-        }
-        if (is.null(tasks[[task_name]]$label)) {
-            tasks[[task_name]]$label <- task_label
-        }
-        if (is.null(tasks[[task_name]]$authors)) {
-            tasks[[task_name]]$authors <- list()
-        }
-        
 }
