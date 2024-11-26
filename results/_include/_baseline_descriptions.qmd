@@ -1,13 +1,58 @@
 ```{r baseline_descriptions}
 #| echo: false
 baselines <- method_info %>% filter(is_baseline)
-lines <- pmap_chr(baselines, function(method_name, method_summary, method_description, reference, code_url, ...) {
+lines <- pmap_chr(baselines, function(method_name, method_summary, method_description, reference, code_url, implementation_url, ...) {
+  rest <- list(...)
+  image <- pluck(rest, "image", .default = NULL)
+  documentation_url <- pluck(rest, "documentation_url", .default = NULL)
+  code_version <- pluck(rest, "code_version", .default = NULL)
+  references_doi <- pluck(rest, "references_doi", .default = NULL)
+  references_bibtex <- pluck(rest, "references_bibtex", .default = NULL)
+
+  if ("paper_reference" %in% names(rest)) {
+    ref <- split_cite_fun(rest$paper_reference)
+  } else {
+    bibs <- c()
+    if (!is.null(references_doi) && !is.na(references_doi)) {
+      bibs <- get_bibtex_from_doi(references_doi)
+    }
+    if (!is.null(references_bibtex) && !is.na(references_bibtex)) {
+      bibs <- c(bibs, references_bibtex)
+    }
+    # Write new entries to library.bib
+    write_library(bibs)
+    # Get bibtex references
+    if (!is.null(bibs)) {
+      ref <- get_bibtex_entries(bibs)
+    } else {
+      ref <- ""
+    }
+  }
+
+  if (ref != "") ref <- paste0(" ", ref)
+
   summ <- (method_summary %|% "Missing 'method_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
+
+  method_meta <- tribble(
+    ~icon, ~value,
+    "bi bi-book", if (!is.null(documentation_url)) paste0("[Documentation](", documentation_url, ")") else NULL,
+    "bi bi-globe", if (!is.null(code_url)) paste0("[Repository](", code_url, ")") else NULL,
+    "bi bi-file-earmark-code", if (!is.null(implementation_url)) paste0("[Source Code](", implementation_url, ")") else NULL,
+    "bi bi-box-seam", if (!is.null(image)) paste0("[Container](", image, ")") else NULL,
+    "bi bi-tag", if (!is.null(code_version) && !is.na(code_version)) code_version else NULL,
+    ) %>% filter(!sapply(value, is.null))
+  
+  meta_list <- paste(
+      paste0("<i class=\"", method_meta$icon, "\"></i> ", method_meta$value),
+      collapse = " · "
+    )
 
   strip_margin(glue::glue("
     |### {method_name}
     |
-    |{summ}
+    |{meta_list}
+    |
+    |{summ} {ref}
     |
     |{method_description %|% ''}
     |"

@@ -10,7 +10,7 @@ task_info_files = benchmark_dir.glob("*/data/task_info.json")
 for task_info_file in task_info_files:
     print(f"Reading {task_info_file}", flush=True)
     task_info = json.loads(task_info_file.read_text())
-    task_id = task_info.get("task_id", "task_id_missing")
+    task_id = task_info.get("task_id", "task_id_missing").replace("task_", "")
     task_name = task_info.get("task_name", "<Name missing>")
     task_summary = task_info.get("task_summary", "<Summary missing>")
 
@@ -24,6 +24,9 @@ css: ../_include/task_template.css
 engine: knitr
 fig-cap-location: bottom
 citation-location: document
+bibliography: 
+  - library.bib
+  - ../../library.bib
 toc: false
 ---
 
