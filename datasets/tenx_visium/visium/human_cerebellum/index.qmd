@@ -1,0 +1,19 @@
+---
+dataset-id: "tenx_visium/visium/human_cerebellum"
+title: "10X Visium - Adult Human Cerebellum"
+subtitle: "Human Cerebellum Whole Transcriptome Analysis"
+categories: ["tenx_visium"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/tenx_visium/visium/human_cerebellum/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

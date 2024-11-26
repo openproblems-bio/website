@@ -1,0 +1,19 @@
+---
+dataset-id: "tenx_visium/visium/mouse_olfactory_bulb"
+title: "10X Visium - Mouse Olfactory Bulb"
+subtitle: "10X Genomics obtained fresh frozen mouse olfactory bulb tissue from BioIVT"
+categories: ["tenx_visium"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/tenx_visium/visium/mouse_olfactory_bulb/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}
