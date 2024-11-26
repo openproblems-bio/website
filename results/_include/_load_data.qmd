@@ -8,6 +8,11 @@ library(tidyverse)
 library(funkyheatmap)
 library(kableExtra)
 
+# touch library.bib in data dir
+if (!file.exists("library.bib")) {
+  file.create("library.bib")
+}
+
 # read task info
 task_info <- jsonlite::read_json(paste0(params$data_dir, "/task_info.json"))
 
