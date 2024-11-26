@@ -7,15 +7,16 @@ css: ../_include/task_template.css
 engine: knitr
 fig-cap-location: bottom
 citation-location: document
-bibliography: library.bib
+bibliography: 
+  - library.bib
+  - ../../library.bib
 toc: false
 ---
 
 ```{r}
 #| include: false
-params <- list(data_dir = "results/predict_modality/data")
+params <- list(data_dir = "results/perturbation_prediction/data")
 params <- list(data_dir = "./data")
 ```
 
 {{< include ../_include/_task_template.qmd >}}
-
