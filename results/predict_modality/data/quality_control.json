@@ -422,6 +422,26 @@
     {
         "task_id": "task_predict_modality", 
         "category": "Raw results", 
+        "name": "Dataset 'openproblems_neurips2021/bmmc_cite/normal' %missing", 
+        "value": 0.02777777777777779, 
+        "severity": 0, 
+        "severity_value": 0.2777777777777779, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_predict_modality\n  dataset id: openproblems_neurips2021/bmmc_cite/normal\n  Percentage missing: 3%\n"
+    }, 
+    {
+        "task_id": "task_predict_modality", 
+        "category": "Raw results", 
+        "name": "Dataset 'openproblems_neurips2021/bmmc_multiome/normal' %missing", 
+        "value": 0.02777777777777779, 
+        "severity": 0, 
+        "severity_value": 0.2777777777777779, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_predict_modality\n  dataset id: openproblems_neurips2021/bmmc_multiome/normal\n  Percentage missing: 3%\n"
+    }, 
+    {
+        "task_id": "task_predict_modality", 
+        "category": "Raw results", 
         "name": "Dataset 'openproblems_neurips2022/pbmc_multiome/swap' %missing", 
         "value": 0.36111111111111116, 
         "severity": 3, 
@@ -442,22 +462,22 @@
     {
         "task_id": "task_predict_modality", 
         "category": "Raw results", 
+        "name": "Dataset 'openproblems_neurips2022/pbmc_multiome/normal' %missing", 
+        "value": 0.13888888888888884, 
+        "severity": 1, 
+        "severity_value": 1.3888888888888884, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_predict_modality\n  dataset id: openproblems_neurips2022/pbmc_multiome/normal\n  Percentage missing: 14%\n"
+    }, 
+    {
+        "task_id": "task_predict_modality", 
+        "category": "Raw results", 
         "name": "Dataset 'openproblems_neurips2022/pbmc_cite/normal' %missing", 
         "value": 0.02777777777777779, 
         "severity": 0, 
         "severity_value": 0.2777777777777779, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: task_predict_modality\n  dataset id: openproblems_neurips2022/pbmc_cite/normal\n  Percentage missing: 3%\n"
-    }, 
-    {
-        "task_id": "task_predict_modality", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_neurips2021/bmmc_cite/normal' %missing", 
-        "value": 0.02777777777777779, 
-        "severity": 0, 
-        "severity_value": 0.2777777777777779, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_predict_modality\n  dataset id: openproblems_neurips2021/bmmc_cite/normal\n  Percentage missing: 3%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -478,26 +498,6 @@
         "severity_value": 0.2777777777777779, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: task_predict_modality\n  dataset id: openproblems_neurips2021/bmmc_cite/swap\n  Percentage missing: 3%\n"
-    }, 
-    {
-        "task_id": "task_predict_modality", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_neurips2022/pbmc_multiome/normal' %missing", 
-        "value": 0.13888888888888884, 
-        "severity": 1, 
-        "severity_value": 1.3888888888888884, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_predict_modality\n  dataset id: openproblems_neurips2022/pbmc_multiome/normal\n  Percentage missing: 14%\n"
-    }, 
-    {
-        "task_id": "task_predict_modality", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_neurips2021/bmmc_multiome/normal' %missing", 
-        "value": 0.02777777777777779, 
-        "severity": 0, 
-        "severity_value": 0.2777777777777779, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_predict_modality\n  dataset id: openproblems_neurips2021/bmmc_multiome/normal\n  Percentage missing: 3%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -523,21 +523,21 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score random_predict mean_pearson_per_cell", 
-        "value": 0.0205, 
+        "value": 0.0202, 
         "severity": 0, 
-        "severity_value": -0.0205, 
+        "severity_value": -0.0202, 
         "code": "worst_score >= -1", 
-        "message": "Method random_predict performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: random_predict\n  Metric id: mean_pearson_per_cell\n  Worst score: 0.0205%\n"
+        "message": "Method random_predict performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: random_predict\n  Metric id: mean_pearson_per_cell\n  Worst score: 0.0202%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score random_predict mean_pearson_per_cell", 
-        "value": 0.7547, 
+        "value": 0.7556, 
         "severity": 0, 
-        "severity_value": 0.37735, 
+        "severity_value": 0.3778, 
         "code": "best_score <= 2", 
-        "message": "Method random_predict performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: random_predict\n  Metric id: mean_pearson_per_cell\n  Best score: 0.7547%\n"
+        "message": "Method random_predict performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: random_predict\n  Metric id: mean_pearson_per_cell\n  Best score: 0.7556%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -593,31 +593,31 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score knnr_py mean_pearson_per_cell", 
-        "value": 0.8766, 
+        "value": 0.8764, 
         "severity": 0, 
-        "severity_value": 0.4383, 
+        "severity_value": 0.4382, 
         "code": "best_score <= 2", 
-        "message": "Method knnr_py performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_py\n  Metric id: mean_pearson_per_cell\n  Best score: 0.8766%\n"
+        "message": "Method knnr_py performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_py\n  Metric id: mean_pearson_per_cell\n  Best score: 0.8764%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score knnr_r mean_pearson_per_cell", 
-        "value": 0.1081, 
+        "value": 0.1076, 
         "severity": 0, 
-        "severity_value": -0.1081, 
+        "severity_value": -0.1076, 
         "code": "worst_score >= -1", 
-        "message": "Method knnr_r performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mean_pearson_per_cell\n  Worst score: 0.1081%\n"
+        "message": "Method knnr_r performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mean_pearson_per_cell\n  Worst score: 0.1076%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score knnr_r mean_pearson_per_cell", 
-        "value": 0.8741, 
+        "value": 0.8737, 
         "severity": 0, 
-        "severity_value": 0.43705, 
+        "severity_value": 0.43685, 
         "code": "best_score <= 2", 
-        "message": "Method knnr_r performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mean_pearson_per_cell\n  Best score: 0.8741%\n"
+        "message": "Method knnr_r performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mean_pearson_per_cell\n  Best score: 0.8737%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -633,31 +633,31 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score lm mean_pearson_per_cell", 
-        "value": 0.7042, 
+        "value": 0.7078, 
         "severity": 0, 
-        "severity_value": 0.3521, 
+        "severity_value": 0.3539, 
         "code": "best_score <= 2", 
-        "message": "Method lm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: mean_pearson_per_cell\n  Best score: 0.7042%\n"
+        "message": "Method lm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: mean_pearson_per_cell\n  Best score: 0.7078%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score lmds_irlba_rf mean_pearson_per_cell", 
-        "value": 0.0753, 
+        "value": 0.0729, 
         "severity": 0, 
-        "severity_value": -0.0753, 
+        "severity_value": -0.0729, 
         "code": "worst_score >= -1", 
-        "message": "Method lmds_irlba_rf performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mean_pearson_per_cell\n  Worst score: 0.0753%\n"
+        "message": "Method lmds_irlba_rf performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mean_pearson_per_cell\n  Worst score: 0.0729%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score lmds_irlba_rf mean_pearson_per_cell", 
-        "value": 0.7112, 
+        "value": 0.7061, 
         "severity": 0, 
-        "severity_value": 0.3556, 
+        "severity_value": 0.35305, 
         "code": "best_score <= 2", 
-        "message": "Method lmds_irlba_rf performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mean_pearson_per_cell\n  Best score: 0.7112%\n"
+        "message": "Method lmds_irlba_rf performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mean_pearson_per_cell\n  Best score: 0.7061%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -703,21 +703,21 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score random_predict mean_spearman_per_cell", 
-        "value": 0.0853, 
+        "value": 0.0723, 
         "severity": 0, 
-        "severity_value": -0.0853, 
+        "severity_value": -0.0723, 
         "code": "worst_score >= -1", 
-        "message": "Method random_predict performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: random_predict\n  Metric id: mean_spearman_per_cell\n  Worst score: 0.0853%\n"
+        "message": "Method random_predict performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: random_predict\n  Metric id: mean_spearman_per_cell\n  Worst score: 0.0723%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score random_predict mean_spearman_per_cell", 
-        "value": 0.5182, 
+        "value": 0.5185, 
         "severity": 0, 
-        "severity_value": 0.2591, 
+        "severity_value": 0.25925, 
         "code": "best_score <= 2", 
-        "message": "Method random_predict performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: random_predict\n  Metric id: mean_spearman_per_cell\n  Best score: 0.5182%\n"
+        "message": "Method random_predict performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: random_predict\n  Metric id: mean_spearman_per_cell\n  Best score: 0.5185%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -773,31 +773,31 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score knnr_py mean_spearman_per_cell", 
-        "value": 0.6912, 
+        "value": 0.6911, 
         "severity": 0, 
-        "severity_value": 0.3456, 
+        "severity_value": 0.34555, 
         "code": "best_score <= 2", 
-        "message": "Method knnr_py performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_py\n  Metric id: mean_spearman_per_cell\n  Best score: 0.6912%\n"
+        "message": "Method knnr_py performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_py\n  Metric id: mean_spearman_per_cell\n  Best score: 0.6911%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score knnr_r mean_spearman_per_cell", 
-        "value": 0.194, 
+        "value": 0.1941, 
         "severity": 0, 
-        "severity_value": -0.194, 
+        "severity_value": -0.1941, 
         "code": "worst_score >= -1", 
-        "message": "Method knnr_r performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mean_spearman_per_cell\n  Worst score: 0.194%\n"
+        "message": "Method knnr_r performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mean_spearman_per_cell\n  Worst score: 0.1941%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score knnr_r mean_spearman_per_cell", 
-        "value": 0.6717, 
+        "value": 0.6708, 
         "severity": 0, 
-        "severity_value": 0.33585, 
+        "severity_value": 0.3354, 
         "code": "best_score <= 2", 
-        "message": "Method knnr_r performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mean_spearman_per_cell\n  Best score: 0.6717%\n"
+        "message": "Method knnr_r performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mean_spearman_per_cell\n  Best score: 0.6708%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -813,31 +813,31 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score lm mean_spearman_per_cell", 
-        "value": 0.6085, 
+        "value": 0.6098, 
         "severity": 0, 
-        "severity_value": 0.30425, 
+        "severity_value": 0.3049, 
         "code": "best_score <= 2", 
-        "message": "Method lm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: mean_spearman_per_cell\n  Best score: 0.6085%\n"
+        "message": "Method lm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: mean_spearman_per_cell\n  Best score: 0.6098%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score lmds_irlba_rf mean_spearman_per_cell", 
-        "value": 0.0234, 
+        "value": 0.0228, 
         "severity": 0, 
-        "severity_value": -0.0234, 
+        "severity_value": -0.0228, 
         "code": "worst_score >= -1", 
-        "message": "Method lmds_irlba_rf performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mean_spearman_per_cell\n  Worst score: 0.0234%\n"
+        "message": "Method lmds_irlba_rf performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mean_spearman_per_cell\n  Worst score: 0.0228%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score lmds_irlba_rf mean_spearman_per_cell", 
-        "value": 0.5932, 
+        "value": 0.589, 
         "severity": 0, 
-        "severity_value": 0.2966, 
+        "severity_value": 0.2945, 
         "code": "best_score <= 2", 
-        "message": "Method lmds_irlba_rf performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mean_spearman_per_cell\n  Best score: 0.5932%\n"
+        "message": "Method lmds_irlba_rf performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mean_spearman_per_cell\n  Best score: 0.589%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -873,11 +873,11 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score mean_per_gene mean_pearson_per_gene", 
-        "value": 2.2277e-06, 
+        "value": 0.0157, 
         "severity": 0, 
-        "severity_value": 1.11385e-06, 
+        "severity_value": 0.00785, 
         "code": "best_score <= 2", 
-        "message": "Method mean_per_gene performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: mean_per_gene\n  Metric id: mean_pearson_per_gene\n  Best score: 2.2277e-06%\n"
+        "message": "Method mean_per_gene performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: mean_per_gene\n  Metric id: mean_pearson_per_gene\n  Best score: 0.0157%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -893,11 +893,11 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score random_predict mean_pearson_per_gene", 
-        "value": 0.0117, 
+        "value": 0.0034, 
         "severity": 0, 
-        "severity_value": 0.00585, 
+        "severity_value": 0.0017, 
         "code": "best_score <= 2", 
-        "message": "Method random_predict performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: random_predict\n  Metric id: mean_pearson_per_gene\n  Best score: 0.0117%\n"
+        "message": "Method random_predict performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: random_predict\n  Metric id: mean_pearson_per_gene\n  Best score: 0.0034%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -913,11 +913,11 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score zeros mean_pearson_per_gene", 
-        "value": 2.2277e-06, 
+        "value": 0.0157, 
         "severity": 0, 
-        "severity_value": 1.11385e-06, 
+        "severity_value": 0.00785, 
         "code": "best_score <= 2", 
-        "message": "Method zeros performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: zeros\n  Metric id: mean_pearson_per_gene\n  Best score: 2.2277e-06%\n"
+        "message": "Method zeros performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: zeros\n  Metric id: mean_pearson_per_gene\n  Best score: 0.0157%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -953,31 +953,31 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score knnr_py mean_pearson_per_gene", 
-        "value": 0.5943, 
+        "value": 0.601, 
         "severity": 0, 
-        "severity_value": 0.29715, 
+        "severity_value": 0.3005, 
         "code": "best_score <= 2", 
-        "message": "Method knnr_py performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_py\n  Metric id: mean_pearson_per_gene\n  Best score: 0.5943%\n"
+        "message": "Method knnr_py performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_py\n  Metric id: mean_pearson_per_gene\n  Best score: 0.601%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score knnr_r mean_pearson_per_gene", 
-        "value": 0.0183, 
+        "value": 0.0207, 
         "severity": 0, 
-        "severity_value": -0.0183, 
+        "severity_value": -0.0207, 
         "code": "worst_score >= -1", 
-        "message": "Method knnr_r performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mean_pearson_per_gene\n  Worst score: 0.0183%\n"
+        "message": "Method knnr_r performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mean_pearson_per_gene\n  Worst score: 0.0207%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score knnr_r mean_pearson_per_gene", 
-        "value": 0.5437, 
+        "value": 0.5439, 
         "severity": 0, 
-        "severity_value": 0.27185, 
+        "severity_value": 0.27195, 
         "code": "best_score <= 2", 
-        "message": "Method knnr_r performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mean_pearson_per_gene\n  Best score: 0.5437%\n"
+        "message": "Method knnr_r performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mean_pearson_per_gene\n  Best score: 0.5439%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -993,31 +993,31 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score lm mean_pearson_per_gene", 
-        "value": 0.5152, 
+        "value": 0.5264, 
         "severity": 0, 
-        "severity_value": 0.2576, 
+        "severity_value": 0.2632, 
         "code": "best_score <= 2", 
-        "message": "Method lm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: mean_pearson_per_gene\n  Best score: 0.5152%\n"
+        "message": "Method lm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: mean_pearson_per_gene\n  Best score: 0.5264%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score lmds_irlba_rf mean_pearson_per_gene", 
-        "value": 0.0617, 
+        "value": 0.0619, 
         "severity": 0, 
-        "severity_value": -0.0617, 
+        "severity_value": -0.0619, 
         "code": "worst_score >= -1", 
-        "message": "Method lmds_irlba_rf performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mean_pearson_per_gene\n  Worst score: 0.0617%\n"
+        "message": "Method lmds_irlba_rf performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mean_pearson_per_gene\n  Worst score: 0.0619%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score lmds_irlba_rf mean_pearson_per_gene", 
-        "value": 0.551, 
+        "value": 0.5398, 
         "severity": 0, 
-        "severity_value": 0.2755, 
+        "severity_value": 0.2699, 
         "code": "best_score <= 2", 
-        "message": "Method lmds_irlba_rf performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mean_pearson_per_gene\n  Best score: 0.551%\n"
+        "message": "Method lmds_irlba_rf performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mean_pearson_per_gene\n  Best score: 0.5398%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1033,11 +1033,11 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score guanlab_dengkw_pm mean_pearson_per_gene", 
-        "value": 0.6394, 
+        "value": 0.6474, 
         "severity": 0, 
-        "severity_value": 0.3197, 
+        "severity_value": 0.3237, 
         "code": "best_score <= 2", 
-        "message": "Method guanlab_dengkw_pm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: guanlab_dengkw_pm\n  Metric id: mean_pearson_per_gene\n  Best score: 0.6394%\n"
+        "message": "Method guanlab_dengkw_pm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: guanlab_dengkw_pm\n  Metric id: mean_pearson_per_gene\n  Best score: 0.6474%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1053,11 +1053,11 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score mean_per_gene mean_spearman_per_gene", 
-        "value": 0.0001, 
+        "value": 0.0193, 
         "severity": 0, 
-        "severity_value": 5e-05, 
+        "severity_value": 0.00965, 
         "code": "best_score <= 2", 
-        "message": "Method mean_per_gene performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: mean_per_gene\n  Metric id: mean_spearman_per_gene\n  Best score: 0.0001%\n"
+        "message": "Method mean_per_gene performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: mean_per_gene\n  Metric id: mean_spearman_per_gene\n  Best score: 0.0193%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1073,11 +1073,11 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score random_predict mean_spearman_per_gene", 
-        "value": 0.0048, 
+        "value": 0.0009, 
         "severity": 0, 
-        "severity_value": 0.0024, 
+        "severity_value": 0.00045, 
         "code": "best_score <= 2", 
-        "message": "Method random_predict performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: random_predict\n  Metric id: mean_spearman_per_gene\n  Best score: 0.0048%\n"
+        "message": "Method random_predict performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: random_predict\n  Metric id: mean_spearman_per_gene\n  Best score: 0.0009%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1093,11 +1093,11 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score zeros mean_spearman_per_gene", 
-        "value": 0.0001, 
+        "value": 0.0193, 
         "severity": 0, 
-        "severity_value": 5e-05, 
+        "severity_value": 0.00965, 
         "code": "best_score <= 2", 
-        "message": "Method zeros performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: zeros\n  Metric id: mean_spearman_per_gene\n  Best score: 0.0001%\n"
+        "message": "Method zeros performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: zeros\n  Metric id: mean_spearman_per_gene\n  Best score: 0.0193%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1133,31 +1133,31 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score knnr_py mean_spearman_per_gene", 
-        "value": 0.4881, 
+        "value": 0.499, 
         "severity": 0, 
-        "severity_value": 0.24405, 
+        "severity_value": 0.2495, 
         "code": "best_score <= 2", 
-        "message": "Method knnr_py performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_py\n  Metric id: mean_spearman_per_gene\n  Best score: 0.4881%\n"
+        "message": "Method knnr_py performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_py\n  Metric id: mean_spearman_per_gene\n  Best score: 0.499%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score knnr_r mean_spearman_per_gene", 
-        "value": 0.0187, 
+        "value": 0.0208, 
         "severity": 0, 
-        "severity_value": -0.0187, 
+        "severity_value": -0.0208, 
         "code": "worst_score >= -1", 
-        "message": "Method knnr_r performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mean_spearman_per_gene\n  Worst score: 0.0187%\n"
+        "message": "Method knnr_r performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mean_spearman_per_gene\n  Worst score: 0.0208%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score knnr_r mean_spearman_per_gene", 
-        "value": 0.4353, 
+        "value": 0.4419, 
         "severity": 0, 
-        "severity_value": 0.21765, 
+        "severity_value": 0.22095, 
         "code": "best_score <= 2", 
-        "message": "Method knnr_r performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mean_spearman_per_gene\n  Best score: 0.4353%\n"
+        "message": "Method knnr_r performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mean_spearman_per_gene\n  Best score: 0.4419%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1173,31 +1173,31 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score lm mean_spearman_per_gene", 
-        "value": 0.4206, 
+        "value": 0.4398, 
         "severity": 0, 
-        "severity_value": 0.2103, 
+        "severity_value": 0.2199, 
         "code": "best_score <= 2", 
-        "message": "Method lm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: mean_spearman_per_gene\n  Best score: 0.4206%\n"
+        "message": "Method lm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: mean_spearman_per_gene\n  Best score: 0.4398%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score lmds_irlba_rf mean_spearman_per_gene", 
-        "value": 0.0629, 
+        "value": 0.0631, 
         "severity": 0, 
-        "severity_value": -0.0629, 
+        "severity_value": -0.0631, 
         "code": "worst_score >= -1", 
-        "message": "Method lmds_irlba_rf performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mean_spearman_per_gene\n  Worst score: 0.0629%\n"
+        "message": "Method lmds_irlba_rf performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mean_spearman_per_gene\n  Worst score: 0.0631%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score lmds_irlba_rf mean_spearman_per_gene", 
-        "value": 0.4502, 
+        "value": 0.4441, 
         "severity": 0, 
-        "severity_value": 0.2251, 
+        "severity_value": 0.22205, 
         "code": "best_score <= 2", 
-        "message": "Method lmds_irlba_rf performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mean_spearman_per_gene\n  Best score: 0.4502%\n"
+        "message": "Method lmds_irlba_rf performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mean_spearman_per_gene\n  Best score: 0.4441%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1213,31 +1213,31 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score guanlab_dengkw_pm mean_spearman_per_gene", 
-        "value": 0.5008, 
+        "value": 0.5135, 
         "severity": 0, 
-        "severity_value": 0.2504, 
+        "severity_value": 0.25675, 
         "code": "best_score <= 2", 
-        "message": "Method guanlab_dengkw_pm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: guanlab_dengkw_pm\n  Metric id: mean_spearman_per_gene\n  Best score: 0.5008%\n"
+        "message": "Method guanlab_dengkw_pm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: guanlab_dengkw_pm\n  Metric id: mean_spearman_per_gene\n  Best score: 0.5135%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score mean_per_gene overall_pearson", 
-        "value": 0.1141, 
+        "value": 0.1203, 
         "severity": 0, 
-        "severity_value": -0.1141, 
+        "severity_value": -0.1203, 
         "code": "worst_score >= -1", 
-        "message": "Method mean_per_gene performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: mean_per_gene\n  Metric id: overall_pearson\n  Worst score: 0.1141%\n"
+        "message": "Method mean_per_gene performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: mean_per_gene\n  Metric id: overall_pearson\n  Worst score: 0.1203%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score mean_per_gene overall_pearson", 
-        "value": 0.4139, 
+        "value": 0.4197, 
         "severity": 0, 
-        "severity_value": 0.20695, 
+        "severity_value": 0.20985, 
         "code": "best_score <= 2", 
-        "message": "Method mean_per_gene performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: mean_per_gene\n  Metric id: overall_pearson\n  Best score: 0.4139%\n"
+        "message": "Method mean_per_gene performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: mean_per_gene\n  Metric id: overall_pearson\n  Best score: 0.4197%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1313,71 +1313,71 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score knnr_py overall_pearson", 
-        "value": 0.7034, 
+        "value": 0.7082, 
         "severity": 0, 
-        "severity_value": 0.3517, 
+        "severity_value": 0.3541, 
         "code": "best_score <= 2", 
-        "message": "Method knnr_py performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_py\n  Metric id: overall_pearson\n  Best score: 0.7034%\n"
+        "message": "Method knnr_py performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_py\n  Metric id: overall_pearson\n  Best score: 0.7082%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score knnr_r overall_pearson", 
-        "value": 0.086, 
+        "value": 0.0864, 
         "severity": 0, 
-        "severity_value": -0.086, 
+        "severity_value": -0.0864, 
         "code": "worst_score >= -1", 
-        "message": "Method knnr_r performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: overall_pearson\n  Worst score: 0.086%\n"
+        "message": "Method knnr_r performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: overall_pearson\n  Worst score: 0.0864%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score knnr_r overall_pearson", 
-        "value": 0.6629, 
+        "value": 0.6654, 
         "severity": 0, 
-        "severity_value": 0.33145, 
+        "severity_value": 0.3327, 
         "code": "best_score <= 2", 
-        "message": "Method knnr_r performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: overall_pearson\n  Best score: 0.6629%\n"
+        "message": "Method knnr_r performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: overall_pearson\n  Best score: 0.6654%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score lm overall_pearson", 
-        "value": -1.0596, 
-        "severity": 1, 
-        "severity_value": 1.0596, 
+        "value": -0.6151, 
+        "severity": 0, 
+        "severity_value": 0.6151, 
         "code": "worst_score >= -1", 
-        "message": "Method lm performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: overall_pearson\n  Worst score: -1.0596%\n"
+        "message": "Method lm performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: overall_pearson\n  Worst score: -0.6151%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score lm overall_pearson", 
-        "value": 0.6412, 
+        "value": 0.6541, 
         "severity": 0, 
-        "severity_value": 0.3206, 
+        "severity_value": 0.32705, 
         "code": "best_score <= 2", 
-        "message": "Method lm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: overall_pearson\n  Best score: 0.6412%\n"
+        "message": "Method lm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: overall_pearson\n  Best score: 0.6541%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score lmds_irlba_rf overall_pearson", 
-        "value": -2.4094, 
+        "value": -2.4102, 
         "severity": 2, 
-        "severity_value": 2.4094, 
+        "severity_value": 2.4102, 
         "code": "worst_score >= -1", 
-        "message": "Method lmds_irlba_rf performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: overall_pearson\n  Worst score: -2.4094%\n"
+        "message": "Method lmds_irlba_rf performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: overall_pearson\n  Worst score: -2.4102%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score lmds_irlba_rf overall_pearson", 
-        "value": 0.6487, 
+        "value": 0.6371, 
         "severity": 0, 
-        "severity_value": 0.32435, 
+        "severity_value": 0.31855, 
         "code": "best_score <= 2", 
-        "message": "Method lmds_irlba_rf performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: overall_pearson\n  Best score: 0.6487%\n"
+        "message": "Method lmds_irlba_rf performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: overall_pearson\n  Best score: 0.6371%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1393,31 +1393,31 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score guanlab_dengkw_pm overall_pearson", 
-        "value": 0.7431, 
+        "value": 0.7483, 
         "severity": 0, 
-        "severity_value": 0.37155, 
+        "severity_value": 0.37415, 
         "code": "best_score <= 2", 
-        "message": "Method guanlab_dengkw_pm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: guanlab_dengkw_pm\n  Metric id: overall_pearson\n  Best score: 0.7431%\n"
+        "message": "Method guanlab_dengkw_pm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: guanlab_dengkw_pm\n  Metric id: overall_pearson\n  Best score: 0.7483%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score mean_per_gene overall_spearman", 
-        "value": 0.0678, 
+        "value": 0.0908, 
         "severity": 0, 
-        "severity_value": -0.0678, 
+        "severity_value": -0.0908, 
         "code": "worst_score >= -1", 
-        "message": "Method mean_per_gene performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: mean_per_gene\n  Metric id: overall_spearman\n  Worst score: 0.0678%\n"
+        "message": "Method mean_per_gene performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: mean_per_gene\n  Metric id: overall_spearman\n  Worst score: 0.0908%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score mean_per_gene overall_spearman", 
-        "value": 0.1834, 
+        "value": 0.1824, 
         "severity": 0, 
-        "severity_value": 0.0917, 
+        "severity_value": 0.0912, 
         "code": "best_score <= 2", 
-        "message": "Method mean_per_gene performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: mean_per_gene\n  Metric id: overall_spearman\n  Best score: 0.1834%\n"
+        "message": "Method mean_per_gene performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: mean_per_gene\n  Metric id: overall_spearman\n  Best score: 0.1824%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1493,71 +1493,71 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score knnr_py overall_spearman", 
-        "value": 0.5994, 
+        "value": 0.61, 
         "severity": 0, 
-        "severity_value": 0.2997, 
+        "severity_value": 0.305, 
         "code": "best_score <= 2", 
-        "message": "Method knnr_py performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_py\n  Metric id: overall_spearman\n  Best score: 0.5994%\n"
+        "message": "Method knnr_py performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_py\n  Metric id: overall_spearman\n  Best score: 0.61%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score knnr_r overall_spearman", 
-        "value": 0.1053, 
+        "value": 0.1103, 
         "severity": 0, 
-        "severity_value": -0.1053, 
+        "severity_value": -0.1103, 
         "code": "worst_score >= -1", 
-        "message": "Method knnr_r performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: overall_spearman\n  Worst score: 0.1053%\n"
+        "message": "Method knnr_r performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: overall_spearman\n  Worst score: 0.1103%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score knnr_r overall_spearman", 
-        "value": 0.5595, 
+        "value": 0.5663, 
         "severity": 0, 
-        "severity_value": 0.27975, 
+        "severity_value": 0.28315, 
         "code": "best_score <= 2", 
-        "message": "Method knnr_r performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: overall_spearman\n  Best score: 0.5595%\n"
+        "message": "Method knnr_r performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: overall_spearman\n  Best score: 0.5663%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score lm overall_spearman", 
-        "value": -0.3417, 
+        "value": -0.2449, 
         "severity": 0, 
-        "severity_value": 0.3417, 
+        "severity_value": 0.2449, 
         "code": "worst_score >= -1", 
-        "message": "Method lm performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: overall_spearman\n  Worst score: -0.3417%\n"
+        "message": "Method lm performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: overall_spearman\n  Worst score: -0.2449%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score lm overall_spearman", 
-        "value": 0.5137, 
+        "value": 0.5364, 
         "severity": 0, 
-        "severity_value": 0.25685, 
+        "severity_value": 0.2682, 
         "code": "best_score <= 2", 
-        "message": "Method lm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: overall_spearman\n  Best score: 0.5137%\n"
+        "message": "Method lm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: overall_spearman\n  Best score: 0.5364%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score lmds_irlba_rf overall_spearman", 
-        "value": -0.988, 
+        "value": -0.9923, 
         "severity": 0, 
-        "severity_value": 0.988, 
+        "severity_value": 0.9923, 
         "code": "worst_score >= -1", 
-        "message": "Method lmds_irlba_rf performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: overall_spearman\n  Worst score: -0.988%\n"
+        "message": "Method lmds_irlba_rf performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: overall_spearman\n  Worst score: -0.9923%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score lmds_irlba_rf overall_spearman", 
-        "value": 0.5176, 
+        "value": 0.5143, 
         "severity": 0, 
-        "severity_value": 0.2588, 
+        "severity_value": 0.25715, 
         "code": "best_score <= 2", 
-        "message": "Method lmds_irlba_rf performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: overall_spearman\n  Best score: 0.5176%\n"
+        "message": "Method lmds_irlba_rf performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: overall_spearman\n  Best score: 0.5143%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1573,21 +1573,21 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score guanlab_dengkw_pm overall_spearman", 
-        "value": 0.6116, 
+        "value": 0.6234, 
         "severity": 0, 
-        "severity_value": 0.3058, 
+        "severity_value": 0.3117, 
         "code": "best_score <= 2", 
-        "message": "Method guanlab_dengkw_pm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: guanlab_dengkw_pm\n  Metric id: overall_spearman\n  Best score: 0.6116%\n"
+        "message": "Method guanlab_dengkw_pm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: guanlab_dengkw_pm\n  Metric id: overall_spearman\n  Best score: 0.6234%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score mean_per_gene rmse", 
-        "value": 0.1976, 
+        "value": 0.2007, 
         "severity": 0, 
-        "severity_value": -0.1976, 
+        "severity_value": -0.2007, 
         "code": "worst_score >= -1", 
-        "message": "Method mean_per_gene performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: mean_per_gene\n  Metric id: rmse\n  Worst score: 0.1976%\n"
+        "message": "Method mean_per_gene performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: mean_per_gene\n  Metric id: rmse\n  Worst score: 0.2007%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1613,11 +1613,11 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score random_predict rmse", 
-        "value": 0.3395, 
+        "value": 0.3408, 
         "severity": 0, 
-        "severity_value": 0.16975, 
+        "severity_value": 0.1704, 
         "code": "best_score <= 2", 
-        "message": "Method random_predict performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: random_predict\n  Metric id: rmse\n  Best score: 0.3395%\n"
+        "message": "Method random_predict performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: random_predict\n  Metric id: rmse\n  Best score: 0.3408%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1633,11 +1633,11 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score zeros rmse", 
-        "value": 0.3028, 
+        "value": 0.3061, 
         "severity": 0, 
-        "severity_value": 0.1514, 
+        "severity_value": 0.15305, 
         "code": "best_score <= 2", 
-        "message": "Method zeros performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: zeros\n  Metric id: rmse\n  Best score: 0.3028%\n"
+        "message": "Method zeros performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: zeros\n  Metric id: rmse\n  Best score: 0.3061%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1673,31 +1673,31 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score knnr_py rmse", 
-        "value": 0.5468, 
+        "value": 0.5465, 
         "severity": 0, 
-        "severity_value": 0.2734, 
+        "severity_value": 0.27325, 
         "code": "best_score <= 2", 
-        "message": "Method knnr_py performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_py\n  Metric id: rmse\n  Best score: 0.5468%\n"
+        "message": "Method knnr_py performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_py\n  Metric id: rmse\n  Best score: 0.5465%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score knnr_r rmse", 
-        "value": 0.1994, 
+        "value": 0.2044, 
         "severity": 0, 
-        "severity_value": -0.1994, 
+        "severity_value": -0.2044, 
         "code": "worst_score >= -1", 
-        "message": "Method knnr_r performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: rmse\n  Worst score: 0.1994%\n"
+        "message": "Method knnr_r performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: rmse\n  Worst score: 0.2044%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score knnr_r rmse", 
-        "value": 0.5423, 
+        "value": 0.5417, 
         "severity": 0, 
-        "severity_value": 0.27115, 
+        "severity_value": 0.27085, 
         "code": "best_score <= 2", 
-        "message": "Method knnr_r performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: rmse\n  Best score: 0.5423%\n"
+        "message": "Method knnr_r performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: rmse\n  Best score: 0.5417%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1713,31 +1713,31 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score lm rmse", 
-        "value": 0.4619, 
+        "value": 0.4537, 
         "severity": 0, 
-        "severity_value": 0.23095, 
+        "severity_value": 0.22685, 
         "code": "best_score <= 2", 
-        "message": "Method lm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: rmse\n  Best score: 0.4619%\n"
+        "message": "Method lm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: rmse\n  Best score: 0.4537%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score lmds_irlba_rf rmse", 
-        "value": 0.0083, 
+        "value": 0.0089, 
         "severity": 0, 
-        "severity_value": -0.0083, 
+        "severity_value": -0.0089, 
         "code": "worst_score >= -1", 
-        "message": "Method lmds_irlba_rf performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: rmse\n  Worst score: 0.0083%\n"
+        "message": "Method lmds_irlba_rf performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: rmse\n  Worst score: 0.0089%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score lmds_irlba_rf rmse", 
-        "value": 0.303, 
+        "value": 0.3061, 
         "severity": 0, 
-        "severity_value": 0.1515, 
+        "severity_value": 0.15305, 
         "code": "best_score <= 2", 
-        "message": "Method lmds_irlba_rf performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: rmse\n  Best score: 0.303%\n"
+        "message": "Method lmds_irlba_rf performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: rmse\n  Best score: 0.3061%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1763,11 +1763,11 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score mean_per_gene mae", 
-        "value": 0.0164, 
+        "value": 0.0259, 
         "severity": 0, 
-        "severity_value": -0.0164, 
+        "severity_value": -0.0259, 
         "code": "worst_score >= -1", 
-        "message": "Method mean_per_gene performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: mean_per_gene\n  Metric id: mae\n  Worst score: 0.0164%\n"
+        "message": "Method mean_per_gene performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: mean_per_gene\n  Metric id: mae\n  Worst score: 0.0259%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1793,11 +1793,11 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score random_predict mae", 
-        "value": 0.2697, 
+        "value": 0.2591, 
         "severity": 0, 
-        "severity_value": 0.13485, 
+        "severity_value": 0.12955, 
         "code": "best_score <= 2", 
-        "message": "Method random_predict performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: random_predict\n  Metric id: mae\n  Best score: 0.2697%\n"
+        "message": "Method random_predict performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: random_predict\n  Metric id: mae\n  Best score: 0.2591%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1813,11 +1813,11 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score zeros mae", 
-        "value": 0.4618, 
+        "value": 0.46, 
         "severity": 0, 
-        "severity_value": 0.2309, 
+        "severity_value": 0.23, 
         "code": "best_score <= 2", 
-        "message": "Method zeros performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: zeros\n  Metric id: mae\n  Best score: 0.4618%\n"
+        "message": "Method zeros performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: zeros\n  Metric id: mae\n  Best score: 0.46%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1863,21 +1863,21 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score knnr_r mae", 
-        "value": 0.0231, 
+        "value": 0.0167, 
         "severity": 0, 
-        "severity_value": -0.0231, 
+        "severity_value": -0.0167, 
         "code": "worst_score >= -1", 
-        "message": "Method knnr_r performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mae\n  Worst score: 0.0231%\n"
+        "message": "Method knnr_r performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mae\n  Worst score: 0.0167%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score knnr_r mae", 
-        "value": 0.5142, 
+        "value": 0.5132, 
         "severity": 0, 
-        "severity_value": 0.2571, 
+        "severity_value": 0.2566, 
         "code": "best_score <= 2", 
-        "message": "Method knnr_r performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mae\n  Best score: 0.5142%\n"
+        "message": "Method knnr_r performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: knnr_r\n  Metric id: mae\n  Best score: 0.5132%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1893,31 +1893,31 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score lm mae", 
-        "value": 0.4796, 
+        "value": 0.4771, 
         "severity": 0, 
-        "severity_value": 0.2398, 
+        "severity_value": 0.23855, 
         "code": "best_score <= 2", 
-        "message": "Method lm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: mae\n  Best score: 0.4796%\n"
+        "message": "Method lm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lm\n  Metric id: mae\n  Best score: 0.4771%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Worst score lmds_irlba_rf mae", 
-        "value": -0.0608, 
+        "value": -0.0588, 
         "severity": 0, 
-        "severity_value": 0.0608, 
+        "severity_value": 0.0588, 
         "code": "worst_score >= -1", 
-        "message": "Method lmds_irlba_rf performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mae\n  Worst score: -0.0608%\n"
+        "message": "Method lmds_irlba_rf performs much worse than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mae\n  Worst score: -0.0588%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score lmds_irlba_rf mae", 
-        "value": 0.279, 
+        "value": 0.278, 
         "severity": 0, 
-        "severity_value": 0.1395, 
+        "severity_value": 0.139, 
         "code": "best_score <= 2", 
-        "message": "Method lmds_irlba_rf performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mae\n  Best score: 0.279%\n"
+        "message": "Method lmds_irlba_rf performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: lmds_irlba_rf\n  Metric id: mae\n  Best score: 0.278%\n"
     }, 
     {
         "task_id": "task_predict_modality", 
@@ -1933,10 +1933,10 @@
         "task_id": "task_predict_modality", 
         "category": "Scaling", 
         "name": "Best score guanlab_dengkw_pm mae", 
-        "value": 0.5126, 
+        "value": 0.5124, 
         "severity": 0, 
-        "severity_value": 0.2563, 
+        "severity_value": 0.2562, 
         "code": "best_score <= 2", 
-        "message": "Method guanlab_dengkw_pm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: guanlab_dengkw_pm\n  Metric id: mae\n  Best score: 0.5126%\n"
+        "message": "Method guanlab_dengkw_pm performs a lot better than baselines.\n  Task id: task_predict_modality\n  Method id: guanlab_dengkw_pm\n  Metric id: mae\n  Best score: 0.5124%\n"
     }
 ]
