@@ -1,10 +1,15 @@
 library(rlang)
 
 repositories <- c(
-    "openproblems-bio/openproblems",
-    # "openproblems-bio/task_dimensionality_reduction",
-    # "openproblems-bio/task_spatially_variable_genes",
-    "openproblems-bio/task_perturbation_prediction"
+    "openproblems-bio/task_denoising",
+    "openproblems-bio/task_dimensionality_reduction",
+    "openproblems-bio/task_spatially_variable_genes",
+    "openproblems-bio/task_perturbation_prediction",
+    "openproblems-bio/task_batch_integration",
+    "openproblems-bio/task_cell_cell_communication",
+    "openproblems-bio/task_label_projection",
+    "openproblems-bio/task_spatial_decomposition",
+    "openproblems-bio/task_predict_modality"
 )
 
 cache_repository <- function(repo) {
@@ -20,7 +25,13 @@ cache_repository <- function(repo) {
     zzz <- processx::run("git", c("fetch", "--all"), wd = repo_dir)
 
     # reset the repository to the latest commit
-    zzz <- processx::run("git", c("pull", "origin", "main"), wd = repo_dir)
+    if (repo == "openproblems-bio/task_spatial_decomposition") {
+        zzz <- processx::run("git", c("pull", "origin", "add-missing-authors"), wd = repo_dir)
+    } else if (repo == "openproblems-bio/task_dimensionality_reduction") {
+        zzz <- processx::run("git", c("pull", "origin", "add_author"), wd = repo_dir)
+    } else {
+        zzz <- processx::run("git", c("pull", "origin", "main"), wd = repo_dir)
+    }
 
     # return the path to the repository
     return(repo_dir)
@@ -28,12 +39,12 @@ cache_repository <- function(repo) {
 
 find_task_info <- function(repo_dir) {
     # find all authors in the repository
-    task_info <- list.files(repo_dir, pattern = "task_info.yaml", full.names = TRUE, recursive = TRUE)
-    task_info <- task_info[grep("/api/task_info.yaml", task_info)]
+    # task_info <- list.files(repo_dir, pattern = "task_info.yaml", full.names = TRUE, recursive = TRUE)
+    # task_info <- task_info[grep("/api/task_info.yaml", task_info)]
 
-    if (length(task_info) > 0) {
-        return(task_info)
-    }
+    # if (length(task_info) > 0) {
+    #     return(task_info)
+    # }
 
     viash_yaml <- list.files(repo_dir, pattern = "_viash.yaml", full.names = TRUE, recursive = TRUE)
 
@@ -52,8 +63,18 @@ render_author <- function(author) {
             email_clean <- tolower(stringr::str_trim(author$info$email))
             checksum <- digest::digest(email_clean, algo = "md5", serialize = FALSE)
             paste0("https://www.gravatar.com/avatar/", checksum)
-        } else {
+        } else if (file.exists("/images/avatar.svg")){
             "/images/avatar.svg"
+        } else {
+            # generate random avatar
+            name <- strsplit(author$name, " ")
+            url <- paste0("https://avatar.iran.liara.run/username?username=",name[[1]][[1]],"+",name[[1]][[2]])
+            output_dir <- file.path("tmp", gsub(" ", "_", author$name))
+            if (!dir.exists(output_dir)) {
+                dir.create(output_dir, recursive = TRUE)
+            }
+            download.file(url, file.path(output_dir, "avatar.png"), mode = "wb")
+            "avatar.png"
         }
 
     # process links
@@ -74,7 +95,7 @@ render_author <- function(author) {
         },
         orcid = function(value) {
             list(
-                icon = "fa-brands fa-orcid",
+                icon = "fa-brands--orcid",
                 text = "ORCID",
                 href = paste0("https://orcid.org/", value)
             )
@@ -98,8 +119,8 @@ render_author <- function(author) {
     out <- list(
         title = author$name,
         image = out_image,
-        # role = paste(stringr::str_to_title(author$roles), collapse = ", "),
-        role = "Task Contributor",
+        role = paste(stringr::str_to_title(author$roles), collapse = ", "),
+        # role = "Task Contributor",
         about = list(
             template = "jolla",
             links = out_links
@@ -162,18 +183,22 @@ for (task_name in names(tasks)) {
         author <- task$authors[[author_id]]
         
         txt <- render_author(author)
-        file_path <- file.path("team", "task_contributors", paste0(author_id, "/index.qmd"))
+        file_path <- file.path("team", "task_contributors", task_name, paste0(author_id, "/index.qmd"))
 
         if (!dir.exists(dirname(file_path))) {
             dir.create(dirname(file_path), recursive = TRUE)
         }
         
         writeLines(txt, file_path)
+
+        if (file.exists(file.path("tmp", gsub(" ", "_", author$name), "avatar.png"))) {
+            file.rename(file.path("tmp", gsub(" ", "_", author$name), "avatar.png"), file.path(dirname(file_path), "avatar.png"))
+        }
+
     }
 }
 
-teams <- list.dirs("team", full.names = FALSE, recursive = FALSE)
-teams <- teams[!teams %in% c("core_members", "scientific_advisors")]
+teams <- list.dirs("team/task_contributors", full.names = FALSE, recursive = FALSE)
 
 teams_headers <- paste0(
 "  - id: ", teams, "
@@ -183,7 +208,7 @@ teams_headers <- paste0(
     sort: ''"
 )
 teams_index <- paste0(
-"## ", stringr::str_to_title(gsub("_", " ", teams)), "
+"### ", stringr::str_to_title(gsub("_", " ", teams)), "
 
 :::{#", teams, "}
 :::
@@ -219,6 +244,8 @@ css: team.css
 
 :::{#scientific_advisors}
 :::
+
+## Task Contributors
 
 ", paste(teams_index, collapse = "\n"), "
 ")

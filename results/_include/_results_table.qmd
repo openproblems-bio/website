@@ -15,7 +15,7 @@ mean_na_zero <- function(x) {
 }
 
 res_tib1 <- res_tib0 %>% 
-  group_by(method_id, method_name, paper_reference, code_url) %>%
+  group_by(method_id, method_name, code_url) %>%
   summarise_if(is.numeric, mean_na_zero) %>%
   ungroup() %>%
   mutate(

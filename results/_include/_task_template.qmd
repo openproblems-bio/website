@@ -18,6 +18,22 @@ cat(
 )
 ```
 
+```{r details, results="asis", echo=FALSE}
+#| column: margin
+
+cat("#### Info\n\n")
+
+details <- tribble(
+  ~icon, ~value,
+  "bi bi-github", if (!is.null(task_info$repo)) paste0("[Repository](",task_info$repo,")") else NULL,
+  "octicon--issue-opened-17", if (!is.null(task_info$issue_tracker)) paste0("[Issues](",task_info$issue_tracker,")") else NULL,
+  "bi bi-tag", if (!is.null(task_info$version)) paste0(task_info$version) else NULL,
+  "fa-solid fa-scale-balanced", if (!is.null(task_info$license)) paste0(task_info$license) else NULL
+  ) %>% filter(!sapply(value, is.null))
+cat(paste(paste0("<i class=\"", details$icon, "\"></i> ", details$value), " \n"))
+
+```
+
 
 [Task info](data/task_info.json){class="btn btn-secondary"}
 [Method info](data/method_info.json){class="btn btn-secondary"}

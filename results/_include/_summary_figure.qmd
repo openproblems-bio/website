@@ -34,7 +34,7 @@ results_resources = results.flatMap(d => {
     dataset_id: d.dataset_id,
     ...d.resources
   })
-})
+}).filter(d => method_ids.includes(d.method_id) && dataset_ids.includes(d.dataset_id))
 
 function label_time(time) {
   if (time < 1e-5) return "0s";
