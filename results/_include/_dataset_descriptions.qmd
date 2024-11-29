@@ -8,32 +8,34 @@ lines <- pmap_chr(dataset_info, function(dataset_id, dataset_name, dataset_summa
   date_created <- pluck(rest, "date_created", .default = NULL)
   file_size <- pluck(rest, "file_size", .default = NULL)
 
-  if (grep("^[a-zA-Z0-9]+[0-9]{4}[a-z]+$",data_reference) && !grepl("^@",data_reference)) {
-    ref <- split_cite_fun(data_reference)
-  } else {
-    bibs <- convert_to_bibtex(data_reference)
-    # Write new entries to library.bib
-    write_library(bibs)
-    ref <- get_bibtex_entries(bibs)
-  }
+  ref <-
+    if (grepl("^[a-zA-Z0-9]+[0-9]{4}[a-z]+$", data_reference) && !grepl("^@", data_reference)) {
+      split_cite_fun(data_reference)
+    } else {
+      bibs <- convert_to_bibtex(data_reference)
+      # Write new entries to library.bib
+      write_library(bibs)
+      get_bibtex_entries(bibs)
+    }
 
   if (ref != "") ref <- paste0(" ", ref)
   
-  dataset_link <- if (!is.null(source_dataset_id) && dir.exists(paste0("../../datasets/", source_dataset_id))) {
-    glue::glue("../../datasets/{source_dataset_id}")
-  } else if (dir.exists(paste0("../../datasets/", dataset_id))) {
-    glue::glue("../../datasets/{dataset_id}")
-  } else {
-    NULL
-  }
+  dataset_link <-
+    if (!is.null(source_dataset_id) && dir.exists(paste0("../../datasets/", source_dataset_id))) {
+      glue::glue("../../datasets/{source_dataset_id}")
+    } else if (dir.exists(paste0("../../datasets/", dataset_id))) {
+      glue::glue("../../datasets/{dataset_id}")
+    } else {
+      NULL
+    }
 
   # Make file_size human readable
   if (!is.null(file_size)) {
     file_size_str <- format(
-    structure(file_size, class = "object_size"),
-    units = "auto",
-    standard = "IEC",
-    digits = 2
+      structure(file_size, class = "object_size"),
+      units = "auto",
+      standard = "IEC",
+      digits = 2
     )
   }
 
