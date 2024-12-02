@@ -1,0 +1,387 @@
+---
+title: Timeline
+execute:
+  echo: false
+  output: false
+css: "timeline.css"
+---
+```{ojs}
+require('d3');
+sb = require('@supabase/supabase-js');
+```
+
+```{ojs}
+// Based on https://observablehq.com/@d3/color-legend
+function Swatches(color, {
+  columns = null,
+  format,
+  unknown: formatUnknown,
+  swatchSize = 20,
+} = {}) {
+  const id = `legend-swatches`;
+  const unknown = formatUnknown == null ? undefined : color.unknown();
+  const unknowns = unknown == null || unknown === d3.scaleImplicit ? [] : [unknown];
+  const domain = color.domain().concat(unknowns);
+  if (format === undefined) format = x => x === unknown ? formatUnknown : x;
+
+  function entity(character) {
+    return `&#${character.charCodeAt(0).toString()};`;
+  }
+
+  if (columns !== null) return htl.html`<div>
+  <div style=${{columns}}>${domain.map(value => {
+    const label = `${format(value)}`;
+    return htl.html`<div class=legend-swatches-item>
+      <div class=legend-swatches-swatch style=${{background: color(value)}}></div>
+      <div class=legend-swatches-label title=${label}>${label}</div>
+    </div>`;
+  })}
+  </div>
+</div>`;
+
+  return htl.html`<div class=legend-swatches-item>
+  ${domain.map(value => htl.html`<span class="${id}" style="--color: ${color(value)}">${format(value)}</span>`)}`;
+}
+```
+
+
+```{ojs}
+//| output: true
+
+Swatches(d3.scaleOrdinal(["event", "milestone", "competition", "benchmark"], ["#d95f02", "#1b9e77", "#e7298a", "#FF414B"]))
+```
+
+
+
+
+```{ojs supabase_data}
+supabase_url="https://bleficzaoyltozjjndha.supabase.co"
+supabase_key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJsZWZpY3phb3lsdG96ampuZGhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQyNDI2ODMsImV4cCI6MjAzOTgxODY4M30.fHtpJTveDUF1z07_k7FZX3wLy7bXpkYl5KyA5o_EuQY"
+supabase = sb.createClient(supabase_url, supabase_key);
+
+benchmarks = (await supabase
+  .from('tasks')
+  .select('first_release, name, task_name'))
+  .data
+  .filter(item => item.first_release !== null)
+  .map(item => ({
+    date: d3.timeParse("%Y-%m-%d")(item.first_release),
+    eventName: item.name,
+    eventDescription: '',
+    eventType: "benchmark"
+  }));
+
+// Add result link
+
+timeline = (await supabase
+  .from('timeline')
+  .select('name, date, type'))
+  .data
+  .map(item => ({
+    date: d3.timeParse("%Y-%m-%d")(item.date),
+    eventName: item.name,
+    eventDescription: '',
+    eventType: item.type  }));
+  
+
+combinedData = benchmarks.concat(timeline);
+
+combinedData;
+```
+
+```{ojs}
+
+data = combinedData
+
+function halo(text) {
+  text.clone(true)
+      .each(function() { this.parentNode.insertBefore(this, this.previousSibling); })
+      .attr("aria-hidden", "true")
+      .attr("fill", "none")
+      .attr("stroke", backgroundColor)
+      .attr("stroke-width", 24)
+      .attr("stroke-linecap", "round")
+      .attr("stroke-linejoin", "round")
+      .style("text-shadow", `-1px -1px 2px ${backgroundColor}, 1px 1px 2px ${backgroundColor}, -1px 1px 2px ${backgroundColor}, 1px -1px 2px ${backgroundColor}`);
+}
+
+
+params = {
+  let output = {};
+  
+  output["smallScreenSize"] = 768;
+  output["mediumScreenSize"] = 940;
+  
+  output["svg"] = {
+    "width":  width,
+    "height": data.length * 50 // Roughly relative to number of data points but doesn't factor in the full timeline scale such as clustering or spread out data
+  };
+  
+  output["margin"] = {
+    "top":    104,
+    "right":  96,
+    "bottom": 192,
+    "left":   240,
+    "axisLeft": 144,
+  };
+  
+  output["plot"] = {
+    "x":      output["margin"]["left"],
+    "y":      output["margin"]["top"],
+    "width":  output["svg"]["width"]  - output["margin"]["left"] - output["margin"]["right"],
+    "height": output["svg"]["height"] - output["margin"]["top"]  - output["margin"]["bottom"]
+  };
+  
+  output["smallScreenMargin"] = {
+    "top":    60,
+    "right":  8,
+    "bottom": 192,
+    "left":   8,
+    "axisLeft": 144,
+  };
+
+  output["smallScreenPlot"] = {
+    "x":      output["margin"]["left"],
+    "y":      output["margin"]["top"],
+    "width":  output["svg"]["width"]  - output["margin"]["left"] - output["margin"]["right"],
+    "height": output["svg"]["height"] - output["margin"]["top"]  - output["margin"]["bottom"]
+  };
+
+  output["marker"] = {
+    "radius": 4
+  }
+  
+  output["date"] = {
+    "offset": output["marker"]["radius"] * 2
+  }
+
+  output["event"] = {
+    "offset": output["marker"]["radius"] * 6
+  }
+
+  output["smallScreenEvent"] = {
+    "offset": output["marker"]["radius"] * 4
+  }
+  
+  return output;
+}
+
+axis = {
+  const yAxis = width >= params.smallScreenSize ? 
+        d3.axisRight(y)
+            .ticks(d3.timeYear)
+            .tickPadding(-(params.margin.axisLeft))
+            .tickSizeOuter(0)
+            .tickSizeInner(-(params.margin.axisLeft))
+        :
+        d3.axisRight(y)
+            .ticks(d3.timeYear)
+            .tickPadding(-(params.smallScreenMargin.axisLeft))
+            .tickSizeOuter(0)
+            .tickSizeInner(-(params.smallScreenMargin.axisLeft))
+            .tickFormat(d3.timeFormat('%Y'));
+
+  return {y: yAxis};
+}
+
+// Calculate the new domain
+firstDate = new Date(d3.min(data, d => d.date));
+lastDate = new Date(d3.max(data, d => d.date));
+startDate = new Date(firstDate.getUTCFullYear(), 0, 1); // 01/01/year of the first event
+endDate = new Date(lastDate.getUTCFullYear() + 1, 0, 1); // 01/01/year following the last event
+
+y = d3.scaleUtc()
+  .domain([startDate, endDate])//.nice()
+  .range([params.plot.y, params.plot.height]);
+  // .range([params.margin.top, height - params.margin.bottom]);
+
+// The dodge function takes an array of positions (e.g. X values along an X Axis) in floating point numbers
+// The dodge function optionally takes customisable separation, iteration, and error values.
+// The dodge function returns a similar array of positions, but slightly dodged from where they were in an attempt to separate them out. It restrains the result a little bit so that the elements don't explode all over the place and so they don't go out of bounds.
+
+function dodge(positions, separation = 10, maxiter = 10, maxerror = 1e-1) {
+  positions = Array.from(positions);
+  let n = positions.length;
+  if (!positions.every(isFinite)) throw new Error("invalid position");
+  if (!(n > 1)) return positions;
+  let index = d3.range(positions.length);
+  for (let iter = 0; iter < maxiter; ++iter) {
+    index.sort((i, j) => d3.ascending(positions[i], positions[j]));
+    let error = 0;
+    for (let i = 1; i < n; ++i) {
+      let delta = positions[index[i]] - positions[index[i - 1]];
+      if (delta < separation) {
+        delta = (separation - delta) / 2;
+        error = Math.max(error, delta);
+        positions[index[i - 1]] -= delta;
+        positions[index[i]] += delta;
+      }
+    }
+    if (error < maxerror) break;
+  }
+  return positions;
+}
+
+backgroundColor = "#FAF9FB";
+```
+
+
+```{ojs}
+//| output: true
+DiDoesDigital2020Timeline = {
+  const markerDefaultColor = "#FF414B";
+  const markerSelectedColor = "#9880C2";
+  const markerFadedColor = "#E4DDEE";
+  const markerEventColor = "#d95f02";
+  const markerMilestoneColor = "#1b9e77";
+  const markerCompetitionColor = "#e7298a";
+
+
+  const labelDefaultColor = "#331A5B";
+  const labelSelectedColor = "#331A5B";
+  const labelFadedColor = "#E4DDEE";
+  const labelEventColor = "#d95f02";
+  const labelMilestoneColor = "#1b9e77";
+  const labelCompetitionColor = "#e7298a";
+
+  const eventTypeColors = {
+    benchmark: markerDefaultColor,
+    event: markerEventColor,
+    milestone: markerMilestoneColor,
+    competition: markerCompetitionColor
+  };
+  
+  const svg = d3.select(DOM.svg(params.svg.width, params.svg.height))
+    .attr("id", "timeline");
+  
+  const plot = svg.append("g")
+    .attr("id", "plot")
+    // .attr("transform", `translate(350, 0)`);
+
+  const gy = plot.append("g")
+    .attr("id", "y-axis")
+    .attr("class", "axis")
+    .call(axis.y)
+    .attr("aria-hidden", "true")
+    .call(g => g.selectAll(".tick text").call(halo));
+  
+  const markers = plot.append("g")
+    .attr("class", "markers")
+    .selectAll("circle")
+    .data(data)
+    .join("circle")
+      .attr("transform", d => `translate(0, ${y(d.date)})`)
+      .attr("aria-hidden", "true")
+      .attr("fill", d => eventTypeColors[d.eventType] || markerDefaultColor)
+      .attr("stroke", d => eventTypeColors[d.eventType] || markerDefaultColor)
+      // .attr("stroke-width", 1)
+      .attr("cx", 0.5)
+      .attr("cy", (params.marker.radius / 2) + 0.5)
+      .attr("r", params.marker.radius);
+
+  const dodgedYValues = dodge(data.map(d => y(d.date)), 24);
+  // const dodgedYValues = data.map(d => y(d.date)); // for debugging alignment
+
+  const eventLabels = plot.append("g")
+    .attr("class", "eventLabels")
+    .selectAll("text")
+    .data(d => d3.zip(
+      data,
+      dodgedYValues,
+    ))
+    .join("text")
+      .attr("class", "event-title")
+      .style("font-weight", "400")
+      .style("fill", ([d]) => eventTypeColors[d.eventType] || markerDefaultColor)
+      .attr("x", width >= params.smallScreenSize ? params.event.offset : params.smallScreenEvent.offset)
+      .attr("y", ([, y]) => y)
+      .attr("dy", "0.35em");
+    
+  eventLabels.append("tspan")
+      .text(([d]) => d.eventName);
+  // eventLabels.append("tspan")
+  //     .text(([d]) => ` ${d.eventDescription} ${d3.timeFormat("%Y")(d.date)}`)
+  //       .attr("x", width);
+      // .text(([d]) => d.eventName);
+  
+  const tooltip = d3.create("div")
+    .attr("class", "tooltip")
+    .attr("aria-hidden", "true")
+    .html(`
+      <div class="tooltip-date">
+        <span id="date"></span>
+      </div>
+      <div class="tooltip-name">
+        <span id="name"></span>
+      </div>
+      <div class="tooltip-description">
+        <span id="description"></span>
+      </div>
+    `);
+  
+  const rangeY = dodgedYValues.map(x => x);
+  const rangeY0 = rangeY[0];
+  const fuzzyTextHeightAdjustment = 24
+  
+  svg.on("touchend mouseout", function(event) {
+    markers
+      .attr("fill", d => eventTypeColors[d.eventType] || markerDefaultColor)
+      .attr("stroke", d => eventTypeColors[d.eventType] || markerDefaultColor);
+    
+    eventLabels
+      .style("opacity", 1);
+  });
+  
+  svg.on("touchmove mousemove", function(event) {
+    const mouseY = d3.pointer(event,this)[1];
+    const nearestEventY = rangeY.reduce((a, b) => Math.abs(b - mouseY) < Math.abs(a - mouseY) ? b : a);
+    const dodgedIndex = rangeY.indexOf(nearestEventY);
+    const dataEvent = data[dodgedIndex];
+
+    eventLabels
+      .filter((d, i) => i !== dodgedIndex)
+      .style("opacity", 0.3);
+
+    eventLabels
+      .filter((d, i) => i === dodgedIndex)
+      .style("opacity", 1);
+
+    markers
+      .filter((d, i) => i !== dodgedIndex)
+      .attr("fill", markerFadedColor)
+      .attr("stroke", markerFadedColor);
+
+    markers
+      .filter((d, i) => i === dodgedIndex)
+      .attr("fill", d => eventTypeColors[d.eventType] || markerDefaultColor)
+      .attr("stroke", d => eventTypeColors[d.eventType] || markerDefaultColor)
+      .raise();
+    
+    tooltip.style("opacity", 1);
+    tooltip.style("transform", `translate(${(width >= params.smallScreenSize ? params.plot.x + 8 : 0)}px, calc(-100% + ${nearestEventY}px))`);
+    tooltip.select("#date")
+      .text(d3.timeFormat("%d %m %Y")(dataEvent.date));
+    tooltip.select("#name")
+      .text(dataEvent.eventName);
+    tooltip.select("#description")
+      .text(dataEvent.eventDescription);
+  });
+
+  svg.on("touchend mouseleave", () => tooltip.style("opacity", 0));
+
+  return html`
+    <figure style="max-width: 100%;">
+      <div id="wrapper" class="wrapper">
+        ${tooltip.node()}
+        <div class=timeline-svg>
+          ${svg.node()}
+        </div>
+      </div>
+    </figure>
+  </div>`;
+  
+  // return svg.node();
+  // yield svg.node();
+  // d3.selectAll(".event-name div").attr('class', 'teft');
+}
+```
