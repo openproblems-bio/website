@@ -24,6 +24,8 @@
 
 * Fix "used in" section in dataset pages (PR #362).
 
+* Rescale resources in funkyheatmap when methods and/or datasets are filtered (PR #368).
+
 # openproblems.bio v2.3.6
 
 ## NEW CONTENT
