@@ -1,5 +1,9 @@
 # openproblems.bio unreleased
 
+## NEW FEATURES
+
+* Add timeline visualisation (PR #360).
+
 ## MAJOR CHANGES
 
 * Migrated the result scaling from R to JavaScript to allow dynamically updating the results (PR #332).
