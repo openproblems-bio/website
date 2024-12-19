@@ -5,10 +5,135 @@ engine: knitr
 page-navigation: true
 ---
 
-Once dataset processor, method and metric components are created, it is time to combine them into a workflow. A workflow is a sequence of components that are executed in a specific order.
+Up to this point, you've seen how OpenProblems uses modular components — dataset loaders, methods, and metrics — to define benchmarking tasks for single-cell analysis. Now, we'll bring these components together into a complete, executable workflow using Viash. By creating a Viash Nextflow component, we can orchestrate the execution of these modules, making it simple to run a full benchmark, manage dependencies, and generate comprehensive results. 
 
-:::{.callout-important}
-This page is still under construction.
+Let's break down how we build a Nextflow workflow component using Viash. The core idea is to define a `config.vsh.yaml` file that describes our workflow's inputs, outputs, dependencies, and execution logic, and then write a `main.nf` script containing the Nextflow workflow itself. Viash will take care of the rest, automatically generating the necessary boilerplate code and wiring everything together.
 
-For now, this step is not an essential step of creating a new task before submitting it for review.
-:::
+## Viash Config for Nextflow Workflows (`config.vsh.yaml`)
+
+The `config.vsh.yaml` file is where we specify the blueprint of our workflow. 
+Here's a breakdown of the key sections:
+
+```{.yaml filename="src/workflows/run_benchmark/config.vsh.yaml"}
+name: run_benchmark # <1>
+namespace: workflows
+
+argument_groups:
+  - name: Inputs # <2>
+    arguments:
+      - name: "--input_train"
+        __merge__: /src/api/file_train.yaml
+        type: file
+        direction: input
+        required: true
+      - ...
+  - name: Outputs # <3>
+    arguments:
+      - name: "--output_scores"
+        type: file
+        required: true
+        direction: output
+        description: A yaml file containing the scores of each of the methods
+        default: score_uns.yaml
+      - ...
+
+resources: # <4>
+  - type: nextflow_script
+    path: main.nf
+    entrypoint: run_wf
+
+dependencies: # <5>
+  - name: h5ad/extract_uns_metadata
+  - name: methods/logistic_regression
+  - name: metrics/accuracy
+  - name: control_methods/true_labels
+
+runners: # <6>
+  - type: nextflow
+```
+
+1. **`name` and `namespace`:** These fields, as with other component types, uniquely identify your workflow component within the Viash ecosystem.
+2. **Input arguments:** Here we define the input files our workflow will consume. These typically consists of all of the files created by the dataset processor defined in the previous page.
+3. **Output arguments:** The outputs are where the results of your benchmarking workflow will be stored. For benchmarks, this should always be the following. `output_scores`: A yaml containing the scores of the methods on the datasets. `output_method_configs`: A yaml containing the Viash configs of the methods used in the benchmark. `output_metric_configs`: A yaml containing the Viash configs of the metrics used in the benchmark. `output_dataset_info`: A yaml containing the metadata of the datasets used in the benchmark. `output_task_info`: A yaml containing the metadata of the benchmark task itself.
+4. **`resources`:** This section is where you point Viash to your Nextflow workflow definition, which is typically stored in a file named `main.nf` with an entry point named `run_wf`.
+5. **`dependencies`:** This is what makes workflow components truly powerful. Here, you declare the other Viash components that your workflow depends on. These can be methods, metrics, or other utility components. You need to specify each dependency by name, and optionally its repository if it's not a component from this repository.
+6. **`runners`:** This tells Viash that it should use Nextflow to run this component.
+
+
+
+### The Nextflow Workflow (`main.nf`)
+
+The `main.nf` file contains the actual Nextflow workflow that orchestrates the execution of your components. Let's dissect the key parts of this file:
+
+```{.groovy filename="src/workflows/run_benchmark/main.nf"}
+// <1>
+
+workflow run_wf { // <2>
+  take:
+  input_ch // <3>
+
+  main:
+
+  dataset_ch = input_ch
+    | map{ id, state -> 
+      [id, state + ["_meta": [join_id: id]]]
+    }
+    | extract_uns_metadata.run( // <4>
+      fromState: [input: "input_solution"],
+      toState: { id, output, state ->
+        state + [
+          dataset_uns: readYaml(output.output).uns
+        ]
+      }
+    )
+
+  methods = [ // <5>
+    true_labels,
+    logistic_regression
+  ]
+  metrics = [
+    accuracy
+  ]
+
+  score_ch = dataset_ch // <6>
+    // run all methods
+    | runEach(
+      components: methods,
+      // ...
+    )
+    // run all metrics
+    | runEach(
+      components: metrics,
+      // ...
+    )
+  
+  output_ch = ... // <7>
+
+  emit:
+  output_ch
+}
+
+```
+
+1. **Auto-Generated Code (not shown):** When you build your workflow component with Viash, it automatically injects some boilerplate code at the beginning of your `main.nf`. This code handles tasks like finding the components you declared as dependencies and setting up the initial data flow.
+2. **Workflow Structure:** Your main workflow logic will typically be enclosed within a `workflow` block, named `run_wf` as we specified in our `config.vsh.yaml`. This is the entry point for your workflow.
+3. **Channels: The Data Flow Backbone** Nextflow uses channels to pass data between different processes (which, in our case, are the Viash components). Channels are like asynchronous queues, allowing components to operate independently and concurrently. Viash workflows use a specific convention for the data passed through channels. Each element in a channel is a tuple `[id, state]`, where `id` is a unique identifier for a particular data instance, and `state` is a dictionary key-value dictionary that holds all of the data and metadata associated with that `id`.
+4. **Component Execution with `.run()`:**  Viash enhances components with a `.run()` method. While a regular component is executed as a process in a nextflow workflow directly, `.run()` provides more fine-grained control. You can specify which data gets passed to the component using the `fromState` argument, and how the component's output gets merged back into the state using the `toState` argument. This is a powerful way to customize how components interact with the workflow's data.
+5. **Method and Metric Components:** Here, we define the methods and metrics we want to use in our benchmark. These are the components we declared as dependencies in our `config.vsh.yaml`. We can pass these components directly to the `methods` and `metrics` variables, and then use them in the workflow as needed.
+6. **Running Components with `runEach()`:** The `runEach()` function takes a list of components and runs them in parallel, passing the data through the channels. This is where the benchmarking actually happens. We run each method on each dataset, then run each metric on the results, and finally collect the scores.
+7. **Boilerplate**: The rest of the workflow is typically boilerplate code. This will be moved to a separate helper file to avoid code duplication.
+
+
+
+
+## Test run
+
+To test your workflow, you can use the provided `scripts/run_benchmark/run_test_local.sh` script. This script is designed to run the `run_benchmark` workflow on a small test dataset.
+
+1. **Build All Docker Containers**: Before running the script, make sure you have built all Docker containers for your components by running `scripts/project/build_all_docker_containers.sh`. This will ensure that the necessary dependencies are available when the workflow runs.
+
+2. **Edit run_test_local.sh**: You'll need to modify the script to match your workflow's inputs and outputs. The relevant lines are currently marked with TODO comments.
+
+3. **Run the Script**: Once you've edited the script, run it from the root of the repository with `./scripts/run_benchmark/run_test_local.sh`.
+
+The script will execute the `run_benchmark` workflow using Nextflow and the Docker profile. After the script finishes, you can examine the output files in the specified `publish_dir` to verify that your workflow is working correctly.
