@@ -332,16 +332,6 @@
     {
         "task_id": "task_denoising", 
         "category": "Raw results", 
-        "name": "Method 'scprint' %missing", 
-        "value": 1.0, 
-        "severity": 3, 
-        "severity_value": 10.0, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_denoising\n  method id: scprint\n  Percentage missing: 100%\n"
-    }, 
-    {
-        "task_id": "task_denoising", 
-        "category": "Raw results", 
         "name": "Dataset 'openproblems_v1/pancreas' %missing", 
         "value": 0.1428571428571429, 
         "severity": 1, 
@@ -358,16 +348,6 @@
         "severity_value": 1.428571428571429, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: task_denoising\n  dataset id: cellxgene_census/mouse_pancreas_atlas\n  Percentage missing: 14%\n"
-    }, 
-    {
-        "task_id": "task_denoising", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/cengen' %missing", 
-        "value": 0.1428571428571429, 
-        "severity": 1, 
-        "severity_value": 1.428571428571429, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_denoising\n  dataset id: openproblems_v1/cengen\n  Percentage missing: 14%\n"
     }, 
     {
         "task_id": "task_denoising", 
@@ -438,16 +418,6 @@
         "severity_value": 1.428571428571429, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: task_denoising\n  dataset id: cellxgene_census/gtex_v9\n  Percentage missing: 14%\n"
-    }, 
-    {
-        "task_id": "task_denoising", 
-        "category": "Raw results", 
-        "name": "Dataset 'openproblems_v1/mouse_blood_olsson_labelled' %missing", 
-        "value": 0.1428571428571429, 
-        "severity": 1, 
-        "severity_value": 1.428571428571429, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_denoising\n  dataset id: openproblems_v1/mouse_blood_olsson_labelled\n  Percentage missing: 14%\n"
     }, 
     {
         "task_id": "task_denoising", 
@@ -632,26 +602,6 @@
     {
         "task_id": "task_denoising", 
         "category": "Scaling", 
-        "name": "Worst score scprint mse", 
-        "value": 0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method scprint performs much worse than baselines.\n  Task id: task_denoising\n  Method id: scprint\n  Metric id: mse\n  Worst score: 0%\n"
-    }, 
-    {
-        "task_id": "task_denoising", 
-        "category": "Scaling", 
-        "name": "Best score scprint mse", 
-        "value": 0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
-        "code": "best_score <= 2", 
-        "message": "Method scprint performs a lot better than baselines.\n  Task id: task_denoising\n  Method id: scprint\n  Metric id: mse\n  Best score: 0%\n"
-    }, 
-    {
-        "task_id": "task_denoising", 
-        "category": "Scaling", 
         "name": "Worst score no_denoising poisson", 
         "value": 0, 
         "severity": 0, 
@@ -768,25 +718,5 @@
         "severity_value": 0.26225, 
         "code": "best_score <= 2", 
         "message": "Method magic performs a lot better than baselines.\n  Task id: task_denoising\n  Method id: magic\n  Metric id: poisson\n  Best score: 0.5245%\n"
-    }, 
-    {
-        "task_id": "task_denoising", 
-        "category": "Scaling", 
-        "name": "Worst score scprint poisson", 
-        "value": 0, 
-        "severity": 0, 
-        "severity_value": -0.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method scprint performs much worse than baselines.\n  Task id: task_denoising\n  Method id: scprint\n  Metric id: poisson\n  Worst score: 0%\n"
-    }, 
-    {
-        "task_id": "task_denoising", 
-        "category": "Scaling", 
-        "name": "Best score scprint poisson", 
-        "value": 0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
-        "code": "best_score <= 2", 
-        "message": "Method scprint performs a lot better than baselines.\n  Task id: task_denoising\n  Method id: scprint\n  Metric id: poisson\n  Best score: 0%\n"
     }
 ]
