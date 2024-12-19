@@ -28,7 +28,10 @@ jobs:
           use-public-rspm: true
 
       - name: Install system dependencies for igraph
-        run: sudo apt-get update && sudo apt-get install -y libglpk40
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libglpk40 # igraph
+          sudo apt-get install -y libfontconfig1-dev # systemfonts
 
       - name: Set up environment
         run: |
