@@ -1,26 +1,32 @@
 [
   {
-    "metric_name": "Mean-squared error",
-    "metric_summary": "The mean squared error between the denoised counts of the training dataset and the true counts of the test dataset after reweighting by the train/test ratio.",
-    "paper_reference": "batson2019molecular",
-    "maximize": false,
-    "image": "https://github.com/openproblems-bio/openproblems/pkgs/container/openproblems",
-    "task_id": "denoising",
-    "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+    "task_id": "metrics",
+    "component_name": "mse",
     "metric_id": "mse",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/v1.0.0/openproblems/tasks/denoising/metrics/mse.py",
-    "code_version": "v1.0.0"
+    "metric_name": "Mean-squared error",
+    "metric_summary": "The mean squared error between the denoised counts and the true counts.",
+    "metric_description": "The mean squared error between the denoised counts of the training dataset and the true counts of the test dataset after reweighing by the train/test ratio",
+    "references_doi": "10.1101/786269",
+    "references_bibtex": null,
+    "implementation_url": "https://github.com/openproblems-bio/task_denoising/blob/bfa2730431d47be21afe1c62fc4f2139036126a0/src/metrics/mse",
+    "image": "https://ghcr.io/openproblems-bio/task_denoising/metrics/mse:build_main",
+    "code_version": "build_main",
+    "commit_sha": "bfa2730431d47be21afe1c62fc4f2139036126a0",
+    "maximize": false
   },
   {
-    "metric_name": "Poisson loss",
-    "metric_summary": "The Poisson log likelihood of observing the true counts of the test dataset given the distribution given in the denoised dataset.",
-    "paper_reference": "batson2019molecular",
-    "maximize": false,
-    "image": "https://github.com/openproblems-bio/openproblems/pkgs/container/openproblems-python-pytorch",
-    "task_id": "denoising",
-    "commit_sha": "b3456fd73c04c28516f6df34c57e6e3e8b0dab32",
+    "task_id": "metrics",
+    "component_name": "poisson",
     "metric_id": "poisson",
-    "implementation_url": "https://github.com/openproblems-bio/openproblems/blob/v1.0.0/openproblems/tasks/denoising/metrics/poisson.py",
-    "code_version": "v1.0.0"
+    "metric_name": "Poisson Loss",
+    "metric_summary": "The Poisson log likelihood of the true counts observed in the distribution of denoised counts",
+    "metric_description": "The Poisson log likelihood of observing the true counts of the test dataset given the distribution given in the denoised dataset.",
+    "references_doi": "10.1101/786269",
+    "references_bibtex": null,
+    "implementation_url": "https://github.com/openproblems-bio/task_denoising/blob/bfa2730431d47be21afe1c62fc4f2139036126a0/src/metrics/poisson",
+    "image": "https://ghcr.io/openproblems-bio/task_denoising/metrics/poisson:build_main",
+    "code_version": "build_main",
+    "commit_sha": "bfa2730431d47be21afe1c62fc4f2139036126a0",
+    "maximize": false
   }
 ]
