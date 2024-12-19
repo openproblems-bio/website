@@ -1,11 +1,63 @@
 ```{r dataset_description}
 #| echo: false
-lines <- pmap_chr(dataset_info, function(dataset_name, dataset_summary, dataset_description, data_reference, ...) {
-  ref <- split_cite_fun(data_reference)
+lines <- pmap_chr(dataset_info, function(dataset_id, dataset_name, dataset_summary, dataset_description, data_reference, ...) {
+
+  rest <- list(...)
+  source_dataset_id <- pluck(rest, "source_dataset_id", .default = NULL)
+  data_url <- pluck(rest, "data_url", .default = NULL)
+  date_created <- pluck(rest, "date_created", .default = NULL)
+  file_size <- pluck(rest, "file_size", .default = NULL)
+
+  ref <-
+    if (grepl("^[a-zA-Z0-9]+[0-9]{4}[a-z]+$", data_reference) && !grepl("^@", data_reference)) {
+      split_cite_fun(data_reference)
+    } else {
+      bibs <- convert_to_bibtex(data_reference)
+      # Write new entries to library.bib
+      write_library(bibs)
+      get_bibtex_entries(bibs)
+    }
+
   if (ref != "") ref <- paste0(" ", ref)
+  
+  dataset_link <-
+    if (!is.null(source_dataset_id) && dir.exists(paste0("../../datasets/", source_dataset_id))) {
+      glue::glue("../../datasets/{source_dataset_id}")
+    } else if (dir.exists(paste0("../../datasets/", dataset_id))) {
+      glue::glue("../../datasets/{dataset_id}")
+    } else {
+      NULL
+    }
+
+  # Make file_size human readable
+  if (!is.null(file_size)) {
+    file_size_str <- format(
+      structure(file_size, class = "object_size"),
+      units = "auto",
+      standard = "IEC",
+      digits = 2
+    )
+  }
+
+  dataset_meta <- tribble(
+    ~icon, ~value,
+    "bi bi-link-45deg", if(!is.null(dataset_link)) paste0("[Source dataset](", dataset_link, ")") else NULL,
+    "bi bi-box-arrow-up-right", if(!is.null(data_url)) paste0("[Data source](", data_url, ")") else NULL,
+    "bi bi-calendar", if(!is.null(date_created)) paste0(date_created) else NULL,
+    "bi bi-file-earmark-text", if(!is.null(file_size)) file_size_str else NULL,
+    ) %>% filter(!sapply(value, is.null))
+  
+  meta_list <- paste(
+      paste0("<i class=\"", dataset_meta$icon, "\"></i> ", dataset_meta$value),
+      collapse = " · "
+    )
+  
   summ <- (dataset_summary %|% "Missing 'dataset_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
+  
   strip_margin(glue::glue("
   |### {dataset_name}
+  |
+  |{meta_list}
   |
   |{summ}{ref}.
   |

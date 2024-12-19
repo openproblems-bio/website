@@ -1,8 +1,93 @@
 {
-  "task_id": "perturbation_prediction",
+  "task_id": "task_perturbation_prediction",
   "commit_sha": null,
   "task_name": "Perturbation Prediction",
   "task_summary": "Predicting how small molecules change gene expression in different cell types.",
-  "task_description": "Human biology can be complex, in part due to the function and interplay of the body's\napproximately 37 trillion cells, which are organized into tissues, organs, and systems.\nHowever, recent advances in single-cell technologies have provided unparalleled insight\ninto the function of cells and tissues at the level of DNA, RNA, and proteins. Yet\nleveraging single-cell methods to develop medicines requires mapping causal links\nbetween chemical perturbations and the downstream impact on cell state. These experiments\nare costly and labor intensive, and not all cells and tissues are amenable to\nhigh-throughput transcriptomic screening. If data science could help accurately predict\nchemical perturbations in new cell types, it could accelerate and expand the development\nof new medicines.\n\nSeveral methods have been developed for drug perturbation prediction, most of which are\nvariations on the autoencoder architecture (Dr.VAE, scGEN, and ChemCPA). However, these\nmethods lack proper benchmarking datasets with diverse cell types to determine how well\nthey generalize. The largest available training dataset is the NIH-funded Connectivity\nMap (CMap), which comprises over 1.3M small molecule perturbation measurements. However,\nthe CMap includes observations of only 978 genes, less than 5% of all genes. Furthermore,\nthe CMap data is comprised almost entirely of measurements in cancer cell lines, which\nmay not accurately represent human biology.\n\n\nThis task aims to predict how small molecules change gene expression in different cell\ntypes. This task was a [Kaggle competition](https://www.kaggle.com/competitions/open-problems-single-cell-perturbations/overview)\nas part of the [NeurIPS 2023 competition track](https://neurips.cc/virtual/2023/competition/66586).\n\nThe task is to predict the gene expression profile of a cell after a small molecule\nperturbation. For this competition, we designed and generated a novel single-cell\nperturbational dataset in human peripheral blood mononuclear cells (PBMCs). We\nselected 144 compounds from the Library of Integrated Network-Based Cellular Signatures\n(LINCS) Connectivity Map dataset ([PMID: 29195078](https://pubmed.ncbi.nlm.nih.gov/29195078/))\nand measured single-cell gene\nexpression profiles after 24 hours of treatment. The experiment was repeated in three\nhealthy human donors, and the compounds were selected based on diverse transcriptional\nsignatures observed in CD34+ hematopoietic stem cells (data not released). We performed\nthis experiment in human PBMCs because the cells are commercially available with\npre-obtained consent for public release and PBMCs are a primary, disease-relevant tissue\nthat contains multiple mature cell types (including T-cells, B-cells, myeloid cells,\nand NK cells) with established markers for annotation of cell types. To supplement this\ndataset, we also measured cells from each donor at baseline with joint scRNA and\nsingle-cell chromatin accessibility measurements using the 10x Multiome assay. We hope\nthat the addition of rich multi-omic data for each donor and cell type at baseline will\nhelp establish biological priors that explain the susceptibility of particular genes to\nexhibit perturbation responses in difference biological contexts.\n",
-  "repo": "openproblems-bio/openproblems-v2"
+  "task_description": "Human biology can be complex, in part due to the function and interplay of the body's\napproximately 37 trillion cells, which are organized into tissues, organs, and systems.\nHowever, recent advances in single-cell technologies have provided unparalleled insight\ninto the function of cells and tissues at the level of DNA, RNA, and proteins. Yet\nleveraging single-cell methods to develop medicines requires mapping causal links\nbetween chemical perturbations and the downstream impact on cell state. These experiments\nare costly and labor intensive, and not all cells and tissues are amenable to\nhigh-throughput transcriptomic screening. If data science could help accurately predict\nchemical perturbations in new cell types, it could accelerate and expand the development\nof new medicines.\n\nSeveral methods have been developed for drug perturbation prediction, most of which are\nvariations on the autoencoder architecture (Dr.VAE, scGEN, and ChemCPA). However, these\nmethods lack proper benchmarking datasets with diverse cell types to determine how well\nthey generalize. The largest available training dataset is the NIH-funded Connectivity\nMap (CMap), which comprises over 1.3M small molecule perturbation measurements. However,\nthe CMap includes observations of only 978 genes, less than 5% of all genes. Furthermore,\nthe CMap data is comprised almost entirely of measurements in cancer cell lines, which\nmay not accurately represent human biology.\n\nThis task aims to predict how small molecules change gene expression in different cell\ntypes. This task was a [Kaggle competition](https://www.kaggle.com/competitions/open-problems-single-cell-perturbations/overview)\nas part of the [NeurIPS 2023 competition track](https://neurips.cc/virtual/2023/competition/66586).\n\nThe task is to predict the gene expression profile of a cell after a small molecule\nperturbation. For this competition, we designed and generated a novel single-cell\nperturbational dataset in human peripheral blood mononuclear cells (PBMCs). We\nselected 144 compounds from the Library of Integrated Network-Based Cellular Signatures\n(LINCS) Connectivity Map dataset ([PMID: 29195078](https://pubmed.ncbi.nlm.nih.gov/29195078/))\nand measured single-cell gene\nexpression profiles after 24 hours of treatment. The experiment was repeated in three\nhealthy human donors, and the compounds were selected based on diverse transcriptional\nsignatures observed in CD34+ hematopoietic stem cells (data not released). We performed\nthis experiment in human PBMCs because the cells are commercially available with\npre-obtained consent for public release and PBMCs are a primary, disease-relevant tissue\nthat contains multiple mature cell types (including T-cells, B-cells, myeloid cells,\nand NK cells) with established markers for annotation of cell types. To supplement this\ndataset, we also measured cells from each donor at baseline with joint scRNA and\nsingle-cell chromatin accessibility measurements using the 10x Multiome assay. We hope\nthat the addition of rich multi-omic data for each donor and cell type at baseline will\nhelp establish biological priors that explain the susceptibility of particular genes to\nexhibit perturbation responses in difference biological contexts.\n",
+  "repo": "https://github.com/openproblems-bio/task_perturbation_prediction",
+  "issue_tracker": "https://github.com/openproblems-bio/task_perturbation_prediction/issues",
+  "authors": [
+    {
+      "name": "Artur Szałata",
+      "roles": "author",
+      "info": {
+        "github": "szalata",
+        "orcid": "000-0001-8413-234X"
+      }
+    },
+    {
+      "name": "Robrecht Cannoodt",
+      "roles": "author",
+      "info": {
+        "github": "rcannood",
+        "orcid": "0000-0003-3641-729X"
+      }
+    },
+    {
+      "name": "Daniel Burkhardt",
+      "roles": "author",
+      "info": {
+        "github": "dburkhardt",
+        "orcid": "0000-0001-7744-1363"
+      }
+    },
+    {
+      "name": "Malte D. Luecken",
+      "roles": "author",
+      "info": {
+        "github": "LuckyMD",
+        "orcid": "0000-0001-7464-7921"
+      }
+    },
+    {
+      "name": "Tin M. Tunjic",
+      "roles": "contributor",
+      "info": {
+        "github": "ttunja",
+        "orcid": "0000-0001-8842-6548"
+      }
+    },
+    {
+      "name": "Mengbo Wang",
+      "roles": "contributor",
+      "info": {
+        "github": "wangmengbo",
+        "orcid": "0000-0002-0266-9993"
+      }
+    },
+    {
+      "name": "Andrew Benz",
+      "roles": "author",
+      "info": {
+        "github": "andrew-benz",
+        "orcid": "0009-0002-8118-1861"
+      }
+    },
+    {
+      "name": "Tianyu Liu",
+      "roles": "contributor",
+      "info": {
+        "github": "HelloWorldLTY",
+        "orcid": "0000-0002-9412-6573"
+      }
+    },
+    {
+      "name": "Jalil Nourisa",
+      "roles": "contributor",
+      "info": {
+        "github": "janursa",
+        "orcid": "0000-0002-7539-4396"
+      }
+    },
+    {
+      "name": "Rico Meinl",
+      "roles": "contributor",
+      "info": {
+        "github": "ricomnl",
+        "orcid": "0000-0003-4356-6058"
+      }
+    }
+  ],
+  "version": "build_main",
+  "license": "MIT"
 }

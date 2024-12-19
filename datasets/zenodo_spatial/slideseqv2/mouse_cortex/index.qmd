@@ -1,0 +1,19 @@
+---
+dataset-id: "zenodo_spatial/slideseqv2/mouse_cortex"
+title: "Slide-seqV2 - Mouse Cortex"
+subtitle: "Highly sensitive spatial transcriptomics at near-cellular resolution with Slide-seqV2"
+categories: ["zenodo_spatial"]
+css: [/datasets/datasets.css]
+title-block-banner: transparent
+toc: false
+engine: knitr
+citation-location: document
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "datasets/zenodo_spatial/slideseqv2/mouse_cortex/data", results_dir = "results")
+params <- list(data_dir = "./data", results_dir = "../../../../results")
+```
+
+{{< include /datasets/_include/_index_template.qmd >}}

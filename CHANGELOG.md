@@ -14,11 +14,19 @@
 
 * Update base images documentation (PR #342).
 
-* Add foundation models benchmark page (PR #354)
+* Add foundation models benchmark page (PR #354).
+
+* Add url to benchmark datasets to dataset page (PR #362).
+
+* Change "n x m" to "n cells × m genes" on dataset info (PR #362).
 
 ## BUG FIXES
 
 * Fix error in summary figure when not all method info ids are present in the results (PR #330).
+
+* Fix "used in" section in dataset pages (PR #362).
+
+* Rescale resources in funkyheatmap when methods and/or datasets are filtered (PR #368).
 
 # openproblems.bio v2.3.6
 
