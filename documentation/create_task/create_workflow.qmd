@@ -125,8 +125,7 @@ workflow run_wf { // <2>
 
 
 
-
-## Test run
+## Test Run
 
 To test your workflow, you can use the provided `scripts/run_benchmark/run_test_local.sh` script. This script is designed to run the `run_benchmark` workflow on a small test dataset.
 
@@ -137,3 +136,11 @@ To test your workflow, you can use the provided `scripts/run_benchmark/run_test_
 3. **Run the Script**: Once you've edited the script, run it from the root of the repository with `./scripts/run_benchmark/run_test_local.sh`.
 
 The script will execute the `run_benchmark` workflow using Nextflow and the Docker profile. After the script finishes, you can examine the output files in the specified `publish_dir` to verify that your workflow is working correctly.
+
+## Next Steps
+
+Now that you've created a complete benchmarking workflow, you can run it on your own datasets and methods. You can also extend the workflow to include additional metrics, methods, or other components.
+
+We can now run the workflow on the OpenProblems cloud infrastructure. This will allow us to benchmark our methods on a larger scale and generate comprehensive results. Get in touch to get access to the platform for launching your workflows.
+
+Once the workflow has finished running and has been reviewed by the results QC team, the results will be published on the OpenProblems website.
