@@ -1,10 +1,59 @@
-```{r}
+```{r metric_descriptions}
 #| echo: false
-lines <- pmap_chr(metric_info, function(metric_name, metric_summary, paper_reference, ...) {
-  ref <- split_cite_fun(paper_reference)
+lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_description, implementation_url, code_version, ...) {
+  rest <- list(...)
+  image <- pluck(rest, "image", .default = NULL)
+  code_version <- pluck(rest, "code_version", .default = NULL)
+  references_doi <- pluck(rest, "references_doi", .default = NULL)
+  references_bibtex <- pluck(rest, "references_bibtex", .default = NULL)
+  
+  ref <-
+    if ("paper_reference" %in% names(rest)) {
+      split_cite_fun(rest$paper_reference)
+    } else {
+      bibs <- c()
+      if (!is.null(references_doi) && !is.na(references_doi)) {
+        bibs <- get_bibtex_from_doi(references_doi)
+      }
+      if (!is.null(references_bibtex) && !is.na(references_bibtex)) {
+        bibs <- c(bibs, references_bibtex)
+      }
+      # Write new entries to library.bib
+      write_library(bibs)
+
+      # Get bibtex references
+      if (!is.null(bibs)) {
+        get_bibtex_entries(bibs)
+      } else {
+        ""
+      }
+    }
+
   if (ref != "") ref <- paste0(" ", ref)
-  summ <- (metric_summary %|% "Missing 'metric_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "") 
-  glue::glue("* **{metric_name}**{ref}: {summ}.")
+
+  summ <- (metric_summary %|% "Missing 'metric_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
+
+  metric_meta <- tribble(
+    ~icon, ~value,
+    "bi bi-file-earmark-code", if (!is.null(implementation_url)) paste0("[Source code](", implementation_url, ")") else NULL,
+    "bi bi-box-seam", if (!is.null(image)) paste0("[Container](", image, ")") else NULL,
+    "bi bi-tag", if (!is.null(code_version) && !is.na(code_version)) code_version else NULL,
+    ) %>% filter(!sapply(value, is.null))
+
+  meta_list <- paste(
+      paste0("<i class=\"", metric_meta$icon, "\"></i> ", metric_meta$value),
+      collapse = " · "
+    )
+
+  strip_margin(glue::glue("
+  |### {metric_name}
+  |
+  |{meta_list}
+  |
+  |{summ}{ref}.
+  |
+  |{metric_description %|% ''}
+  |"))
 })
 knitr::asis_output(paste(lines, collapse = "\n"))
 ```
