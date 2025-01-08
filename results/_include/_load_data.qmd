@@ -8,6 +8,11 @@ library(tidyverse)
 library(funkyheatmap)
 library(kableExtra)
 
+# touch library.bib in data dir
+if (!file.exists("library.bib")) {
+  file.create("library.bib")
+}
+
 # read task info
 task_info <- jsonlite::read_json(paste0(params$data_dir, "/task_info.json"))
 
@@ -26,13 +31,13 @@ results <- jsonlite::read_json(paste0(params$data_dir, "/results.json"), simplif
 qc <- jsonlite::read_json(paste0(params$data_dir, "/quality_control.json"), simplifyVector = TRUE)
 
 # add missing columns
-for (col in c("method_summary")) {
+for (col in c("method_summary", "method_description")) {
   method_info[[col]] <- method_info[[col]] %||% NA_character_
 }
-for (col in c("metric_summary")) {
+for (col in c("metric_summary", "metric_description")) {
   metric_info[[col]] <- metric_info[[col]] %||% NA_character_
 }
-for (col in c("dataset_summary", "dataset_name")) {
+for (col in c("dataset_summary", "dataset_description", "dataset_name")) {
   dataset_info[[col]] <- dataset_info[[col]] %||% NA_character_
 }
 
@@ -52,10 +57,97 @@ split_cite_fun <- function(keys) {
   paste0("[@", paste(refs, collapse = "; @"), "]")
 }
 
+
+convert_to_bibtex <- function(refs) {
+
+  bibtexhandle <- curl::new_handle()
+  curl::handle_setheaders(bibtexhandle, "accept" = "application/x-bibtex")
+
+  bibs <- map(refs, function(ref) {
+    if (grepl("^@", ref)) {
+      # text is already a bibtex, update citation key
+      ref
+    } else {
+      url <- paste0("https://doi.org/", ref)
+      res <- curl::curl_fetch_memory(url, handle = bibtexhandle)
+      if (res$status_code != 200) {
+        cli::cli_alert_warning(paste0("Error processing doi '", ref, "'"))
+        ""
+      } else {
+        rawToChar(res$content)
+      }
+    }
+  })
+  return(unlist(bibs))
+}
+
+
+get_bibtex_from_doi <- function(dois) {
+  if (is.null(dois)) return("")
+
+  dois <- dois[!is.na(dois)]
+  if (length(dois) == 0) return("")
+
+  bibtexhandle <- curl::new_handle()
+  curl::handle_setheaders(bibtexhandle, "accept" = "application/x-bibtex")
+
+  refs <- unlist(dois)
+  bibs <- map (refs,function(ref) {
+    url <- paste0("https://doi.org/", ref)
+    res <- curl::curl_fetch_memory(url, handle = bibtexhandle)
+    if (res$status_code != 200) {
+      cli::cli_alert_warning(paste0("Error processing doi '", text, "'"))
+      ""
+    } else {
+      rawToChar(res$content)
+    }
+  })
+
+  return(unlist(bibs))
+}
+
+write_library <- function(library) {
+  # Read existing entries from library.bib
+  existing_bibs <- if (file.exists("library.bib")) {
+    readLines("library.bib")
+  } else {
+    c()
+  }
+
+  # Filter out bibs that already exist in library.bib
+  new_bibs <- library[!library %in% existing_bibs]
+
+  # Write new entries to library.bib
+  if (length(new_bibs) > 0) {
+    write(new_bibs, "library.bib", append=TRUE)
+  }
+}
+
+get_bibtex_entries <- function(bibs) {
+  ref <-sapply(bibs, function(bib) {
+    matches <- regmatches(bib, regexpr("@.*?\\{(.*?),", bib))
+    if (length(matches) > 0) {
+      sub("@.*?\\{(.*?),", "\\1", matches)
+    } else {
+      NA
+    }
+  })
+  ref <- na.omit(ref)
+  ref_string <- paste0("[@", ref, "]", collapse = " ")
+  return(ref_string)
+}
+
+
+
+
 aggregate_scores <- function(scaled_score) {
   mean(pmin(1, pmax(0, scaled_score)) %|% 0)
 }
 
+
+strip_margin <- function(text, symbol = "\\|") {
+  str_replace_all(text, paste0("(\n?)[ \t]*", symbol), "\\1") 
+}
 
 ojs_define(
   task_info = jsonlite::read_json(paste0(params$data_dir, "/task_info.json")),

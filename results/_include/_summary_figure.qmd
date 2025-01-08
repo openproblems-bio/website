@@ -34,7 +34,7 @@ results_resources = results.flatMap(d => {
     dataset_id: d.dataset_id,
     ...d.resources
   })
-})
+}).filter(d => method_ids.includes(d.method_id) && dataset_ids.includes(d.dataset_id))
 
 function label_time(time) {
   if (time < 1e-5) return "0s";
@@ -147,8 +147,12 @@ column_info = [
   {id: "method_name", name: "Name", label: null, group: "method", geom: "text", palette: null},
   {id: "mean_score", name: "Score", group: "overall", geom: "bar", palette: "overall"},
   {id: "error_reason", name: "Error reason", group: "overall", geom: "pie", palette: "error_reason"},
-  ...dataset_info.filter(d => dataset_ids.includes(d.dataset_id)).map(d => ({id: "dataset_" + d.dataset_id, name: d.dataset_name, group: "dataset", geom: "funkyrect", palette: "dataset"})),
-  ...metric_info.filter(d => metric_ids.includes(d.metric_id)).map(d => ({id: "metric_" + d.metric_id, name: d.metric_name, group: "metric", geom: "funkyrect", palette: "metric"})),
+  ...dataset_info
+    .filter(d => dataset_ids.includes(d.dataset_id)).map(d => ({id: "dataset_" + d.dataset_id, name: d.dataset_name, group: "dataset", geom: "funkyrect", palette: "dataset"}))
+    .sort((a, b) => a.name.localeCompare(b.name)),
+  ...metric_info
+    .filter(d => metric_ids.includes(d.metric_id)).map(d => ({id: "metric_" + d.metric_id, name: d.metric_name, group: "metric", geom: "funkyrect", palette: "metric"}))
+    .sort((a, b) => a.name.localeCompare(b.name)),
   {id: "mean_cpu_pct", name: "%CPU", group: "resources", geom: "funkyrect", palette: "resources"},
   {id: "mean_peak_memory_log", name: "Peak memory", label: "mean_peak_memory_str", group: "resources", geom: "rect", palette: "resources"},
   {id: "mean_disk_read_log", name: "Disk read", label: "mean_disk_read_str", group: "resources", geom: "rect", palette: "resources"},
@@ -227,7 +231,7 @@ funkyheatmap(
 
 viewof color_by_rank = Inputs.toggle({label: "Color by rank:", value: true})
 viewof scale_column = Inputs.toggle({label: "Minmax column:", value: false})
-viewof show_con = Inputs.toggle({label: "Show control methods:", value: false})
+viewof show_con = Inputs.toggle({label: "Show control methods:", value: true})
 ```
 
 </details>

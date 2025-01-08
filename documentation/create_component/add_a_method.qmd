@@ -3,67 +3,69 @@ title: Add a method
 description: This guide will show you how to add a new method to the pipeline.
 order: 40
 engine: knitr
+page-navigation: true
 ---
 
-{{< include ../../_include/_clone_repo.qmd >}}
+{{< include ../../_include/_clone_repo_task_template.qmd >}}
 {{< include /_include/_evaluate_code.qmd >}}
-{{< include /_include/_synchonize_tabs.qmd >}}
-{{< include /_include/_read_api.qmd >}}
 
 A method is a technique to solve a specific problem when analysing omics data. Its performance is assessed by comparing it to other methods and control methods.
 
 This guide will show you how to create a new [Viash](https://viash.io) component.
 In the following we will show examples for both Python and R.
-Note that the Label Projection task is used throughout the guide, so make sure to replace any occurrences of `"label_projection"` with your task of interest.
+Note that the Task template repo is used throughout the guide, so make sure to replace any occurrences of `"task_template"` with your task of interest.
 
 :::{.callout-tip}
-Make sure you have followed the ["Getting started"](../fundamentals/getting_started.qmd) guide.
+Make sure you have followed the ["Getting started"](getting_started.qmd) guide.
 :::
 
 ## Step 1:  Create a new component
 
-Use the `create_component` component to start creating a new method.
+Use the `create_*_method.sh` script found in the scripts repository to start creating a new method. Open the script and update the `name` parameter to the desired name of the method.
 
-::: {.panel-tabset}
+::: {.panel-tabset group="language"}
 ## Python
+
 ```{bash}
-viash run src/common/create_component/config.vsh.yaml -- \
-  --task label_projection \
-  --type method \
-  --name my_method_py \
-  --language python
+scripts/create_component/create_python_method.sh
 ```
 
 
-This will create a new folder at `src/tasks/label_projection/methods/my_method_py` containing a Viash config and a script.
+```{bash filename="scripts/create_component/create_python_method.sh"}
+#| eval: false
+common/scripts/create_component \
+  --name my_python_method \
+  --language python \
+  --type method
+```
 
-    src/tasks/label_projection/methods/my_method_py
-        ├── script.py                    Script for running the method.
-        ├── config.vsh.yaml              Config file for method.
-        └── ...                          Optional additional resources.
+This creates a new folder at `src/methods/my_python_method` containing a Viash config and a script.
+
+    tree src/methods/my_python_method
+        ├── script.py         Script for running the method.
+        ├── config.vsh.yaml   Config file for method.
+        └── ...               Optional additional resources.
 
 ## R
 
 ```{bash}
-viash run src/common/create_component/config.vsh.yaml -- \
-  --task label_projection \
-  --type method \
-  --name my_method_r \
-  --language r
+scripts/create_component/create_r_method.sh
 ```
 
+```{bash filename="scripts/create_component/create_r_method.sh"}
+#| eval: false
+common/scripts/create_component \
+  --name my_r_method \
+  --language r \
+  --type method
+```
 
-This will create a new folder at `src/tasks/label_projection/methods/my_method_r` containing a Viash config and a script.
+This creates a new folder at `src/methods/my_r_method` containing a Viash config and a script.
 
-    src/tasks/label_projection/methods/my_method_r
-        ├── script.R                     Script for running the method.
-        ├── config.vsh.yaml              Config file for method.
-        └── ...                          Optional additional resources.
-
-:::
-
-:::{.callout-tip}
-Some tasks have multiple method subtypes (e.g. `batch_integration`), which will require you to use a different value for `--type` corresponding to the desired method subtype.
+    tree src/methods/my_r_method
+        ├── script.R          Script for running the method.
+        ├── config.vsh.yaml   Config file for method.
+        └── ...               Optional additional resources.
 :::
 
 Change the `--name` to a unique name for your method. It must match the regex `[a-z][a-z0-9_]*` (snakecase).
@@ -71,14 +73,17 @@ Change the `--name` to a unique name for your method. It must match the regex `[
 * A **config file** contains metadata of the component and the dependencies required to run it. In steps 2 and 3 we will fill in the required information.
 * A **script** contains the code to run the method. In step 4 we will edit the script. 
 
+:::{.callout-tip}
+Some tasks have multiple method subtypes (e.g. `batch_integration`), which will require you to use a different value for `--type` corresponding to the desired method subtype.
+:::
 
 ## Step 2: Fill in metadata
 
-```{r, include=FALSE, eval=TRUE}
+<!-- ```{r, include=FALSE, eval=TRUE}
 # set eval to TRUE to make sure is always run, even when profile is not 'evaluate_code'
 norm_methods <- list.files("src/datasets/normalization")
 norm_methods_str <- paste(paste0("`", norm_methods, "`"), collapse = ", ")
-```
+``` -->
 
 The [Viash config](https://viash.io/reference/config/) contains metadata of your method, which script is used to run it, and the required dependencies. 
 
@@ -86,19 +91,15 @@ The [Viash config](https://viash.io/reference/config/) contains metadata of your
 
 This is what the `config.vsh.yaml` generated by the `create_component` component looks like:
 
-:::{.panel-tabset}
+:::{.panel-tabset group="language"}
 
 ### Python
 
 <details><summary>Contents of `config.vsh.yaml`</summary>
 
-````yaml
-```{bash}
-#| echo: false
-#| output: asis
-cat src/tasks/label_projection/methods/my_method_py/config.vsh.yaml
+```{embed lang="yaml"}
+src/methods/my_python_method/config.vsh.yaml
 ```
-````
 
 </details>
 
@@ -106,27 +107,22 @@ cat src/tasks/label_projection/methods/my_method_py/config.vsh.yaml
 
 <details><summary>Contents of `config.vsh.yaml`</summary>
 
-````yaml
-```{bash}
-#| echo: false
-#| output: asis
-cat src/tasks/label_projection/methods/my_method_r/config.vsh.yaml
+```{embed lang="yaml"}
+src/methods/my_r_method/config.vsh.yaml
 ```
-````
 
 </details>
 
 :::
 
-
 ### Required metadata fields
 
-Please edit `functionality.info` section in the config file to fill in the necessary metadata.
+Please edit `info` section in the config file to fill in the necessary metadata.
 
 {{< include _include/_render_schema_required_fields.qmd >}}
 
 ```{r echo=FALSE, warning=FALSE, error=FALSE}
-info <- read_and_merge_yaml("src/common/schemas/task_method.yaml")
+info <- openproblems::read_nested_yaml("../_core/schemas/task_method.yaml")
 
 info_str <- paste(render_schema_required_fields(info, required = TRUE), collapse = "\n\n")
 
@@ -142,13 +138,13 @@ knitr::asis_output(info_str)
 **Tip:** After making changes to the components dependencies, you will need to rebuild the docker container as follows:
 
 ```bash
-viash run src/tasks/label_projection/methods/my_method_py/config.vsh.yaml -- \
+viash run src/methods/my_python_method/config.vsh.yaml -- \
   ---setup cachedbuild
 ```
 <details><summary>output</summary>
 ```{bash}
 #| echo: false
-viash run src/tasks/label_projection/methods/my_method_py/config.vsh.yaml -- \
+viash run src/methods/my_python_method/config.vsh.yaml -- \
   ---setup cachedbuild
 ```
 </details>
@@ -159,28 +155,24 @@ viash run src/tasks/label_projection/methods/my_method_py/config.vsh.yaml -- \
 
 A component's script typically has five sections:
 
-1. Imports and libraries
-2. Argument values
-3. Read input data
-4. Generate results
-5. Write output data to file
+a. Imports and libraries
+b. Argument values
+c. Read input data
+d. Generate results
+e. Write output data to file
 
 
 This is what the script generated by the `create_component` component looks like:
 
-:::{.panel-tabset}
+:::{.panel-tabset group="language"}
 
 ### Python
 
 <details><summary>Contents of `script.py`</summary>
 
-````python
-```{bash}
-#| echo: false
-#| output: asis
-cat src/tasks/label_projection/methods/my_method_py/script.py
+```{embed lang="python"}
+src/methods/my_python_method/script.py
 ```
-````
 
 </details>
 
@@ -188,13 +180,9 @@ cat src/tasks/label_projection/methods/my_method_py/script.py
 
 <details><summary>Contents of `script.R`</summary>
 
-````r
-```{bash}
-#| echo: false
-#| output: asis
-cat src/tasks/label_projection/methods/my_method_r/script.R
+```{embed lang="r"}
+src/methods/my_r_method/script.R
 ```
-````
 
 </details>
 
@@ -237,15 +225,15 @@ Your component's API file contains the necessary unit tests to check whether you
 You can test your component by using the following command:
 
 ```bash
-viash test src/tasks/label_projection/methods/my_method_py/config.vsh.yaml
+viash test src/methods/my_python_method/config.vsh.yaml
 ```
 <details>
   <summary>Output</summary>
 ```{bash}
 #| echo: false
-# use knn instead of 'my_method' because the script won't work.
+# use logistic_regression instead of 'my_python_method' because the script won't work.
 # maybe copy a 'working' script here
-viash test src/tasks/label_projection/methods/knn/config.vsh.yaml
+viash test src/methods/logistic_regression/config.vsh.yaml
 ```
 </details>
 
@@ -254,9 +242,9 @@ Visit ["Run tests"](run_tests.qmd) for more information on running unit tests an
 You can also run your component on local files using the `viash run` command. For example:
 
 ```bash
-viash run src/tasks/label_projection/methods/my_method_py/config.vsh.yaml -- \
-  --input_train resources_test/label_projection/pancreas/train.h5ad \
-  --input_test resources_test/label_projection/pancreas/test.h5ad \
+viash run src/methods/my_python_method/config.vsh.yaml -- \
+  --input_train resources_test/task_template/cxg_mouse_pancreas_atlas/train.h5ad \
+  --input_test resources_test/task_template/cxg_mouse_pancreas_atlas/test.h5ad \
   --output output.h5ad
 ```
 

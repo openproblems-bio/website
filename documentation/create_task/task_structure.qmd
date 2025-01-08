@@ -1,41 +1,40 @@
 ---
 title: Task structure
 order: 5
+page-navigation: true
 ---
 
 Before defining a new {{< glossary task >}} in OpenProblems, it's important to understand the typical structure of an OpenProblems task (@fig-task-workflow).
 
-A task typically consists of a dataset processor, methods, control methods and metrics. Each component has a well-defined input-output interface, for which the file formats in the resulting AnnData are also described.
+A task typically consists of a data processors, methods, control methods and metrics. Each component has a well-defined input-output interface, for which the file formats in the resulting AnnData are also described.
 
 {{< include /documentation/_figures/_project_structure_task_workflow.qmd >}}
 
 
 ## File and component formats
 
-Path: `src/tasks/<task_id>/api`
+Path: `src/api`
 
 This folder contains task-specific {{< glossary File format specification label="file formats" >}} and {{< glossary Component interface label="component interfaces" >}}. More specifically:
 
-* `task_info.yaml`: The task name, description and other metadata.
 * `file_*.yaml`: File format specifications for the task.
 * `comp_*.yaml`: Component interface specifications for the task.
-* `thumbnail.svg`: A thumbnail image for the task.
 
-## Dataset processor
+## Data processors
 
-Path: `src/tasks/<task_id>/process_dataset`
+Path: `src/data_processors`
 
-The {{< glossary data processor >}} transforms a {{< glossary common dataset >}} into task-specific dataset objects. In supervised tasks, this component will usually output a solution, a training dataset and a test dataset. In unsupervised tasks, this component usually output a solution and a masked dataset.
+This folder contains components that transforms a {{< glossary common dataset >}} into task-specific dataset objects. The {{< glossary data processor >}} component has been proided by default. In supervised tasks, this component will usually output a solution, a training dataset and a test dataset. In unsupervised tasks, this component usually output a solution and a masked dataset.
 
 ## Methods
 
-Path: `src/tasks/<task_id>/methods`
+Path: `src/methods`
 
 This folder contains {{< glossary method >}} components. Each method component outputs a prediction given the training and test datasets (when applicable).
 
 ## Control methods
 
-Path: `src/tasks/<task_id>/control_methods`
+Path: `src/control_methods`
 
 This folder contains {{< glossary control methods >}} for the task. These components have the same interface as the regular methods but also receive the solution object as input.  It serves as a starting point to test the relative accuracy of new methods in the task, and also as a quality control for the metrics defined in the task. A control method can either be a positive control or a negative control, which set a maximum and minimum threshold for performance, so any new method should perform better than the negative control methods and worse than the positive control method.
 
@@ -45,24 +44,12 @@ A *negative control* is a simple, naive, or random method that does not rely on 
 
 ## Metrics
 
-Path: `src/tasks/<task_id>/metrics`
+Path: `src/metrics`
 
 This folder contains {{< glossary metric >}} components. Each metric component outputs one or more metric results given a solution object and a method output object.
 
 ## Benchmarking pipeline
 
-Path: `src/tasks/<task_id>/workflows`
+Path: `src/workflows`
 
 This folder contains a {{< glossary Nextflow >}} workflow defining the benchmarking workflow for this task.
-
-## Resource generation scripts
-
-Path: `src/tasks/<task_id>/resources_scripts`
-
-This folder contains scripts for generating benchmarking resources required for the task.
-
-## Test resource generation scripts
-
-Path: `src/tasks/<task_id>/resources_test_scripts`
-
-This folder contains scripts for generating test resources for the task.

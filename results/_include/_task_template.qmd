@@ -18,6 +18,29 @@ cat(
 )
 ```
 
+```{r details, results="asis", echo=FALSE}
+#| column: margin
+
+cat("#### Info\n\n")
+
+details <- tribble(
+  ~icon, ~value,
+  "bi bi-github", if (!is.null(task_info$repo)) paste0("[Repository](",task_info$repo,")") else NULL,
+  "octicon--issue-opened-17", if (!is.null(task_info$issue_tracker)) paste0("[Issues](",task_info$issue_tracker,")") else NULL,
+  "bi bi-tag", if (!is.null(task_info$version)) paste0(task_info$version) else NULL,
+  "fa-solid fa-scale-balanced", if (!is.null(task_info$license)) paste0(task_info$license) else NULL
+  ) %>% filter(!sapply(value, is.null))
+cat(paste(paste0("<i class=\"", details$icon, "\"></i> ", details$value), " \n"))
+
+```
+
+
+[Task info](data/task_info.json){class="btn btn-secondary"}
+[Method info](data/method_info.json){class="btn btn-secondary"}
+[Metric info](data/metric_info.json){class="btn btn-secondary"}
+[Dataset info](data/dataset_info.json){class="btn btn-secondary"}
+[Results](data/results.json){class="btn btn-secondary"}
+
 
 `r task_info$task_motivation %|% ""`
 
@@ -27,53 +50,88 @@ cat(
 
 {{< include ../_include/_summary_figure.qmd >}}
 
-## Metrics
-
-{{< include ../_include/_metric_descriptions.qmd >}}
-
 ## Results
 
 {{< include ../_include/_results_table.qmd >}}
 
-## Details
+## Dataset info
 
-<details><summary>Methods</summary>
-
-{{< include ../_include/_method_descriptions.qmd >}}
-
-</details>
-
-<details><summary>Baseline methods</summary>
-
-{{< include ../_include/_baseline_descriptions.qmd >}}
-
-</details>
-
-<details><summary>Datasets</summary>
+<details><summary>Show</summary>
 
 {{< include ../_include/_dataset_descriptions.qmd >}}
 
 </details>
 
-<details><summary>Quality control results</summary>
+## Method info
+
+<details><summary>Show</summary>
+
+{{< include ../_include/_method_descriptions.qmd >}}
+
+</details>
+
+## Control method info
+
+<details><summary>Show</summary>
+
+{{< include ../_include/_baseline_descriptions.qmd >}}
+
+</details>
+
+## Metric info
+
+<details><summary>Show</summary>
+
+{{< include ../_include/_metric_descriptions.qmd >}}
+
+</details>
+
+## Quality control results
+
+<details><summary>Show</summary>
 
 {{< include ../_include/_qc_table.qmd >}}
 
 </details>
 
-<details><summary>Raw results</summary>
+## Normalisation visualisation
 
-[Task info](data/task_info.json){class="btn btn-secondary"} 
-[Method info](data/method_info.json){class="btn btn-secondary"} 
-[Metric info](data/metric_info.json){class="btn btn-secondary"} 
-[Dataset info](data/dataset_info.json){class="btn btn-secondary"} 
-[Results](data/results.json){class="btn btn-secondary"}
-
-</details>
-
-<details><summary>Visualization of raw results</summary>
+<details><summary>Show</summary>
 
 {{< include ../_include/_scaling_figure.qmd >}}
 
 </details>
+
+## Authors
+
+```{r}
+#| echo: false
+if (!is.null(task_info$authors) && length(task_info$authors) > 0) {
+  lines <- map_chr(task_info$authors, function(author) {
+    name <- author$name
+    roles <- author$roles %>% paste(collapse = ", ")
+    github <- author$info$github %||% NULL
+    orcid <- author$info$orcid %||% NULL
+
+    links <- c()
+    if (!is.null(github)) {
+      links <- c(links, glue::glue("[{{{{< fa brands github >}}}}](https://github.com/{github})"))
+    }
+    if (!is.null(orcid)) {
+      links <- c(links, glue::glue("[{{{{< fa brands orcid >}}}}](https://orcid.org/{orcid})"))
+    }  
+    links_label <- 
+      if (length(links) > 0) {
+        glue::glue("{paste(links, collapse = ', ')}")
+      } else {
+        ""
+      }
+    strip_margin(glue::glue("
+      |* {name} ({roles}) {links_label}
+      |"
+    ))
+  })
+  knitr::asis_output(paste(lines, collapse = "\n"))
+}
+```
 
