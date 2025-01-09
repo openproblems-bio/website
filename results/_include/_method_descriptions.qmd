@@ -6,18 +6,18 @@ lines <- pmap_chr(method_info %>% filter(!is_baseline), function(method_name, me
   image <- pluck(rest, "image", .default = NULL)
   documentation_url <- pluck(rest, "documentation_url", .default = NULL)
   code_version <- pluck(rest, "code_version", .default = NULL)
-  references_doi <- pluck(rest, "references_doi", .default = NULL)
-  references_bibtex <- pluck(rest, "references_bibtex", .default = NULL)
+  references_doi <- pluck(rest, "references_doi", .default = NULL) |> na.omit()
+  references_bibtex <- pluck(rest, "references_bibtex", .default = NULL) |> na.omit()
 
   ref <-
     if ("paper_reference" %in% names(rest)) {
       split_cite_fun(rest$paper_reference)
     } else {
       bibs <- c()
-      if (!is.null(references_doi) && !is.na(references_doi)) {
+      if (!is.null(references_doi) && length(references_doi) != 0) {
         bibs <- get_bibtex_from_doi(references_doi)
       }
-      if (!is.null(references_bibtex) && !is.na(references_bibtex)) {
+      if (!is.null(references_bibtex) && length(references_bibtex) != 0) {
         bibs <- c(bibs, references_bibtex)
       }
       # Write new entries to library.bib
