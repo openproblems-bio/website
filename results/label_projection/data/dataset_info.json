@@ -6,58 +6,8 @@
     "dataset_description": "Understanding the function of genes and their regulation in tissue homeostasis and disease requires knowing the cellular context in which genes are expressed in tissues across the body. Single cell genomics allows the generation of detailed cellular atlases in human tissues, but most efforts are focused on single tissue types. Here, we establish a framework for profiling multiple tissues across the human body at single-cell resolution using single nucleus RNA-Seq (snRNA-seq), and apply it to 8 diverse, archived, frozen tissue types (three donors per tissue). We apply four snRNA-seq methods to each of 25 samples from 16 donors, generating a cross-tissue atlas of 209,126 nuclei profiles, and benchmark them vs. scRNA-seq of comparable fresh tissues. We use a conditional variational autoencoder (cVAE) to integrate an atlas across tissues, donors, and laboratory methods. We highlight shared and tissue-specific features of tissue-resident immune cells, identifying tissue-restricted and non-restricted resident myeloid populations. These include a cross-tissue conserved dichotomy between LYVE1- and HLA class II-expressing macrophages, and the broad presence of LAM-like macrophages across healthy tissues that is also observed in disease. For rare, monogenic muscle diseases, we identify cell types that likely underlie the neuromuscular, metabolic, and immune components of these diseases, and biological processes involved in their pathology. For common complex diseases and traits analyzed by GWAS, we identify the cell types and gene modules that potentially underlie disease mechanisms. The experimental and analytical frameworks we describe will enable the generation of large-scale studies of how cellular and molecular processes vary across individuals and populations.",
     "data_reference": "eraslan2022singlenucleus",
     "data_url": "https://cellxgene.cziscience.com/collections/a3ffde6c-7ad2-498a-903c-d58e732f7470",
-    "date_created": "08-01-2025",
+    "date_created": "09-01-2025",
     "file_size": 206108150
-  },
-  {
-    "dataset_id": "openproblems_v1/cengen",
-    "dataset_name": "CeNGEN",
-    "dataset_summary": "Complete Gene Expression Map of an Entire Nervous System",
-    "dataset_description": "100k FACS-isolated C. elegans neurons from 17 experiments sequenced on 10x Genomics.",
-    "data_reference": "hammarlund2018cengen",
-    "data_url": "https://www.cengen.org",
-    "date_created": "08-01-2025",
-    "file_size": 8339122
-  },
-  {
-    "dataset_id": "cellxgene_census/tabula_sapiens",
-    "dataset_name": "Tabula Sapiens",
-    "dataset_summary": "A multiple-organ, single-cell transcriptomic atlas of humans",
-    "dataset_description": "Tabula Sapiens is a benchmark, first-draft human cell atlas of nearly 500,000 cells from 24 organs of 15 normal human subjects. This work is the product of the Tabula Sapiens Consortium. Taking the organs from the same individual controls for genetic background, age, environment, and epigenetic effects and allows detailed analysis and comparison of cell types that are shared between tissues. Our work creates a detailed portrait of cell types as well as their distribution and variation in gene expression across tissues and within the endothelial, epithelial, stromal and immune compartments.",
-    "data_reference": "consortium2022tabula",
-    "data_url": "https://cellxgene.cziscience.com/collections/e5f58829-1a66-40b5-a624-9046778e74f5",
-    "date_created": "08-01-2025",
-    "file_size": 1727821930
-  },
-  {
-    "dataset_id": "cellxgene_census/hypomap",
-    "dataset_name": "HypoMap",
-    "dataset_summary": "A unified single cell gene expression atlas of the murine hypothalamus",
-    "dataset_description": "The hypothalamus plays a key role in coordinating fundamental body functions. Despite recent progress in single-cell technologies, a unified catalogue and molecular characterization of the heterogeneous cell types and, specifically, neuronal subtypes in this brain region are still lacking. Here we present an integrated reference atlas “HypoMap” of the murine hypothalamus consisting of 384,925 cells, with the ability to incorporate new additional experiments. We validate HypoMap by comparing data collected from SmartSeq2 and bulk RNA sequencing of selected neuronal cell types with different degrees of cellular heterogeneity.",
-    "data_reference": "steuernagel2022hypomap",
-    "data_url": "https://cellxgene.cziscience.com/collections/d86517f0-fa7e-4266-b82e-a521350d6d36",
-    "date_created": "08-01-2025",
-    "file_size": 23568346
-  },
-  {
-    "dataset_id": "cellxgene_census/immune_cell_atlas",
-    "dataset_name": "Immune Cell Atlas",
-    "dataset_summary": "Cross-tissue immune cell analysis reveals tissue-specific features in humans",
-    "dataset_description": "Despite their crucial role in health and disease, our knowledge of immune cells within human tissues remains limited. We surveyed the immune compartment of 16 tissues from 12 adult donors by single-cell RNA sequencing and VDJ sequencing generating a dataset of ~360,000 cells. To systematically resolve immune cell heterogeneity across tissues, we developed CellTypist, a machine learning tool for rapid and precise cell type annotation. Using this approach, combined with detailed curation, we determined the tissue distribution of finely phenotyped immune cell types, revealing hitherto unappreciated tissue-specific features and clonal architecture of T and B cells. Our multitissue approach lays the foundation for identifying highly resolved immune cell types by leveraging a common reference dataset, tissue-integrated expression analysis, and antigen receptor sequencing.",
-    "data_reference": "dominguez2022crosstissue",
-    "data_url": "https://cellxgene.cziscience.com/collections/62ef75e4-cbea-454e-a0ce-998ec40223d3",
-    "date_created": "08-01-2025",
-    "file_size": 341174505
-  },
-  {
-    "dataset_id": "cellxgene_census/hcla",
-    "dataset_name": "Human Lung Cell Atlas",
-    "dataset_summary": "An integrated cell atlas of the human lung in health and disease (core)",
-    "dataset_description": "The integrated Human Lung Cell Atlas (HLCA) represents the first large-scale, integrated single-cell reference atlas of the human lung. It consists of over 2 million cells from the respiratory tract of 486 individuals, and includes 49 different datasets. It is split into the HLCA core, and the extended or full HLCA. The HLCA core includes data of healthy lung tissue from 107 individuals, and includes manual cell type annotations based on consensus across 6 independent experts, as well as demographic, biological and technical metadata.",
-    "data_reference": "sikkema2023integrated",
-    "data_url": "https://cellxgene.cziscience.com/collections/6f6d381a-7701-4781-935c-db10d30de293",
-    "date_created": "08-01-2025",
-    "file_size": 197407896
   },
   {
     "dataset_id": "cellxgene_census/dkd",
@@ -66,8 +16,38 @@
     "dataset_description": "Multimodal single cell sequencing is a powerful tool for interrogating cell-specific changes in transcription and chromatin accessibility. We performed single nucleus RNA (snRNA-seq) and assay for transposase accessible chromatin sequencing (snATAC-seq) on human kidney cortex from donors with and without diabetic kidney disease (DKD) to identify altered signaling pathways and transcription factors associated with DKD. Both snRNA-seq and snATAC-seq had an increased proportion of VCAM1+ injured proximal tubule cells (PT_VCAM1) in DKD samples. PT_VCAM1 has a pro-inflammatory expression signature and transcription factor motif enrichment implicated NFkB signaling. We used stratified linkage disequilibrium score regression to partition heritability of kidney-function-related traits using publicly-available GWAS summary statistics. Cell-specific PT_VCAM1 peaks were enriched for heritability of chronic kidney disease (CKD), suggesting that genetic background may regulate chromatin accessibility and DKD progression. snATAC-seq found cell-specific differentially accessible regions (DAR) throughout the nephron that change accessibility in DKD and these regions were enriched for glucocorticoid receptor (GR) motifs. Changes in chromatin accessibility were associated with decreased expression of insulin receptor, increased gluconeogenesis, and decreased expression of the GR cytosolic chaperone, FKBP5, in the diabetic proximal tubule. Cleavage under targets and release using nuclease (CUT&RUN) profiling of GR binding in bulk kidney cortex and an in vitro model of the proximal tubule (RPTEC) showed that DAR co-localize with GR binding sites. CRISPRi silencing of GR response elements (GRE) in the FKBP5 gene body reduced FKBP5 expression in RPTEC, suggesting that reduced FKBP5 chromatin accessibility in DKD may alter cellular response to GR. We developed an open-source tool for single cell allele specific analysis (SALSA) to model the effect of genetic background on gene expression. Heterozygous germline single nucleotide variants (SNV) in proximal tubule ATAC peaks were associated with allele-specific chromatin accessibility and differential expression of target genes within cis-coaccessibility networks. Partitioned heritability of proximal tubule ATAC peaks with a predicted allele-specific effect was enriched for eGFR, suggesting that genetic background may modify DKD progression in a cell-specific manner.",
     "data_reference": "wilson2022multimodal",
     "data_url": "https://cellxgene.cziscience.com/collections/b3e2c6e3-9b05-4da9-8f42-da38a664b45b",
-    "date_created": "08-01-2025",
+    "date_created": "09-01-2025",
     "file_size": 86763866
+  },
+  {
+    "dataset_id": "cellxgene_census/hypomap",
+    "dataset_name": "HypoMap",
+    "dataset_summary": "A unified single cell gene expression atlas of the murine hypothalamus",
+    "dataset_description": "The hypothalamus plays a key role in coordinating fundamental body functions. Despite recent progress in single-cell technologies, a unified catalogue and molecular characterization of the heterogeneous cell types and, specifically, neuronal subtypes in this brain region are still lacking. Here we present an integrated reference atlas “HypoMap” of the murine hypothalamus consisting of 384,925 cells, with the ability to incorporate new additional experiments. We validate HypoMap by comparing data collected from SmartSeq2 and bulk RNA sequencing of selected neuronal cell types with different degrees of cellular heterogeneity.",
+    "data_reference": "steuernagel2022hypomap",
+    "data_url": "https://cellxgene.cziscience.com/collections/d86517f0-fa7e-4266-b82e-a521350d6d36",
+    "date_created": "09-01-2025",
+    "file_size": 23568346
+  },
+  {
+    "dataset_id": "cellxgene_census/tabula_sapiens",
+    "dataset_name": "Tabula Sapiens",
+    "dataset_summary": "A multiple-organ, single-cell transcriptomic atlas of humans",
+    "dataset_description": "Tabula Sapiens is a benchmark, first-draft human cell atlas of nearly 500,000 cells from 24 organs of 15 normal human subjects. This work is the product of the Tabula Sapiens Consortium. Taking the organs from the same individual controls for genetic background, age, environment, and epigenetic effects and allows detailed analysis and comparison of cell types that are shared between tissues. Our work creates a detailed portrait of cell types as well as their distribution and variation in gene expression across tissues and within the endothelial, epithelial, stromal and immune compartments.",
+    "data_reference": "consortium2022tabula",
+    "data_url": "https://cellxgene.cziscience.com/collections/e5f58829-1a66-40b5-a624-9046778e74f5",
+    "date_created": "09-01-2025",
+    "file_size": 1727821930
+  },
+  {
+    "dataset_id": "cellxgene_census/immune_cell_atlas",
+    "dataset_name": "Immune Cell Atlas",
+    "dataset_summary": "Cross-tissue immune cell analysis reveals tissue-specific features in humans",
+    "dataset_description": "Despite their crucial role in health and disease, our knowledge of immune cells within human tissues remains limited. We surveyed the immune compartment of 16 tissues from 12 adult donors by single-cell RNA sequencing and VDJ sequencing generating a dataset of ~360,000 cells. To systematically resolve immune cell heterogeneity across tissues, we developed CellTypist, a machine learning tool for rapid and precise cell type annotation. Using this approach, combined with detailed curation, we determined the tissue distribution of finely phenotyped immune cell types, revealing hitherto unappreciated tissue-specific features and clonal architecture of T and B cells. Our multitissue approach lays the foundation for identifying highly resolved immune cell types by leveraging a common reference dataset, tissue-integrated expression analysis, and antigen receptor sequencing.",
+    "data_reference": "dominguez2022crosstissue",
+    "data_url": "https://cellxgene.cziscience.com/collections/62ef75e4-cbea-454e-a0ce-998ec40223d3",
+    "date_created": "09-01-2025",
+    "file_size": 341174505
   },
   {
     "dataset_id": "cellxgene_census/mouse_pancreas_atlas",
@@ -76,47 +56,7 @@
     "dataset_description": "To better understand pancreatic β-cell heterogeneity we generated a mouse pancreatic islet atlas capturing a wide range of biological conditions. The atlas contains scRNA-seq datasets of over 300,000 mouse pancreatic islet cells, of which more than 100,000 are β-cells, from nine datasets with 56 samples, including two previously unpublished datasets. The samples vary in sex, age (ranging from embryonic to aged), chemical stress, and disease status (including T1D NOD model development and two T2D models, mSTZ and db/db) together with different diabetes treatments. Additional information about data fields is available in anndata uns field 'field_descriptions' and on https://github.com/theislab/mm_pancreas_atlas_rep/blob/main/resources/cellxgene.md.",
     "data_reference": "hrovatin2023delineating",
     "data_url": "https://cellxgene.cziscience.com/collections/296237e2-393d-4e31-b590-b03f74ac5070",
-    "date_created": "08-01-2025",
+    "date_created": "09-01-2025",
     "file_size": 133936661
-  },
-  {
-    "dataset_id": "openproblems_v1/immune_cells",
-    "dataset_name": "Human immune",
-    "dataset_summary": "Human immune cells dataset from the scIB benchmarks",
-    "dataset_description": "Human immune cells from peripheral blood and bone marrow taken from 5 datasets comprising 10 batches across technologies (10X, Smart-seq2).",
-    "data_reference": "luecken2022benchmarking",
-    "data_url": "https://theislab.github.io/scib-reproducibility/dataset_immune_cell_hum.html",
-    "date_created": "08-01-2025",
-    "file_size": 38683549
-  },
-  {
-    "dataset_id": "allen_brain_cell_atlas/2023_yao_mouse_brain_scrnaseq_10xv2",
-    "dataset_name": "ABCA Mouse Brain scRNAseq",
-    "dataset_summary": "A high-resolution scRNAseq atlas of cell types in the whole mouse brain",
-    "dataset_description": "See dataset_reference for more information. Note that we only took the 10xv2 data from the dataset.",
-    "data_reference": "10.1038/s41586-023-06812-z",
-    "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE246717",
-    "date_created": "08-01-2025",
-    "file_size": 317012639
-  },
-  {
-    "dataset_id": "openproblems_v1/zebrafish",
-    "dataset_name": "Zebrafish embryonic cells",
-    "dataset_summary": "Single-cell mRNA sequencing of zebrafish embryonic cells.",
-    "dataset_description": "90k cells from zebrafish embryos throughout the first day of development, with and without a knockout of chordin, an important developmental gene.",
-    "data_reference": "wagner2018single",
-    "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE112294",
-    "date_created": "08-01-2025",
-    "file_size": 291760514
-  },
-  {
-    "dataset_id": "openproblems_v1/pancreas",
-    "dataset_name": "Human pancreas",
-    "dataset_summary": "Human pancreas cells dataset from the scIB benchmarks",
-    "dataset_description": "Human pancreatic islet scRNA-seq data from 6 datasets across technologies (CEL-seq, CEL-seq2, Smart-seq2, inDrop, Fluidigm C1, and SMARTER-seq).",
-    "data_reference": "luecken2022benchmarking",
-    "data_url": "https://theislab.github.io/scib-reproducibility/dataset_pancreas.html",
-    "date_created": "08-01-2025",
-    "file_size": 73130523
   }
 ]
