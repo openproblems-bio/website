@@ -93,7 +93,7 @@
         "task_id": "task_label_projection", 
         "category": "Method info", 
         "name": "Pct 'paper_reference' missing", 
-        "value": 0.8333333333333334, 
+        "value": 0.8421052631578947, 
         "severity": 2, 
         "severity_value": 3.0, 
         "code": "percent_missing(method_info, field)", 
@@ -243,51 +243,51 @@
         "task_id": "task_label_projection", 
         "category": "Raw data", 
         "name": "Number of results", 
-        "value": 102, 
+        "value": 114, 
         "severity": 0, 
-        "severity_value": 0.5555555555555558, 
+        "severity_value": 0.0, 
         "code": "len(results) == len(method_info) * len(metric_info) * len(dataset_info)", 
-        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: task_label_projection\n  Number of results: 102\n  Number of methods: 18\n  Number of metrics: 4\n  Number of datasets: 6\n"
+        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: task_label_projection\n  Number of results: 114\n  Number of methods: 19\n  Number of metrics: 4\n  Number of datasets: 6\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Raw results", 
         "name": "Metric 'accuracy' %missing", 
-        "value": 0.2407407407407408, 
-        "severity": 2, 
-        "severity_value": 2.407407407407408, 
+        "value": 0.3157894736842105, 
+        "severity": 3, 
+        "severity_value": 3.157894736842105, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  Metric id: accuracy\n  Percentage missing: 24%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  Metric id: accuracy\n  Percentage missing: 32%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Raw results", 
         "name": "Metric 'f1_weighted' %missing", 
-        "value": 0.2407407407407408, 
-        "severity": 2, 
-        "severity_value": 2.407407407407408, 
+        "value": 0.3070175438596492, 
+        "severity": 3, 
+        "severity_value": 3.070175438596492, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  Metric id: f1_weighted\n  Percentage missing: 24%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  Metric id: f1_weighted\n  Percentage missing: 31%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Raw results", 
         "name": "Metric 'f1_macro' %missing", 
-        "value": 0.2407407407407408, 
-        "severity": 2, 
-        "severity_value": 2.407407407407408, 
+        "value": 0.3070175438596492, 
+        "severity": 3, 
+        "severity_value": 3.070175438596492, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  Metric id: f1_macro\n  Percentage missing: 24%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  Metric id: f1_macro\n  Percentage missing: 31%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Raw results", 
         "name": "Metric 'f1_micro' %missing", 
-        "value": 0.2407407407407408, 
-        "severity": 2, 
-        "severity_value": 2.407407407407408, 
+        "value": 0.3070175438596492, 
+        "severity": 3, 
+        "severity_value": 3.070175438596492, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  Metric id: f1_micro\n  Percentage missing: 24%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  Metric id: f1_micro\n  Percentage missing: 31%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -363,51 +363,61 @@
         "task_id": "task_label_projection", 
         "category": "Raw results", 
         "name": "Method 'naive_bayes' %missing", 
-        "value": 0.0, 
+        "value": 0.04166666666666663, 
         "severity": 0, 
-        "severity_value": 0.0, 
+        "severity_value": 0.4166666666666663, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  method id: naive_bayes\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  method id: naive_bayes\n  Percentage missing: 4%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Raw results", 
         "name": "Method 'scanvi' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.16666666666666663, 
+        "severity": 1, 
+        "severity_value": 1.6666666666666663, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  method id: scanvi\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  method id: scanvi\n  Percentage missing: 17%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Raw results", 
         "name": "Method 'scanvi_scarches' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.16666666666666663, 
+        "severity": 1, 
+        "severity_value": 1.6666666666666663, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  method id: scanvi_scarches\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  method id: scanvi_scarches\n  Percentage missing: 17%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Raw results", 
-        "name": "Method 'scgpt_zero_shot' %missing", 
-        "value": 0.33333333333333337, 
+        "name": "Method 'scgpt_finetuned' %missing", 
+        "value": 1.0, 
         "severity": 3, 
-        "severity_value": 3.3333333333333335, 
+        "severity_value": 10.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  method id: scgpt_zero_shot\n  Percentage missing: 33%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  method id: scgpt_finetuned\n  Percentage missing: 100%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Raw results", 
+        "name": "Method 'scgpt_zeroshot' %missing", 
+        "value": 0.5, 
+        "severity": 3, 
+        "severity_value": 5.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  method id: scgpt_zeroshot\n  Percentage missing: 50%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Raw results", 
         "name": "Method 'scimilarity' %missing", 
-        "value": 0.5, 
+        "value": 0.33333333333333337, 
         "severity": 3, 
-        "severity_value": 5.0, 
+        "severity_value": 3.3333333333333335, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  method id: scimilarity\n  Percentage missing: 50%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  method id: scimilarity\n  Percentage missing: 33%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -443,91 +453,91 @@
         "task_id": "task_label_projection", 
         "category": "Raw results", 
         "name": "Method 'singler' %missing", 
-        "value": 0.5, 
-        "severity": 3, 
-        "severity_value": 5.0, 
+        "value": 0.16666666666666663, 
+        "severity": 1, 
+        "severity_value": 1.6666666666666663, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  method id: singler\n  Percentage missing: 50%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  method id: singler\n  Percentage missing: 17%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Raw results", 
         "name": "Method 'uce' %missing", 
-        "value": 0.6666666666666667, 
+        "value": 1.0, 
         "severity": 3, 
-        "severity_value": 6.666666666666667, 
+        "severity_value": 10.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  method id: uce\n  Percentage missing: 67%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  method id: uce\n  Percentage missing: 100%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Raw results", 
         "name": "Method 'xgboost' %missing", 
-        "value": 0.0, 
-        "severity": 0, 
-        "severity_value": 0.0, 
+        "value": 0.16666666666666663, 
+        "severity": 1, 
+        "severity_value": 1.6666666666666663, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  method id: xgboost\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  method id: xgboost\n  Percentage missing: 17%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Raw results", 
         "name": "Dataset 'cellxgene_census/immune_cell_atlas' %missing", 
-        "value": 0.2222222222222222, 
+        "value": 0.21052631578947367, 
         "severity": 2, 
-        "severity_value": 2.222222222222222, 
+        "severity_value": 2.1052631578947367, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  dataset id: cellxgene_census/immune_cell_atlas\n  Percentage missing: 22%\n"
-    }, 
-    {
-        "task_id": "task_label_projection", 
-        "category": "Raw results", 
-        "name": "Dataset 'cellxgene_census/dkd' %missing", 
-        "value": 0.11111111111111116, 
-        "severity": 1, 
-        "severity_value": 1.1111111111111116, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  dataset id: cellxgene_census/dkd\n  Percentage missing: 11%\n"
-    }, 
-    {
-        "task_id": "task_label_projection", 
-        "category": "Raw results", 
-        "name": "Dataset 'cellxgene_census/mouse_pancreas_atlas' %missing", 
-        "value": 0.38888888888888884, 
-        "severity": 3, 
-        "severity_value": 3.8888888888888884, 
-        "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  dataset id: cellxgene_census/mouse_pancreas_atlas\n  Percentage missing: 39%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  dataset id: cellxgene_census/immune_cell_atlas\n  Percentage missing: 21%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Raw results", 
         "name": "Dataset 'cellxgene_census/gtex_v9' %missing", 
-        "value": 0.11111111111111116, 
-        "severity": 1, 
-        "severity_value": 1.1111111111111116, 
+        "value": 0.26315789473684215, 
+        "severity": 2, 
+        "severity_value": 2.6315789473684212, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  dataset id: cellxgene_census/gtex_v9\n  Percentage missing: 11%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  dataset id: cellxgene_census/gtex_v9\n  Percentage missing: 26%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Raw results", 
+        "name": "Dataset 'cellxgene_census/dkd' %missing", 
+        "value": 0.21052631578947367, 
+        "severity": 2, 
+        "severity_value": 2.1052631578947367, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  dataset id: cellxgene_census/dkd\n  Percentage missing: 21%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Raw results", 
         "name": "Dataset 'cellxgene_census/tabula_sapiens' %missing", 
-        "value": 0.2777777777777778, 
-        "severity": 2, 
-        "severity_value": 2.7777777777777777, 
+        "value": 0.368421052631579, 
+        "severity": 3, 
+        "severity_value": 3.68421052631579, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  dataset id: cellxgene_census/tabula_sapiens\n  Percentage missing: 28%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  dataset id: cellxgene_census/tabula_sapiens\n  Percentage missing: 37%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Raw results", 
         "name": "Dataset 'cellxgene_census/hypomap' %missing", 
-        "value": 0.33333333333333337, 
+        "value": 0.368421052631579, 
         "severity": 3, 
-        "severity_value": 3.3333333333333335, 
+        "severity_value": 3.68421052631579, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  dataset id: cellxgene_census/hypomap\n  Percentage missing: 33%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  dataset id: cellxgene_census/hypomap\n  Percentage missing: 37%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Raw results", 
+        "name": "Dataset 'cellxgene_census/mouse_pancreas_atlas' %missing", 
+        "value": 0.4342105263157895, 
+        "severity": 3, 
+        "severity_value": 4.342105263157895, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_label_projection\n  dataset id: cellxgene_census/mouse_pancreas_atlas\n  Percentage missing: 43%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -543,11 +553,11 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score majority_vote accuracy", 
-        "value": 0.447, 
+        "value": 0.204, 
         "severity": 0, 
-        "severity_value": 0.2235, 
+        "severity_value": 0.102, 
         "code": "best_score <= 2", 
-        "message": "Method majority_vote performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: majority_vote\n  Metric id: accuracy\n  Best score: 0.447%\n"
+        "message": "Method majority_vote performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: majority_vote\n  Metric id: accuracy\n  Best score: 0.204%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -563,11 +573,11 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score random_labels accuracy", 
-        "value": 0.0023, 
+        "value": 0.0419, 
         "severity": 0, 
-        "severity_value": 0.00115, 
+        "severity_value": 0.02095, 
         "code": "best_score <= 2", 
-        "message": "Method random_labels performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: random_labels\n  Metric id: accuracy\n  Best score: 0.0023%\n"
+        "message": "Method random_labels performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: random_labels\n  Metric id: accuracy\n  Best score: 0.0419%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -592,142 +602,182 @@
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
-        "name": "Worst score knn accuracy", 
-        "value": 0.7651, 
+        "name": "Worst score geneformer accuracy", 
+        "value": 0, 
         "severity": 0, 
-        "severity_value": -0.7651, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method knn performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: knn\n  Metric id: accuracy\n  Worst score: 0.7651%\n"
+        "message": "Method geneformer performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: geneformer\n  Metric id: accuracy\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Scaling", 
+        "name": "Best score geneformer accuracy", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method geneformer performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: geneformer\n  Metric id: accuracy\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Scaling", 
+        "name": "Worst score knn accuracy", 
+        "value": 0.1637, 
+        "severity": 0, 
+        "severity_value": -0.1637, 
+        "code": "worst_score >= -1", 
+        "message": "Method knn performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: knn\n  Metric id: accuracy\n  Worst score: 0.1637%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score knn accuracy", 
-        "value": 0.9927, 
+        "value": 0.9934, 
         "severity": 0, 
-        "severity_value": 0.49635, 
+        "severity_value": 0.4967, 
         "code": "best_score <= 2", 
-        "message": "Method knn performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: knn\n  Metric id: accuracy\n  Best score: 0.9927%\n"
+        "message": "Method knn performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: knn\n  Metric id: accuracy\n  Best score: 0.9934%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score logistic_regression accuracy", 
-        "value": 0.77, 
+        "value": 0.1744, 
         "severity": 0, 
-        "severity_value": -0.77, 
+        "severity_value": -0.1744, 
         "code": "worst_score >= -1", 
-        "message": "Method logistic_regression performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: logistic_regression\n  Metric id: accuracy\n  Worst score: 0.77%\n"
+        "message": "Method logistic_regression performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: logistic_regression\n  Metric id: accuracy\n  Worst score: 0.1744%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score logistic_regression accuracy", 
-        "value": 0.9951, 
+        "value": 0.9947, 
         "severity": 0, 
-        "severity_value": 0.49755, 
+        "severity_value": 0.49735, 
         "code": "best_score <= 2", 
-        "message": "Method logistic_regression performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: logistic_regression\n  Metric id: accuracy\n  Best score: 0.9951%\n"
+        "message": "Method logistic_regression performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: logistic_regression\n  Metric id: accuracy\n  Best score: 0.9947%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score mlp accuracy", 
-        "value": 0.7549, 
+        "value": 0.2811, 
         "severity": 0, 
-        "severity_value": -0.7549, 
+        "severity_value": -0.2811, 
         "code": "worst_score >= -1", 
-        "message": "Method mlp performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: mlp\n  Metric id: accuracy\n  Worst score: 0.7549%\n"
+        "message": "Method mlp performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: mlp\n  Metric id: accuracy\n  Worst score: 0.2811%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score mlp accuracy", 
-        "value": 0.9927, 
+        "value": 0.9974, 
         "severity": 0, 
-        "severity_value": 0.49635, 
+        "severity_value": 0.4987, 
         "code": "best_score <= 2", 
-        "message": "Method mlp performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: mlp\n  Metric id: accuracy\n  Best score: 0.9927%\n"
+        "message": "Method mlp performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: mlp\n  Metric id: accuracy\n  Best score: 0.9974%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score naive_bayes accuracy", 
-        "value": 0.7419, 
+        "value": 0.0, 
         "severity": 0, 
-        "severity_value": -0.7419, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method naive_bayes performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: naive_bayes\n  Metric id: accuracy\n  Worst score: 0.7419%\n"
+        "message": "Method naive_bayes performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: naive_bayes\n  Metric id: accuracy\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score naive_bayes accuracy", 
-        "value": 0.9854, 
+        "value": 0.9921, 
         "severity": 0, 
-        "severity_value": 0.4927, 
+        "severity_value": 0.49605, 
         "code": "best_score <= 2", 
-        "message": "Method naive_bayes performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: naive_bayes\n  Metric id: accuracy\n  Best score: 0.9854%\n"
+        "message": "Method naive_bayes performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: naive_bayes\n  Metric id: accuracy\n  Best score: 0.9921%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score scanvi accuracy", 
-        "value": 0.8305, 
+        "value": 0.0, 
         "severity": 0, 
-        "severity_value": -0.8305, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method scanvi performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scanvi\n  Metric id: accuracy\n  Worst score: 0.8305%\n"
+        "message": "Method scanvi performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scanvi\n  Metric id: accuracy\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score scanvi accuracy", 
-        "value": 0.9903, 
+        "value": 0.9947, 
         "severity": 0, 
-        "severity_value": 0.49515, 
+        "severity_value": 0.49735, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scanvi\n  Metric id: accuracy\n  Best score: 0.9903%\n"
+        "message": "Method scanvi performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scanvi\n  Metric id: accuracy\n  Best score: 0.9947%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score scanvi_scarches accuracy", 
-        "value": 0.8351, 
+        "value": 0.0, 
         "severity": 0, 
-        "severity_value": -0.8351, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method scanvi_scarches performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scanvi_scarches\n  Metric id: accuracy\n  Worst score: 0.8351%\n"
+        "message": "Method scanvi_scarches performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scanvi_scarches\n  Metric id: accuracy\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score scanvi_scarches accuracy", 
-        "value": 0.9951, 
+        "value": 0.996, 
         "severity": 0, 
-        "severity_value": 0.49755, 
+        "severity_value": 0.498, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi_scarches performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scanvi_scarches\n  Metric id: accuracy\n  Best score: 0.9951%\n"
+        "message": "Method scanvi_scarches performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scanvi_scarches\n  Metric id: accuracy\n  Best score: 0.996%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
-        "name": "Worst score scgpt_zero_shot accuracy", 
+        "name": "Worst score scgpt_finetuned accuracy", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method scgpt_finetuned performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_finetuned\n  Metric id: accuracy\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Scaling", 
+        "name": "Best score scgpt_finetuned accuracy", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method scgpt_finetuned performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_finetuned\n  Metric id: accuracy\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Scaling", 
+        "name": "Worst score scgpt_zeroshot accuracy", 
         "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method scgpt_zero_shot performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_zero_shot\n  Metric id: accuracy\n  Worst score: 0.0%\n"
+        "message": "Method scgpt_zeroshot performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_zeroshot\n  Metric id: accuracy\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
-        "name": "Best score scgpt_zero_shot accuracy", 
-        "value": 0.8955, 
+        "name": "Best score scgpt_zeroshot accuracy", 
+        "value": 0.8151, 
         "severity": 0, 
-        "severity_value": 0.44775, 
+        "severity_value": 0.40755, 
         "code": "best_score <= 2", 
-        "message": "Method scgpt_zero_shot performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_zero_shot\n  Metric id: accuracy\n  Best score: 0.8955%\n"
+        "message": "Method scgpt_zeroshot performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_zeroshot\n  Metric id: accuracy\n  Best score: 0.8151%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -743,11 +793,11 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score scimilarity accuracy", 
-        "value": 0.873, 
+        "value": 0.8634, 
         "severity": 0, 
-        "severity_value": 0.4365, 
+        "severity_value": 0.4317, 
         "code": "best_score <= 2", 
-        "message": "Method scimilarity performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scimilarity\n  Metric id: accuracy\n  Best score: 0.873%\n"
+        "message": "Method scimilarity performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scimilarity\n  Metric id: accuracy\n  Best score: 0.8634%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -763,11 +813,11 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score scimilarity_knn accuracy", 
-        "value": 0.9188, 
+        "value": 0.946, 
         "severity": 0, 
-        "severity_value": 0.4594, 
+        "severity_value": 0.473, 
         "code": "best_score <= 2", 
-        "message": "Method scimilarity_knn performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scimilarity_knn\n  Metric id: accuracy\n  Best score: 0.9188%\n"
+        "message": "Method scimilarity_knn performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scimilarity_knn\n  Metric id: accuracy\n  Best score: 0.946%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -793,21 +843,21 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score seurat_transferdata accuracy", 
-        "value": 0.8257, 
+        "value": 0.3701, 
         "severity": 0, 
-        "severity_value": -0.8257, 
+        "severity_value": -0.3701, 
         "code": "worst_score >= -1", 
-        "message": "Method seurat_transferdata performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: seurat_transferdata\n  Metric id: accuracy\n  Worst score: 0.8257%\n"
+        "message": "Method seurat_transferdata performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: seurat_transferdata\n  Metric id: accuracy\n  Worst score: 0.3701%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score seurat_transferdata accuracy", 
-        "value": 0.9927, 
+        "value": 0.9947, 
         "severity": 0, 
-        "severity_value": 0.49635, 
+        "severity_value": 0.49735, 
         "code": "best_score <= 2", 
-        "message": "Method seurat_transferdata performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: seurat_transferdata\n  Metric id: accuracy\n  Best score: 0.9927%\n"
+        "message": "Method seurat_transferdata performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: seurat_transferdata\n  Metric id: accuracy\n  Best score: 0.9947%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -823,91 +873,91 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score singler accuracy", 
-        "value": 0.9854, 
+        "value": 0.9894, 
         "severity": 0, 
-        "severity_value": 0.4927, 
+        "severity_value": 0.4947, 
         "code": "best_score <= 2", 
-        "message": "Method singler performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: singler\n  Metric id: accuracy\n  Best score: 0.9854%\n"
+        "message": "Method singler performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: singler\n  Metric id: accuracy\n  Best score: 0.9894%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score uce accuracy", 
-        "value": -0.0287, 
+        "value": 0, 
         "severity": 0, 
-        "severity_value": 0.0287, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method uce performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: uce\n  Metric id: accuracy\n  Worst score: -0.0287%\n"
+        "message": "Method uce performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: uce\n  Metric id: accuracy\n  Worst score: 0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score uce accuracy", 
-        "value": 0.0252, 
+        "value": 0, 
         "severity": 0, 
-        "severity_value": 0.0126, 
+        "severity_value": 0.0, 
         "code": "best_score <= 2", 
-        "message": "Method uce performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: uce\n  Metric id: accuracy\n  Best score: 0.0252%\n"
+        "message": "Method uce performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: uce\n  Metric id: accuracy\n  Best score: 0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score xgboost accuracy", 
-        "value": 0.7688, 
+        "value": 0.0, 
         "severity": 0, 
-        "severity_value": -0.7688, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method xgboost performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: xgboost\n  Metric id: accuracy\n  Worst score: 0.7688%\n"
+        "message": "Method xgboost performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: xgboost\n  Metric id: accuracy\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score xgboost accuracy", 
-        "value": 0.9951, 
+        "value": 0.996, 
         "severity": 0, 
-        "severity_value": 0.49755, 
+        "severity_value": 0.498, 
         "code": "best_score <= 2", 
-        "message": "Method xgboost performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: xgboost\n  Metric id: accuracy\n  Best score: 0.9951%\n"
+        "message": "Method xgboost performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: xgboost\n  Metric id: accuracy\n  Best score: 0.996%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score majority_vote f1_weighted", 
-        "value": 0.0, 
+        "value": 0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method majority_vote performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: majority_vote\n  Metric id: f1_weighted\n  Worst score: 0.0%\n"
+        "message": "Method majority_vote performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: majority_vote\n  Metric id: f1_weighted\n  Worst score: 0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score majority_vote f1_weighted", 
-        "value": 0.1959, 
+        "value": 0, 
         "severity": 0, 
-        "severity_value": 0.09795, 
+        "severity_value": 0.0, 
         "code": "best_score <= 2", 
-        "message": "Method majority_vote performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: majority_vote\n  Metric id: f1_weighted\n  Best score: 0.1959%\n"
+        "message": "Method majority_vote performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: majority_vote\n  Metric id: f1_weighted\n  Best score: 0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score random_labels f1_weighted", 
-        "value": 0.0, 
+        "value": 0.0078, 
         "severity": 0, 
-        "severity_value": -0.0, 
+        "severity_value": -0.0078, 
         "code": "worst_score >= -1", 
-        "message": "Method random_labels performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: random_labels\n  Metric id: f1_weighted\n  Worst score: 0.0%\n"
+        "message": "Method random_labels performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: random_labels\n  Metric id: f1_weighted\n  Worst score: 0.0078%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score random_labels f1_weighted", 
-        "value": 0.1318, 
+        "value": 0.0537, 
         "severity": 0, 
-        "severity_value": 0.0659, 
+        "severity_value": 0.02685, 
         "code": "best_score <= 2", 
-        "message": "Method random_labels performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: random_labels\n  Metric id: f1_weighted\n  Best score: 0.1318%\n"
+        "message": "Method random_labels performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: random_labels\n  Metric id: f1_weighted\n  Best score: 0.0537%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -932,142 +982,182 @@
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
-        "name": "Worst score knn f1_weighted", 
-        "value": 0.7724, 
+        "name": "Worst score geneformer f1_weighted", 
+        "value": 0, 
         "severity": 0, 
-        "severity_value": -0.7724, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method knn performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: knn\n  Metric id: f1_weighted\n  Worst score: 0.7724%\n"
+        "message": "Method geneformer performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: geneformer\n  Metric id: f1_weighted\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Scaling", 
+        "name": "Best score geneformer f1_weighted", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method geneformer performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: geneformer\n  Metric id: f1_weighted\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Scaling", 
+        "name": "Worst score knn f1_weighted", 
+        "value": 0.2211, 
+        "severity": 0, 
+        "severity_value": -0.2211, 
+        "code": "worst_score >= -1", 
+        "message": "Method knn performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: knn\n  Metric id: f1_weighted\n  Worst score: 0.2211%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score knn f1_weighted", 
-        "value": 0.9933, 
+        "value": 0.9936, 
         "severity": 0, 
-        "severity_value": 0.49665, 
+        "severity_value": 0.4968, 
         "code": "best_score <= 2", 
-        "message": "Method knn performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: knn\n  Metric id: f1_weighted\n  Best score: 0.9933%\n"
+        "message": "Method knn performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: knn\n  Metric id: f1_weighted\n  Best score: 0.9936%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score logistic_regression f1_weighted", 
-        "value": 0.7761, 
+        "value": 0.2032, 
         "severity": 0, 
-        "severity_value": -0.7761, 
+        "severity_value": -0.2032, 
         "code": "worst_score >= -1", 
-        "message": "Method logistic_regression performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: logistic_regression\n  Metric id: f1_weighted\n  Worst score: 0.7761%\n"
+        "message": "Method logistic_regression performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: logistic_regression\n  Metric id: f1_weighted\n  Worst score: 0.2032%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score logistic_regression f1_weighted", 
-        "value": 0.9963, 
+        "value": 0.9949, 
         "severity": 0, 
-        "severity_value": 0.49815, 
+        "severity_value": 0.49745, 
         "code": "best_score <= 2", 
-        "message": "Method logistic_regression performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: logistic_regression\n  Metric id: f1_weighted\n  Best score: 0.9963%\n"
+        "message": "Method logistic_regression performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: logistic_regression\n  Metric id: f1_weighted\n  Best score: 0.9949%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score mlp f1_weighted", 
-        "value": 0.7602, 
+        "value": 0.3564, 
         "severity": 0, 
-        "severity_value": -0.7602, 
+        "severity_value": -0.3564, 
         "code": "worst_score >= -1", 
-        "message": "Method mlp performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: mlp\n  Metric id: f1_weighted\n  Worst score: 0.7602%\n"
+        "message": "Method mlp performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: mlp\n  Metric id: f1_weighted\n  Worst score: 0.3564%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score mlp f1_weighted", 
-        "value": 0.9936, 
+        "value": 0.9975, 
         "severity": 0, 
-        "severity_value": 0.4968, 
+        "severity_value": 0.49875, 
         "code": "best_score <= 2", 
-        "message": "Method mlp performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: mlp\n  Metric id: f1_weighted\n  Best score: 0.9936%\n"
+        "message": "Method mlp performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: mlp\n  Metric id: f1_weighted\n  Best score: 0.9975%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score naive_bayes f1_weighted", 
-        "value": 0.753, 
+        "value": 0.1892, 
         "severity": 0, 
-        "severity_value": -0.753, 
+        "severity_value": -0.1892, 
         "code": "worst_score >= -1", 
-        "message": "Method naive_bayes performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: naive_bayes\n  Metric id: f1_weighted\n  Worst score: 0.753%\n"
+        "message": "Method naive_bayes performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: naive_bayes\n  Metric id: f1_weighted\n  Worst score: 0.1892%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score naive_bayes f1_weighted", 
-        "value": 0.9854, 
+        "value": 0.9924, 
         "severity": 0, 
-        "severity_value": 0.4927, 
+        "severity_value": 0.4962, 
         "code": "best_score <= 2", 
-        "message": "Method naive_bayes performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: naive_bayes\n  Metric id: f1_weighted\n  Best score: 0.9854%\n"
+        "message": "Method naive_bayes performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: naive_bayes\n  Metric id: f1_weighted\n  Best score: 0.9924%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score scanvi f1_weighted", 
-        "value": 0.8287, 
+        "value": 0.0, 
         "severity": 0, 
-        "severity_value": -0.8287, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method scanvi performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scanvi\n  Metric id: f1_weighted\n  Worst score: 0.8287%\n"
+        "message": "Method scanvi performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scanvi\n  Metric id: f1_weighted\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score scanvi f1_weighted", 
-        "value": 0.9911, 
+        "value": 0.9949, 
         "severity": 0, 
-        "severity_value": 0.49555, 
+        "severity_value": 0.49745, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scanvi\n  Metric id: f1_weighted\n  Best score: 0.9911%\n"
+        "message": "Method scanvi performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scanvi\n  Metric id: f1_weighted\n  Best score: 0.9949%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score scanvi_scarches f1_weighted", 
-        "value": 0.8307, 
+        "value": 0.0, 
         "severity": 0, 
-        "severity_value": -0.8307, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method scanvi_scarches performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scanvi_scarches\n  Metric id: f1_weighted\n  Worst score: 0.8307%\n"
+        "message": "Method scanvi_scarches performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scanvi_scarches\n  Metric id: f1_weighted\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score scanvi_scarches f1_weighted", 
-        "value": 0.9952, 
+        "value": 0.9962, 
         "severity": 0, 
-        "severity_value": 0.4976, 
+        "severity_value": 0.4981, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi_scarches performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scanvi_scarches\n  Metric id: f1_weighted\n  Best score: 0.9952%\n"
+        "message": "Method scanvi_scarches performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scanvi_scarches\n  Metric id: f1_weighted\n  Best score: 0.9962%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
-        "name": "Worst score scgpt_zero_shot f1_weighted", 
+        "name": "Worst score scgpt_finetuned f1_weighted", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method scgpt_finetuned performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_finetuned\n  Metric id: f1_weighted\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Scaling", 
+        "name": "Best score scgpt_finetuned f1_weighted", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method scgpt_finetuned performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_finetuned\n  Metric id: f1_weighted\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Scaling", 
+        "name": "Worst score scgpt_zeroshot f1_weighted", 
         "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method scgpt_zero_shot performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_zero_shot\n  Metric id: f1_weighted\n  Worst score: 0.0%\n"
+        "message": "Method scgpt_zeroshot performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_zeroshot\n  Metric id: f1_weighted\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
-        "name": "Best score scgpt_zero_shot f1_weighted", 
-        "value": 0.9005, 
+        "name": "Best score scgpt_zeroshot f1_weighted", 
+        "value": 0.8058, 
         "severity": 0, 
-        "severity_value": 0.45025, 
+        "severity_value": 0.4029, 
         "code": "best_score <= 2", 
-        "message": "Method scgpt_zero_shot performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_zero_shot\n  Metric id: f1_weighted\n  Best score: 0.9005%\n"
+        "message": "Method scgpt_zeroshot performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_zeroshot\n  Metric id: f1_weighted\n  Best score: 0.8058%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -1083,11 +1173,11 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score scimilarity f1_weighted", 
-        "value": 0.8833, 
+        "value": 0.8455, 
         "severity": 0, 
-        "severity_value": 0.44165, 
+        "severity_value": 0.42275, 
         "code": "best_score <= 2", 
-        "message": "Method scimilarity performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scimilarity\n  Metric id: f1_weighted\n  Best score: 0.8833%\n"
+        "message": "Method scimilarity performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scimilarity\n  Metric id: f1_weighted\n  Best score: 0.8455%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -1103,11 +1193,11 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score scimilarity_knn f1_weighted", 
-        "value": 0.9375, 
+        "value": 0.9487, 
         "severity": 0, 
-        "severity_value": 0.46875, 
+        "severity_value": 0.47435, 
         "code": "best_score <= 2", 
-        "message": "Method scimilarity_knn performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scimilarity_knn\n  Metric id: f1_weighted\n  Best score: 0.9375%\n"
+        "message": "Method scimilarity_knn performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scimilarity_knn\n  Metric id: f1_weighted\n  Best score: 0.9487%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -1133,21 +1223,21 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score seurat_transferdata f1_weighted", 
-        "value": 0.8182, 
+        "value": 0.3833, 
         "severity": 0, 
-        "severity_value": -0.8182, 
+        "severity_value": -0.3833, 
         "code": "worst_score >= -1", 
-        "message": "Method seurat_transferdata performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: seurat_transferdata\n  Metric id: f1_weighted\n  Worst score: 0.8182%\n"
+        "message": "Method seurat_transferdata performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: seurat_transferdata\n  Metric id: f1_weighted\n  Worst score: 0.3833%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score seurat_transferdata f1_weighted", 
-        "value": 0.9935, 
+        "value": 0.9949, 
         "severity": 0, 
-        "severity_value": 0.49675, 
+        "severity_value": 0.49745, 
         "code": "best_score <= 2", 
-        "message": "Method seurat_transferdata performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: seurat_transferdata\n  Metric id: f1_weighted\n  Best score: 0.9935%\n"
+        "message": "Method seurat_transferdata performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: seurat_transferdata\n  Metric id: f1_weighted\n  Best score: 0.9949%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -1163,51 +1253,51 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score singler f1_weighted", 
-        "value": 0.9861, 
+        "value": 0.9898, 
         "severity": 0, 
-        "severity_value": 0.49305, 
+        "severity_value": 0.4949, 
         "code": "best_score <= 2", 
-        "message": "Method singler performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: singler\n  Metric id: f1_weighted\n  Best score: 0.9861%\n"
+        "message": "Method singler performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: singler\n  Metric id: f1_weighted\n  Best score: 0.9898%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score uce f1_weighted", 
-        "value": -0.0037, 
+        "value": 0, 
         "severity": 0, 
-        "severity_value": 0.0037, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method uce performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: uce\n  Metric id: f1_weighted\n  Worst score: -0.0037%\n"
+        "message": "Method uce performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: uce\n  Metric id: f1_weighted\n  Worst score: 0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score uce f1_weighted", 
-        "value": 0.1528, 
+        "value": 0, 
         "severity": 0, 
-        "severity_value": 0.0764, 
+        "severity_value": 0.0, 
         "code": "best_score <= 2", 
-        "message": "Method uce performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: uce\n  Metric id: f1_weighted\n  Best score: 0.1528%\n"
+        "message": "Method uce performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: uce\n  Metric id: f1_weighted\n  Best score: 0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score xgboost f1_weighted", 
-        "value": 0.799, 
+        "value": 0.0, 
         "severity": 0, 
-        "severity_value": -0.799, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method xgboost performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: xgboost\n  Metric id: f1_weighted\n  Worst score: 0.799%\n"
+        "message": "Method xgboost performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: xgboost\n  Metric id: f1_weighted\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score xgboost f1_weighted", 
-        "value": 0.9947, 
+        "value": 0.9961, 
         "severity": 0, 
-        "severity_value": 0.49735, 
+        "severity_value": 0.49805, 
         "code": "best_score <= 2", 
-        "message": "Method xgboost performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: xgboost\n  Metric id: f1_weighted\n  Best score: 0.9947%\n"
+        "message": "Method xgboost performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: xgboost\n  Metric id: f1_weighted\n  Best score: 0.9961%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -1223,11 +1313,11 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score majority_vote f1_macro", 
-        "value": 0.0172, 
+        "value": 0.0112, 
         "severity": 0, 
-        "severity_value": 0.0086, 
+        "severity_value": 0.0056, 
         "code": "best_score <= 2", 
-        "message": "Method majority_vote performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: majority_vote\n  Metric id: f1_macro\n  Best score: 0.0172%\n"
+        "message": "Method majority_vote performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: majority_vote\n  Metric id: f1_macro\n  Best score: 0.0112%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -1243,11 +1333,11 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score random_labels f1_macro", 
-        "value": 0.0442, 
+        "value": 0.0343, 
         "severity": 0, 
-        "severity_value": 0.0221, 
+        "severity_value": 0.01715, 
         "code": "best_score <= 2", 
-        "message": "Method random_labels performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: random_labels\n  Metric id: f1_macro\n  Best score: 0.0442%\n"
+        "message": "Method random_labels performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: random_labels\n  Metric id: f1_macro\n  Best score: 0.0343%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -1272,142 +1362,182 @@
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
-        "name": "Worst score knn f1_macro", 
-        "value": 0.2675, 
+        "name": "Worst score geneformer f1_macro", 
+        "value": 0, 
         "severity": 0, 
-        "severity_value": -0.2675, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method knn performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: knn\n  Metric id: f1_macro\n  Worst score: 0.2675%\n"
+        "message": "Method geneformer performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: geneformer\n  Metric id: f1_macro\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Scaling", 
+        "name": "Best score geneformer f1_macro", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method geneformer performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: geneformer\n  Metric id: f1_macro\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Scaling", 
+        "name": "Worst score knn f1_macro", 
+        "value": 0.1013, 
+        "severity": 0, 
+        "severity_value": -0.1013, 
+        "code": "worst_score >= -1", 
+        "message": "Method knn performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: knn\n  Metric id: f1_macro\n  Worst score: 0.1013%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score knn f1_macro", 
-        "value": 0.8835, 
+        "value": 0.9711, 
         "severity": 0, 
-        "severity_value": 0.44175, 
+        "severity_value": 0.48555, 
         "code": "best_score <= 2", 
-        "message": "Method knn performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: knn\n  Metric id: f1_macro\n  Best score: 0.8835%\n"
+        "message": "Method knn performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: knn\n  Metric id: f1_macro\n  Best score: 0.9711%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score logistic_regression f1_macro", 
-        "value": 0.2957, 
+        "value": 0.1227, 
         "severity": 0, 
-        "severity_value": -0.2957, 
+        "severity_value": -0.1227, 
         "code": "worst_score >= -1", 
-        "message": "Method logistic_regression performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: logistic_regression\n  Metric id: f1_macro\n  Worst score: 0.2957%\n"
+        "message": "Method logistic_regression performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: logistic_regression\n  Metric id: f1_macro\n  Worst score: 0.1227%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score logistic_regression f1_macro", 
-        "value": 0.8688, 
+        "value": 0.975, 
         "severity": 0, 
-        "severity_value": 0.4344, 
+        "severity_value": 0.4875, 
         "code": "best_score <= 2", 
-        "message": "Method logistic_regression performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: logistic_regression\n  Metric id: f1_macro\n  Best score: 0.8688%\n"
+        "message": "Method logistic_regression performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: logistic_regression\n  Metric id: f1_macro\n  Best score: 0.975%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score mlp f1_macro", 
-        "value": 0.2702, 
+        "value": 0.155, 
         "severity": 0, 
-        "severity_value": -0.2702, 
+        "severity_value": -0.155, 
         "code": "worst_score >= -1", 
-        "message": "Method mlp performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: mlp\n  Metric id: f1_macro\n  Worst score: 0.2702%\n"
+        "message": "Method mlp performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: mlp\n  Metric id: f1_macro\n  Worst score: 0.155%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score mlp f1_macro", 
-        "value": 0.8843, 
+        "value": 0.9946, 
         "severity": 0, 
-        "severity_value": 0.44215, 
+        "severity_value": 0.4973, 
         "code": "best_score <= 2", 
-        "message": "Method mlp performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: mlp\n  Metric id: f1_macro\n  Best score: 0.8843%\n"
+        "message": "Method mlp performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: mlp\n  Metric id: f1_macro\n  Best score: 0.9946%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score naive_bayes f1_macro", 
-        "value": 0.2934, 
+        "value": 0.1606, 
         "severity": 0, 
-        "severity_value": -0.2934, 
+        "severity_value": -0.1606, 
         "code": "worst_score >= -1", 
-        "message": "Method naive_bayes performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: naive_bayes\n  Metric id: f1_macro\n  Worst score: 0.2934%\n"
+        "message": "Method naive_bayes performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: naive_bayes\n  Metric id: f1_macro\n  Worst score: 0.1606%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score naive_bayes f1_macro", 
-        "value": 0.8918, 
+        "value": 0.9599, 
         "severity": 0, 
-        "severity_value": 0.4459, 
+        "severity_value": 0.47995, 
         "code": "best_score <= 2", 
-        "message": "Method naive_bayes performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: naive_bayes\n  Metric id: f1_macro\n  Best score: 0.8918%\n"
+        "message": "Method naive_bayes performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: naive_bayes\n  Metric id: f1_macro\n  Best score: 0.9599%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score scanvi f1_macro", 
-        "value": 0.3129, 
+        "value": 0.0, 
         "severity": 0, 
-        "severity_value": -0.3129, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method scanvi performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scanvi\n  Metric id: f1_macro\n  Worst score: 0.3129%\n"
+        "message": "Method scanvi performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scanvi\n  Metric id: f1_macro\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score scanvi f1_macro", 
-        "value": 0.8688, 
+        "value": 0.9767, 
         "severity": 0, 
-        "severity_value": 0.4344, 
+        "severity_value": 0.48835, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scanvi\n  Metric id: f1_macro\n  Best score: 0.8688%\n"
+        "message": "Method scanvi performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scanvi\n  Metric id: f1_macro\n  Best score: 0.9767%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score scanvi_scarches f1_macro", 
-        "value": 0.3373, 
+        "value": 0.0, 
         "severity": 0, 
-        "severity_value": -0.3373, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method scanvi_scarches performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scanvi_scarches\n  Metric id: f1_macro\n  Worst score: 0.3373%\n"
+        "message": "Method scanvi_scarches performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scanvi_scarches\n  Metric id: f1_macro\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score scanvi_scarches f1_macro", 
-        "value": 0.943, 
+        "value": 0.9908, 
         "severity": 0, 
-        "severity_value": 0.4715, 
+        "severity_value": 0.4954, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi_scarches performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scanvi_scarches\n  Metric id: f1_macro\n  Best score: 0.943%\n"
+        "message": "Method scanvi_scarches performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scanvi_scarches\n  Metric id: f1_macro\n  Best score: 0.9908%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
-        "name": "Worst score scgpt_zero_shot f1_macro", 
+        "name": "Worst score scgpt_finetuned f1_macro", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method scgpt_finetuned performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_finetuned\n  Metric id: f1_macro\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Scaling", 
+        "name": "Best score scgpt_finetuned f1_macro", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method scgpt_finetuned performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_finetuned\n  Metric id: f1_macro\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Scaling", 
+        "name": "Worst score scgpt_zeroshot f1_macro", 
         "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method scgpt_zero_shot performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_zero_shot\n  Metric id: f1_macro\n  Worst score: 0.0%\n"
+        "message": "Method scgpt_zeroshot performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_zeroshot\n  Metric id: f1_macro\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
-        "name": "Best score scgpt_zero_shot f1_macro", 
-        "value": 0.597, 
+        "name": "Best score scgpt_zeroshot f1_macro", 
+        "value": 0.5022, 
         "severity": 0, 
-        "severity_value": 0.2985, 
+        "severity_value": 0.2511, 
         "code": "best_score <= 2", 
-        "message": "Method scgpt_zero_shot performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_zero_shot\n  Metric id: f1_macro\n  Best score: 0.597%\n"
+        "message": "Method scgpt_zeroshot performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_zeroshot\n  Metric id: f1_macro\n  Best score: 0.5022%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -1423,11 +1553,11 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score scimilarity f1_macro", 
-        "value": 0.7501, 
+        "value": 0.6366, 
         "severity": 0, 
-        "severity_value": 0.37505, 
+        "severity_value": 0.3183, 
         "code": "best_score <= 2", 
-        "message": "Method scimilarity performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scimilarity\n  Metric id: f1_macro\n  Best score: 0.7501%\n"
+        "message": "Method scimilarity performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scimilarity\n  Metric id: f1_macro\n  Best score: 0.6366%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -1443,11 +1573,11 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score scimilarity_knn f1_macro", 
-        "value": 0.839, 
+        "value": 0.9266, 
         "severity": 0, 
-        "severity_value": 0.4195, 
+        "severity_value": 0.4633, 
         "code": "best_score <= 2", 
-        "message": "Method scimilarity_knn performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scimilarity_knn\n  Metric id: f1_macro\n  Best score: 0.839%\n"
+        "message": "Method scimilarity_knn performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scimilarity_knn\n  Metric id: f1_macro\n  Best score: 0.9266%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -1473,21 +1603,21 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score seurat_transferdata f1_macro", 
-        "value": 0.4144, 
+        "value": 0.1656, 
         "severity": 0, 
-        "severity_value": -0.4144, 
+        "severity_value": -0.1656, 
         "code": "worst_score >= -1", 
-        "message": "Method seurat_transferdata performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: seurat_transferdata\n  Metric id: f1_macro\n  Worst score: 0.4144%\n"
+        "message": "Method seurat_transferdata performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: seurat_transferdata\n  Metric id: f1_macro\n  Worst score: 0.1656%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score seurat_transferdata f1_macro", 
-        "value": 0.8661, 
+        "value": 0.9891, 
         "severity": 0, 
-        "severity_value": 0.43305, 
+        "severity_value": 0.49455, 
         "code": "best_score <= 2", 
-        "message": "Method seurat_transferdata performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: seurat_transferdata\n  Metric id: f1_macro\n  Best score: 0.8661%\n"
+        "message": "Method seurat_transferdata performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: seurat_transferdata\n  Metric id: f1_macro\n  Best score: 0.9891%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -1503,41 +1633,41 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score singler f1_macro", 
-        "value": 0.8229, 
+        "value": 0.9536, 
         "severity": 0, 
-        "severity_value": 0.41145, 
+        "severity_value": 0.4768, 
         "code": "best_score <= 2", 
-        "message": "Method singler performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: singler\n  Metric id: f1_macro\n  Best score: 0.8229%\n"
+        "message": "Method singler performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: singler\n  Metric id: f1_macro\n  Best score: 0.9536%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score uce f1_macro", 
-        "value": -0.0036, 
+        "value": 0, 
         "severity": 0, 
-        "severity_value": 0.0036, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method uce performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: uce\n  Metric id: f1_macro\n  Worst score: -0.0036%\n"
+        "message": "Method uce performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: uce\n  Metric id: f1_macro\n  Worst score: 0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score uce f1_macro", 
-        "value": 0.0506, 
+        "value": 0, 
         "severity": 0, 
-        "severity_value": 0.0253, 
+        "severity_value": 0.0, 
         "code": "best_score <= 2", 
-        "message": "Method uce performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: uce\n  Metric id: f1_macro\n  Best score: 0.0506%\n"
+        "message": "Method uce performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: uce\n  Metric id: f1_macro\n  Best score: 0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score xgboost f1_macro", 
-        "value": 0.2692, 
+        "value": 0.0, 
         "severity": 0, 
-        "severity_value": -0.2692, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method xgboost performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: xgboost\n  Metric id: f1_macro\n  Worst score: 0.2692%\n"
+        "message": "Method xgboost performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: xgboost\n  Metric id: f1_macro\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -1563,11 +1693,11 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score majority_vote f1_micro", 
-        "value": 0.447, 
+        "value": 0.204, 
         "severity": 0, 
-        "severity_value": 0.2235, 
+        "severity_value": 0.102, 
         "code": "best_score <= 2", 
-        "message": "Method majority_vote performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: majority_vote\n  Metric id: f1_micro\n  Best score: 0.447%\n"
+        "message": "Method majority_vote performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: majority_vote\n  Metric id: f1_micro\n  Best score: 0.204%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -1583,11 +1713,11 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score random_labels f1_micro", 
-        "value": 0.0023, 
+        "value": 0.0419, 
         "severity": 0, 
-        "severity_value": 0.00115, 
+        "severity_value": 0.02095, 
         "code": "best_score <= 2", 
-        "message": "Method random_labels performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: random_labels\n  Metric id: f1_micro\n  Best score: 0.0023%\n"
+        "message": "Method random_labels performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: random_labels\n  Metric id: f1_micro\n  Best score: 0.0419%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -1612,142 +1742,182 @@
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
-        "name": "Worst score knn f1_micro", 
-        "value": 0.7651, 
+        "name": "Worst score geneformer f1_micro", 
+        "value": 0, 
         "severity": 0, 
-        "severity_value": -0.7651, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method knn performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: knn\n  Metric id: f1_micro\n  Worst score: 0.7651%\n"
+        "message": "Method geneformer performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: geneformer\n  Metric id: f1_micro\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Scaling", 
+        "name": "Best score geneformer f1_micro", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method geneformer performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: geneformer\n  Metric id: f1_micro\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Scaling", 
+        "name": "Worst score knn f1_micro", 
+        "value": 0.1637, 
+        "severity": 0, 
+        "severity_value": -0.1637, 
+        "code": "worst_score >= -1", 
+        "message": "Method knn performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: knn\n  Metric id: f1_micro\n  Worst score: 0.1637%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score knn f1_micro", 
-        "value": 0.9927, 
+        "value": 0.9934, 
         "severity": 0, 
-        "severity_value": 0.49635, 
+        "severity_value": 0.4967, 
         "code": "best_score <= 2", 
-        "message": "Method knn performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: knn\n  Metric id: f1_micro\n  Best score: 0.9927%\n"
+        "message": "Method knn performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: knn\n  Metric id: f1_micro\n  Best score: 0.9934%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score logistic_regression f1_micro", 
-        "value": 0.77, 
+        "value": 0.1744, 
         "severity": 0, 
-        "severity_value": -0.77, 
+        "severity_value": -0.1744, 
         "code": "worst_score >= -1", 
-        "message": "Method logistic_regression performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: logistic_regression\n  Metric id: f1_micro\n  Worst score: 0.77%\n"
+        "message": "Method logistic_regression performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: logistic_regression\n  Metric id: f1_micro\n  Worst score: 0.1744%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score logistic_regression f1_micro", 
-        "value": 0.9951, 
+        "value": 0.9947, 
         "severity": 0, 
-        "severity_value": 0.49755, 
+        "severity_value": 0.49735, 
         "code": "best_score <= 2", 
-        "message": "Method logistic_regression performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: logistic_regression\n  Metric id: f1_micro\n  Best score: 0.9951%\n"
+        "message": "Method logistic_regression performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: logistic_regression\n  Metric id: f1_micro\n  Best score: 0.9947%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score mlp f1_micro", 
-        "value": 0.7549, 
+        "value": 0.2811, 
         "severity": 0, 
-        "severity_value": -0.7549, 
+        "severity_value": -0.2811, 
         "code": "worst_score >= -1", 
-        "message": "Method mlp performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: mlp\n  Metric id: f1_micro\n  Worst score: 0.7549%\n"
+        "message": "Method mlp performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: mlp\n  Metric id: f1_micro\n  Worst score: 0.2811%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score mlp f1_micro", 
-        "value": 0.9927, 
+        "value": 0.9974, 
         "severity": 0, 
-        "severity_value": 0.49635, 
+        "severity_value": 0.4987, 
         "code": "best_score <= 2", 
-        "message": "Method mlp performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: mlp\n  Metric id: f1_micro\n  Best score: 0.9927%\n"
+        "message": "Method mlp performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: mlp\n  Metric id: f1_micro\n  Best score: 0.9974%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score naive_bayes f1_micro", 
-        "value": 0.7419, 
+        "value": 0.1495, 
         "severity": 0, 
-        "severity_value": -0.7419, 
+        "severity_value": -0.1495, 
         "code": "worst_score >= -1", 
-        "message": "Method naive_bayes performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: naive_bayes\n  Metric id: f1_micro\n  Worst score: 0.7419%\n"
+        "message": "Method naive_bayes performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: naive_bayes\n  Metric id: f1_micro\n  Worst score: 0.1495%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score naive_bayes f1_micro", 
-        "value": 0.9854, 
+        "value": 0.9921, 
         "severity": 0, 
-        "severity_value": 0.4927, 
+        "severity_value": 0.49605, 
         "code": "best_score <= 2", 
-        "message": "Method naive_bayes performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: naive_bayes\n  Metric id: f1_micro\n  Best score: 0.9854%\n"
+        "message": "Method naive_bayes performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: naive_bayes\n  Metric id: f1_micro\n  Best score: 0.9921%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score scanvi f1_micro", 
-        "value": 0.8305, 
+        "value": 0.0, 
         "severity": 0, 
-        "severity_value": -0.8305, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method scanvi performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scanvi\n  Metric id: f1_micro\n  Worst score: 0.8305%\n"
+        "message": "Method scanvi performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scanvi\n  Metric id: f1_micro\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score scanvi f1_micro", 
-        "value": 0.9903, 
+        "value": 0.9947, 
         "severity": 0, 
-        "severity_value": 0.49515, 
+        "severity_value": 0.49735, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scanvi\n  Metric id: f1_micro\n  Best score: 0.9903%\n"
+        "message": "Method scanvi performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scanvi\n  Metric id: f1_micro\n  Best score: 0.9947%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score scanvi_scarches f1_micro", 
-        "value": 0.8351, 
+        "value": 0.0, 
         "severity": 0, 
-        "severity_value": -0.8351, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method scanvi_scarches performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scanvi_scarches\n  Metric id: f1_micro\n  Worst score: 0.8351%\n"
+        "message": "Method scanvi_scarches performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scanvi_scarches\n  Metric id: f1_micro\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score scanvi_scarches f1_micro", 
-        "value": 0.9951, 
+        "value": 0.996, 
         "severity": 0, 
-        "severity_value": 0.49755, 
+        "severity_value": 0.498, 
         "code": "best_score <= 2", 
-        "message": "Method scanvi_scarches performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scanvi_scarches\n  Metric id: f1_micro\n  Best score: 0.9951%\n"
+        "message": "Method scanvi_scarches performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scanvi_scarches\n  Metric id: f1_micro\n  Best score: 0.996%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
-        "name": "Worst score scgpt_zero_shot f1_micro", 
+        "name": "Worst score scgpt_finetuned f1_micro", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method scgpt_finetuned performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_finetuned\n  Metric id: f1_micro\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Scaling", 
+        "name": "Best score scgpt_finetuned f1_micro", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method scgpt_finetuned performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_finetuned\n  Metric id: f1_micro\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "task_label_projection", 
+        "category": "Scaling", 
+        "name": "Worst score scgpt_zeroshot f1_micro", 
         "value": 0.0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method scgpt_zero_shot performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_zero_shot\n  Metric id: f1_micro\n  Worst score: 0.0%\n"
+        "message": "Method scgpt_zeroshot performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_zeroshot\n  Metric id: f1_micro\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
-        "name": "Best score scgpt_zero_shot f1_micro", 
-        "value": 0.8955, 
+        "name": "Best score scgpt_zeroshot f1_micro", 
+        "value": 0.8151, 
         "severity": 0, 
-        "severity_value": 0.44775, 
+        "severity_value": 0.40755, 
         "code": "best_score <= 2", 
-        "message": "Method scgpt_zero_shot performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_zero_shot\n  Metric id: f1_micro\n  Best score: 0.8955%\n"
+        "message": "Method scgpt_zeroshot performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scgpt_zeroshot\n  Metric id: f1_micro\n  Best score: 0.8151%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -1763,11 +1933,11 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score scimilarity f1_micro", 
-        "value": 0.873, 
+        "value": 0.8634, 
         "severity": 0, 
-        "severity_value": 0.4365, 
+        "severity_value": 0.4317, 
         "code": "best_score <= 2", 
-        "message": "Method scimilarity performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scimilarity\n  Metric id: f1_micro\n  Best score: 0.873%\n"
+        "message": "Method scimilarity performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scimilarity\n  Metric id: f1_micro\n  Best score: 0.8634%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -1783,11 +1953,11 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score scimilarity_knn f1_micro", 
-        "value": 0.9188, 
+        "value": 0.946, 
         "severity": 0, 
-        "severity_value": 0.4594, 
+        "severity_value": 0.473, 
         "code": "best_score <= 2", 
-        "message": "Method scimilarity_knn performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scimilarity_knn\n  Metric id: f1_micro\n  Best score: 0.9188%\n"
+        "message": "Method scimilarity_knn performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: scimilarity_knn\n  Metric id: f1_micro\n  Best score: 0.946%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -1813,21 +1983,21 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score seurat_transferdata f1_micro", 
-        "value": 0.8257, 
+        "value": 0.3701, 
         "severity": 0, 
-        "severity_value": -0.8257, 
+        "severity_value": -0.3701, 
         "code": "worst_score >= -1", 
-        "message": "Method seurat_transferdata performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: seurat_transferdata\n  Metric id: f1_micro\n  Worst score: 0.8257%\n"
+        "message": "Method seurat_transferdata performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: seurat_transferdata\n  Metric id: f1_micro\n  Worst score: 0.3701%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score seurat_transferdata f1_micro", 
-        "value": 0.9927, 
+        "value": 0.9947, 
         "severity": 0, 
-        "severity_value": 0.49635, 
+        "severity_value": 0.49735, 
         "code": "best_score <= 2", 
-        "message": "Method seurat_transferdata performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: seurat_transferdata\n  Metric id: f1_micro\n  Best score: 0.9927%\n"
+        "message": "Method seurat_transferdata performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: seurat_transferdata\n  Metric id: f1_micro\n  Best score: 0.9947%\n"
     }, 
     {
         "task_id": "task_label_projection", 
@@ -1843,50 +2013,50 @@
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score singler f1_micro", 
-        "value": 0.9854, 
+        "value": 0.9894, 
         "severity": 0, 
-        "severity_value": 0.4927, 
+        "severity_value": 0.4947, 
         "code": "best_score <= 2", 
-        "message": "Method singler performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: singler\n  Metric id: f1_micro\n  Best score: 0.9854%\n"
+        "message": "Method singler performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: singler\n  Metric id: f1_micro\n  Best score: 0.9894%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score uce f1_micro", 
-        "value": -0.0287, 
+        "value": 0, 
         "severity": 0, 
-        "severity_value": 0.0287, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method uce performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: uce\n  Metric id: f1_micro\n  Worst score: -0.0287%\n"
+        "message": "Method uce performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: uce\n  Metric id: f1_micro\n  Worst score: 0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score uce f1_micro", 
-        "value": 0.0252, 
+        "value": 0, 
         "severity": 0, 
-        "severity_value": 0.0126, 
+        "severity_value": 0.0, 
         "code": "best_score <= 2", 
-        "message": "Method uce performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: uce\n  Metric id: f1_micro\n  Best score: 0.0252%\n"
+        "message": "Method uce performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: uce\n  Metric id: f1_micro\n  Best score: 0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Worst score xgboost f1_micro", 
-        "value": 0.7688, 
+        "value": 0.0, 
         "severity": 0, 
-        "severity_value": -0.7688, 
+        "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method xgboost performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: xgboost\n  Metric id: f1_micro\n  Worst score: 0.7688%\n"
+        "message": "Method xgboost performs much worse than baselines.\n  Task id: task_label_projection\n  Method id: xgboost\n  Metric id: f1_micro\n  Worst score: 0.0%\n"
     }, 
     {
         "task_id": "task_label_projection", 
         "category": "Scaling", 
         "name": "Best score xgboost f1_micro", 
-        "value": 0.9951, 
+        "value": 0.996, 
         "severity": 0, 
-        "severity_value": 0.49755, 
+        "severity_value": 0.498, 
         "code": "best_score <= 2", 
-        "message": "Method xgboost performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: xgboost\n  Metric id: f1_micro\n  Best score: 0.9951%\n"
+        "message": "Method xgboost performs a lot better than baselines.\n  Task id: task_label_projection\n  Method id: xgboost\n  Metric id: f1_micro\n  Best score: 0.996%\n"
     }
 ]
