@@ -66,6 +66,12 @@ jobs:
       - name: Render with Quarto
         shell: bash -l {0}  
         run: |
+          # touch results/*/library.bib files
+          for task in results/*; do
+            touch "$task/library.bib"
+          done
+
+          # render
           quarto render --profile evaluate_code
       
       ## push actions
