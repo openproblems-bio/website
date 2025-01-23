@@ -109,7 +109,7 @@ jobs:
           message: 'Deploy preview ${{ github.ref }}'
 
       - name: Comment on PR (success)
-        uses: thollander/actions-comment-pull-request@v2
+        uses: thollander/actions-comment-pull-request@v3
         if: github.event_name == 'pull_request'
         with:
           message: |
@@ -117,7 +117,7 @@ jobs:
           comment_tag: deploy_status
 
       - name: Comment on PR (deploy failure)
-        uses: thollander/actions-comment-pull-request@v2
+        uses: thollander/actions-comment-pull-request@v3
         if: github.event_name == 'pull_request' && failure() && steps.deploy_preview.outcome == 'failure'
         with:
           message: |
@@ -125,7 +125,7 @@ jobs:
           comment_tag: deploy_status
 
       - name: Comment on PR (actions failure)
-        uses: thollander/actions-comment-pull-request@v2
+        uses: thollander/actions-comment-pull-request@v3
         if: github.event_name == 'pull_request' && failure() && steps.deploy_preview.outcome != 'failure'
         with:
           message: |
