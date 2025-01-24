@@ -7,19 +7,938 @@ css: ../_include/task_template.css
 engine: knitr
 fig-cap-location: bottom
 citation-location: document
+bibliography:
+  - library.bib
+  - ../../library.bib
 toc: false
 ---
 
-Recent developments in deep-learning have led to the creation of several "foundation models" for single-cell data.
-These are large models that have been trained on data from millions of cells and am to fully capture the variability in the single-cell landscape.
-Typically, they use a transformer architecture [@szalata2024transformers] and undergo self-supervised pre-training using masking of parts of the input data.
-Trained foundation models can then be applied to a variety of downstream tasks, either by directly feeding new data into the model or by fine-tuning to better fit a new dataset or to produce a specific output.
-The general nature of single-cell foundation models and the large amount of data they have been trained on makes them potentially powerful tools for single-cell analysis but their performance is yet to be fully established.
+```{r}
+#| include: false
+params <- list(data_dir = "./data")
+```
 
-Open Problems plans to build on the existing evaluation [@boiarsky2023foundationmodels; @liu2024foundationmodels] of foundation models by incorportating them into our continuous benchmarking framework.
-Models will be included in existing tasks where they will be compared to more traditional methods.
-We also plan to compare foundation models across tasks to evaluate their flexibility and compare them to each other.
+<!-- {{< include ../_include/_task_template.qmd >}} -->
 
-If you are interested in evaluating foundation models for single-cell data please fill in the form below to get in touch.
+<!-- {{< include ../_include/_load_data.qmd >}} -->
+
+```{r setup}
+#| include: false
+#| error: true
+
+library(tidyverse)
+# library(funkyheatmap)
+# library(kableExtra)
+
+# touch library.bib in data dir
+if (!file.exists("library.bib")) {
+  file.create("library.bib")
+}
+
+# # read task info
+task_info <- jsonlite::read_json(paste0(params$data_dir, "/task_info.json"))
+
+# # add missing data
+# task_info$task_description <- task_info$task_description %||% NA_character_
+# task_info$task_motivation <- task_info$task_motivation %||% NA_character_
+
+`%|%` <- function(x, y) {
+  ifelse(is.na(x), y, x)
+}
+
+method_info <- jsonlite::read_json(paste0(params$data_dir, "/method_info.json"), simplifyVector = TRUE)
+metric_info <- jsonlite::read_json(paste0(params$data_dir, "/metric_info.json"), simplifyVector = TRUE)
+dataset_info <- jsonlite::read_json(paste0(params$data_dir, "/dataset_info.json"), simplifyVector = TRUE)
+results <- jsonlite::read_json(paste0(params$data_dir, "/results.json"), simplifyVector = TRUE) %>% tibble()
+# qc <- jsonlite::read_json(paste0(params$data_dir, "/quality_control.json"), simplifyVector = TRUE)
+
+# # add missing columns
+# for (col in c("method_summary", "method_description")) {
+#   method_info[[col]] <- method_info[[col]] %||% NA_character_
+# }
+# for (col in c("metric_summary", "metric_description")) {
+#   metric_info[[col]] <- metric_info[[col]] %||% NA_character_
+# }
+# for (col in c("dataset_summary", "dataset_description", "dataset_name")) {
+#   dataset_info[[col]] <- dataset_info[[col]] %||% NA_character_
+# }
+
+# # fill missing data
+# dataset_info$dataset_name <- dataset_info$dataset_name %|% dataset_info$dataset_id
+
+split_cite_fun <- function(keys) {
+  if (is.null(keys)) return("")
+
+  keys <- keys[!is.na(keys)]
+  if (length(keys) == 0) return("")
+
+  refs <- unlist(stringr::str_split(keys, ", *"))
+  # inner_str <- sapply(refs, function(ref) cite_fun(ref, format = format))
+  # paste0("<sup>", paste(inner_str, collapse = ", "), "</sup>")
+  # paste0("[", paste(inner_str, collapse = ", "), "]")
+  paste0("[@", paste(refs, collapse = "; @"), "]")
+}
+
+
+# convert_to_bibtex <- function(refs) {
+
+#   bibtexhandle <- curl::new_handle()
+#   curl::handle_setheaders(bibtexhandle, "accept" = "application/x-bibtex")
+
+#   bibs <- map(refs, function(ref) {
+#     if (grepl("^@", ref)) {
+#       # text is already a bibtex, update citation key
+#       ref
+#     } else {
+#       url <- paste0("https://doi.org/", ref)
+#       res <- curl::curl_fetch_memory(url, handle = bibtexhandle)
+#       if (res$status_code != 200) {
+#         cli::cli_alert_warning(paste0("Error processing doi '", ref, "'"))
+#         ""
+#       } else {
+#         rawToChar(res$content)
+#       }
+#     }
+#   })
+#   return(unlist(bibs))
+# }
+
+
+get_bibtex_from_doi <- function(dois) {
+  if (is.null(dois)) return("")
+
+  dois <- dois[!is.na(dois)]
+  if (length(dois) == 0) return("")
+
+  bibtexhandle <- curl::new_handle()
+  curl::handle_setheaders(bibtexhandle, "accept" = "application/x-bibtex")
+
+  refs <- unlist(dois)
+  bibs <- map (refs,function(ref) {
+    url <- paste0("https://doi.org/", ref)
+    res <- curl::curl_fetch_memory(url, handle = bibtexhandle)
+    if (res$status_code != 200) {
+      cli::cli_alert_warning(paste0("Error processing doi '", text, "'"))
+      ""
+    } else {
+      rawToChar(res$content)
+    }
+  })
+
+  return(unlist(bibs))
+}
+
+write_library <- function(library) {
+  # Read existing entries from library.bib
+  existing_bibs <- if (file.exists("library.bib")) {
+    readLines("library.bib")
+  } else {
+    c()
+  }
+
+  # Filter out bibs that already exist in library.bib
+  new_bibs <- library[!library %in% existing_bibs]
+
+  # Write new entries to library.bib
+  if (length(new_bibs) > 0) {
+    write(new_bibs, "library.bib", append=TRUE)
+  }
+}
+
+get_bibtex_entries <- function(bibs) {
+  ref <-sapply(bibs, function(bib) {
+    matches <- regmatches(bib, regexpr("@.*?\\{(.*?),", bib))
+    if (length(matches) > 0) {
+      sub("@.*?\\{(.*?),", "\\1", matches)
+    } else {
+      NA
+    }
+  })
+  ref <- na.omit(ref)
+  ref_string <- paste0("[@", ref, "]", collapse = " ")
+  return(ref_string)
+}
+
+
+
+
+aggregate_scores <- function(scaled_score) {
+  mean(pmin(1, pmax(0, scaled_score)) %|% 0)
+}
+
+
+strip_margin <- function(text, symbol = "\\|") {
+  str_replace_all(text, paste0("(\n?)[ \t]*", symbol), "\\1")
+}
+
+ojs_define(
+  task_info = jsonlite::read_json(paste0(params$data_dir, "/task_info.json")),
+  dataset_info = jsonlite::read_json(paste0(params$data_dir, "/dataset_info.json")),
+  method_info = jsonlite::read_json(paste0(params$data_dir, "/method_info.json")),
+  metric_info = jsonlite::read_json(paste0(params$data_dir, "/metric_info.json")),
+  results = jsonlite::read_json(paste0(params$data_dir, "/results.json"))
+)
+```
+
+```{r overall_ranking}
+#| echo: false
+results_long <-
+  inner_join(
+    results %>%
+      select(method_id, dataset_id, metric_values) %>%
+      unnest(metric_values) %>%
+      gather(metric_id, value, any_of(metric_info$metric_id)) %>%
+      mutate(value = ifelse(is.na(value), NA_real_, value)),
+    results %>%
+      select(method_id, dataset_id, scaled_scores) %>%
+      unnest(scaled_scores) %>%
+      gather(metric_id, score, any_of(metric_info$metric_id)) %>%
+      mutate(score = ifelse(is.na(score), NA_real_, score)),
+    by = c("method_id", "dataset_id", "metric_id")
+  ) %>%
+  left_join(method_info %>% select(method_id, is_baseline), "method_id")
+
+overall_ranking <- results_long %>%
+  group_by(method_id) %>%
+  summarise(mean_score = aggregate_scores(score)) %>%
+  arrange(desc(mean_score))
+
+# order by ranking
+results_long$method_id <- factor(results_long$method_id, levels = rev(overall_ranking$method_id))
+results$method_id <- factor(results$method_id, levels = rev(overall_ranking$method_id))
+method_info$method_id <- factor(method_info$method_id, levels = rev(overall_ranking$method_id))
+```
+
+```{r description, results="asis", echo=FALSE}
+metadata <- tribble(
+  ~icon, ~value,
+  "bi bi-table", paste0(nrow(dataset_info), " datasets"),
+  # "bi bi-gear", paste0(sum(!method_info$is_baseline), " methods"),
+  # "bi bi-shield-check", paste0(sum(method_info$is_baseline), " control methods"),
+  "bi bi-gear", paste0(sum(method_info$task_id == "methods"), " methods"),
+  "bi bi-shield-check", paste0(sum(method_info$task_id == "control_methods"), " control methods"),
+  "bi bi-graph-up", paste0(nrow(metric_info), " metrics")
+)
+
+cat(
+  paste(
+    paste0("<i class=\"", metadata$icon, "\"></i> ", metadata$value),
+    collapse = " · "
+  )
+)
+```
+
+```{r details, results="asis", echo=FALSE}
+#| column: margin
+
+cat("#### Info\n\n")
+
+details <- tribble(
+  ~icon, ~value,
+  "bi bi-github", if (!is.null(task_info$repo)) paste0("[Repository](",task_info$repo,")") else NULL,
+  "octicon--issue-opened-17", if (!is.null(task_info$issue_tracker)) paste0("[Issues](",task_info$issue_tracker,")") else NULL,
+  "bi bi-tag", if (!is.null(task_info$version)) paste0(task_info$version) else NULL,
+  "fa-solid fa-scale-balanced", if (!is.null(task_info$license)) paste0(task_info$license) else NULL
+  ) %>% filter(!sapply(value, is.null))
+cat(paste(paste0("<i class=\"", details$icon, "\"></i> ", details$value), " \n"))
+
+```
+
+
+[Task info](data/task_info.json){class="btn btn-secondary"}
+[Method info](data/method_info.json){class="btn btn-secondary"}
+[Metric info](data/metric_info.json){class="btn btn-secondary"}
+[Dataset info](data/dataset_info.json){class="btn btn-secondary"}
+[Results](data/results.json){class="btn btn-secondary"}
+
+`r task_info$task_motivation %|% ""`
+
+`r task_info$task_description %|% ""`
+
+This benchmark is a work in progress.
+If you are interested in evaluating foundation models for single-cell data please fill in the [form below](https://docs.google.com/forms/d/e/1FAIpQLSeB6ZHTL8yvKpA8VNRoQY28p5WDpi2WEtwRkeGSgRz3Mqw8bA/viewform?usp=sf_link) to get in touch.
+
+<details><summary>Foundation models contact form</summary>
 
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeB6ZHTL8yvKpA8VNRoQY28p5WDpi2WEtwRkeGSgRz3Mqw8bA/viewform?embedded=true" width="640" height="959" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+</details>
+
+## Summary
+
+<!-- {{< include ../_include/_summary_figure.qmd >}} -->
+
+```{ojs}
+// | echo: false
+poss_dataset_ids = dataset_info
+  .map(d => d.dataset_id)
+  .filter(d => results.map(r => r.dataset_id).includes(d))
+poss_method_ids = method_info
+  .map(d => d.method_id)
+  .filter(d => results.map(r => r.method_id).includes(d))
+poss_real_method_ids = method_info
+  .filter(d => d.task_id === "methods")
+  .map(d => d.method_id)
+  .filter(d => results.map(r => r.method_id).includes(d))
+poss_metric_ids = metric_info
+  .map(d => d.metric_id)
+  .filter(d => results.map(r => Object.keys(r.scaled_scores)).flat().includes(d))
+```
+
+```{ojs}
+// | echo: false
+// | message: false
+// | warning: false
+results_long = results.flatMap(d => {
+  return Object.entries(d.scaled_scores).map(([metric_id, value]) =>
+    ({
+      method_id: d.method_id,
+      dataset_id: d.dataset_id,
+      metric_id: metric_id,
+      score: value
+    })
+  )
+}).filter(d => method_ids.includes(d.method_id) && metric_ids.includes(d.metric_id) && dataset_ids.includes(d.dataset_id))
+
+// results_resources = results.flatMap(d => {
+//   return ({
+//     method_id: d.method_id,
+//     dataset_id: d.dataset_id,
+//     ...d.resources
+//   })
+// }).filter(d => method_ids.includes(d.method_id) && dataset_ids.includes(d.dataset_id))
+
+// function label_time(time) {
+//   if (time < 1e-5) return "0s";
+//   if (time < 1) return "<1s";
+//   if (time < 60) return `${Math.floor(time)}s`;
+//   if (time < 3600) return `${Math.floor(time / 60)}m`;
+//   if (time < 3600 * 24) return `${Math.floor(time / 3600)}h`;
+//   if (time < 3600 * 24 * 7) return `${Math.floor(time / 3600 / 24)}d`;
+//   return ">7d"; // Assuming missing values are encoded as NaN
+// }
+
+// function label_memory(x_mb, include_mb = true) {
+//   if (!include_mb && x_mb < 1e3) return "<1G";
+//   if (x_mb < 1) return "<1M";
+//   if (x_mb < 1e3) return `${Math.round(x_mb)}M`;
+//   if (x_mb < 1e6) return `${Math.round(x_mb / 1e3)}G`;
+//   if (x_mb < 1e9) return `${Math.round(x_mb / 1e6)}T`;
+//   return ">1P";
+// }
+
+function aggregate_scores(obj) {
+  return d3.mean(obj.map(val => {
+    if (val.score === undefined || isNaN(val.score)) return 0;
+    return Math.min(1, Math.max(0, val.score))
+  }));
+}
+
+// function mean_na_rm(x) {
+//   return d3.mean(x.filter(d => !isNaN(d)));
+// }
+
+function transpose_list_of_objects(list) {
+  return Object.fromEntries(Object.keys(list[0]).map(key => [key, list.map(d => d[key])]))
+}
+
+overall = d3.groups(results_long, d => d.method_id)
+  .map(([method_id, values]) => ({method_id, mean_score: aggregate_scores(values)}))
+
+per_dataset = d3.groups(results_long, d => d.method_id)
+  .map(([method_id, values]) => {
+    const datasets = d3.groups(values, d => d.dataset_id)
+      .map(([dataset_id, values]) => ({["dataset_" + dataset_id]: aggregate_scores(values)}))
+      .reduce((a, b) => ({...a, ...b}), {})
+    return {method_id, ...datasets}
+  })
+
+per_metric = d3.groups(results_long, d => d.method_id)
+  .map(([method_id, values]) => {
+    const metrics = d3.groups(values, d => d.metric_id)
+      .map(([metric_id, values]) => ({["metric_" + metric_id]: aggregate_scores(values)}))
+      .reduce((a, b) => ({...a, ...b}), {})
+    return {method_id, ...metrics}
+  })
+
+// resources = d3.groups(results_resources, d => d.method_id)
+//   .map(([method_id, values]) => {
+//     const error_pct_oom = d3.mean(values, d => d.exit_code === 137)
+//     const error_pct_timeout = d3.mean(values, d => d.exit_code === 143)
+//     const error_pct_error = d3.mean(values, d => d.exit_code > 0) - error_pct_oom - error_pct_timeout
+//     const error_pct_ok = 1 - error_pct_oom - error_pct_timeout - error_pct_error
+//     const mean_peak_memory_mb = mean_na_rm(values.map(d => d.peak_memory_mb))
+//     const mean_disk_read_mb = mean_na_rm(values.map(d => d.disk_read_mb))
+//     const mean_disk_write_mb = mean_na_rm(values.map(d => d.disk_write_mb))
+//     const mean_duration_sec = mean_na_rm(values.map(d => d.duration_sec))
+//     return ({
+//       method_id,
+//       error_pct_error,
+//       error_pct_oom,
+//       error_pct_timeout,
+//       error_pct_ok,
+//       // error_reason: {
+//       //   "Memory limit exceeded": error_pct_oom,
+//       //   "Time limit exceeded": error_pct_timeout,
+//       //   "Execution error": error_pct_error,
+//       //   "No error": error_pct_ok
+//       // },
+//       error_reason: [error_pct_oom, error_pct_timeout, error_pct_error, error_pct_ok],
+//       mean_cpu_pct: mean_na_rm(values.map(d => d.cpu_pct)),
+//       mean_peak_memory_mb,
+//       mean_peak_memory_log: -Math.log10(mean_peak_memory_mb),
+//       mean_peak_memory_str: " " + label_memory(mean_peak_memory_mb) + " ",
+//       mean_disk_read_mb: mean_na_rm(values.map(d => d.disk_read_mb)),
+//       mean_disk_read_log: -Math.log10(mean_disk_read_mb),
+//       mean_disk_read_str: " " + label_memory(mean_disk_read_mb) + " ",
+//       mean_disk_write_mb: mean_na_rm(values.map(d => d.disk_write_mb)),
+//       mean_disk_write_log: -Math.log10(mean_disk_write_mb),
+//       mean_disk_write_str: " " + label_memory(mean_disk_write_mb) + " ",
+//       mean_duration_sec,
+//       mean_duration_log: -Math.log10(mean_duration_sec),
+//       mean_duration_str: " " + label_time(mean_duration_sec) + " "
+//     })
+//   })
+
+exit_codes = results.flatMap(d => {
+  return ({
+    method_id: d.method_id,
+    dataset_id: d.dataset_id,
+    exit_codes: Object.values(d.exit_codes)
+  })
+}).filter(d => method_ids.includes(d.method_id) && dataset_ids.includes(d.dataset_id))
+
+error_reasons = d3.groups(exit_codes, d => d.method_id)
+  .map(([method_id, values]) => {
+    if (!poss_real_method_ids.includes(method_id)) {
+      return {method_id, error_reason: []}
+    }
+
+    const all_codes = values.flatMap(d => d.exit_codes)
+    const error_pct_oom = d3.mean(all_codes, d => d === 137)
+    const error_pct_timeout = d3.mean(all_codes, d => d === 143)
+    const error_pct_na = d3.mean(all_codes, d => d === 99)
+    const error_pct_error = d3.mean(all_codes, d => d > 0) - error_pct_oom - error_pct_timeout - error_pct_na
+    const error_pct_unknown = d3.mean(all_codes, d => d < 0)
+    const error_pct_ok = d3.mean(all_codes, d => d === 0)
+    return ({
+      method_id,
+      error_reason: [
+        error_pct_oom,
+        error_pct_timeout,
+        error_pct_error,
+        error_pct_unknown,
+        error_pct_na,
+        error_pct_ok
+      ],
+    })
+  })
+
+summary_all = method_info
+  .filter(d => show_con || !d.is_baseline)
+  .filter(d => method_ids.includes(d.method_id))
+  .map(method => {
+    const method_id = method.method_id
+    const method_name = method.method_name
+    const mean_score = overall.find(d => d.method_id === method_id).mean_score
+    const datasets = per_dataset.find(d => d.method_id === method_id)
+    const metrics = per_metric.find(d => d.method_id === method_id)
+    // const resources_ = resources.find(d => d.method_id === method_id)
+    const error_reasons_ = error_reasons.find(d => d.method_id === method_id)
+    // return {method_id, method_name, mean_score, ...datasets, ...metrics, ...resources_}
+    return {method_id, method_name, mean_score, ...datasets, ...metrics, ...error_reasons_}
+  })
+  .sort((a, b) => b.mean_score - a.mean_score)
+
+// make sure the first entry contains all columns
+column_info = [
+  {id: "method_name", name: "Name", label: null, group: "method", geom: "text", palette: null},
+  {id: "mean_score", name: "Score", group: "overall", geom: "bar", palette: "overall"},
+  {id: "error_reason", name: "Error reason", group: "overall", geom: "pie", palette: "error_reason"},
+  ...dataset_info
+    .filter(d => dataset_ids.includes(d.dataset_id)).map(d => ({id: "dataset_" + d.dataset_id, name: d.dataset_name, group: "dataset", geom: "funkyrect", palette: "dataset"}))
+    .sort((a, b) => a.name.localeCompare(b.name)),
+  ...metric_info
+    .filter(d => metric_ids.includes(d.metric_id)).map(d => ({id: "metric_" + d.metric_id, name: d.metric_name, group: "metric", geom: "funkyrect", palette: "metric"}))
+    .sort((a, b) => a.name.localeCompare(b.name)),
+  // {id: "mean_cpu_pct", name: "%CPU", group: "resources", geom: "funkyrect", palette: "resources"},
+  // {id: "mean_peak_memory_log", name: "Peak memory", label: "mean_peak_memory_str", group: "resources", geom: "rect", palette: "resources"},
+  // {id: "mean_disk_read_log", name: "Disk read", label: "mean_disk_read_str", group: "resources", geom: "rect", palette: "resources"},
+  // {id: "mean_disk_write_log", name: "Disk write", label: "mean_disk_write_str", group: "resources", geom: "rect", palette: "resources"},
+  // {id: "mean_duration_log", name: "Duration", label: "mean_duration_str", group: "resources", geom: "rect", palette: "resources"}
+].map(d => {
+  if (d.id === "method_name") {
+    return {...d, options: {width: 15, hjust: 0}}
+  } else if (d.id === "is_baseline") {
+    return {...d, options: {width: 1}}
+  } else if (d.geom === "bar") {
+    return {...d, options: {width: 4}}
+  } else {
+    return d
+  }
+})
+
+column_groups = [
+  {group: "method", palette: null, level1: ""},
+  {group: "overall", palette: "overall", level1: "Overall"},
+  {group: "error_reason", palette: "error_reason", level1: "Error reason"},
+  {group: "dataset", palette: "dataset", level1: dataset_info.length >= 3 ? "Datasets" : ""},
+  {group: "metric", palette: "metric", level1: metric_info.length >= 3 ? "Metrics" : ""},
+  // {group: "resources", palette: "resources", level1: "Resources"}
+]
+
+palettes = [
+  {
+    overall: "Greys",
+    dataset: "Blues",
+    metric: "Reds",
+    resources: "YlOrBr",
+    error_reason: {
+      colors: ["#8DD3C7", "#FFFFB3", "#BEBADA", "#fdb462", "#80b1d3", "#FFFFFF"],
+      names: [
+        "Memory limit exceeded",
+        "Time limit exceeded",
+        "Execution error",
+        "Unknown error",
+        "Not applicable",
+        "No error"
+      ]
+    }
+  }
+][0]
+```
+
+```{ojs}
+//| echo: false
+//| fig-cap: "Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)."
+//| column: page
+funkyheatmap(
+    transpose_list_of_objects(summary_all),
+    transpose_list_of_objects(column_info),
+    [],
+    transpose_list_of_objects(column_groups),
+    [],
+    palettes,
+    {
+        fontSize: 14,
+        rowHeight: 26,
+        rootStyle: 'max-width: none',
+        colorByRank: color_by_rank,
+        theme: {
+            oddRowBackground: 'var(--bs-body-bg)',
+            evenRowBackground: 'var(--bs-button-hover)',
+            textColor: 'var(--bs-body-color)',
+            strokeColor: 'var(--bs-body-color)',
+            headerColor: 'var(--bs-body-color)',
+            hoverColor: 'var(--bs-body-color)'
+        }
+    },
+    scale_column
+);
+```
+
+<div class="cell panel-input card bg-light">
+<details><summary>Display settings</summary>
+
+```{ojs}
+// | echo: false
+
+viewof color_by_rank = Inputs.toggle({label: "Color by rank:", value: true})
+viewof scale_column = Inputs.toggle({label: "Minmax column:", value: false})
+viewof show_con = Inputs.toggle({label: "Show control methods:", value: true})
+```
+
+</details>
+
+<details><summary>Filter datasets</summary>
+
+```{ojs}
+//| echo: false
+viewof dataset_ids = Inputs.checkbox(
+  dataset_info.filter(d => poss_dataset_ids.includes(d.dataset_id)),
+  {
+    keyof: d => d.dataset_name,
+    valueof: d => d.dataset_id,
+    value: dataset_info.map(d => d.dataset_id),
+    label: "Datasets:"
+  }
+)
+```
+
+</details>
+
+<details><summary>Filter methods</summary>
+
+```{ojs}
+//| echo: false
+viewof method_ids = Inputs.checkbox(
+  method_info.filter(d => poss_method_ids.includes(d.method_id)),
+  {
+    keyof: d => d.method_name,
+    valueof: d => d.method_id,
+    value: method_info.map(d => d.method_id),
+    label: "Methods:"
+  }
+)
+```
+
+</details>
+
+<details><summary>Filter metrics</summary>
+
+```{ojs}
+//| echo: false
+viewof metric_ids = Inputs.checkbox(
+  metric_info.filter(d => poss_metric_ids.includes(d.metric_id)),
+  {
+    keyof: d => d.metric_name,
+    valueof: d => d.metric_id,
+    value: metric_info.map(d => d.metric_id),
+    label: "Metrics:"
+  }
+)
+```
+
+</details>
+</div>
+
+```{ojs}
+//| echo: false
+funkyheatmap = (await require('d3@7').then(d3 => {
+  window.d3 = d3;
+  window._ = _;
+  return import('https://unpkg.com/funkyheatmapjs@0.2.5');
+})).default;
+```
+
+## Results
+
+<!-- {{< include ../_include/_results_table.qmd >}} -->
+
+Results table of the scores per method, dataset and metric (after scaling). Use the filters to make a custom subselection of methods and datasets. The "Overall mean" dataset is the mean value across all datasets.
+
+```{r resultstable}
+#| echo: false
+res_tib0 <- results %>%
+  # select(dataset_id, method_id, metric_values, resources, mean_score) %>%
+  select(dataset_id, method_id, metric_values, mean_score) %>%
+  unnest(metric_values) %>%
+  # unnest(resources) %>%
+  # left_join(method_info %>% select(-commit_sha, -code_version, -task_id), by = "method_id") %>%
+  left_join(method_info %>% select(-task_id), by = "method_id") %>%
+  filter(!is_baseline) %>%
+  left_join(dataset_info %>% select(dataset_id, dataset_name, data_reference), by = "dataset_id")
+
+mean_na_zero <- function(x) {
+  mean(ifelse(is.na(x), 0, x))
+}
+
+res_tib1 <- res_tib0 %>%
+  group_by(method_id, method_name, code_url) %>%
+  summarise_if(is.numeric, mean_na_zero) %>%
+  ungroup() %>%
+  mutate(
+    dataset_name = "Overall mean"
+  ) %>%
+  bind_rows(res_tib0)
+
+
+res_tib <- res_tib1 %>%
+  arrange(desc(mean_score)) %>%
+  # rowwise() %>%
+  # mutate(
+  #   peak_memory_gb = peak_memory_mb / 1024
+  # ) %>%
+  # ungroup() %>%
+  select(
+    method_name,
+    dataset_name,
+    mean_score,
+    any_of(metric_info$metric_id),
+    # duration_sec,
+    # cpu_pct,
+    # peak_memory_gb
+  )
+
+res_met <- metric_info %>%
+  filter(metric_id %in% colnames(res_tib))
+
+res_cn <- c(
+  "Method",
+  "Dataset",
+  "Mean score",
+  res_met$metric_name
+  # "Runtime (s)",
+  # "CPU (%)",
+  # "Memory (GB)"
+)
+
+dt <- DT::datatable(
+  res_tib,
+  colnames = res_cn,
+  options = list(
+    dom = "Pt",
+    paging = FALSE,
+    columnDefs = list(
+      list(
+        searchPanes = list(show = FALSE),
+        targets = seq(2, ncol(res_tib)-1)
+      )
+    ),
+    searchPanes = list(
+      initCollapsed = TRUE,
+      preSelect = list(
+        list(
+          rows = c( "Overall mean"),
+          column = 1
+        )
+      )
+    ),
+    buttons = list(
+      "searchPanes",
+      "csv",
+      "excel"
+    ),
+    scrollX = TRUE
+  ),
+  escape = FALSE,
+  class = "stripe compact",
+  rownames = FALSE,
+  extensions = c("Select", "SearchPanes")
+) %>%
+  # DT::formatRound(c("peak_memory_gb", "mean_score", res_met$metric_id), digits = 2) %>%
+  DT::formatRound(c("mean_score", res_met$metric_id), digits = 2) %>%
+  # DT::formatRound(c("cpu_pct", "duration_sec"), digits = 0) %>%
+  DT::formatStyle(seq_len(ncol(res_tib)), fontSize = "80%")
+
+dt
+```
+
+## Dataset info
+
+<details><summary>Show</summary>
+
+{{< include ../_include/_dataset_descriptions.qmd >}}
+
+</details>
+
+## Method info
+
+<details><summary>Show</summary>
+
+<!-- {{< include ../_include/_method_descriptions.qmd >}} -->
+
+```{r method_description}
+#| echo: false
+# show each method just once
+# lines <- pmap_chr(method_info %>% filter(!task_id$is_baseline), function(method_name, method_summary, method_description, code_url, implementation_url, ...) {
+lines <- pmap_chr(method_info %>% filter(task_id == "methods"), function(method_name, method_summary, method_description, code_url, implementation_url, ...) {
+  rest <- list(...)
+  # image <- pluck(rest, "image", .default = NULL)
+  # documentation_url <- pluck(rest, "documentation_url", .default = NULL)
+  # code_version <- pluck(rest, "code_version", .default = NULL)
+  # references_doi <- pluck(rest, "references_doi", .default = NULL) |> na.omit()
+  # references_bibtex <- pluck(rest, "references_bibtex", .default = NULL) |> na.omit()
+
+  implementation_url <- if (is.na(implementation_url)) NULL else implementation_url
+  code_url <- if (is.na(code_url)) NULL else code_url
+
+  image <- pluck(rest, "image", .default = NULL) |> na.omit()
+  documentation_url <- pluck(rest, "documentation_url", .default = NULL) |> na.omit()
+  code_version <- pluck(rest, "code_version", .default = NULL) |> na.omit()
+  references_doi <- pluck(rest, "references_doi", .default = NULL) |> na.omit()
+  references_bibtex <- pluck(rest, "references_bibtex", .default = NULL) |> na.omit()
+
+  ref <-
+    if ("paper_reference" %in% names(rest)) {
+      split_cite_fun(rest$paper_reference)
+    } else {
+      bibs <- c()
+      if (!is.null(references_doi) && length(references_doi) != 0) {
+        bibs <- get_bibtex_from_doi(references_doi)
+      }
+      if (!is.null(references_bibtex) && length(references_bibtex) != 0) {
+        bibs <- c(bibs, references_bibtex)
+      }
+      # Write new entries to library.bib
+      write_library(bibs)
+      # Get bibtex references
+      if (!is.null(bibs)) {
+        get_bibtex_entries(bibs)
+      } else {
+        ""
+      }
+    }
+
+  if (ref != "") ref <- paste0(" ", ref)
+
+  summ <- (method_summary %|% "Missing 'method_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
+
+  method_meta <- tribble(
+    ~icon, ~value,
+    "bi bi-book", if (!is.null(documentation_url)) paste0("[Documentation](", documentation_url, ")") else NULL,
+    "bi bi-globe", if (!is.null(code_url)) paste0("[Repository](", code_url, ")") else NULL,
+    "bi bi-file-earmark-code", if (!is.null(implementation_url)) paste0("[Source Code](", implementation_url, ")") else NULL,
+    "bi bi-box-seam", if (!is.null(image)) paste0("[Container](", image, ")") else NULL,
+    "bi bi-tag", if (!is.null(code_version) && !is.na(code_version)) code_version else NULL,
+    ) %>% filter(!sapply(value, is.null))
+
+  meta_list <- paste(
+      paste0("<i class=\"", method_meta$icon, "\"></i> ", method_meta$value),
+      collapse = " · "
+    )
+
+  strip_margin(glue::glue("
+    |### {method_name}
+    |
+    |{meta_list}
+    |
+    |{summ}{ref}
+    |
+    |{method_description %|% ''}
+    |"
+  ))
+})
+knitr::asis_output(paste(lines, collapse = "\n"))
+```
+
+</details>
+
+## Control method info
+
+<details><summary>Show</summary>
+
+<!-- {{< include ../_include/_baseline_descriptions.qmd >}} -->
+
+```{r baseline_descriptions}
+#| echo: false
+# baselines <- method_info %>% filter(is_baseline)
+baselines <- method_info %>% filter(task_id == "control_methods")
+lines <- pmap_chr(baselines, function(method_name, method_summary, method_description, reference, code_url, implementation_url, ...) {
+  rest <- list(...)
+  # image <- pluck(rest, "image", .default = NULL)
+  # documentation_url <- pluck(rest, "documentation_url", .default = NULL)
+  # code_version <- pluck(rest, "code_version", .default = NULL)
+  # references_doi <- pluck(rest, "references_doi", .default = NULL) |> na.omit()
+  # references_bibtex <- pluck(rest, "references_bibtex", .default = NULL) |> na.omit()
+
+  implementation_url <- if (is.na(implementation_url)) NULL else implementation_url
+  code_url <- if (is.na(code_url)) NULL else code_url
+
+  image <- pluck(rest, "image", .default = NULL) |> na.omit()
+  documentation_url <- pluck(rest, "documentation_url", .default = NULL) |> na.omit()
+  code_version <- pluck(rest, "code_version", .default = NULL) |> na.omit()
+  references_doi <- pluck(rest, "references_doi", .default = NULL) |> na.omit()
+  references_bibtex <- pluck(rest, "references_bibtex", .default = NULL) |> na.omit()
+
+  ref <-
+    if ("paper_reference" %in% names(rest)) {
+      split_cite_fun(rest$paper_reference)
+    } else {
+      bibs <- c()
+      if (!is.null(references_doi) && length(references_doi) != 0) {
+        bibs <- get_bibtex_from_doi(references_doi)
+      }
+      if (!is.null(references_bibtex) && length(references_bibtex) != 0) {
+        bibs <- c(bibs, references_bibtex)
+      }
+      # Write new entries to library.bib
+      write_library(bibs)
+      # Get bibtex references
+      if (!is.null(bibs)) {
+        get_bibtex_entries(bibs)
+      } else {
+        ""
+      }
+    }
+
+  if (ref != "") ref <- paste0(" ", ref)
+
+  summ <- (method_summary %|% "Missing 'method_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
+
+  method_meta <- tribble(
+    ~icon, ~value,
+    "bi bi-book", if (!is.null(documentation_url)) paste0("[Documentation](", documentation_url, ")") else NULL,
+    "bi bi-globe", if (!is.null(code_url)) paste0("[Repository](", code_url, ")") else NULL,
+    "bi bi-file-earmark-code", if (!is.null(implementation_url)) paste0("[Source Code](", implementation_url, ")") else NULL,
+    "bi bi-box-seam", if (!is.null(image)) paste0("[Container](", image, ")") else NULL,
+    "bi bi-tag", if (!is.null(code_version) && !is.na(code_version)) code_version else NULL,
+    ) %>% filter(!sapply(value, is.null))
+
+  meta_list <- paste(
+      paste0("<i class=\"", method_meta$icon, "\"></i> ", method_meta$value),
+      collapse = " · "
+    )
+
+  strip_margin(glue::glue("
+    |### {method_name}
+    |
+    |{meta_list}
+    |
+    |{summ} {ref}
+    |
+    |{method_description %|% ''}
+    |"
+  ))
+})
+knitr::asis_output(paste(lines, collapse = "\n"))
+```
+
+</details>
+
+## Metric info
+
+<details><summary>Show</summary>
+
+{{< include ../_include/_metric_descriptions.qmd >}}
+
+</details>
+
+<!-- ## Quality control results -->
+
+<!-- <details><summary>Show</summary> -->
+
+<!-- {{< include ../_include/_qc_table.qmd >}} -->
+
+<!-- </details> -->
+
+<!-- ## Normalisation visualisation -->
+
+<!-- <details><summary>Show</summary> -->
+
+<!-- {{< include ../_include/_scaling_figure.qmd >}} -->
+
+<!-- </details> -->
+
+## Authors
+
+```{r}
+#| echo: false
+if (!is.null(task_info$authors) && length(task_info$authors) > 0) {
+  lines <- map_chr(task_info$authors, function(author) {
+    name <- author$name
+    roles <- author$roles %>% paste(collapse = ", ")
+    github <- author$info$github %||% NULL
+    orcid <- author$info$orcid %||% NULL
+
+    links <- c()
+    if (!is.null(github)) {
+      links <- c(links, glue::glue("[{{{{< fa brands github >}}}}](https://github.com/{github})"))
+    }
+    if (!is.null(orcid)) {
+      links <- c(links, glue::glue("[{{{{< fa brands orcid >}}}}](https://orcid.org/{orcid})"))
+    }
+    links_label <-
+      if (length(links) > 0) {
+        glue::glue("{paste(links, collapse = ', ')}")
+      } else {
+        ""
+      }
+    strip_margin(glue::glue("
+      |* {name} ({roles}) {links_label}
+      |"
+    ))
+  })
+  knitr::asis_output(paste(lines, collapse = "\n"))
+}
+```
