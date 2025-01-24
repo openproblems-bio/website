@@ -91,14 +91,18 @@ per_metric = d3.groups(results_long, d => d.method_id)
 
 resources = d3.groups(results_resources, d => d.method_id)
   .map(([method_id, values]) => {
+    // Calculate the error percentages
     const error_pct_oom = d3.mean(values, d => d.exit_code === 137)
     const error_pct_timeout = d3.mean(values, d => d.exit_code === 143)
-    const error_pct_error = d3.mean(values, d => d.exit_code > 0) - error_pct_oom - error_pct_timeout
-    const error_pct_ok = 1 - error_pct_oom - error_pct_timeout - error_pct_error
+    const error_pct_na = d3.mean(values, d => d.exit_code === 99)
+    const error_pct_error = d3.mean(values, d => d.exit_code > 0) - error_pct_oom - error_pct_timeout - error_pct_na
+    const error_pct_ok = 1 - error_pct_oom - error_pct_timeout - error_pct_error - error_pct_na
     const mean_peak_memory_mb = mean_na_rm(values.map(d => d.peak_memory_mb))
     const mean_disk_read_mb = mean_na_rm(values.map(d => d.disk_read_mb))
     const mean_disk_write_mb = mean_na_rm(values.map(d => d.disk_write_mb))
     const mean_duration_sec = mean_na_rm(values.map(d => d.duration_sec))
+
+    // Return the resources
     return ({
       method_id,
       error_pct_error,
@@ -111,7 +115,7 @@ resources = d3.groups(results_resources, d => d.method_id)
       //   "Execution error": error_pct_error,
       //   "No error": error_pct_ok
       // },
-      error_reason: [error_pct_oom, error_pct_timeout, error_pct_error, error_pct_ok],
+      error_reason: [error_pct_oom, error_pct_timeout, error_pct_error, error_pct_na, error_pct_ok],
       mean_cpu_pct: mean_na_rm(values.map(d => d.cpu_pct)),
       mean_peak_memory_mb,
       mean_peak_memory_log: -Math.log10(mean_peak_memory_mb),
@@ -186,8 +190,8 @@ palettes = [
     metric: "Reds",
     resources: "YlOrBr",
     error_reason: {
-      colors: ["#8DD3C7", "#FFFFB3", "#BEBADA", "#FFFFFF"],
-      names: ["Memory limit exceeded", "Time limit exceeded", "Execution error", "No error"]
+      colors: ["#8DD3C7", "#FFFFB3", "#BEBADA", "#999999", "#FFFFFF"],
+      names: ["Memory limit exceeded", "Time limit exceeded", "Execution error", "Not applicable", "No error"]
     }
   }
 ][0]
