@@ -13,6 +13,7 @@ bibliography:
 toc: false
 ---
 
+
 ```{r}
 #| include: false
 params <- list(data_dir = "./data")
@@ -80,28 +81,28 @@ split_cite_fun <- function(keys) {
 }
 
 
-# convert_to_bibtex <- function(refs) {
+convert_to_bibtex <- function(refs) {
 
-#   bibtexhandle <- curl::new_handle()
-#   curl::handle_setheaders(bibtexhandle, "accept" = "application/x-bibtex")
+  bibtexhandle <- curl::new_handle()
+  curl::handle_setheaders(bibtexhandle, "accept" = "application/x-bibtex")
 
-#   bibs <- map(refs, function(ref) {
-#     if (grepl("^@", ref)) {
-#       # text is already a bibtex, update citation key
-#       ref
-#     } else {
-#       url <- paste0("https://doi.org/", ref)
-#       res <- curl::curl_fetch_memory(url, handle = bibtexhandle)
-#       if (res$status_code != 200) {
-#         cli::cli_alert_warning(paste0("Error processing doi '", ref, "'"))
-#         ""
-#       } else {
-#         rawToChar(res$content)
-#       }
-#     }
-#   })
-#   return(unlist(bibs))
-# }
+  bibs <- map(refs, function(ref) {
+    if (grepl("^@", ref)) {
+      # text is already a bibtex, update citation key
+      ref
+    } else {
+      url <- paste0("https://doi.org/", ref)
+      res <- curl::curl_fetch_memory(url, handle = bibtexhandle)
+      if (res$status_code != 200) {
+        cli::cli_alert_warning(paste0("Error processing doi '", ref, "'"))
+        ""
+      } else {
+        rawToChar(res$content)
+      }
+    }
+  })
+  return(unlist(bibs))
+}
 
 
 get_bibtex_from_doi <- function(dois) {
