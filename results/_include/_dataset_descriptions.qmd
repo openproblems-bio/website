@@ -19,7 +19,7 @@ lines <- pmap_chr(dataset_info, function(dataset_id, dataset_name, dataset_summa
     }
 
   if (ref != "") ref <- paste0(" ", ref)
-  
+
   dataset_link <-
     if (!is.null(source_dataset_id) && dir.exists(paste0("../../datasets/", source_dataset_id))) {
       glue::glue("../../datasets/{source_dataset_id}")
@@ -49,14 +49,14 @@ lines <- pmap_chr(dataset_info, function(dataset_id, dataset_name, dataset_summa
     "bi bi-calendar", if(!is.null(date_created)) paste0(date_created) else NULL,
     "bi bi-file-earmark-text", file_size_str,
     ) %>% filter(!sapply(value, is.null))
-  
+
   meta_list <- paste(
     paste0("<i class=\"", dataset_meta$icon, "\"></i> ", dataset_meta$value),
     collapse = " · "
   )
-  
+
   summ <- (dataset_summary %|% "Missing 'dataset_summary'") %>% str_replace_all("\\n", " ") %>% str_replace_all("\\. *$", "")
-  
+
   strip_margin(glue::glue("
   |### {dataset_name}
   |
@@ -68,4 +68,4 @@ lines <- pmap_chr(dataset_info, function(dataset_id, dataset_name, dataset_summa
   |"))
 })
 knitr::asis_output(paste(lines, collapse = "\n"))
- ```
+```
