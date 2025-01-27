@@ -1,27 +1,5 @@
 [
   {
-    "dataset_id": "allen_brain_cell_atlas/2023_yao_mouse_brain_scrnaseq_10xv2",
-    "method_id": "positive_control",
-    "metric_values": {
-        "task_label_projection": 0
-      },
-    "scaled_scores": {
-        "task_label_projection": 0
-      },
-    "exit_codes": {}
-  },
-  {
-    "dataset_id": "allen_brain_cell_atlas/2023_yao_mouse_brain_scrnaseq_10xv2",
-    "method_id": "negative_control",
-    "metric_values": {
-        "task_label_projection": 0
-      },
-    "scaled_scores": {
-        "task_label_projection": 0
-      },
-    "exit_codes": {}
-  },
-  {
     "dataset_id": "cellxgene_census/dkd",
     "method_id": "positive_control",
     "metric_values": {
@@ -134,8 +112,7 @@
     "mean_score": 0.0886
   },
   {
-    "dataset_id": "allen_brain_cell_atlas/2023_yao_mouse_brain_scrnaseq_10xv2",
-    "method_id": "median_standard",
+    "method_id": "positive_control",
     "metric_values": {
         "task_label_projection": 0
       },
@@ -145,8 +122,7 @@
     "exit_codes": {}
   },
   {
-    "dataset_id": "allen_brain_cell_atlas/2023_yao_mouse_brain_scrnaseq_10xv2",
-    "method_id": "best_standard",
+    "method_id": "negative_control",
     "metric_values": {
         "task_label_projection": 0
       },
@@ -268,43 +244,24 @@
     "mean_score": 0.361
   },
   {
-    "dataset_id": "allen_brain_cell_atlas/2023_yao_mouse_brain_scrnaseq_10xv2",
-    "method_id": "scgpt_zeroshot",
+    "method_id": "median_standard",
     "metric_values": {
         "task_label_projection": 0
       },
     "scaled_scores": {
         "task_label_projection": 0
       },
-    "exit_codes": {
-        "task_label_projection": 99
-      }
+    "exit_codes": {}
   },
   {
-    "dataset_id": "allen_brain_cell_atlas/2023_yao_mouse_brain_scrnaseq_10xv2",
-    "method_id": "scimilarity",
+    "method_id": "best_standard",
     "metric_values": {
         "task_label_projection": 0
       },
     "scaled_scores": {
         "task_label_projection": 0
       },
-    "exit_codes": {
-        "task_label_projection": 99
-      }
-  },
-  {
-    "dataset_id": "allen_brain_cell_atlas/2023_yao_mouse_brain_scrnaseq_10xv2",
-    "method_id": "uce",
-    "metric_values": {
-        "task_label_projection": 0
-      },
-    "scaled_scores": {
-        "task_label_projection": 0
-      },
-    "exit_codes": {
-        "task_label_projection": 1
-      }
+    "exit_codes": {}
   },
   {
     "dataset_id": "cellxgene_census/dkd",
@@ -511,45 +468,6 @@
     "mean_score": 0.2208
   },
   {
-    "dataset_id": "allen_brain_cell_atlas/2023_yao_mouse_brain_scrnaseq_10xv2",
-    "method_id": "geneformer",
-    "metric_values": {
-        "task_label_projection": 0
-      },
-    "scaled_scores": {
-        "task_label_projection": 0
-      },
-    "exit_codes": {
-        "task_label_projection": 99
-      }
-  },
-  {
-    "dataset_id": "allen_brain_cell_atlas/2023_yao_mouse_brain_scrnaseq_10xv2",
-    "method_id": "scgpt_finetuned",
-    "metric_values": {
-        "task_label_projection": 0
-      },
-    "scaled_scores": {
-        "task_label_projection": 0
-      },
-    "exit_codes": {
-        "task_label_projection": 99
-      }
-  },
-  {
-    "dataset_id": "allen_brain_cell_atlas/2023_yao_mouse_brain_scrnaseq_10xv2",
-    "method_id": "scprint",
-    "metric_values": {
-        "task_label_projection": 0
-      },
-    "scaled_scores": {
-        "task_label_projection": 0
-      },
-    "exit_codes": {
-        "task_label_projection": 1
-      }
-  },
-  {
     "dataset_id": "cellxgene_census/dkd",
     "method_id": "geneformer",
     "metric_values": {
@@ -752,5 +670,77 @@
         "task_batch_integration": 1
       },
     "mean_score": 0
+  },
+  {
+    "method_id": "geneformer",
+    "metric_values": {
+        "task_label_projection": 0
+      },
+    "scaled_scores": {
+        "task_label_projection": 0
+      },
+    "exit_codes": {
+        "task_label_projection": 99
+      }
+  },
+  {
+    "method_id": "scgpt_finetuned",
+    "metric_values": {
+        "task_label_projection": 0
+      },
+    "scaled_scores": {
+        "task_label_projection": 0
+      },
+    "exit_codes": {
+        "task_label_projection": 99
+      }
+  },
+  {
+    "method_id": "scgpt_zeroshot",
+    "metric_values": {
+        "task_label_projection": 0
+      },
+    "scaled_scores": {
+        "task_label_projection": 0
+      },
+    "exit_codes": {
+        "task_label_projection": 99
+      }
+  },
+  {
+    "method_id": "scimilarity",
+    "metric_values": {
+        "task_label_projection": 0
+      },
+    "scaled_scores": {
+        "task_label_projection": 0
+      },
+    "exit_codes": {
+        "task_label_projection": 99
+      }
+  },
+  {
+    "method_id": "scprint",
+    "metric_values": {
+        "task_label_projection": 0
+      },
+    "scaled_scores": {
+        "task_label_projection": 0
+      },
+    "exit_codes": {
+        "task_label_projection": 1
+      }
+  },
+  {
+    "method_id": "uce",
+    "metric_values": {
+        "task_label_projection": 0
+      },
+    "scaled_scores": {
+        "task_label_projection": 0
+      },
+    "exit_codes": {
+        "task_label_projection": 1
+      }
   }
 ]
