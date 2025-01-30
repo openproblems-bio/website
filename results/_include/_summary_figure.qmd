@@ -1,40 +1,15 @@
-
 ```{ojs}
 //| echo: false
-poss_dataset_ids = dataset_info
-  .map(d => d.dataset_id)
-  .filter(d => results.map(r => r.dataset_id).includes(d))
-poss_method_ids = method_info
-  .map(d => d.method_id)
-  .filter(d => results.map(r => r.method_id).includes(d))
-poss_metric_ids = metric_info
-  .map(d => d.metric_id)
-  .filter(d => results.map(r => Object.keys(r.scaled_scores)).flat().includes(d))
-```
+function aggregate_scores(obj) {
+  return d3.mean(obj.map(val => {
+    if (val.score === undefined || isNaN(val.score)) return 0;
+    return Math.min(1, Math.max(0, val.score))
+  }));
+}
 
-
-```{ojs}
-//| echo: false
-//| message: false
-//| warning: false
-results_long = results.flatMap(d => {
-  return Object.entries(d.scaled_scores).map(([metric_id, value]) =>
-    ({
-      method_id: d.method_id,
-      dataset_id: d.dataset_id,
-      metric_id: metric_id,
-      score: value
-    })
-  )
-}).filter(d => method_ids.includes(d.method_id) && metric_ids.includes(d.metric_id) && dataset_ids.includes(d.dataset_id))
-
-results_resources = results.flatMap(d => {
-  return ({
-    method_id: d.method_id,
-    dataset_id: d.dataset_id,
-    ...d.resources
-  })
-}).filter(d => method_ids.includes(d.method_id) && dataset_ids.includes(d.dataset_id))
+function transpose_list_of_objects(list) {
+  return Object.fromEntries(Object.keys(list[0]).map(key => [key, list.map(d => d[key])]))
+}
 
 function label_time(time) {
   if (time < 1e-5) return "0s";
@@ -55,20 +30,45 @@ function label_memory(x_mb, include_mb = true) {
   return ">1P";
 }
 
-function aggregate_scores(obj) {
-  return d3.mean(obj.map(val => {
-    if (val.score === undefined || isNaN(val.score)) return 0;
-    return Math.min(1, Math.max(0, val.score))
-  }));
-}
-
 function mean_na_rm(x) {
   return d3.mean(x.filter(d => !isNaN(d)));
 }
+```
 
-function transpose_list_of_objects(list) {
-  return Object.fromEntries(Object.keys(list[0]).map(key => [key, list.map(d => d[key])]))
-}
+```{ojs}
+//| echo: false
+poss_dataset_ids = dataset_info
+  .map(d => d.dataset_id)
+  .filter(d => results.map(r => r.dataset_id).includes(d))
+poss_method_ids = method_info
+  .map(d => d.method_id)
+  .filter(d => results.map(r => r.method_id).includes(d))
+poss_real_method_ids = method_info
+  .filter(d => d.task_id === "methods")
+  .map(d => d.method_id)
+  .filter(d => results.map(r => r.method_id).includes(d))
+poss_metric_ids = metric_info
+  .map(d => d.metric_id)
+  .filter(d => results.map(r => Object.keys(r.scaled_scores)).flat().includes(d))
+```
+
+```{ojs}
+//| echo: false
+//| message: false
+//| warning: false
+has_resources = results[0].hasOwnProperty("resources")
+has_exit_codes = results[0].hasOwnProperty("exit_codes")
+
+results_long = results.flatMap(d => {
+  return Object.entries(d.scaled_scores).map(([metric_id, value]) =>
+    ({
+      method_id: d.method_id,
+      dataset_id: d.dataset_id,
+      metric_id: metric_id,
+      score: value
+    })
+  )
+}).filter(d => method_ids.includes(d.method_id) && metric_ids.includes(d.metric_id) && dataset_ids.includes(d.dataset_id))
 
 overall = d3.groups(results_long, d => d.method_id)
   .map(([method_id, values]) => ({method_id, mean_score: aggregate_scores(values)}))
@@ -89,46 +89,103 @@ per_metric = d3.groups(results_long, d => d.method_id)
     return {method_id, ...metrics}
   })
 
-resources = d3.groups(results_resources, d => d.method_id)
-  .map(([method_id, values]) => {
-    // Calculate the error percentages
-    const error_pct_oom = d3.mean(values, d => d.exit_code === 137)
-    const error_pct_timeout = d3.mean(values, d => d.exit_code === 143)
-    const error_pct_na = d3.mean(values, d => d.exit_code === 99)
-    const error_pct_error = d3.mean(values, d => d.exit_code > 0) - error_pct_oom - error_pct_timeout - error_pct_na
-    const error_pct_ok = 1 - error_pct_oom - error_pct_timeout - error_pct_error - error_pct_na
-    const mean_peak_memory_mb = mean_na_rm(values.map(d => d.peak_memory_mb))
-    const mean_disk_read_mb = mean_na_rm(values.map(d => d.disk_read_mb))
-    const mean_disk_write_mb = mean_na_rm(values.map(d => d.disk_write_mb))
-    const mean_duration_sec = mean_na_rm(values.map(d => d.duration_sec))
+results_resources = {
+  let results_resources = null
 
-    // Return the resources
+  if (has_resources) {
+    results_resources = results.flatMap(d => {
+      return ({
+        method_id: d.method_id,
+        dataset_id: d.dataset_id,
+        ...d.resources
+      })
+    }).filter(d => method_ids.includes(d.method_id) && dataset_ids.includes(d.dataset_id))
+  }
+
+  return results_resources
+}
+
+resources = {
+  let resources = null
+
+  if (has_resources) {
+    resources = d3.groups(results_resources, d => d.method_id)
+      .map(([method_id, values]) => {
+        const mean_peak_memory_mb = mean_na_rm(values.map(d => d.peak_memory_mb))
+        const mean_disk_read_mb = mean_na_rm(values.map(d => d.disk_read_mb))
+        const mean_disk_write_mb = mean_na_rm(values.map(d => d.disk_write_mb))
+        const mean_duration_sec = mean_na_rm(values.map(d => d.duration_sec))
+
+        return ({
+          method_id,
+          mean_cpu_pct: mean_na_rm(values.map(d => d.cpu_pct)),
+          mean_peak_memory_mb,
+          mean_peak_memory_log: -Math.log10(mean_peak_memory_mb),
+          mean_peak_memory_str: " " + label_memory(mean_peak_memory_mb) + " ",
+          mean_disk_read_mb: mean_na_rm(values.map(d => d.disk_read_mb)),
+          mean_disk_read_log: -Math.log10(mean_disk_read_mb),
+          mean_disk_read_str: " " + label_memory(mean_disk_read_mb) + " ",
+          mean_disk_write_mb: mean_na_rm(values.map(d => d.disk_write_mb)),
+          mean_disk_write_log: -Math.log10(mean_disk_write_mb),
+          mean_disk_write_str: " " + label_memory(mean_disk_write_mb) + " ",
+          mean_duration_sec,
+          mean_duration_log: -Math.log10(mean_duration_sec),
+          mean_duration_str: " " + label_time(mean_duration_sec) + " "
+        })
+      })
+  }
+
+  return resources
+}
+
+exit_codes = {
+  let exit_codes = null
+
+  if (has_exit_codes) {
+    exit_codes = results.flatMap(d => {
+      return ({
+        method_id: d.method_id,
+        dataset_id: d.dataset_id,
+        exit_codes: Object.values(d.exit_codes)
+      })
+    }).filter(d => method_ids.includes(d.method_id) && dataset_ids.includes(d.dataset_id))
+  } else {
+    exit_codes = results_resources.flatMap(d => {
+      return ({
+        method_id: d.method_id,
+        dataset_id: d.dataset_id,
+        exit_codes: [d.exit_code]
+      })
+    }).filter(d => method_ids.includes(d.method_id) && dataset_ids.includes(d.dataset_id))
+  }
+
+  return exit_codes
+}
+
+error_reasons = d3.groups(exit_codes, d => d.method_id)
+  .map(([method_id, values]) => {
+    const all_codes = values.flatMap(d => d.exit_codes)
+
+    if (all_codes.length === 0) {
+      return {method_id, error_reason: []}
+    }
+
+    const error_pct_oom = d3.mean(all_codes, d => d === 137)
+    const error_pct_timeout = d3.mean(all_codes, d => d === 143)
+    const error_pct_na = d3.mean(all_codes, d => d === 99)
+    const error_pct_error = d3.mean(all_codes, d => d > 0) - error_pct_oom - error_pct_timeout - error_pct_na
+    const error_pct_unknown = d3.mean(all_codes, d => d < 0)
+    const error_pct_ok = d3.mean(all_codes, d => d === 0)
     return ({
       method_id,
-      error_pct_error,
-      error_pct_oom,
-      error_pct_timeout,
-      error_pct_ok,
-      // error_reason: {
-      //   "Memory limit exceeded": error_pct_oom,
-      //   "Time limit exceeded": error_pct_timeout,
-      //   "Execution error": error_pct_error,
-      //   "No error": error_pct_ok
-      // },
-      error_reason: [error_pct_oom, error_pct_timeout, error_pct_error, error_pct_na, error_pct_ok],
-      mean_cpu_pct: mean_na_rm(values.map(d => d.cpu_pct)),
-      mean_peak_memory_mb,
-      mean_peak_memory_log: -Math.log10(mean_peak_memory_mb),
-      mean_peak_memory_str: " " + label_memory(mean_peak_memory_mb) + " ",
-      mean_disk_read_mb: mean_na_rm(values.map(d => d.disk_read_mb)),
-      mean_disk_read_log: -Math.log10(mean_disk_read_mb),
-      mean_disk_read_str: " " + label_memory(mean_disk_read_mb) + " ",
-      mean_disk_write_mb: mean_na_rm(values.map(d => d.disk_write_mb)),
-      mean_disk_write_log: -Math.log10(mean_disk_write_mb),
-      mean_disk_write_str: " " + label_memory(mean_disk_write_mb) + " ",
-      mean_duration_sec,
-      mean_duration_log: -Math.log10(mean_duration_sec),
-      mean_duration_str: " " + label_time(mean_duration_sec) + " "
+      error_reason: [
+        error_pct_oom,
+        error_pct_timeout,
+        error_pct_error,
+        error_pct_unknown,
+        error_pct_na,
+        error_pct_ok
+      ],
     })
   })
 
@@ -141,47 +198,172 @@ summary_all = method_info
     const mean_score = overall.find(d => d.method_id === method_id).mean_score
     const datasets = per_dataset.find(d => d.method_id === method_id)
     const metrics = per_metric.find(d => d.method_id === method_id)
-    const resources_ = resources.find(d => d.method_id === method_id)
-    return {method_id, method_name, mean_score, ...datasets, ...metrics, ...resources_}
+    const error_reasons_ = error_reasons.find(d => d.method_id === method_id)
+
+    let summary = {
+      method_id,
+      method_name,
+      mean_score,
+      ...datasets,
+      ...metrics,
+      ...error_reasons_
+    }
+
+    if (has_resources) {
+      const resources_ = resources.find(d => d.method_id === method_id)
+      summary = {...summary, ...resources_}
+    }
+    return summary
   })
   .sort((a, b) => b.mean_score - a.mean_score)
 
 // make sure the first entry contains all columns
-column_info = [
-  {id: "method_name", name: "Name", label: null, group: "method", geom: "text", palette: null},
-  {id: "mean_score", name: "Score", group: "overall", geom: "bar", palette: "overall"},
-  {id: "error_reason", name: "Error reason", group: "overall", geom: "pie", palette: "error_reason"},
-  ...dataset_info
-    .filter(d => dataset_ids.includes(d.dataset_id)).map(d => ({id: "dataset_" + d.dataset_id, name: d.dataset_name, group: "dataset", geom: "funkyrect", palette: "dataset"}))
-    .sort((a, b) => a.name.localeCompare(b.name)),
-  ...metric_info
-    .filter(d => metric_ids.includes(d.metric_id)).map(d => ({id: "metric_" + d.metric_id, name: d.metric_name, group: "metric", geom: "funkyrect", palette: "metric"}))
-    .sort((a, b) => a.name.localeCompare(b.name)),
-  {id: "mean_cpu_pct", name: "%CPU", group: "resources", geom: "funkyrect", palette: "resources"},
-  {id: "mean_peak_memory_log", name: "Peak memory", label: "mean_peak_memory_str", group: "resources", geom: "rect", palette: "resources"},
-  {id: "mean_disk_read_log", name: "Disk read", label: "mean_disk_read_str", group: "resources", geom: "rect", palette: "resources"},
-  {id: "mean_disk_write_log", name: "Disk write", label: "mean_disk_write_str", group: "resources", geom: "rect", palette: "resources"},
-  {id: "mean_duration_log", name: "Duration", label: "mean_duration_str", group: "resources", geom: "rect", palette: "resources"}
-].map(d => {
-  if (d.id === "method_name") {
-    return {...d, options: {width: 15, hjust: 0}}
-  } else if (d.id === "is_baseline") {
-    return {...d, options: {width: 1}}
-  } else if (d.geom === "bar") {
-    return {...d, options: {width: 4}}
-  } else {
-    return d
-  }
-})
+column_info = {
+  let column_info = [
+    {
+      id: "method_name",
+      name: "Name",
+      label: null,
+      group: "method",
+      geom: "text",
+      palette: null
+    },
+    {
+      id: "mean_score",
+      name: "Score",
+      group: "overall",
+      geom: "bar",
+      palette: "overall"
+    },
+    {
+      id: "error_reason",
+      name: "Error reason",
+      group: "overall",
+      geom: "pie",
+      palette: "error_reason"
+    },
+    ...dataset_info
+      .filter(d => dataset_ids.includes(d.dataset_id))
+      .map(
+        d => ({
+          id: "dataset_" + d.dataset_id,
+          name: d.dataset_name,
+          group: "dataset",
+          geom: "funkyrect",
+          palette: "dataset"
+        })
+      )
+      .sort((a, b) => a.name.localeCompare(b.name)),
+    ...metric_info
+      .filter(d => metric_ids.includes(d.metric_id))
+      .map(
+        d => ({
+          id: "metric_" + d.metric_id,
+          name: d.metric_name,
+          group: "metric",
+          geom: "funkyrect",
+          palette: "metric"
+        })
+      )
+      .sort((a, b) => a.name.localeCompare(b.name)),
+  ]
 
-column_groups = [
-  {group: "method", palette: null, level1: ""},
-  {group: "overall", palette: "overall", level1: "Overall"},
-  {group: "error_reason", palette: "error_reason", level1: "Error reason"},
-  {group: "dataset", palette: "dataset", level1: dataset_info.length >= 3 ? "Datasets" : ""},
-  {group: "metric", palette: "metric", level1: metric_info.length >= 3 ? "Metrics" : ""},
-  {group: "resources", palette: "resources", level1: "Resources"}
-]
+  if (has_resources) {
+    column_info.push(
+      {
+        id: "mean_cpu_pct",
+        name: "%CPU",
+        group: "resources",
+        geom: "funkyrect",
+        palette: "resources"
+      },
+      {
+        id: "mean_peak_memory_log",
+        name: "Peak memory",
+        label: "mean_peak_memory_str",
+        group: "resources",
+        geom: "rect",
+        palette: "resources"
+      },
+      {
+        id: "mean_disk_read_log",
+        name: "Disk read",
+        label: "mean_disk_read_str",
+        group: "resources",
+        geom: "rect",
+        palette: "resources"
+      },
+      {
+        id: "mean_disk_write_log",
+        name: "Disk write",
+        label: "mean_disk_write_str",
+        group: "resources",
+        geom: "rect",
+        palette: "resources"
+      },
+      {
+        id: "mean_duration_log",
+        name: "Duration",
+        label: "mean_duration_str",
+        group: "resources",
+        geom: "rect",
+        palette: "resources"
+      }
+    )
+  }
+
+  column_info = column_info.map(d => {
+    if (d.id === "method_name") {
+      return {...d, options: {width: 15, hjust: 0}}
+    } else if (d.id === "is_baseline") {
+      return {...d, options: {width: 1}}
+    } else if (d.geom === "bar") {
+      return {...d, options: {width: 4}}
+    } else {
+      return d
+    }
+  })
+
+  return column_info
+}
+
+column_groups = {
+  let column_groups = [
+    {
+      group: "method",
+      palette: null,
+      level1: ""
+    },
+    {
+      group: "overall",
+      palette: "overall",
+      level1: "Overall"
+    },
+    {
+      group: "error_reason",
+      palette: "error_reason",
+      level1: "Error reason"
+    },
+    {
+      group: "dataset",
+      palette: "dataset",
+      level1: dataset_info.length >= 3 ? "Datasets" : ""
+    },
+    {
+      group: "metric",
+      palette: "metric",
+      level1: metric_info.length >= 3 ? "Metrics" : ""
+    }
+  ]
+
+  if (has_resources) {
+    column_groups.push(
+      {group: "resources", palette: "resources", level1: "Resources"}
+    )
+  }
+
+  return column_groups
+}
 
 palettes = [
   {
@@ -190,8 +372,15 @@ palettes = [
     metric: "Reds",
     resources: "YlOrBr",
     error_reason: {
-      colors: ["#8DD3C7", "#FFFFB3", "#BEBADA", "#999999", "#FFFFFF"],
-      names: ["Memory limit exceeded", "Time limit exceeded", "Execution error", "Not applicable", "No error"]
+      colors: ["#8DD3C7", "#FFFFB3", "#BEBADA", "#fdb462", "#999999", "#FFFFFF"],
+      names: [
+        "Memory limit exceeded",
+        "Time limit exceeded",
+        "Execution error",
+        "Unknown error",
+        "Not applicable",
+        "No error"
+      ]
     }
   }
 ][0]
@@ -226,13 +415,11 @@ funkyheatmap(
 );
 ```
 
-
 <div class="cell panel-input card bg-light">
 <details><summary>Display settings</summary>
 
 ```{ojs}
 //| echo: false
-
 viewof color_by_rank = Inputs.toggle({label: "Color by rank:", value: true})
 viewof scale_column = Inputs.toggle({label: "Minmax column:", value: false})
 viewof show_con = Inputs.toggle({label: "Show control methods:", value: true})
