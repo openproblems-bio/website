@@ -147,10 +147,16 @@ exit_codes = {
     }).filter(d => method_ids.includes(d.method_id) && dataset_ids.includes(d.dataset_id))
   } else {
     exit_codes = results_resources.flatMap(d => {
+      let exit_code = d.exit_code
+      if (exit_code === undefined) {
+        // If there is not exit code, assume the method ran successfully
+        exit_code = 0
+      }
+
       return ({
         method_id: d.method_id,
         dataset_id: d.dataset_id,
-        exit_codes: [d.exit_code]
+        exit_codes: [exit_code]
       })
     }).filter(d => method_ids.includes(d.method_id) && dataset_ids.includes(d.dataset_id))
   }
