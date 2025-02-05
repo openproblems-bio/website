@@ -43,10 +43,6 @@ poss_dataset_ids = dataset_info
 poss_method_ids = method_info
   .map(d => d.method_id)
   .filter(d => results.map(r => r.method_id).includes(d))
-poss_real_method_ids = method_info
-  .filter(d => d.task_id === "methods")
-  .map(d => d.method_id)
-  .filter(d => results.map(r => r.method_id).includes(d))
 poss_metric_ids = metric_info
   .map(d => d.metric_id)
   .filter(d => results.map(r => Object.keys(r.scaled_scores)).flat().includes(d))

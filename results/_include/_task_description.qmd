@@ -2,8 +2,8 @@
 metadata <- tribble(
   ~icon, ~value,
   "bi bi-table", paste0(nrow(dataset_info), " datasets"),
-  "bi bi-gear", paste0(sum(method_info$task_id == "methods"), " methods"),
-  "bi bi-shield-check", paste0(sum(method_info$task_id == "control_methods"), " control methods"),
+  "bi bi-gear", paste0(sum(!method_info$is_baseline), " methods"),
+  "bi bi-shield-check", paste0(sum(method_info$is_baseline), " control methods"),
   "bi bi-graph-up", paste0(nrow(metric_info), " metrics")
 )
 
