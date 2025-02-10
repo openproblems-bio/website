@@ -7,19 +7,102 @@ css: ../_include/task_template.css
 engine: knitr
 fig-cap-location: bottom
 citation-location: document
+bibliography:
+  - library.bib
+  - ../../library.bib
 toc: false
 ---
 
-Recent developments in deep-learning have led to the creation of several "foundation models" for single-cell data.
-These are large models that have been trained on data from millions of cells and am to fully capture the variability in the single-cell landscape.
-Typically, they use a transformer architecture [@szalata2024transformers] and undergo self-supervised pre-training using masking of parts of the input data.
-Trained foundation models can then be applied to a variety of downstream tasks, either by directly feeding new data into the model or by fine-tuning to better fit a new dataset or to produce a specific output.
-The general nature of single-cell foundation models and the large amount of data they have been trained on makes them potentially powerful tools for single-cell analysis but their performance is yet to be fully established.
+```{r params}
+#| include: false
+params <- list(data_dir = "./data")
+```
 
-Open Problems plans to build on the existing evaluation [@boiarsky2023foundationmodels; @liu2024foundationmodels] of foundation models by incorportating them into our continuous benchmarking framework.
-Models will be included in existing tasks where they will be compared to more traditional methods.
-We also plan to compare foundation models across tasks to evaluate their flexibility and compare them to each other.
+{{< include ../_include/_load_data.qmd >}}
 
-If you are interested in evaluating foundation models for single-cell data please fill in the form below to get in touch.
+{{< include ../_include/_task_description.qmd >}}
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeB6ZHTL8yvKpA8VNRoQY28p5WDpi2WEtwRkeGSgRz3Mqw8bA/viewform?embedded=true" width="640" height="959" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+This benchmark is a work in progress.
+If you are interested in evaluating foundation models for single-cell data please fill in the [form below](https://docs.google.com/forms/d/e/1FAIpQLSeB6ZHTL8yvKpA8VNRoQY28p5WDpi2WEtwRkeGSgRz3Mqw8bA/viewform?usp=sf_link) to get in touch.
+
+<details><summary>Foundation models contact form</summary>
+
+<iframe
+  src="https://docs.google.com/forms/d/e/1FAIpQLSeB6ZHTL8yvKpA8VNRoQY28p5WDpi2WEtwRkeGSgRz3Mqw8bA/viewform?embedded=true"
+  width="640"
+  height="959"
+  frameborder="0"
+  marginheight="0"
+  marginwidth="0"
+>Loading…</iframe>
+
+</details>
+
+## Interpretation
+
+The foundation models task combines results for multiple analysis tasks and therefore should be interpreted differently.
+We treat each task as a metric that means the overall performance of a foundation model on that type of analysis.
+For more information about how foundation models perform at specific aspects of each task you should refer to that tasks results page.
+As well as comparing between foundation models we provide additional context by including representative standard methods for each task, allowing us to see how foundation models compare to more established methods.
+
+The high hardware and computational requirements of some foundation models present additional challenges for benchmarking and make it difficult to obtain results in some cases.
+
+## Summary
+
+{{< include ../_include/_summary_figure.qmd >}}
+
+## Results
+
+{{< include ../_include/_results_table.qmd >}}
+
+## Dataset info
+
+<details><summary>Show</summary>
+
+{{< include ../_include/_dataset_descriptions.qmd >}}
+
+</details>
+
+## Method info
+
+<details><summary>Show</summary>
+
+{{< include ../_include/_method_descriptions.qmd >}}
+
+</details>
+
+## Control method info
+
+<details><summary>Show</summary>
+
+{{< include ../_include/_baseline_descriptions.qmd >}}
+
+</details>
+
+## Metric info
+
+<details><summary>Show</summary>
+
+{{< include ../_include/_metric_descriptions.qmd >}}
+
+</details>
+
+<!-- ## Quality control results -->
+
+<!-- <details><summary>Show</summary> -->
+
+<!-- {{< include ../_include/_qc_table.qmd >}} -->
+
+<!-- </details> -->
+
+<!-- ## Normalisation visualisation -->
+
+<!-- <details><summary>Show</summary> -->
+
+<!-- {{< include ../_include/_scaling_figure.qmd >}} -->
+
+<!-- </details> -->
+
+## Authors
+
+{{< include ../_include/_authors.qmd >}}

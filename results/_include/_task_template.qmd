@@ -1,50 +1,7 @@
 
 {{< include ../_include/_load_data.qmd >}}
 
-```{r description, results="asis", echo=FALSE}
-metadata <- tribble(
-  ~icon, ~value,
-  "bi bi-table", paste0(nrow(dataset_info), " datasets"),
-  "bi bi-gear", paste0(sum(!method_info$is_baseline), " methods"),
-  "bi bi-shield-check", paste0(sum(method_info$is_baseline), " control methods"),
-  "bi bi-graph-up", paste0(nrow(metric_info), " metrics")
-)
-
-cat(
-  paste(
-    paste0("<i class=\"", metadata$icon, "\"></i> ", metadata$value),
-    collapse = " · "
-  )
-)
-```
-
-```{r details, results="asis", echo=FALSE}
-#| column: margin
-
-cat("#### Info\n\n")
-
-details <- tribble(
-  ~icon, ~value,
-  "bi bi-github", if (!is.null(task_info$repo)) paste0("[Repository](",task_info$repo,")") else NULL,
-  "octicon--issue-opened-17", if (!is.null(task_info$issue_tracker)) paste0("[Issues](",task_info$issue_tracker,")") else NULL,
-  "bi bi-tag", if (!is.null(task_info$version)) paste0(task_info$version) else NULL,
-  "fa-solid fa-scale-balanced", if (!is.null(task_info$license)) paste0(task_info$license) else NULL
-  ) %>% filter(!sapply(value, is.null))
-cat(paste(paste0("<i class=\"", details$icon, "\"></i> ", details$value), " \n"))
-
-```
-
-
-[Task info](data/task_info.json){class="btn btn-secondary"}
-[Method info](data/method_info.json){class="btn btn-secondary"}
-[Metric info](data/metric_info.json){class="btn btn-secondary"}
-[Dataset info](data/dataset_info.json){class="btn btn-secondary"}
-[Results](data/results.json){class="btn btn-secondary"}
-
-
-`r task_info$task_motivation %|% ""`
-
-`r task_info$task_description %|% ""`
+{{< include ../_include/_task_description.qmd >}}
 
 ## Summary
 
@@ -104,34 +61,4 @@ cat(paste(paste0("<i class=\"", details$icon, "\"></i> ", details$value), " \n")
 
 ## Authors
 
-```{r}
-#| echo: false
-if (!is.null(task_info$authors) && length(task_info$authors) > 0) {
-  lines <- map_chr(task_info$authors, function(author) {
-    name <- author$name
-    roles <- author$roles %>% paste(collapse = ", ")
-    github <- author$info$github %||% NULL
-    orcid <- author$info$orcid %||% NULL
-
-    links <- c()
-    if (!is.null(github)) {
-      links <- c(links, glue::glue("[{{{{< fa brands github >}}}}](https://github.com/{github})"))
-    }
-    if (!is.null(orcid)) {
-      links <- c(links, glue::glue("[{{{{< fa brands orcid >}}}}](https://orcid.org/{orcid})"))
-    }  
-    links_label <- 
-      if (length(links) > 0) {
-        glue::glue("{paste(links, collapse = ', ')}")
-      } else {
-        ""
-      }
-    strip_margin(glue::glue("
-      |* {name} ({roles}) {links_label}
-      |"
-    ))
-  })
-  knitr::asis_output(paste(lines, collapse = "\n"))
-}
-```
-
+{{< include ../_include/_authors.qmd >}}
