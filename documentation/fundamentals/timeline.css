@@ -1,0 +1,149 @@
+/* legend */
+.legend-swatches {
+  
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1em;
+}
+
+.legend-swatches::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  margin-right: 0.5em;
+  background: var(--color);
+}
+
+
+.legend-swatches-item {
+  break-inside: avoid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1px;
+}
+
+.legend-swatches-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 18px - 0.5em);
+}
+
+.legend-swatches-swatch {
+  width: 18px;
+  height: 18px;
+  margin: 0 0.5em 0 0;
+}
+
+/* typography */
+.event-title {
+  fill: #3C3941;
+  line-height: 1.4;
+}
+
+.event-title:hover {
+  cursor: default;
+}
+
+.event-description {
+  fill: #3C3941;
+  font: 400 16px/1.4 "Source Sans Pro", "Noto Sans", sans-serif;
+  transform: translateY(1em);
+}
+
+#title {
+  fill: #3C3941;
+  font: 600 16px/1.4 "Source Sans Pro", "Noto Sans", sans-serif;
+}
+
+.axis text {
+  font: 400 16px/1.4 "Source Sans Pro", "Noto Sans", sans-serif;
+  fill: #676170;
+}
+
+@media (max-width: 768px) {
+  text,
+  .event-title,
+  .event-description,
+  #title,
+  .axis text {
+    font-size: 14px;
+  }
+}
+
+/* chart */
+#chart-background {
+  fill: #FAF9FB;
+}
+
+.tick line,
+.domain {
+  stroke: #E2E0E5;
+}
+
+/* tooltip */
+.wrapper {
+  position: relative;
+}
+
+.tooltip {
+  background-color: #fff;
+  border: 1px solid;
+  font-family: "Source Sans Pro", "Noto Sans", sans-serif;
+  left: 0;
+  max-width: 300px;
+  opacity: 0;
+  padding: calc(16px - 1px); /* border width adjustment */
+  pointer-events: none;
+  border-radius: 5px;
+  position: absolute;
+  top: -8px;
+  transition: opacity 0.1s linear, transform 0.05s ease-in-out;
+  z-index: 1;
+}
+
+/*
+.tooltip:before {
+  background-color: #fff;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  bottom: 0;
+  content: '';
+  height: 12px;
+  left: 50%;
+  position: absolute;
+  transform-origin: center center;
+  transform: translate(-50%, 50%) rotate(45deg);
+  width: 12px;
+  z-index: 1;
+}
+*/
+
+.tooltip-date {
+  margin-bottom: 0.2em;
+  font-size: 0.7em;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.tooltip-name {
+  margin-bottom: 0.2em;
+  font-size: 1em;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.tooltip-description {
+  margin-bottom: 0.2em;
+  font-size: 0.8em;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+/* timeline */
+
+#plot {
+  position: relative;
+  transform: translateX(50%);
+}
