@@ -1,0 +1,22 @@
+---
+title: "Cyto Batch Integration"
+subtitle: "A one sentence summary of purpose and methodology. Used for creating an overview tables."
+image: thumbnail.svg
+page-layout: full
+css: ../_include/task_template.css
+engine: knitr
+fig-cap-location: bottom
+citation-location: document
+bibliography: 
+  - library.bib
+  - ../../library.bib
+toc: false
+---
+
+```{r}
+#| include: false
+params <- list(data_dir = "results/cyto_batch_integration/data")
+params <- list(data_dir = "./data")
+```
+
+{{< include ../_include/_task_template.qmd >}}
