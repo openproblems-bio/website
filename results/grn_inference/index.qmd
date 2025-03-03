@@ -18,4 +18,374 @@ toc: false
 params <- list(data_dir = "results/grn_inference/data")
 params <- list(data_dir = "./data")
 ```
-{{< include ../_include/_task_template.qmd >}}
+
+
+{{< include ../_include/_load_data.qmd >}}
+
+{{< include ../_include/_task_description.qmd >}}
+
+## Summary
+
+```{ojs}
+//| echo: false
+function aggregate_scores(obj) {
+  return d3.mean(obj.map(val => {
+    if (val.score === undefined || isNaN(val.score)) return 0;
+    return Math.min(1, Math.max(0, val.score))
+  }));
+}
+
+function transpose_list_of_objects(list) {
+  return Object.fromEntries(Object.keys(list[0]).map(key => [key, list.map(d => d[key])]))
+}
+
+function label_time(time) {
+  if (time < 1e-5) return "0s";
+  if (time < 1) return "<1s";
+  if (time < 60) return `${Math.floor(time)}s`;
+  if (time < 3600) return `${Math.floor(time / 60)}m`;
+  if (time < 3600 * 24) return `${Math.floor(time / 3600)}h`;
+  if (time < 3600 * 24 * 7) return `${Math.floor(time / 3600 / 24)}d`;
+  return ">7d"; // Assuming missing values are encoded as NaN
+}
+
+function label_memory(x_mb, include_mb = true) {
+  if (!include_mb && x_mb < 1e3) return "<1G";
+  if (x_mb < 1) return "<1M";
+  if (x_mb < 1e3) return `${Math.round(x_mb)}M`;
+  if (x_mb < 1e6) return `${Math.round(x_mb / 1e3)}G`;
+  if (x_mb < 1e9) return `${Math.round(x_mb / 1e6)}T`;
+  return ">1P";
+}
+
+function mean_na_rm(x) {
+  return d3.mean(x.filter(d => !isNaN(d)));
+}
+```
+
+```{ojs}
+//| echo: false
+poss_dataset_ids = dataset_info
+  .map(d => d.dataset_id)
+  .filter(d => results.map(r => r.dataset_id).includes(d))
+poss_method_ids = method_info
+  .map(d => d.method_id)
+  .filter(d => results.map(r => r.method_id).includes(d))
+poss_metric_ids = metric_info
+  .map(d => d.metric_id)
+  .filter(d => results.map(r => Object.keys(r.scaled_scores)).flat().includes(d))
+```
+
+```{ojs}
+//| echo: false
+//| message: false
+//| warning: false
+
+results_long = results.flatMap(d => {
+  return Object.entries(d.scaled_scores).map(([metric_id, value]) =>
+    ({
+      method_id: d.method_id,
+      dataset_id: d.dataset_id,
+      metric_id: metric_id,
+      score: value
+    })
+  )
+}).filter(d => method_ids.includes(d.method_id) && metric_ids.includes(d.metric_id) && dataset_ids.includes(d.dataset_id))
+
+overall = d3.groups(results_long, d => d.method_id)
+  .map(([method_id, values]) => ({method_id, mean_score: aggregate_scores(values)}))
+
+per_dataset = d3.groups(results_long, d => d.method_id)
+  .map(([method_id, values]) => {
+    const datasets = d3.groups(values, d => d.dataset_id)
+      .map(([dataset_id, values]) => ({["dataset_" + dataset_id]: aggregate_scores(values)}))
+      .reduce((a, b) => ({...a, ...b}), {})
+    return {method_id, ...datasets}
+  })
+
+per_metric = d3.groups(results_long, d => d.method_id)
+  .map(([method_id, values]) => {
+    const metrics = d3.groups(values, d => d.metric_id)
+      .map(([metric_id, values]) => ({["metric_" + metric_id]: aggregate_scores(values)}))
+      .reduce((a, b) => ({...a, ...b}), {})
+    return {method_id, ...metrics}
+  })
+
+
+
+summary_all = method_info
+  .filter(d => show_con || !d.is_baseline)
+  .filter(d => method_ids.includes(d.method_id))
+  .map(method => {
+    const method_id = method.method_id
+    const method_name = method.method_name
+    const mean_score = overall.find(d => d.method_id === method_id).mean_score
+    const datasets = per_dataset.find(d => d.method_id === method_id)
+    const metrics = per_metric.find(d => d.method_id === method_id)
+
+    let summary = {
+      method_id,
+      method_name,
+      mean_score,
+      ...datasets,
+      ...metrics,
+    }
+
+    return summary
+  })
+  .sort((a, b) => b.mean_score - a.mean_score)
+
+// make sure the first entry contains all columns
+column_info = {
+  let column_info = [
+    {
+      id: "method_name",
+      name: "Name",
+      label: null,
+      group: "method",
+      geom: "text",
+      palette: null
+    },
+    {
+      id: "mean_score",
+      name: "Score",
+      group: "overall",
+      geom: "bar",
+      palette: "overall"
+    },
+    ...dataset_info
+      .filter(d => dataset_ids.includes(d.dataset_id))
+      .map(
+        d => ({
+          id: "dataset_" + d.dataset_id,
+          name: d.dataset_name,
+          group: "dataset",
+          geom: "funkyrect",
+          palette: "dataset"
+        })
+      )
+      .sort((a, b) => a.name.localeCompare(b.name)),
+    ...metric_info
+      .filter(d => metric_ids.includes(d.metric_id))
+      .map(
+        d => ({
+          id: "metric_" + d.metric_id,
+          name: d.metric_name,
+          group: "metric",
+          geom: "funkyrect",
+          palette: "metric"
+        })
+      )
+      .sort((a, b) => a.name.localeCompare(b.name)),
+  ]
+
+  column_info = column_info.map(d => {
+    if (d.id === "method_name") {
+      return {...d, options: {width: 15, hjust: 0}}
+    } else if (d.id === "is_baseline") {
+      return {...d, options: {width: 1}}
+    } else if (d.geom === "bar") {
+      return {...d, options: {width: 4}}
+    } else {
+      return d
+    }
+  })
+
+  return column_info
+}
+
+column_groups = {
+  let column_groups = [
+    {
+      group: "method",
+      palette: null,
+      level1: ""
+    },
+    {
+      group: "overall",
+      palette: "overall",
+      level1: "Overall"
+    },
+    {
+      group: "dataset",
+      palette: "dataset",
+      level1: dataset_info.length >= 3 ? "Datasets" : ""
+    },
+    {
+      group: "metric",
+      palette: "metric",
+      level1: metric_info.length >= 3 ? "Metrics" : ""
+    }
+  ]
+
+  return column_groups
+}
+
+palettes = [
+  {
+    overall: "Greys",
+    dataset: "Blues",
+    metric: "Reds"
+  }
+][0]
+```
+
+```{ojs}
+//| echo: false
+//| fig-cap: "Overview of the results per method. This figures shows the mean of the scaled scores (group Overall), the mean scores per dataset (group Dataset) and the mean scores per metric (group Metric)."
+//| column: page
+funkyheatmap(
+    transpose_list_of_objects(summary_all),
+    transpose_list_of_objects(column_info),
+    [],
+    transpose_list_of_objects(column_groups),
+    [],
+    palettes,
+    {
+        fontSize: 14,
+        rowHeight: 26,
+        rootStyle: 'max-width: none',
+        colorByRank: color_by_rank,
+        theme: {
+            oddRowBackground: 'var(--bs-body-bg)',
+            evenRowBackground: 'var(--bs-button-hover)',
+            textColor: 'var(--bs-body-color)',
+            strokeColor: 'var(--bs-body-color)',
+            headerColor: 'var(--bs-body-color)',
+            hoverColor: 'var(--bs-body-color)'
+        }
+    },
+    scale_column
+);
+```
+
+<div class="cell panel-input card bg-light">
+<details><summary>Display settings</summary>
+
+```{ojs}
+//| echo: false
+viewof color_by_rank = Inputs.toggle({label: "Color by rank:", value: true})
+viewof scale_column = Inputs.toggle({label: "Minmax column:", value: false})
+viewof show_con = Inputs.toggle({label: "Show control methods:", value: true})
+```
+
+</details>
+
+<details><summary>Filter datasets</summary>
+
+```{ojs}
+//| echo: false
+viewof dataset_ids = Inputs.checkbox(
+  dataset_info.filter(d => poss_dataset_ids.includes(d.dataset_id)),
+  {
+    keyof: d => d.dataset_name,
+    valueof: d => d.dataset_id,
+    value: dataset_info.map(d => d.dataset_id),
+    label: "Datasets:"
+  }
+)
+```
+
+</details>
+
+<details><summary>Filter methods</summary>
+
+```{ojs}
+//| echo: false
+viewof method_ids = Inputs.checkbox(
+  method_info.filter(d => poss_method_ids.includes(d.method_id)),
+  {
+    keyof: d => d.method_name,
+    valueof: d => d.method_id,
+    value: method_info.map(d => d.method_id),
+    label: "Methods:"
+  }
+)
+```
+
+</details>
+
+<details><summary>Filter metrics</summary>
+
+```{ojs}
+//| echo: false
+viewof metric_ids = Inputs.checkbox(
+  metric_info.filter(d => poss_metric_ids.includes(d.metric_id)),
+  {
+    keyof: d => d.metric_name,
+    valueof: d => d.metric_id,
+    value: metric_info.map(d => d.metric_id),
+    label: "Metrics:"
+  }
+)
+```
+
+</details>
+</div>
+
+```{ojs}
+//| echo: false
+funkyheatmap = (await require('d3@7').then(d3 => {
+  window.d3 = d3;
+  window._ = _;
+  return import('https://unpkg.com/funkyheatmapjs@0.2.5');
+})).default;
+```
+
+
+## Results
+
+{{< include ../_include/_results_table.qmd >}}
+
+## Dataset info
+
+<details><summary>Show</summary>
+
+{{< include ../_include/_dataset_descriptions.qmd >}}
+
+</details>
+
+## Method info
+
+<details><summary>Show</summary>
+
+{{< include ../_include/_method_descriptions.qmd >}}
+
+</details>
+
+## Control method info
+
+<details><summary>Show</summary>
+
+{{< include ../_include/_baseline_descriptions.qmd >}}
+
+</details>
+
+## Metric info
+
+<details><summary>Show</summary>
+
+{{< include ../_include/_metric_descriptions.qmd >}}
+
+</details>
+
+## Quality control results
+
+<details><summary>Show</summary>
+
+{{< include ../_include/_qc_table.qmd >}}
+
+</details>
+
+## Normalisation visualisation
+
+<details><summary>Show</summary>
+
+{{< include ../_include/_scaling_figure.qmd >}}
+
+</details>
+
+## Authors
+
+{{< include ../_include/_authors.qmd >}}
+
