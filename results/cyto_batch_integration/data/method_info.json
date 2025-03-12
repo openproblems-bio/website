@@ -11,9 +11,9 @@
     "code_url": "https://github.com/openproblems-bio/task_cyto_batch_integration",
     "documentation_url": null,
     "image": "https://ghcr.io/openproblems-bio/task_cyto_batch_integration/control_methods/shuffle_integration:build_main",
-    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/0423799b338abe490764d3403608758eb58041ec/src/control_methods/shuffle_integration",
+    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/818cd97980d3e08d36a079595f02bfb75dca71bd/src/control_methods/shuffle_integration",
     "code_version": "build_main",
-    "commit_sha": "0423799b338abe490764d3403608758eb58041ec"
+    "commit_sha": "818cd97980d3e08d36a079595f02bfb75dca71bd"
   },
   {
     "task_id": "control_methods",
@@ -27,9 +27,9 @@
     "code_url": "https://github.com/openproblems-bio/task_cyto_batch_integration",
     "documentation_url": null,
     "image": "https://ghcr.io/openproblems-bio/task_cyto_batch_integration/control_methods/shuffle_integration_by_batch:build_main",
-    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/0423799b338abe490764d3403608758eb58041ec/src/control_methods/shuffle_integration_by_batch",
+    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/818cd97980d3e08d36a079595f02bfb75dca71bd/src/control_methods/shuffle_integration_by_batch",
     "code_version": "build_main",
-    "commit_sha": "0423799b338abe490764d3403608758eb58041ec"
+    "commit_sha": "818cd97980d3e08d36a079595f02bfb75dca71bd"
   },
   {
     "task_id": "control_methods",
@@ -43,9 +43,9 @@
     "code_url": "https://github.com/openproblems-bio/task_cyto_batch_integration",
     "documentation_url": null,
     "image": "https://ghcr.io/openproblems-bio/task_cyto_batch_integration/control_methods/shuffle_integration_by_cell_type:build_main",
-    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/0423799b338abe490764d3403608758eb58041ec/src/control_methods/shuffle_integration_by_cell_type",
+    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/818cd97980d3e08d36a079595f02bfb75dca71bd/src/control_methods/shuffle_integration_by_cell_type",
     "code_version": "build_main",
-    "commit_sha": "0423799b338abe490764d3403608758eb58041ec"
+    "commit_sha": "818cd97980d3e08d36a079595f02bfb75dca71bd"
   },
   {
     "task_id": "methods",
@@ -59,9 +59,9 @@
     "code_url": "https://github.com/slowkow/harmonypy",
     "documentation_url": "https://portals.broadinstitute.org/harmony",
     "image": "https://ghcr.io/openproblems-bio/task_cyto_batch_integration/methods/harmonypy:build_main",
-    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/0423799b338abe490764d3403608758eb58041ec/src/methods/harmonypy",
+    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/818cd97980d3e08d36a079595f02bfb75dca71bd/src/methods/harmonypy",
     "code_version": "build_main",
-    "commit_sha": "0423799b338abe490764d3403608758eb58041ec"
+    "commit_sha": "818cd97980d3e08d36a079595f02bfb75dca71bd"
   },
   {
     "task_id": "methods",
@@ -75,9 +75,9 @@
     "code_url": "https://github.com/bioc/limma",
     "documentation_url": "https://bioinf.wehi.edu.au/limma",
     "image": "https://ghcr.io/openproblems-bio/task_cyto_batch_integration/methods/limma_remove_batch_effect:build_main",
-    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/0423799b338abe490764d3403608758eb58041ec/src/methods/limma_remove_batch_effect",
+    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/818cd97980d3e08d36a079595f02bfb75dca71bd/src/methods/limma_remove_batch_effect",
     "code_version": "build_main",
-    "commit_sha": "0423799b338abe490764d3403608758eb58041ec"
+    "commit_sha": "818cd97980d3e08d36a079595f02bfb75dca71bd"
   },
   {
     "task_id": "control_methods",
@@ -91,9 +91,25 @@
     "code_url": "https://github.com/openproblems-bio/task_cyto_batch_integration",
     "documentation_url": null,
     "image": "https://ghcr.io/openproblems-bio/task_cyto_batch_integration/control_methods/no_integration:build_main",
-    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/0423799b338abe490764d3403608758eb58041ec/src/control_methods/no_integration",
+    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/818cd97980d3e08d36a079595f02bfb75dca71bd/src/control_methods/no_integration",
     "code_version": "build_main",
-    "commit_sha": "0423799b338abe490764d3403608758eb58041ec"
+    "commit_sha": "818cd97980d3e08d36a079595f02bfb75dca71bd"
+  },
+  {
+    "task_id": "control_methods",
+    "method_id": "perfect_integration",
+    "method_name": "Perfect Integration",
+    "method_summary": "Positive control method which imitates what perfect batch integration.",
+    "method_description": "The method actually just return the validation data but just changing the batch\nand sample ID to those that are in the unintegrated_censored.\nBecause the marker expression is the exactly same as the validation data, there won't\nbe any batch effect present.\n",
+    "is_baseline": true,
+    "references_doi": null,
+    "references_bibtex": null,
+    "code_url": "https://github.com/openproblems-bio/task_cyto_batch_integration",
+    "documentation_url": null,
+    "image": "https://ghcr.io/openproblems-bio/task_cyto_batch_integration/control_methods/perfect_integration:build_main",
+    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/818cd97980d3e08d36a079595f02bfb75dca71bd/src/control_methods/perfect_integration",
+    "code_version": "build_main",
+    "commit_sha": "818cd97980d3e08d36a079595f02bfb75dca71bd"
   },
   {
     "task_id": "methods",
@@ -107,8 +123,24 @@
     "code_url": "https://github.com/brentp/combat.py",
     "documentation_url": "https://scanpy.readthedocs.io/en/latest/api/generated/scanpy.pp.combat.html",
     "image": "https://ghcr.io/openproblems-bio/task_cyto_batch_integration/methods/combat:build_main",
-    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/0423799b338abe490764d3403608758eb58041ec/src/methods/combat",
+    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/818cd97980d3e08d36a079595f02bfb75dca71bd/src/methods/combat",
     "code_version": "build_main",
-    "commit_sha": "0423799b338abe490764d3403608758eb58041ec"
+    "commit_sha": "818cd97980d3e08d36a079595f02bfb75dca71bd"
+  },
+  {
+    "task_id": "methods",
+    "method_id": "cycombine_nocontrols",
+    "method_name": "cyCombine (no-controls)",
+    "method_summary": "cyCombine perform batch correction by using self-organizing maps and ComBat.",
+    "method_description": "cyCombine perform batch integration by first using self-organizing maps (SOM) to \ngroup similar cells, then applies a ComBat-based method to correct batch effects within \neach group of similar cells. \n\nHere, we run cyCombine without control samples (replicates in cyCombine terminology).\n",
+    "is_baseline": false,
+    "references_doi": "10.1038/s41467-022-29383-5",
+    "references_bibtex": null,
+    "code_url": "https://github.com/biosurf/cyCombine",
+    "documentation_url": "https://biosurf.org/cyCombine.html",
+    "image": "https://ghcr.io/openproblems-bio/task_cyto_batch_integration/methods/cycombine_nocontrols:build_main",
+    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/818cd97980d3e08d36a079595f02bfb75dca71bd/src/methods/cycombine_nocontrols",
+    "code_version": "build_main",
+    "commit_sha": "818cd97980d3e08d36a079595f02bfb75dca71bd"
   }
 ]

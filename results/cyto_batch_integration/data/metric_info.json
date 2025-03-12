@@ -8,10 +8,10 @@
     "metric_description": "Earth Mover Distance (EMD) is a metric designed for comparing two distributions.\nIt is also known as the Wasserstein metric.\n",
     "references_doi": "10.1023/A:1026543900054",
     "references_bibtex": null,
-    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/0423799b338abe490764d3403608758eb58041ec/src/metrics/emd",
+    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/818cd97980d3e08d36a079595f02bfb75dca71bd/src/metrics/emd",
     "image": "https://ghcr.io/openproblems-bio/task_cyto_batch_integration/metrics/emd:build_main",
     "code_version": "build_main",
-    "commit_sha": "0423799b338abe490764d3403608758eb58041ec",
+    "commit_sha": "818cd97980d3e08d36a079595f02bfb75dca71bd",
     "maximize": false
   },
   {
@@ -23,10 +23,25 @@
     "metric_description": "Earth Mover Distance (EMD) is a metric designed for comparing two distributions.\nIt is also known as the Wasserstein metric.\n",
     "references_doi": "10.1023/A:1026543900054",
     "references_bibtex": null,
-    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/0423799b338abe490764d3403608758eb58041ec/src/metrics/emd",
+    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/818cd97980d3e08d36a079595f02bfb75dca71bd/src/metrics/emd",
     "image": "https://ghcr.io/openproblems-bio/task_cyto_batch_integration/metrics/emd:build_main",
     "code_version": "build_main",
-    "commit_sha": "0423799b338abe490764d3403608758eb58041ec",
+    "commit_sha": "818cd97980d3e08d36a079595f02bfb75dca71bd",
+    "maximize": false
+  },
+  {
+    "task_id": "metrics",
+    "component_name": "n_inconsistent_peaks",
+    "metric_id": "n_inconsistent_peaks",
+    "metric_name": "Number of inconsistent peaks",
+    "metric_summary": "Compare the number of marker-expression peaks between validation and batch-normalized data.",
+    "metric_description": "The metric compares the number of marker-expression peaks between the validation and batch-normalized data. \nThe number of peaks is calculated using the `scipy.signal.find_peaks` function. \nThe metric is calculated as the absolute difference between the number of peaks in the validation and batch-normalized data.\nThe marker-expression profiles are first smoothed using kernel density estimation (KDE) (`scipy.stats.gaussian_kde`),\nand then peaks are then identified using the `scipy.signal.find_peaks` function.\nFor peak calling, the `prominence` parameter is set to 0.1 and the `height` parameter is set to 0.05*max_density.\n",
+    "references_doi": "10.1038/s41592-019-0686-2",
+    "references_bibtex": null,
+    "implementation_url": "https://github.com/openproblems-bio/task_cyto_batch_integration/blob/818cd97980d3e08d36a079595f02bfb75dca71bd/src/metrics/n_inconsistent_peaks",
+    "image": "https://ghcr.io/openproblems-bio/task_cyto_batch_integration/metrics/n_inconsistent_peaks:build_main",
+    "code_version": "build_main",
+    "commit_sha": "818cd97980d3e08d36a079595f02bfb75dca71bd",
     "maximize": false
   }
 ]
