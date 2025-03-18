@@ -6,7 +6,7 @@ lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_desc
   code_version <- pluck(rest, "code_version", .default = NULL)
   references_doi <- pluck(rest, "references_doi", .default = NULL) |> na.omit()
   references_bibtex <- pluck(rest, "references_bibtex", .default = NULL) |> na.omit()
-  
+
   ref <-
     if ("paper_reference" %in% names(rest)) {
       split_cite_fun(rest$paper_reference)
@@ -55,5 +55,6 @@ lines <- pmap_chr(metric_info, function(metric_name, metric_summary, metric_desc
   |{metric_description %|% ''}
   |"))
 })
+
 knitr::asis_output(paste(lines, collapse = "\n"))
 ```

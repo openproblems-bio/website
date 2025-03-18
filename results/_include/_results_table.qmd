@@ -1,20 +1,47 @@
 Results table of the scores per method, dataset and metric (after scaling). Use the filters to make a custom subselection of methods and datasets. The "Overall mean" dataset is the mean value across all datasets.
 
-```{r resultstable}
+```{r results_table}
 #| echo: false
-res_tib0 <- results %>%
-  select(dataset_id, method_id, metric_values, resources, mean_score) %>%
-  unnest(metric_values) %>%
-  unnest(resources) %>%
-  left_join(method_info %>% select(-commit_sha, -code_version, -task_id), by = "method_id") %>%
-  filter(!is_baseline) %>%
-  left_join(dataset_info %>% select(dataset_id, dataset_name, data_reference), by = "dataset_id")
+has_resources <- "resources" %in% colnames(results)
+
+res_tib0 <- if (has_resources) {
+  results %>%
+    select(dataset_id, method_id, metric_values, resources, mean_score) %>%
+    unnest(metric_values) %>%
+    unnest(resources) %>%
+    left_join(
+      method_info %>%
+        select(-commit_sha, -code_version, -task_id),
+      by = "method_id"
+    ) %>%
+    filter(!is_baseline) %>%
+    left_join(
+      dataset_info %>%
+        select(dataset_id, dataset_name, data_reference),
+      by = "dataset_id"
+    )
+} else {
+  results %>%
+    select(dataset_id, method_id, metric_values, mean_score) %>%
+    unnest(metric_values) %>%
+    left_join(
+      method_info %>%
+        select(-task_id),
+      by = "method_id"
+    ) %>%
+    filter(!is_baseline) %>%
+    left_join(
+      dataset_info %>%
+        select(dataset_id, dataset_name, data_reference),
+      by = "dataset_id"
+    )
+}
 
 mean_na_zero <- function(x) {
   mean(ifelse(is.na(x), 0, x))
 }
 
-res_tib1 <- res_tib0 %>% 
+res_tib1 <- res_tib0 %>%
   group_by(method_id, method_name, code_url) %>%
   summarise_if(is.numeric, mean_na_zero) %>%
   ungroup() %>%
@@ -23,23 +50,33 @@ res_tib1 <- res_tib0 %>%
   ) %>%
   bind_rows(res_tib0)
 
-  
-res_tib <- res_tib1 %>%
-  arrange(desc(mean_score)) %>%
-  rowwise() %>%
-  mutate(
-    peak_memory_gb = peak_memory_mb / 1024
-  ) %>%
-  ungroup() %>%
-  select(
-    method_name,
-    dataset_name,
-    mean_score,
-    any_of(metric_info$metric_id),
-    duration_sec,
-    cpu_pct,
-    peak_memory_gb
-  )
+res_tib <- if (has_resources) {
+  res_tib1 %>%
+    arrange(desc(mean_score)) %>%
+    rowwise() %>%
+    mutate(
+      peak_memory_gb = peak_memory_mb / 1024
+    ) %>%
+    ungroup() %>%
+    select(
+      method_name,
+      dataset_name,
+      mean_score,
+      any_of(metric_info$metric_id),
+      duration_sec,
+      cpu_pct,
+      peak_memory_gb
+    )
+} else {
+  res_tib1 %>%
+    arrange(desc(mean_score)) %>%
+    select(
+      method_name,
+      dataset_name,
+      mean_score,
+      any_of(metric_info$metric_id),
+    )
+}
 
 res_met <- metric_info %>%
   filter(metric_id %in% colnames(res_tib))
@@ -48,11 +85,12 @@ res_cn <- c(
   "Method",
   "Dataset",
   "Mean score",
-  res_met$metric_name,
-  "Runtime (s)",
-  "CPU (%)",
-  "Memory (GB)"
+  res_met$metric_name
 )
+
+if (has_resources) {
+  res_cn <- c(res_cn, "Runtime (s)", "CPU (%)", "Memory (GB)")
+}
 
 dt <- DT::datatable(
   res_tib,
@@ -63,7 +101,7 @@ dt <- DT::datatable(
     columnDefs = list(
       list(
         searchPanes = list(show = FALSE),
-        targets = seq(2, ncol(res_tib)-1)
+        targets = seq(2, ncol(res_tib) - 1)
       )
     ),
     searchPanes = list(
@@ -87,9 +125,16 @@ dt <- DT::datatable(
   rownames = FALSE,
   extensions = c("Select", "SearchPanes")
 ) %>%
-  DT::formatRound(c("peak_memory_gb", "mean_score", res_met$metric_id), digits = 2) %>%
-  DT::formatRound(c("cpu_pct", "duration_sec"), digits = 0) %>%
+  DT::formatRound(c("mean_score", res_met$metric_id), digits = 2) %>%
   DT::formatStyle(seq_len(ncol(res_tib)), fontSize = "80%")
+
+if (has_resources) {
+  dt <- dt %>%
+    DT::formatRound(
+      c("peak_memory_gb", "mean_score", res_met$metric_id), digits = 2
+    ) %>%
+    DT::formatRound(c("cpu_pct", "duration_sec"), digits = 0)
+}
 
 dt
 ```

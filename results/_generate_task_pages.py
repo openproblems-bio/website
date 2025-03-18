@@ -43,3 +43,8 @@ params <- list(data_dir = "./data")
     print(f"Write to {index_qmd}", flush=True)
     with index_qmd.open("w", encoding ="utf-8") as f:
         f.write(content)
+
+    library = task_info_file.parent.parent / "library.bib"
+    if not library.exists():
+        print(f"Create {library}", flush=True)
+        library.write_text("")

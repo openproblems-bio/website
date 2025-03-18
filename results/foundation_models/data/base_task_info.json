@@ -1,0 +1,21 @@
+{
+  "task_id": "task_foundation_models",
+  "commit_sha": null,
+  "task_name": "Foundation models",
+  "task_summary": "Modelling of single-cells to perform multiple tasks using",
+  "task_description": "Recent developments in deep-learning have led to the creation of several 'foundation models' for single-cell data. These are large models that have been trained on data from millions of cells and am to fully capture the variability in the single-cell landscape. Typically, they use a transformer architecture [@szalata2024transformers] and undergo self-supervised pre-training using masking of parts of the input data. Trained foundation models can then be applied to a variety of downstream tasks, either by directly feeding new data into the model or by fine-tuning to better fit a new dataset or to produce a specific output. The general nature of single-cell foundation models and the large amount of data they have been trained on makes them potentially powerful tools for single-cell analysis but their performance is yet to be fully established.\n\nOpen Problems builds on existing evaluations [@boiarsky2023foundationmodels; @liu2024foundationmodels] of foundation models by incorporating them into our continuous benchmarking framework.",
+  "repo": "https://github.com/openproblems-bio/task_foundation_models",
+  "issue_tracker": "https://github.com/openproblems-bio/task_foundation_models/issues",
+  "authors": [
+    {
+      "name": "Robrecht Cannoodt",
+      "roles": ["author", "maintainer"],
+      "info": {
+        "github": "rcannood",
+        "orcid": "0000-0003-3641-729X"
+      }
+    }
+  ],
+  "version": "build_main",
+  "license": "MIT"
+}

@@ -1,6 +1,6 @@
 ```{r quality_control}
 #| echo: false
-qc_print <- qc %>% 
+qc_print <- qc %>%
   filter(severity > 0) %>%
   mutate(
     test = case_when(
@@ -14,7 +14,7 @@ qc_print <- qc %>%
   arrange(desc(severity_value), category, name)
 
 if (nrow(qc_print) > 0) {
-  qc_print %>% 
+  qc_print %>%
     transmute(
       Category = category,
       Name = name,
@@ -26,7 +26,7 @@ if (nrow(qc_print) > 0) {
     kable_styling() %>%
     kable_paper() %>%
     column_spec(
-      5, 
+      5,
       color = qc_print$color
     ) %>%
     column_spec(

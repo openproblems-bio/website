@@ -1,0 +1,69 @@
+{
+  "task_id": "task_batch_integration",
+  "commit_sha": null,
+  "task_name": "Batch Integration",
+  "task_summary": "Remove unwanted batch effects from scRNA-seq data while retaining biologically meaningful variation.",
+  "task_description": "As single-cell technologies advance, single-cell datasets are growing both in size and complexity.\nEspecially in consortia such as the Human Cell Atlas, individual studies combine data from multiple labs, each sequencing multiple individuals possibly with different technologies.\nThis gives rise to complex batch effects in the data that must be computationally removed to perform a joint analysis.\nThese batch integration methods must remove the batch effect while not removing relevant biological information.\nCurrently, over 200 tools exist that aim to remove batch effects scRNA-seq datasets [@zappia2018exploring].\nThese methods balance the removal of batch effects with the conservation of nuanced biological information in different ways.\nThis abundance of tools has complicated batch integration method choice, leading to several benchmarks on this topic [@luecken2022benchmarking; @tran2020benchmark; @chazarragil2021flexible; @mereu2020benchmarking].\nYet, benchmarks use different metrics, method implementations and datasets. Here we build a living benchmarking task for batch integration methods with the vision of improving the consistency of method evaluation.\n\nIn this task we evaluate batch integration methods on their ability to remove batch effects in the data while conserving variation attributed to biological effects.\nAs input, methods require either normalised or unnormalised data with multiple batches and consistent cell type labels.\nThe batch integrated output can be a feature matrix, a low dimensional embedding and/or a neighbourhood graph.\nThe respective batch-integrated representation is then evaluated using sets of metrics that capture how well batch effects are removed and whether biological variance is conserved.\nWe have based this particular task on the latest, and most extensive benchmark of single-cell data integration methods.\n",
+  "repo": "https://github.com/openproblems-bio/task_batch_integration",
+  "issue_tracker": "https://github.com/openproblems-bio/task_batch_integration/issues",
+  "authors": [
+    {
+      "name": "Michaela Mueller",
+      "roles": ["maintainer", "author"],
+      "info": {
+        "github": "mumichae",
+        "orcid": "0000-0002-1401-1785"
+      }
+    },
+    {
+      "name": "Malte Luecken",
+      "roles": "author",
+      "info": {
+        "github": "LuckyMD",
+        "orcid": "0000-0001-7464-7921"
+      }
+    },
+    {
+      "name": "Daniel Strobl",
+      "roles": "author",
+      "info": {
+        "github": "danielStrobl",
+        "orcid": "0000-0002-5516-7057"
+      }
+    },
+    {
+      "name": "Robrecht Cannoodt",
+      "roles": "contributor",
+      "info": {
+        "github": "rcannood",
+        "orcid": "0000-0003-3641-729X"
+      }
+    },
+    {
+      "name": "Scott Gigante",
+      "roles": "contributor",
+      "info": {
+        "github": "scottgigante",
+        "orcid": "0000-0002-4544-2764"
+      }
+    },
+    {
+      "name": "Kai Waldrant",
+      "roles": "contributor",
+      "info": {
+        "github": "KaiWaldrant",
+        "orcid": "0009-0003-8555-1361"
+      }
+    },
+    {
+      "name": "Nartin Kim",
+      "roles": "contributor",
+      "info": {
+        "github": "martinkim0",
+        "orcid": "0009-0003-8555-1361"
+      }
+    }
+  ],
+  "version": "build_main",
+  "license": "MIT"
+}
