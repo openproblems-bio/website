@@ -2,20 +2,46 @@
   "task_id": "task_cyto_batch_integration",
   "commit_sha": null,
   "task_name": "Cyto Batch Integration",
-  "task_summary": "A one sentence summary of purpose and methodology. Used for creating an overview tables.",
-  "task_description": "Provide a clear and concise description of your task, detailing the specific problem it aims\nto solve. Outline the input data types, the expected output, and any assumptions or constraints.\nBe sure to explain any terminology or concepts that are essential for understanding the task.\n\nExplain the motivation behind your proposed task. Describe the biological or computational \nproblem you aim to address and why it's important. Discuss the current state of research in\nthis area and any gaps or challenges that your task could help address. This section \nshould convince readers of the significance and relevance of your task.\n",
+  "task_summary": "Benchmarking of batch integration algorithms for cytometry data.",
+  "task_description": "Cytometry is a non-sequencing single cell profiling technique commonly used in clinical studies. \nIt is very sensitive to batch effects, which can lead to biases in the interpretation of the result. \nBatch integration algorithms are often used to mitigate this effect.\n\nIn this project, we are building a pipeline for reproducible and continuous benchmarking \nof batch integration algorithms for cytometry data.\nAs input, methods require cleaned and normalised (using arc-sinh or logicle transformation)\ndata with multiple batches, cell type labels, and biological subjects, with paired samples\nfrom a subject profiled across multiple batches.\nThe batch integrated output must be an integrated marker by cell matrix stored in \nAnndata format.\nAll markers in the input data must be returned, regardless of whether they were integrated or not.\nThis output is then evaluated using metrics that assess how well the batch effects\nwere removed and how much biological signals were preserved. \n",
   "repo": "https://github.com/openproblems-bio/task_cyto_batch_integration",
   "issue_tracker": "https://github.com/openproblems-bio/task_cyto_batch_integration/issues",
   "authors": [
     {
-      "name": "John Doe",
+      "name": "Luca Leomazzi",
       "roles": ["author", "maintainer"],
       "info": {
-        "github": "johndoe",
-        "orcid": "0000-0000-0000-0000",
-        "email": "john@doe.me",
-        "twitter": "johndoe",
-        "linkedin": "johndoe"
+        "github": "LuLeom"
+      }
+    },
+    {
+      "name": "Givanna Putri",
+      "roles": ["author", "maintainer"],
+      "info": {
+        "github": "ghar1821",
+        "orcid": "0000-0002-7399-8014"
+      }
+    },
+    {
+      "name": "Robrecht Cannoodt",
+      "roles": "author",
+      "info": {
+        "github": "rcannood",
+        "orcid": "0000-0003-3641-729X"
+      }
+    },
+    {
+      "name": "Katrien Quintelier",
+      "roles": "contributor",
+      "info": {
+        "github": "KatrienQ"
+      }
+    },
+    {
+      "name": "Sofie Van Gassen",
+      "roles": "contributor",
+      "info": {
+        "github": "SofieVG"
       }
     }
   ],
