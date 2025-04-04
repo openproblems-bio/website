@@ -22,6 +22,9 @@ To define benchmarking tasks, OpenProblems incorporates the principles of the Co
 
 {{< include ../_figures/_fig_task_structure.qmd >}}
 
+{{< include ../_figures/_fig_multiple_task_structure.qmd >}}
+
+
 AnnData, short for "Annotated Data", is a file format designed for handling annotated, high-dimensional biological data [@virshup2021anndataannotateddata]. In OpenProblems, AnnData serves as the standard data format for both input and output files of components, ensuring a consistent and seamless exchange of data between different components of the benchmarking pipelines.
 
 Viash is a meta-framework which allows generating modular {{< glossary Nextflow >}} components and workflows from Python and R scripts [@cannoodt2021viashfromscripts]. Viash components are used in OpenProblems for creating dataset loaders, dataset processors, methods, and metrics, enabling developers to focus on the core functionality of their components without worrying about the chosen pipeline framework (i.e. Nextflow).
