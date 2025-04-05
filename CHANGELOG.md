@@ -2,6 +2,8 @@
 
 ## MAJOR CHANGES
 
+* Update Dimensionality Reduction task to OpenProblems v2 results (PR #326).
+
 * Migrated the result scaling from R to JavaScript to allow dynamically updating the results (PR #332).
 
 ## MINOR CHANGES
