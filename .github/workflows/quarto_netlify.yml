@@ -107,6 +107,13 @@ jobs:
           dir: '_site'
           alias: "${{ env.BRANCH_NAME }}"
           message: 'Deploy preview ${{ github.ref }}'
+        
+      - name: Upload artifact
+        if: failure()
+        uses: actions/upload-artifact@v4
+        id: upload-artifact
+        with:
+          name: _site
 
       - name: Comment on PR (success)
         uses: thollander/actions-comment-pull-request@v2
@@ -122,6 +129,8 @@ jobs:
         with:
           message: |
             [![Deploy: failure](https://img.shields.io/badge/Deploy-failure-critical)](${{ steps.deploy_preview.outputs.logs }})
+
+            Artifacts are available for download [here](${{ steps.upload-artifact.outputs.artifact_url }})
           comment_tag: deploy_status
 
       - name: Comment on PR (actions failure)
@@ -130,5 +139,6 @@ jobs:
         with:
           message: |
             [![Deploy: failure](https://img.shields.io/badge/Deploy-failure-critical)](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}/jobs/${{github.job}})
+
+            Artifacts are available for download [here](${{ steps.upload-artifact.outputs.artifact_url }})
           comment_tag: deploy_status
-  
