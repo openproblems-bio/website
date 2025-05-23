@@ -93,7 +93,7 @@
         "task_id": "task_cyto_batch_integration", 
         "category": "Method info", 
         "name": "Pct 'paper_reference' missing", 
-        "value": 0.5454545454545454, 
+        "value": 0.5, 
         "severity": 2, 
         "severity_value": 3.0, 
         "code": "percent_missing(method_info, field)", 
@@ -243,51 +243,71 @@
         "task_id": "task_cyto_batch_integration", 
         "category": "Raw data", 
         "name": "Number of results", 
-        "value": 11, 
+        "value": 12, 
         "severity": 0, 
         "severity_value": 0.0, 
         "code": "len(results) == len(method_info) * len(metric_info) * len(dataset_info)", 
-        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: task_cyto_batch_integration\n  Number of results: 11\n  Number of methods: 11\n  Number of metrics: 8\n  Number of datasets: 1\n"
+        "message": "Number of results should be equal to #methods × #metrics × #datasets.\n  Task id: task_cyto_batch_integration\n  Number of results: 12\n  Number of methods: 12\n  Number of metrics: 11\n  Number of datasets: 1\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Raw results", 
-        "name": "Metric 'emd_mean_ct' %missing", 
+        "name": "Metric 'emd_mean_ct_horiz' %missing", 
         "value": 0.0, 
         "severity": 0, 
         "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_cyto_batch_integration\n  Metric id: emd_mean_ct\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_cyto_batch_integration\n  Metric id: emd_mean_ct_horiz\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Raw results", 
-        "name": "Metric 'emd_max_ct' %missing", 
+        "name": "Metric 'emd_max_ct_horiz' %missing", 
         "value": 0.0, 
         "severity": 0, 
         "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_cyto_batch_integration\n  Metric id: emd_max_ct\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_cyto_batch_integration\n  Metric id: emd_max_ct_horiz\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Raw results", 
-        "name": "Metric 'emd_mean_global' %missing", 
+        "name": "Metric 'emd_mean_global_horiz' %missing", 
         "value": 0.0, 
         "severity": 0, 
         "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_cyto_batch_integration\n  Metric id: emd_mean_global\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_cyto_batch_integration\n  Metric id: emd_mean_global_horiz\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Raw results", 
-        "name": "Metric 'emd_max_global' %missing", 
+        "name": "Metric 'emd_max_global_horiz' %missing", 
         "value": 0.0, 
         "severity": 0, 
         "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_cyto_batch_integration\n  Metric id: emd_max_global\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_cyto_batch_integration\n  Metric id: emd_max_global_horiz\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Raw results", 
+        "name": "Metric 'emd_mean_global_vert' %missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_cyto_batch_integration\n  Metric id: emd_mean_global_vert\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Raw results", 
+        "name": "Metric 'emd_max_global_vert' %missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_cyto_batch_integration\n  Metric id: emd_max_global_vert\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
@@ -328,6 +348,16 @@
         "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
         "message": "Percentage of missing results should be less than 10%.\n  Task id: task_cyto_batch_integration\n  Metric id: average_batch_r2_ct\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Raw results", 
+        "name": "Metric 'flowsom_mean_mapping_similarity' %missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_cyto_batch_integration\n  Metric id: flowsom_mean_mapping_similarity\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
@@ -392,12 +422,22 @@
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Raw results", 
-        "name": "Method 'perfect_integration' %missing", 
+        "name": "Method 'perfect_integration_horizontal' %missing", 
         "value": 0.0, 
         "severity": 0, 
         "severity_value": 0.0, 
         "code": "pct_missing <= .1", 
-        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_cyto_batch_integration\n  method id: perfect_integration\n  Percentage missing: 0%\n"
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_cyto_batch_integration\n  method id: perfect_integration_horizontal\n  Percentage missing: 0%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Raw results", 
+        "name": "Method 'perfect_integration_vertical' %missing", 
+        "value": 0.0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "pct_missing <= .1", 
+        "message": "Percentage of missing results should be less than 10%.\n  Task id: task_cyto_batch_integration\n  method id: perfect_integration_vertical\n  Percentage missing: 0%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
@@ -452,882 +492,1442 @@
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score shuffle_integration emd_mean_ct", 
-        "value": 0.0245, 
+        "name": "Worst score shuffle_integration emd_mean_ct_horiz", 
+        "value": 0.0241, 
         "severity": 0, 
-        "severity_value": -0.0245, 
+        "severity_value": -0.0241, 
         "code": "worst_score >= -1", 
-        "message": "Method shuffle_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_mean_ct\n  Worst score: 0.0245%\n"
+        "message": "Method shuffle_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_mean_ct_horiz\n  Worst score: 0.0241%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score shuffle_integration emd_mean_ct", 
-        "value": 0.0245, 
+        "name": "Best score shuffle_integration emd_mean_ct_horiz", 
+        "value": 0.0241, 
         "severity": 0, 
-        "severity_value": 0.01225, 
+        "severity_value": 0.01205, 
         "code": "best_score <= 2", 
-        "message": "Method shuffle_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_mean_ct\n  Best score: 0.0245%\n"
+        "message": "Method shuffle_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_mean_ct_horiz\n  Best score: 0.0241%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score shuffle_integration_by_batch emd_mean_ct", 
+        "name": "Worst score shuffle_integration_by_batch emd_mean_ct_horiz", 
         "value": 0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method shuffle_integration_by_batch performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_mean_ct\n  Worst score: 0%\n"
+        "message": "Method shuffle_integration_by_batch performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_mean_ct_horiz\n  Worst score: 0%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score shuffle_integration_by_batch emd_mean_ct", 
+        "name": "Best score shuffle_integration_by_batch emd_mean_ct_horiz", 
         "value": 0, 
         "severity": 0, 
         "severity_value": 0.0, 
         "code": "best_score <= 2", 
-        "message": "Method shuffle_integration_by_batch performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_mean_ct\n  Best score: 0%\n"
+        "message": "Method shuffle_integration_by_batch performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_mean_ct_horiz\n  Best score: 0%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score shuffle_integration_by_cell_type emd_mean_ct", 
-        "value": 0.7809, 
+        "name": "Worst score shuffle_integration_by_cell_type emd_mean_ct_horiz", 
+        "value": 0.78, 
         "severity": 0, 
-        "severity_value": -0.7809, 
+        "severity_value": -0.78, 
         "code": "worst_score >= -1", 
-        "message": "Method shuffle_integration_by_cell_type performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_mean_ct\n  Worst score: 0.7809%\n"
+        "message": "Method shuffle_integration_by_cell_type performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_mean_ct_horiz\n  Worst score: 0.78%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score shuffle_integration_by_cell_type emd_mean_ct", 
-        "value": 0.7809, 
+        "name": "Best score shuffle_integration_by_cell_type emd_mean_ct_horiz", 
+        "value": 0.78, 
         "severity": 0, 
-        "severity_value": 0.39045, 
+        "severity_value": 0.39, 
         "code": "best_score <= 2", 
-        "message": "Method shuffle_integration_by_cell_type performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_mean_ct\n  Best score: 0.7809%\n"
+        "message": "Method shuffle_integration_by_cell_type performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_mean_ct_horiz\n  Best score: 0.78%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score harmonypy emd_mean_ct", 
-        "value": 0.7862, 
+        "name": "Worst score harmonypy emd_mean_ct_horiz", 
+        "value": 0.7864, 
         "severity": 0, 
-        "severity_value": -0.7862, 
+        "severity_value": -0.7864, 
         "code": "worst_score >= -1", 
-        "message": "Method harmonypy performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_mean_ct\n  Worst score: 0.7862%\n"
+        "message": "Method harmonypy performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_mean_ct_horiz\n  Worst score: 0.7864%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score harmonypy emd_mean_ct", 
-        "value": 0.7862, 
+        "name": "Best score harmonypy emd_mean_ct_horiz", 
+        "value": 0.7864, 
         "severity": 0, 
-        "severity_value": 0.3931, 
+        "severity_value": 0.3932, 
         "code": "best_score <= 2", 
-        "message": "Method harmonypy performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_mean_ct\n  Best score: 0.7862%\n"
+        "message": "Method harmonypy performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_mean_ct_horiz\n  Best score: 0.7864%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score limma_remove_batch_effect emd_mean_ct", 
-        "value": 0.7721, 
+        "name": "Worst score limma_remove_batch_effect emd_mean_ct_horiz", 
+        "value": 0.7723, 
         "severity": 0, 
-        "severity_value": -0.7721, 
+        "severity_value": -0.7723, 
         "code": "worst_score >= -1", 
-        "message": "Method limma_remove_batch_effect performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_mean_ct\n  Worst score: 0.7721%\n"
+        "message": "Method limma_remove_batch_effect performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_mean_ct_horiz\n  Worst score: 0.7723%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score limma_remove_batch_effect emd_mean_ct", 
-        "value": 0.7721, 
+        "name": "Best score limma_remove_batch_effect emd_mean_ct_horiz", 
+        "value": 0.7723, 
         "severity": 0, 
-        "severity_value": 0.38605, 
+        "severity_value": 0.38615, 
         "code": "best_score <= 2", 
-        "message": "Method limma_remove_batch_effect performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_mean_ct\n  Best score: 0.7721%\n"
+        "message": "Method limma_remove_batch_effect performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_mean_ct_horiz\n  Best score: 0.7723%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score no_integration emd_mean_ct", 
-        "value": 0.7451, 
+        "name": "Worst score no_integration emd_mean_ct_horiz", 
+        "value": 0.7453, 
         "severity": 0, 
-        "severity_value": -0.7451, 
+        "severity_value": -0.7453, 
         "code": "worst_score >= -1", 
-        "message": "Method no_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_mean_ct\n  Worst score: 0.7451%\n"
+        "message": "Method no_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_mean_ct_horiz\n  Worst score: 0.7453%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score no_integration emd_mean_ct", 
-        "value": 0.7451, 
+        "name": "Best score no_integration emd_mean_ct_horiz", 
+        "value": 0.7453, 
         "severity": 0, 
-        "severity_value": 0.37255, 
+        "severity_value": 0.37265, 
         "code": "best_score <= 2", 
-        "message": "Method no_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_mean_ct\n  Best score: 0.7451%\n"
+        "message": "Method no_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_mean_ct_horiz\n  Best score: 0.7453%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score perfect_integration emd_mean_ct", 
+        "name": "Worst score perfect_integration_horizontal emd_mean_ct_horiz", 
         "value": 1, 
         "severity": 0, 
         "severity_value": -1.0, 
         "code": "worst_score >= -1", 
-        "message": "Method perfect_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration\n  Metric id: emd_mean_ct\n  Worst score: 1%\n"
+        "message": "Method perfect_integration_horizontal performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: emd_mean_ct_horiz\n  Worst score: 1%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score perfect_integration emd_mean_ct", 
+        "name": "Best score perfect_integration_horizontal emd_mean_ct_horiz", 
         "value": 1, 
         "severity": 0, 
         "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method perfect_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration\n  Metric id: emd_mean_ct\n  Best score: 1%\n"
+        "message": "Method perfect_integration_horizontal performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: emd_mean_ct_horiz\n  Best score: 1%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score combat emd_mean_ct", 
-        "value": 0.7765, 
+        "name": "Worst score perfect_integration_vertical emd_mean_ct_horiz", 
+        "value": 0.8783, 
         "severity": 0, 
-        "severity_value": -0.7765, 
+        "severity_value": -0.8783, 
         "code": "worst_score >= -1", 
-        "message": "Method combat performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_mean_ct\n  Worst score: 0.7765%\n"
+        "message": "Method perfect_integration_vertical performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: emd_mean_ct_horiz\n  Worst score: 0.8783%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score combat emd_mean_ct", 
-        "value": 0.7765, 
+        "name": "Best score perfect_integration_vertical emd_mean_ct_horiz", 
+        "value": 0.8783, 
         "severity": 0, 
-        "severity_value": 0.38825, 
+        "severity_value": 0.43915, 
         "code": "best_score <= 2", 
-        "message": "Method combat performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_mean_ct\n  Best score: 0.7765%\n"
+        "message": "Method perfect_integration_vertical performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: emd_mean_ct_horiz\n  Best score: 0.8783%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score cycombine_nocontrols emd_mean_ct", 
-        "value": 0.8229, 
+        "name": "Worst score combat emd_mean_ct_horiz", 
+        "value": 0.7766, 
         "severity": 0, 
-        "severity_value": -0.8229, 
+        "severity_value": -0.7766, 
         "code": "worst_score >= -1", 
-        "message": "Method cycombine_nocontrols performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_mean_ct\n  Worst score: 0.8229%\n"
+        "message": "Method combat performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_mean_ct_horiz\n  Worst score: 0.7766%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score cycombine_nocontrols emd_mean_ct", 
-        "value": 0.8229, 
+        "name": "Best score combat emd_mean_ct_horiz", 
+        "value": 0.7766, 
         "severity": 0, 
-        "severity_value": 0.41145, 
+        "severity_value": 0.3883, 
         "code": "best_score <= 2", 
-        "message": "Method cycombine_nocontrols performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_mean_ct\n  Best score: 0.8229%\n"
+        "message": "Method combat performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_mean_ct_horiz\n  Best score: 0.7766%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score gaussnorm emd_mean_ct", 
-        "value": 0.7422, 
+        "name": "Worst score cycombine_nocontrols emd_mean_ct_horiz", 
+        "value": 0.823, 
         "severity": 0, 
-        "severity_value": -0.7422, 
+        "severity_value": -0.823, 
         "code": "worst_score >= -1", 
-        "message": "Method gaussnorm performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_mean_ct\n  Worst score: 0.7422%\n"
+        "message": "Method cycombine_nocontrols performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_mean_ct_horiz\n  Worst score: 0.823%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score gaussnorm emd_mean_ct", 
-        "value": 0.7422, 
+        "name": "Best score cycombine_nocontrols emd_mean_ct_horiz", 
+        "value": 0.823, 
         "severity": 0, 
-        "severity_value": 0.3711, 
+        "severity_value": 0.4115, 
         "code": "best_score <= 2", 
-        "message": "Method gaussnorm performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_mean_ct\n  Best score: 0.7422%\n"
+        "message": "Method cycombine_nocontrols performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_mean_ct_horiz\n  Best score: 0.823%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score cytonorm_controls emd_mean_ct", 
-        "value": 0.8327, 
+        "name": "Worst score gaussnorm emd_mean_ct_horiz", 
+        "value": 0.7423, 
         "severity": 0, 
-        "severity_value": -0.8327, 
+        "severity_value": -0.7423, 
         "code": "worst_score >= -1", 
-        "message": "Method cytonorm_controls performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_mean_ct\n  Worst score: 0.8327%\n"
+        "message": "Method gaussnorm performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_mean_ct_horiz\n  Worst score: 0.7423%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score cytonorm_controls emd_mean_ct", 
-        "value": 0.8327, 
+        "name": "Best score gaussnorm emd_mean_ct_horiz", 
+        "value": 0.7423, 
         "severity": 0, 
-        "severity_value": 0.41635, 
+        "severity_value": 0.37115, 
         "code": "best_score <= 2", 
-        "message": "Method cytonorm_controls performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_mean_ct\n  Best score: 0.8327%\n"
+        "message": "Method gaussnorm performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_mean_ct_horiz\n  Best score: 0.7423%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score shuffle_integration emd_max_ct", 
-        "value": 0.0446, 
+        "name": "Worst score cytonorm_controls emd_mean_ct_horiz", 
+        "value": 0.8328, 
         "severity": 0, 
-        "severity_value": -0.0446, 
+        "severity_value": -0.8328, 
         "code": "worst_score >= -1", 
-        "message": "Method shuffle_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_max_ct\n  Worst score: 0.0446%\n"
+        "message": "Method cytonorm_controls performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_mean_ct_horiz\n  Worst score: 0.8328%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score shuffle_integration emd_max_ct", 
-        "value": 0.0446, 
+        "name": "Best score cytonorm_controls emd_mean_ct_horiz", 
+        "value": 0.8328, 
         "severity": 0, 
-        "severity_value": 0.0223, 
+        "severity_value": 0.4164, 
         "code": "best_score <= 2", 
-        "message": "Method shuffle_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_max_ct\n  Best score: 0.0446%\n"
+        "message": "Method cytonorm_controls performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_mean_ct_horiz\n  Best score: 0.8328%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score shuffle_integration_by_batch emd_max_ct", 
+        "name": "Worst score shuffle_integration emd_max_ct_horiz", 
+        "value": 0.0338, 
+        "severity": 0, 
+        "severity_value": -0.0338, 
+        "code": "worst_score >= -1", 
+        "message": "Method shuffle_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_max_ct_horiz\n  Worst score: 0.0338%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score shuffle_integration emd_max_ct_horiz", 
+        "value": 0.0338, 
+        "severity": 0, 
+        "severity_value": 0.0169, 
+        "code": "best_score <= 2", 
+        "message": "Method shuffle_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_max_ct_horiz\n  Best score: 0.0338%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score shuffle_integration_by_batch emd_max_ct_horiz", 
         "value": 0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method shuffle_integration_by_batch performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_max_ct\n  Worst score: 0%\n"
+        "message": "Method shuffle_integration_by_batch performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_max_ct_horiz\n  Worst score: 0%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score shuffle_integration_by_batch emd_max_ct", 
+        "name": "Best score shuffle_integration_by_batch emd_max_ct_horiz", 
         "value": 0, 
         "severity": 0, 
         "severity_value": 0.0, 
         "code": "best_score <= 2", 
-        "message": "Method shuffle_integration_by_batch performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_max_ct\n  Best score: 0%\n"
+        "message": "Method shuffle_integration_by_batch performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_max_ct_horiz\n  Best score: 0%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score shuffle_integration_by_cell_type emd_max_ct", 
+        "name": "Worst score shuffle_integration_by_cell_type emd_max_ct_horiz", 
+        "value": 0.5382, 
+        "severity": 0, 
+        "severity_value": -0.5382, 
+        "code": "worst_score >= -1", 
+        "message": "Method shuffle_integration_by_cell_type performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_max_ct_horiz\n  Worst score: 0.5382%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score shuffle_integration_by_cell_type emd_max_ct_horiz", 
+        "value": 0.5382, 
+        "severity": 0, 
+        "severity_value": 0.2691, 
+        "code": "best_score <= 2", 
+        "message": "Method shuffle_integration_by_cell_type performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_max_ct_horiz\n  Best score: 0.5382%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score harmonypy emd_max_ct_horiz", 
+        "value": 0.559, 
+        "severity": 0, 
+        "severity_value": -0.559, 
+        "code": "worst_score >= -1", 
+        "message": "Method harmonypy performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_max_ct_horiz\n  Worst score: 0.559%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score harmonypy emd_max_ct_horiz", 
+        "value": 0.559, 
+        "severity": 0, 
+        "severity_value": 0.2795, 
+        "code": "best_score <= 2", 
+        "message": "Method harmonypy performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_max_ct_horiz\n  Best score: 0.559%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score limma_remove_batch_effect emd_max_ct_horiz", 
+        "value": 0.5529, 
+        "severity": 0, 
+        "severity_value": -0.5529, 
+        "code": "worst_score >= -1", 
+        "message": "Method limma_remove_batch_effect performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_max_ct_horiz\n  Worst score: 0.5529%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score limma_remove_batch_effect emd_max_ct_horiz", 
+        "value": 0.5529, 
+        "severity": 0, 
+        "severity_value": 0.27645, 
+        "code": "best_score <= 2", 
+        "message": "Method limma_remove_batch_effect performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_max_ct_horiz\n  Best score: 0.5529%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score no_integration emd_max_ct_horiz", 
+        "value": 0.5373, 
+        "severity": 0, 
+        "severity_value": -0.5373, 
+        "code": "worst_score >= -1", 
+        "message": "Method no_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_max_ct_horiz\n  Worst score: 0.5373%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score no_integration emd_max_ct_horiz", 
+        "value": 0.5373, 
+        "severity": 0, 
+        "severity_value": 0.26865, 
+        "code": "best_score <= 2", 
+        "message": "Method no_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_max_ct_horiz\n  Best score: 0.5373%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score perfect_integration_horizontal emd_max_ct_horiz", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method perfect_integration_horizontal performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: emd_max_ct_horiz\n  Worst score: 1%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score perfect_integration_horizontal emd_max_ct_horiz", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method perfect_integration_horizontal performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: emd_max_ct_horiz\n  Best score: 1%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score perfect_integration_vertical emd_max_ct_horiz", 
+        "value": 0.5979, 
+        "severity": 0, 
+        "severity_value": -0.5979, 
+        "code": "worst_score >= -1", 
+        "message": "Method perfect_integration_vertical performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: emd_max_ct_horiz\n  Worst score: 0.5979%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score perfect_integration_vertical emd_max_ct_horiz", 
+        "value": 0.5979, 
+        "severity": 0, 
+        "severity_value": 0.29895, 
+        "code": "best_score <= 2", 
+        "message": "Method perfect_integration_vertical performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: emd_max_ct_horiz\n  Best score: 0.5979%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score combat emd_max_ct_horiz", 
+        "value": 0.5441, 
+        "severity": 0, 
+        "severity_value": -0.5441, 
+        "code": "worst_score >= -1", 
+        "message": "Method combat performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_max_ct_horiz\n  Worst score: 0.5441%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score combat emd_max_ct_horiz", 
+        "value": 0.5441, 
+        "severity": 0, 
+        "severity_value": 0.27205, 
+        "code": "best_score <= 2", 
+        "message": "Method combat performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_max_ct_horiz\n  Best score: 0.5441%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score cycombine_nocontrols emd_max_ct_horiz", 
+        "value": 0.5993, 
+        "severity": 0, 
+        "severity_value": -0.5993, 
+        "code": "worst_score >= -1", 
+        "message": "Method cycombine_nocontrols performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_max_ct_horiz\n  Worst score: 0.5993%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score cycombine_nocontrols emd_max_ct_horiz", 
+        "value": 0.5993, 
+        "severity": 0, 
+        "severity_value": 0.29965, 
+        "code": "best_score <= 2", 
+        "message": "Method cycombine_nocontrols performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_max_ct_horiz\n  Best score: 0.5993%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score gaussnorm emd_max_ct_horiz", 
         "value": 0.54, 
         "severity": 0, 
         "severity_value": -0.54, 
         "code": "worst_score >= -1", 
-        "message": "Method shuffle_integration_by_cell_type performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_max_ct\n  Worst score: 0.54%\n"
+        "message": "Method gaussnorm performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_max_ct_horiz\n  Worst score: 0.54%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score shuffle_integration_by_cell_type emd_max_ct", 
+        "name": "Best score gaussnorm emd_max_ct_horiz", 
         "value": 0.54, 
         "severity": 0, 
         "severity_value": 0.27, 
         "code": "best_score <= 2", 
-        "message": "Method shuffle_integration_by_cell_type performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_max_ct\n  Best score: 0.54%\n"
+        "message": "Method gaussnorm performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_max_ct_horiz\n  Best score: 0.54%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score harmonypy emd_max_ct", 
-        "value": 0.5606, 
+        "name": "Worst score cytonorm_controls emd_max_ct_horiz", 
+        "value": 0.6814, 
         "severity": 0, 
-        "severity_value": -0.5606, 
+        "severity_value": -0.6814, 
         "code": "worst_score >= -1", 
-        "message": "Method harmonypy performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_max_ct\n  Worst score: 0.5606%\n"
+        "message": "Method cytonorm_controls performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_max_ct_horiz\n  Worst score: 0.6814%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score harmonypy emd_max_ct", 
-        "value": 0.5606, 
+        "name": "Best score cytonorm_controls emd_max_ct_horiz", 
+        "value": 0.6814, 
         "severity": 0, 
-        "severity_value": 0.2803, 
+        "severity_value": 0.3407, 
         "code": "best_score <= 2", 
-        "message": "Method harmonypy performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_max_ct\n  Best score: 0.5606%\n"
+        "message": "Method cytonorm_controls performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_max_ct_horiz\n  Best score: 0.6814%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score limma_remove_batch_effect emd_max_ct", 
-        "value": 0.5546, 
+        "name": "Worst score shuffle_integration emd_mean_global_horiz", 
+        "value": 0.2001, 
         "severity": 0, 
-        "severity_value": -0.5546, 
+        "severity_value": -0.2001, 
         "code": "worst_score >= -1", 
-        "message": "Method limma_remove_batch_effect performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_max_ct\n  Worst score: 0.5546%\n"
+        "message": "Method shuffle_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_mean_global_horiz\n  Worst score: 0.2001%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score limma_remove_batch_effect emd_max_ct", 
-        "value": 0.5546, 
+        "name": "Best score shuffle_integration emd_mean_global_horiz", 
+        "value": 0.2001, 
         "severity": 0, 
-        "severity_value": 0.2773, 
+        "severity_value": 0.10005, 
         "code": "best_score <= 2", 
-        "message": "Method limma_remove_batch_effect performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_max_ct\n  Best score: 0.5546%\n"
+        "message": "Method shuffle_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_mean_global_horiz\n  Best score: 0.2001%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score no_integration emd_max_ct", 
-        "value": 0.5391, 
-        "severity": 0, 
-        "severity_value": -0.5391, 
-        "code": "worst_score >= -1", 
-        "message": "Method no_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_max_ct\n  Worst score: 0.5391%\n"
-    }, 
-    {
-        "task_id": "task_cyto_batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score no_integration emd_max_ct", 
-        "value": 0.5391, 
-        "severity": 0, 
-        "severity_value": 0.26955, 
-        "code": "best_score <= 2", 
-        "message": "Method no_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_max_ct\n  Best score: 0.5391%\n"
-    }, 
-    {
-        "task_id": "task_cyto_batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score perfect_integration emd_max_ct", 
-        "value": 1, 
-        "severity": 0, 
-        "severity_value": -1.0, 
-        "code": "worst_score >= -1", 
-        "message": "Method perfect_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration\n  Metric id: emd_max_ct\n  Worst score: 1%\n"
-    }, 
-    {
-        "task_id": "task_cyto_batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score perfect_integration emd_max_ct", 
-        "value": 1, 
-        "severity": 0, 
-        "severity_value": 0.5, 
-        "code": "best_score <= 2", 
-        "message": "Method perfect_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration\n  Metric id: emd_max_ct\n  Best score: 1%\n"
-    }, 
-    {
-        "task_id": "task_cyto_batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score combat emd_max_ct", 
-        "value": 0.5458, 
-        "severity": 0, 
-        "severity_value": -0.5458, 
-        "code": "worst_score >= -1", 
-        "message": "Method combat performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_max_ct\n  Worst score: 0.5458%\n"
-    }, 
-    {
-        "task_id": "task_cyto_batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score combat emd_max_ct", 
-        "value": 0.5458, 
-        "severity": 0, 
-        "severity_value": 0.2729, 
-        "code": "best_score <= 2", 
-        "message": "Method combat performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_max_ct\n  Best score: 0.5458%\n"
-    }, 
-    {
-        "task_id": "task_cyto_batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score cycombine_nocontrols emd_max_ct", 
-        "value": 0.6009, 
-        "severity": 0, 
-        "severity_value": -0.6009, 
-        "code": "worst_score >= -1", 
-        "message": "Method cycombine_nocontrols performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_max_ct\n  Worst score: 0.6009%\n"
-    }, 
-    {
-        "task_id": "task_cyto_batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score cycombine_nocontrols emd_max_ct", 
-        "value": 0.6009, 
-        "severity": 0, 
-        "severity_value": 0.30045, 
-        "code": "best_score <= 2", 
-        "message": "Method cycombine_nocontrols performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_max_ct\n  Best score: 0.6009%\n"
-    }, 
-    {
-        "task_id": "task_cyto_batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score gaussnorm emd_max_ct", 
-        "value": 0.5418, 
-        "severity": 0, 
-        "severity_value": -0.5418, 
-        "code": "worst_score >= -1", 
-        "message": "Method gaussnorm performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_max_ct\n  Worst score: 0.5418%\n"
-    }, 
-    {
-        "task_id": "task_cyto_batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score gaussnorm emd_max_ct", 
-        "value": 0.5418, 
-        "severity": 0, 
-        "severity_value": 0.2709, 
-        "code": "best_score <= 2", 
-        "message": "Method gaussnorm performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_max_ct\n  Best score: 0.5418%\n"
-    }, 
-    {
-        "task_id": "task_cyto_batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score cytonorm_controls emd_max_ct", 
-        "value": 0.6826, 
-        "severity": 0, 
-        "severity_value": -0.6826, 
-        "code": "worst_score >= -1", 
-        "message": "Method cytonorm_controls performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_max_ct\n  Worst score: 0.6826%\n"
-    }, 
-    {
-        "task_id": "task_cyto_batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score cytonorm_controls emd_max_ct", 
-        "value": 0.6826, 
-        "severity": 0, 
-        "severity_value": 0.3413, 
-        "code": "best_score <= 2", 
-        "message": "Method cytonorm_controls performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_max_ct\n  Best score: 0.6826%\n"
-    }, 
-    {
-        "task_id": "task_cyto_batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score shuffle_integration emd_mean_global", 
-        "value": 0.1979, 
-        "severity": 0, 
-        "severity_value": -0.1979, 
-        "code": "worst_score >= -1", 
-        "message": "Method shuffle_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_mean_global\n  Worst score: 0.1979%\n"
-    }, 
-    {
-        "task_id": "task_cyto_batch_integration", 
-        "category": "Scaling", 
-        "name": "Best score shuffle_integration emd_mean_global", 
-        "value": 0.1979, 
-        "severity": 0, 
-        "severity_value": 0.09895, 
-        "code": "best_score <= 2", 
-        "message": "Method shuffle_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_mean_global\n  Best score: 0.1979%\n"
-    }, 
-    {
-        "task_id": "task_cyto_batch_integration", 
-        "category": "Scaling", 
-        "name": "Worst score shuffle_integration_by_batch emd_mean_global", 
+        "name": "Worst score shuffle_integration_by_batch emd_mean_global_horiz", 
         "value": 0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method shuffle_integration_by_batch performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_mean_global\n  Worst score: 0%\n"
+        "message": "Method shuffle_integration_by_batch performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_mean_global_horiz\n  Worst score: 0%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score shuffle_integration_by_batch emd_mean_global", 
+        "name": "Best score shuffle_integration_by_batch emd_mean_global_horiz", 
         "value": 0, 
         "severity": 0, 
         "severity_value": 0.0, 
         "code": "best_score <= 2", 
-        "message": "Method shuffle_integration_by_batch performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_mean_global\n  Best score: 0%\n"
+        "message": "Method shuffle_integration_by_batch performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_mean_global_horiz\n  Best score: 0%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score shuffle_integration_by_cell_type emd_mean_global", 
-        "value": 0.5178, 
+        "name": "Worst score shuffle_integration_by_cell_type emd_mean_global_horiz", 
+        "value": 0.518, 
         "severity": 0, 
-        "severity_value": -0.5178, 
+        "severity_value": -0.518, 
         "code": "worst_score >= -1", 
-        "message": "Method shuffle_integration_by_cell_type performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_mean_global\n  Worst score: 0.5178%\n"
+        "message": "Method shuffle_integration_by_cell_type performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_mean_global_horiz\n  Worst score: 0.518%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score shuffle_integration_by_cell_type emd_mean_global", 
-        "value": 0.5178, 
+        "name": "Best score shuffle_integration_by_cell_type emd_mean_global_horiz", 
+        "value": 0.518, 
         "severity": 0, 
-        "severity_value": 0.2589, 
+        "severity_value": 0.259, 
         "code": "best_score <= 2", 
-        "message": "Method shuffle_integration_by_cell_type performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_mean_global\n  Best score: 0.5178%\n"
+        "message": "Method shuffle_integration_by_cell_type performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_mean_global_horiz\n  Best score: 0.518%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score harmonypy emd_mean_global", 
-        "value": 0.5995, 
+        "name": "Worst score harmonypy emd_mean_global_horiz", 
+        "value": 0.6002, 
         "severity": 0, 
-        "severity_value": -0.5995, 
+        "severity_value": -0.6002, 
         "code": "worst_score >= -1", 
-        "message": "Method harmonypy performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_mean_global\n  Worst score: 0.5995%\n"
+        "message": "Method harmonypy performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_mean_global_horiz\n  Worst score: 0.6002%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score harmonypy emd_mean_global", 
-        "value": 0.5995, 
+        "name": "Best score harmonypy emd_mean_global_horiz", 
+        "value": 0.6002, 
         "severity": 0, 
-        "severity_value": 0.29975, 
+        "severity_value": 0.3001, 
         "code": "best_score <= 2", 
-        "message": "Method harmonypy performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_mean_global\n  Best score: 0.5995%\n"
+        "message": "Method harmonypy performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_mean_global_horiz\n  Best score: 0.6002%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score limma_remove_batch_effect emd_mean_global", 
-        "value": 0.5889, 
+        "name": "Worst score limma_remove_batch_effect emd_mean_global_horiz", 
+        "value": 0.5896, 
         "severity": 0, 
-        "severity_value": -0.5889, 
+        "severity_value": -0.5896, 
         "code": "worst_score >= -1", 
-        "message": "Method limma_remove_batch_effect performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_mean_global\n  Worst score: 0.5889%\n"
+        "message": "Method limma_remove_batch_effect performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_mean_global_horiz\n  Worst score: 0.5896%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score limma_remove_batch_effect emd_mean_global", 
-        "value": 0.5889, 
+        "name": "Best score limma_remove_batch_effect emd_mean_global_horiz", 
+        "value": 0.5896, 
         "severity": 0, 
-        "severity_value": 0.29445, 
+        "severity_value": 0.2948, 
         "code": "best_score <= 2", 
-        "message": "Method limma_remove_batch_effect performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_mean_global\n  Best score: 0.5889%\n"
+        "message": "Method limma_remove_batch_effect performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_mean_global_horiz\n  Best score: 0.5896%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score no_integration emd_mean_global", 
-        "value": 0.3608, 
+        "name": "Worst score no_integration emd_mean_global_horiz", 
+        "value": 0.3619, 
         "severity": 0, 
-        "severity_value": -0.3608, 
+        "severity_value": -0.3619, 
         "code": "worst_score >= -1", 
-        "message": "Method no_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_mean_global\n  Worst score: 0.3608%\n"
+        "message": "Method no_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_mean_global_horiz\n  Worst score: 0.3619%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score no_integration emd_mean_global", 
-        "value": 0.3608, 
+        "name": "Best score no_integration emd_mean_global_horiz", 
+        "value": 0.3619, 
         "severity": 0, 
-        "severity_value": 0.1804, 
+        "severity_value": 0.18095, 
         "code": "best_score <= 2", 
-        "message": "Method no_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_mean_global\n  Best score: 0.3608%\n"
+        "message": "Method no_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_mean_global_horiz\n  Best score: 0.3619%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score perfect_integration emd_mean_global", 
+        "name": "Worst score perfect_integration_horizontal emd_mean_global_horiz", 
         "value": 1, 
         "severity": 0, 
         "severity_value": -1.0, 
         "code": "worst_score >= -1", 
-        "message": "Method perfect_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration\n  Metric id: emd_mean_global\n  Worst score: 1%\n"
+        "message": "Method perfect_integration_horizontal performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: emd_mean_global_horiz\n  Worst score: 1%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score perfect_integration emd_mean_global", 
+        "name": "Best score perfect_integration_horizontal emd_mean_global_horiz", 
         "value": 1, 
         "severity": 0, 
         "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method perfect_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration\n  Metric id: emd_mean_global\n  Best score: 1%\n"
+        "message": "Method perfect_integration_horizontal performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: emd_mean_global_horiz\n  Best score: 1%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score combat emd_mean_global", 
-        "value": 0.6011, 
+        "name": "Worst score perfect_integration_vertical emd_mean_global_horiz", 
+        "value": 0.6847, 
         "severity": 0, 
-        "severity_value": -0.6011, 
+        "severity_value": -0.6847, 
         "code": "worst_score >= -1", 
-        "message": "Method combat performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_mean_global\n  Worst score: 0.6011%\n"
+        "message": "Method perfect_integration_vertical performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: emd_mean_global_horiz\n  Worst score: 0.6847%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score combat emd_mean_global", 
-        "value": 0.6011, 
+        "name": "Best score perfect_integration_vertical emd_mean_global_horiz", 
+        "value": 0.6847, 
         "severity": 0, 
-        "severity_value": 0.30055, 
+        "severity_value": 0.34235, 
         "code": "best_score <= 2", 
-        "message": "Method combat performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_mean_global\n  Best score: 0.6011%\n"
+        "message": "Method perfect_integration_vertical performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: emd_mean_global_horiz\n  Best score: 0.6847%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score cycombine_nocontrols emd_mean_global", 
-        "value": 0.5821, 
+        "name": "Worst score combat emd_mean_global_horiz", 
+        "value": 0.6018, 
         "severity": 0, 
-        "severity_value": -0.5821, 
+        "severity_value": -0.6018, 
         "code": "worst_score >= -1", 
-        "message": "Method cycombine_nocontrols performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_mean_global\n  Worst score: 0.5821%\n"
+        "message": "Method combat performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_mean_global_horiz\n  Worst score: 0.6018%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score cycombine_nocontrols emd_mean_global", 
-        "value": 0.5821, 
+        "name": "Best score combat emd_mean_global_horiz", 
+        "value": 0.6018, 
         "severity": 0, 
-        "severity_value": 0.29105, 
+        "severity_value": 0.3009, 
         "code": "best_score <= 2", 
-        "message": "Method cycombine_nocontrols performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_mean_global\n  Best score: 0.5821%\n"
+        "message": "Method combat performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_mean_global_horiz\n  Best score: 0.6018%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score gaussnorm emd_mean_global", 
-        "value": 0.4566, 
+        "name": "Worst score cycombine_nocontrols emd_mean_global_horiz", 
+        "value": 0.5829, 
         "severity": 0, 
-        "severity_value": -0.4566, 
+        "severity_value": -0.5829, 
         "code": "worst_score >= -1", 
-        "message": "Method gaussnorm performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_mean_global\n  Worst score: 0.4566%\n"
+        "message": "Method cycombine_nocontrols performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_mean_global_horiz\n  Worst score: 0.5829%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score gaussnorm emd_mean_global", 
-        "value": 0.4566, 
+        "name": "Best score cycombine_nocontrols emd_mean_global_horiz", 
+        "value": 0.5829, 
         "severity": 0, 
-        "severity_value": 0.2283, 
+        "severity_value": 0.29145, 
         "code": "best_score <= 2", 
-        "message": "Method gaussnorm performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_mean_global\n  Best score: 0.4566%\n"
+        "message": "Method cycombine_nocontrols performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_mean_global_horiz\n  Best score: 0.5829%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score cytonorm_controls emd_mean_global", 
-        "value": 0.6438, 
+        "name": "Worst score gaussnorm emd_mean_global_horiz", 
+        "value": 0.4575, 
         "severity": 0, 
-        "severity_value": -0.6438, 
+        "severity_value": -0.4575, 
         "code": "worst_score >= -1", 
-        "message": "Method cytonorm_controls performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_mean_global\n  Worst score: 0.6438%\n"
+        "message": "Method gaussnorm performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_mean_global_horiz\n  Worst score: 0.4575%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score cytonorm_controls emd_mean_global", 
-        "value": 0.6438, 
+        "name": "Best score gaussnorm emd_mean_global_horiz", 
+        "value": 0.4575, 
         "severity": 0, 
-        "severity_value": 0.3219, 
+        "severity_value": 0.22875, 
         "code": "best_score <= 2", 
-        "message": "Method cytonorm_controls performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_mean_global\n  Best score: 0.6438%\n"
+        "message": "Method gaussnorm performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_mean_global_horiz\n  Best score: 0.4575%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score shuffle_integration emd_max_global", 
-        "value": 0.1312, 
+        "name": "Worst score cytonorm_controls emd_mean_global_horiz", 
+        "value": 0.6444, 
         "severity": 0, 
-        "severity_value": -0.1312, 
+        "severity_value": -0.6444, 
         "code": "worst_score >= -1", 
-        "message": "Method shuffle_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_max_global\n  Worst score: 0.1312%\n"
+        "message": "Method cytonorm_controls performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_mean_global_horiz\n  Worst score: 0.6444%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score shuffle_integration emd_max_global", 
-        "value": 0.1312, 
+        "name": "Best score cytonorm_controls emd_mean_global_horiz", 
+        "value": 0.6444, 
         "severity": 0, 
-        "severity_value": 0.0656, 
+        "severity_value": 0.3222, 
         "code": "best_score <= 2", 
-        "message": "Method shuffle_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_max_global\n  Best score: 0.1312%\n"
+        "message": "Method cytonorm_controls performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_mean_global_horiz\n  Best score: 0.6444%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score shuffle_integration_by_batch emd_max_global", 
+        "name": "Worst score shuffle_integration emd_max_global_horiz", 
+        "value": 0.1315, 
+        "severity": 0, 
+        "severity_value": -0.1315, 
+        "code": "worst_score >= -1", 
+        "message": "Method shuffle_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_max_global_horiz\n  Worst score: 0.1315%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score shuffle_integration emd_max_global_horiz", 
+        "value": 0.1315, 
+        "severity": 0, 
+        "severity_value": 0.06575, 
+        "code": "best_score <= 2", 
+        "message": "Method shuffle_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_max_global_horiz\n  Best score: 0.1315%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score shuffle_integration_by_batch emd_max_global_horiz", 
         "value": 0, 
         "severity": 0, 
         "severity_value": -0.0, 
         "code": "worst_score >= -1", 
-        "message": "Method shuffle_integration_by_batch performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_max_global\n  Worst score: 0%\n"
+        "message": "Method shuffle_integration_by_batch performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_max_global_horiz\n  Worst score: 0%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score shuffle_integration_by_batch emd_max_global", 
+        "name": "Best score shuffle_integration_by_batch emd_max_global_horiz", 
         "value": 0, 
         "severity": 0, 
         "severity_value": 0.0, 
         "code": "best_score <= 2", 
-        "message": "Method shuffle_integration_by_batch performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_max_global\n  Best score: 0%\n"
+        "message": "Method shuffle_integration_by_batch performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_max_global_horiz\n  Best score: 0%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score shuffle_integration_by_cell_type emd_max_global", 
-        "value": 0.5831, 
+        "name": "Worst score shuffle_integration_by_cell_type emd_max_global_horiz", 
+        "value": 0.583, 
         "severity": 0, 
-        "severity_value": -0.5831, 
+        "severity_value": -0.583, 
         "code": "worst_score >= -1", 
-        "message": "Method shuffle_integration_by_cell_type performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_max_global\n  Worst score: 0.5831%\n"
+        "message": "Method shuffle_integration_by_cell_type performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_max_global_horiz\n  Worst score: 0.583%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score shuffle_integration_by_cell_type emd_max_global", 
-        "value": 0.5831, 
+        "name": "Best score shuffle_integration_by_cell_type emd_max_global_horiz", 
+        "value": 0.583, 
         "severity": 0, 
-        "severity_value": 0.29155, 
+        "severity_value": 0.2915, 
         "code": "best_score <= 2", 
-        "message": "Method shuffle_integration_by_cell_type performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_max_global\n  Best score: 0.5831%\n"
+        "message": "Method shuffle_integration_by_cell_type performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_max_global_horiz\n  Best score: 0.583%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score harmonypy emd_max_global", 
-        "value": 0.5861, 
+        "name": "Worst score harmonypy emd_max_global_horiz", 
+        "value": 0.5859, 
         "severity": 0, 
-        "severity_value": -0.5861, 
+        "severity_value": -0.5859, 
         "code": "worst_score >= -1", 
-        "message": "Method harmonypy performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_max_global\n  Worst score: 0.5861%\n"
+        "message": "Method harmonypy performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_max_global_horiz\n  Worst score: 0.5859%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score harmonypy emd_max_global", 
-        "value": 0.5861, 
+        "name": "Best score harmonypy emd_max_global_horiz", 
+        "value": 0.5859, 
         "severity": 0, 
-        "severity_value": 0.29305, 
+        "severity_value": 0.29295, 
         "code": "best_score <= 2", 
-        "message": "Method harmonypy performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_max_global\n  Best score: 0.5861%\n"
+        "message": "Method harmonypy performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_max_global_horiz\n  Best score: 0.5859%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score limma_remove_batch_effect emd_max_global", 
-        "value": 0.5724, 
+        "name": "Worst score limma_remove_batch_effect emd_max_global_horiz", 
+        "value": 0.5721, 
         "severity": 0, 
-        "severity_value": -0.5724, 
+        "severity_value": -0.5721, 
         "code": "worst_score >= -1", 
-        "message": "Method limma_remove_batch_effect performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_max_global\n  Worst score: 0.5724%\n"
+        "message": "Method limma_remove_batch_effect performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_max_global_horiz\n  Worst score: 0.5721%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score limma_remove_batch_effect emd_max_global", 
-        "value": 0.5724, 
+        "name": "Best score limma_remove_batch_effect emd_max_global_horiz", 
+        "value": 0.5721, 
         "severity": 0, 
-        "severity_value": 0.2862, 
+        "severity_value": 0.28605, 
         "code": "best_score <= 2", 
-        "message": "Method limma_remove_batch_effect performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_max_global\n  Best score: 0.5724%\n"
+        "message": "Method limma_remove_batch_effect performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_max_global_horiz\n  Best score: 0.5721%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score no_integration emd_max_global", 
-        "value": 0.2374, 
+        "name": "Worst score no_integration emd_max_global_horiz", 
+        "value": 0.2369, 
         "severity": 0, 
-        "severity_value": -0.2374, 
+        "severity_value": -0.2369, 
         "code": "worst_score >= -1", 
-        "message": "Method no_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_max_global\n  Worst score: 0.2374%\n"
+        "message": "Method no_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_max_global_horiz\n  Worst score: 0.2369%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score no_integration emd_max_global", 
-        "value": 0.2374, 
+        "name": "Best score no_integration emd_max_global_horiz", 
+        "value": 0.2369, 
         "severity": 0, 
-        "severity_value": 0.1187, 
+        "severity_value": 0.11845, 
         "code": "best_score <= 2", 
-        "message": "Method no_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_max_global\n  Best score: 0.2374%\n"
+        "message": "Method no_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_max_global_horiz\n  Best score: 0.2369%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score perfect_integration emd_max_global", 
+        "name": "Worst score perfect_integration_horizontal emd_max_global_horiz", 
         "value": 1, 
         "severity": 0, 
         "severity_value": -1.0, 
         "code": "worst_score >= -1", 
-        "message": "Method perfect_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration\n  Metric id: emd_max_global\n  Worst score: 1%\n"
+        "message": "Method perfect_integration_horizontal performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: emd_max_global_horiz\n  Worst score: 1%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score perfect_integration emd_max_global", 
+        "name": "Best score perfect_integration_horizontal emd_max_global_horiz", 
         "value": 1, 
         "severity": 0, 
         "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method perfect_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration\n  Metric id: emd_max_global\n  Best score: 1%\n"
+        "message": "Method perfect_integration_horizontal performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: emd_max_global_horiz\n  Best score: 1%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score combat emd_max_global", 
-        "value": 0.5298, 
+        "name": "Worst score perfect_integration_vertical emd_max_global_horiz", 
+        "value": 0.2369, 
         "severity": 0, 
-        "severity_value": -0.5298, 
+        "severity_value": -0.2369, 
         "code": "worst_score >= -1", 
-        "message": "Method combat performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_max_global\n  Worst score: 0.5298%\n"
+        "message": "Method perfect_integration_vertical performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: emd_max_global_horiz\n  Worst score: 0.2369%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score combat emd_max_global", 
-        "value": 0.5298, 
+        "name": "Best score perfect_integration_vertical emd_max_global_horiz", 
+        "value": 0.2369, 
         "severity": 0, 
-        "severity_value": 0.2649, 
+        "severity_value": 0.11845, 
         "code": "best_score <= 2", 
-        "message": "Method combat performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_max_global\n  Best score: 0.5298%\n"
+        "message": "Method perfect_integration_vertical performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: emd_max_global_horiz\n  Best score: 0.2369%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score cycombine_nocontrols emd_max_global", 
-        "value": 0.5339, 
+        "name": "Worst score combat emd_max_global_horiz", 
+        "value": 0.5295, 
         "severity": 0, 
-        "severity_value": -0.5339, 
+        "severity_value": -0.5295, 
         "code": "worst_score >= -1", 
-        "message": "Method cycombine_nocontrols performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_max_global\n  Worst score: 0.5339%\n"
+        "message": "Method combat performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_max_global_horiz\n  Worst score: 0.5295%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score cycombine_nocontrols emd_max_global", 
-        "value": 0.5339, 
+        "name": "Best score combat emd_max_global_horiz", 
+        "value": 0.5295, 
         "severity": 0, 
-        "severity_value": 0.26695, 
+        "severity_value": 0.26475, 
         "code": "best_score <= 2", 
-        "message": "Method cycombine_nocontrols performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_max_global\n  Best score: 0.5339%\n"
+        "message": "Method combat performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_max_global_horiz\n  Best score: 0.5295%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score gaussnorm emd_max_global", 
-        "value": 0.4736, 
+        "name": "Worst score cycombine_nocontrols emd_max_global_horiz", 
+        "value": 0.5337, 
         "severity": 0, 
-        "severity_value": -0.4736, 
+        "severity_value": -0.5337, 
         "code": "worst_score >= -1", 
-        "message": "Method gaussnorm performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_max_global\n  Worst score: 0.4736%\n"
+        "message": "Method cycombine_nocontrols performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_max_global_horiz\n  Worst score: 0.5337%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score gaussnorm emd_max_global", 
-        "value": 0.4736, 
+        "name": "Best score cycombine_nocontrols emd_max_global_horiz", 
+        "value": 0.5337, 
         "severity": 0, 
-        "severity_value": 0.2368, 
+        "severity_value": 0.26685, 
         "code": "best_score <= 2", 
-        "message": "Method gaussnorm performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_max_global\n  Best score: 0.4736%\n"
+        "message": "Method cycombine_nocontrols performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_max_global_horiz\n  Best score: 0.5337%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score cytonorm_controls emd_max_global", 
-        "value": 0.6243, 
+        "name": "Worst score gaussnorm emd_max_global_horiz", 
+        "value": 0.4733, 
         "severity": 0, 
-        "severity_value": -0.6243, 
+        "severity_value": -0.4733, 
         "code": "worst_score >= -1", 
-        "message": "Method cytonorm_controls performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_max_global\n  Worst score: 0.6243%\n"
+        "message": "Method gaussnorm performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_max_global_horiz\n  Worst score: 0.4733%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score cytonorm_controls emd_max_global", 
-        "value": 0.6243, 
+        "name": "Best score gaussnorm emd_max_global_horiz", 
+        "value": 0.4733, 
         "severity": 0, 
-        "severity_value": 0.31215, 
+        "severity_value": 0.23665, 
         "code": "best_score <= 2", 
-        "message": "Method cytonorm_controls performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_max_global\n  Best score: 0.6243%\n"
+        "message": "Method gaussnorm performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_max_global_horiz\n  Best score: 0.4733%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score cytonorm_controls emd_max_global_horiz", 
+        "value": 0.6241, 
+        "severity": 0, 
+        "severity_value": -0.6241, 
+        "code": "worst_score >= -1", 
+        "message": "Method cytonorm_controls performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_max_global_horiz\n  Worst score: 0.6241%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score cytonorm_controls emd_max_global_horiz", 
+        "value": 0.6241, 
+        "severity": 0, 
+        "severity_value": 0.31205, 
+        "code": "best_score <= 2", 
+        "message": "Method cytonorm_controls performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_max_global_horiz\n  Best score: 0.6241%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score shuffle_integration emd_mean_global_vert", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method shuffle_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_mean_global_vert\n  Worst score: 1%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score shuffle_integration emd_mean_global_vert", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method shuffle_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_mean_global_vert\n  Best score: 1%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score shuffle_integration_by_batch emd_mean_global_vert", 
+        "value": 0.6413, 
+        "severity": 0, 
+        "severity_value": -0.6413, 
+        "code": "worst_score >= -1", 
+        "message": "Method shuffle_integration_by_batch performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_mean_global_vert\n  Worst score: 0.6413%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score shuffle_integration_by_batch emd_mean_global_vert", 
+        "value": 0.6413, 
+        "severity": 0, 
+        "severity_value": 0.32065, 
+        "code": "best_score <= 2", 
+        "message": "Method shuffle_integration_by_batch performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_mean_global_vert\n  Best score: 0.6413%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score shuffle_integration_by_cell_type emd_mean_global_vert", 
+        "value": 0.4341, 
+        "severity": 0, 
+        "severity_value": -0.4341, 
+        "code": "worst_score >= -1", 
+        "message": "Method shuffle_integration_by_cell_type performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_mean_global_vert\n  Worst score: 0.4341%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score shuffle_integration_by_cell_type emd_mean_global_vert", 
+        "value": 0.4341, 
+        "severity": 0, 
+        "severity_value": 0.21705, 
+        "code": "best_score <= 2", 
+        "message": "Method shuffle_integration_by_cell_type performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_mean_global_vert\n  Best score: 0.4341%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score harmonypy emd_mean_global_vert", 
+        "value": 0.2491, 
+        "severity": 0, 
+        "severity_value": -0.2491, 
+        "code": "worst_score >= -1", 
+        "message": "Method harmonypy performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_mean_global_vert\n  Worst score: 0.2491%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score harmonypy emd_mean_global_vert", 
+        "value": 0.2491, 
+        "severity": 0, 
+        "severity_value": 0.12455, 
+        "code": "best_score <= 2", 
+        "message": "Method harmonypy performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_mean_global_vert\n  Best score: 0.2491%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score limma_remove_batch_effect emd_mean_global_vert", 
+        "value": 0.2382, 
+        "severity": 0, 
+        "severity_value": -0.2382, 
+        "code": "worst_score >= -1", 
+        "message": "Method limma_remove_batch_effect performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_mean_global_vert\n  Worst score: 0.2382%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score limma_remove_batch_effect emd_mean_global_vert", 
+        "value": 0.2382, 
+        "severity": 0, 
+        "severity_value": 0.1191, 
+        "code": "best_score <= 2", 
+        "message": "Method limma_remove_batch_effect performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_mean_global_vert\n  Best score: 0.2382%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score no_integration emd_mean_global_vert", 
+        "value": 0.0543, 
+        "severity": 0, 
+        "severity_value": -0.0543, 
+        "code": "worst_score >= -1", 
+        "message": "Method no_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_mean_global_vert\n  Worst score: 0.0543%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score no_integration emd_mean_global_vert", 
+        "value": 0.0543, 
+        "severity": 0, 
+        "severity_value": 0.02715, 
+        "code": "best_score <= 2", 
+        "message": "Method no_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_mean_global_vert\n  Best score: 0.0543%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score perfect_integration_horizontal emd_mean_global_vert", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method perfect_integration_horizontal performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: emd_mean_global_vert\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score perfect_integration_horizontal emd_mean_global_vert", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method perfect_integration_horizontal performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: emd_mean_global_vert\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score perfect_integration_vertical emd_mean_global_vert", 
+        "value": 0.1673, 
+        "severity": 0, 
+        "severity_value": -0.1673, 
+        "code": "worst_score >= -1", 
+        "message": "Method perfect_integration_vertical performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: emd_mean_global_vert\n  Worst score: 0.1673%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score perfect_integration_vertical emd_mean_global_vert", 
+        "value": 0.1673, 
+        "severity": 0, 
+        "severity_value": 0.08365, 
+        "code": "best_score <= 2", 
+        "message": "Method perfect_integration_vertical performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: emd_mean_global_vert\n  Best score: 0.1673%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score combat emd_mean_global_vert", 
+        "value": 0.2513, 
+        "severity": 0, 
+        "severity_value": -0.2513, 
+        "code": "worst_score >= -1", 
+        "message": "Method combat performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_mean_global_vert\n  Worst score: 0.2513%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score combat emd_mean_global_vert", 
+        "value": 0.2513, 
+        "severity": 0, 
+        "severity_value": 0.12565, 
+        "code": "best_score <= 2", 
+        "message": "Method combat performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_mean_global_vert\n  Best score: 0.2513%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score cycombine_nocontrols emd_mean_global_vert", 
+        "value": 0.2659, 
+        "severity": 0, 
+        "severity_value": -0.2659, 
+        "code": "worst_score >= -1", 
+        "message": "Method cycombine_nocontrols performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_mean_global_vert\n  Worst score: 0.2659%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score cycombine_nocontrols emd_mean_global_vert", 
+        "value": 0.2659, 
+        "severity": 0, 
+        "severity_value": 0.13295, 
+        "code": "best_score <= 2", 
+        "message": "Method cycombine_nocontrols performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_mean_global_vert\n  Best score: 0.2659%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score gaussnorm emd_mean_global_vert", 
+        "value": 0.2413, 
+        "severity": 0, 
+        "severity_value": -0.2413, 
+        "code": "worst_score >= -1", 
+        "message": "Method gaussnorm performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_mean_global_vert\n  Worst score: 0.2413%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score gaussnorm emd_mean_global_vert", 
+        "value": 0.2413, 
+        "severity": 0, 
+        "severity_value": 0.12065, 
+        "code": "best_score <= 2", 
+        "message": "Method gaussnorm performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_mean_global_vert\n  Best score: 0.2413%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score cytonorm_controls emd_mean_global_vert", 
+        "value": 0.2422, 
+        "severity": 0, 
+        "severity_value": -0.2422, 
+        "code": "worst_score >= -1", 
+        "message": "Method cytonorm_controls performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_mean_global_vert\n  Worst score: 0.2422%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score cytonorm_controls emd_mean_global_vert", 
+        "value": 0.2422, 
+        "severity": 0, 
+        "severity_value": 0.1211, 
+        "code": "best_score <= 2", 
+        "message": "Method cytonorm_controls performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_mean_global_vert\n  Best score: 0.2422%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score shuffle_integration emd_max_global_vert", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method shuffle_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_max_global_vert\n  Worst score: 1%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score shuffle_integration emd_max_global_vert", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method shuffle_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: emd_max_global_vert\n  Best score: 1%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score shuffle_integration_by_batch emd_max_global_vert", 
+        "value": 0.4225, 
+        "severity": 0, 
+        "severity_value": -0.4225, 
+        "code": "worst_score >= -1", 
+        "message": "Method shuffle_integration_by_batch performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_max_global_vert\n  Worst score: 0.4225%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score shuffle_integration_by_batch emd_max_global_vert", 
+        "value": 0.4225, 
+        "severity": 0, 
+        "severity_value": 0.21125, 
+        "code": "best_score <= 2", 
+        "message": "Method shuffle_integration_by_batch performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: emd_max_global_vert\n  Best score: 0.4225%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score shuffle_integration_by_cell_type emd_max_global_vert", 
+        "value": 0.2146, 
+        "severity": 0, 
+        "severity_value": -0.2146, 
+        "code": "worst_score >= -1", 
+        "message": "Method shuffle_integration_by_cell_type performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_max_global_vert\n  Worst score: 0.2146%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score shuffle_integration_by_cell_type emd_max_global_vert", 
+        "value": 0.2146, 
+        "severity": 0, 
+        "severity_value": 0.1073, 
+        "code": "best_score <= 2", 
+        "message": "Method shuffle_integration_by_cell_type performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: emd_max_global_vert\n  Best score: 0.2146%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score harmonypy emd_max_global_vert", 
+        "value": 0.1647, 
+        "severity": 0, 
+        "severity_value": -0.1647, 
+        "code": "worst_score >= -1", 
+        "message": "Method harmonypy performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_max_global_vert\n  Worst score: 0.1647%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score harmonypy emd_max_global_vert", 
+        "value": 0.1647, 
+        "severity": 0, 
+        "severity_value": 0.08235, 
+        "code": "best_score <= 2", 
+        "message": "Method harmonypy performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: emd_max_global_vert\n  Best score: 0.1647%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score limma_remove_batch_effect emd_max_global_vert", 
+        "value": 0.1784, 
+        "severity": 0, 
+        "severity_value": -0.1784, 
+        "code": "worst_score >= -1", 
+        "message": "Method limma_remove_batch_effect performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_max_global_vert\n  Worst score: 0.1784%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score limma_remove_batch_effect emd_max_global_vert", 
+        "value": 0.1784, 
+        "severity": 0, 
+        "severity_value": 0.0892, 
+        "code": "best_score <= 2", 
+        "message": "Method limma_remove_batch_effect performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: emd_max_global_vert\n  Best score: 0.1784%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score no_integration emd_max_global_vert", 
+        "value": 0.0084, 
+        "severity": 0, 
+        "severity_value": -0.0084, 
+        "code": "worst_score >= -1", 
+        "message": "Method no_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_max_global_vert\n  Worst score: 0.0084%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score no_integration emd_max_global_vert", 
+        "value": 0.0084, 
+        "severity": 0, 
+        "severity_value": 0.0042, 
+        "code": "best_score <= 2", 
+        "message": "Method no_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: emd_max_global_vert\n  Best score: 0.0084%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score perfect_integration_horizontal emd_max_global_vert", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method perfect_integration_horizontal performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: emd_max_global_vert\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score perfect_integration_horizontal emd_max_global_vert", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method perfect_integration_horizontal performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: emd_max_global_vert\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score perfect_integration_vertical emd_max_global_vert", 
+        "value": 0.1784, 
+        "severity": 0, 
+        "severity_value": -0.1784, 
+        "code": "worst_score >= -1", 
+        "message": "Method perfect_integration_vertical performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: emd_max_global_vert\n  Worst score: 0.1784%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score perfect_integration_vertical emd_max_global_vert", 
+        "value": 0.1784, 
+        "severity": 0, 
+        "severity_value": 0.0892, 
+        "code": "best_score <= 2", 
+        "message": "Method perfect_integration_vertical performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: emd_max_global_vert\n  Best score: 0.1784%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score combat emd_max_global_vert", 
+        "value": 0.1831, 
+        "severity": 0, 
+        "severity_value": -0.1831, 
+        "code": "worst_score >= -1", 
+        "message": "Method combat performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_max_global_vert\n  Worst score: 0.1831%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score combat emd_max_global_vert", 
+        "value": 0.1831, 
+        "severity": 0, 
+        "severity_value": 0.09155, 
+        "code": "best_score <= 2", 
+        "message": "Method combat performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: emd_max_global_vert\n  Best score: 0.1831%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score cycombine_nocontrols emd_max_global_vert", 
+        "value": 0.176, 
+        "severity": 0, 
+        "severity_value": -0.176, 
+        "code": "worst_score >= -1", 
+        "message": "Method cycombine_nocontrols performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_max_global_vert\n  Worst score: 0.176%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score cycombine_nocontrols emd_max_global_vert", 
+        "value": 0.176, 
+        "severity": 0, 
+        "severity_value": 0.088, 
+        "code": "best_score <= 2", 
+        "message": "Method cycombine_nocontrols performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: emd_max_global_vert\n  Best score: 0.176%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score gaussnorm emd_max_global_vert", 
+        "value": 0.0301, 
+        "severity": 0, 
+        "severity_value": -0.0301, 
+        "code": "worst_score >= -1", 
+        "message": "Method gaussnorm performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_max_global_vert\n  Worst score: 0.0301%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score gaussnorm emd_max_global_vert", 
+        "value": 0.0301, 
+        "severity": 0, 
+        "severity_value": 0.01505, 
+        "code": "best_score <= 2", 
+        "message": "Method gaussnorm performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: emd_max_global_vert\n  Best score: 0.0301%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score cytonorm_controls emd_max_global_vert", 
+        "value": 0.1853, 
+        "severity": 0, 
+        "severity_value": -0.1853, 
+        "code": "worst_score >= -1", 
+        "message": "Method cytonorm_controls performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_max_global_vert\n  Worst score: 0.1853%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score cytonorm_controls emd_max_global_vert", 
+        "value": 0.1853, 
+        "severity": 0, 
+        "severity_value": 0.09265, 
+        "code": "best_score <= 2", 
+        "message": "Method cytonorm_controls performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: emd_max_global_vert\n  Best score: 0.1853%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
@@ -1452,22 +2052,42 @@
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score perfect_integration n_inconsistent_peaks", 
+        "name": "Worst score perfect_integration_horizontal n_inconsistent_peaks", 
         "value": 1, 
         "severity": 0, 
         "severity_value": -1.0, 
         "code": "worst_score >= -1", 
-        "message": "Method perfect_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration\n  Metric id: n_inconsistent_peaks\n  Worst score: 1%\n"
+        "message": "Method perfect_integration_horizontal performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: n_inconsistent_peaks\n  Worst score: 1%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score perfect_integration n_inconsistent_peaks", 
+        "name": "Best score perfect_integration_horizontal n_inconsistent_peaks", 
         "value": 1, 
         "severity": 0, 
         "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method perfect_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration\n  Metric id: n_inconsistent_peaks\n  Best score: 1%\n"
+        "message": "Method perfect_integration_horizontal performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: n_inconsistent_peaks\n  Best score: 1%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score perfect_integration_vertical n_inconsistent_peaks", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method perfect_integration_vertical performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: n_inconsistent_peaks\n  Worst score: 1%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score perfect_integration_vertical n_inconsistent_peaks", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method perfect_integration_vertical performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: n_inconsistent_peaks\n  Best score: 1%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
@@ -1553,21 +2173,21 @@
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score shuffle_integration n_inconsistent_peaks_ct", 
-        "value": 0.0278, 
+        "value": 0.0034, 
         "severity": 0, 
-        "severity_value": -0.0278, 
+        "severity_value": -0.0034, 
         "code": "worst_score >= -1", 
-        "message": "Method shuffle_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.0278%\n"
+        "message": "Method shuffle_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.0034%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score shuffle_integration n_inconsistent_peaks_ct", 
-        "value": 0.0278, 
+        "value": 0.0034, 
         "severity": 0, 
-        "severity_value": 0.0139, 
+        "severity_value": 0.0017, 
         "code": "best_score <= 2", 
-        "message": "Method shuffle_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.0278%\n"
+        "message": "Method shuffle_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.0034%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
@@ -1593,201 +2213,221 @@
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score shuffle_integration_by_cell_type n_inconsistent_peaks_ct", 
-        "value": 0.75, 
+        "value": 0.7655, 
         "severity": 0, 
-        "severity_value": -0.75, 
+        "severity_value": -0.7655, 
         "code": "worst_score >= -1", 
-        "message": "Method shuffle_integration_by_cell_type performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.75%\n"
+        "message": "Method shuffle_integration_by_cell_type performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.7655%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score shuffle_integration_by_cell_type n_inconsistent_peaks_ct", 
-        "value": 0.75, 
+        "value": 0.7655, 
         "severity": 0, 
-        "severity_value": 0.375, 
+        "severity_value": 0.38275, 
         "code": "best_score <= 2", 
-        "message": "Method shuffle_integration_by_cell_type performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.75%\n"
+        "message": "Method shuffle_integration_by_cell_type performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.7655%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score harmonypy n_inconsistent_peaks_ct", 
-        "value": 0.8715, 
+        "value": 0.8724, 
         "severity": 0, 
-        "severity_value": -0.8715, 
+        "severity_value": -0.8724, 
         "code": "worst_score >= -1", 
-        "message": "Method harmonypy performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.8715%\n"
+        "message": "Method harmonypy performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.8724%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score harmonypy n_inconsistent_peaks_ct", 
-        "value": 0.8715, 
+        "value": 0.8724, 
         "severity": 0, 
-        "severity_value": 0.43575, 
+        "severity_value": 0.4362, 
         "code": "best_score <= 2", 
-        "message": "Method harmonypy performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.8715%\n"
+        "message": "Method harmonypy performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.8724%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score limma_remove_batch_effect n_inconsistent_peaks_ct", 
-        "value": 0.8681, 
+        "value": 0.869, 
         "severity": 0, 
-        "severity_value": -0.8681, 
+        "severity_value": -0.869, 
         "code": "worst_score >= -1", 
-        "message": "Method limma_remove_batch_effect performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.8681%\n"
+        "message": "Method limma_remove_batch_effect performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.869%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score limma_remove_batch_effect n_inconsistent_peaks_ct", 
-        "value": 0.8681, 
+        "value": 0.869, 
         "severity": 0, 
-        "severity_value": 0.43405, 
+        "severity_value": 0.4345, 
         "code": "best_score <= 2", 
-        "message": "Method limma_remove_batch_effect performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.8681%\n"
+        "message": "Method limma_remove_batch_effect performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.869%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score no_integration n_inconsistent_peaks_ct", 
-        "value": 0.8681, 
+        "value": 0.869, 
         "severity": 0, 
-        "severity_value": -0.8681, 
+        "severity_value": -0.869, 
         "code": "worst_score >= -1", 
-        "message": "Method no_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.8681%\n"
+        "message": "Method no_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.869%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score no_integration n_inconsistent_peaks_ct", 
-        "value": 0.8681, 
+        "value": 0.869, 
         "severity": 0, 
-        "severity_value": 0.43405, 
+        "severity_value": 0.4345, 
         "code": "best_score <= 2", 
-        "message": "Method no_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.8681%\n"
+        "message": "Method no_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.869%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score perfect_integration n_inconsistent_peaks_ct", 
+        "name": "Worst score perfect_integration_horizontal n_inconsistent_peaks_ct", 
         "value": 1, 
         "severity": 0, 
         "severity_value": -1.0, 
         "code": "worst_score >= -1", 
-        "message": "Method perfect_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 1%\n"
+        "message": "Method perfect_integration_horizontal performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 1%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score perfect_integration n_inconsistent_peaks_ct", 
+        "name": "Best score perfect_integration_horizontal n_inconsistent_peaks_ct", 
         "value": 1, 
         "severity": 0, 
         "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method perfect_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 1%\n"
+        "message": "Method perfect_integration_horizontal performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 1%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score perfect_integration_vertical n_inconsistent_peaks_ct", 
+        "value": 0.9345, 
+        "severity": 0, 
+        "severity_value": -0.9345, 
+        "code": "worst_score >= -1", 
+        "message": "Method perfect_integration_vertical performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.9345%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score perfect_integration_vertical n_inconsistent_peaks_ct", 
+        "value": 0.9345, 
+        "severity": 0, 
+        "severity_value": 0.46725, 
+        "code": "best_score <= 2", 
+        "message": "Method perfect_integration_vertical performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.9345%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score combat n_inconsistent_peaks_ct", 
-        "value": 0.8646, 
+        "value": 0.8655, 
         "severity": 0, 
-        "severity_value": -0.8646, 
+        "severity_value": -0.8655, 
         "code": "worst_score >= -1", 
-        "message": "Method combat performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.8646%\n"
+        "message": "Method combat performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.8655%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score combat n_inconsistent_peaks_ct", 
-        "value": 0.8646, 
+        "value": 0.8655, 
         "severity": 0, 
-        "severity_value": 0.4323, 
+        "severity_value": 0.43275, 
         "code": "best_score <= 2", 
-        "message": "Method combat performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.8646%\n"
+        "message": "Method combat performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.8655%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score cycombine_nocontrols n_inconsistent_peaks_ct", 
-        "value": 0.8646, 
+        "value": 0.8655, 
         "severity": 0, 
-        "severity_value": -0.8646, 
+        "severity_value": -0.8655, 
         "code": "worst_score >= -1", 
-        "message": "Method cycombine_nocontrols performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.8646%\n"
+        "message": "Method cycombine_nocontrols performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.8655%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score cycombine_nocontrols n_inconsistent_peaks_ct", 
-        "value": 0.8646, 
+        "value": 0.8655, 
         "severity": 0, 
-        "severity_value": 0.4323, 
+        "severity_value": 0.43275, 
         "code": "best_score <= 2", 
-        "message": "Method cycombine_nocontrols performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.8646%\n"
+        "message": "Method cycombine_nocontrols performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.8655%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score gaussnorm n_inconsistent_peaks_ct", 
-        "value": 0.8819, 
+        "value": 0.8828, 
         "severity": 0, 
-        "severity_value": -0.8819, 
+        "severity_value": -0.8828, 
         "code": "worst_score >= -1", 
-        "message": "Method gaussnorm performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.8819%\n"
+        "message": "Method gaussnorm performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.8828%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score gaussnorm n_inconsistent_peaks_ct", 
-        "value": 0.8819, 
+        "value": 0.8828, 
         "severity": 0, 
-        "severity_value": 0.44095, 
+        "severity_value": 0.4414, 
         "code": "best_score <= 2", 
-        "message": "Method gaussnorm performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.8819%\n"
+        "message": "Method gaussnorm performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.8828%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score cytonorm_controls n_inconsistent_peaks_ct", 
-        "value": 0.8785, 
+        "value": 0.8793, 
         "severity": 0, 
-        "severity_value": -0.8785, 
+        "severity_value": -0.8793, 
         "code": "worst_score >= -1", 
-        "message": "Method cytonorm_controls performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.8785%\n"
+        "message": "Method cytonorm_controls performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: n_inconsistent_peaks_ct\n  Worst score: 0.8793%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score cytonorm_controls n_inconsistent_peaks_ct", 
-        "value": 0.8785, 
+        "value": 0.8793, 
         "severity": 0, 
-        "severity_value": 0.43925, 
+        "severity_value": 0.43965, 
         "code": "best_score <= 2", 
-        "message": "Method cytonorm_controls performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.8785%\n"
+        "message": "Method cytonorm_controls performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: n_inconsistent_peaks_ct\n  Best score: 0.8793%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score shuffle_integration average_batch_r2_global", 
-        "value": 0.5228, 
+        "value": 0.5241, 
         "severity": 0, 
-        "severity_value": -0.5228, 
+        "severity_value": -0.5241, 
         "code": "worst_score >= -1", 
-        "message": "Method shuffle_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: average_batch_r2_global\n  Worst score: 0.5228%\n"
+        "message": "Method shuffle_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: average_batch_r2_global\n  Worst score: 0.5241%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score shuffle_integration average_batch_r2_global", 
-        "value": 0.5228, 
+        "value": 0.5241, 
         "severity": 0, 
-        "severity_value": 0.2614, 
+        "severity_value": 0.26205, 
         "code": "best_score <= 2", 
-        "message": "Method shuffle_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: average_batch_r2_global\n  Best score: 0.5228%\n"
+        "message": "Method shuffle_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: average_batch_r2_global\n  Best score: 0.5241%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
@@ -1813,201 +2453,221 @@
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score shuffle_integration_by_cell_type average_batch_r2_global", 
-        "value": 0.7144, 
+        "value": 0.7157, 
         "severity": 0, 
-        "severity_value": -0.7144, 
+        "severity_value": -0.7157, 
         "code": "worst_score >= -1", 
-        "message": "Method shuffle_integration_by_cell_type performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: average_batch_r2_global\n  Worst score: 0.7144%\n"
+        "message": "Method shuffle_integration_by_cell_type performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: average_batch_r2_global\n  Worst score: 0.7157%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score shuffle_integration_by_cell_type average_batch_r2_global", 
-        "value": 0.7144, 
+        "value": 0.7157, 
         "severity": 0, 
-        "severity_value": 0.3572, 
+        "severity_value": 0.35785, 
         "code": "best_score <= 2", 
-        "message": "Method shuffle_integration_by_cell_type performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: average_batch_r2_global\n  Best score: 0.7144%\n"
+        "message": "Method shuffle_integration_by_cell_type performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: average_batch_r2_global\n  Best score: 0.7157%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score harmonypy average_batch_r2_global", 
-        "value": 0.7585, 
+        "value": 0.759, 
         "severity": 0, 
-        "severity_value": -0.7585, 
+        "severity_value": -0.759, 
         "code": "worst_score >= -1", 
-        "message": "Method harmonypy performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: average_batch_r2_global\n  Worst score: 0.7585%\n"
+        "message": "Method harmonypy performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: average_batch_r2_global\n  Worst score: 0.759%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score harmonypy average_batch_r2_global", 
-        "value": 0.7585, 
+        "value": 0.759, 
         "severity": 0, 
-        "severity_value": 0.37925, 
+        "severity_value": 0.3795, 
         "code": "best_score <= 2", 
-        "message": "Method harmonypy performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: average_batch_r2_global\n  Best score: 0.7585%\n"
+        "message": "Method harmonypy performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: average_batch_r2_global\n  Best score: 0.759%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score limma_remove_batch_effect average_batch_r2_global", 
-        "value": 0.7619, 
+        "value": 0.7624, 
         "severity": 0, 
-        "severity_value": -0.7619, 
+        "severity_value": -0.7624, 
         "code": "worst_score >= -1", 
-        "message": "Method limma_remove_batch_effect performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: average_batch_r2_global\n  Worst score: 0.7619%\n"
+        "message": "Method limma_remove_batch_effect performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: average_batch_r2_global\n  Worst score: 0.7624%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score limma_remove_batch_effect average_batch_r2_global", 
-        "value": 0.7619, 
+        "value": 0.7624, 
         "severity": 0, 
-        "severity_value": 0.38095, 
+        "severity_value": 0.3812, 
         "code": "best_score <= 2", 
-        "message": "Method limma_remove_batch_effect performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: average_batch_r2_global\n  Best score: 0.7619%\n"
+        "message": "Method limma_remove_batch_effect performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: average_batch_r2_global\n  Best score: 0.7624%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score no_integration average_batch_r2_global", 
-        "value": 0.2159, 
+        "value": 0.2176, 
         "severity": 0, 
-        "severity_value": -0.2159, 
+        "severity_value": -0.2176, 
         "code": "worst_score >= -1", 
-        "message": "Method no_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: average_batch_r2_global\n  Worst score: 0.2159%\n"
+        "message": "Method no_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: average_batch_r2_global\n  Worst score: 0.2176%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score no_integration average_batch_r2_global", 
-        "value": 0.2159, 
+        "value": 0.2176, 
         "severity": 0, 
-        "severity_value": 0.10795, 
+        "severity_value": 0.1088, 
         "code": "best_score <= 2", 
-        "message": "Method no_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: average_batch_r2_global\n  Best score: 0.2159%\n"
+        "message": "Method no_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: average_batch_r2_global\n  Best score: 0.2176%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score perfect_integration average_batch_r2_global", 
+        "name": "Worst score perfect_integration_horizontal average_batch_r2_global", 
         "value": 1, 
         "severity": 0, 
         "severity_value": -1.0, 
         "code": "worst_score >= -1", 
-        "message": "Method perfect_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration\n  Metric id: average_batch_r2_global\n  Worst score: 1%\n"
+        "message": "Method perfect_integration_horizontal performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: average_batch_r2_global\n  Worst score: 1%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score perfect_integration average_batch_r2_global", 
+        "name": "Best score perfect_integration_horizontal average_batch_r2_global", 
         "value": 1, 
         "severity": 0, 
         "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method perfect_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration\n  Metric id: average_batch_r2_global\n  Best score: 1%\n"
+        "message": "Method perfect_integration_horizontal performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: average_batch_r2_global\n  Best score: 1%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score perfect_integration_vertical average_batch_r2_global", 
+        "value": 0.5898, 
+        "severity": 0, 
+        "severity_value": -0.5898, 
+        "code": "worst_score >= -1", 
+        "message": "Method perfect_integration_vertical performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: average_batch_r2_global\n  Worst score: 0.5898%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score perfect_integration_vertical average_batch_r2_global", 
+        "value": 0.5898, 
+        "severity": 0, 
+        "severity_value": 0.2949, 
+        "code": "best_score <= 2", 
+        "message": "Method perfect_integration_vertical performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: average_batch_r2_global\n  Best score: 0.5898%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score combat average_batch_r2_global", 
-        "value": 0.754, 
+        "value": 0.7545, 
         "severity": 0, 
-        "severity_value": -0.754, 
+        "severity_value": -0.7545, 
         "code": "worst_score >= -1", 
-        "message": "Method combat performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: average_batch_r2_global\n  Worst score: 0.754%\n"
+        "message": "Method combat performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: average_batch_r2_global\n  Worst score: 0.7545%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score combat average_batch_r2_global", 
-        "value": 0.754, 
+        "value": 0.7545, 
         "severity": 0, 
-        "severity_value": 0.377, 
+        "severity_value": 0.37725, 
         "code": "best_score <= 2", 
-        "message": "Method combat performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: average_batch_r2_global\n  Best score: 0.754%\n"
+        "message": "Method combat performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: average_batch_r2_global\n  Best score: 0.7545%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score cycombine_nocontrols average_batch_r2_global", 
-        "value": 0.6772, 
+        "value": 0.6779, 
         "severity": 0, 
-        "severity_value": -0.6772, 
+        "severity_value": -0.6779, 
         "code": "worst_score >= -1", 
-        "message": "Method cycombine_nocontrols performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: average_batch_r2_global\n  Worst score: 0.6772%\n"
+        "message": "Method cycombine_nocontrols performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: average_batch_r2_global\n  Worst score: 0.6779%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score cycombine_nocontrols average_batch_r2_global", 
-        "value": 0.6772, 
+        "value": 0.6779, 
         "severity": 0, 
-        "severity_value": 0.3386, 
+        "severity_value": 0.33895, 
         "code": "best_score <= 2", 
-        "message": "Method cycombine_nocontrols performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: average_batch_r2_global\n  Best score: 0.6772%\n"
+        "message": "Method cycombine_nocontrols performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: average_batch_r2_global\n  Best score: 0.6779%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score gaussnorm average_batch_r2_global", 
-        "value": 0.5398, 
+        "value": 0.5408, 
         "severity": 0, 
-        "severity_value": -0.5398, 
+        "severity_value": -0.5408, 
         "code": "worst_score >= -1", 
-        "message": "Method gaussnorm performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: average_batch_r2_global\n  Worst score: 0.5398%\n"
+        "message": "Method gaussnorm performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: average_batch_r2_global\n  Worst score: 0.5408%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score gaussnorm average_batch_r2_global", 
-        "value": 0.5398, 
+        "value": 0.5408, 
         "severity": 0, 
-        "severity_value": 0.2699, 
+        "severity_value": 0.2704, 
         "code": "best_score <= 2", 
-        "message": "Method gaussnorm performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: average_batch_r2_global\n  Best score: 0.5398%\n"
+        "message": "Method gaussnorm performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: average_batch_r2_global\n  Best score: 0.5408%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score cytonorm_controls average_batch_r2_global", 
-        "value": 0.7636, 
+        "value": 0.7641, 
         "severity": 0, 
-        "severity_value": -0.7636, 
+        "severity_value": -0.7641, 
         "code": "worst_score >= -1", 
-        "message": "Method cytonorm_controls performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: average_batch_r2_global\n  Worst score: 0.7636%\n"
+        "message": "Method cytonorm_controls performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: average_batch_r2_global\n  Worst score: 0.7641%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score cytonorm_controls average_batch_r2_global", 
-        "value": 0.7636, 
+        "value": 0.7641, 
         "severity": 0, 
-        "severity_value": 0.3818, 
+        "severity_value": 0.38205, 
         "code": "best_score <= 2", 
-        "message": "Method cytonorm_controls performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: average_batch_r2_global\n  Best score: 0.7636%\n"
+        "message": "Method cytonorm_controls performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: average_batch_r2_global\n  Best score: 0.7641%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score shuffle_integration average_batch_r2_ct", 
-        "value": 0.0641, 
+        "value": 0.0598, 
         "severity": 0, 
-        "severity_value": -0.0641, 
+        "severity_value": -0.0598, 
         "code": "worst_score >= -1", 
-        "message": "Method shuffle_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: average_batch_r2_ct\n  Worst score: 0.0641%\n"
+        "message": "Method shuffle_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: average_batch_r2_ct\n  Worst score: 0.0598%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score shuffle_integration average_batch_r2_ct", 
-        "value": 0.0641, 
+        "value": 0.0598, 
         "severity": 0, 
-        "severity_value": 0.03205, 
+        "severity_value": 0.0299, 
         "code": "best_score <= 2", 
-        "message": "Method shuffle_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: average_batch_r2_ct\n  Best score: 0.0641%\n"
+        "message": "Method shuffle_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: average_batch_r2_ct\n  Best score: 0.0598%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
@@ -2033,180 +2693,440 @@
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score shuffle_integration_by_cell_type average_batch_r2_ct", 
-        "value": 0.843, 
+        "value": 0.8421, 
         "severity": 0, 
-        "severity_value": -0.843, 
+        "severity_value": -0.8421, 
         "code": "worst_score >= -1", 
-        "message": "Method shuffle_integration_by_cell_type performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: average_batch_r2_ct\n  Worst score: 0.843%\n"
+        "message": "Method shuffle_integration_by_cell_type performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: average_batch_r2_ct\n  Worst score: 0.8421%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score shuffle_integration_by_cell_type average_batch_r2_ct", 
-        "value": 0.843, 
+        "value": 0.8421, 
         "severity": 0, 
-        "severity_value": 0.4215, 
+        "severity_value": 0.42105, 
         "code": "best_score <= 2", 
-        "message": "Method shuffle_integration_by_cell_type performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: average_batch_r2_ct\n  Best score: 0.843%\n"
+        "message": "Method shuffle_integration_by_cell_type performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: average_batch_r2_ct\n  Best score: 0.8421%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score harmonypy average_batch_r2_ct", 
-        "value": 0.7966, 
+        "value": 0.7969, 
         "severity": 0, 
-        "severity_value": -0.7966, 
+        "severity_value": -0.7969, 
         "code": "worst_score >= -1", 
-        "message": "Method harmonypy performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: average_batch_r2_ct\n  Worst score: 0.7966%\n"
+        "message": "Method harmonypy performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: average_batch_r2_ct\n  Worst score: 0.7969%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score harmonypy average_batch_r2_ct", 
-        "value": 0.7966, 
+        "value": 0.7969, 
         "severity": 0, 
-        "severity_value": 0.3983, 
+        "severity_value": 0.39845, 
         "code": "best_score <= 2", 
-        "message": "Method harmonypy performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: average_batch_r2_ct\n  Best score: 0.7966%\n"
+        "message": "Method harmonypy performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: average_batch_r2_ct\n  Best score: 0.7969%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score limma_remove_batch_effect average_batch_r2_ct", 
-        "value": 0.754, 
+        "value": 0.7542, 
         "severity": 0, 
-        "severity_value": -0.754, 
+        "severity_value": -0.7542, 
         "code": "worst_score >= -1", 
-        "message": "Method limma_remove_batch_effect performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: average_batch_r2_ct\n  Worst score: 0.754%\n"
+        "message": "Method limma_remove_batch_effect performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: average_batch_r2_ct\n  Worst score: 0.7542%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score limma_remove_batch_effect average_batch_r2_ct", 
-        "value": 0.754, 
+        "value": 0.7542, 
         "severity": 0, 
-        "severity_value": 0.377, 
+        "severity_value": 0.3771, 
         "code": "best_score <= 2", 
-        "message": "Method limma_remove_batch_effect performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: average_batch_r2_ct\n  Best score: 0.754%\n"
+        "message": "Method limma_remove_batch_effect performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: average_batch_r2_ct\n  Best score: 0.7542%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score no_integration average_batch_r2_ct", 
-        "value": 0.706, 
+        "value": 0.7063, 
         "severity": 0, 
-        "severity_value": -0.706, 
+        "severity_value": -0.7063, 
         "code": "worst_score >= -1", 
-        "message": "Method no_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: average_batch_r2_ct\n  Worst score: 0.706%\n"
+        "message": "Method no_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: average_batch_r2_ct\n  Worst score: 0.7063%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score no_integration average_batch_r2_ct", 
-        "value": 0.706, 
+        "value": 0.7063, 
         "severity": 0, 
-        "severity_value": 0.353, 
+        "severity_value": 0.35315, 
         "code": "best_score <= 2", 
-        "message": "Method no_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: average_batch_r2_ct\n  Best score: 0.706%\n"
+        "message": "Method no_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: average_batch_r2_ct\n  Best score: 0.7063%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Worst score perfect_integration average_batch_r2_ct", 
+        "name": "Worst score perfect_integration_horizontal average_batch_r2_ct", 
         "value": 1, 
         "severity": 0, 
         "severity_value": -1.0, 
         "code": "worst_score >= -1", 
-        "message": "Method perfect_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration\n  Metric id: average_batch_r2_ct\n  Worst score: 1%\n"
+        "message": "Method perfect_integration_horizontal performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: average_batch_r2_ct\n  Worst score: 1%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
-        "name": "Best score perfect_integration average_batch_r2_ct", 
+        "name": "Best score perfect_integration_horizontal average_batch_r2_ct", 
         "value": 1, 
         "severity": 0, 
         "severity_value": 0.5, 
         "code": "best_score <= 2", 
-        "message": "Method perfect_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration\n  Metric id: average_batch_r2_ct\n  Best score: 1%\n"
+        "message": "Method perfect_integration_horizontal performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: average_batch_r2_ct\n  Best score: 1%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score perfect_integration_vertical average_batch_r2_ct", 
+        "value": 0.8482, 
+        "severity": 0, 
+        "severity_value": -0.8482, 
+        "code": "worst_score >= -1", 
+        "message": "Method perfect_integration_vertical performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: average_batch_r2_ct\n  Worst score: 0.8482%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score perfect_integration_vertical average_batch_r2_ct", 
+        "value": 0.8482, 
+        "severity": 0, 
+        "severity_value": 0.4241, 
+        "code": "best_score <= 2", 
+        "message": "Method perfect_integration_vertical performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: average_batch_r2_ct\n  Best score: 0.8482%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score combat average_batch_r2_ct", 
-        "value": 0.7585, 
+        "value": 0.7587, 
         "severity": 0, 
-        "severity_value": -0.7585, 
+        "severity_value": -0.7587, 
         "code": "worst_score >= -1", 
-        "message": "Method combat performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: average_batch_r2_ct\n  Worst score: 0.7585%\n"
+        "message": "Method combat performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: average_batch_r2_ct\n  Worst score: 0.7587%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score combat average_batch_r2_ct", 
-        "value": 0.7585, 
+        "value": 0.7587, 
         "severity": 0, 
-        "severity_value": 0.37925, 
+        "severity_value": 0.37935, 
         "code": "best_score <= 2", 
-        "message": "Method combat performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: average_batch_r2_ct\n  Best score: 0.7585%\n"
+        "message": "Method combat performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: average_batch_r2_ct\n  Best score: 0.7587%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score cycombine_nocontrols average_batch_r2_ct", 
-        "value": 0.854, 
+        "value": 0.8541, 
         "severity": 0, 
-        "severity_value": -0.854, 
+        "severity_value": -0.8541, 
         "code": "worst_score >= -1", 
-        "message": "Method cycombine_nocontrols performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: average_batch_r2_ct\n  Worst score: 0.854%\n"
+        "message": "Method cycombine_nocontrols performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: average_batch_r2_ct\n  Worst score: 0.8541%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score cycombine_nocontrols average_batch_r2_ct", 
-        "value": 0.854, 
+        "value": 0.8541, 
         "severity": 0, 
-        "severity_value": 0.427, 
+        "severity_value": 0.42705, 
         "code": "best_score <= 2", 
-        "message": "Method cycombine_nocontrols performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: average_batch_r2_ct\n  Best score: 0.854%\n"
+        "message": "Method cycombine_nocontrols performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: average_batch_r2_ct\n  Best score: 0.8541%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score gaussnorm average_batch_r2_ct", 
-        "value": 0.7231, 
+        "value": 0.7234, 
         "severity": 0, 
-        "severity_value": -0.7231, 
+        "severity_value": -0.7234, 
         "code": "worst_score >= -1", 
-        "message": "Method gaussnorm performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: average_batch_r2_ct\n  Worst score: 0.7231%\n"
+        "message": "Method gaussnorm performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: average_batch_r2_ct\n  Worst score: 0.7234%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score gaussnorm average_batch_r2_ct", 
-        "value": 0.7231, 
+        "value": 0.7234, 
         "severity": 0, 
-        "severity_value": 0.36155, 
+        "severity_value": 0.3617, 
         "code": "best_score <= 2", 
-        "message": "Method gaussnorm performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: average_batch_r2_ct\n  Best score: 0.7231%\n"
+        "message": "Method gaussnorm performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: average_batch_r2_ct\n  Best score: 0.7234%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Worst score cytonorm_controls average_batch_r2_ct", 
-        "value": 0.8639, 
+        "value": 0.8641, 
         "severity": 0, 
-        "severity_value": -0.8639, 
+        "severity_value": -0.8641, 
         "code": "worst_score >= -1", 
-        "message": "Method cytonorm_controls performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: average_batch_r2_ct\n  Worst score: 0.8639%\n"
+        "message": "Method cytonorm_controls performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: average_batch_r2_ct\n  Worst score: 0.8641%\n"
     }, 
     {
         "task_id": "task_cyto_batch_integration", 
         "category": "Scaling", 
         "name": "Best score cytonorm_controls average_batch_r2_ct", 
-        "value": 0.8639, 
+        "value": 0.8641, 
         "severity": 0, 
-        "severity_value": 0.43195, 
+        "severity_value": 0.43205, 
         "code": "best_score <= 2", 
-        "message": "Method cytonorm_controls performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: average_batch_r2_ct\n  Best score: 0.8639%\n"
+        "message": "Method cytonorm_controls performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: average_batch_r2_ct\n  Best score: 0.8641%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score shuffle_integration flowsom_mean_mapping_similarity", 
+        "value": 0.0002, 
+        "severity": 0, 
+        "severity_value": -0.0002, 
+        "code": "worst_score >= -1", 
+        "message": "Method shuffle_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: flowsom_mean_mapping_similarity\n  Worst score: 0.0002%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score shuffle_integration flowsom_mean_mapping_similarity", 
+        "value": 0.0002, 
+        "severity": 0, 
+        "severity_value": 0.0001, 
+        "code": "best_score <= 2", 
+        "message": "Method shuffle_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration\n  Metric id: flowsom_mean_mapping_similarity\n  Best score: 0.0002%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score shuffle_integration_by_batch flowsom_mean_mapping_similarity", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": -0.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method shuffle_integration_by_batch performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: flowsom_mean_mapping_similarity\n  Worst score: 0%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score shuffle_integration_by_batch flowsom_mean_mapping_similarity", 
+        "value": 0, 
+        "severity": 0, 
+        "severity_value": 0.0, 
+        "code": "best_score <= 2", 
+        "message": "Method shuffle_integration_by_batch performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_batch\n  Metric id: flowsom_mean_mapping_similarity\n  Best score: 0%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score shuffle_integration_by_cell_type flowsom_mean_mapping_similarity", 
+        "value": 0.9761, 
+        "severity": 0, 
+        "severity_value": -0.9761, 
+        "code": "worst_score >= -1", 
+        "message": "Method shuffle_integration_by_cell_type performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: flowsom_mean_mapping_similarity\n  Worst score: 0.9761%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score shuffle_integration_by_cell_type flowsom_mean_mapping_similarity", 
+        "value": 0.9761, 
+        "severity": 0, 
+        "severity_value": 0.48805, 
+        "code": "best_score <= 2", 
+        "message": "Method shuffle_integration_by_cell_type performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: shuffle_integration_by_cell_type\n  Metric id: flowsom_mean_mapping_similarity\n  Best score: 0.9761%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score harmonypy flowsom_mean_mapping_similarity", 
+        "value": 0.9817, 
+        "severity": 0, 
+        "severity_value": -0.9817, 
+        "code": "worst_score >= -1", 
+        "message": "Method harmonypy performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: flowsom_mean_mapping_similarity\n  Worst score: 0.9817%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score harmonypy flowsom_mean_mapping_similarity", 
+        "value": 0.9817, 
+        "severity": 0, 
+        "severity_value": 0.49085, 
+        "code": "best_score <= 2", 
+        "message": "Method harmonypy performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: harmonypy\n  Metric id: flowsom_mean_mapping_similarity\n  Best score: 0.9817%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score limma_remove_batch_effect flowsom_mean_mapping_similarity", 
+        "value": 0.9809, 
+        "severity": 0, 
+        "severity_value": -0.9809, 
+        "code": "worst_score >= -1", 
+        "message": "Method limma_remove_batch_effect performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: flowsom_mean_mapping_similarity\n  Worst score: 0.9809%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score limma_remove_batch_effect flowsom_mean_mapping_similarity", 
+        "value": 0.9809, 
+        "severity": 0, 
+        "severity_value": 0.49045, 
+        "code": "best_score <= 2", 
+        "message": "Method limma_remove_batch_effect performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: limma_remove_batch_effect\n  Metric id: flowsom_mean_mapping_similarity\n  Best score: 0.9809%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score no_integration flowsom_mean_mapping_similarity", 
+        "value": 0.9803, 
+        "severity": 0, 
+        "severity_value": -0.9803, 
+        "code": "worst_score >= -1", 
+        "message": "Method no_integration performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: flowsom_mean_mapping_similarity\n  Worst score: 0.9803%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score no_integration flowsom_mean_mapping_similarity", 
+        "value": 0.9803, 
+        "severity": 0, 
+        "severity_value": 0.49015, 
+        "code": "best_score <= 2", 
+        "message": "Method no_integration performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: no_integration\n  Metric id: flowsom_mean_mapping_similarity\n  Best score: 0.9803%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score perfect_integration_horizontal flowsom_mean_mapping_similarity", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": -1.0, 
+        "code": "worst_score >= -1", 
+        "message": "Method perfect_integration_horizontal performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: flowsom_mean_mapping_similarity\n  Worst score: 1%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score perfect_integration_horizontal flowsom_mean_mapping_similarity", 
+        "value": 1, 
+        "severity": 0, 
+        "severity_value": 0.5, 
+        "code": "best_score <= 2", 
+        "message": "Method perfect_integration_horizontal performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_horizontal\n  Metric id: flowsom_mean_mapping_similarity\n  Best score: 1%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score perfect_integration_vertical flowsom_mean_mapping_similarity", 
+        "value": 0.9923, 
+        "severity": 0, 
+        "severity_value": -0.9923, 
+        "code": "worst_score >= -1", 
+        "message": "Method perfect_integration_vertical performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: flowsom_mean_mapping_similarity\n  Worst score: 0.9923%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score perfect_integration_vertical flowsom_mean_mapping_similarity", 
+        "value": 0.9923, 
+        "severity": 0, 
+        "severity_value": 0.49615, 
+        "code": "best_score <= 2", 
+        "message": "Method perfect_integration_vertical performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: perfect_integration_vertical\n  Metric id: flowsom_mean_mapping_similarity\n  Best score: 0.9923%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score combat flowsom_mean_mapping_similarity", 
+        "value": 0.981, 
+        "severity": 0, 
+        "severity_value": -0.981, 
+        "code": "worst_score >= -1", 
+        "message": "Method combat performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: flowsom_mean_mapping_similarity\n  Worst score: 0.981%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score combat flowsom_mean_mapping_similarity", 
+        "value": 0.981, 
+        "severity": 0, 
+        "severity_value": 0.4905, 
+        "code": "best_score <= 2", 
+        "message": "Method combat performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: combat\n  Metric id: flowsom_mean_mapping_similarity\n  Best score: 0.981%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score cycombine_nocontrols flowsom_mean_mapping_similarity", 
+        "value": 0.9835, 
+        "severity": 0, 
+        "severity_value": -0.9835, 
+        "code": "worst_score >= -1", 
+        "message": "Method cycombine_nocontrols performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: flowsom_mean_mapping_similarity\n  Worst score: 0.9835%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score cycombine_nocontrols flowsom_mean_mapping_similarity", 
+        "value": 0.9835, 
+        "severity": 0, 
+        "severity_value": 0.49175, 
+        "code": "best_score <= 2", 
+        "message": "Method cycombine_nocontrols performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cycombine_nocontrols\n  Metric id: flowsom_mean_mapping_similarity\n  Best score: 0.9835%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score gaussnorm flowsom_mean_mapping_similarity", 
+        "value": 0.9759, 
+        "severity": 0, 
+        "severity_value": -0.9759, 
+        "code": "worst_score >= -1", 
+        "message": "Method gaussnorm performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: flowsom_mean_mapping_similarity\n  Worst score: 0.9759%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score gaussnorm flowsom_mean_mapping_similarity", 
+        "value": 0.9759, 
+        "severity": 0, 
+        "severity_value": 0.48795, 
+        "code": "best_score <= 2", 
+        "message": "Method gaussnorm performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: gaussnorm\n  Metric id: flowsom_mean_mapping_similarity\n  Best score: 0.9759%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Worst score cytonorm_controls flowsom_mean_mapping_similarity", 
+        "value": 0.9838, 
+        "severity": 0, 
+        "severity_value": -0.9838, 
+        "code": "worst_score >= -1", 
+        "message": "Method cytonorm_controls performs much worse than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: flowsom_mean_mapping_similarity\n  Worst score: 0.9838%\n"
+    }, 
+    {
+        "task_id": "task_cyto_batch_integration", 
+        "category": "Scaling", 
+        "name": "Best score cytonorm_controls flowsom_mean_mapping_similarity", 
+        "value": 0.9838, 
+        "severity": 0, 
+        "severity_value": 0.4919, 
+        "code": "best_score <= 2", 
+        "message": "Method cytonorm_controls performs a lot better than baselines.\n  Task id: task_cyto_batch_integration\n  Method id: cytonorm_controls\n  Metric id: flowsom_mean_mapping_similarity\n  Best score: 0.9838%\n"
     }
 ]
